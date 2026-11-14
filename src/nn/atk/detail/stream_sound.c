@@ -28,6 +28,10 @@ __int64 StreamSound_Unknown5(_BYTE* a1);
 __int64 StreamSound_DeletingDestructor(__int64 a1);
 _DWORD* BasicSound_281a40(_DWORD* result);
 _DWORD* StreamSound_Unknown10(__int64 a1);
+__int64 StreamSoundPlayer_Destructor_alt1(_QWORD*) __asm__(
+    "StreamSoundPlayer_Destructor");
+void GameRoutine_6512d0(__int64);
+void StreamSound_Unknown2(_QWORD* a1);
 
 __int64 StreamSound_Unknown3(__int64 a1, unsigned __int64 a2, __int64 a3,
                              __int64 a4, __int64 a5, __int64 a6)
@@ -1249,6 +1253,13 @@ __int64 StreamSound_DeletingDestructor(__int64 a1)
   *(_QWORD*)a1 = nn_atk_detail_BasicSound_vtable;
   *(_DWORD*)(a1 + 260) = 3;
   return result;
+}
+
+void StreamSound_Unknown2(_QWORD* a1)
+{
+  *a1 = GameData_21353b0[0] + 2;
+  StreamSoundPlayer_Destructor_alt1(a1 + 96);
+  GameRoutine_6512d0((__int64)a1);
 }
 
 #pragma GCC visibility pop

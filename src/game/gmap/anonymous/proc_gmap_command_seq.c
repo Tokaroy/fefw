@@ -257,6 +257,11 @@ void game_gmap_anonymous_ProcGmapCommandSeq_ExecuteStay();
 __int64 ProcGmapCommandSeq_14b11a0(__int64 result);
 void ProcGmapCommandSeq_14b3420();
 void ProcGmapCommandSeq_14b37a0();
+__int64 Troop_133e6e0(__int64);
+__int64 game_gmap_anonymous_ProcGmapCommandSeq_AfterCreateCorps_closure_Invoke(
+    __int64 a1, __int64* a2);
+__int64 game_gmap_anonymous_ProcGmapCommandSeq_AfterChangeCorps_closure_Invoke(
+    __int64 a1, __int64* a2);
 
 __int64 game_gmap_anonymous_ProcGmapCommandSeq_EndDestroyHellGate()
 {
@@ -3701,6 +3706,30 @@ bool game_gmap_anonymous_ProcGmapCommandSeq_EndDestroyHellGate_closure_Invoke(
   v2 = *(_QWORD*)(*(_QWORD*)a2 + 96LL);
   return v2 != 0 && *(_BYTE*)(v2 + 32) == 3 &&
          (*(_WORD*)(*(_QWORD*)a2 + 544LL) & 8) != 0;
+}
+
+__int64 game_gmap_anonymous_ProcGmapCommandSeq_AfterCreateCorps_closure_Invoke(
+    __int64 a1, __int64* a2)
+{
+  __int64 result;
+
+  result = *a2;
+  if (*(_QWORD*)GameData_212d750 != 0 & *(_QWORD*)(*a2 + 344) == 0) {
+    return Troop_133e6e0(result);
+  }
+  return result;
+}
+
+__int64 game_gmap_anonymous_ProcGmapCommandSeq_AfterChangeCorps_closure_Invoke(
+    __int64 a1, __int64* a2)
+{
+  __int64 result;
+
+  result = *a2;
+  if (*(_QWORD*)GameData_212d750 != 0 & *(_QWORD*)(*a2 + 344) == 0) {
+    return Troop_133e6e0(result);
+  }
+  return result;
 }
 
 #pragma GCC visibility pop

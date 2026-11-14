@@ -156,6 +156,14 @@ void hub_event_AddEventExecute(__int64 a1, unsigned __int8* a2, __int64 a3);
 _QWORD* Manager_66cc20_alt1(__int64*, _QWORD*) __asm__("Manager_66cc20");
 __int64* GameHr_e24420(__int64**, unsigned __int8*, __int64, __int64**);
 void hub_event_PushArrangementCharaPid(__int64 a1, __int64 a2);
+void GameRoutine_d68860(__int64, char, __int64, __int64, __int64, __int64,
+                        __int64, __int64, double, double, double, double,
+                        double, double, double, double, ...);
+void hub_event_StartSelectExMenu(__int64 a1, double a2, double a3, double a4,
+                                 double a5, double a6, double a7, double a8,
+                                 double a9, __int64 a10, __int64 a11,
+                                 __int64 a12, __int64 a13, __int64 a14,
+                                 __int64 a15, __int64 a16);
 
 _QWORD* HubEventNatives_d5b9c0(_QWORD* result)
 {
@@ -2957,6 +2965,18 @@ LABEL_33:
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v23, v28);
   }
   return result;
+}
+
+void hub_event_StartSelectExMenu(__int64 a1, double a2, double a3, double a4,
+                                 double a5, double a6, double a7, double a8,
+                                 double a9, __int64 a10, __int64 a11,
+                                 __int64 a12, __int64 a13, __int64 a14,
+                                 __int64 a15, __int64 a16)
+{
+
+#pragma clang fp contract(off)
+  GameRoutine_d68860(a1, 1, a11, a12, a13, a14, a15, a16, a2, a3, a4, a5, a6,
+                     a7, a8, a9);
 }
 
 void hub_event_PushArrangementCharaPid(__int64 a1, __int64 a2)

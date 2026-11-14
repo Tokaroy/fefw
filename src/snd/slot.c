@@ -6841,7 +6841,7 @@ unsigned __int64 snd_Slot_countActiveVoice_lambda0_Invoke(__int64 a1,
                                                           _QWORD* a2)
 {
   __int64 v2;
-  const char* v4;
+  char* v4;
   unsigned __int64 result;
   __int64 v6;
   unsigned __int64 v7;
@@ -6886,7 +6886,7 @@ unsigned __int64 snd_Slot_countActiveVoice_lambda2_Invoke(__int64 a1,
                                                           _QWORD* a2)
 {
   __int64 v2;
-  const char* v4;
+  char* v4;
   unsigned __int64 result;
   __int64 v6;
   unsigned __int64 v7;

@@ -37,6 +37,71 @@ bool GameRoutine_19ef8e0_alt1(_QWORD*, _QWORD*) __asm__("GameRoutine_19ef8e0");
 bool game_menu_TransportMenu_SortAndFilter_lambda1_Invoke(__int64 a1,
                                                           _QWORD* a2,
                                                           _QWORD** a3);
+extern __int64 (*GameData_20aa128[])();
+extern __int64 (*GameData_20aa1a8[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+__int64 game_menu_TransportMenu_SortAndFilter(__int64 a1);
+
+__int64 game_menu_TransportMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  bool v5;
+  unsigned __int64 v6;
+  __int64 v7;
+  __int64 result;
+  __int64 v9;
+  struct {
+    _QWORD v10[4];
+    _QWORD* v11;
+  } v10_;
+  struct {
+    _QWORD v12[4];
+    _QWORD* v13;
+  } v12_;
+  char v16;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v10_.v11 = v10_.v10;
+  v5 = (unsigned __int8)v3 >= 7u;
+  v6 = 0xD040302010010uLL >> (8 * (unsigned __int8)v3);
+  if (v5) {
+    LOBYTE(v6) = 14;
+  }
+  v16 = v6;
+  v12_.v12[0] = GameData_20aa128;
+  v12_.v12[1] = &v16;
+  v12_.v13 = v12_.v12;
+  v10_.v10[0] = GameData_20aa1a8;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)v12_.v12, (__int64)v10_.v10);
+  if (v10_.v11 == v10_.v10) {
+    v7 = 32;
+  }
+  else {
+    if (v10_.v11 == nullptr) {
+      goto LABEL_11;
+    }
+    v7 = 40;
+  }
+  (*(void (**)(__int64))(*v10_.v11 + v7))((__int64)v10_.v11);
+LABEL_11:
+  result = (__int64)v12_.v13;
+  if (v12_.v13 == v12_.v12) {
+    v9 = 32;
+  }
+  else {
+    if (v12_.v13 == nullptr) {
+      return result;
+    }
+    v9 = 40;
+  }
+  return (*(__int64 (**)(__int64))(*v12_.v13 + v9))((__int64)v12_.v13);
+}
 
 __int64 TransportMenu_170b4c0(__int64 a1)
 {

@@ -118,6 +118,9 @@ GameRoutine_60a210_alt1() __asm__("GameRoutine_60a210");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_menu_anonymous_ProcQuestMenu_ShowMap(_QWORD* a1);
+extern __int64 (*GameData_20e52e8[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+__int64 game_menu_anonymous_ProcQuestMenu_SortAndFilter(__int64 a1);
 
 __int64 ProcQuestMenu_Destructor(__int64 a1)
 {
@@ -1033,6 +1036,59 @@ LABEL_30:
     return nn_mem_StandardAllocator_Free(v58 + v59, v39);
   }
   return result;
+}
+
+__int64 game_menu_anonymous_ProcQuestMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  __int64 v5;
+  __int64 result;
+  __int64 v7;
+  struct {
+    _BYTE v8[32];
+    _BYTE* v9;
+  } v8_;
+  struct {
+    __int64 (**v10)();
+    int v11;
+    char gap60_[20];
+    __int64 (***v12)();
+  } v10_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v10_.v11 = v3;
+  v8_.v9 = nullptr;
+  v10_.v10 = GameData_20e52e8;
+  v10_.v12 = &v10_.v10;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v10_.v10, (__int64)v8_.v8);
+  if (v8_.v9 == v8_.v8) {
+    v5 = 32;
+  }
+  else {
+    if (v8_.v9 == nullptr) {
+      goto LABEL_8;
+    }
+    v5 = 40;
+  }
+  (*(void (**)(__int64))(*(_QWORD*)v8_.v9 + v5))((__int64)v8_.v9);
+LABEL_8:
+  result = (__int64)v10_.v12;
+  if (v10_.v12 == &v10_.v10) {
+    v7 = 4;
+  }
+  else {
+    if (v10_.v12 == nullptr) {
+      return result;
+    }
+    v7 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v10_.v12)[v7])((__int64)v10_.v12);
 }
 
 __int64 ProcQuestMenu_Unknown139(__int64 a1, __int64* a2)

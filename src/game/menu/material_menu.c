@@ -43,6 +43,10 @@ __int64 game_gameui_Util_EachMaterialItemFromTransporter(__int64);
 extern __int64 (*GameData_20f4648[])();
 extern __int64 (*game_menu_MaterialMenuItem_Empty_vtable[])();
 __int64 game_menu_MaterialMenu_AddItemList(__int64 a1);
+extern __int64 (*GameData_20f46c8[])();
+extern __int64 (*GameData_20f4748[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+__int64 game_menu_MaterialMenu_SortAndFilter(__int64 a1);
 
 void MaterialMenu_18706d0(__int64 a1)
 {
@@ -145,6 +149,66 @@ __int64 game_menu_MaterialMenu_AddItemList(__int64 a1)
     v5 = 40;
   }
   return (*(__int64 (**)(__int64))(*v6_.v7 + v5))((__int64)v6_.v7);
+}
+
+__int64 game_menu_MaterialMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  __int64 v5;
+  bool v6;
+  unsigned __int64 v7;
+  __int64 result;
+  __int64 v9;
+  struct {
+    _QWORD v10[4];
+    _QWORD* v11;
+  } v10_;
+  struct {
+    __int64 (**v12)();
+    char v13;
+    char gap57_[23];
+    __int64 (***v14)();
+  } v12_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v5 = 32;
+  v10_.v11 = v10_.v10;
+  v6 = (unsigned __int8)v3 >= 6u;
+  v12_.v12 = GameData_20f46c8;
+  v7 = 0x160E0D141320uLL >> (8 * (unsigned __int8)v3);
+  if (v6) {
+    LOBYTE(v7) = 32;
+  }
+  v12_.v13 = v7;
+  v12_.v14 = &v12_.v12;
+  v10_.v10[0] = GameData_20f4748;
+  v10_.v10[1] = a1;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v12_.v12, (__int64)v10_.v10);
+  if (v10_.v11 != v10_.v10) {
+    if (v10_.v11 == nullptr) {
+      goto LABEL_10;
+    }
+    v5 = 40;
+  }
+  (*(void (**)(__int64))(*v10_.v11 + v5))((__int64)v10_.v11);
+LABEL_10:
+  result = (__int64)v12_.v14;
+  if (v12_.v14 == &v12_.v12) {
+    v9 = 4;
+  }
+  else {
+    if (v12_.v14 == nullptr) {
+      return result;
+    }
+    v9 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v12_.v14)[v9])((__int64)v12_.v14);
 }
 
 __int64 game_menu_MaterialMenu_OnInit_lambda0_Invoke(__int64 a1, __int64* a2,

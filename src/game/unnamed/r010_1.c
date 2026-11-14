@@ -111,6 +111,12 @@ void GameHr_196b6c0();
 __int16* GameHr_197f580(_QWORD* a1);
 __int64* GameHr_194cb90(__int64* result, __int64* a2, __int64* a3, __int64* a4,
                         __int64* a5, __int64 a6);
+__int64 PrimitiveDrawManager_1997280(__int64 result, int*, __int64,
+                                     unsigned __int64, int*);
+char* PrimitiveDrawManager_1997540(char* result, char*, char*, __int64, __int64,
+                                   __int64, __int64, __int64);
+char* GameHr_1996fc0(char* result, char* a2, __int64 a3, unsigned __int64 a4,
+                     int* a5, __int64 a6);
 
 void GameHr_18af120(_QWORD* a1, __int64* a2)
 {
@@ -1257,16 +1263,16 @@ __int64 GameHr_1980740(__int64 result)
   return result;
 }
 
-int* GameHr_1996fc0(int* result, int* a2, __int64 a3, unsigned __int64 a4,
-                    int* a5, signed __int64 a6)
+char* GameHr_1996fc0(char* result, char* a2, __int64 a3, unsigned __int64 a4,
+                     int* a5, __int64 a6)
 {
   int v6;
   int v7;
   __int64 v8;
-  int* v9;
+  char* v9;
   __int64 v10;
-  int* v11;
-  int* v12;
+  char* v11;
+  char* v12;
   int v13;
   int v14;
   int v15;
@@ -1275,8 +1281,8 @@ int* GameHr_1996fc0(int* result, int* a2, __int64 a3, unsigned __int64 a4,
   __int64 v18;
   unsigned __int64 v19;
   unsigned __int64 v21;
-  int* v22;
-  int* v26;
+  char* v22;
+  char* v26;
   int* v29;
   int* v30;
   int* v31;
@@ -1292,15 +1298,15 @@ int* GameHr_1996fc0(int* result, int* a2, __int64 a3, unsigned __int64 a4,
 
   if (a4 >= 2) {
     if (a4 == 2) {
-      v6 = *(a2 - 1);
-      v7 = *result;
+      v6 = *((_DWORD*)a2 - 1);
+      v7 = *(_DWORD*)result;
       v8 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-      if (*(_DWORD*)(v8 + 1440LL * v6 + 36) +
-              *(_DWORD*)(v8 + 1440LL * v6 + 32) <
-          *(_DWORD*)(v8 + 1440LL * v7 + 36) +
-              *(_DWORD*)(v8 + 1440LL * v7 + 32)) {
-        *result = v6;
-        *(a2 - 1) = v7;
+      if ((signed __int32)(*(int*)(v8 + 1440LL * v6 + 36) +
+                           *(int*)(v8 + 1440LL * v6 + 32)) <
+          (signed __int32)(*(int*)(v8 + 1440LL * v7 + 36) +
+                           *(int*)(v8 + 1440LL * v7 + 32))) {
+        *(_DWORD*)result = v6;
+        *((_DWORD*)a2 - 1) = v7;
       }
     }
     else if ((__int64)a4 > 128) {
@@ -1309,18 +1315,20 @@ int* GameHr_1996fc0(int* result, int* a2, __int64 a3, unsigned __int64 a4,
       if ((__int64)a4 <= a6) {
         v26 = result;
         v29 = a5;
-        ((void (*)(void))GameRoutine_1997280)();
+        PrimitiveDrawManager_1997280((__int64)result, (int*)&result[4 * v19],
+                                     a3, a4 >> 1, a5);
         v30 = &v29[v19];
-        result = (int*)GameRoutine_1997280(&v26[v19], a2, a3, v21, v30);
+        result = (char*)PrimitiveDrawManager_1997280((__int64)&v26[4 * v19],
+                                                     (int*)a2, a3, v21, v30);
         v31 = &v29[a4];
         v32 = v30;
         while (v32 != v31) {
           v33 = *v32;
           v34 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-          v35 = *(_DWORD*)(v34 + 1440LL * v33 + 36) +
-                *(_DWORD*)(v34 + 1440LL * v33 + 32);
-          v36 = *(_DWORD*)(v34 + 1440LL * *v29 + 36) +
-                *(_DWORD*)(v34 + 1440LL * *v29 + 32);
+          v35 = *(int*)(v34 + 1440LL * v33 + 36) +
+                *(int*)(v34 + 1440LL * v33 + 32);
+          v36 = *(int*)(v34 + 1440LL * *v29 + 36) +
+                *(int*)(v34 + 1440LL * *v29 + 32);
           if (v35 < v36) {
             v37 = 0;
           }
@@ -1335,65 +1343,68 @@ int* GameHr_1996fc0(int* result, int* a2, __int64 a3, unsigned __int64 a4,
           else {
             v38 = 4;
           }
-          *v26++ = v33;
+          *(_DWORD*)v26 = v33;
+          v26 += 4;
           v32 = (int*)((char*)v32 + v38);
           if (v29 == v30) {
             while (v32 != v31) {
               v40 = *v32++;
-              *v26++ = v40;
+              *(_DWORD*)v26 = v40;
+              v26 += 4;
             }
             return result;
           }
         }
         while (v29 != v30) {
           v39 = *v29++;
-          *v26++ = v39;
+          *(_DWORD*)v26 = v39;
+          v26 += 4;
         }
       }
       else {
         v22 = result;
-        GameHr_1996fc0(result, &result[v19], a3, a4 >> 1, a5, a6);
-        GameHr_1996fc0(&v22[v19], a2, a3, v21, a5, a6);
-        return (int*)GameRoutine_1997540(v22, &v22[v19], a2, a3, v19, v21, a5,
-                                         a6);
+        GameHr_1996fc0(result, (int*)&result[4 * v19], a3, a4 >> 1, a5, a6);
+        GameHr_1996fc0(&v22[4 * v19], (int*)a2, a3, v21, a5, a6);
+        return PrimitiveDrawManager_1997540(v22, &v22[4 * v19], a2, a3, v19,
+                                            v21, (__int64)a5, a6);
       }
     }
     else if (result != a2) {
-      v9 = result + 1;
-      if (result + 1 != a2) {
+      v9 = result + 4;
+      if (result + 4 != a2) {
         v10 = 0;
         v11 = result;
         do {
-          v14 = *v11;
-          v13 = v11[1];
+          v14 = *(_DWORD*)v11;
+          v13 = *((_DWORD*)v11 + 1);
           v11 = v9;
           v15 = v14;
           v16 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-          if (*(_DWORD*)(v16 + 1440LL * v13 + 36) +
-                  *(_DWORD*)(v16 + 1440LL * v13 + 32) <
-              *(_DWORD*)(v16 + 1440LL * v15 + 36) +
-                  *(_DWORD*)(v16 + 1440LL * v15 + 32)) {
+          if ((signed __int32)(*(int*)(v16 + 1440LL * v13 + 36) +
+                               *(int*)(v16 + 1440LL * v13 + 32)) <
+              (signed __int32)(*(int*)(v16 + 1440LL * v15 + 36) +
+                               *(int*)(v16 + 1440LL * v15 + 32))) {
             v17 = v10;
             do {
-              *(int*)((char*)result + v17 + 4) = v15;
+              *(_DWORD*)&result[v17 + 4] = v15;
               if (v17 == 0) {
                 v12 = result;
                 goto LABEL_11;
               }
-              v15 = *(int*)((char*)result + v17 - 4);
+              v15 = *(_DWORD*)&result[v17 - 4];
               v17 -= 4;
               v18 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-            } while (*(_DWORD*)(v18 + 1440LL * v13 + 36) +
-                         *(_DWORD*)(v18 + 1440LL * v13 + 32) <
-                     *(_DWORD*)(v18 + 1440LL * v15 + 36) +
-                         *(_DWORD*)(v18 + 1440LL * v15 + 32));
-            v12 = (int*)((char*)result + v17 + 4);
+            } while ((signed __int32)(*(int*)(v18 + 1440LL * v13 + 36) +
+                                      *(int*)(v18 + 1440LL * v13 + 32)) <
+                     (signed __int32)(*(int*)(v18 + 1440LL * v15 + 36) +
+                                      *(int*)(v18 + 1440LL * v15 + 32)));
+            v12 = &result[v17 + 4];
           LABEL_11:
-            *v12 = v13;
+            *(_DWORD*)v12 = v13;
           }
-          v9 = v11 + 1;
+          v9 = v11 + 4;
           v10 += 4;
-        } while (v11 + 1 != a2);
+        } while (v11 + 4 != a2);
       }
     }
   }

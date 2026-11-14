@@ -117,6 +117,10 @@ extern __int64 game_gameui_MenuAnimator_instance_;
 int sprintf(__int64, const char*, ...);
 void __attribute__((noreturn)) GameRoutine_874500();
 void AnimalPoolMenu_1861030(__int64* a1, __int64* a2);
+extern __int64 (*GameData_20f0660[])();
+extern __int64 (*GameData_20f06e0[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+__int64 game_menu_AnimalPoolMenu_SortAndFilter(__int64 a1);
 
 void AnimalPoolMenu_1861030(__int64* a1, __int64* a2)
 {
@@ -1592,6 +1596,68 @@ __int64 AnimalPoolMenu_Unknown149(__int64 a1, __int64 a2, __int64 a3,
   *(_QWORD*)result = game_menu_EquipMenuItem_AnimalPool_vtable;
   *(_QWORD*)(result + 8) = 0;
   return result;
+}
+
+__int64 game_menu_AnimalPoolMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  bool v5;
+  unsigned __int64 v6;
+  __int64 v7;
+  __int64 result;
+  __int64 v9;
+  struct {
+    _QWORD v10[4];
+    _QWORD* v11;
+  } v10_;
+  struct {
+    _QWORD v12[4];
+    _QWORD* v13;
+  } v12_;
+  char v16;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v10_.v11 = v10_.v10;
+  v5 = (unsigned __int8)v3 >= 6u;
+  v6 = 0x50403020106uLL >> (8 * (unsigned __int8)v3);
+  if (v5) {
+    LOBYTE(v6) = 6;
+  }
+  v16 = v6;
+  v12_.v12[0] = GameData_20f0660;
+  v12_.v12[1] = &v16;
+  v12_.v13 = v12_.v12;
+  v10_.v10[0] = GameData_20f06e0;
+  v10_.v10[1] = a1;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)v12_.v12, (__int64)v10_.v10);
+  if (v10_.v11 == v10_.v10) {
+    v7 = 32;
+  }
+  else {
+    if (v10_.v11 == nullptr) {
+      goto LABEL_11;
+    }
+    v7 = 40;
+  }
+  (*(void (**)(__int64))(*v10_.v11 + v7))((__int64)v10_.v11);
+LABEL_11:
+  result = (__int64)v12_.v13;
+  if (v12_.v13 == v12_.v12) {
+    v9 = 32;
+  }
+  else {
+    if (v12_.v13 == nullptr) {
+      return result;
+    }
+    v9 = 40;
+  }
+  return (*(__int64 (**)(__int64))(*v12_.v13 + v9))((__int64)v12_.v13);
 }
 
 __int64 game_menu_AnimalPoolMenu_GetSumReliance(__int64 a1, unsigned __int8* a2,

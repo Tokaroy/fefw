@@ -9450,7 +9450,7 @@ __int64 GameHr_fa9dc0(__int64 a1, __int64 a2)
   char v3;
   __int64 v4;
   __int64 v5;
-  const char* v6;
+  char* v6;
   __int64 result;
 
   v2 = 0;

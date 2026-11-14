@@ -268,6 +268,9 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void SpotAttachmentAnimal_14d3f50(__int64 a1);
 void SpotAttachmentAnimal_14d3ff0(__int64 a1);
+__int64 Impl_13261c0_alt1(__int64) __asm__("Impl_13261c0");
+__int64 Troop_1342210(__int64, long double);
+__int64 SpotAttachmentAnimal_Unknown28(__int64* a1);
 
 __int64 SpotAttachmentAnimal_14d28c0()
 {
@@ -579,6 +582,93 @@ LABEL_40:
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, (__int64)v25_.v26);
   }
   return v17;
+}
+
+__int64 SpotAttachmentAnimal_Unknown28(__int64* a1)
+{
+
+#pragma clang fp contract(off)
+  __int64 v1;
+  __int64 result;
+  __int64 v5;
+  long double v6;
+  char v8;
+  __int64 v9;
+  __int64 v10;
+  _QWORD* v11;
+  _QWORD* v12;
+  _QWORD* v13;
+  __int64 v14;
+  __int64 v15;
+
+  v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+  v1 = a1[4];
+  result = Impl_13261c0_alt1(v1),
+  v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+  if ((unsigned __int8)result == 6 & *(_QWORD*)(v1 + 152) != 0) {
+    v5 = a1[4];
+    Impl_13261c0_alt1(v5),
+        v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+    if (*(_DWORD*)(*(_QWORD*)(v5 + 152) + 64LL) != 0) {
+      if (a1[6] == 0) {
+        v8 = (*(__int64 (**)(__int64*))(*a1 + 48))(a1),
+        v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+        v9 = a1[4];
+        if ((v8 & 1) == 0) {
+          Impl_13261c0_alt1(a1[4]),
+              v6 = COERCE_AS(__typeof__(v6),
+                             PSEUDO_REGISTER(__n128, "v0", "=w"));
+          *(_DWORD*)(*(_QWORD*)(v9 + 152) + 64LL) = 0;
+          v15 = a1[4];
+          result = Impl_13261c0_alt1(v15),
+          v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+          *(_QWORD*)(*(_QWORD*)(v15 + 152) + 72LL) = 0;
+          return result;
+        }
+        if (v9 != 0) {
+          v10 = *(_QWORD*)(GameData_21c96e8 + 8);
+          v11 = *(_QWORD**)(v10 + 8);
+          v12 = *(_QWORD**)(v10 + 16);
+          while (v11 != v12) {
+            v13 = (_QWORD*)*v11;
+            if (*(_QWORD*)*v11 == v9 && v13[12] == 0) {
+              v14 = v13[69];
+              if (v14 != 0 && v13[13] == 0 &&
+                  *((__int16*)v13 + 321) * *((__int16*)v13 + 320) *
+                          *((__int16*)v13 + 322) ==
+                      0 &&
+                  *(_QWORD*)(v14 + 352) != 0) {
+                a1[6] = (__int64)v13;
+                result = a1[6];
+                if (result != 0) {
+                  return Troop_1342210(result, v6);
+                }
+                return result;
+              }
+            }
+            ++v11;
+          }
+        }
+        a1[6] = 0;
+      LABEL_25:
+        *(float*)&v6 = GameRoutine_14d2c20((__int64)a1),
+        v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(__n128, "v0", "=w"));
+        result = a1[6];
+        if (result == 0) {
+          return result;
+        }
+        return Troop_1342210(result, v6);
+      }
+    }
+    else if (((*(__int64 (**)(__int64*))(*a1 + 48))(a1) & 1) != 0) {
+      goto LABEL_25;
+    }
+    result = a1[6];
+    if (result != 0) {
+      return Troop_1342210(result, v6);
+    }
+  }
+  return result;
 }
 
 __int64 SpotAttachmentAnimal_Unknown11(__int64 a1, __int64 a2)

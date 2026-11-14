@@ -654,8 +654,10 @@ void HubUniqueNatives_ec6600()
   __int64 v8;
   int v9;
   __int64 v10;
-  unsigned __int8 v11;
-  _BYTE v12[23];
+  struct {
+    unsigned __int8 v11;
+    _BYTE v12[23];
+  } v11_;
   struct {
     __int64 v13;
     int v14;
@@ -701,10 +703,10 @@ void HubUniqueNatives_ec6600()
   }
   GameRoutine_17b95c0_alt1(v6, (__int16*)&v13_.v13);
   v7 = game_hub_ProcHubSeqView_instance_;
-  v11 = 30;
-  strcpy(v12, "TimeProgression");
+  v11_.v11 = 30;
+  strcpy(v11_.v12, "TimeProgression");
   if (game_hub_ProcHubSeqView_instance_ != 0) {
-    GameRoutine_d8b9c0_alt1(game_hub_ProcHubSeqView_instance_ + 424, &v11);
+    GameRoutine_d8b9c0_alt1(game_hub_ProcHubSeqView_instance_ + 424, &v11_.v11);
     v8 = *(_QWORD*)(*(_QWORD*)(v7 + 416) + 40LL);
     if (v8 != 0) {
       v9 = 0;
@@ -712,20 +714,20 @@ void HubUniqueNatives_ec6600()
         v8 = *(_QWORD*)(v8 + 40);
         ++v9;
       } while (v8 != 0);
-      v15 = &v11;
+      v15 = &v11_.v11;
       *((_DWORD*)GameRoutine_d8bae0_alt1(
-            (__int64**)(v7 + 424), &v11,
+            (__int64**)(v7 + 424), &v11_.v11,
             (__int64)std___1_piecewise_construct_ptr, (__int64**)&v15) +
         14) = v9;
     }
   }
-  if ((v11 & 1) != 0 && *(_QWORD*)&v12[15] != 0) {
+  if ((v11_.v11 & 1) != 0 && *(_QWORD*)&v11_.v12[15] != 0) {
     v10 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v10 = 56;
     }
     nn_mem_StandardAllocator_Free_alt3(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, *(__int64*)&v12[15]);
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, *(__int64*)&v11_.v12[15]);
   }
 }
 
@@ -816,7 +818,8 @@ LABEL_19:
       v13 = 56;
     }
     nn_mem_StandardAllocator_Free_alt2(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                       v13, (_QWORD)(*(_QWORD*)&v15[15]));
+                                           v13,
+                                       (_QWORD)(*(_QWORD*)&v15[15]));
   }
   if ((v6 & 1) == 0 &&
       *(_QWORD*)game_hub_ProgressEventView_instance__ptr[0] != 0) {

@@ -1979,11 +1979,14 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
   struct {
     _DWORD v40[8];
     _DWORD* v41;
+    char gap88_[20];
+    char v42;
   } v40_;
-  char v42;
   __int64 v43;
-  unsigned int v44;
-  unsigned int v45;
+  struct {
+    unsigned int v44;
+    unsigned int v45;
+  } v44_;
   struct {
     _QWORD v46[4];
     _QWORD* v47;
@@ -1993,8 +1996,8 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
   v12 = COERCE_AS(__typeof__(v12), PSEUDO_REGISTER(float, "s0", "=w")),
   v34 = COERCE_AS(__typeof__(v34),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  v44 = a2;
-  v45 = a1;
+  v44_.v44 = a2;
+  v44_.v45 = a1;
   v43 = a3;
   v3 = a1 + 32 * a2;
   v4 = GameData_212ce98[0];
@@ -2028,7 +2031,7 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
         if (v10 != 0) {
           return (__int64*)v7;
         }
-        v42 = 0;
+        v40_.v42 = 0;
       LABEL_37:
         if (*(_DWORD*)(GameData_21cd120 + 4368) >= 3u &&
             *(_BYTE*)(GameData_21cd108 + 8) != 0) {
@@ -2044,7 +2047,7 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
               v28 = *((unsigned __int8*)v25 + 585);
               v29 = *((_DWORD*)v25 + 148);
               v38_.v38[0] = GameData_1ffccd8;
-              v38_.v38[1] = v45 | ((unsigned __int64)v44 << 32);
+              v38_.v38[1] = v44_.v45 | ((unsigned __int64)v44_.v44 << 32);
               v38_.v39 = v38_.v38;
               if (v29 >= 1) {
                 v30 = v28 << 24;
@@ -2100,7 +2103,7 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
       }
     }
   }
-  v42 = 0;
+  v40_.v42 = 0;
   v7 = 0;
   if (a3 == 0) {
     goto LABEL_37;
@@ -2132,9 +2135,9 @@ __int64* GameHr_fbb8a0(unsigned int a1, unsigned int a2, __int64 a3)
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v40_.v41 = v17;
   *v17 = GameData_1ffcbd8;
-  v17[1] = &v42;
-  v17[2] = &v45;
-  v17[3] = &v44;
+  v17[1] = &v40_.v42;
+  v17[2] = &v44_.v45;
+  v17[3] = &v44_.v44;
   v17[4] = &v43;
   v18 = v46_.v46;
   v19 = *(_QWORD*)(v16 + 16);
@@ -2192,7 +2195,7 @@ LABEL_29:
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
 LABEL_35:
   v25 = nullptr;
-  if ((v42 & 1) == 0) {
+  if ((v40_.v42 & 1) == 0) {
     v7 = 0;
     goto LABEL_37;
   }

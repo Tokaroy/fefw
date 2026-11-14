@@ -5089,7 +5089,8 @@ LABEL_9:
         v15 = 56;
       }
       nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                    v15, (_QWORD)(*(_QWORD*)&v24[15]));
+                                        v15,
+                                    (_QWORD)(*(_QWORD*)&v24[15]));
     }
   }
   v23 = 30;

@@ -1295,6 +1295,10 @@ extern __int64 (*game_cmdbtl_anonymous_LinkUnitMenuItem_vtable[])();
 extern __int64 fw_memory_g_heap_manager;
 void BasicMenuCursor_16e0c00(_QWORD*, __int64);
 void GameHr_1623400(__int64 a1, __int64* a2);
+__int64 GameHr_1635860_alt1(__int64 result, __int64*, __int64, __int64*,
+                            __int64) __asm__("GameHr_1635860");
+__int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
+                       __int64* a4);
 
 __int64 GameHr_15d9080(__int64 a1, __int64 a2, _QWORD* a3)
 {
@@ -6628,6 +6632,8 @@ __int64 GameHr_1635860(__int64 result, __int64* a2, unsigned __int64 a3,
 __int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
                        __int64* a4)
 {
+
+#pragma clang fp contract(off)
   __int64 v4;
   __int64 v5;
   __int64 v6;
@@ -6639,7 +6645,7 @@ __int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
   __int64* v12;
   __int64 v13;
   __int64 v14;
-  unsigned __int64 v15;
+  __int64 v15;
   __int64 v16;
   __int64* v20;
   __int64 v21;
@@ -6676,9 +6682,9 @@ __int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
       v16 = result;
       v20 = (__int64*)(result + 8 * (a3 >> 1));
       v21 = 8 * (a3 >> 1);
-      GameRoutine_1635860(result, v20, v15, a4, v15);
+      GameHr_1635860_alt1(result, v20, v15, a4, v15);
       result =
-          GameRoutine_1635860((__int64)v20, a2, a3 - v15, &a4[v15], a3 - v15);
+          GameHr_1635860_alt1((__int64)v20, a2, a3 - v15, &a4[v15], a3 - v15);
       if (v21 != 0) {
         v22 = v20;
         v23 = a4;

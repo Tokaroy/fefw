@@ -6,6 +6,8 @@ __int64 std___1___shared_weak_count___release_weak(_QWORD);
 extern __int64 game_g_frame_clock;
 extern __int64* game_g_frame_clock_ptr[3];
 float ProcFadeTimeSlip_Unknown2(__int64 a1, float result);
+__int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
+    "std___1___shared_weak_count___release_weak");
 
 float ProcFadeTimeSlip_Unknown2(__int64 a1, float result)
 {
@@ -30,11 +32,12 @@ float ProcFadeTimeSlip_Unknown2(__int64 a1, float result)
     if (v2 == 1) {
       v11 = *(float*)(a1 + 160);
       v3 = *game_g_frame_clock_ptr[0];
-      v12 = 60.0 / (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
-      if (v12 <= 0.0) {
-        v12 = 1.0;
+      v12 = 0x1.e000000000000p+5f /
+            (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
+      if (v12 <= 0x0.0p+0f) {
+        v12 = 0x1.0000000000000p+0f;
       }
-      result = *(float*)(a1 + 156) + (float)(v12 * 0.5);
+      result = *(float*)(a1 + 156) + (float)(v12 * 0x1.0000000000000p-1f);
       *(float*)(a1 + 152) = result / v11;
       *(float*)(a1 + 156) = result;
       if (result > v11) {
@@ -44,13 +47,14 @@ float ProcFadeTimeSlip_Unknown2(__int64 a1, float result)
     }
     else if (v2 == 2) {
       v3 = *game_g_frame_clock_ptr[0];
-      v4 = 60.0 / (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
-      if (v4 <= 0.0) {
-        v4 = 1.0;
+      v4 = 0x1.e000000000000p+5f /
+           (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
+      if (v4 <= 0x0.0p+0f) {
+        v4 = 0x1.0000000000000p+0f;
       }
-      result = *(float*)(a1 + 156) + (float)(v4 * 0.5);
+      result = *(float*)(a1 + 156) + (float)(v4 * 0x1.0000000000000p-1f);
       v5 = *(float*)(a1 + 164);
-      *(float*)(a1 + 152) = 1.0 - (float)(result / v5);
+      *(float*)(a1 + 152) = 0x1.0000000000000p+0f - (float)(result / v5);
       *(float*)(a1 + 156) = result;
       if (result > v5) {
         v6 = *(unsigned __int8**)(a1 + 16);
@@ -60,7 +64,7 @@ float ProcFadeTimeSlip_Unknown2(__int64 a1, float result)
           v7 = *v6;
           v8 = v7 > 0x10;
           v9 = (1 << v7) & 0x1CE00;
-          if (!v8 && v9 != 0) {
+          if (!v8 & v9 != 0) {
             *(_WORD*)(a1 + 136) |= 0x80u;
           }
         }
@@ -81,7 +85,7 @@ float ProcFadeTimeSlip_Unknown2(__int64 a1, float result)
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         v17 = a1;
         (*(void (**)(__int64))(*(_QWORD*)v15 + 16LL))(v15);
-        std___1___shared_weak_count___release_weak(v15);
+        std___1___shared_weak_count___release_weak_alt1(v15);
         a1 = v17;
       }
     }

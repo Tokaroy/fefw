@@ -55,6 +55,13 @@ __int64 fw_memory_HeapManager_Allocate_alt1(
 void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 __int64 BanquetPool_Unknown148(__int64 a1, unsigned __int8 a2);
+extern __int64 (*GameData_2071ea0[])();
+extern __int64 (*GameData_2071f20[])();
+extern char* GameData_2072ab8[4];
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+void LayoutAccessor_1562060(__int64*, __int64, const char*);
+void BanquetPool_Unknown85(__int64 a1);
+__int64 game_gmap_anonymous_BanquetPool_SortAndFilter(__int64 a1);
 
 const char* BanquetPool_Unknown43(__int64 a1, char a2)
 {
@@ -104,6 +111,27 @@ LABEL_6:
     return std___1___shared_weak_count___release_weak(v8_.v9);
   }
   return result;
+}
+
+void BanquetPool_Unknown85(__int64 a1)
+{
+  int v1;
+  __int64 v2;
+  char* v3;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    v1 = *(_DWORD*)(v2 + 4LL * v1);
+  }
+  if ((v1 & 0xFC) != 0) {
+    v3 = nullptr;
+  }
+  else {
+    v3 = GameData_2072ab8[v1 & 3];
+  }
+  LayoutAccessor_1562060((__int64*)(a1 + 952), (__int64)"T_Title", v3);
 }
 
 __int64 BanquetPool_Unknown107(__int64* a1)
@@ -262,6 +290,65 @@ LABEL_16:
   }
   return (*(__int64 (**)(_QWORD*, __int64, __int64))(*v16_.v17 + v15))(v16_.v17,
                                                                        v3, v4);
+}
+
+__int64 game_gmap_anonymous_BanquetPool_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  int v5;
+  __int64 v6;
+  __int64 result;
+  __int64 v8;
+  struct {
+    __int64 (**v9)();
+    char v10;
+    char gap9_[23];
+    __int64 (***v11)();
+  } v9_;
+  struct {
+    __int64 (**v12)();
+    char v13;
+    char gap57_[23];
+    __int64 (***v14)();
+  } v12_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v5 = *(_DWORD*)(a1 + 200);
+  v12_.v13 = v3;
+  v12_.v14 = &v12_.v12;
+  v12_.v12 = GameData_2071ea0;
+  v9_.v11 = &v9_.v9;
+  v9_.v9 = GameData_2071f20;
+  v9_.v10 = v5;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v12_.v12, (__int64)&v9_.v9);
+  if (v9_.v11 == &v9_.v9) {
+    v6 = 4;
+  }
+  else {
+    if (v9_.v11 == nullptr) {
+      goto LABEL_8;
+    }
+    v6 = 5;
+  }
+  ((__int64 (*)(__int64))(*v9_.v11)[v6])((__int64)v9_.v11);
+LABEL_8:
+  result = (__int64)v12_.v14;
+  if (v12_.v14 == &v12_.v12) {
+    v8 = 4;
+  }
+  else {
+    if (v12_.v14 == nullptr) {
+      return result;
+    }
+    v8 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v12_.v14)[v8])((__int64)v12_.v14);
 }
 
 __int64 BanquetPool_Unknown144(__int64 a1, char a2)

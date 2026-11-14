@@ -533,6 +533,7 @@ void GameHr_e26b40(__int64 a1, unsigned __int8* a2, unsigned __int8* a3,
 void GameHr_e273d0(__int64 a1);
 void GameHr_e2a160(__int64 a1, unsigned int a2, unsigned __int16* a3);
 __int64 GameHr_e30f30(__int64 a1, __int64 a2);
+char* GameRoutine_60a020_alt2(char*, const char*) __asm__("GameRoutine_60a020");
 
 bool GameHr_db2940(__int64 a1)
 {
@@ -10217,8 +10218,7 @@ void GameHr_e2a160(__int64 a1, unsigned int a2, unsigned __int16* a3)
       v41_.v44 = 0;
       v41_.v41 = 0;
       v41_.v42 = 0;
-      GameRoutine_60a020_alt1((__int64)&v41_.v41,
-                              *(const char**)(v14 + 8 * v13));
+      GameRoutine_60a020_alt2((char*)&v41_.v41, *(const char**)(v14 + 8 * v13));
       LODWORD(v41_.v44) = *(__int16*)(*((_QWORD*)a3 + 3) + 2 * v13);
       HIDWORD(v41_.v44) = *(unsigned __int8*)(*((_QWORD*)a3 + 5) + v13);
       v16 = *(__int64**)(v7 + 8);
@@ -10256,7 +10256,7 @@ void GameHr_e2a160(__int64 a1, unsigned int a2, unsigned __int16* a3)
           fw_text_String_CopyTerminated(v27, v41_.v43, v41_.v42);
           v19 = *(_QWORD*)v7;
           v16 = *(__int64**)(v7 + 8);
-          v21 = ((__int64)v16 - *(_QWORD*)v7) >> 5;
+          v21 = (signed __int64)((__int64)v16 - *(_QWORD*)v7) >> 5;
         }
         else {
           v28 = v41_.v42;

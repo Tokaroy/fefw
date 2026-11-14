@@ -54,6 +54,40 @@ GameRoutine_874520_alt1() __asm__("GameRoutine_874520");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void ProcObeliskDestinyMenu_Unknown143(_BYTE* a1, __int64* a2);
+extern _QWORD GameData_1fb2568[7];
+extern __int64 (*GameData_2116558[])();
+extern __int64 (*GameData_21165d8[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+void LayoutAccessor_1562060(__int64*, __int64, const char*);
+void ProcObeliskDestinyMenu_Unknown85(__int64 a1);
+__int64
+game_facility_anonymous_ProcObeliskDestinyMenu_SortAndFilter(__int64 a1);
+
+void ProcObeliskDestinyMenu_Unknown85(__int64 a1)
+{
+  int v1;
+  __int64 v2;
+  char* v3;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    LOBYTE(v1) = *(_BYTE*)(v2 + 4LL * v1);
+  }
+  if ((_BYTE)v1 != 0) {
+    if ((unsigned __int8)v1 == 7) {
+      v3 = nullptr;
+    }
+    else {
+      v3 = (const char*)GameData_1fb2568[(unsigned __int8)v1];
+    }
+  }
+  else {
+    v3 = "MID_Menu_All";
+  }
+  LayoutAccessor_1562060((__int64*)(a1 + 848), (__int64)"T_Title", v3);
+}
 
 __int64 ProcObeliskDestinyMenu_Unknown91(_QWORD* a1, int a2)
 {
@@ -279,6 +313,60 @@ __int64 ProcObeliskDestinyMenu_Unknown128(__int64 a1)
     } while (v6 != v7);
   }
   return result;
+}
+
+__int64 game_facility_anonymous_ProcObeliskDestinyMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  __int64 v5;
+  __int64 result;
+  __int64 v7;
+  struct {
+    _QWORD v8[4];
+    _QWORD* v9;
+  } v8_;
+  struct {
+    __int64 (**v10)();
+    int v11;
+    char gap60_[20];
+    __int64 (***v12)();
+  } v10_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v10_.v11 = v3;
+  v10_.v12 = &v10_.v10;
+  v10_.v10 = GameData_2116558;
+  v8_.v9 = v8_.v8;
+  v8_.v8[0] = GameData_21165d8;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v10_.v10, (__int64)v8_.v8);
+  if (v8_.v9 == v8_.v8) {
+    v5 = 32;
+  }
+  else {
+    if (v8_.v9 == nullptr) {
+      goto LABEL_8;
+    }
+    v5 = 40;
+  }
+  (*(void (**)(__int64))(*v8_.v9 + v5))((__int64)v8_.v9);
+LABEL_8:
+  result = (__int64)v10_.v12;
+  if (v10_.v12 == &v10_.v10) {
+    v7 = 4;
+  }
+  else {
+    if (v10_.v12 == nullptr) {
+      return result;
+    }
+    v7 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v10_.v12)[v7])((__int64)v10_.v12);
 }
 
 void ProcObeliskDestinyMenu_Unknown143(_BYTE* a1, __int64* a2)

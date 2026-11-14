@@ -875,6 +875,11 @@ unsigned int* game_gmap_SpotMgr_GetCurrentSpot();
 void __cxa_guard_release(__int64);
 unsigned int* GameHr_154dea0(__int64 a1);
 __int64 GameHr_15651c0(__int64 result);
+__attribute__((swiftcall)) void
+game_gmap_TroopMgr_GetEncountEnemyList(PSEUDO_X8, __int64(__fastcall*)());
+__int64 ProcInst_657850_alt1(__int64, __int64, const char*, char,
+                             __int64) __asm__("ProcInst_657850");
+void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64);
 
 unsigned int* GameHr_154dea0(__int64 a1)
 {
@@ -980,7 +985,8 @@ unsigned int* GameHr_154dea0(__int64 a1)
     GameData_2257c30 = 0;
     GameData_2257c38 = (__int64)GameRoutine_154f660;
     GameData_2257c68 = 14;
-    GameData_2257c78 = (__int64)GameRoutine_154eed0;
+    GameData_2257c78 =
+        (__int64)game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick;
     GameData_2257cb8 = (__int64)ProcBeforeEncountSeq_154f0e0;
     GameData_2257d08 = 0;
     GameData_2257d10 = 0;
@@ -1058,8 +1064,8 @@ unsigned int* GameHr_154dea0(__int64 a1)
     *(_QWORD*)(v8 + 152) = v9;
     *(_QWORD*)v8 = game_gmap_ProcBeforeEncountSeq_vtable;
     TroopMgr_134b820((void*)((_QWORD*)(v8 + 160)), (__int64)v9);
-    GameRoutine_134b980_alt1((void*)((__int64 (**)(void))(v8 + 184)),
-                             (__int64 (*)())v9);
+    game_gmap_TroopMgr_GetEncountEnemyList(
+        (void*)((__int64 (**)(void))(v8 + 184)), (__int64 (*)())v9);
     v11 = *(_QWORD*)(v8 + 152);
     *(_DWORD*)(v8 + 208) = 0;
     v12 = *(_QWORD*)(v11 + 120);
@@ -1075,7 +1081,7 @@ unsigned int* GameHr_154dea0(__int64 a1)
       if ((v14 & 0x80000000) == 0) {
         v16 = *(_QWORD*)(v15 + 40);
         v17 = wmemchr(*(_QWORD*)(v15 + 32), v14,
-                      (v16 - *(_QWORD*)(v15 + 32)) >> 2);
+                      (signed __int64)(v16 - *(_QWORD*)(v15 + 32)) >> 2);
         v18 = *(_QWORD*)(v15 + 32);
         v19 = *(_QWORD*)(v15 + 40);
         if (v17 != 0) {
@@ -1090,14 +1096,13 @@ unsigned int* GameHr_154dea0(__int64 a1)
           *(_QWORD*)(v15 + 40) = v16 + v20;
         }
         TroopMgr_1353fb0((__int64*)(v15 + 32), v18, (char*)&v21);
-        return (unsigned int*)ProcInst_657850(v8, (__int64)&GameData_2257a68,
-                                              (__int64)"ProcBeforeEncountSeq",
-                                              1, a1);
+        return (unsigned int*)ProcInst_657850_alt1(
+            v8, (__int64)&GameData_2257a68, "ProcBeforeEncountSeq", 1, a1);
       }
     }
     *(_BYTE*)(*(_QWORD*)(*GameData_212d728[0] + 8) + 5844LL) = 0;
-    return (unsigned int*)ProcInst_657850(
-        v8, (__int64)&GameData_2257a68, (__int64)"ProcBeforeEncountSeq", 1, a1);
+    return (unsigned int*)ProcInst_657850_alt1(v8, (__int64)&GameData_2257a68,
+                                               "ProcBeforeEncountSeq", 1, a1);
   }
   return result;
 }

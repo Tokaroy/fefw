@@ -47,6 +47,14 @@ __int64 GameHr_1098db0(__int64);
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void ActionArts_Unknown2(_QWORD* a1);
+__int64* CharacterModel_1070c00_alt1(__int64,
+                                     __int64) __asm__("CharacterModel_1070c00");
+__int64
+CharacterSelfie_10a6ac0_alt1(__int64 result) __asm__("CharacterSelfie_10a6ac0");
+__int64 wld_Crc32_alt1(int, unsigned __int8*,
+                       unsigned __int64) __asm__("wld_Crc32");
+int __cxa_guard_acquire_alt1(__int64) __asm__("__cxa_guard_acquire");
+void __cxa_guard_release_alt1(__int64) __asm__("__cxa_guard_release");
 
 _DWORD* game_combat_ActionArts_OnEnter(__int64 a1)
 {
@@ -308,6 +316,8 @@ __int64 ActionArts_Unknown6(__int64 a1)
 
 float ActionArts_Unknown7(__int64 a1)
 {
+
+#pragma clang fp contract(off)
   __int64 v1;
   int v3;
   __int64* v4;
@@ -343,6 +353,7 @@ float ActionArts_Unknown7(__int64 a1)
   float v39;
   float result;
 
+  result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   v1 = *(_QWORD*)(a1 + 24);
   v3 = *(_DWORD*)(v1 + 64);
   v4 = GameData_212d448[0];
@@ -355,20 +366,24 @@ float ActionArts_Unknown7(__int64 a1)
         atomic_fetch_add_explicit((atomic_ullong* volatile)(v7 + 16), 1u,
                                   memory_order_relaxed);
         v8 = *(_QWORD*)(v6 + 40);
-        v9 = *(_QWORD*)(v7 + 8) == -1 || v8 == 0;
+        v9 = *(_QWORD*)(v7 + 8) == -1 | v8 == 0;
         if (v9 || (v10 = *(_QWORD*)(v8 + 80)) == 0 ||
             (*(_QWORD*)(v10 + 8) != -1 ? (v11 = *(_QWORD*)(v8 + 88) == 0)
                                        : (v11 = true),
              v11 || *(_QWORD*)(v7 + 8) == -1)) {
-          std___1___shared_weak_count___release_weak(v7);
+          std___1___shared_weak_count___release_weak_alt1(v7),
+              result = COERCE_AS(__typeof__(result),
+                                 PSEUDO_REGISTER(float, "s0", "=w"));
         }
         else {
-          std___1___shared_weak_count___release_weak(v7);
+          std___1___shared_weak_count___release_weak_alt1(v7),
+              result = COERCE_AS(__typeof__(result),
+                                 PSEUDO_REGISTER(float, "s0", "=w"));
           v12 = *(_QWORD*)(v8 + 80);
           if (v12 != 0) {
             v13 = *(_QWORD*)(v12 + 8);
             v14 = *(_QWORD*)(v8 + 88);
-            if (v13 != -1 && v14 != 0) {
+            if (v13 != -1 & v14 != 0) {
               *(_BYTE*)(*(_QWORD*)(v14 + 8) + 289LL) = 1;
             }
           }
@@ -376,14 +391,14 @@ float ActionArts_Unknown7(__int64 a1)
       }
     }
   }
-  v16 = 0.0f;
+  v16 = 0x0.0p+0f;
   if ((*(_BYTE*)v1 & 4) != 0) {
     if (v3 > 603384317) {
-      if (v3 != 603384318 && v3 != 989295323 && v3 != 603384504) {
+      if (v3 != 603384318 & v3 != 989295323 && v3 != 603384504) {
         goto LABEL_47;
       }
     }
-    else if (v3 != -2068235574 && v3 != 309207023 && v3 != 309207209) {
+    else if (v3 != -2068235574 & v3 != 309207023 && v3 != 309207209) {
       goto LABEL_47;
     }
     v21 = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 88LL);
@@ -396,20 +411,23 @@ float ActionArts_Unknown7(__int64 a1)
       if (atomic_fetch_add((atomic_ullong* volatile)(v23 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         v25 = v24;
-        (*(void (**)(__int64))(*(_QWORD*)v23 + 16LL))(v23);
-        std___1___shared_weak_count___release_weak(v23);
+        (*(void (**)(__int64))(*(_QWORD*)v23 + 16LL))(v23),
+            result = COERCE_AS(__typeof__(result),
+                               PSEUDO_REGISTER(float, "s0", "=w"));
+        std___1___shared_weak_count___release_weak_alt1(v23),
+            result = COERCE_AS(__typeof__(result),
+                               PSEUDO_REGISTER(float, "s0", "=w"));
         v24 = v25;
       }
     }
     else {
       v24 = *(_QWORD*)(v22 + 11608);
     }
-    if ((*(_BYTE*)(CharacterModel_1070c00(v24, (unsigned int)v3) + 96) & 1) !=
-        0) {
-      v16 = 0.066667f;
+    if ((CharacterModel_1070c00_alt1(v24, (unsigned int)v3)[12] & 1) != 0) {
+      v16 = 0x1.1111120000000p-4f;
     }
     else {
-      v16 = 0.0f;
+      v16 = 0x0.0p+0f;
     }
   }
 LABEL_47:
@@ -428,9 +446,12 @@ LABEL_47:
                                   memory_order_acquire);
   v32 = GameData_212ff10;
   if ((explicit & 1) == 0 &&
-      (unsigned int)__cxa_guard_acquire(GameData_212ff18) != 0) {
-    *v32 = wld_Crc32(0, "CharacterSelfie", 15);
-    __cxa_guard_release(GameData_212ff18);
+      __cxa_guard_acquire_alt1((__int64)GameData_212ff18) != 0) {
+    *v32 = wld_Crc32_alt1(0, "CharacterSelfie", 0xFu),
+    result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
+    __cxa_guard_release_alt1((__int64)GameData_212ff18),
+        result =
+            COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   }
   v33 = *(_QWORD*)(v30 + 512);
   v34 = v33;
@@ -440,8 +461,10 @@ LABEL_47:
     v33 -= 16;
   } while (v35 != *v32);
   v36 = *(_QWORD*)(v33 + 8);
-  if (v16 <= 0.0f) {
-    CharacterSelfie_10a6ac0(*(_QWORD*)(v33 + 8));
+  if (v16 <= 0x0.0p+0f) {
+    CharacterSelfie_10a6ac0_alt1(*(_QWORD*)(v33 + 8)),
+        result =
+            COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   }
   else {
     if (*v4 != 0) {
@@ -450,15 +473,19 @@ LABEL_47:
                 *(_QWORD*)(*(_QWORD*)game_script_hub_g_frame_counter_ptr[0] +
                            344LL)) /
                 1000 -
-            *(_QWORD*)(v37 + 136);
-      v39 = 1000000.0f;
+            *(_QWORD*)(v37 + 136),
+      result =
+          COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
+      v39 = 0x1.e848000000000p+19f;
     }
     else {
       v38 = nn_os_ConvertToTimeSpan(
                 *(_QWORD*)(*(_QWORD*)game_script_hub_g_frame_counter_ptr[0] +
                            344LL)) /
-            1000000;
-      v39 = 1000.0f;
+            1000000,
+      result =
+          COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
+      v39 = 0x1.f400000000000p+9f;
     }
     result = v16 + (float)((float)v38 / v39);
     *(float*)(v36 + 144) = result;

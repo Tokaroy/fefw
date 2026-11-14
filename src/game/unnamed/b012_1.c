@@ -1500,6 +1500,9 @@ void GameHr_e6ce50();
 void GameHr_e6cfa0(int a1, unsigned int a2);
 __int64 GameHr_e6e0a0(__int64 a1);
 void GameHr_e7ca80(__int64 a1, float a2);
+__int64 MapSortieMenu_871860_alt1(__int64, __int64, __int64, __int64,
+                                  __int64) __asm__("MapSortieMenu_871860");
+__int64 game_1007060(__int64);
 
 __int64 GameHr_db8540(__int64 a1)
 {
@@ -5084,7 +5087,7 @@ _QWORD* GameHr_e42820(__int64 a1)
   int v25;
   __int64 v26;
 
-  if ((GameRoutine_e42540_alt1(a1) & 1) != 0) {
+  if ((GameHr_e42540(a1) & 1) != 0) {
     return (_QWORD*)(((_UNKNOWN*)0x0LL) + 1);
   }
   if (*(_DWORD*)(a1 + 32) == 1) {
@@ -6678,7 +6681,7 @@ __int64 GameHr_e63e80(__int64 a1)
   bool v5;
   bool v6;
   __int64 v7;
-  _QWORD* v8;
+  __int64 v8;
   __int64 v9;
   __int64 v10;
   __int64 v11;
@@ -6696,7 +6699,7 @@ __int64 GameHr_e63e80(__int64 a1)
     char gap112_[16];
     unsigned __int64* v18;
   } v16_;
-  const char* v19;
+  char* v19;
 
   v16_.v17 = &GameData_1adb4d1;
   result = game_HashString((__int64)&GameData_1adb4d1);
@@ -6724,9 +6727,10 @@ __int64 GameHr_e63e80(__int64 a1)
       }
       if ((GameData_2216820 & 8) == 0) {
       LABEL_10:
-        result = GameRoutine_ec1aa0_alt1(GameData_21f4cc0);
+        result =
+            ((__int64 (*)(__int64))GameRoutine_ec1aa0_alt1)(GameData_21f4cc0);
         if ((result & 1) == 0) {
-          CmdBtlSkipInput_1007060(GameData_22190c0);
+          game_1007060(GameData_22190c0);
           if (*(_BYTE*)(GameData_22190a8 + 168) == 1 &&
               (*(_BYTE*)(GameData_22190a8 + 9) != 0
                    ? (v4 = *(_BYTE*)(GameData_22190a8 + 10) == 0)
@@ -6750,8 +6754,8 @@ __int64 GameHr_e63e80(__int64 a1)
           v14_.v14[1] = v7;
           v12_.v12[0] = GameData_1fe70e0;
           v12_.v12[1] = v7;
-          v8 = MapSortieMenu_871860(a1, (__int64)&v19, (__int64)&v16_.v16,
-                                    (__int64)v14_.v14, (__int64)v12_.v12);
+          v8 = MapSortieMenu_871860_alt1(a1, (__int64)&v19, (__int64)&v16_.v16,
+                                         (__int64)v14_.v14, (__int64)v12_.v12);
           if (v12_.v13 == v12_.v12) {
             v9 = 32;
           }
@@ -6779,12 +6783,12 @@ __int64 GameHr_e63e80(__int64 a1)
           }
           else {
             if (v16_.v18 == nullptr) {
-              return Dialog_16499c0((__int64)v8);
+              return Dialog_16499c0(v8);
             }
             v11 = 40;
           }
           (*(void (**)(__int64))(*v16_.v18 + v11))((__int64)v16_.v18);
-          return Dialog_16499c0((__int64)v8);
+          return Dialog_16499c0(v8);
         }
       }
     }

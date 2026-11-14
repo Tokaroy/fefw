@@ -1072,6 +1072,9 @@ __int64 game_AIThink_UpdateTargetOne_lambda0_Invoke(__int64 result, _DWORD* a2,
                                                     _DWORD* a3);
 __int64 game_AIThink_IsEnemyInsideInterferenceArea_lambda0_Invoke(
     __int64 result, _DWORD* a2, _DWORD* a3);
+__int64 GameRoutine_1206ca0(__int64);
+__int64 AIThink_12070f0(__int64 a1, int a2, __int64 a3, __int64 a4);
+__int64 AIThink_12071a0(__int64 a1, unsigned int a2, __int64 a3, __int64 a4);
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -11026,6 +11029,50 @@ __int64 game_AIThink_MoveAgitation(__int64 a1, int a2)
     return 1;
   }
   return 0;
+}
+
+__int64 AIThink_12070f0(__int64 a1, int a2, __int64 a3, __int64 a4)
+{
+  __int64 v4;
+  __int64 v9;
+  unsigned int v11;
+
+  v4 = *(_QWORD*)(a1 + 8);
+  v9 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
+                  8LL * *(int*)((char*)GameData_2130920[0] +
+                                (unsigned __int64)((_UNKNOWN*)0xC0LL)));
+  if (v9 != 0) {
+    LODWORD(v9) = *(_WORD*)(v9 + 16) & 0xFFF;
+  }
+  v11 = v9;
+  if ((game_HasSkill_alt1((_QWORD*)(v4 + 1744), &v11) & 1) != 0) {
+    return GameRoutine_1206ca0(a1);
+  }
+  else {
+    return game_AIThink_ActionMovePerson(a1, a2, a3, a4);
+  }
+}
+
+__int64 AIThink_12071a0(__int64 a1, unsigned int a2, __int64 a3, __int64 a4)
+{
+  __int64 v4;
+  __int64 v9;
+  unsigned int v11;
+
+  v4 = *(_QWORD*)(a1 + 8);
+  v9 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
+                  8LL * *(int*)((char*)GameData_2130920[0] +
+                                (unsigned __int64)((_UNKNOWN*)0xC0LL)));
+  if (v9 != 0) {
+    LODWORD(v9) = *(_WORD*)(v9 + 16) & 0xFFF;
+  }
+  v11 = v9;
+  if ((game_HasSkill_alt1((_QWORD*)(v4 + 1744), &v11) & 1) != 0) {
+    return GameRoutine_1206ca0(a1);
+  }
+  else {
+    return AIThink_12044c0(a1, a2, a3, a4);
+  }
 }
 
 __int64 AIThink_1207260(__int64 a1, unsigned int a2, __int64 a3, __int64 a4)

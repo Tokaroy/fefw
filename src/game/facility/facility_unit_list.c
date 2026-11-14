@@ -126,6 +126,7 @@ __int64** FacilityUnitList_145e2c0(__int64** result, __int64 a2, char a3);
 __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
                                  unsigned __int64 a3, __int64* a4, __int64 a5);
 void FacilityUnitList_145ea80(__int64 a1);
+__int64 ui_game_15b7370();
 __int64
 
 game_facility_FacilityUnitList_GetEnableCount_closure_Invoke(__int64 result,
@@ -1670,7 +1671,8 @@ __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
   if (a3 >= 2) {
     v6 = (__int64*)result;
     if (a3 == 2) {
-      result = game_145c270(*(a2 - 2), *(_QWORD*)result);
+      result = ((__int64 (*)(__int64, __int64))game_145c270)(*(a2 - 2),
+                                                             *(_QWORD*)result);
       if ((result & 1) != 0) {
         v7 = *v6;
         *v6 = *(a2 - 2);
@@ -1693,7 +1695,7 @@ __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
               v18 = v16[2];
               v19 = *v16;
               v16 = v14;
-              result = game_145c270(v18, v19);
+              result = ((__int64 (*)(__int64, __int64))game_145c270)(v18, v19);
               if ((result & 1) != 0) {
                 v20 = *v16;
                 v21 = v17[3];
@@ -1734,7 +1736,7 @@ __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
                   else if ((v29 & 1) == (v30 & 1)) {
                     if (game_GameModeData_instance_ != 0 &&
                         *(_DWORD*)(game_GameModeData_instance_ + 60) == 3) {
-                      if ((GameRoutine_15b7370_alt1() & 1) != 0) {
+                      if ((ui_game_15b7370() & 1) != 0) {
                         v31 = (*(_WORD*)(v20 + 48) & 0x100) != 0;
                         v32 = (v28[6] & 0x100) != 0;
                       }
@@ -1772,7 +1774,8 @@ __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
                       v65_.v68 = v32;
                       v65_.v69 = 0;
                       v65_.v70 = 0;
-                      result = game_19f0540(&v71_.v71, &v65_.v65);
+                      result = ((__int64 (*)(_QWORD*, _QWORD*))game_19f0540)(
+                          &v71_.v71, &v65_.v65);
                       if ((result & 1) == 0) {
                       LABEL_41:
                         v27 = (__int64*)((char*)v6 + v22);
@@ -1820,7 +1823,7 @@ __int64 FacilityUnitList_1460900(__int64 result, __int64* a2,
           v42 = v40;
           v43 = a4;
           while (v42 != v41) {
-            result = game_145c270(*v42, *v43);
+            result = ((__int64 (*)(__int64, __int64))game_145c270)(*v42, *v43);
             if ((result & 1) != 0) {
               v44 = *v42;
               v45 = v42[1];

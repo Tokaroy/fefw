@@ -66,6 +66,11 @@ __int64 GameHr_78e5d0_alt1(__int64, long double) __asm__("GameHr_78e5d0");
 __int64 VTarget_779940(_DWORD*, __int64);
 __int64 VTarget_77a2e0(__int64);
 __int64 GameHr_789d20(__int64 a1, long double a2);
+__int64 GameRoutine_74d660_alt2(__int64, int, char,
+                                char) __asm__("GameRoutine_74d660");
+bool MapUtil_7545a0_alt1(unsigned int*, unsigned int*, unsigned __int8, __int64,
+                         unsigned int, unsigned int,
+                         __int64) __asm__("MapUtil_7545a0");
 
 __int64 GameHr_74ae00(__int64 result, __int64 a2, unsigned __int16* a3,
                       __int64* a4, __int64* a5, int* a6, int* a7)
@@ -315,7 +320,7 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
   unsigned int v15;
   unsigned int v16;
   unsigned int v17;
-  int v19;
+  char v19;
   unsigned int v20;
   unsigned int v21;
   unsigned int v22;
@@ -355,10 +360,10 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
   unsigned int v57;
   __int64 v58;
   __int64 v59;
-  unsigned int v61;
+  unsigned __int8 v61;
   struct {
     __int64 v62;
-    char v63;
+    unsigned __int8 v63;
     char gap41_[7];
     __int64 v64;
     __int64 v65;
@@ -366,8 +371,10 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
     unsigned int v67;
     int v68;
   } v62_;
-  unsigned int v69;
-  unsigned int v70;
+  struct {
+    unsigned int v69;
+    unsigned int v70;
+  } v69_;
   _QWORD v71[16];
   struct {
     int v72;
@@ -381,7 +388,8 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
     return;
   }
   v6 = GameData_212c880[0];
-  v7 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) + 8LL * (*a2 & 0xFFF));
+  v7 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
+                  8LL * (*(_DWORD*)a2 & 0xFFF));
   if (v7 == 0) {
     return;
   }
@@ -401,8 +409,8 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
   v13 = a1;
   memset(v71, 0, sizeof(v71));
   if (v10 != 0) {
-    v61 = *(unsigned __int8*)(v10 + 16);
-    if (*(_BYTE*)(v10 + 16) != 0) {
+    v61 = *(_BYTE*)(v10 + 16);
+    if (v61 != 0) {
       goto LABEL_18;
     }
     if (GameData_21ca300 != 0 && (*(_BYTE*)(GameData_21ca2f8 + 21) & 2) != 0) {
@@ -410,7 +418,7 @@ void GameHr_757f60(__int64 a1, _DWORD* a2, unsigned int a3, unsigned int a4,
       v15 = *(unsigned __int8*)(GameData_21ca300 + 31);
       v16 = *(unsigned __int8*)(GameData_21ca300 + 28);
       v17 = *(unsigned __int8*)(GameData_21ca300 + 30);
-      if (v14 <= v15 && v16 <= v17) {
+      if (v14 <= v15 & v16 <= v17) {
         v34 = *(_BYTE*)(GameData_21ca300 + 16);
         v35 = *(unsigned __int8*)(GameData_21ca300 + 18);
         v36 = v17 + 1;
@@ -524,16 +532,17 @@ LABEL_18:
     v20 = 0;
     v58 = v9;
     do {
-      if (MapUtil_7545a0(&v70, &v69, v61, v9, a3, a4, (__int64)v71)) {
+      if (MapUtil_7545a0_alt1(&v69_.v70, &v69_.v69, v61, v9, a3, a4,
+                              (__int64)v71)) {
         v21 = a3;
         v22 = a4;
         v23 = v13;
         v62_.v62 = v13;
-        v24 = v69;
-        v25 = v70;
+        v24 = v69_.v69;
+        v25 = v69_.v70;
         v62_.v63 = v61;
-        v62_.v66 = v70;
-        v62_.v67 = v69;
+        v62_.v66 = v69_.v70;
+        v62_.v67 = v69_.v69;
         v62_.v64 = v59;
         v62_.v65 = v9;
         v62_.v68 = *(unsigned __int8*)(v9 + 417);
@@ -551,7 +560,7 @@ LABEL_18:
           v72_.v73 = nullptr;
           v72_.v74 = 0;
           v72_.v75 = 0;
-          GameRoutine_74d660_alt1((__int64)&v72_.v72, v27, 0, 0);
+          GameRoutine_74d660_alt2((__int64)&v72_.v72, v27, 0, 0);
           v28 = (__int64)v72_.v73;
           v29 = (char*)v72_.v74;
           for (i = v72_.v73; i != v29;
@@ -579,9 +588,10 @@ LABEL_18:
         v9 = v58;
       }
       ++v20;
-    } while (v20 < *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*v6 + 64) +
-                                                  8LL * (*a2 & 0xFFF)) +
-                                       688LL));
+    } while (v20 <
+             *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*v6 + 64) +
+                                            8LL * (*(_DWORD*)a2 & 0xFFF)) +
+                                 688LL));
   }
 }
 

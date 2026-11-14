@@ -18,6 +18,38 @@ char* GameRoutine_a4dbe0_alt1(__int64, _BYTE*,
 char* game_1603e30();
 char* game_util_Format_alt1(const char*, ...) __asm__("game_util_Format");
 char* RetireRouteMenuItem_Unknown77(__int64 a1);
+__int64 GameRoutine_877930(char, __int64, __int64, __int64, __int64, __int64,
+                           __int64, __int64, char*, unsigned __int64, __int64,
+                           int, __int64, __int64, __int64, __int64, __int64,
+                           int, __int64, __int64, __int64, __int64, __int64,
+                           __int64, __int64, __int64);
+extern __int64 game_GameModeData_instance_;
+__int64 RetireRouteMenuItem_Unknown76(
+    __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
+    __int64 a7, __int64 a8, char* a9, unsigned __int64 a10, __int64 a11,
+    int a12, __int64 a13, __int64 a14, __int64 a15, __int64 a16, __int64 a17,
+    int a18, __int64 a19, __int64 a20, __int64 a21, __int64 a22, __int64 a23,
+    __int64 a24, __int64 a25, __int64 a26);
+
+__int64 RetireRouteMenuItem_Unknown76(
+    __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
+    __int64 a7, __int64 a8, char* a9, unsigned __int64 a10, __int64 a11,
+    int a12, __int64 a13, __int64 a14, __int64 a15, __int64 a16, __int64 a17,
+    int a18, __int64 a19, __int64 a20, __int64 a21, __int64 a22, __int64 a23,
+    __int64 a24, __int64 a25, __int64 a26)
+{
+  char v26;
+
+  if (game_GameModeData_instance_ != 0) {
+    v26 = *(_BYTE*)(game_GameModeData_instance_ + 15);
+  }
+  else {
+    v26 = 0;
+  }
+  return GameRoutine_877930(v26, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12,
+                            a13, a14, a15, a16, a17, a18, a19, a20, a21, a22,
+                            a23, a24, a25, a26);
+}
 
 char* RetireRouteMenuItem_Unknown77(__int64 a1)
 {

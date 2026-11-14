@@ -41,6 +41,8 @@ _QWORD* GameRoutine_a3a3a0(_QWORD*, __int64, unsigned __int64);
 __int64* GameRoutine_a3a260(__int64*, __int64, unsigned __int64);
 __int64 GameRoutine_a392e0(__int64, __int64, ...);
 __int64 Listener_112c20(__int64 a1, int* a2);
+float Listener_112ab0(__int64 result);
+float Listener_112ad0(__int64 result);
 
 __int64 Listener_Destructor(__int64 a1)
 {
@@ -149,6 +151,38 @@ __int64 Listener_1129c0(__int64 a1)
   }
   return (*(__int64 (**)(_QWORD, __int64))(**(_QWORD**)(a1 + 5624) + 88LL))(
       *(_QWORD*)(a1 + 5624), a1);
+}
+
+float Listener_112ab0(__int64 result)
+{
+
+#pragma clang fp contract(off)
+  __int64 v1;
+
+  v1 = *(_QWORD*)(result + 5632);
+  if (v1 != 0) {
+    return *(float*)(v1 + 8);
+  }
+  else {
+    return (*(float (**)(_QWORD))(**(_QWORD**)(result + 5624) + 64LL))(
+        *(_QWORD*)(result + 5624));
+  }
+}
+
+float Listener_112ad0(__int64 result)
+{
+
+#pragma clang fp contract(off)
+  __int64 v1;
+
+  v1 = *(_QWORD*)(result + 5632);
+  if (v1 != 0) {
+    return *(float*)(v1 + 12);
+  }
+  else {
+    return (*(float (**)(_QWORD))(**(_QWORD**)(result + 5624) + 80LL))(
+        *(_QWORD*)(result + 5624));
+  }
 }
 
 float Listener_112af0(__int64 a1)

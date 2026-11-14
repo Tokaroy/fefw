@@ -39,6 +39,15 @@ __int64 physx_NpScene_applySoftBodyData(__int64 a1);
 __int64 GameRoutine_2f32c0(_QWORD, _QWORD);
 __int64 PxGetBroadcastAllocator_alt1(_QWORD) __asm__("PxGetBroadcastAllocator");
 __int64 physx_NpScene_applyParticleBufferData(__int64 a1);
+_DWORD* physx_PxTempAllocator_allocate(__int64, __int64, __int64, unsigned int);
+__int64 GameRoutine_2d8df0(unsigned int, __int64);
+__int64 GameRoutine_2dd5c0(__int64, __int64, __int64, __int64, unsigned int);
+__int64 GameRoutine_2dd880(__int64, __int64, __int64, __int64, unsigned int);
+__int64 physx_NpArticulationReducedCoordinate_wakeUpInternal(__int64, int, int);
+__int64 physx_NpRigidDynamic_wakeUpInternalNoKinematicTest(__int64, int, int);
+void GameRoutine_386740();
+void physx_PxTempAllocator_deallocate(__int64, __int64);
+__int64 physx_NpScene_resetFiltering_2dd1c0(__int64 a1, __int64 a2);
 
 __int64 physx_NpScene_NpScene(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -414,6 +423,179 @@ LABEL_14:
       *(_QWORD*)v17 + 88LL))(
       v17, 4, "/Inside/Lib/PhysX/O/physx/source/physx/src/NpScene.cpp", v16,
       v15);
+}
+
+__int64 physx_NpScene_resetFiltering_2dd1c0(__int64 a1, __int64 a2)
+{
+  __int64 v5;
+  __int64 v6;
+  __int64 v7;
+  __int64 v8;
+  __int64 v9;
+  int v11;
+  __int64 v13;
+  unsigned int v14;
+  __int64 v15;
+  __int64 v17;
+  __int64* v18;
+  __int64 v19;
+  __int64 v20;
+  __int64 v21;
+  __int64 v22;
+  __int64 v23;
+  __int64 v24;
+  unsigned int v25;
+  __int64 v26;
+  __int64* v27;
+  __int64 v28;
+  _QWORD* v29;
+  __int64 v30;
+  __int64 v31;
+  __int64 v32;
+  __int64 v33;
+  __int64 v34;
+  __int64 v35;
+  int v36;
+  char v37;
+  _QWORD v38[8];
+  __int64 v39;
+  __int64 v40;
+  __int64 v41;
+  __int64 v42;
+
+  if (*(_BYTE*)(a1 + 1002) == 1) {
+    v9 = PxGetFoundation();
+    (*(void (**)(__int64, __int64, const char*, __int64, const char*))(
+        *(_QWORD*)v9 + 88LL))(
+        v9, 8, "/Inside/Lib/PhysX/O/physx/source/physx/src/NpScene.cpp", 2573,
+        "PxScene::resetFiltering() not allowed while simulation is running. "
+        "Call will be ignored.");
+    return 0;
+  }
+  v11 = *(unsigned __int16*)(a2 + 8);
+  switch (v11) {
+  case 7:
+    if ((GameRoutine_2dd5c0(a2, a2 + 24, a2 + 80, 0, 0) & 1) == 0) {
+      return 0;
+    }
+    if ((*(_WORD*)(a2 + 124) & 1) == 0) {
+      physx_NpRigidDynamic_wakeUpInternalNoKinematicTest(a2, 0, 1);
+    }
+    return 1;
+  case 17:
+    if ((GameRoutine_2dd880(a2, a2 + 24, a2 + 80, 0, 0) & 1) == 0) {
+      return 0;
+    }
+    physx_NpArticulationReducedCoordinate_wakeUpInternal(*(_QWORD*)(a2 + 256),
+                                                         0, 1);
+    return 1;
+  case 8:
+    v13 = v41;
+    v38[2] = v39;
+    v38[3] = v40;
+    v38[4] = v8;
+    v38[5] = v7;
+    v38[6] = v6;
+    v38[7] = v5;
+    v42 = v13;
+    v14 = *(unsigned __int16*)(a2 + 64);
+    v15 = a2 + 80;
+    v17 = 8 * v14;
+    LOBYTE(v38[1]) = (unsigned int)v17 > 0x1000;
+    if ((unsigned int)v17 <= 0x1000) {
+      v18 = (__int64*)((char*)&v35 - ((v17 + 15) & 0x1FFFFFFF0LL));
+      v38[0] = v18;
+    }
+    else {
+      v18 = (__int64*)physx_PxTempAllocator_allocate(
+          (__int64)&v37, 8 * v14,
+          (__int64)"/Inside/Lib/PhysX/O/physx/source/physx/"
+                   "src\\NpRigidActorTemplate.h",
+          0x19Eu);
+      v38[0] = v18;
+      if (v18 == nullptr) {
+      LABEL_29:
+        physx_PxTempAllocator_deallocate((__int64)v38, (__int64)v18);
+        return 1;
+      }
+    }
+    v21 = *(_QWORD*)(a2 + 56);
+    v20 = a2 + 56;
+    v19 = v21;
+    if (*(_WORD*)(v20 + 8) == 1) {
+      v22 = v20;
+    }
+    else {
+      v22 = v19;
+    }
+    if (v14 == 0) {
+      return 1;
+    }
+    v23 = v14 & 3;
+    if (v14 >= 4) {
+      v29 = (_QWORD*)(v22 + 16);
+      v30 = 0;
+      v25 = 0;
+      do {
+        v31 = *(v29 - 2);
+        if ((*(_BYTE*)(v31 + 96) & 5) != 0) {
+          v18[v25++] = v31;
+        }
+        v32 = *(v29 - 1);
+        if ((*(_BYTE*)(v32 + 96) & 5) != 0) {
+          v18[v25++] = v32;
+        }
+        if ((*(_BYTE*)(*v29 + 96LL) & 5) != 0) {
+          v18[v25++] = *v29;
+        }
+        v33 = v29[1];
+        if ((*(_BYTE*)(v33 + 96) & 5) != 0) {
+          v18[v25++] = v33;
+        }
+        v30 -= 4;
+        v29 += 4;
+      } while (-(__int64)((unsigned __int16)v14 & 0xFFFC) != v30);
+      v24 = -v30;
+      if ((v14 & 3) == 0) {
+      LABEL_25:
+        if (v25 != 0) {
+          v26 = v25;
+          v27 = v18;
+          do {
+            v28 = *v27++;
+            v36 = 32;
+            ((void (*)(__int64, __int64, int*))GameRoutine_386740)(
+                v15, v28 + 48, &v36);
+            --v26;
+          } while (v26 != 0);
+        }
+        if ((unsigned int)v17 <= 0x1000) {
+          return 1;
+        }
+        goto LABEL_29;
+      }
+    }
+    else {
+      v24 = 0;
+      v25 = 0;
+      if ((v14 & 3) == 0) {
+        goto LABEL_25;
+      }
+    }
+    v34 = v22 + 8 * v24;
+    do {
+      if ((*(_BYTE*)(*(_QWORD*)v34 + 96LL) & 5) != 0) {
+        v18[v25++] = *(_QWORD*)v34;
+      }
+      v34 += 8;
+      --v23;
+    } while (v23 != 0);
+    goto LABEL_25;
+  default:
+    return GameRoutine_2d8df0(0xA2Fu,
+                              (__int64)"PxScene::resetFiltering(): only "
+                                       "PxRigidActor supports this operation!");
+  }
 }
 
 __int64 physx_NpScene_unlockRead(__int64 a1)

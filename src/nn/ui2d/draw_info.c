@@ -34,6 +34,8 @@ __int64 DrawInfo_55dc90(__int64 result);
 __int64 DrawInfo_5fdd40(__int64 a1, unsigned int a2, unsigned int a3,
                         __int64 a4);
 __int64 DrawInfo_5fdf40(__int64 a1, __int64 a2, int a3, __int64 a4);
+__int64 GameRoutine_578310(__int64, __int64);
+__int64 DrawInfo_576a20(__int64 result, __int64 a2);
 
 void DrawInfo_55dc00(__int64 a1, int a2)
 {
@@ -181,6 +183,15 @@ _QWORD* DrawInfo_5769d0(_QWORD* result, __int64* a2)
   v5 = a2[4];
   result[8] = a2[6];
   result[6] = v5;
+  return result;
+}
+
+__int64 DrawInfo_576a20(__int64 result, __int64 a2)
+{
+  if ((*(_BYTE*)(result + 404) & 0x40) != 0) {
+    *(_BYTE*)(result + 404) &= ~0x40u;
+    return GameRoutine_578310(*(_QWORD*)(result + 184), a2);
+  }
   return result;
 }
 

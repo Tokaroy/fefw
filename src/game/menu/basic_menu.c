@@ -83,6 +83,14 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void BasicMenu_16dc800(__int64 a1);
 void BasicMenu_16e1f40(_QWORD* a1, __int64 a2, __int64 a3);
+__int64 GameRoutine_1553220(__int64 result);
+__int64 GameRoutine_16ddcf0(__int64);
+__int64 LayoutAccessor_155e830(__int64 result, char);
+__int64 MultiMenuSequence_1787fe0(__int64 result, unsigned int);
+extern __int64* GameData_21319e8[10];
+extern __int64 GameData_212c610;
+extern __int64 GameData_2131c18[55];
+__int64 BasicMenu_16e0120(__int64 result, signed int a2);
 
 void BasicMenu_16dc800(__int64 a1)
 {
@@ -1250,6 +1258,130 @@ __int64 BasicMenu_16df7a0(__int64 result)
     v10 = 11;
     goto LABEL_67;
   }
+  return result;
+}
+
+__int64 BasicMenu_16e0120(__int64 result, signed int a2)
+{
+  unsigned int v2;
+  __int64 v4;
+  __int64 v5;
+  __int64 v6;
+  __int64 v7;
+  __int64 v8;
+  __int64 v9;
+  __int64 v10;
+  __int64 v11;
+  __int64 v12;
+  __int64 v13;
+  __int64 v14;
+  unsigned __int8* v15;
+  unsigned int v16;
+  bool v17;
+  int v18;
+
+  v2 = a2 - 4;
+  v4 = result;
+  if ((unsigned int)(a2 - 4) >= 9) {
+    if (a2 == 1) {
+      return (*(__int64 (**)(__int64))(*(_QWORD*)result + 584LL))(result);
+    }
+    if (a2 == 3) {
+      goto LABEL_22;
+    }
+    if (a2 != 2) {
+      return result;
+    }
+  }
+  result = (*(__int64 (**)(__int64, _QWORD))(*(_QWORD*)result + 728LL))(
+      result, (unsigned int)a2);
+  if (a2 <= 8) {
+    if (v2 < 5 || a2 == 2) {
+      v5 = *(_QWORD*)(v4 + 152);
+      if (v5 == 0) {
+        goto LABEL_25;
+      }
+      goto LABEL_23;
+    }
+  LABEL_22:
+    (*(void (**)(__int64))(*(_QWORD*)v4 + 576LL))(v4);
+    v5 = *(_QWORD*)(v4 + 152);
+    if (v5 == 0) {
+    LABEL_25:
+      v14 = *(_QWORD*)(v4 + 592);
+      *(_DWORD*)(v4 + 352) = a2;
+      *(_QWORD*)(v4 + 600) = v14;
+      result = (*(__int64 (**)(__int64))(*(_QWORD*)v4 + 472LL))(v4);
+      if ((result & 1) == 0) {
+        result = (*(__int64 (**)(__int64))(*(_QWORD*)v4 + 480LL))(v4);
+        if ((result & 1) == 0) {
+          result = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v4 + 464LL))(
+              v4, v4 + 592);
+        }
+        if (*(_BYTE*)(v4 + 138) == 0) {
+          result = *(_QWORD*)(v4 + 152);
+          if ((result == 0 ||
+               (result = __dynamic_cast(result, GameData_2131c18[0],
+                                        GameData_21319e8[0], 0)) == 0) &&
+              *(_BYTE*)(v4 + 172) == 1) {
+            result = GameRoutine_1553220(*(unsigned int*)(v4 + 168));
+            if (*(_BYTE*)(v4 + 172) == 1) {
+              *(_BYTE*)(v4 + 172) = 0;
+            }
+          }
+        }
+      }
+      v15 = *(unsigned __int8**)(v4 + 16);
+      if (v15 != nullptr) {
+        v16 = *v15;
+        v17 = v16 > 0x10;
+        v18 = (1 << v16) & 0x1CE00;
+        if (!v17 & v18 != 0) {
+          *(_WORD*)(v4 + 136) |= 0x80u;
+        }
+      }
+      *(_WORD*)(v4 + 136) |= 8u;
+      return result;
+    }
+  LABEL_23:
+    v13 = __dynamic_cast(v5, GameData_2131c18[0], GameData_21319e8[0], 0);
+    if (v13 != 0) {
+      return MultiMenuSequence_1787fe0(v13, a2);
+    }
+    goto LABEL_25;
+  }
+  if (a2 > 10) {
+    if (a2 == 11) {
+      *(_BYTE*)(v4 + 362) = 1;
+    }
+  }
+  else if (a2 == 9) {
+    v6 = *(_QWORD*)(v4 + 152);
+    if (v6 == 0) {
+      return GameRoutine_16ddcf0(v4);
+    }
+    v7 = __dynamic_cast(v6, GameData_2131c18[0], GameData_21319e8[0], 0);
+    if (v7 == 0) {
+      return GameRoutine_16ddcf0(v4);
+    }
+    v8 = *(_QWORD*)(v7 + 152);
+    v9 = v7;
+    if (v8 == 0) {
+      v8 = v7;
+    }
+    v10 = *(_QWORD*)(v8 + 32);
+    if (v10 != 0) {
+      v11 = __dynamic_cast(v10, GameData_212c610, GameData_2131c18[0], 0);
+      if (v11 != 0) {
+        v12 = v11;
+        if ((*(unsigned int (**)(__int64))(*(_QWORD*)v11 + 168LL))(v11) == 10) {
+          (*(void (**)(__int64))(*(_QWORD*)v12 + 152LL))(v12);
+        }
+      }
+    }
+    return LayoutAccessor_155e830(v9 + 200, 0);
+  }
+  *(_DWORD*)(v4 + 352) = a2;
   return result;
 }
 

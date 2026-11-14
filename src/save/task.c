@@ -1072,9 +1072,8 @@ __int64 save_Task_Open_lambda0_Clone(__int64 a1)
   *(_QWORD*)(result + 8) = v4;
   if ((v3 & 1) != 0) {
     v7 = result;
-    fw_text_String_CopyTerminated_alt1((__int64*)(result + 16),
-                                       *(_QWORD*)(a1 + 32),
-                                       *(_QWORD*)(a1 + 24));
+    fw_text_String_CopyTerminated_alt1(
+        (__int64*)(result + 16), *(_QWORD*)(a1 + 32), *(_QWORD*)(a1 + 24));
     result = v7;
   }
   else {
@@ -1098,8 +1097,8 @@ _QWORD* save_Task_Open_lambda0_CloneInto(_QWORD* result, __int64 a2)
   *(_QWORD*)a2 = GameData_2109438;
   *(_QWORD*)(a2 + 8) = result[1];
   if ((result[2] & 1) != 0) {
-    result = (_QWORD*)fw_text_String_CopyTerminated_alt1(
-        (__int64*)(a2 + 16), result[4], result[3]);
+    result = (_QWORD*)fw_text_String_CopyTerminated_alt1((__int64*)(a2 + 16),
+                                                         result[4], result[3]);
   }
   else {
     v4 = result[2];
@@ -1352,17 +1351,17 @@ __int64 save_Task_DeleteNoCommit_lambda0_Invoke(__int64 a1)
 {
   __int64 v1;
   char v2;
-  const char* v3;
+  char* v3;
   __int64 v4;
   int v5;
-  const char* v6;
+  char* v6;
   unsigned __int64 v7;
   unsigned __int64 v8;
   bool v9;
   unsigned __int64 v10;
-  const char* v11;
-  const char* v12;
-  const char* v13;
+  char* v11;
+  char* v12;
+  char* v13;
   __int64 result;
   _QWORD v15[32];
 

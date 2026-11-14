@@ -27,6 +27,16 @@ float GameRoutine_135bea0();
 __int64 game_gmap_ProcBeforeEncountSeq_EndStartBattle(__int64 a1);
 void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick_closure_Invoke(
     __int64 a1, __int64* a2);
+__int64 GmapSound_1530c60(__int64 result);
+__int64 game_gmap_TroopMgr_EachEncountTroop_alt1(__int64, __int64) __asm__(
+    "game_gmap_TroopMgr_EachEncountTroop");
+bool TroopMgr_134d080(__int64);
+extern __int64 (*GameData_204c1b8[])();
+extern __int64 GameData_21f1648;
+extern __int64 game_ProcFadeView_instance_;
+extern __int64 game_ProcGameSkipView_instance_;
+extern __int64 game_script_hub_g_frame_counter;
+void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64 a1);
 
 _QWORD* game_gmap_ProcBeforeEncountSeq_HideAnimal(__int64 a1, __int64 a2)
 {
@@ -75,6 +85,110 @@ _QWORD* game_gmap_ProcBeforeEncountSeq_HideAnimal(__int64 a1, __int64 a2)
   }
   v7 = 40;
   return (_QWORD*)(*(__int64 (**)(_QWORD*))(*result + v7))(result);
+}
+
+void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64 a1)
+{
+  int v2;
+  int v3;
+  unsigned __int64 v4;
+  __int128 v5;
+  int v6;
+  int v7;
+  float v8;
+  float v9;
+  float v10;
+  __int64 v11;
+  __int64 v12;
+  unsigned __int8* v13;
+  unsigned int v14;
+  unsigned __int8* v15;
+  unsigned int v16;
+  bool v17;
+  int v18;
+  struct {
+    _QWORD v20[4];
+    _QWORD* v21;
+  } v20_;
+
+  if (game_ProcGameSkipView_instance_ != 0 &&
+      *(_BYTE*)(game_ProcGameSkipView_instance_ + 152) == 3) {
+    v2 = *(_DWORD*)(game_ProcGameSkipView_instance_ + 156);
+    v3 = (v2 & 8) != 0 ? 2 : 3;
+    if ((v3 & v2) == 0) {
+      goto LABEL_13;
+    }
+  }
+  if (game_ProcFadeView_instance_ != 0) {
+    v4 = game_ProcFadeView_instance_ +
+         ((unsigned __int64)*(unsigned __int8*)(game_ProcFadeView_instance_ +
+                                                480)
+          << 6);
+    if (*(float*)(v4 + 172) == *(float*)(v4 + 168)) {
+      (*(void (**)(unsigned __int64))(*(_QWORD*)(v4 + 160) + 16LL))(v4 + 160);
+    }
+    else {
+      v5 = *(_OWORD*)(v4 + 208);
+    }
+    if (*((float*)&v5 + 3) == 0x1.0000000000000p+0f &&
+        LANES128_OF(((__n128 (*)(unsigned __int64, float)) *
+                     (_QWORD*)(*(_QWORD*)(v4 + 160) + 16LL))(
+                        v4 + 160, *((float*)&v5 + 3)))
+                .n128_f32[3] == 0x1.0000000000000p+0f) {
+    LABEL_13:
+      GmapSound_1530c60(*(_QWORD*)(GameData_21f1648 + 8));
+    }
+  }
+  if (game_ProcGameSkipView_instance_ != 0 &&
+      *(_BYTE*)(game_ProcGameSkipView_instance_ + 152) == 3) {
+    v6 = *(_DWORD*)(game_ProcGameSkipView_instance_ + 156);
+    v7 = (v6 & 8) != 0 ? 2 : 3;
+    if ((v7 & v6) == 0) {
+      v15 = *(unsigned __int8**)(a1 + 16);
+      if (v15 != nullptr) {
+        v16 = *v15;
+        v17 = v16 > 0x10;
+        v18 = (1 << v16) & 0x1CE00;
+        if (v17 || v18 == 0) {
+          goto LABEL_37;
+        }
+      LABEL_36:
+        *(_WORD*)(a1 + 136) |= 0x80u;
+      }
+    LABEL_37:
+      *(_WORD*)(a1 + 136) |= 8u;
+      return;
+    }
+  }
+  v8 = *(float*)(game_script_hub_g_frame_counter + 160);
+  v9 = GameRoutine_135bea0();
+  v10 = *(float*)(a1 + 208);
+  v11 = *(_QWORD*)(a1 + 152);
+  v20_.v20[0] = GameData_204c1b8;
+  v20_.v21 = v20_.v20;
+  *(float*)(a1 + 208) = v10 + (float)(v8 * v9);
+  game_gmap_TroopMgr_EachEncountTroop_alt1(v11, (__int64)v20_.v20);
+  if (v20_.v21 == v20_.v20) {
+    v12 = 32;
+    goto LABEL_24;
+  }
+  if (v20_.v21 != nullptr) {
+    v12 = 40;
+  LABEL_24:
+    (*(void (**)(__int64))(*v20_.v21 + v12))((__int64)v20_.v21);
+  }
+  if (!TroopMgr_134d080(*(_QWORD*)(a1 + 152)) &&
+      *(float*)(a1 + 208) >= 0x1.e000000000000p+5f) {
+    v13 = *(unsigned __int8**)(a1 + 16);
+    if (v13 == nullptr) {
+      goto LABEL_37;
+    }
+    v14 = *v13;
+    if (v14 > 0x10 || ((1 << v14) & 0x1CE00) == 0) {
+      goto LABEL_37;
+    }
+    goto LABEL_36;
+  }
 }
 
 void ProcBeforeEncountSeq_154f0e0()

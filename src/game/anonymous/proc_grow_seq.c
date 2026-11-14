@@ -703,14 +703,14 @@ __int64 game_anonymous_ProcGrowSeq_UpdateLearn_closure_Invoke(__int64 result,
     }
     v4[57] = v7;
     v21 = *(_DWORD**)(result + 8);
-    if ((*v21 & 0xFFF) != 0) {
+    if ((*(_DWORD*)v21 & 0xFFF) != 0) {
       v22 = v4[19];
-      result = GameRoutine_6fcb20_alt1(
-          *(_QWORD*)(*(_QWORD*)(*v3 + 64) + 8LL * (*v21 & 0xFFF)),
+      result = ((__int64 (*)(__int64, _QWORD*))GameRoutine_6fcb20_alt1)(
+          *(_QWORD*)(*(_QWORD*)(*v3 + 64) + 8LL * (*(_DWORD*)v21 & 0xFFF)),
           (_QWORD*)(v22 + 1840));
       if ((result & 1) != 0) {
         v23 = *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*v3 + 64) +
-                                             8LL * (*v21 & 0xFFF)) +
+                                             8LL * (*(_DWORD*)v21 & 0xFFF)) +
                                   104LL);
         if (v23 == 2) {
           return Unit_6cc580_alt1(v22, v21);

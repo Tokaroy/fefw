@@ -124,6 +124,7 @@ char* GameRoutine_a4dbe0_alt2(__int64, const char*,
 extern __int64 (*GameData_2082b88[])();
 __int64 game_hub_anonymous_ProcFastTravelMenu_ZRCall(__int64 a1);
 __int64 ProcFastTravelMenu_Unknown143(__int64 a1, int a2, char a3);
+void ProcFastTravelMenu_Unknown85(__int64 a1);
 
 __int64 ProcFastTravelMenu_Unknown2(__int64 a1)
 {
@@ -472,6 +473,38 @@ LABEL_41:
       v36 = 56;
     }
     nn_mem_StandardAllocator_Free_alt1(*v4 + v36, (__int64)v41_.v43);
+  }
+}
+
+void ProcFastTravelMenu_Unknown85(__int64 a1)
+{
+  signed int v1;
+  __int64 v2;
+  char* v4;
+  char* v5;
+  __int64 v6;
+  __int64 v7;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    v1 = *(_DWORD*)(v2 + 4LL * v1);
+  }
+  if ((unsigned int)v1 > 2) {
+    v4 = &GameData_1a9f09e;
+  }
+  else {
+    v4 = GameData_2083b20[v1];
+  }
+  v5 = GameRoutine_a4dbe0_alt2(*msg_MessageManager_instance__ptr[0], v4, 0);
+  if (v5 != nullptr) {
+    v6 = (__int64)v5;
+    v7 = ui_LayoutAccessor_FindTextBox_alt1((__int64*)(a1 + 952),
+                                            (__int64)"T_Title");
+    if (v7 != 0) {
+      GameRoutine_156c5d0_alt1(v7, v6, 0);
+    }
   }
 }
 

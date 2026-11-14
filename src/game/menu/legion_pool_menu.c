@@ -73,6 +73,21 @@ __int64 game_menu_PageTab_SetupImage(int*, __int64, __int64, unsigned int,
 char* GameRoutine_60a060(char*, __int64, unsigned __int64);
 extern __int64 (*GameData_20ef2c0[])();
 __int64 game_menu_LegionPoolMenu_OnInit(__int64 a1);
+__int64 GameRoutine_1595570(__int64*);
+__int64 game_menu_LegionPoolMenu_UpdateEquipList_alt1(
+    __int64, __int64 (*)()) __asm__("game_menu_LegionPoolMenu_UpdateEquipList");
+__int64 ui_LayoutAccessor_FindTextBox(__int64*, __int64);
+char* GameRoutine_a4dbe0(__int64, const char*, char);
+char* game_util_Format(const char*, ...);
+extern __int64 (*GameData_20ef3c0[])();
+extern __int64 (*GameData_20ef440[])();
+extern __int64 (*msg_TagSelector_vtable[])();
+extern __int64* msg_MessageManager_instance__ptr[2];
+extern char* GameData_20ef4b0[14];
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+void GameRoutine_156c5d0(__int64, __int64, char);
+__int64 LegionPoolMenu_Unknown85(__int64 a1);
+__int64 game_menu_LegionPoolMenu_SortAndFilter(__int64 a1);
 
 __int64 LegionPoolMenu_Unknown139(_QWORD* a1)
 {
@@ -487,6 +502,110 @@ __int64 LegionPoolMenu_Unknown93(__int64 result)
   return result;
 }
 
+__int64 LegionPoolMenu_Unknown85(__int64 a1)
+{
+  int v1;
+  __int64 v2;
+  unsigned __int8 v4;
+  char* v5;
+  __int64 v6;
+  char* v7;
+  __int64 v8;
+  __int64 v9;
+  char* v10;
+  __int64 result;
+  __int64 v12;
+  __int64* v13;
+  struct {
+    __int64 (**v14)();
+    __int64 v15;
+    unsigned __int64 v16;
+    unsigned __int64 v17;
+    int v18;
+    int v19;
+    __int64 v20;
+    __int64 v21;
+    __int64 v22;
+    __int64 v23;
+    __int64 v24;
+    __int64 v25;
+    __int64 v26;
+    __int64 v27;
+    __int64 v28;
+    __int64 v29;
+    __int64 v30;
+    __int64 v31;
+    __int64 v32;
+  } v14_;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    v1 = *(_DWORD*)(v2 + 4LL * v1);
+  }
+  v4 = v1 - 1;
+  if (v4 > 3u) {
+    v5 = "MID_Menu_All";
+  }
+  else {
+    v5 = GameData_20ef4b0[v4];
+  }
+  v14_.v20 = -1;
+  v14_.v21 = -1;
+  v14_.v22 = -1;
+  v14_.v23 = -1;
+  v6 = *msg_MessageManager_instance__ptr[0];
+  v14_.v24 = -1;
+  v14_.v25 = -1;
+  v14_.v26 = -1;
+  v14_.v27 = -1;
+  v14_.v28 = -1;
+  v14_.v29 = -1;
+  v14_.v30 = -1;
+  v14_.v31 = -1;
+  v14_.v14 = msg_TagSelector_vtable;
+  v14_.v15 = 0xFFFF0001FFFF0000LL;
+  v14_.v16 = 0xFFFF0004FFFF0002LL;
+  v14_.v17 = 0xFFFF0006FFFF0005LL;
+  v14_.v32 = 8;
+  v14_.v18 = -65529;
+  v14_.v19 = -65528;
+  v7 = GameRoutine_a4dbe0(v6, v5, 0);
+  if (v7 != nullptr) {
+    v8 = (__int64)v7;
+    v9 = ui_LayoutAccessor_FindTextBox((__int64*)(a1 + 952), (__int64)"T_Type");
+    if (v9 != 0) {
+      GameRoutine_156c5d0(v9, v8, 0);
+    }
+  }
+  game_menu_LegionPoolMenu_UpdateEquipList_alt1(
+      a1, *(__int64 (**)(void))(a1 + 1064));
+  v10 = game_util_Format("%s/L_Num", "L_EquipPool");
+  LayoutAccessor_1560070((void*)(&v14_.v14), (__int64*)(a1 + 848), v10);
+  result = v14_.v15;
+  if (v14_.v15 != 0) {
+    v12 = std___1___shared_weak_count_lock_alt1(v14_.v15);
+    v13 = (__int64*)v14_.v14;
+    result = v14_.v15;
+    if (v14_.v15 != 0) {
+      result = std___1___shared_weak_count___release_weak_alt1(v14_.v15);
+    }
+    if (v12 != 0 && v13 != nullptr) {
+      result = GameRoutine_1595570(v13);
+    }
+    else if (v12 == 0) {
+      return result;
+    }
+    if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
+                         0xFFFFFFFFFFFFFFFFLL) == 0) {
+      (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
+      return std___1___shared_weak_count___release_weak_alt1(v12);
+    }
+  }
+  return result;
+}
+
 __int64 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1, __int64 (*a2)())
 {
   bool v4;
@@ -719,6 +838,65 @@ bool LegionPoolMenu_Unknown144(__int64 a1, _QWORD* a2)
   v12 = v11 > 7;
   v13 = (1 << v11) & 0x91;
   return !v12 && v13 != 0 && *(_BYTE*)(a2[50] + 96LL) == 1;
+}
+
+__int64 game_menu_LegionPoolMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  int v5;
+  __int64 v6;
+  __int64 result;
+  __int64 v8;
+  struct {
+    __int64 (**v9)();
+    char v10;
+    char gap9_[23];
+    __int64 (***v11)();
+  } v9_;
+  struct {
+    _QWORD v12[4];
+    _QWORD* v13;
+  } v12_;
+  char v16;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v5 = *(_DWORD*)(a1 + 200);
+  v16 = v3;
+  v12_.v12[0] = GameData_20ef3c0;
+  v12_.v12[1] = &v16;
+  v9_.v11 = &v9_.v9;
+  v12_.v13 = v12_.v12;
+  v9_.v9 = GameData_20ef440;
+  v9_.v10 = v5;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)v12_.v12, (__int64)&v9_.v9);
+  if (v9_.v11 == &v9_.v9) {
+    v6 = 4;
+  }
+  else {
+    if (v9_.v11 == nullptr) {
+      goto LABEL_8;
+    }
+    v6 = 5;
+  }
+  ((__int64 (*)(__int64))(*v9_.v11)[v6])((__int64)v9_.v11);
+LABEL_8:
+  result = (__int64)v12_.v13;
+  if (v12_.v13 == v12_.v12) {
+    v8 = 32;
+  }
+  else {
+    if (v12_.v13 == nullptr) {
+      return result;
+    }
+    v8 = 40;
+  }
+  return (*(__int64 (**)(__int64))(*v12_.v13 + v8))((__int64)v12_.v13);
 }
 
 _QWORD* game_menu_LegionPoolMenu_UpdateEquipList_lambda0_Invoke(__int64 a1,

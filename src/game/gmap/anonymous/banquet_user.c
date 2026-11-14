@@ -64,6 +64,11 @@ __int64 game_ProcInst_Register_alt1(__int64) __asm__("game_ProcInst_Register");
 __int64 memset_alt1(__int64, int, unsigned __int64) __asm__("memset");
 const char*
 game_HashString32_alt1(const char* result) __asm__("game_HashString32");
+__int64 GameRoutine_19edd80(_QWORD*, int, char, char);
+__int64 GameRoutine_19ee0c0(__int64, int, char, char);
+__int64 GameRoutine_19ee9a0(_QWORD*, int, char);
+__int64 BanquetUser_1643710(__int64 a1, int a2, char a3, char a4);
+__int64 BanquetUser_16437b0(__int64 a1, int a2, char a3);
 
 void* BanquetUser_1642d70()
 {
@@ -503,6 +508,48 @@ __int64 BanquetUser_Unknown156(__int64 a1, char a2)
 LABEL_10:
   v11 = a2 | (*(_DWORD*)(a1 + 1064) == 0);
   return v11 & 1;
+}
+
+__int64 BanquetUser_1643710(__int64 a1, int a2, char a3, char a4)
+{
+  _QWORD* v8;
+  __int64 (**v9)(_QWORD*);
+  int v10;
+  char v11;
+  char v12;
+
+  *(_BYTE*)(__dynamic_cast(*(_QWORD*)(a1 + 1056), GameData_21319e8[0],
+                           &GameData_20702e8, 0) +
+            440) = 0;
+  v9 = *(__int64 (***)(_QWORD*))(a1 + 176);
+  v8 = (_QWORD*)(a1 + 176);
+  v10 = (*v9)(v8);
+  v11 = a3 & 1;
+  v12 = a4 & 1;
+  if (v10 != 0) {
+    return GameRoutine_19ee0c0((__int64)v8, a2, v11, v12);
+  }
+  else {
+    return GameRoutine_19edd80(v8, a2, v11, v12);
+  }
+}
+
+__int64 BanquetUser_16437b0(__int64 a1, int a2, char a3)
+{
+  _QWORD* v6;
+  unsigned int (**v7)(_QWORD*);
+
+  *(_BYTE*)(__dynamic_cast(*(_QWORD*)(a1 + 1056), GameData_21319e8[0],
+                           &GameData_20702e8, 0) +
+            440) = 0;
+  v7 = *(unsigned int (***)(_QWORD*))(a1 + 176);
+  v6 = (_QWORD*)(a1 + 176);
+  if ((*v7)(v6) != 0) {
+    return 0;
+  }
+  else {
+    return GameRoutine_19ee9a0(v6, a2, a3 & 1);
+  }
 }
 
 #pragma GCC visibility pop

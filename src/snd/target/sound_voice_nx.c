@@ -41,6 +41,8 @@ __int64 nn_os_LockMutex_alt1(__int64) __asm__("nn_os_LockMutex");
 __int64 nn_os_UnlockMutex_alt1(__int64) __asm__("nn_os_UnlockMutex");
 __int64 SoundVoiceNX_Unknown2(__int64 result, __int64 a2, int a3);
 __int64 SoundVoiceNX_Unknown8(__int64 a1, __int64 a2);
+__int64 GameRoutine_14e990(__int64);
+__int64 SoundVoiceNX_Unknown14(__int64 a1, int a2, float a3);
 
 void SoundVoiceNX_Destructor(__int64 a1)
 {
@@ -282,6 +284,17 @@ __int64 SoundVoiceNX_Unknown8(__int64 a1, __int64 a2)
   }
   *(_QWORD*)v8 = 0;
   return 0;
+}
+
+__int64 SoundVoiceNX_Unknown14(__int64 a1, int a2, float a3)
+{
+
+#pragma clang fp contract(off)
+  if (*(_BYTE*)(a1 + 48) == 1) {
+    *(float*)(a1 + 4LL * a2 + 32) = a3;
+    return GameRoutine_14e990(a1);
+  }
+  return a1;
 }
 
 #pragma GCC visibility pop

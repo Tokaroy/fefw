@@ -4532,8 +4532,8 @@ __int64 GameHr_1135e80(__int64 result)
                 if (*(_QWORD*)(*(_QWORD*)GameData_212bf68 + 200LL) == 0) {
                   v157 = 56;
                 }
-                return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 +
-                                                v157, (_QWORD)(v175));
+                return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v157,
+                                           (_QWORD)(v175));
               }
               return result;
             }

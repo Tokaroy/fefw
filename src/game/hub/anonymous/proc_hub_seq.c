@@ -412,6 +412,11 @@ __int64 GameHr_d85ce0(__int64);
 void HubNatives_ccbf80_alt1(__int64) __asm__("HubNatives_ccbf80");
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+__int64 GameRoutine_d796a0(__int64);
+extern __int64 game_script_hub_g_frame_counter_ptr[3];
+void game_hub_fa1b40(float*, float);
+__int64
+game_hub_anonymous_ProcHubSeq_CreateInstances_closure_Invoke(__int64 result);
 
 void ProcHubSeq_d85530()
 {
@@ -2630,6 +2635,71 @@ __int64 ProcHubSeq_d88a40(__int64 result)
       }
     }
     *(_WORD*)(v2 + 216) = 0;
+  }
+  return result;
+}
+
+__int64
+
+game_hub_anonymous_ProcHubSeq_CreateInstances_closure_Invoke(__int64 result)
+{
+
+#pragma clang fp contract(off)
+  __int64 v1;
+  __int64 v2;
+  __int64 v4;
+  float* v5;
+  float v6;
+  float v7;
+  float v8;
+
+  v1 = *(_QWORD*)(result + 8);
+  v2 = *(_QWORD*)GameData_212dbb8[0];
+  if (*(_QWORD*)GameData_212dbb8[0] == 0 |
+      (signed __int32)*(_DWORD*)(v1 + 232) > 0) {
+    return result;
+  }
+  v4 = *(_QWORD*)(v2 + 200);
+  if (v4 != 0) {
+    v5 = *(float**)(v4 + 24);
+    v6 = 0x1.0000000000000p+0f;
+    if (*(_BYTE*)(v2 + 10) == 0) {
+      v6 = 0x0.0p+0f;
+    }
+    v7 = v5[3];
+    v8 = fabsf(
+        (float)((float)(*(float*)(*(_QWORD*)
+                                      game_script_hub_g_frame_counter_ptr[0] +
+                                  104LL) *
+                        0x1.0aef000000000p+4f) /
+                0x1.f400000000000p+9f) *
+        0x1.0000000000000p+2f);
+    if (v7 <= v6) {
+      if (v7 >= v6) {
+        goto LABEL_15;
+      }
+      v7 = v7 + v8;
+      if (v7 <= v6) {
+        goto LABEL_15;
+      }
+    }
+    else {
+      v7 = v7 - v8;
+      if (v7 >= v6) {
+        goto LABEL_15;
+      }
+    }
+    v7 = v6;
+  LABEL_15:
+    v5[3] = v7;
+    game_hub_fa1b40(v5, 0x0.0p+0f);
+  }
+  result = GameData_220b6e0;
+  if (GameData_220b6e0 != 0) {
+    result = GameRoutine_d796a0(GameData_220b6e0);
+  }
+  if (*(_BYTE*)(v1 + 219) == 1) {
+    *(_BYTE*)(v1 + 219) = 0;
   }
   return result;
 }

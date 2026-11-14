@@ -75,6 +75,35 @@ void GameRoutine_6e3b50_alt1(__int64, _QWORD*) __asm__("GameRoutine_6e3b50");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_facility_anonymous_ProcStableBreedingFoodMenu_AddItemList(_QWORD* a1);
+extern __int64 (*GameData_208ffb8[])();
+extern __int64 (*GameData_2090038[])();
+extern char* GameData_20901a0[4];
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+void LayoutAccessor_1562060(__int64*, __int64, const char*);
+void ProcStableBreedingFoodMenu_Unknown85(__int64 a1);
+__int64
+game_facility_anonymous_ProcStableBreedingFoodMenu_SortAndFilter(__int64 a1);
+
+void ProcStableBreedingFoodMenu_Unknown85(__int64 a1)
+{
+  int v1;
+  __int64 v2;
+  char* v3;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    v1 = *(_DWORD*)(v2 + 4LL * v1);
+  }
+  if ((v1 & 0xFC) != 0) {
+    v3 = nullptr;
+  }
+  else {
+    v3 = GameData_20901a0[v1 & 3];
+  }
+  LayoutAccessor_1562060((__int64*)(a1 + 952), (__int64)"T_Title", v3);
+}
 
 __int64 ProcStableBreedingFoodMenu_Unknown88(__int64 a1)
 {
@@ -321,6 +350,74 @@ LABEL_17:
     v21 = nullptr;
   }
   GameRoutine_6e3b50_alt1((__int64)&v27, v21);
+}
+
+__int64
+
+game_facility_anonymous_ProcStableBreedingFoodMenu_SortAndFilter(__int64 a1)
+{
+  int v3;
+  __int64 v4;
+  char v5;
+  int v6;
+  __int64 v7;
+  __int64 result;
+  __int64 v9;
+  struct {
+    __int64 (**v10)();
+    char v11;
+    char gap9_[23];
+    __int64 (***v12)();
+  } v10_;
+  struct {
+    __int64 (**v13)();
+    char v14;
+    char gap57_[23];
+    __int64 (***v15)();
+  } v13_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v10_.v12 = &v10_.v10;
+  if ((v3 & 0xFC) != 0) {
+    v5 = 3;
+  }
+  else {
+    v5 = 0x2010003u >> (8 * v3);
+  }
+  v6 = *(_DWORD*)(a1 + 200);
+  v13_.v13 = GameData_208ffb8;
+  v13_.v14 = v5;
+  v13_.v15 = &v13_.v13;
+  v10_.v10 = GameData_2090038;
+  v10_.v11 = v6;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v13_.v13, (__int64)&v10_.v10);
+  if (v10_.v12 == &v10_.v10) {
+    v7 = 4;
+  }
+  else {
+    if (v10_.v12 == nullptr) {
+      goto LABEL_11;
+    }
+    v7 = 5;
+  }
+  ((__int64 (*)(__int64))(*v10_.v12)[v7])((__int64)v10_.v12);
+LABEL_11:
+  result = (__int64)v13_.v15;
+  if (v13_.v15 == &v13_.v13) {
+    v9 = 4;
+  }
+  else {
+    if (v13_.v15 == nullptr) {
+      return result;
+    }
+    v9 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v13_.v15)[v9])((__int64)v13_.v15);
 }
 
 unsigned __int16* ProcStableBreedingFoodMenu_16bfbb0(__int64 a1, int a2,

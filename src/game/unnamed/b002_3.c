@@ -108,7 +108,9 @@ __int64 GameRoutine_59ec70_alt1() __asm__("GameRoutine_59ec70");
 __int64 nn_ui2d_575670(__int64, unsigned int*, unsigned int);
 int memcmp(__int64, __int64, unsigned __int64);
 unsigned __int64 strlen(const char*);
-__int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, const char* a4);
+__int64 GameHr_572ae0_alt1(__int64 a1, __int64 a2, __int64 a3,
+                           const char* a4) __asm__("GameHr_572ae0");
+__int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, char* a4);
 
 __int64 GameHr_55b820(__int64** a1)
 {
@@ -2512,7 +2514,7 @@ __int64 GameHr_5725c0(__int64 a1, __int64 a2)
   return result;
 }
 
-__int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, const char* a4)
+__int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, char* a4)
 {
   __int64 v6;
   __int64 v7;

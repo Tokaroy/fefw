@@ -1285,7 +1285,7 @@ __int64* GameHr_1210c00(__int64* a1, __int64* a2, unsigned __int64* a3)
   unsigned __int64 v13;
   __int64 v14;
   unsigned __int64 v15;
-  _QWORD* v16;
+  unsigned __int64** v16;
   __int64 v17;
   __int64 v18;
   __int64 v19;
@@ -1294,7 +1294,7 @@ __int64* GameHr_1210c00(__int64* a1, __int64* a2, unsigned __int64* a3)
   __int64 v22;
   unsigned __int64 v23;
   __int64 v24;
-  __int64 v25;
+  unsigned __int64 v25;
   __int64 v26;
   __int64 v27;
   __int64 v28;
@@ -1312,7 +1312,7 @@ __int64* GameHr_1210c00(__int64* a1, __int64* a2, unsigned __int64* a3)
 
   if (a3 != nullptr) {
     v4 = a1[1];
-    if (v4 != 0 && a1[3] != 0) {
+    if (v4 != 0 & a1[3] != 0) {
       v8 = *a3;
       v9 = v4 - 1;
       if ((v4 & (v4 - 1)) != 0) {
@@ -1366,7 +1366,7 @@ __int64* GameHr_1210c00(__int64* a1, __int64* a2, unsigned __int64* a3)
       }
     }
   LABEL_25:
-    v16 = (_QWORD*)a2[1];
+    v16 = (unsigned __int64**)a2[1];
     v15 = a2[2];
     v17 = fw_memory_g_heap_manager_ptr;
     if ((unsigned __int64)v16 >= v15) {

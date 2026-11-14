@@ -1693,8 +1693,9 @@ __int64 SeqVoice_12b0e0(__int64 result)
     char v58;
     char gap537_[15];
     __int64 v59;
+    char gap560_[156];
+    float v60;
   } v47_;
-  float v60;
 
   v1 = *(_DWORD*)(result + 5792);
   v2 = result;
@@ -1703,7 +1704,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
     if (v9 == 0 || ((result = (*(__int64 (**)(__int64))(*(_QWORD*)(v9 - 5592) +
                                                         376LL))(v9 - 5592)) &
                     1) == 0) {
-      if (!(*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) >= 0x0.0p+0f)) {
+      if (*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) < 0x0.0p+0f) {
         return (*(__int64 (**)(__int64))(*(_QWORD*)v2 + 264LL))(v2);
       }
       if (snd_Param_isEnvelopeReleased_alt1(v2 + 40)) {
@@ -1712,7 +1713,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
       if (snd_Param_isEnvelopeFading_alt1(v2 + 40)) {
         return (*(__int64 (**)(__int64))(*(_QWORD*)v2 + 264LL))(v2);
       }
-      result = snd_Param_isEnvelopeEnded_alt1(v2 + 40);
+      result = ((__int64 (*)(__int64))snd_Param_isEnvelopeEnded_alt1)(v2 + 40);
       if ((result & 1) != 0) {
         return (*(__int64 (**)(__int64))(*(_QWORD*)v2 + 264LL))(v2);
       }
@@ -1840,7 +1841,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
     SeqVoice_130790((void*)((__int64)v38), v2, 0, (__int64)v39_.v39,
                     *(_QWORD*)(*(_QWORD*)(v2 + 6096) + 48LL) +
                         104LL * ***(unsigned __int8***)(v2 + 6096),
-                    &v60, 1);
+                    &v47_.v60, 1);
     GameRoutine_112180_alt1(*(_QWORD*)(v2 + 6104), (__int64)v38);
     v29 = GameManager_a223a0_alt1(*(_QWORD*)(v2 + 6104));
     if (v29 != nullptr) {
@@ -1873,9 +1874,9 @@ __int64 SeqVoice_12b0e0(__int64 result)
         }
       }
     }
-    *(float*)&v30 = v60;
-    if (v60 > *(float*)(v2 + 5788)) {
-      *(float*)(v2 + 5788) = v60;
+    *(float*)&v30 = v47_.v60;
+    if (v47_.v60 > *(float*)(v2 + 5788)) {
+      *(float*)(v2 + 5788) = v47_.v60;
       v36 = snd_g_memory_ptr[0];
       if ((v47_.v58 & 1) == 0) {
       LABEL_61:

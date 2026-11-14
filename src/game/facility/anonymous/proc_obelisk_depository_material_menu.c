@@ -105,6 +105,11 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
 void ProcObeliskDepositoryMaterialMenu_Unknown88(__int64 a1);
 void ProcObeliskDepositoryMaterialMenu_Unknown148(__int64 a1, __int64* a2);
 void ProcObeliskDepositoryMaterialMenu_9bfe50(__int64 a1);
+extern __int64 (*GameData_1fb5b68[])();
+extern __int64 (*GameData_1fb5be8[])();
+void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
+__int64 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_SortAndFilter(
+    __int64 a1);
 __int64
 
 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_OnInit(__int64 a1)
@@ -388,6 +393,71 @@ _QWORD* ProcObeliskDepositoryMaterialMenu_Unknown128(__int64 a1)
   }
   return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v11))(result,
                                                                      v3);
+}
+
+__int64 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_SortAndFilter(
+    __int64 a1)
+{
+  int v3;
+  __int64 v4;
+  int v5;
+  __int64 v6;
+  bool v7;
+  unsigned __int64 v8;
+  __int64 result;
+  __int64 v10;
+  struct {
+    __int64 (**v11)();
+    char v12;
+    char gap9_[23];
+    __int64 (***v13)();
+  } v11_;
+  struct {
+    __int64 (**v14)();
+    char v15;
+    char gap57_[23];
+    __int64 (***v16)();
+  } v14_;
+
+  v3 = *(_DWORD*)(a1 + 660);
+  v4 = *(_QWORD*)(a1 + 672);
+  v5 = *(_DWORD*)(a1 + 200);
+  if (v3 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+    v3 = *(_DWORD*)(v4 + 4LL * v3);
+  }
+  v6 = 4;
+  v11_.v12 = v5;
+  v11_.v13 = &v11_.v11;
+  v7 = (unsigned __int8)v3 >= 6u;
+  v14_.v14 = GameData_1fb5b68;
+  v8 = 0x160E0D141320uLL >> (8 * (unsigned __int8)v3);
+  if (v7) {
+    LOBYTE(v8) = 32;
+  }
+  v14_.v15 = v8;
+  v14_.v16 = &v14_.v14;
+  v11_.v11 = GameData_1fb5be8;
+  BasicMenu_16e1f40((_QWORD*)a1, (__int64)&v14_.v14, (__int64)&v11_.v11);
+  if (v11_.v13 != &v11_.v11) {
+    if (v11_.v13 == nullptr) {
+      goto LABEL_10;
+    }
+    v6 = 5;
+  }
+  ((__int64 (*)(__int64))(*v11_.v13)[v6])((__int64)v11_.v13);
+LABEL_10:
+  result = (__int64)v14_.v16;
+  if (v14_.v16 == &v14_.v14) {
+    v10 = 4;
+  }
+  else {
+    if (v14_.v16 == nullptr) {
+      return result;
+    }
+    v10 = 5;
+  }
+  return ((__int64 (*)(__int64))(*v14_.v16)[v10])((__int64)v14_.v16);
 }
 
 void ProcObeliskDepositoryMaterialMenu_Unknown141(__int64* a1)

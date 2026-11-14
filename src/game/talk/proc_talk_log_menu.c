@@ -130,6 +130,10 @@ __int64 ProcTalkLogMenu_TalkLogMenuItem_Unknown17(__int64 a1);
 __int64 ProcTalkLogMenu_TalkLogMenuItem_Unknown19(__int64 result);
 __int64 ProcTalkLogMenu_TalkLogMenuItem_ACall(__int64 a1);
 __int64 ProcTalkLogMenu_TalkLogMenuItem_DrawText(__int64 a1);
+__int64 GameRoutine_19edd80(_QWORD*, int, char, char);
+__int64 GameRoutine_19ee0c0(__int64, int, char, char);
+__int64 ProcTalkLogMenu_Unknown137(__int64 a1, int a2, char a3, char a4);
+__int64 ProcTalkLogMenu_Unknown11(_QWORD* a1, int a2, char a3, char a4);
 
 __int64 ProcTalkLogMenu_17cfc80(__int64 result, char a2)
 {
@@ -528,6 +532,46 @@ __int64 ProcTalkLogMenu_Unknown2(__int64 a1)
     }
   }
   return result;
+}
+
+__int64 ProcTalkLogMenu_Unknown137(__int64 a1, int a2, char a3, char a4)
+{
+  _QWORD* v4;
+  int v7;
+  int v8;
+  char v9;
+  char v10;
+
+  v4 = (_QWORD*)(a1 + 176);
+  v7 = -a2;
+  v8 = (**(__int64 (***)(__int64))(a1 + 176))(a1 + 176);
+  v9 = a3 & 1;
+  v10 = a4 & 1;
+  if (v8 != 0) {
+    return GameRoutine_19ee0c0((__int64)v4, v7, v9, v10);
+  }
+  else {
+    return GameRoutine_19edd80(v4, v7, v9, v10);
+  }
+}
+
+__int64 ProcTalkLogMenu_Unknown11(_QWORD* a1, int a2, char a3, char a4)
+{
+  int v7;
+  int v8;
+  char v9;
+  char v10;
+
+  v7 = -a2;
+  v8 = (*(__int64 (**)(_QWORD*))*a1)(a1);
+  v9 = a3 & 1;
+  v10 = a4 & 1;
+  if (v8 != 0) {
+    return GameRoutine_19ee0c0((__int64)a1, v7, v9, v10);
+  }
+  else {
+    return GameRoutine_19edd80(a1, v7, v9, v10);
+  }
 }
 
 __int64 ProcTalkLogMenu_Unknown138(__int64 a1, __int64 a2, __int64 a3)

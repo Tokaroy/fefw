@@ -56,6 +56,10 @@ void game_menu_PageTab_SetupImage(int*, __int64, __int64, int, unsigned int,
                                   unsigned int);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 void game_gmap_anonymous_ProcDispatchMenu_OnInit(__int64 a1);
+__int64 ui_LayoutAccessor_FindTextBox_alt1(__int64*, __int64) __asm__(
+    "ui_LayoutAccessor_FindTextBox");
+extern char* GameData_20a0ef0[4];
+void ProcDispatchMenu_Unknown85(__int64 a1);
 
 void* ProcDispatchMenu_Unknown67(__int64 a1)
 {
@@ -241,6 +245,40 @@ LABEL_20:
     }
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v18,
                                   v21_.v24);
+  }
+}
+
+void ProcDispatchMenu_Unknown85(__int64 a1)
+{
+  int v1;
+  __int64 v2;
+  unsigned __int8 v4;
+  char* v5;
+  char* v6;
+  __int64 v7;
+  __int64 v8;
+
+  v1 = *(_DWORD*)(a1 + 660);
+  v2 = *(_QWORD*)(a1 + 672);
+  if (v1 <
+      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+    v1 = *(_DWORD*)(v2 + 4LL * v1);
+  }
+  v4 = v1 - 1;
+  if (v4 > 3u) {
+    v5 = "MID_Menu_All";
+  }
+  else {
+    v5 = GameData_20a0ef0[v4];
+  }
+  v6 = GameRoutine_a4dbe0(*msg_MessageManager_instance__ptr[0], v5, 0);
+  if (v6 != nullptr) {
+    v7 = (__int64)v6;
+    v8 = ui_LayoutAccessor_FindTextBox_alt1((__int64*)(a1 + 952),
+                                            (__int64)"T_Title");
+    if (v8 != 0) {
+      GameRoutine_156c5d0(v8, v7, 0);
+    }
   }
 }
 

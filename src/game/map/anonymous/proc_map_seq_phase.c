@@ -95,7 +95,8 @@ void __attribute__((noreturn)) GameRoutine_84a6f0(void);
 __int64 ProcMapSeqPhase_847c20();
 __int64
 ProcMapSeqPhase_848120_alt1(__int64 a1) __asm__("ProcMapSeqPhase_848120");
-__int64 ProcMapSeqPhase_848400(__int64 a1);
+__int64
+ProcMapSeqPhase_848400_alt1(__int64 a1) __asm__("ProcMapSeqPhase_848400");
 void ProcMapSeqPhase_848590(__int64 a1);
 __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TryDamage(__int64 result);
 __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TryPollution(
@@ -267,6 +268,9 @@ void game_map_anonymous_ProcMapSeqPhase_TerrainEnumerate(__int64 a1);
 __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TryHeal_closure_Invoke(
     __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
     __int64 a7, __int64 a8);
+__int64 game_UnitSkillList_IsVanish_alt1(__int64) __asm__(
+    "game_UnitSkillList_IsVanish");
+void ProcMapSeqPhase_848400(__int64 a1);
 
 void game_map_anonymous_ProcMapSeqPhase_TerrainEnumerate(__int64 a1)
 {
@@ -1327,77 +1331,76 @@ LABEL_37:
   }
 }
 
-__int64 ProcMapSeqPhase_848400(__int64 a1)
+void ProcMapSeqPhase_848400(__int64 a1)
 {
-  __int64 result;
-  __int64 v3;
-  _QWORD* v4;
-  _QWORD* v5;
-  __int64 v6;
+  __int64 v4;
+  __int64 v5;
+  __int64* v6;
   __int64 v7;
   __int64 v8;
   __int64 v9;
-  unsigned __int64 v10;
+  __int64 v10;
   __int64 v11;
-  _QWORD v12[3];
+  unsigned __int64 v12;
+  __int64 v13;
+  __int64 v14[3];
 
-  result = ProcMapSeqPhase_849860_alt1(v12);
-  v3 = v12[0];
-  v4 = (_QWORD*)v12[1];
-  if (v12[0] != v12[1]) {
-    v5 = (_QWORD*)v12[0];
+  ProcMapSeqPhase_849860_alt2(v14);
+  v4 = v14[0];
+  v5 = v14[1];
+  if (v14[0] != v14[1]) {
+    v6 = (__int64*)v14[0];
     do {
-      result = game_UnitSkillList_IsVanish(*v5 + 1744LL);
-      if ((result & 1) != 0) {
-        result = ProcMapSeqPhase_849ba0_alt1(a1 + 152);
+      v7 = *v6;
+      if ((game_UnitSkillList_IsVanish_alt1(*v6 + 1744) & 1) != 0) {
+        ProcMapSeqPhase_849ba0_alt3((_QWORD*)(a1 + 152), v7);
       }
-      ++v5;
-    } while (v5 != v4);
+      ++v6;
+    } while (v6 != (__int64*)v5);
   }
-  if (v3 != 0) {
-    v6 = 128;
+  if (v4 != 0) {
+    v8 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
-      v6 = 56;
+      v8 = 56;
     }
-    result = nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v6, v3);
+    nn_mem_StandardAllocator_Free_alt1(
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v8, v4);
   }
   if (0x2E8BA2E8BA2E8BA3LL *
           ((__int64)(*(_QWORD*)(a1 + 160) - *(_QWORD*)(a1 + 152)) >> 4) >
       (unsigned __int64)*(int*)(a1 + 176)) {
-    v7 = *(_QWORD*)(a1 + 96);
-    v8 = *(_QWORD*)(a1 + 104);
-    v9 = ((v8 - v7) << 6) - 1;
-    if (v8 == v7) {
-      v9 = 0;
+    v9 = *(_QWORD*)(a1 + 96);
+    v10 = *(_QWORD*)(a1 + 104);
+    v11 = ((v10 - v9) << 6) - 1;
+    if (v10 == v9) {
+      v11 = 0;
     }
-    v10 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
-    if (v9 == v10) {
-      result = GameRoutine_658d60(a1 + 88);
-      v7 = *(_QWORD*)(a1 + 96);
-      v10 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
+    v12 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
+    if (v11 == v12) {
+      GameRoutine_658d60_alt1((__int64*)(a1 + 88));
+      v9 = *(_QWORD*)(a1 + 96);
+      v12 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
     }
-    *(_QWORD*)(*(_QWORD*)(v7 + 8 * (v10 >> 9)) + 8 * (v10 & 0x1FF)) =
+    *(_QWORD*)(*(_QWORD*)(v9 + 8 * (v12 >> 9)) + 8 * (v12 & 0x1FF)) =
         *(_QWORD*)(a1 + 16);
     ++*(_QWORD*)(a1 + 128);
-    v11 = *(_QWORD*)(a1 + 8);
-    if (v11 != 0) {
+    v13 = *(_QWORD*)(a1 + 8);
+    if (v13 != 0) {
       while (1) {
-        if (*(_BYTE*)v11 == 2) {
-          if (*(_DWORD*)(v11 + 32) == 5) {
-            *(_QWORD*)(a1 + 16) = v11;
+        if (*(_BYTE*)v13 == 2) {
+          if (*(_DWORD*)(v13 + 32) == 5) {
+            *(_QWORD*)(a1 + 16) = v13;
             *(_WORD*)(a1 + 136) &= ~0x80u;
-            return result;
+            return;
           }
         }
-        else if (*(_BYTE*)v11 == 0) {
-          return result;
+        else if (*(_BYTE*)v13 == 0) {
+          return;
         }
-        v11 += 64;
+        v13 += 64;
       }
     }
   }
-  return result;
 }
 
 void ProcMapSeqPhase_848590(__int64 a1)

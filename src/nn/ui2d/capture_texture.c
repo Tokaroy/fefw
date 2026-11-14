@@ -51,6 +51,10 @@ __int64 Pane_58f580(_QWORD, _QWORD, _QWORD);
 void GameRoutine_5816b0();
 __int64 CaptureTexture_Unknown7(__int64 a1, __int64 a2, __int64* a3,
                                 __int64 a4);
+__int64 GameRoutine_5816b0_alt1(float32x2_t*, __int64, __int64,
+                                unsigned int) __asm__("GameRoutine_5816b0");
+float32x2_t* CaptureTexture_581820(float32x2_t* result, __int64 a2, __int64 a3,
+                                   float32x2_t* a4, unsigned __int64 a5);
 
 __int64 CaptureTexture_DeletingDestructor(_QWORD* a1)
 {
@@ -184,6 +188,52 @@ LABEL_5:
       *(_WORD*)(a1 + 104) |= 4u;
     }
   }
+}
+
+float32x2_t* CaptureTexture_581820(float32x2_t* result, __int64 a2, __int64 a3,
+                                   float32x2_t* a4, unsigned __int64 a5)
+{
+
+#pragma clang fp contract(off)
+  unsigned __int16 v5;
+  unsigned __int16 v6;
+
+  LANES64(result[6]).n64_u64[0] = a3;
+  LANES64(result[7]).n64_u64[0] = a5;
+  v5 = LANES64(a4[13]).n64_u16[0];
+  if ((v5 & 1) != 0) {
+    LANES64(result[13]).n64_u16[0] |= 1u;
+    v5 = LANES64(a4[13]).n64_u16[0];
+    if ((v5 & 2) == 0) {
+    LABEL_3:
+      v6 = LANES64(result[13]).n64_u16[0];
+      if ((v5 & 0x10) == 0) {
+        goto LABEL_5;
+      }
+      goto LABEL_4;
+    }
+  }
+  else if ((v5 & 2) == 0) {
+    goto LABEL_3;
+  }
+  v6 = LANES64(result[13]).n64_u16[0] | 2;
+  LANES64(result[13]).n64_u16[0] = v6;
+  if ((LANES64(a4[13]).n64_u16[0] & 0x10) != 0) {
+  LABEL_4:
+    v6 |= 0x10u;
+    LANES64(result[13]).n64_u16[0] = v6;
+  }
+LABEL_5:
+  LANES64(result[8]).n64_u32[1] = LANES64(a4[8]).n64_u32[1];
+  LANES64(result[11]).n64_u64[0] = LANES64(a4[11]).n64_u64[0];
+  LANES64(result[10]).n64_u64[0] = LANES64(a4[10]).n64_u64[0];
+  LANES64(result[8]).n64_u32[0] = LANES64(a4[8]).n64_u32[0];
+  LANES64(result[5]).n64_u32[0] = LANES64(a4[5]).n64_u32[0];
+  LANES64(result[12]).n64_u64[0] = LANES64(a4[12]).n64_u64[0];
+  if ((v6 & 0x12) != 0) {
+    return (float32x2_t*)GameRoutine_5816b0_alt1(result, a2, a3, 0);
+  }
+  return result;
 }
 
 __int64 CaptureTexture_Unknown3(__int64 a1)

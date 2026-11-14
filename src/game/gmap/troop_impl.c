@@ -7,6 +7,12 @@ __int64 game_UnitPool_GetFirst(_QWORD);
 extern __int64 GameData_21ca310;
 void __attribute__((noreturn)) GameRoutine_60a310(_QWORD, _QWORD);
 __int64 Troop_133ed80(__int64 result, __int64 a2);
+__int64
+game_CorpsManager_EachUnit_alt1(__int64 result,
+                                __int64) __asm__("game_CorpsManager_EachUnit");
+__int64 game_UnitPool_GetFirst_alt1(int*) __asm__("game_UnitPool_GetFirst");
+void __attribute__((noreturn))
+GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 
 __int64 Troop_133ed80(__int64 result, __int64 a2)
 {
@@ -19,10 +25,11 @@ __int64 Troop_133ed80(__int64 result, __int64 a2)
   __int64 v9;
   int v10;
   __int64 v11;
-  unsigned int v12;
+  __int64 v12;
   unsigned int v13;
-  int v14;
-  __int64 v15;
+  unsigned int v14;
+  int v15;
+  __int64 v16;
 
   v2 = *(_QWORD*)(result + 96);
   if (v2 != 0) {
@@ -32,12 +39,12 @@ __int64 Troop_133ed80(__int64 result, __int64 a2)
       if (v4 != v5) {
         while (1) {
           v6 = *(_QWORD*)(a2 + 32);
-          v15 = v4;
+          v16 = v4;
           if (v6 == 0) {
             break;
           }
           result = (*(__int64 (**)(__int64, __int64*))(*(_QWORD*)v6 + 48LL))(
-              v6, &v15);
+              v6, &v16);
           v4 += 2224;
           if (v4 == v5) {
             return result;
@@ -50,23 +57,23 @@ __int64 Troop_133ed80(__int64 result, __int64 a2)
   else if (*(_QWORD*)(result + 552) == 0) {
     v7 = *(unsigned int*)(result + 84);
     if ((v7 & 0x80000000) != 0) {
-      LODWORD(v15) = 17;
-      result = game_UnitPool_GetFirst(&v15);
+      LODWORD(v16) = 17;
+      result = game_UnitPool_GetFirst_alt1((int*)&v16);
       if (result != 0) {
         v8 = *(_QWORD*)(result + 432);
         if (v8 == 0) {
           v9 = *(_QWORD*)(result + 440);
           if (v9 != 0 &&
               (unsigned int)(v10 = *(unsigned __int8*)(v9 + 16)) <= 8) {
-            v14 = v10 - 3;
+            v15 = v10 - 3;
             while (1) {
-              if (v14 == 0) {
+              if (v15 == 0) {
                 v8 = *(_QWORD*)(*(_QWORD*)(GameData_21ca310 + 56) + 556096LL);
                 if (v8 != 0) {
                   break;
                 }
               }
-              if (++v14 == 6) {
+              if (++v15 == 6) {
                 goto LABEL_15;
               }
             }
@@ -76,55 +83,55 @@ __int64 Troop_133ed80(__int64 result, __int64 a2)
             v8 = 0;
           }
         }
-        v15 = result;
-        v6 = *(_QWORD*)(a2 + 32);
-        if (v6 == 0) {
+        v16 = result;
+        v11 = *(_QWORD*)(a2 + 32);
+        if (v11 == 0) {
         LABEL_34:
-          GameRoutine_60a310(v6, a2);
+          GameRoutine_60a310_alt1();
         }
         while (1) {
-          result = (*(__int64 (**)(__int64, __int64*))(*(_QWORD*)v6 + 48LL))(
-              v6, &v15);
+          result = (*(__int64 (**)(__int64, __int64*))(*(_QWORD*)v11 + 48LL))(
+              v11, &v16);
           if (v8 == 0) {
             break;
           }
-          v11 = *(_QWORD*)(v8 + 432);
-          if (v11 == 0) {
-            v11 = *(_QWORD*)(v8 + 440);
-            if (v11 != 0) {
-              v12 = *(unsigned __int8*)(v11 + 16);
-              if (v12 > 8) {
+          v12 = *(_QWORD*)(v8 + 432);
+          if (v12 == 0) {
+            v12 = *(_QWORD*)(v8 + 440);
+            if (v12 != 0) {
+              v13 = *(unsigned __int8*)(v12 + 16);
+              if (v13 > 8) {
               LABEL_18:
-                v11 = 0;
+                v12 = 0;
               }
               else {
-                v13 = v12 - 3;
+                v14 = v13 - 3;
                 while (1) {
-                  if (v13 == 0) {
-                    v11 = *(_QWORD*)(*(_QWORD*)(GameData_21ca310 + 56) +
+                  if (v14 == 0) {
+                    v12 = *(_QWORD*)(*(_QWORD*)(GameData_21ca310 + 56) +
                                      556096LL);
-                    if (v11 != 0) {
+                    if (v12 != 0) {
                       break;
                     }
                   }
-                  if (++v13 == 6) {
+                  if (++v14 == 6) {
                     goto LABEL_18;
                   }
                 }
               }
             }
           }
-          v6 = *(_QWORD*)(a2 + 32);
-          v15 = v8;
-          v8 = v11;
-          if (v6 == 0) {
+          v11 = *(_QWORD*)(a2 + 32);
+          v16 = v8;
+          v8 = v12;
+          if (v11 == 0) {
             goto LABEL_34;
           }
         }
       }
     }
     else {
-      return game_CorpsManager_EachUnit(v7, a2);
+      return game_CorpsManager_EachUnit_alt1(v7, a2);
     }
   }
   return result;

@@ -32,6 +32,9 @@ char* GameRoutine_a4dbe0_alt1(__int64, _BYTE*,
 void GameRoutine_156c5d0_alt1(__int64, __int64,
                               char) __asm__("GameRoutine_156c5d0");
 void GmapSpotCarriageMenuItem_DrawText(__int64 a1);
+__int64 GameRoutine_167ad50(__int64, _BYTE*);
+bool GameRoutine_ae2330(__int64);
+__int64 GmapSpotCarriageMenuItem_Unknown72(__int64 a1);
 
 void GmapSpotCarriageMenuItem_DrawText(__int64 a1)
 {
@@ -174,6 +177,24 @@ LABEL_12:
       GameRoutine_9db9e0(23, *(unsigned __int16*)(*(_QWORD*)(v1 + 288) + 64LL));
   return GameRoutine_157d280(v12, 0, v13, v14 < v15, 0,
                              *(_DWORD*)(v1 + 296) == 0);
+}
+
+__int64 GmapSpotCarriageMenuItem_Unknown72(__int64 a1)
+{
+  char* v2;
+
+  if ((*(_BYTE*)(*(_QWORD*)(a1 + 88) + 178LL) & 4) != 0 &&
+      game_GameModeData_instance_ != 0 &&
+      *(_DWORD*)(game_GameModeData_instance_ + 60) == 3) {
+    v2 = "IconState_Broken";
+  }
+  else if (GameRoutine_ae2330(*(_QWORD*)(a1 + 288))) {
+    v2 = nullptr;
+  }
+  else {
+    v2 = "IconState_Disable";
+  }
+  return GameRoutine_167ad50(a1, v2);
 }
 
 #pragma GCC visibility pop

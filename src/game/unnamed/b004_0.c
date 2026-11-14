@@ -334,6 +334,7 @@ __int64 GameHr_5fdb80(__int64 a1, __int64 a2, unsigned int a3, int a4,
                       float a5);
 __int64 GameHr_5fe290(__int64 result, _QWORD* a2, int a3);
 __int64 GameHr_608f60(__int64 a1, const char* a2, signed __int64 a3, char a4);
+__int64 GameHr_5fd480(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
 
 bool GameHr_5ebbe0(__int64* a1, __int64* a2, __int64 a3, unsigned __int64 a4)
 {

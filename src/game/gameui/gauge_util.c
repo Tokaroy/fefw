@@ -187,6 +187,7 @@ __int64 GaugeUtil_174e040(__int64 result, __int64* a2, __int64 a3, __int64 a4,
 __int64 GaugeUtil_1750020(__int64* a1, __int64* a2, __int64 a3, char a4,
                           signed int a5, unsigned int a6);
 __int64 GaugeUtil_UnitExpChangeUtil_Unknown5();
+unsigned __int64 GaugeUtil_RelianceExpChange_Unknown5();
 
 __int64 GaugeUtil_174e040(__int64 result, __int64* a2, __int64 a3, __int64 a4,
                           unsigned int a5)
@@ -744,6 +745,114 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
     v9 = 0;
   }
   return v9 & 1;
+}
+
+unsigned __int64 GaugeUtil_RelianceExpChange_Unknown5()
+{
+  unsigned __int64 v0;
+  int v1;
+  int v2;
+  unsigned int v4;
+  int v5;
+  unsigned int v6;
+  unsigned int v7;
+  _DWORD* v8;
+  int v9;
+  int v10;
+  int v11;
+  int v12;
+  int v13;
+  int v14;
+  int v15;
+  int v16;
+  int v17;
+  int v18;
+  int v19;
+  int v20;
+  int* v21;
+  int v22;
+  int v23;
+  int v24;
+
+  v0 = (unsigned __int64)(GameData_21d99d0 - GameData_21d99c8) >> 2;
+  v1 = v0 - 1;
+  if ((int)v0 < 1) {
+    return 0;
+  }
+  if ((_DWORD)v0 == 1) {
+    v2 = -*(_DWORD*)GameData_21d99c8 &
+         ~((signed __int32)-*(int*)GameData_21d99c8 >> 31);
+  }
+  else {
+    v4 = v0 - 2;
+    v5 = v1 & 7;
+    v2 = (*(int*)(GameData_21d99c8 + 4) - *(int*)GameData_21d99c8) &
+         ~((signed __int32)(*(int*)(GameData_21d99c8 + 4) -
+                            *(int*)GameData_21d99c8) >>
+           31);
+    if (v4 >= 7) {
+      v7 = v1 & 0xFFFFFFF8;
+      v8 = (_DWORD*)(GameData_21d99c8 + 16);
+      v6 = 1;
+      do {
+        v9 = *(v8 - 3);
+        v6 += 8;
+        if ((signed __int32)(v9 - *(v8 - 4)) > v2) {
+          v2 = v9 - *(v8 - 4);
+        }
+        v10 = *(v8 - 2);
+        v11 = *(v8 - 1);
+        v12 = v10 - v9;
+        if (v12 > v2) {
+          v2 = v12;
+        }
+        if (v11 - v10 > v2) {
+          v2 = v11 - v10;
+        }
+        v13 = v8[1];
+        v14 = *(int*)v8 - v11;
+        if (v14 > v2) {
+          v2 = v14;
+        }
+        if ((signed __int32)(v13 - *(int*)v8) > v2) {
+          v2 = v13 - *(int*)v8;
+        }
+        v15 = v8[2];
+        v16 = v8[3];
+        v17 = v15 - v13;
+        v18 = v16 - v15;
+        if (v17 > v2) {
+          v2 = v17;
+        }
+        if (v18 > v2) {
+          v2 = v18;
+        }
+        v19 = v8[4];
+        v8 += 8;
+        v20 = v19 - v16;
+        if (v20 > v2) {
+          v2 = v20;
+        }
+        v7 -= 8;
+      } while (v7 != 0);
+    }
+    else {
+      v6 = 1;
+    }
+    if (v5 != 0) {
+      v21 = (int*)(GameData_21d99c8 + 4LL * v6);
+      do {
+        v23 = *(v21 - 1);
+        v22 = *v21++;
+        v24 = v22 - v23;
+        if (v24 > v2) {
+          v2 = v24;
+        }
+        --v5;
+      } while (v5 != 0);
+    }
+  }
+  return (unsigned int)v2 / 0xAuLL;
 }
 
 __int64 GaugeUtil_RelianceExpChange_Unknown6(__int64 result)

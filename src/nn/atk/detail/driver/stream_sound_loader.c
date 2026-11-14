@@ -16,6 +16,9 @@ __int64 StreamSoundLoader_29d180(__int64 a1, __int64 a2, __int64 a3, int a4,
 __int64 memcpy_alt1(__int64, __int64, unsigned __int64) __asm__("memcpy");
 __int64 nn_atk_2b8e00_alt1(__int64, __int64*) __asm__("nn_atk_2b8e00");
 __int64 nn_os_GetSystemTick_alt1() __asm__("nn_os_GetSystemTick");
+__int64 GameRoutine_29c870(__int64 result, __int64, unsigned int, __int64,
+                           __int64, __int64);
+__int64 StreamSoundLoader_StreamDataLoadTask_Unknown2(__int64 a1, __int64 a2);
 
 __int64 StreamSoundLoader_29d180(__int64 a1, __int64 a2, __int64 a3, int a4,
                                  __int64 a5, __int64 a6, __int64 a7)
@@ -392,6 +395,12 @@ LABEL_29:
     return 1;
   }
   return result;
+}
+
+__int64 StreamSoundLoader_StreamDataLoadTask_Unknown2(__int64 a1, __int64 a2)
+{
+  return GameRoutine_29c870(*(_QWORD*)(a1 + 224), a1 + 72, *(_DWORD*)(a1 + 200),
+                            *(_QWORD*)(a1 + 208), *(_QWORD*)(a1 + 216), a2);
 }
 
 #pragma GCC visibility pop
