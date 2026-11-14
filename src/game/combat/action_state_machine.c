@@ -146,7 +146,7 @@ void ActionStateMachine_1066c00(__int64* a1)
     }
   }
   *v4 = 0;
-  v11 = v2 - v1;
+  v11 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v11 >= 3) {
     v12 = fw_memory_g_heap_manager_ptr;
     do {
@@ -162,7 +162,7 @@ void ActionStateMachine_1066c00(__int64* a1)
         v2 = (__int64*)a1[2];
       }
       a1[1] = (__int64)++v1;
-      v11 = v2 - v1;
+      v11 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v11 > 2);
   }
   if (v11 == 1) {

@@ -75,7 +75,7 @@ void SceneCharacterBehaviorStack_Destructor(_QWORD* a1)
     }
   }
   *v4 = 0;
-  v11 = v2 - v1;
+  v11 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v11 >= 3) {
     v12 = fw_memory_g_heap_manager_ptr;
     do {
@@ -91,7 +91,7 @@ void SceneCharacterBehaviorStack_Destructor(_QWORD* a1)
         v2 = (__int64*)a1[4];
       }
       a1[3] = ++v1;
-      v11 = v2 - v1;
+      v11 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v11 > 2);
   }
   if (v11 == 1) {

@@ -11061,7 +11061,7 @@ __int64 GameHr_d740c0(__int64 a1, int* a2)
     goto LABEL_70;
   }
   v15 = v9 == 0 || *(_BYTE*)((v14 = *(_QWORD*)(v9 + 8)) + 5) == 0 ||
-        *(_DWORD*)(v14 + 8) < 1;
+        *(int*)(v14 + 8) < 1;
   if (atomic_fetch_add((atomic_ullong* volatile)(v13 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64, int*))(*(_QWORD*)v13 + 16LL))(v13, v12);
@@ -11215,7 +11215,7 @@ __int64 GameHr_d744b0(__int64 a1, int a2)
     return 0;
   }
   v10 = v4 != 0 && *(_BYTE*)((v9 = *(_QWORD*)(v4 + 8)) + 5) != 0 &&
-        *(_DWORD*)(v9 + 8) > 0;
+        *(int*)(v9 + 8) > 0;
   if (atomic_fetch_add((atomic_ullong* volatile)(v8 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);

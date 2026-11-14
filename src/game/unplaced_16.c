@@ -26950,7 +26950,8 @@ __attribute__((swiftcall)) void game_113f5c0(PSEUDO_X8 x8_, unsigned __int8* a1,
               }
             }
             v51 = (__int64)v88_.v88;
-            v56 = 0xAAAAAAAAAAAAAAABLL * (v88_.v89 - v88_.v88);
+            v56 = 0xAAAAAAAAAAAAAAABLL *
+                  (((__int64)v88_.v89 - (__int64)v88_.v88) >> 3);
           }
           else {
             v7 = 0x0.0p+0f;
@@ -26961,7 +26962,9 @@ __attribute__((swiftcall)) void game_113f5c0(PSEUDO_X8 x8_, unsigned __int8* a1,
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v51 = (__int64)v88_.v88;
             v24 = v61;
-            if (0xAAAAAAAAAAAAAAABLL * (v88_.v89 - v88_.v88) >= 4) {
+            if (0xAAAAAAAAAAAAAAABLL *
+                    (((__int64)v88_.v89 - (__int64)v88_.v88) >> 3) >=
+                4) {
               if ((v88_.v88[9] & 1) != 0) {
                 fw_text_String_CopyTerminated(&v83_.v83, v88_.v88[11],
                                               v88_.v88[10]),

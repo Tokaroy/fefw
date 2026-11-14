@@ -1707,7 +1707,7 @@ _QWORD* ProcGameUiFade_15e2de0(_QWORD* result)
 
 LABEL_14:
   *v4 = 0;
-  v12 = v2 - v1;
+  v12 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v12 >= 3) {
     v13 = fw_memory_g_heap_manager_ptr;
     do {
@@ -1724,7 +1724,7 @@ LABEL_14:
         v2 = (_QWORD*)v3[2];
       }
       v3[1] = ++v1;
-      v12 = v2 - v1;
+      v12 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v12 > 2);
   }
   if (v12 == 1) {
@@ -1835,7 +1835,7 @@ void ProcGameUiFade_15e3040(__int64* a1)
   }
 LABEL_14:
   *v4 = 0;
-  v13 = v2 - v1;
+  v13 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v13 >= 3) {
     v14 = fw_memory_g_heap_manager_ptr;
     do {
@@ -1851,7 +1851,7 @@ LABEL_14:
         v2 = (__int64*)a1[2];
       }
       a1[1] = (__int64)++v1;
-      v13 = v2 - v1;
+      v13 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v13 > 2);
   }
   if (v13 == 1) {

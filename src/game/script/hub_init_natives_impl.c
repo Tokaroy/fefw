@@ -412,7 +412,7 @@ __int64* HubInitNatives_ff5d00(__int64* result)
       return SpineModel_64dde0_alt1(result, v21, v22);
     }
   }
-  else if (0xAAAAAAAAAAAAAAABLL * (v2 - v1) < 2) {
+  else if (0xAAAAAAAAAAAAAAABLL * (((__int64)v2 - (__int64)v1) >> 3) < 2) {
     if ((result[4] & 1) != 0) {
       *(_BYTE*)result[6] = 0;
       result[5] = 0;

@@ -197,7 +197,7 @@ __int64 MapInfo_Destructor(_QWORD* a1)
   v18 = (_QWORD*)a1[6];
   v19 = (_QWORD*)a1[7];
   a1[10] = 0;
-  v20 = v19 - v18;
+  v20 = ((__int64)v19 - (__int64)v18) >> 3;
   if (v20 >= 3) {
     do {
       if (*v18 != 0) {
@@ -212,7 +212,7 @@ __int64 MapInfo_Destructor(_QWORD* a1)
         v19 = (_QWORD*)a1[7];
       }
       a1[6] = ++v18;
-      v20 = v19 - v18;
+      v20 = ((__int64)v19 - (__int64)v18) >> 3;
     } while (v20 > 2);
   }
   if (v20 == 1) {

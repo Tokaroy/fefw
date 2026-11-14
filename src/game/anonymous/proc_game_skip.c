@@ -58,7 +58,7 @@ void ProcGameSkip_Destructor(__int64 a1)
   *(_QWORD*)(a1 + 216) = 0;
   *(_QWORD*)a1 = game_anonymous_ProcGameSkip_vtable;
   v4 = fw_memory_g_heap_manager_ptr;
-  v5 = v2 - v1;
+  v5 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v5 >= 3) {
     do {
       if (*v1 != 0) {
@@ -73,7 +73,7 @@ void ProcGameSkip_Destructor(__int64 a1)
         v2 = *(__int64**)(a1 + 192);
       }
       *(_QWORD*)(a1 + 184) = ++v1;
-      v5 = v2 - v1;
+      v5 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v5 > 2);
   }
   if (v5 == 1) {

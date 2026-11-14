@@ -2869,7 +2869,7 @@ void GameHr_1348160()
           }
           if (*v2 != 0) {
             v18 = 0;
-            v19 = v10 - v11;
+            v19 = ((__int64)v10 - (__int64)v11) >> 3;
             while (v11[v18] != v13) {
               if (v19 == ++v18) {
                 goto LABEL_21;
@@ -3144,7 +3144,7 @@ void GameHr_13487a0()
                 goto LABEL_15;
               }
               v34 = 0;
-              v35 = v19 - v18;
+              v35 = ((__int64)v19 - (__int64)v18) >> 3;
               while (v18[v34] != v30) {
                 if (v35 == ++v34) {
                   goto LABEL_76;
@@ -3204,7 +3204,7 @@ void GameHr_13487a0()
           }
           if (*GameData_212c790 != 0) {
             v36 = 0;
-            v37 = v25 - v26;
+            v37 = ((__int64)v25 - (__int64)v26) >> 3;
             while (v26[v36] != v28) {
               if (v37 == ++v36) {
                 goto LABEL_15;
@@ -3362,7 +3362,7 @@ void GameHr_1348ba0()
                         break;
                       }
                       v28 = 0;
-                      v29 = v18 - v19;
+                      v29 = ((__int64)v18 - (__int64)v19) >> 3;
                       while (v19[v28] != v24) {
                         if (v29 == ++v28) {
                           goto LABEL_56;
@@ -3527,7 +3527,7 @@ __int64 GameHr_135aa80(__int64 a1)
   if (GameData_21caab0 != 0) {
     v11 = *(_DWORD*)(GameData_21caab0 + 60);
     if (v11 == 3) {
-      v14 = *(_DWORD*)(GameData_21caab0 + 64) <= 1;
+      v14 = *(int*)(GameData_21caab0 + 64) <= 1;
     }
     else {
       if (v11 != 1) {
@@ -11479,7 +11479,7 @@ void GameHr_1405080(__int64 a1)
       }
     }
     *(_QWORD*)(a1 + 56) = 0;
-    v12 = v5 - v2;
+    v12 = ((__int64)v5 - (__int64)v2) >> 3;
     if (v12 >= 3) {
       v13 = fw_memory_g_heap_manager_ptr;
       do {
@@ -11495,7 +11495,7 @@ void GameHr_1405080(__int64 a1)
           v5 = *(__int64**)(a1 + 32);
         }
         *(_QWORD*)(a1 + 24) = ++v2;
-        v12 = v5 - v2;
+        v12 = ((__int64)v5 - (__int64)v2) >> 3;
       } while (v12 > 2);
     }
     if (v12 == 1) {

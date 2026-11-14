@@ -202,7 +202,7 @@ __int64 Image_Destructor(_QWORD* a1)
   v13 = (_QWORD*)a1[15];
   a1[18] = 0;
   v14 = fw_memory_g_heap_manager_ptr;
-  v15 = v13 - v12;
+  v15 = ((__int64)v13 - (__int64)v12) >> 3;
   if (v15 >= 3) {
     do {
       if (*v12 != 0) {
@@ -217,7 +217,7 @@ __int64 Image_Destructor(_QWORD* a1)
         v13 = (_QWORD*)a1[15];
       }
       a1[14] = ++v12;
-      v15 = v13 - v12;
+      v15 = ((__int64)v13 - (__int64)v12) >> 3;
     } while (v15 > 2);
   }
   if (v15 == 1) {

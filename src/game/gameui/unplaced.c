@@ -6149,7 +6149,7 @@ LABEL_2:
   while (1) {
     v10 = v152;
     v8 = v9;
-    v11 = v152 - v9;
+    v11 = ((__int64)v152 - (__int64)v9) >> 3;
     if (v11 > 2) {
       switch (v11) {
       case 3LL:
@@ -6960,7 +6960,7 @@ LABEL_2:
   while (1) {
     v10 = v152;
     v8 = v9;
-    v11 = v152 - v9;
+    v11 = ((__int64)v152 - (__int64)v9) >> 3;
     if (v11 > 2) {
       switch (v11) {
       case 3LL:

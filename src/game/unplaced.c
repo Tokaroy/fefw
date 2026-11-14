@@ -1266,7 +1266,7 @@ _QWORD* game_660c40(_QWORD* result)
     }
   }
   *v4 = 0;
-  v16 = v2 - v1;
+  v16 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v16 >= 3) {
     v17 = fw_memory_g_heap_manager_ptr;
     do {
@@ -1283,7 +1283,7 @@ _QWORD* game_660c40(_QWORD* result)
         v2 = (_QWORD*)v3[2];
       }
       v3[1] = ++v1;
-      v16 = v2 - v1;
+      v16 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v16 > 2);
   }
   if (v16 == 1) {

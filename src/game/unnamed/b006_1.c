@@ -6411,7 +6411,7 @@ _QWORD* GameHr_820460(_QWORD* result)
     }
   }
   *v4 = 0;
-  v15 = v2 - v1;
+  v15 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v15 >= 3) {
     v16 = GameData_212bf68;
     do {
@@ -6427,7 +6427,7 @@ _QWORD* GameHr_820460(_QWORD* result)
         v2 = (_QWORD*)v3[2];
       }
       v3[1] = ++v1;
-      v15 = v2 - v1;
+      v15 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v15 > 2);
   }
   if (v15 == 1) {

@@ -7970,7 +7970,7 @@ void game_13da3a0(__int64 a1)
     while (1) {
       v33 = v30;
       v30 = (unsigned int)(v31 + 1);
-      v34 = v26 - v25;
+      v34 = ((__int64)v26 - (__int64)v25) >> 3;
       if (v34 > v30) {
         break;
       }

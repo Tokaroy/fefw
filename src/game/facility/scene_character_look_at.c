@@ -666,7 +666,7 @@ LABEL_19:
   v15 = v3;
 LABEL_21:
   *v4 = 0;
-  v16 = v15 - v2;
+  v16 = ((__int64)v15 - (__int64)v2) >> 3;
   if (v16 >= 3) {
     v17 = fw_memory_g_heap_manager_ptr;
     do {
@@ -683,7 +683,7 @@ LABEL_21:
         v15 = v3;
       }
       *(_QWORD*)(a1 + 176) = ++v2;
-      v16 = v15 - v2;
+      v16 = ((__int64)v15 - (__int64)v2) >> 3;
     } while (v16 > 2);
   }
   if (v16 == 1) {

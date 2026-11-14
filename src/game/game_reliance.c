@@ -1959,13 +1959,14 @@ LABEL_44:
   v28 = v54_.v54;
   v29 = v54_.v55;
   v52_.v52[0] = a1;
-  if (v54_.v55 - v54_.v54 < 129) {
+  if (((__int64)v54_.v55 - (__int64)v54_.v54) >> 2 < 129) {
     v33 = 0;
   LABEL_50:
-    GameHr_8e33a0(v28, v29, (__int64)v52_.v52, v29 - v28, nullptr, v33);
+    GameHr_8e33a0(v28, v29, (__int64)v52_.v52,
+                  ((__int64)v29 - (__int64)v28) >> 2, nullptr, v33);
   }
   else {
-    v30 = v54_.v55 - v54_.v54;
+    v30 = ((__int64)v54_.v55 - (__int64)v54_.v54) >> 2;
     v31 = GameData_212c060;
     while (1) {
       v32 = (int*)GameRoutine_1a09d20_alt1(4 * v30, v31);
@@ -1980,7 +1981,8 @@ LABEL_44:
       }
     }
     v35 = (__int64)v32;
-    GameHr_8e33a0(v28, v29, (__int64)v52_.v52, v29 - v28, v32, v30);
+    GameHr_8e33a0(v28, v29, (__int64)v52_.v52,
+                  ((__int64)v29 - (__int64)v28) >> 2, v32, v30);
     v36 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v36 = 56;

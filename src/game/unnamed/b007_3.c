@@ -999,11 +999,11 @@ __int64 GameHr_94c660(__int64 a1)
   v19[0] = GameRoutine_7a86e0(v3);
   v5 = GameData_21caab0 != 0 &&
        (v4 = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v19)) != 0 &&
-       *(_DWORD*)(v4 + 32) > 0;
+       *(int*)(v4 + 32) > 0;
   v6 = GameRoutine_821090(19);
   if (GameData_21caab0 != 0) {
     v6 = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v6);
-    v7 = v6 == 0 || *(_DWORD*)(v6 + 32) < 1;
+    v7 = v6 == 0 || *(int*)(v6 + 32) < 1;
     v8 = 0x400000;
     if (GameData_21caab0 != 0) {
       if (v5 || v7) {

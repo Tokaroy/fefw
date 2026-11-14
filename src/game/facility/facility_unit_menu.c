@@ -435,7 +435,7 @@ LABEL_44:
         }
       }
     }
-    v68 = v36 - v88_.v88;
+    v68 = ((__int64)v36 - (__int64)v88_.v88) >> 3;
     v69 = v85 - v68;
     if (v85 > v68) {
       v70 = (__int64*)fw_memory_g_heap_manager_ptr;

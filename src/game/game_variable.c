@@ -807,7 +807,7 @@ void GameVariable_826320(_QWORD* a1)
     v17 = v4;
   }
   *v6 = 0;
-  v18 = v17 - v3;
+  v18 = ((__int64)v17 - (__int64)v3) >> 3;
   if (v18 >= 3) {
     v19 = fw_memory_g_heap_manager_ptr;
     do {
@@ -824,7 +824,7 @@ void GameVariable_826320(_QWORD* a1)
         v17 = v4;
       }
       v2[95] = (__int64)++v3;
-      v18 = v17 - v3;
+      v18 = ((__int64)v17 - (__int64)v3) >> 3;
     } while (v18 > 2);
   }
   if (v18 == 1) {

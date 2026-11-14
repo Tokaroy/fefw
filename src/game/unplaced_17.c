@@ -11341,7 +11341,9 @@ void game_18d6580(_QWORD* a1)
   v112 = (__int64*)a1[8];
   v113 = (__int64*)a1[9];
   if (v112 != v113) {
-    GameRoutine_18d82a0(v112, v113, (2 * __clz(v113 - v112)) ^ 0x7E, 1),
+    GameRoutine_18d82a0(
+        v112, v113, (2 * __clz(((__int64)v113 - (__int64)v112) >> 3)) ^ 0x7E,
+        1),
         v71 = COERCE_AS(__typeof__(v71),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
         v81 = COERCE_AS(__typeof__(v81),

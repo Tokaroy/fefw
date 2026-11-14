@@ -9336,8 +9336,9 @@ LABEL_26:
       v23 = v37_.v37;
     }
     else {
-      GameRoutine_a17d20_alt1(v40_.v40, v40_.v41, (__int64*)&v43,
-                              (2 * __clz(v40_.v41 - v40_.v40)) ^ 0x7E, 1);
+      GameRoutine_a17d20_alt1(
+          v40_.v40, v40_.v41, (__int64*)&v43,
+          (2 * __clz(((__int64)v40_.v41 - (__int64)v40_.v40) >> 2)) ^ 0x7E, 1);
       v23 = v37_.v39;
       if (v37_.v39 != v37_.v37) {
         v24 = a4;

@@ -174,8 +174,9 @@ LABEL_14:
   v13 = v34_.v34;
   v14 = v34_.v35;
   if (v34_.v34 != v34_.v35) {
-    GameRoutine_1639f60_alt1((__int64)v34_.v34, v34_.v35,
-                             (2 * __clz(v34_.v35 - v34_.v34)) ^ 0x7E, 1);
+    GameRoutine_1639f60_alt1(
+        (__int64)v34_.v34, v34_.v35,
+        (2 * __clz(((__int64)v34_.v35 - (__int64)v34_.v34) >> 3)) ^ 0x7E, 1);
     v13 = v34_.v34;
     v14 = v34_.v35;
   }
@@ -536,8 +537,9 @@ LABEL_13:
 LABEL_14:
   v50_.v50[0] = (__int64 (*)(__int64))GameData_21319a8;
   if (v52_.v52 != v52_.v53) {
-    GameRoutine_1638d20((__int64)v52_.v52, v52_.v53, v50_.v50,
-                        (2 * __clz(v52_.v53 - v52_.v52)) ^ 0x7E, 1);
+    GameRoutine_1638d20(
+        (__int64)v52_.v52, v52_.v53, v50_.v50,
+        (2 * __clz(((__int64)v52_.v53 - (__int64)v52_.v52) >> 3)) ^ 0x7E, 1);
   }
   v12 = v5 + 552960;
   v13 = GameData_21ca310;

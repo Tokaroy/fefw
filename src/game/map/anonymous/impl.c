@@ -1458,7 +1458,7 @@ void Impl_Destructor_9ba4a0(_QWORD* a1)
   v21 = (__int64*)a1[2];
   v22 = (__int64*)a1[3];
   a1[6] = 0;
-  v23 = v22 - v21;
+  v23 = ((__int64)v22 - (__int64)v21) >> 3;
   if (v23 >= 3) {
     v24 = fw_memory_g_heap_manager_ptr;
     do {
@@ -1474,7 +1474,7 @@ void Impl_Destructor_9ba4a0(_QWORD* a1)
         v22 = (__int64*)a1[3];
       }
       a1[2] = ++v21;
-      v23 = v22 - v21;
+      v23 = ((__int64)v22 - (__int64)v21) >> 3;
     } while (v23 > 2);
   }
   if (v23 == 1) {

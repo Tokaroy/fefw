@@ -5189,7 +5189,7 @@ __int64 GameHr_16516a0(int a1)
     v1 =
         GameData_21caab0 == 0 ||
         (v5 = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v4)) == 0 ||
-        *(_DWORD*)(v5 + 32) < 1;
+        *(int*)(v5 + 32) < 1;
     return v1 & 1;
   }
   if (a1 == 12) {

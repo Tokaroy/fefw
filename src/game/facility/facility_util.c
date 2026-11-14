@@ -1900,14 +1900,14 @@ LABEL_20:
 LABEL_21:
   v8 = v30_.v30;
   v9 = v30_.v31;
-  v10 = v30_.v31 - v30_.v30;
+  v10 = ((__int64)v30_.v31 - (__int64)v30_.v30) >> 3;
   if (v10 < 129) {
     v14 = 0;
   LABEL_27:
     FacilityUtil_94f740_alt1(v8, v9, v10, nullptr, v14);
   }
   else {
-    v11 = v30_.v31 - v30_.v30;
+    v11 = ((__int64)v30_.v31 - (__int64)v30_.v30) >> 3;
     v12 = GameData_212c060;
     while (1) {
       v13 = (__int64*)GameRoutine_1a09d20_alt1(8 * v11, v12);

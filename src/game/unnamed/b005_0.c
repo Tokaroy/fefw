@@ -3926,7 +3926,7 @@ __int64 GameHr_6e3e40(__int64 result, int* a2, __int64* a3, __int64 a4, char a5)
       while (1) {
         v10 = v89;
         v8 = v9;
-        v11 = v89 - v9;
+        v11 = ((__int64)v89 - (__int64)v9) >> 2;
         if (v11 > 2) {
           switch (v11) {
           case 3LL:

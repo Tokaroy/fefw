@@ -3077,7 +3077,7 @@ __int64 GameHr_8229c0()
   }
   result = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v11);
   if (result != 0) {
-    return *(_DWORD*)(result + 32) > 0;
+    return *(int*)(result + 32) > 0;
   }
   return result;
 }

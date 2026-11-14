@@ -6837,7 +6837,7 @@ void game_facility_148b700(__int64 a1)
     }
   }
   *v4 = 0;
-  v16 = v3 - v2;
+  v16 = ((__int64)v3 - (__int64)v2) >> 3;
   if (v16 >= 3) {
     v17 = fw_memory_g_heap_manager_ptr;
     do {
@@ -6853,7 +6853,7 @@ void game_facility_148b700(__int64 a1)
         v3 = *(__int64**)(a1 + 24);
       }
       *(_QWORD*)(a1 + 16) = ++v2;
-      v16 = v3 - v2;
+      v16 = ((__int64)v3 - (__int64)v2) >> 3;
     } while (v16 > 2);
   }
   if (v16 == 1) {
@@ -6930,7 +6930,7 @@ LABEL_31:
     }
   }
   *v23 = 0;
-  v35 = v22 - v21;
+  v35 = ((__int64)v22 - (__int64)v21) >> 3;
   if (v35 >= 3) {
     v36 = fw_memory_g_heap_manager_ptr;
     do {
@@ -6946,7 +6946,7 @@ LABEL_31:
         v22 = *(__int64**)(a1 + 24);
       }
       *(_QWORD*)(a1 + 16) = ++v21;
-      v35 = v22 - v21;
+      v35 = ((__int64)v22 - (__int64)v21) >> 3;
     } while (v35 > 2);
   }
   if (v35 == 1) {

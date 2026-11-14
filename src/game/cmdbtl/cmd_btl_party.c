@@ -1453,7 +1453,7 @@ __int64 game_cmdbtl_CmdBtlParty_GetLinkCause(__int64 a1, __int64 (**a2)(),
     }
   }
   else {
-    v22 = v41_.v42 - v41_.v41;
+    v22 = ((__int64)v41_.v42 - (__int64)v41_.v41) >> 2;
     v23 = 0;
     v24 = v41_.v41;
     do {

@@ -16187,8 +16187,9 @@ __attribute__((swiftcall)) void game_gameui_Util_GetNewMagicList(PSEUDO_X8 x8_,
   v13 = v41_.v42;
   v39_.v39[0] = &v44;
   if (v41_.v41 != v41_.v42) {
-    game_gameui_15a2ea0_alt1((__int64)v41_.v41, v41_.v42, v39_.v39,
-                             (2 * __clz(v41_.v42 - v41_.v41)) ^ 0x7E, 1);
+    game_gameui_15a2ea0_alt1(
+        (__int64)v41_.v41, v41_.v42, v39_.v39,
+        (2 * __clz(((__int64)v41_.v42 - (__int64)v41_.v41) >> 3)) ^ 0x7E, 1);
   }
   v14 = v39_.v39;
   v39_.v39[0] = GameData_204e318;

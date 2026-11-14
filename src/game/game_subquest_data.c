@@ -2307,15 +2307,15 @@ void GameSubquestData_1259ce0(__int64* a1)
     v10 = (unsigned __int64*)a1[180];
     v11 = (unsigned __int64*)a1[179];
     v12 = a1[182];
-    v13 = v10 - v11;
+    v13 = ((__int64)v10 - (__int64)v11) >> 3;
     if (v12 != v13) {
       if (v13 < 129) {
         v17 = 0;
       LABEL_22:
-        game_1268280(v11, v10, v10 - v11, nullptr, v17);
+        game_1268280(v11, v10, v13, nullptr, v17);
       }
       else {
-        v14 = v10 - v11;
+        v14 = v13;
         v15 = GameData_212c060;
         while (1) {
           v16 = (__int64*)GameRoutine_1a09d20_alt1(8 * v14, v15);
@@ -2330,7 +2330,7 @@ void GameSubquestData_1259ce0(__int64* a1)
           }
         }
         v19 = (__int64)v16;
-        game_1268280(v11, v10, v10 - v11, v16, v14);
+        game_1268280(v11, v10, v13, v16, v14);
         v20 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v20 = 56;

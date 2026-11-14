@@ -1082,7 +1082,7 @@ __int64 Impl_Destructor_718a40(__int64 a1)
   *(_QWORD*)(a1 + 2816) = 0;
   *(_QWORD*)a1 = game_anonymous_Impl_vtable;
   v4 = fw_memory_g_heap_manager_ptr;
-  v5 = v2 - v1;
+  v5 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v5 >= 3) {
     do {
       if (*v1 != 0) {
@@ -1097,7 +1097,7 @@ __int64 Impl_Destructor_718a40(__int64 a1)
         v2 = *(__int64**)(a1 + 2792);
       }
       *(_QWORD*)(a1 + 2784) = ++v1;
-      v5 = v2 - v1;
+      v5 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v5 > 2);
   }
   if (v5 == 1) {
@@ -1164,7 +1164,7 @@ LABEL_14:
   v17 = *(__int64**)(a1 + 2664);
   v18 = *(__int64**)(a1 + 2672);
   *(_QWORD*)(a1 + 2696) = 0;
-  v19 = v18 - v17;
+  v19 = ((__int64)v18 - (__int64)v17) >> 3;
   if (v19 >= 3) {
     do {
       if (*v17 != 0) {
@@ -1179,7 +1179,7 @@ LABEL_14:
         v18 = *(__int64**)(a1 + 2672);
       }
       *(_QWORD*)(a1 + 2664) = ++v17;
-      v19 = v18 - v17;
+      v19 = ((__int64)v18 - (__int64)v17) >> 3;
     } while (v19 > 2);
   }
   if (v19 == 1) {
@@ -3091,7 +3091,7 @@ LABEL_10:
           v84 = (__int64*)v218_.v220;
         }
         v218_.v219 = (char*)++v141;
-        v142 = v84 - v141;
+        v142 = ((__int64)v84 - (__int64)v141) >> 3;
       } while (v142 > 2);
     }
     if (v142 == 1) {
@@ -3376,7 +3376,7 @@ LABEL_98:
     v175 = nullptr;
   }
   v218_.v223 = 0;
-  v191 = v175 - v174;
+  v191 = ((__int64)v175 - (__int64)v174) >> 3;
   if (v191 >= 3) {
     v192 = (char*)v175 - (char*)v174 - 8;
     do {

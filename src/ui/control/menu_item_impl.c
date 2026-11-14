@@ -568,7 +568,7 @@ void MenuItem_188b880(__int64 a1, __int64 a2)
   v6 = nullptr;
 LABEL_78:
   v62_.v67 = 0;
-  v53 = v7 - v6;
+  v53 = ((__int64)v7 - (__int64)v6) >> 3;
   if (v53 >= 3) {
     v54 = (char*)v7 - (char*)v6 - 8;
     do {

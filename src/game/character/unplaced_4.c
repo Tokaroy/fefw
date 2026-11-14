@@ -1715,7 +1715,7 @@ LABEL_138:
   v382[7] = DWORD1(v384_.v432);
   v382[8] = HIDWORD(v384_.v434[0]);
   do {
-    v169 = v168 - v167;
+    v169 = ((__int64)v168 - (__int64)v167) >> 2;
     if ((unsigned __int64)v169 < 2) {
       break;
     }

@@ -5941,7 +5941,9 @@ void GameHr_a878a0(__int64 result, __int64 a2)
         v15 = *(__int64**)(result + 40);
       LABEL_73:
         if (v13 != v15) {
-          GameHr_a89080(v13, v15, (2 * __clz(v15 - v13)) ^ 0x7E, 1);
+          GameHr_a89080(v13, v15,
+                        (2 * __clz(((__int64)v15 - (__int64)v13) >> 3)) ^ 0x7E,
+                        1);
         }
       LABEL_75:
         *(_BYTE*)(result + 80) = 1;
@@ -6953,7 +6955,8 @@ void GameHr_a88540(__int64 a1, __int64** a2)
     v51 = *(__int64**)(a1 + 32);
     v52 = *(__int64**)(a1 + 40);
     if (v51 != v52) {
-      GameHr_a89080(v51, v52, (2 * __clz(v52 - v51)) ^ 0x7E, 1);
+      GameHr_a89080(v51, v52,
+                    (2 * __clz(((__int64)v52 - (__int64)v51) >> 3)) ^ 0x7E, 1);
     }
     *(_BYTE*)(a1 + 80) = 1;
   }

@@ -442,7 +442,9 @@ LABEL_20:
       if (v10 == v11) {
         v30 = (__int64*)v3[14];
         if (v30 != v9) {
-          game_zview_cf29e0(v3[14], v9, (2 * __clz(v9 - v30)) ^ 0x7E, 1);
+          game_zview_cf29e0(
+              v3[14], v9, (2 * __clz(((__int64)v9 - (__int64)v30) >> 3)) ^ 0x7E,
+              1);
           v30 = (__int64*)v3[14];
           v9 = (__int64*)v3[15];
         }

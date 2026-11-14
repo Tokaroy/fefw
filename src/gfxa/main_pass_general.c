@@ -2087,7 +2087,7 @@ __int64 gfxa_MainPassGeneral_SetupPrePass_lambda0_Invoke(__int64 a1, __int64 a2,
   v32 = (_QWORD*)v4[7];
   v33 = (_QWORD*)v4[8];
   v34 = *(int**)(v31 + 288);
-  v35 = v33 - v32;
+  v35 = ((__int64)v33 - (__int64)v32) >> 3;
   v36 = v34[236];
   v58 = v34;
   if (v36 <= v35) {
@@ -2145,7 +2145,7 @@ __int64 gfxa_MainPassGeneral_SetupPrePass_lambda0_Invoke(__int64 a1, __int64 a2,
   v47 = (__int64*)v4[11];
   result = (__int64)(v4 + 10);
   v48 = v58[237];
-  v49 = v47 - v46;
+  v49 = ((__int64)v47 - (__int64)v46) >> 3;
   if (v48 <= v49) {
     if (v48 < v49) {
       v47 = &v46[v48];

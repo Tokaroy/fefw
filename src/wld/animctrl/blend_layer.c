@@ -852,7 +852,7 @@ __attribute__((swiftcall)) void BlendLayer_d2b700(PSEUDO_X8 x8_, _QWORD* result)
   if (v3 != 0) {
     v6 = *(int**)(v3 + 64);
     v7 = *(int**)(v3 + 72);
-    v8 = v7 - v6;
+    v8 = ((__int64)v7 - (__int64)v6) >> 2;
     v9 = v8 + 1;
     if (v8 != -1) {
       if (v9 >> 62 != 0) {

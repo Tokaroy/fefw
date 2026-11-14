@@ -116,7 +116,7 @@ __int64 SoundHandleNX_Unknown19(__int64 a1, char a2)
     }
     goto LABEL_23;
   }
-  v11 = v9 - v10;
+  v11 = ((__int64)v9 - (__int64)v10) >> 3;
   while (1) {
     v13 = *v10++;
     v12 = v13;

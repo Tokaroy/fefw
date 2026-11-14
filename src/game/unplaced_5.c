@@ -4304,7 +4304,10 @@ LABEL_212:
   if (v132 != v133) {
     GameRoutine_1025e20_alt1(
         *(_QWORD*)(a1 + 280), *(_QWORD*)(a1 + 288),
-        (2 * __clz(0xAAAAAAAAAAAAAAABLL * (v133 - v132))) ^ 0x7E, 1),
+        (2 *
+         __clz(0xAAAAAAAAAAAAAAABLL * (((__int64)v133 - (__int64)v132) >> 3))) ^
+            0x7E,
+        1),
         v209 = COERCE_AS(__typeof__(v209), PSEUDO_REGISTER(float, "s0", "=w")),
         v211 = COERCE_AS(__typeof__(v211), PSEUDO_REGISTER(float, "s0", "=w"));
     v132 = *(__int64**)(a1 + 280);
@@ -4317,7 +4320,8 @@ LABEL_212:
         v134 += 24;
         v132 = *(__int64**)(a1 + 280);
         v133 = *(__int64**)(a1 + 288);
-      } while (0xAAAAAAAAAAAAAAABLL * (v133 - v132) > v135);
+      } while (0xAAAAAAAAAAAAAAABLL * (((__int64)v133 - (__int64)v132) >> 3) >
+               v135);
     }
   }
   if (v132 != v133) {
@@ -17736,7 +17740,8 @@ LABEL_22:
   *(_QWORD*)a2 = v27_.v27;
   *(_QWORD*)(a2 + 8) = v15;
   *(_QWORD*)(a2 + 16) = v27_.v29;
-  if (0xAAAAAAAAAAAAAAABLL * (v33_.v34 - v33_.v33) < 2) {
+  if (0xAAAAAAAAAAAAAAABLL * (((__int64)v33_.v34 - (__int64)v33_.v33) >> 3) <
+      2) {
     LOWORD(v27_.v27) = 0;
     if ((*(_BYTE*)a3 & 1) == 0) {
       goto LABEL_33;

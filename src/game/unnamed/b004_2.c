@@ -5385,7 +5385,7 @@ void GameHr_6b3360(__int64* a1)
     }
   }
   *v4 = 0;
-  v10 = v2 - v1;
+  v10 = ((__int64)v2 - (__int64)v1) >> 3;
   if (v10 >= 3) {
     v11 = fw_memory_g_heap_manager_ptr;
     do {
@@ -5401,7 +5401,7 @@ void GameHr_6b3360(__int64* a1)
         v2 = (__int64*)a1[2];
       }
       a1[1] = (__int64)++v1;
-      v10 = v2 - v1;
+      v10 = ((__int64)v2 - (__int64)v1) >> 3;
     } while (v10 > 2);
   }
   if (v10 == 1) {

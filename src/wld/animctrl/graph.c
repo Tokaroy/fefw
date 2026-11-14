@@ -568,7 +568,7 @@ _QWORD* Graph_d29060(_QWORD* result, long double a2, double a3, double a4,
   }
   LANES64(v29).n64_u64[0] = v129;
 LABEL_99:
-  v91 = v45 - v44;
+  v91 = ((__int64)v45 - (__int64)v44) >> 3;
   if (v91 == 0) {
     v107 = v9[2];
     for (i = v9[3]; v107 != i; v107 += 48) {

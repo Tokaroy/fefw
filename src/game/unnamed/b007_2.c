@@ -4489,7 +4489,7 @@ bool GameHr_914920()
   result = false;
   if (GameData_2212270 == 0 || *(_DWORD*)(GameData_2212270 + 152) == 0) {
     if (*(int*)(GameData_21f3cb8 + 32) > 0 ||
-        *(_DWORD*)(GameData_21f3cb8 + 16) > 0) {
+        *(int*)(GameData_21f3cb8 + 16) > 0) {
       return true;
     }
     if (GameData_21ee240 != 0 &&
@@ -9940,7 +9940,7 @@ __int64 GameHr_94c220(__int64 a1)
     }
     goto LABEL_31;
   }
-  v12 = *(_DWORD*)(v13 + 32) > 0;
+  v12 = *(int*)(v13 + 32) > 0;
   v14 = GameData_21caab0;
   if (GameData_21caab0 != 0) {
   LABEL_31:
@@ -10071,7 +10071,7 @@ LABEL_10:
     }
     goto LABEL_32;
   }
-  v14 = *(_DWORD*)(v15 + 32) > 0;
+  v14 = *(int*)(v15 + 32) > 0;
   v16 = GameData_21caab0;
   if (GameData_21caab0 != 0) {
   LABEL_32:

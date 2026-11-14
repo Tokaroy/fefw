@@ -246,7 +246,7 @@ __int64 UnitMakeBodySelectMenu_Unknown144(__int64 a1, int a2, char a3)
     }
   LABEL_7:
     ++v9;
-  } while (v9 < v4 - v3);
+  } while (v9 < ((__int64)v4 - (__int64)v3) >> 3);
   v15 = v28_.v29;
   if (v28_.v29 != v28_.v28) {
     if (v28_.v29 != nullptr) {

@@ -2110,8 +2110,9 @@ __int64 VTarget_77a0c0(__int64 a1, unsigned int a2, char a3, char a4)
       v13 = v24_.v24;
     }
     else {
-      GameRoutine_a17d20_alt1(v27_.v27, v27_.v28, (__int64*)&v30,
-                              (2 * __clz(v27_.v28 - v27_.v27)) ^ 0x7E, 1),
+      GameRoutine_a17d20_alt1(
+          v27_.v27, v27_.v28, (__int64*)&v30,
+          (2 * __clz(((__int64)v27_.v28 - (__int64)v27_.v27) >> 2)) ^ 0x7E, 1),
           v10 = COERCE_AS(__typeof__(v10),
                           PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
           v11 = COERCE_AS(__typeof__(v11),
@@ -2303,8 +2304,9 @@ __int64 game_map_VTarget_GetSubDataNextSelect(__int64 a1, unsigned int a2,
       v13 = v27_.v27;
     }
     else {
-      GameRoutine_a17d20_alt1(v30_.v30, v30_.v31, (__int64*)&v33,
-                              (2 * __clz(v30_.v31 - v30_.v30)) ^ 0x7E, 1),
+      GameRoutine_a17d20_alt1(
+          v30_.v30, v30_.v31, (__int64*)&v33,
+          (2 * __clz(((__int64)v30_.v31 - (__int64)v30_.v30) >> 2)) ^ 0x7E, 1),
           v10 = COERCE_AS(__typeof__(v10),
                           PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
           v11 = COERCE_AS(__typeof__(v11),

@@ -2008,7 +2008,7 @@ __int64 UnitSkillList_84cc00(__int64* a1, _DWORD* a2, char a3)
       goto LABEL_24;
     }
     v18 = 0;
-    v19 = v17 - v16;
+    v19 = ((__int64)v17 - (__int64)v16) >> 2;
     while (1) {
       v20 =
           *(_QWORD*)(*(_QWORD*)(GameData_21c99b0 + 64) + 8LL * (*v16 & 0xFFF));

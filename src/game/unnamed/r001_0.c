@@ -556,7 +556,7 @@ __int64* GameHr_5e2b40(__int64* result)
 
   v1 = *((_BYTE*)result + 28);
   if ((v1 & 1) != 0) {
-    v2 = *((int*)result + 4) < 2 || *((_DWORD*)result + 6) < 1;
+    v2 = *((int*)result + 4) < 2 || *((int*)result + 6) < 1;
     if (!v2 && *((int*)result + 5) >= 1) {
       v3 = 0;
       do {

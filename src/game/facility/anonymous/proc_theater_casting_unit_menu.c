@@ -601,8 +601,9 @@ __int64 game_facility_anonymous_ProcTheaterCastingUnitMenu_PlusCall(__int64* a1,
       v5 = v21;
     }
     if (v17 != v18) {
-      ProcTheaterCastingUnitMenu_1929e40((__int64)v17, v18,
-                                         (2 * __clz(v18 - v17)) ^ 0x7E, 1);
+      ProcTheaterCastingUnitMenu_1929e40(
+          (__int64)v17, v18,
+          (2 * __clz(((__int64)v18 - (__int64)v17) >> 3)) ^ 0x7E, 1);
       v17 = v38_.v38;
     }
     v30 = (_BYTE*)*v17;

@@ -7228,7 +7228,7 @@ void GameHr_10e8d40(__int64* a1)
   }
 LABEL_20:
   *v4 = 0;
-  v17 = v2 - v9;
+  v17 = ((__int64)v2 - (__int64)v9) >> 3;
   if (v17 >= 3) {
     v18 = fw_memory_g_heap_manager_ptr;
     do {
@@ -7244,7 +7244,7 @@ LABEL_20:
         v2 = (__int64*)a1[2];
       }
       a1[1] = (__int64)++v9;
-      v17 = v2 - v9;
+      v17 = ((__int64)v2 - (__int64)v9) >> 3;
     } while (v17 > 2);
   }
   if (v17 == 1) {
@@ -7287,7 +7287,7 @@ LABEL_33:
     }
   }
   *v21 = 0;
-  v28 = v2 - v9;
+  v28 = ((__int64)v2 - (__int64)v9) >> 3;
   if (v28 >= 3) {
     v29 = fw_memory_g_heap_manager_ptr;
     do {
@@ -7303,7 +7303,7 @@ LABEL_33:
         v2 = (__int64*)a1[2];
       }
       a1[1] = (__int64)++v9;
-      v28 = v2 - v9;
+      v28 = ((__int64)v2 - (__int64)v9) >> 3;
     } while (v28 > 2);
   }
   if (v28 == 1) {

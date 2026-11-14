@@ -157,7 +157,7 @@ __int64 CmdBtlWindow_Destructor(_QWORD* a1)
   v8 = (_QWORD*)a1[6];
   v9 = (_QWORD*)a1[7];
   a1[10] = 0;
-  v10 = v9 - v8;
+  v10 = ((__int64)v9 - (__int64)v8) >> 3;
   if (v10 >= 3) {
     do {
       if (*v8 != 0) {
@@ -172,7 +172,7 @@ __int64 CmdBtlWindow_Destructor(_QWORD* a1)
         v9 = (_QWORD*)a1[7];
       }
       a1[6] = ++v8;
-      v10 = v9 - v8;
+      v10 = ((__int64)v9 - (__int64)v8) >> 3;
     } while (v10 > 2);
   }
   if (v10 == 1) {

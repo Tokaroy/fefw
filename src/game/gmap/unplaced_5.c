@@ -6578,7 +6578,7 @@ LABEL_8:
               v335_.v337 = a1;
               v335_.v335 = &v339_.v339;
               v335_.v336 = (__int64*)&v360_.v360;
-              v106 = v360_.v361 - v360_.v360;
+              v106 = ((__int64)v360_.v361 - (__int64)v360_.v360) >> 3;
               v107 = (*(__int64 (**)(__int64*))(*a1 + 40))(a1),
               v126 = COERCE_AS(__typeof__(v126),
                                PSEUDO_REGISTER(unsigned long long, "x8", "=r"));
@@ -6597,7 +6597,9 @@ LABEL_8:
                   v158 = 0;
                   do {
                     GmapSpotInfoSetterForGmap_165b440(
-                        &v335_.v335, v158, v158 < v360_.v361 - v360_.v360),
+                        &v335_.v335, v158,
+                        v158 <
+                            (((__int64)v360_.v361 - (__int64)v360_.v360) >> 3)),
                         v126 = COERCE_AS(
                             __typeof__(v126),
                             PSEUDO_REGISTER(unsigned long long, "x8", "=r"));

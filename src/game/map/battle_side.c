@@ -352,7 +352,7 @@ void BattleSide_Destructor(_QWORD* a1)
   v36 = (__int64*)a1[17];
   v37 = (__int64*)a1[18];
   a1[21] = 0;
-  v38 = v37 - v36;
+  v38 = ((__int64)v37 - (__int64)v36) >> 3;
   if (v38 >= 3) {
     do {
       if (*v36 != 0) {
@@ -367,7 +367,7 @@ void BattleSide_Destructor(_QWORD* a1)
         v37 = (__int64*)a1[18];
       }
       a1[17] = ++v36;
-      v38 = v37 - v36;
+      v38 = ((__int64)v37 - (__int64)v36) >> 3;
     } while (v38 > 2);
   }
   if (v38 == 1) {

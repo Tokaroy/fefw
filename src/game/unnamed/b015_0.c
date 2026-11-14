@@ -3042,7 +3042,7 @@ _QWORD* GameHr_10671c0(_QWORD* result, long double a2)
       }
     }
     v3[10] = 0;
-    v10 = v4 - v2;
+    v10 = ((__int64)v4 - (__int64)v2) >> 3;
     if (v10 >= 3) {
       v11 = GameData_212bf68;
       do {
@@ -3060,7 +3060,7 @@ _QWORD* GameHr_10671c0(_QWORD* result, long double a2)
           v4 = (_QWORD*)v3[7];
         }
         v3[6] = ++v2;
-        v10 = v4 - v2;
+        v10 = ((__int64)v4 - (__int64)v2) >> 3;
       } while (v10 > 2);
     }
     if (v10 == 1) {

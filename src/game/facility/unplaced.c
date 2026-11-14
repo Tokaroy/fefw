@@ -6339,7 +6339,7 @@ void game_facility_148c760(_QWORD* a1, __int64 a2, const char* a3)
     }
   }
   *v8 = 0;
-  v20 = v4 - v3;
+  v20 = ((__int64)v4 - (__int64)v3) >> 3;
   if (v20 >= 3) {
     v21 = fw_memory_g_heap_manager_ptr;
     do {
@@ -6355,7 +6355,7 @@ void game_facility_148c760(_QWORD* a1, __int64 a2, const char* a3)
         v4 = (__int64*)a1[3];
       }
       a1[2] = ++v3;
-      v20 = v4 - v3;
+      v20 = ((__int64)v4 - (__int64)v3) >> 3;
     } while (v20 > 2);
   }
   if (v20 == 1) {
