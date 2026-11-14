@@ -87,7 +87,8 @@ void game_map_history_anonymous_1243060(__int64 a1, __int64 a2)
   v9 = *(unsigned __int8*)(v4 + v3 + 2);
   *(_DWORD*)(a2 + 20) = v3 + 4;
   v10 = *(_QWORD*)a1;
-  v11 = v8 | (v9 << 16) | (*(unsigned __int8*)(v4 + v3 + 3) << 24);
+  v11 = (unsigned int)(v8 | (v9 << 16) |
+                       (*(unsigned __int8*)(v4 + v3 + 3) << 24));
   v12 = fw_memory_g_heap_manager_ptr;
   v63 = v8 | (v9 << 16) | (*(unsigned __int8*)(v4 + v3 + 3) << 24);
   if (v11 > (__int64)(*(_QWORD*)(a1 + 16) - *(_QWORD*)a1) >> 3) {

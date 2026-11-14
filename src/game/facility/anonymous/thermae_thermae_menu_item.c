@@ -310,8 +310,9 @@ _QWORD* ThermaeThermaeMenuItem_15e6c00(__int64 a1)
   struct {
     _QWORD v15[4];
     _QWORD* v16;
-  } v15_;
-  __int64 v17;
+    _BYTE pad[16];
+    __int64 v17;
+  } f;
 
   v6 = COERCE_AS(__typeof__(v6),
                  PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -348,11 +349,11 @@ _QWORD* ThermaeThermaeMenuItem_15e6c00(__int64 a1)
                   1, a1),
       v6 = COERCE_AS(__typeof__(v6),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  result = v15_.v15;
-  v15_.v15[0] = GameData_205d688;
-  v15_.v15[1] = v2;
+  result = f.v15;
+  f.v15[0] = GameData_205d688;
+  f.v15[1] = v2;
   v8 = *(__int64****)(game_UnitListSet_instance_ + 24);
-  v15_.v16 = v15_.v15;
+  f.v16 = f.v15;
   v9 = *v8;
   v10 = v8[1];
   if (*v8 == v10) {
@@ -393,22 +394,22 @@ _QWORD* ThermaeThermaeMenuItem_15e6c00(__int64 a1)
   LABEL_13:
     if (v13) {
     LABEL_14:
-      v17 = **v9;
-      if (v15_.v16 == nullptr) {
+      f.v17 = **v9;
+      if (f.v16 == nullptr) {
         GameRoutine_60a310_alt1(),
             v6 = COERCE_AS(__typeof__(v6),
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
-      (*(void (**)(_QWORD*, __int64*))(*v15_.v16 + 48LL))(v15_.v16, &v17),
+      (*(void (**)(_QWORD*, __int64*))(*f.v16 + 48LL))(f.v16, &f.v17),
           v6 = COERCE_AS(__typeof__(v6),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
   LABEL_5:
     v9 += 2;
   } while (v9 != v10);
-  result = v15_.v16;
-  if (v15_.v16 != v15_.v15) {
-    if (v15_.v16 != nullptr) {
+  result = f.v16;
+  if (f.v16 != f.v15) {
+    if (f.v16 != nullptr) {
       v14 = 40;
       return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v14))(result,
                                                                          v6);

@@ -2261,8 +2261,11 @@ void HubNatives_cc53f0()
   __int64 v4;
   __int64* v5;
   __int64 v6;
-  __int128 v7;
-  __int64 v8;
+  struct {
+    __int64 pad;
+    __int128 v7 __attribute__((packed, aligned(8)));
+    __int64 v8;
+  } f;
 
   v0 = as_g_script_manager;
   v1 = *(
@@ -2291,23 +2294,25 @@ void HubNatives_cc53f0()
   }
   (*(void (**)(__int64))(*v3 + v4))((__int64)v3);
 LABEL_9:
-  LOWORD(v7) = 0;
+  LOWORD(f.v7) = 0;
+  // The original copies the uninitialised tail of the string too.
+  __asm__ volatile("" : "+m"(f));
   v5 = (__int64*)(GameData_21c9608 + 280);
-  if ((__int128*)(GameData_21c9608 + 280) != &v7) {
+  if ((__int128*)(GameData_21c9608 + 280) != &f.v7) {
     if ((*(_BYTE*)v5 & 1) != 0) {
-      SpineModel_64dde0_alt1(v5, (__int64)&v7 + 1, 0);
-      if ((v7 & 1) != 0 && v8 != 0) {
+      SpineModel_64dde0_alt1(v5, (__int64)&f.v7 + 1, 0);
+      if ((f.v7 & 1) != 0 && f.v8 != 0) {
         v6 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v6 = 56;
         }
         nn_mem_StandardAllocator_Free_alt1(
-            *(_QWORD*)fw_memory_g_heap_manager_ptr + v6, v8);
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v6, f.v8);
       }
     }
     else {
-      *(_OWORD*)v5 = v7;
-      v5[2] = v8;
+      *(_OWORD*)v5 = f.v7;
+      v5[2] = f.v8;
     }
   }
 }

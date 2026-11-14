@@ -6865,7 +6865,7 @@ unsigned __int64 snd_Slot_countActiveVoice_lambda0_Invoke(__int64 a1,
     else {
       v8 = v2 + 1;
     }
-    result = memcmp_alt1(v8, (__int64)v4, v7);
+    result = memcmp(v8, (__int64)v4, v7);
     if ((_DWORD)result == 0) {
       ++**(_DWORD**)(a1 + 8);
     }
@@ -6910,7 +6910,7 @@ unsigned __int64 snd_Slot_countActiveVoice_lambda2_Invoke(__int64 a1,
     else {
       v8 = v2 + 1;
     }
-    result = memcmp_alt1(v8, (__int64)v4, v7);
+    result = memcmp(v8, (__int64)v4, v7);
     if ((_DWORD)result == 0) {
       ++**(_DWORD**)(a1 + 8);
     }

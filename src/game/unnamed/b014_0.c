@@ -2826,6 +2826,7 @@ __int64 std___1___shared_weak_count___release_weak(__int64);
 extern __int64 game_GameRestartData_unknown_;
 extern int game_script_hub_talk_g_choice_menu_result;
 int memcmp(__int64, __int64, unsigned __int64);
+__int64 memcmp_alt1(__int64, __int64, unsigned __int64) __asm__("memcmp");
 unsigned __int64 GameRoutine_fd6db0_alt1(__int64, __int64, __int64,
                                          __int64) __asm__("GameRoutine_fd6db0");
 unsigned __int64 GameRoutine_fd6f70_alt1(__int64, __int64, __int64, __int64,
@@ -9474,7 +9475,7 @@ __int64 GameHr_fa9dc0(__int64 a1, __int64 a2)
       if (result == -1) {
         fs_60a230();
       }
-      result = memcmp(v4, (__int64)v6, result);
+      result = memcmp_alt1(v4, (__int64)v6, result);
       if ((_DWORD)result == 0) {
         v3 = v2;
       }

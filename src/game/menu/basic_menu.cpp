@@ -363,6 +363,8 @@ bool BasicMenu::Unknown124() {
     return false;
   }
   for (int64_t handle : animations_) {
+    // The original reads every handle, even without an animator.
+    __asm__ volatile("" : : "r"(handle));
     if (gameui::MenuAnimator::IsPlaying(handle)) {
       return false;
     }
@@ -375,6 +377,8 @@ bool BasicMenu::Unknown125() {
     return false;
   }
   for (int64_t handle : animations_) {
+    // The original reads every handle, even without an animator.
+    __asm__ volatile("" : : "r"(handle));
     if (gameui::MenuAnimator::IsPlaying(handle)) {
       return false;
     }

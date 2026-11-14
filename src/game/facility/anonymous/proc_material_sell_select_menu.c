@@ -465,50 +465,50 @@ game_facility_anonymous_ProcMaterialSellSelectMenu_SortAndFilter(__int64 a1)
   struct {
     _QWORD v10[4];
     _QWORD* v11;
-  } v10_;
-  struct {
+    _QWORD pad;
     __int64 (**v12)();
     char v13;
     char gap57_[23];
     __int64 (***v14)();
-  } v12_;
+    _QWORD pad1;
+  } f;
 
   v3 = *(_DWORD*)(a1 + 660);
   v4 = *(_QWORD*)(a1 + 672);
-  if (v3 < (unsigned __int64)((*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+  if (v3 < (unsigned __int64)((*(__int64*)(a1 + 680) - v4) >> 2)) {
     v3 = *(_DWORD*)(v4 + 4LL * v3);
   }
   v5 = 32;
-  v10_.v11 = v10_.v10;
+  f.v11 = f.v10;
   v6 = (unsigned __int8)v3 >= 6u;
-  v12_.v12 = GameData_20a92b8;
+  f.v12 = GameData_20a92b8;
   v7 = 0x160E0D141320uLL >> (8 * (unsigned __int8)v3);
   if (v6) {
     LOBYTE(v7) = 32;
   }
-  v12_.v13 = v7;
-  v12_.v14 = &v12_.v12;
-  v10_.v10[0] = GameData_20a9338;
-  BasicMenu_16e1f40(a1, (__int64)&v12_.v12, (__int64)v10_.v10);
-  if (v10_.v11 != v10_.v10) {
-    if (v10_.v11 == nullptr) {
+  f.v13 = v7;
+  f.v14 = &f.v12;
+  f.v10[0] = GameData_20a9338;
+  BasicMenu_16e1f40(a1, (__int64)&f.v12, (__int64)f.v10);
+  if (f.v11 != f.v10) {
+    if (f.v11 == nullptr) {
       goto LABEL_10;
     }
     v5 = 40;
   }
-  (*(void (**)(__int64))(*v10_.v11 + v5))((__int64)v10_.v11);
+  (*(void (**)(__int64))(*f.v11 + v5))((__int64)f.v11);
 LABEL_10:
-  result = (__int64)v12_.v14;
-  if (v12_.v14 == &v12_.v12) {
+  result = (__int64)f.v14;
+  if (f.v14 == &f.v12) {
     v9 = 4;
   }
   else {
-    if (v12_.v14 == nullptr) {
+    if (f.v14 == nullptr) {
       return result;
     }
     v9 = 5;
   }
-  return ((__int64 (*)(__int64))(*v12_.v14)[v9])((__int64)v12_.v14);
+  return ((__int64 (*)(__int64))(*f.v14)[v9])((__int64)f.v14);
 }
 
 __int64 ProcMaterialSellSelectMenu_Unknown148(__int64 a1, __int64* a2)

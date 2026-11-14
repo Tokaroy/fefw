@@ -441,11 +441,11 @@ __n128 game_facility_anonymous_ProcImpression_PrepareCamera(__n128 result)
   struct {
     _QWORD v7[4];
     _QWORD* v8;
-  } v7_;
-  struct {
+    _BYTE pad1[8];
     _QWORD v9[4];
     _QWORD* v10;
-  } v9_;
+    _BYTE pad2[8];
+  } f;
 
   v1 = *(_QWORD*)(GameData_21f4000 + 264);
   if (v1 != 0) {
@@ -459,32 +459,38 @@ __n128 game_facility_anonymous_ProcImpression_PrepareCamera(__n128 result)
       if (v2 == 0) {
         goto LABEL_14;
       }
-      v7_.v7[0] = GameData_203c3d8;
-      v7_.v8 = v7_.v7;
-      v9_.v10 = v9_.v9;
-      v9_.v9[0] = GameData_203c3d8;
-      GameRoutine_14514d0(v9_.v9, (_QWORD*)(v2 + 272));
-      if (v9_.v10 == v9_.v9) {
+      f.v7[0] = GameData_203c3d8;
+      f.v8 = f.v7;
+      f.v10 = f.v9;
+      f.v9[0] = GameData_203c3d8;
+      GameRoutine_14514d0(f.v9, (_QWORD*)(v2 + 272));
+      result =
+          COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
+      if (f.v10 == f.v9) {
         v5 = 32;
       }
       else {
-        if (v9_.v10 == nullptr) {
+        if (f.v10 == nullptr) {
           goto LABEL_9;
         }
         v5 = 40;
       }
-      (*(void (**)(__int64))(*v9_.v10 + v5))((__int64)v9_.v10);
+      (*(void (**)(__int64))(*f.v10 + v5))((__int64)f.v10);
+      result =
+          COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
     LABEL_9:
-      if (v7_.v8 == v7_.v7) {
+      if (f.v8 == f.v7) {
         v6 = 32;
       }
       else {
-        if (v7_.v8 == nullptr) {
+        if (f.v8 == nullptr) {
           goto LABEL_14;
         }
         v6 = 40;
       }
-      (*(void (**)(__int64))(*v7_.v8 + v6))((__int64)v7_.v8);
+      (*(void (**)(__int64))(*f.v8 + v6))((__int64)f.v8);
+      result =
+          COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
     LABEL_14:
       if (atomic_fetch_add((atomic_ullong* volatile)(v4 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {

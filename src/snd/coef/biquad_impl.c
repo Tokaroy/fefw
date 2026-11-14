@@ -14,12 +14,37 @@ __int64 Biquad_16cf50(__int64 a1);
 float Biquad_16afe0(__int64 a1, float a2, float a3, float a4, float a5,
                     float a6, float a7)
 {
+  float* v8;
+  float result;
+
   *(float*)(*(_QWORD*)(a1 + 16) + 8LL) = a5 / a2;
   *(float*)(*(_QWORD*)(a1 + 16) + 12LL) = a6 / a2;
   *(float*)(*(_QWORD*)(a1 + 16) + 16LL) = a7 / a2;
   **(float**)(a1 + 16) = a3 / a2;
   *(float*)(*(_QWORD*)(a1 + 16) + 4LL) = a4 / a2;
-  return *(float*)(*(_QWORD*)(a1 + 16) + 4LL);
+  v8 = *(float**)(a1 + 16);
+  result = v8[2];
+  if (result == result) {
+    result = v8[3];
+    if (result == result) {
+      result = v8[4];
+      if (result == result) {
+        result = v8[0];
+        if (result == result) {
+          result = v8[1];
+          if (result == result) {
+            return result;
+          }
+        }
+      }
+    }
+  }
+  v8[2] = 0.0f;
+  *(float*)(*(_QWORD*)(a1 + 16) + 12LL) = 0.0f;
+  *(float*)(*(_QWORD*)(a1 + 16) + 16LL) = 0.0f;
+  **(float**)(a1 + 16) = 0.0f;
+  *(float*)(*(_QWORD*)(a1 + 16) + 4LL) = 0.0f;
+  return result;
 }
 
 __int64 Biquad_16cf50(__int64 a1)

@@ -884,6 +884,8 @@ float GameHr_11055e0(_QWORD* a1)
         v10 = v6;
         (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
         std___1___shared_weak_count___release_weak(v8);
+        result =
+            COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
         v6 = v10;
       }
       if (*(_BYTE*)(v6 + 16) != 0) {
@@ -915,6 +917,8 @@ float GameHr_11055e0(_QWORD* a1)
     v12[696] = 0;
     v12[728] = 0;
     (*(void (**)(__int64))(*(_QWORD*)v6 + 72LL))(v6);
+    result =
+        COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   }
   return result;
 }

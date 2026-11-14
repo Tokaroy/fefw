@@ -479,33 +479,32 @@ __int64 game_gameui_UnitUtil_GetNext(__int64 a1, char a2, _QWORD* a3, char a4)
   struct {
     _BYTE v15[32];
     _BYTE* v16;
-  } v15_;
-  struct {
+    _BYTE pad1[8];
     _BYTE v17[32];
     _BYTE* v18;
-  } v17_;
-  struct {
+    _BYTE pad2[8];
     _QWORD v19[4];
     _QWORD* v20;
-  } v19_;
+    _BYTE pad3[8];
+  } f;
 
   v5 = (_QWORD*)a3[4];
   if (v5 == nullptr) {
-    v19_.v19[0] = GameData_205c078;
-    v19_.v20 = v19_.v19;
-    GameRoutine_145f5d0(v19_.v19, a3);
-    if (v19_.v20 == v19_.v19) {
+    f.v19[0] = GameData_205c078;
+    f.v20 = f.v19;
+    GameRoutine_145f5d0(f.v19, a3);
+    if (f.v20 == f.v19) {
       v9 = 32;
     }
     else {
-      if (v19_.v20 == nullptr) {
+      if (f.v20 == nullptr) {
       LABEL_7:
         v5 = (_QWORD*)a3[4];
         goto LABEL_8;
       }
       v9 = 40;
     }
-    (*(void (**)(__int64))(*v19_.v20 + v9))((__int64)v19_.v20);
+    (*(void (**)(__int64))(*f.v20 + v9))((__int64)f.v20);
     goto LABEL_7;
   }
 LABEL_8:
@@ -513,19 +512,19 @@ LABEL_8:
   if (v10 != 0) {
     if (v5 != nullptr) {
       if (v5 == a3) {
-        v17_.v18 = v17_.v17;
-        (*(void (**)(_QWORD*, _BYTE*))(*v5 + 24LL))(v5, v17_.v17);
+        f.v18 = f.v17;
+        (*(void (**)(_QWORD*, _BYTE*))(*v5 + 24LL))(v5, f.v17);
       }
       else {
-        v17_.v18 = (_BYTE*)(*(__int64 (**)(_QWORD*))(*v5 + 16LL))(v5);
+        f.v18 = (_BYTE*)(*(__int64 (**)(_QWORD*))(*v5 + 16LL))(v5);
       }
     }
     else {
-      v17_.v18 = nullptr;
+      f.v18 = nullptr;
     }
-    v11 = UnitUtil_15df6c0(v10, a1, a2 & 1, (__int64)v17_.v17, a4 & 1);
-    v12 = v17_.v18;
-    if (v17_.v18 != v17_.v17) {
+    v11 = UnitUtil_15df6c0(v10, a1, a2 & 1, (__int64)f.v17, a4 & 1);
+    v12 = f.v18;
+    if (f.v18 != f.v17) {
       goto LABEL_18;
     }
   LABEL_23:
@@ -534,19 +533,19 @@ LABEL_8:
   }
   if (v5 != nullptr) {
     if (v5 == a3) {
-      v15_.v16 = v15_.v15;
-      (*(void (**)(_QWORD*, _BYTE*))(*v5 + 24LL))(v5, v15_.v15);
+      f.v16 = f.v15;
+      (*(void (**)(_QWORD*, _BYTE*))(*v5 + 24LL))(v5, f.v15);
     }
     else {
-      v15_.v16 = (_BYTE*)(*(__int64 (**)(_QWORD*))(*v5 + 16LL))(v5);
+      f.v16 = (_BYTE*)(*(__int64 (**)(_QWORD*))(*v5 + 16LL))(v5);
     }
   }
   else {
-    v15_.v16 = nullptr;
+    f.v16 = nullptr;
   }
-  v11 = GameHr_15df820(a1, (__int64)v15_.v15, a4 & 1);
-  v12 = v15_.v16;
-  if (v15_.v16 == v15_.v15) {
+  v11 = GameHr_15df820(a1, (__int64)f.v15, a4 & 1);
+  v12 = f.v16;
+  if (f.v16 == f.v15) {
     goto LABEL_23;
   }
 LABEL_18:

@@ -7219,10 +7219,10 @@ __int64 game_gmap_1520240(__int64 a1, __int64 a2, char a3)
   result = *(_QWORD*)(v13 + 24);
   if (result != 0) {
     if (*(_BYTE*)result == 48 && *(_BYTE*)(result + 1) == 120) {
-      return sscanf_alt1((const char*)result, "%x", v14);
+      return sscanf(result, "%x", v14);
     }
     else {
-      return sscanf_alt1((const char*)result, "%f", v14);
+      return sscanf(result, "%f", v14);
     }
   }
   else {

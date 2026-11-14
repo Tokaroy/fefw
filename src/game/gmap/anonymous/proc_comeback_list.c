@@ -488,23 +488,24 @@ __int64 ProcComebackList_Unknown124(_QWORD* a1)
   do {
     while (1) {
       v5 = *v3;
-      if (*v3 != -1 && game_gameui_MenuAnimator_instance_ != 0) {
+      __asm__ volatile("" ::"r"(v5));
+      if (v5 != -1 && game_gameui_MenuAnimator_instance_ != 0) {
         break;
       }
       if (++v3 == v4) {
         goto LABEL_43;
       }
     }
-    v15 = v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 272) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 504) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 736) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 968) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1200) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1432) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1664) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1896) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 2128) ||
-          v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 2360);
+    v15 = (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 272)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 504)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 736)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 968)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1200)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1432)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1664)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 1896)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 2128)) |
+          (v5 == *(_QWORD*)(game_gameui_MenuAnimator_instance_ + 2360));
     v16 = v15;
     if (v15) {
       break;
@@ -596,7 +597,7 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
 
   v1 = *(_DWORD*)(a1 + 660);
   v2 = *(_QWORD*)(a1 + 672);
-  if (v1 < (unsigned __int64)((*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+  if (v1 < (unsigned __int64)((*(__int64*)(a1 + 680) - v2) >> 2)) {
     v1 = *(_DWORD*)(v2 + 4LL * v1);
   }
   v4 = *(_QWORD**)(a1 + 256);

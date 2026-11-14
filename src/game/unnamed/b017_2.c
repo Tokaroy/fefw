@@ -978,8 +978,9 @@ LABEL_27:
   v47 = *(unsigned __int8*)(v44 + v43 + 2);
   *(_DWORD*)(a2 + 20) = v43 + 4;
   v48 = v6[1];
-  v49 = v46 | (v47 << 16) | (*(unsigned __int8*)(v44 + v43 + 3) << 24);
-  if (v49 > (v6[3] - v48) >> 3) {
+  v49 = (unsigned int)(v46 | (v47 << 16) |
+                       (*(unsigned __int8*)(v44 + v43 + 3) << 24));
+  if (v49 > (unsigned __int64)((__int64)(v6[3] - v48) >> 3)) {
     v50 = GameData_212bf68;
     v51 = v6[2] - v48;
     v52 = GameRoutine_651b90(*(_QWORD*)GameData_212bf68, 8 * v49, 16, 0);

@@ -106,11 +106,11 @@ void game_facility_anonymous_ProcDivinationSceneVisitor_PrepareScene()
   struct {
     _QWORD v6[4];
     _QWORD* v7;
-  } v6_;
-  struct {
+    _BYTE pad1[8];
     _QWORD v8[4];
     _QWORD* v9;
-  } v8_;
+    _BYTE pad2[8];
+  } f;
 
   {
     v0 = *(_QWORD*)(GameData_21f4000 + 264);
@@ -133,32 +133,32 @@ void game_facility_anonymous_ProcDivinationSceneVisitor_PrepareScene()
       if (v1 == 0) {
         goto LABEL_14;
       }
-      v6_.v6[0] = GameData_211a4e0;
-      v6_.v7 = v6_.v6;
-      v8_.v9 = v8_.v8;
-      v8_.v8[0] = GameData_211a4e0;
-      GameRoutine_14514d0(v8_.v8, (_QWORD*)(v1 + 272));
-      if (v8_.v9 == v8_.v8) {
+      f.v6[0] = GameData_211a4e0;
+      f.v7 = f.v6;
+      f.v9 = f.v8;
+      f.v8[0] = GameData_211a4e0;
+      GameRoutine_14514d0(f.v8, (_QWORD*)(v1 + 272));
+      if (f.v9 == f.v8) {
         v4 = 32;
       }
       else {
-        if (v8_.v9 == nullptr) {
+        if (f.v9 == nullptr) {
           goto LABEL_9;
         }
         v4 = 40;
       }
-      (*(void (**)(__int64))(*v8_.v9 + v4))((__int64)v8_.v9);
+      (*(void (**)(__int64))(*f.v9 + v4))((__int64)f.v9);
     LABEL_9:
-      if (v6_.v7 == v6_.v6) {
+      if (f.v7 == f.v6) {
         v5 = 32;
       }
       else {
-        if (v6_.v7 == nullptr) {
+        if (f.v7 == nullptr) {
           goto LABEL_14;
         }
         v5 = 40;
       }
-      (*(void (**)(__int64))(*v6_.v7 + v5))((__int64)v6_.v7);
+      (*(void (**)(__int64))(*f.v7 + v5))((__int64)f.v7);
     LABEL_14:
       if (atomic_fetch_add((atomic_ullong* volatile)(v3 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {

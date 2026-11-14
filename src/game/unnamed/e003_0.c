@@ -2122,74 +2122,73 @@ __int64 GameHr_bf1300(_QWORD* a1, _QWORD* a2)
   struct {
     _BYTE v27[32];
     _BYTE* v28;
-  } v27_;
-  struct {
+    _BYTE pad1[8];
     _BYTE v29[32];
     _BYTE* v30;
-  } v29_;
-  struct {
+    _BYTE pad2[8];
     _BYTE v31[32];
     _BYTE* v32;
     char gap136_[8];
     __int64 v33;
     __int64 v34;
-  } v31_;
+    _BYTE pad3[16];
+  } f;
 
   v2 = (_QWORD*)a1[4];
   if (v2 != nullptr) {
     if (v2 == a1) {
       v4 = a1;
       v5 = a1[4];
-      v27_.v28 = v27_.v27;
+      f.v28 = f.v27;
       (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64, _BYTE*))(
-          *v2 + 24LL))((void*)(v2), v5, v27_.v27);
+          *v2 + 24LL))((void*)(v2), v5, f.v27);
       a1 = v4;
     }
     else {
-      v27_.v28 = (_BYTE*)a1[4];
+      f.v28 = (_BYTE*)a1[4];
       a1[4] = 0;
     }
   }
   else {
-    v27_.v28 = nullptr;
+    f.v28 = nullptr;
   }
   v6 = (_QWORD*)a1[10];
   if (v6 != nullptr) {
     if (v6 == a1 + 6) {
-      v29_.v30 = v29_.v29;
+      f.v30 = f.v29;
       v7 = a1;
       (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _QWORD*, _BYTE*))(
-          *v6 + 24LL))((void*)(v6), v6, v29_.v29);
+          *v6 + 24LL))((void*)(v6), v6, f.v29);
       a1 = v7;
     }
     else {
-      v29_.v30 = (_BYTE*)a1[10];
+      f.v30 = (_BYTE*)a1[10];
       a1[10] = 0;
     }
   }
   else {
-    v29_.v30 = nullptr;
+    f.v30 = nullptr;
   }
   v8 = (_QWORD*)a1[16];
   if (v8 != nullptr) {
     if (v8 == a1 + 12) {
-      v31_.v32 = v31_.v31;
+      f.v32 = f.v31;
       v9 = a1;
       (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _QWORD*, _BYTE*))(
-          *v8 + 24LL))((void*)(v8), v8, v31_.v31);
+          *v8 + 24LL))((void*)(v8), v8, f.v31);
       a1 = v9;
     }
     else {
-      v31_.v32 = (_BYTE*)a1[16];
+      f.v32 = (_BYTE*)a1[16];
       a1[16] = 0;
     }
   }
   else {
-    v31_.v32 = nullptr;
+    f.v32 = nullptr;
   }
   v10 = a1[19];
-  v31_.v33 = a1[18];
-  v31_.v34 = v10;
+  f.v33 = a1[18];
+  f.v34 = v10;
   GameRoutine_bf1600_alt1(a1, a2);
   v11 = (_QWORD*)a2[4];
   a2[4] = 0;
@@ -2204,15 +2203,15 @@ __int64 GameHr_bf1300(_QWORD* a1, _QWORD* a2)
   }
   (*(void (**)(__int64))(*v11 + v12))((__int64)v11);
 LABEL_21:
-  v13 = v27_.v28;
-  if (v27_.v28 != nullptr) {
-    if (v27_.v28 == v27_.v27) {
+  v13 = f.v28;
+  if (f.v28 != nullptr) {
+    if (f.v28 == f.v27) {
       a2[4] = a2;
       (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v13 + 24LL))(v13, a2);
     }
     else {
-      a2[4] = v27_.v28;
-      v27_.v28 = nullptr;
+      a2[4] = f.v28;
+      f.v28 = nullptr;
     }
   }
   else {
@@ -2231,15 +2230,15 @@ LABEL_21:
   }
   (*(void (**)(__int64))(*v14 + v15))((__int64)v14);
 LABEL_31:
-  v16 = v29_.v30;
-  if (v29_.v30 != nullptr) {
-    if (v29_.v30 == v29_.v29) {
+  v16 = f.v30;
+  if (f.v30 != nullptr) {
+    if (f.v30 == f.v29) {
       a2[10] = a2 + 6;
       (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v16 + 24LL))(v16, a2 + 6);
     }
     else {
-      a2[10] = v29_.v30;
-      v29_.v30 = nullptr;
+      a2[10] = f.v30;
+      f.v30 = nullptr;
     }
   }
   else {
@@ -2258,27 +2257,27 @@ LABEL_31:
   }
   (*(void (**)(__int64))(*v17 + v18))((__int64)v17);
 LABEL_41:
-  v19 = v31_.v32;
-  if (v31_.v32 == nullptr) {
+  v19 = f.v32;
+  if (f.v32 == nullptr) {
     a2[16] = 0;
     goto LABEL_45;
   }
-  if (v31_.v32 != v31_.v31) {
-    a2[16] = v31_.v32;
-    v31_.v32 = nullptr;
+  if (f.v32 != f.v31) {
+    a2[16] = f.v32;
+    f.v32 = nullptr;
   LABEL_45:
-    v20 = v31_.v34;
-    a2[18] = v31_.v33;
+    v20 = f.v34;
+    a2[18] = f.v33;
     a2[19] = v20;
     goto LABEL_46;
   }
   a2[16] = a2 + 12;
   (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v19 + 24LL))(v19, a2 + 12);
-  v24 = v31_.v32;
-  v25 = v31_.v34;
-  a2[18] = v31_.v33;
+  v24 = f.v32;
+  v25 = f.v34;
+  a2[18] = f.v33;
   a2[19] = v25;
-  if (v24 == v31_.v31) {
+  if (v24 == f.v31) {
     v26 = 32;
   }
   else {
@@ -2289,29 +2288,29 @@ LABEL_41:
   }
   (*(void (**)(__int64))(*(_QWORD*)v24 + v26))((__int64)v24);
 LABEL_46:
-  if (v29_.v30 == v29_.v29) {
+  if (f.v30 == f.v29) {
     v21 = 32;
   }
   else {
-    if (v29_.v30 == nullptr) {
+    if (f.v30 == nullptr) {
       goto LABEL_51;
     }
     v21 = 40;
   }
-  (*(void (**)(__int64))(*(_QWORD*)v29_.v30 + v21))((__int64)v29_.v30);
+  (*(void (**)(__int64))(*(_QWORD*)f.v30 + v21))((__int64)f.v30);
 LABEL_51:
-  result = (__int64)v27_.v28;
-  if (v27_.v28 == v27_.v27) {
+  result = (__int64)f.v28;
+  if (f.v28 == f.v27) {
     v23 = 32;
   }
   else {
-    if (v27_.v28 == nullptr) {
+    if (f.v28 == nullptr) {
       return result;
     }
     v23 = 40;
   }
-  return (*(__int64 (**)(__int64))(*(_QWORD*)v27_.v28 + v23))(
-      (__int64)v27_.v28);
+  return (*(__int64 (**)(__int64))(*(_QWORD*)f.v28 + v23))(
+      (__int64)f.v28);
 }
 
 _QWORD* GameHr_bf1600(_QWORD* a1, _QWORD* a2)

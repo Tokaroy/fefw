@@ -883,7 +883,7 @@ __int64 UnitMastery_7fd6e0(__int64 a1, __int64 a2, int a3)
     }
     v7 = (__int64*)(a1 + 48);
     {
-      v9 = (*(_QWORD*)(a1 + 56) - v8) >> 1;
+      v9 = (*(__int64*)(a1 + 56) - v8) >> 1;
       __asm__ volatile("" ::"r"(v9));
     }
     {

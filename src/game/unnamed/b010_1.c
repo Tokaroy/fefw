@@ -253,6 +253,7 @@ extern __int64 (*gfx_light_SpotLightActor_vtable[])();
 extern __int64 (*wld_WorldAOModule_vtable[])();
 int __cxa_guard_acquire(__int64);
 int memcmp(__int64, __int64, unsigned __int64);
+__int64 memcmp_alt1(__int64, __int64, unsigned __int64) __asm__("memcmp");
 unsigned __int64 Value_2500(__int64*, __int64, unsigned __int64);
 unsigned __int64 strlen(const char*);
 void GameRoutine_191eec0_alt1(_QWORD*, __int64) __asm__("GameRoutine_191eec0");
@@ -6652,7 +6653,7 @@ __int64 GameHr_c30780(__int64 result, __int64 a2, __int64 a3)
         v18 -= 8;
         v19 = v20;
         if (*(_QWORD*)(v20 + 272) == v17) {
-          result = memcmp(v19 + 16, v16, v17);
+          result = memcmp_alt1(v19 + 16, v16, v17);
           if ((_DWORD)result == 0) {
             break;
           }
@@ -6677,7 +6678,7 @@ __int64 GameHr_c30780(__int64 result, __int64 a2, __int64 a3)
           v23 -= 8;
           v24 = v25;
           if (v14 == *(_DWORD*)(v25 + 284) && *(_QWORD*)(v24 + 272) == v17) {
-            result = memcmp(v24 + 16, v16, v17);
+            result = memcmp_alt1(v24 + 16, v16, v17);
             if ((_DWORD)result == 0) {
               break;
             }
@@ -6702,7 +6703,7 @@ __int64 GameHr_c30780(__int64 result, __int64 a2, __int64 a3)
         v26 -= 8;
         v27 = v28;
         if (*(_QWORD*)(v28 + 272) == v17) {
-          result = memcmp(v27 + 16, v16, v17);
+          result = memcmp_alt1(v27 + 16, v16, v17);
           if ((_DWORD)result == 0) {
             break;
           }

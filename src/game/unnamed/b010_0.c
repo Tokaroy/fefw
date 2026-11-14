@@ -304,7 +304,6 @@ __int64 GameHr_c380b0(__int64);
 __int64 GameRoutine_18e5e60_alt1(__int64) __asm__("GameRoutine_18e5e60");
 __int64 GameRoutine_1a09d20_alt1(unsigned __int64,
                                  __int64) __asm__("GameRoutine_1a09d20");
-__int64 GameRoutine_2b0_alt1() __asm__("GameRoutine_2b0");
 __int64 GameRoutine_6040f0_alt1(__int64) __asm__("GameRoutine_6040f0");
 __int64 GameRoutine_bef640_alt1(__int64 result, __int64, unsigned __int64,
                                 _QWORD*,
@@ -7744,7 +7743,7 @@ void GameHr_c1ce40(__int64 a1, __int64 a2, int a3, char a4)
         do {
           v19 = *(_QWORD*)(*v16 + 120);
           v20 = wmemchr(*(_QWORD*)(*v16 + 112), v18,
-                        (v19 - *(_QWORD*)(*v16 + 112)) >> 2);
+                        (v19 - *(__int64*)(*v16 + 112)) >> 2);
           v21 = *v16;
           if (v20 != 0) {
             v22 = v20;
@@ -7777,7 +7776,7 @@ void GameHr_c1ce40(__int64 a1, __int64 a2, int a3, char a4)
       do {
         v36 = *(_QWORD*)(*v33 + 120);
         v37 = wmemchr(*(_QWORD*)(*v33 + 112), v35,
-                      (v36 - *(_QWORD*)(*v33 + 112)) >> 2);
+                      (v36 - *(__int64*)(*v33 + 112)) >> 2);
         v38 = *v33;
         if (v37 != 0) {
           v39 = v37;
@@ -7810,7 +7809,7 @@ void GameHr_c1ce40(__int64 a1, __int64 a2, int a3, char a4)
         do {
           v10 = *(_QWORD*)(*v7 + 120);
           v11 = wmemchr(*(_QWORD*)(*v7 + 112), v9,
-                        (v10 - *(_QWORD*)(*v7 + 112)) >> 2);
+                        (v10 - *(__int64*)(*v7 + 112)) >> 2);
           v12 = *v7;
           if (v11 != 0) {
             v13 = v11;
@@ -7843,7 +7842,7 @@ void GameHr_c1ce40(__int64 a1, __int64 a2, int a3, char a4)
       do {
         v28 = *(_QWORD*)(*v25 + 120);
         v29 = wmemchr(*(_QWORD*)(*v25 + 112), v27,
-                      (v28 - *(_QWORD*)(*v25 + 112)) >> 2);
+                      (v28 - *(__int64*)(*v25 + 112)) >> 2);
         v30 = *v25;
         if (v29 != 0) {
           v31 = v29;
@@ -8030,7 +8029,8 @@ void GameHr_c20010(__int64 a1)
          1) == 0 &&
         __cxa_guard_acquire((__int64)&GameData_21fde98) != 0) {
       GameHr_a5aca0((__int64)GameData_21fdd90_alt2);
-      GameRoutine_2b0_alt1();
+      GameRoutine_2b0(GameData_212e358[0], &GameData_21fdd90,
+                      &GameData_1f50948);
       __cxa_guard_release((__int64)&GameData_21fde98);
     }
     GameHr_a5d860(GameData_21fdd90_alt2);

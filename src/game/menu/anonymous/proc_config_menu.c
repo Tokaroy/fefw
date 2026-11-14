@@ -357,46 +357,46 @@ __int64 game_menu_anonymous_ProcConfigMenu_SortAndFilter(__int64 a1)
   struct {
     _BYTE v8[32];
     _BYTE* v9;
-  } v8_;
-  struct {
+    _QWORD pad;
     __int64 (**v10)();
     char v11;
     char gap57_[23];
     __int64 (***v12)();
-  } v10_;
+    _QWORD pad1;
+  } f;
 
   v3 = *(_DWORD*)(a1 + 660);
   v4 = *(_QWORD*)(a1 + 672);
-  if (v3 < (unsigned __int64)((*(_QWORD*)(a1 + 680) - v4) >> 2)) {
+  if (v3 < (unsigned __int64)((*(__int64*)(a1 + 680) - v4) >> 2)) {
     v3 = *(_DWORD*)(v4 + 4LL * v3);
   }
-  v10_.v11 = v3;
-  v8_.v9 = nullptr;
-  v10_.v10 = GameData_207ed88;
-  v10_.v12 = &v10_.v10;
-  BasicMenu_16e1f40(a1, (__int64)&v10_.v10, (__int64)v8_.v8);
-  if (v8_.v9 == v8_.v8) {
+  f.v11 = v3;
+  f.v9 = nullptr;
+  f.v10 = GameData_207ed88;
+  f.v12 = &f.v10;
+  BasicMenu_16e1f40(a1, (__int64)&f.v10, (__int64)f.v8);
+  if (f.v9 == f.v8) {
     v5 = 32;
   }
   else {
-    if (v8_.v9 == nullptr) {
+    if (f.v9 == nullptr) {
       goto LABEL_8;
     }
     v5 = 40;
   }
-  (*(void (**)(__int64))(*(_QWORD*)v8_.v9 + v5))((__int64)v8_.v9);
+  (*(void (**)(__int64))(*(_QWORD*)f.v9 + v5))((__int64)f.v9);
 LABEL_8:
-  result = (__int64)v10_.v12;
-  if (v10_.v12 == &v10_.v10) {
+  result = (__int64)f.v12;
+  if (f.v12 == &f.v10) {
     v7 = 4;
   }
   else {
-    if (v10_.v12 == nullptr) {
+    if (f.v12 == nullptr) {
       return result;
     }
     v7 = 5;
   }
-  return ((__int64 (*)(__int64))(*v10_.v12)[v7])((__int64)v10_.v12);
+  return ((__int64 (*)(__int64))(*f.v12)[v7])((__int64)f.v12);
 }
 
 __int64 ProcConfigMenu_Unknown142(__int64 a1, __int64* a2)

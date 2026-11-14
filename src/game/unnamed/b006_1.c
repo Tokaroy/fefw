@@ -1293,6 +1293,7 @@ extern __int64 game_sound_g_game_sound;
 int __cxa_guard_acquire(__int64);
 
 int strcmp(const char*, const char*);
+__int64 strcmp_alt1(const char*, const char*) __asm__("strcmp");
 
 long double UnitActor_81ba20(__int64, long double result);
 
@@ -5415,7 +5416,7 @@ LABEL_37:
             (v20 & 1) != 0)
                ? (v23 = v21)
                : (v23 = v22),
-           (_DWORD)(result = strcmp(v18, v23)) != 0)) {
+           (_DWORD)(result = strcmp_alt1(v18, v23)) != 0)) {
     *(_DWORD*)(v17 + 2188) = -1;
   }
   return result;

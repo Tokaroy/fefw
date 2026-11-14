@@ -8,7 +8,8 @@ NvnSwapChain::~NvnSwapChain() {
   nvnWindowFinalize(&window_);
   for (NVNtexture* texture : textures_) {
     nvnTextureFinalize(texture);
-    delete texture;
+    // The original frees without a null check.
+    ::operator delete(texture, sizeof(NVNtexture));
   }
 }
 
