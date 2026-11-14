@@ -3140,8 +3140,9 @@ unsigned __int64 game_1660460(__int64 a1)
   ui_LayoutAccessor_SetPaneVisible(*(_QWORD*)a1, "L_SpotDispatch", 0);
   ui_LayoutAccessor_SetPaneVisible(*(_QWORD*)a1, "L_HonorLv00", 0);
   ui_LayoutAccessor_SetPaneVisible(*(_QWORD*)a1, "L_Cost", 0);
-  result = game_gmap_GmapUIDef_SetQuestIcon(*(_QWORD*)(a1 + 72),
-                                            *(_QWORD*)(a1 + 88), 1);
+  result = ((__int64 (*)(__int64, __int64, char))
+                game_gmap_GmapUIDef_SetQuestIcon)(*(_QWORD*)(a1 + 72),
+                                                  *(_QWORD*)(a1 + 88), 1);
   if ((result & 1) == 0) {
     goto LABEL_28;
   }
@@ -11344,7 +11345,8 @@ LABEL_2:
         goto LABEL_85;
       }
       v79 = game_1864e60_alt1((__int64)v7, v8 - 16);
-      result = (__int64*)game_1864e60_alt1(v8, (__int64)a2);
+      result = (__int64*)((__int64 (*)(__int64, __int64))game_1864e60_alt1)(
+          v8, (__int64)a2);
       if (((unsigned __int8)result & 1) != 0) {
         a2 = (__int64*)(v8 - 16);
         if (!v79) {

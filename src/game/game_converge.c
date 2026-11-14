@@ -1008,6 +1008,8 @@ __int64 game_GameConverge_Impl_Commit(__int64 result, __int64* a2)
           v52 = *v50++;
           v53 = v52[3];
           v54 = GameConverge_8e7ca0(v2, v52);
+          // The body is in this unit, hide what clang knows of it.
+          __asm__("" : "+r"(v54));
         }
         return result;
       }
@@ -1043,7 +1045,7 @@ __int64 game_GameConverge_Impl_Commit(__int64 result, __int64* a2)
               *(_BYTE*)(v16 + 177) = 3;
             }
             if (v19 != 1 && result != 0) {
-              result = ((__int64 (*)(void))GameRoutine_ae07e0)();
+              result = GameRoutine_ae07e0(result);
               if (*(_QWORD*)result != 0) {
                 result = game_VariableManager_SetFlag(result, 1);
               }

@@ -2998,9 +2998,11 @@ __n128 MagicInst_10a4fe0(__int64 a1, int a2)
       result =
           COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
   v20 = GameData_21ec7b0;
-  result = vaddq_f32(
-      vmulq_f32(*(float32x4_t*)GameData_212c558, vdupq_n_s32(0x3FD9999Au)),
-      v16[7]);
+  result = vmulq_f32(*(float32x4_t*)GameData_212c558,
+                     vdupq_n_s32(0x3FD9999Au));
+  // The spec fuses with fp-contract=fast, the original keeps fmul and fadd.
+  __asm__("" : "+w"(result));
+  result = vaddq_f32(result, v16[7]);
   v23 = result;
   if (GameData_21ec7b0 == 0 || (v21 = *(_QWORD*)(GameData_21ec7b0 + 8)) == 0 ||
       (*(_BYTE*)(v21 + 113) & 0x40) == 0) {

@@ -2483,7 +2483,8 @@ LABEL_2:
         goto LABEL_79;
       }
       v209 = gfxa_c64240((float32x4_t*)v8, v12 - 2, a3);
-      result = gfxa_c64240(v12, a2, a3);
+      result = ((__int64 (*)(float32x4_t*, float32x4_t*, __int64))
+                    gfxa_c64240)(v12, a2, a3);
       if ((result & 1) != 0) {
         a2 = v12 - 2;
         if (!v209) {

@@ -1661,7 +1661,7 @@ void DropItemCalculatorHub_fce960(_QWORD* a1)
   v1 = a1[1];
   v2 = (__int64*)a1[2];
   if ((__int64*)v1 != v2) {
-    v3 = (__int64*)(v1 + 48);
+    v3 = (__int64*)((char*)v1 + 48);
     v5 = nullptr;
     v6 = 0;
     v7 = 0;

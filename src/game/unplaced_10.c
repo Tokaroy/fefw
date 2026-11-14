@@ -5099,7 +5099,7 @@ unsigned __int64 game_a617e0(_QWORD* a1)
     v5 = *(unsigned __int16*)(v3 + 12);
     v6 = v3 + 8 + 16 * v5;
     v7 = *(_DWORD*)v6;
-    if (*(_DWORD*)(v3 + 8) < *(_DWORD*)v6) {
+    if (*(int*)(v3 + 8) < *(int*)v6) {
       do {
         v10 = (__int64)v7 >> 3;
         if (result > v10) {
@@ -5109,7 +5109,7 @@ unsigned __int64 game_a617e0(_QWORD* a1)
           v8 = 0;
         }
         v5 = *(unsigned __int16*)(v3 + 12 + 16 * v5 + 2 * v8);
-        v9 = v7 < *(_DWORD*)(v4 + 16 * v5);
+        v9 = v7 < *(int*)(v4 + 16 * v5);
         v7 = *(_DWORD*)(v4 + 16 * v5);
       } while (v9);
       v6 = v4 + 16 * v5;

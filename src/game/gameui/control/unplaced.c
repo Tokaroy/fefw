@@ -248,7 +248,6 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
   __int64 v20;
   __int64 v21;
   float v22;
-  float v23;
   float v24;
   float32x4_t v25;
   float32x4_t v26;
@@ -274,6 +273,16 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
   __int128 v47;
   float32x4_t v48;
   _DWORD v49[23];
+  struct m4_18bee90 {
+    float32x4_t c0;
+    float32x4_t c1;
+    float32x4_t c2;
+    float32x4_t c3;
+  } v50;
+  struct f2_18bee90 {
+    float c0;
+    float c1;
+  } v51;
 
   if (*(_BYTE*)(*(_QWORD*)(result + 72) + 24LL) == 1) {
     *(_QWORD*)&v49[3] = v13;
@@ -305,10 +314,17 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
         }
       }
     }
-    v22 = (*(float (**)(float32x2_t*))(LANES64(*(v17)).n64_u64[0] + 112))(v17);
-    v24 = v23;
-    *(long double*)&v25 =
-        ((long double (*)(__int64)) * (_QWORD*)(*(_QWORD*)v20 + 16LL))(v20);
+    v51 = (*(struct f2_18bee90 (**)(float32x2_t*))(
+        LANES64(*(v17)).n64_u64[0] + 112))(v17);
+    v22 = v51.c0;
+    v24 = v51.c1;
+    // Both getters return a matrix in q0 to q3.
+    v50 = ((struct m4_18bee90 (*)(__int64)) *
+           (_QWORD*)(*(_QWORD*)v20 + 16LL))(v20);
+    v25 = v50.c0;
+    v26 = v50.c1;
+    v27 = v50.c2;
+    v28 = v50.c3;
     v48 = vaddq_f32(
         v28, vmlaq_laneq_f32(
                  vmlaq_lane_f32(
@@ -316,8 +332,12 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
                          v25, COERCE_FLOAT(*(_OWORD*)LANES64(v17[24]).n64_u64)),
                      v26, v17[24], 1),
                  v27, *(float32x4_t*)LANES64(v17[24]).n64_u64, 2));
-    *(long double*)&v29 =
-        ((long double (*)(__int64)) * (_QWORD*)(*(_QWORD*)v20 + 24LL))(v20);
+    v50 = ((struct m4_18bee90 (*)(__int64)) *
+           (_QWORD*)(*(_QWORD*)v20 + 24LL))(v20);
+    v29 = v50.c0;
+    v30 = v50.c1;
+    v31 = v50.c2;
+    v32 = v50.c3;
     v33 = vaddq_f32(
         v32, vmlaq_laneq_f32(
                  vmlaq_lane_f32(
@@ -330,13 +350,13 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
                          COERCE_AS(float32x2_t, LANES128(v36).n128_u64[0]), 1);
     LANES128(v36).n128_f32[0] =
         -(float)(LANES128(v36).n128_f32[0] * 0x1.e000000000000p+9);
-    if (LANES128(v36).n128_f32[2] >= 0.0) {
+    if (!(LANES128(v36).n128_f32[2] < 0.0)) {
       v37 = v34;
     }
     else {
       v37 = LANES128(v36).n128_f32[0];
     }
-    if (LANES128(v36).n128_f32[2] >= 0.0) {
+    if (!(LANES128(v36).n128_f32[2] < 0.0)) {
       v38 = v35;
     }
     else {
@@ -347,16 +367,16 @@ __int64 game_gameui_control_18bee90(__int64 result, __int64 a2, char a3,
     if (v39 < v40) {
       v39 = v40;
     }
-    if (LANES128(v36).n128_f32[2] < 0.0 || v39 > 1.0) {
+    if (LANES128(v36).n128_f32[2] < 0.0 || !(v39 <= 1.0)) {
       if (GameData_21ec7b0 != 0) {
         v37 = v37 / v39;
         v38 = v38 / v39;
       }
       else {
         v41 = fabsf(v38 / (float)((float)(v24 + 0x1.0e00000000000p+10) * 0.5));
-        if (fabsf(v37 / (float)((float)(v22 + 0x1.e000000000000p+10) * 0.5)) >
-                1.0 ||
-            v41 > 1.0) {
+        if (!(fabsf(v37 / (float)((float)(v22 + 0x1.e000000000000p+10) *
+                                  0.5)) <= 1.0) ||
+            !(v41 <= 1.0)) {
           (*(void (**)(float32x2_t*, _QWORD))(LANES64(*(v17)).n64_u64[0] + 40))(
               v17, 0);
         }

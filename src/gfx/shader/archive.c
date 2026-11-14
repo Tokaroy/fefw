@@ -239,7 +239,7 @@ gfx_shader_Archive_CreateShader(PSEUDO_X8 x8_, __int64 a1, __int64 a2,
     v25 = *(unsigned __int16*)(v21 + 12);
     v26 = v21 + 8 + 16 * v25;
     v27 = *(_DWORD*)v26;
-    if (*(_DWORD*)(v21 + 8) < *(_DWORD*)v26) {
+    if (*(int*)(v21 + 8) < *(int*)v26) {
       do {
         v30 = (__int64)v27 >> 3;
         if (v23 > v30) {
@@ -249,7 +249,7 @@ gfx_shader_Archive_CreateShader(PSEUDO_X8 x8_, __int64 a1, __int64 a2,
           v28 = 0;
         }
         v25 = *(unsigned __int16*)(v21 + 12 + 16 * v25 + 2 * v28);
-        v29 = v27 < *(_DWORD*)(v24 + 16 * v25);
+        v29 = v27 < *(int*)(v24 + 16 * v25);
         v27 = *(_DWORD*)(v24 + 16 * v25);
       } while (v29);
       v26 = v24 + 16 * v25;

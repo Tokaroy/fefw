@@ -99,7 +99,7 @@ bool GameHr_ae3d80(__int64 a1);
 void GameHr_c47f40(_QWORD* a1, __int64* a2);
 float GameHr_c4e160(_QWORD* a1, char* a2);
 float powf(float, float);
-int memcmp(__int64, __int64, unsigned __int64);
+__int64 memcmp(__int64, __int64, unsigned __int64);
 __int64 GameHr_bd8300(__int64 result, __int64 a2, unsigned __int64 a3,
                       _BYTE* a4);
 __int64 GameHr_bd8640(__int64 result, __int64 a2, unsigned __int64 a3,

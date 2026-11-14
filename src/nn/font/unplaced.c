@@ -9,6 +9,7 @@ __attribute__((swiftcall)) void Font_55d700(PSEUDO_X8, __int64);
 __attribute__((swiftcall)) void Font_55d7a0(PSEUDO_X8, __int64);
 __int64 GameRoutine_561450(_QWORD);
 __int64 GameRoutine_561490(__int64, int, float*);
+__int64 GameRoutine_561590(__int64, __int64, float*, int);
 __int64 GameRoutine_565fe0(__int64);
 __int64 GameRoutine_5662e0(_QWORD, long double);
 __int64 GameRoutine_567cd0(_QWORD, long double);
@@ -30,6 +31,7 @@ __int64 nn_font_567fe0(__int64 a1, float* a2, unsigned __int64* a3, int a4);
 float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
                      _DWORD* a5, __int64 a6);
 __int64 nn_font_5697e0(__int64 a1, int a2, float* a3);
+__int64 nn_font_569bc0(__int64 a1, int a2, float* a3, __int64 a4);
 float GameRoutine_55c300_alt1(__int64, __int64,
                               float) __asm__("GameRoutine_55c300");
 
@@ -2388,7 +2390,8 @@ LABEL_101:
   return v20;
 }
 
-__int64 nn_font_5697e0(__int64 a1, int a2, float* a3)
+__attribute__((noinline)) __int64 nn_font_569bc0(__int64 a1, int a2,
+                                                  float* a3, __int64 a4)
 {
 
 #pragma clang fp contract(off)
@@ -2449,6 +2452,9 @@ __int64 nn_font_5697e0(__int64 a1, int a2, float* a3)
   __int64* v65;
 
   if ((unsigned int)(a2 - 16) <= 0xFFFFFFFD) {
+    if (a4 != 0) {
+      return GameRoutine_561590(a1, a4, a3, a2);
+    }
     return GameRoutine_561490(a1, a2, a3);
   }
   v7 = *((_WORD**)a3 + 1);
@@ -2473,6 +2479,9 @@ __int64 nn_font_5697e0(__int64 a1, int a2, float* a3)
     return 0;
   }
   *((_QWORD*)a3 + 1) = v10;
+  if (a4 != 0) {
+    return 0;
+  }
   v12 = *(__int64**)a3;
   v13 = (unsigned __int16*)v10;
   v15 = v8;
@@ -2570,6 +2579,11 @@ LABEL_16:
       TextBox_568750((__int64)&v48_.v48, (unsigned __int64)(v15 + 6), v27);
   GameRoutine_567cd0(&v48_.v48, v47);
   return 0;
+}
+
+__int64 nn_font_5697e0(__int64 a1, int a2, float* a3)
+{
+  return nn_font_569bc0(a1, a2, a3, 0);
 }
 
 #pragma GCC visibility pop

@@ -7818,7 +7818,7 @@ char* game_7408a0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
     if (a3 == 2) {
       v5 = *((_QWORD*)a2 - 1);
       v6 = *(_QWORD*)result;
-      if (*(_DWORD*)(v5 + 592) > *(_DWORD*)(*(_QWORD*)result + 592LL)) {
+      if (*(int*)(v5 + 592) > *(int*)(*(_QWORD*)result + 592LL)) {
         *(_QWORD*)result = v5;
         *((_QWORD*)a2 - 1) = v6;
       }
@@ -7838,8 +7838,8 @@ char* game_7408a0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
         v25 = v23;
         while (v25 != v24) {
           v26 = *v25;
-          v27 = *(_DWORD*)(*v25 + 592);
-          v28 = *(_DWORD*)(*v22 + 592);
+          v27 = *(int*)(*v25 + 592);
+          v28 = *(int*)(*v22 + 592);
           if (v27 > v28) {
             v29 = 0;
           }
@@ -7889,7 +7889,7 @@ char* game_7408a0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
           v12 = *(_QWORD*)v9;
           v11 = *((_QWORD*)v9 + 1);
           v9 = v7;
-          if (*(_DWORD*)(v11 + 592) > *(_DWORD*)(v12 + 592)) {
+          if (*(int*)(v11 + 592) > *(int*)(v12 + 592)) {
             v13 = v8;
             do {
               *(_QWORD*)&result[v13 + 8] = v12;
@@ -7899,7 +7899,7 @@ char* game_7408a0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
               }
               v12 = *(_QWORD*)&result[v13 - 8];
               v13 -= 8;
-            } while (*(_DWORD*)(v11 + 592) > *(_DWORD*)(v12 + 592));
+            } while (*(int*)(v11 + 592) > *(int*)(v12 + 592));
             v10 = &result[v13 + 8];
           LABEL_11:
             *(_QWORD*)v10 = v11;

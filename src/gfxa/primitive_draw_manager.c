@@ -4652,10 +4652,10 @@ char* PrimitiveDrawManager_1997280(char* result, char* a2, __int64 a3,
       v5 = *((_DWORD*)a2 - 1);
       v6 = *(_DWORD*)result;
       v7 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-      if (*(_DWORD*)(v7 + 1440LL * v5 + 36) +
-              *(_DWORD*)(v7 + 1440LL * v5 + 32) >=
-          *(_DWORD*)(v7 + 1440LL * v6 + 36) +
-              *(_DWORD*)(v7 + 1440LL * v6 + 32)) {
+      if (*(int*)(v7 + 1440LL * v5 + 36) +
+              *(int*)(v7 + 1440LL * v5 + 32) >=
+          *(int*)(v7 + 1440LL * v6 + 36) +
+              *(int*)(v7 + 1440LL * v6 + 32)) {
         *a5 = v6;
         v8 = *((_DWORD*)a2 - 1);
       }
@@ -4686,9 +4686,9 @@ char* PrimitiveDrawManager_1997280(char* result, char* a2, __int64 a3,
           v34 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
           v35 = v34 + 1440LL * *v29;
           v36 = v34 + 1440LL * *v32;
-          v37 = *(_DWORD*)(v35 + 36) + *(_DWORD*)(v35 + 32);
+          v37 = *(int*)(v35 + 36) + *(int*)(v35 + 32);
           result = (char*)*(unsigned int*)(v36 + 32);
-          v38 = *(_DWORD*)(v36 + 36) + (_DWORD)result;
+          v38 = *(int*)(v36 + 36) + (int)(__int64)result;
           if (v37 < v38) {
             v39 = 4;
           }
@@ -4738,10 +4738,10 @@ char* PrimitiveDrawManager_1997280(char* result, char* a2, __int64 a3,
           v15 = *v12++;
           v14 = v15;
           v16 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-          if (*(_DWORD*)(v16 + 1440LL * v13 + 36) +
-                  *(_DWORD*)(v16 + 1440LL * v13 + 32) >=
-              *(_DWORD*)(v16 + 1440LL * v15 + 36) +
-                  *(_DWORD*)(v16 + 1440LL * v15 + 32)) {
+          if (*(int*)(v16 + 1440LL * v13 + 36) +
+                  *(int*)(v16 + 1440LL * v13 + 32) >=
+              *(int*)(v16 + 1440LL * v15 + 36) +
+                  *(int*)(v16 + 1440LL * v15 + 32)) {
             *v12 = v13;
           }
           else {
@@ -4753,10 +4753,10 @@ char* PrimitiveDrawManager_1997280(char* result, char* a2, __int64 a3,
                 v17 = (int*)((char*)a5 + v18);
                 v19 = *(int*)((char*)a5 + v18 - 4);
                 v20 = *(_QWORD*)(*(_QWORD*)a3 + 18736LL);
-                if (*(_DWORD*)(v20 + 1440LL * *(int*)result + 36) +
-                        *(_DWORD*)(v20 + 1440LL * *(int*)result + 32) >=
-                    *(_DWORD*)(v20 + 1440LL * v19 + 36) +
-                        *(_DWORD*)(v20 + 1440LL * v19 + 32)) {
+                if (*(int*)(v20 + 1440LL * *(int*)result + 36) +
+                        *(int*)(v20 + 1440LL * *(int*)result + 32) >=
+                    *(int*)(v20 + 1440LL * v19 + 36) +
+                        *(int*)(v20 + 1440LL * v19 + 32)) {
                   break;
                 }
                 v18 -= 4;
@@ -6548,7 +6548,7 @@ LABEL_22:
           v21 = v19 + 8;
           v22 = v19 + 8 + 16 * v20;
           v23 = *(_DWORD*)v22;
-          if (*(_DWORD*)(v19 + 8) < *(_DWORD*)v22) {
+          if (*(int*)(v19 + 8) < *(int*)v22) {
             do {
               v26 = (__int64)v23 >> 3;
               if (v3 > v26) {
@@ -6558,7 +6558,7 @@ LABEL_22:
                 v24 = 0;
               }
               v20 = *(unsigned __int16*)(v19 + 12 + 16 * v20 + 2 * v24);
-              v25 = v23 < *(_DWORD*)(v21 + 16 * v20);
+              v25 = v23 < *(int*)(v21 + 16 * v20);
               v23 = *(_DWORD*)(v21 + 16 * v20);
             } while (v25);
             v22 = v21 + 16 * v20;

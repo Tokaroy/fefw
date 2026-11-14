@@ -184,7 +184,7 @@ LABEL_11:
         v18 = *(_QWORD*)(a1 + 616);
         v19 = v56 / 1000;
         nn_os_LockMutex_alt1(v18);
-        v20 = (__int64)((double)(v19 - *(_QWORD*)(v18 + 32)) /
+        v20 = (__int64)((double)(__int64)(v19 - *(_QWORD*)(v18 + 32)) /
                             *(double*)(v18 + 48) +
                         (double)*(__int64*)(v18 + 40));
         nn_os_UnlockMutex_alt1(v18);
@@ -210,7 +210,7 @@ LABEL_11:
           v22 = *(_QWORD*)(a1 + 600);
         }
         nn_os_LockMutex_alt1(v21);
-        v25 = (__int64)((double)(v22 - *(_QWORD*)(v21 + 32)) /
+        v25 = (__int64)((double)(__int64)(v22 - *(_QWORD*)(v21 + 32)) /
                             *(double*)(v21 + 48) +
                         (double)*(__int64*)(v21 + 40));
         nn_os_UnlockMutex_alt1(v21);

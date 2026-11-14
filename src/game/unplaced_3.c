@@ -873,7 +873,7 @@ __attribute__((swiftcall)) void game_9c5fd0(PSEUDO_X8 x8_, char** result,
     v8 = nullptr;
     do {
       v10 = *(_DWORD*)v5;
-      if (*(_DWORD*)v5 <= a2) {
+      if (v10 <= a2) {
         v11 = game_GameModeData_instance_;
         if (game_GameModeData_instance_ != 0) {
           result = (char**)game_GameVariableTable_Find(

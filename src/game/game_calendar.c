@@ -3118,6 +3118,8 @@ unsigned __int64 game_GameCalendar_UpdateLatest_lambda1_Invoke(_QWORD* a1,
   v55 = (__int16*)a1[3];
   result = a1[1];
   v57 = *v53;
+  // The original reads the flag before the null test.
+  __asm__ volatile("" ::"r"(v57));
   if (v54 == 0) {
     return result;
   }

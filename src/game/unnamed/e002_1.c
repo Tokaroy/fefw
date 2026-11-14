@@ -1022,7 +1022,8 @@ __int64 GameHr_80eb10(char a1)
       result = snd_fnd_WeakHandle_isValid(v16_.v16);
       if ((result & 1) != 0) {
         v14 = snd_fnd_WeakHandle_get((__int64)v16_.v16);
-        result = snd_Voice_hasFeature(v14 - 5592, 0x19u);
+        result = ((__int64 (*)(__int64, unsigned int))snd_Voice_hasFeature)(
+            v14 - 5592, 0x19u);
         if ((result & 1) == 0) {
           snd_Fade_Fade_10cb00((__int64)v15, "FadeTime_BGM_Bmap_In");
           snd_startVolume_1006d0(v16_.v16, 0, (__int64)v15,

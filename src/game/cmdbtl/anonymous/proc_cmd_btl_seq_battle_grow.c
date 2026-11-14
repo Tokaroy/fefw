@@ -65,7 +65,7 @@ __int64 game_telop_TelopSkillLearnIndividually_CreateBind_alt1(
 __int64 memcpy_alt1(__int64, __int64, unsigned __int64) __asm__("memcpy");
 __int64 std___1___shared_weak_count___release_weak_alt2(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
-bool GameRoutine_6fcb20_alt1(__int64, _QWORD*) __asm__("GameRoutine_6fcb20");
+__int64 GameRoutine_6fcb20_alt1(__int64, _QWORD*) __asm__("GameRoutine_6fcb20");
 void GameRoutine_658c00_alt1(__int64*) __asm__("GameRoutine_658c00");
 void __attribute__((noreturn))
 GameRoutine_60a210_alt1() __asm__("GameRoutine_60a210");

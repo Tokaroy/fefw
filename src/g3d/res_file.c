@@ -1676,7 +1676,7 @@ __int64 ResFile_ad8b40(__int64 a1, __int64 a2, __int64 a3)
         *((_DWORD*)v34 + 38) = 1065353216;
         *((_DWORD*)v34 + 54) = 1065353216;
         v40 = (float)(unsigned __int64)(*(_QWORD*)(a3 + 24) + 1LL);
-        if (v20 != 0 && (float)(v38 * (float)v20) >= v40) {
+        if (v20 != 0 && !((float)(v38 * (float)v20) < v40)) {
         LABEL_120:
           v67 = *(_QWORD*)v37;
           v68 = *(_QWORD**)(*(_QWORD*)v37 + 8LL * (_QWORD)v8);

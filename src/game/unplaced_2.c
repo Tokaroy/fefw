@@ -157,7 +157,7 @@ __int64 strlen(_QWORD);
 __n128 nn_os_UnlockMutex(_QWORD);
 bool GameRoutine_876070(unsigned __int8*, __int64);
 bool GameRoutine_8c4ee0(__int64);
-bool GameRoutine_90c9e0(__int64);
+__int64 GameRoutine_90c9e0(__int64);
 bool GameRoutine_910ac0(unsigned __int8*, __int64, __int64, unsigned __int8*,
                         char*, int);
 bool Stream_65d2d0(__int64, int*, int*, int*);

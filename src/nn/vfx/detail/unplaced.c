@@ -52,7 +52,7 @@ __int64 nn_vfx_detail_5b4f80(__int64 a1, int a2, int a3, int a4, int a5, int a6,
     return 0;
   }
   *(_QWORD*)a1 = *(_QWORD*)(v8 + 16);
-  if (a2 >= *(_DWORD*)(v8 + 76)) {
+  if (a2 >= *(int*)(v8 + 76)) {
     *(_QWORD*)(a1 + 568) = 0;
     goto LABEL_8;
   }

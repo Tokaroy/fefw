@@ -30,16 +30,13 @@ __int64 ProcStableScene_Destructor_1955bd0_alt1(__int64 a1) __asm__(
     "ProcStableScene_Destructor_1955bd0");
 __int64 ProcStableScene_DeletingDestructor_1955d80_alt1(__int64 a1) __asm__(
     "ProcStableScene_DeletingDestructor_1955d80");
-__int64 GameRoutine_1130770(_QWORD, _QWORD, _QWORD);
+__int64 GameRoutine_112e1e0(__int64, __int64);
 __int64 GameRoutine_1a09ce0(_QWORD, _QWORD, _QWORD);
-__int64 ProcInst_657850(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 __int64 fw_memory_HeapManager_Allocate(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 memmove(_QWORD, _QWORD, _QWORD);
 __int64 strlen(_QWORD);
-extern _UNKNOWN* GameData_2130228;
 extern _UNKNOWN GameData_1ac690d;
 extern _UNKNOWN GameData_1adcd05;
-extern __int64* GameData_212d460[6];
 extern __int64 GameData_21c9e18;
 extern __int64 fw_memory_g_heap_manager;
 void __attribute__((noreturn)) String_60a1d0(_QWORD);
@@ -63,8 +60,6 @@ void ProcStableScene_DeletingDestructor_1955d80(__int64 a1);
 
 unsigned __int64 ProcStableScene_19550a0(__int64 a1)
 {
-  __int64 v1;
-  __int64 v2;
   unsigned __int64 result;
   unsigned __int64 v5;
   unsigned __int64 v7;
@@ -117,20 +112,7 @@ unsigned __int64 ProcStableScene_19550a0(__int64 a1)
               LABEL_26:
                 v13 = v10[3];
                 if (v13 != 0) {
-                  if (*GameData_212d460[0] != 0) {
-                    return *GameData_212d460[0];
-                  }
-                  else if (*(_QWORD*)(v13 + 32) != 0) {
-                    v1 = *(_QWORD*)(v13 + 32);
-                    v2 = fw_memory_HeapManager_Allocate(
-                        *(_QWORD*)fw_memory_g_heap_manager_ptr, 1376, 16, 0);
-                    GameRoutine_1130770(v2, v1, 0);
-                    return ProcInst_657850(v2, GameData_2130228, "talk::Seq", 1,
-                                           a1);
-                  }
-                  else {
-                    return 0;
-                  }
+                  return GameRoutine_112e1e0(a1, *(_QWORD*)(v13 + 32));
                 }
                 return result;
               }

@@ -34,8 +34,7 @@ __int64 game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1);
 __int64 game_combat_ActionAttack_OnEnter_lambda4_Invoke(__int64 a1);
 __int64 GameRoutine_106aeb0(_QWORD, _QWORD);
 __int64 GameRoutine_d2b5f0(_QWORD);
-__int64 __dynamic_cast(void);
-__int64 game_combat_ActionAttack_OnEnter_lambda2_Clone_alt1(void) __asm__(
+__int64 game_combat_ActionAttack_OnEnter_lambda2_Clone_alt1(__int64) __asm__(
     "game_combat_ActionAttack_OnEnter_lambda2_Clone");
 extern __int64 GameData_2235e30;
 __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
@@ -2027,7 +2026,9 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
       }
       goto LABEL_18;
     }
-    result = __dynamic_cast();
+    // The type info slot sits 16 bytes below the declared one.
+    result = __dynamic_cast_alt1(result, GameData_212d4f0[0],
+                                 GameData_212ecc0[-2], 0);
     v14 = result == 0;
     if (result != 0) {
       v2 = result;
@@ -2165,7 +2166,7 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
     v48 = *(_DWORD*)(v47 + 44);
     *(float*)(v30 + 684) = (float)(v27 / 60.0) - (float)(v28 / 60.0);
     *(_DWORD*)(v30 + 680) = v48;
-    v59 = (_BYTE*)game_combat_ActionAttack_OnEnter_lambda2_Clone_alt1();
+    v59 = (_BYTE*)game_combat_ActionAttack_OnEnter_lambda2_Clone_alt1(v41);
     GameRoutine_106aeb0(v58, v30 + 688);
     if (v59 == v58) {
       v49 = 32;

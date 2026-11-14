@@ -468,7 +468,7 @@ __int64* ProcGmapCarriageList_168c5c0(__int64* result, __int64* a2, __int64* a3,
       v9 = -a4;
       for (i = 0;; i += 2) {
         v11 = &result[i];
-        if (*((_DWORD*)a2 + 2) < SLODWORD(result[i + 1])) {
+        if (*((int*)a2 + 2) < SLODWORD(result[i + 1])) {
           break;
         }
         if (__CFADD__(v9++, 1)) {
@@ -501,7 +501,7 @@ __int64* ProcGmapCarriageList_168c5c0(__int64* result, __int64* a2, __int64* a3,
             v26 = *((_DWORD*)v25 + 2);
             v27 = v25 + 2;
             v23 += ~(v23 >> 1);
-            if (v26 < *((_DWORD*)v16 + 2)) {
+            if (v26 < *((int*)v16 + 2)) {
               v15 = v27;
             }
             else {
@@ -526,7 +526,7 @@ __int64* ProcGmapCarriageList_168c5c0(__int64* result, __int64* a2, __int64* a3,
             v20 = *((_DWORD*)v19 + 2);
             v21 = v19 + 2;
             v17 += ~(v17 >> 1);
-            if (*((_DWORD*)v15 + 2) < v20) {
+            if (*((int*)v15 + 2) < v20) {
               v17 = v18;
             }
             else {
@@ -642,7 +642,7 @@ __int64* ProcGmapCarriageList_168c5c0(__int64* result, __int64* a2, __int64* a3,
         } while (v56 != a2);
         v59 = v55 - 2;
         while (a2 != a3) {
-          if (*((_DWORD*)a2 + 2) >= *((_DWORD*)a6 + 2)) {
+          if (*((int*)a2 + 2) >= *((int*)a6 + 2)) {
             v60 = a6;
             a6 += 2;
           }

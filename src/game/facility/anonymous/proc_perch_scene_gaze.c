@@ -2939,31 +2939,33 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
   __int64 v22;
   _QWORD* result;
   struct {
-    __int64 v24;
-    __int64 v25;
-  } v24_;
-  __int64 v26[2];
-  struct {
-    _QWORD* v27;
-    __int64 v28;
-  } v27_;
-  struct {
-    _QWORD v29[4];
-    _QWORD* v30;
-  } v29_;
+    struct {
+      __int64 v24;
+      __int64 v25;
+    } v24_;
+    __int64 v26[2];
+    struct {
+      _QWORD* v27;
+      __int64 v28;
+    } v27_;
+    struct {
+      _QWORD v29[4];
+      _QWORD* v30;
+    } v29_;
+  } v24f_;
 
-  ProcPerchSceneGaze_1439890(&v27_.v27, GameData_1aeedbf_alt1);
-  if (v27_.v27 == nullptr) {
+  ProcPerchSceneGaze_1439890(&v24f_.v27_.v27, GameData_1aeedbf_alt1);
+  if (v24f_.v27_.v27 == nullptr) {
     goto LABEL_46;
   }
-  v0 = v27_.v28;
-  v26[0] = (__int64)v27_.v27;
-  v26[1] = v27_.v28;
-  if (v27_.v28 != 0) {
-    atomic_fetch_add_explicit((atomic_ullong* volatile)(v27_.v28 + 8), 1u,
+  v0 = v24f_.v27_.v28;
+  v24f_.v26[0] = (__int64)v24f_.v27_.v27;
+  v24f_.v26[1] = v24f_.v27_.v28;
+  if (v24f_.v27_.v28 != 0) {
+    atomic_fetch_add_explicit((atomic_ullong* volatile)(v24f_.v27_.v28 + 8), 1u,
                               memory_order_relaxed);
     game_facility_anonymous_ProcPerchSceneGaze_CameraStateBase_AddGazeCameraWorkSe(
-        v26);
+        v24f_.v26);
     if (atomic_fetch_add((atomic_ullong* volatile)(v0 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v0 + 16LL))(v0);
@@ -2972,12 +2974,12 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
   }
   else {
     game_facility_anonymous_ProcPerchSceneGaze_CameraStateBase_AddGazeCameraWorkSe(
-        v26);
+        v24f_.v26);
   }
-  ProcPerchSceneGaze_14393f0_alt2(&v24_.v24);
-  v1 = v27_.v27[10];
+  ProcPerchSceneGaze_14393f0_alt2(&v24f_.v24_.v24);
+  v1 = v24f_.v27_.v27[10];
   if (v1 != 0) {
-    v2 = v27_.v27[6];
+    v2 = v24f_.v27_.v27[6];
     if (v1 == 1) {
       v3 = 0;
       v4 = 0x0.0p+0f;
@@ -2985,7 +2987,7 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
     else {
       v4 = 0x0.0p+0f;
       v3 = 0;
-      v9 = v27_.v27[9];
+      v9 = v24f_.v27_.v27[9];
       do {
         v11 = *(_QWORD*)(*(_QWORD*)(v2 + 8 * (v9 >> 9)) + 8 * (v9 & 0x1FF));
         v12 = *(_QWORD*)(v11 + 72);
@@ -3018,8 +3020,10 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
     if ((v1 & 1) != 0) {
       v5 = *(
           _QWORD*)(*(_QWORD*)(v2 +
-                              8 * ((unsigned __int64)(v3 + v27_.v27[9]) >> 9)) +
-                   8LL * (((_WORD)v3 + (unsigned __int16)v27_.v27[9]) & 0x1FF));
+                              8 * ((unsigned __int64)(v3 + v24f_.v27_.v27[9]) >>
+                                   9)) +
+                   8LL * (((_WORD)v3 + (unsigned __int16)v24f_.v27_.v27[9]) &
+                          0x1FF));
       v6 = *(_QWORD*)(v5 + 72);
       if (v6 != 0) {
         v7 = *(float*)(v6 + 60);
@@ -3031,8 +3035,8 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
         v7 = *(float*)(v5 + 160);
       }
       v4 = v4 + v7;
-      v8 = v24_.v24;
-      if (v24_.v24 == 0) {
+      v8 = v24f_.v24_.v24;
+      if (v24f_.v24_.v24 == 0) {
         goto LABEL_43;
       }
       goto LABEL_31;
@@ -3041,28 +3045,28 @@ _QWORD* ProcPerchSceneGaze_CameraStateFromQuestion_Unknown2()
   else {
     v4 = 0x0.0p+0f;
   }
-  v8 = v24_.v24;
-  if (v24_.v24 == 0) {
+  v8 = v24f_.v24_.v24;
+  if (v24f_.v24_.v24 == 0) {
     goto LABEL_43;
   }
 LABEL_31:
   v16 = SceneManager_138e5e0_alt1(*(_QWORD*)GameData_212dce8);
   if (v16 != 0) {
-    v17 = v24_.v25;
-    if (v24_.v25 != 0) {
-      atomic_fetch_add_explicit((atomic_ullong* volatile)(v24_.v25 + 8), 1u,
-                                memory_order_relaxed);
+    v17 = v24f_.v24_.v25;
+    if (v24f_.v24_.v25 != 0) {
+      atomic_fetch_add_explicit((atomic_ullong* volatile)(v24f_.v24_.v25 + 8),
+                                1u, memory_order_relaxed);
     }
-    v29_.v29[2] = v17;
-    v29_.v29[0] = GameData_203de10;
-    v29_.v29[1] = v8;
+    v24f_.v29_.v29[2] = v17;
+    v24f_.v29_.v29[0] = GameData_203de10;
+    v24f_.v29_.v29[1] = v8;
     v18 = *(_QWORD*)(v16 + 176);
     v19 = *(_QWORD*)(v16 + 184);
-    v29_.v30 = v29_.v29;
+    v24f_.v29_.v30 = v24f_.v29_.v29;
     if (v19 != 0) {
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v19 + 8), 1u,
                                 memory_order_relaxed);
-      SceneCharacterLookAt_1416a00(v18, (__int64)v29_.v29,
+      SceneCharacterLookAt_1416a00(v18, (__int64)v24f_.v29_.v29,
                                    0x1.0000000000000p+0f, v4);
       if (atomic_fetch_add((atomic_ullong* volatile)(v19 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
@@ -3071,30 +3075,32 @@ LABEL_31:
       }
     }
     else {
-      SceneCharacterLookAt_1416a00(v18, (__int64)v29_.v29,
+      SceneCharacterLookAt_1416a00(v18, (__int64)v24f_.v29_.v29,
                                    0x1.0000000000000p+0f, v4);
     }
-    if (v29_.v30 == v29_.v29) {
+    if (v24f_.v29_.v30 == v24f_.v29_.v29) {
       v20 = 32;
       goto LABEL_42;
     }
-    if (v29_.v30 != nullptr) {
+    if (v24f_.v29_.v30 != nullptr) {
       v20 = 40;
     LABEL_42:
-      (*(void (**)(__int64))(*v29_.v30 + v20))((__int64)v29_.v30);
+      (*(void (**)(__int64))(*v24f_.v29_.v30 + v20))((__int64)v24f_.v29_.v30);
     }
   }
 LABEL_43:
-  v21 = v24_.v25;
-  if (v24_.v25 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v24_.v25 + 8),
-                                        0xFFFFFFFFFFFFFFFFLL) == 0) {
+  v21 = v24f_.v24_.v25;
+  if (v24f_.v24_.v25 != 0 &&
+      atomic_fetch_add((atomic_ullong* volatile)(v24f_.v24_.v25 + 8),
+                       0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v21 + 16LL))(v21);
     std___1___shared_weak_count___release_weak_alt2(v21);
   }
 LABEL_46:
-  v22 = v27_.v28;
-  if (v27_.v28 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v27_.v28 + 8),
-                                        0xFFFFFFFFFFFFFFFFLL) == 0) {
+  v22 = v24f_.v27_.v28;
+  if (v24f_.v27_.v28 != 0 &&
+      atomic_fetch_add((atomic_ullong* volatile)(v24f_.v27_.v28 + 8),
+                       0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v22 + 16LL))(v22);
     std___1___shared_weak_count___release_weak_alt2(v22);
   }

@@ -1122,7 +1122,9 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x6", "=r")),
     v48 = COERCE_AS(__typeof__(v48),
                     PSEUDO_REGISTER(unsigned long long, "x7", "=r"));
-    result = GameRoutine_109c60(v41 + 1, a2, a3, v44, v45, v46, v47, v48),
+    result = ((__int64 (*)(__int64*, __int64*, __int64, __int64, __int64,
+                           __int64, __int64, __int64))GameRoutine_109c60)(
+        v41 + 1, a2, a3, v44, v45, v46, v47, v48),
     v17 = COERCE_AS(__typeof__(v17),
                     PSEUDO_REGISTER(unsigned long long, "x4", "=r")),
     v18 = COERCE_AS(__typeof__(v18),

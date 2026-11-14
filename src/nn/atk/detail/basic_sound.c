@@ -596,8 +596,8 @@ __int64 BasicSound_280a00(__int64 a1)
   int v9;
   char* v10;
   int v11;
-  _DWORD* v12;
-  _DWORD* v13;
+  int* v12;
+  int* v13;
   _BOOL4 v14;
   int v15;
   int v16;
@@ -712,9 +712,9 @@ __int64 BasicSound_280a00(__int64 a1)
     v9 = *(unsigned __int8*)(a1 + 265);
     v10 = (char*)(a1 + 265);
     if (v9 == 2) {
-      v12 = (_DWORD*)(a1 + 224);
-      v13 = (_DWORD*)(a1 + 220);
-      v14 = *(_DWORD*)(a1 + 224) >= *(_DWORD*)(a1 + 220);
+      v12 = (int*)(a1 + 224);
+      v13 = (int*)(a1 + 220);
+      v14 = *(int*)(a1 + 224) >= *(int*)(a1 + 220);
       goto LABEL_33;
     }
     v15 = *(_DWORD*)(a1 + 276);
@@ -722,10 +722,10 @@ __int64 BasicSound_280a00(__int64 a1)
       *(_DWORD*)(a1 + 276) = v15 + 1;
     }
   LABEL_25:
-    v12 = (_DWORD*)(a1 + 224);
-    v16 = *(_DWORD*)(a1 + 224);
-    v13 = (_DWORD*)(a1 + 220);
-    v17 = *(_DWORD*)(a1 + 220);
+    v12 = (int*)(a1 + 224);
+    v16 = *(int*)(a1 + 224);
+    v13 = (int*)(a1 + 220);
+    v17 = *(int*)(a1 + 220);
     v14 = v16 >= v17;
     if (v9 != 0) {
       if (v9 != 3) {
@@ -924,7 +924,7 @@ __int64 BasicSound_280a00(__int64 a1)
         }
         GameRoutine_281160(a1);
         if (*(_BYTE*)(a1 + 247) == 1 &&
-            *(_DWORD*)(a1 + 208) >= *(_DWORD*)(a1 + 204)) {
+            *(int*)(a1 + 208) >= *(int*)(a1 + 204)) {
           v66 = *(_QWORD*)a1;
           *(_BYTE*)(a1 + 247) = 0;
           return (*(__int64 (**)(__int64))(v66 + 32))(a1);
@@ -954,11 +954,11 @@ __int64 BasicSound_280a00(__int64 a1)
             }
             v65 = *(unsigned __int8*)(a1 + 266);
             if (v65 == 3) {
-              if (*(_DWORD*)(a1 + 240) >= *(_DWORD*)(a1 + 236)) {
+              if (*(int*)(a1 + 240) >= *(int*)(a1 + 236)) {
                 *(_BYTE*)(a1 + 266) = 0;
               }
             }
-            else if (v65 == 1 && *(_DWORD*)(a1 + 240) >= *(_DWORD*)(a1 + 236)) {
+            else if (v65 == 1 && *(int*)(a1 + 240) >= *(int*)(a1 + 236)) {
               *(_BYTE*)(a1 + 266) = 2;
             }
             return result;
@@ -970,7 +970,7 @@ __int64 BasicSound_280a00(__int64 a1)
             goto LABEL_92;
           }
           v61 = *(_DWORD*)(a1 + 252) == 1
-                    ? *(_DWORD*)(a1 + 224) >= *(_DWORD*)(a1 + 220)
+                    ? *(int*)(a1 + 224) >= *(int*)(a1 + 220)
                     : v14;
           if (v61 != 1) {
             goto LABEL_92;

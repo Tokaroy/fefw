@@ -150,7 +150,6 @@ __int64 GameRoutine_f3a40(_QWORD);
 __int64 GameRoutine_f57c0(int*);
 __int64 GameRoutine_f57c0_alt1(_QWORD) __asm__("GameRoutine_f57c0");
 __int64 GameRoutine_f5850(int, _QWORD*, char);
-__int64 GameRoutine_f5850_alt1(void) __asm__("GameRoutine_f5850");
 __int64 GameRoutine_f63e0(int*);
 __int64 GameRoutine_f63e0_alt1(_QWORD,
                                long double) __asm__("GameRoutine_f63e0");
@@ -2219,6 +2218,7 @@ __attribute__((swiftcall)) void snd_11a5d0(PSEUDO_X8 x8_, __int64 result,
   __int64 v170;
   __int64 v171;
   _DWORD v172[4];
+  __int64 v173;
 
   if (*(_BYTE*)(result + 8) == 1) {
     *(_QWORD*)a8 = 0;
@@ -2361,7 +2361,7 @@ __attribute__((swiftcall)) void snd_11a5d0(PSEUDO_X8 x8_, __int64 result,
     v32 = (int*)v152;
   }
   else if ((v19 & 0x1000000) != 0) {
-    v70 = GameRoutine_f5850_alt1();
+    v70 = GameRoutine_f5850(v19, &v173, 0);
     v71 = v70;
     if (*(_DWORD*)(v70 + 132) != 0) {
       v72 = Crc32List_119b10_alt1(v16 + 2840);

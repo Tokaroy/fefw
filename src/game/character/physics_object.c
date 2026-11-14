@@ -699,9 +699,9 @@ __n128 game_character_PhysicsObject_PhysicsObject_lambda0_Invoke(__int64 a1,
                 }
               }
               v23 = *(_QWORD*)(v6 + 136);
-              (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, long double))(
+              (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64))(
                   **(_QWORD**)(*(_QWORD*)(v5 + 24) + 16LL) + 176LL))(
-                  (void*)(v33_.v33), *(long double*)&result),
+                  (void*)(v33_.v33), *(_QWORD*)(*(_QWORD*)(v5 + 24) + 16LL)),
                   v14 = COERCE_AS(
                       __typeof__(v14),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -711,9 +711,8 @@ __n128 game_character_PhysicsObject_PhysicsObject_lambda0_Invoke(__int64 a1,
               v26 = v24;
               GameRoutine_1096110_alt1((void*)((__int64)v33_.v33), v23, v17,
                                        nullptr, &v26, 0x1.0000000000000p+0f),
-                  v14 = COERCE_AS(
-                      __typeof__(v14),
-                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+                  result = COERCE_AS(__typeof__(result),
+                                     PSEUDO_REGISTER(__n128, "v0", "=w"));
             }
           }
         }

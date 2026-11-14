@@ -537,7 +537,7 @@ bool TempleMiracleMenuItem_IsActive(__int64 a1)
 {
   __int64 v3;
   int v4;
-  _DWORD* v5;
+  int* v5;
   int v6;
   bool v9;
   __int64 v10;
@@ -560,7 +560,7 @@ bool TempleMiracleMenuItem_IsActive(__int64 a1)
   }
   v3 = *(_QWORD*)(a1 + 96);
   v4 = *(_DWORD*)(v3 + 4);
-  v5 = *(_DWORD**)(*(_QWORD*)(v3 + 16) + 24LL);
+  v5 = *(int**)(*(_QWORD*)(v3 + 16) + 24LL);
   v6 = v5[105];
   if ((v6 <= 2 || v5[103] > v4) && (v6 <= 1 || v5[102] > v4)) {
     v9 = v6 >= 1 && v5[101] <= v4;

@@ -28,7 +28,7 @@ __int64 CmdBtlDispos_f36bc0(__int64 result, _QWORD* a2);
 __int64 game_cmdbtl_CmdBtlDispos_Initialize_lambda0_Invoke(__int64 result,
                                                            __int64 a2);
 _QWORD* CmdbtlPartyNatives_eba910(_QWORD*, __int64*);
-__int64 CmdbtlPartyNatives_eba740(__int64*);
+__int64 CmdbtlPartyNatives_eba740(__int64*, __int64*);
 __int64 GameRoutine_932c10(_QWORD, _QWORD);
 extern __int64 GameData_21f4cc0;
 extern int GameData_22167c0;
@@ -2525,10 +2525,11 @@ __int64 game_cmdbtl_CmdBtlDispos_CreatePlayer_lambda0_Invoke(__int64 result,
             GameRoutine_8123d0(result);
           }
           v8 = *(_DWORD**)(result + 24);
-          if (*v8 >= GameData_22167c0) {
+          if (*(int*)v8 >= GameData_22167c0) {
             v13 = *(_QWORD*)(v3 + 240);
             if (v13 >= *(_QWORD*)(v3 + 248)) {
-              result = CmdbtlPartyNatives_eba740((__int64*)(v3 + 232));
+              result = CmdbtlPartyNatives_eba740((__int64*)(v3 + 232),
+                                                 (__int64*)a2);
               *(_QWORD*)(v3 + 240) = result;
             }
             else {
@@ -2609,7 +2610,7 @@ __int64 game_cmdbtl_CmdBtlDispos_CreatePlayer_lambda0_Invoke(__int64 result,
               }
             }
             v28 = *(unsigned __int8*)(v11 + 498);
-            if ((*(_BYTE*)(v3 + 228) & 1) != 0 && *(_DWORD*)(v3 + 224) < v28) {
+            if ((*(_BYTE*)(v3 + 228) & 1) != 0 && *(int*)(v3 + 224) < v28) {
               v28 = *(_DWORD*)(v3 + 224);
             }
             *(_DWORD*)(v3 + 224) = v28;

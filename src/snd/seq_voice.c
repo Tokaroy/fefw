@@ -1703,7 +1703,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
     if (v9 == 0 || ((result = (*(__int64 (**)(__int64))(*(_QWORD*)(v9 - 5592) +
                                                         376LL))(v9 - 5592)) &
                     1) == 0) {
-      if (*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) < 0x0.0p+0f) {
+      if (!(*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) >= 0x0.0p+0f)) {
         return (*(__int64 (**)(__int64))(*(_QWORD*)v2 + 264LL))(v2);
       }
       if (snd_Param_isEnvelopeReleased_alt1(v2 + 40)) {

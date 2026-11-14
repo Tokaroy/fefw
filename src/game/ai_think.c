@@ -436,7 +436,7 @@ __int64 AIThink_11f6e20_alt1(__int64, _DWORD*, __int64, __int64, __int64,
                              __int64) __asm__("AIThink_11f6e20");
 __int64 AIThink_11f73f0_alt1(_QWORD, _QWORD, _QWORD,
                              _QWORD) __asm__("AIThink_11f73f0");
-__int64 AIThink_11fd9e0_alt1(_QWORD) __asm__("AIThink_11fd9e0");
+__int64 AIThink_11fd9e0_alt1(_QWORD, _QWORD) __asm__("AIThink_11fd9e0");
 __int64 AIThink_1202f00_alt1(_QWORD, _QWORD, _QWORD) __asm__("AIThink_1202f00");
 __int64 AIThink_12047a0_alt1(_QWORD, _QWORD, _QWORD,
                              _QWORD) __asm__("AIThink_12047a0");
@@ -1910,7 +1910,7 @@ LABEL_22:
       if (i == 0) {
         break;
       }
-      if ((AIThink_11fd9e0_alt1(a1[1]) & 1) != 0 &&
+      if ((AIThink_11fd9e0_alt1(a1[1], v45) & 1) != 0 &&
           (GameRoutine_11f25a0(a1[1], v45) & 1) != 0) {
         v19 = v45;
         v44 = 0;

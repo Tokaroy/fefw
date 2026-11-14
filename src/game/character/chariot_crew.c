@@ -203,23 +203,24 @@ game_character_ChariotCrew_ChariotCrew_closure_Invoke(__int64 a1, __int64 a2,
   }
   v15 = LANES128(v3[3]).n128_f32[0];
   v16 = 0x0.0p+0f;
-  if (v15 > 0x0.0p+0f) {
+  if (!(v15 <= 0x0.0p+0f)) {
     v16 = 0x1.0000000000000p+0f - exp2f(v15 * -0x1.df851e0000000p+4f);
     PSEUDO_LOW_LANE128(v10, n128_u32, DWORD1(v32));
   }
   if (((v17 = LANES128(v3[12]).n128_f32[0],
-        LANES128(v10).n128_f32[0] < 0x0.0p+0f) ||
-       v17 > 0x0.0p+0f) &&
-      (LANES128(v10).n128_f32[0] > 0x0.0p+0f || v17 < 0x0.0p+0f)) {
+        !(LANES128(v10).n128_f32[0] >= 0x0.0p+0f)) ||
+       !(v17 <= 0x0.0p+0f)) &&
+      (!(LANES128(v10).n128_f32[0] <= 0x0.0p+0f) ||
+       !(v17 >= 0x0.0p+0f))) {
     v18 = v17 + (float)(v16 * (float)(LANES128(v10).n128_f32[0] - v17));
-    v19 = (v16 > 0x1.0000000000000p+0f) ^ (LANES128(v10).n128_f32[0] <= v17);
-    if (LANES128(v10).n128_f32[0] >= v18) {
+    v19 = (v16 > 0x1.0000000000000p+0f) ^ !(LANES128(v10).n128_f32[0] > v17);
+    if (!(LANES128(v10).n128_f32[0] < v18)) {
       v20 = LANES128(v10).n128_f32[0];
     }
     else {
       v20 = v17 + (float)(v16 * (float)(LANES128(v10).n128_f32[0] - v17));
     }
-    if (v18 >= LANES128(v10).n128_f32[0]) {
+    if (!(v18 < LANES128(v10).n128_f32[0])) {
       v18 = LANES128(v10).n128_f32[0];
     }
     if (v19 == 0) {
@@ -246,7 +247,7 @@ game_character_ChariotCrew_ChariotCrew_closure_Invoke(__int64 a1, __int64 a2,
   if ((v22 & 1) != 0) {
     v23 = LANES128(v3[3]).n128_f32[0];
     PSEUDO_LOW_LANE128(v10, n128_u64, 0);
-    if (v23 > 0x0.0p+0f) {
+    if (!(v23 <= 0x0.0p+0f)) {
       PSEUDO_LOW_LANE128(v10, n128_f32,
                          0x1.0000000000000p+0f -
                              exp2f(v23 * -0x1.df851e0000000p+4f));

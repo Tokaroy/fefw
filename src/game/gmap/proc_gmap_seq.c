@@ -68,7 +68,6 @@ __int64 GameRoutine_8679c0(void);
 __int64 GameRoutine_877400(__int64);
 __int64 GameRoutine_887600(void);
 __int64 GameRoutine_888970(_QWORD, _QWORD, _QWORD, _QWORD);
-__int64 GameRoutine_88cee0(void);
 __int64 GameRoutine_ad7390(void);
 __int64 GameRoutine_ecb40(void);
 __int64 GmapSituation_14db030(void);
@@ -5997,7 +5996,7 @@ void ProcGmapSeq_8855f0()
     if (game_GameModeData_instance_ != 0) {
       v4 = *(_DWORD**)(game_GameModeData_instance_ + 24);
       if (v4 != nullptr) {
-        v4 = (_DWORD*)GameRoutine_88cee0();
+        v4 = (_DWORD*)GameRoutine_88cee0_alt1((__int64)v4);
         if (v4 != nullptr) {
           v4 = (_DWORD*)game_gmap_SpotMgr_FindSpot(v4);
         }

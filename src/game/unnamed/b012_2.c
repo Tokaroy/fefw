@@ -103,7 +103,7 @@ extern __int64 fw_memory_g_heap_manager_ptr;
 extern char** msg_MessageManager_empty_text__ptr;
 float CharacterAnimator_1079580(__int64, int, float, float, float);
 int __cxa_guard_acquire(__int64);
-int memcmp(__int64, __int64, unsigned __int64);
+__int64 memcmp(__int64, __int64, unsigned __int64);
 void BasicMenuCursor_16e0c00(_QWORD*, __int64);
 void CharacterFacialController_10b2280(__int64, unsigned int, float);
 void GameRoutine_e3f8b0_alt1(_QWORD*, double,
