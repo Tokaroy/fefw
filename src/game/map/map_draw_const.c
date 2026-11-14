@@ -93,11 +93,21 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
                                             int a4, int a5, __int64 a6,
                                             long double a7);
 void MapDrawConst_fcc660(__int64* a1, __int64 a2);
+__int64 MapDrawConst_fcbcc0_alt4(long double, __int64, int, unsigned __int8,
+                                 unsigned __int8, __int64, char);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+int __cxa_guard_acquire_alt2(__int64);
+void __attribute__((noreturn)) GameRoutine_60a210_alt2();
+void __cxa_guard_release_alt2(__int64);
+void nn_mem_StandardAllocator_Free_alt2(__int64, __int64);
 
 void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
                                             int a4, int a5, __int64 a6,
                                             long double a7)
 {
+
+#pragma clang fp contract(on)
 
 #pragma clang fp contract(off)
   int v7;
@@ -110,7 +120,7 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
   unsigned __int64 v14;
   __int64 v15;
   unsigned __int64 v16;
-  __int64 v17;
+  unsigned __int64 v17;
   _BYTE* v18;
   _BYTE* v19;
   char v20;
@@ -140,9 +150,9 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
   unsigned __int64 v44;
   unsigned __int64 i;
   float32x4_t v46;
-  unsigned __int64 v47;
+  float32x4_t* v47;
   float32x4_t* v48;
-  unsigned __int64 v49;
+  float32x4_t* v49;
   float32x4_t v50;
   float32x4_t v51;
   int8x16_t v52;
@@ -217,11 +227,11 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
             v16 = v14;
           }
           if (v16 >> 62 != 0) {
-            GameRoutine_60a210_alt1(),
+            GameRoutine_60a210_alt2(),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
           }
-          a1 = fw_memory_HeapManager_Allocate_alt1(
+          a1 = fw_memory_HeapManager_Allocate_alt2(
               *(_QWORD*)fw_memory_g_heap_manager_ptr, 4 * v16, 16, 0),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v17 = a1 + v12;
@@ -250,7 +260,7 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
                 0) {
               v21 = 56;
             }
-            nn_mem_StandardAllocator_Free_alt1(
+            nn_mem_StandardAllocator_Free_alt2(
                 *(_QWORD*)fw_memory_g_heap_manager_ptr + v21, v11),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
@@ -270,7 +280,7 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
         v62_.v62[1] = &v64_.v64;
         v62_.v63 = v62_.v62;
         v25 =
-            MapDrawConst_fcbcc0_alt3(a7, a1, 1, v23, v24, (__int64)v62_.v62, 0),
+            MapDrawConst_fcbcc0_alt4(a7, a1, 1, v23, v24, (__int64)v62_.v62, 0),
         v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
         v27 = (__int64)v62_.v63;
         if (v62_.v63 == v62_.v62) {
@@ -292,13 +302,13 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
              1) == 0) {
           v31 = v29;
           v32 = v30;
-          v27 = __cxa_guard_acquire_alt1((__int64)&GameData_21a60e8),
+          v27 = __cxa_guard_acquire_alt2((__int64)&GameData_21a60e8),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v30 = v32;
           v29 = v31;
           if ((_DWORD)v27 != 0) {
             GameData_21a60e0 = 0;
-            __cxa_guard_release_alt1((__int64)&GameData_21a60e8),
+            __cxa_guard_release_alt2((__int64)&GameData_21a60e8),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v30 = v32;
@@ -310,13 +320,13 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
              1) == 0) {
           v33 = v29;
           v34 = v30;
-          v27 = __cxa_guard_acquire_alt1((__int64)&GameData_21a60e8),
+          v27 = __cxa_guard_acquire_alt2((__int64)&GameData_21a60e8),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v30 = v34;
           v29 = v33;
           if ((_DWORD)v27 != 0) {
             GameData_21a60e0 = 0;
-            __cxa_guard_release_alt1((__int64)&GameData_21a60e8),
+            __cxa_guard_release_alt2((__int64)&GameData_21a60e8),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v30 = v34;
@@ -328,13 +338,13 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
              1) == 0) {
           v35 = v29;
           v36 = v30;
-          v27 = __cxa_guard_acquire_alt1((__int64)&GameData_21a60e8),
+          v27 = __cxa_guard_acquire_alt2((__int64)&GameData_21a60e8),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v30 = v36;
           v29 = v35;
           if ((_DWORD)v27 != 0) {
             GameData_21a60e0 = 0;
-            __cxa_guard_release_alt1((__int64)&GameData_21a60e8),
+            __cxa_guard_release_alt2((__int64)&GameData_21a60e8),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v30 = v36;
@@ -346,13 +356,13 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
              1) == 0) {
           v37 = v29;
           v38 = v30;
-          v27 = __cxa_guard_acquire_alt1((__int64)&GameData_21a60e8),
+          v27 = __cxa_guard_acquire_alt2((__int64)&GameData_21a60e8),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v30 = v38;
           v29 = v37;
           if ((_DWORD)v27 != 0) {
             GameData_21a60e0 = 0;
-            __cxa_guard_release_alt1((__int64)&GameData_21a60e8),
+            __cxa_guard_release_alt2((__int64)&GameData_21a60e8),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v30 = v38;
@@ -364,13 +374,13 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
              1) == 0) {
           v39 = v29;
           v40 = v30;
-          v27 = __cxa_guard_acquire_alt1((__int64)&GameData_21a60e8),
+          v27 = __cxa_guard_acquire_alt2((__int64)&GameData_21a60e8),
           v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
           v30 = v40;
           v29 = v39;
           if ((_DWORD)v27 != 0) {
             GameData_21a60e0 = 0;
-            __cxa_guard_release_alt1((__int64)&GameData_21a60e8),
+            __cxa_guard_release_alt2((__int64)&GameData_21a60e8),
                 v43 = COERCE_AS(__typeof__(v43),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
             v30 = v40;
@@ -416,26 +426,26 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
   if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_21a6130,
                             memory_order_acquire) &
        1) == 0 &&
-      __cxa_guard_acquire_alt1((__int64)&GameData_21a6130) != 0) {
+      __cxa_guard_acquire_alt2((__int64)&GameData_21a6130) != 0) {
     v57 = *((_QWORD*)GameData_212c540 + 1);
     *(_QWORD*)&GameData_21a6120 = *(_QWORD*)GameData_212c540;
     *((_QWORD*)&GameData_21a6120 + 1) = v57;
-    __cxa_guard_release_alt1((__int64)&GameData_21a6130),
+    __cxa_guard_release_alt2((__int64)&GameData_21a6130),
         v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
   }
   v46 = COERCE_AS(float32x4_t, GameData_21a6120);
   v48 = (float32x4_t*)LANES128(a2[6]).n128_u64[0];
-  v47 = LANES128(a2[6]).n128_u64[1];
-  if ((float32x4_t*)v47 != v48) {
-    v49 = LANES128(a2[6]).n128_u64[0];
+  v47 = (float32x4_t*)LANES128(a2[6]).n128_u64[1];
+  if (v47 != v48) {
+    v49 = (float32x4_t*)LANES128(a2[6]).n128_u64[0];
     do {
-      v50 = *(float32x4_t*)(v49 + 16);
-      v49 += 64LL;
+      v50 = v49[1];
+      v49 += 4;
       v46 = vaddq_f32(v46, v50);
     } while (v49 != v47);
     v46 = vmulq_n_f32(
         v46, 0x1.0000000000000p+0f /
-                 (float)(unsigned __int64)((__int64)(v47 - (_QWORD)v48) >> 6));
+                 (float)(unsigned __int64)(((char*)v47 - (char*)v48) >> 6));
     LANES128(v46).n128_u32[3] = 0;
   }
   v51 = vsubq_f32(v46, a2[11]);
@@ -448,12 +458,12 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
           .n64_u64[0];
   if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v52).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v52).n128_u64[0])))
-              .n64_f32[0] > 0x0.0p+0f &&
-      v47 != (_QWORD)v48) {
+              .n64_f32[0] > 0x0.0p+0f &
+      v47 != v48) {
     do {
       v48[1] = vsubq_f32(v48[1], v51);
       v48 += 4;
-    } while (v48 != (float32x4_t*)v47);
+    } while (v48 != v47);
   }
   v54 = v64_.v64;
   LANES128(a2[11]).n128_u64[0] = LANES128(v46).n128_u64[0];
@@ -466,7 +476,7 @@ void game_map_MapDrawConst_AddCellPlaneMask(__int64 a1, float32x4_t* a2, int a3,
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v56 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt1(
+    nn_mem_StandardAllocator_Free_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v56, v54),
         v43 = COERCE_AS(__typeof__(v43), PSEUDO_REGISTER(float, "s0", "=w"));
   }

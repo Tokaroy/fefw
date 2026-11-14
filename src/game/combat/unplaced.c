@@ -214,6 +214,11 @@ __int64 GameHr_e412a0_alt1(_QWORD, _QWORD, _QWORD) __asm__("GameHr_e412a0");
 __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
                            double a4, long double a5, long double a6,
                            long double a7, long double a8);
+__int64 GameRoutine_1a09c60(_QWORD, _QWORD, _QWORD);
+__int64 GameRoutine_1a09c70(_QWORD);
+__int64 GameRoutine_1a09c80(_QWORD, _QWORD, _QWORD);
+__int64 GameRoutine_1a0a690(_QWORD, _QWORD);
+float GameRoutine_1a0a6a0(float, float);
 
 __int64 game_combat_d360c0(__int64 a1, unsigned int a2, __int64* a3)
 {
@@ -328,14 +333,14 @@ __int64 game_combat_d360c0(__int64 a1, unsigned int a2, __int64* a3)
     if (v10 > 2) {
       v16 = a1;
       v17 = a2;
-      v18 = strncat(v61, v11 + 3, 12);
+      v18 = GameRoutine_1a09c80(v61, v11 + 3, 12);
       memset(&v60[1], 0, 11);
-      *(_WORD*)&v61[strlen(v18)] = 47;
+      *(_WORD*)&v61[GameRoutine_1a09c70(v18)] = 47;
       v60[0] = 47;
       v19 = *(_QWORD*)(v3 + 11792);
       v20 = *(_BYTE**)(v19 + 8);
       if (v20 != nullptr) {
-        v21 = strchr(*(_QWORD*)(v19 + 8), 95);
+        v21 = GameRoutine_1a0a690(*(_QWORD*)(v19 + 8), 95);
         if (v21 != 0) {
           v22 = (_BYTE*)(v21 + 1);
         }
@@ -349,8 +354,8 @@ __int64 game_combat_d360c0(__int64 a1, unsigned int a2, __int64* a3)
           v20 = (_BYTE*)(v21 + 1);
         }
       }
-      strncat(v60, v20, 12);
-      v24 = strlen(v60);
+      GameRoutine_1a09c80(v60, v20, 12);
+      v24 = GameRoutine_1a09c70(v60);
       v25 = 0;
       memset(&v59[1], 0, 11);
       a2 = v17;
@@ -454,7 +459,7 @@ __int64 game_combat_d360c0(__int64 a1, unsigned int a2, __int64* a3)
       }
       v51 = v30 - 3;
       if (v30 >= 3 && *(_BYTE*)(v35 + 2) == 95) {
-        v52 = memchr(v35 + 3, 95, v30 - 3);
+        v52 = GameRoutine_1a09c60(v35 + 3, 95, v30 - 3);
         a2 = v17;
         v53 = v52;
         a1 = v16;
@@ -468,8 +473,8 @@ __int64 game_combat_d360c0(__int64 a1, unsigned int a2, __int64* a3)
             else {
               v56 = v51;
             }
-            strncat(v59, v35 + 3, v56);
-            v57 = strlen(v59);
+            GameRoutine_1a09c80(v59, v35 + 3, v56);
+            v57 = GameRoutine_1a09c70(v59);
             a2 = v17;
             v58 = v57;
             a1 = v16;
@@ -1936,6 +1941,9 @@ void game_combat_e436c0(__int64 a1, float32x2_t* a2, float a3)
 
 void game_combat_e43d60(__int64 a1)
 {
+
+#pragma clang fp contract(fast)
+
   int v1;
   __int64 v2;
   __int64 v3;
@@ -2255,7 +2263,7 @@ LABEL_20:
       }
     }
     v27 = v23 * LANES128(a1[6]).n128_f32[2];
-    v28 = fmodf(v21 - v20, 0x1.921fb60000000p+2f);
+    v28 = GameRoutine_1a0a6a0(v21 - v20, 0x1.921fb60000000p+2f);
     if (v28 >= 0x0.0p+0f) {
       v29 = v28 + 0x0.0p+0f;
     }
@@ -2280,7 +2288,8 @@ LABEL_20:
       v20 = v20 - v30;
       if (v20 >= v31) {
       LABEL_41:
-        v32 = fmodf(v20 + 0x1.921fb60000000p+1f, 0x1.921fb60000000p+2f) +
+        v32 = GameRoutine_1a0a6a0(v20 + 0x1.921fb60000000p+1f,
+                                  0x1.921fb60000000p+2f) +
               -0x1.921fb60000000p+1f;
         if (v32 < -0x1.921fb60000000p+1f) {
           v32 = v32 + 0x1.921fb60000000p+2f;

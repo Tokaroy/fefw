@@ -1219,6 +1219,7 @@ void game_map_784ec0(int* a1, int* a2, _QWORD* a3, unsigned __int64 a4,
 void game_map_786aa0(int* a1, int* a2, _QWORD* a3, unsigned __int64 a4,
                      int* a5);
 void Camera_7c0910(__int64, __int64);
+void game_map_7c0910(__int64, __int64);
 
 void game_map_724ae0()
 {
@@ -4271,7 +4272,7 @@ bool game_map_75a760(__int64* a1, __int64* a2, __int64* a3)
     if ((unsigned __int64)v6 >= 2) {
       if (v6 == 2) {
         v7 = *a1;
-        Camera_7c0910(*a3, *(a2 - 1)),
+        game_map_7c0910(*a3, *(a2 - 1)),
             v11 =
                 COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
             v19 =
@@ -4284,7 +4285,7 @@ bool game_map_75a760(__int64* a1, __int64* a2, __int64* a3)
                 COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(float, "s0", "=w")),
             v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
         v9 = v8;
-        Camera_7c0910(*a3, v7),
+        game_map_7c0910(*a3, v7),
             v11 =
                 COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
             v19 =
@@ -4356,7 +4357,7 @@ LABEL_11:
   v16 = 0;
   while (1) {
     v18 = *v13;
-    Camera_7c0910(*a3, *v14),
+    game_map_7c0910(*a3, *v14),
         v11 = COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
         v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s0", "=w")),
         v21 = COERCE_AS(__typeof__(v21), PSEUDO_REGISTER(float, "s0", "=w")),
@@ -4364,7 +4365,7 @@ LABEL_11:
         v27 = COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(float, "s0", "=w")),
         v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
     v20 = v19;
-    Camera_7c0910(*a3, v18),
+    game_map_7c0910(*a3, v18),
         v11 = COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
         v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s0", "=w")),
         v21 = COERCE_AS(__typeof__(v21), PSEUDO_REGISTER(float, "s0", "=w")),
@@ -4381,7 +4382,7 @@ LABEL_11:
           goto LABEL_14;
         }
         v24 = *(__int64*)((char*)a1 + v23 + 8);
-        Camera_7c0910(*a3, v22),
+        game_map_7c0910(*a3, v22),
             v11 =
                 COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
             v19 =
@@ -4394,7 +4395,7 @@ LABEL_11:
                 COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(float, "s0", "=w")),
             v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
         v26 = v25;
-        Camera_7c0910(*a3, v24),
+        game_map_7c0910(*a3, v24),
             v11 =
                 COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
             v19 =

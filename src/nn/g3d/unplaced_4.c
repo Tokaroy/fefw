@@ -706,6 +706,9 @@ __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
 
 float32x4_t nn_g3d_5f96c0(__int64 a1, float32x4_t* a2, float32x4_t result)
 {
+
+#pragma clang fp contract(on)
+
   float32x4_t* v3;
   __int64 v4;
   int v5;

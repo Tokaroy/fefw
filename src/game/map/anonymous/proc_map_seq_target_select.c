@@ -85,6 +85,7 @@ extern __int64 GameData_21c99b8;
 extern __int64 GameData_21cd120;
 void game_map_790ba0(__int64);
 __int64 ProcMapSeqTargetSelect_78e5d0(__int64 a1);
+__int64* game_UnitPool_Get_alt2(_BYTE*);
 
 float game_map_anonymous_ProcMapSeqTargetSelect_UpdateFocus_closure_Invoke(
     __int64 a1, _DWORD* a2, long double a3)
@@ -246,6 +247,8 @@ LABEL_34:
 __int64 ProcMapSeqTargetSelect_78e5d0(__int64 a1)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   unsigned int v1;
   __int64* v3;
@@ -328,7 +331,7 @@ __int64 ProcMapSeqTargetSelect_78e5d0(__int64 a1)
       v12 = *(unsigned __int8*)(v7 + 5);
       v11 = (_BYTE*)(v7 + 5);
       if (v12 != 0) {
-        v13 = game_UnitPool_Get_alt1(v11);
+        v13 = game_UnitPool_Get_alt2(v11);
         if (v10 != 0) {
         LABEL_14:
           *(_QWORD*)(v10 + 1072) = v13;
@@ -376,7 +379,7 @@ __int64 ProcMapSeqTargetSelect_78e5d0(__int64 a1)
     }
   LABEL_31:
     if (*(_BYTE*)(GameData_21cd108 + 8) != 0) {
-      v17 = game_UnitPool_Get_alt1((_BYTE*)(GameData_21cd108 + 8));
+      v17 = game_UnitPool_Get_alt2((_BYTE*)(GameData_21cd108 + 8));
       v8 = (_DWORD*)*v3;
       v18 = v17;
     }
@@ -476,7 +479,7 @@ __int64 ProcMapSeqTargetSelect_78e5d0(__int64 a1)
     game_map_790ba0(a1 + 288);
     *(_BYTE*)(a1 + 11561) |= 1u;
     if (*(_BYTE*)(GameData_21cd108 + 8) != 0) {
-      v35 = game_UnitPool_Get_alt1((_BYTE*)(GameData_21cd108 + 8));
+      v35 = game_UnitPool_Get_alt2((_BYTE*)(GameData_21cd108 + 8));
     }
     else {
       v35 = nullptr;

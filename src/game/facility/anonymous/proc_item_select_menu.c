@@ -233,6 +233,11 @@ LayoutAccessor_1562cf0_alt2(__int64 result,
 extern __int64 (*GameData_20f92e8[])();
 extern char* GameData_20f97e0[7];
 _QWORD* ProcItemSelectMenu_Unknown85_1878de0(__int64 a1);
+__int64* LayoutAccessor_155fbe0_alt2(__int64*, const char*);
+__int64 LayoutAccessor_1562cf0_alt3(__int64 result, const char*);
+__int64 ui_LayoutAccessor_FindTextBox_alt2(__int64*, __int64);
+char* GameRoutine_a4dbe0_alt3(__int64, const char*, char);
+void GameRoutine_156c5d0_alt2(__int64, __int64, char);
 
 __int64 ProcItemSelectMenu_Unknown155_1874a60(__int64 a1, unsigned int a2)
 {
@@ -1698,6 +1703,9 @@ __int64 ProcItemSelectMenu_Unknown84_187a6d0(_BYTE* a1)
 
 _QWORD* ProcItemSelectMenu_Unknown85_187a700(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   int v1;
   __int64 v2;
   unsigned __int8 v4;
@@ -1784,13 +1792,13 @@ _QWORD* ProcItemSelectMenu_Unknown85_187a700(__int64 a1)
   v25_.v25[3] = 0xFFFF0006FFFF0005LL;
   v25_.v39 = 8;
   v25_.v26 = (_QWORD*)0xFFFF0008FFFF0007LL;
-  v7 = GameRoutine_a4dbe0_alt2(v6, v5, 0);
+  v7 = GameRoutine_a4dbe0_alt3(v6, v5, 0);
   if (v7 != nullptr) {
     v8 = (__int64)v7;
-    v9 = ui_LayoutAccessor_FindTextBox_alt1((__int64*)(a1 + 952),
+    v9 = ui_LayoutAccessor_FindTextBox_alt2((__int64*)(a1 + 952),
                                             (__int64)"L_MenuItem_Info/T_Title");
     if (v9 != 0) {
-      GameRoutine_156c5d0_alt1(v9, v8, 0);
+      GameRoutine_156c5d0_alt2(v9, v8, 0);
     }
   }
   v10 = *(_QWORD*)(a1 + 1064);
@@ -1844,19 +1852,19 @@ LABEL_22:
 LABEL_27:
   if (v10 != 0) {
     GameHr_1562680(a1 + 848, "UnitInfoCost_On", 0x1.0000000000000p+0f);
-    v15 = LayoutAccessor_155fbe0_alt1((__int64*)(a1 + 848), "L_UnitInfo");
+    v15 = LayoutAccessor_155fbe0_alt2((__int64*)(a1 + 848), "L_UnitInfo");
     LayoutAccessor_1572ac0(v15, v10, 0, v13);
-    v16 = LayoutAccessor_155fbe0_alt1((__int64*)(a1 + 848), "L_UnitInfo");
-    LayoutAccessor_1562cf0_alt1((__int64)v16, "Info00");
-    v17 = LayoutAccessor_155fbe0_alt1((__int64*)(a1 + 848), "L_MasteryInfo");
+    v16 = LayoutAccessor_155fbe0_alt2((__int64*)(a1 + 848), "L_UnitInfo");
+    LayoutAccessor_1562cf0_alt3((__int64)v16, "Info00");
+    v17 = LayoutAccessor_155fbe0_alt2((__int64*)(a1 + 848), "L_MasteryInfo");
     return Util_1575c70((__int64)v17, v10, 0, nullptr, 0, 0);
   }
   else {
     GameHr_1562680(a1 + 848, "StockCost_On", 0x1.0000000000000p+0f);
-    v19 = LayoutAccessor_155fbe0_alt1((__int64*)(a1 + 848), "L_UnitInfo");
+    v19 = LayoutAccessor_155fbe0_alt2((__int64*)(a1 + 848), "L_UnitInfo");
     LayoutAccessor_1572ac0(v19, 0, 0, v13);
-    v20 = LayoutAccessor_155fbe0_alt1((__int64*)(a1 + 848), "L_UnitInfo");
-    return (_QWORD*)LayoutAccessor_1562cf0_alt1((__int64)v20, "Simple00");
+    v20 = LayoutAccessor_155fbe0_alt2((__int64*)(a1 + 848), "L_UnitInfo");
+    return (_QWORD*)LayoutAccessor_1562cf0_alt3((__int64)v20, "Simple00");
   }
 }
 

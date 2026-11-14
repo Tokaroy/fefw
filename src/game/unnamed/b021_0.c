@@ -4885,6 +4885,8 @@ char* GameHr_16030a0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
                      __int64 a5)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v5;
   __int64 v6;

@@ -161,7 +161,12 @@ void LayoutAccessor_1562060(__int64* a1, __int64 a2, _BYTE* a3);
 __int64 LayoutAccessor_15625b0(__int64* a1, const char* a2, char a3);
 __int64 LayoutAccessor_1562cf0(__int64 result, const char* a2);
 __int64 LayoutAccessor_1562f00(__int64 result, const char* a2, float a3);
-__int64 LayoutAccessor_1563030(__int64 result, const char* a2, char a3);
+__int64 LayoutAccessor_1563030_alt2(__int64 result, const char* a2, char a3);
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+__int64 std___1___shared_weak_count_lock_alt2(__int64);
+bool GameHr_fb1e50(__int64, const char*);
+char* GameRoutine_15623e0_alt2(__int64*, unsigned int*);
+__int64 LayoutAccessor_1563030(__int64 result, unsigned int* a2, char a3);
 
 __int64 LayoutAccessor_1555630(__int64 a1)
 {
@@ -2037,7 +2042,7 @@ LABEL_16:
       GameHr_1562680((__int64)v3, a2, 0x1.0000000000000p+0f),
           v10 = COERCE_AS(__typeof__(v10),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      return LayoutAccessor_1563030((__int64)v3, a2, 0);
+      return LayoutAccessor_1563030_alt2((__int64)v3, a2, 0);
     }
   }
   return result;
@@ -2143,8 +2148,11 @@ LABEL_16:
   return result;
 }
 
-__int64 LayoutAccessor_1563030(__int64 result, const char* a2, char a3)
+__int64 LayoutAccessor_1563030(__int64 result, unsigned int* a2, char a3)
 {
+
+#pragma clang fp contract(on)
+
   int v3;
   __int64* v4;
   __int64 v7;
@@ -2171,7 +2179,7 @@ __int64 LayoutAccessor_1563030(__int64 result, const char* a2, char a3)
   if (result == 0) {
     return result;
   }
-  result = std___1___shared_weak_count_lock_alt1(result),
+  result = std___1___shared_weak_count_lock_alt2(result),
   v12 = COERCE_AS(__typeof__(v12),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   if (result == 0) {
@@ -2205,7 +2213,7 @@ __int64 LayoutAccessor_1563030(__int64 result, const char* a2, char a3)
     (*(void (**)(__int64))(*(_QWORD*)result + 16LL))(result),
         v12 = COERCE_AS(__typeof__(v12),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    result = std___1___shared_weak_count___release_weak_alt1(v11),
+    result = std___1___shared_weak_count___release_weak_alt2(v11),
     v12 = COERCE_AS(__typeof__(v12),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (v9) {
@@ -2217,11 +2225,9 @@ __int64 LayoutAccessor_1563030(__int64 result, const char* a2, char a3)
   }
 LABEL_16:
   if (v4[5] != 0) {
-    v19[0] = (__int64)({
-      unsigned __int128 r_ = GameRoutine_15623e0_alt1_pair(v4, a2);
-      v12 = COERCE_AS(__typeof__(v12), (unsigned long long)(r_ >> 64));
-      (const char*)(unsigned long long)r_;
-    });
+    v19[0] = (__int64)GameRoutine_15623e0_alt2(v4, a2),
+    v12 = COERCE_AS(__typeof__(v12),
+                    PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v19[1] = v12;
     result = LayoutAccessor_1564b20((__int64)(v4 + 3), v19),
     v12 = COERCE_AS(__typeof__(v12),
@@ -2230,10 +2236,12 @@ LABEL_16:
       v13 = *(_QWORD**)(result + 56);
       v14 = result;
       if (*v13 != 0 &&
-          ((a3 & 1) == 0 || a2 != nullptr && ((result = GameRoutine_fb1e50_alt1(
-                                                   (__int64)(v13 + 1), a2)) &
-                                              1) != 0)) {
-        v15 = std___1___shared_weak_count_lock_alt1(v4[1]),
+          ((a3 & 1) == 0 ||
+           a2 != nullptr &&
+               ((result = ((__int64 (*)(__int64, const char*))GameHr_fb1e50)(
+                     (__int64)(v13 + 1), (const char*)a2)) &
+                1) != 0)) {
+        v15 = std___1___shared_weak_count_lock_alt2(v4[1]),
         v12 = COERCE_AS(__typeof__(v12),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         if (v15 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v15 + 8),
@@ -2242,7 +2250,7 @@ LABEL_16:
           (*(void (**)(__int64))(*(_QWORD*)v15 + 16LL))(v15),
               v12 = COERCE_AS(__typeof__(v12),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          std___1___shared_weak_count___release_weak_alt1(v16),
+          std___1___shared_weak_count___release_weak_alt2(v16),
               v12 = COERCE_AS(__typeof__(v12),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         }
@@ -2251,7 +2259,7 @@ LABEL_16:
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         *(_DWORD*)(*(_QWORD*)(v14 + 56) + 32LL) =
             *(_DWORD*)(**(_QWORD**)(v14 + 56) + 32LL);
-        v17 = std___1___shared_weak_count_lock_alt1(v4[1]),
+        v17 = std___1___shared_weak_count_lock_alt2(v4[1]),
         v12 = COERCE_AS(__typeof__(v12),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         if (v17 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v17 + 8),
@@ -2260,7 +2268,7 @@ LABEL_16:
           (*(void (**)(__int64))(*(_QWORD*)v17 + 16LL))(v17),
               v12 = COERCE_AS(__typeof__(v12),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          std___1___shared_weak_count___release_weak_alt1(v18),
+          std___1___shared_weak_count___release_weak_alt2(v18),
               v12 = COERCE_AS(__typeof__(v12),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         }

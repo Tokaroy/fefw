@@ -195,6 +195,9 @@ void GameRoutine_167fe20_alt1(__int64, __int64) __asm__("GameRoutine_167fe20");
 void GmapSpotInfoSetterForGmap_1657240(__int64*);
 void ui_1567760(const char*, unsigned int, char);
 void GmapSpotList_167c2c0(_QWORD* a1);
+_QWORD* GameRoutine_654050_alt2(_QWORD* result, _QWORD*);
+__int64 GameRoutine_1a0b940(_QWORD, _QWORD, _QWORD);
+__int64 GmapSpotList_167ea80_alt1(_QWORD, _QWORD);
 
 __int64 game_gmap_GmapSpotList_OnInit(__int64 a1)
 {
@@ -1338,6 +1341,9 @@ __int64 GmapSpotList_Unknown100(__int64 a1)
 
 __int64 game_gmap_GmapSpotList_BCall(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   __int64 v4;
   __int64 v5;
@@ -1355,7 +1361,7 @@ __int64 game_gmap_GmapSpotList_BCall(__int64 a1)
     v6_.v7 = v6_.v6;
     v8_.v9 = v8_.v8;
     v8_.v8[0] = GameData_20801d8;
-    GameRoutine_654050_alt1(v8_.v8, (_QWORD*)(a1 + 288));
+    GameRoutine_654050_alt2(v8_.v8, (_QWORD*)(a1 + 288));
     if (v8_.v9 == v8_.v8) {
       v4 = 32;
     }
@@ -1943,6 +1949,9 @@ bool game_gmap_GmapSpotList_UpdateMapTargetSpot_lambda0_Invoke(__int64 a1,
 __int64 GmapSpotList_167e820(__int64 result, __int64* a2, unsigned __int64 a3,
                              __int64* a4, __int64 a5)
 {
+
+#pragma clang fp contract(on)
+
   __int64* v6;
   __int64 v7;
   __int64* v8;
@@ -2374,7 +2383,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
   __int64* v24;
   __int64* v25;
   __int64* v26;
-  char* v27;
+  signed __int64 v27;
   __int64 v28;
   __int64 v29;
   __int64 v30;
@@ -2386,9 +2395,9 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
   __int64 v37;
   __int64 v38;
   __int64* v39;
-  _QWORD* v40;
-  _QWORD* v41;
-  char* v42;
+  __int64* v40;
+  __int64* v41;
+  __int64* v42;
   __int64 v43;
   bool v44;
   char v45;
@@ -2397,7 +2406,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
   __int64* v48;
   __int64* v49;
   __int64 v50;
-  __int64* v51;
+  _QWORD* v51;
   __int64* v52;
   __int64 v53;
   __int64* v54;
@@ -2408,7 +2417,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
   __int64 v59;
   __int64 v60;
   __int64 v61;
-  __int64 v62;
+  _QWORD* v62;
   __int64 v63;
   __int64* v64;
 
@@ -2420,8 +2429,8 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
         return result;
       }
       while (1) {
-        result =
-            GmapSpotList_167ea80(*(_QWORD*)(*a2 + 88), *(_QWORD*)(*v13 + 88));
+        result = GmapSpotList_167ea80_alt1(*(_QWORD*)(*a2 + 88),
+                                           *(_QWORD*)(*v13 + 88));
         if ((result & 1) != 0) {
           break;
         }
@@ -2447,8 +2456,8 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
             v21 = &a3[v20 >> 1];
             v23 = *v21;
             v22 = v21 + 1;
-            if ((GmapSpotList_167ea80(*(_QWORD*)(v23 + 88),
-                                      *(_QWORD*)(*v15 + 88)) &
+            if ((GmapSpotList_167ea80_alt1(*(_QWORD*)(v23 + 88),
+                                           *(_QWORD*)(*v15 + 88)) &
                  1) != 0) {
               a3 = v22;
               v20 += ~(v20 >> 1);
@@ -2467,15 +2476,15 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
           v15 = a2;
         }
         else {
-          v62 = a6;
+          v62 = (_QWORD*)a6;
           v15 = v13;
           v16 = a2 - v13;
           do {
             v17 = &v15[v16 >> 1];
             v19 = *v17;
             v18 = v17 + 1;
-            if ((GmapSpotList_167ea80(*(_QWORD*)(*a3 + 88),
-                                      *(_QWORD*)(v19 + 88)) &
+            if ((GmapSpotList_167ea80_alt1(*(_QWORD*)(*a3 + 88),
+                                           *(_QWORD*)(v19 + 88)) &
                  1) != 0) {
               v16 >>= 1;
             }
@@ -2485,7 +2494,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
             }
           } while (v16 != 0);
           v14 = v9 / 2;
-          a6 = v62;
+          a6 = (__int64)v62;
         }
         v63 = v15 - v13;
       }
@@ -2497,7 +2506,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
           if (v15 + 1 == a2) {
             v61 = v14;
             v32 = *v15;
-            memmove((__int64)v15, (__int64)v25, (char*)a3 - (char*)a2);
+            GameRoutine_1a0b940(v15, v25, (char*)a3 - (char*)a2);
             v24 = (__int64*)((char*)v15 + ((char*)a3 - (char*)a2));
             *v24 = v32;
             v14 = v61;
@@ -2508,13 +2517,12 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
               v33 = *(a3 - 1);
               v24 = v15 + 1;
               if (a3 - 1 != v15) {
-                memmove((__int64)(v15 + 1), (__int64)v15,
-                        (char*)(a3 - 1) - (char*)v15);
+                GameRoutine_1a0b940(v15 + 1, v15, (char*)(a3 - 1) - (char*)v15);
               }
               *v15 = v33;
             }
             else {
-              v27 = (char*)((char*)a2 - (char*)v15);
+              v27 = (char*)a2 - (char*)v15;
               v28 = a2 - v15;
               v29 = a3 - a2;
               if (v28 == v29) {
@@ -2541,19 +2549,19 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
                   do {
                     v38 = *--v36;
                     v37 = v38;
-                    v39 = (__int64*)((char*)v36 + (_QWORD)v27);
+                    v39 = (__int64*)((char*)v36 + v27);
                     v40 = v36;
                     do {
                       v41 = v39;
                       *v40 = *v39;
-                      v42 = &v27[(_QWORD)v39];
+                      v42 = (__int64*)((char*)v39 + v27);
                       v43 = a3 - v39;
                       v44 = __OFSUB__(v28, v43);
                       v46 = v28 - v43;
                       v45 = (v46 < 0) ^ v44;
                       v39 = &v15[v46];
                       if (v45) {
-                        v39 = (__int64*)v42;
+                        v39 = v42;
                       }
                       v40 = v41;
                     } while (v39 != v36);
@@ -2569,14 +2577,14 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
       v9 -= v14;
       a4 -= v63;
       if (v63 + v14 >= a4 + v9) {
-        result = GmapSpotList_167ef20((__int64)v24, a3, v64, a4, v9, a6, a7);
+        result = GmapSpotList_167ef20(v24, a3, v64, a4, v9, a6, a7);
         a3 = v15;
         v9 = v14;
         a4 = v63;
         v64 = v24;
       }
       else {
-        result = GmapSpotList_167ef20((__int64)v13, v15, v24, v63, v14, a6, a7);
+        result = GmapSpotList_167ef20(v13, v15, v24, v63, v14, a6, a7);
         v13 = v24;
       }
       a2 = a3;
@@ -2588,7 +2596,7 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
     if (a4 <= v9) {
       if (v13 != a2) {
         v50 = -a6;
-        v51 = (__int64*)a6;
+        v51 = (_QWORD*)a6;
         v52 = v13;
         do {
           v53 = *v52++;
@@ -2596,8 +2604,8 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
           *v51++ = v53;
         } while (v52 != a2);
         while (a2 != a3) {
-          result = GmapSpotList_167ea80(*(_QWORD*)(*a2 + 88),
-                                        *(_QWORD*)(*(_QWORD*)a6 + 88LL));
+          result = GmapSpotList_167ea80_alt1(*(_QWORD*)(*a2 + 88),
+                                             *(_QWORD*)(*(_QWORD*)a6 + 88LL));
           if ((result & 1) != 0) {
             v54 = a2;
           }
@@ -2620,11 +2628,11 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
           }
           a6 += v57;
           *v13++ = v56;
-          if (v51 == (__int64*)a6) {
+          if (v51 == (_QWORD*)a6) {
             return result;
           }
         }
-        return memmove((__int64)v13, a6, -(a6 + v50));
+        return GameRoutine_1a0b940(v13, a6, -(a6 + v50));
       }
     }
     else if (a2 != a3) {
@@ -2635,8 +2643,8 @@ __int64 GmapSpotList_167ef20(__int64 result, __int64* a2, __int64* a3,
       } while (&a2[v47] != a3);
       v48 = (__int64*)(a6 + v47 * 8);
       while (a2 != v13) {
-        result = GmapSpotList_167ea80(*(_QWORD*)(*(v48 - 1) + 88),
-                                      *(_QWORD*)(*(a2 - 1) + 88));
+        result = GmapSpotList_167ea80_alt1(*(_QWORD*)(*(v48 - 1) + 88),
+                                           *(_QWORD*)(*(a2 - 1) + 88));
         if ((result & 1) != 0) {
           v49 = a2;
         }

@@ -15,6 +15,9 @@ void game_combat_e3f8b0(_QWORD*, double, double, double, double);
 void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
                                 double a5)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v6;
   float v7;
   float v8;

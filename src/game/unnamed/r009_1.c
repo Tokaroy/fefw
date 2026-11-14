@@ -25,6 +25,7 @@ __int64 memcpy(__int64, __int64, unsigned __int64);
 void GameHr_17c4f00(__int64*, unsigned __int64);
 void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
                     unsigned __int64 a4);
+__int64 GameRoutine_1a0b950_alt1(__int64, __int64, unsigned __int64);
 
 __int64 GameHr_179af60(__int64 a1, char a2, char a3)
 {
@@ -176,6 +177,9 @@ __int64 GameHr_17bbf00()
 void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
                     unsigned __int64 a4)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v4;
   __int64 v5;
   __int64 v10;
@@ -259,7 +263,7 @@ LABEL_8:
     else {
       v21 = v15;
       do {
-        memcpy(v21, a3, 0xF4u);
+        GameRoutine_1a0b950_alt1(v21, a3, 0xF4u);
         a3 += 244;
         if (a3 - *a2 == 3904) {
           v22 = a2[1];

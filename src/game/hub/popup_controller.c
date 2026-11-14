@@ -111,6 +111,10 @@ void __cxa_guard_release(__int64);
 __int64 PopupController_d7c300(float32x4_t* a1);
 void PopupController_d7e220(__int64 a1);
 __int64 GameHr_d7fde0(__int64*, __int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_GameVariableTable_Find_alt2(_QWORD*, unsigned __int64*);
+__int64 game_HashString_alt2(__int64 result);
 
 __int64 PopupController_Destructor(__int64 a1)
 {
@@ -269,6 +273,8 @@ void PopupController_d7bf00(__int64 a1)
 __int64 PopupController_d7c000(__int64 result)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   int v1;
   __int64 v2;
@@ -353,11 +359,11 @@ __int64 PopupController_d7c000(__int64 result)
       return result;
     }
     v24[1] = (unsigned __int64)&GameData_1ab0bb0;
-    result = game_HashString_alt1((__int64)&GameData_1ab0bb0),
+    result = game_HashString_alt2((__int64)&GameData_1ab0bb0),
     v23 = COERCE_AS(__typeof__(v23), PSEUDO_REGISTER(float, "s0", "=w"));
     v24[0] = result;
     if (game_GameModeData_instance_ != 0 &&
-        (result = game_GameVariableTable_Find_alt1(
+        (result = game_GameVariableTable_Find_alt2(
              *(_QWORD**)(game_GameModeData_instance_ + 48), v24)) != 0) {
       v21 = *(_DWORD*)(result + 32);
       if ((v21 & 0x80000000) != 0) {
@@ -671,6 +677,8 @@ __int64 PopupController_d7c300(float32x4_t* a1)
 float32x4_t* game_hub_PopupController_TryScreenRaycast(float32x4_t* result)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   bool v1;
   bool v2;
@@ -765,7 +773,7 @@ float32x4_t* game_hub_PopupController_TryScreenRaycast(float32x4_t* result)
                                          (float)(v9 + 0x1.8000000000000p+1f))) {
             v23 = 0;
             v22 = 0x100000001LL;
-            v19 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+            v19 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
                 fw_memory_g_heap_manager, 40, 16, 0),
             v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
             v21[4] = v19;
@@ -3548,6 +3556,9 @@ unsigned __int64* PopupController_d7f820(unsigned __int64* result, __int64 a2,
                                          __int64* a3, __int64 a4, __int64 a5,
                                          __int64* a6, __int64 a7)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64* v11;
   __int64 v12;
   __int64 i;

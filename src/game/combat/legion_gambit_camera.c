@@ -68,6 +68,10 @@ GameRoutine_1a09ce0_alt1(__int64, const char*,
                          unsigned __int64) __asm__("GameRoutine_1a09ce0");
 __int64 game_1096780(__int64, unsigned __int8*, char);
 extern const char GameData_1aa9224_alt1[] __asm__("GameData_1aa9224");
+__int64 GameRoutine_1a09ce0_alt2(__int64, const char*, unsigned __int64);
+__int64 GameRoutine_d35d20_alt2(__int64, unsigned __int8*);
+extern const char GameData_1aa9224_alt2[];
+void __attribute__((noreturn)) GameRoutine_d38e30_alt2();
 
 void LegionGambitCamera_e59e90(__int64 a1)
 {
@@ -688,6 +692,8 @@ void LegionGambitCamera_e5a5e0(float32x4_t* result, unsigned __int8* a2,
 float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   int v2;
   unsigned __int8* v3;
@@ -755,14 +761,14 @@ float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
       }
       if (v9 >= 1) {
         if (v10 <= (unsigned int)v9) {
-          GameRoutine_d38e30_alt1();
+          GameRoutine_d38e30_alt2();
         }
         v13 = (unsigned __int8*)(result + 42);
         v14 = (unsigned __int8*)(v6 + 104LL * (unsigned int)v9);
         if (v14 != (unsigned __int8*)(result + 42)) {
           v15 = result;
-          GameRoutine_d35d20_alt1((__int64)(result + 42), v14);
-          GameRoutine_1a09ce0_alt1((__int64)v13, GameData_1aa9224_alt1, 0xEu);
+          GameRoutine_d35d20_alt2((__int64)(result + 42), v14);
+          GameRoutine_1a09ce0_alt2((__int64)v13, GameData_1aa9224_alt2, 0xEu);
           v16 = (unsigned __int8*)v15 + 169;
           result = v15;
           if (((_BYTE)v15[42] & 1) != 0) {

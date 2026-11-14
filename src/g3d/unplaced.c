@@ -14,15 +14,23 @@ extern __int64 fw_memory_g_heap_manager;
 extern __int64 fw_memory_g_heap_manager_ptr;
 void __attribute__((noreturn)) String_60a1d0();
 __int64 g3d_a6c880(__int64* a1, __int64 a2, unsigned __int64 a3);
-__attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
-                                           unsigned __int64 a2, __int64 a3);
-__attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
-                                           unsigned __int64 a2, __int64 a3);
+__attribute__((swiftcall)) void
+g3d_ada070_alt1(PSEUDO_X8 x8_, __int64 a1, unsigned __int64 a2, __int64 a3);
+__attribute__((swiftcall)) void
+g3d_ada970_alt1(PSEUDO_X8 x8_, __int64 a1, unsigned __int64 a2, __int64 a3);
 __int64 memmove_alt1(__int64, __int64, unsigned __int64) __asm__("memmove");
 int memcmp_alt1(__int64, __int64, unsigned __int64) __asm__("memcmp");
 unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+__int64 GameHr_ad6d20(_QWORD, _QWORD, _QWORD, _QWORD);
+__int64 fw_memory_HeapManager_Allocate_alt1(_QWORD, _QWORD, _QWORD, _QWORD);
+__attribute__((swiftcall)) void
+g3d_ada070(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
+           __int64 a2, __int64 a3);
+__attribute__((swiftcall)) void
+g3d_ada970(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
+           __int64 a2, __int64 a3);
 
 __int64 g3d_a6c880(__int64* a1, __int64 a2, unsigned __int64 a3)
 {
@@ -136,11 +144,16 @@ __int64 g3d_a6c880(__int64* a1, __int64 a2, unsigned __int64 a3)
   return v23;
 }
 
-__attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
-                                           unsigned __int64 a2, __int64 a3)
+__attribute__((swiftcall)) void
+
+g3d_ada070(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
+           __int64 a2, __int64 a3)
 {
-  __int64* a4 = (__int64*)PSEUDO_X8_VALUE(x8_);
-  __int64* v8;
+
+#pragma clang fp contract(fast)
+
+  __int64* a4 = (__int64*)(unsigned __int64)x8_;
+  _QWORD* v8;
   __int64 v9;
   __int64 v10;
   _BYTE* v11;
@@ -150,18 +163,14 @@ __attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
   _QWORD* v15;
   _BYTE* v16;
   __int64 v17;
-  struct {
-    _BYTE v18[32];
-    _BYTE* v19;
-  } v18_;
-  struct {
-    _BYTE v20[32];
-    _BYTE* v21;
-  } v20_;
+  _BYTE v18[32];
+  _BYTE* v19;
+  _BYTE v20[32];
+  _BYTE* v21;
 
-  v8 = (__int64*)fw_memory_g_heap_manager_ptr;
-  v9 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      176, 16, 0);
+  v8 = (_QWORD*)fw_memory_g_heap_manager_ptr;
+  v9 = fw_memory_HeapManager_Allocate_alt1(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 176, 16, 0);
   *(_QWORD*)(v9 + 8) = 0;
   *(_QWORD*)(v9 + 16) = 0;
   *(_QWORD*)(v9 + 24) = 0;
@@ -183,22 +192,22 @@ __attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
   v10 = *(_QWORD*)(a3 + 32);
   if (v10 != 0) {
     if (v10 == a3) {
-      v18_.v19 = v18_.v18;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v10 + 24LL))(v10, v18_.v18);
+      v19 = v18;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v10 + 24LL))(v10, v18);
       v12 = v9;
-      v11 = v18_.v19;
+      v11 = v19;
     }
     else {
       v11 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v10 + 16LL))(v10);
-      v18_.v19 = v11;
+      v19 = v11;
       v12 = v9;
     }
-    v15 = (_QWORD*)fw_memory_HeapManager_Allocate(*v8, 80, 16, 0);
+    v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(*v8, 80, 16, 0);
     v16 = v15;
     v15[2] = v12;
     *v15 = GameData_1fc2718;
     if (v11 != nullptr) {
-      if (v11 == v18_.v18) {
+      if (v11 == v18) {
         v15[8] = v15 + 4;
         (*(void (**)(_BYTE*))(*(_QWORD*)v11 + 24LL))(v11);
       }
@@ -209,21 +218,21 @@ __attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
     else {
       v15[8] = 0;
     }
-    v20_.v21 = v16;
-    GameRoutine_ad6d20(v9, a1, a2);
-    if (v20_.v21 == v20_.v20) {
+    v21 = v16;
+    GameHr_ad6d20(v9, a1, a2, v20);
+    if (v21 == v20) {
       v17 = 32;
     }
     else {
-      if (v20_.v21 == nullptr) {
+      if (v21 == nullptr) {
         goto LABEL_17;
       }
       v17 = 40;
     }
-    (*(void (**)(__int64))(*(_QWORD*)v20_.v21 + v17))((__int64)v20_.v21);
+    (*(void (**)(__int64))(*(_QWORD*)v21 + v17))((__int64)v21);
   LABEL_17:
-    result = v18_.v19;
-    if (v18_.v19 != v18_.v18) {
+    result = v19;
+    if (v19 != v18) {
       goto LABEL_18;
     }
   LABEL_5:
@@ -233,10 +242,10 @@ __attribute__((swiftcall)) void g3d_ada070(PSEUDO_X8 x8_, __int64 a1,
       return;
     }
   }
-  v20_.v21 = nullptr;
-  GameRoutine_ad6d20(v9, a1, a2);
-  result = v20_.v21;
-  if (v20_.v21 == v20_.v20) {
+  v21 = nullptr;
+  GameHr_ad6d20(v9, a1, a2, v20);
+  result = v21;
+  if (v21 == v20) {
     goto LABEL_5;
   }
 LABEL_18:
@@ -251,11 +260,16 @@ LABEL_18:
   }
 }
 
-__attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
-                                           unsigned __int64 a2, __int64 a3)
+__attribute__((swiftcall)) void
+
+g3d_ada970(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
+           __int64 a2, __int64 a3)
 {
-  __int64* a4 = (__int64*)PSEUDO_X8_VALUE(x8_);
-  __int64* v8;
+
+#pragma clang fp contract(fast)
+
+  __int64* a4 = (__int64*)(unsigned __int64)x8_;
+  _QWORD* v8;
   __int64 v9;
   __int64 v10;
   _BYTE* v11;
@@ -265,18 +279,14 @@ __attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
   _QWORD* v15;
   _BYTE* v16;
   __int64 v17;
-  struct {
-    _BYTE v18[32];
-    _BYTE* v19;
-  } v18_;
-  struct {
-    _BYTE v20[32];
-    _BYTE* v21;
-  } v20_;
+  _BYTE v18[32];
+  _BYTE* v19;
+  _BYTE v20[32];
+  _BYTE* v21;
 
-  v8 = (__int64*)fw_memory_g_heap_manager_ptr;
-  v9 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      176, 16, 0);
+  v8 = (_QWORD*)fw_memory_g_heap_manager_ptr;
+  v9 = fw_memory_HeapManager_Allocate_alt1(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 176, 16, 0);
   *(_QWORD*)(v9 + 8) = 0;
   *(_QWORD*)(v9 + 16) = 0;
   *(_QWORD*)(v9 + 24) = 0;
@@ -298,22 +308,22 @@ __attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
   v10 = *(_QWORD*)(a3 + 32);
   if (v10 != 0) {
     if (v10 == a3) {
-      v18_.v19 = v18_.v18;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v10 + 24LL))(v10, v18_.v18);
+      v19 = v18;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v10 + 24LL))(v10, v18);
       v12 = v9;
-      v11 = v18_.v19;
+      v11 = v19;
     }
     else {
       v11 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v10 + 16LL))(v10);
-      v18_.v19 = v11;
+      v19 = v11;
       v12 = v9;
     }
-    v15 = (_QWORD*)fw_memory_HeapManager_Allocate(*v8, 80, 16, 0);
+    v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(*v8, 80, 16, 0);
     v16 = v15;
     v15[2] = v12;
     *v15 = GameData_1fc2818;
     if (v11 != nullptr) {
-      if (v11 == v18_.v18) {
+      if (v11 == v18) {
         v15[8] = v15 + 4;
         (*(void (**)(_BYTE*))(*(_QWORD*)v11 + 24LL))(v11);
       }
@@ -324,21 +334,21 @@ __attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
     else {
       v15[8] = 0;
     }
-    v20_.v21 = v16;
-    GameRoutine_ad6d20(v9, a1, a2);
-    if (v20_.v21 == v20_.v20) {
+    v21 = v16;
+    GameHr_ad6d20(v9, a1, a2, v20);
+    if (v21 == v20) {
       v17 = 32;
     }
     else {
-      if (v20_.v21 == nullptr) {
+      if (v21 == nullptr) {
         goto LABEL_17;
       }
       v17 = 40;
     }
-    (*(void (**)(__int64))(*(_QWORD*)v20_.v21 + v17))((__int64)v20_.v21);
+    (*(void (**)(__int64))(*(_QWORD*)v21 + v17))((__int64)v21);
   LABEL_17:
-    result = v18_.v19;
-    if (v18_.v19 != v18_.v18) {
+    result = v19;
+    if (v19 != v18) {
       goto LABEL_18;
     }
   LABEL_5:
@@ -348,10 +358,10 @@ __attribute__((swiftcall)) void g3d_ada970(PSEUDO_X8 x8_, __int64 a1,
       return;
     }
   }
-  v20_.v21 = nullptr;
-  GameRoutine_ad6d20(v9, a1, a2);
-  result = v20_.v21;
-  if (v20_.v21 == v20_.v20) {
+  v21 = nullptr;
+  GameHr_ad6d20(v9, a1, a2, v20);
+  result = v21;
+  if (v21 == v20) {
     goto LABEL_5;
   }
 LABEL_18:

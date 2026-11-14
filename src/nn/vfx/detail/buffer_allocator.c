@@ -264,6 +264,9 @@ __int64 BufferAllocator_Unknown2(__int64 a1, __int64 a2)
 
 __int64 BufferAllocator_5b4b20(__int64 a1, __int64 a2, __int64 a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v4;
   int v5;

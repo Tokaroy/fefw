@@ -179,6 +179,16 @@ __attribute__((swiftcall)) void
 Manager_629f20(__attribute__((swift_indirect_result)) void* x8_, __int64 result,
                _BYTE* a2, __int64 a3, __int64 a4, unsigned int a5, int a6,
                char a7);
+__attribute__((swiftcall)) void
+Manager_62b060_alt2(__attribute__((swift_indirect_result)) void*,
+                    __int64 result, const char*, __int64, __int64, int, int,
+                    char);
+__int64 GameHr_62ec90_alt2(_QWORD, _QWORD);
+__int64 GameRoutine_1a09be0(_QWORD, _QWORD);
+__int64 GameRoutine_1a09bf0(_QWORD, const char*, ...);
+__int64 GameRoutine_1a09d30(_QWORD, _QWORD);
+__int64 nn_os_UnlockMutex_alt3(_QWORD);
+extern _QWORD as_g_context_slots_alt2[16384];
 
 __int64 Manager_626d20(__int64 a1, __int64 a2)
 {
@@ -1531,6 +1541,9 @@ LABEL_26:
 
 __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v5;
   char* v7;
   char* v8;
@@ -1591,9 +1604,9 @@ __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
     while (1) {
       v16 = (*(__int64 (**)(__int64, _QWORD))(*(_QWORD*)v5 + 200LL))(v5, v15);
       v17 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 56LL))(v16);
-      if ((unsigned int)strcmp(v17, v7) == 0) {
+      if ((unsigned int)GameRoutine_1a09d30(v17, v7) == 0) {
         v24 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 48LL))(v16);
-        if ((unsigned int)strcmp(v24, v8) == 0) {
+        if ((unsigned int)GameRoutine_1a09d30(v24, v8) == 0) {
           v31 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 192LL))(v16);
           if (v31 >= 1) {
             break;
@@ -2114,7 +2127,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
 
   if (a5 == 0) {
     X8CALL_X0(__int64,
-              Manager_62b060_alt1((void*)(a9), a1, a2, a3, a4, a6, a7, a8));
+              Manager_62b060_alt2((void*)(a9), a1, a2, a3, a4, a6, a7, a8));
     return;
   }
   nn_os_LockMutex(a1 + 5096);
@@ -2123,15 +2136,15 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
   v18 = *(_DWORD*)(v16 + 4 * v17);
   *(_DWORD*)(a1 + 5088) = v17 + 1;
   *(_DWORD*)(v16 + 4 * v17) = -1;
-  nn_os_UnlockMutex_alt1(a1 + 5096);
+  nn_os_UnlockMutex_alt3(a1 + 5096);
   v19 = *(_QWORD*)(a1 + 5072) + 2272LL * v18;
-  GameHr_62ec90_alt1(v19, a1);
+  GameHr_62ec90_alt2(v19, a1);
   v20 = *(unsigned int*)(v19 + 8);
   if ((_DWORD)v20 != 0x2000 &&
-      (v21 = &as_g_context_slots_alt1[2 * v20])[1] == v19) {
+      (v21 = &as_g_context_slots_alt2[2 * v20])[1] == v19) {
     v72 = *v21;
     v74 = *(_DWORD*)(v19 + 8);
-    sprintf(v77, "%s_%16zx", a2, v19);
+    GameRoutine_1a09bf0(v77, "%s_%16zx", a2, v19);
     v75 = v72;
     v23 = 0;
     if (v21[1] != 0) {
@@ -2147,7 +2160,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     }
   }
   else {
-    sprintf(v77, "%s_%16zx", a2, v19);
+    GameRoutine_1a09bf0(v77, "%s_%16zx", a2, v19);
     v22 = 0;
     v23 = 1;
     v74 = 0x2000;
@@ -2176,7 +2189,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
   }
   v33 = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_engine + 464LL))(as_g_engine);
   *(_BYTE*)(v19 + 336) = 0;
-  strcpy(v19 + 80, v77);
+  GameRoutine_1a09be0(v19 + 80, v77);
   *(_BYTE*)(v19 + 208) = 0;
   *(_QWORD*)(v19 + 24) = v33;
   *(_QWORD*)(v19 + 32) = 0;
@@ -2202,7 +2215,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     v36 = as_g_context_slots_ptr;
     goto LABEL_13;
   }
-  v36 = as_g_context_slots_alt1;
+  v36 = as_g_context_slots_alt2;
   if (v35 != nullptr) {
     v37 = 40;
   LABEL_13:
@@ -2249,7 +2262,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
       return;
     }
   }
-  strcpy(v19 + 208, a4);
+  GameRoutine_1a09be0(v19 + 208, a4);
   if ((v23 & 1) != 0) {
     v47 = v75;
   }
@@ -2324,7 +2337,7 @@ LABEL_28:
     *(_QWORD*)(a1 + 24 + 8 * v65) = v19;
   }
   if (*(_BYTE*)(a1 + 4785) == 1) {
-    result = nn_os_UnlockMutex_alt1(a1 + 4792);
+    result = nn_os_UnlockMutex_alt3(a1 + 4792);
   }
   if ((v23 & 1) != 0) {
     goto LABEL_46;

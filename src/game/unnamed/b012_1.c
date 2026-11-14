@@ -1503,6 +1503,9 @@ void GameHr_e7ca80(__int64 a1, float a2);
 __int64 MapSortieMenu_871860_alt1(__int64, __int64, __int64, __int64,
                                   __int64) __asm__("MapSortieMenu_871860");
 __int64 game_1007060(__int64);
+__int64 GameRoutine_e43260_alt2(_QWORD*);
+bool GameRoutine_108cb20_alt2(int);
+unsigned __int64 GameRoutine_d2b5f0_alt2(__int64);
 
 __int64 GameHr_db8540(__int64 a1)
 {
@@ -5060,6 +5063,8 @@ __int64 GameHr_e42540(__int64 a1)
 _QWORD* GameHr_e42820(__int64 a1)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   _QWORD* result;
   _QWORD* v3;
@@ -5121,7 +5126,7 @@ _QWORD* GameHr_e42820(__int64 a1)
       v12 -= 16;
       v11 -= 16;
     } while (v13 != *v10);
-    if (GameRoutine_108cb20_alt1(*(_DWORD*)(*(_QWORD*)(v11 + 8) + 120LL))) {
+    if (GameRoutine_108cb20_alt2(*(_DWORD*)(*(_QWORD*)(v11 + 8) + 120LL))) {
       return (_QWORD*)(((_UNKNOWN*)0x0LL) + 1);
     }
     v14 = *(_QWORD**)(a1 + 8);
@@ -5153,7 +5158,7 @@ _QWORD* GameHr_e42820(__int64 a1)
     } while (v20 != *v10);
     v21 = *(_QWORD*)(*(_QWORD*)(v18 + 8) + 96LL);
     if (v21 != 0) {
-      v22 = GameRoutine_d2b5f0_alt1(*(_QWORD*)(v21 + 32) + 72LL);
+      v22 = GameRoutine_d2b5f0_alt2(*(_QWORD*)(v21 + 32) + 72LL);
       if ((v22 & 0x100000000LL) != 0) {
         v23 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v21 + 24) + 72LL) +
                          104LL * (int)v22);
@@ -5171,8 +5176,8 @@ _QWORD* GameHr_e42820(__int64 a1)
   }
   result = *(_QWORD**)(a1 + 16);
   if (result != nullptr) {
-    v6 = GameRoutine_e43260_alt1(result);
-    return (_QWORD*)GameRoutine_108cb20_alt1(v6);
+    v6 = GameRoutine_e43260_alt2(result);
+    return (_QWORD*)GameRoutine_108cb20_alt2(v6);
   }
   return result;
 }

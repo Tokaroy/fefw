@@ -259,6 +259,13 @@ void CharacterBuilder_1084780(__int64);
 void CmdBtlUnit_e7bed0(__int64 a1, char a2);
 __int64 GameHr_1919fb0(__int64, unsigned int);
 __int64 GameHr_7e8000(__int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_HashString_alt2(__int64 result);
+__int64 std___1___shared_weak_count___release_weak_alt3(__int64);
+__int64 std___1___shared_weak_count_lock_alt2(__int64);
+void GameHr_81d740_alt2(__int64);
+void __attribute__((noreturn)) GameRoutine_8123d0_alt3();
 
 __int64 CmdBtlUnit_e79c10(__int64 result, int a2)
 {
@@ -436,6 +443,9 @@ __int64 CmdBtlUnit_e79df0(__int64 result)
 
 void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   _BOOL4 v1;
   __int64 v3;
   __int64 v4;
@@ -553,7 +563,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
     if (v3 == 0) {
       goto LABEL_30;
     }
-    v4 = std___1___shared_weak_count_lock_alt1(v3);
+    v4 = std___1___shared_weak_count_lock_alt2(v3);
     if (v4 == 0) {
       goto LABEL_9;
     }
@@ -583,14 +593,14 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
     else {
       v11 = v4;
       (*(void (**)(__int64))(*(_QWORD*)v4 + 16LL))(v4);
-      std___1___shared_weak_count___release_weak_alt2(v11);
+      std___1___shared_weak_count___release_weak_alt3(v11);
       if (((v1 | v6) & 1) != 0) {
       LABEL_9:
         v7 = *(_QWORD*)(a1 + 320);
         if (v7 == 0) {
           goto LABEL_30;
         }
-        v8 = std___1___shared_weak_count_lock_alt1(v7);
+        v8 = std___1___shared_weak_count_lock_alt2(v7);
         if (v8 == 0) {
           goto LABEL_30;
         }
@@ -673,7 +683,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
             GameData_21d9d38 = GameData_21d9d30;
             GameData_21d9d50 = GameData_21d9d48;
             if (v40 != 0) {
-              v41 = std___1___shared_weak_count_lock_alt1(v40);
+              v41 = std___1___shared_weak_count_lock_alt2(v40);
               if (v41 != 0) {
                 v42 = *(_QWORD*)(a1 + 312);
                 if (v42 != 0) {
@@ -688,17 +698,17 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
                   v45 = v41;
                   (*(void (**)(__int64))(*(_QWORD*)v41 + 16LL))(v41);
-                  std___1___shared_weak_count___release_weak_alt2(v45);
+                  std___1___shared_weak_count___release_weak_alt3(v45);
                 }
               }
             }
             v52_.v53 =
                 *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 392LL) + 8LL);
-            v52_.v52 = (__int64 (**)(void))game_HashString_alt1(v52_.v53);
+            v52_.v52 = (__int64 (**)(void))game_HashString_alt2(v52_.v53);
             AssetTableFile_7e7b20((__int64)v57_.v57,
                                   (unsigned __int64*)&v52_.v52);
             GameHr_7e8000((__int64)v57_.v57);
-            v46 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+            v46 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
                 *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
             v46[2] = 0;
             v47 = (unsigned __int64)(v46 + 3);
@@ -731,14 +741,14 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
                 atomic_fetch_add((atomic_ullong* volatile)(v55_.v56 + 8),
                                  0xFFFFFFFFFFFFFFFFLL) == 0) {
               (*(void (**)(__int64))(*(_QWORD*)v49 + 16LL))(v49);
-              std___1___shared_weak_count___release_weak_alt2(v49);
+              std___1___shared_weak_count___release_weak_alt3(v49);
             }
             TrickEntity_7d1480((__int64)v57_.v57);
             goto LABEL_74;
           }
           v36 = v8;
           (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
-          std___1___shared_weak_count___release_weak_alt2(v36);
+          std___1___shared_weak_count___release_weak_alt3(v36);
           if (((v1 | v10) & 1) == 0) {
             goto LABEL_56;
           }
@@ -820,7 +830,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
                 v28 = v26 + 1;
               }
               v52_.v53 = v28;
-              v52_.v52 = (__int64 (**)(void))game_HashString_alt1(v28);
+              v52_.v52 = (__int64 (**)(void))game_HashString_alt2(v28);
               AssetTableFile_7e7b20((__int64)v57_.v57,
                                     (unsigned __int64*)&v52_.v52);
             }
@@ -832,7 +842,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
           TrickEntity_7d1480((__int64)v57_.v57);
           GameHr_1919fb0(*(_QWORD*)(a1 + 16), 1u);
           *(_QWORD*)(a1 + 24) = *(_QWORD*)(*(_QWORD*)(a1 + 16) + 232LL);
-          v30 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+          v30 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
               fw_memory_g_heap_manager, 80, 16, 0);
           v30[2] = 0;
           v31 = *(_QWORD*)(a1 + 240);
@@ -844,7 +854,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
           if (v31 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v31 + 8),
                                            0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v31 + 16LL))(v31);
-            std___1___shared_weak_count___release_weak_alt2(v31);
+            std___1___shared_weak_count___release_weak_alt3(v31);
           }
           v32 = *(_QWORD**)(a1 + 232);
           v57_.v57[0] = GameData_1fe8078;
@@ -867,11 +877,11 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
               }
               game_UnitActor_FuncBuildCompleteSubscribe(v34, &v50_.v50);
               if (v50_.v51 != 0) {
-                std___1___shared_weak_count___release_weak_alt2(v50_.v51);
+                std___1___shared_weak_count___release_weak_alt3(v50_.v51);
               }
             LABEL_74:
               ++*(_DWORD*)(*(_QWORD*)(a1 + 16) + 32LL);
-              GameHr_81d740_alt1(*(_QWORD*)(a1 + 16));
+              GameHr_81d740_alt2(*(_QWORD*)(a1 + 16));
               return;
             }
             v33 = 40;
@@ -885,7 +895,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
           goto LABEL_28;
         }
       LABEL_80:
-        GameRoutine_8123d0_alt1();
+        GameRoutine_8123d0_alt3();
       }
     }
     v57_.v80 = 0;
@@ -961,11 +971,11 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
         v17 = v15 + 1;
       }
       v52_.v53 = v17;
-      v52_.v52 = (__int64 (**)(void))game_HashString_alt1(v17);
+      v52_.v52 = (__int64 (**)(void))game_HashString_alt2(v17);
       AssetTableFile_7e7b20((__int64)v57_.v57, (unsigned __int64*)&v52_.v52);
     }
     GameHr_7e8000((__int64)v57_.v57);
-    v18 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+    v18 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
     v18[2] = 0;
     v19 = (unsigned __int64)(v18 + 3);

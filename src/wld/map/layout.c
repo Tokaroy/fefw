@@ -2035,6 +2035,9 @@ __int64 Layout_c1b8c0(_QWORD* a1)
 
 void Layout_c1ba40(__int64 a1, __int64 a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v4;
   __int64 v5;

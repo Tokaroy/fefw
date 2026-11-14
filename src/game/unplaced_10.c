@@ -2684,6 +2684,7 @@ void __cxa_guard_release_alt1(__int64) __asm__("__cxa_guard_release");
 __int64 game_e5f420(_DWORD* a1, char* a2);
 _QWORD* game_e803d0(__int64 a1, __int64 a2);
 __int64 game_zview_d198c0(float32x2_t*, float32x2_t*, char, char);
+float GameRoutine_1a0a550(float, float);
 
 __int64 game_80ef70()
 {
@@ -8445,8 +8446,8 @@ LABEL_168:
         v129 = 0x0.0p+0f;
       }
     }
-    v131 = (float)(fminf(fmaxf(powf(0x1.0000000000000p+0f - v129,
-                                    0x1.0000000000000p-1f),
+    v131 = (float)(fminf(fmaxf(GameRoutine_1a0a550(0x1.0000000000000p+0f - v129,
+                                                   0x1.0000000000000p-1f),
                                0x0.0p+0f),
                          0x1.0000000000000p+0f) *
                    0x1.8000000000000p-1f) +

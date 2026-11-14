@@ -285,6 +285,8 @@ void __attribute__((noreturn)) GameRoutine_65c760();
 __int64 UnitActor_81b840(__int64 result);
 void UnitActor_81c600(__int64 a1);
 __attribute__((swiftcall)) void Quat_622ac0(PSEUDO_X8, float32x2_t*);
+__attribute__((swiftcall)) void math_622ac0(PSEUDO_X8, float32x2_t*);
+float Cursor_734120_alt2(int, int, float, float, float, float);
 
 __int64 UnitActor_819160(__int64 a1)
 {
@@ -2359,6 +2361,8 @@ __int64 UnitActor_81b840(__int64 result)
 long double UnitActor_81ba20(__int64 a1, long double result)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v2;
   float v4;
@@ -2402,7 +2406,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
     }
     else {
       *(float*)&result =
-          Cursor_734120_alt1(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
+          Cursor_734120_alt2(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
                              *(float*)(a1 + 80), *(float*)&v6, v4, v5);
       v7 = *(float*)(a1 + 100);
       v5 = *(float*)(a1 + 56);
@@ -2412,7 +2416,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
     v23 = v6;
     if (v4 < v5) {
       *(float*)&result =
-          Cursor_734120_alt1(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
+          Cursor_734120_alt2(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
                              *(float*)(a1 + 84), v7, v4, v5);
       v5 = *(float*)(a1 + 56);
       v4 = *(float*)(a1 + 60);
@@ -2422,7 +2426,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
     v22 = v7;
     if (v4 < v5) {
       *(float*)&result =
-          Cursor_734120_alt1(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
+          Cursor_734120_alt2(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
                              *(float*)(a1 + 88), v8, v4, v5);
       v7 = v22;
       v8 = *(float*)&result;
@@ -2437,7 +2441,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
       v20 = v13;
       v21 = v8;
       *(float*)&result =
-          Cursor_734120_alt1(*(_DWORD*)(a1 + 128), *(_DWORD*)(a1 + 132),
+          Cursor_734120_alt2(*(_DWORD*)(a1 + 128), *(_DWORD*)(a1 + 132),
                              *(float*)(a1 + 140), v12, v10, v11);
       v13 = v20;
       v8 = v21;
@@ -2481,7 +2485,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
           LANES128_OF(vextq_s8(*(int8x16_t*)&result, *(int8x16_t*)&result, 8u))
               .n128_u64[0];
       LANES128(v14[18]).n128_u32[2] = v18;
-      Quat_622ac0((void*)(&v25), (float32x2_t*)&v24);
+      math_622ac0((void*)(&v25), (float32x2_t*)&v24);
       result = v25;
       LANES128(v14[20]).n128_u64[0] = *(_QWORD*)&v25;
       v19 = v14[20];

@@ -1079,6 +1079,24 @@ __int64 GameHr_11fbb20_alt1(_QWORD) __asm__("GameHr_11fbb20");
 __int64 GameHr_6c2b50_alt1(_QWORD) __asm__("GameHr_6c2b50");
 __int64 game_128df90(_QWORD, _QWORD);
 __int64 AITarget_1276580(__int64, int);
+_QWORD* GameRoutine_11fb4c0_alt2(_QWORD* result, _QWORD*);
+__int64 AIDeploy_1274c80_alt4(__int64 result, __int64, unsigned int, _DWORD*);
+__int64 AIThink_1200be0_alt2(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+__int64 BattleSide_Destructor_alt3(_QWORD, long double, long double);
+__int64 GameHr_11fbb20_alt2(_QWORD);
+__int64 GameHr_6c2b50_alt2(_QWORD);
+__int64 GameRoutine_65c660_alt2(_QWORD*, unsigned __int64*);
+__int64 GameRoutine_747a00_alt4(void);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_AISupportSkillScope_Update_alt3(_BYTE*, unsigned int,
+                                             unsigned int);
+__int64 game_AIThink_EntrustMoveTo_alt3(__int64, unsigned int, unsigned int,
+                                        int);
+__int64 game_Unit_Destroy_Unit_alt3(_QWORD);
+bool AISupportSkillScope_11ff100_alt2(__int64*, int*);
+long double AiBattleSimulator_11fc090_alt3(_QWORD, _QWORD);
+void __attribute__((noreturn)) GameRoutine_60a310_alt3();
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -7846,7 +7864,7 @@ __int64 AIThink_12030e0(__int64 a1, int a2, __int64 a3)
             }
             if (*(unsigned __int8*)(*(_QWORD*)(v21 + 8) + v24 + 64) != 255) {
               v25 = *(unsigned __int8*)(*(_QWORD*)(v21 + 12880) + v24 + 64);
-              if ((GameRoutine_747a00_alt1() & 1) != 0) {
+              if ((GameRoutine_747a00_alt4() & 1) != 0) {
                 v26 = 256;
               }
               else {
@@ -7901,7 +7919,7 @@ __int64 AIThink_12030e0(__int64 a1, int a2, __int64 a3)
       else {
         v30 = 0;
       }
-      return AIThink_1200be0_alt1(a1, v18, v16, v30, 0);
+      return AIThink_1200be0_alt2(a1, v18, v16, v30, 0);
     }
   }
   return result;
@@ -16240,8 +16258,8 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
   GameRoutine_11fe0c0(v128, *a1);
   v10 = GameData_21306b8[0];
   v117[0] = GameData_21306b8[0] + 16;
-  GameHr_6c2b50_alt1(v118);
-  GameHr_6c2b50_alt1(v119);
+  GameHr_6c2b50_alt2(v118);
+  GameHr_6c2b50_alt2(v119);
   GameRoutine_790080(v120);
   v13 = *((_DWORD*)a1 + 4);
   v14 = *((_DWORD*)a1 + 5);
@@ -16331,7 +16349,7 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
         v136 = 0;
         v137[0] = v15;
         v137[1] = __PAIR64__(v24, v19);
-        if (AISupportSkillScope_11ff100_alt1(v137, (int*)&v136)) {
+        if (AISupportSkillScope_11ff100_alt2(v137, (int*)&v136)) {
           v93 = v19;
           if ((v24 & 1) != 0) {
             v30 = 1;
@@ -16528,7 +16546,7 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
           v17 = GameData_212c878[0];
           v19 = v93;
           if ((v106 & 0x80000000) == 0) {
-            game_AISupportSkillScope_Update_alt1(v128, v106, v104);
+            game_AISupportSkillScope_Update_alt3(v128, v106, v104);
             v116 = -1;
             v108 = __PAIR64__(v104, v106);
             v109 = v93;
@@ -16542,11 +16560,11 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
             v115 = 0;
             game_128df90(v117, &v107);
             AiInterferenceSimulator_128e230(v117, &v107);
-            GameHr_11fbb20_alt1(v117);
+            GameHr_11fbb20_alt2(v117);
             AIBattleSimulator_11fbe50((__int64)v117, 0);
             AIBattleSimulator_11fbe50((__int64)v117, 1);
-            AiBattleSimulator_11fc090_alt2(v117, 0);
-            v75 = AiBattleSimulator_11fc090_alt2(v117, 1);
+            AiBattleSimulator_11fc090_alt3(v117, 0);
+            v75 = AiBattleSimulator_11fc090_alt3(v117, 1);
             AIBattleSimulator_11fc220((__int64)v117, v75);
             v15 = v99;
             v76 = (int)v127;
@@ -16593,12 +16611,12 @@ LABEL_141:
     v125 = 0;
   }
   v120[1] = GameData_212d258[0] + 2;
-  BattleSide_Destructor_alt1(v124, v11, v12);
-  BattleSide_Destructor_alt1(&v123, v83, v84);
-  BattleSide_Destructor_alt1(&v122, v85, v86);
-  BattleSide_Destructor_alt1(&v121, v87, v88);
-  game_Unit_Destroy_Unit_alt1(v119);
-  game_Unit_Destroy_Unit_alt1(v118);
+  BattleSide_Destructor_alt3(v124, v11, v12);
+  BattleSide_Destructor_alt3(&v123, v83, v84);
+  BattleSide_Destructor_alt3(&v122, v85, v86);
+  BattleSide_Destructor_alt3(&v121, v87, v88);
+  game_Unit_Destroy_Unit_alt3(v119);
+  game_Unit_Destroy_Unit_alt3(v118);
   AISupportSkillScope_11fef70(v128);
   return v23;
 }
@@ -21080,6 +21098,9 @@ LABEL_135:
 
 __int64 game_AIThink_EntrustMoveNearestFriend(__int64 a1, int a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v4;
   __int64 v5;
@@ -21156,7 +21177,7 @@ __int64 game_AIThink_EntrustMoveNearestFriend(__int64 a1, int a2)
   v9 = game_GameModeData_instance_;
   if (game_GameModeData_instance_ != 0) {
     LOBYTE(a1) =
-        GameRoutine_65c660_alt1(*(_QWORD**)(game_GameModeData_instance_ + 48),
+        GameRoutine_65c660_alt2(*(_QWORD**)(game_GameModeData_instance_ + 48),
                                 (unsigned __int64*)GameData_21306a8[0]);
     v3 = *(_QWORD*)(v4 + 8);
   }
@@ -21168,7 +21189,7 @@ __int64 game_AIThink_EntrustMoveNearestFriend(__int64 a1, int a2)
   }
 LABEL_18:
   LODWORD(v37_.v37[0]) = v10;
-  AIDeploy_1274c80_alt1(*(_QWORD*)GameData_21306a0[0], v3, 0x64u, v37_.v37);
+  AIDeploy_1274c80_alt4(*(_QWORD*)GameData_21306a0[0], v3, 0x64u, v37_.v37);
   v35_.v36 = nullptr;
   if ((a2 & 0x10) != 0) {
     v11 = GameData_201a268;
@@ -21178,7 +21199,7 @@ LABEL_18:
   }
   v37_.v38 = v37_.v37;
   v37_.v37[0] = v11;
-  GameRoutine_11fb4c0_alt1(v37_.v37, v35_.v35);
+  GameRoutine_11fb4c0_alt2(v37_.v37, v35_.v35);
   if (v37_.v38 == v37_.v37) {
     v12 = 32;
   }
@@ -21212,13 +21233,13 @@ LABEL_26:
           *(unsigned __int8*)(v15 + 2088) != *(unsigned __int8*)(v17 + 2088)) {
         v37_.v37[0] = v15;
         if (v35_.v36 == nullptr) {
-          GameRoutine_60a310_alt2();
+          GameRoutine_60a310_alt3();
         }
         v18 = (*(__int64 (**)(_QWORD*, _QWORD*))(*v35_.v36 + 48LL))(v35_.v36,
                                                                     v37_.v37);
         v15 = v30;
         if ((v18 & 1) != 0) {
-          v19 = (__int64 (***)(void))fw_memory_HeapManager_Allocate_alt1(
+          v19 = (__int64 (***)(void))fw_memory_HeapManager_Allocate_alt2(
               *(_QWORD*)fw_memory_g_heap_manager_ptr, 48, 16, 0);
           v19[4] = (__int64 (**)(void))&v33;
           v19[5] = (__int64 (**)(void))&v32;
@@ -21254,7 +21275,7 @@ LABEL_26:
       v30 = v15;
     } while (v15 != 0);
     if (v34 != 0) {
-      LODWORD(v15) = game_AIThink_EntrustMoveTo_alt2(v4, v33, v32, v29);
+      LODWORD(v15) = game_AIThink_EntrustMoveTo_alt3(v4, v33, v32, v29);
     }
     else {
       LODWORD(v15) = 0;

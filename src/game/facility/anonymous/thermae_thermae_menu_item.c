@@ -56,6 +56,15 @@ __int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
 __int64 std___1___shared_weak_count_lock(__int64);
 __int64 ThermaeThermaeMenuItem_Unknown55_192ca20(__int64 result);
+__int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
+__int64 ProcInst_657850(__int64, __int64, __int64, char, __int64);
+__int64 fw_memory_HeapManager_Allocate_alt1(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_menu_1789cf0(__int64, __int64);
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+extern __int64 (*game_menu_GameMenuImpl_ImplUnknown00_ptr_205d5d8[])();
+void GameRoutine_f369a0_alt1(__int64*, unsigned __int64);
+void __attribute__((noreturn)) GameRoutine_60a310_alt1();
 
 bool ThermaeThermaeMenuItem_94efe0(__int64 a1, __int64 a2)
 {
@@ -282,29 +291,37 @@ LABEL_20:
 
 _QWORD* ThermaeThermaeMenuItem_15e6c00(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64* v3;
   __int64 v4;
-  __int64 v5;
+  signed __int64 v5;
   __int64 v6;
-  __int64 v7;
-  __int64 v8;
-  __int64 v9;
   _QWORD* result;
-  __int64*** v11;
-  __int64** v12;
-  __int64** v13;
-  __int64* v14;
-  __int64* v15;
-  _BOOL4 v16;
+  __int64*** v8;
+  __int64** v9;
+  __int64** v10;
+  __int64* v11;
+  __int64 v12;
+  _BOOL4 v13;
+  __int64 v14;
+  struct {
+    _QWORD v15[4];
+    _QWORD* v16;
+  } v15_;
   __int64 v17;
-  _QWORD v18[4];
-  _QWORD* v19;
-  __int64 v20;
 
-  v2 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      1216, 16, 0);
-  GameRoutine_1789cf0(v2, "ThermaeUnitMenu");
+  v6 = COERCE_AS(__typeof__(v6),
+                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  v2 = fw_memory_HeapManager_Allocate_alt1(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 1216, 16, 0),
+  v6 = COERCE_AS(__typeof__(v6),
+                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  game_menu_1789cf0(v2, (__int64)"ThermaeUnitMenu"),
+      v6 = COERCE_AS(__typeof__(v6),
+                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v3 = GameData_21312e0[0];
   *(_QWORD*)(v2 + 1184) = 0;
   *(_QWORD*)(v2 + 1192) = 0;
@@ -313,81 +330,95 @@ _QWORD* ThermaeThermaeMenuItem_15e6c00(__int64 a1)
   *(_QWORD*)v2 = v3 + 2;
   *(_QWORD*)(v2 + 176) = v3 + 163;
   *(_QWORD*)(v2 + 1056) = v3 + 189;
-  GameRoutine_f369a0(v2 + 1184, 2);
-  v7 = *(_QWORD*)(v2 + 1184);
-  v8 = *(_QWORD*)(v2 + 1192) - v7;
-  if (v8 >= 1) {
-    memset(v7, 0, v8, v4, v5, v6);
+  GameRoutine_f369a0_alt1((__int64*)(v2 + 1184), 2u),
+      v6 = COERCE_AS(__typeof__(v6),
+                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  v4 = *(_QWORD*)(v2 + 1184);
+  v5 = *(_QWORD*)(v2 + 1192) - v4;
+  if (v5 >= 1) {
+    GameRoutine_1a0ba50(v4, 0, v5),
+        v6 = COERCE_AS(__typeof__(v6),
+                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   *(_QWORD*)v2 = game_facility_anonymous_ProcThermaeUnitMenu_vtable;
   *(_QWORD*)(v2 + 176) = GameData_205d508;
-  *(_QWORD*)(v2 + 1056) = game_menu_GameMenuImpl_ImplUnknown00_ptr;
+  *(_QWORD*)(v2 + 1056) = game_menu_GameMenuImpl_ImplUnknown00_ptr_205d5d8;
   *(_QWORD*)(*GameData_212dcd0 + 56) = *(_QWORD*)(*GameData_212dcd0 + 48);
-  GameRoutine_657850(v2, GameData_212c730, "ProcThermaeUnitMenu", 1, a1);
-  result = v18;
-  v18[0] = GameData_205d688;
-  v18[1] = v2;
-  v11 = *(__int64****)(game_UnitListSet_instance_ + 24);
-  v19 = v18;
-  v12 = *v11;
-  v13 = v11[1];
-  if (*v11 == v13) {
+  ProcInst_657850(v2, (__int64)GameData_212c730, (__int64)"ProcThermaeUnitMenu",
+                  1, a1),
+      v6 = COERCE_AS(__typeof__(v6),
+                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  result = v15_.v15;
+  v15_.v15[0] = GameData_205d688;
+  v15_.v15[1] = v2;
+  v8 = *(__int64****)(game_UnitListSet_instance_ + 24);
+  v15_.v16 = v15_.v15;
+  v9 = *v8;
+  v10 = v8[1];
+  if (*v8 == v10) {
     goto LABEL_21;
   }
   do {
-    v14 = *v12;
-    v15 = v12[1];
-    if (v15 != nullptr) {
-      atomic_fetch_add_explicit((atomic_ullong* volatile)(v15 + 1), 1u,
+    v11 = *v9;
+    v12 = (__int64)v9[1];
+    if (v12 != 0) {
+      atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 8), 1u,
                                 memory_order_relaxed);
     }
-    if (v14 != nullptr) {
-      v16 = (v14[6] & 0x20) == 0;
-      if (v15 == nullptr) {
+    if (v11 != nullptr) {
+      v13 = (v11[6] & 0x20) == 0;
+      if (v12 == 0) {
         goto LABEL_13;
       }
     }
     else {
-      v16 = false;
-      if (v15 == nullptr) {
+      v13 = false;
+      if (v12 == 0) {
         goto LABEL_13;
       }
     }
-    if (atomic_fetch_add((atomic_ullong* volatile)(v15 + 1),
+    if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
-      (*(void (**)(__int64*))(*v15 + 16))(v15);
-      std___1___shared_weak_count___release_weak(v15);
-      if (!v16) {
+      (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12),
+          v6 = COERCE_AS(__typeof__(v6),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      std___1___shared_weak_count___release_weak_alt2(v12),
+          v6 = COERCE_AS(__typeof__(v6),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      if (!v13) {
         goto LABEL_5;
       }
       goto LABEL_14;
     }
   LABEL_13:
-    if (v16) {
+    if (v13) {
     LABEL_14:
-      v20 = **v12;
-      if (v19 == nullptr) {
-        GameRoutine_60a310(0, v9);
+      v17 = **v9;
+      if (v15_.v16 == nullptr) {
+        GameRoutine_60a310_alt1(),
+            v6 = COERCE_AS(__typeof__(v6),
+                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
-      (*(void (**)(_QWORD*, __int64*))(*v19 + 48LL))(v19, &v20);
+      (*(void (**)(_QWORD*, __int64*))(*v15_.v16 + 48LL))(v15_.v16, &v17),
+          v6 = COERCE_AS(__typeof__(v6),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
   LABEL_5:
-    v12 += 2;
-  } while (v12 != v13);
-  result = v19;
-  if (v19 != v18) {
-    if (v19 != nullptr) {
-      v17 = 40;
-      return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v17))(result,
-                                                                         v9);
+    v9 += 2;
+  } while (v9 != v10);
+  result = v15_.v16;
+  if (v15_.v16 != v15_.v15) {
+    if (v15_.v16 != nullptr) {
+      v14 = 40;
+      return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v14))(result,
+                                                                         v6);
     }
     return result;
   }
-
 LABEL_21:
-  v17 = 32;
-  return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v17))(result,
-                                                                     v9);
+  v14 = 32;
+  return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v14))(result,
+                                                                     v6);
 }
 
 __int64 ThermaeThermaeMenuItem_Unknown55_192ca20(__int64 result)

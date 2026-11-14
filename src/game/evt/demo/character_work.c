@@ -128,10 +128,19 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
                                        __int128* a6);
 void game_evt_demo_CharacterWork_SetClothControl(__int64 a1, char a2,
                                                  __int64 a3);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+__int64 wld_Crc32_alt2(int, unsigned __int8*, unsigned __int64);
+int __cxa_guard_acquire_alt2(__int64);
+void __cxa_guard_release_alt2(__int64);
 
 void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
                                        __int128* a4, __int128* a5, __int128* a6)
 {
+
+#pragma clang fp contract(on)
+
   int* v11;
   __int64 v12;
   __int64 v13;
@@ -214,7 +223,7 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
   GameData_21d9d78 = 8;
   GameHr_11c4280(a1, (__int64)v37_.v37);
   v14 = (__int64*)fw_memory_g_heap_manager_ptr;
-  v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+  v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
       *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
   v15[2] = 0;
   v16 = (unsigned __int64)(v15 + 3);
@@ -231,9 +240,9 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
                                     memory_order_acquire);
     v20 = GameData_212deb0;
     if ((explicit & 1) == 0 &&
-        __cxa_guard_acquire_alt1((__int64)GameData_212deb8) != 0) {
-      *v20 = wld_Crc32_alt1(0, "CharacterBuilder", 0x10u);
-      __cxa_guard_release_alt1((__int64)GameData_212deb8);
+        __cxa_guard_acquire_alt2((__int64)GameData_212deb8) != 0) {
+      *v20 = wld_Crc32_alt2(0, "CharacterBuilder", 0x10u);
+      __cxa_guard_release_alt2((__int64)GameData_212deb8);
     }
     v21 = *(_QWORD*)(v18 + 512);
     v22 = v21;
@@ -271,7 +280,7 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
     v32 = *a3;
     v29 = *a6;
     v30 = *a5;
-    v27 = fw_memory_HeapManager_Allocate_alt1(v26, 96, 16, 0);
+    v27 = fw_memory_HeapManager_Allocate_alt2(v26, 96, 16, 0);
     *(_QWORD*)(v27 + 16) = a1;
     v33_.v34 = (_BYTE*)v27;
     *(_QWORD*)v27 = GameData_2016950;
@@ -299,7 +308,7 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
   if (atomic_fetch_add((atomic_ullong* volatile)(v17 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v17 + 16LL))(v17);
-    std___1___shared_weak_count___release_weak_alt1(v17);
+    std___1___shared_weak_count___release_weak_alt2(v17);
   }
 LABEL_25:
   TrickEntity_7d1480((__int64)v37_.v37);

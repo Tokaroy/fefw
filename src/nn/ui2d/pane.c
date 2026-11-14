@@ -2199,6 +2199,9 @@ __int64* Pane_GetRuntimeTypeInfo()
 
 __int64 Pane_590f00(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v6;
   int* v7;
   int* v8;

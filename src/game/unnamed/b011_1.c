@@ -2625,6 +2625,9 @@ void GameHr_d29910(_QWORD* a1, __int64* a2, unsigned int a3)
 
 __int64 GameHr_d4a700(__int64 result, _BYTE* a2, _BYTE* a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   int v4;
   _BYTE* v5;
@@ -2675,6 +2678,9 @@ __int64 GameHr_d4a780(__int64 result, _DWORD* a2, _DWORD* a3)
 
 __int64 GameHr_d4aae0(__int64 result, _DWORD* a2, _DWORD* a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   int v4;
   _DWORD* v5;

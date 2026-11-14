@@ -267,6 +267,8 @@ __int64 ProcTrainingKindMenu_Unknown88(__int64 a1)
 __int64 game_facility_anonymous_ProcTrainingKindMenu_ACall(__int64 a1)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v2;
   __int64 v3;

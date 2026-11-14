@@ -878,6 +878,10 @@ __int64 game_gameui_Util_SetStatusForClassChange(__int64 result, _QWORD* a2,
                                                  __int64 a3, char a4, char a5);
 __int64 Util_15892d0(__int64** a1, unsigned __int8 a2, unsigned __int8 a3,
                      __int64 a4);
+__int64 GameRoutine_60a020_alt2(__int64, const char*);
+__int64 ui_LayoutAccessor_FindPane_alt3(__int64*, __int64);
+char* game_util_Format_alt4(const char*, ...);
+void nn_mem_StandardAllocator_Free_alt4(__int64, __int64);
 
 __int64 game_gameui_Util_CountAvailableArtsNum(__int64 a1, __int64 a2,
                                                __int64 a3)
@@ -6251,6 +6255,9 @@ __int64 Util_1576480(__int64 a1, __int64 a2, unsigned __int8 a3)
 
 void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
 {
+
+#pragma clang fp contract(on)
+
   int* v3;
   int v6;
   __int64 v7;
@@ -6358,11 +6365,11 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
     UnitUtil_15e0640((__int64)&v42_.v42, *v9, v6, *v10, 1);
     if (*(&v42_.v42 + 3 * **(int**)(a2 + 24) + 1) !=
         *(&v42_.v42 + 3 * **(int**)(a2 + 24))) {
-      v11 = game_util_Format_alt3("L_JobIcon_Rank%d_Attr%d_%02d", v6,
+      v11 = game_util_Format_alt4("L_JobIcon_Rank%d_Attr%d_%02d", v6,
                                   **(_DWORD**)(a2 + 32), **(_DWORD**)(a2 + 40));
-      if (ui_LayoutAccessor_FindPane_alt1(**(__int64***)(a2 + 48),
+      if (ui_LayoutAccessor_FindPane_alt3(**(__int64***)(a2 + 48),
                                           (__int64)v11) != 0) {
-        GameRoutine_60a020_alt1((__int64)&v63_.v63, v11);
+        GameRoutine_60a020_alt2((__int64)&v63_.v63, v11);
         v12 = false;
         v13 = 1;
         v14 = v42_.v57;
@@ -6378,7 +6385,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
         else {
           v17 = 56;
         }
-        nn_mem_StandardAllocator_Free_alt3(v16 + v17, v14);
+        nn_mem_StandardAllocator_Free_alt4(v16 + v17, v14);
         goto LABEL_21;
       }
     }
@@ -6394,9 +6401,9 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
             3;
       if ((v28 & 0x80000000) == 0) {
         while (1) {
-          v29 = game_util_Format_alt3("L_JobIcon_Rank%d_Attr%d_%02d", v6,
+          v29 = game_util_Format_alt4("L_JobIcon_Rank%d_Attr%d_%02d", v6,
                                       **(_DWORD**)(a2 + 32), v28);
-          if (ui_LayoutAccessor_FindPane_alt1(**(__int64***)(a2 + 48),
+          if (ui_LayoutAccessor_FindPane_alt3(**(__int64***)(a2 + 48),
                                               (__int64)v29) != 0) {
             break;
           }
@@ -6406,7 +6413,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
             goto LABEL_13;
           }
         }
-        GameRoutine_60a020_alt1((__int64)&v60_.v60, v29);
+        GameRoutine_60a020_alt2((__int64)&v60_.v60, v29);
       }
     }
   LABEL_13:
@@ -6431,7 +6438,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       else {
         v19 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(v18 + v19, v42_.v54);
+      nn_mem_StandardAllocator_Free_alt4(v18 + v19, v42_.v54);
     }
     if (v42_.v51 != 0) {
       v20 = *(_QWORD*)v7;
@@ -6442,7 +6449,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       else {
         v21 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(v20 + v21, v42_.v51);
+      nn_mem_StandardAllocator_Free_alt4(v20 + v21, v42_.v51);
     }
     if (v42_.v48 != 0) {
       v22 = *(_QWORD*)v7;
@@ -6453,7 +6460,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       else {
         v23 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(v22 + v23, v42_.v48);
+      nn_mem_StandardAllocator_Free_alt4(v22 + v23, v42_.v48);
     }
     if (v42_.v45 != 0) {
       v24 = *(_QWORD*)v7;
@@ -6464,7 +6471,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       else {
         v25 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(v24 + v25, v42_.v45);
+      nn_mem_StandardAllocator_Free_alt4(v24 + v25, v42_.v45);
     }
     if (v42_.v42 != 0) {
       v26 = *(_QWORD*)v7;
@@ -6475,7 +6482,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       else {
         v27 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(v26 + v27, v42_.v42);
+      nn_mem_StandardAllocator_Free_alt4(v26 + v27, v42_.v42);
     }
   } while ((v12 | v13) != 1);
   v31 = v63_.v64;
@@ -6507,7 +6514,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
       if (*(_QWORD*)(*(_QWORD*)v7 + 200LL) == 0) {
         v37 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)v7 + v37, v60_.v62);
+      nn_mem_StandardAllocator_Free_alt4(*(_QWORD*)v7 + v37, v60_.v62);
       if ((v63_.v63 & 1) != 0) {
       LABEL_65:
         if (v63_.v65 != 0) {
@@ -6515,7 +6522,7 @@ void Util_1578f20(_QWORD* a1, __int64 a2, char a3)
           if (*(_QWORD*)(*(_QWORD*)v7 + 200LL) == 0) {
             v40 = 56;
           }
-          nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)v7 + v40, v63_.v65);
+          nn_mem_StandardAllocator_Free_alt4(*(_QWORD*)v7 + v40, v63_.v65);
         }
       }
     }

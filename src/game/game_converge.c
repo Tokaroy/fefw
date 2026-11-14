@@ -226,7 +226,8 @@ void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
-__int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3);
+__int64 game_GameConverge_Impl_CommonInfo_Merge_alt3(__int64 a1, char a2,
+                                                     int a3);
 void game_GameConverge_Impl_RouteInfo_ResetReceived(__int64* a1);
 __int64 GameConst_7f97f0(__int64);
 __int64 GameRoutine_6c47b0(__int64, _BYTE*, char, char);
@@ -271,6 +272,8 @@ extern __int64 (*game_anonymous_UnitData_vtable[])();
 void GameHr_6c2b50(__int64);
 void __attribute__((noreturn)) GameRoutine_8ee670();
 char* GameConverge_8ef5a0(char** a1);
+__int64 GameRoutine_8ee960_alt2(__int64 result, unsigned int*);
+_QWORD* game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3);
 
 __int64 GameConverge_Destructor(_QWORD* a1)
 {
@@ -2605,8 +2608,11 @@ GameConverge_8ea8c0(PSEUDO_X8 x8_, __int64 result, __int64 a2, char a3)
   }
 }
 
-__int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
+_QWORD* game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v6;
   __int64* v7;
   __int64* v8;
@@ -2621,7 +2627,7 @@ __int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
   __int64 v18;
   unsigned __int64 v19;
   int v20;
-  __int64 result;
+  _QWORD* result;
   __int64 v22;
   struct {
     _QWORD v23[4];
@@ -2639,7 +2645,7 @@ __int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
       v11 = *(_BYTE*)(v9 + 178);
       BYTE4(v23_.v23[0]) = v10;
       BYTE5(v23_.v23[0]) = v11;
-      GameRoutine_8ee960_alt1(a1, (unsigned int*)v23_.v23);
+      GameRoutine_8ee960_alt2(a1, (unsigned int*)v23_.v23);
     }
     ++v7;
   }
@@ -2654,7 +2660,7 @@ __int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
       v19 = 0;
       do {
         v20 = *(_DWORD*)(*(_QWORD*)(v13 + 8) + v18);
-        if ((signed __int32)*(_DWORD*)(v16 + v18) < v20) {
+        if (*(_DWORD*)(v16 + v18) < v20) {
           *(_DWORD*)(v16 + v18) = v20;
           v16 = *(_QWORD*)(v14 + 8);
           v15 = *(_QWORD*)(v14 + 16);
@@ -2669,7 +2675,7 @@ __int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
   v23_.v23[1] = a1;
   v23_.v24 = v23_.v23;
   GameHr_8273e0(v12 + 40, (__int64)v23_.v23);
-  result = (__int64)v23_.v24;
+  result = v23_.v24;
   if (v23_.v24 == v23_.v23) {
     v22 = 32;
     goto LABEL_21;
@@ -2677,7 +2683,8 @@ __int64 game_GameConverge_Impl_CommonInfo_Merge(__int64 a1, char a2, int a3)
   if (v23_.v24 != nullptr) {
     v22 = 40;
   LABEL_21:
-    result = (*(__int64 (**)(__int64))(*v23_.v24 + v22))((__int64)v23_.v24);
+    result =
+        (_QWORD*)(*(__int64 (**)(__int64))(*v23_.v24 + v22))((__int64)v23_.v24);
   }
   *(_BYTE*)(a1 + 144) = a2;
   *(_DWORD*)(a1 + 148) = a3;

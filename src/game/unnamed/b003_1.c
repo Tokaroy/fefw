@@ -481,6 +481,7 @@ __int64 GameHr_5b0c00(__int64 result, __int64 a2, float* a3, __int64 a4,
                       float* a5, unsigned int a6);
 __int64 GameHr_5b1ee0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float* a5,
                       unsigned int a6);
+__int64 GameRoutine_55ea10_alt2(_QWORD*);
 
 __int64 GameHr_577d50(unsigned __int8* a1, unsigned __int8* a2)
 {
@@ -5069,7 +5070,7 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
     v15 = (_QWORD*)LayoutEx_579180(264);
     v16 = (__int64)v15;
     if (v15 != nullptr) {
-      GameRoutine_55ea10_alt1(v15);
+      GameRoutine_55ea10_alt2(v15);
     }
     ResFont_55eae0(v16, a1, v14, 0, 0, 0);
     ResFont_55f190(v16, a2);

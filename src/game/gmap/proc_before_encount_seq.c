@@ -37,6 +37,7 @@ extern __int64 game_ProcFadeView_instance_;
 extern __int64 game_ProcGameSkipView_instance_;
 extern __int64 game_script_hub_g_frame_counter;
 void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64 a1);
+__int64 game_gmap_TroopMgr_EachEncountTroop_alt2(__int64, __int64);
 
 _QWORD* game_gmap_ProcBeforeEncountSeq_HideAnimal(__int64 a1, __int64 a2)
 {
@@ -89,6 +90,9 @@ _QWORD* game_gmap_ProcBeforeEncountSeq_HideAnimal(__int64 a1, __int64 a2)
 
 void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   int v2;
   int v3;
   unsigned __int64 v4;
@@ -167,7 +171,7 @@ void game_gmap_ProcBeforeEncountSeq_WaitEncountMotionTick(__int64 a1)
   v20_.v20[0] = GameData_204c1b8;
   v20_.v21 = v20_.v20;
   *(float*)(a1 + 208) = v10 + (float)(v8 * v9);
-  game_gmap_TroopMgr_EachEncountTroop_alt1(v11, (__int64)v20_.v20);
+  game_gmap_TroopMgr_EachEncountTroop_alt2(v11, (__int64)v20_.v20);
   if (v20_.v21 == v20_.v20) {
     v12 = 32;
     goto LABEL_24;

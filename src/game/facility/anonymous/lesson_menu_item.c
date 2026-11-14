@@ -53,6 +53,7 @@ void GameRoutine_156c5d0(__int64, __int64, char);
 void game_gameui_1595d90(char*, int, char, char);
 __int64 LessonMenuItem_DrawText(_QWORD* a1);
 __int64 game_156c910(__int64 result, const char*, int, ...);
+__int64 GameSubquestData_125b8e0_alt2(_QWORD*, const char*, unsigned __int8);
 
 __int64 LessonMenuItem_ACall(_QWORD* a1)
 {
@@ -227,6 +228,9 @@ LABEL_48:
 
 __int64 LessonMenuItem_DrawText(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   char* v4;
@@ -475,7 +479,7 @@ LABEL_35:
       else {
         v39 = 0;
       }
-      v50 = GameSubquestData_125b8e0_alt1(*(_QWORD**)GameData_212c7b0[0], v38,
+      v50 = GameSubquestData_125b8e0_alt2(*(_QWORD**)GameData_212c7b0[0], v38,
                                           v39);
       v35 = 3;
       if (v50 != 0) {
@@ -493,14 +497,14 @@ LABEL_35:
     goto LABEL_60;
   }
   if (game_GameModeData_instance_ != 0) {
-    v34 = GameSubquestData_125b8e0_alt1(
+    v34 = GameSubquestData_125b8e0_alt2(
         v33, v32, *(_BYTE*)(game_GameModeData_instance_ + 15));
     if (v34 == 0) {
       goto LABEL_49;
     }
   }
   else {
-    v34 = GameSubquestData_125b8e0_alt1(v33, v32, 0);
+    v34 = GameSubquestData_125b8e0_alt2(v33, v32, 0);
     if (v34 == 0) {
       goto LABEL_49;
     }

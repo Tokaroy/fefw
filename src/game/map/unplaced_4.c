@@ -178,6 +178,11 @@ _DWORD* game_map_18c63a0(__int64 a1, int* a2, __int64 a3, __int64 a4, char a5);
 _DWORD* game_map_18c6550(__int64 a1, int* a2, int a3);
 _DWORD* game_map_18c66b0(__int64 a1, int* a2);
 void game_map_1a00e90(__int64* a1, _DWORD* a2, _QWORD* a3);
+_QWORD* game_map_MapBattleHUD_DamagePopupFactory(_QWORD* result, __int64, int,
+                                                 int);
+__attribute__((swiftcall)) void game_map_79ca50(PSEUDO_X8, __int64,
+                                                float32x4_t result);
+void game_map_7aa980_alt1(_BYTE*, __int64, float32x4_t);
 
 __int64 game_map_727040()
 {
@@ -2389,8 +2394,8 @@ void game_map_7b0700(__int64 a1)
                ? (v24 = 2)
                : (v24 = 3),
            (v24 & v23) != 0)) {
-        v7 =
-            X8CALL_V0(float32x4_t, GameRoutine_79ca50((void*)(&v96_.v96), v13)),
+        v7 = X8CALL_V0(float32x4_t,
+                       game_map_79ca50((void*)(&v96_.v96), v13, v7)),
         v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v25 = GameData_21ec7b0;
@@ -2398,8 +2403,8 @@ void game_map_7b0700(__int64 a1)
             (v26 = *(_QWORD*)(GameData_21ec7b0 + 8)) == 0 ||
             (*(_BYTE*)(v26 + 113) & 0x40) == 0) {
           if (GameData_21ed098 != 0) {
-            GameRoutine_18c4dd0((_QWORD*)GameData_21ed098, (__int64)&v96_.v96,
-                                0, 1),
+            game_map_MapBattleHUD_DamagePopupFactory((_QWORD*)GameData_21ed098,
+                                                     (__int64)&v96_.v96, 0, 1),
                 v52 = COERCE_AS(__typeof__(v52),
                                 PSEUDO_REGISTER(__n128, "v0", "=w")),
                 v7 = COERCE_AS(__typeof__(v7),
@@ -2416,7 +2421,7 @@ void game_map_7b0700(__int64 a1)
           }
         }
       }
-      GameRoutine_79ca50((void*)(&v94), v13),
+      game_map_79ca50((void*)(&v94), v13, v7),
           v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
@@ -2455,7 +2460,7 @@ void game_map_7b0700(__int64 a1)
       v18 = v6 + 12LL * *(unsigned __int8*)(v13 + 16);
       v19 = *(__int16*)(v18 + 18);
       if (*(_WORD*)(v18 + 18) != 0) {
-        GameRoutine_79ca50((void*)(&v96_.v96), v13),
+        game_map_79ca50((void*)(&v96_.v96), v13, v7),
             v52 =
                 COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
             v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -2544,7 +2549,7 @@ void game_map_7b0700(__int64 a1)
         }
         else {
           LANES128(v94).n128_u64[0] = v75;
-          GameRoutine_79ca50((void*)(&v95), v13),
+          game_map_79ca50((void*)(&v95), v13, v7),
               v52 = COERCE_AS(__typeof__(v52),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v7 = COERCE_AS(__typeof__(v7),
@@ -2581,7 +2586,7 @@ void game_map_7b0700(__int64 a1)
                ? (v81 = 2)
                : (v81 = 3),
            (v81 & v80) != 0)) {
-        GameRoutine_79ca50((void*)(&v96_.v96), v17),
+        game_map_79ca50((void*)(&v96_.v96), v17, v78),
             v52 =
                 COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
             v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -2624,7 +2629,7 @@ void game_map_7b0700(__int64 a1)
     }
     v39 = *(__int16*)(v6 + 16 + 12LL * *(unsigned __int8*)(v13 + 16) + 2);
     if ((v39 & 0x80000000) != 0) {
-      v7 = X8CALL_V0(float32x4_t, GameRoutine_79ca50((void*)(&v96_.v96), v13)),
+      v7 = X8CALL_V0(float32x4_t, game_map_79ca50((void*)(&v96_.v96), v13, v7)),
       v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
       if (game_ProcGameSkipView_instance_ == 0 ||
@@ -2721,7 +2726,7 @@ void game_map_7b0700(__int64 a1)
       if (v57 == 0) {
         v60 = *(_DWORD*)(v6 + 12);
         if ((v60 & 4) != 0) {
-          game_map_7aa980("SE_ACT_LD_Hit_Critical", v13),
+          game_map_7aa980_alt1("SE_ACT_LD_Hit_Critical", v13, v7),
               v52 = COERCE_AS(__typeof__(v52),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v7 = COERCE_AS(__typeof__(v7),
@@ -2737,7 +2742,7 @@ void game_map_7b0700(__int64 a1)
                               PSEUDO_REGISTER(__n128, "v0", "=w"));
         }
         else if ((v60 & 0x60) != 0) {
-          game_map_7aa980("SE_ACT_LD_Hit_Special", v13),
+          game_map_7aa980_alt1("SE_ACT_LD_Hit_Special", v13, v7),
               v52 = COERCE_AS(__typeof__(v52),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v7 = COERCE_AS(__typeof__(v7),
@@ -2753,7 +2758,7 @@ void game_map_7b0700(__int64 a1)
                               PSEUDO_REGISTER(__n128, "v0", "=w"));
         }
         else {
-          game_map_7aa980("SE_ACT_LD_Hit_Common", v13),
+          game_map_7aa980_alt1("SE_ACT_LD_Hit_Common", v13, v7),
               v52 = COERCE_AS(__typeof__(v52),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v7 = COERCE_AS(__typeof__(v7),
@@ -2765,7 +2770,7 @@ void game_map_7b0700(__int64 a1)
     }
     else {
       if (!BattleSide_7a11b0(v17) && (BattleInfo_79d030(v17) & 1) == 0) {
-        game_map_7aa980("SE_ACT_LD_Guard_Normal", v13),
+        game_map_7aa980_alt1("SE_ACT_LD_Guard_Normal", v13, v52),
             v52 =
                 COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
             v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -2806,7 +2811,7 @@ void game_map_7b0700(__int64 a1)
         v67 = v6 + 16 + 12LL * *(unsigned __int8*)(v17 + 16);
         v68 = *(__int16*)(v67 + 2);
         if (*(_WORD*)(v67 + 2) != 0) {
-          GameRoutine_79ca50((void*)(&v96_.v96), v17),
+          game_map_79ca50((void*)(&v96_.v96), v17, v7),
               v52 = COERCE_AS(__typeof__(v52),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v7 = COERCE_AS(__typeof__(v7),

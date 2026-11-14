@@ -1407,6 +1407,9 @@ LABEL_11:
 
 bool GmapExploreInfo_135e360(__int64* a1, __int64* a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   __int64 v4;

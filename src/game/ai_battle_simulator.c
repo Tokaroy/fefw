@@ -262,6 +262,9 @@ float AiBattleSimulator_11fc090(__int64 a1, unsigned int a2)
 
 __int64 AIBattleSimulator_11fc220(__int64 a1, long double a2)
 {
+
+#pragma clang fp contract(on)
+
   float v2;
   float v3;
   float v4;

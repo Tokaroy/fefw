@@ -346,6 +346,9 @@ LABEL_11:
 
 __int64 game_menu_anonymous_ProcConfigMenu_SortAndFilter(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   int v3;
   __int64 v4;
   __int64 v5;

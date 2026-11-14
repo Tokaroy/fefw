@@ -401,6 +401,11 @@ extern __int64 fw_memory_g_heap_manager;
 void __attribute__((noreturn)) String_60a1d0();
 __int64 GameHr_1104f00(__int64 result, int* a2);
 float GameHr_11055e0(_QWORD* a1);
+_QWORD* GameRoutine_64df20_alt1(_QWORD*, __int64, unsigned __int64);
+__int64 GameRoutine_eaec10_alt1(__int64*, __int64);
+extern __int64 (*decltype_c81af0_ptr_2012a50[6])();
+extern __int64 (*game_map_MapAccessEventBase_vtable[])();
+__int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3);
 
 __int64 GameHr_1104f00(__int64 result, int* a2)
 {
@@ -6941,6 +6946,9 @@ bool GameHr_1140ab0(__int64 a1, unsigned int a2, unsigned int a3,
 
 __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64* result;
   __int64 v6;
   __int64 v7;
@@ -6948,8 +6956,10 @@ __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
   __int64 i;
   int v10;
   __int64 (*v11)();
-  _BYTE v12[24];
-  int v13;
+  struct {
+    _BYTE v12[24];
+    int v13;
+  } v12_;
   _BYTE* v14;
 
   *(_WORD*)(a1 + 8) = 0;
@@ -6961,10 +6971,10 @@ __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
   *(_QWORD*)(a1 + 80) = 0;
   *(_QWORD*)(a1 + 88) = 0;
   *(_QWORD*)(a1 + 96) = 0;
-  *(_QWORD*)a1 = GameData_2012160;
+  *(_QWORD*)a1 = game_map_MapAccessEventBase_vtable;
   if (result != a3) {
     if ((*(_BYTE*)a3 & 1) != 0) {
-      result = (__int64*)GameRoutine_64df20(result, a3[2], a3[1]);
+      result = GameRoutine_64df20_alt1(result, a3[2], a3[1]);
     }
     else {
       v6 = *a3;
@@ -6976,19 +6986,21 @@ __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
   }
   v8 = a3[3];
   for (i = a3[4]; v8 != i; v8 += 32) {
-    v12[0] = 0;
-    v13 = -1;
+    v12_.v12[0] = 0;
+    v12_.v13 = -1;
     v10 = *(_DWORD*)(v8 + 24);
     if (v10 != -1) {
       v11 = GameData_2012a68[v10];
-      v14 = v12;
+      v14 = v12_.v12;
       ((void (*)(_BYTE**, __int64))v11)(&v14, v8);
-      v13 = v10;
+      v12_.v13 = v10;
     }
-    result = (__int64*)GameRoutine_eaec10(a1 + 64, v12);
-    if (v13 != -1) {
-      result = (__int64*)((__int64 (*)(_BYTE**, _BYTE*))GameData_2012a50[v13])(
-          &v14, v12);
+    result = (__int64*)GameRoutine_eaec10_alt1((__int64*)(a1 + 64),
+                                               (__int64)v12_.v12);
+    if (v12_.v13 != -1) {
+      result = (__int64*)((
+          __int64 (*)(_BYTE**, _BYTE*))decltype_c81af0_ptr_2012a50[v12_.v13])(
+          &v14, v12_.v12);
     }
   }
   *(_DWORD*)(a1 + 88) = *((_DWORD*)a3 + 12);

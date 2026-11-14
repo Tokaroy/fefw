@@ -5639,6 +5639,9 @@ void game_10332b0(__int64 a1, int8x16_t* a2, int a3, __int64 a4, float a5)
 
 __attribute__((swiftcall)) void game_103a420(PSEUDO_X8 x8_)
 {
+
+#pragma clang fp contract(fast)
+
   __int64 a1 = (__int64)PSEUDO_X8_VALUE(x8_);
   __int64 v2;
   __int64* v3;

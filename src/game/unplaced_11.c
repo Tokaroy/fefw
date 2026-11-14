@@ -1727,6 +1727,8 @@ void TelopParts_17cbd60_alt1(__int64) __asm__("TelopParts_17cbd60");
 void __cxa_guard_release_alt1(__int64) __asm__("__cxa_guard_release");
 __int64 game_1034e80(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
 void game_10f03a0();
+float GameRoutine_1a09fb0(float);
+float GameRoutine_1a09fc0(float);
 
 __attribute__((swiftcall)) void game_eb68e0(PSEUDO_X8 x8_, int a1)
 {
@@ -7675,8 +7677,8 @@ LABEL_17:
   else {
     v37 = v21;
   }
-  v38 = sinf(v37);
-  v39 = cosf(v37);
+  v38 = GameRoutine_1a09fb0(v37);
+  v39 = GameRoutine_1a09fc0(v37);
   v40 = *(_QWORD*)(a1 + 8);
   v41 = vmulq_f32(v57, v57);
   LANES128(v41).n128_u64[0] =

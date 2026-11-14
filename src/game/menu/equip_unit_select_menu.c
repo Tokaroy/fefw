@@ -87,6 +87,10 @@ void GameRoutine_157e060(__int64*, const char*, const char*);
 void Util_157f4e0(__int64*, __int64, __int64);
 void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
                                                    char a3);
+__attribute__((swiftcall)) void GameRoutine_15d4100_alt2(PSEUDO_X8, __int64*,
+                                                         _QWORD*);
+__int64 ui_LayoutAccessor_SetPaneVisible_alt2(__int64 result, __int64, char);
+unsigned __int64 GameRoutine_1a09c70(const char*);
 
 __int64 EquipUnitSelectMenu_16cd870(__int64* a1)
 {
@@ -204,6 +208,9 @@ __int64 EquipUnitSelectMenu_16cd870(__int64* a1)
 void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
                                                    char a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v5;
   __int64* v6;
   __int64 v7;
@@ -450,7 +457,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
     goto LABEL_31;
   }
   LayoutAccessor_155e830((__int64)v6, 1);
-  ui_LayoutAccessor_SetPaneVisible_alt1((__int64)v6, (__int64)"N_List", 1);
+  ui_LayoutAccessor_SetPaneVisible_alt2((__int64)v6, (__int64)"N_List", 1);
   v8 = *(_DWORD*)(a1 + 1352);
   if (v8 > 4) {
     if ((unsigned int)(v8 - 5) >= 2) {
@@ -536,7 +543,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
             GameRoutine_15dee60(&v208, v215[0]);
             v205 = "L_Legion_Name";
             v206 = 13;
-            GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+            GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
             v209_.v209 = nullptr;
             v209_.v210 = 0;
             if (v200_.v201 != 0) {
@@ -583,7 +590,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
             GameRoutine_16ccdc0((__int64)&v209_.v209);
             v205 = "L_Legion_Gambit";
             v206 = 15;
-            GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+            GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
             v209_.v209 = nullptr;
             v209_.v210 = 0;
             if (v200_.v201 != 0) {
@@ -649,7 +656,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         }
         v205 = "L_Legion_Name";
         v206 = 13;
-        GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+        GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
         v209_.v209 = nullptr;
         v209_.v210 = 0;
         if (v200_.v201 != 0) {
@@ -681,7 +688,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         GameRoutine_16ccdc0((__int64)&v209_.v209);
         v205 = "L_Legion_Gambit";
         v206 = 15;
-        GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+        GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
         v209_.v209 = nullptr;
         v209_.v210 = 0;
         if (v200_.v201 != 0) {
@@ -712,7 +719,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         GameRoutine_16ccdc0((__int64)&v209_.v209);
         v22 = "L_GambitRange";
       LABEL_31:
-        ui_LayoutAccessor_SetPaneVisible_alt1((__int64)v6, (__int64)v22, 0);
+        ui_LayoutAccessor_SetPaneVisible_alt2((__int64)v6, (__int64)v22, 0);
         goto LABEL_32;
       }
       LayoutAccessor_1562cf0((__int64)v6, "Animal");
@@ -807,7 +814,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         LayoutAccessor_1562cf0((__int64)v6, "Animal");
         v205 = "L_AnimalName";
         v206 = 12;
-        GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+        GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
         v209_.v209 = nullptr;
         v209_.v210 = 0;
         if (v200_.v201 != 0) {
@@ -838,7 +845,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         GameRoutine_16ccdc0((__int64)&v209_.v209);
         v205 = "L_RelianceSkill";
         v206 = 15;
-        GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+        GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
         v209_.v209 = nullptr;
         v209_.v210 = 0;
         if (v200_.v201 != 0) {
@@ -868,7 +875,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
           }
         }
         GameRoutine_16ccdc0((__int64)&v209_.v209);
-        ui_LayoutAccessor_SetPaneVisible_alt1(
+        ui_LayoutAccessor_SetPaneVisible_alt2(
             (__int64)v6, (__int64)"L_AnimalName/L_AnimalLv", 0);
         LayoutAccessor_1562cf0((__int64)v6, "AttackMorphOff");
         goto LABEL_503;
@@ -906,7 +913,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
       LayoutAccessor_1562cf0(v105, v106);
       v205 = "L_AnimalName";
       v206 = 12;
-      GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+      GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
       v209_.v209 = nullptr;
       v209_.v210 = 0;
       if (v200_.v201 != 0) {
@@ -942,7 +949,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
       if (*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c8a0 + 64) +
                                8LL * *(unsigned __int8*)v78) +
                     109LL) != 0) {
-        ui_LayoutAccessor_SetPaneVisible_alt1(
+        ui_LayoutAccessor_SetPaneVisible_alt2(
             (__int64)v6, (__int64)"L_AnimalName/L_AnimalLv", 1);
         LayoutAccessor_1560070((void*)(&v196_.v196), v6,
                                "L_AnimalName/L_AnimalLv");
@@ -971,10 +978,10 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         v116 = (__int64)v6;
         v117 = 0;
       }
-      ui_LayoutAccessor_SetPaneVisible_alt1(v116, (__int64)v115, v117);
+      ui_LayoutAccessor_SetPaneVisible_alt2(v116, (__int64)v115, v117);
       v205 = "L_RelianceSkill";
       v206 = 15;
-      GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+      GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
       v209_.v209 = nullptr;
       v209_.v210 = 0;
       if (v200_.v201 != 0) {
@@ -1091,8 +1098,8 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
             v174 = v175;
             v176 = *(_QWORD**)(*(_QWORD*)(v77 + 136) + v173);
             v209_.v209 = (char*)v175;
-            v209_.v210 = strlen(v175);
-            GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v209_.v209);
+            v209_.v210 = GameRoutine_1a09c70(v175);
+            GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v209_.v209);
             if (v200_.v201 != 0) {
               v177 = std___1___shared_weak_count_lock(v200_.v201);
               v178 = (char*)v200_.v200;
@@ -1159,7 +1166,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
       }
       v209_.v209 = "L_AnimalAttack00";
       v209_.v210 = 16;
-      GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v209_.v209);
+      GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v209_.v209);
       if (v200_.v201 != 0) {
         v163 = std___1___shared_weak_count_lock(v200_.v201);
         v164 = (const char*)v200_.v200;
@@ -1191,7 +1198,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
     LABEL_451:
       v209_.v209 = "L_AnimalAttack01";
       v209_.v210 = 16;
-      GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v209_.v209);
+      GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v209_.v209);
       if (v200_.v201 != 0) {
         v168 = std___1___shared_weak_count_lock(v200_.v201);
         v169 = (const char*)v200_.v200;
@@ -1225,7 +1232,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
       if (v187 != 0) {
         v205 = "L_AnimalMorph";
         v206 = 13;
-        GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+        GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
         v209_.v209 = nullptr;
         v209_.v210 = 0;
         if (v200_.v201 != 0) {
@@ -1290,8 +1297,8 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         v85 = (const char*)(GameData_212d890[0] + 2);
         while (1) {
           v209_.v209 = game_util_Format("L_Skill%02d", v84);
-          v209_.v210 = strlen(v209_.v209);
-          GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v209_.v209);
+          v209_.v210 = GameRoutine_1a09c70(v209_.v209);
+          GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v209_.v209);
           if (v200_.v201 != 0) {
             v86 = std___1___shared_weak_count_lock(v200_.v201);
             v87 = (const char*)v200_.v200;
@@ -1349,8 +1356,8 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
         v91 = v81 + 1;
         while (1) {
           v209_.v209 = game_util_Format("L_Skill%02d", v89);
-          v209_.v210 = strlen(v209_.v209);
-          GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v209_.v209);
+          v209_.v210 = GameRoutine_1a09c70(v209_.v209);
+          GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v209_.v209);
           if (v200_.v201 != 0) {
             v92 = std___1___shared_weak_count_lock(v200_.v201);
             v93 = (const char*)v200_.v200;
@@ -1518,8 +1525,8 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
                       0xFFF) != 0)) {
                   v58 = v208++;
                   v205 = game_util_Format("L_Skill%02d", v58);
-                  v206 = strlen(v205);
-                  GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+                  v206 = GameRoutine_1a09c70(v205);
+                  GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
                   if (v200_.v201 != 0) {
                     v59 = std___1___shared_weak_count_lock(v200_.v201);
                     v60 = (const char*)v200_.v200;
@@ -1593,8 +1600,8 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
             LABEL_146:
               while (2) {
                 v205 = game_util_Format("L_Skill%02d", v49);
-                v206 = strlen(v205);
-                GameRoutine_15d4100_alt1((void*)(&v200_.v200), v6, &v205);
+                v206 = GameRoutine_1a09c70(v205);
+                GameRoutine_15d4100_alt2((void*)(&v200_.v200), v6, &v205);
                 if (v200_.v201 != 0) {
                   v68 = std___1___shared_weak_count_lock(v200_.v201);
                   v69 = (const char*)v200_.v200;
@@ -1765,7 +1772,7 @@ void game_menu_EquipUnitSelectMenu_UpdateEquipList(__int64 a1, __int64 a2,
           v137 = LayoutAccessor_155ea30(v6);
           Util_1575c70((__int64)v6, v215[0], 1, nullptr, 0, 0);
           LayoutAccessor_155e830((__int64)v6, v137 & 1);
-          ui_LayoutAccessor_SetPaneVisible_alt1(
+          ui_LayoutAccessor_SetPaneVisible_alt2(
               (__int64)v6, (__int64)"N_MasteryInfoItem", (a3 & 1) == 0);
           v5 = v192;
           goto LABEL_32;
@@ -1928,7 +1935,7 @@ LABEL_12:
         Util_15792c0(v28, (unsigned __int16*)game_g_empty_item_ptr, 0, 0, 0,
                      "L_Icon", (__int64)"T_Txt", 1);
         LayoutAccessor_155e830((__int64)v28, 1);
-        ui_LayoutAccessor_SetPaneVisible_alt1((__int64)v28, (__int64)"T_Txt",
+        ui_LayoutAccessor_SetPaneVisible_alt2((__int64)v28, (__int64)"T_Txt",
                                               1);
         LayoutAccessor_1562060((char*)v28, (__int64)"T_Txt", "MID_Sys_Empty");
       LABEL_157:

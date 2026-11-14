@@ -23,6 +23,9 @@ __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1);
 
 __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   _QWORD* v3;
   __int64 v4;

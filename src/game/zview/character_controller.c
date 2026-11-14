@@ -287,6 +287,10 @@ CharacterController_d3f410_alt3(_QWORD* result,
 typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
 extern GameAlign_22110ac GameData_22110ac_alt1 __asm__("GameData_22110ac");
 void CharacterController_StateJump_Unknown4(__int64 a1);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 std___1___shared_weak_count___release_weak_alt4(__int64);
+float GameRoutine_1a0ab40(float, float);
 
 void CharacterController_StateWarpTo_Unknown3(__int64 a1)
 {
@@ -5892,6 +5896,9 @@ void* CharacterController_d43a60(int a1, __int64 a2)
 
 void CharacterController_d449c0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   _QWORD* v3;
   _QWORD* v4;
@@ -5920,7 +5927,7 @@ void CharacterController_d449c0(__int64 a1)
     return;
   }
   if (*(_QWORD*)(a1 + 280) == 0) {
-    v12 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+    v12 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 96, 16, 0);
     v12[2] = 0;
     v13 = *(_QWORD*)(a1 + 288);
@@ -5939,7 +5946,7 @@ void CharacterController_d449c0(__int64 a1)
     if (v13 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v13 + 8),
                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v13 + 16LL))(v13);
-      std___1___shared_weak_count___release_weak_alt3(v13);
+      std___1___shared_weak_count___release_weak_alt4(v13);
     }
     v14 = *(_QWORD*)(a1 + 280);
     *(_DWORD*)(v14 + 20) = 1067506044;
@@ -5980,12 +5987,12 @@ void CharacterController_d449c0(__int64 a1)
     if (v24 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v24 + 8),
                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v24 + 16LL))(v24);
-      std___1___shared_weak_count___release_weak_alt3(v24);
+      std___1___shared_weak_count___release_weak_alt4(v24);
     }
     if (v22 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v22 + 8),
                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v22 + 16LL))(v22);
-      std___1___shared_weak_count___release_weak_alt3(v22);
+      std___1___shared_weak_count___release_weak_alt4(v22);
     }
   }
   v2 = *(_QWORD*)(a1 + 88);
@@ -6033,7 +6040,7 @@ LABEL_22:
       v10 = v10 / v20;
       v11 = v11 / v20;
     }
-    v19 = atan2f_alt3(v10, v11);
+    v19 = GameRoutine_1a0ab40(v10, v11);
   }
   **(float**)(a1 + 280) = v19;
 }
