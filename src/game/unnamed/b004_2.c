@@ -3767,11 +3767,12 @@ __int64 GameHr_67efe0(__int64 result, __int64 a2, __int64 a3)
   __int64 v19;
   __int64 v20;
   __int64 v21;
+  __int64 v24;
   struct {
     _BYTE v22[32];
     _BYTE* v23;
+    char gap40_[16];
   } v22_;
-  __int64 v24;
 
   if (a2 != 0) {
     v3 = *(_QWORD*)(result + 24);
@@ -3811,7 +3812,7 @@ __int64 GameHr_67efe0(__int64 result, __int64 a2, __int64 a3)
     if (v12 != nullptr) {
       if (v12 == v22_.v22) {
         v13[6] = v15;
-        (*(void (**)(_BYTE*))(*(_QWORD*)v12 + 24LL))(v12);
+        (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v12 + 24LL))(v12, v15);
       }
       else {
         v13[6] =

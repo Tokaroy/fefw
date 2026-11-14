@@ -941,12 +941,12 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
       v39 = (int)v36 >= v127 && v37 == v123;
       v40 = v36;
       v41 = v39;
-      v42 = v39 || v17 >= 0x1.fffffe0000000p+127f;
+      v42 = v39 || !(v17 < 0x1.fffffe0000000p+127f);
       while (1) {
         while (v35 <= 0x1F) {
           v136_.v140 = v29;
           LODWORD(v136_.v144) = (v125 & 1) == 0;
-          v44 = v17 >= 0x1.fffffe0000000p+127f || v35 == 10;
+          v44 = !(v17 < 0x1.fffffe0000000p+127f) || v35 == 10;
           if (v44 || v41) {
             goto LABEL_63;
           }
@@ -983,7 +983,7 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
           (*(void (**)(__int64, unsigned __int64*, __int64**, _QWORD))(
               *(_QWORD*)v47 + 32LL))(v47, &v128_.v128, &v130_.v130, v35);
           LODWORD(v53) = v128_.v129;
-          if (*(float*)&v128_.v129 <= *(float*)&v128_.v128) {
+          if (!(*(float*)&v128_.v129 > *(float*)&v128_.v128)) {
             goto LABEL_62;
           }
           *(_QWORD*)&v53 = 0;
@@ -991,8 +991,8 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
             LODWORD(v53) = *(_DWORD*)(a6 + 4LL * (int)v36);
           }
           *(float*)&v53 = *(float*)(a1 + 60) + *(float*)&v53;
-          if ((float)(*((float*)&v136_.v149 + 1) - *(float*)&v136_.v142) <=
-              *(float*)&v53) {
+          if (!((float)(*((float*)&v136_.v149 + 1) - *(float*)&v136_.v142) >
+               *(float*)&v53)) {
           LABEL_62:
             GameRoutine_5662e0(&v136_.v147, v53);
           LABEL_63:
@@ -1091,7 +1091,7 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
                 GameRoutine_5662e0(&v136_.v147, v113);
                 *(float*)(a1 + 20) =
                     v84 + (float)((float)(v20 - v114) + *(float*)&v136_.v142);
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }
@@ -1139,7 +1139,7 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
                 }
                 *(float*)(a1 + 20) =
                     v84 + (float)(*(float*)&v136_.v142 + (float)(v96 - v98));
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }
@@ -1148,7 +1148,7 @@ float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
                   v20 = *(float*)(a1 + 20) - *(float*)&v136_.v142;
                 }
                 *(float*)(a1 + 20) = v84 + *(float*)&v136_.v142;
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }
@@ -1999,12 +1999,12 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
       v40 = (int)v37 >= v132 && v38 == v128;
       v41 = v37;
       v42 = v40;
-      v43 = v40 || v17 >= 0x1.fffffe0000000p+127f;
+      v43 = v40 || !(v17 < 0x1.fffffe0000000p+127f);
       while (1) {
         while (v36 <= 0x1F) {
           v141_.v145 = v30;
           LODWORD(v141_.v149) = (v130 & 1) == 0;
-          v45 = v17 >= 0x1.fffffe0000000p+127f || v36 == 10;
+          v45 = !(v17 < 0x1.fffffe0000000p+127f) || v36 == 10;
           if (v45 || v42) {
             goto LABEL_63;
           }
@@ -2041,7 +2041,7 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
           (*(void (**)(__int64, unsigned __int64*, __int64**, _QWORD))(
               *(_QWORD*)v48 + 32LL))(v48, &v133_.v133, &v135_.v135, v36);
           LODWORD(v54) = v133_.v134;
-          if (*(float*)&v133_.v134 <= *(float*)&v133_.v133) {
+          if (!(*(float*)&v133_.v134 > *(float*)&v133_.v133)) {
             goto LABEL_62;
           }
           *(_QWORD*)&v54 = 0;
@@ -2049,8 +2049,8 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
             LODWORD(v54) = *(_DWORD*)(a6 + 4LL * (int)v37);
           }
           *(float*)&v54 = *(float*)(a1 + 60) + *(float*)&v54;
-          if ((float)(*((float*)&v141_.v154 + 1) - *(float*)&v141_.v147) <=
-              *(float*)&v54) {
+          if (!((float)(*((float*)&v141_.v154 + 1) - *(float*)&v141_.v147) >
+               *(float*)&v54)) {
           LABEL_62:
             GameRoutine_567cd0(&v141_.v152, v54);
           LABEL_63:
@@ -2149,7 +2149,7 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
                 GameRoutine_567cd0(&v141_.v152, v118);
                 *(float*)(a1 + 20) =
                     v85 + (float)((float)(v20 - v119) + *(float*)&v141_.v147);
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }
@@ -2197,7 +2197,7 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
                 }
                 *(float*)(a1 + 20) =
                     v85 + (float)(*(float*)&v141_.v147 + (float)(v97 - v99));
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }
@@ -2206,7 +2206,7 @@ float nn_font_568880(__int64 a1, unsigned __int64 a2, int a3, int a4,
                   v20 = *(float*)(a1 + 20) - *(float*)&v141_.v147;
                 }
                 *(float*)(a1 + 20) = v85 + *(float*)&v141_.v147;
-                if (v17 >= 0x1.fffffe0000000p+127f) {
+                if (!(v17 < 0x1.fffffe0000000p+127f)) {
                   goto LABEL_81;
                 }
               }

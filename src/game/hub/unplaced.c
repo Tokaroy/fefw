@@ -1260,17 +1260,14 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
   struct {
     __int64 v32[2];
     __int64 v33;
-  } v32_;
-  struct {
     __int64 v34;
     __int64 v35;
     __int64 v36;
-  } v34_;
-  struct {
     __int64 v37[6];
     int v38;
-  } v37_;
-  unsigned __int64 v39;
+    char gap100_[4];
+    unsigned __int64 v39;
+  } v32_;
 
   v13 = COERCE_AS(__typeof__(v13),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1278,12 +1275,12 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
   if (v4 != 0 && *(_QWORD*)(v4 + 8) != -1) {
     goto LABEL_58;
   }
-  GameRoutine_cac400((void*)(v37_.v37), a1, 0),
+  GameRoutine_cac400((void*)(v32_.v37), a1, 0),
       v13 = COERCE_AS(__typeof__(v13),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  v7 = v37_.v37[1];
+  v7 = v32_.v37[1];
   v8 = *(_QWORD*)(a1 + 112);
-  *(_QWORD*)(a1 + 104) = v37_.v37[0];
+  *(_QWORD*)(a1 + 104) = v32_.v37[0];
   *(_QWORD*)(a1 + 112) = v7;
   if (v8 != 0) {
     std___1___shared_weak_count___release_weak(v8),
@@ -1299,8 +1296,8 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
       v10 = *(_QWORD*)(a1 + 104);
       v11 = v9;
       if (v10 != 0) {
-        LOWORD(v37_.v37[0]) = 0;
-        GameRoutine_d58e20((_QWORD*)v10, 0, v37_.v37, 0),
+        LOWORD(v32_.v37[0]) = 0;
+        GameRoutine_d58e20((_QWORD*)v10, 0, v32_.v37, 0),
             v13 = COERCE_AS(__typeof__(v13),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         *(_DWORD*)(v10 + 1760) = *(_DWORD*)(v10 + 1760) & 0xFFFFFFBF |
@@ -1346,15 +1343,15 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
         goto LABEL_47;
       }
       LOWORD(v32_.v32[0]) = 0;
-      v34_.v34 = 0;
-      v34_.v35 = 0;
-      v34_.v36 = 0;
+      v32_.v34 = 0;
+      v32_.v35 = 0;
+      v32_.v36 = 0;
       if (v32_.v32 != (__int64*)a2) {
         if ((*(_BYTE*)a2 & 1) != 0) {
           GameRoutine_64df20(v32_.v32, *(_QWORD*)(a2 + 16), *(_QWORD*)(a2 + 8)),
               v13 = COERCE_AS(__typeof__(v13),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          if (&v34_.v34 == (__int64*)a3) {
+          if (&v32_.v34 == (__int64*)a3) {
             goto LABEL_19;
           }
           goto LABEL_18;
@@ -1364,28 +1361,28 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
         v32_.v32[1] = v16;
         v32_.v33 = *(_QWORD*)(a2 + 16);
       }
-      if (&v34_.v34 == (__int64*)a3) {
+      if (&v32_.v34 == (__int64*)a3) {
       LABEL_19:
         v17 = (__int64*)(v14 + 24LL * *(int*)(a1 + 1160));
         v18 = v17 + 160;
-        HandlePtr_d5bf40(v37_.v37, v13, v32_.v32),
+        HandlePtr_d5bf40(v32_.v37, v13, v32_.v32),
             v13 = COERCE_AS(__typeof__(v13),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-        v37_.v38 = 0;
+        v32_.v38 = 0;
         v19 = v17[161];
         if (v19 >= v17[162]) {
-          v21 = HubEventNatives_d5bb40(v17 + 160, (__int64)v37_.v37),
+          v21 = HubEventNatives_d5bb40(v17 + 160, (__int64)v32_.v37),
           v13 = COERCE_AS(__typeof__(v13),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         }
         else {
           *(_BYTE*)v19 = 0;
           *(_DWORD*)(v19 + 48) = -1;
-          v20 = v37_.v38;
-          if (v37_.v38 != -1) {
-            v39 = v19;
+          v20 = v32_.v38;
+          if (v32_.v38 != -1) {
+            v32_.v39 = v19;
             ((void (*)(unsigned __int64*, __int64*))
-                 HandlePtr_Unknown23_d5be90_ptr[v37_.v38])(&v39, v37_.v37),
+                 HandlePtr_Unknown23_d5be90_ptr[v32_.v38])(&v32_.v39, v32_.v37),
                 v13 =
                     COERCE_AS(__typeof__(v13),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1394,20 +1391,20 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
           v21 = v19 + 64;
         }
         v18[1] = v21;
-        if (v37_.v38 != -1) {
-          ((void (*)(unsigned __int64*, __int64*))GameData_1fdce28[v37_.v38])(
-              &v39, v37_.v37),
+        if (v32_.v38 != -1) {
+          ((void (*)(unsigned __int64*, __int64*))GameData_1fdce28[v32_.v38])(
+              &v32_.v39, v32_.v37),
               v13 = COERCE_AS(__typeof__(v13),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         }
-        v22 = v34_.v34;
-        if (v34_.v34 != 0) {
-          v23 = v34_.v35;
+        v22 = v32_.v34;
+        if (v32_.v34 != 0) {
+          v23 = v32_.v35;
           v24 = fw_memory_g_heap_manager_ptr;
-          if (v34_.v34 == v34_.v35) {
+          if (v32_.v34 == v32_.v35) {
             goto LABEL_37;
           }
-          v25 = v34_.v35;
+          v25 = v32_.v35;
           do {
             v26 = *(_BYTE*)(v25 - 24);
             v25 -= 24;
@@ -1425,8 +1422,8 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
             }
             v23 = v25;
           } while (v25 != v22);
-          v34_.v35 = v22;
-          if (v34_.v34 != 0) {
+          v32_.v35 = v22;
+          if (v32_.v34 != 0) {
           LABEL_37:
             v28 = 128;
             if (*(_QWORD*)(*(_QWORD*)v24 + 200LL) == 0) {
@@ -1452,7 +1449,7 @@ unsigned __int64 game_hub_cad680(__int64 a1, __int64 a2, __int64 a3)
       }
     LABEL_18:
       GameRoutine_6b7aa0(
-          &v34_.v34, *(__int64**)a3, *(__int64**)(a3 + 8),
+          &v32_.v34, *(__int64**)a3, *(__int64**)(a3 + 8),
           0xAAAAAAAAAAAAAAABLL *
               ((__int64)(*(_QWORD*)(a3 + 8) - *(_QWORD*)a3) >> 3)),
           v13 = COERCE_AS(__typeof__(v13),

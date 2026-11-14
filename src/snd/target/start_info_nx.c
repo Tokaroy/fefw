@@ -270,15 +270,15 @@ __int64 StartInfoNX_Unknown16(__int64* a1)
   __int64 v19;
   __int64 v20;
   struct {
-    _QWORD v21[2];
-    void* v22;
-  } v21_;
-  void* v23[3];
-  struct {
     __int64 v24;
     unsigned __int64 v25;
     char* v26;
   } v24_;
+  void* v23[3];
+  struct {
+    _QWORD v21[2];
+    void* v22;
+  } v21_;
 
   result = (*(__int64 (**)(__int64))(*(_QWORD*)snd_target_s_platform + 200LL))(
       snd_target_s_platform);

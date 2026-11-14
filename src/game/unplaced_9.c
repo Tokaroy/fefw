@@ -3959,7 +3959,7 @@ LABEL_14:
       if ((int)v26 >= 1) {
         v27 = 0;
         v28 = (float*)(*(_QWORD*)(a3 + 176) + 12LL);
-        while ((float)(*(float*)(a3 + 68) - *(v28 - 1)) <= *v28) {
+        while (!((float)(*(float*)(a3 + 68) - *(v28 - 1)) > *v28)) {
           v28 += 8;
           if (v26 == ++v27) {
             goto LABEL_38;
@@ -5325,7 +5325,7 @@ float32x4_t game_5be030(float32x4_t* a1, float32x4_t* a2, __int64 a3, float a4,
                                      v20 * -0x1.0000000000000p-1f))) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v22 <= 0x1.921fb60000000p+0f) {
+    if (!(v22 > 0x1.921fb60000000p+0f)) {
       goto LABEL_10;
     }
   LABEL_6:
@@ -5442,7 +5442,7 @@ LABEL_21:
   v46 = v25 * v31;
   v47 = 0x1.0000000000000p+0f - (float)(v44 * v44);
   v48 = 0x0.0p+0f;
-  if (v47 > 0x0.0p+0f) {
+  if (!(v47 <= 0x0.0p+0f)) {
     v48 = sqrtf(v47);
   }
   v49 = v45 * v48;
@@ -9295,7 +9295,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
             v44 = a9;
             *(float*)&a1 = fmodf(
                 *(float*)&a3 +
-                    (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
+                    (float)((float)(*a7 * (float)LANES128(v11).n128_u8[0]) *
                             (float)v35),
                 (float)v35);
             LODWORD(a3) = v41;
@@ -9383,7 +9383,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
           v27 = a8;
           v28 = a9;
           *(float*)&a1 =
-              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LODWORD(v10)) *
+              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LOBYTE(v10)) *
                                            (float)v18),
                     (float)v18);
           a2 = v22;
@@ -9670,7 +9670,7 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             *(float*)&a1 =
                 GameRoutine_1a0a6a0(
                     *(float*)&a2 +
-                        (float)((float)(*a6 * (float)LANES128(v8).n128_u32[0]) *
+                        (float)((float)(*a6 * (float)LANES128(v8).n128_u8[0]) *
                                 (float)v31),
                     (float)v31) /
                 (float)v31;
@@ -9751,7 +9751,7 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
           v23 = a5;
           *(float*)&a1 = GameRoutine_1a0a6a0(
               *(float*)&a2 +
-                  (float)((float)(*a6 * (float)LODWORD(v7)) * (float)v16),
+                  (float)((float)(*a6 * (float)LOBYTE(v7)) * (float)v16),
               (float)v16);
           LODWORD(a2) = v20;
           a5 = v23;
@@ -10066,7 +10066,7 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
             v44 = a9;
             *(float*)&a1 = fmodf(
                 *(float*)&a3 +
-                    (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
+                    (float)((float)(*a7 * (float)LANES128(v11).n128_u8[0]) *
                             (float)v35),
                 (float)v35);
             LODWORD(a3) = v41;
@@ -10154,7 +10154,7 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
           v27 = a8;
           v28 = a9;
           *(float*)&a1 =
-              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LODWORD(v10)) *
+              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LOBYTE(v10)) *
                                            (float)v18),
                     (float)v18);
           a2 = v22;

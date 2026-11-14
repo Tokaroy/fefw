@@ -1034,6 +1034,7 @@ void nn_g3d_5f2710(__int64* a1, __int64 a2, double a3, double a4,
       }
       else {
         LANES128(v15).n128_u64[0] = LANES128(v21[2]).n128_u64[0];
+        LANES128(v15).n128_u64[1] = 0;
         v23 = GameRoutine_5f7910((int8x16_t*)v22, LANES128(v21[2]).n128_u32[2],
                                  v15, *(float*)&a3),
         v28 = COERCE_AS(__typeof__(v28),

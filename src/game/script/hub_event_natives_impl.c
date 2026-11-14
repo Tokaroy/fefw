@@ -1921,25 +1921,22 @@ void HubEventNatives_d63b00(__int64 a1, unsigned __int8* a2, __int64** a3)
   struct {
     __int64 v27[2];
     __int64 v28;
-  } v27_;
-  struct {
     __int64 v29;
     __int64 v30;
     __int64 v31;
-  } v29_;
-  struct {
     __int64 v32[6];
     unsigned int v33;
-  } v32_;
-  unsigned __int64 v34;
+    char gap100_[4];
+    unsigned __int64 v34;
+  } v27_;
 
   v10 = COERCE_AS(__typeof__(v10),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v3 = *(_DWORD*)(a1 + 256);
   LOWORD(v27_.v27[0]) = 0;
-  v29_.v29 = 0;
-  v29_.v30 = 0;
-  v29_.v31 = 0;
+  v27_.v29 = 0;
+  v27_.v30 = 0;
+  v27_.v31 = 0;
   if ((unsigned int)(v3 - 1) >= 3) {
     v6 = 1;
   }
@@ -1962,56 +1959,56 @@ void HubEventNatives_d63b00(__int64 a1, unsigned __int8* a2, __int64** a3)
   GameRoutine_60a060_alt1((char*)v27_.v27, v9, v8),
       v10 = COERCE_AS(__typeof__(v10),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (&v29_.v29 != (__int64*)a3) {
-    GameRoutine_6b7aa0_alt1((__int64)&v29_.v29, *a3, a3[1],
+  if (&v27_.v29 != (__int64*)a3) {
+    GameRoutine_6b7aa0_alt1((__int64)&v27_.v29, *a3, a3[1],
                             0xAAAAAAAAAAAAAAABLL * (a3[1] - *a3)),
         v10 = COERCE_AS(__typeof__(v10),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   v11 = (__int64*)(a1 + 24LL * v6);
   v12 = v11 + 160;
-  HandlePtr_d5bf40_alt1(v32_.v32, v10, v27_.v27),
+  HandlePtr_d5bf40_alt1(v27_.v32, v10, v27_.v27),
       v10 = COERCE_AS(__typeof__(v10),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v13 = v11[161];
   v14 = v11[162];
-  v32_.v33 = 0;
+  v27_.v33 = 0;
   if (v13 >= v14) {
-    v16 = HubEventNatives_d5bb40(v11 + 160, (__int64)v32_.v32),
+    v16 = HubEventNatives_d5bb40(v11 + 160, (__int64)v27_.v32),
     v10 = COERCE_AS(__typeof__(v10),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   else {
     *(_BYTE*)v13 = 0;
     *(_DWORD*)(v13 + 48) = -1;
-    v15 = v32_.v33;
-    if (v32_.v33 != -1) {
-      v34 = v13;
+    v15 = v27_.v33;
+    if (v27_.v33 != -1) {
+      v27_.v34 = v13;
       ((void (*)(unsigned __int64*,
-                 __int64*))HandlePtr_Unknown23_d5be90_ptr[v32_.v33])(&v34,
-                                                                     v32_.v32),
+                 __int64*))HandlePtr_Unknown23_d5be90_ptr[v27_.v33])(&v27_.v34,
+                                                                     v27_.v32),
           v10 = COERCE_AS(__typeof__(v10),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       *(_DWORD*)(v13 + 48) = v15;
     }
     v16 = v13 + 64;
   }
-  v17 = v32_.v33;
+  v17 = v27_.v33;
   v12[1] = v16;
   if ((_DWORD)v17 != -1) {
-    ((void (*)(unsigned __int64*, __int64*))GameData_1fdce28[v17])(&v34,
-                                                                   v32_.v32),
+    ((void (*)(unsigned __int64*, __int64*))GameData_1fdce28[v17])(&v27_.v34,
+                                                                   v27_.v32),
         v10 = COERCE_AS(__typeof__(v10),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
-  v18 = v29_.v29;
-  if (v29_.v29 != 0) {
-    v19 = v29_.v30;
+  v18 = v27_.v29;
+  if (v27_.v29 != 0) {
+    v19 = v27_.v30;
     v20 = fw_memory_g_heap_manager_ptr;
-    if (v29_.v29 == v29_.v30) {
+    if (v27_.v29 == v27_.v30) {
       goto LABEL_30;
     }
-    v21 = v29_.v30;
+    v21 = v27_.v30;
     do {
       v22 = *(_BYTE*)(v21 - 24);
       v21 -= 24;
@@ -2031,9 +2028,9 @@ void HubEventNatives_d63b00(__int64 a1, unsigned __int8* a2, __int64** a3)
       }
       v19 = v21;
     } while (v21 != v18);
-    v29_.v30 = v18;
-    v18 = v29_.v29;
-    if (v29_.v29 != 0) {
+    v27_.v30 = v18;
+    v18 = v27_.v29;
+    if (v27_.v29 != 0) {
     LABEL_30:
       v25 = 128;
       if (*(_QWORD*)(*(_QWORD*)v20 + 200LL) == 0) {

@@ -3516,6 +3516,7 @@ __int64 Manager_1187c0(__int64 a1, __int64 a2, char a3)
   struct {
     _QWORD v21[4];
     _QWORD* v22;
+    char gap40_[8];
   } v21_;
   __int64 v23;
 
