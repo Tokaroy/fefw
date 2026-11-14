@@ -59053,8 +59053,8 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 13461e0,344,verified,src/game/gmap/troop_mgr.c,TroopMgr_13461e0
 1346380,112,verified,src/game/gmap/troop_mgr.c,TroopMgr_1346380
 13463f0,196,verified,src/game/gmap/troop_mgr.c,TroopMgr_13463f0
-13464c0,896,verified,src/game/gmap/troop_mgr.c,TroopMgr_13464c0
-1347360,528,verified,src/game/gmap/troop_mgr.c,TroopMgr_1347360
+13464c0,944,verified,src/game/gmap/troop_mgr.c,TroopMgr_13464c0
+1347360,672,verified,src/game/gmap/troop_mgr.c,TroopMgr_1347360
 1347760,232,verified,src/game/gmap/troop_mgr.c,TroopMgr_1347760
 1347860,248,verified,src/game/gmap/troop_mgr.c,TroopMgr_1347860
 1347960,432,verified,src/game/gmap/unplaced.c,game_gmap_1347960
@@ -59072,8 +59072,8 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1349320,820,verified,src/game/gmap/troop_mgr.c,TroopMgr_1349320
 1349680,192,verified,src/game/gmap/troop_mgr.cpp,_ZN4game4gmap8TroopMgr10CountTroopERKNSt3__18functionIFbPNS0_5TroopEEEE
 1349820,956,verified,src/game/unnamed/b018_0.c,GameHr_1349820
-1349c20,484,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_RequestEscapeSpecial
-1349f40,336,verified,src/game/gmap/troop_mgr.c,TroopMgr_1349f40
+1349c20,496,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_RequestEscapeSpecial
+1349f40,616,verified,src/game/gmap/troop_mgr.c,TroopMgr_1349f40
 134a200,336,verified,src/game/gmap/troop_mgr.c,TroopMgr_134a200
 134a480,28,verified,src/game/gmap/troop_mgr.c,TroopMgr_134a480
 134a4a0,600,verified,src/game/gmap/troop_mgr.c,TroopMgr_134a4a0
@@ -59091,15 +59091,15 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 134b820,324,verified,src/game/gmap/troop_mgr.c,TroopMgr_134b820
 134b980,312,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_GetEncountEnemyList
 134bbe0,520,verified,src/game/gmap/troop_mgr.c,TroopMgr_134bbe0
-134be40,88,verified,src/game/gmap/troop_mgr.c,TroopMgr_134be40
-134c680,580,verified,src/game/gmap/troop_mgr.c,TroopMgr_134c680
+134be40,156,verified,src/game/gmap/troop_mgr.c,TroopMgr_134be40
+134c680,696,verified,src/game/gmap/troop_mgr.c,TroopMgr_134c680
 134ca00,904,verified,src/game/gmap/troop_mgr.c,TroopMgr_134ca00
 134cdc0,592,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_EachEncountTroop
 134d080,560,verified,src/game/gmap/troop_mgr.c,TroopMgr_134d080
 134d2b0,20,verified,src/game/game_trivial_wrappers.cpp,_Z16GameStub_134d2b0m
-134d2e0,1168,verified,src/game/gmap/troop_mgr.c,TroopMgr_134d2e0
+134d2e0,1196,verified,src/game/gmap/troop_mgr.c,TroopMgr_134d2e0
 134e220,348,verified,src/game/gmap/troop_mgr.c,TroopMgr_134e220
-134e390,500,verified,src/game/gmap/troop_mgr.c,TroopMgr_134e390
+134e390,584,verified,src/game/gmap/troop_mgr.c,TroopMgr_134e390
 134e600,428,verified,src/game/gmap/troop_mgr.cpp,_ZN4game4gmap8TroopMgr10CountTroopEPKNS0_4SpotERKNSt3__18functionIFbPNS0_5TroopEEEE
 134e7b0,340,verified,src/game/gmap/troop_mgr.cpp,_ZN4game4gmap8TroopMgr16CountPlayerTroopERKNSt3__18functionIFbPNS0_5TroopEEEE
 134e920,584,verified,src/game/gmap/troop_mgr.c,TroopMgr_134e920
@@ -59115,7 +59115,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 13507c0,184,verified,src/game/gmap/troop_mgr_impl.cpp,_ZN4game4gmap8TroopMgr4Impl9Unknown05Ev
 1350880,4,verified,src/game/gmap/troop_mgr_impl.cpp,_ZN4game4gmap8TroopMgr4Impl9Unknown06Ev
 13508a0,216,verified,src/game/gmap/troop_mgr_impl.cpp,_ZNK4game4gmap8TroopMgr4Impl9SerializeERNS_6StreamE
-1350980,1056,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_Impl_OnDeserialize
+1350980,1500,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_Impl_OnDeserialize
 1351040,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::OnDeserialize(game::Stream&, int)::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::deleting destructor"
 1351070,76,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::OnDeserialize(game::Stream&, int)::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone()"
 13510c0,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::OnDeserialize(game::Stream&, int)::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone(__base*)"
@@ -59139,7 +59139,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1354290,8,verified,src/game/game_trivial.cpp,_Z16GameStub_1354290mm
 13542a0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::BeginMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::target(std::type_info const&)"
 13542c0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::BeginMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::target_type()"
-13542e0,1248,verified,src/game/gmap/troop_mgr.c,TroopMgr_13542e0
+13542e0,1288,verified,src/game/gmap/troop_mgr.c,TroopMgr_13542e0
 1354840,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::EndMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::deleting destructor"
 1354870,60,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::EndMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone()"
 13548b0,16,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::EndMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone(__base*)"
@@ -59149,7 +59149,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 13549b0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::EndMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::target(std::type_info const&)"
 13549d0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::EndMovePlayer()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::target_type()"
 13549e0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_out_of_range()
-1354a00,288,verified,src/game/gmap/troop_mgr.c,TroopMgr_1354a00
+1354a00,336,verified,src/game/gmap/troop_mgr.c,TroopMgr_1354a00
 1354c80,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateCorps()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::deleting destructor"
 1354cb0,76,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateCorps()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone()"
 1354d00,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateCorps()::'lambda'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone(__base*)"
@@ -59180,7 +59180,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1355c60,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateVisibleTroops()::'lambda0'(game::gmap::Troop*), void (game::gmap::Troop*)>::__clone(__base*)"
 1355c80,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateVisibleTroops()::'lambda0'(game::gmap::Troop*), void (game::gmap::Troop*)>::destroy()"
 1355c90,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateVisibleTroops()::'lambda0'(game::gmap::Troop*), void (game::gmap::Troop*)>::destroy_deallocate()"
-1355ca0,120,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_Impl_UpdateVisibleTroops_closure0_Invoke
+1355ca0,176,verified,src/game/gmap/troop_mgr.c,game_gmap_TroopMgr_Impl_UpdateVisibleTroops_closure0_Invoke
 1355e00,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateVisibleTroops()::'lambda0'(game::gmap::Troop*), void (game::gmap::Troop*)>::target(std::type_info const&)"
 1355e20,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::TroopMgr::Impl::UpdateVisibleTroops()::'lambda0'(game::gmap::Troop*), void (game::gmap::Troop*)>::target_type()"
 1355e40,748,verified,src/game/gmap/troop_mgr.c,TroopMgr_1355e40
