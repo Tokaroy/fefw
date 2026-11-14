@@ -2823,7 +2823,7 @@ bool game_gmap_132a900(float32x4_t* a1, __int64 a2)
     goto LABEL_18;
   }
   v5 = (float32x4_t**)a2;
-  if (!game_gmap_Spot_CanPopTroop((__int64)a1, *(_DWORD*)(a2 + 540) > 0)) {
+  if (!game_gmap_Spot_CanPopTroop((__int64)a1, *(int*)(a2 + 540) > 0)) {
     goto LABEL_18;
   }
   v6 = *((_DWORD*)v5 + 135);

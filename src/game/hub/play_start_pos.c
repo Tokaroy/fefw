@@ -305,7 +305,7 @@ __int64 PlayStartPos_fa25b0(__int64 a1)
         *(_QWORD**)(game_GameModeData_instance_ + 48),
         (unsigned __int64*)&v10_.v10);
     if (v7 != 0) {
-      v5 = *(_DWORD*)(v7 + 32) > 0;
+      v5 = *(int*)(v7 + 32) > 0;
       result = *(_QWORD*)(a1 + 16);
       if (result == 0) {
         return result;
@@ -328,7 +328,7 @@ __int64 PlayStartPos_fa25b0(__int64 a1)
        (v4 = game_GameVariableTable_Find(
             *(_QWORD**)(game_GameModeData_instance_ + 48),
             (unsigned __int64*)&v10_.v10)) != 0 &&
-       *(_DWORD*)(v4 + 32) > 0;
+       *(int*)(v4 + 32) > 0;
   if (atomic_fetch_add((atomic_ullong* volatile)(v3 + 8),
                        0xFFFFFFFFFFFFFFFFLL) != 0) {
     result = *(_QWORD*)(a1 + 16);

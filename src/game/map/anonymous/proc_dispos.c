@@ -575,7 +575,7 @@ bool ProcDispos_742000()
   v13 = 15;
   v0 = (_QWORD*)game_UnitPool_GetFirst(&v13);
   if (v0 == nullptr) {
-    return *(_DWORD*)(GameData_21cd100 + 16) > 0;
+    return *(int*)(GameData_21cd100 + 16) > 0;
   }
   v1 = (_QWORD*)v0[54];
   if (v1 == nullptr) {
@@ -618,7 +618,7 @@ LABEL_6:
     }
   LABEL_12:
     if (v4 == nullptr) {
-      return *(_DWORD*)(GameData_21cd100 + 16) > 0;
+      return *(int*)(GameData_21cd100 + 16) > 0;
     }
     v1 = (_QWORD*)v4[54];
     v0 = v4;

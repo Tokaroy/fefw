@@ -136,7 +136,7 @@ __int64 SystemMenuItem_System_Unknown25(__int64 a1)
     v15 = *(_DWORD*)(game_GameModeData_instance_ + 60);
     switch (v15) {
     case 3:
-      v17 = *(_DWORD*)(game_GameModeData_instance_ + 64) <= 1;
+      v17 = *(int*)(game_GameModeData_instance_ + 64) <= 1;
       goto LABEL_15;
     case 2:
     LABEL_20:
@@ -145,13 +145,13 @@ __int64 SystemMenuItem_System_Unknown25(__int64 a1)
     case 1:
       v16 = *(unsigned __int8*)(game_GameModeData_instance_ + 15);
       if ((unsigned int)(v16 - 2) < 3) {
-        v17 = *(_DWORD*)(game_GameModeData_instance_ + 64) <= 3;
+        v17 = *(int*)(game_GameModeData_instance_ + 64) <= 3;
         goto LABEL_15;
       }
       if (v16 != 1) {
         goto LABEL_20;
       }
-      v17 = *(_DWORD*)(game_GameModeData_instance_ + 64) <= 2;
+      v17 = *(int*)(game_GameModeData_instance_ + 64) <= 2;
     LABEL_15:
       v14 = !v17;
     LABEL_21:

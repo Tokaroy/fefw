@@ -1600,7 +1600,7 @@ __int64 Situation_7653d0()
   result = game_GameVariableTable_Find(
       *(_QWORD*)(game_GameModeData_instance_ + 48), &GameData_21d1e60);
   if (result != 0) {
-    return *(_DWORD*)(result + 32) > 1;
+    return *(int*)(result + 32) > 1;
   }
   return result;
 }

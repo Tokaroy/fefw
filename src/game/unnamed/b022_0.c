@@ -2644,7 +2644,7 @@ __int64 GameHr_1695090()
   v0 = GameRoutine_821090(9);
   v2 = GameData_21caab0 != 0 &&
        (v1 = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v0)) != 0 &&
-       *(_DWORD*)(v1 + 32) > 0;
+       *(int*)(v1 + 32) > 0;
   if (GameData_21ee260 != 0) {
     v3 = GameData_21ee260 + 8;
   }
@@ -2683,7 +2683,7 @@ __int64 GameHr_1695190()
   v0 = GameRoutine_821090(9);
   v2 = GameData_21caab0 != 0 &&
        (v1 = GameRoutine_65c580(*(_QWORD*)(GameData_21caab0 + 48), v0)) != 0 &&
-       *(_DWORD*)(v1 + 32) > 0;
+       *(int*)(v1 + 32) > 0;
   if (GameData_21ee260 != 0) {
     v3 = GameData_21ee260 + 8;
   }
@@ -2763,7 +2763,7 @@ bool GameHr_16953f0()
 
 bool GameHr_16954d0()
 {
-  return *(_DWORD*)(*(_QWORD*)(GameData_21f42d0 + 8) + 144LL) > 0;
+  return *(int*)(*(_QWORD*)(GameData_21f42d0 + 8) + 144LL) > 0;
 }
 
 bool GameHr_1695530()

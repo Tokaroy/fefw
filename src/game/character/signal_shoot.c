@@ -181,7 +181,7 @@ __int64 Signal_Shoot_821040()
   result = game_GameVariableTable_Find(
       *(_QWORD*)(game_GameModeData_instance_ + 48), v0);
   if (result != 0) {
-    return *(_DWORD*)(result + 32) > 0;
+    return *(int*)(result + 32) > 0;
   }
   return result;
 }

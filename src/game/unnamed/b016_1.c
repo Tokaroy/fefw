@@ -6585,7 +6585,7 @@ __int64 GameHr_11970a0()
   result = 0;
   v2 = *(_QWORD*)GameData_212dbb8[0] != 0 &&
        *(_BYTE*)(GameData_2212270 + 218) != 0 &&
-       *(_DWORD*)(GameData_2212270 + 232) <= 0;
+       *(int*)(GameData_2212270 + 232) <= 0;
   if (v2 && (*(_BYTE*)(GameData_2212270 + 240) & 1) == 0) {
     v3 = *(_DWORD*)(*(_QWORD*)GameData_212dbb8[0] + 136LL);
     if (v3 == 1) {

@@ -2166,7 +2166,7 @@ LABEL_12:
     }
   }
   if (GameData_21d96b8 != 0) {
-    *(_BYTE*)(GameData_21d96b8 + 55) = *(_DWORD*)(a1 + 152) > 0;
+    *(_BYTE*)(GameData_21d96b8 + 55) = *(int*)(a1 + 152) > 0;
   }
 }
 
@@ -2207,7 +2207,7 @@ void Manager_d54760(__int64 a1)
   }
 LABEL_12:
   if (GameData_21d96b8 != 0) {
-    *(_BYTE*)(GameData_21d96b8 + 55) = *(_DWORD*)(a1 + 152) > 0;
+    *(_BYTE*)(GameData_21d96b8 + 55) = *(int*)(a1 + 152) > 0;
   }
 }
 

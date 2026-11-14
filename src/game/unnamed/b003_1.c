@@ -8082,7 +8082,7 @@ bool GameHr_5b4780(__int64 a1)
               (float)v2)) {
     return false;
   }
-  return *(_BYTE*)(v3 + 1874) != 0 || *(_DWORD*)(a1 + 44) < 1;
+  return *(_BYTE*)(v3 + 1874) != 0 || *(int*)(a1 + 44) < 1;
 }
 
 __int64 GameHr_5b47e0(__int64 a1, __int64 a2)

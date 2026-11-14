@@ -1768,7 +1768,7 @@ __int64 game_gmap_1536e70(int a1)
       result = game_GameVariableTable_Find(
           *(_QWORD**)(game_GameModeData_instance_ + 48), (unsigned __int64*)v1);
       if (result != 0) {
-        return *(_DWORD*)(result + 32) > 0;
+        return *(int*)(result + 32) > 0;
       }
       return result;
     }

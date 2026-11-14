@@ -740,7 +740,7 @@ __int64 FacilityUtil_948d00(__int64 a1)
        (v3 = game_GameVariableTable_Find_alt1(
             *(_QWORD**)(game_GameModeData_instance_ + 48),
             (unsigned __int64*)v2)) != 0 &&
-       *(_DWORD*)(v3 + 32) > 0;
+       *(int*)(v3 + 32) > 0;
   if (*(_BYTE*)(*(_QWORD*)GameData_212c6a0[0] + 304LL) != 1) {
     goto LABEL_12;
   }
@@ -1441,7 +1441,7 @@ __int64 FacilityUtil_949930()
        (v8 = game_GameVariableTable_Find_alt1(
             *(_QWORD**)(game_GameModeData_instance_ + 48),
             (unsigned __int64*)v7)) != 0 &&
-       *(_DWORD*)(v8 + 32) > 0;
+       *(int*)(v8 + 32) > 0;
   v17 = 0;
   v10 = *(_QWORD*)(game_UnitListSet_instance_ + 24);
   v14_.v16 = (unsigned __int64*)&v14_.v14;
@@ -1631,7 +1631,7 @@ __int64 FacilityUtil_949d50()
       *(_QWORD**)(game_GameModeData_instance_ + 48),
       (unsigned __int64*)&GameData_22491f8);
   if (result != 0) {
-    return *(_DWORD*)(result + 32) > 0;
+    return *(int*)(result + 32) > 0;
   }
   return result;
 }

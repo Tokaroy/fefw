@@ -55,7 +55,7 @@ __int64 ItemShopTopMenuItem_1871d00()
   v2 = game_GameModeData_instance_ == 0 ||
        (v1 = game_GameVariableTable_Find(
             *(_QWORD*)(game_GameModeData_instance_ + 48), v0)) == 0 ||
-       *(_DWORD*)(v1 + 32) < 1;
+       *(int*)(v1 + 32) < 1;
   if (game_gmap_GmapClock_instance_ != 0) {
     v3 = game_gmap_GmapClock_instance_ + 8;
   }

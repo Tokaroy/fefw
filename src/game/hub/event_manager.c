@@ -688,7 +688,7 @@ LABEL_11:
     }
   }
   v41 = 0;
-  v28 = v16 - v15;
+  v28 = ((__int64)v16 - (__int64)v15) >> 3;
   if (v28 >= 3) {
     v29 = fw_memory_g_heap_manager_ptr;
     do {
@@ -706,7 +706,7 @@ LABEL_11:
         v16 = v38;
       }
       v37 = ++v15;
-      v28 = v16 - v15;
+      v28 = ((__int64)v16 - (__int64)v15) >> 3;
     } while (v28 > 2);
   }
   if (v28 == 1) {
@@ -2811,7 +2811,7 @@ __int64 EventManager_d7ac20(__int64 result)
 
   if ((*(_BYTE*)(result + 76) & 1) == 0 &&
       *(int*)(GameData_21f3cb8 + 32) <= 0 &&
-      *(_DWORD*)(GameData_21f3cb8 + 16) <= 0) {
+      *(int*)(GameData_21f3cb8 + 16) <= 0) {
     if (game_ProcGameSkipView_instance_ == 0 ||
         (unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ +
                                           152) -

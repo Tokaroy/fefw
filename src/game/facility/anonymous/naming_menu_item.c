@@ -22,7 +22,7 @@ void NamingMenuItem_Unknown73(__int64 a1);
 
 bool NamingMenuItem_Unknown58()
 {
-  return *(_DWORD*)(*(_QWORD*)(GameData_21f42d0 + 8) + 144LL) > 0;
+  return *(int*)(*(_QWORD*)(GameData_21f42d0 + 8) + 144LL) > 0;
 }
 
 void NamingMenuItem_Unknown73(__int64 a1)

@@ -40,7 +40,7 @@ __int64 CausationTransporterMenuItem_Unknown25(__int64 a1)
   v4 = game_GameModeData_instance_;
   *(_WORD*)(v3 + 80) = 257;
   *(_BYTE*)(v3 + 82) =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v4 + 176) + 2472LL) + 84LL) > 0;
+      *(int*)(*(_QWORD*)(*(_QWORD*)(v4 + 176) + 2472LL) + 84LL) > 0;
   BasicMenuCursor_16e0c00(v1, v3);
   v5 = fw_memory_HeapManager_Allocate(*v2, 144, 16, 0);
   *(_WORD*)(v5 + 16) = 0;
@@ -54,7 +54,7 @@ __int64 CausationTransporterMenuItem_Unknown25(__int64 a1)
   *(_QWORD*)v5 = game_facility_anonymous_MaterialDepositoryMenuItem_vtable;
   *(_QWORD*)(v5 + 8) = 0;
   *(_BYTE*)(v5 + 82) =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
+      *(int*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
                             2472LL) +
                  88LL) > 0;
   BasicMenuCursor_16e0c00(v1, v5);
@@ -70,7 +70,7 @@ __int64 CausationTransporterMenuItem_Unknown25(__int64 a1)
   *(_QWORD*)v6 = game_facility_anonymous_LegionDepositoryMenuItem_vtable;
   *(_QWORD*)(v6 + 8) = 0;
   *(_BYTE*)(v6 + 82) =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
+      *(int*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
                             2504LL) +
                  72LL) > 0;
   BasicMenuCursor_16e0c00(v1, v6);
@@ -86,7 +86,7 @@ __int64 CausationTransporterMenuItem_Unknown25(__int64 a1)
   *(_QWORD*)v7 = game_facility_anonymous_RideDepositoryMenuItem_vtable;
   *(_QWORD*)(v7 + 8) = 0;
   *(_BYTE*)(v7 + 82) =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
+      *(int*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
                             2488LL) +
                  144LL) > 0;
   BasicMenuCursor_16e0c00(v1, v7);

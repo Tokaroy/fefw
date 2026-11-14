@@ -6022,7 +6022,7 @@ __int64 game_hub_d7b370(__int64 a1)
     v4 = *(_QWORD*)(a1 + 16);
     if (v4 == 0 ||
         (*(int*)(GameData_21f3cb8 + 32) <= 0
-             ? (v5 = *(_DWORD*)(GameData_21f3cb8 + 16) <= 0)
+             ? (v5 = *(int*)(GameData_21f3cb8 + 16) <= 0)
              : (v5 = false),
          !v5 ||
              game_ProcGameSkipView_instance_ != 0 &&
@@ -6155,7 +6155,7 @@ __int64 game_hub_d7b960(__int64 a1)
                        COERCE_AS(float32x2_t, LANES128(v5).n128_u64[0]))))
             .n64_u64[0];
     if (LANES64(v6).n64_f32[0] >= 0x1.0000000000000p+0f) {
-      return (*(_DWORD*)(*GameData_212ebc0[0] +
+      return (*(int*)(*GameData_212ebc0[0] +
                          16LL * (*(int (**)(__int64, double))(*(_QWORD*)a1 +
                                                               40LL))(
                                     a1, LANES64(v6).n64_f64[0]) +

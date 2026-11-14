@@ -246,7 +246,7 @@ __int64 ProcGrowSeq_7faa40(__int64 result)
   v1 = *(_QWORD**)(result + 152);
   if (v1[51] == 0) {
     v2 = *(_QWORD*)(*(_QWORD*)(v1[50] + 24LL) + 1104LL);
-    if (v2 != 0 && *(_DWORD*)(result + 172) >= 1) {
+    if (v2 != 0 && *(int*)(result + 172) >= 1) {
       v4 = *(_QWORD*)(*(_QWORD*)(v2 + 24) + 1104LL);
       if (v4 != 0) {
         v5 = *(_QWORD*)(*(_QWORD*)(v4 + 24) + 1104LL);

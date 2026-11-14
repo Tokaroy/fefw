@@ -965,14 +965,14 @@ _QWORD* AreaEvent_d5a220(_QWORD* result, float32x4_t* a2, float32x4_t* a3)
     if ((v3 & 0x100) != 0 && game_hub_ProcHubSeqView_instance_ != 0) {
       v4 = GameData_21f3d10 == 0 ||
            *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 218) == 0;
-      v5 = !v4 && *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0;
+      v5 = !v4 && *(int*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0;
       if (v5 && (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 240) & 1) == 0 &&
           *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) == 0 &&
           *(int*)(GameData_21f3d10 + 152) <= 0 &&
           *((float*)result + 439) <= 0.0) {
         if ((v3 & 0x20) == 0 ||
             (*(int*)(GameData_21f3cb8 + 32) <= 0
-                 ? (v25 = *(_DWORD*)(GameData_21f3cb8 + 16) <= 0)
+                 ? (v25 = *(int*)(GameData_21f3cb8 + 16) <= 0)
                  : (v25 = false),
              v25 &&
                  (game_ProcGameSkipView_instance_ == 0 ||

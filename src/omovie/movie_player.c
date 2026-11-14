@@ -314,7 +314,7 @@ bool MoviePlayer_18d1b90(__int64 a1)
     }
   }
   return (nn_os_TryWaitLightEvent(a1 + 684) & 1) != 0 ||
-         *(_DWORD*)(a1 + 4892) > 0;
+         *(int*)(a1 + 4892) > 0;
 }
 
 __int64 MoviePlayer_18d1c50(__int64 a1)

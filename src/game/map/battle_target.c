@@ -2613,7 +2613,7 @@ LABEL_102:
       *(_BYTE*)(v58 + v70) = v51;
     } while (!v71);
   }
-  return *(_DWORD*)(a2 + 136) > 0;
+  return *(int*)(a2 + 136) > 0;
 }
 
 __int64 BattleTarget_9001a0(__int64 a1)

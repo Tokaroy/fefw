@@ -233,7 +233,7 @@ __int64 ScheduleManager_d9eb80(__int64 result)
   v1 = *(_QWORD**)GameData_212dbb8[0];
   v2 = game_gmap_GmapClock_instance_;
   if (*(_BYTE*)(*(_QWORD*)GameData_212dbb8[0] + 10LL) != 1 ||
-      *(_DWORD*)(result + 16) > 0) {
+      *(int*)(result + 16) > 0) {
     if (game_gmap_GmapClock_instance_ == 0) {
       return result;
     }

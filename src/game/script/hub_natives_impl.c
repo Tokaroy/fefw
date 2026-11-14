@@ -5466,7 +5466,7 @@ _QWORD* HubNatives_ccaff0()
       (GameData_21f3d10 != 0
            ? (v0 = *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 218) == 0)
            : (v0 = true),
-       !v0 ? (v1 = *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0)
+       !v0 ? (v1 = *(int*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0)
            : (v1 = false),
        !v1 || (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 240) & 1) != 0 ||
            *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) != 0 ||
@@ -5527,7 +5527,7 @@ _QWORD* HubNatives_ccb180()
   if (*(int*)(*(_QWORD*)(GameData_21f3d10 + 216) + 252LL) < 1 ||
       game_hub_ProcHubSeqView_instance_ == 0 ||
       (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 218) != 0
-           ? (v0 = *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0)
+           ? (v0 = *(int*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0)
            : (v0 = false),
        !v0 || (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 240) & 1) != 0 ||
            *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) != 0 ||

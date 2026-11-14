@@ -14196,7 +14196,7 @@ __int64* game_9a3180()
   v3 = v1 != 0 &&
        (v39[0] = &GameData_1ac6ca2, v39[1] = 3,
         (v2 = GameRoutine_18dc920((_QWORD*)(v1 + 24), v39)) != nullptr) &&
-       *((_DWORD*)v2 + 10) >= 0;
+       *((int*)v2 + 10) >= 0;
   v4 = game_9a28e0(50);
   game_VariableManager_SetFlag((__int64)v4, v3);
   v5 = *(_QWORD*)(*v0 + 4752);
@@ -14223,7 +14223,7 @@ __int64* game_9a3180()
   v22 = v20 != 0 &&
         (v39[0] = &GameData_1ac6ca2, v39[1] = 3,
          (v21 = GameRoutine_18dc920((_QWORD*)(v20 + 24), v39)) != nullptr) &&
-        *((_DWORD*)v21 + 10) >= 0;
+        *((int*)v21 + 10) >= 0;
   v23 = game_9a28e0(56);
   if (game_GameModeData_instance_ != 0) {
     GameVariable_828700(game_GameModeData_instance_ + 40,

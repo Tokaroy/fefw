@@ -884,7 +884,7 @@ __int64 ProcHubSeqEnter_915c00(__int64 a1)
     return result;
   }
   if (*(int*)(GameData_21f3cb8 + 32) <= 0 &&
-      *(_DWORD*)(GameData_21f3cb8 + 16) <= 0) {
+      *(int*)(GameData_21f3cb8 + 16) <= 0) {
     if (game_ProcGameSkipView_instance_ == 0 ||
         (unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ +
                                           152) -
@@ -1120,7 +1120,7 @@ __int64 ProcHubSeqEnter_916060(__int64 result)
     return result;
   }
   if (*(int*)(*(_QWORD*)GameData_212dbc8[0] + 32LL) <= 0 &&
-      *(_DWORD*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) <= 0) {
+      *(int*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) <= 0) {
     if (game_ProcGameSkipView_instance_ == 0 ||
         (unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ +
                                           152) -
@@ -1187,7 +1187,7 @@ _QWORD* ProcHubSeqEnter_9161e0(__int64 a1)
     return result;
   }
   if (*(int*)(GameData_21f3cb8 + 32) <= 0 &&
-      *(_DWORD*)(GameData_21f3cb8 + 16) <= 0) {
+      *(int*)(GameData_21f3cb8 + 16) <= 0) {
     if (game_ProcGameSkipView_instance_ == 0 ||
         (unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ +
                                           152) -
@@ -1836,7 +1836,7 @@ void ProcHubSeqEnter_916ea0(__int64 a1)
         if (game_hub_ProcHubSeqView_instance_ == 0 ||
             *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 152) == 0) {
           v20 = *(int*)(*(_QWORD*)GameData_212dbc8[0] + 32LL) <= 0 &&
-                *(_DWORD*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) <= 0;
+                *(int*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) <= 0;
           if (!v20 ||
               game_ProcGameSkipView_instance_ != 0 &&
                   (unsigned int)*(

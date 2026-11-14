@@ -722,7 +722,7 @@ __int64 Popup2D_f7f870(__int64 a1)
 
 LABEL_32:
   if ((v2 & 1) == 0 && (v2 & 0x406) != 0) {
-    if (v5 >= 1 && *(float*)(v1 + 100) >= 2.0) {
+    if (v5 >= 1 && !(*(float*)(v1 + 100) < 2.0)) {
       return 3;
     }
     return 4;
@@ -819,7 +819,7 @@ __int64 Popup2D_f7fa70(__int64 a1)
   }
   v2 = GameData_212dbc8[0];
   if (*(int*)(*(_QWORD*)GameData_212dbc8[0] + 32LL) > 0 ||
-      *(_DWORD*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) > 0) {
+      *(int*)(*(_QWORD*)GameData_212dbc8[0] + 16LL) > 0) {
     goto LABEL_50;
   }
   v4 = GameData_212dc68;

@@ -23399,7 +23399,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
   }
   v27 = *(unsigned int*)(v26 + 12356);
   if ((int)v27 < 1) {
-    return *(_DWORD*)(a2 + 4) >= 0;
+    return *(int*)(a2 + 4) >= 0;
   }
   v28 = 0;
   v107 = 0;
@@ -23678,7 +23678,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
     if (++v28 != v27) {
       continue;
     }
-    return *(_DWORD*)(a2 + 4) >= 0;
+    return *(int*)(a2 + 4) >= 0;
   }
 }
 
@@ -24601,7 +24601,7 @@ LABEL_26:
   }
   v54 = *(unsigned int*)(v12 + 12356);
   if ((int)v54 < 1) {
-    return *(_DWORD*)(a2 + 4) >= 0;
+    return *(int*)(a2 + 4) >= 0;
   }
   v17 = 0;
   v52 = v12 + 12417;
@@ -24770,7 +24770,7 @@ LABEL_26:
     if (++v17 != v54) {
       continue;
     }
-    return *(_DWORD*)(a2 + 4) >= 0;
+    return *(int*)(a2 + 4) >= 0;
   }
 }
 

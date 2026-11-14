@@ -106,7 +106,7 @@ void SubMix_2b6e40(__int64 a1, int a2)
       LABEL_12:
         v11 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 104) + 16LL))(
             *(_QWORD*)(a1 + 104));
-        if (v11 >= 1 && *(_DWORD*)(a1 + 168) >= 1) {
+        if (v11 >= 1 && *(int*)(a1 + 168) >= 1) {
           v13 = v11;
           v14 = 0;
           do {
@@ -160,7 +160,7 @@ LABEL_24:
       LABEL_35:
         v26 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 104) + 16LL))(
             *(_QWORD*)(a1 + 104));
-        if (v26 >= 1 && *(_DWORD*)(a1 + 172) >= 1) {
+        if (v26 >= 1 && *(int*)(a1 + 172) >= 1) {
           v28 = v26;
           v29 = 0;
           do {
@@ -610,7 +610,7 @@ LABEL_109:
 LABEL_113:
   result = (*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 104) + 16LL))(
       *(_QWORD*)(a1 + 104));
-  if ((int)result >= 1 && *(_DWORD*)(a1 + 168) >= 1) {
+  if ((int)result >= 1 && *(int*)(a1 + 168) >= 1) {
     v77 = result;
     v78 = 0;
     do {

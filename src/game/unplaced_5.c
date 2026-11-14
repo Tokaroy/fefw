@@ -16690,7 +16690,7 @@ float game_111e3c0(__int64 a1)
   v43 = -0x1.0000000000000p+0f;
 LABEL_41:
   v51 = 0x1.4000000000000p+2f;
-  if (*(int*)(*(_QWORD*)a1 + 52LL) > 1 || *(_DWORD*)(*(_QWORD*)a1 + 48LL) > 1) {
+  if (*(int*)(*(_QWORD*)a1 + 52LL) > 1 || *(int*)(*(_QWORD*)a1 + 48LL) > 1) {
     v51 = 0x1.0000000000000p+3f;
   }
   v53 = v49 * v49;

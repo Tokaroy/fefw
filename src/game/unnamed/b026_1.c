@@ -10587,7 +10587,7 @@ LABEL_14:
 __int64 GameHr_19581e0(__int64 result)
 {
   if ((*(_BYTE*)(result + 209) & 1) == 0 && GameData_2212270 != 0 &&
-      GameData_21f3d10 != 0 && *(_DWORD*)(GameData_2212270 + 232) <= 0) {
+      GameData_21f3d10 != 0 && *(int*)(GameData_2212270 + 232) <= 0) {
     *(_BYTE*)(GameData_21f3d10 + 768) = 1;
   }
   return result;

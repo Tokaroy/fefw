@@ -7857,7 +7857,7 @@ __int64 GameHr_c1bb50(__int64 result)
   }
 LABEL_7:
   result = GameRoutine_c1bc40(v2);
-  if (*(_DWORD*)(v2 + 184) == 4 && *(_DWORD*)(v2 + 188) >= 1) {
+  if (*(_DWORD*)(v2 + 184) == 4 && *(int*)(v2 + 188) >= 1) {
     v6 = *(_QWORD*)(v2 + 208);
     if (v6 == 0 || *(_DWORD*)(v6 + 136) != 1) {
       return GameRoutine_c1be80(v2);

@@ -8,7 +8,7 @@ __int64 RideDepositoryMenuItem_DrawText(__int64 result);
 __int64 RideDepositoryMenuItem_DrawText(__int64 result)
 {
   *(_BYTE*)(result + 82) =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
+      *(int*)(*(_QWORD*)(*(_QWORD*)(game_GameModeData_instance_ + 176) +
                             2488LL) +
                  144LL) > 0;
   return result;

@@ -12942,7 +12942,7 @@ bool GameHr_12f46a0(__int64 a1, __int64* a2)
 {
   GameRoutine_12f2270(*a2);
   return *(int*)(*(_QWORD*)(GameData_21f42d0 + 8) + 144LL) <= 0 &&
-         *(_DWORD*)(*(_QWORD*)(GameData_21f4280 + 8) + 72LL) < 1;
+         *(int*)(*(_QWORD*)(GameData_21f4280 + 8) + 72LL) < 1;
 }
 
 _QWORD* GameHr_12f61a0(_QWORD* a1, __int64* a2)

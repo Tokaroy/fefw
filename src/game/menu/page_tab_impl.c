@@ -99,8 +99,8 @@ __int64 PageTab_16e6880(__int64 a1, int a2, unsigned int a3, unsigned int a4)
     }
   }
   ui_LayoutAccessor_SetPaneVisible(v9, "A_Tab", 1);
-  ui_LayoutAccessor_SetPaneVisible(v9, "L_ArrowL", *(_DWORD*)a1 > 0);
-  ui_LayoutAccessor_SetPaneVisible(v9, "L_ArrowR", *(_DWORD*)a1 > 0);
+  ui_LayoutAccessor_SetPaneVisible(v9, "L_ArrowL", *(int*)a1 > 0);
+  ui_LayoutAccessor_SetPaneVisible(v9, "L_ArrowR", *(int*)a1 > 0);
   *(_BYTE*)(a1 + 112) = GameRoutine_156d490(v9);
   v27[0] = "L_ArrowL";
   v27[1] = 8;
