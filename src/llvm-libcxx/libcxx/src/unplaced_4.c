@@ -3,128 +3,213 @@
 #pragma GCC visibility push(hidden)
 
 _QWORD* locale_80fb50(_QWORD*, unsigned __int64, __int64);
+
 __attribute__((swiftcall)) void std___1_ios_base_getloc_plt(PSEUDO_X8, _QWORD);
+
 __int64* SdkRoutine_82dbb0(__int64* result, unsigned __int64, __int64,
                            unsigned __int64);
+
 __int64 SdkRoutine_807eb0(_QWORD);
+
 __int64 SdkRoutine_80a740(_QWORD*, _QWORD*, _DWORD*, __int64, int);
+
 __int64 SdkRoutine_815340();
+
 __int64 SdkRoutine_81add0(_QWORD);
+
 __int64 SdkRoutine_81b480(_QWORD);
+
 __int64 SdkRoutine_82dd20(__int64*);
+
 __int64 SdkRoutine_82f0b0();
+
 __int64 SdkRoutine_857220(_QWORD, _QWORD);
+
 __int64 SdkRoutine_85e050(unsigned __int64);
+
 __int64 SdkRoutine_87cb10(_QWORD);
+
 __int64 SdkRoutine_87cb20(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                           _QWORD);
+
 __int64 SdkRoutine_87d120(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                           _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 SdkRoutine_87d140(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                           _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 _Unwind_Resume_plt(_QWORD);
+
 __int64 __cxa_begin_catch_plt(_QWORD);
+
 __int64 __cxa_guard_abort_plt(_QWORD);
+
 __int64 __cxa_rethrow_plt(_QWORD);
+
 __int64 free_plt(_QWORD);
+
 __int64 llvm_libcxx_libcxx_src_806ce0_alt1(_QWORD) __asm__(
     "llvm_libcxx_libcxx_src_806ce0");
+
 __int64 locale_8087a0(_QWORD*, _QWORD*, _DWORD*, _QWORD*, int);
+
 __int64 memmove_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 std___1___call_once_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 std___1___do_nothing(void*);
+
 __int64 std___1___shared_count_Destroy___shared_count_plt(_QWORD);
+
 __int64 std___1_locale_Destroy_locale_plt(_QWORD);
+
 __int64 std___1_locale_locale_81b330(_QWORD);
+
 __int64 std___1_locale_name(_QWORD);
+
 __int64 std___1_money_put_do_put_812320(_QWORD);
+
 __int64 std___1_num_put_do_put_804140(_QWORD);
+
 __int64 std___1_num_put_do_put_804490(_QWORD);
+
 __int64 std___1_num_put_do_put_8047d0(_QWORD);
+
 extern _UNKNOWN SdkData_1060b80;
+
 extern _UNKNOWN SdkData_1060b90;
+
 extern _UNKNOWN SdkData_1060ba0;
+
 extern void (*SdkData_e89440[137])();
+
 extern void (*SdkData_e89480[129])();
+
 extern void (*SdkData_e89498[126])();
+
 extern void (*SdkData_e894c0[121])();
+
 extern void (*SdkData_e89530[107])();
+
 extern void (*SdkData_e89540[105])();
+
 extern void (*SdkData_e89550[103])();
+
 extern void (*SdkData_e89558[102])();
+
 extern void (*SdkData_e89560[101])();
+
 extern void (*SdkData_e89568[100])();
+
 extern void (*SdkData_e89570[99])();
+
 extern void (*SdkData_e89658[70])();
+
 extern void (*SdkData_e89660[69])();
+
 extern void (*SdkData_e89668[68])();
+
 extern void (*SdkData_e89670[67])();
+
 extern void (*SdkData_e89678[66])();
+
 extern void (*SdkData_e89680[65])();
+
 extern void (*SdkData_e89688[64])();
+
 extern void (*SdkData_e896a0[61])();
+
 extern void (*SdkData_e896b0[59])();
+
 extern void (*SdkData_e896b8[58])();
+
 extern void (*SdkData_e896c0[57])();
+
 extern void (*SdkData_e896c8[56])();
+
 unsigned __int64* locale_80d8a0(unsigned __int64*, unsigned __int64, __int64);
+
 unsigned __int8* SdkRoutine_7f8a00(_QWORD**, _QWORD*, unsigned __int8*,
                                    unsigned __int8*, __int64, _DWORD*, char);
+
 unsigned __int8* SdkRoutine_7fd440(_QWORD**, _QWORD*, unsigned __int8*,
                                    unsigned __int8*, __int64, _DWORD*, char);
+
 void __attribute__((noreturn)) SdkRoutine_7cd620();
+
 void __attribute__((noreturn)) locale_7f6090();
+
 __int64 llvm_libcxx_libcxx_src_804104(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9,
                                       __int64 a10, __int64 a11, char a12);
+
 __int64 llvm_libcxx_libcxx_src_80447c(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9);
+
 __int64 llvm_libcxx_libcxx_src_8047bc(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8051e0(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8056bc(__int64 a1);
+
 __int64 llvm_libcxx_libcxx_src_806c8c(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9,
                                       __int64 a10, __int64 a11, __int64 a12,
                                       __int64 a13, __int64 a14, __int64 a15,
                                       __int64 a16);
+
 _QWORD* llvm_libcxx_libcxx_src_806ce0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6,
                                       char* a7, unsigned __int8* a8);
+
 _QWORD* llvm_libcxx_libcxx_src_8072d0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 _QWORD* llvm_libcxx_libcxx_src_8074f0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 __int64 llvm_libcxx_libcxx_src_8076f0(__int64 a1, __int64 a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 __int64 llvm_libcxx_libcxx_src_807e9c(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9,
                                       __int64 a10, char a11);
+
 _QWORD* llvm_libcxx_libcxx_src_808b20(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6,
                                       unsigned int* a7, unsigned int* a8);
+
 _QWORD* llvm_libcxx_libcxx_src_8091c0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 _QWORD* llvm_libcxx_libcxx_src_8093e0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 __int64 llvm_libcxx_libcxx_src_8095e0(__int64 a1, __int64 a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_809df4(__int64 a1);
+
 _QWORD* llvm_libcxx_libcxx_src_80aae0(__int64 a1, _QWORD* a2, __int64 a3,
                                       unsigned int a4, __int64 a5,
                                       unsigned __int8* a6, unsigned __int8* a7);
+
 _QWORD* llvm_libcxx_libcxx_src_80af00(__int64 a1, _QWORD* a2, __int64 a3,
                                       unsigned int a4, __int64 a5,
                                       unsigned int* a6, unsigned int* a7);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_80b358(__int64 a1);
+
 _QWORD* llvm_libcxx_libcxx_src_80d460(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       char a4, __int64 a5, _DWORD* a6,
                                       unsigned __int8* a7);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_80f6d0(
     __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
     __int64 a7, __int64 a8, __int64 a9, __int64 a10, __int64 a11, __int64 a12,
@@ -134,193 +219,111 @@ void __attribute__((noreturn)) llvm_libcxx_libcxx_src_80f6d0(
     __int64 a28, __int64 a29, __int64 a30, __int64 a31, __int64 a32,
     __int64 a33, __int64 a34, __int64 a35, __int64 a36, __int64 a37,
     __int64 a38, __int64 a39, __int64 a40, __int64 a41);
+
 _QWORD* llvm_libcxx_libcxx_src_80f820(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       char a4, __int64 a5, _DWORD* a6,
                                       unsigned __int8* a7);
+
 __int64 llvm_libcxx_libcxx_src_8122f8(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
                                       __int64 a7, __int64 a8, __int64 a9,
                                       __int64 a10, __int64 a11, __int64 a12);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_812e88(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8158d0(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816ad0(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816d10(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816f40(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_817120(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_817db0(__int64 a1);
+
 __int64 llvm_libcxx_libcxx_src_818500(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818780(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_8188c0(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818a00(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818b40(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818c80(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818dc0(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_818f00(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819040(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819180(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_8192c0(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819400(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819540(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819680(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819a40(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_819b80(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a080(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a1c0(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a440(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a580(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a6c0(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81a800(__int64 a1, __int64 a2, __int64 a3,
                                       unsigned __int64 a4);
+
 __int64 llvm_libcxx_libcxx_src_81adb8(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81b25c(
     __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
     __int64 a7, __int64 a8, __int64 a9, __int64 a10, __int64 a11, __int64 a12);
+
 __int64 llvm_libcxx_libcxx_src_81b318(__int64 a1);
+
 __int64 llvm_libcxx_libcxx_src_81b398(__int64 a1);
+
 __int64 llvm_libcxx_libcxx_src_81b468(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81dd40(__int64 a1);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81de08(__int64 a1);
-
-__int64 llvm_libcxx_libcxx_src_804104(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9,
-                                      __int64 a10, __int64 a11, char a12)
-{
-  __int64 v13;
-  __int64 v14;
-
-  std___1_locale_Destroy_locale_plt(&a12);
-  v13 = _Unwind_Resume_plt(a1);
-  if ((a9 & 1) != 0) {
-    SdkRoutine_857220(a11, (4 * a9) & 0xFFFFFFFFFFFFFFF8LL);
-  }
-  v14 = _Unwind_Resume_plt(v13);
-  return std___1_num_put_do_put_804140(v14);
-}
-
-__int64 llvm_libcxx_libcxx_src_80447c(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9)
-{
-  __int64 v10;
-
-  std___1_locale_Destroy_locale_plt(&a9);
-  v10 = _Unwind_Resume_plt(a1);
-  return std___1_num_put_do_put_804490(v10);
-}
-
-__int64 llvm_libcxx_libcxx_src_8047bc(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9)
-{
-  __int64 v10;
-
-  std___1_locale_Destroy_locale_plt(&a9);
-  v10 = _Unwind_Resume_plt(a1);
-  return std___1_num_put_do_put_8047d0(v10);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8051e0(__int64 a1)
-{
-  __int64 v1;
-  __int64 v2;
-  __int64 v4;
-  __int64 v5;
-  __int64 v6;
-  __int64 v7;
-  __int64 v8;
-  __int64 v9;
-
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v4 = _Unwind_Resume_plt(a1);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v5 = _Unwind_Resume_plt(v4);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v6 = _Unwind_Resume_plt(v5);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v7 = _Unwind_Resume_plt(v6);
-  v8 = _Unwind_Resume_plt(v7);
-  v9 = _Unwind_Resume_plt(v8);
-  if (v1 == 0) {
-    while (1) {
-      _Unwind_Resume_plt(v9);
-      free_plt(v2);
-    }
-  }
-  free_plt(v1);
-  _Unwind_Resume_plt(v9);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8056bc(__int64 a1)
-{
-  __int64 v1;
-  __int64 v2;
-  __int64 v4;
-  __int64 v5;
-  __int64 v6;
-  __int64 v7;
-  __int64 v8;
-  __int64 v9;
-
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v4 = _Unwind_Resume_plt(a1);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v5 = _Unwind_Resume_plt(v4);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v6 = _Unwind_Resume_plt(v5);
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  v7 = _Unwind_Resume_plt(v6);
-  v8 = _Unwind_Resume_plt(v7);
-  v9 = _Unwind_Resume_plt(v8);
-  if (v1 == 0) {
-    while (1) {
-      _Unwind_Resume_plt(v9);
-      free_plt(v2);
-    }
-  }
-  free_plt(v1);
-  _Unwind_Resume_plt(v9);
-  __udf(0);
-}
-
-__int64 llvm_libcxx_libcxx_src_806c8c(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9,
-                                      __int64 a10, __int64 a11, __int64 a12,
-                                      __int64 a13, __int64 a14, __int64 a15,
-                                      __int64 a16)
-{
-  __int64 v17;
-
-  __cxa_guard_abort_plt(&SdkData_1060b80);
-  if ((a14 & 1) != 0) {
-    SdkRoutine_857220(a16, a14 & 0xFFFFFFFFFFFFFFFELL);
-  }
-  v17 = _Unwind_Resume_plt(a1);
-  return llvm_libcxx_libcxx_src_806ce0_alt1(v17);
-}
 
 _QWORD* llvm_libcxx_libcxx_src_806ce0(__int64 a1, _QWORD* a2, _QWORD* a3,
                                       __int64 a4, _DWORD* a5, __int64 a6,
@@ -767,18 +770,6 @@ __int64 llvm_libcxx_libcxx_src_8076f0(__int64 a1, __int64 a2, _QWORD* a3,
     *(_DWORD*)(a6 + 20) = v16 - 1900;
   }
   return v19;
-}
-
-__int64 llvm_libcxx_libcxx_src_807e9c(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9,
-                                      __int64 a10, char a11)
-{
-  __int64 v12;
-
-  std___1_locale_Destroy_locale_plt(&a11);
-  v12 = _Unwind_Resume_plt(a1);
-  return SdkRoutine_807eb0(v12);
 }
 
 _QWORD* llvm_libcxx_libcxx_src_808b20(__int64 a1, _QWORD* a2, _QWORD* a3,
@@ -1250,15 +1241,6 @@ __int64 llvm_libcxx_libcxx_src_8095e0(__int64 a1, __int64 a2, _QWORD* a3,
   return v19;
 }
 
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_809df4(__int64 a1)
-{
-  __int64 v1;
-
-  std___1_locale_Destroy_locale_plt(v1 - 32);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
 _QWORD* llvm_libcxx_libcxx_src_80aae0(__int64 a1, _QWORD* a2, __int64 a3,
                                       unsigned int a4, __int64 a5,
                                       unsigned __int8* a6, unsigned __int8* a7)
@@ -1529,15 +1511,6 @@ _QWORD* llvm_libcxx_libcxx_src_80af00(__int64 a1, _QWORD* a2, __int64 a3,
     }
   }
   return a2;
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_80b358(__int64 a1)
-{
-  __int64 v1;
-
-  SdkRoutine_82dd20((__int64*)(v1 - 8));
-  _Unwind_Resume_plt(a1);
-  __udf(0);
 }
 
 _QWORD* llvm_libcxx_libcxx_src_80d460(__int64 a1, _QWORD* a2, _QWORD* a3,
@@ -2012,230 +1985,6 @@ LABEL_37:
     v37_.v38();
   }
   return v32;
-}
-
-__int64 llvm_libcxx_libcxx_src_8122f8(__int64 a1, __int64 a2, __int64 a3,
-                                      __int64 a4, __int64 a5, __int64 a6,
-                                      __int64 a7, __int64 a8, __int64 a9,
-                                      __int64 a10, __int64 a11, __int64 a12)
-{
-  __int64 v13;
-
-  if ((a10 & 1) != 0) {
-    SdkRoutine_857220(a12, (4 * a10) & 0xFFFFFFFFFFFFFFF8LL);
-  }
-  v13 = _Unwind_Resume_plt(a1);
-  return std___1_money_put_do_put_812320(v13);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_812e88(__int64 a1)
-{
-  __int64 v1;
-  __int64 v3;
-
-  __cxa_guard_abort_plt(v3);
-  std___1___shared_count_Destroy___shared_count_plt(v3 + 760);
-  if ((*(_BYTE*)(v1 + 288) & 1) != 0) {
-    SdkRoutine_857220(*(_QWORD*)(v1 + 304),
-                      *(_QWORD*)(v1 + 288) & 0xFFFFFFFFFFFFFFFELL);
-  }
-  SdkRoutine_815340();
-  std___1___shared_count_Destroy___shared_count_plt(v1);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_8158d0(__int64 a1)
-{
-  __int64 v1;
-  __int64 v3;
-  __int64 v4;
-  unsigned int v5;
-  unsigned __int64 v6;
-
-  __cxa_guard_abort_plt(&SdkData_1060b90);
-  v3 = __cxa_begin_catch_plt(a1);
-  v4 = *(_QWORD*)(v1 + 16);
-  if (*(_QWORD*)(v1 + 24) != v4) {
-    goto LABEL_3;
-  }
-  while (1) {
-    __cxa_rethrow_plt(v3);
-  LABEL_3:
-    v5 = 1;
-    v6 = 0;
-    do {
-      v3 = *(_QWORD*)(v4 + 8 * v6);
-      if (v3 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v3 + 8),
-                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
-        v3 = (*(__int64 (**)(__int64))(*(_QWORD*)v3 + 16LL))(v3);
-      }
-      v4 = *(_QWORD*)(v1 + 16);
-      v6 = v5++;
-    } while (v6 < (*(_QWORD*)(v1 + 24) - v4) >> 3);
-  }
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816ad0(__int64 a1)
-{
-  __int64 v1;
-  _BYTE* v2;
-
-  if ((*(_BYTE*)(v1 + 96) & 1) != 0) {
-    goto LABEL_6;
-  }
-  if ((*(_BYTE*)(v1 + 72) & 1) != 0) {
-    goto LABEL_7;
-  }
-LABEL_3:
-  if ((*(_BYTE*)(v1 + 48) & 1) != 0) {
-    while (1) {
-      SdkRoutine_857220(*(_QWORD*)(v1 + 64),
-                        *(_QWORD*)(v1 + 48) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*v2 & 1) != 0) {
-        break;
-      }
-    LABEL_5:
-      std___1___shared_count_Destroy___shared_count_plt(v1);
-      _Unwind_Resume_plt(a1);
-    LABEL_6:
-      SdkRoutine_857220(*(_QWORD*)(v1 + 112),
-                        *(_QWORD*)(v1 + 96) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*(_BYTE*)(v1 + 72) & 1) == 0) {
-        goto LABEL_3;
-      }
-    LABEL_7:
-      SdkRoutine_857220(*(_QWORD*)(v1 + 88),
-                        *(_QWORD*)(v1 + 72) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*(_BYTE*)(v1 + 48) & 1) == 0) {
-        goto LABEL_4;
-      }
-    }
-  }
-  else {
-  LABEL_4:
-    if ((*v2 & 1) == 0) {
-      goto LABEL_5;
-    }
-  }
-  SdkRoutine_857220(*(_QWORD*)(v1 + 40),
-                    *(_QWORD*)(v1 + 24) & 0xFFFFFFFFFFFFFFFELL);
-  std___1___shared_count_Destroy___shared_count_plt(v1);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816d10(__int64 a1)
-{
-  __int64 v1;
-  _BYTE* v2;
-
-  if ((*(_BYTE*)(v1 + 96) & 1) != 0) {
-    goto LABEL_6;
-  }
-  if ((*(_BYTE*)(v1 + 72) & 1) != 0) {
-    goto LABEL_7;
-  }
-LABEL_3:
-  if ((*(_BYTE*)(v1 + 48) & 1) != 0) {
-    while (1) {
-      SdkRoutine_857220(*(_QWORD*)(v1 + 64),
-                        *(_QWORD*)(v1 + 48) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*v2 & 1) != 0) {
-        break;
-      }
-    LABEL_5:
-      std___1___shared_count_Destroy___shared_count_plt(v1);
-      _Unwind_Resume_plt(a1);
-    LABEL_6:
-      SdkRoutine_857220(*(_QWORD*)(v1 + 112),
-                        *(_QWORD*)(v1 + 96) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*(_BYTE*)(v1 + 72) & 1) == 0) {
-        goto LABEL_3;
-      }
-    LABEL_7:
-      SdkRoutine_857220(*(_QWORD*)(v1 + 88),
-                        *(_QWORD*)(v1 + 72) & 0xFFFFFFFFFFFFFFFELL);
-      if ((*(_BYTE*)(v1 + 48) & 1) == 0) {
-        goto LABEL_4;
-      }
-    }
-  }
-  else {
-  LABEL_4:
-    if ((*v2 & 1) == 0) {
-      goto LABEL_5;
-    }
-  }
-  SdkRoutine_857220(*(_QWORD*)(v1 + 40),
-                    *(_QWORD*)(v1 + 24) & 0xFFFFFFFFFFFFFFFELL);
-  std___1___shared_count_Destroy___shared_count_plt(v1);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_816f40(__int64 a1)
-{
-  __int64 v1;
-
-  SdkRoutine_87cb10(v1 + 96);
-  SdkRoutine_87cb10(v1 + 72);
-  SdkRoutine_87cb10(v1 + 48);
-  if ((*(_BYTE*)(v1 + 24) & 1) != 0) {
-    SdkRoutine_857220(*(_QWORD*)(v1 + 40),
-                      *(_QWORD*)(v1 + 24) & 0xFFFFFFFFFFFFFFFELL);
-  }
-  std___1___shared_count_Destroy___shared_count_plt(v1);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_817120(__int64 a1)
-{
-  __int64 v1;
-
-  SdkRoutine_87cb10(v1 + 96);
-  SdkRoutine_87cb10(v1 + 72);
-  SdkRoutine_87cb10(v1 + 48);
-  if ((*(_BYTE*)(v1 + 24) & 1) != 0) {
-    SdkRoutine_857220(*(_QWORD*)(v1 + 40),
-                      *(_QWORD*)(v1 + 24) & 0xFFFFFFFFFFFFFFFELL);
-  }
-  std___1___shared_count_Destroy___shared_count_plt(v1);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_817db0(__int64 a1)
-{
-  __int64 v1;
-  __int64 v2;
-  __int64 v4;
-  __int64 v5;
-  unsigned int v6;
-  unsigned __int64 v7;
-
-  SdkRoutine_857220(v2, 24);
-  v4 = __cxa_begin_catch_plt(a1);
-  v5 = *(_QWORD*)(v1 + 16);
-  if (*(_QWORD*)(v1 + 24) != v5) {
-    goto LABEL_3;
-  }
-  while (1) {
-    __cxa_rethrow_plt(v4);
-  LABEL_3:
-    v6 = 1;
-    v7 = 0;
-    do {
-      v4 = *(_QWORD*)(v5 + 8 * v7);
-      if (v4 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v4 + 8),
-                                      0xFFFFFFFFFFFFFFFFLL) == 0) {
-        v4 = (*(__int64 (**)(__int64))(*(_QWORD*)v4 + 16LL))(v4);
-      }
-      v5 = *(_QWORD*)(v1 + 16);
-      v7 = v6++;
-    } while (v7 < (*(_QWORD*)(v1 + 24) - v5) >> 3);
-  }
 }
 
 __int64 llvm_libcxx_libcxx_src_818500(__int64 a1, __int64 a2, __int64 a3,
@@ -3446,81 +3195,6 @@ __int64 llvm_libcxx_libcxx_src_81a800(__int64 a1, __int64 a2, __int64 a3,
   }
   *(_QWORD*)(*v11 + 8 * v7) = v9;
   return result;
-}
-
-__int64 llvm_libcxx_libcxx_src_81adb8(__int64 a1)
-{
-  __int64 v2;
-
-  __cxa_guard_abort_plt(&SdkData_1060ba0);
-  v2 = _Unwind_Resume_plt(a1);
-  return SdkRoutine_81add0(v2);
-}
-
-void __attribute__((noreturn))
-
-llvm_libcxx_libcxx_src_81b25c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
-                              __int64 a5, __int64 a6, __int64 a7, __int64 a8,
-                              __int64 a9, __int64 a10, __int64 a11, __int64 a12)
-{
-  __int64 v12;
-
-  if ((a10 & 1) != 0) {
-    SdkRoutine_857220(a12, a10 & 0xFFFFFFFFFFFFFFFELL);
-    SdkRoutine_857220(v12, 312);
-    a1 = _Unwind_Resume_plt(a1);
-  }
-  SdkRoutine_857220(v12, 312);
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-__int64 llvm_libcxx_libcxx_src_81b318(__int64 a1)
-{
-  __int64 v1;
-  __int64 v3;
-
-  SdkRoutine_857220(v1, 312);
-  v3 = _Unwind_Resume_plt(a1);
-  return std___1_locale_locale_81b330(v3);
-}
-
-__int64 llvm_libcxx_libcxx_src_81b398(__int64 a1)
-{
-  __int64 v1;
-  __int64 v3;
-
-  SdkRoutine_857220(v1, 312);
-  v3 = _Unwind_Resume_plt(a1);
-  return std___1_locale_name(v3);
-}
-
-__int64 llvm_libcxx_libcxx_src_81b468(__int64 a1)
-{
-  __int64 v1;
-  __int64 v3;
-
-  SdkRoutine_857220(v1, 312);
-  v3 = _Unwind_Resume_plt(a1);
-  return SdkRoutine_81b480(v3);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81dd40(__int64 a1)
-{
-  __int64 v1;
-
-  SdkRoutine_82dd20((__int64*)(v1 + 24));
-  _Unwind_Resume_plt(a1);
-  __udf(0);
-}
-
-void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81de08(__int64 a1)
-{
-  __int64 v1;
-
-  SdkRoutine_82dd20((__int64*)(v1 + 24));
-  _Unwind_Resume_plt(a1);
-  __udf(0);
 }
 
 #pragma GCC visibility pop

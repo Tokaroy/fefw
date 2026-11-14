@@ -5,51 +5,90 @@
 #pragma GCC visibility push(hidden)
 
 __int64 SdkRoutine_14d4b0();
+
 __int64 __errno_location_plt(_QWORD);
+
 __int64 at_quick_exit_plt(_QWORD);
+
 __int64 fw_rtld_RegisterCrtDestructor();
+
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 nn_nlibsdk_detail_JoinAndFreePosixThread(__int64, _QWORD*);
+
 __int64 nn_os_SdkConditionVariableType_Wait_plt(_QWORD, _QWORD);
+
 __int64 nn_os_SdkMutexType_Lock_plt(_QWORD);
+
 __int64 nnmem_nlib_memcplen_plt(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 nnmem_nlib_memutf8_to_utf32char_plt(_QWORD, _QWORD, _QWORD, _QWORD,
                                             long double);
+
 __int64 nnmem_nlib_threadpool_notify_plt(_QWORD, _QWORD);
+
 __int64 pthread_cond_broadcast_plt(_QWORD);
+
 __int64 pthread_mutex_lock_plt(_QWORD);
+
 __int64 pthread_mutex_unlock_plt(_QWORD);
+
 __int64 std___1___libcpp_verbose_abort_plt(const char*, ...);
+
 __int64 strtod_plt(_QWORD, _QWORD);
+
 extern _UNKNOWN SdkData_ea1978;
+
 extern _UNKNOWN SdkData_ea1980;
+
 extern _UNKNOWN SdkData_ea1988;
+
 extern _UNKNOWN SdkData_eb7e94;
+
 extern _UNKNOWN SdkData_eb7e98;
+
 extern __int128 SdkData_bb1200;
+
 extern __int128 SdkData_bb3810;
+
 extern __int128 SdkData_bb4340;
+
 extern __int64 SdkData_e86e38;
+
 extern __int64 SdkData_eb7ea8;
+
 extern __int64 SdkData_eb7eb0;
+
 extern char SdkData_eb4d08;
+
 int8x16_t SdkRoutine_151fd0(__int64, uint8x16_t, int8x16_t, int8x16_t,
                             int8x16_t, int8x16_t, int8x16_t);
+
 __int64 nnmem_nlib_double_from_chars(double* a1, unsigned __int8** a2,
                                      unsigned __int8* a3, unsigned __int8* a4);
+
 __int64 nn_nlibsdk_146ed0();
+
 __int64 nn_nlibsdk_146f40();
+
 __int64 nn_nlibsdk_14d4a0();
+
 __int64 nnmem_nlib_memcplen(__int64* a1, _QWORD* a2, _QWORD* a3, int8x16_t* a4,
                             unsigned __int64 a5);
+
 __int64 nnmem_nlib_sanitize_utf8(_QWORD* a1, unsigned __int64* a2,
                                  int8x16_t* a3, __int64 a4, __int64 a5,
                                  unsigned __int64 a6, int a7);
+
 __int64 nn_nlibsdk_151f00(__int64 a1, __int64 a2, char* a3, __int64 a4);
+
 int8x16_t nn_nlibsdk_152150(int8x16_t* a1, int8x16_t a2, int8x16_t a3,
                             int16x8_t a4);
+
 void __attribute__((noreturn)) nn_nlibsdk_173980();
+
 void __attribute__((noreturn)) nn_nlibsdk_173a00();
+
 __int64 nn_nlibsdk_173a20();
 
 __int64 nnmem_nlib_double_from_chars(double* a1, unsigned __int8** a2,
@@ -1512,28 +1551,6 @@ int8x16_t nn_nlibsdk_152150(int8x16_t* a1, int8x16_t a2, int8x16_t a3,
     a1[2] = result;
   }
   return result;
-}
-
-void __attribute__((noreturn)) nn_nlibsdk_173980()
-{
-  __int64* v0;
-  __int64 v1;
-  __int64 v2;
-
-  nn_os_SdkMutexType_Lock_plt(&SdkData_eb7e94);
-  while (1) {
-    nn_os_SdkConditionVariableType_Wait_plt(&SdkData_eb7e98, &SdkData_eb7e94);
-    v0 = (__int64*)SdkData_eb7ea8;
-    v1 = SdkData_eb7eb0;
-    if (SdkData_eb7ea8 != SdkData_eb7eb0) {
-      do {
-        v2 = *v0++;
-        nn_nlibsdk_detail_JoinAndFreePosixThread(v2, nullptr);
-      } while (v0 != (__int64*)v1);
-      v0 = (__int64*)SdkData_eb7ea8;
-    }
-    SdkData_eb7eb0 = (__int64)v0;
-  }
 }
 
 void __attribute__((noreturn)) nn_nlibsdk_173a00()

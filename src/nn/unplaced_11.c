@@ -3,120 +3,118 @@
 #pragma GCC visibility push(hidden)
 
 __int64 NvRmSyncClose_plt(_QWORD);
+
 __int64 NvRmSyncWait_plt(_QWORD, _QWORD);
+
 __int64 SdkRoutine_65cc80(_QWORD);
+
 __int64 SdkRoutine_65cce0(_QWORD);
+
 __int64 SdkRoutine_65ccf0();
+
 __int64 SdkRoutine_65cd00();
+
 __int64 SdkRoutine_65cd10(void);
+
 __int64 SdkRoutine_65cd20();
+
 __int64 SdkRoutine_65cd50();
+
 __int64 SdkRoutine_65cd80(_QWORD);
+
 __int64 SdkRoutine_65cd90(_QWORD, _QWORD);
+
 __int64 SdkRoutine_65cda0();
+
 __int64 SdkRoutine_65cdf0();
+
 __int64 SdkRoutine_664dc0(__int64);
+
 __int64 SdkRoutine_66eca0(__int64);
+
 __int64 nn_65cc90();
+
 __int64 nn_65cd30();
+
 __int64 nn_65cdb0();
+
 __int64 nn_66eba0(__int64 result, unsigned int);
+
 __int64 nn_audio_CreateAudioRendererManager_plt(_QWORD);
+
 __int64 nn_diag_detail_AbortImpl_plt_858db0(_QWORD);
+
 __int64 nn_os_LockMutex_plt(_QWORD);
+
 __int64 nn_os_UnlockMutex_plt(_QWORD);
+
 extern _UNKNOWN* SdkData_e89bd8;
+
 extern __int64 (*SdkData_e89d58)();
+
 extern __int64 (*SdkData_e89d68[3])();
+
 extern __int64 (*SdkData_e89d70[2])();
+
 extern __int64 (*SdkData_e89d78)();
+
 extern __int64 (*SdkData_e89d88[6])();
+
 extern __int64 (*SdkData_e89d90[5])();
+
 extern __int64 (*SdkData_e89d98[4])();
+
 extern __int64 (*SdkData_e89da0[3])();
+
 extern __int64 (*SdkData_e89da8[2])();
+
 extern __int64 (*SdkData_e89db0)();
+
 extern __int64 (*nn_65c5e0_ptr)(int, int, int, int, int, int, int, int, char);
+
 extern __int64 (*nn_65ca10_ptr)(int, int, int, int, int, int, int, int, char);
+
 __int64 nn_22f7a0(unsigned int* a1);
+
 void nn_65cb70();
+
 __int64 nn_6650a0(__int64 a1, __int64 a2);
+
 _QWORD* nn_65e620(__int64, _QWORD*, _QWORD*);
+
 __int64 SdkRoutine_689560(__int64*, unsigned int, char, __int64, unsigned int,
                           char, int, char);
+
 __int64 SdkRoutine_699ec0(__int64 result, __int64, int, int, int, char);
+
 __int64 SdkRoutine_699fb0(__int64 result, __int64, int, int, char, char);
+
 __int64 SdkRoutine_69a080(__int64 result, __int64, int, int, char);
+
 __int64 SdkRoutine_69a230(__int64 result, int, __int64, int);
+
 __int64 SdkRoutine_69a2c0(__int64 result, int, __int64, int);
+
 __int64 nn_66a170(unsigned __int16*, __int64);
+
 __int64 nvidia_64b750(__int64 result, __int64, __int64);
+
 extern _DWORD SdkData_c77cf4[5];
+
 extern _DWORD SdkData_c7de80[5];
+
 extern _DWORD SdkData_c7de94[5];
+
 extern _DWORD SdkData_ea4528[1956];
+
 int* SdkRoutine_69aee0(int* result, char, char, __int16, char, int);
+
 __int64 nn_65ba90(__int64 a1, __int64* a2, int a3, int a4);
+
 __int64 nn_65bcb0(__int64 a1, __int64* a2, int a3, int a4, int a5,
                   unsigned int a6, char a7, char a8);
+
 unsigned __int64 nn_669a20(__int64 a1, unsigned __int64* a2);
-
-__int64 nn_22f7a0(unsigned int* a1)
-{
-  unsigned int v1;
-  unsigned int v3;
-  unsigned int v4;
-  unsigned int v5;
-  unsigned int v6;
-  unsigned int v7;
-  __int64 v8;
-  _QWORD v10[2];
-  unsigned int v11;
-  __int64 v12;
-  unsigned int v13;
-  __int64 v14;
-  __int64 v15;
-  unsigned int v16;
-  int v17;
-  struct {
-    __int64 v18;
-    char gap64_[24];
-    __int64 v19;
-  } v18_;
-
-  v1 = a1[11];
-  v18_.v19 = 0;
-  nn_audio_CreateAudioRendererManager_plt(v1 == 1);
-  v3 = *a1;
-  v4 = a1[1];
-  v14 = 0;
-  v15 = 0;
-  v18_.v18 = 0;
-  v10[0] = __PAIR64__(v4, v3);
-  v10[1] = *((_QWORD*)a1 + 1);
-  v11 = a1[4];
-  v12 = *(_QWORD*)(a1 + 5);
-  v13 = a1[7];
-  LOBYTE(v14) = *((_BYTE*)a1 + 32);
-  v5 = a1[10];
-  HIDWORD(v14) = a1[9];
-  LODWORD(v15) = v5;
-  v6 = a1[12];
-  BYTE2(v14) = a1[11];
-  v7 = a1[13];
-  BYTE3(v14) = v6;
-  v16 = v7;
-  v17 = (*(__int64 (**)(__int64, __int64*, _QWORD*))(
-      *(_QWORD*)v18_.v19 + 40LL))(v18_.v19, &v18_.v18, v10);
-  if (v17 != 0) {
-    nn_diag_detail_AbortImpl_plt_858db0(&v17);
-  }
-  v8 = v18_.v18;
-  if (v18_.v19 != 0) {
-    (*(void (**)(__int64))(*(_QWORD*)v18_.v19 + 8LL))(v18_.v19);
-  }
-  return v8 + 4096;
-}
 
 __int64 nn_65ba90(__int64 a1, __int64* a2, int a3, int a4)
 {

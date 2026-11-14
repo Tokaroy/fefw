@@ -4,217 +4,402 @@
 
 __attribute__((swiftcall)) void
     nn_fs_detail_FileSystemAccessor_GetMultiCommitTarget_plt(PSEUDO_X8, _QWORD);
+
 __attribute__((swiftcall)) void
     nn_fs_detail_GetFileSystemProxyServiceObject_plt(PSEUDO_X8, _QWORD);
+
 __int64 SdkRoutine_85af00(_QWORD, _QWORD);
+
 __int64 SdkRoutine_85af90(_QWORD, _QWORD);
+
 __int64 SdkRoutine_85afa0(_QWORD, _QWORD);
+
 unsigned __int128 SdkRoutine_85afa0_pair(_QWORD,
                                          _QWORD) __asm__("SdkRoutine_85afa0");
+
 __int64 SdkRoutine_dbd00(_QWORD);
+
 __int64 SdkRoutine_f3600(__int64, int);
+
 __int64 SdkRoutine_f42c0();
+
 __int64 __cxa_guard_acquire_plt(_QWORD);
+
 __int64 __cxa_guard_release_plt(_QWORD);
+
 __int64 fw_rtld_RegisterCrtDestructor();
+
 __int64 memchr_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 memcmp_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 memmove_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 memset_plt(void* this_, void*, int, unsigned __int64);
+
 __int64 memset_plt_alt1(void* this_, void*, int) __asm__("memset_plt");
+
 __int64 nn_detail_UnexpectedDefaultImpl_plt_857150(_QWORD);
+
 __int64 nn_diag_detail_AbortImpl_plt_856170(_QWORD);
+
 __int64 nn_diag_detail_AbortImpl_plt_858db0(_QWORD);
+
 __int64 nn_diag_detail_NotNullImpl_plt(_QWORD);
+
 __int64 nn_fs_FileStorage_FileStorage_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_CreateDirectory_plt(_QWORD, _QWORD,
                                                            _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_CreateFile_plt(_QWORD, _QWORD, _QWORD,
                                                       _QWORD, _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_CreateRootDirectory_plt(_QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_FindOpen_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_Format_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_HierarchicalRomFileTable_plt(_QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_Initialize_plt(_QWORD, _QWORD, _QWORD,
                                                       _QWORD, _QWORD);
+
 __int64 nn_fs_HierarchicalRomFileTable_QueryRomFileSystemSize_plt(_QWORD,
                                                                   _QWORD,
                                                                   _QWORD);
+
 __int64 nn_fs_Path_AppendChild_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_Path_GetString_plt(_QWORD);
+
 __int64 nn_fs_Path_Initialize_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_Path_Path_plt(_QWORD);
+
 __int64 nn_fs_Path_RemoveChild_plt(_QWORD);
+
 __int64 nn_fs_RomFsFileSystem_GetFileBaseOffset_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 nn_fs_RomFsFileSystem_GetRequiredWorkingMemorySize_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_RomFsFileSystem_Initialize_plt_85af30(_QWORD, _QWORD, _QWORD,
                                                     _QWORD, _QWORD);
+
 __int64 nn_fs_RomFsFileSystem_RomFsFileSystem_plt(void);
+
 __int64 nn_fs_SetUpFixedPath_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_da070(__int64**);
+
 __int64 nn_fs_dc510_alt1(_QWORD, _QWORD) __asm__("nn_fs_dc510");
+
 __int64 nn_fs_dc570_alt1(_QWORD, _QWORD) __asm__("nn_fs_dc570");
+
 __int64 nn_fs_dcab0_alt1(_QWORD, _QWORD, _QWORD) __asm__("nn_fs_dcab0");
+
 __int64 nn_fs_dd460_alt1(_QWORD, _QWORD) __asm__("nn_fs_dd460");
+
 __int64 nn_fs_dd680_alt1(_QWORD, _QWORD) __asm__("nn_fs_dd680");
+
 __int64 nn_fs_de3c0_alt1(_QWORD, _QWORD, _QWORD) __asm__("nn_fs_de3c0");
+
 __int64 nn_fs_detail_Allocate_plt(_QWORD);
+
 __int64 nn_fs_detail_Deallocate_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_detail_EnableFileSystemAccessorAccessLog_plt(_QWORD);
+
 __int64
     nn_fs_detail_FileServiceObjectAdapter_FileServiceObjectAdapter_plt(_QWORD,
                                                                        _QWORD);
+
 __int64 nn_fs_detail_Find_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_detail_GetMemoryResource_plt(void);
+
 __int64 nn_fs_detail_IsAbortNeeded_plt(_QWORD);
+
 __int64 nn_fs_detail_IsEnabledAccessLog_plt_85a3e0(_QWORD, _QWORD);
+
 __int64 nn_fs_detail_IsEnabledAccessLog_plt_85aec0(_QWORD);
+
 __int64 nn_fs_detail_IsEnabledHandleAccessLog_plt_85a9a0(_QWORD);
+
 __int64 nn_fs_detail_LogResultErrorMessage_plt(_QWORD, _QWORD);
+
 __int64 nn_fs_detail_OutputAccessLogUnlessResultSuccess_plt(_QWORD, _QWORD,
                                                             _QWORD, _QWORD,
                                                             _QWORD, const char*,
                                                             ...);
+
 __int64 nn_fs_detail_OutputAccessLog_plt_85a860(_QWORD, _QWORD, _QWORD, _QWORD,
                                                 _QWORD, const char*, ...);
+
 __int64 nn_fs_detail_OutputAccessLog_plt_85b210(_QWORD, _QWORD, _QWORD, _QWORD,
                                                 _QWORD, _QWORD, _QWORD);
+
 __int64 nn_fs_detail_OutputAccessLog_plt_85b220(_QWORD, _QWORD, _QWORD, _QWORD,
                                                 _QWORD, _QWORD, _QWORD);
+
 __int64 nn_fs_detail_OutputAccessLog_plt_85b220_alt1(
     _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, const char*,
     ...) __asm__("nn_fs_detail_OutputAccessLog_plt_85b220");
+
 __int64 nn_fs_save_SaveDataFileSystemCore_Destroy_SaveDataFileSystemCore_plt(
     _QWORD);
+
 __int64 nn_mem_StandardAllocator_Allocate_plt_85af60(_QWORD);
+
 __int64 nn_mem_StandardAllocator_CleanUpManagementArea_plt(_QWORD);
+
 __int64 nn_mem_StandardAllocator_Finalize_plt(_QWORD);
+
 __int64 nn_os_GetCurrentThread_plt(_QWORD);
+
 __int64 nn_os_GetSystemTick_plt(_QWORD);
+
 __int64 nn_os_GetThreadId_plt(_QWORD);
+
 __int64 nn_os_SdkMutexType_Lock_plt(_QWORD);
+
 __int64 nn_os_SdkMutexType_Unlock_plt(_QWORD);
+
 __int64 nn_sf_GetFsInlineContext_plt(void);
+
 __int64 nn_sf_GetFsInlineContext_plt_alt1(_QWORD) __asm__(
     "nn_sf_GetFsInlineContext_plt");
+
 __int64 nn_sf_SetFsInlineContext_plt(_QWORD, _QWORD);
+
 __int64 nn_util_SNPrintf_plt(_QWORD, _QWORD, const char*, ...);
+
 __int64 std___1___libcpp_verbose_abort_plt(const char*, ...);
+
 __int64 std___1___shared_weak_count___release_weak_plt(_QWORD);
+
 __int64 strlen_plt(_QWORD);
+
 __int64 strnlen_plt(_QWORD, _QWORD);
+
 extern _DWORD SdkData_bb47a0[4];
+
 extern _UNKNOWN SdkData_bd27d0;
+
 extern _UNKNOWN SdkData_bd28ac;
+
 extern _UNKNOWN SdkData_bd2988;
+
 extern _UNKNOWN SdkData_e4ddf0;
+
 extern _UNKNOWN SdkData_eaf490;
+
 extern __int16 SdkData_eaf440;
+
 extern __int16 SdkData_eaf9f8;
+
 extern __int64 (*SdkData_e4de40[])();
+
 extern __int64 (*SdkData_e50d18[])();
+
 extern __int64 SdkData_e86ce0;
+
 extern __int64 SdkData_e86d00;
+
 extern __int64 SdkData_e86d58;
+
 extern __int64 SdkData_e86d68;
+
 extern __int64 SdkData_e86d70;
+
 extern __int64 SdkData_e86da0;
+
 extern __int64 SdkData_eaf448;
+
 extern __int64 SdkData_eaf8b0;
+
 extern __int64 SdkData_eaf8e8;
+
 extern char SdkData_bbbd5c;
+
 extern int SdkData_eaf8f0;
+
 extern int nn_fs_detail_g_SessionForRealtimeMode;
+
 extern unsigned int SdkData_bb2590[4];
+
 void __attribute__((noreturn)) nn_fs_dc4d0_alt1(void) __asm__("nn_fs_dc4d0");
+
 void __attribute__((noreturn)) nn_fs_dc4f0_alt1(_QWORD) __asm__("nn_fs_dc4f0");
+
 void __attribute__((noreturn)) nn_fs_dc820_alt1(void) __asm__("nn_fs_dc820");
+
 void __attribute__((noreturn)) nn_fs_dc840_alt1(_QWORD) __asm__("nn_fs_dc840");
+
 __int64 nn_fs_Commit(void* this_, const char* const* a2);
+
 __int64 nn_fs_cbac0(__int64 a1);
+
 __int64 nn_fs_d7460(__int64 a1, __int64 a2, __int64 a3);
+
 __int64 nn_fs_GetContentStorageInfo(__int64 a1);
+
 __int64 nn_fs_MountDevelopmentStorageReadWrite(void* this_, const char* a2,
                                                size_t a3);
+
 __int64 nn_fs_da290(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4);
+
 __int64 nn_fs_da500(__int64 a1);
+
 __int64 nn_fs_da750(__int64 a1);
+
 __int64 nn_fs_da770(__int64 a1);
+
 __int64 nn_fs_da7c0(__int64 a1);
+
 __int64 nn_fs_da840(__int64 a1);
+
 __int64 nn_fs_da8f0(__int64 a1);
+
 __int64 nn_fs_da9a0(__int64 a1, __int64 a2, __int64 a3);
+
 __int64 nn_fs_dad00(__int64 a1, __int64 a2);
+
 __int64 nn_fs_daf00(__int64 a1, __int64 a2);
+
 __int64 nn_fs_db130(__int64 a1, __int64 a2);
+
 __int64 nn_fs_db3c0(__int64 a1, __int64 a2);
+
 __int64 nn_fs_db4e0(__int64 a1, __int64 a2);
+
 __int64 nn_fs_db5d0(__int64 a1);
+
 __int64 nn_fs_db610(__int64 a1, _DWORD* a2, __int64 a3);
+
 __int64 nn_fs_db7e0(__int64 a1, __int64* a2, __int64 a3, int a4);
+
 __int64 nn_fs_dba80(__int64 a1, __int64* a2, __int64 a3, int a4);
+
 __int64 nn_fs_dbe80(__int64* a1, __int64 a2, __int64 a3);
+
 __int64* nn_fs_dc120(__int64* result, __int64* a2);
+
 void __attribute__((noreturn)) nn_fs_dc4d0();
+
 void __attribute__((noreturn)) nn_fs_dc4f0(const char* a1);
+
 __int64 nn_fs_dc510(__int64 result, _QWORD* a2);
+
 __int64 nn_fs_dc570(__int64 result, __int64 a2);
+
 __attribute__((swiftcall)) void nn_fs_dc600(PSEUDO_X8 x8_, __int64 a1,
                                             __int64 a2);
+
 void __attribute__((noreturn)) nn_fs_dc820();
+
 void __attribute__((noreturn)) nn_fs_dc840(const char* a1);
+
 unsigned __int8* nn_fs_dc860(unsigned __int8* result, unsigned __int8 a2);
+
 __int64 nn_fs_dcab0(__int64* a1, __int64 a2, unsigned __int64 a3);
+
 __int64 nn_fs_dcb60(__int64* a1, __int64 a2, __int64 a3, __int64 a4,
                     __int64 a5);
+
 __int64* nn_fs_dcd00(__int64* result, __int64 a2, __int64 a3);
+
 __int64* nn_fs_dcfe0(__int64* result, __int64* a2);
+
 __int64 nn_fs_dd460(__int64 a1, __int64* a2);
+
 __int64 nn_fs_dd680(__int64 a1, __int64* a2);
+
 __int64 nn_fs_dd7e0(__int64 a1, __int64 a2, char a3);
+
 __int64 nn_fs_ddf10(_QWORD* a1);
+
 __int64 nn_fs_ddf40(_QWORD* a1);
+
 __int64 nn_fs_ddfa0(__int64* a1, _QWORD* a2, __int64 a3, __int64 a4,
                     __int64 a5);
+
 __int64 nn_fs_de080(__int64* a1, __int64 a2, __int64 a3, __int64 a4, _BYTE* a5);
+
 __int64 nn_fs_de160(__int64 a1);
+
 __int64 nn_fs_de170();
+
 __int64 nn_fs_de180(__int64 result);
+
 __int64 nn_fs_de1c0(__int64 a1);
+
 __int64 nn_fs_de240(__int64 a1, __int64* a2, __int64 a3, signed __int64 a4);
+
 __int64 nn_fs_de340(__int64 a1, __int64* a2);
+
 __int64 nn_fs_de3c0(__int64 result, __int64 a2, __int64 a3);
+
 __int64 nn_fs_de900(__int64 a1, __int64* a2, __int64 a3, unsigned __int64 a4);
+
 __int64 nn_fs_df280(__int64 result, __int64 a2, _BYTE* a3);
+
 __int64 nn_fs_df380(__int64* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                     __int64* a6, __int64 a7);
+
 __int64 nn_fs_df530(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4);
+
 __int64 nn_fs_e03d0(__int64* a1);
+
 __int64 nn_fs_detail_InitializeDfcFileSystemProxyServiceObject(_QWORD* a1);
+
 __int64
 nn_fs_detail_DisableSessionForRealtimeOnlyAndChangeSessionCount(void* this_);
+
 __int64 nn_fs_detail_EnableSessionForRealtimeOnly(void* this_);
+
 __int64 nn_fs_InitializeForApplication(__int64 result);
+
 __int64 nn_fs_InitializeWithMultiSessionForSystem(__int64 result);
+
 __int64 nn_fs_InitializeWithMultiSessionForTargetTool(__int64 result);
+
 __int64 nn_fs_GetAndClearMemoryReportInfo(_QWORD* a1);
+
 __int64 nn_fs_SetPriorityOnCurrentThread(unsigned int a1);
+
 __int64 nn_fs_GetPriorityOnCurrentThread(void* this_, __int64 a2);
+
 __int64 nn_fs_SetPriorityRawOnCurrentThread(unsigned int a1);
+
 __int64 nn_fs_SetPriorityRaw(__int64 a1, unsigned int a2);
+
 __int64 nn_fs_GetPriorityRawOnCurrentThreadForInternalUse(__int64 a1);
+
 __int64 nn_fs_GetPriorityRawOnCurrentThread(void* this_);
+
 __int64 nn_fs_GetPriorityRaw(__int64 a1);
+
 __int64 nn_fs_101580(__int64 a1, _QWORD* a2, __int64 a3, __int64 a4, __int64 a5,
                      __int64 a6);
+
 __int64 nn_fs_1020b0(_QWORD* a1);
+
 __int64 nn_fs_102110(_QWORD* a1);
+
 __int64 nn_fs_102170(_QWORD* a1);
+
 __int64* std___1___tree___emplace_unique_impl(__int64** a1, __int64* a2);
+
 __int64* std___1___tree___emplace_unique_impl_dc000(__int64** a1, int* a2);
+
 void __attribute__((noreturn)) unplaced_dc4d0();
+
 void __attribute__((noreturn)) unplaced_dc820();
+
 __int64 std___1___tree_find(__int64 a1, unsigned __int8* a2);
 
 __int64 nn_fs_Commit(void* this_, const char* const* a2)
@@ -4053,13 +4238,6 @@ LABEL_30:
   return v7;
 }
 
-void __attribute__((noreturn)) nn_fs_dc4d0()
-{
-  nn_fs_dc4f0_alt1("basic_string");
-}
-
-void __attribute__((noreturn)) unplaced_dc4d0() { nn_fs_dc4f0("basic_string"); }
-
 void __attribute__((noreturn)) nn_fs_dc4f0(const char* a1)
 {
   std___1___libcpp_verbose_abort_plt(
@@ -4281,13 +4459,6 @@ __attribute__((swiftcall)) void nn_fs_dc600(PSEUDO_X8 x8_, __int64 a1,
     return;
   }
 }
-
-void __attribute__((noreturn)) nn_fs_dc820()
-{
-  nn_fs_dc840_alt1("basic_string");
-}
-
-void __attribute__((noreturn)) unplaced_dc820() { nn_fs_dc840("basic_string"); }
 
 void __attribute__((noreturn)) nn_fs_dc840(const char* a1)
 {

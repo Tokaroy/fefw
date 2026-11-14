@@ -3,80 +3,154 @@
 #pragma GCC visibility push(hidden)
 
 _QWORD* Manager_66cc20(__int64*, _QWORD*);
+
 __int64* game_8aef60(__int64, unsigned __int16*);
+
 __int64 Dir_70df40(__int16*, __int16*);
+
 __int64 GameHr_fbcd00(unsigned int);
+
 __int64 GameRoutine_715440();
+
 __int64 Message_16f9b50(__int64);
+
 __int64 fw_memory_HeapManager_Allocate(__int64, __int64, __int64, unsigned int);
+
 __int64 fw_text_String_CopyTerminated(__int64*, __int64, unsigned __int64);
+
 __int64 game_HashString(__int64 result);
+
 __int64 memcpy(__int64, __int64, unsigned __int64);
+
 __int64 nn_oe_GetCurrentFocusState(void);
+
 __int64 nn_oe_GetCurrentGraphicsScale(void);
+
 __int64 nn_oe_PopNotificationMessage(void);
+
 __int64 nn_os_AcquireWriteLock(__int64);
+
 __int64 nn_os_LockMutex(__int64);
+
 __int64 nn_os_ReleaseWriteLock(__int64);
+
 __int64 nn_os_SignalLightEvent(__int64);
+
 __int64 nn_os_SleepThread(_QWORD);
+
 __int64 nn_os_UnlockMutex(__int64);
+
 extern _UNKNOWN* GameData_212c2a0;
+
 extern _UNKNOWN GameData_21a55c0;
+
 extern _UNKNOWN GameData_21f4318;
+
 extern _UNKNOWN GameData_22660d0;
+
 extern _UNKNOWN GameData_22660dc;
+
 extern _UNKNOWN GameData_22660e8;
+
 extern _UNKNOWN game_g_random_mutex;
+
 extern __int128 GameData_21a5580;
+
 extern __int128 GameData_21a5590;
+
 extern __int128 GameData_21a55a0;
+
 extern __int128 GameData_21a55b0;
+
 extern __int64* GameData_212c878[6];
+
 extern __int64* game_map_MapRandom_instance__ptr[3];
+
 extern __int64 GameData_212d6e8;
+
 extern __int64 GameData_21ca098;
+
 extern __int64 fw_memory_g_heap_manager;
+
 extern __int64 fw_memory_g_heap_manager_ptr;
+
 extern __int64 game_GameModeData_instance_;
+
 extern __int64 game_g_game_setting_ptr;
+
 extern char* GameData_1ffce20[2];
+
 extern char GameData_1a9f09e;
+
 extern int GameData_21f4314;
+
 extern int GameData_2266118;
+
 int __cxa_guard_acquire(__int64);
+
 int sprintf(__int64, const char*, ...);
+
 typedef __int64 GameAlign_21f430c __attribute__((aligned(4)));
+
 extern GameAlign_21f430c GameData_21f430c;
+
 unsigned __int64 strlen(const char*);
+
 void __attribute__((noreturn)) GameRoutine_60a210();
+
 void __attribute__((noreturn)) GameRoutine_6e56b0();
+
 void __attribute__((noreturn)) GameRoutine_6f26d0();
+
 void __attribute__((noreturn)) GameRoutine_6f93f0();
+
 void __attribute__((noreturn)) GameRoutine_953bb0();
+
 void __attribute__((noreturn)) String_60a1d0();
+
 void __cxa_guard_release(__int64);
+
 void nn_mem_StandardAllocator_Free(__int64, __int64);
+
 void nn_oe_LeaveExitRequestHandlingSection();
+
 __attribute__((swiftcall)) void game_950ec0(PSEUDO_X8 x8_, __int16* a1);
+
 unsigned __int64 game_a794a0(unsigned __int64 result, __int64* a2,
                              float32x4_t* a3);
+
 void game_fbdd20(__int64 a1);
+
 void game_1254c80(__int64 a1);
+
 void __attribute__((noreturn)) game_17e3de0();
+
 __int64 GameRoutine_60a020(__int64, const char*);
+
 __int64 GameRoutine_9750e0(__int64, __int64);
+
 __int64 GameRoutine_975520(__int64, __int64);
+
 __int64 GameRoutine_975940(__int64);
+
 __int64 game_GameVariableTable_Find(_QWORD*, unsigned __int64*);
+
 bool GameRoutine_1008d20(__int64);
+
 extern _UNKNOWN GameData_1ab4cc9;
+
 extern __int64 game_TransporterConst_List_instance__ptr[6];
+
 extern __int64 game_gmap_GmapClock_instance_;
+
 extern __int64 game_gmap_GmapClock_kDefaultTime_ptr;
+
 extern int GameData_2167728;
+
 unsigned __int64 GameRoutine_1a09c70(const char*);
+
 void Se_80e330(__int64, const char*);
+
 __attribute__((swiftcall)) void game_10081e0(PSEUDO_X8 x8_, char* a1);
 
 __attribute__((swiftcall)) void game_950ec0(PSEUDO_X8 x8_, __int16* a1)
@@ -1765,80 +1839,6 @@ void game_1254c80(__int64 a1)
       v5 = game_map_MapRandom_instance__ptr[0];
       v1 = v83 + 8;
     } while (v83 + 8 != v82);
-  }
-}
-
-void __attribute__((noreturn)) game_17e3de0()
-{
-  __int64* v0;
-  int v1;
-  int CurrentGraphicsScaleEv;
-  __int64 v3;
-  __int64** v4;
-  __int64 v5;
-  unsigned int v6;
-  int v7;
-
-  v0 = (__int64*)game_g_game_setting_ptr;
-  while (1) {
-    while (1) {
-      v1 = nn_oe_PopNotificationMessage();
-      if (v1 <= 29) {
-        break;
-      }
-      switch (v1) {
-      case 30:
-        nn_os_SignalLightEvent((__int64)&GameData_22660d0);
-        break;
-      case 31:
-        nn_os_SignalLightEvent((__int64)&GameData_22660dc);
-        break;
-      case 300:
-        CurrentGraphicsScaleEv = nn_oe_GetCurrentGraphicsScale();
-        if (GameData_2266118 != CurrentGraphicsScaleEv) {
-          GameData_2266118 = CurrentGraphicsScaleEv;
-          nn_os_SignalLightEvent((__int64)&GameData_22660e8);
-        }
-        break;
-      default:
-        break;
-      }
-    }
-    switch (v1) {
-    case 15:
-      nn_oe_GetCurrentFocusState();
-      break;
-    case 16:
-      v3 = *v0;
-      if (*v0 != 0) {
-        nn_os_AcquireWriteLock(v3 + 984);
-        *(_DWORD*)(v3 + 1032) = 1;
-        nn_os_ReleaseWriteLock(v3 + 984);
-      }
-      break;
-    case 4:
-      v4 = (__int64**)GameData_212d6e8;
-      while (*v4 != nullptr) {
-        v5 = **v4;
-        if (v5 == 0) {
-          break;
-        }
-        v6 = atomic_load((unsigned int*)(v5 + 804));
-        if (v6 == 0) {
-          v7 = atomic_load((unsigned __int8*)(*(_QWORD*)(v5 + 792) + 81LL));
-          if (v7 != 1) {
-            break;
-          }
-        }
-        nn_os_SleepThread(16000000);
-      }
-      nn_oe_LeaveExitRequestHandlingSection();
-      while (1) {
-        nn_os_SleepThread(86400000000000LL);
-      }
-    default:
-      break;
-    }
   }
 }
 

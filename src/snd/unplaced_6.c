@@ -3,27 +3,26 @@
 #pragma GCC visibility push(hidden)
 
 __int64 fw_memory_HeapManager_Allocate(__int64, __int64, __int64, unsigned int);
-__int64 snd_data_getMuseumDataCount();
-extern _UNKNOWN GameData_1aa49c1;
-extern __int64 (*snd_Archive_vtable[])();
-extern __int64 fw_memory_g_heap_manager_ptr;
-void* snd_data_getMuseumData(int);
-void __attribute__((noreturn)) GameRoutine_60a210();
-void __attribute__((noreturn)) GameRoutine_a36670();
-void nn_mem_StandardAllocator_Free(__int64, __int64);
-__int64 snd_104020(__int64 result, __int64 a2);
-__attribute__((swiftcall)) void snd_a35e20(PSEUDO_X8 x8_, __int64 a1);
 
-__int64 snd_104020(__int64 result, __int64 a2)
-{
-  *(_QWORD*)(result + 16) = 0;
-  *(_QWORD*)(result + 24) = 0;
-  *(_QWORD*)(result + 32) = a2;
-  *(_WORD*)(result + 40) = 0;
-  *(_QWORD*)result = snd_Archive_vtable;
-  *(_QWORD*)(result + 8) = 0;
-  return result;
-}
+__int64 snd_data_getMuseumDataCount();
+
+extern _UNKNOWN GameData_1aa49c1;
+
+extern __int64 (*snd_Archive_vtable[])();
+
+extern __int64 fw_memory_g_heap_manager_ptr;
+
+void* snd_data_getMuseumData(int);
+
+void __attribute__((noreturn)) GameRoutine_60a210();
+
+void __attribute__((noreturn)) GameRoutine_a36670();
+
+void nn_mem_StandardAllocator_Free(__int64, __int64);
+
+__int64 snd_104020(__int64 result, __int64 a2);
+
+__attribute__((swiftcall)) void snd_a35e20(PSEUDO_X8 x8_, __int64 a1);
 
 __attribute__((swiftcall)) void snd_a35e20(PSEUDO_X8 x8_, __int64 a1)
 {

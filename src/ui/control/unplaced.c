@@ -4,64 +4,104 @@
 
 __attribute__((swiftcall)) void Element_1885dc0(PSEUDO_X8, __int64 result,
                                                 _QWORD*);
+
 __attribute__((swiftcall)) void GameRoutine_15b71b0(PSEUDO_X8, _QWORD, _QWORD);
+
 __int64 Element_1887de0(_QWORD, _QWORD, _QWORD);
+
 __int64 GameRoutine_60a060(_QWORD, _QWORD, _QWORD, long double);
+
 __int64 Manager_66cc20(_QWORD, _QWORD);
+
 __int64 fw_memory_HeapManager_Allocate(_QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 fw_text_String_CopyTerminated(_QWORD, _QWORD, _QWORD);
+
 __int64 memchr(_QWORD, _QWORD, _QWORD);
+
 __int64 memcpy(_QWORD, _QWORD, _QWORD);
+
 __int64 memmove(_QWORD, _QWORD, _QWORD);
+
 __int64 nn_mem_StandardAllocator_Free(_QWORD, _QWORD);
+
 __int64 std___1___shared_weak_count___release_weak(_QWORD);
+
 __int64 std___1___shared_weak_count_lock(_QWORD);
+
 __int64 strlen(_QWORD);
+
 __int64 ui_control_1887780_alt1(_QWORD, _QWORD,
                                 _QWORD) __asm__("ui_control_1887780");
+
 extern __int64 fw_memory_g_heap_manager;
+
 extern __int64 fw_memory_g_heap_manager_ptr;
+
 void __attribute__((noreturn)) GameRoutine_18883b0(_QWORD);
+
 void __attribute__((noreturn)) GameRoutine_60a210(_QWORD);
+
 void __attribute__((noreturn)) GameRoutine_60a310(_QWORD);
+
 void __attribute__((noreturn)) String_60a1d0(_QWORD);
+
 __attribute__((swiftcall)) void ui_control_18868e0(PSEUDO_X8 x8_,
                                                    __int64 result, int a2);
+
 char* ui_control_1886bc0_alt1(_QWORD* a1, int a2) __asm__("ui_control_1886bc0");
+
 __attribute__((swiftcall)) void ui_control_1886f20(PSEUDO_X8 x8_, _QWORD* a1,
                                                    int a2, __int64 a3);
+
 __int64 ui_control_1887780(__int64 result, __int64 a2, __int64 a3, __int64 a4);
+
 __attribute__((swiftcall)) void ui_control_1888120(PSEUDO_X8 x8_, _QWORD* a1,
                                                    int a2, __int64 a3);
+
 __attribute__((swiftcall)) void
 Element_1885dc0_alt1(PSEUDO_X8, __int64 result,
                      __int64*) __asm__("Element_1885dc0");
+
 __attribute__((swiftcall)) void
     GameRoutine_15b71b0_alt1(PSEUDO_X8) __asm__("GameRoutine_15b71b0");
+
 __int64 fw_memory_HeapManager_Allocate_alt1(
     __int64, __int64, __int64,
     unsigned int) __asm__("fw_memory_HeapManager_Allocate");
+
 __int64 fw_text_String_CopyTerminated_alt1(
     __int64*, __int64,
     unsigned __int64) __asm__("fw_text_String_CopyTerminated");
+
 __int64 memcpy_alt1(__int64, __int64, unsigned __int64) __asm__("memcpy");
+
 __int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
+
 __int64 std___1___shared_weak_count_lock_alt1(__int64) __asm__(
     "std___1___shared_weak_count_lock");
+
 void Element_1887de0_alt1(_QWORD*, __int64, const char*,
                           __int64) __asm__("Element_1887de0");
+
 void __attribute__((noreturn))
 GameRoutine_18883b0_alt1() __asm__("GameRoutine_18883b0");
+
 void __attribute__((noreturn))
 GameRoutine_60a210_alt1() __asm__("GameRoutine_60a210");
+
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+
 void ui_control_1887780_alt2(const char**, __int64, const char*,
                              __int64) __asm__("ui_control_1887780");
+
 __int64 ui_control_1886bc0(_QWORD* a1, int a2);
+
 void Element_1887de0_alt2(_QWORD*, __int64*, const char*,
                           __int64) __asm__("Element_1887de0");
+
 void ui_control_1887780_alt3(__int64*, __int64**, const char*,
                              __int64) __asm__("ui_control_1887780");
 
@@ -1601,92 +1641,6 @@ LABEL_125:
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v76, (_QWORD)(v81));
   }
   return result;
-}
-
-__attribute__((swiftcall)) void ui_control_1888120(PSEUDO_X8 x8_, _QWORD* a1,
-                                                   int a2, __int64 a3)
-{
-  _QWORD* a4 = (_QWORD*)PSEUDO_X8_VALUE(x8_);
-  __int64 v5;
-  _QWORD* v7;
-  int v8;
-  __int64 v9;
-  __int64 v10;
-  __int64 v11;
-  __int64 v12;
-  __int64 v13;
-  __int64 v14;
-  struct {
-    _BYTE v15[32];
-    _BYTE* v16;
-  } v15_;
-  __int64 v17[3];
-
-  v5 = *(_QWORD*)(a3 + 32);
-  if (v5 != 0) {
-    v7 = a1;
-    v8 = a2;
-    if (v5 == a3) {
-      v15_.v16 = v15_.v15;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v5 + 24LL))(v5, v15_.v15);
-    }
-    else {
-      v15_.v16 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v5 + 16LL))(v5);
-    }
-    a2 = v8;
-    a1 = v7;
-  }
-  else {
-    v15_.v16 = nullptr;
-  }
-  ui_control_1886f20((void*)(v17), a1, a2, (__int64)v15_.v15);
-  if (v15_.v16 == v15_.v15) {
-    v9 = 32;
-  }
-  else {
-    if (v15_.v16 == nullptr) {
-      goto LABEL_12;
-    }
-    v9 = 40;
-  }
-  (*(void (**)(__int64))(*(_QWORD*)v15_.v16 + v9))((__int64)v15_.v16);
-LABEL_12:
-  v10 = v17[0];
-  v11 = v17[1];
-  if (v17[0] == v17[1]) {
-    *a4 = 0;
-    a4[1] = 0;
-    if (v10 == 0) {
-      return;
-    }
-    goto LABEL_20;
-  }
-  v12 = *(_QWORD*)(v17[0] + 8);
-  *a4 = *(_QWORD*)v17[0];
-  a4[1] = v12;
-  if (v12 != 0) {
-    atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 8), 1u,
-                              memory_order_relaxed);
-  }
-  do {
-    v13 = *(_QWORD*)(v11 - 8);
-    if (v13 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v13 + 8),
-                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
-      (*(void (**)(__int64))(*(_QWORD*)v13 + 16LL))(v13);
-      std___1___shared_weak_count___release_weak_alt1(v13);
-    }
-    v11 -= 16;
-  } while (v11 != v10);
-  v10 = v17[0];
-  if (v17[0] != 0) {
-  LABEL_20:
-    v14 = 128;
-    if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
-      v14 = 56;
-    }
-    nn_mem_StandardAllocator_Free_alt1(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v14, v10);
-  }
 }
 
 #pragma GCC visibility pop

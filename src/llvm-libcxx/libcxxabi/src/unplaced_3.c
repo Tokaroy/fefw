@@ -3,137 +3,211 @@
 #pragma GCC visibility push(hidden)
 
 __int64* SdkRoutine_836230(__int64* result, _QWORD*);
+
 __int64 SdkRoutine_833240(_QWORD*, __int64, unsigned __int64);
+
 __int64 SdkRoutine_8332c0(__int64);
+
 __int64 SdkRoutine_8355a0(_QWORD*, _QWORD*);
+
 __int64 SdkRoutine_8365b0(char*);
+
 __int64 SdkRoutine_837160(__int64, char**);
+
 __int64 SdkRoutine_837c80(unsigned __int8**, char);
+
 __int64 SdkRoutine_8382a0(__int64);
+
 __int64 SdkRoutine_8387c0(_QWORD*);
+
 __int64 SdkRoutine_8393e0(__int64);
+
 __int64 _Unwind_Resume_plt(_QWORD);
+
 __int64 __cxxabiv1_(__int64 result);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_837870(__int64,
                                                                       _QWORD*);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_838200(__int64,
                                                                       __int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_83cdb0(__int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_845bc0(__int64,
                                                                       __int64,
                                                                       char,
                                                                       int);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_846080(__int64,
                                                                       __int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_8477d0(__int64,
                                                                       __int64*,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_847880(__int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_847920(__int64,
                                                                       __int64,
                                                                       char);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_8479d0(__int64,
                                                                       __int64,
                                                                       __int64*);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_848050(__int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_848100(__int64,
                                                                       __int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_849660(__int64,
                                                                       __int64,
                                                                       __int64);
+
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_parseClassEnumType(__int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_parseDecltype(
     unsigned __int8**);
+
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_parseOperatorName(__int64,
                                                                     _BYTE*);
+
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_parseQualifiedType(__int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_parseSourceName(
     unsigned __int8**);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_parseUnscopedName(
     __int64, __int64, _BYTE*);
+
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_parseVectorType(__int64);
+
 __int64 anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
     _QWORD*, unsigned __int64);
+
 unsigned __int128 popTrailingNodeArray_pair(_QWORD*, unsigned __int64) __asm__(
     "anonymous_itanium_demangle_"
     "AbstractManglingParser_popTrailingNodeArray");
+
 __int64 llvm_libcxx_libcxxabi_src_835780_alt1(
     unsigned __int8**, __int64) __asm__("llvm_libcxx_libcxxabi_src_835780");
+
 __int64 llvm_libcxx_libcxxabi_src_838aa0_alt1(
     unsigned __int8**, _BYTE*, __int64,
     __int64) __asm__("llvm_libcxx_libcxxabi_src_838aa0");
+
 __int64 llvm_libcxx_libcxxabi_src_846dc0(__int64);
+
 __int64 malloc_plt(_QWORD);
+
 __int64 memmove_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 realloc_plt(_QWORD, _QWORD);
+
 char* SdkRoutine_8393e0_alt1(unsigned __int16**) __asm__("SdkRoutine_8393e0");
+
 char* SdkRoutine_83f360(__int64, __int64);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_make_8377c0(__int64,
                                                                     __int64);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_make_845b20(__int64,
                                                                     __int64);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_make_847ef0(__int64,
                                                                     __int64);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_make_847fa0(__int64,
                                                                     __int64,
                                                                     int);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_make_84a0d0(__int64,
                                                                     __int64,
                                                                     __int64);
+
 char* anonymous_itanium_demangle_AbstractManglingParser_parseAbiTags(__int64,
                                                                      char*);
+
 extern __int64 (*SdkData_e82ae8[])();
+
 extern __int64 (*SdkData_e84288[])();
+
 extern __int64 (*SdkData_e84828[])();
+
 extern __int64 (*SdkData_e84918[])();
+
 extern __int64 (*SdkData_e84990[])();
+
 extern __int64 (*SdkData_e84a08[])();
+
 extern __int64 (*SdkData_e84be8[])();
+
 extern __int64 SdkData_e897f8;
+
 extern __int64 SdkData_e89848;
+
 extern __int64 SdkData_e89858;
+
 int strcmp_plt(const char*, const char*);
+
 unsigned __int8* SdkRoutine_833d40(unsigned __int8**, char);
+
 unsigned __int128 SdkRoutine_833d40_pair(unsigned __int8**,
                                          char) __asm__("SdkRoutine_833d40");
+
 unsigned __int8* SdkRoutine_845fc0(unsigned __int8* result, unsigned __int8*);
+
 void __attribute__((noreturn)) SdkRoutine_7cd620();
+
 void __attribute__((noreturn)) abort_plt(_QWORD);
+
 void __attribute__((noreturn)) std___unexpected(void (*)(void));
+
 void __attribute__((noreturn)) std_terminate_plt(_QWORD);
+
 char* llvm_libcxx_libcxxabi_src_833e70(unsigned __int8** a1, __int64 a2,
                                        __int64 a3);
+
 __int64 llvm_libcxx_libcxxabi_src_835780(unsigned __int8** a1, __int64 a2,
                                          __int64 a3);
+
 __int64 llvm_libcxx_libcxxabi_src_838aa0(unsigned __int8** a1, _BYTE* a2,
                                          char* a3, char* a4);
+
 char* llvm_libcxx_libcxxabi_src_83ca00(__int64 a1, __int64 a2, __int64 a3);
+
 void __attribute__((noreturn)) llvm_libcxx_libcxxabi_src_84b300();
+
 void __attribute__((noreturn))
 llvm_libcxx_libcxxabi_src_84b56c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                                  __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                                  __int64 a9);
+
 void __attribute__((noreturn))
 llvm_libcxx_libcxxabi_src_84b730(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                                  __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                                  __int64 a9, char a10);
+
 void __attribute__((noreturn))
 llvm_libcxx_libcxxabi_src_84bb6c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                                  __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                                  __int64 a9);
+
 void __attribute__((noreturn))
 llvm_libcxx_libcxxabi_src_84bc7c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                                  __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                                  __int64 a9, char a10);
+
 char* llvm_libcxx_libcxxabi_src_84cce0(__int64 a1, __int64 a2);
 
 char* llvm_libcxx_libcxxabi_src_833e70(unsigned __int8** a1, __int64 a2,
@@ -3456,76 +3530,6 @@ void __attribute__((noreturn)) llvm_libcxx_libcxxabi_src_84b300()
 {
   std___unexpected((void (*)(void))atomic_load_explicit(
       (atomic_ullong* volatile)SdkData_e897f8, memory_order_acquire));
-}
-
-void __attribute__((noreturn))
-
-llvm_libcxx_libcxxabi_src_84b56c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
-                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
-                                 __int64 a9)
-{
-  void (*v9)(__int64);
-  __int64 v10;
-
-  __cxxabiv1_((__int64)&a9);
-  v9(v10);
-  _Unwind_Resume_plt(a1);
-  SdkRoutine_7cd620();
-}
-
-void __attribute__((noreturn))
-
-llvm_libcxx_libcxxabi_src_84b730(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
-                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
-                                 __int64 a9, char a10)
-{
-  void (*v10)(__int64, __int64);
-  __int64 v11;
-  __int64 v12;
-
-  __cxxabiv1_((__int64)&a10);
-  v10(v12, v11);
-  _Unwind_Resume_plt(a1);
-  SdkRoutine_7cd620();
-}
-
-void __attribute__((noreturn))
-
-llvm_libcxx_libcxxabi_src_84bb6c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
-                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
-                                 __int64 a9)
-{
-  __int64 v9;
-  char v10;
-  void (*v11)(__int64);
-
-  if ((v10 & 1) != 0) {
-    std_terminate_plt(a1);
-  }
-  __cxxabiv1_((__int64)&a9);
-  v11(v9);
-  _Unwind_Resume_plt(a1);
-  SdkRoutine_7cd620();
-}
-
-void __attribute__((noreturn))
-
-llvm_libcxx_libcxxabi_src_84bc7c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
-                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
-                                 __int64 a9, char a10)
-{
-  __int64 v10;
-  __int64 v11;
-  char v12;
-  void (*v13)(__int64, __int64);
-
-  if ((v12 & 1) != 0) {
-    std_terminate_plt(a1);
-  }
-  __cxxabiv1_((__int64)&a10);
-  v13(v10, v11);
-  _Unwind_Resume_plt(a1);
-  SdkRoutine_7cd620();
 }
 
 char* llvm_libcxx_libcxxabi_src_84cce0(__int64 a1, __int64 a2)

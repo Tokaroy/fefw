@@ -3,46 +3,85 @@
 #pragma GCC visibility push(hidden)
 
 __attribute__((swiftcall)) void GameRoutine_d9b060(PSEUDO_X8);
+
 __attribute__((swiftcall)) void Manager_d9b420(PSEUDO_X8, _QWORD*,
                                                unsigned __int8*);
+
 __attribute__((swiftcall)) void game_hub_d99f80(PSEUDO_X8);
+
 __attribute__((swiftcall)) void game_hub_fb48a0(PSEUDO_X8, _QWORD, _QWORD);
+
 __int64 HubCharacterNatives_cabfc0(__int64 result, char);
+
 __int64 as_627e70(__int64, __int64, char, __int64, char);
+
 __int64 fw_memory_HeapManager_Allocate(__int64, __int64, __int64, unsigned int);
+
 __int64 game_GameVariableTable_Find(_QWORD*, unsigned __int64*);
+
 __int64 game_HashString(__int64 result);
+
 __int64 game_hub_Character_RebuildAppearance(__int64);
+
 __int64 game_zview_d12d30(__int64 result, int32x2_t*, char);
+
 __int64 memmove(__int64, __int64, unsigned __int64);
+
 __int64 std___1___shared_weak_count___release_weak(__int64);
+
 __int64 std___1___shared_weak_count_lock(__int64);
+
 bool llvm_libcxx_21_libcxx_include___memory_d2d4e0();
+
 extern _QWORD as_g_context_slots[16384];
+
 extern _UNKNOWN* GameData_212c188;
+
 extern _UNKNOWN* GameData_212c190;
+
 extern _UNKNOWN GameData_1a95d15;
+
 extern __int64 (*GameData_1fdee00[14])();
+
 extern __int64* as_g_script_manager_ptr;
+
 extern __int64 GameData_212dc50[4];
+
 extern __int64 GameData_21ec7c0;
+
 extern __int64 GameData_2212268;
+
 extern __int64 fw_memory_g_heap_manager;
+
 extern __int64 fw_memory_g_heap_manager_ptr;
+
 extern __int64 game_GameModeData_instance_;
+
 void CharacterRotate_d519c0(int8x16_t*);
+
 void __attribute__((noreturn)) GameRoutine_8123d0();
+
 void __attribute__((noreturn)) String_60a1d0();
+
 void as_d9b900(__int64, __int64, __int64, __int64, __int64, __int64, __int64,
                __int64*);
+
 void game_hub_d9a500_alt1(__int64, __int64, __int64) __asm__("game_hub_d9a500");
+
 void nn_mem_StandardAllocator_Free(__int64, __int64);
+
 void game_hub_d99d20(__int64 a1);
+
 void game_hub_d9a500(_QWORD* a1, __int64 a2, __int64 a3);
+
 void game_hub_d9a760(_QWORD* a1);
+
 void game_hub_d9a9c0(_QWORD* a1);
+
 void game_hub_d9ac20(_QWORD* a1);
+
 __int64 game_hub_e1dce0();
+
 __int64 game_hub_f8ad80(__int64 result);
 
 void game_hub_d99d20(__int64 a1)
@@ -800,24 +839,6 @@ void game_hub_d9ac20(_QWORD* a1)
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v24, (__int64)v2);
     }
   }
-}
-
-__int64 game_hub_e1dce0()
-{
-  __int64* v0;
-  __int64* i;
-  __int64 v2;
-  __int64 result;
-
-  result = COERCE_AS(__typeof__(result),
-                     PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  v0 = *(__int64**)(GameData_21ec7c0 + 24);
-  for (i = *(__int64**)(GameData_21ec7c0 + 32); v0 != i;
-       result = game_hub_Character_RebuildAppearance(v2)) {
-    v2 = *v0;
-    v0 += 2;
-  }
-  return result;
 }
 
 __int64 game_hub_f8ad80(__int64 result)

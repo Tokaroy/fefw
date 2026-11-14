@@ -3,18 +3,31 @@
 #pragma GCC visibility push(hidden)
 
 __int64 nn_nlibsdk_detail_JoinAndFreePosixThread(__int64, _QWORD*);
+
 __int64 nn_os_GetThreadAvailableCoreMask_plt(_QWORD, _QWORD);
+
 __int64 nn_os_SdkConditionVariableType_Wait_plt(_QWORD, _QWORD);
+
 __int64 nn_os_SdkMutexType_Lock_plt(_QWORD);
+
 __int64 nn_os_SdkMutexType_Unlock_plt(_QWORD);
+
 extern _UNKNOWN SdkData_eb7e78;
+
 extern _UNKNOWN SdkData_eb7e94;
+
 extern _UNKNOWN SdkData_eb7e98;
+
 extern __int64 SdkData_eb7ea8;
+
 extern __int64 SdkData_eb7eb0;
+
 extern int nn_init_detail_PthreadDefaults[];
+
 __int64 nn_nlibsdk_173360(_QWORD* a1);
+
 __int64 nn_nlibsdk_1733f0(__int64* a1, __int64 a2);
+
 void __attribute__((noreturn)) nn_nlibsdk_173980();
 
 __int64 nn_nlibsdk_173360(_QWORD* a1)
@@ -100,28 +113,6 @@ __int64 nn_nlibsdk_1733f0(__int64* a1, __int64 a2)
   nn_init_detail_PthreadDefaults[0] = v8;
   nn_os_SdkMutexType_Unlock_plt(&SdkData_eb7e78);
   return 0;
-}
-
-void __attribute__((noreturn)) nn_nlibsdk_173980()
-{
-  __int64* v0;
-  __int64 v1;
-  __int64 v2;
-
-  nn_os_SdkMutexType_Lock_plt(&SdkData_eb7e94);
-  while (1) {
-    nn_os_SdkConditionVariableType_Wait_plt(&SdkData_eb7e98, &SdkData_eb7e94);
-    v0 = (__int64*)SdkData_eb7ea8;
-    v1 = SdkData_eb7eb0;
-    if (SdkData_eb7ea8 != SdkData_eb7eb0) {
-      do {
-        v2 = *v0++;
-        nn_nlibsdk_detail_JoinAndFreePosixThread(v2, nullptr);
-      } while (v0 != (__int64*)v1);
-      v0 = (__int64*)SdkData_eb7ea8;
-    }
-    SdkData_eb7eb0 = (__int64)v0;
-  }
 }
 
 #pragma GCC visibility pop

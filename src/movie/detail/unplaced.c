@@ -3,37 +3,57 @@
 #pragma GCC visibility push(hidden)
 
 __int64 MovieRoutine_82870(_QWORD, _QWORD);
+
 __int64 memmove_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 nn_codec_GetH264DecoderOutputBufferProperties_plt(void);
+
 __int64 nn_codec_GetVp8DecoderOutputBufferProperties_plt(void);
+
 __int64 nn_codec_ReleaseH264DecoderOutputBuffer_plt(void);
+
 __int64 nn_codec_ReleaseVp8DecoderOutputBuffer_plt(void);
+
 __int64 std___1___libcpp_verbose_abort_plt(const char*, ...);
+
 extern __int64 MovieData_c08e0;
+
 extern __int64 MovieData_c0960;
+
 extern __int64 MovieData_c0970;
+
 void __attribute__((noreturn)) MovieRoutine_14f0(const char*);
+
 void __attribute__((noreturn))
 movie_detail_9f60_alt1(_QWORD) __asm__("movie_detail_9f60");
-void __attribute__((noreturn)) movie_detail_9f40();
-void __attribute__((noreturn)) movie_detail_9f60(const char* a1);
-void __attribute__((noreturn)) movie_detail_f500();
-void __attribute__((noreturn)) movie_detail_f520();
-__int64* movie_detail_f540(__int64* a1, __int64 a2, unsigned __int64 a3);
-__int64 movie_detail_fef0();
-__int64 movie_detail_fef4();
-__int64 movie_detail_ff40();
-__int64 movie_detail_ff44();
-__int64 movie_detail_12280(_QWORD* a1);
-__int64 movie_detail_122d0(_QWORD* a1);
-__int64 movie_detail_1ad50(_QWORD* a1);
-__int64 movie_detail_1b850(_QWORD* a1);
-__int64 movie_detail_1b8b0(_QWORD* a1);
 
-void __attribute__((noreturn)) movie_detail_9f40()
-{
-  movie_detail_9f60_alt1("vector");
-}
+void __attribute__((noreturn)) movie_detail_9f40();
+
+void __attribute__((noreturn)) movie_detail_9f60(const char* a1);
+
+void __attribute__((noreturn)) movie_detail_f500();
+
+void __attribute__((noreturn)) movie_detail_f520();
+
+__int64* movie_detail_f540(__int64* a1, __int64 a2, unsigned __int64 a3);
+
+__int64 movie_detail_fef0();
+
+__int64 movie_detail_fef4();
+
+__int64 movie_detail_ff40();
+
+__int64 movie_detail_ff44();
+
+__int64 movie_detail_12280(_QWORD* a1);
+
+__int64 movie_detail_122d0(_QWORD* a1);
+
+__int64 movie_detail_1ad50(_QWORD* a1);
+
+__int64 movie_detail_1b850(_QWORD* a1);
+
+__int64 movie_detail_1b8b0(_QWORD* a1);
 
 void __attribute__((noreturn)) movie_detail_9f60(const char* a1)
 {
@@ -41,11 +61,6 @@ void __attribute__((noreturn)) movie_detail_9f60(const char* a1)
       "out_of_range was thrown in -fno-exceptions mode with message \"%s\"",
       a1);
   __udf(0);
-}
-
-void __attribute__((noreturn)) movie_detail_f500()
-{
-  movie_detail_9f60("basic_string");
 }
 
 void __attribute__((noreturn)) movie_detail_f520()

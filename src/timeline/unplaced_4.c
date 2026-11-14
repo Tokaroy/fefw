@@ -4,36 +4,50 @@
 
 __attribute__((swiftcall)) void
 GameRoutine_b760(PSEUDO_X8, unsigned __int8** result, unsigned int*);
+
 __attribute__((swiftcall)) void
 GameRoutine_b830(PSEUDO_X8, unsigned __int8** result, unsigned int*);
+
 __attribute__((swiftcall)) void
 GameRoutine_db10(PSEUDO_X8, unsigned __int8** result, unsigned int*);
+
 __int64 GameHr_4c20();
+
 __int64 GameRoutine_1a0b960(unsigned __int64, __int64);
+
 __int64 GameRoutine_b290(__int64*, __int64);
+
 __int64 Value_10e0(unsigned __int64*, unsigned __int64*, __int64,
                    unsigned __int64, __int64, unsigned __int64, int);
+
 __int64 Value_b320(_QWORD**, __int64, unsigned __int64, __int64,
                    unsigned __int64, unsigned __int64);
-__int64 Value_b440(__int64*);
-__int64 memcpy(__int64, __int64, unsigned __int64);
-__int64 memset(__int64, int, unsigned __int64);
-extern __int64 GameData_212c060;
-extern unsigned __int8 GameData_1aff518[256];
-unsigned __int64 GameRoutine_b600(unsigned __int8**);
-unsigned __int64 GameRoutine_b6b0(unsigned __int8**);
-unsigned __int64 Value_2640(_QWORD*, __int64, unsigned __int64);
-unsigned __int64 Value_b210(__int64, __int64, unsigned __int64);
-void GameRoutine_651310(__int64);
-__int64 timeline_4c1c();
-__int64 timeline_8060(__int64 a1, int* a2, __int64 a3);
-__int64 timeline_a3e0(__int64 a1, int* a2, __int64 a3);
 
-__int64 timeline_4c1c()
-{
-  GameHr_4c20();
-  return GameHr_4c20();
-}
+__int64 Value_b440(__int64*);
+
+__int64 memcpy(__int64, __int64, unsigned __int64);
+
+__int64 memset(__int64, int, unsigned __int64);
+
+extern __int64 GameData_212c060;
+
+extern unsigned __int8 GameData_1aff518[256];
+
+unsigned __int64 GameRoutine_b600(unsigned __int8**);
+
+unsigned __int64 GameRoutine_b6b0(unsigned __int8**);
+
+unsigned __int64 Value_2640(_QWORD*, __int64, unsigned __int64);
+
+unsigned __int64 Value_b210(__int64, __int64, unsigned __int64);
+
+void GameRoutine_651310(__int64);
+
+__int64 timeline_4c1c();
+
+__int64 timeline_8060(__int64 a1, int* a2, __int64 a3);
+
+__int64 timeline_a3e0(__int64 a1, int* a2, __int64 a3);
 
 __int64 timeline_8060(__int64 a1, int* a2, __int64 a3)
 {

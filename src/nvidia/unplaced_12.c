@@ -3,74 +3,100 @@
 #pragma GCC visibility push(hidden)
 
 _DWORD* nvrm_surface_query_607fa0(__int64, int);
+
 __int64 NvColorFormatFromString_plt(_QWORD);
+
 __int64 NvOsAlloc_plt(_QWORD);
+
 __int64 NvOsDrvClose_plt(void);
+
 __int64 NvOsDrvIoctl_plt(_QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 NvOsDrvOpen_plt(_QWORD);
+
 __int64 NvOsFree_plt(_QWORD);
+
 __int64 NvOsGetCurrentAllocator_plt(void);
+
 __int64 NvRmMemCacheSyncForCpu_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 NvRmMemCacheSyncForDevice_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 NvRmMemHandleAllocAttr_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 NvRmMemMap_plt(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+
 __int64 NvRmMemUnmap_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 NvRmSurfaceGetAlignment_plt(_QWORD, _QWORD);
+
 __int64 SdkRoutine_607f20(_QWORD);
+
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 memset_plt(void* this_, void*, int);
+
 __int64 nvrm_surface_query_6077c0(__int64 result);
+
 __int64 nvrm_surface_query_6078d0(__int64 result);
+
 __int64 nvrm_surface_query_607910(__int64);
+
 __int64 nvrm_surface_query_607940(__int64, char*);
+
 __int64 nvrm_surface_query_6079e0(__int64, char*);
+
 __int64 nvrm_surface_query_607be0(__int64, char*);
+
 __int64 nvrm_surface_query_607e80(__int64, char*);
+
 __int64 nvrm_surface_query_607f40(__int64, int);
+
 __int64 strcmp_plt(void* this_, const char*, const char*);
+
 __int64 strcmp_plt_alt1(void* this_, const char*) __asm__("strcmp_plt");
+
 __int64 strncpy_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 unplaced_4_629030(_QWORD*, __int64);
+
 int nvrm_surface_query_607de0(__int64, char*);
+
 extern __int64* SdkData_e89a70[4];
+
 extern char* SdkData_e71f28;
+
 extern char* SdkData_e71f58;
+
 extern int SdkData_ea4230;
+
 extern void (*SdkData_ea42b8)(_QWORD, _QWORD, _QWORD);
+
 extern void (*SdkData_ea42b8_alt1)(_QWORD, __int64,
                                    _QWORD) __asm__("SdkData_ea42b8");
+
 extern void (*SdkData_ea42c0)(_QWORD, __int64, __int64);
+
 extern void (*SdkData_ea42c8)(_QWORD, __int64, __int64);
+
 extern void (*SdkData_ea42d0)(_QWORD, __int64, _QWORD);
+
 unsigned int* nvrm_surface_query_6078c0(unsigned int* result);
+
 void __attribute__((noreturn)) NvOsAllocAlign_0(__int64 a1, __int64 a2);
+
 void __attribute__((noreturn)) NvOsAlloc_0(__int64 a1);
+
 void __attribute__((noreturn)) NvOsRealloc_0(__int64 a1, __int64 a2);
+
 void __attribute__((noreturn)) NvOsFree_0(__int64 a1);
+
 __int64 nvidia_5f7a90(void* a1, __int64 a2, const char* a3);
+
 __int64 NvRmSurfaceFromJson(__int64 a1, __int64 a2, unsigned int* a3,
                             __int64 a4, unsigned int a5);
+
 __int64 nvidia_635510(__int64 a1, __int64 a2);
-
-void __attribute__((noreturn)) NvOsAllocAlign_0(__int64 a1, __int64 a2)
-{
-  SdkData_ea42c0(&SdkData_ea42b8, a1, a2);
-}
-
-void __attribute__((noreturn)) NvOsAlloc_0(__int64 a1)
-{
-  SdkData_ea42b8_alt1(&SdkData_ea42b8_alt1, a1, SdkData_ea42b8_alt1);
-}
-
-void __attribute__((noreturn)) NvOsRealloc_0(__int64 a1, __int64 a2)
-{
-  SdkData_ea42c8(&SdkData_ea42b8, a1, a2);
-}
-
-void __attribute__((noreturn)) NvOsFree_0(__int64 a1)
-{
-  SdkData_ea42d0(&SdkData_ea42b8, a1, SdkData_ea42d0);
-}
 
 __int64 nvidia_5f7a90(void* a1, __int64 a2, const char* a3)
 {

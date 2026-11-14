@@ -3,24 +3,23 @@
 #pragma GCC visibility push(hidden)
 
 __int64 SdkRoutine_85e050(unsigned __int64);
+
 __int64 _Unwind_Resume_plt(_QWORD);
+
 __int64 llvm_libcxx_libcxx_src_ryu_7dbcf0_alt1(_QWORD) __asm__(
     "llvm_libcxx_libcxx_src_ryu_7dbcf0");
+
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
+
 __int64 strlen_plt(_QWORD);
+
 extern __int64 SdkData_e89398;
+
 void std_exception_Destroy_exception_plt_87c890();
+
 __int64 llvm_libcxx_libcxx_src_ryu_7dbcdc(__int64 a1);
+
 __int64 llvm_libcxx_libcxx_src_ryu_7dbcf0(_QWORD* a1, __int64 a2);
-
-__int64 llvm_libcxx_libcxx_src_ryu_7dbcdc(__int64 a1)
-{
-  __int64 v3;
-
-  std_exception_Destroy_exception_plt_87c890();
-  v3 = _Unwind_Resume_plt(a1);
-  return llvm_libcxx_libcxx_src_ryu_7dbcf0_alt1(v3);
-}
 
 __int64 llvm_libcxx_libcxx_src_ryu_7dbcf0(_QWORD* a1, __int64 a2)
 {

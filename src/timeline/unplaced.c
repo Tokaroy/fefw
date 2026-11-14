@@ -5,31 +5,55 @@
 #pragma GCC visibility push(hidden)
 
 __int64 GameRoutine_1a09d20(_QWORD, _QWORD);
+
 __int64 GameRoutine_5770(__int64, __int64, __int64, __int64, __int64, __int64,
                          __int64, __int64, char);
+
 __int64 GameRoutine_5cc0(__int64, __int64, __int64, __int64, __int64, __int64,
                          __int64, __int64, char);
+
 __int64 GameRoutine_6720(char*, __int64);
+
 __int64 GameRoutine_6a0(unsigned __int64*, __int64, unsigned __int64);
+
 __int64 GameRoutine_6b55a0(__int64 result, unsigned __int8);
+
 __int64 GameRoutine_8060(_QWORD*, int*, __int64, __int64, __int64, __int64);
+
 __int64 GameRoutine_86a0(__int64, int*, _BYTE*, unsigned __int64);
+
 __int64 Value_2ad0(__int64*, __int64, __int64);
+
 __int64 Value_4c20();
+
 __int64 memcpy(_QWORD, _QWORD, _QWORD);
+
 bool Value_3510(__int64);
+
 extern _DWORD GameData_1b37d88[29];
+
 extern _QWORD GameData_1aff2c8[7];
+
 extern __int64 GameData_212c060;
+
 extern unsigned __int8 GameData_1aff300[8];
+
 int* GameRoutine_2de0(__int64, unsigned __int64);
+
 void GameRoutine_651250(void*);
+
 __int64* timeline_3dd0(__int64* a1, unsigned __int64 a2);
+
 __int64* timeline_3fe0(__int64* a1, unsigned __int64 a2);
+
 __int64 timeline_4720(__int64 a1, __int64 a2, unsigned __int64 a3);
+
 __int64 timeline_4c1c();
+
 __int64* timeline_57f0(__int64* a1, int a2);
+
 __int64* timeline_5aa0(__int64* a1, float a2);
+
 __attribute__((swiftcall)) void timeline_6530(PSEUDO_X8 x8_, __int64 a1,
                                               _BYTE* a2, __int64 unused_int2,
                                               unsigned __int64 a3, __int64 a4,
@@ -573,12 +597,6 @@ LABEL_61:
 LABEL_66:
   *v23 = 5;
   return 0;
-}
-
-__int64 timeline_4c1c()
-{
-  Value_4c20();
-  return Value_4c20();
 }
 
 __int64* timeline_57f0(__int64* a1, int a2)

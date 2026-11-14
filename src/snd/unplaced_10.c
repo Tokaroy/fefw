@@ -5,58 +5,107 @@
 __attribute__((swiftcall)) void snd_11d8c0(PSEUDO_X8, __int64 result, __int64,
                                            __int64, _DWORD*, __int64, __int64,
                                            __int64, __int64);
+
 __int64 GameRoutine_10d050(__int64);
+
 __int64 GameRoutine_112180(__int64, __int64);
+
 __int64 snd_Fade_Destroy_Fade(_QWORD*);
+
 __int64 snd_fnd_WeakHandle_get(__int64);
+
 __int64 snd_fnd_WeakHandle_reset(__int64);
+
 __int64 snd_fnd_WeakHandle_set(__int64, __int64);
+
 extern __int64* snd_Game_s_instance_ptr[3];
+
 extern __int64 snd_g_frameCount_ptr;
+
 extern char GameData_1a9f09e;
+
 void snd_Fade_Fade_10c830(__int64, float);
+
 void snd_e9590();
+
 __attribute__((swiftcall)) void snd_130790(PSEUDO_X8 x8_, __int64 a1, int a2,
                                            _DWORD* a3, __int64 a4, _DWORD* a5,
                                            char a6);
+
 _QWORD* ConstructString_1901f0(_QWORD* result);
+
 _QWORD* GameRoutine_a3a3a0(_QWORD*, __int64, unsigned __int64);
+
 __attribute__((swiftcall)) void Manager_11ec80(PSEUDO_X8, __int64, int*);
+
 __attribute__((swiftcall)) void snd_1319c0(PSEUDO_X8, _QWORD, _QWORD, _QWORD,
                                            _QWORD, _QWORD, _QWORD);
+
 __int64* GameRoutine_a3a260(__int64*, __int64, unsigned __int64);
+
 __int64* snd_131280(__int64* result, unsigned __int64);
+
 __int64 Crc32List_1163b0();
+
 __int64 GameAlloc_e5eb0(__int64);
+
 __int64 GameRoutine_1a09c70(_QWORD);
+
 __int64 GameRoutine_1a09cf0(_QWORD, _QWORD, _QWORD);
+
 __int64 GameRoutine_1a0b940(_QWORD, _QWORD, _QWORD);
+
 __int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
+
 __int64 GameRoutine_a1efd0(__int64);
+
 __int64 TargetFile_a392e0(__int64, __int64, ...);
+
 __int64 Wind_e5340(__int64 result, char*, const char*, const char*, __int64,
                    __int64);
+
 __int64 nn_os_LockMutex(_QWORD);
+
 __int64 nn_os_LockMutex_alt1(__int64);
+
 __int64 nn_os_UnlockMutex(_QWORD);
+
 __int64 nn_os_UnlockMutex_alt1(__int64);
+
 __int64 snd_Env_removeGroup(__int64 result, _QWORD*);
+
 __n128 nn_os_UnlockMutex_alt2(_QWORD);
+
 extern __int16* GameData_2134648[7];
+
 extern __int16 GameData_2198f28;
+
 extern __int64* snd_g_memory_ptr[2];
+
 extern __int64 GameData_212e2d8;
+
 extern __int64 snd_g_memory;
+
 int rand();
+
 unsigned __int8* snd_fnd_calcCrc32(unsigned __int8* result, int);
+
 void __attribute__((noreturn)) GameRoutine_131460();
+
 void __attribute__((noreturn)) GameRoutine_60a310();
+
 void __attribute__((noreturn)) GameRoutine_e6680();
+
 void __attribute__((noreturn)) snd_a36650();
+
 void nn_diag_detail_AbortImpl_1a0a590();
+
 __int64 snd_dfd00(__int64 a1, __int64 a2);
+
 __int64 snd_e4f40(__int64 result, _DWORD* a2, char* a3, char* a4);
+
 __n128 snd_11f260(__int64 a1, __int64 a2);
+
 _QWORD* snd_130d20(_QWORD* result, unsigned __int64 a2, char a3);
 
 __int64 snd_dfd00(__int64 a1, __int64 a2)
@@ -422,18 +471,6 @@ LABEL_19:
     } while (v15 < v14);
   }
   return result;
-}
-
-void snd_e9590()
-{
-  _QWORD* v0;
-  __int64 v1;
-
-  v0 = (_QWORD*)*snd_Game_s_instance_ptr[0];
-  v1 = *(_QWORD*)snd_g_frameCount_ptr;
-  v0[41] = 0;
-  v0[39] = v1;
-  v0[40] = 0;
 }
 
 __n128 snd_11f260(__int64 a1, __int64 a2)

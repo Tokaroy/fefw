@@ -3,97 +3,149 @@
 #pragma GCC visibility push(hidden)
 
 _QWORD* MapSortieMenu_871860(__int64, __int64, __int64, __int64, __int64);
+
 __attribute__((swiftcall)) void GameRoutine_134b980(PSEUDO_X8,
                                                     __int64(__fastcall*)());
+
 __attribute__((swiftcall)) void SpotMgr_13306e0(PSEUDO_X8, char**, char,
                                                 char**);
+
 __attribute__((swiftcall)) void TroopMgr_134b820(PSEUDO_X8, __int64);
+
 __int16* Dir_70dd80(__int16* result, __int16*);
+
 __int64* GameRoutine_888970(__int64* result, __int64, __int64,
                             unsigned __int64);
+
 __int64 GameHr_1340b20(__int64*);
+
 __int64 GameRoutine_1317f10(float32x4_t*, float32x4_t*);
+
 __int64 GameRoutine_14b4cf0(__int64, unsigned int, __int64);
+
 __int64 GameRoutine_1530790();
+
 __int64 GameRoutine_1530850();
+
 __int64 GameRoutine_15308b0();
+
 __int64 GameRoutine_1530910();
+
 __int64 GameRoutine_19023d0(__int64, __int64);
+
 __int64 GameRoutine_ae0560();
+
 __int64 Impl_13261c0(__int64);
+
 __int64 ProcGmapMove_1549f60(__int64, __int64);
+
 __int64 Spot_132ac40(__int64, char);
+
 __int64 TroopMgr_1345b40();
+
 __int64 TroopMgr_13463f0(__int64 result);
+
 __int64 TroopMgr_134d2e0(__int64);
+
 __int64 Troop_1343230(__int64);
+
 __int64 UnitActor_81a540(__int64, unsigned int, __int64);
+
 __int64 fw_memory_HeapManager_Allocate(__int64, __int64, __int64, unsigned int);
+
 __int64 game_GameVariableTable_Find(_QWORD*, unsigned __int64*);
+
 __int64 game_HashString(__int64 result);
+
 __int64 game_gmap_GmapShopGuideTopMenu_HasShopGuide(__int64);
+
 __int64 game_gmap_TroopMgr_GetAroundTroop(char);
+
 __int64 memcpy(__int64, __int64, unsigned __int64);
+
 __int64 memmove(__int64, __int64, unsigned __int64);
+
 __int64 snd_Fade_Destroy_Fade(_QWORD*);
+
 __attribute__((swiftcall)) void snd_play_ff2d0(PSEUDO_X8, __int64, __int64,
                                                float, float, __int64,
                                                unsigned int, unsigned int, int);
+
 extern _UNKNOWN* GameData_212ceb8;
+
 extern _UNKNOWN GameData_1ab570b;
+
 extern _UNKNOWN GameData_1abd4d1;
+
 extern _UNKNOWN GameData_1ac8821;
+
 extern _UNKNOWN GameData_1ade186;
+
 extern _UNKNOWN GameData_1b45704;
+
 extern __int64 (*GameData_204bf80[])();
+
 extern __int64 (*GameData_204c000[])();
+
 extern __int64 (*game_sound_PlayDecideLightSe_ptr[6])();
+
 extern __int64* GameData_212c790;
+
 extern __int64* GameData_212d2b8;
+
 extern __int64* GameData_212d700[2];
+
 extern __int64* GameData_212d708;
+
 extern __int64* GameData_212d728[2];
+
 extern __int64* GameData_2130e70;
+
 extern __int64 GameData_212d750;
+
 extern __int64 GameData_21316c8;
+
 extern __int64 GameData_21c96e8;
+
 extern __int64 GameData_21c96f8;
+
 extern __int64 GameData_2258178;
+
 extern __int64 fw_memory_g_heap_manager_ptr;
+
 extern __int64 game_GameModeData_instance_;
+
 extern __int64 game_g_game_setting_ptr;
+
 extern __int64 game_gmap_GmapClock_instance_;
+
 extern __int64 game_gmap_GmapClock_kDefaultTime_ptr;
+
 unsigned __int16* Dir_70d7a0(unsigned __int16* result);
+
 unsigned int* TroopMgr_1346380();
+
 unsigned int* TroopMgr_134c680(_QWORD*);
+
 unsigned int* game_gmap_SpotMgr_GetCurrentSpot();
+
 void __attribute__((noreturn)) GameRoutine_60a210();
+
 void __attribute__((noreturn)) GameRoutine_8875e0();
+
 void game_gmap_1319f40(__int64);
+
 void game_gmap_1539fc0(__int64);
+
 void nn_mem_StandardAllocator_Free(__int64, __int64);
+
 void snd_Fade_Fade_10c830(__int64, float);
+
 __int64 game_gmap_888560(__int64 a1);
+
 void game_gmap_154b9a0(char* a1);
+
 void game_gmap_154f6c0(__int64 a1);
-
-__int64 game_gmap_888560(__int64 a1)
-{
-  __int64 v2;
-  __int64* v3;
-  __int64* v4;
-  __int64 v5;
-
-  v2 = *(_QWORD*)(*GameData_212c790 + 8);
-  v3 = *(__int64**)(v2 + 8);
-  v4 = *(__int64**)(v2 + 16);
-  while (v3 != v4) {
-    v5 = *v3++;
-    UnitActor_81a540(v5 + 112, 0x723D4B8u, (__int64)&GameData_1b45704);
-  }
-  return GameRoutine_14b4cf0(a1, 2u, a1 + 152);
-}
 
 void game_gmap_154b9a0(char* a1)
 {
