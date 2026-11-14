@@ -467,6 +467,9 @@ __int64 cuda_driver_unplaced_5_d83a0(__int64* a1, __int64 a2, __int64* a3,
 __int64 cuda_driver_unplaced_5_d8640(_QWORD* a1, __int128* a2);
 __int64 cuda_driver_unplaced_9_1bb6a0(unsigned __int64, unsigned __int64);
 __int64 nvidia_ed630(__int64, __int64, __int64, ...);
+__int64 CudaDriverStub_107f90_alt4(__int64);
+__int64 CudaDriverStub_108070_alt4(__int64);
+extern __int64 (*CudaDriverData_14324a0_alt3)(__int64*);
 
 __int64 cuda_driver_ae7f0(_QWORD* a1, unsigned __int64 a2, __int64 a3)
 {
@@ -2704,7 +2707,7 @@ LABEL_35:
   }
   v83_.v84 = v32;
   v83_.v86 = &v80_.v80;
-  CudaDriverData_14324a0_alt1(&v83_.v83);
+  CudaDriverData_14324a0_alt3(&v83_.v83);
   result = HIDWORD(v83_.v83);
   if (SHIDWORD(v83_.v83) > 2) {
     if (SHIDWORD(v83_.v83) <= 4) {
@@ -2858,7 +2861,7 @@ LABEL_35:
   v64 = **(_QWORD**)(a1 + 64);
   v83_.v86 = &v75_.v75;
   v83_.v84 = v64;
-  CudaDriverData_14324a0_alt1(&v83_.v83);
+  CudaDriverData_14324a0_alt3(&v83_.v83);
   result = (unsigned int)v83_.v87;
 LABEL_81:
   if (v20 != v78) {
@@ -4237,9 +4240,9 @@ void cuda_driver_c61e0(__int64 a1, _QWORD* a2, __int64 a3)
           *(_DWORD*)a3 =
               CudaDriverRoutine_114a80(a2[20], *(_QWORD*)(a3 + 8), 0);
         }
-        CudaDriverStub_107f90_alt1(v12 + 592);
+        CudaDriverStub_107f90_alt4(v12 + 592);
         cuda_driver_unplaced_9_1bb6a0(*(_QWORD*)(v12 + 584), v8);
-        CudaDriverStub_108070_alt1(v12 + 592);
+        CudaDriverStub_108070_alt4(v12 + 592);
         CudaDriverRoutine_205fa0(0, v12, (__int64)&v27, &v26);
         v13 = CudaDriverRoutine_ddbe0(v27, (__int64)v5, *(_QWORD*)(v11 + 424),
                                       *(_QWORD*)(v11 + 432), 0);

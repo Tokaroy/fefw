@@ -64,9 +64,10 @@ __int64 dltss_network_65ab0(__int64 a1);
 __int64 dltss_network_65b40(__int64 a1, __int64 a2, __int64* a3, int a4, int a5,
                             int a6, __int64 a7, __int64 a8, int a9, __int64 a10,
                             int a11);
-__int64 dltss_network_65c90(__int64 a1, __int64 a2, _QWORD* a3, __int64* a4,
-                            unsigned int a5, unsigned int a6, _QWORD* a7,
-                            unsigned int a8, __int64 a9, __int64 a10, int a11);
+__int64 dltss_network_65c90_alt1(__int64 a1, __int64 a2, _QWORD* a3,
+                                 __int64* a4, unsigned int a5, unsigned int a6,
+                                 _QWORD* a7, unsigned int a8, __int64 a9,
+                                 __int64 a10, int a11);
 __int64 dltss_network_65f70(__int64 a1, unsigned int a2);
 __int64 dltss_network_661d0(__int64 a1, unsigned int a2);
 __int64 dltss_network_664c0(_QWORD* a1, __int64 a2, unsigned int a3);
@@ -98,6 +99,19 @@ __int64 setWeightsHelper(__int64 a1, __int64* a2, __int64 a3);
 __int64 setBiasesHelper(__int64 a1, __int64* a2, __int64 a3);
 __int64 reuseWeightsBias(__int64 a1);
 _QWORD* Destroy_CubinConvLayer(__int64 a1);
+__int64 NgxRoutine_420_alt1(_QWORD);
+__int64 NgxRoutine_baf10_alt2(__int64 result);
+__int64 memmove_plt_alt1(__int64, __int64, unsigned __int64);
+__int64 nvidia_dlss_a9960_alt2(_QWORD, _QWORD, _QWORD);
+__int64 nvidia_dlss_rel_source_features_dlaa_70310(__int64, __int64, __int64*,
+                                                   _QWORD*, int, int, int,
+                                                   __int64, char, int);
+extern __int64 (*nvidia_dlss_rel_source_features_dlaa_70670_ptr[])();
+unsigned __int64 strlen_plt_alt1(const char*);
+void __attribute__((noreturn)) nvidia_27cb0();
+__int64 dltss_network_65c90(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
+                            int a5, int a6, _QWORD* a7, int a8, __int64 a9,
+                            __int64 a10, int a11);
 
 __int64 dltss_network_65ab0(__int64 a1)
 {
@@ -171,18 +185,21 @@ __int64 dltss_network_65b40(__int64 a1, __int64 a2, __int64* a3, int a4, int a5,
                                *(int*)(a1 + 92) * *(int*)(a1 + 108));
 }
 
-__int64 dltss_network_65c90(__int64 a1, __int64 a2, _QWORD* a3, __int64* a4,
-                            unsigned int a5, unsigned int a6, _QWORD* a7,
-                            unsigned int a8, __int64 a9, __int64 a10, int a11)
+__int64 dltss_network_65c90(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
+                            int a5, int a6, _QWORD* a7, int a8, __int64 a9,
+                            __int64 a10, int a11)
 {
-  __int64 v11;
+
+#pragma clang fp contract(on)
+
+  const char* v11;
   unsigned __int64 v20;
   unsigned __int64 v21;
   char* v22;
   int v23;
   __int64 v24;
   __int64 v25;
-  __int64 v26;
+  const char* v26;
   __int64 v27;
   __int64 v28;
   __int64 v29;
@@ -195,23 +212,27 @@ __int64 dltss_network_65c90(__int64 a1, __int64 a2, _QWORD* a3, __int64* a4,
   __int64 v36;
   __int64 v37;
   __int64 result;
-  unsigned int v39;
-  unsigned int v40;
+  int v39;
+  int v40;
   _QWORD* v41;
   __int64 v42;
   __int64 v43;
   __int64 v44;
-  unsigned int v45;
+  int v45;
   __int64 v46;
-  __int64 v47;
-  __int64 v48;
-  _QWORD v49[2];
-  __int64 v50;
+  struct {
+    __int64 v47;
+    __int64 v48;
+  } v47_;
+  struct {
+    __int64 v49[2];
+    __int64 v50;
+  } v49_;
 
-  v11 = *a3;
-  v20 = strlen_plt(*a3);
+  v11 = *(const char**)a3;
+  v20 = strlen_plt_alt1(*(const char**)a3);
   if (v20 >= 0xFFFFFFFFFFFFFFF7LL) {
-    NgxRoutine_27cb0();
+    nvidia_27cb0();
   }
   v21 = v20;
   v46 = a2;
@@ -226,67 +247,68 @@ __int64 dltss_network_65c90(__int64 a1, __int64 a2, _QWORD* a3, __int64* a4,
     else {
       v42 = (v20 | 7) + 1;
     }
-    v43 = NgxRoutine_420(v42);
+    v43 = NgxRoutine_420_alt1(v42);
     v44 = v42 | 1;
     a7 = v41;
     a8 = v40;
     a6 = v39;
     a5 = v45;
     v22 = (char*)v43;
-    v49[1] = v21;
-    v50 = v43;
-    v49[0] = v44;
+    v49_.v49[1] = v21;
+    v49_.v50 = v43;
+    v49_.v49[0] = v44;
   LABEL_27:
-    memmove_plt(v22, v11, v21);
+    memmove_plt_alt1((__int64)v22, (__int64)v11, v21);
     v22[v21] = 0;
     v23 = a11;
     v24 = a4[1];
-    v47 = *a4;
-    v48 = v24;
+    v47_.v47 = *a4;
+    v47_.v48 = v24;
     if (v24 == 0) {
       goto LABEL_6;
     }
     goto LABEL_5;
   }
-  LOBYTE(v49[0]) = 2 * v20;
-  v22 = (char*)v49 + 1;
+  LOBYTE(v49_.v49[0]) = 2 * v20;
+  v22 = (char*)v49_.v49 + 1;
   if (v20 != 0) {
     goto LABEL_27;
   }
-  BYTE1(v49[0]) = 0;
+  BYTE1(v49_.v49[0]) = 0;
   v23 = a11;
   v24 = a4[1];
-  v47 = *a4;
-  v48 = v24;
+  v47_.v47 = *a4;
+  v47_.v48 = v24;
   if (v24 != 0) {
   LABEL_5:
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v24 + 8), 1u,
                               memory_order_relaxed);
   }
 LABEL_6:
-  NgxRoutine_70310(a1, v46, v49, &v47, a5, a6, a8, a9, 0, v23);
-  v25 = v48;
-  if (v48 == 0 || atomic_fetch_add((atomic_ullong* volatile)(v48 + 8),
-                                   0xFFFFFFFFFFFFFFFFLL) != 0) {
-    if ((v49[0] & 1) == 0) {
+  nvidia_dlss_rel_source_features_dlaa_70310(a1, v46, v49_.v49, &v47_.v47, a5,
+                                             a6, a8, a9, 0, v23);
+  v25 = v47_.v48;
+  if (v47_.v48 == 0 || atomic_fetch_add((atomic_ullong* volatile)(v47_.v48 + 8),
+                                        0xFFFFFFFFFFFFFFFFLL) != 0) {
+    if ((v49_.v49[0] & 1) == 0) {
       goto LABEL_10;
     }
     goto LABEL_9;
   }
   (*(void (**)(__int64))(*(_QWORD*)v25 + 16LL))(v25);
-  NgxRoutine_baf10(v25);
-  if ((v49[0] & 1) != 0) {
+  NgxRoutine_baf10_alt2(v25);
+  if ((v49_.v49[0] & 1) != 0) {
   LABEL_9:
-    NgxRoutine_430(v50, v49[0] & 0xFFFFFFFFFFFFFFFELL);
+    NgxRoutine_430(v49_.v50, v49_.v49[0] & 0xFFFFFFFFFFFFFFFELL);
   }
 LABEL_10:
   *(_QWORD*)(a1 + 320) = 0;
   *(_QWORD*)(a1 + 328) = 0;
-  *(_QWORD*)a1 = NgxData_94cdc8;
-  v26 = *a3;
-  v27 = a3[1];
-  v28 = a3[2];
-  v29 = a3[3];
+  *(_QWORD*)a1 = nvidia_dlss_rel_source_features_dlaa_70670_ptr;
+  v26 = *(const char**)a3;
+  v27 = *(_QWORD*)(a3 + 8);
+  v28 = *(_QWORD*)(a3 + 16);
+  v29 = *(_QWORD*)(a3 + 24);
   *(_QWORD*)(a1 + 368) = 0;
   *(_DWORD*)(a1 + 376) = 0;
   *(_QWORD*)(a1 + 352) = v28;
@@ -305,11 +327,11 @@ LABEL_10:
   if (v32 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v32 + 8),
                                    0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v32 + 16LL))(v32);
-    NgxRoutine_baf10(v32);
+    NgxRoutine_baf10_alt2(v32);
   }
   v33 = *(_QWORD*)(a1 + 16);
   v34 = *(_DWORD*)(v33 + 96);
-  *(_DWORD*)(a1 + 92) = *(_DWORD*)(v33 + 92) / 2;
+  *(_DWORD*)(a1 + 92) = (signed __int32)*(_DWORD*)(v33 + 92) / 2;
   *(_DWORD*)(a1 + 96) = v34 / 2;
   v36 = *a7;
   v35 = a7[1];
@@ -323,9 +345,9 @@ LABEL_10:
   if (v37 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v37 + 8),
                                    0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v37 + 16LL))(v37);
-    NgxRoutine_baf10(v37);
+    NgxRoutine_baf10_alt2(v37);
   }
-  nvidia_dlss_a9960_alt1(
+  nvidia_dlss_a9960_alt2(
       *(_QWORD*)(a1 + 120),
       *(unsigned int*)(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 120LL) + 48LL),
       *(unsigned int*)(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 120LL) + 52LL));
@@ -333,7 +355,7 @@ LABEL_10:
                              *(int*)(a1 + 96) * (__int64)*(int*)(a1 + 100) *
                                  *(int*)(a1 + 92) * *(int*)(a1 + 108));
   if (*(_QWORD*)(a1 + 344) != 0) {
-    result = dltss_network_65f70_alt1(a1, 0);
+    result = dltss_network_65f70(a1, 0);
     *(_DWORD*)(a1 + 128) = 0;
   }
   return result;

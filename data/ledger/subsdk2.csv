@@ -683,7 +683,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 254a0,3088,verified,src/opus/celt/unplaced_3.c,opus_celt_254a0
 270a0,1640,verified,src/opus/celt/celt_decoder_impl2.c,celt_decode_lost
 29540,2752,disputed,src/opus/celt/unplaced_2.c,opus_celt_29540
-2a420,1380,disputed,src/opus/celt/celt_decoder_impl2.c,celt_synthesis
+2a420,1380,verified,src/opus/celt/celt_decoder_impl2.c,celt_synthesis
 2aba0,580,verified,src/opus/celt/celt_decoder.c,opus_custom_decoder_ctl
 2b090,72,verified,src/opus/celt/celt_encoder.c,celt_encoder_get_size
 2b0e0,248,verified,src/opus/celt/celt_encoder.c,celt_encoder_init
@@ -782,7 +782,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 4f810,16,verified,src/opus/silk/dec_API.c,silk_Get_Decoder_Size
 4f820,60,verified,src/opus/silk/dec_API_impl.c,silk_InitDecoder
 4f860,592,verified,src/opus/silk/dec_API_impl.c,silk_Decode
-50640,504,disputed,src/opus/silk/unplaced_2.c,opus_silk_50640
+50640,504,verified,src/opus/silk/unplaced_2.c,opus_silk_50640
 51580,500,verified,src/opus/silk/unplaced_7.c,opus_silk_51580
 51780,672,verified,src/opus/silk/decode_indices.c,silk_decode_indices
 51b60,768,verified,src/opus/silk/unplaced_3.c,opus_silk_51b60
@@ -834,11 +834,11 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 5cf80,512,verified,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_5cf80
 5d1c0,2996,verified,src/movie/unnamed/p000_0.c,MovieHr_5d1c0
 5dde0,180,verified,src/opus/silk/fixed/encode_frame_FIX.c,silk_encode_do_VAD_FIX
-5dea0,3968,disputed,src/opus/silk/fixed/encode_frame_FIX_impl.c,silk_encode_frame_FIX
+5dea0,3968,verified,src/opus/silk/fixed/encode_frame_FIX_impl.c,silk_encode_frame_FIX
 5ef40,728,verified,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_5ef40
 5f240,668,verified,src/opus/silk/fixed/find_LTP_FIX.c,silk_find_LTP_FIX
 5f5e0,888,verified,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_5f5e0
-5fa60,1112,disputed,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_5fa60
+5fa60,1112,verified,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_5fa60
 5ff80,452,verified,src/opus/silk/fixed/unplaced_5.c,opus_silk_fixed_5ff80
 60180,592,verified,src/opus/silk/fixed/unplaced_2.c,opus_silk_fixed_60180
 61860,2088,verified,src/opus/silk/fixed/pitch_analysis_core_FIX_impl2.c,silk_pitch_analysis_core
@@ -938,7 +938,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 7a500,208,verified,src/movie/unnamed/p000_0.c,MovieHr_7a500
 7a5e0,208,verified,src/movie/unnamed/p000_0.c,MovieHr_7a5e0
 7a6c0,548,verified,src/movie/unnamed/p000_0.c,MovieHr_7a6c0
-7a920,668,verified,src/movie/unnamed/p000_0.c,MovieHr_7a920
+7a920,668,disputed,src/movie/unnamed/p000_0.c,MovieHr_7a920
 7ac60,136,verified,src/movie/unnamed/p000_0.c,MovieHr_7ac60
 7ad00,1172,verified,src/opus/src/unplaced_3.c,opus_src_7ad00
 7b4c0,1068,verified,src/movie/unnamed/p000_0.c,MovieHr_7b4c0
@@ -946,7 +946,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 7b9e0,728,verified,src/opus/src/unplaced_3.c,opus_src_7b9e0
 7bce0,572,verified,src/opus/src/unplaced_3.c,opus_src_7bce0
 7c120,88,verified,src/movie/unnamed/p000_0.c,MovieHr_7c120
-7c180,712,verified,src/movie/unnamed/p000_0.c,MovieHr_7c180
+7c180,712,disputed,src/movie/unnamed/p000_0.c,MovieHr_7c180
 7d020,2908,verified,src/movie/unnamed/p000_0.c,MovieHr_7d020
 7de20,176,verified,src/movie/unnamed/p000_0.c,MovieHr_7de20
 7dee0,568,verified,src/movie/unnamed/p000_0.c,MovieHr_7dee0

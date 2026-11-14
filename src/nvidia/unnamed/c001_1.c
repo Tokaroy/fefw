@@ -5064,6 +5064,9 @@ __int64 CudaDriverHr_99830(__int64 a1, unsigned int a2)
 
 __int64 CudaDriverHr_998a0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   _DWORD* v1;
   int v2;
   int v3;

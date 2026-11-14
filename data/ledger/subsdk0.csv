@@ -622,7 +622,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 65ab0,132,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_65ab0
 65b40,284,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_65b40
 65c60,48,verified,src/nvidia/ngx_trivial_thunks.cpp,_Z13NgxStub_65c60m
-65c90,688,disputed,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_65c90
+65c90,676,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_65c90
 65f70,588,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_65f70
 661d0,696,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_661d0
 664c0,804,verified,src/nvidia/dlss/rel/source/features/dlaa/dltss_network.c,dltss_network_664c0

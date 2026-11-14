@@ -447,6 +447,8 @@ __int64 cuda_driver_120770(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                            __int64 a5, __int64 a6);
 __int64 nvidia_ed630(__int64, __int64, __int64, ...);
 bool CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
+__int64 cuda_driver_119b20_alt2(__int64 result, __int64);
+bool CudaDriverRoutine_1dd060_alt2(__int64);
 
 __int64 cuda_driver_fabf0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
                           unsigned int a5, __int64 a6, __int64 a7)
@@ -642,7 +644,7 @@ __int64 cuda_driver_fb050(__int64 a1, __int64 a2, char a3, bool* a4, bool* a5)
     LABEL_11:
       v17 = a1;
       v18 = a2;
-      v19 = CudaDriverRoutine_1dd060_alt1(v13);
+      v19 = CudaDriverRoutine_1dd060_alt2(v13);
       a2 = v18;
       v12 = v19;
       a1 = v17;
@@ -706,7 +708,7 @@ LABEL_19:
       }
     }
   LABEL_27:
-    if (v12 != CudaDriverRoutine_1dd060_alt1(v21)) {
+    if (v12 != CudaDriverRoutine_1dd060_alt2(v21)) {
       goto LABEL_34;
     }
     goto LABEL_31;
@@ -6065,7 +6067,7 @@ LABEL_37:
               CudaDriverRoutine_1199d0(v10);
               if ((unsigned int)CudaDriverRoutine_997d0(*(_QWORD*)(v10 + 16)) !=
                   3) {
-                cuda_driver_119b20_alt1(v9, v10);
+                cuda_driver_119b20_alt2(v9, v10);
               }
               v18 = 0;
             LABEL_54:
