@@ -1002,7 +1002,7 @@ __int64 CudaDriverHr_b7720(__int64 a1, __int64 a2, _QWORD* a3,
   unsigned __int64 v50;
   __int64 v51;
   char v52[4];
-  _QWORD v53[11];
+  _QWORD v53[48];
   __int128 v54;
   __int128 v55;
   __int128 v56;

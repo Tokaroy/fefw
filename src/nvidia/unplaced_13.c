@@ -222,8 +222,7 @@ __int64 nvidia_11ea0(__int64 a1, _BYTE* a2)
   __int64 v20;
   char* v21;
   char v22;
-  _DWORD v23[4];
-  __int64 v24;
+  _DWORD v23[256];
   _DWORD v25[256];
 
   memset_plt(v25, 0, 1024);
@@ -239,7 +238,7 @@ __int64 nvidia_11ea0(__int64 a1, _BYTE* a2)
     v6 = *(_QWORD*)(a1 + 16104);
     if ((unsigned int)v4 >= 8 && (unsigned __int64)&v23[-6] - v6 >= 0x20) {
       v7 = (unsigned int)v4 & 0xFFFFFFF8;
-      v14 = (int32x4_t*)&v24;
+      v14 = (int32x4_t*)&v23[4];
       v15 = (int32x4_t*)(v6 + 40);
       v16 = vdupq_n_s32(0x50450Cu);
       v17 = v7;
@@ -331,8 +330,7 @@ __int64 nvidia_211a0(__int64 a1, _BYTE* a2)
   __int64 v20;
   char* v21;
   char v22;
-  _DWORD v23[4];
-  __int64 v24;
+  _DWORD v23[256];
   _DWORD v25[256];
 
   memset_plt(v25, 0, 1024);
@@ -348,7 +346,7 @@ __int64 nvidia_211a0(__int64 a1, _BYTE* a2)
     v6 = *(_QWORD*)(a1 + 16104);
     if ((unsigned int)v4 >= 8 && (unsigned __int64)&v23[-6] - v6 >= 0x20) {
       v7 = (unsigned int)v4 & 0xFFFFFFF8;
-      v14 = (int32x4_t*)&v24;
+      v14 = (int32x4_t*)&v23[4];
       v15 = (int32x4_t*)(v6 + 40);
       v16 = vdupq_n_s32(0x50450Cu);
       v17 = v7;
@@ -3304,8 +3302,7 @@ __int64 nvidia_1d47c0(__int64 a1, _BYTE* a2)
   __int64 v20;
   char* v21;
   char v22;
-  _DWORD v23[4];
-  __int64 v24;
+  _DWORD v23[256];
   _DWORD v25[256];
 
   memset_plt(v25, 0, 1024);
@@ -3322,7 +3319,7 @@ __int64 nvidia_1d47c0(__int64 a1, _BYTE* a2)
     if ((unsigned int)v4 >= 8 &&
         (unsigned __int64)((char*)v23 - (char*)v6 - 32) >= 0x20) {
       v7 = (unsigned int)v4 & 0xFFFFFFF8;
-      v14 = (int32x4_t*)&v24;
+      v14 = (int32x4_t*)&v23[4];
       v15 = v6 + 3;
       v16 = vdupq_n_s32(0x50450Cu);
       v17 = v7;
@@ -3840,8 +3837,7 @@ __int64 nvidia_210400(__int64 a1)
   char v34;
   unsigned __int64 v35;
   unsigned int v36;
-  _QWORD v37[4];
-  __int64 v38;
+  _QWORD v37[512];
   _QWORD v39[2];
 
   memset_plt(v37, 0, 4096);
@@ -3874,7 +3870,7 @@ __int64 nvidia_210400(__int64 a1)
   v7 = 1;
   v10 = 0;
   v11 = -(__int64)(v4 & 0xFFFFFFFC);
-  v12 = &v38;
+  v12 = (__int64*)&v37[4];
   do {
     v13 = *(v9 - 8);
     v14 = *(v9 - 7);
@@ -4008,8 +4004,7 @@ __int64 nvidia_233e00(__int64 a1, _BYTE* a2)
   __int64 v20;
   char* v21;
   char v22;
-  _DWORD v23[4];
-  __int64 v24;
+  _DWORD v23[256];
   _DWORD v25[256];
 
   memset_plt(v25, 0, 1024);
@@ -4025,7 +4020,7 @@ __int64 nvidia_233e00(__int64 a1, _BYTE* a2)
     v6 = *(_QWORD*)(a1 + 16104);
     if ((unsigned int)v4 >= 8 && (unsigned __int64)&v23[-6] - v6 >= 0x20) {
       v7 = (unsigned int)v4 & 0xFFFFFFF8;
-      v14 = (int32x4_t*)&v24;
+      v14 = (int32x4_t*)&v23[4];
       v15 = (int32x4_t*)(v6 + 40);
       v16 = vdupq_n_s32(0x50450Cu);
       v17 = v7;
@@ -4117,8 +4112,7 @@ __int64 nvidia_2461c0(__int64 a1, _BYTE* a2)
   __int64 v20;
   char* v21;
   char v22;
-  _DWORD v23[4];
-  __int64 v24;
+  _DWORD v23[256];
   _DWORD v25[256];
 
   memset_plt(v25, 0, 1024);
@@ -4134,7 +4128,7 @@ __int64 nvidia_2461c0(__int64 a1, _BYTE* a2)
     v6 = *(_QWORD*)(a1 + 16104);
     if ((unsigned int)v4 >= 8 && (unsigned __int64)&v23[-6] - v6 >= 0x20) {
       v7 = (unsigned int)v4 & 0xFFFFFFF8;
-      v14 = (int32x4_t*)&v24;
+      v14 = (int32x4_t*)&v23[4];
       v15 = (int32x4_t*)(v6 + 40);
       v16 = vdupq_n_s32(0x50450Cu);
       v17 = v7;

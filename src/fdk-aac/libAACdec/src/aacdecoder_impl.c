@@ -436,8 +436,7 @@ __int64 nn_codec_CAacDecoder_AncDataParse(__int64 result, unsigned int* a2,
       if ((int)v7 + a3 <= (signed __int32)*(_DWORD*)(result + 8) &&
           (int)v6 <= 6) {
         v14 = (unsigned int)a3;
-        v15 = *(_DWORD*)((char*)SdkData_e87a50[0] +
-                         (unsigned __int64)(*(_BYTE**)0x20LL));
+        v15 = *(_DWORD*)((char*)SdkData_e87a50[0] + 0x20);
         while (1) {
           v17 = a2[1];
           if (v17 < 9) {

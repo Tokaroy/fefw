@@ -56,7 +56,6 @@ __int64 nn_fs_da070(__int64**);
 __int64 nn_fs_dc510_alt1(_QWORD, _QWORD) __asm__("nn_fs_dc510");
 __int64 nn_fs_dc570_alt1(_QWORD, _QWORD) __asm__("nn_fs_dc570");
 __int64 nn_fs_dcab0_alt1(_QWORD, _QWORD, _QWORD) __asm__("nn_fs_dcab0");
-__int64 nn_fs_dcfe0_alt1(void) __asm__("nn_fs_dcfe0");
 __int64 nn_fs_dd460_alt1(_QWORD, _QWORD) __asm__("nn_fs_dd460");
 __int64 nn_fs_dd680_alt1(_QWORD, _QWORD) __asm__("nn_fs_dd680");
 __int64 nn_fs_de3c0_alt1(_QWORD, _QWORD, _QWORD) __asm__("nn_fs_de3c0");
@@ -4880,7 +4879,7 @@ __int64* nn_fs_dcd00(__int64* result, __int64 a2, __int64 a3)
     v3[1] = (__int64)v19;
   }
   --v3[4];
-  nn_fs_dcfe0_alt1();
+  nn_fs_dcfe0((__int64*)v4, (__int64*)v13);
   result = (__int64*)(*(__int64 (**)(__int64, __int64**, __int64, __int64))(
       *(_QWORD*)v3[3] + 24LL))(v3[3], v13, 48, 16);
   v10 = a2 <= v15;

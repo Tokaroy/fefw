@@ -679,7 +679,7 @@ void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                (float)(PSEUDO_UNFUSED(v135 * v135)))) +
                0x1.0000000000000p-126f) *
          0x1.0000000000000p-1f;
-  if ((float)(v137 * v137) <= 0x1.47ae140000000p-5f) {
+  if (!((float)(v137 * v137) > 0x1.47ae140000000p-5f)) {
     v138 =
         (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v137 *
                                                                                         v137) *

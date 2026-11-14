@@ -68,7 +68,7 @@ __int64 CudaDriverRoutine_203600(__int64, _QWORD*);
 __int64 CudaDriverRoutine_203f30(__int64);
 __int64 CudaDriverRoutine_428b0(__int64*, int, __int64*, __int64*);
 __int64 CudaDriverRoutine_56260(_QWORD);
-__int64 CudaDriverRoutine_5a580(__int64);
+__int64 CudaDriverRoutine_5a580(__int64, __int64, unsigned int);
 __int64 CudaDriverRoutine_5bfb0(__int64 result, _DWORD*, _DWORD*);
 __int64 CudaDriverRoutine_5bfe0(__int64 result, unsigned int, __int64);
 __int64 CudaDriverRoutine_61ac0();
@@ -2496,6 +2496,8 @@ __int64 cuda_driver_1bc0e0(_QWORD* a1, __int64 a2, _BYTE* a3)
   int v10;
   bool v11;
   unsigned int v12;
+  __int64 v13;
+  __int64 v14;
 
   v12 = 2;
   if (a3 != nullptr) {
@@ -2516,23 +2518,29 @@ __int64 cuda_driver_1bc0e0(_QWORD* a1, __int64 a2, _BYTE* a3)
           v9 = *(_QWORD*)(a2 + 24);
           v10 = *(_DWORD*)(v9 + v7);
           if (v10 == 1) {
-            if (*(_QWORD*)(v9 + 8 + v7) != 0) {
+            v13 = *(_QWORD*)(v9 + 8 + v7);
+            if (v13 != 0) {
+              v14 = *(_QWORD*)(v9 + 16 + v7);
               goto LABEL_17;
             }
           }
           else {
             if (v10 != 3) {
               if (v10 == 16) {
-                CudaDriverRoutine_5a580((__int64)a1);
+                CudaDriverRoutine_5a580((__int64)a1, *(_QWORD*)(v9 + v7 + 8),
+                                        *(unsigned int*)(v9 + v7 + 16));
               }
               goto LABEL_9;
             }
-            if (*(_QWORD*)(v9 + 24 + v7) != 0) {
+            v13 = *(_QWORD*)(v9 + 24 + v7);
+            if (v13 != 0) {
+              v14 = *(_QWORD*)(v9 + 32 + v7);
             LABEL_17:
               CudaDriverRoutine_108080(*(_QWORD*)(*a1 + 48LL) + 8LL,
                                        *(_QWORD*)(*(_QWORD*)a2 + 48LL) + 8LL,
                                        0);
-              (*(void (**)(void))(a1[4228] + 120LL))();
+              (*(void (**)(__int64, __int64, __int64))(a1[4228] + 120LL))(
+                  a1[4228], v13, v14);
               CudaDriverRoutine_108280(*(_QWORD*)(*a1 + 48LL) + 8LL,
                                        *(_QWORD*)(*(_QWORD*)a2 + 48LL) + 8LL,
                                        0);
@@ -4934,7 +4942,8 @@ __int64 cuda_driver_1c6c40(__int64 a1, unsigned int a2, __int64* a3)
             if ((unsigned int)v14 > 0x40) {
               v18 = 0;
             }
-            if (((*(_QWORD*)(v17 + 48) >> v14 << v18) & 1) == 0) {
+            if (((*(_QWORD*)(v17 + 48) >> (v14 & 63) << (v18 & 63)) & 1) ==
+                0) {
               goto LABEL_9;
             }
           }
@@ -4943,8 +4952,8 @@ __int64 cuda_driver_1c6c40(__int64 a1, unsigned int a2, __int64* a3)
           if ((_DWORD)result != 0) {
             return result;
           }
-          v19 = 1LL << v14;
-          v20 = (1LL << v14) | v15;
+          v19 = 1LL << (v14 & 63);
+          v20 = (1LL << (v14 & 63)) | v15;
           if (v14 > 0x3F) {
             v19 = 0;
           }
@@ -4992,7 +5001,7 @@ __int64 cuda_driver_1c95e0(_DWORD* a1)
   __int64 v11;
   _DWORD v13[1829];
 
-  v2 = *((_QWORD*)CudaDriverData_1422118 + a1[272] + 35);
+  v2 = *((_QWORD*)CudaDriverData_1422118 + (int)a1[272] + 35);
   memset_plt(v13, 0, 7316);
   memset_plt(a1 + 5843230, 255, 2336);
   v3 = (*(__int64 (**)(__int64, _DWORD*))(v2 + 21256))(v2, v13);

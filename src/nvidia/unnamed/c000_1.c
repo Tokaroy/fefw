@@ -6197,8 +6197,8 @@ __int64 CudaDriverHr_4dd40(unsigned __int64* a1, unsigned __int64 a2,
       if (v9 > a3 >> 6) {
         return 1;
       }
-      v12 = v9 == v11 ? 0xFFFFFFFFFFFFFFFFLL >> ~(_BYTE)a3 : -1LL;
-      if (((-1LL << a2) & v12 & ~v10[v9]) == 0) {
+      v12 = v9 == v11 ? 0xFFFFFFFFFFFFFFFFLL >> (~a3 & 63) : -1LL;
+      if (((-1LL << (a2 & 63)) & v12 & ~v10[v9]) == 0) {
         v13 = v9 - v11;
         if (v13 == 0) {
           return 1;
@@ -6207,8 +6207,8 @@ __int64 CudaDriverHr_4dd40(unsigned __int64* a1, unsigned __int64 a2,
         v15 = 1;
         result = 1;
         while (1) {
-          v16 = v15 != 0 ? -1LL : -1LL << a2;
-          v17 = v13 + v15 != 0 ? -1LL : 0xFFFFFFFFFFFFFFFFLL >> ~(_BYTE)a3;
+          v16 = v15 != 0 ? -1LL : -1LL << (a2 & 63);
+          v17 = v13 + v15 != 0 ? -1LL : 0xFFFFFFFFFFFFFFFFLL >> (~a3 & 63);
           if ((v16 & v17 & ~v14[v15]) != 0) {
             break;
           }

@@ -257,6 +257,10 @@ static int wprintf_core(FILE *f, const wchar_t *fmt, va_list *ap, union arg *nl_
 		}
 
 		if (!f) continue;
+
+		/* Do not process any new directives once in error state. */
+		if (f->flags & F_ERR) return -1;
+
 		t = s[-1];
 		if (ps && (t&15)==3) t&=~32;
 
@@ -273,12 +277,12 @@ static int wprintf_core(FILE *f, const wchar_t *fmt, va_list *ap, union arg *nl_
 			}
 			continue;
 		case 'c':
-			fputwc(btowc(arg.i), f);
-			l = 1;
-			continue;
 		case 'C':
-			fputwc(arg.i, f);
-			l = 1;
+			if (w<1) w=1;
+			pad(f, w-1, fl);
+			out(f, &(wchar_t){t=='C' ? arg.i : btowc(arg.i)}, 1);
+			pad(f, w-1, fl^LEFT_ADJ);
+			l = w;
 			continue;
 		case 'S':
 			a = arg.p;
@@ -306,7 +310,7 @@ static int wprintf_core(FILE *f, const wchar_t *fmt, va_list *ap, union arg *nl_
 			while (l--) {
 				i=mbtowc(&wc, bs, MB_LEN_MAX);
 				bs+=i;
-				fputwc(wc, f);
+				out(f, &wc, 1);
 			}
 			pad(f, w-p, fl^LEFT_ADJ);
 			l=w;

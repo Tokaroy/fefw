@@ -13786,7 +13786,7 @@ __int64 nn_fontll_itype_42f9e0(__int64 a1)
     if ((int)(v6 - v12) < 0) {
       v13 = v12 - v6;
     }
-    if (v13 <= *(_DWORD*)(v5 + 112)) {
+    if (v13 <= *(int*)(v5 + 112)) {
       v14 = v6;
     }
     else {

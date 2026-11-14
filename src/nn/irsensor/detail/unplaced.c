@@ -502,8 +502,8 @@ __int64 nn_irsensor_GetHandAnalysisImageState(__int64 a1, int* a2, int a3)
   struct {
     _QWORD v15[2];
     int v16;
+    _BYTE v17[300];
   } v15_;
-  _BYTE v17[300];
   __int64 v18;
   __int64 v19;
 
@@ -558,10 +558,10 @@ __int64 nn_irsensor_GetHandAnalysisImageState(__int64 a1, int* a2, int a3)
       *(_QWORD*)v10 = v15_.v15[0];
       *(_DWORD*)(v10 + 8) = v15_.v16;
       if ((nerd_gillette_internal_otete_jaimev2_DecodePacketModeROK_plt(
-               (char*)&v19 + 4, v17, 300, &v18) &
+               (char*)&v19 + 4, v15_.v17, 300, &v18) &
            1) == 0 ||
           (nerd_gillette_internal_otete_jaimev2_DecodeIntensityROK_plt(
-               &v19, v17, 300, &v18) &
+               &v19, v15_.v17, 300, &v18) &
            1) == 0) {
         goto LABEL_10;
       }
@@ -569,7 +569,7 @@ __int64 nn_irsensor_GetHandAnalysisImageState(__int64 a1, int* a2, int a3)
         return 563917;
       }
       if ((nerd_gillette_internal_otete_jaimev2_DecodeImageROK_plt(
-               v10 + 12, v17, 300, &v18, &v19) &
+               v10 + 12, v15_.v17, 300, &v18, &v19) &
            1) == 0) {
       LABEL_10:
         *a2 = 0;

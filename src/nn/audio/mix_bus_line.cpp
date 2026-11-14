@@ -196,7 +196,8 @@ void MixBusLine::MixInputJunction(MixBusLineScratch*, int sampleCount,
   float end = endGain * pJunction->GetWeight();
   start = start > MaxGain ? MaxGain : start;
   end = end > MaxGain ? MaxGain : end;
-  if (m_IsOutputWritten) {
+  // The original tests only the low bit of the flag byte.
+  if (*reinterpret_cast<const uint8_t*>(&m_IsOutputWritten) & 1) {
     MixSignal(&output, &input, sampleCount, false, start, end);
   }
   else {

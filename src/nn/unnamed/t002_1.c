@@ -76,9 +76,11 @@ __int64 SdkHr_6ad560(__int64 a1)
   _DWORD* v5;
   unsigned int v6;
   __int64 result;
-  _QWORD v8[2];
-  int v9;
-  int v10;
+  struct {
+    _QWORD v8[2];
+    int v9;
+    int v10;
+  } v8_;
 
   if (SdkData_10450c0 != 2) {
     v2 = 0;
@@ -108,16 +110,16 @@ __int64 SdkHr_6ad560(__int64 a1)
       if (v5 != nullptr) {
         v6 = 0;
         while (*v5 == 48) {
-          result =
-              SdkRoutine_8768a0(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 24LL), v8, v6);
+          result = SdkRoutine_8768a0(
+              *(_QWORD*)(*(_QWORD*)(a1 + 16) + 24LL), v8_.v8, v6);
           if ((_DWORD)result != 0) {
             return 7;
           }
           ++v6;
-          *(_QWORD*)(*(_QWORD*)(a1 + 32) + 4LL) = v8[0];
-          *(_QWORD*)(*(_QWORD*)(a1 + 32) + 32LL) = v8[1];
-          *(_DWORD*)(*(_QWORD*)(a1 + 32) + 16LL) = v9;
-          *(_DWORD*)(*(_QWORD*)(a1 + 32) + 20LL) = v10;
+          *(_QWORD*)(*(_QWORD*)(a1 + 32) + 4LL) = v8_.v8[0];
+          *(_QWORD*)(*(_QWORD*)(a1 + 32) + 32LL) = v8_.v8[1];
+          *(_DWORD*)(*(_QWORD*)(a1 + 32) + 16LL) = v8_.v9;
+          *(_DWORD*)(*(_QWORD*)(a1 + 32) + 20LL) = v8_.v10;
           *(_DWORD*)(*(_QWORD*)(a1 + 32) + 12LL) = 0;
           *(_QWORD*)(*(_QWORD*)(a1 + 32) + 24LL) = 0;
           v5 = (_DWORD*)((char*)v5 + (unsigned int)*v5);

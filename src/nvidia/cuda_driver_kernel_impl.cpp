@@ -395,9 +395,10 @@ namespace {
 [[gnu::always_inline]] inline bool IsSettingCurrent(
   const CudaKernelSetting* settings, const U32* device, U32 stride,
   U32 value) {
-  const U32 isSet = settings[*device * stride].isSet;
+  const U32 isSet = settings[static_cast<U64>(*device) * stride].isSet;
   __builtin_arm_dmb(13);
-  return isSet == 1 && settings[*device * stride].value == value;
+  return isSet == 1 &&
+    settings[static_cast<U64>(*device) * stride].value == value;
 }
 
 }

@@ -1866,9 +1866,11 @@ __int64 FSS_get_ppem_size(__int64 a1, unsigned __int16 a2, unsigned int a3)
   char v15;
   int v16;
   _BOOL4 v18;
-  _BYTE v20[2];
-  __int16 v21;
-  unsigned __int16 v22;
+  struct {
+    _BYTE v20[2];
+    __int16 v21;
+    unsigned __int16 v22;
+  } v20_;
   _BYTE v23[4];
   _BYTE v24[4];
   __int64 v25;
@@ -1906,16 +1908,16 @@ __int64 FSS_get_ppem_size(__int64 a1, unsigned __int16 a2, unsigned int a3)
         *(_DWORD*)(a1 + 72) = v16;
         return 0;
       }
-      fs_api_416160(a1, v3, *v10, v6 << 16, (__int64)v20);
+      fs_api_416160(a1, v3, *v10, v6 << 16, (__int64)&v20_);
       if (*(_DWORD*)(a1 + 72) != 0) {
         return 0;
       }
-      if (v21 != 0) {
-        if (v21 < 0) {
-          v12 = v6 - ((-v21 & 0xFF00u) >> 8);
+      if (v20_.v21 != 0) {
+        if (v20_.v21 < 0) {
+          v12 = v6 - ((-v20_.v21 & 0xFF00u) >> 8);
         }
         else {
-          v12 = v6 + ((v21 & 0xFF00u) >> 8);
+          v12 = v6 + ((v20_.v21 & 0xFF00u) >> 8);
         }
         v13 = *(_BYTE*)(v11 + 36);
         v25 = 0;
@@ -1939,7 +1941,7 @@ __int64 FSS_get_ppem_size(__int64 a1, unsigned __int16 a2, unsigned int a3)
       }
       --v7;
       v10 += 3;
-      v14 = v22 << 16;
+      v14 = v20_.v22 << 16;
       if (v8 <= (unsigned int)(HIDWORD(v25) + v14 + 0x8000) >> 16) {
         v8 = (unsigned int)(HIDWORD(v25) + v14 + 0x8000) >> 16;
       }

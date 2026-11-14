@@ -56,7 +56,7 @@ class VerifiedMemoryStorage : public IStorage, public detail::Newable {
 public:
   static const size_t GuardSize = sizeof(uint64_t);
 
-  VerifiedMemoryStorage(void* buffer, size_t size)
+  [[gnu::always_inline]] VerifiedMemoryStorage(void* buffer, size_t size)
     : m_Buffer(static_cast<char*>(buffer)), m_DataBuffer(m_Buffer + GuardSize),
       m_BufferSize(size), m_DataSize(size - GuardSize * 2) {
     os::Tick tick = os::GetSystemTick();

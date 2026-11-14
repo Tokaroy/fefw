@@ -128,13 +128,13 @@ __int64 llvm_libcxx_libunwind_src_850980(__int64 a1, __int64 a2,
   struct {
     _DWORD v30[2];
     unsigned __int64 v31;
-  } v30_;
-  struct {
+    char gap16_[8];
     __int64 v32;
     char gap1120_[536];
     __int64 v33;
     __int64 v34;
-  } v32_;
+    char gap584_[984];
+  } v30_;
   struct {
     _BYTE v35[50];
     unsigned __int8 v36;
@@ -212,7 +212,7 @@ LABEL_24:
   v16 = 0;
   v17 = nullptr;
   v25_.v26 = v14;
-  v18 = &v32_.v32;
+  v18 = &v30_.v32;
   do {
     v20 = *(_DWORD*)v18;
     if (*(_DWORD*)v18 == 0) {
@@ -312,9 +312,9 @@ LABEL_24:
   *a6 = v35_.v35[48];
   memcpy_plt((__int64)v23, (__int64)a5, 0x110u);
   memcpy_plt((__int64)v24, (__int64)(a5 + 34), 0x100u);
-  v39[0] = v32_.v33;
-  v39[1] = v32_.v34;
-  if ((_DWORD)v32_.v33 != 0) {
+  v39[0] = v30_.v33;
+  v39[1] = v30_.v34;
+  if ((_DWORD)v30_.v33 != 0) {
     SdkRoutine_851910(a1, v23, v14, (__int64)v39);
   }
   v25_.v27 = v17;

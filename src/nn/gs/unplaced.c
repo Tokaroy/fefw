@@ -3468,7 +3468,7 @@ __int64 nn_gs_481640(unsigned __int64* a1, atomic_uint* volatile* a2,
     if (atomic_load_explicit(*a2, memory_order_acquire) != 1) {
       return 0;
     }
-    v26 = atomic_load_explicit((atomic_uint* volatile)((char*)v25 + 40),
+    v26 = atomic_load_explicit((atomic_ullong* volatile)((char*)v25 + 40),
                                memory_order_acquire);
     v27 = *((__int64 (**)(unsigned __int64, __int64, __int64))v25 + 1);
     v28 = *((_QWORD*)v25 + 4);

@@ -3505,7 +3505,7 @@ __int64 nvidia_645e00(__int64 a1, unsigned int a2)
         }
         v26 = (__int64*)*v25;
         if (*(_QWORD*)(*v25 + 16) != 0) {
-          ((void (*)(void))v26[3])();
+          ((void (*)(__int64))v26[3])(v26[2]);
         }
         v27 = *(v26 - 2);
         if (v27 != 0) {
@@ -3533,7 +3533,7 @@ __int64 nvidia_645e00(__int64 a1, unsigned int a2)
         }
       }
       if (*(_QWORD*)(v24 + 120) != 0) {
-        (*(void (**)(__int64))(v24 + 128))((__int64)(a1 + 240));
+        (*(void (**)(__int64))(v24 + 128))(*(_QWORD*)(v24 + 120));
       }
       v31 = *(_QWORD*)(v24 + 88);
       if (v31 != 0) {

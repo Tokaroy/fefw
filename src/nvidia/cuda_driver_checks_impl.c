@@ -42,8 +42,6 @@ __int64
     cuda_driver_checks_1028a0_alt1(_QWORD, _QWORD,
                                    _QWORD) __asm__("cuda_driver_checks_1028a0");
 __int64
-    cuda_driver_checks_1029e0_alt1(_QWORD) __asm__("cuda_driver_checks_1029e0");
-__int64
     cuda_driver_checks_103280_alt1(_QWORD, _QWORD,
                                    _QWORD) __asm__("cuda_driver_checks_103280");
 extern _UNKNOWN* CudaDriverData_1422118;
@@ -482,11 +480,11 @@ __int64 cuda_driver_checks_102180(_QWORD* a1)
   CudaDriverStub_107f90(v3 + 48, 0, 0);
   v8 = v4[27];
   if (v8 != 0 && v4[25] == *(_QWORD*)(v8 + 200)) {
-    cuda_driver_checks_1029e0_alt1(v4);
+    cuda_driver_checks_1029e0((__int64)v4, v8);
   }
   v9 = v4[28];
   if (v9 != 0 && v4[25] == *(_QWORD*)(v9 + 200)) {
-    cuda_driver_checks_1029e0_alt1(v4);
+    cuda_driver_checks_1029e0((__int64)v4, v9);
   }
   CudaDriverStub_108070(v4[21] + 48LL);
   if (v4[25] != *(_QWORD*)(v4[21] + 96LL)) {

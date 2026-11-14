@@ -5420,7 +5420,7 @@ __int64 cuda_driver_1150a0(__int64 a1, unsigned __int64 a2, char a3)
   else {
     v12 = *(_QWORD*)(a1 + 16);
     if ((*(_BYTE*)(a1 + 56) & 2) == 0 &&
-        *((_BYTE*)&CudaDriverRoutine_4730 + (_QWORD)CudaDriverData_1422118) ==
+        *((_BYTE*)((_UNKNOWN*)0x4731LL) + (_QWORD)CudaDriverData_1422118) ==
             0) {
       cuda_driver_1084c0(*(_QWORD*)(v12 + 88) + 104LL);
       CudaDriverStub_107f90(a1 + 592);
@@ -5542,7 +5542,7 @@ LABEL_19:
   if ((v26 & 1) == 0) {
   LABEL_33:
     if ((v26 & 2) == 0 &&
-        *((_BYTE*)&CudaDriverRoutine_4730 + (_QWORD)v11) == 0) {
+        *((_BYTE*)((_UNKNOWN*)0x4731LL) + (_QWORD)v11) == 0) {
       CudaDriverRoutine_1085b0(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 88LL) + 104LL);
       v28 = *(_DWORD**)(a1 + 16);
       if (*v28 == 1) {

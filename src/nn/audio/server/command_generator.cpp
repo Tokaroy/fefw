@@ -1053,10 +1053,11 @@ void CommandGenerator::GenerateMixCommandsWithSplitter(int input, int output,
       !data->IsBiquadFilterEnabledPrev(0),
       !data->IsBiquadFilterEnabledPrev(1),
     };
+    uint8_t* state = data->m_BiquadFilterState;
     DetailAspect({this, PerformanceEntryType_SubMix,
       PerformanceDetailType_BiquadFilterAndMix, nodeId})
       ->m_CommandBuffer->Generate<MultiTapBiquadFilterAndMixCommand>(
-      nodeId, filters, data->m_BiquadFilterState, 0,
+      nodeId, filters, state, 0,
       static_cast<int8_t>(input), static_cast<int8_t>(output),
       needInitialization, 0.0f, volume, false, isFirst);
     data->m_IsBiquadFilterEnabledPrev[0] = filters[0].enable;

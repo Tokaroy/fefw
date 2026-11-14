@@ -2319,7 +2319,7 @@ __int64 llvm_libcxx_libcxx_src_818780(__int64 a1, __int64 a2, __int64 a3,
   }
   v7 = *(int*)((char*)((__int64*)0x4LL) + (_QWORD)v6 + 4) - 1LL;
   v8 = *(_QWORD*)(a2 + 16);
-  if (v7 >= (*(_QWORD*)(a2 + 24) - v8) >> 3 ||
+  if (v7 >= (__int64)(*(_QWORD*)(a2 + 24) - v8) >> 3 ||
       (v9 = *(_QWORD*)(v8 + 8 * v7)) == 0) {
     locale_7f6090();
   }
@@ -2327,7 +2327,7 @@ __int64 llvm_libcxx_libcxx_src_818780(__int64 a1, __int64 a2, __int64 a3,
                             memory_order_relaxed);
   v10 = *(_QWORD*)(a1 + 16);
   v11 = (__int64*)(a1 + 16);
-  v12 = (*(_QWORD*)(a1 + 24) - v10) >> 3;
+  v12 = (__int64)(*(_QWORD*)(a1 + 24) - v10) >> 3;
   if (v12 <= v7) {
     if (v7 + 1 <= v12) {
       if (v7 + 1 < v12) {

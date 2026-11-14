@@ -30,8 +30,8 @@ FS_LONG squeeze_table_ptrs(FS_STATE* sp, FNTSET* fntset) {
     rec = current->next;
 
     FS_BYTE shared;
-    if (current->owner != find_table_owner(current, fntset, &shared)
-      || current->ref_count != 0) {
+    TABLE_OWNER* owner = find_table_owner(current, fntset, &shared);
+    if (current->owner != owner || current->ref_count != 0) {
       previous = current;
       continue;
     }
