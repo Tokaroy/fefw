@@ -57,7 +57,7 @@ __int64 tf_analysis_alt1(__int64, unsigned int, int, __int64, int, __int64, int,
                          unsigned int, __int16, int,
                          _DWORD*) __asm__("tf_analysis");
 int MovieRoutine_2ffe0(__int64, unsigned int, int, _WORD*, _DWORD*, int,
-                        _DWORD*);
+                       _DWORD*);
 int MovieRoutine_30f00(__int64, _WORD*, int, int, int);
 extern _UNKNOWN MovieData_a24c2;
 extern _UNKNOWN MovieData_a24c5;
@@ -75,6 +75,12 @@ __int64 run_prefilter(_QWORD* a1, __int64 a2, __int64 a3, int a4, int a5,
                       int a11, __int64 a12);
 __int64 tf_analysis(__int64 a1, int a2, int a3, __int64 a4, int a5, __int64 a6,
                     int a7, unsigned int a8, __int16 a9, int a10, _DWORD* a11);
+__int64 opus_celt_3aa60(__int64, _WORD*, int, int);
+__int64 opus_celt_3c380(__int64, int, unsigned int, int, _DWORD*, unsigned int,
+                        int);
+bool MovieRoutine_30f00_alt1(__int64, _WORD*, int, int,
+                             int) __asm__("MovieRoutine_30f00");
+bool opus_celt_2ffe0(__int64, unsigned int, int, _WORD*, _DWORD*, int, _DWORD*);
 
 __int16* celt_encoder_2b1e0(__int16* result, _DWORD* a2, int a3, int a4, int a5,
                             __int16* a6, int* a7, int a8)
@@ -2058,8 +2064,8 @@ LABEL_277:
     if (v211 != 0 && v802_.v838 <= 14) {
       v228 = *((_DWORD*)v207 + 47) != 2;
     }
-    v229 = MovieRoutine_2ffe0((__int64)v802_.v839, (unsigned int)v802_.v834,
-                              (int)v866_.v866, v871, &v872, v228, &v870);
+    v229 = opus_celt_2ffe0((__int64)v802_.v839, (unsigned int)v802_.v834,
+                           (int)v866_.v866, v871, &v872, v228, &v870);
     v226 = (int)v866_.v866;
     v225 = v802_.v854;
     v227 = !v229;
@@ -2781,8 +2787,8 @@ LABEL_502:
     }
     else {
       v409 = v802_.v840;
-      if (MovieRoutine_30f00((__int64)v802_.v840, v802_.v845, v214, v212,
-                             v210)) {
+      if (MovieRoutine_30f00_alt1((__int64)v802_.v840, v802_.v845, v214, v212,
+                                  v210)) {
         v410 = (__int64*)v802_.v864;
         v411 = v866_.v868;
         compute_mdcts((__int64)v802_.v864, v802_.v821, (__int64)v802_.v839,
@@ -4628,14 +4634,14 @@ LABEL_12:
     v43 = &v80_.v80[-((v42 + 15) & 0xFFFFFFFFFFFFFFF0LL)];
     memset_plt(v43, 0, v42);
     v44 = v80_.v97;
-    MovieRoutine_3aa60((__int64)v101, v43, v41, v80_.v88);
+    opus_celt_3aa60((__int64)v101, v43, v41, v80_.v88);
     v45 = v80_.v96;
     MovieRoutine_3b720((__int64)(v43 + 512), (__int64)v43, v80_.v96, 979,
                        &v100);
     v46 = *((_DWORD*)v44 + 27);
     v47 = *((unsigned __int16*)v44 + 56);
     v100 = 1024 - v100;
-    v48 = MovieRoutine_3c380((__int64)v43, 1024, 0xFu, v45, &v100, v46, v47);
+    v48 = opus_celt_3c380((__int64)v43, 1024, 0xFu, v45, &v100, v46, v47);
     v49 = v100;
     v50 = v80_.v87;
     if (v100 >= 1023) {
@@ -5138,8 +5144,7 @@ __int64 tf_analysis(__int64 a1, int a2, int a3, __int64 a4, int a5, __int64 a6,
       LODWORD(v27) = *(__int16*)(v27 + 2 * v22);
       v29 = v28 - v27;
       v30 = (v28 - (_DWORD)v27) << v275_.v298;
-      v31 = v275_.v292 +
-            2LL * (int)(((_DWORD)v27 << v275_.v298) + v275_.v290);
+      v31 = v275_.v292 + 2LL * (int)(((_DWORD)v27 << v275_.v298) + v275_.v290);
       memcpy_plt(v20, v31, 2LL * v30);
       v275_.v295 = v22 + 1;
       v275_.v296 = v22;

@@ -24,6 +24,9 @@ __int64 silk_log2lin(unsigned int);
 __int64 silk_process_gains_FIX(__int64, unsigned int*, int);
 __int64 silk_encode_frame_FIX(int* a1, int* a2, __int64* a3, unsigned int a4,
                               signed int a5, int a6);
+__int64 opus_silk_488e0(_DWORD*, __int64, __int64, __int64, __int64, __int64,
+                        __int64, __int64, __int64, __int64, __int64,
+                        unsigned __int64, __int64, unsigned int, __int16);
 
 __int64 silk_encode_frame_FIX(int* a1, int* a2, __int64* a3, unsigned int a4,
                               signed int a5, int a6)
@@ -369,11 +372,11 @@ __int64 silk_encode_frame_FIX(int* a1, int* a2, __int64* a3, unsigned int a4,
                          (__int64)v230, v234_.v235, v229[10]);
     }
     else {
-      MovieRoutine_488e0(v15, (__int64)v237, v24, (__int64)v174_.v189,
-                         (__int64)&v15[80 * v15[1441] + 1557], (__int64)v228,
-                         (__int64)v229, (__int64)v231, (__int64)v234_.v234,
-                         (__int64)v233, (__int64)v232, (unsigned __int64)v227,
-                         (__int64)v230, v234_.v235, v229[10]);
+      opus_silk_488e0(v15, (__int64)v237, v24, (__int64)v174_.v189,
+                      (__int64)&v15[80 * v15[1441] + 1557], (__int64)v228,
+                      (__int64)v229, (__int64)v231, (__int64)v234_.v234,
+                      (__int64)v233, (__int64)v232, (unsigned __int64)v227,
+                      (__int64)v230, v234_.v235, v229[10]);
     }
     memcpy_plt(v227, v238, 4LL * v15[1145]);
   }
@@ -476,11 +479,11 @@ __int64 silk_encode_frame_FIX(int* a1, int* a2, __int64* a3, unsigned int a4,
       }
     }
     else {
-      MovieRoutine_488e0(
-          v15, (__int64)(v15 + 37), (__int64)v174_.v200, (__int64)v174_.v189,
-          v45, (__int64)v228, (__int64)v229, (__int64)v231, (__int64)v174_.v183,
-          (__int64)v174_.v182, (__int64)v174_.v181, (unsigned __int64)v227,
-          (__int64)v174_.v180, v234_.v235, v229[10]);
+      opus_silk_488e0(v15, (__int64)(v15 + 37), (__int64)v174_.v200,
+                      (__int64)v174_.v189, v45, (__int64)v228, (__int64)v229,
+                      (__int64)v231, (__int64)v174_.v183, (__int64)v174_.v182,
+                      (__int64)v174_.v181, (unsigned __int64)v227,
+                      (__int64)v174_.v180, v234_.v235, v229[10]);
       v57 = (_DWORD)v174_.v201 == 0 && v44 == 6;
       v58 = v57;
       if (v57) {

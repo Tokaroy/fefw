@@ -445,6 +445,8 @@ __int64 cuda_driver_unplaced_7_113960(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a7, __int64 a8);
 __int64 cuda_driver_120770(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                            __int64 a5, __int64 a6);
+__int64 nvidia_ed630(__int64, __int64, __int64, ...);
+bool CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
 
 __int64 cuda_driver_fabf0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
                           unsigned int a5, __int64 a6, __int64 a7)
@@ -640,7 +642,7 @@ __int64 cuda_driver_fb050(__int64 a1, __int64 a2, char a3, bool* a4, bool* a5)
     LABEL_11:
       v17 = a1;
       v18 = a2;
-      v19 = CudaDriverRoutine_1dd060(v13);
+      v19 = CudaDriverRoutine_1dd060_alt1(v13);
       a2 = v18;
       v12 = v19;
       a1 = v17;
@@ -704,7 +706,7 @@ LABEL_19:
       }
     }
   LABEL_27:
-    if (v12 != CudaDriverRoutine_1dd060(v21)) {
+    if (v12 != CudaDriverRoutine_1dd060_alt1(v21)) {
       goto LABEL_34;
     }
     goto LABEL_31;
@@ -731,8 +733,7 @@ LABEL_30:
     return 0;
   }
 LABEL_34:
-  CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                          (__int64)"Mismatched operand protection\n");
+  nvidia_ed630((__int64)"CUDA", 0, (__int64)"Mismatched operand protection\n");
   return 800;
 }
 
@@ -5541,8 +5542,7 @@ LABEL_19:
   v26 = *(_BYTE*)(a1 + 56);
   if ((v26 & 1) == 0) {
   LABEL_33:
-    if ((v26 & 2) == 0 &&
-        *((_BYTE*)((_UNKNOWN*)0x4731LL) + (_QWORD)v11) == 0) {
+    if ((v26 & 2) == 0 && *((_BYTE*)((_UNKNOWN*)0x4731LL) + (_QWORD)v11) == 0) {
       CudaDriverRoutine_1085b0(*(_QWORD*)(*(_QWORD*)(a1 + 16) + 88LL) + 104LL);
       v28 = *(_DWORD**)(a1 + 16);
       if (*v28 == 1) {

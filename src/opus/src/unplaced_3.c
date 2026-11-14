@@ -5112,8 +5112,7 @@ void* opus_src_81b40(__int64 a1, int a2, unsigned int a3, int* a4, __int64 a5,
   v10 = a7 << 12;
   v11 = (int)a5;
   v140_.v154 = a6;
-  v140_.v148 =
-      (_DWORD*)__builtin_alloca((v9 + 15) & 0xFFFFFFFFFFFFFFF0LL);
+  v140_.v148 = (_DWORD*)__builtin_alloca((v9 + 15) & 0xFFFFFFFFFFFFFFF0LL);
   v16 = (int)v8;
   v17 = (unsigned __int16*)&MovieData_b399e;
   v18 = 0;

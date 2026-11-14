@@ -200,6 +200,8 @@ __int64 nvidia_1fbf20(__int64 a1, _BYTE* a2);
 __int64 nvidia_210400(__int64 a1);
 __int64 nvidia_233e00(__int64 a1, _BYTE* a2);
 __int64 nvidia_2461c0(__int64 a1, _BYTE* a2);
+__int64 nvidia_121c60(__int64*);
+__int64 nvidia_ed630(__int64, __int64, __int64, ...);
 
 __int64 nvidia_11ea0(__int64 a1, _BYTE* a2)
 {
@@ -449,7 +451,7 @@ __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
   __int64 v34;
 
   v34 = 0;
-  result = CudaDriverRoutine_121c60(&v34);
+  result = nvidia_121c60(&v34);
   if ((_DWORD)result != 0) {
     return result;
   }
@@ -462,13 +464,11 @@ __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
     return result;
   }
   if (a1 == 0) {
-    CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                            (__int64)"Parameter pool cannot be NULL");
+    nvidia_ed630((__int64)"CUDA", 0, (__int64)"Parameter pool cannot be NULL");
     return 1;
   }
   if (a2 == nullptr) {
-    CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                            (__int64)"Parameter map cannot be NULL");
+    nvidia_ed630((__int64)"CUDA", 0, (__int64)"Parameter map cannot be NULL");
     return 1;
   }
   v7 = *(_QWORD*)(a1 + 96);
@@ -480,9 +480,8 @@ __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
       v12 = *v8;
       goto LABEL_15;
     }
-    CudaDriverRoutine_ed630(
-        (__int64)"CUDA", 0,
-        (__int64)"Parameter pool cannot have invalid CUmemorypool");
+    nvidia_ed630((__int64)"CUDA", 0,
+                 (__int64)"Parameter pool cannot have invalid CUmemorypool");
     return 1;
   }
   v10 = *(int**)(v7 + 176);
@@ -506,17 +505,15 @@ LABEL_16:
   do {
     v17 = *(_DWORD*)(a1 + 16);
     if (v17 == 1 && *(v14 - 1) != 1) {
-      CudaDriverRoutine_ed630(
-          (__int64)"CUDA", 0,
-          (__int64)"Invalid mapping location type request: Device memory can "
-                   "only be mapped on device");
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"Invalid mapping location type request: Device "
+                            "memory can only be mapped on device");
       return 801;
     }
     v18 = v14[1];
     if (v18 == 1) {
-      CudaDriverRoutine_ed630(
-          (__int64)"CUDA", 0,
-          (__int64)"Mempools do not support Read-Only flag");
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"Mempools do not support Read-Only flag");
       return 801;
     }
     if (*(v14 - 1) == 1) {
@@ -568,9 +565,9 @@ LABEL_16:
         }
       }
     LABEL_35:
-      CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                              (__int64)"HOST/HOST_NUMA pools are always "
-                                       "read-write accessible on the HOST");
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"HOST/HOST_NUMA pools are always read-write "
+                            "accessible on the HOST");
       goto LABEL_36;
     }
     v24 = a2 + 2;
@@ -580,9 +577,9 @@ LABEL_16:
         if (*v24 != 3) {
         LABEL_63:
           v30 = 801;
-          CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                                  (__int64)"HOST pools are always read-write "
-                                           "accessible on the HOST");
+          nvidia_ed630((__int64)"CUDA", 0,
+                       (__int64)"HOST pools are always read-write accessible "
+                                "on the HOST");
           return v30;
         }
       }
@@ -593,10 +590,9 @@ LABEL_16:
           if (v27 == 1 && (_DWORD)v28 == v12) {
             if (*v24 != 3) {
               v30 = 101;
-              CudaDriverRoutine_ed630(
-                  (__int64)"CUDA", 0,
-                  (__int64)"Modifying accessibility of memory pool on owning "
-                           "device is not supported");
+              nvidia_ed630((__int64)"CUDA", 0,
+                           (__int64)"Modifying accessibility of memory pool on "
+                                    "owning device is not supported");
               return v30;
             }
           }
@@ -607,9 +603,9 @@ LABEL_16:
             }
           }
         }
-        CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                                (__int64)"HOST/HOST_NUMA pools are always "
-                                         "read-write accessible on the HOST");
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"HOST/HOST_NUMA pools are always read-write "
+                              "accessible on the HOST");
       }
       v24 += 3;
     }
@@ -2082,7 +2078,7 @@ LABEL_15:
     v42_.v61 = (__typeof__(v42_.v61)){0};
     v42_.v62 = (__typeof__(v42_.v62)){0};
     v42_.v63 = (__typeof__(v42_.v63)){0};
-    DWORD3(v42_.v63) = -1;
+    HIDWORD(v42_.v63) = -1;
     if ((CudaDriverData_1436502 & 1) != 0) {
       v23 = 0x802119000211LL;
     }

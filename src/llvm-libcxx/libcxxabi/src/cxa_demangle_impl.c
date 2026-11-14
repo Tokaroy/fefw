@@ -3542,13 +3542,18 @@ __int64 anonymous_itanium_demangle_AbstractManglingParser_make_83fb90(
   __int64 v11;
   __int16 v12;
 
-  v3 = *(_QWORD**)(a1 + 4912);
-  v6 = v3[1];
+  {
+    v3 = *(_QWORD**)(a1 + 4912);
+    __asm__ volatile("" ::"r"(v3));
+  }
+  {
+    v6 = v3[1];
+    __asm__ volatile("" ::"r"(v6));
+  }
   if ((unsigned __int64)(v6 - 4032) <= 0xFFFFFFFFFFFFF00FLL) {
-    v8 = (_QWORD*)malloc_plt(4096);
+    v8 = (_QWORD*)malloc_plt_alt1(0x1000u);
     if (v8 == nullptr) {
-      std_terminate_plt(0);
-      __udf(0);
+      std_terminate_plt_alt1(0);
     }
     v6 = 0;
     *v8 = v3;
@@ -3560,9 +3565,18 @@ __int64 anonymous_itanium_demangle_AbstractManglingParser_make_83fb90(
   *(_QWORD*)((char*)v3 + v6 + 16) = SdkData_e83ce8;
   result = (__int64)v3 + v6 + 16;
   *(_BYTE*)(result + 8) = 76;
-  v10 = *a3;
-  v11 = a3[1];
-  v12 = *(_WORD*)(result + 9);
+  {
+    v10 = *a3;
+    __asm__ volatile("" ::"r"(v10));
+  }
+  {
+    v11 = a3[1];
+    __asm__ volatile("" ::"r"(v11));
+  }
+  {
+    v12 = *(_WORD*)(result + 9);
+    __asm__ volatile("" ::"r"(v12));
+  }
   *(_QWORD*)(result + 16) = a2;
   *(_QWORD*)(result + 24) = v10;
   *(_QWORD*)(result + 32) = v11;

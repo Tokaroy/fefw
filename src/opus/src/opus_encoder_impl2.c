@@ -20,6 +20,10 @@ __int16* opus_encoder_6d020(__int16* result, __int16* a2, __int16 a3,
 __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4,
                           int a5);
 __int64 opus_encode(int* a1, __int64 a2, int a3, _BYTE* a4, int a5);
+__int64 memset_plt_alt1(__int64, int, unsigned __int64) __asm__("memset_plt");
+__int64 opus_src_694e0(int*, __int64, int, _BYTE*, int, int, __int64,
+                       unsigned int, unsigned int, unsigned int, unsigned int,
+                       __int64, int);
 
 __int64 opus_encoder_68dc0(__int64 result, __int64 a2, unsigned int a3, int a4,
                            int a5, unsigned int a6, int a7)
@@ -1035,6 +1039,8 @@ LABEL_19:
 
 __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4, int a5)
 {
+
+#pragma clang fp contract(off)
   __int64 v5;
   __int64 v6;
   __int64 v7;
@@ -1055,13 +1061,16 @@ __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4, int a5)
   int v26;
   char v31;
   unsigned int v32;
-  __int64 v36;
+  unsigned __int64 v36;
   char* v37;
   __int64 v38;
   __int64 v39;
   _QWORD v40[5];
 
-  v10 = a1[36];
+  {
+    v10 = a1[36];
+    __asm__ volatile("" ::"r"(v10));
+  }
   if (a3 < v10 / 400) {
     return 0xFFFFFFFFLL;
   }
@@ -1070,7 +1079,10 @@ __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4, int a5)
   v40[2] = v7;
   v40[3] = v5;
   v40[4] = v6;
-  v12 = a1[39];
+  {
+    v12 = a1[39];
+    __asm__ volatile("" ::"r"(v12));
+  }
   v15 = a3;
   if (v12 != 5000) {
     v18 = v12 + 119;
@@ -1085,7 +1097,7 @@ __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4, int a5)
       return 0xFFFFFFFFLL;
     }
   }
-  if (400 * v15 == v10 || 200 * v15 == v10 || 100 * v15 == v10) {
+  if (400 * v15 == v10 | 200 * v15 == v10 || 100 * v15 == v10) {
     if (v15 < 1) {
       return 0xFFFFFFFFLL;
     }
@@ -1094,30 +1106,37 @@ __int64 opus_encode_float(int* a1, __int64 a2, signed int a3, _BYTE* a4, int a5)
     v22 = 4 * v10;
     result = 0xFFFFFFFFLL;
     v23 = 50 * v15;
-    v24 = 50 * v15 == v10 || 25 * v15 == v10;
+    v24 = 50 * v15 == v10 | 25 * v15 == v10;
     v25 = 3 * v10;
     v26 = 5 * v10;
-    v31 = !v24 && v23 != v25 && v23 != v22 && v23 != v26 && v23 != 2 * v25;
+    v31 = !v24 & v23 != v25 && v23 != v22 && v23 != v26 && v23 != 2 * v25;
     if (v15 < 1 || (v31 & 1) != 0) {
       return result;
     }
   }
-  v32 = a1[28];
+  {
+    v32 = a1[28];
+    __asm__ volatile("" ::"r"(v32));
+  }
   v36 = 2LL * (int)(v32 * v15);
-  v37 = (char*)__builtin_alloca((v36 + 15) & 0xFFFFFFFFFFFFFFF0LL);
-  v38 = memset_plt(v37, 0, v36);
+  v37 = (char*)v40 - ((v36 + 15) & 0xFFFFFFFFFFFFFFF0LL);
+  v38 = memset_plt_alt1((__int64)v37, 0, v36);
   if ((int)(v32 * v15) >= 1) {
     v39 = 0;
     do {
       v38 = lrint_plt(
-          v38,
-          fminf(fmaxf(*(float*)(a2 + 4 * v39) * 32768.0, -32768.0), 32767.0));
-      v32 = a1[28];
+          v38, fminf(fmaxf(*(float*)(a2 + 4 * v39) * 0x1.0000000000000p+15f,
+                           -0x1.0000000000000p+15f),
+                     0x1.fffc000000000p+14f));
+      {
+        v32 = a1[28];
+        __asm__ volatile("" ::"r"(v32));
+      }
       *(_WORD*)&v37[2 * v39++] = v38;
     } while (v39 < (int)(v32 * v15));
   }
-  return MovieRoutine_694e0(a1, (__int64)v37, v15, a4, a5, 16, a2, a3, 0,
-                            0xFFFFFFFE, v32, (__int64)downmix_float, 1);
+  return opus_src_694e0(a1, (__int64)v37, v15, a4, a5, 16, a2, a3, 0,
+                        0xFFFFFFFE, v32, (__int64)downmix_float, 1);
 }
 
 __int64 opus_encode(int* a1, __int64 a2, int a3, _BYTE* a4, int a5)

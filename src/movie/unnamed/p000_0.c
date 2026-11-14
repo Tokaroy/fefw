@@ -3,119 +3,66 @@
 #pragma GCC visibility push(hidden)
 
 extern unsigned __int8 MovieData_a2230[16];
-
 extern _DWORD MovieData_a2290[30];
-
 extern _QWORD MovieData_a9508[33];
-
 extern int MovieData_b1990[1];
-
 extern _UNKNOWN MovieData_b1994;
-
 extern _UNKNOWN MovieData_b1998;
-
 extern _UNKNOWN MovieData_b2990;
-
 extern _UNKNOWN MovieData_b2998;
-
 extern _UNKNOWN* MovieData_bf000;
-
 extern _UNKNOWN* MovieData_c0a00;
-
 extern _UNKNOWN* MovieData_c0a08;
-
 extern _UNKNOWN* MovieData_c0a10;
-
 extern _UNKNOWN* MovieData_c0a18;
-
 extern _UNKNOWN* MovieData_c0a20;
-
 extern _UNKNOWN* MovieData_c0a28;
-
 extern _UNKNOWN* MovieData_c0a30;
-
 extern _UNKNOWN* MovieData_c0a38;
-
 extern _UNKNOWN* MovieData_c0a40;
-
 extern __int64 MovieData_d0010;
-
 void __attribute__((noreturn)) MovieRoutine_14f0(_QWORD);
-
 __int64 MovieRoutine_340(_QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_4eef0(__int64, _DWORD*);
-
 __int64 MovieRoutine_4f690(_QWORD);
-
 __int64 MovieRoutine_5abc0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_652a0(_QWORD, _QWORD);
-
 _QWORD* MovieRoutine_79fe0(_QWORD* result, __int64);
-
 __int64 MovieRoutine_7a0b0(int*, int);
-
 __int64 MovieRoutine_7a2e0(__int64 result, int);
-
 __int64 MovieRoutine_7a3c0(__int64, int);
-
 _QWORD* MovieRoutine_7ac60(_QWORD* result);
-
 __int64 MovieRoutine_7ad00(__int64, __int64);
-
 __int64 MovieRoutine_7c120(__int64 result);
-
 __int64 MovieRoutine_7c180(_QWORD*, __int64, __int64);
-
 __int64 MovieRoutine_7c480(_QWORD, _QWORD);
-
 __int64 MovieRoutine_7de20(_QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_7dee0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_7e1c0(__int64 result);
-
 __int64 MovieRoutine_7e220(__int64, __int64, __int64);
-
 __int64 MovieRoutine_7f480(__int64 result);
-
 __int64 MovieRoutine_7fc30(_QWORD);
-
 __int64 MovieRoutine_7fca0(_QWORD, _QWORD);
-
 __int64 MovieRoutine_80960(_QWORD, _QWORD);
-
 __int64 MovieRoutine_80de0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_813e0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                            _QWORD);
-
 void* MovieRoutine_81b40(__int64, int, unsigned int, int*, __int64, int, int,
                          int);
-
 __int64 MovieRoutine_82440(_QWORD);
-
 __int64 MovieRoutine_82460(_QWORD, _QWORD);
-
 __int64 MovieRoutine_82920(_QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_82bd0(const char*, ...);
-
 __int64 MovieRoutine_82ce0(_QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_82f40(_QWORD);
-
 __int64 MovieRoutine_82f50(_QWORD, _QWORD, _QWORD);
-
 __int64 MovieRoutine_82f60(_QWORD);
-
 __int64 MovieRoutine_84650(_QWORD);
-
 __int64 MovieRoutine_84660(_QWORD);
-
 __int64 MovieRoutine_84760(_QWORD, _QWORD);
-
+__int64 MovieFree_plt(void);
+__int64 MovieMalloc_plt(_QWORD);
+__int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3);
 void MovieHr_1b0() { __udf(0x8003u); }
 
 __int64 MovieHr_200()
@@ -4093,19 +4040,19 @@ __int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3)
   int v19;
   unsigned __int8 v20;
   bool v21;
-  __int64 v22;
-  __int64 v23;
+  int v23;
   __int64 v24;
+  __int64 v25;
   int v26;
   __int64 v27;
   __int64 v28;
-  int v29;
-  __int64 v30;
-  __int64 v31;
-  __int64 v32;
-  int v33;
+  __int64 v29;
+  int v30;
 
-  v3 = *(_QWORD*)(a2 + 48);
+  {
+    v3 = *(_QWORD*)(a2 + 48);
+    __asm__ volatile("" ::"r"(v3));
+  }
   a1[3] = 0;
   a1[4] = 0;
   a1[1] = 0;
@@ -4119,11 +4066,17 @@ __int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3)
   if (MovieRoutine_7a3c0(a3, 1) != 0) {
     v8 = MovieRoutine_7a3c0(a3, 8);
     *((_DWORD*)a1 + 6) = v8 + 1;
-    v9 = MovieRoutine_84650(2LL * (v8 + 1));
-    v10 = *((_DWORD*)a1 + 6);
+    v9 = MovieMalloc_plt(2LL * (v8 + 1));
+    {
+      v10 = *((_DWORD*)a1 + 6);
+      __asm__ volatile("" ::"r"(v10));
+    }
     a1[4] = v9;
     if (v10 >= 1) {
-      v11 = *(_DWORD*)(a2 + 4);
+      {
+        v11 = *(_DWORD*)(a2 + 4);
+        __asm__ volatile("" ::"r"(v11));
+      }
       v12 = 0;
       do {
         if ((unsigned int)v11 >= 2) {
@@ -4140,7 +4093,10 @@ __int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3)
         }
         v15 = MovieRoutine_7a3c0(a3, v13);
         *(_BYTE*)(a1[4] + 2 * v12) = v15;
-        v16 = *(_DWORD*)(a2 + 4);
+        {
+          v16 = *(_DWORD*)(a2 + 4);
+          __asm__ volatile("" ::"r"(v16));
+        }
         if (v16 >= 2) {
           v18 = v16 - 1;
           v17 = 0;
@@ -4159,7 +4115,10 @@ __int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3)
         if (v19 == v20) {
           goto LABEL_22;
         }
-        v11 = *(_DWORD*)(a2 + 4);
+        {
+          v11 = *(_DWORD*)(a2 + 4);
+          __asm__ volatile("" ::"r"(v11));
+        }
         v21 = v19 < v11 && v20 < v11;
         if (!v21) {
           goto LABEL_22;
@@ -4168,69 +4127,81 @@ __int64 MovieHr_7c180(_QWORD* a1, __int64 a2, __int64 a3)
     }
   }
   if (MovieRoutine_7a3c0(a3, 2) <= 0) {
-    v26 = *(_DWORD*)a1;
+    {
+      v23 = *(_DWORD*)a1;
+      __asm__ volatile("" ::"r"(v23));
+    }
     if (*(int*)a1 <= 1) {
     LABEL_34:
-      v28 = MovieRoutine_84650(2LL * v26);
-      v29 = *(_DWORD*)a1;
-      a1[2] = v28;
-      if (v29 < 1) {
+      v25 = MovieMalloc_plt(2LL * v23);
+      {
+        v26 = *(_DWORD*)a1;
+        __asm__ volatile("" ::"r"(v26));
+      }
+      a1[2] = v25;
+      if (v26 < 1) {
         return 0;
       }
     }
     else {
-      a1[1] = MovieRoutine_84650(*(int*)(a2 + 4));
+      a1[1] = MovieMalloc_plt(*(int*)(a2 + 4));
       if (*(int*)(a2 + 4) >= 1) {
-        v27 = 0;
+        v24 = 0;
         while (1) {
-          *(_BYTE*)(a1[1] + v27) = MovieRoutine_7a3c0(a3, 4);
-          v26 = *(_DWORD*)a1;
-          if (*(_DWORD*)a1 <= (int)*(unsigned __int8*)(a1[1] + v27)) {
+          *(_BYTE*)(a1[1] + v24) = MovieRoutine_7a3c0(a3, 4);
+          {
+            v23 = *(_DWORD*)a1;
+            __asm__ volatile("" ::"r"(v23));
+          }
+          if ((signed __int32)*(_DWORD*)a1 <=
+              (int)*(unsigned __int8*)(a1[1] + v24)) {
             goto LABEL_22;
           }
-          if (++v27 >= *(int*)(a2 + 4)) {
+          if (++v24 >= *(int*)(a2 + 4)) {
             goto LABEL_34;
           }
         }
       }
-      v32 = MovieRoutine_84650(2LL * *(int*)a1);
-      v33 = *(_DWORD*)a1;
-      a1[2] = v32;
-      if (v33 < 1) {
+      v29 = MovieMalloc_plt(2LL * *(int*)a1);
+      {
+        v30 = *(_DWORD*)a1;
+        __asm__ volatile("" ::"r"(v30));
+      }
+      a1[2] = v29;
+      if (v30 < 1) {
         return 0;
       }
     }
-    v30 = 0;
-    v31 = 0;
+    v27 = 0;
+    v28 = 0;
     while (1) {
       MovieRoutine_7a3c0(a3, 8);
-      *(_BYTE*)(a1[2] + v30) = MovieRoutine_7a3c0(a3, 8);
-      if (*(_DWORD*)(v3 + 24) <= (int)*(unsigned __int8*)(a1[2] + v30)) {
+      *(_BYTE*)(a1[2] + v27) = MovieRoutine_7a3c0(a3, 8);
+      if ((signed __int32)*(_DWORD*)(v3 + 24) <=
+          (int)*(unsigned __int8*)(a1[2] + v27)) {
         break;
       }
-      *(_BYTE*)(a1[2] + v30 + 1) = MovieRoutine_7a3c0(a3, 8);
-      if (*(_DWORD*)(v3 + 28) <= (int)*(unsigned __int8*)(a1[2] + v30 + 1)) {
+      *(_BYTE*)(a1[2] + v27 + 1) = MovieRoutine_7a3c0(a3, 8);
+      if ((signed __int32)*(_DWORD*)(v3 + 28) <=
+          (int)*(unsigned __int8*)(a1[2] + v27 + 1)) {
         break;
       }
-      ++v31;
-      v30 += 2;
-      if (v31 >= *(int*)a1) {
+      ++v28;
+      v27 += 2;
+      if (v28 >= *(int*)a1) {
         return 0;
       }
     }
   }
 LABEL_22:
-  v22 = a1[1];
-  if (v22 != 0) {
-    MovieRoutine_84660(v22);
+  if (a1[1] != 0) {
+    MovieFree_plt();
   }
-  v23 = a1[2];
-  if (v23 != 0) {
-    MovieRoutine_84660(v23);
+  if (a1[2] != 0) {
+    MovieFree_plt();
   }
-  v24 = a1[4];
-  if (v24 != 0) {
-    MovieRoutine_84660(v24);
+  if (a1[4] != 0) {
+    MovieFree_plt();
   }
   a1[3] = 0;
   a1[4] = 0;

@@ -893,7 +893,7 @@ long double cuda_driver_229040(__int64 a1, __int64 a2, unsigned int* a3,
         if (v24 != 0) {
           break;
         }
-        a3[(unsigned int)(v23 + 640) >> 5] &= ~(1 << (v23 & 0x1F));
+        a3[(unsigned int)(v23 + 640) >> 5] &= ~(1 << v23);
         v21 = *(unsigned int**)(a1 + 64);
         ++v23;
         v22 += 64;
@@ -902,7 +902,7 @@ long double cuda_driver_229040(__int64 a1, __int64 a2, unsigned int* a3,
         }
       }
       v25 = ((v51[v23] + v21[946] - 1) / v21[946] * v21[946]) << 15;
-      a3[(unsigned int)(v23 + 640) >> 5] |= 1 << (v23 & 0x1F);
+      a3[(unsigned int)(v23 + 640) >> 5] |= 1 << v23;
       a3[v22 >> 5] = v25 & 0xFFF80000 | a3[v22 >> 5] & 0x7FFFF;
       a3[(v22 - 19) >> 5] =
           HIDWORD(v24) & 0x1FFFF | (a3[(v22 - 19) >> 5] >> 17 << 17);
@@ -913,7 +913,7 @@ long double cuda_driver_229040(__int64 a1, __int64 a2, unsigned int* a3,
     } while (v23 < v21[944]);
   }
 LABEL_6:
-  a3[(v21[2927] + 640) >> 5] |= 1 << (v21[2927] & 0x1F);
+  a3[(v21[2927] + 640) >> 5] |= 1 << v21[2927];
   v26 =
       (unsigned int)((*(_DWORD*)(*(_QWORD*)(a1 + 64) + 11708LL) << 6) + 1075) >>
       5;

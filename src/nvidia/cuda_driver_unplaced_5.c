@@ -465,6 +465,8 @@ __int64 cuda_driver_unplaced_5_d83a0(__int64* a1, __int64 a2, __int64* a3,
                                      _QWORD* a4, __int64 a5, __int64 a6,
                                      __int64 a7, int a8);
 __int64 cuda_driver_unplaced_5_d8640(_QWORD* a1, __int128* a2);
+__int64 cuda_driver_unplaced_9_1bb6a0(unsigned __int64, unsigned __int64);
+__int64 nvidia_ed630(__int64, __int64, __int64, ...);
 
 __int64 cuda_driver_ae7f0(_QWORD* a1, unsigned __int64 a2, __int64 a3)
 {
@@ -1948,7 +1950,7 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
       if ((_DWORD)a2 != 12) {
         if (*(_BYTE*)(a1 + 440) != 0) {
           if (*(_DWORD*)(a1 + 452) != a3) {
-            CudaDriverRoutine_ed630(
+            nvidia_ed630(
                 (__int64)"CUDA", 0,
                 (__int64)"%s specified but cluster size is read-only\n",
                 "CU_FUNC_ATTRIBUTE_REQUIRED_CLUSTER_DEPTH");
@@ -1966,17 +1968,15 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
           goto LABEL_47;
         }
       LABEL_48:
-        CudaDriverRoutine_ed630(
-            (__int64)"CUDA", 0,
-            (__int64)"Cluster dimension cannot be negative %d.\n", a3);
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"Cluster dimension cannot be negative %d.\n", a3);
         return 1;
       }
       if (*(_BYTE*)(a1 + 440) != 0) {
         if (*(_DWORD*)(a1 + 448) != a3) {
-          CudaDriverRoutine_ed630(
-              (__int64)"CUDA", 0,
-              (__int64)"%s specified but cluster size is read-only\n",
-              "CU_FUNC_ATTRIBUTE_REQUIRED_CLUSTER_HEIGHT");
+          nvidia_ed630((__int64)"CUDA", 0,
+                       (__int64)"%s specified but cluster size is read-only\n",
+                       "CU_FUNC_ATTRIBUTE_REQUIRED_CLUSTER_HEIGHT");
           return 1;
         }
       LABEL_26:
@@ -2005,9 +2005,8 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
         *(_DWORD*)(a1 + 460) = a3;
         goto LABEL_64;
       }
-      CudaDriverRoutine_ed630(
-          (__int64)"CUDA", 0,
-          (__int64)"Invalid cluster scheduling policy (%d)\n", a3);
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"Invalid cluster scheduling policy (%d)\n", a3);
       return 1;
     }
     goto LABEL_23;
@@ -2015,7 +2014,7 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
   switch ((_DWORD)a2) {
   case 8:
     if ((a3 & 0x80000000) != 0) {
-      CudaDriverRoutine_ed630(
+      nvidia_ed630(
           (__int64)"CUDA", 0,
           (__int64)"Requested dynamic shared mem size cannot be negative %d\n",
           a3);
@@ -2025,9 +2024,9 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
     v7 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 32) + 24LL) + 64LL);
     v8 = *(_DWORD*)(v7 + 3884);
     if (v6 > v8) {
-      CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                              (__int64)"Requested dynamic shared memory size "
-                                       "is larger than limit\n");
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"Requested dynamic shared memory size is larger "
+                            "than limit\n");
       return 1;
     }
     v14 = *(_DWORD*)(v7 + 3880);
@@ -2086,17 +2085,16 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
       }
       break;
     }
-    CudaDriverRoutine_ed630(
+    nvidia_ed630(
         (__int64)"CUDA", 0,
         (__int64)"Requested preferred shared mem carveout invalid %d\n", a3);
     return 1;
   case 0xB:
     if (*(_BYTE*)(a1 + 440) != 0) {
       if (*(_DWORD*)(a1 + 444) != a3) {
-        CudaDriverRoutine_ed630(
-            (__int64)"CUDA", 0,
-            (__int64)"%s specified but cluster size is read-only\n",
-            "CU_FUNC_ATTRIBUTE_REQUIRED_CLUSTER_WIDTH");
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"%s specified but cluster size is read-only\n",
+                     "CU_FUNC_ATTRIBUTE_REQUIRED_CLUSTER_WIDTH");
         return 1;
       }
       goto LABEL_26;
@@ -2107,7 +2105,7 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
     v13 = *(_DWORD*)(a1 + 456);
     if (v13 != 0 && (int)a3 > v13) {
     LABEL_47:
-      CudaDriverRoutine_ed630(
+      nvidia_ed630(
           (__int64)"CUDA", 0,
           (__int64)"cluster size %d greater than maximum cluster size\n", a3);
       return 1;
@@ -2117,9 +2115,9 @@ __int64 cuda_driver_bb120(__int64 a1, __int64 a2, unsigned int a3, int a4)
     break;
   default:
   LABEL_23:
-    CudaDriverRoutine_ed630((__int64)"CUDA", 0,
-                            (__int64)"Invalid CUfunction_attribute value %d\n",
-                            (unsigned int)a2);
+    nvidia_ed630((__int64)"CUDA", 0,
+                 (__int64)"Invalid CUfunction_attribute value %d\n",
+                 (unsigned int)a2);
     return 1;
   }
 LABEL_64:
@@ -4222,7 +4220,7 @@ void cuda_driver_c61e0(__int64 a1, _QWORD* a2, __int64 a3)
     v7 = CudaDriverStub_112f50(v25, v5[95]);
     *(_DWORD*)a3 = v7;
     if (v7 == 0) {
-      *(_DWORD*)a3 = CudaDriverRoutine_1bb6a0(v6, (unsigned __int64)v25);
+      *(_DWORD*)a3 = cuda_driver_unplaced_9_1bb6a0(v6, (unsigned __int64)v25);
     }
     a1 = CudaDriverRoutine_1ba580((__int64)v25);
     v8 = a2[19];
@@ -4240,7 +4238,7 @@ void cuda_driver_c61e0(__int64 a1, _QWORD* a2, __int64 a3)
               CudaDriverRoutine_114a80(a2[20], *(_QWORD*)(a3 + 8), 0);
         }
         CudaDriverStub_107f90_alt1(v12 + 592);
-        CudaDriverRoutine_1bb6a0(*(_QWORD*)(v12 + 584), v8);
+        cuda_driver_unplaced_9_1bb6a0(*(_QWORD*)(v12 + 584), v8);
         CudaDriverStub_108070_alt1(v12 + 592);
         CudaDriverRoutine_205fa0(0, v12, (__int64)&v27, &v26);
         v13 = CudaDriverRoutine_ddbe0(v27, (__int64)v5, *(_QWORD*)(v11 + 424),
@@ -4253,7 +4251,8 @@ void cuda_driver_c61e0(__int64 a1, _QWORD* a2, __int64 a3)
         v14 = CudaDriverStub_112f50(v25, v12);
         *(_DWORD*)a3 = v14;
         if (v14 == 0) {
-          *(_DWORD*)a3 = CudaDriverRoutine_1bb6a0(v8, (unsigned __int64)v25);
+          *(_DWORD*)a3 =
+              cuda_driver_unplaced_9_1bb6a0(v8, (unsigned __int64)v25);
         }
         a1 = CudaDriverRoutine_1ba580((__int64)v25);
       }

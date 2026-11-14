@@ -1,5 +1,8 @@
-#include "decomp/pseudo_types.h"
+#include "decomp/pseudo_helpers.h"
+
 #pragma GCC visibility push(hidden)
+
+#include "decomp/pseudo_types.h"
 
 extern _DWORD SdkData_bb00b0[8];
 extern _DWORD SdkData_bb0570[8];
@@ -252,6 +255,12 @@ __int64 SdkRoutine_876980(_QWORD, _QWORD);
 __int64 SdkRoutine_876990(_QWORD, _QWORD, _QWORD);
 __int64 SdkRoutine_876a90(_QWORD, _QWORD);
 __int64 SdkRoutine_876aa0(_QWORD, _QWORD);
+__int64 SdkRoutine_653d20_alt1(int*, __int64,
+                               char) __asm__("SdkRoutine_653d20");
+__int64 SdkRoutine_6666a0_alt1(__int64 result) __asm__("SdkRoutine_6666a0");
+__int64 SdkRoutine_672d00_alt1(__int64, __int64, __int64,
+                               __int64) __asm__("SdkRoutine_672d00");
+__int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3);
 
 __int64 SdkHr_6649b0(__int64 result)
 {
@@ -5073,14 +5082,12 @@ _QWORD* SdkHr_66fa00(_QWORD* result)
 
 __int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3)
 {
-  __int64 v3;
-  __int64 v4;
   _QWORD* v5;
   __int64 v6;
   __int64 v7;
   __int64 v8;
   __int64 v9;
-  _QWORD* v12;
+  __int64 v12;
   __int64 v13;
   bool v14;
   __int64 v15;
@@ -5096,17 +5103,13 @@ __int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3)
   __int64 v25;
   __int64 v26;
   __int64 v27;
-  __int64 v28;
-  __int64 v29;
 
   v5 = (_QWORD*)(a1 + 10160);
-  v28 = v3;
-  v29 = v4;
   v6 = v5[16];
   v7 = v5[6];
   v8 = v5[3];
   v9 = a3 + a2;
-  v12 = v5;
+  v12 = (__int64)v5;
   v13 = 2 * (a3 + a2);
   v14 = v7 < v6;
   v15 = v13 - v6;
@@ -5118,22 +5121,22 @@ __int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3)
   }
   if (v15 + v7 + v16 <= v8) {
   LABEL_10:
-    SdkRoutine_672d00(v12, &v27, a2, v9);
+    SdkRoutine_672d00_alt1(v12, (__int64)&v27, a2, v9);
     v22 = v27;
-    v23 = v12[3];
-    *((_BYTE*)v12 + 64) = 0;
+    v23 = *(_QWORD*)(v12 + 24);
+    *(_BYTE*)(v12 + 64) = 0;
     result = (a3 + v22 - 1) & -a3;
     v24 = result + a2 - v22;
-    if (result + a2 >= v12[7]) {
+    if (result + a2 >= (signed __int64)*(_QWORD*)(v12 + 56)) {
       v25 = v23;
     }
     else {
       v25 = 0;
     }
     v26 = result + a2 - v25;
-    v12[6] = v26;
-    v12[9] = v26;
-    v12[17] += v24;
+    *(_QWORD*)(v12 + 48) = v26;
+    *(_QWORD*)(v12 + 72) = v26;
+    *(_QWORD*)(v12 + 136) += v24;
     return result;
   }
   v17 = v5[15];
@@ -5148,8 +5151,8 @@ __int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3)
   }
   if (v19 - v17 + v20 <= v8) {
     v21 = a3 + a2;
-    SdkRoutine_653d20(v12[1], v12[14], 0);
-    SdkRoutine_6666a0(v12[14]);
+    SdkRoutine_653d20_alt1(*(int**)(v12 + 8), *(_QWORD*)(v12 + 112), 0);
+    SdkRoutine_6666a0_alt1(*(_QWORD*)(v12 + 112));
     v9 = v21;
     goto LABEL_10;
   }

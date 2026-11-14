@@ -3,235 +3,142 @@
 #pragma GCC visibility push(hidden)
 
 extern __int128 CudaDriverData_1115310;
-
 extern __int128 CudaDriverData_1115320;
-
 extern __int128 CudaDriverData_11153e0;
-
 extern __int128 CudaDriverData_11153f0;
-
 extern __int128 CudaDriverData_1115440;
-
 extern __int128 CudaDriverData_1115510;
-
 extern __int128 CudaDriverData_11155c0;
-
 extern __int128 CudaDriverData_11155d0;
-
 extern __int128 CudaDriverData_1115690;
-
 extern __int128 CudaDriverData_1115860;
-
 extern __int128 CudaDriverData_11158d0;
-
 extern __int128 CudaDriverData_11158e0;
-
 extern __int128 CudaDriverData_11159f0;
-
 extern __int128 CudaDriverData_1115ca0;
-
 extern __int128 CudaDriverData_1115e50;
-
 extern __int128 CudaDriverData_1115e60;
-
 extern __int128 CudaDriverData_1115ee0;
-
 extern __int128 CudaDriverData_1115fc0;
-
 extern __int128 CudaDriverData_1115fd0;
-
 extern __int128 CudaDriverData_11160b0;
-
 extern __int128 CudaDriverData_1116190;
-
 extern __int128 CudaDriverData_1116300;
-
 extern __int128 CudaDriverData_1116310;
-
 extern __int128 CudaDriverData_1116320;
-
 extern int CudaDriverData_14302fc;
-
 extern int CudaDriverData_1435994;
-
 extern int CudaDriverData_1435998;
-
 extern char CudaDriverData_1435ff0;
-
 extern int CudaDriverData_1435ff4;
-
 extern __int16 CudaDriverData_1436018;
-
 extern int CudaDriverData_143601c;
-
 extern int CudaDriverData_143bc74;
-
 extern __int64 CudaDriverData_143bd98;
-
 void __attribute__((noreturn)) CudaDriverRoutine_0(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_107f40(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_107f60(_QWORD);
-
 __int64 CudaDriverRoutine_113470(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_114150(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_12dd60(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_12e330(_QWORD);
-
 __int64 CudaDriverRoutine_12e340(_QWORD);
-
 __int64 CudaDriverRoutine_12e510(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_12f200(_QWORD);
-
 __int64 CudaDriverRoutine_12f300(_QWORD);
-
 __int64 CudaDriverRoutine_138660(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_19ab80(_QWORD);
-
 __int64 CudaDriverRoutine_1a28d0(_QWORD);
-
 __int64 CudaDriverRoutine_1a2910(void);
-
 __int64 CudaDriverRoutine_1a3f00(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1a81a0(void);
-
 __int64 CudaDriverRoutine_1a8260(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1ba480(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1ba520(_QWORD);
-
 __int64 CudaDriverRoutine_1baa40(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1bace0(unsigned int*, __int64*, char);
-
 __int64 CudaDriverRoutine_1bbee0(_QWORD);
-
 __int64 CudaDriverRoutine_1bbf50(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1bc430(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1d7740();
-
 __int64 CudaDriverRoutine_1d93e0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1dc9f0(void);
-
 __int64 CudaDriverRoutine_201160(_QWORD);
-
 __int64 CudaDriverRoutine_201460(_QWORD);
-
 __int64 CudaDriverRoutine_201480(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_201580(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_2016a0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_201740(void);
-
 __int64 CudaDriverRoutine_202960(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                                  _QWORD);
-
 __int64 CudaDriverRoutine_203f30(_QWORD);
-
 __int64 CudaDriverRoutine_204330(__int64);
-
 __int64 CudaDriverRoutine_204700(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_204820(_QWORD);
-
 __int64 CudaDriverRoutine_205fa0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_206060(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_223310(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_25cf10(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_25cf30(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_25cf70(_QWORD, _QWORD, const char*, ...);
-
 __int64 CudaDriverRoutine_4f840(_QWORD);
-
 __int64 CudaDriverRoutine_56260(_QWORD);
-
 __int64 CudaDriverRoutine_59490(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_59730(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_59a40(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_5a6f0(_QWORD);
-
 __int64 CudaDriverRoutine_5bba0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_5e970(_QWORD);
-
 __int64 CudaDriverRoutine_5f050(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_62d00(_QWORD);
-
 __int64 CudaDriverRoutine_640d0(__int64, __int64, _QWORD);
-
 __int64 CudaDriverRoutine_640e0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_68d00(void);
-
 __int64 CudaDriverRoutine_68ec0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_8bc20(_QWORD);
-
 __int64 CudaDriverRoutine_928b0(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_92a90(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_97bc0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_98190(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_98340(_QWORD);
-
 __int64 CudaDriverRoutine_985a0(_QWORD);
-
 __int64 CudaDriverRoutine_9aa40(_QWORD);
-
 __int64 CudaDriverRoutine_9aea0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_9bc10(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_b4790(void);
-
 __int64 CudaDriverRoutine_b92e0(_QWORD);
-
 __int64 CudaDriverRoutine_b9300(_QWORD);
-
 __int64 CudaDriverRoutine_bbd70(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_bbdf0(_QWORD);
-
 __int64 CudaDriverRoutine_bbe30(_QWORD);
-
 __int64 CudaDriverRoutine_bc770(_QWORD);
-
 __int64 CudaDriverRoutine_e7cb0(long double);
-
 __int64 CudaDriverRoutine_fa5c0(_QWORD);
-
 __int64 CudaDriverRoutine_fa660(_QWORD);
-
 __int64 CudaDriverRoutine_fcca0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_fcf20(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_fd0f0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+__int64
+CudaDriverRoutine_928b0_alt1(__int64, _DWORD*,
+                             _DWORD*) __asm__("CudaDriverRoutine_928b0");
+__int64
+CudaDriverRoutine_92a90_alt1(__int64, __int64,
+                             __int64) __asm__("CudaDriverRoutine_92a90");
+__int64
+CudaDriverRoutine_98340_alt1(__int64 result) __asm__("CudaDriverRoutine_98340");
+__int64
+CudaDriverRoutine_bbd70_alt1(__int64 result,
+                             _QWORD*) __asm__("CudaDriverRoutine_bbd70");
+__int64
+CudaDriverRoutine_bc770_alt1(__int64) __asm__("CudaDriverRoutine_bc770");
+__int64 cuda_driver_helpers_b92e0(__int64);
+__int64 memset_plt(__int64, int, unsigned __int64);
+bool CudaDriverRoutine_bbdf0_alt1(__int64) __asm__("CudaDriverRoutine_bbdf0");
+bool CudaDriverRoutine_bbe30_alt1(__int64) __asm__("CudaDriverRoutine_bbe30");
+bool CudaDriverRoutine_e7cb0_alt1(__int64, __int64, unsigned int) __asm__(
+    "CudaDriverRoutine_e7cb0");
+bool CudaDriverStub_b9300(__int64);
+__int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3);
 
 __int64 CudaDriverHr_129320()
 {
@@ -949,7 +856,7 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
   __int64 v3;
   __int64 v5;
   __int64 v6;
-  char v7;
+  bool v7;
   __int64 v8;
   __int16 v9;
   unsigned int v10;
@@ -977,17 +884,17 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
   unsigned int v32;
   unsigned int v33;
   unsigned __int16 v34;
-  char v35;
-  long double v36;
-  __int64 v37;
-  int v38;
-  unsigned __int16 v39;
-  __int64 v40;
-  unsigned int v41;
+  bool v35;
+  __int64 v36;
+  int v37;
+  unsigned __int16 v38;
+  __int64 v39;
+  unsigned int v40;
+  __int64 v41;
   __int64 v42;
   __int64 v43;
-  __int64 v44;
-  unsigned __int64 v45;
+  unsigned __int64 v44;
+  __int64 v45;
   __int64 v46;
   int v47;
   unsigned int v48;
@@ -1005,73 +912,89 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
   __int64 v60;
   unsigned int v61;
   unsigned __int16 v62;
-  char v63;
-  long double v64;
-  int v65;
-  unsigned __int16 v66;
-  __int64 v67;
-  unsigned int v68;
+  bool v63;
+  int v64;
+  unsigned __int16 v65;
+  __int64 v66;
+  unsigned int v67;
+  __int64 v68;
   __int64 v69;
   __int64 v70;
-  __int64 v71;
-  unsigned __int64 v72;
-  int v73;
-  unsigned int v74;
-  unsigned __int8 v75;
-  int v76;
-  unsigned __int8 v77;
-  int v78;
-  unsigned __int8 v79;
+  unsigned __int64 v71;
+  int v72;
+  unsigned int v73;
+  unsigned __int8 v74;
+  int v75;
+  unsigned __int8 v76;
+  int v77;
+  unsigned __int8 v78;
+  int v79;
   int v80;
-  int v81;
-  char v82;
-  __int64 v83;
-  __int64 v85;
-  char v86;
-  __int64 v87;
-  _BYTE v89[4];
-  int v90;
-  __int64 v91;
+  char v81;
+  __int64 v82;
+  __int64 v84;
+  char v85;
+  __int64 v86;
+  struct {
+    int v88;
+    int v89;
+  } v88_;
+  __int64 v90;
 
-  v3 = *(_QWORD*)(a3 + 16);
+  {
+    v3 = *(_QWORD*)(a3 + 16);
+    __asm__ volatile("" ::"r"(v3));
+  }
   v5 = a2;
   if (*(_DWORD*)(*(_QWORD*)(a1 + 64) + 3384LL) != 45504) {
-    v21 = *(_QWORD*)(a3 + 8);
-    v91 = 0;
-    CudaDriverRoutine_bbdf0(a2);
+    {
+      v21 = *(_QWORD*)(a3 + 8);
+      __asm__ volatile("" ::"r"(v21));
+    }
+    v90 = 0;
+    CudaDriverRoutine_bbdf0_alt1(a2);
     if (*(_BYTE*)(a3 + 201) == 0) {
-      *(_OWORD*)v21 = 0u;
-      *(_OWORD*)(v21 + 16) = 0u;
-      *(_OWORD*)(v21 + 32) = 0u;
-      *(_OWORD*)(v21 + 48) = 0u;
-      *(_OWORD*)(v21 + 64) = 0u;
-      *(_OWORD*)(v21 + 80) = 0u;
-      *(_OWORD*)(v21 + 96) = 0u;
-      *(_OWORD*)(v21 + 112) = 0u;
-      *(_OWORD*)(v21 + 128) = 0u;
-      *(_OWORD*)(v21 + 144) = 0u;
-      *(_OWORD*)(v21 + 160) = 0u;
-      *(_OWORD*)(v21 + 176) = 0u;
-      *(_OWORD*)(v21 + 192) = 0u;
-      *(_OWORD*)(v21 + 208) = 0u;
-      *(_OWORD*)(v21 + 224) = 0u;
-      *(_OWORD*)(v21 + 240) = 0u;
-      if ((unsigned __int8)CudaDriverRoutine_b9300(v5) != 0 ||
-          (unsigned __int8)CudaDriverRoutine_b92e0(v5) != 0) {
-        CudaDriverRoutine_25cf10(*(_QWORD*)(a3 + 16), 0, 2048);
+      *(_OWORD*)v21 = (__typeof__(*(_OWORD*)v21)){0};
+      *(_OWORD*)(v21 + 16) = (__typeof__(*(_OWORD*)(v21 + 16))){0};
+      *(_OWORD*)(v21 + 32) = (__typeof__(*(_OWORD*)(v21 + 32))){0};
+      *(_OWORD*)(v21 + 48) = (__typeof__(*(_OWORD*)(v21 + 48))){0};
+      *(_OWORD*)(v21 + 64) = (__typeof__(*(_OWORD*)(v21 + 64))){0};
+      *(_OWORD*)(v21 + 80) = (__typeof__(*(_OWORD*)(v21 + 80))){0};
+      *(_OWORD*)(v21 + 96) = (__typeof__(*(_OWORD*)(v21 + 96))){0};
+      *(_OWORD*)(v21 + 112) = (__typeof__(*(_OWORD*)(v21 + 112))){0};
+      *(_OWORD*)(v21 + 128) = (__typeof__(*(_OWORD*)(v21 + 128))){0};
+      *(_OWORD*)(v21 + 144) = (__typeof__(*(_OWORD*)(v21 + 144))){0};
+      *(_OWORD*)(v21 + 160) = (__typeof__(*(_OWORD*)(v21 + 160))){0};
+      *(_OWORD*)(v21 + 176) = (__typeof__(*(_OWORD*)(v21 + 176))){0};
+      *(_OWORD*)(v21 + 192) = (__typeof__(*(_OWORD*)(v21 + 192))){0};
+      *(_OWORD*)(v21 + 208) = (__typeof__(*(_OWORD*)(v21 + 208))){0};
+      *(_OWORD*)(v21 + 224) = (__typeof__(*(_OWORD*)(v21 + 224))){0};
+      *(_OWORD*)(v21 + 240) = (__typeof__(*(_OWORD*)(v21 + 240))){0};
+      if (CudaDriverStub_b9300(v5) ||
+          (unsigned __int8)cuda_driver_helpers_b92e0(v5) != 0) {
+        memset_plt(*(_QWORD*)(a3 + 16), 0, 0x800u);
       }
     }
     if (*(_BYTE*)(a3 + 198) != 0) {
       *(_DWORD*)(v21 + 24) |= 0x1000u;
     }
-    v22 = *(_DWORD*)(v21 + 28) & 0x83FFFFFF | 0x3C000000;
-    v23 = *(_DWORD*)(v21 + 28) & 0x3FFFFFF | 0xBC000000;
+    {
+      v22 = *(_DWORD*)(v21 + 28) & 0x83FFFFFF | 0x3C000000;
+      __asm__ volatile("" ::"r"(v22));
+    }
+    {
+      v23 = *(_DWORD*)(v21 + 28) & 0x3FFFFFF | 0xBC000000;
+      __asm__ volatile("" ::"r"(v23));
+    }
     *(_DWORD*)(v21 + 28) = v22;
     v24 = v22 & 0x3FFFFFFF;
     if (*(_BYTE*)(a3 + 207) == 0) {
       v23 = v24;
     }
-    v25 = *(_DWORD*)(v21 + 44);
+    {
+      v25 = *(_DWORD*)(v21 + 44);
+      __asm__ volatile("" ::"r"(v25));
+    }
     *(_DWORD*)(v21 + 28) = v23;
     v26 = v25 & 0xFFFCBFFF;
     if (*(_BYTE*)(a3 + 206) != 0) {
@@ -1081,17 +1004,23 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
       v27 = 0x10000;
     }
     *(_DWORD*)(v21 + 44) = v26 | v27;
-    if ((unsigned __int8)CudaDriverRoutine_bbe30(v5) != 0) {
-      v28 = *(_QWORD*)(CudaDriverRoutine_98340(a1) + 2392);
+    if (CudaDriverRoutine_bbe30_alt1(v5)) {
+      v28 = *(_QWORD*)(CudaDriverRoutine_98340_alt1(a1) + 2392);
     }
     else {
       if ((*(_WORD*)(v5 + 977) & 8) != 0) {
-        CudaDriverRoutine_928b0(v5, &v90, v89);
-        *(_DWORD*)(v21 + 32) = v90;
-        v29 = *(_DWORD*)(v21 + 44);
+        CudaDriverRoutine_928b0_alt1(v5, &v88_.v89, &v88_.v88);
+        *(_DWORD*)(v21 + 32) = v88_.v89;
+        {
+          v29 = *(_DWORD*)(v21 + 44);
+          __asm__ volatile("" ::"r"(v29));
+        }
         v30 = v29 | 0x4000000;
         *(_DWORD*)(v21 + 44) = v29 | 0x4000000;
-        v31 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+        {
+          v31 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+          __asm__ volatile("" ::"r"(v31));
+        }
         if (v31 != 0) {
         LABEL_35:
           if (v31 == 2) {
@@ -1106,90 +1035,124 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
           *(_DWORD*)(v21 + 44) = v32;
         }
       LABEL_73:
-        v61 = *(_DWORD*)(v21 + 576);
+        {
+          v61 = *(_DWORD*)(v21 + 576);
+          __asm__ volatile("" ::"r"(v61));
+        }
         *(_DWORD*)(v21 + 48) = *(_DWORD*)(a3 + 156);
-        v62 = *(_DWORD*)(a3 + 160);
+        {
+          v62 = *(_DWORD*)(a3 + 160);
+          __asm__ volatile("" ::"r"(v62));
+        }
         *(_WORD*)(v21 + 52) = v62;
         *(_DWORD*)(v21 + 52) =
             v62 | ((unsigned __int16)*(_DWORD*)(a3 + 164) << 16);
-        v63 = CudaDriverRoutine_bbdf0(v5);
+        v63 = CudaDriverRoutine_bbdf0_alt1(v5);
         if (v61 <= 0x100) {
-          v65 = 256;
+          v64 = 256;
         }
         else {
-          v65 = v61;
+          v64 = v61;
         }
-        if (v63 == 0) {
-          v65 = v61;
+        if (!v63) {
+          v64 = v61;
         }
         *(_DWORD*)(v21 + 68) =
-            *(_DWORD*)(v21 + 68) & 0xFFFC0000 | v65 & 0x3FFFF;
+            *(_DWORD*)(v21 + 68) & 0xFFFC0000 | v64 & 0x3FFFF;
         *(_WORD*)(v21 + 74) = *(_WORD*)(a3 + 168);
-        v66 = *(_DWORD*)(a3 + 172);
-        *(_WORD*)(v21 + 76) = v66;
+        {
+          v65 = *(_DWORD*)(a3 + 172);
+          __asm__ volatile("" ::"r"(v65));
+        }
+        *(_WORD*)(v21 + 76) = v65;
         *(_DWORD*)(v21 + 76) =
-            v66 | ((unsigned __int16)*(_DWORD*)(a3 + 176) << 16);
-        v67 = *(_QWORD*)(a1 + 64);
-        if (*(_DWORD*)(v67 + 3776) != 0) {
-          v68 = 928;
-          v69 = 640;
-          v70 = 104;
-          v71 = 40;
+            v65 | ((unsigned __int16)*(_DWORD*)(a3 + 176) << 16);
+        {
+          v66 = *(_QWORD*)(a1 + 64);
+          __asm__ volatile("" ::"r"(v66));
+        }
+        if (*(_DWORD*)(v66 + 3776) != 0) {
+          v67 = 928;
+          v68 = 640;
+          v69 = 104;
+          v70 = 40;
           do {
-            if (*(_QWORD*)(a3 + v71) != 0) {
-              v73 = *(_DWORD*)(a3 + v70);
-              v74 = *(_DWORD*)(v67 + 3784);
-              if ((unsigned __int8)CudaDriverRoutine_e7cb0(v64) != 0) {
-                *(_DWORD*)(v21 + 4LL * ((v68 + 46) >> 5)) |= 0x4000u;
+            if (*(_QWORD*)(a3 + v70) != 0) {
+              {
+                v72 = *(_DWORD*)(a3 + v69);
+                __asm__ volatile("" ::"r"(v72));
               }
-              *(_DWORD*)(v21 + 4LL * ((unsigned int)v69 >> 5)) |=
-                  1 << (v69 + 0x80);
-              *(_DWORD*)(v21 + 4LL * ((v68 + 47) >> 5)) =
-                  *(_DWORD*)(v21 + 4LL * ((v68 + 47) >> 5)) & 0x7FFF |
-                  (((v73 + v74 - 1) / v74 * v74) << 15);
-              *(_BYTE*)(v21 + 4LL * ((v68 + 32) >> 5)) =
-                  *(_DWORD*)(a3 + v71 + 4);
-              *(_DWORD*)(v21 + 4LL * (v68 >> 5)) = *(_QWORD*)(a3 + v71);
+              {
+                v73 = *(_DWORD*)(v66 + 3784);
+                __asm__ volatile("" ::"r"(v73));
+              }
+              if (CudaDriverRoutine_e7cb0_alt1(a1, a3, v68 - 640)) {
+                *(_DWORD*)(v21 + 4LL * ((v67 + 46) >> 5)) |= 0x4000u;
+              }
+              *(_DWORD*)(v21 + 4LL * ((unsigned int)v68 >> 5)) |=
+                  1 << (v68 + 0x80);
+              *(_DWORD*)(v21 + 4LL * ((v67 + 47) >> 5)) =
+                  *(_DWORD*)(v21 + 4LL * ((v67 + 47) >> 5)) & 0x7FFF |
+                  (((v72 + v73 - 1) / v73 * v73) << 15);
+              *(_BYTE*)(v21 + 4LL * ((v67 + 32) >> 5)) =
+                  *(_DWORD*)(a3 + v70 + 4);
+              *(_DWORD*)(v21 + 4LL * (v67 >> 5)) = *(_QWORD*)(a3 + v70);
             }
             else {
-              *(_DWORD*)(v21 + 4LL * ((unsigned int)v69 >> 5)) &=
-                  ~(1 << (v69 + 0x80));
+              *(_DWORD*)(v21 + 4LL * ((unsigned int)v68 >> 5)) &=
+                  ~(1 << (v68 + 0x80));
             }
-            v67 = *(_QWORD*)(a1 + 64);
-            v72 = v69 - 639;
-            ++v69;
-            v68 += 64;
-            v70 += 4;
-            v71 += 8;
-          } while (v72 < *(unsigned int*)(v67 + 3776));
+            {
+              v66 = *(_QWORD*)(a1 + 64);
+              __asm__ volatile("" ::"r"(v66));
+            }
+            v71 = v68 - 639;
+            ++v68;
+            v67 += 64;
+            v69 += 4;
+            v70 += 8;
+          } while (v71 < *(unsigned int*)(v66 + 3776));
         }
-        v75 = *(_BYTE*)(v21 + 183);
-        v76 = *(_DWORD*)(CudaDriverRoutine_98340(a1) + 1276) & 0xFFFFFF |
-              (v75 << 24);
-        v77 = *(_BYTE*)(v21 + 187);
-        *(_DWORD*)(v21 + 180) = v76;
-        v78 = *(_DWORD*)(CudaDriverRoutine_98340(a1) + 1280) & 0xFFFFFF |
-              (v77 << 24);
-        v79 = *(_BYTE*)(v21 + 191);
-        *(_DWORD*)(v21 + 184) = v78;
-        v80 = *(_DWORD*)(CudaDriverRoutine_98340(a1) + 1284) & 0xFFFFFF |
-              (v79 << 24);
-        v81 = *(_DWORD*)(v21 + 180);
-        *(_DWORD*)(v21 + 188) = v80;
+        {
+          v74 = *(_BYTE*)(v21 + 183);
+          __asm__ volatile("" ::"r"(v74));
+        }
+        v75 = *(_DWORD*)(CudaDriverRoutine_98340_alt1(a1) + 1276) & 0xFFFFFF |
+              (v74 << 24);
+        {
+          v76 = *(_BYTE*)(v21 + 187);
+          __asm__ volatile("" ::"r"(v76));
+        }
+        *(_DWORD*)(v21 + 180) = v75;
+        v77 = *(_DWORD*)(CudaDriverRoutine_98340_alt1(a1) + 1280) & 0xFFFFFF |
+              (v76 << 24);
+        {
+          v78 = *(_BYTE*)(v21 + 191);
+          __asm__ volatile("" ::"r"(v78));
+        }
+        *(_DWORD*)(v21 + 184) = v77;
+        v79 = *(_DWORD*)(CudaDriverRoutine_98340_alt1(a1) + 1284) & 0xFFFFFF |
+              (v78 << 24);
+        {
+          v80 = *(_DWORD*)(v21 + 180);
+          __asm__ volatile("" ::"r"(v80));
+        }
+        *(_DWORD*)(v21 + 188) = v79;
         *(_DWORD*)(v21 + 180) =
-            v81 & 0x7FFFFFF |
-            ((unsigned __int8)CudaDriverRoutine_bc770(v5) << 27);
+            v80 & 0x7FFFFFF |
+            ((unsigned __int8)CudaDriverRoutine_bc770_alt1(v5) << 27);
         if (*(_DWORD*)(v5 + 392) != 0) {
-          v82 = *(_DWORD*)(v5 + 392);
+          v81 = *(_DWORD*)(v5 + 392);
+          __asm__ volatile("" ::"r"(v81));
         }
         else {
-          v82 = 1;
+          v81 = 1;
         }
-        *(_BYTE*)(v21 + 187) = v82;
+        *(_BYTE*)(v21 + 187) = v81;
         if (*(_BYTE*)(a3 + 376) != 0) {
           *(_DWORD*)(v21 + 84) = *(_DWORD*)(a3 + 380);
           *(_DWORD*)(v21 + 88) = *(_DWORD*)(a3 + 384);
-          if ((unsigned __int8)CudaDriverRoutine_bbdf0(v5) != 0) {
+          if (CudaDriverRoutine_bbdf0_alt1(v5)) {
             *(_DWORD*)(v3 + 596) = *(_DWORD*)(a3 + 380);
             *(_DWORD*)(v3 + 600) = *(_DWORD*)(a3 + 384);
           }
@@ -1207,65 +1170,86 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
         goto LABEL_95;
       }
       if (*(_DWORD*)(v5 + 404) != 0) {
-        v28 = *(_QWORD*)(CudaDriverRoutine_98340(a1) + 2424);
+        v28 = *(_QWORD*)(CudaDriverRoutine_98340_alt1(a1) + 2424);
       }
       else {
-        CudaDriverRoutine_bbd70(v5, &v91);
-        LODWORD(v28) = v91;
+        CudaDriverRoutine_bbd70_alt1(v5, &v90);
+        LODWORD(v28) = v90;
       }
     }
     *(_DWORD*)(v21 + 32) = v28;
-    v29 = *(_DWORD*)(v21 + 44);
+    {
+      v29 = *(_DWORD*)(v21 + 44);
+      __asm__ volatile("" ::"r"(v29));
+    }
     v30 = v29 | 0x4000000;
     *(_DWORD*)(v21 + 44) = v29 | 0x4000000;
-    v31 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+    {
+      v31 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+      __asm__ volatile("" ::"r"(v31));
+    }
     if (v31 == 0) {
       goto LABEL_73;
     }
     goto LABEL_35;
   }
-  v6 = *(_QWORD*)(a3 + 8);
-  v91 = 0;
-  v7 = CudaDriverRoutine_bbdf0(a2);
+  {
+    v6 = *(_QWORD*)(a3 + 8);
+    __asm__ volatile("" ::"r"(v6));
+  }
+  v90 = 0;
+  v7 = CudaDriverRoutine_bbdf0_alt1(a2);
   v8 = v3 + 512;
-  if (v7 == 0) {
+  if (!v7) {
     v8 = 0;
   }
-  v85 = v8;
+  v84 = v8;
   if (*(_BYTE*)(a3 + 201) == 0) {
-    *(_OWORD*)v6 = 0u;
-    *(_OWORD*)(v6 + 16) = 0u;
-    *(_OWORD*)(v6 + 32) = 0u;
-    *(_OWORD*)(v6 + 48) = 0u;
-    *(_OWORD*)(v6 + 64) = 0u;
-    *(_OWORD*)(v6 + 80) = 0u;
-    *(_OWORD*)(v6 + 96) = 0u;
-    *(_OWORD*)(v6 + 112) = 0u;
-    *(_OWORD*)(v6 + 128) = 0u;
-    *(_OWORD*)(v6 + 144) = 0u;
-    *(_OWORD*)(v6 + 160) = 0u;
-    *(_OWORD*)(v6 + 176) = 0u;
-    *(_OWORD*)(v6 + 192) = 0u;
-    *(_OWORD*)(v6 + 208) = 0u;
-    *(_OWORD*)(v6 + 224) = 0u;
-    *(_OWORD*)(v6 + 240) = 0u;
-    if ((unsigned __int8)CudaDriverRoutine_b9300(v5) != 0 ||
-        (unsigned __int8)CudaDriverRoutine_b92e0(v5) != 0) {
-      CudaDriverRoutine_25cf10(*(_QWORD*)(a3 + 16), 0, 2048);
+    *(_OWORD*)v6 = (__typeof__(*(_OWORD*)v6)){0};
+    *(_OWORD*)(v6 + 16) = (__typeof__(*(_OWORD*)(v6 + 16))){0};
+    *(_OWORD*)(v6 + 32) = (__typeof__(*(_OWORD*)(v6 + 32))){0};
+    *(_OWORD*)(v6 + 48) = (__typeof__(*(_OWORD*)(v6 + 48))){0};
+    *(_OWORD*)(v6 + 64) = (__typeof__(*(_OWORD*)(v6 + 64))){0};
+    *(_OWORD*)(v6 + 80) = (__typeof__(*(_OWORD*)(v6 + 80))){0};
+    *(_OWORD*)(v6 + 96) = (__typeof__(*(_OWORD*)(v6 + 96))){0};
+    *(_OWORD*)(v6 + 112) = (__typeof__(*(_OWORD*)(v6 + 112))){0};
+    *(_OWORD*)(v6 + 128) = (__typeof__(*(_OWORD*)(v6 + 128))){0};
+    *(_OWORD*)(v6 + 144) = (__typeof__(*(_OWORD*)(v6 + 144))){0};
+    *(_OWORD*)(v6 + 160) = (__typeof__(*(_OWORD*)(v6 + 160))){0};
+    *(_OWORD*)(v6 + 176) = (__typeof__(*(_OWORD*)(v6 + 176))){0};
+    *(_OWORD*)(v6 + 192) = (__typeof__(*(_OWORD*)(v6 + 192))){0};
+    *(_OWORD*)(v6 + 208) = (__typeof__(*(_OWORD*)(v6 + 208))){0};
+    *(_OWORD*)(v6 + 224) = (__typeof__(*(_OWORD*)(v6 + 224))){0};
+    *(_OWORD*)(v6 + 240) = (__typeof__(*(_OWORD*)(v6 + 240))){0};
+    if (CudaDriverStub_b9300(v5) ||
+        (unsigned __int8)cuda_driver_helpers_b92e0(v5) != 0) {
+      memset_plt(*(_QWORD*)(a3 + 16), 0, 0x800u);
     }
   }
-  v9 = *(_WORD*)(v5 + 977);
+  {
+    v9 = *(_WORD*)(v5 + 977);
+    __asm__ volatile("" ::"r"(v9));
+  }
   if (*(_BYTE*)(a3 + 198) != 0) {
     *(_DWORD*)(v6 + 24) |= 0x1000u;
   }
-  v10 = *(_DWORD*)(v6 + 28) & 0x83FFFFFF | 0x3C000000;
-  v11 = *(_DWORD*)(v6 + 28) & 0x3FFFFFF | 0xBC000000;
+  {
+    v10 = *(_DWORD*)(v6 + 28) & 0x83FFFFFF | 0x3C000000;
+    __asm__ volatile("" ::"r"(v10));
+  }
+  {
+    v11 = *(_DWORD*)(v6 + 28) & 0x3FFFFFF | 0xBC000000;
+    __asm__ volatile("" ::"r"(v11));
+  }
   *(_DWORD*)(v6 + 28) = v10;
   v12 = v10 & 0x3FFFFFFF;
   if (*(_BYTE*)(a3 + 207) == 0) {
     v11 = v12;
   }
-  v13 = *(_DWORD*)(v6 + 44);
+  {
+    v13 = *(_DWORD*)(v6 + 44);
+    __asm__ volatile("" ::"r"(v13));
+  }
   *(_DWORD*)(v6 + 28) = v11;
   v14 = v13 & 0xFFFCBFFF;
   if (*(_BYTE*)(a3 + 206) != 0) {
@@ -1275,104 +1259,148 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
     v15 = 0x10000;
   }
   *(_DWORD*)(v6 + 44) = v14 | v15;
-  v86 = v9;
-  if ((unsigned __int8)CudaDriverRoutine_bbe30(v5) != 0) {
-    v16 = *(_QWORD*)(CudaDriverRoutine_98340(a1) + 2392);
+  v85 = v9;
+  if (CudaDriverRoutine_bbe30_alt1(v5)) {
+    v16 = *(_QWORD*)(CudaDriverRoutine_98340_alt1(a1) + 2392);
     goto LABEL_17;
   }
   if ((*(_WORD*)(v5 + 977) & 8) == 0) {
     if (*(_DWORD*)(v5 + 404) != 0) {
-      v16 = *(_QWORD*)(CudaDriverRoutine_98340(a1) + 2424);
+      v16 = *(_QWORD*)(CudaDriverRoutine_98340_alt1(a1) + 2424);
     }
     else {
-      CudaDriverRoutine_bbd70(v5, &v91);
-      LODWORD(v16) = v91;
+      CudaDriverRoutine_bbd70_alt1(v5, &v90);
+      LODWORD(v16) = v90;
     }
   LABEL_17:
     *(_DWORD*)(v6 + 32) = v16;
-    v17 = *(_DWORD*)(v6 + 44);
+    {
+      v17 = *(_DWORD*)(v6 + 44);
+      __asm__ volatile("" ::"r"(v17));
+    }
     v18 = v17 | 0x4000000;
     *(_DWORD*)(v6 + 44) = v17 | 0x4000000;
-    v19 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+    {
+      v19 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+      __asm__ volatile("" ::"r"(v19));
+    }
     if (v19 == 0) {
     LABEL_46:
-      v33 = *(_DWORD*)(v6 + 576);
-      v87 = v5;
+      {
+        v33 = *(_DWORD*)(v6 + 576);
+        __asm__ volatile("" ::"r"(v33));
+      }
+      v86 = v5;
       *(_DWORD*)(v6 + 48) = *(_DWORD*)(a3 + 156);
-      v34 = *(_DWORD*)(a3 + 160);
+      {
+        v34 = *(_DWORD*)(a3 + 160);
+        __asm__ volatile("" ::"r"(v34));
+      }
       *(_WORD*)(v6 + 52) = v34;
       *(_DWORD*)(v6 + 52) =
           v34 | ((unsigned __int16)*(_DWORD*)(a3 + 164) << 16);
-      v35 = CudaDriverRoutine_bbdf0(v5);
-      v37 = a1;
+      v35 = CudaDriverRoutine_bbdf0_alt1(v5);
+      v36 = a1;
       if (v33 <= 0x100) {
-        v38 = 256;
+        v37 = 256;
       }
       else {
-        v38 = v33;
+        v37 = v33;
       }
-      if (v35 == 0) {
-        v38 = v33;
+      if (!v35) {
+        v37 = v33;
       }
-      *(_DWORD*)(v6 + 68) = *(_DWORD*)(v6 + 68) & 0xFFFC0000 | v38 & 0x3FFFF;
+      *(_DWORD*)(v6 + 68) = *(_DWORD*)(v6 + 68) & 0xFFFC0000 | v37 & 0x3FFFF;
       *(_WORD*)(v6 + 74) = *(_WORD*)(a3 + 168);
-      v39 = *(_DWORD*)(a3 + 172);
-      *(_WORD*)(v6 + 76) = v39;
+      {
+        v38 = *(_DWORD*)(a3 + 172);
+        __asm__ volatile("" ::"r"(v38));
+      }
+      *(_WORD*)(v6 + 76) = v38;
       *(_DWORD*)(v6 + 76) =
-          v39 | ((unsigned __int16)*(_DWORD*)(a3 + 176) << 16);
-      v40 = *(_QWORD*)(a1 + 64);
-      if (*(_DWORD*)(v40 + 3776) != 0) {
-        v41 = 928;
-        v42 = 640;
-        v43 = 104;
-        v44 = 40;
+          v38 | ((unsigned __int16)*(_DWORD*)(a3 + 176) << 16);
+      {
+        v39 = *(_QWORD*)(a1 + 64);
+        __asm__ volatile("" ::"r"(v39));
+      }
+      if (*(_DWORD*)(v39 + 3776) != 0) {
+        v40 = 928;
+        v41 = 640;
+        v42 = 104;
+        v43 = 40;
         do {
-          v46 = (unsigned int)v42 >> 5;
-          if (*(_QWORD*)(a3 + v44) != 0) {
-            v47 = *(_DWORD*)(a3 + v43);
-            v48 = *(_DWORD*)(v40 + 3784);
-            if ((unsigned __int8)CudaDriverRoutine_e7cb0(v36) != 0) {
-              *(_DWORD*)(v6 + 4LL * ((v41 + 46) >> 5)) |= 0x4000u;
+          v45 = (unsigned int)v41 >> 5;
+          if (*(_QWORD*)(a3 + v43) != 0) {
+            v46 = v36;
+            {
+              v47 = *(_DWORD*)(a3 + v42);
+              __asm__ volatile("" ::"r"(v47));
+            }
+            {
+              v48 = *(_DWORD*)(v39 + 3784);
+              __asm__ volatile("" ::"r"(v48));
+            }
+            if (CudaDriverRoutine_e7cb0_alt1(v46, a3, v41 - 640)) {
+              *(_DWORD*)(v6 + 4LL * ((v40 + 46) >> 5)) |= 0x4000u;
             }
             v49 = v47 + v48;
-            v37 = a1;
-            *(_DWORD*)(v6 + 4 * v46) |= 1 << (v42 + 0x80);
-            *(_DWORD*)(v6 + 4LL * ((v41 + 47) >> 5)) =
-                *(_DWORD*)(v6 + 4LL * ((v41 + 47) >> 5)) & 0x7FFF |
+            v36 = a1;
+            *(_DWORD*)(v6 + 4 * v45) |= 1 << (v41 + 0x80);
+            *(_DWORD*)(v6 + 4LL * ((v40 + 47) >> 5)) =
+                *(_DWORD*)(v6 + 4LL * ((v40 + 47) >> 5)) & 0x7FFF |
                 (((v49 - 1) / v48 * v48) << 15);
-            *(_BYTE*)(v6 + 4LL * ((v41 + 32) >> 5)) = *(_DWORD*)(a3 + v44 + 4);
-            *(_DWORD*)(v6 + 4LL * (v41 >> 5)) = *(_QWORD*)(a3 + v44);
+            *(_BYTE*)(v6 + 4LL * ((v40 + 32) >> 5)) = *(_DWORD*)(a3 + v43 + 4);
+            *(_DWORD*)(v6 + 4LL * (v40 >> 5)) = *(_QWORD*)(a3 + v43);
           }
           else {
-            *(_DWORD*)(v6 + 4 * v46) &= ~(1 << (v42 + 0x80));
+            *(_DWORD*)(v6 + 4 * v45) &= ~(1 << (v41 + 0x80));
           }
-          v40 = *(_QWORD*)(v37 + 64);
-          v45 = v42 - 639;
-          ++v42;
-          v41 += 64;
-          v43 += 4;
-          v44 += 8;
-        } while (v45 < *(unsigned int*)(v40 + 3776));
+          {
+            v39 = *(_QWORD*)(v36 + 64);
+            __asm__ volatile("" ::"r"(v39));
+          }
+          v44 = v41 - 639;
+          ++v41;
+          v40 += 64;
+          v42 += 4;
+          v43 += 8;
+        } while (v44 < *(unsigned int*)(v39 + 3776));
       }
-      v50 = *(_BYTE*)(v6 + 183);
-      v51 = *(_DWORD*)(CudaDriverRoutine_98340(v37) + 1276) & 0xFFFFFF |
+      {
+        v50 = *(_BYTE*)(v6 + 183);
+        __asm__ volatile("" ::"r"(v50));
+      }
+      v51 = *(_DWORD*)(CudaDriverRoutine_98340_alt1(v36) + 1276) & 0xFFFFFF |
             (v50 << 24);
-      v52 = *(_BYTE*)(v6 + 187);
+      {
+        v52 = *(_BYTE*)(v6 + 187);
+        __asm__ volatile("" ::"r"(v52));
+      }
       *(_DWORD*)(v6 + 180) = v51;
-      v53 = *(_DWORD*)(CudaDriverRoutine_98340(v37) + 1280) & 0xFFFFFF |
+      v53 = *(_DWORD*)(CudaDriverRoutine_98340_alt1(v36) + 1280) & 0xFFFFFF |
             (v52 << 24);
-      v54 = *(_BYTE*)(v6 + 191);
+      {
+        v54 = *(_BYTE*)(v6 + 191);
+        __asm__ volatile("" ::"r"(v54));
+      }
       *(_DWORD*)(v6 + 184) = v53;
-      v55 = CudaDriverRoutine_98340(v37);
-      v5 = v87;
-      v56 = *(_DWORD*)(v55 + 1284) & 0xFFFFFF | (v54 << 24);
-      v57 = *(_DWORD*)(v6 + 180);
+      v55 = CudaDriverRoutine_98340_alt1(v36);
+      v5 = v86;
+      {
+        v56 = *(_DWORD*)(v55 + 1284) & 0xFFFFFF | (v54 << 24);
+        __asm__ volatile("" ::"r"(v56));
+      }
+      {
+        v57 = *(_DWORD*)(v6 + 180);
+        __asm__ volatile("" ::"r"(v57));
+      }
       *(_DWORD*)(v6 + 188) = v56;
       *(_DWORD*)(v6 + 180) =
           v57 & 0x7FFFFFF |
-          ((unsigned __int8)CudaDriverRoutine_bc770(v87) << 27);
-      if (*(_DWORD*)(v87 + 392) != 0) {
-        v58 = *(_DWORD*)(v87 + 392);
+          ((unsigned __int8)CudaDriverRoutine_bc770_alt1(v86) << 27);
+      if (*(_DWORD*)(v86 + 392) != 0) {
+        v58 = *(_DWORD*)(v86 + 392);
+        __asm__ volatile("" ::"r"(v58));
       }
       else {
         v58 = 1;
@@ -1381,13 +1409,16 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
       if (*(_BYTE*)(a3 + 376) != 0) {
         *(_DWORD*)(v6 + 84) = *(_DWORD*)(a3 + 380);
         *(_DWORD*)(v6 + 88) = *(_DWORD*)(a3 + 384);
-        if ((unsigned __int8)CudaDriverRoutine_bbdf0(v87) != 0) {
+        if (CudaDriverRoutine_bbdf0_alt1(v86)) {
           *(_DWORD*)(v3 + 596) = *(_DWORD*)(a3 + 380);
           *(_DWORD*)(v3 + 600) = *(_DWORD*)(a3 + 384);
         }
       }
-      v59 = *(_DWORD*)(v6 + 24) & 0xFFFFFF3F | (((v86 & 0x40) != 0) << 7) |
-            (((v86 & 0x40) != 0) << 6);
+      {
+        v59 = *(_DWORD*)(v6 + 24) & 0xFFFFFF3F | (((v85 & 0x40) != 0) << 7) |
+              (((v85 & 0x40) != 0) << 6);
+        __asm__ volatile("" ::"r"(v59));
+      }
       *(_DWORD*)(v6 + 24) = v59;
       if (*(_BYTE*)(a3 + 203) == 0) {
         *(_DWORD*)(v6 + 24) = v59 | 0x400;
@@ -1395,26 +1426,32 @@ __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3)
       }
       *(_BYTE*)(v6 + 72) = 23;
       *(_BYTE*)(v6 + 191) = 64;
-      if ((unsigned __int8)CudaDriverRoutine_b9300(v87) != 0) {
+      if (CudaDriverStub_b9300(v86)) {
         *(_DWORD*)(v6 + 24) |= 0x3Fu;
-        if ((unsigned __int8)CudaDriverRoutine_bbdf0(v87) != 0) {
-          *(_DWORD*)(v85 + 24) = *(_DWORD*)(v85 + 24) & 0xFFFFFFC0 | 0x3E;
+        if (CudaDriverRoutine_bbdf0_alt1(v86)) {
+          *(_DWORD*)(v84 + 24) = *(_DWORD*)(v84 + 24) & 0xFFFFFFC0 | 0x3E;
         }
       }
       v60 = a1;
     LABEL_95:
-      v83 = CudaDriverRoutine_98340(v60);
-      CudaDriverRoutine_92a90(v83, v5, a3);
+      v82 = CudaDriverRoutine_98340_alt1(v60);
+      CudaDriverRoutine_92a90_alt1(v82, v5, a3);
       return 0;
     }
     goto LABEL_18;
   }
-  CudaDriverRoutine_928b0(v5, &v90, v89);
-  *(_DWORD*)(v6 + 32) = v90;
-  v17 = *(_DWORD*)(v6 + 44);
+  CudaDriverRoutine_928b0_alt1(v5, &v88_.v89, &v88_.v88);
+  *(_DWORD*)(v6 + 32) = v88_.v89;
+  {
+    v17 = *(_DWORD*)(v6 + 44);
+    __asm__ volatile("" ::"r"(v17));
+  }
   v18 = v17 | 0x4000000;
   *(_DWORD*)(v6 + 44) = v17 | 0x4000000;
-  v19 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+  {
+    v19 = *(_DWORD*)(*(_QWORD*)(v5 + 32) + 276LL);
+    __asm__ volatile("" ::"r"(v19));
+  }
   if (v19 == 0) {
     goto LABEL_46;
   }

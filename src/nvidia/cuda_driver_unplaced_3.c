@@ -4270,9 +4270,8 @@ __int64 cuda_driver_750a0(unsigned int a1, unsigned int a2, unsigned int a3,
       result = CudaDriverRoutine_6cac0(0xFFu, a1, a2, a3, 0xFFFFFFFF);
       if ((_DWORD)result == 0) {
         v17 = *(_QWORD*)(*v9 + 8LL * a1);
-        result = (*(__int64 (**)(__int64, unsigned int, unsigned int,
-                                 __int64))(v17 + 23375528LL))(v17, a2, a3,
-                                                               a4 + 16);
+        result = (*(__int64 (**)(__int64, unsigned int, unsigned int, __int64))(
+            v17 + 23375528LL))(v17, a2, a3, a4 + 16);
         if ((_DWORD)result == 0) {
           result = CudaDriverRoutine_6cac0(0x7Fu, a1, a2, a3, 0xFFFFFFFF);
           if ((_DWORD)result == 0) {

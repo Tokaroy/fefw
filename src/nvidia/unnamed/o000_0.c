@@ -5,61 +5,36 @@
 struct PseudoSret {
   _QWORD words[3];
 };
-
 extern _UNKNOWN* CudaDriverData_1423028;
-
 extern _UNKNOWN* CudaDriverData_1423030;
-
 extern int CudaDriverData_14324c0;
-
 extern __int64 (*CudaDriverData_1432d28)(_QWORD, _QWORD, __int64, int*);
-
 __int64 CudaDriverRoutine_11d560(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_12e340(_QWORD);
-
 __int64 CudaDriverRoutine_197480(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                                  _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1a2910(void);
-
 __int64 CudaDriverRoutine_205fa0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_206060(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_208ba0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_25cf10(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_25cf30(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_574e0(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_577d0(_QWORD);
-
 __int64 CudaDriverRoutine_82bc0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_82e60(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_90880(_QWORD*, __int64, int);
-
 __int64 CudaDriverRoutine_97090(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_98190(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_98340(_QWORD);
-
 __int64 CudaDriverRoutine_985b0(_QWORD);
-
 __int64 CudaDriverRoutine_bc770(_QWORD);
-
 __int64 CudaDriverRoutine_e5960(_QWORD);
-
 __int64 CudaDriverRoutine_e7ac0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_e7b50(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_e7e40(_QWORD);
+__int64 CudaDriverHr_4d910(unsigned __int64* a1, unsigned __int64 a2,
+                           unsigned __int64 a3, _QWORD* a4);
 
 __int64 CudaDriverHr_3a0(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -1152,11 +1127,17 @@ __int64 CudaDriverHr_4d910(unsigned __int64* a1, unsigned __int64 a2,
 
   result = 0;
   if (a1 != nullptr && a2 <= a3) {
-    v6 = *a1;
+    {
+      v6 = *a1;
+      __asm__ volatile("" ::"r"(v6));
+    }
     if (a3 > *a1 - 1) {
       return 0;
     }
-    v9 = a1[1];
+    {
+      v9 = a1[1];
+      __asm__ volatile("" ::"r"(v9));
+    }
     v7 = a1 + 1;
     v8 = (_QWORD*)v9;
     v10 = a2 >> 6;
@@ -1168,8 +1149,11 @@ __int64 CudaDriverHr_4d910(unsigned __int64* a1, unsigned __int64 a2,
       v12 = a2 >> 6;
       while (1) {
         v13 = v12 == v10 ? -1LL << a2 : -1LL;
-        v14 = v12 == v11 ? 0xFFFFFFFFFFFFFFFFLL >> ~(_BYTE)a3 : -1LL;
-        v15 = v14 & ~v8[v12] & v13;
+        v14 = v12 == v11 ? 0xFFFFFFFFFFFFFFFFLL >> ((~(_BYTE)a3) & 63) : -1LL;
+        {
+          v15 = v14 & ~v8[v12] & v13;
+          __asm__ volatile("" ::"r"(v15));
+        }
         if (v15 != 0) {
           break;
         }

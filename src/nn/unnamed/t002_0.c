@@ -3,134 +3,75 @@
 #pragma GCC visibility push(hidden)
 
 extern int SdkData_10450c0;
-
 extern char SdkData_10450c4;
-
 extern __int64 SdkData_10450c8;
-
 extern __int128 SdkData_bb1e60;
-
 extern __int128 SdkData_bb3360;
-
 extern _DWORD SdkData_c77cf4[5];
-
 extern _DWORD SdkData_c925c0[5];
-
 extern float SdkData_c925d4[7];
-
 extern float SdkData_c925f0[7];
-
 extern _DWORD SdkData_c92ba8[3];
-
 extern _UNKNOWN* SdkData_e89ba0;
-
 extern _UNKNOWN* SdkData_e89bd8;
-
 __int64 SdkRoutine_64ac60(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_64b750(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_65ce80(_QWORD);
-
 __int64 SdkRoutine_669460(void);
-
 __int64 SdkRoutine_669550(void);
-
 __int64 SdkRoutine_669c40(_QWORD, _QWORD);
-
 __int64 SdkRoutine_669f00(_QWORD);
-
 __int64 SdkRoutine_669f10(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_669f40(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_66a6d0(_QWORD, _QWORD);
-
 __int64 SdkRoutine_66cfa0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_67a390(_QWORD, _QWORD);
-
 unsigned __int64 SdkRoutine_6863c0(__int64, _DWORD*);
-
 __int64 SdkRoutine_686c00(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_686d90(__int64, __int64, unsigned int*, unsigned int,
                           __int64);
-
 __int64 SdkRoutine_696a70(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_699440(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_6a9c00(__int64);
-
 __int64 SdkRoutine_6adbf0(_QWORD);
-
 __int64 SdkRoutine_86acf0(void);
-
 __int64 SdkRoutine_86ad00(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_86ad40(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_875d30(_QWORD);
-
 __int64 SdkRoutine_876530(_QWORD);
-
 __int64 SdkRoutine_876550(_QWORD, _QWORD);
-
 __int64 SdkRoutine_876560(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_876570(_QWORD);
-
 __int64 SdkRoutine_876580(_QWORD);
-
 __int64 SdkRoutine_8765a0(_QWORD, _QWORD);
-
 __int64 SdkRoutine_8765b0(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8767c0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8767d0(_QWORD, _QWORD);
-
 __int64 SdkRoutine_8767e0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8767f0(_QWORD, _QWORD);
-
 __int64 SdkRoutine_876830(_QWORD, _QWORD);
-
 __int64 SdkRoutine_876850(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8768b0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8768c0(void);
-
 __int64 SdkRoutine_8768d0(void);
-
 __int64 SdkRoutine_8768e0(void);
-
 __int64 SdkRoutine_876900(void);
-
 __int64 SdkRoutine_876910(void);
-
 __int64 SdkRoutine_876930(_QWORD, _QWORD);
-
 __int64 SdkRoutine_8769c0(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_8769d0(_QWORD);
-
 __int64 SdkRoutine_8769e0(_QWORD, _QWORD);
-
 __int64 SdkRoutine_8769f0(void);
-
 __int64 SdkRoutine_876a00(void);
-
 __int64 SdkRoutine_876a10(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_876a20(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                           _QWORD, _QWORD);
-
 __int64 SdkRoutine_876a30(void);
-
 __int64 SdkRoutine_876a80(_QWORD, _QWORD, _QWORD, _QWORD);
+__int64* nn_67a390(__int64* result, __int64);
+__int64 nvidia_64b750(__int64 result, __int64, __int64);
+unsigned __int64 SdkHr_688090(unsigned __int64 result, __int64 a2, _DWORD* a3,
+                              unsigned int a4, __int64 a5, char a6);
 
 __int64 SdkHr_681b60(__int64 result, int a2, int a3, __int64 a4)
 {
@@ -401,8 +342,8 @@ LABEL_35:
   return SdkRoutine_686c00(a2, v24, a4, v22 & 0xFFFFFF00, a1);
 }
 
-__int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
-                     __int64 a5, char a6)
+unsigned __int64 SdkHr_688090(unsigned __int64 result, __int64 a2, _DWORD* a3,
+                              unsigned int a4, __int64 a5, char a6)
 {
   __int64 v9;
   int v10;
@@ -432,33 +373,62 @@ __int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
   v9 = result;
   if ((a6 & 1) != 0 || (*(_WORD*)(result + 360) & 3) != 0) {
     if (a2 != 0) {
-      v10 = *(unsigned __int8*)(a2 + 32);
-      v11 = *(_DWORD**)(result + 16);
+      {
+        v10 = *(unsigned __int8*)(a2 + 32);
+        __asm__ volatile("" ::"r"(v10));
+      }
+      {
+        v11 = *(_DWORD**)(result + 16);
+        __asm__ volatile("" ::"r"(v11));
+      }
       if ((*(_BYTE*)(result + 11408) & 1) != 0) {
         goto LABEL_11;
       }
-      v13 = v11[44];
-      v12 = v11[45];
-      v14 = *(_DWORD*)(a2 + 52);
+      {
+        v13 = v11[44];
+        __asm__ volatile("" ::"r"(v13));
+      }
+      {
+        v12 = v11[45];
+        __asm__ volatile("" ::"r"(v12));
+      }
+      {
+        v14 = *(_DWORD*)(a2 + 52);
+        __asm__ volatile("" ::"r"(v14));
+      }
       if (v14 <= *(_DWORD*)(result + 7876)) {
-        v16 = v11[43];
+        {
+          v16 = v11[43];
+          __asm__ volatile("" ::"r"(v16));
+        }
         v15 = 256;
         if (v16 != 0) {
         LABEL_7:
           if (v15 != *(_DWORD*)(result + 4280)) {
-            v17 =
-                ((*(_DWORD*)(result + 7872) / (v16 * v13 * v12)) & 0xFFFFFE00) *
-                v13 * v12;
-            v18 = *(_QWORD*)(result + 11240);
+            {
+              v17 = ((*(_DWORD*)(result + 7872) / (v16 * v13 * v12)) &
+                     0xFFFFFE00) *
+                    v13 * v12;
+              __asm__ volatile("" ::"r"(v17));
+            }
+            {
+              v18 = *(_QWORD*)(result + 11240);
+              __asm__ volatile("" ::"r"(v18));
+            }
             if ((unsigned __int64)(v18 + 16) > *(_QWORD*)(result + 11248)) {
-              v32 = *(_DWORD**)(result + 16);
+              {
+                v32 = *(_DWORD**)(result + 16);
+                __asm__ volatile("" ::"r"(v32));
+              }
               v19 = a5;
               v20 = a4;
-              SdkRoutine_64b750(
-                  result + 11240, v18,
-                  4LL * (unsigned int)(*(_DWORD*)(result + 11344) + 4));
+              nvidia_64b750(result + 11240, v18,
+                            4LL * (unsigned int)(*(int*)(result + 11344) + 4));
               v11 = v32;
-              v18 = *(_QWORD*)(v9 + 11240);
+              {
+                v18 = *(_QWORD*)(v9 + 11240);
+                __asm__ volatile("" ::"r"(v18));
+              }
               a5 = v19;
               a4 = v20;
             }
@@ -471,17 +441,29 @@ __int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
         LABEL_11:
           result = SdkRoutine_686d90((__int64)a3, (__int64)v11,
                                      (unsigned int*)a2, a4, a5);
-          v21 = a3[64];
+          {
+            v21 = a3[64];
+            __asm__ volatile("" ::"r"(v21));
+          }
           if ((*(_BYTE*)(v9 + 356) & 4) != 0) {
             if (v21 == 2) {
-              v22 = a3[19] | 0x80000;
+              {
+                v22 = a3[19] | 0x80000;
+                __asm__ volatile("" ::"r"(v22));
+              }
               goto LABEL_16;
             }
-            v29 = a3[16] | 0x80000000;
+            {
+              v29 = a3[16] | 0x80000000;
+              __asm__ volatile("" ::"r"(v29));
+            }
           }
           else {
             if (v21 == 2) {
-              v22 = a3[19] & 0xFFF7FFFF;
+              {
+                v22 = a3[19] & 0xFFF7FFFF;
+                __asm__ volatile("" ::"r"(v22));
+              }
             LABEL_16:
               v23 = -261121;
               a3[19] = v22;
@@ -492,7 +474,10 @@ __int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
               v28 = 22;
               goto LABEL_22;
             }
-            v29 = a3[16] & 0x7FFFFFFF;
+            {
+              v29 = a3[16] & 0x7FFFFFFF;
+              __asm__ volatile("" ::"r"(v29));
+            }
           }
           v23 = -2139095041;
           a3[16] = v29;
@@ -506,18 +491,30 @@ __int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
           a3[v26] |= 0xFF00FF00;
           a3[v28] &= v23;
           a3[v26] = -12517616;
-          v30 = *(unsigned __int8*)(a2 + 32);
+          {
+            v30 = *(unsigned __int8*)(a2 + 32);
+            __asm__ volatile("" ::"r"(v30));
+          }
           if (*(_BYTE*)(a2 + 32) == 0 && v10 != 0) {
             *(_WORD*)(v9 + 360) |= 0x1D8u;
-            v30 = *(unsigned __int8*)(a2 + 32);
+            {
+              v30 = *(unsigned __int8*)(a2 + 32);
+              __asm__ volatile("" ::"r"(v30));
+            }
           }
           if (v30 == 1 && v10 != 1) {
-            v31 = *(_OWORD**)(v9 + 11240);
-            if ((unsigned __int64)(v31 + 1) > *(_QWORD*)(v9 + 11248)) {
-              result = SdkRoutine_64b750(
-                  v9 + 11240, v31,
-                  4LL * (unsigned int)(*(_DWORD*)(v9 + 11344) + 4));
+            {
               v31 = *(_OWORD**)(v9 + 11240);
+              __asm__ volatile("" ::"r"(v31));
+            }
+            if ((unsigned __int64)(v31 + 1) > *(_QWORD*)(v9 + 11248)) {
+              result =
+                  nvidia_64b750(v9 + 11240, (__int64)v31,
+                                4LL * (unsigned int)(*(int*)(v9 + 11344) + 4));
+              {
+                v31 = *(_OWORD**)(v9 + 11240);
+                __asm__ volatile("" ::"r"(v31));
+              }
             }
             *v31 = SdkData_bb3360;
             *(_QWORD*)(v9 + 11240) = v31 + 1;
@@ -526,7 +523,10 @@ __int64 SdkHr_688090(__int64 result, __int64 a2, _DWORD* a3, unsigned int a4,
         }
       }
       else {
-        v15 = *(_DWORD*)(result + 7872) / (v13 * v12 * v14);
+        {
+          v15 = *(_DWORD*)(result + 7872) / (v13 * v12 * v14);
+          __asm__ volatile("" ::"r"(v15));
+        }
         v16 = v15;
         if (v15 != 0) {
           goto LABEL_7;
@@ -542,7 +542,8 @@ LABEL_30:
   }
   if (*(_BYTE*)(v9 + 11408) == 1 && (a6 & 1) == 0 &&
       (*(_BYTE*)(v9 + 5977) & 1) != 0) {
-    result = SdkRoutine_67a390(v9 + 11240, *(_QWORD*)(v9 + 368));
+    result = (unsigned __int64)nn_67a390((__int64*)(v9 + 11240),
+                                         *(_QWORD*)(v9 + 368));
   }
   *(_DWORD*)(v9 + 360) = 512;
   return result;

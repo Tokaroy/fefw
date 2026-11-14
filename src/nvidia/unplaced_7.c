@@ -2888,11 +2888,13 @@ __int64 nvidia_63d810(__int64 a1, __int64 a2, unsigned int a3)
   unsigned int v11;
   __int64 v12;
   int v15;
-  __int128 v16;
-  int v17;
-  int v18;
+  struct {
+    __int128 v16;
+    int v17;
+    int v18;
+  } v16_;
   _QWORD v19[3];
-  _QWORD v20[4];
+  __int64 v20[4];
   _QWORD v21[4];
 
   v5 = *(_QWORD*)(a1 + 8);
@@ -2908,22 +2910,22 @@ __int64 nvidia_63d810(__int64 a1, __int64 a2, unsigned int a3)
   v21[0] = v19;
   v21[1] = 24;
   v19[2] = 24;
-  v20[0] = v19;
+  v20[0] = (__int64)v19;
   v20[3] = 24;
   v20[1] = 24;
-  v20[2] = &v16;
+  v20[2] = (__int64)&v16_.v16;
   v10 = *(_QWORD*)(a1 + 56);
   v11 = *(_DWORD*)(v10 + 60);
   v12 = *(_QWORD*)(v10 + 80) & 0x100LL;
   if (v11 < 0xC || v12 == 0) {
     return 2;
   }
-  result =
-      nvidia_644cf0(*(unsigned int*)(a1 + 48), 3222819852LL, v21, 1, v20, 2);
+  result = nvidia_644cf0_alt1(*(unsigned int*)(a1 + 48), 3222819852LL, v21, 1,
+                              v20, 2u);
   if ((_DWORD)result == 0) {
-    *(_OWORD*)a2 = v16;
-    v15 = v18;
-    *(_DWORD*)(a2 + 16) = v17;
+    *(_OWORD*)a2 = v16_.v16;
+    v15 = v16_.v18;
+    *(_DWORD*)(a2 + 16) = v16_.v17;
     *(_DWORD*)(a2 + 20) = v15;
   }
   return result;

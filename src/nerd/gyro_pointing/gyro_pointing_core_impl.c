@@ -132,6 +132,13 @@ __int64 nerd_gyro_pointing_GyroPointingCore_ResetHeading(__int64 result,
                                                          long double a2,
                                                          double a3, double a4,
                                                          long double a5);
+__attribute__((swiftcall)) void math_70b0c0(PSEUDO_X8, float*, float, float,
+                                            float);
+__attribute__((swiftcall)) void nerd_gyro_pointing_70ace0(PSEUDO_X8, __int64,
+                                                          _QWORD*);
+__attribute__((swiftcall)) void nerd_gyro_pointing_720480(PSEUDO_X8, __int64*,
+                                                          float*);
+__int64 math_711380(__int64*);
 
 void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                                                __int64 a2)
@@ -2418,7 +2425,8 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
     v884 = v81;
     v885 = v82;
     kalman_transition_70e160((void*)((float*)v1029), (float*)v880);
-    SdkRoutine_720480((void*)((float*)&v905), v1029, (float*)(v5 + 8224));
+    nerd_gyro_pointing_720480((void*)((float*)&v905), v1029,
+                              (float*)(v5 + 8224));
     v84 = *(float*)(v5 + 8264);
     v816 = v46;
     v85 = (float*)&v918[24 * v960 - 8];
@@ -2494,7 +2502,7 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
         v880[1] = 0;
         v881 = 0;
         v880[0] = 0;
-        SdkRoutine_70ace0((void*)(&v853), (__int64)&v917, &v961);
+        nerd_gyro_pointing_70ace0((void*)(&v853), (__int64)&v917, &v961);
         v1029[0] = v853;
         v1029[1] = v854;
         v1038 = v868;
@@ -2673,9 +2681,8 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
                   *(float*)&v861 = v133 - (float)(v88 + v99);
                   SdkRoutine_879fa0((void*)(&v844_.v844), v880, &v853);
                   v140 = 0x0.0p+0f;
-                  SdkRoutine_70b0c0((void*)((__int64)v1029), (float*)&v905,
-                                    0x0.0p+0f, 0x0.0p+0f,
-                                    0x1.ea80000000000p+9f);
+                  math_70b0c0((void*)((__int64)v1029), (float*)&v905, 0x0.0p+0f,
+                              0x0.0p+0f, 0x1.ea80000000000p+9f);
                   v141 = *(float*)&v846_.v846;
                   v142 = *(float*)v1030;
                   v143 = v1029[0];
@@ -4336,7 +4343,7 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
                                                 v844_.v844 =
                                                     __PAIR64__(v437, v436);
                                                 *(float*)&v844_.v845 = -v435;
-                                                SdkRoutine_720480(
+                                                nerd_gyro_pointing_720480(
                                                     (void*)((float*)&v917),
                                                     v880, (float*)&v844_.v844);
                                                 SdkRoutine_722d40(
@@ -6179,7 +6186,7 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
                                                 SdkRoutine_87a050(
                                                     v5 + 200, &v853, &v917,
                                                     v1029, v880, 0x0.0p+0);
-                                                SdkRoutine_711380(
+                                                math_711380(
                                                     (__int64*)(v5 + 200));
                                                 if ((nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates_plt(
                                                          v5 + 200) &
@@ -6937,7 +6944,7 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
                                   (float)(PSEUDO_UNFUSED(v63 * v63)))) +
                   0x1.0000000000000p-126f) *
             0x1.0000000000000p-1f;
-      if (!((float)(v65 * v65) > 0x1.47ae140000000p-5f)) {
+      if ((float)(v65 * v65) <= 0x1.47ae140000000p-5f) {
         v66 =
             (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v65 *
                                                                                             v65) *
@@ -6989,7 +6996,7 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
     }
   }
   v73 = sqrtf(v56 + 0x1.0000000000000p-126f) * 0x1.0000000000000p-1f;
-  if (!((float)(v73 * v73) > 0x1.47ae140000000p-5f)) {
+  if ((float)(v73 * v73) <= 0x1.47ae140000000p-5f) {
     v74 =
         (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v73 *
                                                                                         v73) *

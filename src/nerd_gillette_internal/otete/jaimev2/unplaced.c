@@ -3165,6 +3165,8 @@ LABEL_41:
 __int64 nerd_gillette_internal_otete_jaimev2_Serialize_74b2e0(__int64 a1,
                                                               __int64** a2)
 {
+
+#pragma clang fp contract(off)
   __int64* v2;
   unsigned __int64 v3;
   unsigned __int64 v4;
@@ -3366,8 +3368,9 @@ __int64 nerd_gillette_internal_otete_jaimev2_Serialize_74b2e0(__int64 a1,
     v53 = (v52 >> (v23 & 7)) & 1;
   }
   *(float*)(a1 + 24) =
-      (float)((float)(v53 | v50 | (unsigned __int64)(4 * v51)) * 0.0039216f) +
-      0.0f;
+      (float)((float)(v53 | v50 | (unsigned __int64)(4 * v51)) *
+              0x1.0101020000000p-8f) +
+      0x0.0p+0f;
   return 1;
 }
 

@@ -3,126 +3,70 @@
 #pragma GCC visibility push(hidden)
 
 extern _UNKNOWN CudaDriverData_1133bd8;
-
 extern _UNKNOWN CudaDriverData_1133be4;
-
 extern _UNKNOWN CudaDriverData_1133bf0;
-
 extern _UNKNOWN CudaDriverData_1133bfc;
-
 extern _UNKNOWN CudaDriverData_1133c08;
-
 extern _UNKNOWN CudaDriverData_1133c14;
-
 extern _UNKNOWN CudaDriverData_1133c20;
-
 extern _UNKNOWN CudaDriverData_1133c2c;
-
 extern _UNKNOWN CudaDriverData_1133c38;
-
 extern _UNKNOWN CudaDriverData_1133c44;
-
 extern _UNKNOWN CudaDriverData_1133c50;
-
 extern _UNKNOWN CudaDriverData_1133c5c;
-
 extern _UNKNOWN CudaDriverData_1133c68;
-
 extern _UNKNOWN CudaDriverData_1133c74;
-
 extern _UNKNOWN CudaDriverData_1133c80;
-
 extern _UNKNOWN CudaDriverData_1133c8c;
-
 extern _UNKNOWN CudaDriverData_1133c98;
-
 extern _UNKNOWN CudaDriverData_1133ca4;
-
 extern _UNKNOWN CudaDriverData_1133cb0;
-
 extern _UNKNOWN CudaDriverData_1133cbc;
-
 extern _UNKNOWN CudaDriverData_1133cc8;
-
 extern _UNKNOWN CudaDriverData_1133cd4;
-
 extern _UNKNOWN CudaDriverData_1133ce0;
-
 extern _UNKNOWN CudaDriverData_1133cec;
-
 extern _UNKNOWN CudaDriverData_1133cf8;
-
 extern _UNKNOWN CudaDriverData_1133d04;
-
 extern _UNKNOWN CudaDriverData_1133d10;
-
 extern _UNKNOWN CudaDriverData_1133d1c;
-
 extern _UNKNOWN CudaDriverData_1133d28;
-
 extern _UNKNOWN CudaDriverData_1133d34;
-
 extern _UNKNOWN CudaDriverData_1133d40;
-
 extern _UNKNOWN CudaDriverData_1133d4c;
-
 extern _UNKNOWN CudaDriverData_1133d58;
-
 extern _UNKNOWN CudaDriverData_1133d64;
-
 extern _UNKNOWN CudaDriverData_1133d70;
-
 extern __int64 CudaDriverData_1423360;
-
 extern int CudaDriverData_14302f8;
-
 extern __int64 CudaDriverData_14347a0;
-
 extern __int64 CudaDriverData_143bd88;
-
 __int64 CudaDriverRoutine_107f90(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_108070(_QWORD);
-
 __int64 CudaDriverRoutine_11c740(__int64 result, __int64, unsigned int,
                                  int8x16_t*, _BYTE*);
-
 __int64 CudaDriverRoutine_12a4a0(_QWORD);
-
 __int64 CudaDriverRoutine_1dbab0(_QWORD);
-
 __int64 CudaDriverRoutine_1dbb80(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_1dc880(_QWORD);
-
 __int64 CudaDriverRoutine_1dc930(_QWORD);
-
 __int64 CudaDriverRoutine_1dc9f0(void);
-
 __int64 CudaDriverRoutine_25cf10(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_98340(_QWORD);
-
 __int64 CudaDriverRoutine_a3190(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_a38f0(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_b8f70(_QWORD, _QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_c5a60(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_ed630(_QWORD, _QWORD, const char*, ...);
-
 __int64 CudaDriverRoutine_f6e20(_QWORD);
-
 __int64 CudaDriverRoutine_f7a00(_QWORD);
-
 __int64 CudaDriverRoutine_f9380(_QWORD, _QWORD);
-
 __int64 CudaDriverRoutine_f94a0(__int64, unsigned int*, char);
-
 __int64 CudaDriverRoutine_fabf0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                                 _QWORD);
+__int64 nvidia_ed630(__int64, __int64, __int64, ...);
+__int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
+                           __int64 a5, __int64 a6, __int64 a7);
 
 __int64 CudaDriverHr_add60(__int64 a1)
 {
@@ -500,7 +444,6 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
                            __int64 a5, __int64 a6, __int64 a7)
 {
   __int64 v7;
-  __int64 v8;
   bool v9;
   __int64 v10;
   __int64 v11;
@@ -557,24 +500,24 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
   int* v62;
   int v63;
   int v64;
-  _QWORD v65[16];
-  __int64 v66;
-  __int64 v67;
-  __int64 v68;
+  struct {
+    _QWORD v65[16];
+    __int64 v66;
+    __int64 v67;
+  } v65_;
 
-  v67 = v7;
-  v68 = v8;
-  v66 = 0;
+  v65_.v67 = v7;
+  v65_.v66 = 0;
   v64 = -1;
-  memset(v65, 0, sizeof(v65));
+  memset(v65_.v65, 0, sizeof(v65_.v65));
   if ((_DWORD)result == 0) {
     return result;
   }
   if (a2 == 0 || a3 == 0) {
-    CudaDriverRoutine_ed630(
-        "CUDA", 0,
-        "options or optionValues is NULL with a non-zero numOptions\n", a4, a5,
-        a6, a7, 0);
+    nvidia_ed630(
+        (__int64)"CUDA", 0,
+        (__int64)"options or optionValues is NULL with a non-zero numOptions\n",
+        a4, a5, a6, a7, 0);
     return 1;
   }
   v9 = (unsigned __int8)a5 == 0;
@@ -694,25 +637,26 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
       goto LABEL_48;
     default:
       if (v14 != 10004) {
-        CudaDriverRoutine_ed630("CUDA", 0,
-                                "Unrecognized option %u (at index %u)\n", v14);
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"Unrecognized option %u (at index %u)\n", v14);
         return 1;
       }
       v15 = &CudaDriverData_1133d70;
     LABEL_48:
       if ((_BYTE)a4 != 0 && v15[10] == 0) {
-        CudaDriverRoutine_ed630(
-            "CUDA", 0, "Option %u (at index %u) cannot be updated\n", v14);
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"Option %u (at index %u) cannot be updated\n",
+                     v14);
         return 1;
       }
       if (v13 != 0 && v15[11] == 0) {
         return 1;
       }
       if ((_DWORD)a6 != 6 && v15[(unsigned int)a6 + 4] == 0) {
-        CudaDriverRoutine_ed630(
-            "CUDA", 0,
-            "Option %u (at index %u) not applicable for input type %u\n", v14,
-            v10, a6);
+        nvidia_ed630((__int64)"CUDA", 0,
+                     (__int64)"Option %u (at index %u) not applicable for "
+                              "input type %u\n",
+                     v14, v10, a6);
         return 1;
       }
       v16 = v64;
@@ -740,7 +684,7 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
     return 0;
   }
   v20 = v64;
-  v21 = (int*)v65;
+  v21 = (int*)v65_.v65;
   do {
     v22 = v20;
     if (v20 == 3) {
@@ -750,18 +694,18 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
     v20 = v23;
   } while (v23 != -1);
   v24 = v64;
-  v25 = (int*)v65;
+  v25 = (int*)v65_.v65;
   do {
     if (v24 == 4) {
       if (v22 == 3) {
         goto LABEL_70;
       }
     LABEL_91:
-      CudaDriverRoutine_ed630(
-          "CUDA", 0,
-          "CU_JIT_INFO_LOG_BUFFER and CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES must "
-          "be specified together\n",
-          a4, v10, a6, a7, 0);
+      nvidia_ed630((__int64)"CUDA", 0,
+                   (__int64)"CU_JIT_INFO_LOG_BUFFER and "
+                            "CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES must be "
+                            "specified together\n",
+                   a4, v10, a6, a7, 0);
       return 1;
     }
     v26 = *v25++;
@@ -772,7 +716,7 @@ __int64 CudaDriverHr_e3160(__int64 result, __int64 a2, __int64 a3, __int64 a4,
   }
 LABEL_70:
   v27 = v64;
-  v28 = (int*)v65;
+  v28 = (int*)v65_.v65;
   do {
     v29 = v27;
     if (v27 == 5) {
@@ -782,7 +726,7 @@ LABEL_70:
     v27 = v30;
   } while (v30 != -1);
   v31 = v64;
-  v32 = (int*)v65;
+  v32 = (int*)v65_.v65;
   while (2) {
     if (v31 == 6) {
       if (v29 == 5) {
@@ -799,16 +743,16 @@ LABEL_70:
   }
   if (v29 == 5) {
   LABEL_93:
-    CudaDriverRoutine_ed630(
-        "CUDA", 0,
-        "CU_JIT_ERROR_LOG_BUFFER and CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES must "
-        "be specified together\n",
-        a4, v10, a6, a7, 0);
+    nvidia_ed630((__int64)"CUDA", 0,
+                 (__int64)"CU_JIT_ERROR_LOG_BUFFER and "
+                          "CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES must be "
+                          "specified together\n",
+                 a4, v10, a6, a7, 0);
     return 1;
   }
 LABEL_77:
   v34 = v64;
-  v35 = (int*)v65;
+  v35 = (int*)v65_.v65;
   do {
     v36 = v34;
     if (v34 == 10000) {
@@ -818,7 +762,7 @@ LABEL_77:
     v34 = v37;
   } while (v37 != -1);
   v38 = v64;
-  v39 = (int*)v65;
+  v39 = (int*)v65_.v65;
   while (2) {
     if (v38 == 10001) {
       if (v36 == 10000) {
@@ -835,34 +779,34 @@ LABEL_77:
   }
   if (v36 == 10000) {
   LABEL_95:
-    CudaDriverRoutine_ed630("CUDA", 0,
-                            "CU_JIT_STATISTICS and CU_JIT_STATISTICS_SIZE must "
-                            "be specified together\n",
-                            a4, v10, a6, a7, 0);
+    nvidia_ed630((__int64)"CUDA", 0,
+                 (__int64)"CU_JIT_STATISTICS and CU_JIT_STATISTICS_SIZE must "
+                          "be specified together\n",
+                 a4, v10, a6, a7, 0);
     return 1;
   }
 LABEL_84:
   v41 = v64;
-  v42 = (int*)v65;
+  v42 = (int*)v65_.v65;
   while (v41 != 1) {
     v43 = *v42++;
     v41 = v43;
     if (v43 == -1) {
     LABEL_99:
       v47 = v64;
-      v48 = (int*)v65;
+      v48 = (int*)v65_.v65;
       while (v47 != 17) {
         v49 = *v48++;
         v47 = v49;
         if (v49 == -1) {
           v50 = v64;
-          v51 = (int*)v65;
+          v51 = (int*)v65_.v65;
           while (v50 != 18) {
             v52 = *v51++;
             v50 = v52;
             if (v52 == -1) {
               v53 = v64;
-              v54 = (int*)v65;
+              v54 = (int*)v65_.v65;
               while (v53 != 19) {
                 v55 = *v54++;
                 v53 = v55;
@@ -879,22 +823,23 @@ LABEL_84:
       }
     LABEL_109:
       v56 = v64;
-      v57 = (int*)v65;
+      v57 = (int*)v65_.v65;
       while (v56 != 17) {
         v58 = *v57++;
         v56 = v58;
         if (v58 == -1) {
         LABEL_121:
-          CudaDriverRoutine_ed630(
-              "CUDA", 0,
-              "CU_JIT_GLOBAL_SYMBOL_NAMES, CU_JIT_GLOBAL_SYMBOL_ADDRESSES and "
-              "CU_JIT_GLOBAL_SYMBOL_COUNT must be specified together\n",
-              a4, v10, a6, a7, 0);
+          nvidia_ed630((__int64)"CUDA", 0,
+                       (__int64)"CU_JIT_GLOBAL_SYMBOL_NAMES, "
+                                "CU_JIT_GLOBAL_SYMBOL_ADDRESSES and "
+                                "CU_JIT_GLOBAL_SYMBOL_COUNT must be s"
+                                "pecified together\n",
+                       a4, v10, a6, a7, 0);
           return 1;
         }
       }
       v59 = v64;
-      v60 = (int*)v65;
+      v60 = (int*)v65_.v65;
       while (v59 != 18) {
         v61 = *v60++;
         v59 = v61;
@@ -902,7 +847,7 @@ LABEL_84:
           goto LABEL_121;
         }
       }
-      v62 = (int*)v65;
+      v62 = (int*)v65_.v65;
       while (v19 != 19) {
         v63 = *v62++;
         v19 = v63;
@@ -914,7 +859,7 @@ LABEL_84:
     }
   }
   v44 = v64;
-  v45 = (int*)v65;
+  v45 = (int*)v65_.v65;
   while (v44 != 9) {
     v46 = *v45++;
     v44 = v46;
@@ -922,8 +867,9 @@ LABEL_84:
       goto LABEL_99;
     }
   }
-  CudaDriverRoutine_ed630(
-      "CUDA", 0, "Cannot specify CU_JIT_THREADS_PER_BLOCK with CU_JIT_TARGET\n",
+  nvidia_ed630(
+      (__int64)"CUDA", 0,
+      (__int64)"Cannot specify CU_JIT_THREADS_PER_BLOCK with CU_JIT_TARGET\n",
       a4, v10, a6, a7, 0);
   return 1;
 }

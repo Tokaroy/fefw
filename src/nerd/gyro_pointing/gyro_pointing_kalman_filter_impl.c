@@ -4157,6 +4157,7 @@ LABEL_27:
 }
 
 _OWORD
+
 nerd_gyro_pointing_GyroPointingKalmanFilter_GetCalibrationState(void* this_)
 {
 
@@ -4196,9 +4197,7 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_GetCalibrationState(void* this_)
   v6 = sqrtf(*(float*)&v3[136 * v4]);
 
   // A NaN deviation lands in the last class, the low test comes first.
-  v22 = v7 < 0x1.0624dd2f1a9fcp-9   ? 2
-        : v7 < 0x1.47ae147ae147bp-7 ? 1
-                                    : 0;
+  v22 = v7 < 0x1.0624dd2f1a9fcp-9 ? 2 : v7 < 0x1.47ae147ae147bp-7 ? 1 : 0;
   v22 |= v5 < 0x1.0624dd2f1a9fcp-9   ? 0x200
          : v5 < 0x1.47ae147ae147bp-7 ? 0x100
                                      : 0;
@@ -4246,9 +4245,7 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_GetCalibrationState(void* this_)
   v22 |= v18 < 0x1.0624dd2f1a9fcp-10  ? 0x200000000000000LL
          : v18 < 0x1.89374bc6a7efap-9 ? 0x100000000000000LL
                                       : 0;
-  v23 = v20 < 0x1.0624dd2f1a9fcp-10  ? 2
-        : v20 < 0x1.89374bc6a7efap-9 ? 1
-                                     : 0;
+  v23 = v20 < 0x1.0624dd2f1a9fcp-10 ? 2 : v20 < 0x1.89374bc6a7efap-9 ? 1 : 0;
   v23 |= v17 < 0x1.0624dd2f1a9fcp-10  ? 0x200
          : v17 < 0x1.89374bc6a7efap-9 ? 0x100
                                       : 0;

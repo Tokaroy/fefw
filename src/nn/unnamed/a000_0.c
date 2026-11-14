@@ -5,32 +5,33 @@
 struct PseudoSret {
   _QWORD words[3];
 };
-
 extern int16x8_t SdkData_bcb9e0;
-
 __int64 SdkRoutine_242a60(_QWORD);
-
 __int64 SdkRoutine_242c00(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_42f340(_QWORD);
-
 __int64 SdkRoutine_433470(_QWORD);
-
 __int64 SdkRoutine_433960(_QWORD);
-
 __int64 SdkRoutine_857100(_QWORD, _QWORD);
-
 __int64 SdkRoutine_857150(_QWORD);
-
 __int64 SdkRoutine_862aa0(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_863470(_QWORD, _QWORD);
-
 __int64 SdkRoutine_863590(_QWORD);
-
 __int64 SdkRoutine_869570(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_869c80(_QWORD);
+__int64 nn_codec_FDKmemclear_plt(_QWORD, _QWORD);
+__int64 nn_codec_FDKmemcpy_plt(_QWORD, _QWORD, _QWORD);
+__int64 nn_fontll_itype_42f340(__int64);
+__int64 nn_fontll_itype_433470(__int64);
+__int64 nn_fontll_itype_433960(__int64 result);
+__int64 rtgah_plt(_QWORD);
+__int64 varmul_64_plt(int, int, char);
+extern _UNKNOWN SdkData_c2c984;
+extern _UNKNOWN SdkData_c2c9ac;
+extern _UNKNOWN SdkData_c2ca2c;
+extern _UNKNOWN SdkData_c2ca8c;
+void longjmp_plt(__int64, int);
+__int64 SdkHr_35dec0(int* a1, int a2, int a3, __int16* a4);
+__int64 SdkHr_430ca0(__int64 result);
 
 int16x8_t* SdkHr_5f0cc(int16x8_t* a1)
 {
@@ -1234,12 +1235,379 @@ __int64 SdkHr_242b10(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int16 a5,
   }
 }
 
+__int64 SdkHr_35dec0(int* a1, int a2, int a3, __int16* a4)
+{
+  int v5;
+  __int64 v6;
+  int v7;
+  int* v10;
+  int* v11;
+  int v12;
+  char v13;
+  __int64 v14;
+  int v15;
+  int v16;
+  int v17;
+  __int16* v18;
+  __int64 v19;
+  unsigned int v20;
+  unsigned int v21;
+  __int16* v22;
+  int v23;
+  __int16* v24;
+  __int64 v25;
+  __int64 v26;
+  unsigned int v27;
+  int v28;
+  __int64 v29;
+  int v30;
+  __int64 v31;
+  unsigned int v32;
+  unsigned int v33;
+  int v34;
+  int v35;
+  int v36;
+  __int64 v37;
+  int v38;
+  int v39;
+  __int64 v40;
+  __int64 v41;
+  _DWORD* v42;
+  __int64 v43;
+  __int64 v44;
+  int* v45;
+  __int64 v46;
+  int v47;
+  signed int v48;
+  unsigned int v49;
+  __int64 v50;
+  int v51;
+  int v52;
+  int v53;
+  char* v54;
+  int* v55;
+  signed int v56;
+  int v57;
+  __int64 v58;
+  __int64 v59;
+  char* v60;
+
+  if (a3 == 0) {
+    v7 = a1[3];
+    a1[5] = a1[4];
+    a1[7] = a1[6];
+    nn_codec_FDKmemcpy_plt(a1 + 16, a1 + 24, 32);
+    v10 = a1 + 32;
+    v11 = a1 + 40;
+    nn_codec_FDKmemcpy_plt(a1 + 32, a1 + 40, 32);
+    if (a1[8] != 0) {
+      nn_codec_FDKmemclear_plt(a1 + 11, 16);
+      a1[10] = 4;
+      nn_codec_FDKmemcpy_plt(a1 + 11, (char*)&SdkData_c2c9ac + 16 * a1[7], 16);
+      if (a1[4] == 1) {
+        v12 = a1[a1[7] + 16];
+      }
+      else {
+        v12 = 0;
+      }
+      a1[15] = v12;
+    }
+    if (v7 == 4) {
+      v13 = 2;
+    }
+    else {
+      v13 = 3;
+    }
+    v14 = (unsigned int)a1[3];
+    if ((_DWORD)v14 != 0) {
+      v15 = a2 >> v13;
+      if (v15 <= 0) {
+        v38 = a1[49];
+        v39 = a1[50];
+        v40 = v14 & 7;
+        if ((unsigned int)v14 >= 8) {
+          v42 = a1 + 47;
+          v43 = 0;
+          v44 = -(__int64)((unsigned int)v14 & 0xFFFFFFF8);
+          do {
+            *(v42 - 23) = 0;
+            *(v42 - 7) = 0;
+            v43 -= 8;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 22) = 0;
+            *(v42 - 6) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 21) = 0;
+            *(v42 - 5) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 20) = 0;
+            *(v42 - 4) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 19) = 0;
+            *(v42 - 3) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 18) = 0;
+            *(v42 - 2) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 17) = 0;
+            *(v42 - 1) = 0;
+            a1[49] = v38;
+            a1[50] = v39;
+            *(v42 - 16) = 0;
+            *v42 = 0;
+            v42 += 8;
+            a1[49] = v38;
+            a1[50] = v39;
+          } while (v44 != v43);
+          v41 = -v43;
+        }
+        else {
+          v41 = 0;
+        }
+        if (v40 != 0) {
+          v45 = &a1[v41 + 40];
+          do {
+            *(v45 - 16) = 0;
+            *v45++ = 0;
+            --v40;
+            a1[49] = v38;
+            a1[50] = v39;
+          } while (v40 != 0);
+        }
+      }
+      else {
+        v16 = a1[49];
+        v17 = a1[50];
+        v18 = a4;
+        v19 = 0;
+        do {
+          if ((unsigned int)v15 >= 4) {
+            v20 = 0;
+            v21 = 0;
+            v23 = v15 & 0x7FFFFFFC;
+            v24 = v18;
+            do {
+              v23 -= 4;
+              v25 = (__int64)*v24 << 15;
+              v26 =
+                  (int)(2 *
+                        (((unsigned __int64)(1620901888 * (v25 - v16)) >> 32) -
+                         ((unsigned __int64)(0x7FFFFFFFBEC90000LL * v17) >>
+                          32)));
+              v27 = v21 +
+                    ((unsigned int)((unsigned __int64)(v26 * v26) >> 32) >> 4);
+              v28 = v24[1] << 15;
+              v29 =
+                  (int)(2 *
+                        (((unsigned __int64)(1620901888LL * (v28 - (int)v25)) >>
+                          32) -
+                         ((unsigned __int64)(0x7FFFFFFFBEC90000LL * v26) >>
+                          32)));
+              v30 = v24[2] << 15;
+              v31 =
+                  (int)(2 * (((unsigned __int64)(1620901888LL * (v30 - v28)) >>
+                              32) -
+                             ((unsigned __int64)(0x7FFFFFFFBEC90000LL * v29) >>
+                              32)));
+              v32 = v20 +
+                    ((unsigned int)((unsigned __int64)((int)v25 *
+                                                       (__int64)(int)v25) >>
+                                    32) >>
+                     4) +
+                    ((unsigned int)((unsigned __int64)(v28 * (__int64)v28) >>
+                                    32) >>
+                     4) +
+                    ((unsigned int)((unsigned __int64)(v30 * (__int64)v30) >>
+                                    32) >>
+                     4);
+              v22 = v24 + 4;
+              v33 = v27 +
+                    ((unsigned int)((unsigned __int64)(v29 * v29) >> 32) >> 4) +
+                    ((unsigned int)((unsigned __int64)(v31 * v31) >> 32) >> 4);
+              v16 = v24[3] << 15;
+              v17 =
+                  2 * (((unsigned __int64)(1620901888LL * (v16 - v30)) >> 32) -
+                       ((unsigned __int64)(0x7FFFFFFFBEC90000LL * v31) >> 32));
+              v20 = v32 +
+                    ((unsigned int)((unsigned __int64)(v16 * (__int64)v16) >>
+                                    32) >>
+                     4);
+              v21 = v33 +
+                    ((unsigned int)((unsigned __int64)(v17 * (__int64)v17) >>
+                                    32) >>
+                     4);
+              v24 += 4;
+            } while (v23 != 0);
+          }
+          else {
+            v20 = 0;
+            v21 = 0;
+            v22 = v18;
+          }
+          v34 = v16;
+          v35 = v17;
+          if ((v15 & 3) != 0) {
+            v36 = v15 & 3;
+            v35 = v17;
+            do {
+              v37 = *v22++;
+              --v36;
+              v34 = (_DWORD)v37 << 15;
+              v35 =
+                  2 * (((unsigned __int64)(1620901888 * ((v37 << 15) - v16)) >>
+                        32) -
+                       ((unsigned __int64)(0x7FFFFFFFBEC90000LL * v35) >> 32));
+              v20 += (unsigned int)((unsigned __int64)(v34 * (__int64)v34) >>
+                                    32) >>
+                     4;
+              v21 += (unsigned int)((unsigned __int64)(v35 * (__int64)v35) >>
+                                    32) >>
+                     4;
+              v16 = (_DWORD)v37 << 15;
+            } while (v36 != 0);
+          }
+          a1[v19 + 24] = v20;
+          v11[v19++] = v21;
+          v17 = v35;
+          v16 = v34;
+          v18 += (unsigned int)(v15 - 1) + 1;
+          a1[49] = v34;
+          a1[50] = v35;
+        } while (v19 != v14);
+      }
+    }
+    v46 = (unsigned int)(v7 - 1);
+    a1[4] = 0;
+    if (v7 == 0) {
+      goto LABEL_40;
+    }
+    v47 = v10[v46];
+    v48 = a1[48];
+    if (v7 == 1) {
+      v49 = 0;
+      v50 = 0;
+      v51 = 0;
+    }
+    else {
+      v55 = a1 + 41;
+      v49 = 0;
+      v50 = 0;
+      v51 = 0;
+      do {
+        v56 = 2 * (((unsigned __int64)(1503264768LL * v48) >> 32) +
+                   ((unsigned __int64)(644245120LL * v47) >> 32));
+        a1[48] = v56;
+        v57 = *(v55 - 1);
+        if ((int)(((unsigned __int64)(214761472LL * v57) >> 31) & 0xFFFFFFFE) >
+            v56) {
+          v49 = 1;
+          a1[6] = v50;
+          a1[4] = 1;
+        }
+        v58 = 1503264768LL * v56;
+        if (v51 <= v57) {
+          v51 = v57;
+        }
+        v48 =
+            2 * (HIDWORD(v58) + ((unsigned __int64)(644245120LL * v57) >> 32));
+        a1[48] = v48;
+        v47 = *v55;
+        if ((int)(((unsigned __int64)(214761472LL * *v55) >> 31) & 0xFFFFFFFE) >
+            v48) {
+          v49 = 1;
+          a1[4] = 1;
+          a1[6] = v50 + 1;
+        }
+        v50 += 2;
+        v55 += 2;
+        if (v51 <= v47) {
+          v51 = v47;
+        }
+      } while ((v7 & 0xFFFFFFFE) != v50);
+    }
+    if ((v7 & 1) != 0) {
+      v52 = ((unsigned __int64)(1503264768LL * v48) >> 32) +
+            ((unsigned __int64)(644245120LL * v47) >> 32);
+      a1[48] = 2 * v52;
+      v53 = v11[v50];
+      if ((int)(((unsigned __int64)(214761472LL * v53) >> 31) & 0xFFFFFFFE) >
+          2 * v52) {
+        v49 = 1;
+        a1[6] = v50;
+        a1[4] = 1;
+      }
+      if (v51 <= v53) {
+        v51 = v53;
+      }
+    }
+    if (v51 > 15624) {
+      if (v49 != 0) {
+        if (a1[9] != 0) {
+          goto LABEL_60;
+        }
+        goto LABEL_47;
+      }
+    }
+    else {
+    LABEL_40:
+      a1[4] = 0;
+    }
+    if (a1[5] == 1) {
+      if ((int)(((unsigned __int64)(5LL * a1[41]) >> 3) & 0xFFFFFFFE) >=
+          v10[v46] >> 4) {
+        v49 = 0;
+        if (a1[9] == 0) {
+          goto LABEL_47;
+        }
+        goto LABEL_60;
+      }
+      if (a1[7] == (_DWORD)v46) {
+        v49 = 1;
+        a1[6] = 0;
+        a1[4] = 1;
+        if (a1[9] == 0) {
+          goto LABEL_47;
+        }
+      LABEL_60:
+        v54 = (char*)&SdkData_c2ca2c + 48 * a1[5] + 24 * v49 + 4 * *a1;
+        goto LABEL_61;
+      }
+    }
+    v49 = 0;
+    if (a1[9] != 0) {
+      goto LABEL_60;
+    }
+  LABEL_47:
+    v54 = (char*)&SdkData_c2ca8c + 24 * v49 + 4 * *a1;
+  LABEL_61:
+    v59 = *(int*)v54;
+    v60 = (char*)&SdkData_c2c984 + 20 * a1[8];
+    *a1 = v59;
+    v5 = *(_DWORD*)&v60[4 * v59];
+    v6 = 1;
+    goto LABEL_62;
+  }
+  v5 = 1;
+  *(_QWORD*)a1 = 0;
+  v6 = 11;
+  a1[10] = 1;
+LABEL_62:
+  a1[v6] = v5;
+  return 0;
+}
+
 __int64 SdkHr_430ca0(__int64 result)
 {
   unsigned int v1;
   unsigned int v2;
   int v3;
-  unsigned int v4;
+  int v4;
   int v5;
   int v6;
   __int64 v7;
@@ -1249,7 +1617,7 @@ __int64 SdkHr_430ca0(__int64 result)
   int v11;
   int v12;
   unsigned int v13;
-  unsigned int v15;
+  int v15;
   int v17;
   int v18;
   int v19;
@@ -1357,7 +1725,7 @@ __int64 SdkHr_430ca0(__int64 result)
   *(_QWORD*)(result + 40) = v7 - 4;
   v11 = *(_DWORD*)(v7 - 4);
   if (v11 == 11) {
-    return SdkRoutine_869c80(result);
+    return rtgah_plt(result);
   }
   if ((v10 & 2) == 0) {
     if (v11 > 252) {
@@ -1518,7 +1886,7 @@ __int64 SdkHr_430ca0(__int64 result)
                 v18 = v53 + v52;
                 *(_QWORD*)(v9 + 40) = v25 + 1;
                 *v25 = v17;
-                result = SdkRoutine_42f340(v9);
+                result = nn_fontll_itype_42f340(v9);
                 v1 = v13;
               }
             }
@@ -1680,7 +2048,7 @@ __int64 SdkHr_430ca0(__int64 result)
                   v76 = *(_DWORD**)(v9 + 40);
                   *(_QWORD*)(v9 + 40) = v76 + 1;
                   *v76 = v17;
-                  result = SdkRoutine_42f340(v9);
+                  result = nn_fontll_itype_42f340(v9);
                   v18 = v75 + 2;
                   v1 = v13;
                 }
@@ -2026,8 +2394,8 @@ __int64 SdkHr_430ca0(__int64 result)
         goto LABEL_24;
       }
     LABEL_18:
-      v15 = SdkRoutine_433470(v9);
-      result = SdkRoutine_869570(v4, v15, 16);
+      v15 = nn_fontll_itype_433470(v9);
+      result = varmul_64_plt(v4, v15, 16);
       v13 = (unsigned __int16)result;
       if ((v5 | v6) != 0 && v1 <= (unsigned __int16)result) {
         goto LABEL_22;
@@ -2035,10 +2403,10 @@ __int64 SdkHr_430ca0(__int64 result)
       goto LABEL_14;
     }
     if (v11 == 252) {
-      return SdkRoutine_433960(result);
+      return nn_fontll_itype_433960(result);
     }
     if ((unsigned int)(v11 - 5) < 5 || (unsigned int)(v11 - 250) < 2) {
-      SdkRoutine_857100(result + 136, 439);
+      longjmp_plt(result + 136, 439);
       goto LABEL_18;
     }
   }

@@ -3881,7 +3881,7 @@ int* opus_silk_575a0(__int64 a1, _WORD* a2, __int16* a3, int a4)
 
   v4 = *(_DWORD*)(a1 + 268);
   v9 = 4LL * v4;
-  v10 = (_QWORD**)__builtin_alloca((v9 + 31) & 0xFFFFFFFFFFFFFFF0LL);
+  v10 = (_QWORD**)((char*)&v34_.v34 - ((v9 + 31) & 0xFFFFFFFFFFFFFFF0LL));
   if (v9 < 0xFFFFFFFFFFFFFFF0LL) {
     v11 = 4LL * v4;
   }

@@ -3642,100 +3642,76 @@ __attribute__((swiftcall)) void linear_algebra_720ce0(PSEUDO_X8 x8_, __int64 a1,
           v52 += 2;
           v57 = v9 + 4 * v56 * v10;
           v58 = v9 + 4 * v55 * v10;
-          v59 = (float)((
-                          float)((
-                                   float)((
-                                            float)((float)((float)((float)((float)((
-                                                                                     float)((
-                                                                                              float)((
-                                                                                                       float)((
-                                                                                                                float)((
-                                                                                                                         float)((float)((float)((float)((float)((float)(v34 * *(float*)(v58 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v58 + 4 * v14))) + (float)(v36 * *(float*)(v58 + 4 * v15))) + (float)(v35 * *(float*)(v58 + 4 * v16))) + (float)(v38 * *(float*)(v58 + 4 * v17))) +
-                                                                                                                (float)(v37 *
-                                                                                                                  *(float*)(v58 +
-                                                                                                                    4 *
-                                                                                                                      v18))) +
-                                                                                                       (float)(v40 *
-                                                                                                         *(float*)(v58 +
-                                                                                                           4 *
-                                                                                                             v19))) +
+          v59 =
+              (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                                          float)((
+                                                                                                                     float)((float)((float)((float)((float)((float)(v34 * *(float*)(v58 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v58 + 4 * v14))) + (float)(v36 * *(float*)(v58 + 4 * v15))) + (float)(v35 * *(float*)(v58 + 4 * v16))) + (float)(v38 * *(float*)(v58 + 4 * v17))) +
+                                                                                                                 (float)(v37 *
+                                                                                                                         *(float*)(v58 +
+                                                                                                                                   4 * v18))) +
+                                                                                                      (float)(v40 *
+                                                                                                              *(float*)(v58 +
+                                                                                                                        4 * v19))) +
                                                                                               (float)(v39 *
-                                                                                                *(float*)(v58 +
-                                                                                                  4 *
-                                                                                                    v20))) +
-                                                                                     (float)(v42 *
-                                                                                       *(float*)(v58 +
-                                                                                         4 *
-                                                                                           v21))) +
-                                                                             (float)(v41 *
-                                                                               *(float*)(v58 +
-                                                                                 4 *
-                                                                                   v23))) +
-                                                                     (float)(v44 *
-                                                                       *(float*)(v58 +
-                                                                         4 *
-                                                                           v24))) +
-                                                             (float)(v43 *
-                                                               *(float*)(v58 +
-                                                                 4 * v25))) +
-                                                     (float)(v46 *
-                                                       *(float*)(v58 +
-                                                         4 * v26))) +
-                                            (float)(v45 *
-                                              *(float*)(v58 + 4 * v27))) +
-                                   (float)(v48 * *(float*)(v58 + 4 * v28))) +
-                          (float)(v47 * *(float*)(v58 + 4 * v29))) +
-                  (float)(v50 * *(float*)(v58 + 4 * v30))) +
-            (float)(v49 * *(float*)(v58 + 4 * v31));
+                                                                                                      *(float*)(v58 +
+                                                                                                                4 * v20))) +
+                                                                                      (float)(v42 *
+                                                                                              *(float*)(v58 +
+                                                                                                        4 * v21))) +
+                                                                              (float)(v41 *
+                                                                                      *(float*)(v58 +
+                                                                                                4 * v23))) +
+                                                                      (float)(v44 *
+                                                                              *(float*)(v58 +
+                                                                                        4 * v24))) +
+                                                              (float)(v43 *
+                                                                      *(float*)(v58 +
+                                                                                4 * v25))) +
+                                                      (float)(v46 *
+                                                              *(float*)(v58 +
+                                                                        4 * v26))) +
+                                              (float)(v45 *
+                                                      *(float*)(v58 +
+                                                                4 * v27))) +
+                                      (float)(v48 * *(float*)(v58 + 4 * v28))) +
+                              (float)(v47 * *(float*)(v58 + 4 * v29))) +
+                      (float)(v50 * *(float*)(v58 + 4 * v30))) +
+              (float)(v49 * *(float*)(v58 + 4 * v31));
           *(v54 - 1) =
-            (float)((
-                      float)((
-                               float)((
-                                        float)((
-                                                 float)((
-                                                          float)((
-                                                                   float)((
-                                                                            float)((
-                                                                                     float)((
-                                                                                              float)((
-                                                                                                       float)((
-                                                                                                                float)((
-                                                                                                                         float)((float)((float)((float)((float)((float)(v34 * *(float*)(v57 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v57 + 4 * v14))) + (float)(v36 * *(float*)(v57 + 4 * v15))) + (float)(v35 * *(float*)(v57 + 4 * v16))) + (float)(v38 * *(float*)(v57 + 4 * v17))) +
-                                                                                                                (float)(v37 *
-                                                                                                                  *(float*)(v57 +
-                                                                                                                    4 *
-                                                                                                                      v18))) +
-                                                                                                       (float)(v40 *
-                                                                                                         *(float*)(v57 +
-                                                                                                           4 *
-                                                                                                             v19))) +
+              (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                                          float)((
+                                                                                                                     float)((float)((float)((float)((float)((float)(v34 * *(float*)(v57 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v57 + 4 * v14))) + (float)(v36 * *(float*)(v57 + 4 * v15))) + (float)(v35 * *(float*)(v57 + 4 * v16))) + (float)(v38 * *(float*)(v57 + 4 * v17))) +
+                                                                                                                 (float)(v37 *
+                                                                                                                         *(float*)(v57 +
+                                                                                                                                   4 * v18))) +
+                                                                                                      (float)(v40 *
+                                                                                                              *(float*)(v57 +
+                                                                                                                        4 * v19))) +
                                                                                               (float)(v39 *
-                                                                                                *(float*)(v57 +
-                                                                                                  4 *
-                                                                                                    v20))) +
-                                                                                     (float)(v42 *
-                                                                                       *(float*)(v57 +
-                                                                                         4 *
-                                                                                           v21))) +
-                                                                            (float)(v41 *
+                                                                                                      *(float*)(v57 +
+                                                                                                                4 * v20))) +
+                                                                                      (float)(v42 *
+                                                                                              *(float*)(v57 +
+                                                                                                        4 * v21))) +
+                                                                              (float)(v41 *
+                                                                                      *(float*)(v57 +
+                                                                                                4 * v23))) +
+                                                                      (float)(v44 *
                                                                               *(float*)(v57 +
-                                                                                4 *
-                                                                                  v23))) +
-                                                                   (float)(v44 *
-                                                                     *(float*)(v57 +
-                                                                       4 *
-                                                                         v24))) +
-                                                          (float)(v43 *
-                                                            *(float*)(v57 +
-                                                              4 * v25))) +
-                                                 (float)(v46 *
-                                                   *(float*)(v57 + 4 * v26))) +
-                                        (float)(v45 *
-                                          *(float*)(v57 + 4 * v27))) +
-                               (float)(v48 * *(float*)(v57 + 4 * v28))) +
-                      (float)(v47 * *(float*)(v57 + 4 * v29))) +
-              (float)(v50 * *(float*)(v57 + 4 * v30))) +
-            (float)(v49 * *(float*)(v57 + 4 * v31));
+                                                                                        4 * v24))) +
+                                                              (float)(v43 *
+                                                                      *(float*)(v57 +
+                                                                                4 * v25))) +
+                                                      (float)(v46 *
+                                                              *(float*)(v57 +
+                                                                        4 * v26))) +
+                                              (float)(v45 *
+                                                      *(float*)(v57 +
+                                                                4 * v27))) +
+                                      (float)(v48 * *(float*)(v57 + 4 * v28))) +
+                              (float)(v47 * *(float*)(v57 + 4 * v29))) +
+                      (float)(v50 * *(float*)(v57 + 4 * v30))) +
+              (float)(v49 * *(float*)(v57 + 4 * v31));
           *v54 = v59;
           v54 += 2;
         } while (v22 != v53);
@@ -3746,52 +3722,37 @@ __attribute__((swiftcall)) void linear_algebra_720ce0(PSEUDO_X8 x8_, __int64 a1,
       }
       v60 = v9 + 4 * *(_QWORD*)(v63 + 8 * v51) * v10;
       *(float*)&v65[120 * v12 + 4 * v51] =
-        (float)((
-                  float)((
-                           float)((
-                                    float)((
-                                             float)((
-                                                      float)((
-                                                               float)((
-                                                                        float)((
-                                                                                 float)((
-                                                                                          float)((
-                                                                                                   float)((
-                                                                                                            float)((
-                                                                                                                     float)((float)((float)((float)((float)((float)(v34 * *(float*)(v60 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v60 + 4 * v14))) + (float)(v36 * *(float*)(v60 + 4 * v15))) + (float)(v35 * *(float*)(v60 + 4 * v16))) + (float)(v38 * *(float*)(v60 + 4 * v17))) +
-                                                                                                            (float)(v37 *
-                                                                                                              *(float*)(v60 +
-                                                                                                                4 *
-                                                                                                                  v18))) +
-                                                                                                   (float)(v40 *
+          (float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                      float)((float)((float)((float)((float)((float)((float)((float)((float)(v34 * *(float*)(v60 + 4 * v13)) + 0x0.0p+0f) + (float)(v33 * *(float*)(v60 + 4 * v14))) + (float)(v36 * *(float*)(v60 + 4 * v15))) + (float)(v35 * *(float*)(v60 + 4 * v16))) + (float)(v38 * *(float*)(v60 + 4 * v17))) + (float)(v37 *
+                                                                                                                                                                                                                                                                                                                                                                                                *(float*)(v60 +
+                                                                                                                                                                                                                                                                                                                                                                                                          4 * v18))) +
+                                                                                                     (float)(v40 *
+                                                                                                             *(float*)(v60 +
+                                                                                                                       4 * v19))) +
+                                                                                             (float)(v39 *
                                                                                                      *(float*)(v60 +
-                                                                                                       4 *
-                                                                                                         v19))) +
-                                                                                          (float)(v39 *
-                                                                                            *(float*)(v60 +
-                                                                                              4 *
-                                                                                                v20))) +
-                                                                                 (float)(v42 *
-                                                                                   *(float*)(v60 +
-                                                                                     4 *
-                                                                                       v21))) +
-                                                                        (float)(v41 *
+                                                                                                               4 * v20))) +
+                                                                                  (float)(v42 *
+                                                                                          *(float*)(v60 +
+                                                                                                    4 * v21))) +
+                                                                          (float)(v41 *
+                                                                                  *(float*)(v60 +
+                                                                                            4 * v23))) +
+                                                                  (float)(v44 *
                                                                           *(float*)(v60 +
-                                                                            4 *
-                                                                              v23))) +
-                                                               (float)(v44 *
-                                                                 *(float*)(v60 +
-                                                                   4 * v24))) +
-                                                      (float)(v43 *
-                                                        *(float*)(v60 +
-                                                          4 * v25))) +
-                                             (float)(v46 *
-                                               *(float*)(v60 + 4 * v26))) +
-                                    (float)(v45 * *(float*)(v60 + 4 * v27))) +
-                           (float)(v48 * *(float*)(v60 + 4 * v28))) +
-                  (float)(v47 * *(float*)(v60 + 4 * v29))) +
-          (float)(v50 * *(float*)(v60 + 4 * v30))) +
-        (float)(v49 * *(float*)(v60 + 4 * v31));
+                                                                                    4 * v24))) +
+                                                          (float)(v43 *
+                                                                  *(float*)(v60 +
+                                                                            4 * v25))) +
+                                                  (float)(v46 *
+                                                          *(float*)(v60 +
+                                                                    4 * v26))) +
+                                          (float)(v45 *
+                                                  *(float*)(v60 + 4 * v27))) +
+                                  (float)(v48 * *(float*)(v60 + 4 * v28))) +
+                          (float)(v47 * *(float*)(v60 + 4 * v29))) +
+                  (float)(v50 * *(float*)(v60 + 4 * v30))) +
+          (float)(v49 * *(float*)(v60 + 4 * v31));
     LABEL_3:
       ++v12;
       v11 += 30;
@@ -3930,131 +3891,115 @@ __attribute__((swiftcall)) void linear_algebra_721480(PSEUDO_X8 x8_, __int64 a1,
       v35 += 3;
       v59 = v6 + 4 * v58 * v7;
       v60 =
-        (float)((float)((float)((float)((float)((float)((float)((float)((float)(v38 *
+          (float)((float)((float)((float)((float)((float)((float)((float)((float)(v38 *
+                                                                                  *(float*)(v59 +
+                                                                                            4 * v12)) +
+                                                                          0x0.0p+0f) +
+                                                                  (float)(v39 *
                                                                           *(float*)(v59 +
-                                                                            4 *
-                                                                              v12)) +
-                                                                  0x0.0p+0f) +
-                                                          (float)(v39 *
-                                                            *(float*)(v59 +
-                                                              4 * v13))) +
-                                                  (float)(v40 *
-                                                    *(float*)(v59 + 4 * v14))) +
-                                          (float)(v41 *
-                                            *(float*)(v59 + 4 * v15))) +
-                                  (float)(v42 * *(float*)(v59 + 4 * v16))) +
-                          (float)(v43 * *(float*)(v59 + 4 * v17))) +
-                  (float)(v44 * *(float*)(v59 + 4 * v18))) +
-          (float)(v45 * *(float*)(v59 + 4 * v19))) +
-        (float)(v46 * *(float*)(v59 + 4 * v20));
+                                                                                    4 * v13))) +
+                                                          (float)(v40 *
+                                                                  *(float*)(v59 +
+                                                                            4 * v14))) +
+                                                  (float)(v41 *
+                                                          *(float*)(v59 +
+                                                                    4 * v15))) +
+                                          (float)(v42 *
+                                                  *(float*)(v59 + 4 * v16))) +
+                                  (float)(v43 * *(float*)(v59 + 4 * v17))) +
+                          (float)(v44 * *(float*)(v59 + 4 * v18))) +
+                  (float)(v45 * *(float*)(v59 + 4 * v19))) +
+          (float)(v46 * *(float*)(v59 + 4 * v20));
       v61 = (float)((
-                      float)((
-                               float)((
-                                        float)((
-                                                 float)((
-                                                          float)((
-                                                                   float)((
-                                                                            float)((
-                                                                                     float)((
-                                                                                              float)((
+                        float)((
+                                   float)((
+                                              float)((float)((float)((float)((
+                                                                                 float)((
+                                                                                            float)((
                                                                                                        float)((
-                                                                                                                float)((
-                                                                                                                         float)((float)((float)((float)((float)((float)(v38 * *(float*)(v57 + 4 * v12)) + 0x0.0p+0f) + (float)(v39 * *(float*)(v57 + 4 * v13))) + (float)(v40 * *(float*)(v57 + 4 * v14))) + (float)(v41 * *(float*)(v57 + 4 * v15))) + (float)(v42 * *(float*)(v57 + 4 * v16))) +
-                                                                                                                (float)(v43 *
-                                                                                                                  *(float*)(v57 +
-                                                                                                                    4 *
-                                                                                                                      v17))) +
-                                                                                                       (float)(v44 *
-                                                                                                         *(float*)(v57 +
-                                                                                                           4 *
-                                                                                                             v18))) +
-                                                                                              (float)(v45 *
+                                                                                                                  float)((float)((float)((float)((float)((float)((float)((float)(v38 * *(float*)(v57 + 4 * v12)) + 0x0.0p+0f) + (float)(v39 * *(float*)(v57 + 4 * v13))) + (float)(v40 * *(float*)(v57 + 4 * v14))) + (float)(v41 * *(float*)(v57 + 4 * v15))) + (float)(v42 * *(float*)(v57 + 4 * v16))) + (float)(v43 * *(float*)(v57 + 4 * v17))) + (float)(v44 *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               *(
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   float*)(v57 +
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                           4 * v18))) +
+                                                                                                              (float)(v45 *
+                                                                                                                      *(float*)(v57 +
+                                                                                                                                4 * v19))) +
+                                                                                                   (float)(v46 *
+                                                                                                           *(float*)(v57 +
+                                                                                                                     4 * v20))) +
+                                                                                        (float)(v47 *
                                                                                                 *(float*)(v57 +
-                                                                                                  4 *
-                                                                                                    v19))) +
-                                                                                     (float)(v46 *
-                                                                                       *(float*)(v57 +
-                                                                                         4 *
-                                                                                           v20))) +
-                                                                            (float)(v47 *
-                                                                              *(float*)(v57 +
-                                                                                4 *
-                                                                                  v9))) +
-                                                                   (float)(v48 *
+                                                                                                          4 * v9))) +
+                                                                             (float)(v48 *
+                                                                                     *(float*)(v57 +
+                                                                                               4 * v21))) +
+                                                                     (float)(v49 *
+                                                                             *(float*)(v57 +
+                                                                                       4 * v22))) +
+                                                             (float)(v50 *
                                                                      *(float*)(v57 +
-                                                                       4 *
-                                                                         v21))) +
-                                                          (float)(v49 *
-                                                            *(float*)(v57 +
-                                                              4 * v22))) +
-                                                 (float)(v50 *
-                                                   *(float*)(v57 + 4 * v23))) +
-                                        (float)(v51 *
-                                          *(float*)(v57 + 4 * v24))) +
-                               (float)(v52 * *(float*)(v57 + 4 * v25))) +
-                      (float)(v53 * *(float*)(v57 + 4 * v29))) +
-              (float)(v54 * *(float*)(v57 + 4 * v31))) +
-        (float)(v55 * *(float*)(v57 + 4 * v32));
+                                                                               4 * v23))) +
+                                                     (float)(v51 *
+                                                             *(float*)(v57 +
+                                                                       4 * v24))) +
+                                          (float)(v52 *
+                                                  *(float*)(v57 + 4 * v25))) +
+                               (float)(v53 * *(float*)(v57 + 4 * v29))) +
+                    (float)(v54 * *(float*)(v57 + 4 * v31))) +
+            (float)(v55 * *(float*)(v57 + 4 * v32));
       v62 = *(float*)(v59 + 4 * v9);
-      *(v36 - 1) = (float)((float)((float)((float)((float)((float)((float)((float)((
-                                                                                     float)((
-                                                                                              float)((
-                                                                                                       float)((
-                                                                                                                float)((
-                                                                                                                         float)((float)((float)((float)((float)((float)(v38 * *(float*)(v56 + 4 * v12)) + 0x0.0p+0f) + (float)(v39 * *(float*)(v56 + 4 * v13))) + (float)(v40 * *(float*)(v56 + 4 * v14))) + (float)(v41 * *(float*)(v56 + 4 * v15))) + (float)(v42 * *(float*)(v56 + 4 * v16))) +
-                                                                                                                (float)(v43 *
-                                                                                                                  *(float*)(v56 +
-                                                                                                                    4 *
-                                                                                                                      v17))) +
-                                                                                                       (float)(v44 *
-                                                                                                         *(float*)(v56 +
-                                                                                                           4 *
-                                                                                                             v18))) +
-                                                                                              (float)(v45 *
-                                                                                                *(float*)(v56 +
-                                                                                                  4 *
-                                                                                                    v19))) +
-                                                                                     (float)(v46 *
-                                                                                       *(float*)(v56 +
-                                                                                         4 *
-                                                                                           v20))) +
-                                                                             (float)(v47 *
-                                                                               *(float*)(v56 +
-                                                                                 4 *
-                                                                                   v9))) +
-                                                                     (float)(v48 *
-                                                                       *(float*)(v56 +
-                                                                         4 *
-                                                                           v21))) +
-                                                             (float)(v49 *
-                                                               *(float*)(v56 +
-                                                                 4 * v22))) +
-                                                     (float)(v50 *
-                                                       *(float*)(v56 +
-                                                         4 * v23))) +
-                                             (float)(v51 *
-                                               *(float*)(v56 + 4 * v24))) +
-                                     (float)(v52 * *(float*)(v56 + 4 * v25))) +
-                             (float)(v53 * *(float*)(v56 + 4 * v29))) +
-                     (float)(v54 * *(float*)(v56 + 4 * v31))) +
-        (float)(v55 * *(float*)(v56 + 4 * v32));
+      *(v36 - 1) =
+          (float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                      float)((float)((float)((float)((float)((float)((float)((float)((float)(v38 * *(float*)(v56 + 4 * v12)) + 0x0.0p+0f) + (float)(v39 * *(float*)(v56 + 4 * v13))) + (float)(v40 * *(float*)(v56 + 4 * v14))) + (float)(v41 * *(float*)(v56 + 4 * v15))) + (float)(v42 * *(float*)(v56 + 4 * v16))) + (float)(v43 *
+                                                                                                                                                                                                                                                                                                                                                                                                *(float*)(v56 +
+                                                                                                                                                                                                                                                                                                                                                                                                          4 * v17))) +
+                                                                                                     (float)(v44 *
+                                                                                                             *(float*)(v56 +
+                                                                                                                       4 * v18))) +
+                                                                                             (float)(v45 *
+                                                                                                     *(float*)(v56 +
+                                                                                                               4 * v19))) +
+                                                                                  (float)(v46 *
+                                                                                          *(float*)(v56 +
+                                                                                                    4 * v20))) +
+                                                                          (float)(v47 *
+                                                                                  *(float*)(v56 +
+                                                                                            4 * v9))) +
+                                                                  (float)(v48 *
+                                                                          *(float*)(v56 +
+                                                                                    4 * v21))) +
+                                                          (float)(v49 *
+                                                                  *(float*)(v56 +
+                                                                            4 * v22))) +
+                                                  (float)(v50 *
+                                                          *(float*)(v56 +
+                                                                    4 * v23))) +
+                                          (float)(v51 *
+                                                  *(float*)(v56 + 4 * v24))) +
+                                  (float)(v52 * *(float*)(v56 + 4 * v25))) +
+                          (float)(v53 * *(float*)(v56 + 4 * v29))) +
+                  (float)(v54 * *(float*)(v56 + 4 * v31))) +
+          (float)(v55 * *(float*)(v56 + 4 * v32));
       *v36 = v61;
       v36[1] =
-        (float)((float)((float)((float)((float)((float)((float)((float)(v60 +
-                                                                  (float)(v47 *
-                                                                    v62)) +
-                                                          (float)(v48 *
-                                                            *(float*)(v59 +
-                                                              4 * v21))) +
-                                                  (float)(v49 *
-                                                    *(float*)(v59 + 4 * v22))) +
-                                          (float)(v50 *
-                                            *(float*)(v59 + 4 * v23))) +
-                                  (float)(v51 * *(float*)(v59 + 4 * v24))) +
-                          (float)(v52 * *(float*)(v59 + 4 * v25))) +
-                  (float)(v53 * *(float*)(v59 + 4 * v29))) +
-          (float)(v54 * *(float*)(v59 + 4 * v31))) +
-        (float)(v55 * *(float*)(v59 + 4 * v32));
+          (float)((float)((float)((float)((float)((float)((float)((float)(v60 +
+                                                                          (float)(v47 *
+                                                                                  v62)) +
+                                                                  (float)(v48 *
+                                                                          *(float*)(v59 +
+                                                                                    4 * v21))) +
+                                                          (float)(v49 *
+                                                                  *(float*)(v59 +
+                                                                            4 * v22))) +
+                                                  (float)(v50 *
+                                                          *(float*)(v59 +
+                                                                    4 * v23))) +
+                                          (float)(v51 *
+                                                  *(float*)(v59 + 4 * v24))) +
+                                  (float)(v52 * *(float*)(v59 + 4 * v25))) +
+                          (float)(v53 * *(float*)(v59 + 4 * v29))) +
+                  (float)(v54 * *(float*)(v59 + 4 * v31))) +
+          (float)(v55 * *(float*)(v59 + 4 * v32));
       v36 += 3;
     } while (v34 != 0);
     ++v8;

@@ -7358,8 +7358,7 @@ __int64 nn_fontll_itype_449700(char a1, _QWORD* a2, __int64 a3,
         }
       }
       result = (unsigned int)(result + 1);
-      if (*(int*)(v13 + 4LL * (unsigned __int16)v14) >
-          *(int*)(v13 + 4 * v20)) {
+      if (*(int*)(v13 + 4LL * (unsigned __int16)v14) > *(int*)(v13 + 4 * v20)) {
         v19 = 1;
       }
       else {
