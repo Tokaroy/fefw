@@ -81,6 +81,8 @@ bool as_c81590();
 __int64* as_c81b50(__int64* result, __int64* a2, __int64* a3);
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+__attribute__((swiftcall)) void as_628be0(PSEUDO_X8, __int64, __int64, char,
+                                          char);
 
 __int64 as_607560(__int64 a1)
 {
@@ -187,9 +189,8 @@ __int64 as_607560(__int64 a1)
             sprintf(v79, "contents:/%s", v5),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
-            GameRoutine_628be0((void*)((__int64)&v80_.v80), *(_QWORD*)(a1 + 16),
-                               (__int64)v79, *(_BYTE*)(a1 + 323),
-                               *(_BYTE*)(a1 + 324)),
+            as_628be0((void*)((__int64)&v80_.v80), *(_QWORD*)(a1 + 16),
+                      (__int64)v79, *(_BYTE*)(a1 + 323), *(_BYTE*)(a1 + 324)),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
             v9 = v80_.v80;

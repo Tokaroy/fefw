@@ -268,6 +268,8 @@ __int64 GameHr_127e30(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
 __int64 GameHr_561e20(__int64 result, __int64* a2, __int64 a3, _QWORD* a4,
                       __int64 a5, __int64 a6);
 __int64 GameHr_55b6e0(atomic_uint* a1, signed int a2);
+__int64 memcpy(__int64, __int64, unsigned __int64);
+__int64 GameHr_198580(__int64 result);
 
 bool GameHr_3510(__int64 a1)
 {
@@ -3198,7 +3200,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3, __int64 a4, __int64 a5,
             a5 = (unsigned int)(v38 / 2);
             a4 = (unsigned int)(a5 + v37 / 2);
             *(float*)(a1 + 108 + 4LL * v23) =
-              vcvts_n_f32_s32(a4 + (v36 / 2 + v35 / 2) / 2, 0xFu);
+                vcvts_n_f32_s32(a4 + (v36 / 2 + v35 / 2) / 2, 0xFu);
             v39 = *(_DWORD*)(a1 + 4204);
             if (v39 <= 1022) {
               v23 = v39 + 1;
@@ -3221,46 +3223,43 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3, __int64 a4, __int64 a5,
       v14 -= 11;
       v17 = *(v15 - 1);
       v18 =
-        (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v16 +
-                                                                                                                                  (float)(*(v15 -
-                                                                                                                                            10) *
-                                                                                                                                    *(v15 -
-                                                                                                                                      10))) *
-                                                                                                                          0.5f) +
-                                                                                                                  (float)(*(v15 -
-                                                                                                                            9) *
-                                                                                                                    *(v15 -
-                                                                                                                      9))) *
-                                                                                                          0.5f) +
-                                                                                                  (float)(*(v15 -
-                                                                                                            8) *
-                                                                                                    *(v15 -
-                                                                                                      8))) *
-                                                                                          0.5f) +
-                                                                                  (float)(*(v15 -
-                                                                                            7) *
-                                                                                    *(v15 -
-                                                                                      7))) *
-                                                                          0.5f) +
-                                                                  (float)(*(v15 -
-                                                                            6) *
-                                                                    *(v15 -
-                                                                      6))) *
-                                                          0.5f) +
-                                                  (float)(*(v15 - 5) *
-                                                    *(v15 - 5))) *
-                                          0.5f) +
-                                  (float)(*(v15 - 4) * *(v15 - 4))) *
-                          0.5f) +
-                  (float)(*(v15 - 3) * *(v15 - 3))) *
-          0.5f) +
-        (float)(*(v15 - 2) * *(v15 - 2));
+          (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                              float)((
+                                                                                                         float)((
+                                                                                                                    float)((float)((float)((float)(v16 + (float)(*(v15 - 10) * *(v15 - 10))) * 0.5f) + (float)(*(v15 -
+                                                                                                                                                                                                                 9) *
+                                                                                                                                                                                                               *(v15 -
+                                                                                                                                                                                                                 9))) *
+                                                                                                                           0.5f) +
+                                                                                                                (float)(*(v15 -
+                                                                                                                          8) *
+                                                                                                                        *(v15 -
+                                                                                                                          8))) *
+                                                                                                     0.5f) +
+                                                                                          (float)(*(v15 -
+                                                                                                    7) *
+                                                                                                  *(v15 -
+                                                                                                    7))) *
+                                                                                  0.5f) +
+                                                                          (float)(*(v15 -
+                                                                                    6) *
+                                                                                  *(v15 -
+                                                                                    6))) *
+                                                                  0.5f) +
+                                                          (float)(*(v15 - 5) *
+                                                                  *(v15 - 5))) *
+                                                  0.5f) +
+                                          (float)(*(v15 - 4) * *(v15 - 4))) *
+                                  0.5f) +
+                          (float)(*(v15 - 3) * *(v15 - 3))) *
+                  0.5f) +
+          (float)(*(v15 - 2) * *(v15 - 2));
       v19 = *v15;
       v15 += 11;
       v16 = (float)((float)((float)((float)(v18 * 0.5f) + (float)(v17 * v17)) *
-                      0.5f) +
-              (float)(v19 * v19)) *
-        0.5f;
+                            0.5f) +
+                    (float)(v19 * v19)) *
+            0.5f;
     } while (v14 != 0);
     v20 = sqrtf(v16);
     if (v20 == 0.0f) {
@@ -3414,16 +3413,16 @@ LABEL_43:
             *(_DWORD*)(v66 + 4 * v59) = v74 + ((unsigned int)v74 >> 31);
             v75 = 274877907LL * *(_DWORD*)(v65 + 4 * v59) * v57;
             *(_DWORD*)(v65 + 4 * v59) =
-              (v75 >> 38) + ((unsigned int)(v75 >> 38) >> 31);
+                (v75 >> 38) + ((unsigned int)(v75 >> 38) >> 31);
             a6 = *(unsigned int*)(v67 + 4 * v59);
             v76 = *(_DWORD*)(v69 + 4 * v59) + *(_DWORD*)(v64 + 4 * v59);
             v77 = a6 + *(_DWORD*)(v68 + 4 * v59);
             v78 = *(_DWORD*)(v66 + 4 * v59++);
             a4 = v77 / 2 + v76 / 2 + ((unsigned int)(v77 / 2 + v76 / 2) >> 31);
             a5 = v78 + (v78 >> 31);
-            *(float*)(v6 + 4LL * *(int*)(a1 + 4204)) =
-              vcvts_n_f32_s32((v75 >> 39) + ((unsigned int)(v75 >> 39) >> 31) +
-                  ((int)a5 >> 1) + (v77 / 2 + v76 / 2) / 2,
+            *(float*)(v6 + 4LL * *(int*)(a1 + 4204)) = vcvts_n_f32_s32(
+                (v75 >> 39) + ((unsigned int)(v75 >> 39) >> 31) +
+                    ((int)a5 >> 1) + (v77 / 2 + v76 / 2) / 2,
                 0xFu);
             v79 = *(_DWORD*)(a1 + 4204);
             if (v79 <= 1022) {
@@ -3446,46 +3445,44 @@ LABEL_43:
   do {
     v82 -= 11;
     v84 = *(v81 - 1);
-    v85 =
-      (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v83 +
-                                                                                                                                (float)(*(v81 -
-                                                                                                                                          10) *
-                                                                                                                                  *(v81 -
-                                                                                                                                    10))) *
-                                                                                                                        0.5f) +
-                                                                                                                (float)(*(v81 -
-                                                                                                                          9) *
-                                                                                                                  *(v81 -
-                                                                                                                    9))) *
-                                                                                                        0.5f) +
-                                                                                                (float)(*(v81 -
-                                                                                                          8) *
+    v85 = (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((
+                                                                                              float)((
+                                                                                                         float)((
+                                                                                                                    float)((float)((float)((float)(v83 + (float)(*(v81 - 10) * *(v81 - 10))) * 0.5f) + (float)(*(
+                                                                                                                                                                                                                   v81 -
+                                                                                                                                                                                                                   9) *
+                                                                                                                                                                                                               *(v81 -
+                                                                                                                                                                                                                 9))) *
+                                                                                                                           0.5f) +
+                                                                                                                (float)(*(v81 - 8) *
+                                                                                                                        *(
+                                                                                                                            v81 -
+                                                                                                                            8))) *
+                                                                                                     0.5f) +
+                                                                                          (float)(*(v81 -
+                                                                                                    7) *
                                                                                                   *(v81 -
-                                                                                                    8))) *
-                                                                                        0.5f) +
-                                                                                (float)(*(v81 -
-                                                                                          7) *
+                                                                                                    7))) *
+                                                                                  0.5f) +
+                                                                          (float)(*(v81 -
+                                                                                    6) *
                                                                                   *(v81 -
-                                                                                    7))) *
-                                                                        0.5f) +
-                                                                (float)(*(v81 -
-                                                                          6) *
-                                                                  *(v81 - 6))) *
-                                                        0.5f) +
-                                                (float)(*(v81 - 5) *
-                                                  *(v81 - 5))) *
-                                        0.5f) +
-                                (float)(*(v81 - 4) * *(v81 - 4))) *
-                        0.5f) +
-                (float)(*(v81 - 3) * *(v81 - 3))) *
-        0.5f) +
-      (float)(*(v81 - 2) * *(v81 - 2));
+                                                                                    6))) *
+                                                                  0.5f) +
+                                                          (float)(*(v81 - 5) *
+                                                                  *(v81 - 5))) *
+                                                  0.5f) +
+                                          (float)(*(v81 - 4) * *(v81 - 4))) *
+                                  0.5f) +
+                          (float)(*(v81 - 3) * *(v81 - 3))) *
+                  0.5f) +
+          (float)(*(v81 - 2) * *(v81 - 2));
     v86 = *v81;
     v81 += 11;
     v83 = (float)((float)((float)((float)(v85 * 0.5f) + (float)(v84 * v84)) *
-                    0.5f) +
-            (float)(v86 * v86)) *
-      0.5f;
+                          0.5f) +
+                  (float)(v86 * v86)) *
+          0.5f;
   } while (v82 != 0);
   v87 = sqrtf(v83);
   if (v87 == 0.0f) {
@@ -3553,17 +3550,20 @@ __int64 GameHr_198580(__int64 result)
   __int64 v2;
   int v3;
   signed int v4;
-  __int64 v5;
+  unsigned __int64 v5;
   __int64 v6;
-  __int64 v7;
+  unsigned __int64 v7;
   __int64 v8;
   signed int v9;
-  __int64 v10;
+  unsigned __int64 v10;
   __int64 v11;
   signed int v12;
   _BYTE v13[16];
 
-  v1 = *(_DWORD*)(*(_QWORD*)(result + 24) + 4LL);
+  {
+    v1 = *(_DWORD*)(*(_QWORD*)(result + 24) + 4LL);
+    __asm__ volatile("" ::"r"(v1));
+  }
   if (v1 >= 2) {
     v2 = result;
     if (v1 >> 1 == 1) {
@@ -3573,34 +3573,50 @@ __int64 GameHr_198580(__int64 result)
       v4 = v1 - 1;
       v3 = 0;
       do {
-        v5 = *(int*)(v2 + 32);
-        v6 = *(_QWORD*)(v2 + 24) + 8LL;
-        GameRoutine_1a0b950(v13, v6 + (int)v5 * v3, v5);
-        GameRoutine_1a0b950(v6 + (int)v5 * v3, v6 + (int)v5 * v4, v5);
-        GameRoutine_1a0b950(*(_QWORD*)(v2 + 24) +
-                                *(int*)(v2 + 32) * (__int64)v4 + 8,
-                            v13, *(int*)(v2 + 32));
-        v7 = *(int*)(v2 + 32);
-        v8 = *(_QWORD*)(v2 + 24) + 8LL;
-        GameRoutine_1a0b950(v13, v8 + (int)v7 + (int)v7 * v3, v7);
+        {
+          v5 = *(int*)(v2 + 32);
+          __asm__ volatile("" ::"r"(v5));
+        }
+        {
+          v6 = *(_QWORD*)(v2 + 24) + 8LL;
+          __asm__ volatile("" ::"r"(v6));
+        }
+        memcpy((__int64)v13, v6 + (int)v5 * v3, v5);
+        memcpy(v6 + (int)v5 * v3, v6 + (int)v5 * v4, v5);
+        memcpy(*(_QWORD*)(v2 + 24) + *(int*)(v2 + 32) * (__int64)v4 + 8,
+               (__int64)v13, *(int*)(v2 + 32));
+        {
+          v7 = *(int*)(v2 + 32);
+          __asm__ volatile("" ::"r"(v7));
+        }
+        {
+          v8 = *(_QWORD*)(v2 + 24) + 8LL;
+          __asm__ volatile("" ::"r"(v8));
+        }
+        memcpy((__int64)v13, v8 + (int)v7 + (int)v7 * v3, v7);
         v9 = v1 + (v3 ^ 0xFFFFFFFE);
-        GameRoutine_1a0b950(v8 + (int)v7 + (int)v7 * v3, v8 + (int)v7 * v9, v7);
-        result = GameRoutine_1a0b950(*(_QWORD*)(v2 + 24) +
-                                         *(int*)(v2 + 32) * (__int64)v9 + 8,
-                                     v13, *(int*)(v2 + 32));
+        memcpy(v8 + (int)v7 + (int)v7 * v3, v8 + (int)v7 * v9, v7);
+        result =
+            memcpy(*(_QWORD*)(v2 + 24) + *(int*)(v2 + 32) * (__int64)v9 + 8,
+                   (__int64)v13, *(int*)(v2 + 32));
         v3 += 2;
         v4 -= 2;
       } while (((v1 >> 1) & 0x7FFFFFFE) != v3);
     }
     if ((v1 & 2) != 0) {
-      v10 = *(int*)(v2 + 32);
-      v11 = *(_QWORD*)(v2 + 24) + 8LL;
-      GameRoutine_1a0b950(v13, v11 + (int)v10 * v3, v10);
+      {
+        v10 = *(int*)(v2 + 32);
+        __asm__ volatile("" ::"r"(v10));
+      }
+      {
+        v11 = *(_QWORD*)(v2 + 24) + 8LL;
+        __asm__ volatile("" ::"r"(v11));
+      }
+      memcpy((__int64)v13, v11 + (int)v10 * v3, v10);
       v12 = v1 + ~v3;
-      GameRoutine_1a0b950(v11 + (int)v10 * v3, v11 + (int)v10 * v12, v10);
-      return GameRoutine_1a0b950(*(_QWORD*)(v2 + 24) +
-                                     *(int*)(v2 + 32) * (__int64)v12 + 8,
-                                 v13, *(int*)(v2 + 32));
+      memcpy(v11 + (int)v10 * v3, v11 + (int)v10 * v12, v10);
+      return memcpy(*(_QWORD*)(v2 + 24) + *(int*)(v2 + 32) * (__int64)v12 + 8,
+                    (__int64)v13, *(int*)(v2 + 32));
     }
   }
   return result;

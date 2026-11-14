@@ -64,6 +64,9 @@ __int64 game_cutscene_1811fa0(__int64 a1, float a2, float a3);
 void game_cutscene_181a480(__int64 a1, char a2);
 __int64 game_cutscene_181a7e0(__int64 a1, char a2);
 __int64 game_cutscene_181acc0(__int64 result);
+__int64 game_ce5d20(__int64, __int64, __int64, __int64, unsigned __int64, char);
+extern __int64 (*game_17e70c0_ptr)();
+void GameHr_ce5c00(__int64);
 
 float game_cutscene_17fb4a0(__int64* a1, float a2, float a3)
 {
@@ -1160,8 +1163,8 @@ LABEL_26:
   v20 = *(_QWORD*)(v17 + 576);
   v26_.v27 = v26_.v26;
   v26_.v26[0] = GameData_212ece8 + 2;
-  v26_.v26[1] = GameData_2131e80;
-  GameRoutine_ce5c00(v18);
+  v26_.v26[1] = game_17e70c0_ptr;
+  GameHr_ce5c00(v18);
   if (v26_.v27 != nullptr) {
     if (v26_.v27 == v26_.v26) {
       v30_.v32 = (__int64 (***)(void))v30_.v30;
@@ -1175,7 +1178,7 @@ LABEL_26:
   else {
     v30_.v32 = nullptr;
   }
-  GameRoutine_ce5d20(v18, v19, v20, (__int64)v30_.v30, 0x800u, 1);
+  game_ce5d20(v18, v19, v20, (__int64)v30_.v30, 0x800u, 1);
   if (v30_.v32 == v30_.v30) {
     v24 = 4;
   }

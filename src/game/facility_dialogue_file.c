@@ -48,6 +48,7 @@ void __attribute__((noreturn))
 GameRoutine_6e5a20_alt1() __asm__("GameRoutine_6e5a20");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+__int64 GameHr_196e540(_QWORD, _QWORD, _QWORD);
 __attribute__((swiftcall)) void
 
 FacilityDialogueFile_196e2b0(PSEUDO_X8 x8_, __int64 a1, __int64 a2, __int64 a3)
@@ -301,7 +302,7 @@ __int64 FacilityDialogueFile_196e860(unsigned int a1, __int64 a2, __int64 a3)
 LABEL_18:
   v15 = &game_vstring_kEmpty;
 LABEL_19:
-  v16 = GameRoutine_196e540(a1, v10, v15);
+  v16 = GameHr_196e540(a1, v10, v15);
   v18 = *(__int64**)(GameData_21c9e08 + 64);
   v17 = *(__int64**)(GameData_21c9e08 + 72);
   if (v18 == v17) {

@@ -1075,6 +1075,9 @@ __int64 game_AIThink_IsEnemyInsideInterferenceArea_lambda0_Invoke(
 __int64 GameRoutine_1206ca0(__int64);
 __int64 AIThink_12070f0(__int64 a1, int a2, __int64 a3, __int64 a4);
 __int64 AIThink_12071a0(__int64 a1, unsigned int a2, __int64 a3, __int64 a4);
+__int64 GameHr_11fbb20_alt1(_QWORD) __asm__("GameHr_11fbb20");
+__int64 GameHr_6c2b50_alt1(_QWORD) __asm__("GameHr_6c2b50");
+__int64 game_128df90(_QWORD, _QWORD);
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -16236,8 +16239,8 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
   GameRoutine_11fe0c0(v128, *a1);
   v10 = GameData_21306b8[0];
   v117[0] = GameData_21306b8[0] + 16;
-  GameRoutine_6c2b50(v118);
-  GameRoutine_6c2b50(v119);
+  GameHr_6c2b50_alt1(v118);
+  GameHr_6c2b50_alt1(v119);
   GameRoutine_790080(v120);
   v13 = *((_DWORD*)a1 + 4);
   v14 = *((_DWORD*)a1 + 5);
@@ -16536,9 +16539,9 @@ bool AIThink_121a340(_QWORD* a1, __int64 a2)
             v107 = v74;
             v114 = -1;
             v115 = 0;
-            GameRoutine_128df90(v117, &v107);
+            game_128df90(v117, &v107);
             AiInterferenceSimulator_128e230(v117, &v107);
-            GameRoutine_11fbb20(v117);
+            GameHr_11fbb20_alt1(v117);
             AIBattleSimulator_11fbe50((__int64)v117, 0);
             AIBattleSimulator_11fbe50((__int64)v117, 1);
             AiBattleSimulator_11fc090_alt2(v117, 0);

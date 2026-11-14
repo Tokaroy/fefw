@@ -110,6 +110,7 @@ void __attribute__((noreturn)) GameRoutine_919020();
 void __cxa_guard_release(__int64);
 __int64 PopupController_d7c300(float32x4_t* a1);
 void PopupController_d7e220(__int64 a1);
+__int64 GameHr_d7fde0(__int64*, __int64);
 
 __int64 PopupController_Destructor(__int64 a1)
 {
@@ -3626,7 +3627,7 @@ unsigned __int64* PopupController_d7f820(unsigned __int64* result, __int64 a2,
     v66 = a6;
     if (-v12 >= a5) {
       if (v12 == -1) {
-        return (unsigned __int64*)GameRoutine_d7fde0((__int64*)&v11[i], a2);
+        return (unsigned __int64*)GameHr_d7fde0((__int64*)&v11[i], a2);
       }
       v25 = v16 / 2;
       v19 = (__int64)&v11[10 * (v16 / 2) + i];
@@ -3685,20 +3686,20 @@ unsigned __int64* PopupController_d7f820(unsigned __int64* result, __int64 a2,
         v63 = v17;
         v64 = a3;
         v65 = a5;
-        GameRoutine_d7fde0((__int64*)v19, a2);
+        GameHr_d7fde0((__int64*)v19, a2);
         v31 = (__int64*)(v19 + 80);
         for (j = a2 + 80; (__int64*)j != v18; j += 80) {
           if (v31 == (__int64*)a2) {
             a2 = j;
           }
-          GameRoutine_d7fde0(v31, j);
+          GameHr_d7fde0(v31, j);
           v31 += 10;
         }
         if (v31 != (__int64*)a2) {
           v33 = v31;
           v34 = a2;
           while (1) {
-            GameRoutine_d7fde0(v33, v34);
+            GameHr_d7fde0(v33, v34);
             v34 += 80;
             v35 = v33 + 10 == (__int64*)a2;
             if ((__int64*)v34 == v18) {
@@ -3708,7 +3709,7 @@ unsigned __int64* PopupController_d7f820(unsigned __int64* result, __int64 a2,
               v34 = a2 + 80;
               v33 += 20;
               while (1) {
-                GameRoutine_d7fde0(v33 - 10, a2);
+                GameHr_d7fde0(v33 - 10, a2);
                 v35 = v33 == (__int64*)a2;
                 if ((__int64*)v34 != v18) {
                   break;

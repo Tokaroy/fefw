@@ -227,6 +227,8 @@ bool GameConverge_8ea350(__int64, unsigned int, unsigned __int64*);
 extern __int64 (*GameData_2005008[])();
 void game_anonymous_ConvergeImpl_TryRunConverge_closure0_Invoke(__int64 a1,
                                                                 __int64* a2);
+_QWORD* GameHr_e13380_alt1(__int64, _BYTE**, _QWORD*, _QWORD*, const char*,
+                           __int64, __int64, __int64) __asm__("GameHr_e13380");
 
 bool ConvergeImpl_104f0e0(__int64 a1, __int64 a2)
 {
@@ -1896,10 +1898,10 @@ void game_anonymous_ConvergeImpl_TryRunConverge_closure0_Invoke(__int64 a1,
   __int64 v18;
   __int64 v19;
   _QWORD* v20;
-  __int64 v21;
+  char* v21;
   __int64 v22;
   const char* v23;
-  const char* v24;
+  char* v24;
   __int64* v25;
   __int64* v26;
   __int64* v27;
@@ -2077,9 +2079,9 @@ void game_anonymous_ConvergeImpl_TryRunConverge_closure0_Invoke(__int64 a1,
   v115 = "MID_RouteSelectMenu_AutoGrow_Yes";
   v116_.v116 = "MID_HeroJoyn_AutoGrow_Confirm";
   v114 = "MID_RouteSelectMenu_AutoGrow_Yes_NotGrow";
-  v21 = GameHr_67ed20_alt1(v20);
+  v21 = GameHr_67ed20(v20);
   v22 = (__int64)v11 - v10;
-  v23 = (const char*)v21;
+  v23 = v21;
   v104 = v4;
   if (v11 == (__int64*)v10) {
     v28 = nullptr;
@@ -2089,7 +2091,7 @@ void game_anonymous_ConvergeImpl_TryRunConverge_closure0_Invoke(__int64 a1,
     if (0xAAAAAAAAAAAAAAABLL * (v22 >> 4) > 0x555555555555555LL) {
       goto LABEL_167;
     }
-    v24 = (const char*)v21;
+    v24 = v21;
     v25 = (__int64*)fw_memory_HeapManager_Allocate_alt1(*v9, v22, 16, 0);
     v26 = (__int64*)v10;
     v27 = v25;
@@ -2181,9 +2183,9 @@ void game_anonymous_ConvergeImpl_TryRunConverge_closure0_Invoke(__int64 a1,
   v110_.v111 = v43;
   v108_.v108[0] = GameData_2005008;
   v108_.v109 = v108_.v108;
-  v105 = GameHr_e13380(v104, (__int64*)&v116_.v116, &v115, &v114, v23,
-                       (__int64)v112_.v112, (__int64)v110_.v110,
-                       (__int64)v108_.v108);
+  v105 = GameHr_e13380_alt1(v104, (_BYTE**)&v116_.v116, &v115, &v114, v23,
+                            (__int64)v112_.v112, (__int64)v110_.v110,
+                            (__int64)v108_.v108);
   if (v108_.v109 == v108_.v108) {
     v48 = 32;
   }

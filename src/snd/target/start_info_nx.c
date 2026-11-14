@@ -36,6 +36,7 @@ unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 void __attribute__((noreturn)) snd_a36650();
 __int64 StartInfoNX_Unknown10(__int64 a1, __int64 a2, char a3);
 __int64 StartInfoNX_14ba80(__int64 a1, int a2, char* a3);
+__int64 TargetFile_a392e0(__int64, __int64, ...);
 
 __int64 StartInfoNX_Unknown3(__int64 result, int a2)
 {
@@ -288,7 +289,7 @@ __int64 StartInfoNX_Unknown16(__int64* a1)
     v6 = (const char*)(*(__int64 (**)(_QWORD))(
         **(_QWORD**)snd_g_proxy_ptr[0] + 128LL))(*(_QWORD*)snd_g_proxy_ptr[0]);
     v7 = (const char*)(*(__int64 (**)(_QWORD))(*(_QWORD*)*v5 + 136LL))(*v5);
-    GameRoutine_a392e0((__int64)(a1 + 47), (__int64)"%s%s%s", v6, v7, v3);
+    TargetFile_a392e0((__int64)(a1 + 47), (__int64)"%s%s%s", v6, v7, v3);
     v8 = *v5;
     v9 = GameRoutine_190240((__int64)(a1 + 47));
     v10 = strlen(v9);

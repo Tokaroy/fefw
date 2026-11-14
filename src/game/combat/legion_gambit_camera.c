@@ -63,6 +63,11 @@ void __attribute__((noreturn)) String_60a1d0();
 __attribute__((swiftcall)) void
 LegionGambitCamera_e59fd0(PSEUDO_X8 x8_, __int64 unused_int0, unsigned int a1,
                           int a2, unsigned int a3);
+__int64
+GameRoutine_1a09ce0_alt1(__int64, const char*,
+                         unsigned __int64) __asm__("GameRoutine_1a09ce0");
+__int64 game_1096780(__int64, unsigned __int8*, char);
+extern const char GameData_1aa9224_alt1[] __asm__("GameData_1aa9224");
 
 void LegionGambitCamera_e59e90(__int64 a1)
 {
@@ -682,6 +687,8 @@ void LegionGambitCamera_e5a5e0(float32x4_t* result, unsigned __int8* a2,
 
 float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
 {
+
+#pragma clang fp contract(off)
   int v2;
   unsigned __int8* v3;
   int v4;
@@ -693,14 +700,15 @@ float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
   unsigned __int64 v10;
   int* v11;
   int v12;
-  float* v13;
-  float* v14;
-  unsigned __int8* v15;
-  int v16;
-  unsigned __int8* v17;
-  int v18;
+  unsigned __int8* v13;
+  unsigned __int8* v14;
+  float* v15;
+  unsigned __int8* v16;
+  int v17;
+  unsigned __int8* v18;
   int v19;
   int v20;
+  int v21;
 
   if (a2 != nullptr) {
     v2 = (unsigned __int8)*a2;
@@ -709,22 +717,34 @@ float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
       v4 = 0;
       do {
         v4 = v2 - v4 + 32 * v4;
-        v5 = *v3++;
+        {
+          v5 = *v3++;
+          __asm__ volatile("" ::"r"(v5));
+        }
         v2 = v5;
       } while (v5 != 0);
     }
     else {
       v4 = 0;
     }
-    v6 = *(_QWORD*)(GameData_220f8c8 + 8);
-    v7 = *(_QWORD*)(GameData_220f8c8 + 16);
+    {
+      v6 = *(_QWORD*)(GameData_220f8c8 + 8);
+      __asm__ volatile("" ::"r"(v6));
+    }
+    {
+      v7 = *(_QWORD*)(GameData_220f8c8 + 16);
+      __asm__ volatile("" ::"r"(v7));
+    }
     v8 = v7 - v6;
     if (v7 != v6) {
       v9 = 0;
       v10 = 0x4EC4EC4EC4EC4EC5LL * (v8 >> 3);
       v11 = (int*)(v6 + 24);
       while (1) {
-        v12 = *v11;
+        {
+          v12 = *v11;
+          __asm__ volatile("" ::"r"(v12));
+        }
         v11 += 26;
         if (v4 == v12) {
           break;
@@ -735,41 +755,50 @@ float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
       }
       if (v9 >= 1) {
         if (v10 <= (unsigned int)v9) {
-          GameRoutine_d38e30(result);
+          GameRoutine_d38e30_alt1();
         }
-        v13 = result + 42;
-        if ((float*)(v6 + 104LL * (unsigned int)v9) != result + 42) {
-          v14 = result;
-          GameRoutine_d35d20(result + 42);
-          GameRoutine_1a09ce0(v13, &GameData_1aa9224, 14);
-          v15 = (unsigned __int8*)v14 + 169;
-          result = v14;
-          if (((_BYTE)v14[42] & 1) != 0) {
-            v15 = *((unsigned __int8**)v14 + 23);
+        v13 = (unsigned __int8*)(result + 42);
+        v14 = (unsigned __int8*)(v6 + 104LL * (unsigned int)v9);
+        if (v14 != (unsigned __int8*)(result + 42)) {
+          v15 = result;
+          GameRoutine_d35d20_alt1((__int64)(result + 42), v14);
+          GameRoutine_1a09ce0_alt1((__int64)v13, GameData_1aa9224_alt1, 0xEu);
+          v16 = (unsigned __int8*)v15 + 169;
+          result = v15;
+          if (((_BYTE)v15[42] & 1) != 0) {
+            v16 = *((unsigned __int8**)v15 + 23);
+            __asm__ volatile("" ::"r"(v16));
           }
-          v18 = *v15;
-          v17 = v15 + 1;
-          v16 = v18;
-          if (v18 != 0) {
-            v19 = 0;
+          {
+            v19 = *v16;
+            __asm__ volatile("" ::"r"(v19));
+          }
+          v18 = v16 + 1;
+          v17 = v19;
+          if (v19 != 0) {
+            v20 = 0;
             do {
-              v19 = v16 - v19 + 32 * v19;
-              v20 = *v17++;
-              v16 = v20;
-            } while (v20 != 0);
+              v20 = v17 - v20 + 32 * v20;
+              {
+                v21 = *v18++;
+                __asm__ volatile("" ::"r"(v21));
+              }
+              v17 = v21;
+            } while (v21 != 0);
           }
           else {
-            v19 = 0;
+            v20 = 0;
           }
-          *((_DWORD*)v14 + 48) = v19;
+          *((_DWORD*)v15 + 48) = v20;
         }
         if (*(_BYTE*)(*(_QWORD*)result + 146LL) == 1) {
-          result[58] = (float)(90.0f - result[58]) + 90.0f;
+          result[58] = (float)(0x1.6800000000000p+6f - result[58]) +
+                       0x1.6800000000000p+6f;
           result[60] = -result[60];
           result[63] = -result[63];
         }
-        return (float*)GameRoutine_1096780(
-            *(_QWORD*)(*GameData_212d448[0] + 128), v13, 0);
+        return (float*)game_1096780(*(_QWORD*)(*GameData_212d448[0] + 128), v13,
+                                    0);
       }
     }
   }

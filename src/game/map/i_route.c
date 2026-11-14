@@ -1306,7 +1306,7 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   v9 = a2 == v6 && a3 == v7;
   if (v9) {
     v14 = 0;
-    return GameRoutine_74f280(a1, v14);
+    return IRoute_74f280(a1, v14);
   }
   v10 = *(unsigned int*)(a1 + 136);
   if ((int)v10 >= 1) {
@@ -1318,7 +1318,7 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
       v6 += *v16;
       v7 += v16[256];
       if (a2 == v6 && a3 == v7) {
-        return GameRoutine_74f280(a1, v14);
+        return IRoute_74f280(a1, v14);
       }
       ++v14;
     } while (--v10 != 0);

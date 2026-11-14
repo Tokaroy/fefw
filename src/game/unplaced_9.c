@@ -1602,6 +1602,10 @@ void game_7bdd40(__int64 a1);
 __int64 game_7c6330(__int64 a1);
 __int64 game_80c680(__int64 result);
 char* game_80e6f0(__int64 a1, __int64 a2);
+__int64 GameHr_e5e8c0(__int64*);
+__int64 GameHr_f55b70(__int64);
+void game_5c11f0(float, __int64, float32x2_t*, float32x2_t*, float*, int32x4_t*,
+                 _QWORD*, int, __int64);
 
 float game_55ca90(__int64 a1, float32x4_t* a2, float32x2_t* a3, __int64 a4,
                   float result)
@@ -2139,7 +2143,7 @@ __int64 game_5b9d90(__int64 a1, __int64 a2)
       PSEUDO_LOW_LANE128(
           v111, n128_f32,
           -COERCE_FLOAT(DWORD3(*(_OWORD*)((char*)((_UNKNOWN*)0x4LL) +
-                                           (_QWORD)GameData_212c190))));
+                                          (_QWORD)GameData_212c190))));
       v113 = vmlaq_f32(
           vdupq_lane_s32(COERCE_AS(int32x2_t, LANES128(v111).n128_u64[0]), 0),
           v109, v112);
@@ -2355,7 +2359,7 @@ __int64 game_5b9d90(__int64 a1, __int64 a2)
       PSEUDO_LOW_LANE128(
           v148, n128_f32,
           -COERCE_FLOAT(DWORD3(*(_OWORD*)((char*)((_UNKNOWN*)0x4LL) +
-                                           (_QWORD)GameData_212c190))));
+                                          (_QWORD)GameData_212c190))));
       v150 = vmlaq_f32(
           vdupq_lane_s32(COERCE_AS(int32x2_t, LANES128(v148).n128_u64[0]), 0),
           v146, v149);
@@ -8789,7 +8793,7 @@ void game_5c1c50(__int64 a1, float32x2_t* a2, float32x4_t* a3, __int64 a4,
       *a8,
       vmulq_n_f32(*a16, *(float*)&a10 * *(float*)(LANES128(a6[30]).n128_u64[1] +
                                                   16LL * a7 + 12)));
-  LANES128(v24).n128_f32[0] = 0x1.0000000000000p+0f;
+  LANES128(v24).n128_u32[0] = 0x1.0000000000000p+0f;
   *(float32x4_t*)LANES64(*(a2)).n64_u64 = v25;
   LANES128(v25).n128_u32[0] =
       *(_DWORD*)(*(_QWORD*)(LANES128(a6[35]).n128_u64[1] + 24) + 112LL);
@@ -8797,7 +8801,7 @@ void game_5c1c50(__int64 a1, float32x2_t* a2, float32x4_t* a3, __int64 a4,
     *a3 = *a16;
     LANES128(v25).n128_u32[0] = LANES128(a6[105]).n128_u32[3];
     v27 = a7;
-    if (!(LANES128(v25).n128_f32[0] > 0x0.0p+0f)) {
+    if (LANES128(v25).n128_f32[0] <= 0x0.0p+0f) {
     LABEL_3:
       v28 = LANES128(a6[35]).n128_u64[1];
       if (*(_BYTE*)(v28 + 3) != 1) {
@@ -8813,7 +8817,7 @@ void game_5c1c50(__int64 a1, float32x2_t* a2, float32x4_t* a3, __int64 a4,
     *a3 = v25;
     LANES128(v25).n128_u32[0] = LANES128(a6[105]).n128_u32[3];
     v27 = a7;
-    if (!(LANES128(v25).n128_f32[0] > 0x0.0p+0f)) {
+    if (LANES128(v25).n128_f32[0] <= 0x0.0p+0f) {
       goto LABEL_3;
     }
   }
@@ -8889,14 +8893,14 @@ void game_5c1c50(__int64 a1, float32x2_t* a2, float32x4_t* a3, __int64 a4,
                      COERCE_AS(float32x2_t, LANES128(v42).n128_u64[0]),
                      COERCE_AS(float32x2_t, LANES128(v42).n128_u64[0]))))
           .n64_u32[0];
-  if (!(v39 > 0x0.0p+0f)) {
-    if (!(v41 > 0x0.0p+0f)) {
+  if (v39 <= 0x0.0p+0f) {
+    if (v41 <= 0x0.0p+0f) {
       goto LABEL_10;
     }
   LABEL_46:
     v33 = vmulq_n_f32(a15, 0x1.0000000000000p+0f / v41);
     v45 = (__typeof__(v45)){0};
-    if (!(v44 > 0x0.0p+0f)) {
+    if (v44 <= 0x0.0p+0f) {
       goto LABEL_12;
     }
     goto LABEL_11;
@@ -8939,9 +8943,8 @@ LABEL_16:
   }
 LABEL_17:
   if (*(_QWORD*)(v28 + 616) != 0) {
-    GameRoutine_5c11f0(a9, a1, a2, (float32x2_t*)a3, a5, a6,
-                       (int32x4_t*)LANES128(a6[29]).n128_u64, a7,
-                       v23 + 32 * v27);
+    game_5c11f0(a9, a1, a2, (float32x2_t*)a3, a5, a6,
+                (int32x4_t*)LANES128(a6[29]).n128_u64, a7, v23 + 32 * v27);
     v28 = LANES128(a6[35]).n128_u64[1];
   }
   v51 = *(_QWORD*)(v28 + 584);
@@ -9142,7 +9145,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
       v10 = *a7 * (float)LANES64(v12[2]).n64_i32[0];
       v15 = 16LL * (int)v10;
       LANES128(v11).n128_u32[0] =
-        LANES64(v12[(unsigned __int64)v15 / 8 + 110]).n64_u32[0];
+          LANES64(v12[(unsigned __int64)v15 / 8 + 110]).n64_u32[0];
       *a5 = v11;
       LANES128(v11).n128_u32[1] = *(_DWORD*)(*(_QWORD*)(a6 + 24) + v15 + 884);
       *a5 = v11;
@@ -9155,20 +9158,21 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
     if (v14 != 2 || (int)(v16 = LANES64(v12[2]).n64_u32[0]) < 1) {
     LABEL_17:
       if (*(_BYTE*)(v13 + 2462) != 2 ||
-        (int)(v33 = LANES64(v12[2]).n64_u32[1]) < 1) {
+          (int)(v33 = LANES64(v12[2]).n64_u32[1]) < 1) {
       LABEL_30:
         v49 = LANES64(v12[108]).n64_f32[0];
         *(float*)&v50 =
-          (float)(v49 * (float)(*a8 * *a9)) * LANES128(v11).n128_f32[0];
+            (float)(v49 * (float)(*a8 * *a9)) * LANES128(v11).n128_f32[0];
         v51 = LANES128(v11).n128_u64[1];
         LANES128(*(a5)).n128_u32[0] = v50;
         LANES128(v52).n128_u64[0] = __PAIR64__(
-          COERCE_UNSIGNED_INT(vmuls_lane_f32(v49 * (float)(a8[1] * a9[1]),
-            COERCE_AS(float32x2_t, LANES128(v11).n128_u64[0]), 1)),
-          v50);
+            COERCE_UNSIGNED_INT(vmuls_lane_f32(
+                v49 * (float)(a8[1] * a9[1]),
+                COERCE_AS(float32x2_t, LANES128(v11).n128_u64[0]), 1)),
+            v50);
         *a5 = v52;
-        LANES128(v52).n128_f32[2] =
-          vmuls_lane_f32(v49 * (float)(a8[2] * a9[2]), v11, 2);
+        LANES128(v52).n128_u32[2] =
+            vmuls_lane_f32(v49 * (float)(a8[2] * a9[2]), v11, 2);
         *a5 = v52;
         *(float*)&a1 = vmuls_lane_f32(*(float*)&a1 * a8[3], v11, 3);
         LANES128(v52).n128_u32[3] = LODWORD(a1);
@@ -9185,9 +9189,9 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
         v59 = *(unsigned __int8*)(v53 + 2535) >> 4;
         if (v59 == 2) {
           v65 = (float)((float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                          (float)(v57 * *a7)) -
-                  floorf((float)((float)(*(float*)&a3 + v58) / v56) +
-                    (float)(v57 * *a7))) < 0.5;
+                                (float)(v57 * *a7)) -
+                        floorf((float)((float)(*(float*)&a3 + v58) / v56) +
+                               (float)(v57 * *a7))) < 0.5;
           v66 = -0.0;
           if (v65) {
             v66 = -1.0;
@@ -9201,63 +9205,48 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
               goto LABEL_45;
             }
             v61 = (float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                    (float)(v57 * *a7)) *
-              0x1.921fb60000000p+1;
+                          (float)(v57 * *a7)) *
+                  0x1.921fb60000000p+1;
             v62 = (float)(v61 + v61) +
-              (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3) *
-                -0x1.921fb60000000p+2);
-            if (!(v62 > 0x1.921fb60000000p+0)) {
+                  (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3) *
+                          -0x1.921fb60000000p+2);
+            if (v62 <= 0x1.921fb60000000p+0) {
               v67 = 1.0;
-              if (!(v62 < -0x1.921fb60000000p+0)) {
+              if (v62 >= -0x1.921fb60000000p+0) {
               LABEL_44:
                 v68 = v62 * v62;
-                v60 =
-                  (float)((float)((float)((float)(v67 *
-                                            (float)((float)((float)-(
-                                                              float)(*(float*)((char*)((
-                                                                                 __int128*)0x10LL) +
-                                                                       (_QWORD)
-                                                                         GameData_212c188) -
-                                                              (float)((float)(*(float*)((char*)((
-                                                                                          _UNKNOWN**)0x8LL) +
-                                                                                (_QWORD)
-                                                                                  GameData_212c188 +
-                                                                                4) +
-                                                                        (float)((float)-(
-                                                                                  float)(*(float*)((char*)((
-                                                                                                     _UNKNOWN**)0x8LL) +
-                                                                                           (_QWORD)
-                                                                                             GameData_212c188) -
-                                                                                  (float)((float)(*((float*)
-                                                                                                      GameData_212c188 +
-                                                                                                    1) -
-                                                                                            (float)(*(float*)
-                                                                                                      GameData_212c188 *
-                                                                                              v68)) *
-                                                                                    v68)) *
-                                                                          v68)) *
-                                                                v68)) *
-                                                      v68) +
-                                              1.0)) +
-                                    1.0) *
-                            -0.5) *
-                    v55) +
-                  1.0;
+                v60 = (float)((float)((float)((float)(v67 * (float)((float)((float)-(
+                                                                                float)(*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c188) - (float)((float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188 + 4) + (float)((float)-(float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188) - (float)((float)(*((float*)
+                                                                                                                                                                                                                                                                                                                                                                  GameData_212c188 +
+                                                                                                                                                                                                                                                                                                                                                              1) -
+                                                                                                                                                                                                                                                                                                                                                            (float)(*(float*)
+                                                                                                                                                                                                                                                                                                                                                                        GameData_212c188 *
+                                                                                                                                                                                                                                                                                                                                                                    v68)) *
+                                                                                                                                                                                                                                                                                                                                                    v68)) *
+                                                                                                                                                                                                                                                         v68)) *
+                                                                                                                                                                  v68)) *
+                                                                            v68) +
+                                                                    1.0)) +
+                                              1.0) *
+                                      -0.5) *
+                              v55) +
+                      1.0;
               LABEL_45:
                 *(float*)&a1 = *(float*)&a1 * v60;
                 *(_QWORD*)&a3 = 0;
                 LANES128(v52).n128_u32[3] = LODWORD(a1);
-                v69 = vdupq_lane_s32(COERCE_AS(int32x2_t,
-                                       LANES128_OF(vcgtq_f32(*(float32x4_t*)&a3,
-                                                     *(float32x4_t*)&a1))
-                                         .n128_u64[0]),
-                  0);
+                v69 = vdupq_lane_s32(
+                    COERCE_AS(int32x2_t,
+                              LANES128_OF(vcgtq_f32(*(float32x4_t*)&a3,
+                                                    *(float32x4_t*)&a1))
+                                  .n128_u64[0]),
+                    0);
                 v70 = v52;
                 LANES128(v70).n128_u32[3] = 0;
                 v71 = vbslq_s8(v69, v70, v52);
                 *a5 = v71;
                 if (LANES128(v71).n128_f32[3] > 1.0) {
-                  LANES128(v71).n128_f32[3] = 1.0f;
+                  LANES128(v71).n128_u32[3] = 1.0;
                   *a5 = v71;
                 }
                 return;
@@ -9272,11 +9261,13 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
             goto LABEL_44;
           }
           v64 = 1.0 -
-            (float)((float)((float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                              (float)(v57 * *a7)) -
-                      floorf((float)((float)(*(float*)&a3 + v58) / v56) +
-                        (float)(v57 * *a7))) *
-              v55);
+                (float)((float)((float)((float)((float)(*(float*)&a3 + v58) /
+                                                v56) +
+                                        (float)(v57 * *a7)) -
+                                floorf(
+                                    (float)((float)(*(float*)&a3 + v58) / v56) +
+                                    (float)(v57 * *a7))) *
+                        v55);
         }
         v60 = fabsf(v64);
         goto LABEL_45;
@@ -9296,10 +9287,11 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
             v42 = a6;
             v43 = a8;
             v44 = a9;
-            *(float*)&a1 = fmodf(*(float*)&a3 +
-                (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
-                  (float)v35),
-              (float)v35);
+            *(float*)&a1 = fmodf(
+                *(float*)&a3 +
+                    (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
+                            (float)v35),
+                (float)v35);
             LODWORD(a3) = v41;
             a9 = v44;
             a8 = v43;
@@ -9329,7 +9321,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
           }
         LABEL_27:
           v48 = LANES64(v12[127]).n64_f32[1];
-          if (!(v45 < v48)) {
+          if (v45 >= v48) {
             v77 = v33 + 1;
             while (--v77 != 0) {
               v78 = v48;
@@ -9340,12 +9332,15 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
                 v36 = v79;
                 if (v45 < v48) {
                   v47 = LANES64_OF(
-                    vadd_f32(v79[-2],
-                      vmul_n_f32(vsub_f32(COERCE_AS(float32x2_t,
-                                            LANES64(*(v79)).n64_u64[0]),
-                                   v79[-2]),
-                        (float)(v45 - v78) / (float)(v48 - v78))))
-                          .n64_u32[0];
+                            vadd_f32(
+                                v79[-2],
+                                vmul_n_f32(
+                                    vsub_f32(
+                                        COERCE_AS(float32x2_t,
+                                                  LANES64(*(v79)).n64_u64[0]),
+                                        v79[-2]),
+                                    (float)(v45 - v78) / (float)(v48 - v78))))
+                            .n64_u32[0];
                   goto LABEL_29;
                 }
               }
@@ -9381,9 +9376,10 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
           v26 = a6;
           v27 = a8;
           v28 = a9;
-          *(float*)&a1 = fmodf(*(float*)&a3 +
-              (float)((float)(*a7 * (float)LODWORD(v10)) * (float)v18),
-            (float)v18);
+          *(float*)&a1 =
+              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LODWORD(v10)) *
+                                           (float)v18),
+                    (float)v18);
           a2 = v22;
           a9 = v28;
           a8 = v27;
@@ -9417,7 +9413,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
         }
       LABEL_14:
         v32 = LANES64(v12[111]).n64_f32[1];
-        if (!(v29 < v32)) {
+        if (v29 >= v32) {
           v72 = v16 + 1;
           while (--v72 != 0) {
             v73 = v32;
@@ -9431,9 +9427,9 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
                 LANES128(v75).n128_u64[1] = LANES64(v74[-1]).n64_u32[0];
                 LANES128(v76).n128_u64[0] = LANES64(*(v74)).n64_u64[0];
                 LANES128(v76).n128_u64[1] = LANES64(v74[1]).n64_u32[0];
-                v11 = vaddq_f32(v75,
-                  vmulq_n_f32(vsubq_f32(v76, v75),
-                    (float)(v29 - v73) / (float)(v32 - v73)));
+                v11 = vaddq_f32(
+                    v75, vmulq_n_f32(vsubq_f32(v76, v75),
+                                     (float)(v29 - v73) / (float)(v32 - v73)));
                 v31 = LANES128(v11).n128_u32[2];
                 goto LABEL_16;
               }
@@ -9548,13 +9544,12 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
       v10 = *(_QWORD*)(a5 + 16);
       v11 = *(unsigned __int8*)(v10 + 2460);
     }
-    if (v11 != 2 ||
-      (v13 = *(_QWORD*)(a5 + 24),
-        (int)(v14 = *(unsigned int*)(v13 + 16)) < 1)) {
+    if (v11 != 2 || (v13 = *(_QWORD*)(a5 + 24),
+                     (int)(v14 = *(unsigned int*)(v13 + 16)) < 1)) {
     LABEL_17:
       if (*(_BYTE*)(v10 + 2462) != 2 ||
-        (v28 = *(float32x2_t**)(a5 + 24),
-          (int)(v29 = LANES64(v28[2]).n64_u32[1]) < 1)) {
+          (v28 = *(float32x2_t**)(a5 + 24),
+           (int)(v29 = LANES64(v28[2]).n64_u32[1]) < 1)) {
       LABEL_30:
         if (*(_BYTE*)(v10 + 2532) == 0) {
           return;
@@ -9567,9 +9562,9 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
         v44 = *(unsigned __int8*)(v10 + 2535) >> 4;
         if (v44 == 2) {
           v50 = (float)((float)((float)((float)(*(float*)&a2 + v43) / v41) +
-                          (float)(v42 * *a6)) -
-                  floorf((float)((float)(*(float*)&a2 + v43) / v41) +
-                    (float)(v42 * *a6))) < 0x1.0000000000000p-1f;
+                                (float)(v42 * *a6)) -
+                        floorf((float)((float)(*(float*)&a2 + v43) / v41) +
+                               (float)(v42 * *a6))) < 0x1.0000000000000p-1f;
           v51 = -0x0.0p+0f;
           if (v50) {
             v51 = -0x1.0000000000000p+0f;
@@ -9583,64 +9578,53 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
               goto LABEL_45;
             }
             v46 = (float)((float)((float)(*(float*)&a2 + v43) / v41) +
-                    (float)(v42 * *a6)) *
-              0x1.921fb60000000p+1f;
+                          (float)(v42 * *a6)) *
+                  0x1.921fb60000000p+1f;
             v47 = (float)(v46 + v46) +
-              (float)(roundf((float)(v46 + v46) * 0x1.45f3060000000p-3f) *
-                -0x1.921fb60000000p+2f);
-            if (!(v47 > 0x1.921fb60000000p+0f)) {
+                  (float)(roundf((float)(v46 + v46) * 0x1.45f3060000000p-3f) *
+                          -0x1.921fb60000000p+2f);
+            if (v47 <= 0x1.921fb60000000p+0f) {
               v52 = 0x1.0000000000000p+0f;
-              if (!(v47 < -0x1.921fb60000000p+0f)) {
+              if (v47 >= -0x1.921fb60000000p+0f) {
               LABEL_44:
                 v53 = v47 * v47;
                 v45 =
-                  (float)((float)((float)((float)(PSEUDO_UNFUSED(v52 *
-                                            (float)((float)((float)-(
-                                                              float)(*(float*)((char*)((
-                                                                                 __int128*)0x10LL) +
-                                                                       (_QWORD)
-                                                                         GameData_212c188) -
-                                                              (float)((float)(*(float*)((char*)((
-                                                                                          _UNKNOWN**)0x8LL) +
-                                                                                (_QWORD)
-                                                                                  GameData_212c188 +
-                                                                                4) +
-                                                                        (float)((float)-(
-                                                                                  float)(*(float*)((char*)((
-                                                                                                     _UNKNOWN**)0x8LL) +
-                                                                                           (_QWORD)
-                                                                                             GameData_212c188) -
-                                                                                  (float)((float)(*((float*)
-                                                                                                      GameData_212c188 +
-                                                                                                    1) -
-                                                                                            (float)(*(float*)
-                                                                                                      GameData_212c188 *
-                                                                                              v53)) *
-                                                                                    v53)) *
-                                                                          v53)) *
-                                                                v53)) *
-                                                      v53) +
-                                              0x1.0000000000000p+0f))) +
-                                    0x1.0000000000000p+0f) *
-                            -0x1.0000000000000p-1f) *
-                    v40) +
-                  0x1.0000000000000p+0f;
+                    (float)((
+                                float)((
+                                           float)((float)(PSEUDO_UNFUSED(
+                                                      v52 * (float)((float)((float)-(
+                                                                                float)(*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c188) - (float)((float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188 + 4) + (float)((float)-(float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188) - (float)((float)(*((float*)
+                                                                                                                                                                                                                                                                                                                                                                  GameData_212c188 +
+                                                                                                                                                                                                                                                                                                                                                              1) -
+                                                                                                                                                                                                                                                                                                                                                            (float)(*(float*)
+                                                                                                                                                                                                                                                                                                                                                                        GameData_212c188 *
+                                                                                                                                                                                                                                                                                                                                                                    v53)) *
+                                                                                                                                                                                                                                                                                                                                                    v53)) *
+                                                                                                                                                                                                                                                         v53)) *
+                                                                                                                                                                  v53)) *
+                                                                            v53) +
+                                                                    0x1.0000000000000p+0f))) +
+                                                  0x1.0000000000000p+0f) *
+                                       -0x1.0000000000000p-1f) *
+                            v40) +
+                    0x1.0000000000000p+0f;
               LABEL_45:
                 *(float*)&a1 = vmuls_lane_f32(v45, v8, 3);
                 *(_QWORD*)&a2 = 0;
                 LANES128(v8).n128_u32[3] = LODWORD(a1);
-                v54 = vdupq_lane_s32(COERCE_AS(int32x2_t,
-                                       LANES128_OF(vcgtq_f32(*(float32x4_t*)&a2,
-                                                     *(float32x4_t*)&a1))
-                                         .n128_u64[0]),
-                  0);
+                v54 = vdupq_lane_s32(
+                    COERCE_AS(int32x2_t,
+                              LANES128_OF(vcgtq_f32(*(float32x4_t*)&a2,
+                                                    *(float32x4_t*)&a1))
+                                  .n128_u64[0]),
+                    0);
                 v55 = v8;
                 LANES128(v55).n128_u32[3] = 0;
                 v56 = vbslq_s8(v54, v55, v8);
                 *a4 = v56;
                 if (LANES128(v56).n128_f32[3] > 0x1.0000000000000p+0f) {
                   LANES128(v56).n128_u32[3] =
-                    COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
+                      COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
                   *a4 = v56;
                 }
                 return;
@@ -9655,11 +9639,13 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             goto LABEL_44;
           }
           v49 = 0x1.0000000000000p+0f -
-            (float)((float)((float)((float)((float)(*(float*)&a2 + v43) / v41) +
-                              (float)(v42 * *a6)) -
-                      floorf((float)((float)(*(float*)&a2 + v43) / v41) +
-                        (float)(v42 * *a6))) *
-              v40);
+                (float)((float)((float)((float)((float)(*(float*)&a2 + v43) /
+                                                v41) +
+                                        (float)(v42 * *a6)) -
+                                floorf(
+                                    (float)((float)(*(float*)&a2 + v43) / v41) +
+                                    (float)(v42 * *a6))) *
+                        v40);
         }
         v45 = fabsf(v49);
         goto LABEL_45;
@@ -9676,11 +9662,12 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             v35 = a6;
             v36 = a5;
             *(float*)&a1 =
-              fmodf(*(float*)&a2 +
-                  (float)((float)(*a6 * (float)LANES128(v8).n128_u32[0]) *
-                    (float)v31),
-                (float)v31) /
-              (float)v31;
+                fmodf(
+                    *(float*)&a2 +
+                        (float)((float)(*a6 * (float)LANES128(v8).n128_u32[0]) *
+                                (float)v31),
+                    (float)v31) /
+                (float)v31;
             LODWORD(a2) = v33;
             a5 = v36;
             a6 = v35;
@@ -9689,7 +9676,7 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             if (LANES64(v37[1]).n64_f32[1] <= *(float*)&a1) {
             LABEL_23:
               *(float32x2_t*)&a1 =
-                COERCE_AS(float32x2_t, LANES64(*(v37)).n64_u64[0]);
+                  COERCE_AS(float32x2_t, LANES64(*(v37)).n64_u64[0]);
             LABEL_29:
               v8 = *a4;
               LANES128(v8).n128_u32[3] = LODWORD(a1);
@@ -9707,7 +9694,7 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
           }
         LABEL_27:
           v38 = LANES64(v28[127]).n64_f32[1];
-          if (!(*(float*)&a1 < v38)) {
+          if (*(float*)&a1 >= v38) {
             v62 = v29 + 1;
             while (--v62 != 0) {
               v63 = v38;
@@ -9717,11 +9704,13 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
               if (v63 <= *(float*)&a1) {
                 v32 = v64;
                 if (*(float*)&a1 < v38) {
-                  *(float32x2_t*)&a1 = vadd_f32(v64[-2],
-                    vmul_n_f32(vsub_f32(COERCE_AS(float32x2_t,
-                                          LANES64(*(v64)).n64_u64[0]),
-                                 v64[-2]),
-                      (float)(*(float*)&a1 - v63) / (float)(v38 - v63)));
+                  *(float32x2_t*)&a1 = vadd_f32(
+                      v64[-2],
+                      vmul_n_f32(vsub_f32(COERCE_AS(float32x2_t,
+                                                    LANES64(*(v64)).n64_u64[0]),
+                                          v64[-2]),
+                                 (float)(*(float*)&a1 - v63) /
+                                     (float)(v38 - v63)));
                   goto LABEL_29;
                 }
               }
@@ -9754,9 +9743,10 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
           v21 = a4;
           v22 = a6;
           v23 = a5;
-          *(float*)&a1 = fmodf(*(float*)&a2 +
-              (float)((float)(*a6 * (float)LODWORD(v7)) * (float)v16),
-            (float)v16);
+          *(float*)&a1 =
+              fmodf(*(float*)&a2 +
+                        (float)((float)(*a6 * (float)LODWORD(v7)) * (float)v16),
+                    (float)v16);
           LODWORD(a2) = v20;
           a5 = v23;
           a6 = v22;
@@ -9786,7 +9776,7 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
         }
       LABEL_14:
         v27 = *(float*)(v13 + 892);
-        if (!(v24 < v27)) {
+        if (v24 >= v27) {
           v57 = v14 + 1;
           while (--v57 != 0) {
             v58 = v27;
@@ -9800,9 +9790,9 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
                 LANES128(v60).n128_u64[1] = *(unsigned int*)(v59 - 8);
                 LANES128(v61).n128_u64[0] = *(_QWORD*)v59;
                 LANES128(v61).n128_u64[1] = *(unsigned int*)(v59 + 8);
-                v8 = vaddq_f32(v60,
-                  vmulq_n_f32(vsubq_f32(v61, v60),
-                    (float)(v24 - v58) / (float)(v27 - v58)));
+                v8 = vaddq_f32(
+                    v60, vmulq_n_f32(vsubq_f32(v61, v60),
+                                     (float)(v24 - v58) / (float)(v27 - v58)));
                 v26 = LANES128(v8).n128_u32[2];
                 goto LABEL_16;
               }
@@ -9921,7 +9911,7 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
       v10 = *a7 * (float)LANES64(v12[3]).n64_i32[0];
       v15 = 16LL * (int)v10;
       LANES128(v11).n128_u32[0] =
-        LANES64(v12[(unsigned __int64)v15 / 8 + 142]).n64_u32[0];
+          LANES64(v12[(unsigned __int64)v15 / 8 + 142]).n64_u32[0];
       *a5 = v11;
       LANES128(v11).n128_u32[1] = *(_DWORD*)(*(_QWORD*)(a6 + 24) + v15 + 1140);
       *a5 = v11;
@@ -9934,20 +9924,21 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
     if (v14 != 2 || (int)(v16 = LANES64(v12[3]).n64_u32[0]) < 1) {
     LABEL_17:
       if (*(_BYTE*)(v13 + 2463) != 2 ||
-        (int)(v33 = LANES64(v12[3]).n64_u32[1]) < 1) {
+          (int)(v33 = LANES64(v12[3]).n64_u32[1]) < 1) {
       LABEL_30:
         v49 = LANES64(v12[108]).n64_f32[0];
         *(float*)&v50 =
-          (float)(v49 * (float)(*a8 * *a9)) * LANES128(v11).n128_f32[0];
+            (float)(v49 * (float)(*a8 * *a9)) * LANES128(v11).n128_f32[0];
         v51 = LANES128(v11).n128_u64[1];
         LANES128(*(a5)).n128_u32[0] = v50;
         LANES128(v52).n128_u64[0] = __PAIR64__(
-          COERCE_UNSIGNED_INT(vmuls_lane_f32(v49 * (float)(a8[1] * a9[1]),
-            COERCE_AS(float32x2_t, LANES128(v11).n128_u64[0]), 1)),
-          v50);
+            COERCE_UNSIGNED_INT(vmuls_lane_f32(
+                v49 * (float)(a8[1] * a9[1]),
+                COERCE_AS(float32x2_t, LANES128(v11).n128_u64[0]), 1)),
+            v50);
         *a5 = v52;
         LANES128(v52).n128_f32[2] =
-          vmuls_lane_f32(v49 * (float)(a8[2] * a9[2]), v11, 2);
+            vmuls_lane_f32(v49 * (float)(a8[2] * a9[2]), v11, 2);
         *a5 = v52;
         *(float*)&a1 = vmuls_lane_f32(*(float*)&a1 * a8[3], v11, 3);
         LANES128(v52).n128_u32[3] = LODWORD(a1);
@@ -9964,9 +9955,9 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
         v59 = *(unsigned __int8*)(v53 + 2535) >> 4;
         if (v59 == 2) {
           v65 = (float)((float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                          (float)(v57 * *a7)) -
-                  floorf((float)((float)(*(float*)&a3 + v58) / v56) +
-                    (float)(v57 * *a7))) < 0x1.0000000000000p-1f;
+                                (float)(v57 * *a7)) -
+                        floorf((float)((float)(*(float*)&a3 + v58) / v56) +
+                               (float)(v57 * *a7))) < 0x1.0000000000000p-1f;
           v66 = -0x0.0p+0f;
           if (v65) {
             v66 = -0x1.0000000000000p+0f;
@@ -9980,64 +9971,53 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
               goto LABEL_45;
             }
             v61 = (float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                    (float)(v57 * *a7)) *
-              0x1.921fb60000000p+1f;
+                          (float)(v57 * *a7)) *
+                  0x1.921fb60000000p+1f;
             v62 = (float)(v61 + v61) +
-              (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3f) *
-                -0x1.921fb60000000p+2f);
+                  (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3f) *
+                          -0x1.921fb60000000p+2f);
             if (v62 <= 0x1.921fb60000000p+0f) {
               v67 = 0x1.0000000000000p+0f;
               if (v62 >= -0x1.921fb60000000p+0f) {
               LABEL_44:
                 v68 = v62 * v62;
                 v60 =
-                  (float)((float)((float)((float)(PSEUDO_UNFUSED(v67 *
-                                            (float)((float)((float)-(
-                                                              float)(*(float*)((char*)((
-                                                                                 __int128*)0x10LL) +
-                                                                       (_QWORD)
-                                                                         GameData_212c188) -
-                                                              (float)((float)(*(float*)((char*)((
-                                                                                          _UNKNOWN**)0x8LL) +
-                                                                                (_QWORD)
-                                                                                  GameData_212c188 +
-                                                                                4) +
-                                                                        (float)((float)-(
-                                                                                  float)(*(float*)((char*)((
-                                                                                                     _UNKNOWN**)0x8LL) +
-                                                                                           (_QWORD)
-                                                                                             GameData_212c188) -
-                                                                                  (float)((float)(*((float*)
-                                                                                                      GameData_212c188 +
-                                                                                                    1) -
-                                                                                            (float)(*(float*)
-                                                                                                      GameData_212c188 *
-                                                                                              v68)) *
-                                                                                    v68)) *
-                                                                          v68)) *
-                                                                v68)) *
-                                                      v68) +
-                                              0x1.0000000000000p+0f))) +
-                                    0x1.0000000000000p+0f) *
-                            -0x1.0000000000000p-1f) *
-                    v55) +
-                  0x1.0000000000000p+0f;
+                    (float)((
+                                float)((
+                                           float)((float)(PSEUDO_UNFUSED(
+                                                      v67 * (float)((float)((float)-(
+                                                                                float)(*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c188) - (float)((float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188 + 4) + (float)((float)-(float)(*(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188) - (float)((float)(*((float*)
+                                                                                                                                                                                                                                                                                                                                                                  GameData_212c188 +
+                                                                                                                                                                                                                                                                                                                                                              1) -
+                                                                                                                                                                                                                                                                                                                                                            (float)(*(float*)
+                                                                                                                                                                                                                                                                                                                                                                        GameData_212c188 *
+                                                                                                                                                                                                                                                                                                                                                                    v68)) *
+                                                                                                                                                                                                                                                                                                                                                    v68)) *
+                                                                                                                                                                                                                                                         v68)) *
+                                                                                                                                                                  v68)) *
+                                                                            v68) +
+                                                                    0x1.0000000000000p+0f))) +
+                                                  0x1.0000000000000p+0f) *
+                                       -0x1.0000000000000p-1f) *
+                            v55) +
+                    0x1.0000000000000p+0f;
               LABEL_45:
                 *(float*)&a1 = *(float*)&a1 * v60;
                 *(_QWORD*)&a3 = 0;
                 LANES128(v52).n128_u32[3] = LODWORD(a1);
-                v69 = vdupq_lane_s32(COERCE_AS(int32x2_t,
-                                       LANES128_OF(vcgtq_f32(*(float32x4_t*)&a3,
-                                                     *(float32x4_t*)&a1))
-                                         .n128_u64[0]),
-                  0);
+                v69 = vdupq_lane_s32(
+                    COERCE_AS(int32x2_t,
+                              LANES128_OF(vcgtq_f32(*(float32x4_t*)&a3,
+                                                    *(float32x4_t*)&a1))
+                                  .n128_u64[0]),
+                    0);
                 v70 = v52;
                 LANES128(v70).n128_u32[3] = 0;
                 v71 = vbslq_s8(v69, v70, v52);
                 *a5 = v71;
                 if (LANES128(v71).n128_f32[3] > 0x1.0000000000000p+0f) {
                   LANES128(v71).n128_u32[3] =
-                    COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
+                      COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
                   *a5 = v71;
                 }
                 return;
@@ -10052,11 +10032,13 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
             goto LABEL_44;
           }
           v64 = 0x1.0000000000000p+0f -
-            (float)((float)((float)((float)((float)(*(float*)&a3 + v58) / v56) +
-                              (float)(v57 * *a7)) -
-                      floorf((float)((float)(*(float*)&a3 + v58) / v56) +
-                        (float)(v57 * *a7))) *
-              v55);
+                (float)((float)((float)((float)((float)(*(float*)&a3 + v58) /
+                                                v56) +
+                                        (float)(v57 * *a7)) -
+                                floorf(
+                                    (float)((float)(*(float*)&a3 + v58) / v56) +
+                                    (float)(v57 * *a7))) *
+                        v55);
         }
         v60 = fabsf(v64);
         goto LABEL_45;
@@ -10076,10 +10058,11 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
             v42 = a6;
             v43 = a8;
             v44 = a9;
-            *(float*)&a1 = fmodf(*(float*)&a3 +
-                (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
-                  (float)v35),
-              (float)v35);
+            *(float*)&a1 = fmodf(
+                *(float*)&a3 +
+                    (float)((float)(*a7 * (float)LANES128(v11).n128_u32[0]) *
+                            (float)v35),
+                (float)v35);
             LODWORD(a3) = v41;
             a9 = v44;
             a8 = v43;
@@ -10120,12 +10103,15 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
                 v36 = v79;
                 if (v45 < v48) {
                   v47 = LANES64_OF(
-                    vadd_f32(v79[-2],
-                      vmul_n_f32(vsub_f32(COERCE_AS(float32x2_t,
-                                            LANES64(*(v79)).n64_u64[0]),
-                                   v79[-2]),
-                        (float)(v45 - v78) / (float)(v48 - v78))))
-                          .n64_u32[0];
+                            vadd_f32(
+                                v79[-2],
+                                vmul_n_f32(
+                                    vsub_f32(
+                                        COERCE_AS(float32x2_t,
+                                                  LANES64(*(v79)).n64_u64[0]),
+                                        v79[-2]),
+                                    (float)(v45 - v78) / (float)(v48 - v78))))
+                            .n64_u32[0];
                   goto LABEL_29;
                 }
               }
@@ -10161,9 +10147,10 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
           v26 = a6;
           v27 = a8;
           v28 = a9;
-          *(float*)&a1 = fmodf(*(float*)&a3 +
-              (float)((float)(*a7 * (float)LODWORD(v10)) * (float)v18),
-            (float)v18);
+          *(float*)&a1 =
+              fmodf(*(float*)&a3 + (float)((float)(*a7 * (float)LODWORD(v10)) *
+                                           (float)v18),
+                    (float)v18);
           a2 = v22;
           a9 = v28;
           a8 = v27;
@@ -10211,9 +10198,9 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
                 LANES128(v75).n128_u64[1] = LANES64(v74[-1]).n64_u32[0];
                 LANES128(v76).n128_u64[0] = LANES64(*(v74)).n64_u64[0];
                 LANES128(v76).n128_u64[1] = LANES64(v74[1]).n64_u32[0];
-                v11 = vaddq_f32(v75,
-                  vmulq_n_f32(vsubq_f32(v76, v75),
-                    (float)(v29 - v73) / (float)(v32 - v73)));
+                v11 = vaddq_f32(
+                    v75, vmulq_n_f32(vsubq_f32(v76, v75),
+                                     (float)(v29 - v73) / (float)(v32 - v73)));
                 v31 = LANES128(v11).n128_u32[2];
                 goto LABEL_16;
               }
@@ -10397,8 +10384,8 @@ float game_5c4910(float* a1, float a2, float a3)
   v5 = v3 / a1[13];
   v6 = v3 / a1[14];
   v7 = (float)(v3 / a1[11]) +
-    (float)(roundf((float)(v3 / a1[11]) * 0x1.45f3060000000p-3f) *
-      -0x1.921fb60000000p+2f);
+       (float)(roundf((float)(v3 / a1[11]) * 0x1.45f3060000000p-3f) *
+               -0x1.921fb60000000p+2f);
   v8 = -0x1.921fb60000000p+1f - v7;
   if (v7 >= -0x1.921fb60000000p+0f) {
     v8 = v7;
@@ -10410,7 +10397,7 @@ float game_5c4910(float* a1, float a2, float a3)
     v9 = v8;
   }
   v15 =
-    v4 + (float)(roundf(v4 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
+      v4 + (float)(roundf(v4 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v16 = -0x1.921fb60000000p+1f - v15;
   if (v15 >= -0x1.921fb60000000p+0f) {
     v16 = v15;
@@ -10422,7 +10409,7 @@ float game_5c4910(float* a1, float a2, float a3)
     v17 = v16;
   }
   v18 =
-    v5 + (float)(roundf(v5 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
+      v5 + (float)(roundf(v5 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v19 = -0x1.921fb60000000p+1f - v18;
   if (v18 >= -0x1.921fb60000000p+0f) {
     v19 = v18;
@@ -10434,7 +10421,7 @@ float game_5c4910(float* a1, float a2, float a3)
     v20 = v19;
   }
   v21 =
-    v6 + (float)(roundf(v6 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
+      v6 + (float)(roundf(v6 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v22 = -0x1.921fb60000000p+1f - v21;
   if (v21 >= -0x1.921fb60000000p+0f) {
     v22 = v21;
@@ -10450,68 +10437,57 @@ float game_5c4910(float* a1, float a2, float a3)
   v12 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c190);
   v13 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c190 + 4);
   v14 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c190);
-  return (float)((float)((float)(a1[7] *
-                           (float)(v9 *
-                             (float)((float)((float)-(float)(v14 -
-                                               (float)((float)(v13 +
-                                                         (float)((float)-(
-                                                                   float)(v12 -
-                                                                   (float)((float)(v11 -
-                                                                             (float)(v10 *
-                                                                               (float)(v9 *
-                                                                                 v9))) *
-                                                                     (float)(v9 *
-                                                                       v9))) *
-                                                           (float)(v9 * v9))) *
-                                                 (float)(v9 * v9))) *
-                                       (float)(v9 * v9)) +
-                               1.0f))) +
-                   (float)((float)(v17 *
-                             (float)((float)((float)-(float)(v14 -
-                                               (float)((float)(v13 +
-                                                         (float)((float)-(
-                                                                   float)(v12 -
-                                                                   (float)((float)(v11 -
-                                                                             (float)(v10 *
-                                                                               (float)(v17 *
-                                                                                 v17))) *
-                                                                     (float)(v17 *
-                                                                       v17))) *
-                                                           (float)(v17 *
-                                                             v17))) *
-                                                 (float)(v17 * v17))) *
-                                       (float)(v17 * v17)) +
-                               1.0f)) *
-                     a1[8])) +
-           (float)((float)(v20 *
-                     (float)((float)((float)-(float)(v14 -
-                                       (float)((float)(v13 +
-                                                 (float)((float)-(float)(v12 -
-                                                           (float)((float)(v11 -
-                                                                     (float)(v10 *
-                                                                       (float)(v20 *
-                                                                         v20))) *
-                                                             (float)(v20 *
-                                                               v20))) *
-                                                   (float)(v20 * v20))) *
-                                         (float)(v20 * v20))) *
-                               (float)(v20 * v20)) +
-                       1.0f)) *
-             a1[9])) +
-    (float)((float)(v23 *
-              (float)((float)((float)-(float)(v14 -
-                                (float)((float)(v13 +
-                                          (float)((float)-(float)(v12 -
-                                                    (float)((float)(v11 -
-                                                              (float)(v10 *
-                                                                (float)(v23 *
-                                                                  v23))) *
-                                                      (float)(v23 * v23))) *
-                                            (float)(v23 * v23))) *
-                                  (float)(v23 * v23))) *
-                        (float)(v23 * v23)) +
-                1.0f)) *
-      a1[10]);
+  return (
+             float)((float)((float)(a1[7] * (float)(v9 * (float)((float)((float)-(float)(v14 - (float)((float)(v13 + (float)((float)-(float)(v12 - (float)((float)(v11 - (float)(v10 * (float)(v9 * v9))) * (float)(v9 * v9))) * (float)(v9 * v9))) * (float)(v9 * v9))) * (float)(v9 * v9)) + 1.0f))) + (float)((
+                                                                                                                                                                                                                                                                                                                     float)(v17 * (float)((
+                                                                                                                                                                                                                                                                                                                                              float)((float)-(
+                                                                                                                                                                                                                                                                                                                                                         float)(v14 - (float)((float)(v13 + (float)((
+                                                                                                                                                                                                                                                                                                                                                                                                        float)-(float)(v12 - (float)((float)(v11 -
+                                                                                                                                                                                                                                                                                                                                                                                                                                             (float)(v10 *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                     (float)(v17 * v17))) *
+                                                                                                                                                                                                                                                                                                                                                                                                                                     (float)(v17 *
+                                                                                                                                                                                                                                                                                                                                                                                                                                             v17))) *
+                                                                                                                                                                                                                                                                                                                                                                                                    (float)(v17 *
+                                                                                                                                                                                                                                                                                                                                                                                                            v17))) *
+                                                                                                                                                                                                                                                                                                                                                                              (float)(v17 *
+                                                                                                                                                                                                                                                                                                                                                                                      v17))) *
+                                                                                                                                                                                                                                                                                                                                                     (float)(v17 *
+                                                                                                                                                                                                                                                                                                                                                             v17)) +
+                                                                                                                                                                                                                                                                                                                                          1.0f)) *
+                                                                                                                                                                                                                                                                                                                 a1[8])) +
+                    (float)((
+                                float)(v20 * (float)((
+                                                         float)((float)-(float)(v14 - (float)((
+                                                                                                  float)(v13 + (float)((
+                                                                                                                           float)-(float)(v12 - (float)((float)(v11 - (float)(v10 * (float)(v20 * v20))) * (float)(v20 *
+                                                                                                                                                                                                                   v20))) *
+                                                                                                                       (float)(v20 *
+                                                                                                                               v20))) *
+                                                                                              (float)(v20 *
+                                                                                                      v20))) *
+                                                                (float)(v20 *
+                                                                        v20)) +
+                                                     1.0f)) *
+                            a1[9])) +
+         (float)((float)(v23 *
+                         (float)((float)((float)-(
+                                             float)(v14 -
+                                                    (float)((float)(v13 +
+                                                                    (float)((float)-(
+                                                                                float)(v12 -
+                                                                                       (float)((float)(v11 -
+                                                                                                       (float)(v10 *
+                                                                                                               (float)(v23 *
+                                                                                                                       v23))) *
+                                                                                               (float)(v23 *
+                                                                                                       v23))) *
+                                                                            (float)(v23 *
+                                                                                    v23))) *
+                                                            (float)(v23 *
+                                                                    v23))) *
+                                         (float)(v23 * v23)) +
+                                 1.0f)) *
+                 a1[10]);
 }
 
 float game_5c4de0(float a1, float a2)
@@ -17250,7 +17226,7 @@ __int64 game_7c6330(__int64 a1)
   v10 = (__int64*)fw_memory_g_heap_manager_ptr;
   v11 = (__int64*)fw_memory_HeapManager_Allocate(
       *(_QWORD*)fw_memory_g_heap_manager_ptr, 32, 16, 0);
-  GameRoutine_e5e8c0(v11);
+  GameHr_e5e8c0(v11);
   v12 = (__int64*)v8[6];
   v8[6] = v11;
   if (v12 != nullptr) {
@@ -17423,7 +17399,7 @@ LABEL_43:
   GameRoutine_d55fd0((__int64)GameData_212ec40[0], (__int64)v51);
   GameRoutine_d56220(v9);
   v35 = (__int64*)fw_memory_HeapManager_Allocate(*v10, 32, 16, 0);
-  GameRoutine_e5e8c0(v35);
+  GameHr_e5e8c0(v35);
   v36 = (__int64*)v8[6];
   v8[6] = v35;
   if (v36 != nullptr) {
@@ -17461,7 +17437,7 @@ LABEL_43:
     nn_mem_StandardAllocator_Free(*v10 + v44, v43);
   }
   v45 = fw_memory_HeapManager_Allocate(*v10, 72, 16, 0);
-  GameRoutine_f55b70(v45);
+  GameHr_f55b70(v45);
   v46 = v8[10];
   v8[10] = v45;
   if (v46 != 0) {

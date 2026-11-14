@@ -110,8 +110,10 @@ void std___1_locale_Destroy_locale(__int64);
 float32x4_t llvm_libcxx_21_libcxx_include___vector_a56f20(_QWORD* a1,
                                                           float32x4_t* a2,
                                                           float32x2_t* a3);
-int8x16_t* llvm_libcxx_21_libcxx_include___vector_a583e0(
-    int8x16_t* result, float32x4_t* a2, char a3, char a4, int a5, float a6);
+int8x16_t* llvm_libcxx_21_libcxx_include___vector_a583e0(int8x16_t* result,
+                                                         float32x4_t* a2,
+                                                         char a3, char a4,
+                                                         int a5, float a6);
 void llvm_libcxx_21_libcxx_include___vector_a58fe0(
     __int64 a1, __int64 a2, float32x4_t* a3, char a4, float32x4_t a5,
     long double a6, long double a7, long double a8, long double a9,
@@ -324,8 +326,10 @@ float32x4_t llvm_libcxx_21_libcxx_include___vector_a56f20(_QWORD* a1,
   return result;
 }
 
-int8x16_t* llvm_libcxx_21_libcxx_include___vector_a583e0(
-    int8x16_t* result, float32x4_t* a2, char a3, char a4, int a5, float a6)
+int8x16_t* llvm_libcxx_21_libcxx_include___vector_a583e0(int8x16_t* result,
+                                                         float32x4_t* a2,
+                                                         char a3, char a4,
+                                                         int a5, float a6)
 {
 
 #pragma clang fp contract(off)
@@ -355,9 +359,8 @@ int8x16_t* llvm_libcxx_21_libcxx_include___vector_a583e0(
     v19 = 0;
     do {
       if ((*(_DWORD*)(v10 + v17) & a5) == 0) {
-        result =
-            GameRoutine_a57200((int8x16_t*)(LANES128(v16[1]).n128_u64[1] + v18),
-                               a2, a6);
+        result = GameRoutine_a57200(
+            (int8x16_t*)(LANES128(v16[1]).n128_u64[1] + v18), a2, a6);
         v10 = LANES128(*(v16)).n128_u64[0];
         v9 = LANES128(*(v16)).n128_i64[1];
       }

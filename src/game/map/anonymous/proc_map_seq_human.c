@@ -127,6 +127,16 @@ void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 _BYTE* ProcMapSeqHuman_738de0();
 _QWORD* ProcMapSeqHuman_739f00();
+__int64 GameHr_7484f0(__int64, __int64);
+__int64 game_159e7c0(__int64, char);
+__int64 game_gameui_FloatingHelp_CheckNeedUpdateTargetElement(__int64 result,
+                                                              __int64);
+__int64 game_map_748f80(__int64, __int64, unsigned int, unsigned int, int,
+                        unsigned int*);
+__int64 snd_play_ff2d0_alt1(__int64, __int64, __int64, unsigned int,
+                            unsigned int, int, float,
+                            float) __asm__("snd_play_ff2d0");
+__int64 ui_1567590(__int64 result, char);
 
 __int64 ProcMapSeqHuman_736ac0(__int64 result, double a2, double a3, double a4,
                                long double a5, long double a6, long double a7,
@@ -134,7 +144,6 @@ __int64 ProcMapSeqHuman_736ac0(__int64 result, double a2, double a3, double a4,
 {
 
 #pragma clang fp contract(off)
-  _QWORD handle[2];
   __int64 v9;
   __int64* v10;
   __int64 v11;
@@ -425,10 +434,10 @@ LABEL_54:
                           v54 = COERCE_AS(
                               __typeof__(v54),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-                      snd_play_ff2d0(
-                          (void*)(handle), (__int64)"SE_SYS_Decide_Unit",
-                          (__int64)"SE_SYS_Decide_Unit", (__int64)v95, 0,
-                          0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f),
+                      snd_play_ff2d0_alt1((__int64)"SE_SYS_Decide_Unit",
+                                          (__int64)"SE_SYS_Decide_Unit",
+                                          (__int64)v95, 0, 0x10001u, 0,
+                                          0x0.0p+0f, 0x1.0000000000000p+0f),
                           v54 = COERCE_AS(
                               __typeof__(v54),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -558,9 +567,9 @@ LABEL_112:
     snd_Fade_Fade_10c830((__int64)v95, 0x0.0p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    snd_play_ff2d0((void*)(handle), (__int64)"SE_SYS_WarpPoint_Check",
-                   (__int64)"SE_SYS_WarpPoint_Check", (__int64)v95, 0, 0x10001u,
-                   0, 0x0.0p+0f, 0x1.0000000000000p+0f),
+    snd_play_ff2d0_alt1((__int64)"SE_SYS_WarpPoint_Check",
+                        (__int64)"SE_SYS_WarpPoint_Check", (__int64)v95, 0,
+                        0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     return snd_Fade_Destroy_Fade(v95);
@@ -701,7 +710,8 @@ LABEL_180:
              *(_QWORD*)(*GameData_212cff8[0] + 88))) {
       v95[0] = 0;
       v95[1] = 0;
-      result = GameRoutine_18aff60(v9, (__int64)v95),
+      result = game_gameui_FloatingHelp_CheckNeedUpdateTargetElement(
+          v9, (__int64)v95),
       v54 = COERCE_AS(__typeof__(v54),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       if ((result & 1) != 0) {
@@ -736,9 +746,9 @@ LABEL_180:
       snd_Fade_Fade_10c830((__int64)v95, 0x0.0p+0f),
           v54 = COERCE_AS(__typeof__(v54),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      snd_play_ff2d0((void*)(handle), (__int64)"SE_SYS_Send_Unit",
-                     (__int64)"SE_SYS_Send_Unit", (__int64)v95, 0, 0x10001u, 0,
-                     0x0.0p+0f, 0x1.0000000000000p+0f),
+      snd_play_ff2d0_alt1((__int64)"SE_SYS_Send_Unit",
+                          (__int64)"SE_SYS_Send_Unit", (__int64)v95, 0,
+                          0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f),
           v54 = COERCE_AS(__typeof__(v54),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       result = snd_Fade_Destroy_Fade(v95),
@@ -747,7 +757,7 @@ LABEL_180:
       v48 = *(_QWORD*)GameData_212d0d0[0];
       if (*(_QWORD*)GameData_212d0d0[0] != 0 && *(int*)(v48 + 16) <= 0 &&
           *(_BYTE*)(v48 + 152) == 0) {
-        return GameRoutine_159e7c0(v48 + 48, v46);
+        return game_159e7c0(v48 + 48, v46);
       }
       return result;
     }
@@ -758,9 +768,9 @@ LABEL_180:
     snd_Fade_Fade_10c830((__int64)v95, 0x0.0p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    snd_play_ff2d0((void*)(handle), (__int64)"SE_SYS_ConfigurationMenu_Open",
-                   (__int64)"SE_SYS_ConfigurationMenu_Open", (__int64)v95, 0,
-                   0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f),
+    snd_play_ff2d0_alt1((__int64)"SE_SYS_ConfigurationMenu_Open",
+                        (__int64)"SE_SYS_ConfigurationMenu_Open", (__int64)v95,
+                        0, 0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     result = snd_Fade_Destroy_Fade(v95),
@@ -841,9 +851,9 @@ LABEL_244:
     snd_Fade_Fade_10c830((__int64)v95, 0x0.0p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    snd_play_ff2d0((void*)(handle), (__int64)"SE_SYS_Cursor_M",
-                   (__int64)"SE_SYS_Cursor_M", (__int64)v95, 0, 0x10001u, 0,
-                   0x0.0p+0f, 0x1.0000000000000p+0f),
+    snd_play_ff2d0_alt1((__int64)"SE_SYS_Cursor_M", (__int64)"SE_SYS_Cursor_M",
+                        (__int64)v95, 0, 0x10001u, 0, 0x0.0p+0f,
+                        0x1.0000000000000p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     snd_Fade_Destroy_Fade(v95),
@@ -869,13 +879,13 @@ LABEL_244:
                                   !v64 && *(_QWORD*)(v63 - 1832) != 0)) {
     v65 = *GameData_212ce88[0];
     LODWORD(v95[0]) = 170987522;
-    IDeploy_748f80(v65, v54, *(char*)(v63 - 1640), *(char*)(v63 - 1639), -1,
-                   (unsigned int*)v95),
+    game_map_748f80(v65, v54, *(char*)(v63 - 1640), *(char*)(v63 - 1639), -1,
+                    (unsigned int*)v95),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   else {
-    GameRoutine_7484f0(*GameData_212ce88[0], v54),
+    GameHr_7484f0(*GameData_212ce88[0], v54),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
@@ -969,7 +979,7 @@ LABEL_244:
     goto LABEL_305;
   }
 LABEL_306:
-  result = GameRoutine_1567590((__int64)"ShowDanger", v78),
+  result = ui_1567590((__int64)"ShowDanger", v78),
   v54 = COERCE_AS(__typeof__(v54),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   if (*GameData_212ce90[0] != 0 &&

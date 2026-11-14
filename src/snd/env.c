@@ -80,6 +80,12 @@ unsigned __int8* snd_fnd_calcCrc32(unsigned __int8* result, int);
 void __attribute__((noreturn)) GameRoutine_e30f0();
 void Env_e0580(__int64 a1, _QWORD* a2, char* a3, char* a4, char* a5, char a6,
                __int64 a7, __int64 a8, __int64 a9);
+__int64 snd_playAt_ff5f0_alt1(__int64, __int64, __int64, __int64, unsigned int,
+                              unsigned int, int, float,
+                              float) __asm__("snd_playAt_ff5f0");
+__int64 snd_play_ff2d0_alt1(__int64, __int64, __int64, unsigned int,
+                            unsigned int, int, float,
+                            float) __asm__("snd_play_ff2d0");
 
 void Env_de340(__int64 a1, __int64 a2)
 {
@@ -431,7 +437,6 @@ void Env_de340(__int64 a1, __int64 a2)
 
 void Env_de920(__int64 a1, __int64 a2)
 {
-  _QWORD handle[2];
   __int64 v4;
   __int64 v5;
   __int64 v6;
@@ -1031,9 +1036,9 @@ LABEL_35:
                                        *(float*)(*v53 + 164)),
                       v8 = COERCE_AS(__typeof__(v8),
                                      PSEUDO_REGISTER(float, "s0", "=w"));
-                  snd_play_ff2d0((void*)(handle), (__int64)"Env", v126,
-                                 (__int64)&v145_.v145, 0, 0x10001u, 0,
-                                 0x0.0p+0f, 0x1.0000000000000p+0f),
+                  snd_play_ff2d0_alt1((__int64)"Env", v126,
+                                      (__int64)&v145_.v145, 0, 0x10001u, 0,
+                                      0x0.0p+0f, 0x1.0000000000000p+0f),
                       v8 = COERCE_AS(__typeof__(v8),
                                      PSEUDO_REGISTER(float, "s0", "=w"));
                   GameRoutine_112180(*v53 + 40, (__int64)&v152_.v152),
@@ -1264,9 +1269,9 @@ LABEL_35:
             snd_Fade_Fade_10c830((__int64)&v145_.v145, *(float*)(*v53 + 184)),
                 v8 = COERCE_AS(__typeof__(v8),
                                PSEUDO_REGISTER(float, "s0", "=w"));
-            snd_playAt_ff5f0((void*)(handle), (__int64)"Env", v140, v139 + 120,
-                             (__int64)&v145_.v145, 0, 0x10001u, 0, 0x0.0p+0f,
-                             0x1.0000000000000p+0f),
+            snd_playAt_ff5f0_alt1((__int64)"Env", v140, v139 + 120,
+                                  (__int64)&v145_.v145, 0, 0x10001u, 0,
+                                  0x0.0p+0f, 0x1.0000000000000p+0f),
                 v8 = COERCE_AS(__typeof__(v8),
                                PSEUDO_REGISTER(float, "s0", "=w"));
             GameRoutine_112180(*v53 + 40, (__int64)v150_.v150),
@@ -1358,9 +1363,9 @@ LABEL_35:
           snd_Fade_Fade_10c830((__int64)&v145_.v145, *(float*)(*v53 + 184)),
               v8 =
                   COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
-          snd_playAt_ff5f0((void*)(handle), (__int64)"Env", v133, v132 + 120,
-                           (__int64)&v145_.v145, 0, 0x10001u, 0, 0x0.0p+0f,
-                           0x1.0000000000000p+0f),
+          snd_playAt_ff5f0_alt1((__int64)"Env", v133, v132 + 120,
+                                (__int64)&v145_.v145, 0, 0x10001u, 0, 0x0.0p+0f,
+                                0x1.0000000000000p+0f),
               v8 =
                   COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
           GameRoutine_112180(*v53 + 40, (__int64)&v152_.v152),
@@ -1951,7 +1956,7 @@ __int64 Env_e0b20(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
           v49_.v50 = __PAIR64__(LODWORD(v43), LODWORD(v39));
           break;
         case 5:
-          v12 = GameAlloc_e2d10(a1, v11, (float*)a4, (float*)&v49_.v49);
+          v12 = Env_e2d10(a1, v11, (float*)a4, (float*)&v49_.v49);
           break;
         default:
           break;
@@ -2508,8 +2513,7 @@ __int64 Env_e25a0(__int64 a1, __int64 a2)
                                                 632LL))(v21 - 5592, 8);
                 v22 = *(float (**)(void))(*(_QWORD*)(v21 - 5592) + 112LL);
               LABEL_9:
-                *(float*)(*v12 + 144) =
-                    ((float (*)(__int64))v22)(v21 - 5592);
+                *(float*)(*v12 + 144) = ((float (*)(__int64))v22)(v21 - 5592);
               }
             }
             else {

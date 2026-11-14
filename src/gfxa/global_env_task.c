@@ -63,6 +63,8 @@ void gfxa_b6a300_alt1(__int64, _QWORD*, __int64*) __asm__("gfxa_b6a300");
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void GlobalEnvTask_b37340(__int64 a1, __int64 a2, _QWORD* a3);
+__int64 GameHr_b3a120(__int64 result, __int64, __int64*, __int64, char, char);
+__int64 TaskSkyCloud_b77550(__int64, _QWORD*, __int64);
 
 void GlobalEnvTask_b37340(__int64 a1, __int64 a2, _QWORD* a3)
 {
@@ -1191,7 +1193,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
             LODWORD(v375) = v7;
             v377 = __PAIR64__(v11, v281);
             v376 = v282;
-            result = GameRoutine_b77550(v12, a2, (__int64)&v374),
+            result = TaskSkyCloud_b77550(v12, a2, (__int64)&v374),
             v306 = COERCE_AS(__typeof__(v306),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
             v319 = COERCE_AS(__typeof__(v319),
@@ -1225,8 +1227,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               if (v288 != 0) {
                 atomic_fetch_add_explicit((atomic_ullong* volatile)(v288 + 8),
                                           1u, memory_order_relaxed);
-                result = GameRoutine_b3a120(v3, (__int64)a2, (__int64*)&v374,
-                                            *(_QWORD*)(v3 + 96), 0, 0),
+                result = GameHr_b3a120(v3, (__int64)a2, (__int64*)&v374,
+                                       *(_QWORD*)(v3 + 96), 0, 0),
                 v306 =
                     COERCE_AS(__typeof__(v306),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -1288,8 +1290,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 }
               }
               else {
-                result = GameRoutine_b3a120(v3, (__int64)a2, (__int64*)&v374,
-                                            *(_QWORD*)(v3 + 96), 0, 0),
+                result = GameHr_b3a120(v3, (__int64)a2, (__int64*)&v374,
+                                       *(_QWORD*)(v3 + 96), 0, 0),
                 v306 =
                     COERCE_AS(__typeof__(v306),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -2321,8 +2323,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
             if (v290 != 0) {
               atomic_fetch_add_explicit((atomic_ullong* volatile)(v290 + 8), 1u,
                                         memory_order_relaxed);
-              GameRoutine_b3a120(v3, (__int64)a2, v373, *(_QWORD*)(v3 + 104), 1,
-                                 0),
+              GameHr_b3a120(v3, (__int64)a2, v373, *(_QWORD*)(v3 + 104), 1, 0),
                   v306 = COERCE_AS(
                       __typeof__(v306),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -2384,8 +2385,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               }
             }
             else {
-              GameRoutine_b3a120(v3, (__int64)a2, v373, *(_QWORD*)(v3 + 104), 1,
-                                 0),
+              GameHr_b3a120(v3, (__int64)a2, v373, *(_QWORD*)(v3 + 104), 1, 0),
                   v306 = COERCE_AS(
                       __typeof__(v306),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -2411,8 +2411,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
             if (v291 != 0) {
               atomic_fetch_add_explicit((atomic_ullong* volatile)(v291 + 8), 1u,
                                         memory_order_relaxed);
-              result = GameRoutine_b3a120(v3, (__int64)a2, v372,
-                                          *(_QWORD*)(v3 + 112), 1, 1),
+              result = GameHr_b3a120(v3, (__int64)a2, v372,
+                                     *(_QWORD*)(v3 + 112), 1, 1),
               v306 = COERCE_AS(__typeof__(v306),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
               v319 = COERCE_AS(__typeof__(v319),
@@ -2468,8 +2468,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               }
             }
             else {
-              result = GameRoutine_b3a120(v3, (__int64)a2, v372,
-                                          *(_QWORD*)(v3 + 112), 1, 1),
+              result = GameHr_b3a120(v3, (__int64)a2, v372,
+                                     *(_QWORD*)(v3 + 112), 1, 1),
               v306 = COERCE_AS(__typeof__(v306),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
               v319 = COERCE_AS(__typeof__(v319),

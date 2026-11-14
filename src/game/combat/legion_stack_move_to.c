@@ -10,6 +10,7 @@ bool LegionStackMoveTo_Unknown5(__int64 a1);
 void GameRoutine_e3f8b0(_QWORD*, double, double, double, double);
 void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
                                 double a5);
+void game_combat_e3f8b0(_QWORD*, double, double, double, double);
 
 void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
                                 double a5)
@@ -50,7 +51,7 @@ void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
     *(_DWORD*)(v6 + 28) = LODWORD(a3);
     *(_DWORD*)(v6 + 16) = LODWORD(a2);
     *(_DWORD*)(v6 + 20) = LODWORD(a3);
-    GameRoutine_e3f8b0(v12, a2, a3, a4, a5);
+    game_combat_e3f8b0(v12, a2, a3, a4, a5);
   }
   else {
     *(_QWORD*)(v6 + 80) = 0;

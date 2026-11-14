@@ -709,6 +709,8 @@ void game_9ddae0(__int64* a1, unsigned __int64 a2);
 void game_e1e5e0(__int64* a1, _DWORD* a2);
 void game_e61f00(__int64 a1);
 void game_e84360(__int64 a1, _DWORD* a2);
+__int64 GameHr_ede500(__int64);
+void GameHr_e7fc40(__int64, char);
 
 __attribute__((swiftcall)) void game_9a64e0(PSEUDO_X8 x8_, __int64* result)
 {
@@ -10299,7 +10301,7 @@ bool game_e81260(__int64 a1)
   float v31;
   __int64 v33;
 
-  GameRoutine_e7fc40(a1, 0);
+  GameHr_e7fc40(a1, 0);
   v2 = *(float32x4_t**)(a1 + 528);
   v3 = game_script_hub_g_frame_counter_ptr[0];
   v4 = *(float*)(*(_QWORD*)game_script_hub_g_frame_counter_ptr[0] + 160LL);
@@ -10321,7 +10323,7 @@ bool game_e81260(__int64 a1)
   LANES128(v6).n128_u64[1] = v5;
   v2[10] = v6;
   game_ede020(v2);
-  GameRoutine_ede500((__int64)v2);
+  GameHr_ede500((__int64)v2);
   game_ede740(v2);
   v7 = (float32x4_t*)LANES128(v2[6]).n128_u64[0];
   if (LANES128(*(v7)).n128_u32[2] == 0) {

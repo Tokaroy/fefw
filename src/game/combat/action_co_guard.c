@@ -8,6 +8,7 @@ extern __int64 GameData_21ec7b0;
 float CharacterAnimator_1079580(__int64, int, float, float, float);
 void GameRoutine_106a860(__int64, float*);
 float ActionCoGuard_Unknown5(__int64 a1);
+void GameHr_106a860(__int64, float*);
 
 float ActionCoGuard_Unknown5(__int64 a1)
 {
@@ -141,7 +142,7 @@ float ActionCoGuard_Unknown5(__int64 a1)
         *(_QWORD*)(v2 + 852) = v37;
       }
     }
-    GameRoutine_106a860(*(_QWORD*)(a1 + 8) + 608LL, (float*)&v37);
+    GameHr_106a860(*(_QWORD*)(a1 + 8) + 608LL, (float*)&v37);
     *(_DWORD*)(*(_QWORD*)(a1 + 8) + 652LL) = 2;
   }
   return result;

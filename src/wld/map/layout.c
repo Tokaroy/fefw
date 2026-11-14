@@ -188,6 +188,7 @@ GameRoutine_b31b50_alt1() __asm__("GameRoutine_b31b50");
 void Layout_c14980(_QWORD** a1);
 __int64 Layout_c1bc40(__int64 result, __int64 a2);
 __int64* Layout_c1d3e0(__int64* result, __int64** a2);
+void GameHr_c38500(_QWORD*, __int64*);
 
 __int64 Layout_c10f80(unsigned __int64 a1)
 {
@@ -957,8 +958,8 @@ _QWORD* wld_map_Layout_Internal_LoadMapModelFile(__int64 a1, __int64 a2,
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v28 = 56;
         }
-        nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                      v28, (_QWORD)(v96_.v98));
+        nn_mem_StandardAllocator_Free(
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v28, (_QWORD)(v96_.v98));
       }
       v27[5] = v24;
       if (*(_DWORD*)(v24 + 32) != 0) {
@@ -2068,7 +2069,7 @@ void Layout_c1ba40(__int64 a1, __int64 a2)
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v4 + 8), 1u,
                               memory_order_relaxed);
   }
-  GameRoutine_c38500((_QWORD*)a2, &v8_.v8);
+  GameHr_c38500((_QWORD*)a2, &v8_.v8);
   v7 = v8_.v9;
   if (v8_.v9 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v8_.v9 + 8),
                                       0xFFFFFFFFFFFFFFFFLL) == 0) {

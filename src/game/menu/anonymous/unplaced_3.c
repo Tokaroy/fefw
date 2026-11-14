@@ -3262,9 +3262,9 @@ __int64 game_menu_anonymous_17aed00(__int64 result, __int64* a2,
       }
       v11 = v29 + 1;
       v31 = game_menu_anonymous_17afdc0_alt1(v9, v29, a3);
-      result = ((__int64 (*)(__int64*, __int64*,
-                             __int64 (**)(__int64*, __int64*)))
-                    game_menu_anonymous_17afdc0_alt1)(v29 + 1, v117, a3);
+      result =
+          ((__int64 (*)(__int64*, __int64*, __int64 (**)(__int64*, __int64*)))
+               game_menu_anonymous_17afdc0_alt1)(v29 + 1, v117, a3);
       if ((result & 1) != 0) {
         break;
       }

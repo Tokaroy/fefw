@@ -52,6 +52,7 @@ void GameHr_a51e10(__int64, unsigned int, int, int);
 void GameRoutine_156c5d0(__int64, __int64, char);
 void game_gameui_1595d90(char*, int, char, char);
 __int64 LessonMenuItem_DrawText(_QWORD* a1);
+__int64 game_156c910(__int64 result, const char*, int, ...);
 
 __int64 LessonMenuItem_ACall(_QWORD* a1)
 {
@@ -336,7 +337,7 @@ __int64 LessonMenuItem_DrawText(_QWORD* a1)
     if (v12 != 0) {
       v13 = __dynamic_cast(v12, GameData_212d670[0], GameData_212d690, 0);
       if (v13 != 0) {
-        GameRoutine_156c910(v13, "%d", 1, v11);
+        game_156c910(v13, "%d", 1, v11);
       }
     }
     v14 = 64;

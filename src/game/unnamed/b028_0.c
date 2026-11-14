@@ -4470,6 +4470,11 @@ int* GameRoutine_11199f0_alt1(int* result, int*, int*, int*,
 __int64 GameHr_11188c0(__int64 result, int* a2, __int64** a3, __int64 a4,
                        char a5);
 bool game_map_747b10(__int64, char, int, int, __int64);
+__int64 GameHr_89f190(int*, int*, int*, int*, int*, __int64);
+bool game_89f340(int*, int*, __int64);
+int* GameHr_89ef30(int* result, int*, int*, int*, __int64);
+__int64 GameHr_89ddc0(__int64 result, int* a2, __int64* a3, __int64 a4,
+                      char a5);
 
 __int64 GameHr_f0a40(__int64 result, __int64 a2)
 {
@@ -11512,10 +11517,10 @@ __int64 GameHr_89ddc0(__int64 result, int* a2, __int64* a3, __int64 a4, char a5)
   int v82;
   int v83;
   int* v84;
-  char v85;
-  char v86;
+  bool v85;
+  bool v86;
   int v87;
-  int* v88;
+  unsigned __int64 v88;
   int* v89;
   int v90;
   int v91;
@@ -11595,12 +11600,15 @@ __int64 GameHr_89ddc0(__int64 result, int* a2, __int64* a3, __int64 a4, char a5)
   int v166;
 
   v9 = (int*)result;
-  v10 = GameData_212c878[0];
+  {
+    v10 = GameData_212c878[0];
+    __asm__ volatile("" ::"r"(v10));
+  }
 LABEL_2:
   v11 = v9;
   while (1) {
     v9 = v11;
-    v12 = ((__int64)a2 - (__int64)v11) >> 2;
+    v12 = a2 - v11;
     if (v12 > 2) {
       break;
     }
@@ -11608,25 +11616,34 @@ LABEL_2:
       return result;
     }
     if (v12 == 2) {
-      v99 = *(a2 - 1);
-      v100 = *v11;
-      if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL * v99 +
-                                                                    4)) +
-                                24LL) +
-                     608LL) <
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL *
-                                                                        *v11 +
-                                                                    4)) +
-                                24LL) +
-                     608LL)) {
+      {
+        v99 = *(a2 - 1);
+        __asm__ volatile("" ::"r"(v99));
+      }
+      {
+        v100 = *v11;
+        __asm__ volatile("" ::"r"(v100));
+      }
+      if ((signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          v99 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) <
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          *v11 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL)) {
         *v11 = v99;
         *(a2 - 1) = v100;
       }
@@ -11638,33 +11655,47 @@ LABEL_2:
       v111 = v11 == a2 || v109 == a2;
       if ((a5 & 1) != 0) {
         if (!v111) {
-          v112 = *v10;
-          v113 = *a3;
+          {
+            v112 = *v10;
+            __asm__ volatile("" ::"r"(v112));
+          }
+          {
+            v113 = *a3;
+            __asm__ volatile("" ::"r"(v113));
+          }
           v114 = 0;
           v115 = v11;
           do {
-            v118 = *v115;
-            v117 = v115[1];
+            {
+              v118 = *v115;
+              __asm__ volatile("" ::"r"(v118));
+            }
+            {
+              v117 = v115[1];
+              __asm__ volatile("" ::"r"(v117));
+            }
             v115 = v109;
             v119 = v118;
-            if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v112 + 64) +
-                                                 8LL *
-                                                     *(unsigned __int16*)(*(_QWORD*)(v113 +
-                                                                                     8) +
-                                                                          12LL *
-                                                                              v117 +
-                                                                          4)) +
-                                      24LL) +
-                           608LL) <
-                *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v112 + 64) +
-                                                 8LL *
-                                                     *(unsigned __int16*)(*(_QWORD*)(v113 +
-                                                                                     8) +
-                                                                          12LL *
-                                                                              v118 +
-                                                                          4)) +
-                                      24LL) +
-                           608LL)) {
+            if ((signed __int32)*(
+                    _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v112 + 64) +
+                                                   8LL *
+                                                       *(unsigned __int16*)(*(_QWORD*)(v113 +
+                                                                                       8) +
+                                                                            12LL *
+                                                                                v117 +
+                                                                            4)) +
+                                        24LL) +
+                             608LL) <
+                (signed __int32)*(
+                    _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v112 + 64) +
+                                                   8LL *
+                                                       *(unsigned __int16*)(*(_QWORD*)(v113 +
+                                                                                       8) +
+                                                                            12LL *
+                                                                                v118 +
+                                                                            4)) +
+                                        24LL) +
+                             608LL)) {
               v120 = v114;
               do {
                 *(int*)((char*)v11 + v120 + 4) = v119;
@@ -11672,32 +11703,43 @@ LABEL_2:
                   v116 = v11;
                   goto LABEL_122;
                 }
-                v119 = *(int*)((char*)v11 + v120 - 4);
+                {
+                  v119 = *(int*)((char*)v11 + v120 - 4);
+                  __asm__ volatile("" ::"r"(v119));
+                }
                 v120 -= 4;
               } while (
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                                   8LL *
-                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                       8) +
-                                                                            12LL *
-                                                                                v117 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL) <
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                                   8LL *
-                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                       8) +
-                                                                            12LL *
-                                                                                v119 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL));
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                     8LL *
+                                                         *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                         8) +
+                                                                              12LL *
+                                                                                  v117 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL) <
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                     8LL *
+                                                         *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                         8) +
+                                                                              12LL *
+                                                                                  v119 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL));
               v116 = (int*)((char*)v11 + v120 + 4);
             LABEL_122:
               *v116 = v117;
-              v112 = *v10;
-              v113 = *a3;
+              {
+                v112 = *v10;
+                __asm__ volatile("" ::"r"(v112));
+              }
+              {
+                v113 = *a3;
+                __asm__ volatile("" ::"r"(v113));
+              }
             }
             v109 = v115 + 1;
             v114 += 4;
@@ -11705,57 +11747,82 @@ LABEL_2:
         }
       }
       else if (!v111) {
-        v161 = *v10;
-        v162 = *a3;
+        {
+          v161 = *v10;
+          __asm__ volatile("" ::"r"(v161));
+        }
+        {
+          v162 = *a3;
+          __asm__ volatile("" ::"r"(v162));
+        }
         do {
-          v164 = *v9;
-          v163 = v9[1];
+          {
+            v164 = *v9;
+            __asm__ volatile("" ::"r"(v164));
+          }
+          {
+            v163 = v9[1];
+            __asm__ volatile("" ::"r"(v163));
+          }
           v9 = v109;
-          if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v161 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(v162 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v163 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL) <
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v161 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(v162 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v164 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL)) {
-            v165 = v109;
-            do {
-              *v165 = v164;
-              v164 = *(v165 - 2);
-              --v165;
-            } while (
-                *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+          if ((signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v161 + 64) +
                                                  8LL *
-                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                     *(unsigned __int16*)(*(_QWORD*)(v162 +
                                                                                      8) +
                                                                           12LL *
                                                                               v163 +
                                                                           4)) +
                                       24LL) +
                            608LL) <
-                *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v161 + 64) +
                                                  8LL *
-                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                     *(unsigned __int16*)(*(_QWORD*)(v162 +
                                                                                      8) +
                                                                           12LL *
                                                                               v164 +
                                                                           4)) +
                                       24LL) +
-                           608LL));
+                           608LL)) {
+            v165 = v109;
+            do {
+              *v165 = v164;
+              {
+                v164 = *(v165 - 2);
+                __asm__ volatile("" ::"r"(v164));
+              }
+              --v165;
+            } while (
+                (signed __int32)*(
+                    _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                   8LL *
+                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                       8) +
+                                                                            12LL *
+                                                                                v163 +
+                                                                            4)) +
+                                        24LL) +
+                             608LL) <
+                (signed __int32)*(
+                    _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                   8LL *
+                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                       8) +
+                                                                            12LL *
+                                                                                v164 +
+                                                                            4)) +
+                                        24LL) +
+                             608LL));
             *v165 = v163;
-            v161 = *v10;
-            v162 = *a3;
+            {
+              v161 = *v10;
+              __asm__ volatile("" ::"r"(v161));
+            }
+            {
+              v162 = *a3;
+              __asm__ volatile("" ::"r"(v162));
+            }
           }
           ++v109;
         } while (v9 + 1 != a2);
@@ -11771,38 +11838,67 @@ LABEL_2:
           if (v121 >= v122) {
             v124 = (2 * (v122 & 0x3FFFFFFFFFFFFFFFLL)) | 1;
             v125 = 2 * v122 + 2;
-            v126 = &v11[v124];
-            v127 = *v126;
+            {
+              v126 = &v11[v124];
+              __asm__ volatile("" ::"r"(v126));
+            }
+            {
+              v127 = *v126;
+              __asm__ volatile("" ::"r"(v127));
+            }
             if (v125 >= v12) {
-              v128 = *(_QWORD*)(*a3 + 8);
-              v129 = *(_QWORD*)(*v10 + 64);
+              {
+                v128 = *(_QWORD*)(*a3 + 8);
+                __asm__ volatile("" ::"r"(v128));
+              }
+              {
+                v129 = *(_QWORD*)(*v10 + 64);
+                __asm__ volatile("" ::"r"(v129));
+              }
             }
             else {
-              v128 = *(_QWORD*)(*a3 + 8);
-              v129 = *(_QWORD*)(*v10 + 64);
-              if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
-                                                   8LL *
-                                                       *(unsigned __int16*)(v128 +
-                                                                            12LL *
-                                                                                v127 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL) <
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
-                                                   8LL *
-                                                       *(unsigned __int16*)(v128 +
-                                                                            12LL *
-                                                                                v126[1] +
-                                                                            4)) +
-                                        24LL) +
-                             608LL)) {
-                v127 = v126[1];
+              {
+                v128 = *(_QWORD*)(*a3 + 8);
+                __asm__ volatile("" ::"r"(v128));
+              }
+              {
+                v129 = *(_QWORD*)(*v10 + 64);
+                __asm__ volatile("" ::"r"(v129));
+              }
+              if ((signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
+                                                     8LL *
+                                                         *(unsigned __int16*)(v128 +
+                                                                              12LL *
+                                                                                  v127 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL) <
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
+                                                     8LL *
+                                                         *(unsigned __int16*)(v128 +
+                                                                              12LL *
+                                                                                  v126[1] +
+                                                                              4)) +
+                                          24LL) +
+                               608LL)) {
+                {
+                  v127 = v126[1];
+                  __asm__ volatile("" ::"r"(v127));
+                }
                 ++v126;
                 v124 = 2 * v123 + 2;
               }
             }
-            v130 = &v11[v123];
-            v131 = *v130;
+            {
+              v130 = &v11[v123];
+              __asm__ volatile("" ::"r"(v130));
+            }
+            {
+              v131 = *v130;
+              __asm__ volatile("" ::"r"(v131));
+            }
             result = *(
                 unsigned int*)(*(_QWORD*)(*(_QWORD*)(v129 +
                                                      8LL *
@@ -11813,14 +11909,15 @@ LABEL_2:
                                           24LL) +
                                608LL);
             if ((int)result >=
-                *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
-                                                 8LL *
-                                                     *(unsigned __int16*)(v128 +
-                                                                          12LL *
-                                                                              *v130 +
-                                                                          4)) +
-                                      24LL) +
-                           608LL)) {
+                (signed __int32)*(
+                    _DWORD*)(*(_QWORD*)(*(_QWORD*)(v129 +
+                                                   8LL *
+                                                       *(unsigned __int16*)(v128 +
+                                                                            12LL *
+                                                                                *v130 +
+                                                                            4)) +
+                                        24LL) +
+                             608LL)) {
               do {
                 v133 = v126;
                 *v130 = v127;
@@ -11829,78 +11926,121 @@ LABEL_2:
                 }
                 v134 = (2 * v124) | 1;
                 v124 = 2 * v124 + 2;
-                v126 = &v11[v134];
-                v127 = *v126;
+                {
+                  v126 = &v11[v134];
+                  __asm__ volatile("" ::"r"(v126));
+                }
+                {
+                  v127 = *v126;
+                  __asm__ volatile("" ::"r"(v127));
+                }
                 if (v124 < v12) {
-                  v132 = *(_QWORD*)(*a3 + 8);
-                  result = *(_QWORD*)(*v10 + 64);
-                  if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
-                                                       8LL *
-                                                           *(unsigned __int16*)(v132 +
-                                                                                12LL *
-                                                                                    v127 +
-                                                                                4)) +
-                                            24LL) +
-                                 608LL) >=
-                      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
-                                                       8LL *
-                                                           *(unsigned __int16*)(v132 +
-                                                                                12LL *
-                                                                                    v126[1] +
-                                                                                4)) +
-                                            24LL) +
-                                 608LL)) {
+                  {
+                    v132 = *(_QWORD*)(*a3 + 8);
+                    __asm__ volatile("" ::"r"(v132));
+                  }
+                  {
+                    result = *(_QWORD*)(*v10 + 64);
+                    __asm__ volatile("" ::"r"(result));
+                  }
+                  if ((signed __int32)*(
+                          _DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
+                                                         8LL *
+                                                             *(unsigned __int16*)(v132 +
+                                                                                  12LL *
+                                                                                      v127 +
+                                                                                  4)) +
+                                              24LL) +
+                                   608LL) >=
+                      (signed __int32)*(
+                          _DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
+                                                         8LL *
+                                                             *(unsigned __int16*)(v132 +
+                                                                                  12LL *
+                                                                                      v126[1] +
+                                                                                  4)) +
+                                              24LL) +
+                                   608LL)) {
                     v124 = v134;
                   }
                   else {
-                    v127 = v126[1];
+                    {
+                      v127 = v126[1];
+                      __asm__ volatile("" ::"r"(v127));
+                    }
                     ++v126;
                   }
                 }
                 else {
-                  v132 = *(_QWORD*)(*a3 + 8);
-                  result = *(_QWORD*)(*v10 + 64);
+                  {
+                    v132 = *(_QWORD*)(*a3 + 8);
+                    __asm__ volatile("" ::"r"(v132));
+                  }
+                  {
+                    result = *(_QWORD*)(*v10 + 64);
+                    __asm__ volatile("" ::"r"(result));
+                  }
                   v124 = v134;
                 }
                 v130 = v133;
               } while (
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
-                                                   8LL *
-                                                       *(unsigned __int16*)(v132 +
-                                                                            12LL *
-                                                                                v127 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL) >=
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
-                                                   8LL *
-                                                       *(unsigned __int16*)(v132 +
-                                                                            12LL *
-                                                                                v131 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL));
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
+                                                     8LL *
+                                                         *(unsigned __int16*)(v132 +
+                                                                              12LL *
+                                                                                  v127 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL) >=
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(result +
+                                                     8LL *
+                                                         *(unsigned __int16*)(v132 +
+                                                                              12LL *
+                                                                                  v131 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL));
               *v133 = v131;
             }
           }
           v122 = v123 - 1;
         } while (v123 != 0);
         do {
-          v136 = *v11;
+          {
+            v136 = *v11;
+            __asm__ volatile("" ::"r"(v136));
+          }
           v137 = 0;
           v138 = v11;
           do {
-            v147 = &v138[v137];
+            {
+              v147 = &v138[v137];
+              __asm__ volatile("" ::"r"(v147));
+            }
             v146 = v147 + 1;
-            v145 = v147[1];
+            {
+              v145 = v147[1];
+              __asm__ volatile("" ::"r"(v145));
+            }
             v148 = (2 * v137) | 1;
             v137 = 2 * v137 + 2;
             if (v137 < v12) {
-              v141 = v147[2];
+              {
+                v141 = v147[2];
+                __asm__ volatile("" ::"r"(v141));
+              }
               v139 = v147 + 2;
               v140 = v141;
-              v142 = *(_QWORD*)(*a3 + 8);
-              v143 = *(_QWORD*)(*v10 + 64);
+              {
+                v142 = *(_QWORD*)(*a3 + 8);
+                __asm__ volatile("" ::"r"(v142));
+              }
+              {
+                v143 = *(_QWORD*)(*v10 + 64);
+                __asm__ volatile("" ::"r"(v143));
+              }
               v144 = *(
                   _DWORD*)(*(_QWORD*)(*(_QWORD*)(v143 +
                                                  8LL *
@@ -11943,28 +12083,39 @@ LABEL_2:
             v135 = v149 < 2;
             v150 = v149 - 2;
             if (!v135) {
-              v151 = *v146;
+              {
+                v151 = *v146;
+                __asm__ volatile("" ::"r"(v151));
+              }
               v152 = v150 >> 1;
-              v153 = &v11[v152];
-              v154 = *v153;
-              if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                                   8LL *
-                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                       8) +
-                                                                            12LL *
-                                                                                *v153 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL) <
-                  *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                                   8LL *
-                                                       *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                       8) +
-                                                                            12LL *
-                                                                                *v146 +
-                                                                            4)) +
-                                        24LL) +
-                             608LL)) {
+              {
+                v153 = &v11[v152];
+                __asm__ volatile("" ::"r"(v153));
+              }
+              {
+                v154 = *v153;
+                __asm__ volatile("" ::"r"(v154));
+              }
+              if ((signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                     8LL *
+                                                         *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                         8) +
+                                                                              12LL *
+                                                                                  *v153 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL) <
+                  (signed __int32)*(
+                      _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                     8LL *
+                                                         *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                         8) +
+                                                                              12LL *
+                                                                                  *v146 +
+                                                                              4)) +
+                                          24LL) +
+                               608LL)) {
                 do {
                   v155 = v153;
                   *v146 = v154;
@@ -11972,10 +12123,22 @@ LABEL_2:
                     break;
                   }
                   v152 = (v152 - 1) >> 1;
-                  v153 = &v11[v152];
-                  v154 = *v153;
-                  v156 = *(_QWORD*)(*v10 + 64);
-                  v157 = *(_QWORD*)(*a3 + 8);
+                  {
+                    v153 = &v11[v152];
+                    __asm__ volatile("" ::"r"(v153));
+                  }
+                  {
+                    v154 = *v153;
+                    __asm__ volatile("" ::"r"(v154));
+                  }
+                  {
+                    v156 = *(_QWORD*)(*v10 + 64);
+                    __asm__ volatile("" ::"r"(v156));
+                  }
+                  {
+                    v157 = *(_QWORD*)(*a3 + 8);
+                    __asm__ volatile("" ::"r"(v157));
+                  }
                   v158 = *(
                       _DWORD*)(*(_QWORD*)(*(_QWORD*)(v156 +
                                                      8LL *
@@ -12005,59 +12168,92 @@ LABEL_2:
       }
       return result;
     }
-    v13 = &v11[(unsigned __int64)v12 >> 1];
-    v14 = *(_QWORD*)(*a3 + 8);
-    v15 = *(_QWORD*)(*v10 + 64);
+    {
+      v13 = &v11[(unsigned __int64)v12 >> 1];
+      __asm__ volatile("" ::"r"(v13));
+    }
+    {
+      v14 = *(_QWORD*)(*a3 + 8);
+      __asm__ volatile("" ::"r"(v14));
+    }
+    {
+      v15 = *(_QWORD*)(*v10 + 64);
+      __asm__ volatile("" ::"r"(v15));
+    }
     if ((unsigned __int64)v12 >= 0x81) {
-      v16 = *v13;
-      v17 = *v11;
-      v18 =
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+      {
+        v16 = *v13;
+        __asm__ volatile("" ::"r"(v16));
+      }
+      {
+        v17 = *v11;
+        __asm__ volatile("" ::"r"(v17));
+      }
+      {
+        v18 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
                                            8LL * *(unsigned __int16*)(v14 +
                                                                       12LL *
                                                                           *v13 +
                                                                       4)) +
                                 24LL) +
                      608LL);
-      v19 =
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+        __asm__ volatile("" ::"r"(v18));
+      }
+      {
+        v19 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
                                            8LL * *(unsigned __int16*)(v14 +
                                                                       12LL *
                                                                           *v11 +
                                                                       4)) +
                                 24LL) +
                      608LL);
-      v20 = *(a2 - 1);
-      v21 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
-                                         8LL * *(unsigned __int16*)(v14 +
+        __asm__ volatile("" ::"r"(v19));
+      }
+      {
+        v20 = *(a2 - 1);
+        __asm__ volatile("" ::"r"(v20));
+      }
+      {
+        v21 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+                                           8LL *
+                                               *(unsigned __int16*)(v14 +
                                                                     12LL * v20 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v21));
+      }
       if (v18 >= v19) {
         if (v21 < v18) {
           *v13 = v20;
           *(a2 - 1) = v16;
-          v28 = *v11;
-          if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            *v13 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL) <
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            *v11 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL)) {
+          {
+            v28 = *v11;
+            __asm__ volatile("" ::"r"(v28));
+          }
+          if ((signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              *v13 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL) <
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              *v11 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL)) {
             *v11 = *v13;
             *v13 = v28;
           }
@@ -12070,80 +12266,120 @@ LABEL_2:
         }
         *v11 = v16;
         *v13 = v17;
-        v30 = *(a2 - 1);
-        if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v30 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v17 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL)) {
+        {
+          v30 = *(a2 - 1);
+          __asm__ volatile("" ::"r"(v30));
+        }
+        if ((signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v30 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) <
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v17 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL)) {
           *v13 = v30;
         LABEL_27:
           *(a2 - 1) = v17;
         }
       }
-      v31 = *(v13 - 1);
-      v32 = v11[1];
-      v33 = *(_QWORD*)(*a3 + 8);
-      v34 = *(_QWORD*)(*v10 + 64);
-      v35 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
-                                         8LL * *(unsigned __int16*)(v33 +
+      {
+        v31 = *(v13 - 1);
+        __asm__ volatile("" ::"r"(v31));
+      }
+      {
+        v32 = v11[1];
+        __asm__ volatile("" ::"r"(v32));
+      }
+      {
+        v33 = *(_QWORD*)(*a3 + 8);
+        __asm__ volatile("" ::"r"(v33));
+      }
+      {
+        v34 = *(_QWORD*)(*v10 + 64);
+        __asm__ volatile("" ::"r"(v34));
+      }
+      {
+        v35 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
+                                           8LL *
+                                               *(unsigned __int16*)(v33 +
                                                                     12LL * v31 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
-      v36 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
-                                         8LL * *(unsigned __int16*)(v33 +
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v35));
+      }
+      {
+        v36 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
+                                           8LL *
+                                               *(unsigned __int16*)(v33 +
                                                                     12LL * v32 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
-      v37 = *(a2 - 2);
-      v38 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
-                                         8LL * *(unsigned __int16*)(v33 +
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v36));
+      }
+      {
+        v37 = *(a2 - 2);
+        __asm__ volatile("" ::"r"(v37));
+      }
+      {
+        v38 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v34 +
+                                           8LL *
+                                               *(unsigned __int16*)(v33 +
                                                                     12LL * v37 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v38));
+      }
       if (v35 >= v36) {
         if (v38 < v35) {
           *(v13 - 1) = v37;
           *(a2 - 2) = v31;
-          v39 = *(v13 - 1);
-          v40 = v11[1];
-          if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v39 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL) <
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v40 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL)) {
+          {
+            v39 = *(v13 - 1);
+            __asm__ volatile("" ::"r"(v39));
+          }
+          {
+            v40 = v11[1];
+            __asm__ volatile("" ::"r"(v40));
+          }
+          if ((signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v39 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL) <
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v40 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL)) {
             v11[1] = v39;
             *(v13 - 1) = v40;
           }
@@ -12156,80 +12392,120 @@ LABEL_2:
         }
         v11[1] = v31;
         *(v13 - 1) = v32;
-        v42 = *(a2 - 2);
-        if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v42 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v32 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL)) {
+        {
+          v42 = *(a2 - 2);
+          __asm__ volatile("" ::"r"(v42));
+        }
+        if ((signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v42 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) <
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v32 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL)) {
           *(v13 - 1) = v42;
         LABEL_39:
           *(a2 - 2) = v32;
         }
       }
-      v43 = v13[1];
-      v44 = v11[2];
-      v45 = *(_QWORD*)(*a3 + 8);
-      v46 = *(_QWORD*)(*v10 + 64);
-      v47 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
-                                         8LL * *(unsigned __int16*)(v45 +
+      {
+        v43 = v13[1];
+        __asm__ volatile("" ::"r"(v43));
+      }
+      {
+        v44 = v11[2];
+        __asm__ volatile("" ::"r"(v44));
+      }
+      {
+        v45 = *(_QWORD*)(*a3 + 8);
+        __asm__ volatile("" ::"r"(v45));
+      }
+      {
+        v46 = *(_QWORD*)(*v10 + 64);
+        __asm__ volatile("" ::"r"(v46));
+      }
+      {
+        v47 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
+                                           8LL *
+                                               *(unsigned __int16*)(v45 +
                                                                     12LL * v43 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
-      v48 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
-                                         8LL * *(unsigned __int16*)(v45 +
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v47));
+      }
+      {
+        v48 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
+                                           8LL *
+                                               *(unsigned __int16*)(v45 +
                                                                     12LL * v44 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
-      v49 = *(a2 - 3);
-      v50 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
-                                         8LL * *(unsigned __int16*)(v45 +
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v48));
+      }
+      {
+        v49 = *(a2 - 3);
+        __asm__ volatile("" ::"r"(v49));
+      }
+      {
+        v50 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v46 +
+                                           8LL *
+                                               *(unsigned __int16*)(v45 +
                                                                     12LL * v49 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v50));
+      }
       if (v47 >= v48) {
         if (v50 < v47) {
           v13[1] = v49;
           *(a2 - 3) = v43;
-          v51 = v13[1];
-          v52 = v11[2];
-          if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v51 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL) <
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v52 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL)) {
+          {
+            v51 = v13[1];
+            __asm__ volatile("" ::"r"(v51));
+          }
+          {
+            v52 = v11[2];
+            __asm__ volatile("" ::"r"(v52));
+          }
+          if ((signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v51 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL) <
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v52 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL)) {
             v11[2] = v51;
             v13[1] = v52;
           }
@@ -12242,57 +12518,88 @@ LABEL_2:
         }
         v11[2] = v43;
         v13[1] = v44;
-        v53 = *(a2 - 3);
-        if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v53 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v44 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL)) {
+        {
+          v53 = *(a2 - 3);
+          __asm__ volatile("" ::"r"(v53));
+        }
+        if ((signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v53 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) <
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v44 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL)) {
           v13[1] = v53;
         LABEL_48:
           *(a2 - 3) = v44;
         }
       }
-      v54 = *v13;
-      v55 = *(v13 - 1);
-      v56 = *(_QWORD*)(*a3 + 8);
-      v57 = *(_QWORD*)(*v10 + 64);
-      v58 =
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
+      {
+        v54 = *v13;
+        __asm__ volatile("" ::"r"(v54));
+      }
+      {
+        v55 = *(v13 - 1);
+        __asm__ volatile("" ::"r"(v55));
+      }
+      {
+        v56 = *(_QWORD*)(*a3 + 8);
+        __asm__ volatile("" ::"r"(v56));
+      }
+      {
+        v57 = *(_QWORD*)(*v10 + 64);
+        __asm__ volatile("" ::"r"(v57));
+      }
+      {
+        v58 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
                                            8LL * *(unsigned __int16*)(v56 +
                                                                       12LL *
                                                                           *v13 +
                                                                       4)) +
                                 24LL) +
                      608LL);
-      v59 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
-                                         8LL * *(unsigned __int16*)(v56 +
+        __asm__ volatile("" ::"r"(v58));
+      }
+      {
+        v59 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
+                                           8LL *
+                                               *(unsigned __int16*)(v56 +
                                                                     12LL * v55 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
-      v60 = v13[1];
-      v61 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
-                                         8LL * *(unsigned __int16*)(v56 +
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v59));
+      }
+      {
+        v60 = v13[1];
+        __asm__ volatile("" ::"r"(v60));
+      }
+      {
+        v61 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v57 +
+                                           8LL *
+                                               *(unsigned __int16*)(v56 +
                                                                     12LL * v60 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v61));
+      }
       if (v58 >= v59) {
         if (v61 >= v58) {
         LABEL_55:
@@ -12301,24 +12608,26 @@ LABEL_2:
         else {
           *v13 = v60;
           v13[1] = v54;
-          if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v60 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL) >=
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                               8LL *
-                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                   8) +
-                                                                        12LL *
-                                                                            v55 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL)) {
+          if ((signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v60 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL) >=
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                                 8LL *
+                                                     *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                     8) +
+                                                                          12LL *
+                                                                              v55 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL)) {
             goto LABEL_58;
           }
           *(v13 - 1) = v60;
@@ -12333,82 +12642,112 @@ LABEL_2:
         }
         *(v13 - 1) = v54;
         *v13 = v55;
-        if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v60 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          v55 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL)) {
+        if ((signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v60 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) <
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            v55 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL)) {
           *v13 = v60;
           v13[1] = v55;
         LABEL_58:
           v55 = v60;
         }
       }
-      v62 = *v11;
+      {
+        v62 = *v11;
+        __asm__ volatile("" ::"r"(v62));
+      }
       *v11 = v55;
       *v13 = v62;
       goto LABEL_60;
     }
-    v22 = *v11;
-    v23 = *v13;
-    v24 = *(
-        _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
-                                       8LL * *(unsigned __int16*)(v14 +
-                                                                  12LL * *v11 +
-                                                                  4)) +
-                            24LL) +
-                 608LL);
-    v25 = *(
-        _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
-                                       8LL * *(unsigned __int16*)(v14 +
-                                                                  12LL * *v13 +
-                                                                  4)) +
-                            24LL) +
-                 608LL);
-    v26 = *(a2 - 1);
-    v27 =
-        *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+    {
+      v22 = *v11;
+      __asm__ volatile("" ::"r"(v22));
+    }
+    {
+      v23 = *v13;
+      __asm__ volatile("" ::"r"(v23));
+    }
+    {
+      v24 =
+          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+                                           8LL * *(unsigned __int16*)(v14 +
+                                                                      12LL *
+                                                                          *v11 +
+                                                                      4)) +
+                                24LL) +
+                     608LL);
+      __asm__ volatile("" ::"r"(v24));
+    }
+    {
+      v25 =
+          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
+                                           8LL * *(unsigned __int16*)(v14 +
+                                                                      12LL *
+                                                                          *v13 +
+                                                                      4)) +
+                                24LL) +
+                     608LL);
+      __asm__ volatile("" ::"r"(v25));
+    }
+    {
+      v26 = *(a2 - 1);
+      __asm__ volatile("" ::"r"(v26));
+    }
+    {
+      v27 = *(
+          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v15 +
                                          8LL * *(unsigned __int16*)(v14 +
                                                                     12LL * v26 +
                                                                     4)) +
                               24LL) +
                    608LL);
+      __asm__ volatile("" ::"r"(v27));
+    }
     if (v24 >= v25) {
       if (v27 < v24) {
         *v11 = v26;
         *(a2 - 1) = v22;
-        v29 = *v13;
-        if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          *v11 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                             8LL *
-                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                                 8) +
-                                                                      12LL *
-                                                                          *v13 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL)) {
+        {
+          v29 = *v13;
+          __asm__ volatile("" ::"r"(v29));
+        }
+        if ((signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            *v11 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) <
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                               8LL *
+                                                   *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                   8) +
+                                                                        12LL *
+                                                                            *v13 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL)) {
           *v13 = *v11;
           *v11 = v29;
         }
@@ -12423,55 +12762,90 @@ LABEL_2:
     }
     *v13 = v22;
     *v11 = v23;
-    v41 = *(a2 - 1);
-    if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                             8) +
-                                                                  12LL * v41 +
-                                                                  4)) +
-                              24LL) +
-                   608LL) <
-        *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                             8) +
-                                                                  12LL * v23 +
-                                                                  4)) +
-                              24LL) +
-                   608LL)) {
+    {
+      v41 = *(a2 - 1);
+      __asm__ volatile("" ::"r"(v41));
+    }
+    if ((signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                               8) +
+                                                                    12LL * v41 +
+                                                                    4)) +
+                                24LL) +
+                     608LL) <
+        (signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                               8) +
+                                                                    12LL * v23 +
+                                                                    4)) +
+                                24LL) +
+                     608LL)) {
       *v11 = v41;
       goto LABEL_36;
     }
   LABEL_60:
-    v63 = *v11;
-    v64 = *a3;
+    {
+      v63 = *v11;
+      __asm__ volatile("" ::"r"(v63));
+    }
+    {
+      v64 = *a3;
+      __asm__ volatile("" ::"r"(v64));
+    }
     --a4;
-    v65 = *v11;
+    {
+      v65 = *v11;
+      __asm__ volatile("" ::"r"(v65));
+    }
     if ((a5 & 1) != 0) {
-      v66 = *(_QWORD*)(v64 + 8);
-      v67 = *(_QWORD*)(*v10 + 64);
-      v68 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                         8LL * *(unsigned __int16*)(v66 +
+      {
+        v66 = *(_QWORD*)(v64 + 8);
+        __asm__ volatile("" ::"r"(v66));
+      }
+      {
+        v67 = *(_QWORD*)(*v10 + 64);
+        __asm__ volatile("" ::"r"(v67));
+      }
+      {
+        v68 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                           8LL *
+                                               *(unsigned __int16*)(v66 +
                                                                     12LL * v65 +
                                                                     4)) +
-                              24LL) +
-                   608LL);
+                                24LL) +
+                     608LL);
+        __asm__ volatile("" ::"r"(v68));
+      }
     LABEL_63:
       v69 = 0;
       do {
-        v70 = &v11[v69++];
-        v71 = v70[1];
+        {
+          v70 = &v11[v69++];
+          __asm__ volatile("" ::"r"(v70));
+        }
+        {
+          v71 = v70[1];
+          __asm__ volatile("" ::"r"(v71));
+        }
       } while (
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                           8LL *
-                                               *(unsigned __int16*)(v66 +
-                                                                    12LL * v71 +
-                                                                    4)) +
-                                24LL) +
-                     608LL) < v68);
-      v72 = &v11[v69];
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                             8LL *
+                                                 *(unsigned __int16*)(v66 +
+                                                                      12LL *
+                                                                          v71 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) < v68);
+      {
+        v72 = &v11[v69];
+        __asm__ volatile("" ::"r"(v72));
+      }
       v73 = a2;
       if (v69 == 1) {
         v73 = a2;
@@ -12481,27 +12855,29 @@ LABEL_2:
           }
           v75 = *--v73;
         } while (
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v66 +
-                                                                      12LL *
-                                                                          v75 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) >= v68);
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v66 +
+                                                                        12LL *
+                                                                            v75 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) >= v68);
       }
       else {
         do {
           v74 = *--v73;
         } while (
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v66 +
-                                                                      12LL *
-                                                                          v74 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) >= v68);
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v66 +
+                                                                        12LL *
+                                                                            v74 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) >= v68);
       }
       if (v72 >= v73) {
         v84 = v72 - 1;
@@ -12512,14 +12888,26 @@ LABEL_2:
         *v11 = *v84;
         goto LABEL_81;
       }
-      v76 = *v73;
-      v77 = &v11[v69];
+      {
+        v76 = *v73;
+        __asm__ volatile("" ::"r"(v76));
+      }
+      {
+        v77 = &v11[v69];
+        __asm__ volatile("" ::"r"(v77));
+      }
       v78 = v73;
       do {
         *v77 = v76;
         *v78 = v71;
-        v79 = *(_QWORD*)(*a3 + 8);
-        v80 = *(_QWORD*)(*v10 + 64);
+        {
+          v79 = *(_QWORD*)(*a3 + 8);
+          __asm__ volatile("" ::"r"(v79));
+        }
+        {
+          v80 = *(_QWORD*)(*v10 + 64);
+          __asm__ volatile("" ::"r"(v80));
+        }
         v81 = *(
             _DWORD*)(*(_QWORD*)(*(_QWORD*)(v80 +
                                            8LL *
@@ -12529,30 +12917,35 @@ LABEL_2:
                                 24LL) +
                      608LL);
         do {
-          v82 = v77[1];
+          {
+            v82 = v77[1];
+            __asm__ volatile("" ::"r"(v82));
+          }
           ++v77;
           v71 = v82;
         } while (
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v80 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v79 +
-                                                                      12LL *
-                                                                          v82 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) < v81);
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v80 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v79 +
+                                                                        12LL *
+                                                                            v82 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) < v81);
         do {
           v83 = *--v78;
           v76 = v83;
         } while (
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v80 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v79 +
-                                                                      12LL *
-                                                                          v83 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL) >= v81);
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v80 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v79 +
+                                                                        12LL *
+                                                                            v83 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL) >= v81);
       } while (v77 < v78);
       v84 = v77 - 1;
       if (v11 != v77 - 1) {
@@ -12563,86 +12956,105 @@ LABEL_2:
       if (v72 < v73) {
         goto LABEL_84;
       }
-      v85 = GameRoutine_89f340(v11, v84, a3);
+      v85 = game_89f340(v11, v84, (__int64)a3);
       v11 = v84 + 1;
       v86 = v85;
-      result = GameRoutine_89f340(v84 + 1, a2, a3);
+      result = ((__int64 (*)(int*, int*, __int64))game_89f340)(v84 + 1, a2,
+                                                               (__int64)a3);
       if ((result & 1) != 0) {
         a2 = v84;
-        if ((v86 & 1) == 0) {
+        if (!v86) {
           goto LABEL_2;
         }
         return result;
       }
-      if ((v86 & 1) == 0) {
+      if (!v86) {
       LABEL_84:
-        result = GameHr_89ddc0(v9, v84, a3, a4, a5 & 1);
+        result = GameHr_89ddc0((__int64)v9, v84, a3, a4, a5 & 1);
         a5 = 0;
         v11 = v84 + 1;
       }
     }
     else {
-      v66 = *(_QWORD*)(v64 + 8);
-      v67 = *(_QWORD*)(*v10 + 64);
-      v68 = *(
-          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                         8LL * *(unsigned __int16*)(v66 +
-                                                                    12LL * v65 +
-                                                                    4)) +
-                              24LL) +
-                   608LL);
-      if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+      {
+        v66 = *(_QWORD*)(v64 + 8);
+        __asm__ volatile("" ::"r"(v66));
+      }
+      {
+        v67 = *(_QWORD*)(*v10 + 64);
+        __asm__ volatile("" ::"r"(v67));
+      }
+      {
+        v68 = *(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
                                            8LL *
                                                *(unsigned __int16*)(v66 +
-                                                                    12LL *
-                                                                        *(v11 -
-                                                                          1) +
+                                                                    12LL * v65 +
                                                                     4)) +
                                 24LL) +
-                     608LL) < v68) {
+                     608LL);
+        __asm__ volatile("" ::"r"(v68));
+      }
+      if ((signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                             8LL *
+                                                 *(unsigned __int16*)(v66 +
+                                                                      12LL *
+                                                                          *(v11 -
+                                                                            1) +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) < v68) {
         goto LABEL_63;
       }
       if (v68 >=
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                           8LL * *(unsigned __int16*)(v66 +
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                             8LL *
+                                                 *(unsigned __int16*)(v66 +
                                                                       12LL *
                                                                           *(a2 -
                                                                             1) +
                                                                       4)) +
-                                24LL) +
-                     608LL)) {
-        v88 = v11 + 1;
+                                  24LL) +
+                       608LL)) {
+        v88 = (unsigned __int64)(v11 + 1);
         do {
-          v11 = v88;
-          if (v88 >= a2) {
+          v11 = (int*)v88;
+          if (v88 >= (unsigned __int64)a2) {
             break;
           }
-          ++v88;
+          v88 += 4LL;
         } while (
             v68 >=
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v66 +
-                                                                      12LL *
-                                                                          *v11 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL));
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v66 +
+                                                                        12LL *
+                                                                            *v11 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL));
       }
       else {
         do {
-          v87 = v11[1];
+          {
+            v87 = v11[1];
+            __asm__ volatile("" ::"r"(v87));
+          }
           ++v11;
         } while (
             v68 >=
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v66 +
-                                                                      12LL *
-                                                                          v87 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL));
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v66 +
+                                                                        12LL *
+                                                                            v87 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL));
       }
       v89 = a2;
       if (v11 < a2) {
@@ -12651,23 +13063,36 @@ LABEL_2:
           v90 = *--v89;
         } while (
             v68 <
-            *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
-                                             8LL *
-                                                 *(unsigned __int16*)(v66 +
-                                                                      12LL *
-                                                                          v90 +
-                                                                      4)) +
-                                  24LL) +
-                       608LL));
+            (signed __int32)*(
+                _DWORD*)(*(_QWORD*)(*(_QWORD*)(v67 +
+                                               8LL *
+                                                   *(unsigned __int16*)(v66 +
+                                                                        12LL *
+                                                                            v90 +
+                                                                        4)) +
+                                    24LL) +
+                         608LL));
       }
       if (v11 < v89) {
-        v91 = *v11;
-        v92 = *v89;
+        {
+          v91 = *v11;
+          __asm__ volatile("" ::"r"(v91));
+        }
+        {
+          v92 = *v89;
+          __asm__ volatile("" ::"r"(v92));
+        }
         do {
           *v11 = v92;
           *v89 = v91;
-          v93 = *(_QWORD*)(*a3 + 8);
-          v94 = *(_QWORD*)(*v10 + 64);
+          {
+            v93 = *(_QWORD*)(*a3 + 8);
+            __asm__ volatile("" ::"r"(v93));
+          }
+          {
+            v94 = *(_QWORD*)(*v10 + 64);
+            __asm__ volatile("" ::"r"(v94));
+          }
           v95 = *(
               _DWORD*)(*(_QWORD*)(*(_QWORD*)(v94 +
                                              8LL *
@@ -12678,32 +13103,37 @@ LABEL_2:
                                   24LL) +
                        608LL);
           do {
-            v96 = v11[1];
+            {
+              v96 = v11[1];
+              __asm__ volatile("" ::"r"(v96));
+            }
             ++v11;
             v91 = v96;
           } while (
               v95 >=
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v94 +
-                                               8LL *
-                                                   *(unsigned __int16*)(v93 +
-                                                                        12LL *
-                                                                            v96 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL));
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(v94 +
+                                                 8LL *
+                                                     *(unsigned __int16*)(v93 +
+                                                                          12LL *
+                                                                              v96 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL));
           do {
             v97 = *--v89;
             v92 = v97;
           } while (
               v95 <
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v94 +
-                                               8LL *
-                                                   *(unsigned __int16*)(v93 +
-                                                                        12LL *
-                                                                            v97 +
-                                                                        4)) +
-                                    24LL) +
-                         608LL));
+              (signed __int32)*(
+                  _DWORD*)(*(_QWORD*)(*(_QWORD*)(v94 +
+                                                 8LL *
+                                                     *(unsigned __int16*)(v93 +
+                                                                          12LL *
+                                                                              v97 +
+                                                                          4)) +
+                                      24LL) +
+                           608LL));
         } while (v11 < v89);
       }
       v98 = v11 - 1;
@@ -12716,63 +13146,95 @@ LABEL_2:
   }
   if (v12 != 3) {
     if (v12 == 4) {
-      return GameRoutine_89ef30(v11, v11 + 1, v11 + 2, a2 - 1, a3);
+      return (__int64)GameHr_89ef30(v11, v11 + 1, v11 + 2, a2 - 1, (__int64)a3);
     }
     if (v12 == 5) {
-      return GameRoutine_89f190(v11, v11 + 1, v11 + 2, v11 + 3, a2 - 1, a3);
+      return GameHr_89f190(v11, v11 + 1, v11 + 2, v11 + 3, a2 - 1, (__int64)a3);
     }
     goto LABEL_10;
   }
-  v101 = *v11;
-  v102 = v11[1];
-  v103 = *(_QWORD*)(*a3 + 8);
-  v104 = *(_QWORD*)(*v10 + 64);
-  v105 =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
+  {
+    v101 = *v11;
+    __asm__ volatile("" ::"r"(v101));
+  }
+  {
+    v102 = v11[1];
+    __asm__ volatile("" ::"r"(v102));
+  }
+  {
+    v103 = *(_QWORD*)(*a3 + 8);
+    __asm__ volatile("" ::"r"(v103));
+  }
+  {
+    v104 = *(_QWORD*)(*v10 + 64);
+    __asm__ volatile("" ::"r"(v104));
+  }
+  {
+    v105 = *(
+        _DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
                                        8LL * *(unsigned __int16*)(v103 +
                                                                   12LL * v102 +
                                                                   4)) +
                             24LL) +
                  608LL);
-  v106 =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
+    __asm__ volatile("" ::"r"(v105));
+  }
+  {
+    v106 = *(
+        _DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
                                        8LL * *(unsigned __int16*)(v103 +
                                                                   12LL * *v11 +
                                                                   4)) +
                             24LL) +
                  608LL);
-  v107 = *(a2 - 1);
-  v108 =
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
+    __asm__ volatile("" ::"r"(v106));
+  }
+  {
+    v107 = *(a2 - 1);
+    __asm__ volatile("" ::"r"(v107));
+  }
+  {
+    v108 = *(
+        _DWORD*)(*(_QWORD*)(*(_QWORD*)(v104 +
                                        8LL * *(unsigned __int16*)(v103 +
                                                                   12LL * v107 +
                                                                   4)) +
                             24LL) +
                  608LL);
+    __asm__ volatile("" ::"r"(v108));
+  }
   if (v105 >= v106) {
     if (v108 < v105) {
       v11[1] = v107;
       *(a2 - 1) = v102;
-      v160 = *v11;
-      v159 = v11[1];
-      if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL *
-                                                                        v159 +
-                                                                    4)) +
-                                24LL) +
-                     608LL) <
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL *
-                                                                        *v11 +
-                                                                    4)) +
-                                24LL) +
-                     608LL)) {
+      {
+        v160 = *v11;
+        __asm__ volatile("" ::"r"(v160));
+      }
+      {
+        v159 = v11[1];
+        __asm__ volatile("" ::"r"(v159));
+      }
+      if ((signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          v159 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) <
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          *v11 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL)) {
         *v11 = v159;
         v11[1] = v160;
       }
@@ -12782,25 +13244,30 @@ LABEL_2:
     if (v108 >= v105) {
       *v11 = v102;
       v11[1] = v101;
-      v166 = *(a2 - 1);
-      if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL *
-                                                                        v166 +
-                                                                    4)) +
-                                24LL) +
-                     608LL) >=
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*a3 +
-                                                                               8) +
-                                                                    12LL *
-                                                                        v101 +
-                                                                    4)) +
-                                24LL) +
-                     608LL)) {
+      {
+        v166 = *(a2 - 1);
+        __asm__ volatile("" ::"r"(v166));
+      }
+      if ((signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          v166 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) >=
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v10 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*a3 +
+                                                                                 8) +
+                                                                      12LL *
+                                                                          v101 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL)) {
         return result;
       }
       v11[1] = v166;
@@ -36038,7 +36505,7 @@ LABEL_2:
         goto LABEL_84;
       }
       v100 = GameRoutine_fae200_alt1(v7, v11 - 24);
-      result = GameRoutine_fae200(v11, (__int64)a2);
+      result = GameRoutine_fae200_alt1(v11, (__int64)a2);
       if ((result & 1) != 0) {
         a2 = (__int64*)(v11 - 24);
         if (!v100) {

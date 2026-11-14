@@ -65,6 +65,8 @@ __int64 nn_lmem_DestroyFrameHeap(__int64);
 extern __int64 (*GameData_212e988)();
 extern __int64 (*GameData_212e9f0)();
 __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4);
+__int64 game_5c52f0(__int64 result);
+__int64 game_5c5380();
 
 __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
 {
@@ -352,7 +354,7 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
     v58 = 0;
     v59 = GameData_2136500[0] + 2;
     do {
-      GameRoutine_5c52f0(v57 - 1560);
+      game_5c52f0(v57 - 1560);
       GameRoutine_5def40((_QWORD*)(v57 + 232));
       *(_QWORD*)v57 = 0;
       *(_QWORD*)(v57 + 8) = 0;
@@ -408,7 +410,7 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   GameRoutine_5b9920(v71, a1);
   *(_QWORD*)(a1 + 2240) = v71;
   LODWORD(v71) = GameRoutine_5c0250();
-  GameRoutine_5c5380();
+  game_5c5380();
   v72 = GameRoutine_5c0250() - (unsigned int)v71;
   v73 = *(_QWORD*)(a1 + 56);
   *(_QWORD*)(a1 + 4624) = v72;

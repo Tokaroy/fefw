@@ -38,6 +38,8 @@ void game_5c38e0(long double, long double, __int64, int8x16_t*, __int64,
 __int64 SuperStripeSystem_5ce190(__int64 a1, __int64 a2, float32x4_t* a3);
 float SuperStripeSystem_5d0cd0(float32x4_t* a1, float32x4_t* a2, __int64 a3,
                                int a4, int a5, float a6);
+float SuperStripeSystem_5d0cd0_alt1(_OWORD*, float32x4_t*, __int64, int, int,
+                                    float) __asm__("SuperStripeSystem_5d0cd0");
 
 __int64 SuperStripeSystem_5cd920(__int64 a1, double a2, long double a3)
 {
@@ -477,8 +479,9 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
     v114 = (__typeof__(v114)){0};
     v113 = (__typeof__(v113)){0};
     v51 = (float)(unsigned int)(v42 - 1);
-    GameRoutine_5d0cd0(&v114, &v113, v11, v47, v115_.v121,
-                       (float)(PSEUDO_UNFUSED(v44 * 0x0.0p+0f)) - (float)v47);
+    SuperStripeSystem_5d0cd0_alt1(&v114, &v113, v11, v47, v115_.v121,
+                                  (float)(PSEUDO_UNFUSED(v44 * 0x0.0p+0f)) -
+                                      (float)v47);
     v52 = *(_DWORD*)(a6 + 88);
     v53 = (__typeof__(v53)){0};
     if (v52 != 0) {
@@ -565,8 +568,8 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
         }
         v114 = (__typeof__(v114)){0};
         v113 = (__typeof__(v113)){0};
-        GameRoutine_5d0cd0(&v114, &v113, v11, v90, v115_.v121,
-                           v89 - (float)v90);
+        SuperStripeSystem_5d0cd0_alt1(&v114, &v113, v11, v90, v115_.v121,
+                                      v89 - (float)v90);
         v91 = *(_DWORD*)(a6 + 88);
         if (v91 == 1) {
           if (v70 <= 2) {

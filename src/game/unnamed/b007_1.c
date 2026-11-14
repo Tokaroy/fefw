@@ -532,6 +532,7 @@ void GameHr_8eab40(__int64* a1);
 __int64 GameHr_8eeb00(__int64* a1);
 void GameHr_8f3920(__int64 a1);
 void GameHr_900490(__int64* a1, __int16 a2);
+__int64 GameHr_90c6c0(__int64 result, int a2);
 
 bool GameHr_878cc0(unsigned __int8 a1, unsigned __int8 a2, int a3, int a4)
 {
@@ -8603,13 +8604,13 @@ __int64 GameHr_90c6c0(__int64 result, int a2)
   v3 = *(_DWORD*)(result + 4);
   v4 = *(_DWORD**)(v2 + 24);
   v5 = v4[105];
-  if (v5 > 2 && v4[103] <= v3) {
+  if (v5 > 2 && (signed __int32)v4[103] <= v3) {
     v9 = 3;
   }
-  else if (v5 > 1 && v4[102] <= v3) {
+  else if (v5 > 1 && (signed __int32)v4[102] <= v3) {
     v9 = 2;
   }
-  else if (v5 >= 1 && v4[101] <= v3) {
+  else if (v5 >= 1 && (signed __int32)v4[101] <= v3) {
     v9 = 1;
   }
   else {
@@ -8627,14 +8628,15 @@ __int64 GameHr_90c6c0(__int64 result, int a2)
   *(_DWORD*)(result + 4) = v11;
   v13 = *(_DWORD**)(v2 + 24);
   v14 = v13[105];
-  v15 = v14 > 2 && v13[103] <= v11;
-  if (v15 || (v14 > 1 ? (v16 = v13[102] <= v11) : (v16 = false), v16)) {
+  v15 = v14 > 2 && (signed __int32)v13[103] <= v11;
+  if (v15 || (v14 > 1 ? (v16 = (signed __int32)v13[102] <= v11) : (v16 = false),
+              v16)) {
     if (v9 > 0) {
       return result;
     }
     goto LABEL_36;
   }
-  if (v14 >= 1 && v13[101] <= v11) {
+  if (v14 >= 1 && (signed __int32)v13[101] <= v11) {
     v18 = 1;
     if (v9 > 0) {
       return result;
@@ -8647,10 +8649,10 @@ __int64 GameHr_90c6c0(__int64 result, int a2)
     }
   }
   if (v9 < v18) {
-    v25 = v14 >= 1 && v13[101] <= v11;
+    v25 = v14 >= 1 && (signed __int32)v13[101] <= v11;
     if (v25 || (int)v13[104] >= 1) {
     LABEL_36:
-      v19 = *(_QWORD*)(GameData_21caab0 + 160);
+      v19 = *(_QWORD*)(game_GameModeData_instance_ + 160);
       v20 = *(_QWORD*)(v19 + 8);
       v21 = *(_QWORD*)(v19 + 16) - v20;
       if ((int)(v21 >> 5) < 1) {

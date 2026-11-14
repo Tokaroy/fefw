@@ -119,6 +119,7 @@ __int64 GameRoutine_62bec0_alt1(__int64 result, __int64,
 __int64 std___1___shared_weak_count___release_weak_alt2(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
 void Object_Destructor_df88c0(__int64 a1, long double a2, long double a3);
+__int64 GameHr_cf62e0(__int64);
 
 void Object_Destructor_df88c0(__int64 a1, long double a2, long double a3)
 {
@@ -1511,7 +1512,7 @@ void game_hub_Object_EnableHitAttack(__int64 a1, __int64 a2)
     if (*(_QWORD*)(v5 + 512) == v9 || (v12 = *(_QWORD*)(v9 + 8)) == 0) {
     LABEL_17:
       v13 = a1;
-      v12 = GameRoutine_cf62e0(v5);
+      v12 = GameHr_cf62e0(v5);
       goto LABEL_18;
     }
     v13 = a1;

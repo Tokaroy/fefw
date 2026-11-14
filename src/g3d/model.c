@@ -176,6 +176,7 @@ void GameHr_a6b760(__int64);
 void __attribute__((noreturn)) fs_60a230();
 __attribute__((swiftcall)) void Model_a66f60(PSEUDO_X8 x8_, __int64 a1,
                                              __int64 a2, unsigned __int64 a3);
+void llvm_libcxx_21_libcxx_include___vector_a67360(__int64*, unsigned __int64);
 
 __int64 Model_a619c0(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -3615,7 +3616,8 @@ void Model_a64b80(__int64 a1, long double a2)
     }
   }
   else {
-    GameRoutine_a67360((_QWORD*)(a1 + 80), v9 - v10),
+    llvm_libcxx_21_libcxx_include___vector_a67360((__int64*)(a1 + 80),
+                                                  v9 - v10),
         v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v1", "=w"));
   }
   if ((_DWORD)v9 != 0) {
@@ -5797,7 +5799,7 @@ __int64* Model_a6aa00(__int64* result, __int64* a2, __int64* a3, __int64 a4,
     for (i = 0;; i += 8) {
       v14 = &result[i];
       v15 = result[i + 1];
-      v16 = *((_DWORD*)a2 + 1) < SHIDWORD(result[i]);
+      v16 = (signed __int32)*((_DWORD*)a2 + 1) < SHIDWORD(result[i]);
       v17 = v11 == v15;
       v18 = v11 < v15;
       if (!v17) {
@@ -5832,7 +5834,7 @@ __int64* Model_a6aa00(__int64* result, __int64* a2, __int64* a3, __int64 a4,
           v38 = *((_DWORD*)v37 + 1);
           v39 = *((_DWORD*)v37 + 2);
           v40 = v37 + 8;
-          v41 = v38 < *((_DWORD*)v24 + 1);
+          v41 = v38 < (signed __int32)*((_DWORD*)v24 + 1);
           v17 = v39 == v34;
           v42 = v39 < v34;
           if (!v17) {
@@ -5865,7 +5867,7 @@ __int64* Model_a6aa00(__int64* result, __int64* a2, __int64* a3, __int64 a4,
           v28 = *((_DWORD*)v27 + 1);
           v29 = *((_DWORD*)v27 + 2);
           v30 = v27 + 8;
-          v31 = *((_DWORD*)v22 + 1) < v28;
+          v31 = (signed __int32)*((_DWORD*)v22 + 1) < v28;
           v17 = v23 == v29;
           v32 = v23 < v29;
           if (!v17) {
@@ -6002,7 +6004,8 @@ __int64* Model_a6aa00(__int64* result, __int64* a2, __int64* a3, __int64 a4,
       v83 = *(_DWORD*)(v81 + 8);
       v84 = v80 - 6;
       v85 = (__int64*)(v80 - 4);
-      v86 = *((_DWORD*)a2 + 1) < *(_DWORD*)(v81 + 4);
+      v86 = (signed __int32)*((_DWORD*)a2 + 1) <
+            (signed __int32)*(_DWORD*)(v81 + 4);
       v17 = v82 == v83;
       v87 = v82 < v83;
       if (!v17) {
@@ -6164,7 +6167,8 @@ __int64* Model_a6aa00(__int64* result, __int64* a2, __int64* a3, __int64 a4,
     v17 = v67 == v66;
     v69 = v67 < v66;
     if (v17) {
-      v69 = *(_DWORD*)(v64 - 60) < *((_DWORD*)a2 - 15);
+      v69 = (signed __int32)*(_DWORD*)(v64 - 60) <
+            (signed __int32)*((_DWORD*)a2 - 15);
     }
     v70 = v63 - 6;
     if (!v69) {

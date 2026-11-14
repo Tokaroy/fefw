@@ -921,6 +921,7 @@ bool game_878240(const char** a1, __int64 a2, __int64 a3);
 bool game_8784c0(const char** a1, __int64 a2);
 bool game_878d80(const char** a1);
 __attribute__((swiftcall)) void game_9470c0(PSEUDO_X8 x8_, __int64 a1);
+bool GameRoutine_90c9e0_alt1(__int64) __asm__("GameRoutine_90c9e0");
 
 bool game_869980()
 {
@@ -2743,9 +2744,9 @@ int* game_8a0490(int* result, int* a2, int* a3)
                608LL);
   if (v6 >=
       *(int*)(*(_QWORD*)(*(_QWORD*)(v5 +
-                                       8LL * *((unsigned __int16*)result + 2)) +
-                            24LL) +
-                 608LL)) {
+                                    8LL * *((unsigned __int16*)result + 2)) +
+                         24LL) +
+              608LL)) {
     if (v9 < v6) {
       v13 = *a2;
       v14 = *(_QWORD*)(a2 + 1);
@@ -2762,13 +2763,13 @@ int* game_8a0490(int* result, int* a2, int* a3)
       v16 = *v4;
       a3[2] = HIDWORD(v14);
       if (*(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v16 + 64) +
-                                           8LL * *((unsigned __int16*)a2 + 2)) +
-                                24LL) +
-                     608LL) <
+                                        8LL * *((unsigned __int16*)a2 + 2)) +
+                             24LL) +
+                  608LL) <
           *(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v16 + 64) +
-                                           8LL * (unsigned __int16)*v7) +
-                                24LL) +
-                     608LL)) {
+                                        8LL * (unsigned __int16)*v7) +
+                             24LL) +
+                  608LL)) {
         v17 = *result;
         v18 = *(_QWORD*)(result + 1);
         *result = *a2;
@@ -2795,12 +2796,12 @@ int* game_8a0490(int* result, int* a2, int* a3)
       *a2 = v11;
       *(_QWORD*)(a2 + 1) = v10;
       if (*(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v4 + 64) + 8LL * *v8) +
-                                24LL) +
-                     608LL) <
+                             24LL) +
+                  608LL) <
           *(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*v4 + 64) +
-                                           8LL * (unsigned __int16)v10) +
-                                24LL) +
-                     608LL)) {
+                                        8LL * (unsigned __int16)v10) +
+                             24LL) +
+                  608LL)) {
         v21 = *(_QWORD*)(a2 + 1);
         *a2 = *a3;
         v22 = *v8;
@@ -2848,13 +2849,13 @@ int* game_8a06e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   v9 = GameData_212c878[0];
   v10 = (__int16*)(a3 + 4);
   if (*(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c878[0] + 64) +
-                                       8LL * *(unsigned __int16*)(a4 + 4)) +
-                            24LL) +
-                 608LL) <
+                                    8LL * *(unsigned __int16*)(a4 + 4)) +
+                         24LL) +
+              608LL) <
       *(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c878[0] + 64) +
-                                       8LL * *(unsigned __int16*)(a3 + 4)) +
-                            24LL) +
-                 608LL)) {
+                                    8LL * *(unsigned __int16*)(a3 + 4)) +
+                         24LL) +
+              608LL)) {
     v11 = *(_DWORD*)a3;
     v12 = *(_QWORD*)(a3 + 4);
     *(_DWORD*)a3 = *(_DWORD*)a4;
@@ -2871,13 +2872,13 @@ int* game_8a06e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     *(_DWORD*)(a4 + 8) = HIDWORD(v12);
     v15 = (__int16*)(a2 + 4);
     if (*(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v14 + 64) +
-                                         8LL * *(unsigned __int16*)(a3 + 4)) +
-                              24LL) +
-                   608LL) <
+                                      8LL * *(unsigned __int16*)(a3 + 4)) +
+                           24LL) +
+                608LL) <
         *(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v14 + 64) +
-                                         8LL * *(unsigned __int16*)(a2 + 4)) +
-                              24LL) +
-                   608LL)) {
+                                      8LL * *(unsigned __int16*)(a2 + 4)) +
+                           24LL) +
+                608LL)) {
       v16 = *(_DWORD*)a2;
       v17 = *(_QWORD*)(a2 + 4);
       *(_DWORD*)a2 = *(_DWORD*)a3;
@@ -2893,13 +2894,13 @@ int* game_8a06e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
       v19 = *v9;
       *(_DWORD*)(a3 + 8) = HIDWORD(v17);
       if (*(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v19 + 64) +
-                                           8LL * *(unsigned __int16*)(a2 + 4)) +
-                                24LL) +
-                     608LL) <
+                                        8LL * *(unsigned __int16*)(a2 + 4)) +
+                             24LL) +
+                  608LL) <
           *(int*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v19 + 64) +
-                                           8LL * *(unsigned __int16*)(a1 + 4)) +
-                                24LL) +
-                     608LL)) {
+                                        8LL * *(unsigned __int16*)(a1 + 4)) +
+                             24LL) +
+                  608LL)) {
         v20 = *(_DWORD*)a1;
         v21 = *(_QWORD*)(a1 + 4);
         *(_DWORD*)a1 = *(_DWORD*)a2;
@@ -5472,7 +5473,7 @@ __int64 game_90d5a0(__int64 result)
   }
   v11 = 0;
   do {
-    result = GameRoutine_90c9e0(v1 + 32 * v11);
+    result = GameRoutine_90c9e0_alt1(v1 + 32 * v11);
     v1 = *(_QWORD*)(v3 + 8);
     if ((result & 1) == 0) {
       goto LABEL_23;
@@ -5541,7 +5542,7 @@ __int64 game_90d5a0(__int64 result)
   if ((int)v12 >= 1) {
     v31 = 0;
     while (1) {
-      result = GameRoutine_90c9e0(v1 + 32 * v31);
+      result = GameRoutine_90c9e0_alt1(v1 + 32 * v31);
       v1 = *(_QWORD*)(v3 + 8);
       if ((result & 1) == 0) {
         v32 = v1 + 32 * v31;

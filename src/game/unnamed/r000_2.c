@@ -3,52 +3,34 @@
 #pragma GCC visibility push(hidden)
 
 __int64 GameRoutine_577d40(_QWORD, _QWORD);
-
 __int64 GameRoutine_578920(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_58c820(_QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_5987a0(_QWORD);
-
 __int64 GameRoutine_5a0010(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_5fe0a0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 _QWORD* BaseNx_2abfb0(_QWORD* result);
-
 __int64 BaseNx_2abf10(__int64 result, int);
-
 __int64 nn_atk_detail_2a7b20(__int64 result);
-
 float BaseNx_28b580(__int64);
-
 void* SoundVoiceNX_14e360();
-
 void GameHr_2a7e40(__int64 a1);
-
 __int64 GameRoutine_577d40_alt1(__int64,
                                 unsigned int) __asm__("GameRoutine_577d40");
-
 __int64 GameRoutine_578920_alt1(__int64, int, int, int,
                                 int) __asm__("GameRoutine_578920");
-
 __int64 GameRoutine_5a0010_alt1(__int64, __int64, __int64,
                                 unsigned int) __asm__("GameRoutine_5a0010");
-
 __int64 GameRoutine_5fcd30_alt1(__int64, unsigned int, unsigned int, _QWORD*,
                                 unsigned int,
                                 unsigned int) __asm__("GameRoutine_5fcd30");
-
 __int64 GameRoutine_5fe0a0_alt1(__int64, unsigned int, unsigned int,
                                 unsigned int*,
                                 unsigned int*) __asm__("GameRoutine_5fe0a0");
-
 __int64 GameRoutine_5fe120_alt1(__int64, unsigned int, unsigned int, _QWORD*,
                                 __int64) __asm__("GameRoutine_5fe120");
-
 __int64 VectorGraphicsTexture_5987a0(__int64);
-
 __int64 GameHr_5926a0(__int64 result, __int64 a2, __int64 a3);
+__int64 GameHr_593100(__int64 a1, __int64 a2, __int64 a3);
 
 void GameHr_2a7e40(__int64 a1)
 {
@@ -457,8 +439,8 @@ __int64 GameHr_593100(__int64 a1, __int64 a2, __int64 a3)
   char v12;
   int v13;
   bool v14;
-  __int64* v15;
-  __int64* v16;
+  unsigned int* v15;
+  unsigned int* v16;
   __int64 v17;
   __int64 v18;
   __int64 v19;
@@ -469,36 +451,51 @@ __int64 GameHr_593100(__int64 a1, __int64 a2, __int64 a3)
   __int64 v25;
   __int64 v26;
 
-  GameRoutine_5a0010(a2, a3, *(_QWORD*)(a1 + 56), *(unsigned int*)(a1 + 64));
-  v6 =
-      *(_QWORD*)GameRoutine_578920(*(_QWORD*)(a2 + 184), *(_WORD*)(a1 + 16) & 3,
-                                   (*(unsigned __int16*)(a1 + 16) >> 2) & 3,
-                                   (*(unsigned __int16*)(a1 + 16) >> 4) & 7,
-                                   (*(_WORD*)(a1 + 16) & 0x80) != 0);
-  v7 = *(_QWORD*)(a2 + 184);
+  GameRoutine_5a0010_alt1(a2, a3, *(_QWORD*)(a1 + 56), *(_DWORD*)(a1 + 64));
+  v6 = *(_QWORD*)GameRoutine_578920_alt1(
+      *(_QWORD*)(a2 + 184), *(_WORD*)(a1 + 16) & 3,
+      (*(unsigned __int16*)(a1 + 16) >> 2) & 3,
+      (*(unsigned __int16*)(a1 + 16) >> 4) & 7,
+      (*(_WORD*)(a1 + 16) & 0x80) != 0);
+  {
+    v7 = *(_QWORD*)(a2 + 184);
+    __asm__ volatile("" ::"r"(v7));
+  }
   v26 = v6;
-  v8 = *(_QWORD*)GameRoutine_578920(v7, *(_WORD*)(a1 + 32) & 3,
-                                    (*(unsigned __int16*)(a1 + 32) >> 2) & 3,
-                                    (*(unsigned __int16*)(a1 + 32) >> 4) & 7,
-                                    (*(_WORD*)(a1 + 32) & 0x80) != 0);
-  v9 = *(_QWORD*)(a1 + 56);
-  v10 = *(_DWORD*)(a1 + 64);
+  v8 = *(_QWORD*)GameRoutine_578920_alt1(
+      v7, *(_WORD*)(a1 + 32) & 3, (*(unsigned __int16*)(a1 + 32) >> 2) & 3,
+      (*(unsigned __int16*)(a1 + 32) >> 4) & 7,
+      (*(_WORD*)(a1 + 32) & 0x80) != 0);
+  {
+    v9 = *(_QWORD*)(a1 + 56);
+    __asm__ volatile("" ::"r"(v9));
+  }
+  {
+    v10 = *(_DWORD*)(a1 + 64);
+    __asm__ volatile("" ::"r"(v10));
+  }
   v25 = v8;
-  v11 = *(_QWORD*)(v9 + 48);
-  v12 = *(_BYTE*)(*(_QWORD*)(a1 + 8) + 4LL);
-  v13 = GameRoutine_5987a0(v9) * v10;
+  {
+    v11 = *(_QWORD*)(v9 + 48);
+    __asm__ volatile("" ::"r"(v11));
+  }
+  {
+    v12 = *(_BYTE*)(*(_QWORD*)(a1 + 8) + 4LL);
+    __asm__ volatile("" ::"r"(v12));
+  }
+  v13 = VectorGraphicsTexture_5987a0(v9) * v10;
   v14 = (v12 & 1) == 0;
   if ((v12 & 1) != 0) {
-    v15 = &v26;
+    v15 = (unsigned int*)&v26;
   }
   else {
-    v15 = &v25;
+    v15 = (unsigned int*)&v25;
   }
   if ((v12 & 1) != 0) {
-    v16 = &v25;
+    v16 = (unsigned int*)&v25;
   }
   else {
-    v16 = &v26;
+    v16 = (unsigned int*)&v26;
   }
   if (v14) {
     v17 = 40;
@@ -512,15 +509,24 @@ __int64 GameHr_593100(__int64 a1, __int64 a2, __int64 a3)
   else {
     v18 = 40;
   }
-  GameRoutine_5fe0a0(a3, *(unsigned int*)(v11 + 4LL * v13), 4,
-                     *(_QWORD*)(a1 + v17) + 8LL, v15);
-  v19 = *(_QWORD*)(a1 + 56);
-  v20 = *(_DWORD*)(a1 + 64);
-  v21 = *(_QWORD*)(v19 + 48);
-  v22 = GameRoutine_5987a0(v19);
-  GameRoutine_5fe0a0(a3, *(unsigned int*)(v21 + 4LL * v22 * v20 + 4), 4,
-                     *(_QWORD*)(a1 + v18) + 8LL, v16);
-  v23 = GameRoutine_577d40(*(_QWORD*)(a2 + 184), 1);
+  GameRoutine_5fe0a0_alt1(a3, *(_DWORD*)(v11 + 4LL * v13), 4u,
+                          (unsigned int*)(*(_QWORD*)(a1 + v17) + 8LL), v15);
+  {
+    v19 = *(_QWORD*)(a1 + 56);
+    __asm__ volatile("" ::"r"(v19));
+  }
+  {
+    v20 = *(_DWORD*)(a1 + 64);
+    __asm__ volatile("" ::"r"(v20));
+  }
+  {
+    v21 = *(_QWORD*)(v19 + 48);
+    __asm__ volatile("" ::"r"(v21));
+  }
+  v22 = VectorGraphicsTexture_5987a0(v19);
+  GameRoutine_5fe0a0_alt1(a3, *(_DWORD*)(v21 + 4LL * v22 * v20 + 4), 4u,
+                          (unsigned int*)(*(_QWORD*)(a1 + v18) + 8LL), v16);
+  v23 = GameRoutine_577d40_alt1(*(_QWORD*)(a2 + 184), 1u);
   return GameRoutine_58c820(a3, a2, v23);
 }
 

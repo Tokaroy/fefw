@@ -301,6 +301,9 @@ __int64 GameHr_576fc0(__int64 a1, __int64* a2, unsigned int a3, __int64 a4,
 __int64 GameHr_57a5a0(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                       __int64 a5, __int64 a6, __int64 a7);
 __int64 GameHr_586c20(__int64 result, __int64 a2, __int64 a3, __int64 a4);
+__int64 nn_ui2d_593c30(__int64*, __int64, unsigned int);
+unsigned __int64 GameHr_59feb0(__int64, _OWORD*);
+__int64 GameHr_591b40(__int64 a1, __int64 a2);
 
 __int64 GameHr_576f40(__int64 result, __int64 a2, __int64 a3)
 {
@@ -7099,8 +7102,10 @@ void GameHr_591940(_BYTE* a1, __int64 a2)
   }
 }
 
-__int64 GameHr_591b40(__int64* a1, __int64 a2)
+__int64 GameHr_591b40(__int64 a1, __int64 a2)
 {
+
+#pragma clang fp contract(off)
   int v4;
   float v5;
   __int64 v6;
@@ -7122,84 +7127,155 @@ __int64 GameHr_591b40(__int64* a1, __int64 a2)
   __int64 v23;
   __int64 v24;
 
-  v4 = GameRoutine_59feb0(a2, *a1);
-  *(__int64*)((char*)a1 + 204) = -1;
-  *((_DWORD*)a1 + 53) = -1;
-  *((_DWORD*)a1 + 54) = v4;
-  v6 = a1[11];
-  v7 = *(_BYTE*)(v6 + 8);
+  v4 = GameHr_59feb0(a2, *(_OWORD**)a1);
+  *(_QWORD*)(a1 + 204) = -1;
+  *(_DWORD*)(a1 + 212) = -1;
+  *(_DWORD*)(a1 + 216) = v4;
+  {
+    v6 = *(_QWORD*)(a1 + 88);
+    __asm__ volatile("" ::"r"(v6));
+  }
+  {
+    v7 = *(_BYTE*)(v6 + 8);
+    __asm__ volatile("" ::"r"(v7));
+  }
   if ((v7 & 1) != 0) {
-    v5 = *(float*)(v6 + 48);
-    if (v5 > 0.0) {
-      v8 = GameRoutine_593c30(a1, a2, 0);
-      v6 = a1[11];
-      *((_DWORD*)a1 + 51) = v8;
-      v7 = *(_BYTE*)(v6 + 8);
+    {
+      v5 = *(float*)(v6 + 48);
+      __asm__ volatile("" ::"w"(v5));
+    }
+    if (v5 > 0x0.0p+0f) {
+      v8 = nn_ui2d_593c30((__int64*)a1, a2, 0);
+      {
+        v6 = *(_QWORD*)(a1 + 88);
+        __asm__ volatile("" ::"r"(v6));
+      }
+      *(_DWORD*)(a1 + 204) = v8;
+      {
+        v7 = *(_BYTE*)(v6 + 8);
+        __asm__ volatile("" ::"r"(v7));
+      }
     }
   }
   if ((v7 & 2) != 0) {
-    v5 = *(float*)(v6 + 64);
-    if (v5 > 0.0) {
-      v9 = GameRoutine_593c30(a1, a2, 1);
-      v6 = a1[11];
-      *((_DWORD*)a1 + 52) = v9;
-      v7 = *(_BYTE*)(v6 + 8);
+    {
+      v5 = *(float*)(v6 + 64);
+      __asm__ volatile("" ::"w"(v5));
+    }
+    if (v5 > 0x0.0p+0f) {
+      v9 = nn_ui2d_593c30((__int64*)a1, a2, 1u);
+      {
+        v6 = *(_QWORD*)(a1 + 88);
+        __asm__ volatile("" ::"r"(v6));
+      }
+      *(_DWORD*)(a1 + 208) = v9;
+      {
+        v7 = *(_BYTE*)(v6 + 8);
+        __asm__ volatile("" ::"r"(v7));
+      }
     }
   }
-  if ((v7 & 4) != 0 && (v5 = *(float*)(v6 + 88)) > 0.0) {
-    *((_DWORD*)a1 + 53) = GameRoutine_593c30(a1, a2, 2);
-    v6 = a1[11];
-    v10 = *(_QWORD*)(*(_QWORD*)(a2 + 200) + 56LL) + *((unsigned int*)a1 + 54);
-    if (v6 == 0 || (a1[69] & 4) != 0) {
+  if ((v7 & 4) != 0 && (v5 = *(float*)(v6 + 88)) > 0x0.0p+0f) {
+    *(_DWORD*)(a1 + 212) = nn_ui2d_593c30((__int64*)a1, a2, 2u);
+    {
+      v6 = *(_QWORD*)(a1 + 88);
+      __asm__ volatile("" ::"r"(v6));
+    }
+    {
+      v10 =
+          *(_QWORD*)(*(_QWORD*)(a2 + 200) + 56LL) + *(unsigned int*)(a1 + 216);
+      __asm__ volatile("" ::"r"(v10));
+    }
+    if (v6 == 0 || (*(_BYTE*)(a1 + 552) & 4) != 0) {
       goto LABEL_15;
     }
   }
   else {
-    v10 = *(_QWORD*)(*(_QWORD*)(a2 + 200) + 56LL) + *((unsigned int*)a1 + 54);
-    if ((a1[69] & 4) != 0) {
+    {
+      v10 =
+          *(_QWORD*)(*(_QWORD*)(a2 + 200) + 56LL) + *(unsigned int*)(a1 + 216);
+      __asm__ volatile("" ::"r"(v10));
+    }
+    if ((*(_BYTE*)(a1 + 552) & 4) != 0) {
       goto LABEL_15;
     }
   }
   if ((*(_BYTE*)(v6 + 8) & 0x20) != 0) {
-    LOBYTE(v5) = *(_BYTE*)(*a1 + 90);
-    *(float*)(v10 + 220) = (float)((float)LODWORD(v5) / 255.0) / 255.0;
+    LOBYTE(v5) = *(_BYTE*)(*(_QWORD*)a1 + 90LL);
+    *(float*)(v10 + 220) = (float)((float)LODWORD(v5) / 0x1.fe00000000000p+7f) /
+                           0x1.fe00000000000p+7f;
   }
 LABEL_15:
-  v11 = *a1;
+  {
+    v11 = *(_QWORD*)a1;
+    __asm__ volatile("" ::"r"(v11));
+  }
   v23 = 0;
   (*(void (**)(__int64, __int64*))(*(_QWORD*)v11 + 96LL))(v11, &v23);
-  v12 = *a1;
+  {
+    v12 = *(_QWORD*)a1;
+    __asm__ volatile("" ::"r"(v12));
+  }
   v22 = 0;
   (*(void (**)(__int64, __int64*))(*(_QWORD*)v12 + 104LL))(v12, &v22);
-  v13 = *a1;
+  {
+    v13 = *(_QWORD*)a1;
+    __asm__ volatile("" ::"r"(v13));
+  }
   v24 = 0;
   (*(void (**)(__int64, __int64*))(*(_QWORD*)v13 + 96LL))(v13, &v24);
-  v14 = *(float*)(*a1 + 84);
-  v15 = *(unsigned __int8*)(*a1 + 91);
-  v16 = (float)(*(float*)&v24 - *(float*)(*a1 + 80)) * 0.5;
+  {
+    v14 = *(float*)(*(_QWORD*)a1 + 84LL);
+    __asm__ volatile("" ::"w"(v14));
+  }
+  {
+    v15 = *(unsigned __int8*)(*(_QWORD*)a1 + 91LL);
+    __asm__ volatile("" ::"r"(v15));
+  }
+  {
+    v16 = (float)(*(float*)&v24 - *(float*)(*(_QWORD*)a1 + 80LL)) *
+          0x1.0000000000000p-1f;
+    __asm__ volatile("" ::"w"(v16));
+  }
   if ((v15 & 3) == 2) {
-    v17 = v16 + *(float*)&v22;
+    {
+      v17 = v16 + *(float*)&v22;
+      __asm__ volatile("" ::"w"(v17));
+    }
   }
   else {
     if ((v15 & 3) != 1) {
       goto LABEL_20;
     }
-    v17 = *(float*)&v22 - v16;
+    {
+      v17 = *(float*)&v22 - v16;
+      __asm__ volatile("" ::"w"(v17));
+    }
   }
   *(float*)&v22 = v17;
 LABEL_20:
   v18 = (v15 >> 2) & 3;
-  v19 = (float)(*((float*)&v24 + 1) - v14) * 0.5;
+  {
+    v19 = (float)(*((float*)&v24 + 1) - v14) * 0x1.0000000000000p-1f;
+    __asm__ volatile("" ::"w"(v19));
+  }
   if (v18 == 2) {
-    v20 = *((float*)&v22 + 1) - v19;
+    {
+      v20 = *((float*)&v22 + 1) - v19;
+      __asm__ volatile("" ::"w"(v20));
+    }
     goto LABEL_24;
   }
   if (v18 == 1) {
-    v20 = v19 + *((float*)&v22 + 1);
+    {
+      v20 = v19 + *((float*)&v22 + 1);
+      __asm__ volatile("" ::"w"(v20));
+    }
   LABEL_24:
     *((float*)&v22 + 1) = v20;
   }
-  return GameRoutine_576260(a2, v10, &v22, &v23, 1, &GameData_1b13cdc);
+  return DynamicRenderingTexture_576260((char*)a2, v10, &v22, &v23, 1,
+                                        (__int64)&GameData_1b13cdc);
 }
 
 __int64 GameHr_591d60(_QWORD* a1, __int64 a2, __int64 a3)

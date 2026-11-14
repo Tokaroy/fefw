@@ -723,6 +723,12 @@ void game_112d480(__int64 a1, char a2, __int64 a3);
 void game_112d580(char* a1, __int64 a2, __int64 a3);
 void game_112daa0(unsigned __int8* a1);
 void game_112dfe0(__int64 a1, __int64* a2);
+__attribute__((swiftcall)) void
+game_108db00_alt1(__attribute__((swift_indirect_result)) void*, __int64, char*,
+                  float32x4_t*, float) __asm__("game_108db00");
+__attribute__((swiftcall)) void
+game_combat_10906b0_alt1(__attribute__((swift_indirect_result)) void*,
+                         float32x4_t*) __asm__("game_combat_10906b0");
 
 __int64* game_100f680(_QWORD* a1)
 {
@@ -10663,8 +10669,8 @@ LABEL_53:
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v44 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt1(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                       v44, (_QWORD)(v61_.v62)),
+    nn_mem_StandardAllocator_Free_alt1(
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v44, (_QWORD)(v61_.v62)),
         v56 = COERCE_AS(__typeof__(v56),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
@@ -15275,8 +15281,6 @@ __n128 game_10f2cc0(float32x4_t* a1)
 
 __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
 {
-
-#pragma clang fp contract(off)
   __int64 v2;
   unsigned int v3;
   __int64 v4;
@@ -15329,10 +15333,8 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
   unsigned __int64 v51;
   float32x4_t v52;
   float32x4_t v53;
-  struct {
-    float32x4_t v54;
-    char v55;
-  } v54_;
+  float32x4_t v54;
+  char v55;
 
   v2 = GameData_21ec7b0;
   if (GameData_21ec7b0 == 0) {
@@ -15398,15 +15400,15 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
     }
     v21 = *(_QWORD*)(v11 + 136);
     v22 = v19;
-    LANES128(v54_.v54).n128_u8[0] = 0;
-    v54_.v55 = 0;
+    LANES128(v54).n128_u8[0] = 0;
+    v55 = 0;
     if (v21 != 0 && *(_QWORD*)(v21 + 8) != -1) {
       v23 = *(_QWORD*)(v11 + 144);
       if (v23 != 0 && *(_BYTE*)(v23 + 784) != 0) {
         v24 = *(_QWORD*)(v23 + 768);
         v25 = *(_QWORD*)(v23 + 776);
-        LANES128(v54_.v54).n128_u64[0] = v24;
-        LANES128(v54_.v54).n128_u64[1] = v25;
+        LANES128(v54).n128_u64[0] = v24;
+        LANES128(v54).n128_u64[1] = v25;
         goto LABEL_84;
       }
     }
@@ -15467,8 +15469,7 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
         v22 = v42;
         if (v34 != 0 && v43 != 0) {
           v44 = v42;
-          v45 = CharacterBuilder_1084a50_alt1(*(_QWORD*)(v34 + 88),
-                                              "Loc_TrailRoot");
+          v45 = CharacterBuilder_1084a50(*(_QWORD*)(v34 + 88), "Loc_TrailRoot");
           v46 = v45;
           if (v45 != 0) {
             v47 = *(float32x4_t*)(v45 + 48);
@@ -15477,20 +15478,20 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
             v47 = (__typeof__(v47)){0};
           }
           v52 = v47;
-          v48 = (float32x4_t*)CharacterBuilder_1084a50_alt1(
-              *(_QWORD*)(v43 + 88), "Loc_TrailRoot");
+          v48 = (float32x4_t*)CharacterBuilder_1084a50(*(_QWORD*)(v43 + 88),
+                                                       "Loc_TrailRoot");
           v22 = v44;
           if (v46 != 0 && v48 != nullptr) {
             LANES128(v49).n128_u64[0] = 0x3F0000003F000000LL;
             LANES128(v49).n128_u64[1] = 0x3F0000003F000000LL;
             v53 = vmulq_f32(vaddq_f32(v52, v48[3]), v49);
           LABEL_83:
-            v54_.v54 = v53;
+            v54 = v53;
           LABEL_84:
             v50 = *(_QWORD*)(v20 + 376);
-            v54_.v55 = 1;
-            game_108db00((void*)(&v53), v50, "Btl_Guard_Parry", &v54_.v54,
-                         0x1.0000000000000p+0f);
+            v55 = 1;
+            game_108db00_alt1((void*)((__int64*)&v53), v50, "Btl_Guard_Parry",
+                              &v54, 1.0f);
             v51 = LANES128(v53).n128_u64[1];
             if (LANES128(v53).n128_u64[1] != 0 &&
                 atomic_fetch_add(
@@ -15505,7 +15506,7 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
       }
     }
   LABEL_82:
-    game_combat_10906b0((void*)(&v53), v22);
+    game_combat_10906b0_alt1((void*)(&v53), v22);
     goto LABEL_83;
   }
   return result;

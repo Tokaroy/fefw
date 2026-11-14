@@ -240,8 +240,8 @@ __int64 UIBase_da17a0(__int64 result, char a2)
 __int64 UIBase_da1810(_BYTE* a1)
 {
   return (*(int*)(GameData_220b6e0 +
-                     16LL * (*(int (**)(_BYTE*))(*(_QWORD*)a1 + 40LL))(a1) +
-                     176) < 1) &
+                  16LL * (*(int (**)(_BYTE*))(*(_QWORD*)a1 + 40LL))(a1) + 176) <
+          1) &
          a1[8];
 }
 

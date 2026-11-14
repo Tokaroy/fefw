@@ -144,7 +144,7 @@ __int64 game_facility_94ad40(__int64 a1)
   }
   v21_.v22 = &GameData_1ac3209;
   v21_.v21 = game_HashString((__int64)&GameData_1ac3209);
-  GameRoutine_9b11a0_alt1(&GameData_21f61c0, (unsigned __int64*)&v21_.v21, 1);
+  GameRoutine_9b11a0(&GameData_21f61c0, (unsigned __int64*)&v21_.v21, 1u);
   return FacilityVariable_1472420((unsigned __int64*)&GameData_2249208,
                                   (unsigned __int64*)&GameData_2249218,
                                   *(_WORD*)(a1 + 16));

@@ -157,6 +157,7 @@ extern __int64 game_hub_ProcHubSeqView_instance_;
 __int64 GameHr_d8d080(__int64 result);
 unsigned __int64 GameHr_dea880(unsigned __int64 result, __int64* a2, __int64 a3,
                                char a4);
+_BYTE* GameHr_d5c6d0(__int64* a1, _QWORD* a2, __int64 a3);
 
 __int64 GameHr_cd7e00(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
 {
@@ -2681,66 +2682,86 @@ _BYTE* GameHr_d5c6d0(__int64* a1, _QWORD* a2, __int64 a3)
   _BYTE* v13;
   __int64 v14;
   __int64 v15;
-  _BYTE v16[32];
-  _BYTE* v17;
+  struct {
+    _BYTE v16[32];
+    _BYTE* v17;
+  } v16_;
   _QWORD v18[4];
 
-  v3 = *a1;
+  {
+    v3 = *a1;
+    __asm__ volatile("" ::"r"(v3));
+  }
   if (*(_DWORD*)(*a1 + 48) == 1) {
-    v4 = *(_QWORD*)(a3 + 32);
+    {
+      v4 = *(_QWORD*)(a3 + 32);
+      __asm__ volatile("" ::"r"(v4));
+    }
     if (v4 != 0) {
       if (v4 == a3) {
-        v17 = v16;
-        (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v4 + 24LL))(v4, v16);
+        v16_.v17 = v16_.v16;
+        (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v4 + 24LL))(v4, v16_.v16);
       }
       else {
-        v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v4 + 16LL))(v4);
+        v16_.v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v4 + 16LL))(v4);
       }
     }
     else {
-      v17 = nullptr;
+      v16_.v17 = nullptr;
     }
-    if (a2 != (_QWORD*)v16) {
-      v7 = v17;
-      v8 = (_QWORD*)a2[4];
-      if (v17 == v16) {
+    if (a2 != (_QWORD*)v16_.v16) {
+      v7 = v16_.v17;
+      {
+        v8 = (_QWORD*)a2[4];
+        __asm__ volatile("" ::"r"(v8));
+      }
+      if (v16_.v17 == v16_.v16) {
         if (v8 == a2) {
-          (*(void (**)(__int64))(*(_QWORD*)v17 + 24LL))((__int64)v17);
-          (*(void (**)(_BYTE*))(*(_QWORD*)v17 + 32LL))(v17);
-          v14 = a2[4];
-          v17 = nullptr;
-          (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v14 + 24LL))(v14, v16);
+          (*(void (**)(__int64))(*(_QWORD*)v16_.v17 + 24LL))((__int64)v16_.v17);
+          (*(void (**)(_BYTE*))(*(_QWORD*)v16_.v17 + 32LL))(v16_.v17);
+          {
+            v14 = a2[4];
+            __asm__ volatile("" ::"r"(v14));
+          }
+          v16_.v17 = nullptr;
+          (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v14 + 24LL))(v14, v16_.v16);
           (*(void (**)(_QWORD))(*(_QWORD*)a2[4] + 32LL))(a2[4]);
-          v15 = v18[0];
+          {
+            v15 = v18[0];
+            __asm__ volatile("" ::"r"(v15));
+          }
           a2[4] = 0;
-          v17 = v16;
+          v16_.v17 = v16_.v16;
           (*(void (**)(_QWORD*, _QWORD*))(v15 + 24))(v18, a2);
           (*(void (**)(_QWORD*))(v18[0] + 32LL))(v18);
           a2[4] = a2;
         }
         else {
-          (*(void (**)(__int64))(*(_QWORD*)v17 + 24LL))((__int64)v17);
-          (*(void (**)(_BYTE*))(*(_QWORD*)v17 + 32LL))(v17);
-          v11 = (_BYTE*)a2[4];
+          (*(void (**)(__int64))(*(_QWORD*)v16_.v17 + 24LL))((__int64)v16_.v17);
+          (*(void (**)(_BYTE*))(*(_QWORD*)v16_.v17 + 32LL))(v16_.v17);
+          {
+            v11 = (_BYTE*)a2[4];
+            __asm__ volatile("" ::"r"(v11));
+          }
           a2[4] = a2;
-          v17 = v11;
+          v16_.v17 = v11;
         }
       }
       else if (v8 == a2) {
         (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _QWORD, _BYTE*))(
-            *v8 + 24LL))((void*)v8, a2[4], v16);
+            *v8 + 24LL))((void*)(v8), a2[4], v16_.v16);
         (*(void (**)(_QWORD))(*(_QWORD*)a2[4] + 32LL))(a2[4]);
-        v13 = v17;
-        v17 = v16;
+        v13 = v16_.v17;
+        v16_.v17 = v16_.v16;
         a2[4] = v13;
       }
       else {
-        v17 = (_BYTE*)a2[4];
+        v16_.v17 = (_BYTE*)a2[4];
         a2[4] = v7;
       }
     }
-    result = v17;
-    if (v17 != v16) {
+    result = v16_.v17;
+    if (v16_.v17 != v16_.v16) {
       goto LABEL_30;
     }
   LABEL_26:
@@ -2748,30 +2769,36 @@ _BYTE* GameHr_d5c6d0(__int64* a1, _QWORD* a2, __int64 a3)
     return (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)result + v12))(
         (__int64)result);
   }
-  v6 = *(_QWORD*)(a3 + 32);
+  {
+    v6 = *(_QWORD*)(a3 + 32);
+    __asm__ volatile("" ::"r"(v6));
+  }
   if (v6 != 0) {
     if (v6 == a3) {
-      v17 = v16;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v6 + 24LL))(v6, v16);
+      v16_.v17 = v16_.v16;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v6 + 24LL))(v6, v16_.v16);
     }
     else {
-      v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6);
+      v16_.v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6);
     }
   }
   else {
-    v17 = nullptr;
+    v16_.v17 = nullptr;
   }
-  v9 = *(unsigned int*)(v3 + 48);
+  {
+    v9 = *(unsigned int*)(v3 + 48);
+    __asm__ volatile("" ::"r"(v9));
+  }
   if ((_DWORD)v9 != -1) {
     ((void (*)(_QWORD*, __int64))GameData_1fdce28[v9])(v18, v3);
   }
-  result = v17;
+  result = v16_.v17;
   *(_DWORD*)(v3 + 48) = -1;
   if (result == nullptr) {
     *(_QWORD*)(v3 + 32) = 0;
     goto LABEL_22;
   }
-  if (result != v16) {
+  if (result != v16_.v16) {
     *(_QWORD*)(v3 + 32) = result;
   LABEL_22:
     *(_DWORD*)(v3 + 48) = 1;
@@ -2779,9 +2806,9 @@ _BYTE* GameHr_d5c6d0(__int64* a1, _QWORD* a2, __int64 a3)
   }
   *(_QWORD*)(v3 + 32) = v3;
   (*(void (**)(_BYTE*, __int64))(*(_QWORD*)result + 24LL))(result, v3);
-  result = v17;
+  result = v16_.v17;
   *(_DWORD*)(v3 + 48) = 1;
-  if (result == v16) {
+  if (result == v16_.v16) {
     goto LABEL_26;
   }
 LABEL_30:

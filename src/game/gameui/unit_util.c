@@ -97,6 +97,8 @@ extern __int64 (*GameData_205c1f8[])();
 extern __int64 GameData_21ca310;
 void __attribute__((noreturn)) GameRoutine_60a310();
 __int64 game_gameui_UnitUtil_GetPrevDefault(__int64 a1, _QWORD* a2, char a3);
+__int64 GameHr_15df820(__int64, __int64, char);
+__int64 UnitUtil_15df6c0(__int64, __int64, char, __int64, char);
 
 bool game_gameui_UnitUtil_CheckDangerCritical(__int64 a1, __int64 a2)
 {
@@ -521,7 +523,7 @@ LABEL_8:
     else {
       v17_.v18 = nullptr;
     }
-    v11 = GameRoutine_15df6c0(v10, a1, a2 & 1, (__int64)v17_.v17, a4 & 1);
+    v11 = UnitUtil_15df6c0(v10, a1, a2 & 1, (__int64)v17_.v17, a4 & 1);
     v12 = v17_.v18;
     if (v17_.v18 != v17_.v17) {
       goto LABEL_18;
@@ -542,7 +544,7 @@ LABEL_8:
   else {
     v15_.v16 = nullptr;
   }
-  v11 = game_gameui_UnitUtil_GetNextDefault(a1, (__int64)v15_.v15, a4 & 1);
+  v11 = GameHr_15df820(a1, (__int64)v15_.v15, a4 & 1);
   v12 = v15_.v16;
   if (v15_.v16 == v15_.v15) {
     goto LABEL_23;

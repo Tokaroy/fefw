@@ -284,6 +284,7 @@ void GameRoutine_81f880_alt1(__int64*,
 void __attribute__((noreturn)) GameRoutine_65c760();
 __int64 UnitActor_81b840(__int64 result);
 void UnitActor_81c600(__int64 a1);
+__attribute__((swiftcall)) void Quat_622ac0(PSEUDO_X8, float32x2_t*);
 
 __int64 UnitActor_819160(__int64 a1)
 {
@@ -2480,7 +2481,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
           LANES128_OF(vextq_s8(*(int8x16_t*)&result, *(int8x16_t*)&result, 8u))
               .n128_u64[0];
       LANES128(v14[18]).n128_u32[2] = v18;
-      GameRoutine_622ac0((void*)(&v25), (float32x2_t*)&v24);
+      Quat_622ac0((void*)(&v25), (float32x2_t*)&v24);
       result = v25;
       LANES128(v14[20]).n128_u64[0] = *(_QWORD*)&v25;
       v19 = v14[20];

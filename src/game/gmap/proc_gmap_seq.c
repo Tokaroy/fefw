@@ -609,6 +609,7 @@ unsigned int* TroopMgr_134e220();
 void TroopMgr_134a4a0(__int64);
 __int64 ProcGmapSeq_882300(__int64 result);
 __int64 (***game_gmap_ProcGmapSeq_LimitOver(__int64 a1))();
+__int64 GameRoutine_88cee0(__int64);
 
 __int64 game_gmap_ProcGmapSeq_Initialize(__int64 a1)
 {
@@ -5700,7 +5701,7 @@ __int64 (***game_gmap_ProcGmapSeq_LimitOver(__int64 a1))()
     if (v9 == 0) {
       goto LABEL_37;
     }
-    v10 = (unsigned int*)GameRoutine_88cee0_alt1(v9),
+    v10 = (unsigned int*)GameRoutine_88cee0(v9),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (v10 == nullptr) {

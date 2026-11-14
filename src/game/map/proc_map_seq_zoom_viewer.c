@@ -158,6 +158,9 @@ __int64 game_zview_CharacterModel_SetActiveSignal(__int64 result, char);
 __int64 wld_AnimCtrlModule_SetRootMotionBone(__int64 result, __int64, __int64,
                                              int);
 bool GameRoutine_108cb20(int);
+__int64 GameHr_e5fa20(_DWORD*);
+__int64 game_zview_cee580(_QWORD*);
+void game_map_zv_f56340(__int64, int);
 
 __int64 game_map_ProcMapSeqZoomViewer_ViewerZoomIn(__int64 a1)
 {
@@ -539,10 +542,10 @@ void ProcMapSeqZoomViewer_faf660(_QWORD* a1)
   v23 = COERCE_AS(__typeof__(v23),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v2 = GameData_212d028[0];
-  GameRoutine_e5fa20(*(_DWORD**)(*(_QWORD*)GameData_212d028[0] + 40LL)),
+  GameHr_e5fa20(*(_DWORD**)(*(_QWORD*)GameData_212d028[0] + 40LL)),
       v23 = COERCE_AS(__typeof__(v23),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  GameRoutine_f56340(*(_QWORD*)(*(_QWORD*)v2 + 80LL), 0),
+  game_map_zv_f56340(*(_QWORD*)(*(_QWORD*)v2 + 80LL), 0),
       v23 = COERCE_AS(__typeof__(v23),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v3 = a1[27];
@@ -584,7 +587,7 @@ void ProcMapSeqZoomViewer_faf660(_QWORD* a1)
   v11 = v10(v4 + 112),
   v23 = COERCE_AS(__typeof__(v23),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  GameRoutine_cee580((_QWORD*)a1[30]),
+  game_zview_cee580((_QWORD*)a1[30]),
       v23 = COERCE_AS(__typeof__(v23),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v12 = *(_QWORD**)(a1[30] + 16LL);
@@ -653,7 +656,7 @@ void ProcMapSeqZoomViewer_faf660(_QWORD* a1)
   *(_DWORD*)(v18 + 268) = 0;
   *(_WORD*)(v18 + 272) = 256;
   *(_BYTE*)(v18 + 224) = 1;
-  GameRoutine_cfc7c0(v18 + 128, (float*)(v18 + 280), 1, 0x0.0p+0f),
+  game_cfc7c0(v18 + 128, (float*)(v18 + 280), 1, 0x0.0p+0f),
       v23 = COERCE_AS(__typeof__(v23),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   if ((*(_QWORD*)(a1[30] + 384LL) & 0x10LL) != 0) {
@@ -923,12 +926,9 @@ LABEL_65:
                              LANES128_OF(vextq_s8(v60, v60, 8u)).n128_u64[0]),
                    COERCE_AS(float32x2_t, LANES128(v60).n128_u64[0])))
           .n64_u64[0];
-  if (__builtin_islessgreater(
-          LANES64_OF(
-              vpadd_f32(COERCE_AS(float32x2_t, LANES128(v60).n128_u64[0]),
-                        COERCE_AS(float32x2_t, LANES128(v60).n128_u64[0])))
-              .n64_f32[0],
-          0x0.0p+0f)) {
+  if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v60).n128_u64[0]),
+                           COERCE_AS(float32x2_t, LANES128(v60).n128_u64[0])))
+          .n64_f32[0] != 0x0.0p+0f) {
     *(_QWORD*)(v57 + 304) = LANES128(v58).n128_u64[0];
     v61 = *(_OWORD*)(v57 + 304);
     *(_DWORD*)(v57 + 296) |= 1u;
@@ -947,12 +947,9 @@ LABEL_65:
                              LANES128_OF(vextq_s8(v65, v65, 8u)).n128_u64[0]),
                    COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0])))
           .n64_u64[0];
-  if (__builtin_islessgreater(
-          LANES64_OF(
-              vpadd_f32(COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0]),
-                        COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0])))
-              .n64_f32[0],
-          0x0.0p+0f)) {
+  if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0]),
+                           COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0])))
+          .n64_f32[0] != 0x0.0p+0f) {
     *(_DWORD*)(v57 + 320) = 0;
     *(float*)(v57 + 324) = v63;
     *(_OWORD*)(v57 + 320) = *(unsigned __int64*)(v57 + 320);

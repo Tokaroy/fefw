@@ -257,6 +257,8 @@ void CmdBtlUnit_e7b0a0(__int64 a1);
 __attribute__((swiftcall)) void Quat_622ac0(PSEUDO_X8, float32x2_t*);
 void CharacterBuilder_1084780(__int64);
 void CmdBtlUnit_e7bed0(__int64 a1, char a2);
+__int64 GameHr_1919fb0(__int64, unsigned int);
+__int64 GameHr_7e8000(__int64);
 
 __int64 CmdBtlUnit_e79c10(__int64 result, int a2)
 {
@@ -695,7 +697,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
             v52_.v52 = (__int64 (**)(void))game_HashString_alt1(v52_.v53);
             AssetTableFile_7e7b20((__int64)v57_.v57,
                                   (unsigned __int64*)&v52_.v52);
-            AssetTableFile_7e8000((__int64)v57_.v57);
+            GameHr_7e8000((__int64)v57_.v57);
             v46 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
                 *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
             v46[2] = 0;
@@ -822,13 +824,13 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
               AssetTableFile_7e7b20((__int64)v57_.v57,
                                     (unsigned __int64*)&v52_.v52);
             }
-            AssetTableFile_7e8000((__int64)v57_.v57);
+            GameHr_7e8000((__int64)v57_.v57);
             v29 = *(_QWORD*)(a1 + 16);
           }
           game_UnitActor_CreateMainCharacter(v29, (__int64)v57_.v57);
           UnitActor_819a50(v29);
           TrickEntity_7d1480((__int64)v57_.v57);
-          GameRoutine_1919fb0(*(_QWORD*)(a1 + 16), 1u);
+          GameHr_1919fb0(*(_QWORD*)(a1 + 16), 1u);
           *(_QWORD*)(a1 + 24) = *(_QWORD*)(*(_QWORD*)(a1 + 16) + 232LL);
           v30 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
               fw_memory_g_heap_manager, 80, 16, 0);
@@ -962,7 +964,7 @@ void game_cmdbtl_CmdBtlUnit_CreateCharacter(__int64 a1)
       v52_.v52 = (__int64 (**)(void))game_HashString_alt1(v17);
       AssetTableFile_7e7b20((__int64)v57_.v57, (unsigned __int64*)&v52_.v52);
     }
-    AssetTableFile_7e8000((__int64)v57_.v57);
+    GameHr_7e8000((__int64)v57_.v57);
     v18 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
     v18[2] = 0;

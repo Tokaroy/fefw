@@ -3,233 +3,123 @@
 #pragma GCC visibility push(hidden)
 
 extern _QWORD GameData_1b01648[4];
-
 extern __int64 (*GameData_1f9c648[])();
-
 extern __int64 (*GameData_1fa2638[])();
-
 extern __int64 (*GameData_1fa2ad0[])();
-
 extern __int64 (*GameData_1fa2ba0[])();
-
 extern __int64 (*GameData_1fa2c50[])();
-
 extern __int64 (*GameData_1fa2eb0[])();
-
 extern __int64 (*GameData_1fa3370[])();
-
 extern __int64 GameData_1fa3820;
-
 extern __int64 (*GameData_1fa3a90[])();
-
 extern __int64 (*GameData_1fa3cf8[])();
-
 extern __int64 GameData_212bf68;
-
 extern __int64 GameData_212c470;
-
 extern _UNKNOWN* GameData_212c730;
-
 extern __int64* GameData_212c880[5];
-
 extern __int64* GameData_212cfc0[10];
-
 extern __int64* GameData_212cfd0[8];
-
 extern __int64* GameData_212d000[2];
-
 extern __int64* GameData_212d660[5];
-
 extern __int64* GameData_212d668[4];
-
 extern __int64* GameData_212d6a8;
-
 extern _UNKNOWN* GameData_212d6b0;
-
 extern __int64* GameData_2132010[2];
-
 extern int GameData_21668d0;
-
 extern __int64 GameData_21c9988;
-
 extern __int64 GameData_21c99b8;
-
 extern __int64 GameData_21caab0;
-
 extern __int64 GameData_21cd120;
-
 extern __int64 GameData_21cd128;
-
 extern __int64 GameData_21cd130;
-
 extern __int64 GameData_21cd138;
-
 extern __int64 GameData_21cd140;
-
 extern int GameData_21d87f8;
-
 extern __int64 GameData_21d8800;
-
 extern __int64 GameData_21d8808;
-
 extern int GameData_21d8828;
-
 extern __int64 GameData_21d8830;
-
 extern __int64 GameData_21d8838;
-
 extern __int64 GameData_21d9c88;
-
 extern __int64 GameData_21d9cb8;
-
 extern __int64 GameData_21d9cc8;
-
 extern __int64 GameData_21d9ce8;
-
 extern __int64 GameData_21d9d00;
-
 extern __int64 GameData_21d9d18;
-
 extern __int64 GameData_21d9d60;
-
 extern int GameData_21d9d7c;
-
 extern __int64 GameData_21eea58;
-
 extern __int64 GameData_21f1648;
-
 extern __int64 GameData_21f2288;
-
 extern __int64 GameData_21f2290;
-
 extern __int64 GameData_21f49b8;
-
 extern __int64 GameData_2258ba8;
-
 extern __int64 GameData_2265ef8;
-
 __int64 GameRoutine_15317a0(_QWORD);
-
 __int64 GameRoutine_1567000(_QWORD, _QWORD);
-
 __int64 GameRoutine_16dcd30(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_16dea40(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_16e0c00(_QWORD, _QWORD);
-
 __int64 GameRoutine_1990fb0(_QWORD);
-
 __int64 GameRoutine_1a070b0(void);
-
 __int64 GameRoutine_1a09c50(_QWORD);
-
 __int64 GameRoutine_651b90(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_657850(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_65c580(_QWORD, _QWORD);
-
 __int64 GameRoutine_6ea8c0(_QWORD);
-
 __int64 GameRoutine_6fc510(_QWORD);
-
 __int64 GameRoutine_6fcdd0(_QWORD, _QWORD);
-
 __int64 GameRoutine_716d80(_QWORD, _QWORD);
-
 __int64 GameRoutine_80e330(_QWORD, _QWORD);
-
 __int64 GameRoutine_825040(_QWORD, _QWORD);
-
 __int64 GameRoutine_834ea0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 GameRoutine_8350c0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                            _QWORD, _QWORD);
-
 __int64 GameRoutine_84ebe0(_QWORD, _QWORD);
-
 __int64 GameRoutine_8c77c0(_QWORD);
-
 __int64 GameRoutine_9a28e0(_QWORD);
-
 __int64 GameRoutine_a2d080(_QWORD);
-
 __int64 GameRoutine_a2f660(_QWORD);
-
 __int64 GameRoutine_c8b5a0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                            _QWORD);
-
 __int64 GameRoutine_d2f6f0(_QWORD);
-
 _QWORD* AssetTableFile_7e73c0(__int64);
-
 _QWORD* ConditionMap_7f2ec0(__int64*, __int64);
-
 _QWORD* game_UnitPool_Find_6ead60(__int64*, int*);
-
 __int64* AssetTableFile_7ea4e0(__int64* result);
-
 __int64* AssetTableFile_7ea680(__int64* result);
-
 __int64* AssetTableFile_7f2a20(__int64* result, unsigned __int64*);
-
 __int64* GameRoutine_7d6200_alt1(__int64* result,
                                  _DWORD*) __asm__("GameRoutine_7d6200");
-
 __int64* game_9a28e0(int);
-
 __int64 ConditionMap_7ea0c0(__int64 result);
-
 __int64 ConditionMap_7ea800(__int64 result);
-
 __int64 GameRoutine_85a540_alt1(__int64 result, unsigned int,
                                 __int64) __asm__("GameRoutine_85a540");
-
 __int64 GameRoutine_96de20_alt1(__int64) __asm__("GameRoutine_96de20");
-
 __int64 game_GameVariableTable_Find(_QWORD*, unsigned __int64*);
-
 __int64 game_HashString(__int64 result);
-
 extern __int64 game_GameModeData_instance_;
-
 __int64* GameHr_7eae80(__int64* result, unsigned int a2);
-
 __int64 GameManager_a2d1c0(__int64 result, __int64, char);
-
 __int64 snd_Fade_Destroy_Fade(_QWORD*);
-
 __int64 snd_Fade_Fade_10cb00(__int64, unsigned __int8*);
-
 extern __int64 game_sound_g_game_sound;
-
 __int64 GameHr_86fc30();
-
 _QWORD* GameRoutine_8768e0_alt1(_QWORD* result) __asm__("GameRoutine_8768e0");
-
 __int64 GameRoutine_66aae0_alt1() __asm__("GameRoutine_66aae0");
-
 __int64 GameRoutine_877680_alt1(__int64*) __asm__("GameRoutine_877680");
-
 __int64 VariableManager_7150e0();
-
 __int64 game_GetHero(unsigned __int8);
-
 __int64 game_GrowthListFile_GetJob(__int64*, __int64, char);
-
 __int64 nn_oe_GetProgramTotalActiveTime();
-
 __int64 nn_os_ConvertToTick(_QWORD);
-
 bool GameRoutine_876070_alt1(unsigned __int8*,
                              __int64) __asm__("GameRoutine_876070");
-
 bool game_877f00(const char**, __int64, __int64);
-
 int* GameRoutine_8767a0_alt1(int* result) __asm__("GameRoutine_8767a0");
-
 bool GameHr_8789c0(const char** a1);
+int* GameHr_89ef30(int* result, int* a2, int* a3, int* a4, __int64 a5);
 
 __int64 GameHr_7bd090(__int64 a1)
 {
@@ -1591,13 +1481,15 @@ int* GameHr_89ef30(int* result, int* a2, int* a3, int* a4, __int64 a5)
                               24LL) +
                    608LL);
   if (v9 >=
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(v8 +
-                                       8LL *
-                                           *(unsigned __int16*)(v7 +
-                                                                12LL * *result +
-                                                                4)) +
-                            24LL) +
-                 608LL)) {
+      (signed __int32)*(
+          _DWORD*)(*(_QWORD*)(*(_QWORD*)(v8 +
+                                         8LL *
+                                             *(unsigned __int16*)(v7 +
+                                                                  12LL *
+                                                                      *result +
+                                                                  4)) +
+                              24LL) +
+                   608LL)) {
     if (v11 >= v9) {
       v12 = *a3;
       goto LABEL_13;
@@ -1605,25 +1497,27 @@ int* GameHr_89ef30(int* result, int* a2, int* a3, int* a4, __int64 a5)
     *a2 = v10;
     *a3 = v5;
     v13 = *result;
-    if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                                 a5 +
-                                                                             8LL) +
-                                                                  12LL * *a2 +
-                                                                  4)) +
-                              24LL) +
-                   608LL) >=
-        *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                                 a5 +
-                                                                             8LL) +
-                                                                  12LL *
-                                                                      *result +
-                                                                  4)) +
-                              24LL) +
-                   608LL)) {
+    if ((signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                   a5 +
+                                                                               8LL) +
+                                                                    12LL * *a2 +
+                                                                    4)) +
+                                24LL) +
+                     608LL) >=
+        (signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                   a5 +
+                                                                               8LL) +
+                                                                    12LL *
+                                                                        *result +
+                                                                    4)) +
+                                24LL) +
+                     608LL)) {
       v12 = v5;
       v10 = v5;
       goto LABEL_13;
@@ -1638,24 +1532,26 @@ int* GameHr_89ef30(int* result, int* a2, int* a3, int* a4, __int64 a5)
     *result = v5;
     *a2 = v6;
     v10 = *a3;
-    if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                                 a5 +
-                                                                             8LL) +
-                                                                  12LL * *a3 +
-                                                                  4)) +
-                              24LL) +
-                   608LL) <
-        *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                         8LL *
-                                             *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                                 a5 +
-                                                                             8LL) +
-                                                                  12LL * v6 +
-                                                                  4)) +
-                              24LL) +
-                   608LL)) {
+    if ((signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                   a5 +
+                                                                               8LL) +
+                                                                    12LL * *a3 +
+                                                                    4)) +
+                                24LL) +
+                     608LL) <
+        (signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                   a5 +
+                                                                               8LL) +
+                                                                    12LL * v6 +
+                                                                    4)) +
+                                24LL) +
+                     608LL)) {
       *a2 = v10;
       goto LABEL_9;
     }
@@ -1668,49 +1564,41 @@ LABEL_9:
   *a3 = v6;
   v10 = v6;
 LABEL_13:
-  if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                       8LL *
-                                           *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                               a5 +
-                                                                           8LL) +
-                                                                12LL * *a4 +
-                                                                4)) +
-                            24LL) +
-                 608LL) <
-      *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                       8LL *
-                                           *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                               a5 +
-                                                                           8LL) +
-                                                                12LL * v12 +
-                                                                4)) +
-                            24LL) +
-                 608LL)) {
-    *a3 = *a4;
-    *a4 = v10;
-    v14 = *a2;
-    if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+  if ((signed __int32)*(
+          _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
                                          8LL *
                                              *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
                                                                                  a5 +
                                                                              8LL) +
-                                                                  12LL * *a3 +
+                                                                  12LL * *a4 +
                                                                   4)) +
                               24LL) +
                    608LL) <
-        *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+      (signed __int32)*(
+          _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
                                          8LL *
                                              *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
                                                                                  a5 +
                                                                              8LL) +
-                                                                  12LL * *a2 +
+                                                                  12LL * v12 +
                                                                   4)) +
                               24LL) +
                    608LL)) {
-      *a2 = *a3;
-      *a3 = v14;
-      v15 = *result;
-      if (*(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+    *a3 = *a4;
+    *a4 = v10;
+    v14 = *a2;
+    if ((signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                           8LL *
+                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                   a5 +
+                                                                               8LL) +
+                                                                    12LL * *a3 +
+                                                                    4)) +
+                                24LL) +
+                     608LL) <
+        (signed __int32)*(
+            _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
                                            8LL *
                                                *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
                                                                                    a5 +
@@ -1718,17 +1606,32 @@ LABEL_13:
                                                                     12LL * *a2 +
                                                                     4)) +
                                 24LL) +
-                     608LL) <
-          *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
-                                           8LL *
-                                               *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
-                                                                                   a5 +
-                                                                               8LL) +
-                                                                    12LL *
-                                                                        *result +
-                                                                    4)) +
-                                24LL) +
                      608LL)) {
+      *a2 = *a3;
+      *a3 = v14;
+      v15 = *result;
+      if ((signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                     a5 +
+                                                                                 8LL) +
+                                                                      12LL *
+                                                                          *a2 +
+                                                                      4)) +
+                                  24LL) +
+                       608LL) <
+          (signed __int32)*(
+              _DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b8 + 64) +
+                                             8LL *
+                                                 *(unsigned __int16*)(*(_QWORD*)(*(_QWORD*)
+                                                                                     a5 +
+                                                                                 8LL) +
+                                                                      12LL *
+                                                                          *result +
+                                                                      4)) +
+                                  24LL) +
+                       608LL)) {
         *result = *a2;
         *a2 = v15;
       }

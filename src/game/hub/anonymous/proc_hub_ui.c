@@ -50,6 +50,11 @@ __int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void ProcHubUI_1635300(__int64 a1);
+__int64 GameHr_1637270(_QWORD, _QWORD, _QWORD);
+__int64 GameHr_a51e10(_QWORD, _QWORD, _QWORD, _QWORD);
+__int64 game_1636200(_QWORD, _QWORD, _QWORD);
+__int64 game_1636f50(_QWORD, _QWORD);
+__int64 game_1637670(_QWORD, _QWORD);
 
 __int64 ProcHubUI_16340d0(__int64 result)
 {
@@ -103,7 +108,7 @@ __int64 ProcHubUI_16340d0(__int64 result)
   if (GameData_225d640 != 0) {
     v3 = result;
     if (*(float*)(result + 156) > 0.0f) {
-      result = GameRoutine_1636200(GameData_225d640, 0, result);
+      result = game_1636200(GameData_225d640, 0, result);
       v4 = *(__int64**)(result + 8);
       if (v4[2] != 0) {
         result = v4[1];
@@ -152,7 +157,7 @@ __int64 ProcHubUI_16340d0(__int64 result)
             LayoutAccessor_1562cf0(v4, "Wdw");
             LayoutAccessor_1562cf0(v4, "Bln_Other");
             LayoutAccessor_1562cf0(v4, "Talk_Off");
-            GameRoutine_1636f50(v4, 0);
+            game_1636f50(v4, 0);
             v11 = LayoutAccessor_155fbe0(v4, "L_IconFacility");
             LayoutAccessor_155e830(v11, 0);
             v10 = *(_QWORD*)(v2 + 304);
@@ -190,8 +195,8 @@ __int64 ProcHubUI_16340d0(__int64 result)
                                                  *(unsigned __int8*)(v3 + 165));
                 v15 = msg_MessageManager_instance__ptr[0];
                 LODWORD(v16) = llroundf(*(float*)(v3 + 116));
-                Manager_a51e10(*msg_MessageManager_instance__ptr[0] + 14704, 0,
-                               v16, 0);
+                GameHr_a51e10(*msg_MessageManager_instance__ptr[0] + 14704, 0,
+                              v16, 0);
                 v17 = *v15;
                 v33 = -1;
                 v34 = -1;
@@ -254,7 +259,7 @@ __int64 ProcHubUI_16340d0(__int64 result)
                       *(unsigned __int8*)(v10 + 196) ==
                           *(unsigned __int8*)(v14 + 164)) {
                     if (v26 == 0) {
-                      return GameRoutine_1637670(v2, v3);
+                      return game_1637670(v2, v3);
                     }
                   LABEL_51:
                     if ((ui_LayoutAccessor_IsPaneVisible(v4, "T_Title") & 1) !=
@@ -267,12 +272,12 @@ __int64 ProcHubUI_16340d0(__int64 result)
                       v29 = "Cursor";
                     }
                     LayoutAccessor_1562cf0(v4, v29);
-                    return GameRoutine_1637670(v2, v3);
+                    return game_1637670(v2, v3);
                   }
                 }
               }
             LABEL_50:
-              GameRoutine_1637270(v4, v3 + 8, *(unsigned __int8*)(v3 + 164));
+              GameHr_1637270(v4, v3 + 8, *(unsigned __int8*)(v3 + 164));
               *(_BYTE*)(v2 + 297) = 1;
               goto LABEL_51;
             }

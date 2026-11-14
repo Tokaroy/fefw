@@ -35,6 +35,7 @@ unsigned int GameRoutine_195b260(__int64, unsigned __int8, int);
 __int64 ProcDivinationSeq_1964870(__int64 a1);
 __int64 ProcDivinationSeq_1964a60(__int64 a1, char a2);
 __int64 ProcDivinationSeq_1964e60(__int64 a1);
+unsigned int game_195b260(__int64, unsigned __int8, int);
 
 __int64 ProcDivinationSeq_1964870(__int64 a1)
 {
@@ -192,7 +193,7 @@ LABEL_7:
   v15 = *(_QWORD*)(a1 + 48);
   v16 = *(_DWORD*)(a1 + 32);
   *(_BYTE*)(a1 + 56) = v13;
-  result = GameRoutine_195b260(v15, v13, v16);
+  result = game_195b260(v15, v13, v16);
   v18 = *(_QWORD*)(a1 + 48);
   *(_DWORD*)(a1 + 60) = result;
   if ((int)result < *(unsigned __int16*)(v18 + 60)) {

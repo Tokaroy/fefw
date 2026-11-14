@@ -1128,8 +1128,8 @@ void game_5c11f0(float a1, __int64 a2, float32x2_t* a3, float32x2_t* a4,
         COERCE_AS(float32x4_t, 0));
     *(float*)&v22 = *(float*)(v9 + 16) * LANES128(v47).n128_f32[0];
     *(_OWORD*)LANES64(*(a4)).n64_u64 = v22;
-    DWORD1(v22) =
-        COERCE_UNSIGNED_INT(vmuls_lane_f32(*(float*)(v9 + 16),
+    DWORD1(v22) = COERCE_UNSIGNED_INT(
+        vmuls_lane_f32(*(float*)(v9 + 16),
                        COERCE_AS(float32x2_t, LANES128(v47).n128_u64[0]), 1));
     *(_OWORD*)LANES64(*(a4)).n64_u64 = v22;
     *((_QWORD*)&v22 + 1) =
@@ -10589,20 +10589,17 @@ float game_e9f360(__int64 a1)
     }
     v9 = *(float*)(v6 + 40);
     v8 = *(float*)(*(_QWORD*)(v6 + 11792) + 32) *
-         (*(float*)(v6 + 32) *
-          ((1.0f - v9) * *(float*)(v3 + 336) + v9));
-    if (v7 != 0 &&
-        atomic_fetch_add_explicit((atomic_ullong* volatile)(v7 + 8),
-                                  0xFFFFFFFFFFFFFFFFLL,
-                                  memory_order_acq_rel) == 0) {
+         (*(float*)(v6 + 32) * ((1.0f - v9) * *(float*)(v3 + 336) + v9));
+    if (v7 != 0 && atomic_fetch_add_explicit((atomic_ullong* volatile)(v7 + 8),
+                                             0xFFFFFFFFFFFFFFFFLL,
+                                             memory_order_acq_rel) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
       std___1___shared_weak_count___release_weak(v7);
     }
   }
-  if (v5 != 0 &&
-      atomic_fetch_add_explicit((atomic_ullong* volatile)(v5 + 8),
-                                0xFFFFFFFFFFFFFFFFLL,
-                                memory_order_acq_rel) == 0) {
+  if (v5 != 0 && atomic_fetch_add_explicit((atomic_ullong* volatile)(v5 + 8),
+                                           0xFFFFFFFFFFFFFFFFLL,
+                                           memory_order_acq_rel) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v5 + 16LL))(v5);
     std___1___shared_weak_count___release_weak(v5);
   }

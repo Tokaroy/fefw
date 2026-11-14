@@ -1003,8 +1003,8 @@ __int64 game_map_7857c0(__int64 result, int* a2, int* a3, _QWORD* a4,
         return result;
       }
       while (1) {
-        result = ((__int64 (*)(_QWORD*, int, int, long double))
-                      game_map_784840)(a4, *a2, *v16, a9),
+        result = ((__int64 (*)(_QWORD*, int, int, long double))game_map_784840)(
+            a4, *a2, *v16, a9),
         v30 = COERCE_AS(__typeof__(v30), PSEUDO_REGISTER(__n128, "v0", "=w"));
         if ((result & 1) != 0) {
           break;
@@ -1117,8 +1117,9 @@ __int64 game_map_7857c0(__int64 result, int* a2, int* a3, _QWORD* a4,
           *v38++ = v40;
         } while (v39 != a2);
         while (a2 != a3) {
-          result = ((__int64 (*)(_QWORD*, int, int, long double))
-                        game_map_784840)(a4, *a2, *(_DWORD*)a7, a9),
+          result =
+              ((__int64 (*)(_QWORD*, int, int, long double))game_map_784840)(
+                  a4, *a2, *(_DWORD*)a7, a9),
           v30 = COERCE_AS(__typeof__(v30), PSEUDO_REGISTER(__n128, "v0", "=w"));
           if ((result & 1) != 0) {
             v41 = a2;
@@ -1157,8 +1158,8 @@ __int64 game_map_7857c0(__int64 result, int* a2, int* a3, _QWORD* a4,
       } while (&a2[v34] != a3);
       v35 = (int*)(a7 + v34 * 4);
       while (a2 != v16) {
-        result = ((__int64 (*)(_QWORD*, int, int, long double))
-                      game_map_784840)(a4, *(v35 - 1), *(a2 - 1), a9),
+        result = ((__int64 (*)(_QWORD*, int, int, long double))game_map_784840)(
+            a4, *(v35 - 1), *(a2 - 1), a9),
         v30 = COERCE_AS(__typeof__(v30), PSEUDO_REGISTER(__n128, "v0", "=w"));
         if ((result & 1) != 0) {
           v36 = a2;
@@ -2388,8 +2389,8 @@ void game_map_7b0700(__int64 a1)
                ? (v24 = 2)
                : (v24 = 3),
            (v24 & v23) != 0)) {
-        v7 = X8CALL_V0(float32x4_t,
-                       GameRoutine_79ca50((void*)(&v96_.v96), v13)),
+        v7 =
+            X8CALL_V0(float32x4_t, GameRoutine_79ca50((void*)(&v96_.v96), v13)),
         v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v25 = GameData_21ec7b0;
@@ -2623,8 +2624,7 @@ void game_map_7b0700(__int64 a1)
     }
     v39 = *(__int16*)(v6 + 16 + 12LL * *(unsigned __int8*)(v13 + 16) + 2);
     if ((v39 & 0x80000000) != 0) {
-      v7 = X8CALL_V0(float32x4_t,
-                     GameRoutine_79ca50((void*)(&v96_.v96), v13)),
+      v7 = X8CALL_V0(float32x4_t, GameRoutine_79ca50((void*)(&v96_.v96), v13)),
       v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
       if (game_ProcGameSkipView_instance_ == 0 ||

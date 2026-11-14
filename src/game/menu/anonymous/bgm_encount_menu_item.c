@@ -74,6 +74,7 @@ void* snd_data_getMuseumData_alt1(int) __asm__("snd_data_getMuseumData");
 void GameRoutine_1673c10_alt1(__int64*, char) __asm__("GameRoutine_1673c10");
 void LayoutAccessor_1562060_alt1(__int64*, __int64,
                                  __int64) __asm__("LayoutAccessor_1562060");
+__int64 game_159e7c0(_QWORD, _QWORD);
 
 __int64 BgmEncountMenuItem_Destructor(__int64 a1)
 {
@@ -464,7 +465,7 @@ LABEL_10:
     if (v15 != 0) {
       v16 = v15;
       if (v13 != 0) {
-        GameRoutine_159e7c0(v13, 1);
+        game_159e7c0(v13, 1);
       }
       if (atomic_fetch_add((atomic_ullong* volatile)(v16 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
