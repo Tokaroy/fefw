@@ -1214,10 +1214,10 @@ void SceneCharacterAnimator_1411f80(__int64 a1)
   int v20;
   __int64 v21;
   char v22;
-  const char* v23;
-  const char* v24;
+  char* v23;
+  char* v24;
   float v25;
-  const char* v26;
+  char* v26;
   unsigned int v27;
   int v28;
   unsigned int v29;
@@ -1227,7 +1227,7 @@ void SceneCharacterAnimator_1411f80(__int64 a1)
   __int64 v33;
   __int64 v34;
   _QWORD* v35;
-  const char* v36;
+  char* v36;
   unsigned __int64 v37;
   unsigned __int64 v38;
   unsigned __int64 v39;
@@ -1262,7 +1262,7 @@ void SceneCharacterAnimator_1411f80(__int64 a1)
     goto LABEL_35;
   }
   v5 = *(_QWORD*)(a1 + 88);
-  if (GameData_22356f8 == 0 || GameData_2235708 == 0) {
+  if (GameData_22356f8 == 0 | GameData_2235708 == 0) {
     goto LABEL_22;
   }
   v7 = GameData_22356f8 - 1;
@@ -1447,7 +1447,7 @@ LABEL_57:
     v36 = (const char*)(a1 + 25);
   }
   v37 = strlen_alt1(v36);
-  GameRoutine_1412f00_alt1(a1, v36, v37);
+  GameHr_1412f00(a1, v36, v37);
   if (*(float*)(a1 + 64) <= 0x0.0p+0f) {
     LODWORD(v39) = 0;
   }

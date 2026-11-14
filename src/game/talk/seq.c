@@ -377,6 +377,8 @@ void game_1489b40(unsigned __int8*, const char*);
 void Seq_1132180(__int64 a1, const char* a2);
 void Seq_1133d80(__int64 a1);
 void Seq_1134430(__int64 a1);
+typedef __int64 GameAlign_1ac302b __attribute__((aligned(1)));
+extern GameAlign_1ac302b GameData_1ac302b_alt1 __asm__("GameData_1ac302b");
 
 void Seq_Destructor_1130ae0(__int64 a1)
 {
@@ -2108,8 +2110,8 @@ __attribute__((swiftcall)) void Seq_11326e0(PSEUDO_X8 x8_, __int64 a1)
   bool v47;
   __int64 v48;
   __int64 v49;
-  const char* v50;
-  const char* v51;
+  char* v50;
+  char* v51;
   unsigned __int64 v52;
   unsigned __int64 v53;
   unsigned __int64 v55;
@@ -2129,8 +2131,8 @@ __attribute__((swiftcall)) void Seq_11326e0(PSEUDO_X8 x8_, __int64 a1)
   unsigned __int64 v70;
   __int64 v71;
   __int64 v72;
-  const char* v73;
-  const char* v74;
+  char* v73;
+  char* v74;
   __int64 v75;
   __int64 v76;
   __int64 v77;
@@ -2199,7 +2201,7 @@ __attribute__((swiftcall)) void Seq_11326e0(PSEUDO_X8 x8_, __int64 a1)
   else {
     v6 = (__int64*)(a1 + 1145);
   }
-  v8 = *v6 == 0x313156455F44494DLL && v6[1] == 0x31306D5F3432305FLL &&
+  v8 = *v6 == 0x313156455F44494DLL & v6[1] == 0x31306D5F3432305FLL &&
        *((_DWORD*)v6 + 4) == 959590495;
   if (v8 ||
       (*v6 == 0x333156455F44494DLL ? (v9 = v6[1] == 0x31306D5F3530305FLL)
@@ -2225,7 +2227,7 @@ __attribute__((swiftcall)) void Seq_11326e0(PSEUDO_X8 x8_, __int64 a1)
     v82 = (__int64*)fw_memory_g_heap_manager_ptr;
     v83 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 16, 16, 0);
-    *v83 = &GameData_1ac302b;
+    *v83 = &GameData_1ac302b_alt1;
     v83[1] = &GameData_1af1f6d;
     v84 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(*v82, 32, 16, 0);
     v85 = v83[1];
@@ -2419,7 +2421,7 @@ LABEL_30:
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v43 + 16), 1u,
                                 memory_order_relaxed);
       v44 = *(_QWORD*)(v42 + 40);
-      v45 = *(_QWORD*)(v43 + 8) == -1 || v44 == 0;
+      v45 = *(_QWORD*)(v43 + 8) == -1 | v44 == 0;
       if (v45 || (v46 = *(_QWORD*)(v44 + 80)) == 0 ||
           (*(_QWORD*)(v46 + 8) != -1 ? (v47 = *(_QWORD*)(v44 + 88) == 0)
                                      : (v47 = true),
@@ -2451,7 +2453,7 @@ LABEL_30:
         if (v101 != 0) {
           v102 = *(_QWORD*)(v101 + 8);
           v103 = *(_QWORD*)(v44 + 88);
-          if (v102 != -1 && v103 != 0) {
+          if (v102 != -1 & v103 != 0) {
             goto LABEL_215;
           }
         }
@@ -2464,7 +2466,7 @@ LABEL_30:
         goto LABEL_117;
       }
       v53 = *(_QWORD*)(*GameData_212c890[0] + 96);
-      if (v53 != 0 && *(_QWORD*)(*GameData_212c890[0] + 112) != 0) {
+      if (v53 != 0 & *(_QWORD*)(*GameData_212c890[0] + 112) != 0) {
         v55 = v53 - 1;
         if ((v53 & (v53 - 1)) != 0) {
           v56 = v52;
@@ -2530,7 +2532,7 @@ LABEL_30:
         goto LABEL_74;
       }
       v63 = *(_QWORD*)(GameData_21c99c8 + 96);
-      if (v63 == 0 || *(_QWORD*)(GameData_21c99c8 + 112) == 0) {
+      if (v63 == 0 | *(_QWORD*)(GameData_21c99c8 + 112) == 0) {
         goto LABEL_74;
       }
       v65 = v63 - 1;
@@ -2661,10 +2663,10 @@ LABEL_30:
     }
   }
   else if (game_hub_ProcHubSeqView_instance_ != 0) {
-    v91 = GameData_21f3d10 == 0 ||
+    v91 = GameData_21f3d10 == 0 |
           *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 218) == 0;
-    v92 = !v91 && (signed __int32)*(_DWORD*)(game_hub_ProcHubSeqView_instance_ +
-                                             232) <= 0;
+    v92 = !v91 & (signed __int32)*(_DWORD*)(game_hub_ProcHubSeqView_instance_ +
+                                            232) <= 0;
     if (v92 && (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 240) & 1) == 0) {
       v93 = *(unsigned __int8*)(a1 + 1200);
       v94 = (v93 & 1) == 0;

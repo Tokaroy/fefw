@@ -118,6 +118,10 @@ float powf(float, float);
 void GameRoutine_dfa900(__int64);
 void snd_Fade_Fade_10c830(__int64, float);
 __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1);
+__int64 snd_play_ff2d0_alt1(__int64, __int64, __int64, unsigned int,
+                            unsigned int, int, float,
+                            float) __asm__("snd_play_ff2d0");
+void game_hub_dfa900(__int64);
 
 void ObjectControllerDropItem_ccc840(__int64 a1, __int64** a2)
 {
@@ -698,7 +702,6 @@ ObjectControllerDropItem_Unknown3(PSEUDO_X8 x8_, __int64 result)
 
 __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
 {
-  _QWORD handle[2];
   float v2;
   float v3;
   float32x4_t v4;
@@ -925,7 +928,11 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
           LANES128(v16).n128_u32[3] = 0;
         }
         else {
-          LODWORD(v15) = 0;
+          {
+            __typeof__(v15) z_ = (__typeof__(v15)){0};
+            LODWORD(z_) = 0;
+            v15 = z_;
+          }
           *((float*)&v15 + 1) = v14 * 0x1.4000000000000p+0f;
           v16 = vaddq_f32(vmlaq_n_f32(v129, vsubq_f32(v127, v129), v132),
                           COERCE_AS(float32x4_t, v15));
@@ -952,7 +959,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
           v17[60] = v16;
           LANES128(v17[61]).n128_u8[0] = 1;
         }
-        GameRoutine_dfa900((__int64)v17),
+        game_hub_dfa900((__int64)v17),
             v29 =
                 COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
         goto LABEL_35;
@@ -1006,7 +1013,7 @@ LABEL_42:
   v29 = COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
   std___1___shared_weak_count___release_weak_alt1(v25),
       v29 = COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
-  if (v28 == 0 || v26 == 0) {
+  if (v28 == 0 | v26 == 0) {
     goto LABEL_206;
   }
   v31 = *(_QWORD*)(a1 + 8);
@@ -1113,7 +1120,11 @@ LABEL_42:
         vmulq_f32(v46, vmulq_f32(v50, vrsqrtsq_f32(v50, vmulq_f32(v48, v50)))),
         vceqzq_f32(v48));
     v52 = fabsf(v47 * fabsf(LANES128(v51).n128_f32[0]));
-    LODWORD(v53) = HIDWORD(*(_QWORD*)(a1 + 128));
+    {
+      __typeof__(v53) z_ = (__typeof__(v53)){0};
+      LODWORD(z_) = HIDWORD(*(_QWORD*)(a1 + 128));
+      v53 = z_;
+    }
     if ((LANES64_OF(vmovn_s32(vcgtq_f32(
                         v44, COERCE_AS(float32x4_t, GameData_21a6120))))
              .n64_u8[0] &
@@ -1122,7 +1133,11 @@ LABEL_42:
                           COERCE_AS(float32x4_t, GameData_21a6120), v44)))
                .n64_u8[0] &
            1) == 0) {
-        LODWORD(v54) = *(_OWORD*)(a1 + 128);
+        {
+          __typeof__(v54) z_ = (__typeof__(v54)){0};
+          LODWORD(z_) = *(_OWORD*)(a1 + 128);
+          v54 = z_;
+        }
         goto LABEL_76;
       }
       v54 = LANES128(v44).n128_f32[0] + v52;
@@ -1298,7 +1313,7 @@ LABEL_42:
       *((_QWORD*)&v79 + 1) = LANES128(v60).n128_u32[0];
       *(_OWORD*)(v76 + 960) = v79;
     LABEL_119:
-      GameRoutine_dfa900(v76),
+      game_hub_dfa900(v76),
           v29 = COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
       v77 = v131;
       v58 = v133;
@@ -1317,8 +1332,10 @@ LABEL_42:
       case 3:
         v83 = *(_DWORD*)(a1 + 108);
         if (game_GameModeData_instance_ != 0) {
-          v84 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v83) &
-                ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v83) >> 31);
+          v84 = (*(int*)(game_GameModeData_instance_ + 72) + v83) &
+                ~((signed __int32)(*(int*)(game_GameModeData_instance_ + 72) +
+                                   v83) >>
+                  31);
           if (v84 >= 9999999) {
             v84 = 9999999;
           }
@@ -1579,9 +1596,9 @@ LABEL_42:
             snd_Fade_Fade_10c830((__int64)v145_.v145, 0x0.0p+0f),
                 v29 = COERCE_AS(__typeof__(v29),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
-            snd_play_ff2d0((void*)(handle), (__int64)v134 + 1,
-                           (__int64)v134 + 1, (__int64)v145_.v145, 0, 0x10001u,
-                           0, 0x0.0p+0f, 0x1.0000000000000p+0f),
+            snd_play_ff2d0_alt1((__int64)v134 + 1, (__int64)v134 + 1,
+                                (__int64)v145_.v145, 0, 0x10001u, 0, 0x0.0p+0f,
+                                0x1.0000000000000p+0f),
                 v29 = COERCE_AS(__typeof__(v29),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
             snd_Fade_Destroy_Fade(v145_.v145),

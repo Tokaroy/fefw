@@ -210,8 +210,7 @@ game_character_ChariotCrew_ChariotCrew_closure_Invoke(__int64 a1, __int64 a2,
   if (((v17 = LANES128(v3[12]).n128_f32[0],
         !(LANES128(v10).n128_f32[0] >= 0x0.0p+0f)) ||
        !(v17 <= 0x0.0p+0f)) &&
-      (!(LANES128(v10).n128_f32[0] <= 0x0.0p+0f) ||
-       !(v17 >= 0x0.0p+0f))) {
+      (!(LANES128(v10).n128_f32[0] <= 0x0.0p+0f) || !(v17 >= 0x0.0p+0f))) {
     v18 = v17 + (float)(v16 * (float)(LANES128(v10).n128_f32[0] - v17));
     v19 = (v16 > 0x1.0000000000000p+0f) ^ !(LANES128(v10).n128_f32[0] > v17);
     if (!(LANES128(v10).n128_f32[0] < v18)) {

@@ -2031,8 +2031,9 @@ void GameConverge_8e9840(_QWORD* a1, __int64 a2)
   struct {
     _QWORD v87[4];
     _QWORD* v88;
+    char gap72_[12];
+    _BYTE v89[4];
   } v87_;
-  _BYTE v89[4];
   struct {
     __int64* v90;
     __int64* v91;
@@ -2163,16 +2164,16 @@ void GameConverge_8e9840(_QWORD* a1, __int64 a2)
   v90_.v91 = nullptr;
   v90_.v92 = 0;
   v90_.v90 = nullptr;
-  v89[0] = 0;
+  v87_.v89[0] = 0;
   v87_.v88 = v87_.v87;
   v87_.v87[0] = GameData_1fabea0;
   v87_.v87[1] = a1;
-  v87_.v87[2] = v89;
+  v87_.v87[2] = v87_.v89;
   v87_.v87[3] = &v90_.v90;
   v93_.v93 = (__int64)a1;
   v95_.v95 = GameData_1fabea0;
   v95_.v96 = (__int64)a1;
-  v95_.v97 = (__int64*)v89;
+  v95_.v97 = (__int64*)v87_.v89;
   v95_.v98 = &v90_.v90;
   v95_.v99 = (__int64*)&v95_.v95;
   v25 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(v24, 80, 16, 0);
@@ -2207,7 +2208,7 @@ LABEL_34:
   }
   (*(void (**)(__int64))(*v87_.v88 + v29))((__int64)v87_.v88);
 LABEL_39:
-  if ((v89[0] & 0x14) != 0) {
+  if ((v87_.v89[0] & 0x14) != 0) {
     v95_.v97 = nullptr;
     v95_.v98 = nullptr;
     v95_.v95 = nullptr;

@@ -205,7 +205,9 @@ void game_talk_Hub_PlayMotionImpl_lambda1_Invoke(__int64 a1, __int64* a2);
 void game_talk_Hub_PlayFacialImpl_lambda0_Invoke(__int64 a1, __int64 a2);
 extern char GameData_1a9f09e;
 __int64 Hub_119a200(__int64 a1, __int64 a2);
-_BYTE* Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5);
+_BYTE* Hub_119b730_alt3(__int64 a1, __int64 a2, int a3, __int64* a4,
+                        __int64 a5) __asm__("Hub_119b730");
+__int64 Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5);
 
 bool Hub_1197e80(__int64 a1, __int64* a2)
 {
@@ -3633,7 +3635,7 @@ LABEL_13:
   }
 }
 
-_BYTE* Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5)
+__int64 Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5)
 {
   __int64 v7;
   __int64 v8;
@@ -3646,7 +3648,7 @@ _BYTE* Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5)
   _BYTE* v15;
   __int64 v16;
   __int64 v17;
-  _BYTE* result;
+  __int64 result;
   __int64 v19;
   struct {
     _BYTE v20[32];
@@ -3729,7 +3731,7 @@ _BYTE* Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5)
       *(_QWORD*)(a1 + 64) = v12;
     }
   }
-  result = v20_.v21;
+  result = (__int64)v20_.v21;
   if (v20_.v21 == v20_.v20) {
     v19 = 32;
   }
@@ -3739,7 +3741,7 @@ _BYTE* Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5)
     }
     v19 = 40;
   }
-  return (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v20_.v21 + v19))(
+  return (*(__int64 (**)(__int64))(*(_QWORD*)v20_.v21 + v19))(
       (__int64)v20_.v21);
 }
 

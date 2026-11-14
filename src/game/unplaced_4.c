@@ -6572,7 +6572,7 @@ __attribute__((swiftcall)) void game_fa4b80(PSEUDO_X8 x8_)
             while (1) {
               v16 = *v12++;
               v15 = v16;
-              if (v16 != 0 && game_GameModeData_instance_ != 0) {
+              if (v16 != 0 & game_GameModeData_instance_ != 0) {
                 v18 = *(unsigned __int8*)(game_GameModeData_instance_ + 15);
                 if (*(_BYTE*)(game_GameModeData_instance_ + 15) != 0 &&
                     ((*(unsigned __int8*)(v15 + 144) >> (v18 - 1)) & 1) != 0) {
@@ -6583,10 +6583,10 @@ __attribute__((swiftcall)) void game_fa4b80(PSEUDO_X8 x8_)
                                             *(unsigned __int8*)(game_GameModeData_instance_ +
                                                                 15) +
                                         4);
-                  if (v20 <= v10 &&
+                  if (v20 <= v10 &
                       *(_DWORD*)(game_GameModeData_instance_ + 60) == 1) {
                     v22 = *(unsigned __int8*)(v19 + 4 * v18 + 5);
-                    if (v20 != v10 || v22 <= v11) {
+                    if (v20 != v10 | v22 <= v11) {
                       break;
                     }
                   }
@@ -16692,8 +16692,8 @@ LABEL_19:
   if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
     v16 = 56;
   }
-  nn_mem_StandardAllocator_Free_alt1(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                     v16, (_QWORD)(v11));
+  nn_mem_StandardAllocator_Free_alt1(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr + v16, (_QWORD)(v11));
 LABEL_22:
   if (GameData_21f3d10 != 0 && *(_QWORD*)(GameData_21f3d10 + 200) != 0) {
     DungeonController_f5f960((void*)((__int64*)&v33));

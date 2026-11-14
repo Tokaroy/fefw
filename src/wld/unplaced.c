@@ -436,6 +436,20 @@ void wld_c40980(__int64* a1);
 void wld_c43d90(__int64 a1, __int64 a2, unsigned __int64 a3, __int64 a4,
                 unsigned __int64 a5, __int64 a6, unsigned __int64 a7, int a8,
                 int a9);
+__attribute__((swiftcall)) void
+llvm_libcxx_21_libcxx_include___functional_a5cb20(PSEUDO_X8, __int64, __int64,
+                                                  unsigned __int64);
+__int64 GameHr_a81a70(__int64, unsigned __int64);
+__int64 GameHr_c284a0_alt1(_QWORD*, _DWORD*, unsigned __int64,
+                           char) __asm__("GameHr_c284a0");
+__int64 memory_a91f40(_QWORD*, __int64, __int64);
+extern _QWORD GameData_21fdd90_alt1[5] __asm__("GameData_21fdd90");
+unsigned int*
+llvm_libcxx_21_libcxx_include___memory_1989130(unsigned int* result, __int64);
+void GameRoutine_1989340_alt2(__int64*, _QWORD*, __int64,
+                              unsigned __int64) __asm__("GameRoutine_1989340");
+void llvm_libcxx_21_libcxx_include___memory_1989b20(__int64, __int64, __int64,
+                                                    _QWORD*);
 
 void wld_a5ef20(__int64 a1)
 {
@@ -5975,7 +5989,7 @@ void wld_c2a300(__int64** a1)
   unsigned int* v52;
   __int64 v53;
   __int64 v54;
-  __int64 v55;
+  __int64* v55;
   unsigned __int64 v56;
   __int64* v57;
   __int64* v58;
@@ -6005,9 +6019,9 @@ void wld_c2a300(__int64** a1)
   __int64 v82;
   __int64 v83;
   __int8* v84;
-  const char** v85;
+  char** v85;
   __int64* v86;
-  const char* v87;
+  char* v87;
   unsigned __int64 v88;
   unsigned __int64 v89;
   __int64 v90;
@@ -6049,11 +6063,11 @@ void wld_c2a300(__int64** a1)
   unsigned __int64 v126;
   __int64 v127;
   __int64 v128;
-  const char** v129;
+  char** v129;
   __int64 v130;
   __int64* v131;
   __int8* v132;
-  const char* v133;
+  char* v133;
   unsigned __int64 v134;
   unsigned __int64 v135;
   __int64 v136;
@@ -6126,14 +6140,14 @@ void wld_c2a300(__int64** a1)
   __int64* v204;
   __int64 v205;
   unsigned __int64 v206;
-  const char* v207;
+  char* v207;
   unsigned __int64 v208;
   unsigned int v209;
   unsigned int v210;
   __int64 v211;
   __int64 v212;
   unsigned __int64 v213;
-  const char* v214;
+  char* v214;
   bool v215;
   unsigned __int64 v216;
   __int64 v217;
@@ -6203,7 +6217,7 @@ void wld_c2a300(__int64** a1)
   __int64 v282;
   unsigned __int64 v283;
   __int64 v284;
-  const char* v285;
+  char* v285;
   unsigned __int64 v286;
   __int64 v287;
   __int64 v288;
@@ -6329,7 +6343,7 @@ void wld_c2a300(__int64** a1)
                                 memory_order_acquire) &
            1) == 0 &&
           __cxa_guard_acquire_alt1((__int64)&GameData_21fde98) != 0) {
-        GameHr_a5aca0((__int64)GameData_21fdd90);
+        GameHr_a5aca0((__int64)GameData_21fdd90_alt1);
         GameRoutine_2b0();
         __cxa_guard_release_alt1((__int64)&GameData_21fde98);
       }
@@ -6342,7 +6356,7 @@ void wld_c2a300(__int64** a1)
                                   memory_order_acquire) &
              1) == 0 &&
             __cxa_guard_acquire_alt1((__int64)&GameData_21fde98) != 0) {
-          GameHr_a5aca0((__int64)GameData_21fdd90);
+          GameHr_a5aca0((__int64)GameData_21fdd90_alt1);
           GameRoutine_2b0();
           __cxa_guard_release_alt1((__int64)&GameData_21fde98);
         }
@@ -6361,8 +6375,8 @@ void wld_c2a300(__int64** a1)
         else {
           v24 = *((_QWORD*)v19 + 1);
         }
-        GameRoutine_a5cb20_alt1((void*)(&v309_.v309), (__int64)GameData_21fdd90,
-                                v23, v24);
+        llvm_libcxx_21_libcxx_include___functional_a5cb20(
+            (void*)(&v309_.v309), (__int64)GameData_21fdd90_alt1, v23, v24);
         if (LANES128(v309_.v309).n128_u64[0] != 0) {
           *(_BYTE*)(LANES128(v309_.v309).n128_u64[0] + 184) = 0;
         }
@@ -6381,7 +6395,7 @@ void wld_c2a300(__int64** a1)
                                   memory_order_acquire) &
              1) == 0 &&
             __cxa_guard_acquire_alt1((__int64)&GameData_21fde98) != 0) {
-          GameHr_a5aca0((__int64)GameData_21fdd90);
+          GameHr_a5aca0((__int64)GameData_21fdd90_alt1);
           GameRoutine_2b0();
           __cxa_guard_release_alt1((__int64)&GameData_21fde98);
         }
@@ -6400,8 +6414,8 @@ void wld_c2a300(__int64** a1)
         else {
           v166 = v160[1];
         }
-        GameRoutine_a5cb20_alt1((void*)(&v309_.v309), (__int64)GameData_21fdd90,
-                                v165, v166);
+        llvm_libcxx_21_libcxx_include___functional_a5cb20(
+            (void*)(&v309_.v309), (__int64)GameData_21fdd90_alt1, v165, v166);
         v167 = (_QWORD*)LANES128(v309_.v309).n128_u64[0];
         if (LANES128(v309_.v309).n128_u64[0] != 0) {
           v168 = v160[3];
@@ -6417,13 +6431,14 @@ void wld_c2a300(__int64** a1)
             do {
               v174 = *(_QWORD*)(v170 + v172);
               game_66f7e0(v167, v173, v174 & v171);
-              if (v174 != 0 && (v174 & v171) == 0) {
+              if (v174 != 0 & (v174 & v171) == 0) {
                 GameHr_66f720((__int64)v167, v173, 0);
               }
               v170 = v167[12];
               ++v173;
               v172 += 40;
-            } while (v173 < 0xCCCCCCCCCCCCCCCDLL * ((v167[13] - v170) >> 3));
+            } while (v173 < 0xCCCCCCCCCCCCCCCDLL *
+                                ((signed __int64)(v167[13] - v170) >> 3));
           }
         }
         v176 = LANES128(v309_.v309).n128_i64[1];
@@ -6442,7 +6457,7 @@ void wld_c2a300(__int64** a1)
                                     memory_order_acquire) &
                1) == 0 &&
               __cxa_guard_acquire_alt1((__int64)&GameData_21fde98) != 0) {
-            GameHr_a5aca0((__int64)GameData_21fdd90);
+            GameHr_a5aca0((__int64)GameData_21fdd90_alt1);
             GameRoutine_2b0();
             __cxa_guard_release_alt1((__int64)&GameData_21fde98);
           }
@@ -6461,8 +6476,8 @@ void wld_c2a300(__int64** a1)
           else {
             v183 = *((_QWORD*)v177 + 1);
           }
-          GameRoutine_a5cb20_alt1((void*)(&v309_.v309),
-                                  (__int64)GameData_21fdd90, v182, v183);
+          llvm_libcxx_21_libcxx_include___functional_a5cb20(
+              (void*)(&v309_.v309), (__int64)GameData_21fdd90_alt1, v182, v183);
           v184 = (_QWORD*)LANES128(v309_.v309).n128_u64[0];
           if (LANES128(v309_.v309).n128_u64[0] != 0) {
             v185 = (*((_DWORD*)v177 + 6) & 0x800) != 0 ? 0x200000000LL
@@ -6498,7 +6513,7 @@ void wld_c2a300(__int64** a1)
         }
       }
       if (((_BYTE)a1[15] & 1) == 0) {
-        GameRoutine_c2c4c0_alt1((__int64)a1);
+        GameRoutine_c2c4c0((__int64)a1);
         v17 = 7;
       }
       else {
@@ -6594,7 +6609,7 @@ void wld_c2a300(__int64** a1)
                 v196 =
                     v194 ? (__int64*)((char*)*a1 + 169) : (__int64*)(*a1)[23];
                 v197 = v194 ? v195 : (*a1)[22];
-                if ((GameHr_c284a0((__int64*)a1, v196, v197, 1) & 1) == 0) {
+                if ((GameHr_c284a0_alt1(a1, v196, v197, 1) & 1) == 0) {
                   GameRoutine_c28e40_alt1(&v309_.v309, 1);
                   GameHr_c29c40((__int64)a1);
                 }
@@ -6614,18 +6629,18 @@ void wld_c2a300(__int64** a1)
                   if (v200 != 0) {
                     v203 = (_DWORD*)ElfFile_631220_alt2(
                         a1[16] + 100, "world::data::s_decalDataVersion");
-                    if (v203 != nullptr && *v203 >= 3u) {
+                    if (v203 != nullptr && *(_DWORD*)v203 >= 3u) {
                       v205 = ElfFile_631220_alt2(a1[16] + 100,
                                                  "world::data::s_decalData");
                       v304 = (_DWORD*)ElfFile_631220_alt2(
                           a1[16] + 100, "world::data::s_decalDataNum");
-                      if (v205 != 0 && v304 != nullptr && *v304 != 0) {
+                      if (v205 != 0 && v304 != nullptr && *(_DWORD*)v304 != 0) {
                         v206 = 0;
                         v325_.v330 = &LANES128(v309_.v309).n128_i8[1];
                         do {
                           v207 = *(const char**)(v205 + 8);
                           v208 = strlen_alt1(v207);
-                          v209 = GameRoutine_a81a70((__int64)v207, v208);
+                          v209 = GameHr_a81a70((__int64)v207, v208);
                           if (v209 >= 0xA) {
                             String_60a250("bitset test argument out of range");
                           }
@@ -6743,7 +6758,7 @@ void wld_c2a300(__int64** a1)
                             else {
                               v233 = 0;
                             }
-                            wld_DecalModule_AddDecal_alt1(v232, v205, v233);
+                            memory_a91f40(v232, v205, v233);
                             *(_DWORD*)(v228 + 284) = v210;
                             LANES128(v234).n128_u64[0] = *(_QWORD*)(v205 + 40);
                             LANES128(v234).n128_u32[2] = *(_DWORD*)(v205 + 48);
@@ -6760,17 +6775,13 @@ void wld_c2a300(__int64** a1)
                                         COERCE_AS(float32x2_t,
                                                   LANES128(v237).n128_u64[0])))
                                     .n64_u64[0];
-                            if (__builtin_islessgreater(
-                                    LANES64_OF(
-                                        vpadd_f32(
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v237).n128_u64[0]),
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v237).n128_u64[0])))
-                                        .n64_f32[0],
-                                    0x0.0p+0f)) {
+                            if (LANES64_OF(
+                                    vpadd_f32(
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v237).n128_u64[0]),
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v237).n128_u64[0])))
+                                    .n64_f32[0] != 0x0.0p+0f) {
                               *(_QWORD*)(v228 + 304) =
                                   LANES128(v235).n128_u64[0];
                               v238 = *(_OWORD*)(v228 + 304);
@@ -6798,17 +6809,13 @@ void wld_c2a300(__int64** a1)
                                         COERCE_AS(float32x2_t,
                                                   LANES128(v244).n128_u64[0])))
                                     .n64_u64[0];
-                            if (__builtin_islessgreater(
-                                    LANES64_OF(
-                                        vpadd_f32(
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v244).n128_u64[0]),
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v244).n128_u64[0])))
-                                        .n64_f32[0],
-                                    0x0.0p+0f)) {
+                            if (LANES64_OF(
+                                    vpadd_f32(
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v244).n128_u64[0]),
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v244).n128_u64[0])))
+                                    .n64_f32[0] != 0x0.0p+0f) {
                               *(float*)(v228 + 320) = v239;
                               *(float*)(v228 + 324) = v240;
                               v245 = *(_OWORD*)(v228 + 320);
@@ -6831,15 +6838,15 @@ void wld_c2a300(__int64** a1)
                                      PSEUDO_UNFUSED(v247 * v249) * v251;
                               v256 = v248 * v249 * v251 -
                                      PSEUDO_UNFUSED(v252 * (v247 * v250));
-                              v257 = COERCE_FLOAT(*(_OWORD*)(v228 + 336)) ==
-                                         v253 &&
-                                     COERCE_FLOAT(HIDWORD(
-                                         *(_QWORD*)(v228 + 336))) == v254;
+                              v257 =
+                                  COERCE_FLOAT(*(_OWORD*)(v228 + 336)) == v253 &
+                                  COERCE_FLOAT(
+                                      HIDWORD(*(_QWORD*)(v228 + 336))) == v254;
                               v258 =
                                   v257 &&
                                   COERCE_FLOAT(*(_QWORD*)(v228 + 344)) == v256;
-                              if (!v258 || COERCE_FLOAT(DWORD3(*(
-                                               _OWORD*)(v228 + 336))) != v255) {
+                              if (!v258 | COERCE_FLOAT(HIDWORD(*(
+                                              _OWORD*)(v228 + 336))) != v255) {
                                 v260 = *(_DWORD*)(v228 + 296);
                                 *(float*)(v228 + 336) = v253;
                                 *(float*)(v228 + 340) = v254;
@@ -6864,17 +6871,13 @@ void wld_c2a300(__int64** a1)
                                         COERCE_AS(float32x2_t,
                                                   LANES128(v265).n128_u64[0])))
                                     .n64_u64[0];
-                            if (__builtin_islessgreater(
-                                    LANES64_OF(
-                                        vpadd_f32(
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v265).n128_u64[0]),
-                                            COERCE_AS(
-                                                float32x2_t,
-                                                LANES128(v265).n128_u64[0])))
-                                        .n64_f32[0],
-                                    0x0.0p+0f)) {
+                            if (LANES64_OF(
+                                    vpadd_f32(
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v265).n128_u64[0]),
+                                        COERCE_AS(float32x2_t,
+                                                  LANES128(v265).n128_u64[0])))
+                                    .n64_f32[0] != 0x0.0p+0f) {
                               *(_DWORD*)(v228 + 352) = *(_DWORD*)(v205 + 64);
                               *(_DWORD*)(v228 + 356) = v261;
                               v266 = *(_OWORD*)(v228 + 352);
@@ -7204,7 +7207,7 @@ void wld_c2a300(__int64** a1)
     v51 = (__int64*)fw_memory_g_heap_manager_ptr;
     v52 = (unsigned int*)fw_memory_HeapManager_Allocate(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 136, 16, 0);
-    GameRoutine_1989130(v52, (__int64)a1[16]);
+    llvm_libcxx_21_libcxx_include___memory_1989130(v52, (__int64)a1[16]);
     v53 = (__int64)a1[19];
     a1[19] = (__int64*)v52;
     if (v53 != 0) {
@@ -7215,10 +7218,10 @@ void wld_c2a300(__int64** a1)
       nn_mem_StandardAllocator_Free_alt2(*v51 + v54, v53);
       v52 = (unsigned int*)a1[19];
     }
-    v55 = fw_memory_HeapManager_Allocate(*v51, 72, 16, 0);
+    v55 = (__int64*)fw_memory_HeapManager_Allocate(*v51, 72, 16, 0);
     v57 = (__int64*)(a1 + 12);
     v56 = *((unsigned __int8*)a1 + 96);
-    v58 = (__int64*)v55;
+    v58 = v55;
     v59 = (v56 & 1) == 0;
     v60 = v56 >> 1;
     if (v59) {
@@ -7233,7 +7236,7 @@ void wld_c2a300(__int64** a1)
     else {
       v62 = (unsigned __int64)a1[13];
     }
-    GameRoutine_1989340_alt1(v55, v52, v61, v62);
+    GameRoutine_1989340_alt2(v55, v52, v61, v62);
     v63 = a1[20];
     a1[20] = v58;
     if (v63 != nullptr) {
@@ -7506,7 +7509,7 @@ void wld_c2a300(__int64** a1)
       v6 = fw_memory_g_heap_manager_ptr;
       v7 = fw_memory_HeapManager_Allocate(
           *(_QWORD*)fw_memory_g_heap_manager_ptr, 80, 16, 0);
-      GameRoutine_1989b20_alt1(v7, v3, v4, v5);
+      llvm_libcxx_21_libcxx_include___memory_1989b20(v7, v3, v4, v5);
       v8 = a1[21];
       a1[21] = (__int64*)v7;
       if (v8 != nullptr) {

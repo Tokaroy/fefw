@@ -922,6 +922,8 @@ bool game_8784c0(const char** a1, __int64 a2);
 bool game_878d80(const char** a1);
 __attribute__((swiftcall)) void game_9470c0(PSEUDO_X8 x8_, __int64 a1);
 bool GameRoutine_90c9e0_alt1(__int64) __asm__("GameRoutine_90c9e0");
+typedef __int64 GameAlign_21f430c __attribute__((aligned(4)));
+extern GameAlign_21f430c GameData_21f430c_alt1 __asm__("GameData_21f430c");
 
 bool game_869980()
 {
@@ -9497,10 +9499,10 @@ __attribute__((swiftcall)) void game_941ce0(PSEUDO_X8 x8_, __int64 a1)
            1) == 0 &&
           __cxa_guard_acquire_alt1((__int64)&GameData_21f4318) != 0) {
         GameData_21f4314 = 0;
-        GameData_21f430c = 0x10000205A5LL;
+        GameData_21f430c_alt1 = 0x10000205A5LL;
         __cxa_guard_release_alt1((__int64)&GameData_21f4318);
       }
-      LODWORD(a1) = Dir_70df40_alt1((__int16*)&GameData_21f430c, v2);
+      LODWORD(a1) = Dir_70df40_alt1((__int16*)&GameData_21f430c_alt1, v2);
       v32 = 1 << ((unsigned int)a1 / 0x2760 -
                   5 * ((858993460 *
                         (unsigned __int64)((unsigned int)a1 / 0x2760)) >>

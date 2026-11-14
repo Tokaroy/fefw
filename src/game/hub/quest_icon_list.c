@@ -574,7 +574,7 @@ void QuestIconList_Unknown3(_QWORD* a1, __int64 a2, int* a3)
           v38 = v14;
           v39 = a1[6];
           v40 = a1[7];
-          v41 = (char*)v29 + v39 - v40;
+          v41 = (char*)v29 + ((char*)v39 - (char*)v40);
           if (v40 != v39) {
             v42 = 0;
             do {

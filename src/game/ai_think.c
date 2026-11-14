@@ -1078,6 +1078,7 @@ __int64 AIThink_12071a0(__int64 a1, unsigned int a2, __int64 a3, __int64 a4);
 __int64 GameHr_11fbb20_alt1(_QWORD) __asm__("GameHr_11fbb20");
 __int64 GameHr_6c2b50_alt1(_QWORD) __asm__("GameHr_6c2b50");
 __int64 game_128df90(_QWORD, _QWORD);
+__int64 AITarget_1276580(__int64, int);
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -22764,7 +22765,7 @@ LABEL_22:
     v34 = GameData_212cfb8[0];
     v126 = v131 + 68;
     do {
-      v35 = GameRoutine_1276580(v30, v33);
+      v35 = AITarget_1276580(v30, v33);
       v36 = *(unsigned int*)(v30 + 24700);
       if ((v35 & 1) != 0 || ((unsigned int)v36 | v32) == 0) {
         if ((int)v36 >= 1) {
@@ -22791,7 +22792,7 @@ LABEL_22:
                       if (v43 != 0 || v44 != 3) {
                       LABEL_68:
                         v46 = v41;
-                        if (AIThink_11fd9e0_alt2(*v31, (_BOOL8)v41)) {
+                        if (AIThink_11fd9e0(*v31, (__int64)v41)) {
                           v47 = v46[55];
                           if (v47 != 0) {
                             v48 = *(unsigned __int8*)(v47 + 16);
@@ -22873,7 +22874,7 @@ LABEL_22:
                     goto LABEL_86;
                   }
                   v61 = v54;
-                  if (AIThink_11fd9e0_alt2(*(_QWORD*)v135_.v136, (_BOOL8)v54)) {
+                  if (AIThink_11fd9e0(*(_QWORD*)v135_.v136, (__int64)v54)) {
                     v62 = v61[55];
                     if (v62 != 0) {
                       v63 = *(unsigned __int8*)(v62 + 16);
@@ -23154,7 +23155,7 @@ LABEL_22:
             }
             else {
               LODWORD(v92) =
-                  *(_DWORD*)(v135_.v136 + 8) + 32 * *(_DWORD*)(v135_.v136 + 12);
+                  *(int*)(v135_.v136 + 8) + 32 * *(int*)(v135_.v136 + 12);
               if ((unsigned int)v92 >= 0x400) {
                 v92 = 0;
               }
@@ -23165,7 +23166,7 @@ LABEL_22:
                                         v92 + 64);
               v94 = v93 <= 0x65;
               v95 = 101 - v93;
-              if (v95 == 0 || !v94) {
+              if (v95 == 0 | !v94) {
                 v95 = 0;
               }
               v96 = v95 + (v71 << 8);
@@ -23175,7 +23176,8 @@ LABEL_22:
             v99 = *(char*)(v97 + 2);
             if (*(_DWORD*)a2 < v96 || (v100 = *(_DWORD*)(a2 + 4)) < 0 ||
                 (*(_DWORD*)a2 <= v96
-                     ? (v101 = (v100 | (*(_DWORD*)(a2 + 8) << 16)) <=
+                     ? (v101 = (signed __int32)(v100 |
+                                                (*(_DWORD*)(a2 + 8) << 16)) <=
                                (v98 | (v99 << 16)))
                      : (v101 = true),
                  !v101)) {

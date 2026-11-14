@@ -248,7 +248,7 @@ void game_hub_ObjectBuildCreate_CreateObject(__int64 a1)
   char* v28;
   unsigned __int64 v29;
   __int64 v30;
-  const char* v31;
+  char* v31;
   unsigned __int64 v32;
   __int64 v33;
   __int64* v34;
@@ -258,7 +258,7 @@ void game_hub_ObjectBuildCreate_CreateObject(__int64 a1)
   __int64* v38;
   __int64 v39;
   unsigned __int64 v40;
-  const char* v41;
+  char* v41;
   unsigned __int64 v42;
   __int64 v43;
   __int64 v44;
@@ -296,7 +296,7 @@ void game_hub_ObjectBuildCreate_CreateObject(__int64 a1)
   struct {
     __int64 v76;
     unsigned __int64 v77;
-    const char* v78;
+    char* v78;
   } v76_;
   struct {
     __int64 v79[2];
@@ -328,7 +328,7 @@ void game_hub_ObjectBuildCreate_CreateObject(__int64 a1)
   struct {
     __int64 v95;
     unsigned __int64 v96;
-    const char* v97;
+    char* v97;
   } v95_;
   struct {
     __int64 (**v98)();
@@ -426,7 +426,7 @@ void game_hub_ObjectBuildCreate_CreateObject(__int64 a1)
           else {
             v23 = (_DWORD*)((char*)&v76_.v76 + 1);
           }
-          *v23 = 1600807503;
+          *(_DWORD*)v23 = 1600807503;
           if ((v20 & 1) != 0) {
             v24 = (char*)(v21 + 4);
           }

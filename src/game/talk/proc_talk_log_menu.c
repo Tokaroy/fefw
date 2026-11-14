@@ -134,6 +134,10 @@ __int64 GameRoutine_19edd80(_QWORD*, int, char, char);
 __int64 GameRoutine_19ee0c0(__int64, int, char, char);
 __int64 ProcTalkLogMenu_Unknown137(__int64 a1, int a2, char a3, char a4);
 __int64 ProcTalkLogMenu_Unknown11(_QWORD* a1, int a2, char a3, char a4);
+_QWORD* game_159e540(__int64);
+__int64
+ProcTransitionAnim_156af20_alt1(__int64, int, int, __int64*, const char*,
+                                __int64) __asm__("ProcTransitionAnim_156af20");
 
 __int64 ProcTalkLogMenu_17cfc80(__int64 result, char a2)
 {
@@ -723,22 +727,25 @@ __int64 ProcTalkLogMenu_Unknown122(__int64 a1)
   _DWORD* v8;
   int v9;
   __int64 v10;
-  __int64 v11;
-  __int64 v12;
+  struct {
+    __int64 v11;
+    __int64 v12;
+  } v11_;
 
-  if (*(_BYTE*)(a1 + 1688) == 1 && *(int*)(a1 + 552) <= 0) {
+  if (*(_BYTE*)(a1 + 1688) == 1 & (signed __int32)*(_DWORD*)(a1 + 552) <= 0) {
     if ((*(_BYTE*)(a1 + 1689) & 1) == 0) {
       v3 = GameData_21ec7b8;
       if (GameData_21ec7b8 != 0 &&
           (*(_BYTE*)(GameData_21ec7b8 + 305) != 1 ||
            (*(_BYTE*)(GameData_21ec7b8 + 304) & 1) != 0)) {
         *(_WORD*)(GameData_21ec7b8 + 304) = 256;
-        GameRoutine_155e830(game_talk_g_window_layout_ptr[0], 1);
+        LayoutAccessor_155e830((__int64)game_talk_g_window_layout_ptr[0], 1);
         v4 = game_gameui_MenuAnimator_instance_;
         if (game_gameui_MenuAnimator_instance_ != 0) {
-          sprintf(&v11, "%s%s", "Down", "In");
-          v5 = GameRoutine_156af20(v4, 1, 0, game_talk_g_window_layout_ptr[0],
-                                   0, &v11);
+          sprintf_alt1((__int64)&v11_.v11, "%s%s", "Down", "In");
+          v5 = ProcTransitionAnim_156af20_alt1(v4, 1, 0,
+                                               game_talk_g_window_layout_ptr[0],
+                                               nullptr, (__int64)&v11_.v11);
         }
         else {
           v5 = -1;
@@ -749,22 +756,22 @@ __int64 ProcTalkLogMenu_Unknown122(__int64 a1)
     *(_BYTE*)(a1 + 1688) = 0;
   }
   (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64))(
-      *(_QWORD*)a1 + 392LL))((void*)&v11, a1);
-  GameRoutine_159e540(&v11);
-  result = v12;
-  if (v12 != 0) {
-    result = std___1___shared_weak_count___release_weak(v12);
+      *(_QWORD*)a1 + 392LL))((void*)(&v11_.v11), a1);
+  game_159e540((__int64)&v11_.v11);
+  result = v11_.v12;
+  if (v11_.v12 != 0) {
+    result = std___1___shared_weak_count___release_weak_alt1(v11_.v12);
   }
   v7 = *(_DWORD**)(a1 + 808);
   v8 = *(_DWORD**)(a1 + 816);
   if (v7 != v8) {
     v9 = *(_DWORD*)(a1 + 644);
     do {
-      *v7++ = v9;
+      *(_DWORD*)v7++ = v9;
     } while (v7 != v8);
   }
   v10 = *(_QWORD*)(a1 + 336);
-  if (v10 != 0 && *(__int64 (***)())v10 ==
+  if (v10 != 0 && *(__int64 (***)(void))v10 ==
                       game_talk_ProcTalkLogMenu_TalkLogMenuItem_vtable) {
     *(_DWORD*)(a1 + 1696) = *(_DWORD*)(v10 + 84);
   }

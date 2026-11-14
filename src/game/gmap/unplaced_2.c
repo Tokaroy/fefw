@@ -233,6 +233,8 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_gmap_152cc00(__int64 a1);
 _QWORD* game_gmap_1541de0(__int64* a1);
+__int64 LayoutAccessor_1562f00_alt2(__int64 result, __int64,
+                                    float) __asm__("LayoutAccessor_1562f00");
 
 void game_gmap_152c5a0(__int64 a1)
 {
@@ -2728,8 +2730,8 @@ LABEL_26:
           if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
             v22 = 56;
           }
-          nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                        v22, (_QWORD)(v18));
+          nn_mem_StandardAllocator_Free(
+              *(_QWORD*)fw_memory_g_heap_manager_ptr + v22, (_QWORD)(v18));
         }
       }
       v26_.v27 = (__int64 (*)())&GameData_1ade186;
@@ -3254,7 +3256,7 @@ __int64 game_gmap_1655e80(__int64 a1)
                 GameHr_1562680(v77 + 88, "In", 0x1.0000000000000p+0f);
                 v78 =
                     LayoutAccessor_15638b0_alt1((__int64*)(v77 + 88), "In", 0);
-                LayoutAccessor_1562f00_alt1(v77 + 88, "In", v78);
+                LayoutAccessor_1562f00_alt2(v77 + 88, (__int64)"In", v78);
                 LayoutAccessor_1563030_alt1(v77 + 88, "In", 0);
                 v55 = 6;
               }
@@ -3348,7 +3350,7 @@ __int64 game_gmap_1655e80(__int64 a1)
             v85_.v96 = 0;
             v85_.v95 = 2;
             v85_.v97 = 0;
-            if ((_DWORD)v68 != 0 || v71 == 0) {
+            if ((_DWORD)v68 != 0 | v71 == 0) {
               LOBYTE(v73) = 0;
             }
             else {
@@ -3503,7 +3505,7 @@ LABEL_22:
     v82 = *(_QWORD*)(a1 + 16);
     GameHr_1562680(v82 + 88, "In", 0x1.0000000000000p+0f);
     v83 = LayoutAccessor_15638b0_alt1((__int64*)(v82 + 88), "In", 0);
-    LayoutAccessor_1562f00_alt1(v82 + 88, "In", v83);
+    LayoutAccessor_1562f00_alt2(v82 + 88, (__int64)"In", v83);
     LayoutAccessor_1563030_alt1(v82 + 88, "In", 0);
     v59 = 6;
   LABEL_64:
