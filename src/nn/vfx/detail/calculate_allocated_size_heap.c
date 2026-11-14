@@ -532,7 +532,7 @@ __int64 CalculateAllocatedSizeHeap_5c78c0(__int64 a1, __int64 a2)
   v11 = v7 + 8;
   v12 = v7 + 8 + 16 * v10;
   v13 = *(_DWORD*)v12;
-  if (*(_DWORD*)(v7 + 8) < *(_DWORD*)v12) {
+  if (*(int*)(v7 + 8) < *(int*)v12) {
     do {
       v16 = (__int64)v13 >> 3;
       if (v9 > v16) {
@@ -542,7 +542,7 @@ __int64 CalculateAllocatedSizeHeap_5c78c0(__int64 a1, __int64 a2)
         v14 = 0;
       }
       v10 = *(unsigned __int16*)(v7 + 12 + 16 * v10 + 2 * v14);
-      v15 = v13 < *(_DWORD*)(v11 + 16 * v10);
+      v15 = v13 < *(int*)(v11 + 16 * v10);
       v13 = *(_DWORD*)(v11 + 16 * v10);
     } while (v15);
     v12 = v11 + 16 * v10;

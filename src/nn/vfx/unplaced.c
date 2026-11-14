@@ -149,7 +149,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
   v9 = *(unsigned __int16*)(v7 + 12);
   v10 = v7 + 8 + 16 * v9;
   v11 = *(_DWORD*)v10;
-  if (*(_DWORD*)(v7 + 8) < *(_DWORD*)v10) {
+  if (*(int*)(v7 + 8) < *(int*)v10) {
     do {
       if ((unsigned int)(v11 >> 3) <= 2) {
         v12 =
@@ -160,7 +160,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
         v12 = 0;
       }
       v9 = *(unsigned __int16*)(v7 + 12 + 16 * v9 + 2 * v12);
-      v13 = v11 < *(_DWORD*)(v8 + 16 * v9);
+      v13 = v11 < *(int*)(v8 + 16 * v9);
       v11 = *(_DWORD*)(v8 + 16 * v9);
     } while (v13);
     v10 = v8 + 16 * v9;
@@ -196,7 +196,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
     v30 = *(unsigned __int16*)(v26 + 12);
     v31 = v26 + 8 + 16 * v30;
     v32 = *(_DWORD*)v31;
-    if (*(_DWORD*)(v26 + 8) < *(_DWORD*)v31) {
+    if (*(int*)(v26 + 8) < *(int*)v31) {
       do {
         v34 = (__int64)v32 >> 3;
         if (v28 > v34) {
@@ -206,7 +206,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
           v33 = 0;
         }
         v30 = *(unsigned __int16*)(v26 + 12 + 16 * v30 + 2 * v33);
-        v13 = v32 < *(_DWORD*)(v29 + 16 * v30);
+        v13 = v32 < *(int*)(v29 + 16 * v30);
         v32 = *(_DWORD*)(v29 + 16 * v30);
       } while (v13);
       v31 = v29 + 16 * v30;
@@ -240,7 +240,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
       v41 = *(unsigned __int16*)(v26 + 12);
       v42 = v26 + 8 + 16 * v41;
       v43 = *(_DWORD*)v42;
-      if (*(_DWORD*)(v26 + 8) < *(_DWORD*)v42) {
+      if (*(int*)(v26 + 8) < *(int*)v42) {
         do {
           v45 = (__int64)v43 >> 3;
           if (v39 > v45) {
@@ -250,7 +250,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
             v44 = 0;
           }
           v41 = *(unsigned __int16*)(v26 + 12 + 16 * v41 + 2 * v44);
-          v13 = v43 < *(_DWORD*)(v40 + 16 * v41);
+          v13 = v43 < *(int*)(v40 + 16 * v41);
           v43 = *(_DWORD*)(v40 + 16 * v41);
         } while (v13);
         v42 = v40 + 16 * v41;
@@ -281,7 +281,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
       v50 = *(unsigned __int16*)(v26 + 12);
       v52 = *(_DWORD*)(v26 + 8 + 16 * v50);
       v53 = v26 + 8 + 16 * v50;
-      if (*(_DWORD*)(v26 + 8) < v52) {
+      if (*(int*)(v26 + 8) < v52) {
         v54 = *(_DWORD*)(v26 + 8 + 16 * v50);
         v55 = *(unsigned __int16*)(v26 + 12);
         do {
@@ -294,7 +294,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
             v56 = 0;
           }
           v55 = *(unsigned __int16*)(v51 + 16 * v55 + 2 * v56);
-          v13 = v54 < *(_DWORD*)(v49 + 16 * v55);
+          v13 = v54 < *(int*)(v49 + 16 * v55);
           v54 = *(_DWORD*)(v49 + 16 * v55);
         } while (v13);
         v53 = v49 + 16 * v55;
@@ -360,7 +360,7 @@ __int64 nn_vfx_5c8480(_QWORD* a1, __int64 a2, __int64 a3)
               v68 = 0;
             }
             v50 = *(unsigned __int16*)(v51 + 16 * v50 + 2 * v68);
-            v13 = v52 < *(_DWORD*)(v49 + 16 * v50);
+            v13 = v52 < *(int*)(v49 + 16 * v50);
             v52 = *(_DWORD*)(v49 + 16 * v50);
           } while (v13);
           v67 = v49 + 16 * v50;

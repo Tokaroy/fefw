@@ -12147,7 +12147,7 @@ unsigned __int64 GameHr_ad8640(unsigned __int64 result)
             v31 = v29 + 8;
             v32 = v29 + 8 + 16 * v30;
             v33 = *(_DWORD*)v32;
-            if (*(_DWORD*)(v29 + 8) < *(_DWORD*)v32) {
+            if (*(int*)(v29 + 8) < *(int*)v32) {
               do {
                 v36 = (__int64)v33 >> 3;
                 if (result > v36) {
@@ -12159,7 +12159,7 @@ unsigned __int64 GameHr_ad8640(unsigned __int64 result)
                   v34 = 0;
                 }
                 v30 = *(unsigned __int16*)(v29 + 12 + 16 * v30 + 2 * v34);
-                v35 = v33 < *(_DWORD*)(v31 + 16 * v30);
+                v35 = v33 < *(int*)(v31 + 16 * v30);
                 v33 = *(_DWORD*)(v31 + 16 * v30);
               } while (v35);
               v32 = v31 + 16 * v30;

@@ -440,7 +440,7 @@ LABEL_64:
   if (v42 == 0) {
     v43 = 0x1.0000000000000p+0f;
   }
-  v44 = (float)(*(_DWORD*)(v2 + 2056) + 1);
+  v44 = (float)(*(int*)(v2 + 2056) + 1);
   v45 = *(unsigned __int8*)(v2 + 1874);
   v46 = vcvtps_s32_f32(v43 / v44);
   v47 = vcvtps_s32_f32((float)v24 / v44);

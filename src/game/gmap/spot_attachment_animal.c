@@ -470,6 +470,8 @@ __int64 SpotAttachmentAnimal_14d2d00(__int64 a1)
       v1 = (const char*)(v2 + 1);
     }
   }
+  // Keeps clang from dropping the null check from what strlen implies.
+  __asm__("" : "+r"(v1));
   v3 = strlen_alt1(v1);
   v4 = (_QWORD*)GameRoutine_1a09ce0_alt1((__int64)&v21_.v21, v1, v3);
   v6 = v4[1];

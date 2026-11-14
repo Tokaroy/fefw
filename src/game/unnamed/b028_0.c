@@ -16374,7 +16374,7 @@ LABEL_2:
   v10 = v7;
   while (1) {
     v7 = v10;
-    v11 = a2 - v10;
+    v11 = ((__int64)a2 - (__int64)v10) >> 3;
     if (v11 > 2) {
       switch (v11) {
       case 3LL:
@@ -42228,7 +42228,7 @@ LABEL_2:
   v10 = v9;
   while (1) {
     v9 = v10;
-    v11 = a2 - v10;
+    v11 = ((__int64)a2 - (__int64)v10) >> 2;
     if (v11 <= 2) {
       if ((unsigned __int64)v11 < 2) {
         return result;
@@ -51194,7 +51194,7 @@ LABEL_2:
   v407 = a2 - 3;
   while (1) {
     v8 = v9;
-    v10 = a2 - v9;
+    v10 = ((__int64)a2 - (__int64)v9) >> 3;
     if (v10 > 2) {
       switch (v10) {
       case 3LL:

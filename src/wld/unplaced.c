@@ -1191,7 +1191,7 @@ LABEL_8:
     v24 = *(unsigned __int16*)(v22 + 12);
     v25 = v22 + 8 + 16 * v24;
     v26 = *(_DWORD*)v25;
-    if (*(_DWORD*)(v22 + 8) < *(_DWORD*)v25) {
+    if (*(int*)(v22 + 8) < *(int*)v25) {
       do {
         if ((unsigned int)(v26 >> 3) <= 2) {
           v27 = ((unsigned __int8)GameData_1af0f9a[~(v26 >> 3) + 3] >>
@@ -1202,7 +1202,7 @@ LABEL_8:
           v27 = 0;
         }
         v24 = *(unsigned __int16*)(v22 + 12 + 16 * v24 + 2 * v27);
-        v28 = v26 < *(_DWORD*)(v23 + 16 * v24);
+        v28 = v26 < *(int*)(v23 + 16 * v24);
         v26 = *(_DWORD*)(v23 + 16 * v24);
       } while (v28);
       v25 = v23 + 16 * v24;

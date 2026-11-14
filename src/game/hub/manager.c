@@ -2866,7 +2866,7 @@ void game_hub_Manager_InitializeArea_lambda0_Invoke()
 
   if (game_hub_ProcHubSeqView_instance_ != 0 && GameData_21f3d10 != 0 &&
       *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 218) != 0 &&
-      *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0 &&
+      *(int*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0 &&
       (*(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 240) & 1) == 0 &&
       *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) == 0 &&
       *(int*)(GameData_21f3d10 + 152) <= 0) {

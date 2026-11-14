@@ -501,7 +501,8 @@ LABEL_20:
     else {
       *(float*)&v11 = 0x0.0p+0f;
     }
-    (*(void (**)(long double))(v76 + 16))(v11);
+    (*(void (**)(__int64*, const char*, __int64, float))(v76 + 16))(
+        v75, "Game_RimScale", 13, *(float*)&v11);
   }
   *(_BYTE*)(a1 + 112) = GameData_2167620;
   if (v150 != nullptr) {

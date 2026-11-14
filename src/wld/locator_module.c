@@ -209,7 +209,7 @@ __int64 LocatorModule_a7bee0(__int64 a1, __int64 a2)
   v8 = *(unsigned __int16*)(v2 + 12);
   v9 = v2 + 8 + 16 * v8;
   v10 = *(_DWORD*)v9;
-  if (*(_DWORD*)(v2 + 8) < *(_DWORD*)v9) {
+  if (*(int*)(v2 + 8) < *(int*)v9) {
     do {
       v13 = (__int64)v10 >> 3;
       if (v6 > v13) {
@@ -219,7 +219,7 @@ __int64 LocatorModule_a7bee0(__int64 a1, __int64 a2)
         v11 = 0;
       }
       v8 = *(unsigned __int16*)(v2 + 12 + 16 * v8 + 2 * v11);
-      v12 = v10 < *(_DWORD*)(v7 + 16 * v8);
+      v12 = v10 < *(int*)(v7 + 16 * v8);
       v10 = *(_DWORD*)(v7 + 16 * v8);
     } while (v12);
     v9 = v7 + 16 * v8;

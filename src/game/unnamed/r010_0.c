@@ -292,7 +292,7 @@ __int64 GameHr_17fd3a0(__int64 result, __int64 a2, __int64 a3)
     v17 = *(unsigned __int16*)(v11 + 12);
     v18 = v11 + 8 + 16 * v17;
     v19 = *(_DWORD*)v18;
-    if (*(_DWORD*)(v11 + 8) < *(_DWORD*)v18) {
+    if (*(int*)(v11 + 8) < *(int*)v18) {
       do {
         v22 = (__int64)v19 >> 3;
         if (v15 > v22) {
@@ -302,7 +302,7 @@ __int64 GameHr_17fd3a0(__int64 result, __int64 a2, __int64 a3)
           v20 = 0;
         }
         v17 = *(unsigned __int16*)(v11 + 12 + 16 * v17 + 2 * v20);
-        v21 = v19 < *(_DWORD*)(v16 + 16 * v17);
+        v21 = v19 < *(int*)(v16 + 16 * v17);
         v19 = *(_DWORD*)(v16 + 16 * v17);
       } while (v21);
       v18 = v16 + 16 * v17;

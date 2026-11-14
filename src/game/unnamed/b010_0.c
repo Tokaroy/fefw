@@ -2046,7 +2046,7 @@ __int64 GameHr_bd9540(_QWORD* a1, __int64 a2, _QWORD* a3)
   v14 = v9 + 8 + 16 * v13;
   v15 = *(_DWORD*)v14;
   v16 = v14;
-  if (v11 < *(_DWORD*)v14) {
+  if (v11 < *(int*)v14) {
     v17 = *(_DWORD*)v14;
     v18 = *(unsigned __int16*)(v9 + 12);
     do {
@@ -2060,7 +2060,7 @@ __int64 GameHr_bd9540(_QWORD* a1, __int64 a2, _QWORD* a3)
         v19 = 0;
       }
       v18 = *(unsigned __int16*)(v12 + 16 * v18 + 2 * v19);
-      v20 = v17 < *(_DWORD*)(v10 + 16 * v18);
+      v20 = v17 < *(int*)(v10 + 16 * v18);
       v17 = *(_DWORD*)(v10 + 16 * v18);
     } while (v20);
     v16 = v10 + 16 * v18;
@@ -2092,7 +2092,7 @@ __int64 GameHr_bd9540(_QWORD* a1, __int64 a2, _QWORD* a3)
           v33 = 0;
         }
         v13 = *(unsigned __int16*)(v12 + 16 * v13 + 2 * v33);
-        v20 = v15 < *(_DWORD*)(v10 + 16 * v13);
+        v20 = v15 < *(int*)(v10 + 16 * v13);
         v15 = *(_DWORD*)(v10 + 16 * v13);
       } while (v20);
       v14 = v10 + 16 * v13;

@@ -2605,7 +2605,7 @@ __int64 game_facility_anonymous_15f7ac0(__int64 result)
   if (v1 != v6) {
   LABEL_8:
     if (game_hub_ProcHubSeqView_instance_ != 0 && GameData_21f3d10 != 0 &&
-        *(_DWORD*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0) {
+        *(int*)(game_hub_ProcHubSeqView_instance_ + 232) <= 0) {
       *(_BYTE*)(GameData_21f3d10 + 768) = 1;
     }
   }

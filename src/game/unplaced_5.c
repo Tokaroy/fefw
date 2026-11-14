@@ -11743,7 +11743,7 @@ void game_10d9020(_QWORD* a1, __int64 a2, __int64* a3)
         v16 = 0;
       }
       v15 = *(unsigned __int16*)(v4 + 16 * v15 + 2 * v16);
-      v17 = v14 < *(_DWORD*)(v5 + 16 * v15);
+      v17 = v14 < *(int*)(v5 + 16 * v15);
       v14 = *(_DWORD*)(v5 + 16 * v15);
     } while (v17);
     v13 = v5 + 16 * v15;
@@ -11782,7 +11782,7 @@ LABEL_18:
         v27 = 0;
       }
       v26 = *(unsigned __int16*)(v4 + 16 * v26 + 2 * v27);
-      v17 = v25 < *(_DWORD*)(v5 + 16 * v26);
+      v17 = v25 < *(int*)(v5 + 16 * v26);
       v25 = *(_DWORD*)(v5 + 16 * v26);
     } while (v17);
     v24 = v5 + 16 * v26;
@@ -11819,7 +11819,7 @@ LABEL_18:
         v33 = 0;
       }
       v8 = *(unsigned __int16*)(v4 + 16 * v8 + 2 * v33);
-      v17 = v11 < *(_DWORD*)(v5 + 16 * v8);
+      v17 = v11 < *(int*)(v5 + 16 * v8);
       v11 = *(_DWORD*)(v5 + 16 * v8);
     } while (v17);
     v10 = v5 + 16 * v8;

@@ -4752,8 +4752,8 @@ __int64 GameHr_9c0680(_QWORD* a1)
         } while (v16 != v17);
         v20 = v18 + 1;
       }
-      if (*(_DWORD*)(*(_QWORD*)(*GameData_212d7d8[0] + 16) + 84LL) + v20 >
-          *(_DWORD*)(*(_QWORD*)(*GameData_212d7d8[0] + 16) + 72LL)) {
+      if (*(int*)(*(_QWORD*)(*GameData_212d7d8[0] + 16) + 84LL) + v20 >
+          *(int*)(*(_QWORD*)(*GameData_212d7d8[0] + 16) + 72LL)) {
         return 2;
       }
     LABEL_39:

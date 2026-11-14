@@ -1304,7 +1304,8 @@ __int64* GameHr_12b3420(__int64* result, __int64 a2)
   v8 = *(unsigned __int8*)(v2 + v5 + 2);
   *(_DWORD*)(a2 + 20) = v5 + 4;
   v9 = *result;
-  v10 = v7 | (v8 << 16) | (*(unsigned __int8*)(v2 + v5 + 3) << 24);
+  v10 = (unsigned int)(v7 | (v8 << 16) |
+                       (*(unsigned __int8*)(v2 + v5 + 3) << 24));
   v11 = GameData_212bf68;
   if (v10 > (result[2] - *result) >> 3) {
     v12 = result[1] - v9;

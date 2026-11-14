@@ -1402,7 +1402,7 @@ __int64 AnimCtrlModule_a77d60(_QWORD* a1, __int64 a2)
       v39 = *(unsigned __int16*)(v34 + 12);
       v40 = v34 + 8 + 16 * v39;
       v41 = *(_DWORD*)v40;
-      if (*(_DWORD*)(v34 + 8) < *(_DWORD*)v40) {
+      if (*(int*)(v34 + 8) < *(int*)v40) {
         do {
           v44 = (__int64)v41 >> 3;
           if ((unsigned __int64)v37 > v44) {
@@ -1412,7 +1412,7 @@ __int64 AnimCtrlModule_a77d60(_QWORD* a1, __int64 a2)
             v42 = 0;
           }
           v39 = *(unsigned __int16*)(v34 + 12 + 16 * v39 + 2 * v42);
-          v43 = v41 < *(_DWORD*)(v38 + 16 * v39);
+          v43 = v41 < *(int*)(v38 + 16 * v39);
           v41 = *(_DWORD*)(v38 + 16 * v39);
         } while (v43);
         v40 = v38 + 16 * v39;

@@ -5510,7 +5510,7 @@ void gfxa_c6f0a0(__int64 a1, char a2, float a3)
   } v73_;
 
   if ((a2 & 1) == 0 &&
-      vabds_f32(*(float*)(a1 + 364), a3) <= 0x1.0000000000000p-23f) {
+      !(vabds_f32(*(float*)(a1 + 364), a3) > 0x1.0000000000000p-23f)) {
     return;
   }
   v5 = *(unsigned __int8*)(a1 + 64);

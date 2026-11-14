@@ -5439,7 +5439,7 @@ void game_109d2e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int a5)
           v21 = *(unsigned __int16*)(v12 + 12);
           v22 = v12 + 8 + 16 * v21;
           v23 = *(_DWORD*)v22;
-          if (*(_DWORD*)(v12 + 8) < *(_DWORD*)v22) {
+          if (*(int*)(v12 + 8) < *(int*)v22) {
             do {
               v26 = (__int64)v23 >> 3;
               if (v19 > v26) {
@@ -5449,7 +5449,7 @@ void game_109d2e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int a5)
                 v24 = 0;
               }
               v21 = *(unsigned __int16*)(v12 + 12 + 16 * v21 + 2 * v24);
-              v25 = v23 < *(_DWORD*)(v20 + 16 * v21);
+              v25 = v23 < *(int*)(v20 + 16 * v21);
               v23 = *(_DWORD*)(v20 + 16 * v21);
             } while (v25);
             v22 = v20 + 16 * v21;
@@ -6290,7 +6290,7 @@ __int64 game_109f1e0(__int64 a1, _BYTE* a2)
     v18 = *(unsigned __int16*)(v14 + 12);
     v19 = v14 + 8 + 16 * v18;
     v20 = *(_DWORD*)v19;
-    if (*(_DWORD*)(v14 + 8) < *(_DWORD*)v19) {
+    if (*(int*)(v14 + 8) < *(int*)v19) {
       do {
         v23 = (__int64)v20 >> 3;
         if (v16 > v23) {
@@ -6300,7 +6300,7 @@ __int64 game_109f1e0(__int64 a1, _BYTE* a2)
           v21 = 0;
         }
         v18 = *(unsigned __int16*)(v14 + 12 + 16 * v18 + 2 * v21);
-        v22 = v20 < *(_DWORD*)(v17 + 16 * v18);
+        v22 = v20 < *(int*)(v17 + 16 * v18);
         v20 = *(_DWORD*)(v17 + 16 * v18);
       } while (v22);
       v19 = v17 + 16 * v18;
@@ -6407,7 +6407,7 @@ __int64 game_109f3c0(__int64 a1, _QWORD* a2, __int64 a3)
                 v14 = *(unsigned __int16*)(v11 + 12);
                 v15 = v11 + 8 + 16 * v14;
                 v16 = *(_DWORD*)v15;
-                if (*(_DWORD*)(v11 + 8) >= *(_DWORD*)v15) {
+                if (*(int*)(v11 + 8) >= *(int*)v15) {
                   if (((-16 * v14) & 0xFFFFFFFF0LL) != 0) {
                     v30 = *(unsigned __int16**)(v15 + 8);
                     v31 = 8 * a3;
@@ -6458,7 +6458,7 @@ __int64 game_109f3c0(__int64 a1, _QWORD* a2, __int64 a3)
                       }
                       v23 = *(unsigned __int16*)(v12 + 16 * v23 + 2 * v24);
                       v25 = 16 * v23;
-                      v26 = v22 < *(_DWORD*)(v13 + 16 * v23);
+                      v26 = v22 < *(int*)(v13 + 16 * v23);
                       v22 = *(_DWORD*)(v13 + 16 * v23);
                     } while (v26);
                     v28 = *(unsigned __int16**)(v18 + 16 * v23);
@@ -6565,7 +6565,7 @@ __attribute__((swiftcall)) void game_109f820(PSEUDO_X8 x8_, __int64 a1,
       v10 = *(unsigned __int16*)(v5 + 12);
       v11 = v5 + 8 + 16 * v10;
       v12 = *(_DWORD*)v11;
-      if (*(_DWORD*)(v5 + 8) < *(_DWORD*)v11) {
+      if (*(int*)(v5 + 8) < *(int*)v11) {
         do {
           v15 = (__int64)v12 >> 3;
           if (v8 > v15) {
@@ -6575,7 +6575,7 @@ __attribute__((swiftcall)) void game_109f820(PSEUDO_X8 x8_, __int64 a1,
             v13 = 0;
           }
           v10 = *(unsigned __int16*)(v5 + 12 + 16 * v10 + 2 * v13);
-          v14 = v12 < *(_DWORD*)(v9 + 16 * v10);
+          v14 = v12 < *(int*)(v9 + 16 * v10);
           v12 = *(_DWORD*)(v9 + 16 * v10);
         } while (v14);
         v11 = v9 + 16 * v10;

@@ -7120,6 +7120,12 @@ LABEL_28:
     }
     v33 = GameData_2264c50;
     *(_DWORD*)(v29 + 5856) = v32 & 0xFFFDFFFF;
+    {
+      // Q0 is passed on as is when nothing is called.
+      register long double q0 __asm__("v0");
+      __asm__("" : "=w"(q0));
+      v30 = q0;
+    }
     if (v33 != 0) {
       v30 = GameRoutine_17b8dd0();
     }

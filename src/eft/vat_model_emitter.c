@@ -328,7 +328,7 @@ unsigned __int64 VATModelEmitter_Unknown2(__int64 a1, __int64* a2)
   v19 = *(unsigned __int16*)(v16 + 12);
   v20 = v16 + 8 + 16 * v19;
   v21 = *(_DWORD*)v20;
-  if (*(_DWORD*)(v16 + 8) < *(_DWORD*)v20) {
+  if (*(int*)(v16 + 8) < *(int*)v20) {
     do {
       v24 = (__int64)v21 >> 3;
       if (v17 > v24) {
@@ -338,7 +338,7 @@ unsigned __int64 VATModelEmitter_Unknown2(__int64 a1, __int64* a2)
         v22 = 0;
       }
       v19 = *(unsigned __int16*)(v16 + 12 + 16 * v19 + 2 * v22);
-      v23 = v21 < *(_DWORD*)(v18 + 16 * v19);
+      v23 = v21 < *(int*)(v18 + 16 * v19);
       v21 = *(_DWORD*)(v18 + 16 * v19);
     } while (v23);
     v20 = v18 + 16 * v19;
@@ -413,7 +413,7 @@ LABEL_19:
     v40 = *(unsigned __int16*)(v38 + 12);
     v41 = v38 + 8 + 16 * v40;
     v42 = *(_DWORD*)v41;
-    if (*(_DWORD*)(v38 + 8) < *(_DWORD*)v41) {
+    if (*(int*)(v38 + 8) < *(int*)v41) {
       do {
         v44 = (__int64)v42 >> 3;
         if (result > v44) {
@@ -423,7 +423,7 @@ LABEL_19:
           v43 = 0;
         }
         v40 = *(unsigned __int16*)(v38 + 12 + 16 * v40 + 2 * v43);
-        v23 = v42 < *(_DWORD*)(v39 + 16 * v40);
+        v23 = v42 < *(int*)(v39 + 16 * v40);
         v42 = *(_DWORD*)(v39 + 16 * v40);
       } while (v23);
       v41 = v39 + 16 * v40;

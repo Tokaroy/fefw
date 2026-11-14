@@ -3406,7 +3406,7 @@ __attribute__((swiftcall)) void HubDisposFileReader_c9bf60(PSEUDO_X8 x8_,
         if (*(_QWORD*)(*v8 + 200LL) == 0) {
           v15 = 56;
         }
-        result = nn_mem_StandardAllocator_Free_alt2(*v8 + v15, a5);
+        result = nn_mem_StandardAllocator_Free_alt1(*v8 + v15, v32);
       }
       if ((unsigned __int64)v10 < v11) {
         *(_DWORD*)v10 = v14;
@@ -3448,7 +3448,7 @@ __attribute__((swiftcall)) void HubDisposFileReader_c9bf60(PSEUDO_X8 x8_,
           if (*(_QWORD*)(*v8 + 200LL) == 0) {
             v23 = 56;
           }
-          result = nn_mem_StandardAllocator_Free_alt2(*v8 + v23, a5);
+          result = nn_mem_StandardAllocator_Free_alt1(*v8 + v23, v9);
         }
         v9 = v22;
       }
@@ -3480,7 +3480,7 @@ __attribute__((swiftcall)) void HubDisposFileReader_c9bf60(PSEUDO_X8 x8_,
       v28 = 56;
     }
     {
-      nn_mem_StandardAllocator_Free_alt2(*v8 + v28, a5);
+      nn_mem_StandardAllocator_Free_alt1(*v8 + v28, v9);
       return;
     }
   }

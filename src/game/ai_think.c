@@ -28113,7 +28113,7 @@ void game_AIThink_MagicInterferenceTo_lambda0_Invoke(_QWORD* a1, int* a2,
 {
   int v3;
   int v4;
-  _DWORD* v5;
+  int* v5;
   int v7;
   int v9;
   int v11;
@@ -28240,7 +28240,7 @@ void game_AIThink_MagicInterferenceTo_lambda0_Invoke(_QWORD* a1, int* a2,
        1) == 0) {
     return;
   }
-  v5 = (_DWORD*)a1[1];
+  v5 = (int*)a1[1];
   if (*v5 != -1 && v3 < *v5) {
     return;
   }

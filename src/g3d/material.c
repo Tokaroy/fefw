@@ -247,7 +247,7 @@ __int64 Material_SetFloat(__int64 a1, char* a2, __int64 a3, float a4)
     v19 = *(unsigned __int16*)(v16 + 12);
     v20 = v16 + 8 + 16 * v19;
     v21 = *(_DWORD*)v20;
-    if (*(_DWORD*)(v16 + 8) < *(_DWORD*)v20) {
+    if (*(int*)(v16 + 8) < *(int*)v20) {
       do {
         v24 = (__int64)v21 >> 3;
         if (v17 > v24) {
@@ -257,7 +257,7 @@ __int64 Material_SetFloat(__int64 a1, char* a2, __int64 a3, float a4)
           v22 = 0;
         }
         v19 = *(unsigned __int16*)(v16 + 12 + 16 * v19 + 2 * v22);
-        v23 = v21 < *(_DWORD*)(v18 + 16 * v19);
+        v23 = v21 < *(int*)(v18 + 16 * v19);
         v21 = *(_DWORD*)(v18 + 16 * v19);
       } while (v23);
       v20 = v18 + 16 * v19;

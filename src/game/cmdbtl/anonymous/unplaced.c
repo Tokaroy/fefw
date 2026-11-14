@@ -3347,6 +3347,12 @@ __int64 game_cmdbtl_anonymous_f40d80(__int64 result)
           }
         }
         game_8ae640(&v18, 0, 0);
+        {
+          // Q0 is passed on as is when nothing is freed.
+          register long double q0 __asm__("v0");
+          __asm__("" : "=w"(q0));
+          v16 = q0;
+        }
         if (v18 != 0) {
           v19 = v18;
           v17 = 128;

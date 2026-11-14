@@ -25,7 +25,7 @@ __attribute__((swiftcall)) void GameRoutine_17fd670(PSEUDO_X8, _QWORD*,
                                                     unsigned int, unsigned int,
                                                     float32x2_t*, float32x4_t*,
                                                     char);
-__int64 GameRoutine_17fb660(__int64 result, _OWORD*, float, double);
+__int64 GameRoutine_17fb660(__int64 result, _OWORD*, float, float);
 __int64 GameRoutine_17fdec0(_QWORD, _QWORD, float);
 __int64 GameRoutine_17fe060(_QWORD, _QWORD);
 __int64 GameRoutine_17fe700(_QWORD, _QWORD);
@@ -1444,10 +1444,8 @@ LABEL_11:
                 v31 = game_cutscene_17ffe50((__int64*)(v29 + 88));
                 v158 = v32;
                 v160 = v31;
-                LANES128(v32).n128_f32[0] = a3;
                 GameRoutine_17fb660((__int64)&v163, (_OWORD*)(v29 + 64),
-                                    *(float*)(v29 + 8),
-                                    LANES128(v32).n128_f64[0]);
+                                    *(float*)(v29 + 8), a3);
                 a1[2] = vaddq_f32(
                     v160, vmulq_n_f32(vsubq_f32(v158, v160), *(float*)&v166));
               }

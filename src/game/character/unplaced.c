@@ -1089,7 +1089,7 @@ __int64 game_character_1084ea0(_QWORD* a1, __int64 a2)
                 v16 = *(unsigned __int16*)(v10 + 12);
                 v17 = v10 + 8 + 16 * v16;
                 v18 = *(_DWORD*)v17;
-                if (*(_DWORD*)(v10 + 8) < *(_DWORD*)v17) {
+                if (*(int*)(v10 + 8) < *(int*)v17) {
                   do {
                     v21 = (__int64)v18 >> 3;
                     if (v14 > v21) {
@@ -1101,7 +1101,7 @@ __int64 game_character_1084ea0(_QWORD* a1, __int64 a2)
                       v19 = 0;
                     }
                     v16 = *(unsigned __int16*)(v10 + 12 + 16 * v16 + 2 * v19);
-                    v20 = v18 < *(_DWORD*)(v15 + 16 * v16);
+                    v20 = v18 < *(int*)(v15 + 16 * v16);
                     v18 = *(_DWORD*)(v15 + 16 * v16);
                   } while (v20);
                   v17 = v15 + 16 * v16;

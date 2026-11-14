@@ -2785,7 +2785,7 @@ LABEL_34:
                                        v34 - v35, 16, 0);
   memcpy(v38, v35, v36);
 LABEL_44:
-  if (((_BYTE)v2[5] & 1) == 0) {
+  if ((*((_BYTE*)v2 + 20) & 1) == 0) {
     GameRoutine_8123d0();
   }
   v39 = v2[4];

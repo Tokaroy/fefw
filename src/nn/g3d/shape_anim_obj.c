@@ -294,7 +294,7 @@ __int64 ShapeAnimObj_5ea620(__int64 a1, __int64 a2, __int64 a3)
       v14 = *(unsigned __int16*)(v10 + 12);
       v15 = v10 + 8 + 16 * v14;
       v16 = *(_DWORD*)v15;
-      if (*(_DWORD*)(v10 + 8) < *(_DWORD*)v15) {
+      if (*(int*)(v10 + 8) < *(int*)v15) {
         do {
           v19 = (__int64)v16 >> 3;
           if (v12 > v19) {
@@ -304,7 +304,7 @@ __int64 ShapeAnimObj_5ea620(__int64 a1, __int64 a2, __int64 a3)
             v17 = 0;
           }
           v14 = *(unsigned __int16*)(v10 + 12 + 16 * v14 + 2 * v17);
-          v18 = v16 < *(_DWORD*)(v13 + 16 * v14);
+          v18 = v16 < *(int*)(v13 + 16 * v14);
           v16 = *(_DWORD*)(v13 + 16 * v14);
         } while (v18);
         v15 = v13 + 16 * v14;

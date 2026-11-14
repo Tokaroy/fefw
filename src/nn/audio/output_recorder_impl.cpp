@@ -230,7 +230,9 @@ void OutputRecorderImpl::GetName(NameStorage<63>* name) {
   size_t length = 0;
   if (context != nullptr) {
     StreamName base(m_Id, m_Format, m_DeviceName);
-    const char* source = context->name.buffer + base.size + 1;
+    // The original keeps the null test on the computed address.
+    const char* source = reinterpret_cast<const char*>(
+      reinterpret_cast<uintptr_t>(context->name.buffer) + base.size + 1);
     if (source != nullptr) {
       int sourceLength = static_cast<int>(strlen(source));
       length = sourceLength < 63 ? sourceLength : 63;
