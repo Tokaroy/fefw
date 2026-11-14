@@ -730,8 +730,10 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 39bf0,244,verified,src/opus/celt/mathops.c,celt_cos_norm
 3a580,1072,verified,src/opus/celt/mdct.c,clt_mdct_backward_c
 3a9f0,92,verified,src/opus/celt/modes_impl.c,opus_custom_mode_create
+3aa60,1800,verified,src/opus/celt/unplaced_6.c,opus_celt_3aa60
 3b1c0,1228,verified,src/opus/celt/pitch_impl.c,celt_pitch_xcorr_c
 3c060,788,verified,src/opus/celt/pitch.c,find_best_pitch
+3c380,2032,verified,src/opus/celt/unplaced_6.c,opus_celt_3c380
 3cf60,1164,verified,src/opus/celt/quant_bands_impl.c,quant_coarse_energy
 3d580,816,verified,src/opus/celt/quant_bands_impl.c,quant_coarse_energy_impl
 3d900,316,verified,src/opus/celt/quant_bands.c,quant_fine_energy
@@ -757,6 +759,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 46040,500,verified,src/opus/silk/NLSF_decode.c,silk_NLSF_decode
 47020,1668,verified,src/opus/silk/unplaced_2.c,opus_silk_47020
 47700,160,verified,src/opus/silk/NLSF_unpack.c,silk_NLSF_unpack
+488e0,2212,verified,src/opus/silk/unplaced_7.c,opus_silk_488e0
 4a340,2320,verified,src/movie/unnamed/p000_0.c,MovieHr_4a340
 4bb60,40,verified,src/opus/silk/PLC.c,silk_PLC_Reset
 4bba0,596,verified,src/opus/silk/PLC_impl.c,silk_PLC
@@ -780,6 +783,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 4f820,60,verified,src/opus/silk/dec_API_impl.c,silk_InitDecoder
 4f860,592,verified,src/opus/silk/dec_API_impl.c,silk_Decode
 50640,504,disputed,src/opus/silk/unplaced_2.c,opus_silk_50640
+51580,500,verified,src/opus/silk/unplaced_7.c,opus_silk_51580
 51780,672,verified,src/opus/silk/decode_indices.c,silk_decode_indices
 51b60,768,verified,src/opus/silk/unplaced_3.c,opus_silk_51b60
 51e80,612,verified,src/opus/silk/unplaced_2.c,opus_silk_51e80
@@ -875,6 +879,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 6c740,136,verified,src/opus/src/opus_encoder.c,compute_redundancy_bytes
 6c7d0,192,verified,src/opus/src/opus_encoder.c,hp_cutoff
 6c8a0,576,verified,src/opus/src/opus_encoder_impl2.c,opus_encoder_6c8a0
+6caf0,232,verified,src/opus/src/unplaced_7.c,opus_src_6caf0
 6cc20,908,verified,src/opus/src/opus_encoder_impl2.c,opus_encoder_6cc20
 6d020,1124,verified,src/opus/src/opus_encoder_impl2.c,opus_encoder_6d020
 6d6a0,692,verified,src/opus/src/opus_encoder.c,decide_dtx_mode
