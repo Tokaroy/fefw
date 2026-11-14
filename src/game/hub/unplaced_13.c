@@ -64,6 +64,14 @@ __attribute__((swiftcall)) void game_hub_cbbcc0(PSEUDO_X8 x8_, __int64 a1,
 void game_hub_d6f2a0(__int64 a1);
 __attribute__((swiftcall)) void game_hub_da1b80(PSEUDO_X8 x8_, const char* a1);
 void game_hub_e16dc0(float32x4_t* a1);
+__int64* DungeonRouteReport_f604e0(__int64* result);
+__int64 GameRoutine_1a0b950(__int64, __int64, unsigned __int64);
+__int64 GameRoutine_f5ffc0(__int64);
+extern __int64 (*GameData_1ff64e8[])();
+void GameRoutine_f60d00(__int64*, _QWORD*);
+void __attribute__((noreturn)) GameRoutine_f618e0();
+void nn_mem_StandardAllocator_Free_alt2(__int64, __int64);
+void game_hub_f60b80(__int64 a1);
 
 __attribute__((swiftcall)) void game_hub_cbbcc0(PSEUDO_X8 x8_, __int64 a1,
                                                 int a2, _QWORD* a3)
@@ -1485,6 +1493,73 @@ LABEL_132:
     LABEL_137:
       LANES128(a1[1]).n128_u32[2] = 0;
     }
+  }
+}
+
+void game_hub_f60b80(__int64 a1)
+{
+  __int64 v2;
+  int v3;
+  __int64* v4;
+  unsigned __int64 v5;
+  __int64 v6;
+  __int64 v7;
+  int v8;
+  _QWORD* v9;
+  _QWORD* v10;
+  _QWORD* v11;
+  __int64 v12;
+  struct {
+    _QWORD* v13;
+    __int64 v14;
+  } v13_;
+
+  DungeonRouteReport_f604e0((__int64*)a1);
+  v2 = *(_QWORD*)(a1 + 32);
+  v3 = *(_DWORD*)(a1 + 88);
+  v4 = (__int64*)fw_memory_g_heap_manager_ptr;
+  if (v3 > (unsigned __int64)((*(_QWORD*)(a1 + 48) - v2) >> 4)) {
+    if (v3 < 0) {
+      GameRoutine_f618e0();
+    }
+    v5 = *(_QWORD*)(a1 + 40) - v2;
+    v6 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
+                                        16LL * v3, 16, 0);
+    GameRoutine_1a0b950(v6, v2, v5);
+    *(_QWORD*)(a1 + 32) = v6;
+    *(_QWORD*)(a1 + 40) = v6 + v5;
+    *(_QWORD*)(a1 + 48) = v6 + 16LL * v3;
+    if (v2 != 0) {
+      v7 = 128;
+      if (*(_QWORD*)(*v4 + 200) == 0) {
+        v7 = 56;
+      }
+      nn_mem_StandardAllocator_Free_alt2(*v4 + v7, v2);
+      v3 = *(_DWORD*)(a1 + 88);
+    }
+  }
+  if (v3 >= 1) {
+    v8 = 0;
+    do {
+      v9 = (_QWORD*)fw_memory_HeapManager_Allocate(*v4, 48, 16, 0);
+      v10 = v9 + 3;
+      v11 = v9;
+      v9[1] = 0;
+      v9[2] = 0;
+      *v9 = GameData_1ff64e8;
+      GameRoutine_f5ffc0((__int64)(v9 + 3));
+      v13_.v13 = v10;
+      v13_.v14 = (__int64)v11;
+      GameRoutine_f60d00((__int64*)(a1 + 32), &v13_.v13);
+      v12 = v13_.v14;
+      if (v13_.v14 != 0 &&
+          atomic_fetch_add((atomic_ullong* volatile)(v13_.v14 + 8),
+                           0xFFFFFFFFFFFFFFFFLL) == 0) {
+        (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
+        std___1___shared_weak_count___release_weak(v12);
+      }
+      ++v8;
+    } while (v8 < (signed __int32)*(_DWORD*)(a1 + 88));
   }
 }
 

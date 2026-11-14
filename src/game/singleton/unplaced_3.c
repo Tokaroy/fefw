@@ -21,6 +21,33 @@ void __attribute__((noreturn)) GameRoutine_60a210();
 void __attribute__((noreturn)) GameRoutine_74e1f0();
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 void game_singleton_fe96c0(__int64 a1);
+__int64* GameRoutine_122f660(__int64* result);
+__int64 GameRoutine_123e340();
+__int64 GameRoutine_1a0b950(__int64, __int64, unsigned __int64);
+__int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
+__int64 GameRoutine_6c2b50(__int64);
+__int64 Impl_1226760();
+__int64 nn_mem_StandardAllocator_StandardAllocator_1a0ad40(__int64, __int64,
+                                                           unsigned __int64);
+extern __int64 (*GameData_201a728[])();
+extern __int64 (*Impl_Destructor_12268e0_ptr[])();
+extern __int64 (*Impl_Destructor_12ae0a0_ptr[])();
+extern __int64 (*game_map_history_anonymous_Impl_vtable_201ad80[])();
+extern __int64 (*game_map_history_anonymous_Impl_vtable_2020058[])();
+extern __int64* GameData_212c668[2];
+extern __int64* GameData_21309d0[4];
+extern __int64* GameData_2130ad8[7];
+extern __int64* game_map_history_g_record_allocators_ptr[2];
+extern __int64* game_map_history_g_record_region_ptr[3];
+extern __int64 GameData_22400f8;
+extern __int64 GameData_22407a8;
+extern __int64 GameData_22408e8;
+extern __int64 game_map_UnitFlags_instance_;
+extern char GameData_1a9f09e;
+extern int* game_map_history_g_record_alloc_retries_ptr[39];
+unsigned __int64 game_12a5280();
+void GameRoutine_60eb40(__int64*, unsigned __int64);
+void game_singleton_12262c0(__int64 a1);
 
 void game_singleton_fe96c0(__int64 a1)
 {
@@ -375,6 +402,246 @@ void game_singleton_fe96c0(__int64 a1)
           }
         }
       }
+    }
+  }
+}
+
+void game_singleton_12262c0(__int64 a1)
+{
+  __int64* v2;
+  __int64 v3;
+  _QWORD* v4;
+  __int64* v5;
+  __int64* v6;
+  __int64 v7;
+  __int64* v8;
+  __int64 v9;
+  char* v10;
+  __int64* v11;
+  __int64 v12;
+  __int64* v13;
+  __int64 v14;
+  void* v15;
+  _QWORD* v16;
+  __int64 v17;
+  __int64 v18;
+  __int64 v19;
+  __int64 v20;
+  __int64 v21;
+  _QWORD* v22;
+  __int64 v23;
+  _QWORD* v24;
+  __int64 v25;
+  __int64 v26;
+  unsigned __int64 v27;
+  __int64 v28;
+  __int64 v29;
+  struct {
+    _QWORD v30[4];
+    _QWORD* v31;
+  } v30_;
+  struct {
+    __int64 v32[4];
+    __int64* v33;
+  } v32_;
+
+  if (GameData_22400f8 == 0) {
+    GameData_22400f8 = a1;
+  }
+  *(_QWORD*)(a1 + 856) = 0;
+  *(_WORD*)(a1 + 8) = 0;
+  *(_BYTE*)(a1 + 10) = 0;
+  *(_DWORD*)(a1 + 12) = 0;
+  *(_QWORD*)a1 = Impl_Destructor_12268e0_ptr;
+  *(_WORD*)(a1 + 16) = 0;
+  *(_QWORD*)(a1 + 824) = 0;
+  *(_DWORD*)(a1 + 832) = 0;
+  *(_QWORD*)(a1 + 840) = 0;
+  *(_QWORD*)(a1 + 848) = 0;
+  *(_DWORD*)(a1 + 872) = 0;
+  *(_QWORD*)(a1 + 880) = 0;
+  *(_QWORD*)(a1 + 888) = &GameData_1a9f09e;
+  *(_DWORD*)(a1 + 863) = 0;
+  *(_QWORD*)(a1 + 896) = 0;
+  *(_QWORD*)(a1 + 904) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 912) = 0;
+  *(_QWORD*)(a1 + 920) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 928) = 0;
+  *(_QWORD*)(a1 + 936) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 1064) = 0;
+  *(_QWORD*)(a1 + 1056) = 0;
+  *(_QWORD*)(a1 + 1048) = 0;
+  *(_QWORD*)(a1 + 1040) = 0;
+  *(_WORD*)(a1 + 867) = -1;
+  *(_QWORD*)(a1 + 1032) = 0;
+  *(_QWORD*)(a1 + 1024) = 0;
+  *(_QWORD*)(a1 + 1016) = 0;
+  *(_QWORD*)(a1 + 1008) = 0;
+  *(_QWORD*)(a1 + 1000) = 0;
+  *(_QWORD*)(a1 + 992) = 0;
+  *(_QWORD*)(a1 + 984) = 0;
+  *(_QWORD*)(a1 + 976) = 0;
+  *(_QWORD*)(a1 + 968) = 0;
+  v2 = (__int64*)fw_memory_g_heap_manager_ptr;
+  v3 = *(_QWORD*)fw_memory_g_heap_manager_ptr;
+  *(_QWORD*)(a1 + 960) = 0;
+  *(_QWORD*)(a1 + 952) = 0;
+  v4 = (_QWORD*)fw_memory_HeapManager_Allocate(v3, 491520, 16, 0);
+  GameRoutine_1a0ba50((__int64)(v4 + 4), 0, 0x77FE0u);
+  *(_QWORD*)(a1 + 952) = v4;
+  *(_QWORD*)(a1 + 960) = 491520;
+  *v4 = 0;
+  v4[1] = 0;
+  v4[2] = 0;
+  v4[3] = 0;
+  v5 = GameData_212c668[0] + 2;
+  *(_WORD*)(a1 + 1072) = 0;
+  *(_DWORD*)(a1 + 1088) = 0;
+  *(_QWORD*)(a1 + 1096) = 0;
+  *(_QWORD*)(a1 + 1104) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 1112) = 0;
+  *(_QWORD*)(a1 + 1120) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 1128) = 0;
+  *(_QWORD*)(a1 + 1136) = &GameData_1a9f09e;
+  *(_QWORD*)(a1 + 944) = v5;
+  *(_DWORD*)(a1 + 1080) = -16777216;
+  *(_BYTE*)(a1 + 1084) = -1;
+  v6 = GameData_2130ad8[0];
+  *(_QWORD*)(a1 + 1144) = 0;
+  *(_QWORD*)(a1 + 1152) = &GameData_1a9f09e;
+  if (*v6 == 0) {
+    v7 = fw_memory_HeapManager_Allocate(*v2, 2224, 16, 0);
+    GameRoutine_6c2b50(v7);
+    *v6 = v7;
+  }
+  game_12a5280();
+  v8 = GameData_21309d0[0];
+  if (*GameData_21309d0[0] == 0) {
+    v9 = fw_memory_HeapManager_Allocate(*v2, 3145728, 4096, 0);
+    *v8 = v9;
+    v10 = (char*)v9;
+    v11 = game_map_history_g_record_region_ptr[0];
+    *game_map_history_g_record_region_ptr[0] = v9;
+    v12 = fw_memory_HeapManager_Allocate(*v2, 72, 16, 0);
+    nn_mem_StandardAllocator_StandardAllocator_1a0ad40(v12, (__int64)v10,
+                                                       0x200000u);
+    v10 += 0x200000;
+    v13 = game_map_history_g_record_allocators_ptr[0];
+    v14 = *v2;
+    *(_UNKNOWN**)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v11) = v10;
+    *v13 = v12;
+    v15 = (void*)fw_memory_HeapManager_Allocate(v14, 72, 16, 0);
+    nn_mem_StandardAllocator_StandardAllocator_1a0ad40((__int64)v15,
+                                                       (__int64)v10, 0x100000u);
+    *(_UNKNOWN**)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v13) = v15;
+  }
+  v16 = (_QWORD*)fw_memory_HeapManager_Allocate(*v2, 16, 16, 0);
+  *v16 = Impl_Destructor_12ae0a0_ptr;
+  v16[1] = 0;
+  GameData_22408e8 = (__int64)v16;
+  v17 = fw_memory_HeapManager_Allocate(*v2, 72, 16, 0);
+  v18 = v17;
+  if (GameData_22407a8 == 0) {
+    GameData_22407a8 = v17;
+  }
+  v19 = *v2;
+  *(_QWORD*)(v18 + 40) = 0;
+  *(_QWORD*)(v18 + 48) = 0;
+  *(_QWORD*)(v18 + 56) = 0;
+  *(_QWORD*)v18 = game_map_history_anonymous_Impl_vtable_2020058;
+  *(_DWORD*)(v18 + 64) = 1065353216;
+  *(_QWORD*)(v18 + 32) = 0;
+  v20 = fw_memory_HeapManager_Allocate(v19, 24576, 16, 0);
+  *(_QWORD*)(v18 + 8) = v20;
+  *(_QWORD*)(v18 + 16) = v20;
+  *(_QWORD*)(v18 + 24) = v20 + 24576;
+  GameRoutine_60eb40((__int64*)(v18 + 32), 0x400u);
+  v21 = *v2;
+  GameData_22407a8 = v18;
+  v22 = (_QWORD*)fw_memory_HeapManager_Allocate(v21, 264, 16, 0);
+  v22[2] = 0;
+  v22[3] = 0;
+  v22[4] = 0;
+  v22[5] = 0;
+  v22[6] = 0;
+  v22[7] = 0;
+  v22[8] = 0;
+  v22[9] = 0;
+  v22[10] = 0;
+  v22[11] = 0;
+  v22[12] = 0;
+  v22[13] = 0;
+  v22[14] = 0;
+  v22[15] = 0;
+  v22[16] = 0;
+  v22[17] = 0;
+  v22[18] = 0;
+  v22[19] = 0;
+  v22[20] = 0;
+  v22[21] = 0;
+  *v22 = game_map_history_anonymous_Impl_vtable_201ad80;
+  v22[1] = 0;
+  v22[22] = 0;
+  v22[23] = 0;
+  v22[24] = 0;
+  v22[25] = 0;
+  v22[26] = 0;
+  v22[27] = 0;
+  v22[28] = 0;
+  v22[29] = 0;
+  v22[30] = 0;
+  v22[31] = 0;
+  v22[32] = 0;
+  game_map_UnitFlags_instance_ = (__int64)v22;
+  GameRoutine_123e340();
+  v30_.v30[2] = 0;
+  v30_.v30[3] = a1;
+  v32_.v32[2] = 0;
+  v30_.v30[0] = GameData_201a728;
+  v30_.v30[1] = Impl_1226760;
+  v30_.v31 = v30_.v30;
+  v32_.v32[3] = a1;
+  v32_.v33 = v32_.v32;
+  v32_.v32[0] = (__int64)GameData_201a728;
+  v32_.v32[1] = (__int64)Impl_1226760;
+  GameRoutine_122f660(v32_.v32);
+  if (v32_.v33 == v32_.v32) {
+    v23 = 32;
+  }
+  else {
+    if (v32_.v33 == nullptr) {
+      goto LABEL_14;
+    }
+    v23 = 40;
+  }
+  (*(void (**)(__int64))(*v32_.v33 + v23))((__int64)v32_.v33);
+LABEL_14:
+  v24 = v30_.v31;
+  *game_map_history_g_record_alloc_retries_ptr[0] = 100;
+  if (v24 == v30_.v30) {
+    v25 = 32;
+    goto LABEL_18;
+  }
+  if (v24 != nullptr) {
+    v25 = 40;
+  LABEL_18:
+    (*(void (**)(__int64))(*v24 + v25))((__int64)v24);
+  }
+  GameRoutine_1a0ba50(a1 + 24, 0, 0x320u);
+  v26 = *(_QWORD*)(a1 + 840);
+  if ((unsigned __int64)(*(_QWORD*)(a1 + 856) - v26) <= 0xFF) {
+    v27 = *(_QWORD*)(a1 + 848) - v26;
+    v28 = fw_memory_HeapManager_Allocate(*v2, 256, 16, 0);
+    GameRoutine_1a0b950(v28, v26, v27);
+    *(_QWORD*)(a1 + 840) = v28;
+    *(_QWORD*)(a1 + 848) = v28 + v27;
+    *(_QWORD*)(a1 + 856) = v28 + 256;
+    if (v26 != 0) {
+      v29 = 128;
+      if (*(_QWORD*)(*v2 + 200) == 0) {
+        v29 = 56;
+      }
+      nn_mem_StandardAllocator_Free(*v2 + v29, v26);
     }
   }
 }

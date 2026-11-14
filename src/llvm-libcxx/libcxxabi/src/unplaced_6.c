@@ -47,6 +47,36 @@ llvm_libcxx_libcxxabi_src_84bc7c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                                  __int64 a9, char a10);
 void __attribute__((noreturn)) llvm_libcxx_libcxxabi_src_84c1f0(__int64 a1,
                                                                 ...);
+__int64 __cxa_allocate_exception_plt(_QWORD);
+__int64 __cxa_begin_catch_plt(_QWORD);
+__int64 __cxa_end_catch_plt(_QWORD);
+__int64 __cxa_get_globals_fast_plt(_QWORD);
+__int64 __cxa_rethrow_plt(_QWORD);
+__int64 __cxa_throw_plt(_QWORD, _QWORD, _QWORD);
+__int64 __cxxabiv1___getExceptionClass(_QWORD);
+__int64 std_bad_exception_Destroy_bad_exception_plt(_QWORD);
+bool __cxxabiv1___isOurExceptionClass(_QWORD*);
+bool __cxxabiv1_exception_spec_can_catch(__int64, __int64, unsigned __int8,
+                                         __int64, unsigned __int16*);
+extern __int64 SdkData_e89810;
+extern __int64 SdkData_e89828;
+extern __int64 SdkData_e89830;
+unsigned __int64 __cxxabiv1_readEncodedPointer(unsigned __int16**,
+                                               unsigned __int8);
+void __attribute__((noreturn)) std_7d57d0();
+void __attribute__((noreturn)) std___terminate(void (*)(void));
+__int64 llvm_libcxx_libcxxabi_src_84b480(unsigned __int64 a1,
+                                         unsigned __int64 a2, __int64 a3,
+                                         void (*a4)(__int64), __int64 a5,
+                                         __int64 (*a6)(__int64));
+__int64 llvm_libcxx_libcxxabi_src_84b640(unsigned __int64 a1,
+                                         unsigned __int64 a2, __int64 a3,
+                                         void (*a4)(__int64), __int64 a5,
+                                         __int64 (*a6)(unsigned __int64));
+void __attribute__((noreturn))
+llvm_libcxx_libcxxabi_src_84f214(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
+                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
+                                 __int64 a9, unsigned __int16* a10);
 
 __int64 llvm_libcxx_libcxxabi_src_83c500(unsigned __int16** a1)
 {
@@ -1024,6 +1054,52 @@ LABEL_33:
   return result;
 }
 
+__int64 llvm_libcxx_libcxxabi_src_84b480(unsigned __int64 a1,
+                                         unsigned __int64 a2, __int64 a3,
+                                         void (*a4)(__int64), __int64 a5,
+                                         __int64 (*a6)(__int64))
+{
+  bool v9;
+  __int64 v10;
+  __int64 v12;
+  __int64 v13;
+  __int64 v14;
+  unsigned __int64 v16;
+
+  if (!(sizeof((a1) * (a2)) > 4
+            ? ((unsigned __int128)(unsigned long long)(a1) *
+               (unsigned long long)(a2)) >>
+                      64 ==
+                  0
+            : ((unsigned long long)(unsigned int)(a1) * (unsigned int)(a2)) >>
+                      32 ==
+                  0) ||
+      (v9 = __CFADD__(a1 * a2, a3), v10 = a1 * a2 + a3, v9)) {
+    std_7d57d0();
+  }
+  v12 = a6(v10);
+  if (v12 == 0) {
+    return 0;
+  }
+  v13 = v12;
+  if (a3 != 0) {
+    v13 = v12 + a3;
+    *(_QWORD*)(v12 + a3 - 8) = a1;
+  }
+  if (a4 != nullptr) {
+    v16 = 0;
+    if (a1 != 0) {
+      v14 = v13;
+      do {
+        a4(v14);
+        v14 += a2;
+        ++v16;
+      } while (v16 < a1);
+    }
+  }
+  return v13;
+}
+
 void __attribute__((noreturn))
 
 llvm_libcxx_libcxxabi_src_84b56c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
@@ -1037,6 +1113,50 @@ llvm_libcxx_libcxxabi_src_84b56c(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   v9(v10);
   _Unwind_Resume_plt(a1);
   SdkRoutine_7cd620();
+}
+
+__int64 llvm_libcxx_libcxxabi_src_84b640(unsigned __int64 a1,
+                                         unsigned __int64 a2, __int64 a3,
+                                         void (*a4)(__int64), __int64 a5,
+                                         __int64 (*a6)(unsigned __int64))
+{
+  __int64 v10;
+  __int64 v11;
+  __int64 v12;
+  unsigned __int64 v14;
+
+  if (!(sizeof((a1) * (a2)) > 4
+            ? ((unsigned __int128)(unsigned long long)(a1) *
+               (unsigned long long)(a2)) >>
+                      64 ==
+                  0
+            : ((unsigned long long)(unsigned int)(a1) * (unsigned int)(a2)) >>
+                      32 ==
+                  0) ||
+      __CFADD__(a1 * a2, a3)) {
+    std_7d57d0();
+  }
+  v10 = a6(a1 * a2 + a3);
+  if (v10 == 0) {
+    return 0;
+  }
+  v11 = v10;
+  if (a3 != 0) {
+    v11 = v10 + a3;
+    *(_QWORD*)(v10 + a3 - 8) = a1;
+  }
+  if (a4 != nullptr) {
+    v14 = 0;
+    if (a1 != 0) {
+      v12 = v11;
+      do {
+        a4(v12);
+        v12 += a2;
+        ++v14;
+      } while (v14 < a1);
+    }
+  }
+  return v11;
 }
 
 void __attribute__((noreturn))
@@ -1103,6 +1223,103 @@ void __attribute__((noreturn)) llvm_libcxx_libcxxabi_src_84c1f0(__int64 a1, ...)
   __builtin_va_start(va1, a1);
   ((void(__attribute__((noreturn))*)(__int64, void*))SdkRoutine_aec10)(
       a1, (__int64)&va);
+}
+
+void __attribute__((noreturn))
+
+llvm_libcxx_libcxxabi_src_84f214(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
+                                 __int64 a5, __int64 a6, __int64 a7, __int64 a8,
+                                 __int64 a9, unsigned __int16* a10)
+{
+  void (*v10)(void);
+  __int64 v13;
+  char v14;
+  __int64 v15;
+  __int64 v16;
+  __int64 v17;
+  unsigned __int8 v18;
+  unsigned __int64 v19;
+  int v20;
+  unsigned __int16* v21;
+  __int64 v22;
+  __int64 v23;
+  char v24;
+  unsigned __int64 v25;
+  _QWORD* v26;
+  __int64 v27;
+  _QWORD* v28;
+  __int64 v29;
+  unsigned __int16* v30;
+  _BOOL8 v31;
+  __int64 v32;
+  _BOOL8 v33;
+  _QWORD* v34;
+  __int64 v35;
+  __int64 v36;
+  __int64 v37;
+  __int64 v38;
+
+  v17 = __cxa_begin_catch_plt(a1);
+  if ((v14 & 1) != 0) {
+    v18 = *(_BYTE*)v15;
+    a10 = (unsigned __int16*)(v15 + 1);
+    v19 = __cxxabiv1_readEncodedPointer(&a10, v18);
+    v20 = *(unsigned __int8*)a10;
+    if (v20 == 255) {
+      goto LABEL_3;
+    }
+    v21 = (unsigned __int16*)((char*)a10 + 1);
+    v22 = 0;
+    v23 = 0;
+    do {
+      v24 = *(_BYTE*)v21;
+      v21 = (unsigned __int16*)((char*)v21 + 1);
+      v25 = (unsigned __int64)(v24 & 0x7F) << v22;
+      v22 += 7;
+      v23 |= v25;
+    } while (v24 < 0);
+    a10 = v21;
+    v26 = (_QWORD*)__cxa_get_globals_fast_plt(v19);
+    v27 = *v26;
+    v28 = v26;
+    if (*v26 == 0) {
+    LABEL_3:
+      std___terminate(v10);
+    }
+    if (__cxxabiv1___isOurExceptionClass((_QWORD*)(v27 + 96)) && v27 != v16) {
+      v29 = *(_QWORD*)(v27 + 16);
+      v30 = __cxxabiv1___getExceptionClass(v27 + 96) == 0x434C4E47432B2B01LL
+                ? *(unsigned __int16**)(v27 + 8)
+                : (unsigned __int16*)(v27 + 128);
+      v31 = __cxxabiv1_exception_spec_can_catch(v13, (__int64)v21 + v23, v20,
+                                                v29, v30);
+      if (!v31) {
+        *(_DWORD*)(v27 + 56) = -*(_DWORD*)(v27 + 56);
+        ++*((_DWORD*)v28 + 2);
+        v35 = __cxa_end_catch_plt(v31);
+        __cxa_end_catch_plt(v35);
+        v36 = __cxa_begin_catch_plt(v27 + 96);
+        v37 = __cxa_rethrow_plt(v36);
+        v38 = std_bad_exception_Destroy_bad_exception_plt(&a9);
+        __cxa_end_catch_plt(v38);
+        _Unwind_Resume_plt(v37);
+        SdkRoutine_7cd620();
+      }
+    }
+    v32 = SdkData_e89828;
+    a9 = SdkData_e89828 + 16;
+    v33 = __cxxabiv1_exception_spec_can_catch(
+        v13, (__int64)v21 + v23, v20, SdkData_e89830, (unsigned __int16*)&a9);
+    if (!v33) {
+      __cxa_end_catch_plt(v33);
+      v34 = (_QWORD*)__cxa_allocate_exception_plt(8);
+      *v34 = v32 + 16;
+      __cxa_throw_plt(v34, SdkData_e89830, SdkData_e89810);
+    }
+    v17 = std_bad_exception_Destroy_bad_exception_plt(&a9);
+  }
+  __cxa_end_catch_plt(v17);
+  std___terminate(v10);
 }
 
 #pragma GCC visibility pop

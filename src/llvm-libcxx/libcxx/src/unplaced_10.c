@@ -143,6 +143,8 @@ __int64 llvm_libcxx_libcxx_src_83027c(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a7, __int64 a8, __int64 a9,
                                       char a10);
 __int64 llvm_libcxx_libcxx_src_83095c(__int64 a1);
+void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81eaf8();
+void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81eb10();
 
 __int64 llvm_libcxx_libcxx_src_801910(__int64 a1, __int64 a2, __int64 a3,
                                       __int64 a4, __int64 a5, __int64 a6,
@@ -773,6 +775,22 @@ void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81e83c(__int64 a1)
   SdkRoutine_82dd20((__int64*)(v1 - 8));
   _Unwind_Resume_plt(a1);
   __udf(0);
+}
+
+void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81eaf8()
+{
+  __int64 v0;
+
+  SdkRoutine_82dd20((__int64*)(v0 + 24));
+  SdkRoutine_7cd620();
+}
+
+void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81eb10()
+{
+  __int64 v0;
+
+  SdkRoutine_82dd20((__int64*)(v0 + 24));
+  SdkRoutine_7cd620();
 }
 
 void __attribute__((noreturn)) llvm_libcxx_libcxx_src_81ec28(__int64 a1)

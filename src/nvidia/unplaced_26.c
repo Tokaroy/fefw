@@ -116,6 +116,8 @@ unsigned __int64 nvidia_e0f88(__int64 a1);
 char* nvidia_e1adc(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                    __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10);
 void __attribute__((noreturn)) nvidia_e21bc(__int64 a1);
+void __attribute__((noreturn)) nvidia_dc738(__int64 a1);
+void __attribute__((noreturn)) nvidia_dc750(__int64 a1);
 void __attribute__((noreturn)) nvidia_b3380() { NgxData_954740(); }
 
 void __attribute__((noreturn)) nvidia_bbecc(__int64 a1, __int64 a2, __int64 a3,
@@ -2091,6 +2093,22 @@ void __attribute__((noreturn)) nvidia_dc47c(__int64 a1)
   NgxRoutine_dfc20((__int64*)(v1 - 8));
   _Unwind_Resume_plt(a1);
   __udf(0);
+}
+
+void __attribute__((noreturn)) nvidia_dc738(__int64 a1)
+{
+  __int64 v1;
+
+  NgxRoutine_dfc20((__int64*)(v1 + 24));
+  NgxRoutine_baf40(a1);
+}
+
+void __attribute__((noreturn)) nvidia_dc750(__int64 a1)
+{
+  __int64 v1;
+
+  NgxRoutine_dfc20((__int64*)(v1 + 24));
+  NgxRoutine_baf40(a1);
 }
 
 void __attribute__((noreturn)) nvidia_dc868(__int64 a1)

@@ -23,6 +23,19 @@ void __cxa_guard_release(__int64);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 __attribute__((swiftcall)) void game_facility_140d160(PSEUDO_X8 x8_,
                                                       __int64 a1);
+__int64 GameRoutine_1a0b940(__int64, __int64, unsigned __int64);
+__int64 LayoutAccessor_155ea30(__int64*);
+__int64 Message_16f9b50(__int64);
+__int64 snd_Fade_Destroy_Fade(_QWORD*);
+__int64 snd_play_ff2d0(__int64, __int64, __int64, unsigned int, unsigned int,
+                       int, float, float);
+extern _BYTE GameData_225d6e8[12];
+extern __int64 fw_memory_g_heap_manager;
+extern __int64 game_gameui_Footer_instance_;
+extern char* GameData_2066090;
+unsigned __int64 GameRoutine_1a09c70(const char*);
+void snd_Fade_Fade_10c830(__int64, float);
+__int64 game_facility_1662370(__int64 a1);
 
 __attribute__((swiftcall)) void game_facility_140d160(PSEUDO_X8 x8_, __int64 a1)
 {
@@ -311,6 +324,99 @@ LABEL_58:
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v41,
                                   (__int64)v48_.v49);
   }
+}
+
+__int64 game_facility_1662370(__int64 a1)
+{
+  __int64 v2;
+  char* v3;
+  __int64 result;
+  char* v5;
+  unsigned __int64 v6;
+  unsigned __int64 v7;
+  char* v8;
+  __int64 v9;
+  char* v10;
+  __int64 v11;
+  __int64 v12;
+  __int64 v13;
+  struct {
+    _QWORD v14[2];
+    char* v15;
+  } v14_;
+
+  if (game_gameui_Footer_instance_ != 0 &&
+      (LayoutAccessor_155ea30((__int64*)(game_gameui_Footer_instance_ + 168)) &
+       1) != 0) {
+    GameData_225d6e8[*(unsigned __int8*)(a1 + 1064)] = 1;
+    snd_Fade_Fade_10c830((__int64)v14_.v14, 0x0.0p+0f);
+    snd_play_ff2d0((__int64)"SE_SYS_Decide_Obelisk_Description",
+                   (__int64)"SE_SYS_Decide_Obelisk_Description",
+                   (__int64)v14_.v14, 0, 0x10001u, 0, 0x0.0p+0f,
+                   0x1.0000000000000p+0f);
+    snd_Fade_Destroy_Fade(v14_.v14);
+    v2 = *(unsigned __int8*)(a1 + 1064);
+    if (v2 == 10) {
+      v3 = nullptr;
+    }
+    else {
+      v3 = (&GameData_2066090)[v2];
+    }
+    v5 = game_util_Format("MID_Obelisk_HowToPlay_%s", v3);
+    v6 = GameRoutine_1a09c70(v5);
+    if (v6 >= 0xFFFFFFFFFFFFFFF7LL) {
+      String_60a1d0();
+    }
+    v7 = v6;
+    if (v6 >= 0x17) {
+      if ((v6 | 7) == 0x17) {
+        v9 = 26;
+      }
+      else {
+        v9 = (v6 | 7) + 1;
+      }
+      v8 = (const char*)fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager,
+                                                       v9, 16, 0);
+      v14_.v14[1] = v7;
+      v14_.v15 = v8;
+      v14_.v14[0] = v9 | 1;
+    }
+    else {
+      LOBYTE(v14_.v14[0]) = 2 * v6;
+      v8 = (char*)v14_.v14 + 1;
+      if (v6 == 0) {
+        goto LABEL_17;
+      }
+    }
+    GameRoutine_1a0b940((__int64)v8, (__int64)v5, v7);
+  LABEL_17:
+    v8[v7] = 0;
+    if ((v14_.v14[0] & 1) != 0) {
+      v10 = v14_.v15;
+    }
+    else {
+      v10 = (char*)v14_.v14 + 1;
+    }
+    GameRoutine_1a09c70(v10);
+    v11 = Message_16f9b50(a1);
+    if ((v14_.v14[0] & 1) != 0 && v14_.v15 != nullptr) {
+      v12 = v11;
+      v13 = 128;
+      if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
+        v13 = 56;
+      }
+      nn_mem_StandardAllocator_Free(
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v13, (__int64)v14_.v15);
+      v11 = v12;
+    }
+    *(_BYTE*)(v11 + 332) = 1;
+    return 13;
+  }
+  result = *(_QWORD*)(a1 + 336);
+  if (result != 0) {
+    return (*(__int64 (**)(__int64))(*(_QWORD*)result + 304LL))(result);
+  }
+  return result;
 }
 
 #pragma GCC visibility pop

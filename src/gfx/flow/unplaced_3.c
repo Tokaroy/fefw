@@ -26,6 +26,7 @@ float log2f(float);
 float task_649cd0(__int64, float32x4_t*);
 float task_649d50(__int64, float32x4_t*);
 __int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3);
+__int64 gfx_flow_b68c90(__int64 a1, __int64 a2);
 
 __int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3)
 {
@@ -1746,6 +1747,226 @@ __int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3)
       v128 = COERCE_AS(__typeof__(v128), PSEUDO_REGISTER(__n128, "v2", "=w")),
       v132 = COERCE_AS(__typeof__(v132), PSEUDO_REGISTER(__n128, "v3", "=w"));
   return (*(__int64 (**)(__int64))(*(_QWORD*)v237 + 64LL))(v237);
+}
+
+__int64 gfx_flow_b68c90(__int64 a1, __int64 a2)
+{
+  __int64 v3;
+  _BYTE* v4;
+  _BYTE* v5;
+  int* v6;
+  int v7;
+  int v8;
+  int v9;
+  bool v10;
+  int v11;
+  __int64 v12;
+  __int128 v13;
+  __int64 v14;
+  __int64 v15;
+  __int64 v16;
+  __int64 v17;
+  float v18;
+  __int64 v19;
+  __int128 v20;
+  float v21;
+  __int64 v22;
+  __int64 v23;
+  _DWORD* v24;
+  _DWORD* v25;
+  __int64 v26;
+  float v27;
+  __int64 v28;
+  __int128 v29;
+  int v30;
+  float v31;
+  float v32;
+  int v33;
+  __int64 v34;
+  int v35;
+  __int64 v36;
+  int v37;
+  __int64 v38;
+  int v39;
+  __int64 v40;
+  __int64 v41;
+  __int64 v42;
+  _DWORD* v43;
+  __int64 v44;
+  float v45;
+  __int64 v46;
+  __int64 v47;
+  unsigned __int64 v48;
+  __int128 v49;
+  __int128 v50;
+  __int128 v52;
+  __int128 v53;
+  int v54;
+  __int64 v55;
+  __int128 v56;
+  struct {
+    float32x4_t v57;
+    char gap80_[8];
+    unsigned __int64 v58;
+  } v57_;
+
+  v3 = *(_QWORD*)a1;
+  v5 = *(_BYTE**)(a2 + 8);
+  v4 = *(_BYTE**)(a2 + 16);
+  v6 = *(int**)(v3 + 16616);
+  if (v6 == nullptr) {
+    v6 = *(int**)(v3 + 16632);
+  }
+  v7 = *v6;
+  v8 = v6[1];
+  v9 = *(_DWORD*)(a1 + 104);
+  v10 = v9 < -1;
+  v54 = v7;
+  v11 = ((_BYTE)v9 + 1) & 1;
+  if (v10) {
+    v11 = -v11;
+  }
+  *(_DWORD*)(a1 + 104) = v11;
+  v12 = 320;
+  if (v5[272] != 0) {
+    v12 = 256;
+  }
+  v57_.v57 = *(float32x4_t*)&v5[v12];
+  *(float*)&v13 = task_649cd0(v3, &v57_.v57);
+  v56 = v13;
+  v14 = 120;
+  if (v5[90] != 0) {
+    v14 = 89;
+  }
+  if ((v5[v14] & 1) != 0) {
+    v15 = 408;
+    if (v5[376] != 0) {
+      v15 = 372;
+    }
+    v57_.v58 = (unsigned __int64)*(unsigned int*)&v5[v15] << 32;
+  }
+  else {
+    v57_.v58 = 0;
+  }
+  v16 = *(_QWORD*)a1;
+  v17 = 568;
+  if (v5[536] != 0) {
+    v17 = 532;
+  }
+  v18 = *(float*)&v5[v17];
+  if (v5[616] != 0) {
+    v19 = 612;
+  }
+  else {
+    v19 = 648;
+  }
+  *(float*)&v20 = v18 + -0x1.0000000000000p-1f;
+  v21 = *(float*)&v5[v19] + -0x1.0000000000000p-1f;
+  if (v5[696] != 0) {
+    v22 = 692;
+  }
+  else {
+    v22 = 728;
+  }
+  v23 = 808;
+  v24 = &v5[v22];
+  if (v5[776] != 0) {
+    v23 = 772;
+  }
+  v25 = &v5[v23];
+  if (v5[456] != 0) {
+    v26 = 452;
+  }
+  else {
+    v26 = 488;
+  }
+  v27 = *(float*)&v5[v26];
+  DWORD2(v20) = *(_DWORD*)v24;
+  v28 = 240;
+  if (v4[192] != 0) {
+    v28 = 176;
+  }
+  *((float*)&v20 + 1) = -v21;
+  DWORDn(v20, sizeof(v20) / 4 - 1) = *(_DWORD*)v25;
+  v53 = v20;
+  v57_.v57 = *(float32x4_t*)&v4[v28];
+  *(float*)&v29 = task_649cd0(v16, &v57_.v57);
+  v30 = *(_DWORD*)(a1 + 104);
+  v52 = v29;
+  v31 = (float)v8;
+  v32 = (float)v54;
+  v10 = v30 < -1;
+  v33 = ((_BYTE)v30 + 1) & 1;
+  if (v10) {
+    v33 = -v33;
+  }
+  v34 = 328;
+  if (v4[296] != 0) {
+    v34 = 292;
+  }
+  v35 = *(_DWORD*)&v4[v34];
+  v36 = 408;
+  if (v4[376] != 0) {
+    v36 = 372;
+  }
+  v37 = *(_DWORD*)&v4[v36];
+  if (v4[456] != 0) {
+    v38 = 452;
+  }
+  else {
+    v38 = 488;
+  }
+  v39 = *(_DWORD*)&v4[v38];
+  v40 = 532;
+  if (v4[536] == 0) {
+    v40 = 568;
+  }
+  {
+    __typeof__(v41) z_ = (__typeof__(v41)){0};
+    LODWORD(z_) = *(_DWORD*)&v4[v40];
+    v41 = z_;
+  }
+  if (v4[616] != 0) {
+    v42 = 612;
+  }
+  else {
+    v42 = 648;
+  }
+  v43 = &v4[v42];
+  if (v4[696] != 0) {
+    v44 = 692;
+  }
+  else {
+    v44 = 728;
+  }
+  v45 = *(float*)&v4[v44];
+  DWORDn(v41, sizeof(v41) / 4 - 1) = *(_DWORD*)v43;
+  *(_DWORD*)(a1 + 104) = v33;
+  v46 = *(_QWORD*)(a1 + 8LL * v33 + 88);
+  v55 = v41;
+  v47 = (*(__int64 (**)(__int64))(*(_QWORD*)v46 + 56LL))(v46);
+  *(float*)(v47 + 32) = v32;
+  *(float*)(v47 + 36) = v31;
+  *(_DWORD*)(v47 + 88) = v37;
+  *(_DWORD*)(v47 + 92) = v39;
+  v48 = v57_.v58;
+  *(_QWORD*)&v49 = v56;
+  *(_QWORD*)(v47 + 64) = 0x3F8000003F800000LL;
+  *((_QWORD*)&v49 + 1) = v48 | DWORD2(v56);
+  *(_OWORD*)v47 = v49;
+  *(_OWORD*)(v47 + 16) = v53;
+  *(float*)(v47 + 40) = 0x1.0000000000000p+0f / v32;
+  *(float*)(v47 + 44) = 0x1.0000000000000p+0f / v31;
+  v50 = v52;
+  DWORDn(v50, sizeof(v50) / 4 - 1) = 0;
+  *(float*)(v47 + 80) = v27 * 0x1.1df46a0000000p-6f;
+  *(_DWORD*)(v47 + 84) = v35;
+  *(_OWORD*)(v47 + 48) = v50;
+  *(_QWORD*)(v47 + 72) = v55;
+  *(float*)(v47 + 96) =
+      (float)((float)((float)(v32 / v31) + -0x1.0000000000000p+0f) * v45) +
+      0x1.0000000000000p+0f;
+  return (*(__int64 (**)(__int64))(*(_QWORD*)v46 + 64LL))(v46);
 }
 
 #pragma GCC visibility pop

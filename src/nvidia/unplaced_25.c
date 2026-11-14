@@ -87,6 +87,15 @@ __int64 nvidia_60a6e0(_DWORD* a1, int a2, unsigned int a3, unsigned int a4,
 void nvidia_6225f0(__int64 a1, float a2, float a3, float a4);
 __int64 nvidia_62a540(__int64 a1, __int64 a2, __int64 a3, __int64* a4);
 __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4);
+__int64 SdkRoutine_62d0e0(_QWORD);
+__int64 gettimeofday_plt(_QWORD, _QWORD);
+__int64 nn_sf_hipc_client_DuplicateSessionEx_plt(_QWORD, _QWORD, _QWORD);
+__int64 nvidia_644da0(unsigned int, int, __int64, __int64);
+extern _BYTE* SdkData_e899e8;
+extern __int64 (*nn_aoc_detail_AddProxyReference_ptr_e71998[])();
+__attribute__((swiftcall)) void nvidia_5f90c0(PSEUDO_X8 x8_, __int64** a1);
+__int64 nvidia_62ea10(__int64 a1, __int64 a2, char a3);
+__int64 nvidia_637e60(__int64 a1, int* a2, __int64 a3, unsigned int a4);
 
 __int64 nvidia_5ef040(char* a1, __int64 a2, const char* a3)
 {
@@ -240,6 +249,57 @@ __attribute__((swiftcall)) void nvidia_5f9020(PSEUDO_X8 x8_, int* a1)
   *a1 = 0;
   {
     result;
+    return;
+  }
+}
+
+__attribute__((swiftcall)) void nvidia_5f90c0(PSEUDO_X8 x8_, __int64** a1)
+{
+  __int64* a2 = (__int64*)PSEUDO_X8_VALUE(x8_);
+  __int64* v2;
+  void (**v4)(__int64*);
+  __int64 (***v5)(_QWORD);
+  __int64 v6;
+  int v7;
+  int v8;
+  __int64 v9;
+  __int64 v10;
+  int v12;
+  int v13;
+  int v14;
+
+  v2 = *a1;
+  *a2 = 0;
+  if (v2 != nullptr) {
+    (*(void (**)(__int64*))*v2)(v2);
+  }
+  v4 = (void (**)(__int64*))*v2;
+  v14 = 0;
+  v5 = (__int64 (***)(_QWORD))((__int64 (*)(__int64*))v4[2])(v2);
+  v6 = (**v5)(v5);
+  v7 = nn_sf_hipc_client_DuplicateSessionEx_plt(&v14, *(unsigned int*)(v6 + 4),
+                                                1);
+  if (v7 != 0) {
+    v12 = v7;
+    (*(void (**)(__int64*))(*v2 + 8))(v2);
+    v13 = v12;
+    nn_diag_detail_AbortImpl_plt_858db0(&v13);
+  }
+  v8 = v14;
+  nn_os_LockMutex_plt(&SdkData_103b108);
+  v9 = nn_lmem_AllocateFromExpHeap_plt_859a90(SdkData_103b100, 32);
+  nn_os_UnlockMutex_plt(&SdkData_103b108);
+  if (v9 != 0) {
+    *(_DWORD*)(v9 + 24) = 1;
+    *(_DWORD*)(v9 + 8) = 1;
+    *(_DWORD*)(v9 + 12) = v8;
+    *(_QWORD*)v9 = nn_aoc_detail_AddProxyReference_ptr_e71998;
+    *(_QWORD*)(v9 + 16) = &SdkData_e71a18;
+  }
+  v10 = *v2;
+  *a2 = v9;
+  {
+    (*(__int64 (**)(__int64*))(v10 + 8))(v2);
     return;
   }
 }
@@ -1650,6 +1710,106 @@ LABEL_17:
   return v24;
 }
 
+__int64 nvidia_62ea10(__int64 a1, __int64 a2, char a3)
+{
+  __int64 v6;
+  unsigned __int64 v7;
+  __int64 v8;
+  __int64 v9;
+  __int64 v10;
+  unsigned __int64 v11;
+  __int64 v12;
+  unsigned int v14;
+  int v15;
+
+  v6 = SdkRoutine_62d0e0(*(_QWORD*)(a1 + 8));
+  {
+    v7 = *(unsigned int*)(a1 + 24);
+    __asm__ volatile("" ::"r"(v7));
+  }
+  LODWORD(v8) = 11;
+  if (((unsigned int)v7 & ((int)v7 - 1)) == 0) {
+    if ((a3 & 1) != 0) {
+      v9 = (v7 - 1) & a2;
+      if (v9 != 0) {
+        LODWORD(v8) = 11;
+      }
+      else {
+        LODWORD(v8) = 0;
+      }
+      if ((_DWORD)v7 != 0 && (v10 = *(_QWORD*)(a1 + 32)) != 0 &&
+          (v11 = v10 - 1, (sizeof((v7) * (v11)) > 4
+                               ? ((unsigned __int128)(unsigned long long)(v7) *
+                                  (unsigned long long)(v11)) >>
+                                         64 ==
+                                     0
+                               : ((unsigned long long)(unsigned int)(v7) *
+                                  (unsigned int)(v11)) >>
+                                         32 ==
+                                     0))) {
+        if (__CFADD__(a2, v7 * v11 + v7 - 1) && v9 == 0) {
+          LODWORD(v8) = 17;
+        }
+      }
+      else if (v9 != 0) {
+        LODWORD(v8) = 11;
+      }
+      else {
+        LODWORD(v8) = 17;
+      }
+    }
+    else if ((_DWORD)v7 != 0) {
+      {
+        v12 = *(_QWORD*)(a1 + 32);
+        __asm__ volatile("" ::"r"(v12));
+      }
+      if (v12 != 0) {
+        {
+          v8 = (*(unsigned int*)(a1 + 24) *
+                (unsigned __int128)(unsigned __int64)(v12 - 1)) >>
+               64;
+          __asm__ volatile("" ::"r"(v8));
+        }
+        if (v8 != 0) {
+          LODWORD(v8) = 17;
+        }
+      }
+      else {
+        LODWORD(v8) = 17;
+      }
+    }
+    else {
+      LODWORD(v8) = 17;
+    }
+  }
+  if ((_DWORD)v8 != 0 | ((*(_DWORD*)(*(_QWORD*)(a1 + 8) + 40LL) |
+                          *(_DWORD*)(*(_QWORD*)(a1 + 8) + 44LL) | 0x1000) &
+                         (unsigned int)v7) == (_DWORD)v7) {
+    v14 = v8;
+  }
+  else {
+    v14 = 11;
+  }
+  {
+    v15 = *(_DWORD*)(a1 + 20);
+    __asm__ volatile("" ::"r"(v15));
+  }
+  if (v15 == 0) {
+    return v14;
+  }
+  if (v15 == 1) {
+    if (((unsigned __int8)(((*(_BYTE*)(v6 + 360) & 4) == 0) | *SdkData_e899e8) &
+         (v14 == 0)) != 0) {
+      return 2;
+    }
+    return v14;
+  }
+  if (v14 == 0) {
+    return 11;
+  }
+  return v14;
+}
+
 __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)
 {
   __int64 result;
@@ -1750,6 +1910,316 @@ __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)
     } while (v8 != 0);
   }
   return 0;
+}
+
+__int64 nvidia_637e60(__int64 a1, int* a2, __int64 a3, unsigned int a4)
+{
+  __int64 v8;
+  __int64 result;
+  int v10;
+  __int64* i;
+  __int64 v12;
+  __int64 v13;
+  __int64 v14;
+  __int64 v15;
+  __int64 v16;
+  _QWORD* v17;
+  __int64 v18;
+  _QWORD* v19;
+  __int64 v20;
+  __int64 v21;
+  __int64 v22;
+  __int64 v23;
+  __int64 v24;
+  __int64 v25;
+  __int64 v26;
+  __int64 v27;
+  __int64 v28;
+  __int64 v29;
+  _QWORD* v30;
+  __int64* v31;
+  __int64 v32;
+  __int64 v33;
+  struct {
+    unsigned __int64 v34;
+    __int64 v35;
+    __int64 v36;
+    __int64 v37;
+    __int64 v38;
+    __int64 v39;
+    __int64 v40;
+    __int64 v41;
+    _QWORD v42[2];
+    __int64 v43;
+    __int64 v44;
+    __int64 v45;
+    __int64 v46;
+    __int64 v47;
+    __int64 v48;
+    __int64 v49;
+    __int64 v50;
+    __int64 v51;
+    __int64 v52;
+    __int64 v53;
+    __int64 v54;
+    __int64 v55;
+    __int64 v56;
+    __int64 v57;
+    __int64 v58;
+    __int64 v59;
+    __int64 v60;
+    __int64 v61;
+    __int64 v62;
+    __int64 v63;
+    __int64 v64;
+    unsigned int v65;
+    int v66;
+  } v34_;
+
+  v8 = a4;
+  if (*(_QWORD*)((*(__int64 (**)(__int64))(*(_QWORD*)a1 + 40LL))(a1) + 776) <
+      (unsigned __int64)a4) {
+    return 11;
+  }
+  {
+    v10 = *a2;
+    __asm__ volatile("" ::"r"(v10));
+  }
+  if (*a2 == 1) {
+    if ((*(_BYTE*)(a1 + 363) & 0x40) == 0) {
+      v34_.v63 = 0;
+      v34_.v64 = 0;
+      v34_.v61 = 0;
+      v34_.v62 = 0;
+      v34_.v59 = 0;
+      v34_.v60 = 0;
+      v34_.v57 = 0;
+      v34_.v58 = 0;
+      v34_.v55 = 0;
+      v34_.v56 = 0;
+      v34_.v53 = 0;
+      v34_.v54 = 0;
+      v34_.v51 = 0;
+      v34_.v52 = 0;
+      v34_.v49 = 0;
+      v34_.v50 = 0;
+      v34_.v47 = 0;
+      v34_.v48 = 0;
+      v34_.v45 = 0;
+      v34_.v46 = 0;
+      v34_.v43 = 0;
+      v34_.v44 = 0;
+      v34_.v42[0] = 0;
+      v34_.v42[1] = 0;
+      v34_.v40 = 0;
+      v34_.v41 = 0;
+      v34_.v38 = 0;
+      v34_.v39 = 0;
+      v34_.v36 = 0;
+      v34_.v37 = 0;
+      v34_.v34 = 0;
+      v34_.v35 = 0;
+      v34_.v66 = 0;
+      if (a4 <= 0x10) {
+        goto LABEL_22;
+      }
+      return 11;
+    }
+    if ((*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 288) + 72LL))(
+            *(_QWORD*)(a1 + 288)) != 0) {
+      if (a4 == 0) {
+        return 0;
+      }
+      for (i = (__int64*)(a3 + 8);; i += 2) {
+        v12 = (*(__int64 (**)(__int64))(*(_QWORD*)a1 + 56LL))(a1);
+        v13 = (*(__int64 (**)(__int64, _QWORD))(*(_QWORD*)v12 + 88LL))(
+            v12, *(_QWORD*)(a1 + 1928));
+        if ((gettimeofday_plt(&v34_.v34, 0) & 0x80000000) != 0) {
+          break;
+        }
+        if (!(sizeof((v34_.v34) * (0xF4240u)) > 4
+                  ? ((unsigned __int128)(unsigned long long)(v34_.v34) *
+                     (unsigned long long)(0xF4240u)) >>
+                            64 ==
+                        0
+                  : ((unsigned long long)(unsigned int)(v34_.v34) *
+                     (unsigned int)(0xF4240u)) >>
+                            32 ==
+                        0) ||
+            __CFADD__(1000000 * v34_.v34, v34_.v35)) {
+          return 17;
+        }
+        *(i - 1) = 1000000 * v34_.v34 + v34_.v35;
+        *i = v13;
+        --v8;
+        result = 0;
+        if (v8 == 0) {
+          return result;
+        }
+      }
+      return 8;
+    }
+    {
+      v10 = *a2;
+      __asm__ volatile("" ::"r"(v10));
+    }
+  }
+  v34_.v63 = 0;
+  v34_.v64 = 0;
+  v34_.v61 = 0;
+  v34_.v62 = 0;
+  v34_.v59 = 0;
+  v34_.v60 = 0;
+  v34_.v57 = 0;
+  v34_.v58 = 0;
+  v34_.v55 = 0;
+  v34_.v56 = 0;
+  v34_.v53 = 0;
+  v34_.v54 = 0;
+  v34_.v51 = 0;
+  v34_.v52 = 0;
+  v34_.v49 = 0;
+  v34_.v50 = 0;
+  v34_.v47 = 0;
+  v34_.v48 = 0;
+  v34_.v45 = 0;
+  v34_.v46 = 0;
+  v34_.v43 = 0;
+  v34_.v44 = 0;
+  v34_.v42[0] = 0;
+  v34_.v42[1] = 0;
+  v34_.v40 = 0;
+  v34_.v41 = 0;
+  v34_.v38 = 0;
+  v34_.v39 = 0;
+  v34_.v36 = 0;
+  v34_.v37 = 0;
+  v34_.v34 = 0;
+  v34_.v35 = 0;
+  if (v10 != 0) {
+    if (v10 == 1) {
+      v34_.v66 = 0;
+      if (a4 <= 0x10) {
+        goto LABEL_22;
+      }
+    }
+    return 11;
+  }
+  v34_.v66 = 1;
+  if (a4 > 0x10) {
+    return 11;
+  }
+LABEL_22:
+  {
+    v14 = *(_QWORD*)(a1 + 928);
+    __asm__ volatile("" ::"r"(v14));
+  }
+  v34_.v65 = a4;
+  if (*(_DWORD*)(v14 + 52) < 0x1Du) {
+    result = 2;
+  }
+  else {
+    result = nvidia_644da0(*(_DWORD*)(a1 + 920), -1056422115,
+                           (__int64)&v34_.v34, 264);
+    if (v34_.v65 != a4) {
+      if ((_DWORD)result != 0) {
+        return (unsigned int)result;
+      }
+      else {
+        return 15;
+      }
+    }
+  }
+  if (a4 != 0) {
+    v15 = v8 & 7;
+    if (a4 >= 8) {
+      v17 = (_QWORD*)(a3 + 64);
+      v18 = 0;
+      v19 = v34_.v42;
+      do {
+        {
+          v20 = *(v19 - 7);
+          __asm__ volatile("" ::"r"(v20));
+        }
+        v18 -= 8;
+        *(v17 - 8) = *(v19 - 8);
+        *(v17 - 7) = v20;
+        {
+          v21 = *(v19 - 5);
+          __asm__ volatile("" ::"r"(v21));
+        }
+        *(v17 - 6) = *(v19 - 6);
+        *(v17 - 5) = v21;
+        {
+          v22 = *(v19 - 3);
+          __asm__ volatile("" ::"r"(v22));
+        }
+        *(v17 - 4) = *(v19 - 4);
+        *(v17 - 3) = v22;
+        {
+          v23 = *(v19 - 1);
+          __asm__ volatile("" ::"r"(v23));
+        }
+        *(v17 - 2) = *(v19 - 2);
+        *(v17 - 1) = v23;
+        {
+          v24 = v19[1];
+          __asm__ volatile("" ::"r"(v24));
+        }
+        *v17 = *v19;
+        v17[1] = v24;
+        {
+          v25 = v19[3];
+          __asm__ volatile("" ::"r"(v25));
+        }
+        v17[2] = v19[2];
+        v17[3] = v25;
+        {
+          v26 = v19[5];
+          __asm__ volatile("" ::"r"(v26));
+        }
+        v17[4] = v19[4];
+        v17[5] = v26;
+        {
+          v27 = v19[6];
+          __asm__ volatile("" ::"r"(v27));
+        }
+        {
+          v28 = v19[7];
+          __asm__ volatile("" ::"r"(v28));
+        }
+        v19 += 16;
+        v17[6] = v27;
+        v17[7] = v28;
+        v17 += 16;
+      } while (-(v8 & 0x18) != v18);
+      v16 = -v18;
+    }
+    else {
+      v16 = 0;
+    }
+    if ((v8 & 7) != 0) {
+      v29 = (16 * v16) | 8;
+      v30 = (_QWORD*)(a3 + v29);
+      v31 = (__int64*)((char*)&v34_.v34 + v29);
+      do {
+        {
+          v32 = *(v31 - 1);
+          __asm__ volatile("" ::"r"(v32));
+        }
+        {
+          v33 = *v31;
+          __asm__ volatile("" ::"r"(v33));
+        }
+        v31 += 2;
+        --v15;
+        *(v30 - 1) = v32;
+        *v30 = v33;
+        v30 += 2;
+      } while (v15 != 0);
+    }
+  }
+  return result;
 }
 
 #pragma GCC visibility pop

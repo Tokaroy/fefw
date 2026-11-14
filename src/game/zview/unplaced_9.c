@@ -56,6 +56,10 @@ void game_zview_103e8e0(__int64);
 float game_zview_d21160(__int64 a1);
 void game_zview_d344a0(__int64 a1);
 float game_zview_d4f350(__int64 a1, __int64 a2);
+__attribute__((swiftcall)) void game_zview_d33ac0(PSEUDO_X8, _QWORD* result,
+                                                  unsigned int, _QWORD*,
+                                                  _DWORD*, _BYTE*);
+__attribute__((swiftcall)) void game_zview_d33900(PSEUDO_X8 x8_, __int64 a1);
 
 float game_zview_d21160(__int64 a1)
 {
@@ -2132,6 +2136,129 @@ LABEL_348:
                    0x1.f400000000000p+9f);
   *(float*)(a1 + 840) = result;
   return result;
+}
+
+__attribute__((swiftcall)) void game_zview_d33900(PSEUDO_X8 x8_, __int64 a1)
+{
+  __int64 a2 = (__int64)PSEUDO_X8_VALUE(x8_);
+  __int64 v3;
+  __int64 i;
+  _QWORD* result;
+  __int128 v6;
+  __int128 v7;
+  int v8;
+  int v9;
+  __int64 v10;
+  char v11;
+  char v12;
+  __int128 v13;
+  __int128 v14;
+  __int128 v15;
+  __int128 v16;
+  int v17;
+  __int128 v18;
+  __int128 v19;
+  struct {
+    _QWORD v20[2];
+    __int128 v21;
+    __int128 v22;
+    int v23;
+    char gap52_[12];
+    char v24;
+  } v20_;
+  struct {
+    _BYTE v25[4];
+    int v26;
+  } v25_;
+  __int64 v27;
+
+  v3 = a1;
+  for (i = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 600LL); i != 0;
+       i = *(_QWORD*)(*(_QWORD*)(v3 + 8) + 600LL)) {
+    v3 = *(_QWORD*)(i + 24);
+  }
+  v27 = 0;
+  v25_.v26 = 0;
+  v25_.v25[0] = 0;
+  result = X8CALL_X0(_QWORD*,
+                     game_zview_d33ac0((void*)((__int64)v20_.v20), (_QWORD*)v3,
+                                       0, &v27, &v25_.v26, v25_.v25));
+  if (v20_.v24 == 1 ||
+      (v27 = 0, v25_.v26 = 0, v25_.v25[0] = 0,
+       result = X8CALL_X0(_QWORD*, game_zview_d33ac0((void*)((__int64)v20_.v20),
+                                                     (_QWORD*)v3, 1u, &v27,
+                                                     &v25_.v26, v25_.v25)),
+       v20_.v24 == 1)) {
+    v6 = v20_.v21;
+    v7 = v20_.v22;
+    DWORDn(v6, sizeof(v6) / 4 - 1) = 0;
+    DWORDn(v7, sizeof(v7) / 4 - 1) = 0;
+    v8 = v20_.v23;
+    v9 = v25_.v26;
+    v10 = v27;
+    *(_QWORD*)a2 = v20_.v20[0];
+    v11 = v25_.v25[0];
+    *(_DWORD*)(a2 + 48) = v8;
+    *(_QWORD*)(a2 + 64) = v10;
+    *(_DWORD*)(a2 + 72) = v9;
+    *(_BYTE*)(a2 + 76) = v11;
+    v12 = 1;
+    *(_OWORD*)(a2 + 16) = v6;
+    *(_OWORD*)(a2 + 32) = v7;
+  }
+  else if ((*(_BYTE*)(*(_QWORD*)(v3 + 8) + 388LL) & 2) != 0 ||
+           *(_BYTE*)(v3 + 256) != 1) {
+    if (*(_BYTE*)(v3 + 336) == 1) {
+      v15 = *(_OWORD*)(v3 + 288);
+      v16 = *(_OWORD*)(v3 + 304);
+      DWORDn(v15, sizeof(v15) / 4 - 1) = 0;
+      DWORDn(v16, sizeof(v16) / 4 - 1) = 0;
+      *(_QWORD*)a2 = *(_QWORD*)(v3 + 272);
+      *(_OWORD*)(a2 + 16) = v15;
+      *(_OWORD*)(a2 + 32) = v16;
+      v17 = *(_DWORD*)(v3 + 320);
+    }
+    else {
+      if (*(_BYTE*)(v3 + 464) != 1) {
+        v12 = 0;
+        *(_BYTE*)a2 = 0;
+        goto LABEL_6;
+      }
+      v18 = *(_OWORD*)(v3 + 416);
+      v19 = *(_OWORD*)(v3 + 432);
+      DWORDn(v18, sizeof(v18) / 4 - 1) = 0;
+      DWORDn(v19, sizeof(v19) / 4 - 1) = 0;
+      *(_QWORD*)a2 = *(_QWORD*)(v3 + 400);
+      *(_OWORD*)(a2 + 16) = v18;
+      *(_OWORD*)(a2 + 32) = v19;
+      v17 = *(_DWORD*)(v3 + 448);
+    }
+    *(_DWORD*)(a2 + 48) = v17;
+    *(_QWORD*)(a2 + 64) = 0;
+    v12 = 1;
+    *(_DWORD*)(a2 + 72) = 0;
+    *(_BYTE*)(a2 + 76) = 0;
+  }
+  else {
+    v13 = *(_OWORD*)(v3 + 208);
+    v14 = *(_OWORD*)(v3 + 224);
+    DWORDn(v13, sizeof(v13) / 4 - 1) = 0;
+    DWORDn(v14, sizeof(v14) / 4 - 1) = 0;
+    *(_QWORD*)a2 = *(_QWORD*)(v3 + 192);
+    *(_QWORD*)(a2 + 64) = 0;
+    *(_DWORD*)(a2 + 72) = 1086918608;
+    v12 = 1;
+    *(_BYTE*)(a2 + 76) = 1;
+    *(_OWORD*)(a2 + 16) = v13;
+    *(_OWORD*)(a2 + 32) = v14;
+    *(_DWORD*)(a2 + 48) = *(_DWORD*)(v3 + 240);
+  }
+LABEL_6:
+  *(_BYTE*)(a2 + 80) = v12;
+  {
+    result;
+    return;
+  }
 }
 
 void game_zview_d344a0(__int64 a1)

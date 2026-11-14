@@ -6,6 +6,84 @@
 
 bool OcclusionCulling_1938520(__int64, int32x2_t*);
 bool gfx_render_1938080(float32x4_t* a1, float32x4_t* a2);
+__int64 GameRoutine_a73160(__int64 result);
+__int64 std___1___shared_weak_count___release_weak(__int64);
+__int64 gfx_render_a717a0(_QWORD* a1, __int64 a2, int a3, _OWORD* a4);
+
+__int64 gfx_render_a717a0(_QWORD* a1, __int64 a2, int a3, _OWORD* a4)
+{
+  __int64* v6;
+  __int64 v7;
+  __int64 v8;
+  _OWORD* v9;
+  __int128 v10;
+  __int64 v11;
+  __int64 result;
+  unsigned __int64 v13;
+  __int64 v14;
+  __int64 v15;
+  __int64 v16;
+  __int64 v17;
+  _BYTE* v18;
+  struct {
+    _QWORD v19[2];
+    int v20;
+  } v19_;
+  _QWORD v21[2];
+
+  v6 = (__int64*)(a1[14] + 48LL * a3);
+  v7 = *v6;
+  v8 = v6[1];
+  if (v8 != 0) {
+    atomic_fetch_add_explicit((atomic_ullong* volatile)(v8 + 8), 1u,
+                              memory_order_relaxed);
+    if (atomic_fetch_add((atomic_ullong* volatile)(v8 + 8),
+                         0xFFFFFFFFFFFFFFFFLL) == 0) {
+      v9 = a4;
+      (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
+      std___1___shared_weak_count___release_weak(v8);
+      a4 = v9;
+    }
+  }
+  v10 = *a4;
+  v21[0] = 16;
+  v21[1] = 0;
+  v11 = a1[39];
+  *(_DWORD*)(v11 + 32) = DWORDn(v10, sizeof(v10) / 4 - 1);
+  DWORDn(v10, sizeof(v10) / 4 - 1) = 0;
+  *(_OWORD*)(v11 + 16) = v10;
+  result = GameRoutine_a73160(a2);
+  v19_.v20 = 0;
+  v19_.v19[0] = a2;
+  v19_.v19[1] = 0xFFFFFFFFLL;
+  v13 = a1[12] - a1[11];
+  if ((int)(v13 >> 4) >= 1) {
+    v14 = (v13 >> 4) & 0x7FFFFFFF;
+    v15 = 0;
+    do {
+      v16 = a1[11];
+      v17 = *(_QWORD*)(v16 + v15);
+      if (v17 != 0 && *(_BYTE*)(v17 + 32) == 1) {
+        result = (*(__int64 (**)(__int64, _QWORD))(*(_QWORD*)v7 + 88LL))(
+            v7, *(unsigned int*)(v17 + 36));
+        if ((result & 1) != 0) {
+          v18 = (_BYTE*)a1[39];
+          if (v18[8] != 1 ||
+              ((result = (*(__int64 (**)(_BYTE*, __int64))(
+                    *(_QWORD*)v18 + 24LL))(v18, *(_QWORD*)(v16 + v15) + 48LL)) &
+               1) != 0) {
+            result = (*(__int64 (**)(_QWORD, _QWORD*, _QWORD*, _QWORD*))(
+                **(_QWORD**)(v16 + v15) + 32LL))(*(_QWORD*)(v16 + v15),
+                                                 v19_.v19, v21, a1 + 1);
+          }
+        }
+      }
+      --v14;
+      v15 += 16;
+    } while (v14 != 0);
+  }
+  return result;
+}
 
 bool gfx_render_1938080(float32x4_t* a1, float32x4_t* a2)
 {

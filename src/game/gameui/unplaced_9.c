@@ -56,6 +56,13 @@ __int64 game_gameui_158ebe0(__int64 a1, _DWORD* a2, __int64 a3, __int64 a4);
 __attribute__((swiftcall)) void
 game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
                     unsigned int a3, __int64* a4);
+__int64 GameHr_15df820(__int64, _QWORD*, char);
+__int64 game_gameui_UnitUtil_GetPrevDefault(__int64, __int64, char);
+void __attribute__((noreturn)) GameRoutine_60a310();
+__int64 game_gameui_15df6c0(__int64 a1, __int64 a2, char a3, __int64 a4,
+                            char a5);
+__int64 game_gameui_15dfa40(__int64 a1, __int64 a2, char a3, __int64 a4,
+                            char a5);
 
 __int64 game_gameui_158ebe0(__int64 a1, _DWORD* a2, __int64 a3, __int64 a4)
 {
@@ -324,6 +331,166 @@ __int64 game_gameui_158ebe0(__int64 a1, _DWORD* a2, __int64 a3, __int64 a4)
   BattleSide_Destructor(v47);
   BattleSide_Destructor(v38);
   return game_Unit_Destroy_Unit((__int64)v55_.v55);
+}
+
+__int64 game_gameui_15df6c0(__int64 a1, __int64 a2, char a3, __int64 a4,
+                            char a5)
+{
+  __int64 v6;
+  __int64 v7;
+  __int64 v11;
+  __int64 v12;
+  _QWORD* v13;
+  __int64 v14;
+  struct {
+    _QWORD v16[4];
+    _QWORD* v17;
+  } v16_;
+  struct {
+    _BYTE v18[32];
+    _BYTE* v19;
+  } v18_;
+  struct {
+    _BYTE v20[4];
+    _BYTE v21[4];
+  } v20_;
+  __int64 v22;
+
+  v6 = *(_QWORD*)(a1 + 32);
+  v7 = *(_QWORD*)(a4 + 32);
+  if (v6 != 0) {
+    if (v7 != 0) {
+      if (v7 == a4) {
+        v18_.v19 = v18_.v18;
+        (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v7 + 24LL))(v7, v18_.v18);
+      }
+      else {
+        v18_.v19 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+      }
+    }
+    else {
+      v18_.v19 = nullptr;
+    }
+    v11 = *(_QWORD*)(a1 + 32);
+    v22 = a2;
+    v20_.v21[0] = a3 & 1;
+    v20_.v20[0] = a5 & 1;
+    if (v11 == 0) {
+      GameRoutine_60a310();
+    }
+    v12 = (*(__int64 (**)(__int64, __int64*, _BYTE*, _BYTE*, _BYTE*))(
+        *(_QWORD*)v11 + 48LL))(v11, &v22, v20_.v21, v18_.v18, v20_.v20);
+    v13 = v18_.v19;
+    if (v18_.v19 != v18_.v18) {
+      goto LABEL_12;
+    }
+  LABEL_17:
+    v14 = 32;
+    goto LABEL_18;
+  }
+  if (v7 != 0) {
+    if (v7 == a4) {
+      v16_.v17 = v16_.v16;
+      (*(void (**)(__int64, _QWORD*))(*(_QWORD*)v7 + 24LL))(v7, v16_.v16);
+    }
+    else {
+      v16_.v17 = (_QWORD*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+    }
+  }
+  else {
+    v16_.v17 = nullptr;
+  }
+  v12 = GameHr_15df820(a2, v16_.v16, a5 & 1);
+  v13 = v16_.v17;
+  if (v16_.v17 == v16_.v16) {
+    goto LABEL_17;
+  }
+LABEL_12:
+  if (v13 != nullptr) {
+    v14 = 40;
+  LABEL_18:
+    (*(void (**)(__int64))(*v13 + v14))((__int64)v13);
+  }
+  return v12;
+}
+
+__int64 game_gameui_15dfa40(__int64 a1, __int64 a2, char a3, __int64 a4,
+                            char a5)
+{
+  __int64 v6;
+  __int64 v7;
+  __int64 v11;
+  __int64 v12;
+  _QWORD* v13;
+  __int64 v14;
+  struct {
+    _BYTE v16[32];
+    _BYTE* v17;
+  } v16_;
+  struct {
+    _BYTE v18[32];
+    _BYTE* v19;
+  } v18_;
+  _BYTE v20[4];
+  _BYTE v21[4];
+  __int64 v22;
+
+  v6 = *(_QWORD*)(a1 + 80);
+  v7 = *(_QWORD*)(a4 + 32);
+  if (v6 != 0) {
+    if (v7 != 0) {
+      if (v7 == a4) {
+        v18_.v19 = v18_.v18;
+        (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v7 + 24LL))(v7, v18_.v18);
+      }
+      else {
+        v18_.v19 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+      }
+    }
+    else {
+      v18_.v19 = nullptr;
+    }
+    v11 = *(_QWORD*)(a1 + 80);
+    v22 = a2;
+    v21[0] = a3 & 1;
+    v20[0] = a5 & 1;
+    if (v11 == 0) {
+      GameRoutine_60a310();
+    }
+    v12 = (*(__int64 (**)(__int64, __int64*, _BYTE*, _BYTE*, _BYTE*))(
+        *(_QWORD*)v11 + 48LL))(v11, &v22, v21, v18_.v18, v20);
+    v13 = v18_.v19;
+    if (v18_.v19 != v18_.v18) {
+      goto LABEL_12;
+    }
+  LABEL_17:
+    v14 = 32;
+    goto LABEL_18;
+  }
+  if (v7 != 0) {
+    if (v7 == a4) {
+      v16_.v17 = v16_.v16;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v7 + 24LL))(v7, v16_.v16);
+    }
+    else {
+      v16_.v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+    }
+  }
+  else {
+    v16_.v17 = nullptr;
+  }
+  v12 = game_gameui_UnitUtil_GetPrevDefault(a2, (__int64)v16_.v16, a5 & 1);
+  v13 = v16_.v17;
+  if (v16_.v17 == v16_.v16) {
+    goto LABEL_17;
+  }
+LABEL_12:
+  if (v13 != nullptr) {
+    v14 = 40;
+  LABEL_18:
+    (*(void (**)(__int64))(*v13 + v14))((__int64)v13);
+  }
+  return v12;
 }
 
 __attribute__((swiftcall)) void
