@@ -1338,16 +1338,18 @@ __int64 ProcGmapCommandSeq_14b14d0(__int64 a1)
   __int64 v10;
   _QWORD v11[2];
   _QWORD v12[2];
-  __int64 v13;
-  __int64 v14;
-  char* v15;
+  struct {
+    __int64 v13;
+    __int64 v14;
+    char* v15;
+  } v13_;
 
   v1 = *(_DWORD*)(a1 + 212);
   v2 = 0;
   v3 = 0;
-  v14 = 0;
-  v15 = nullptr;
-  v13 = 0;
+  v13_.v14 = 0;
+  v13_.v15 = nullptr;
+  v13_.v13 = 0;
   v4 = v1 - 8;
   if ((unsigned int)(v1 - 8) > 0xA) {
     v5 = nullptr;
@@ -1356,17 +1358,17 @@ __int64 ProcGmapCommandSeq_14b14d0(__int64 a1)
     v5 = nullptr;
     if (((0x4D1u >> v4) & 1) != 0) {
       v6 = a1;
-      GameRoutine_60a020(&v13, (&GameData_2044fa0)[v4]);
-      v2 = (unsigned __int8)v13;
-      v3 = v14;
-      v5 = v15;
+      GameRoutine_60a020(&v13_.v13, (&GameData_2044fa0)[v4]);
+      v2 = (unsigned __int8)v13_.v13;
+      v3 = v13_.v14;
+      v5 = v13_.v15;
       a1 = v6;
     }
   }
   v7 = (v2 & 1) == 0;
   v8 = v2 >> 1;
   if (v7) {
-    v5 = (char*)&v13 + 1;
+    v5 = (char*)&v13_.v13 + 1;
   }
   if (!v7) {
     v8 = v3;
@@ -1376,13 +1378,13 @@ __int64 ProcGmapCommandSeq_14b14d0(__int64 a1)
   v11[0] = &GameData_1a9f09e;
   v11[1] = 0;
   result = GameRoutine_16f9d60(a1, v12, v11);
-  if ((v13 & 1) != 0 && v15 != nullptr) {
+  if ((v13_.v13 & 1) != 0 && v13_.v15 != nullptr) {
     v10 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v10 = 56;
     }
     return nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, v15);
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, v13_.v15);
   }
   return result;
 }

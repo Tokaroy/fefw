@@ -2555,9 +2555,11 @@ __int64 dltss_network_69b00(__int64 a1)
   __int64 v24;
   __int64 v25;
   __int64 v26;
-  __int64 v27;
-  unsigned __int64 v28;
-  char* v29;
+  struct {
+    __int64 v27;
+    unsigned __int64 v28;
+    char* v29;
+  } v27_;
   __int64 v30;
   __int64 v31;
 
@@ -2589,13 +2591,13 @@ __int64 dltss_network_69b00(__int64 a1)
         v23 = (v11 | 7) + 1;
       }
       v13 = (char*)NgxRoutine_420(v23);
-      v28 = v12;
-      v29 = v13;
-      v27 = v23 | 1;
+      v27_.v28 = v12;
+      v27_.v29 = v13;
+      v27_.v27 = v23 | 1;
     }
     else {
-      LOBYTE(v27) = 2 * v11;
-      v13 = (char*)&v27 + 1;
+      LOBYTE(v27_.v27) = 2 * v11;
+      v13 = (char*)&v27_.v27 + 1;
       if (v11 == 0) {
         goto LABEL_30;
       }
@@ -2603,7 +2605,7 @@ __int64 dltss_network_69b00(__int64 a1)
     memmove_plt(v13, v9, v12);
   LABEL_30:
     v13[v12] = 0;
-    nvidia_dlss_rel_source_a3ab0((void*)&v30, v10, &v27);
+    nvidia_dlss_rel_source_a3ab0((void*)&v30, v10, &v27_.v27);
     v24 = v30;
     v25 = *(_QWORD*)(a1 + 360);
     v30 = 0;
@@ -2617,7 +2619,7 @@ __int64 dltss_network_69b00(__int64 a1)
       }
     }
     v18 = (__int64*)(a1 + 360);
-    if ((v27 & 1) != 0) {
+    if ((v27_.v27 & 1) != 0) {
       goto LABEL_21;
     }
     goto LABEL_22;
@@ -2637,13 +2639,13 @@ __int64 dltss_network_69b00(__int64 a1)
       v14 = (v6 | 7) + 1;
     }
     v8 = (char*)NgxRoutine_420(v14);
-    v28 = v7;
-    v29 = v8;
-    v27 = v14 | 1;
+    v27_.v28 = v7;
+    v27_.v29 = v8;
+    v27_.v27 = v14 | 1;
   }
   else {
-    LOBYTE(v27) = 2 * v6;
-    v8 = (char*)&v27 + 1;
+    LOBYTE(v27_.v27) = 2 * v6;
+    v8 = (char*)&v27_.v27 + 1;
     if (v6 == 0) {
       goto LABEL_17;
     }
@@ -2651,7 +2653,7 @@ __int64 dltss_network_69b00(__int64 a1)
   memmove_plt(v8, v4, v7);
 LABEL_17:
   v8[v7] = 0;
-  nvidia_dlss_rel_source_a3cd0((void*)&v30, v5, &v27);
+  nvidia_dlss_rel_source_a3cd0((void*)&v30, v5, &v27_.v27);
   v15 = v30;
   v16 = *(_QWORD*)(a1 + 352);
   v30 = 0;
@@ -2665,9 +2667,9 @@ LABEL_17:
     }
   }
   v18 = (__int64*)(a1 + 352);
-  if ((v27 & 1) != 0) {
+  if ((v27_.v27 & 1) != 0) {
   LABEL_21:
-    NgxRoutine_430(v29, v27 & 0xFFFFFFFFFFFFFFFELL);
+    NgxRoutine_430(v27_.v29, v27_.v27 & 0xFFFFFFFFFFFFFFFELL);
   }
 LABEL_22:
   v19 = *v18;

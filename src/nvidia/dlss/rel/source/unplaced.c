@@ -5018,15 +5018,19 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
   __int64 v83;
   __int64 v84;
   __int64* v85;
-  __int64 v86;
-  unsigned __int64 v87;
-  char* v88;
+  struct {
+    __int64 v86;
+    unsigned __int64 v87;
+    char* v88;
+  } v86_;
   __int64 v89;
   __int64 v90;
   char* v91;
-  __int64 v92;
-  unsigned __int64 v93;
-  char* v94;
+  struct {
+    __int64 v92;
+    unsigned __int64 v93;
+    char* v94;
+  } v92_;
   __int64 v95;
   __int64 v96;
   __int64 v97;
@@ -5070,9 +5074,9 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       v104 = 0;
       v105 = 0;
       v106 = 0;
-      v93 = 0;
-      v94 = nullptr;
-      v92 = 0;
+      v92_.v93 = 0;
+      v92_.v94 = nullptr;
+      v92_.v92 = 0;
       v95 = v16;
       v96 = 0;
       v17 = v15[5];
@@ -5088,12 +5092,12 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
         do {
           v22 = *(_QWORD*)(v17 + 8 * v21);
           v23 = strlen_plt(v22);
-          NgxRoutine_bf2e0(&v92, v22, v23);
+          NgxRoutine_bf2e0(&v92_.v92, v22, v23);
           v17 = v15[5];
           ++v21;
         } while (v21 < (v15[6] - v17) >> 3);
-        v24 = (unsigned __int8)v92;
-        v25 = v93;
+        v24 = (unsigned __int8)v92_.v92;
+        v25 = v92_.v93;
         v9 = v20;
         a2 = v19;
         v12 = v18;
@@ -5115,9 +5119,9 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       if (v29 == 0) {
         goto LABEL_40;
       }
-      v30 = v94;
+      v30 = v92_.v94;
       if (v26 == 0) {
-        v30 = (char*)&v92 + 1;
+        v30 = (char*)&v92_.v92 + 1;
       }
       v31 = &v30[v29];
       if (*(v31 - 1) == 61) {
@@ -5167,9 +5171,9 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
             *v34++ = 0;
           } while (v34 != v35);
         }
-        v25 = v93;
-        v26 = v92 & 1;
-        v27 = (unsigned __int64)(unsigned __int8)v92 >> 1;
+        v25 = v92_.v93;
+        v26 = v92_.v92 & 1;
+        v27 = (unsigned __int64)(unsigned __int8)v92_.v92 >> 1;
       }
       else {
       LABEL_40:
@@ -5177,13 +5181,13 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
         v32 = 0;
       }
       v40 = v26 == 0;
-      v41 = (char*)&v92 + 1;
+      v41 = (char*)&v92_.v92 + 1;
       if (v40) {
         v25 = v27;
       }
       v42 = 4;
       if (!v40) {
-        v41 = v94;
+        v41 = v92_.v94;
       }
       if (v25 < 4) {
         v42 = v25;
@@ -5322,14 +5326,14 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       if (v63 >= 0x17) {
         break;
       }
-      v65 = (char*)&v86 + 1;
-      LOBYTE(v86) = 2 * v63;
+      v65 = (char*)&v86_.v86 + 1;
+      LOBYTE(v86_.v86) = 2 * v63;
       if (v63 != 0) {
         goto LABEL_100;
       }
     LABEL_101:
       v65[v64] = 0;
-      v67 = (__int64**)NgxRoutine_a30a0(a4, &v107, &v86);
+      v67 = (__int64**)NgxRoutine_a30a0(a4, &v107, &v86_.v86);
       v68 = *v67;
       v7 = v85;
       if (*v67 != nullptr) {
@@ -5341,10 +5345,10 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       else {
         v75 = v67;
         v76 = (__int64*)NgxRoutine_420_alt2(152);
-        v77 = v86;
-        v78 = v87;
-        v86 = 0;
-        v87 = 0;
+        v77 = v86_.v86;
+        v78 = v86_.v87;
+        v86_.v86 = 0;
+        v86_.v87 = 0;
         v68 = v76;
         v76[8] = 0;
         v76[9] = 0;
@@ -5361,8 +5365,8 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
         v76[1] = 0;
         v76[4] = v77;
         v76[5] = v78;
-        v79 = (__int64)v88;
-        v88 = nullptr;
+        v79 = (__int64)v86_.v88;
+        v86_.v88 = nullptr;
         v80 = v107;
         v76[6] = v79;
         v76[7] = 0;
@@ -5382,11 +5386,11 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
           v68[11] = v99;
           v68[15] = v83;
           v73 = v58;
-          if ((v86 & 1) == 0) {
+          if ((v86_.v86 & 1) == 0) {
             goto LABEL_105;
           }
         LABEL_104:
-          NgxRoutine_430(v88, v86 & 0xFFFFFFFFFFFFFFFELL);
+          NgxRoutine_430(v86_.v88, v86_.v86 & 0xFFFFFFFFFFFFFFFELL);
           v73 = v58;
           goto LABEL_105;
         }
@@ -5403,7 +5407,7 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       nvidia_dlss_rel_source_features_dlaa_76570(v68 + 16, v71, v72,
                                                  (v72 - v71) >> 3);
       v73 = v58;
-      if ((v86 & 1) != 0) {
+      if ((v86_.v86 & 1) != 0) {
         goto LABEL_104;
       }
     LABEL_105:
@@ -5411,8 +5415,8 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       if (v73 != 0) {
         NgxRoutine_430(v73, v57);
       }
-      if ((v92 & 1) != 0) {
-        NgxRoutine_430(v94, v92 & 0xFFFFFFFFFFFFFFFELL);
+      if ((v92_.v92 & 1) != 0) {
+        NgxRoutine_430(v92_.v94, v92_.v92 & 0xFFFFFFFFFFFFFFFELL);
       }
       v9 = v84;
       if (v104 != 0) {
@@ -5440,9 +5444,9 @@ __int64 nvidia_dlss_rel_source_a2740(__int64* a1, _QWORD* a2, __int64 a3,
       v66 = (v63 | 7) + 1;
     }
     v65 = (char*)NgxRoutine_420_alt2(v66);
-    v87 = v64;
-    v88 = v65;
-    v86 = v66 | 1;
+    v86_.v87 = v64;
+    v86_.v88 = v65;
+    v86_.v86 = v66 | 1;
   LABEL_100:
     memmove_plt(v65, v62, v64);
     goto LABEL_101;

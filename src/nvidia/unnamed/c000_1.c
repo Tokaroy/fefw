@@ -9434,9 +9434,11 @@ __int64 CudaDriverHr_55610(__int64 a1, __int64 a2, __int64 a3)
   __int128 v7;
   __int128 v8;
   __int128 v9;
-  __int128 v10;
-  __int128 v11;
-  __int128 v12;
+  struct {
+    __int128 v10;
+    __int128 v11;
+    __int128 v12;
+  } v10_;
   __int128 v13;
   __int128 v14;
   __int128 v15;
@@ -9450,9 +9452,9 @@ __int64 CudaDriverHr_55610(__int64 a1, __int64 a2, __int64 a3)
   v7 = 0u;
   v8 = 0u;
   v9 = 0u;
-  v10 = 0u;
-  v11 = 0u;
-  v12 = 0u;
+  v10_.v10 = 0u;
+  v10_.v11 = 0u;
+  v10_.v12 = 0u;
   v13 = 0u;
   v14 = 0u;
   v15 = 0u;
@@ -9466,12 +9468,12 @@ __int64 CudaDriverHr_55610(__int64 a1, __int64 a2, __int64 a3)
     DWORD3(v9) = 0;
     v19 = a3;
     DWORD3(v14) = 2;
-    *(_QWORD*)((char*)&v10 + 1) = 0x101010101010101LL;
+    *(_QWORD*)((char*)&v10_.v10 + 1) = 0x101010101010101LL;
     BYTE1(v7) = 1;
-    *(_QWORD*)&v11 = CudaDriverRoutine_55720;
-    *((_QWORD*)&v11 + 1) = CudaDriverRoutine_559f0;
-    *(_QWORD*)&v12 = CudaDriverRoutine_55a00;
-    *((_QWORD*)&v12 + 1) = CudaDriverRoutine_55ad0;
+    *(_QWORD*)&v10_.v11 = CudaDriverRoutine_55720;
+    *((_QWORD*)&v10_.v11 + 1) = CudaDriverRoutine_559f0;
+    *(_QWORD*)&v10_.v12 = CudaDriverRoutine_55a00;
+    *((_QWORD*)&v10_.v12 + 1) = CudaDriverRoutine_55ad0;
     *(_QWORD*)&v13 = CudaDriverRoutine_55d40;
     *((_QWORD*)&v13 + 1) = CudaDriverRoutine_55dd0;
     *(_QWORD*)&v14 = CudaDriverRoutine_55df0;

@@ -2515,9 +2515,11 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
   unsigned __int64 v27;
   unsigned __int8* v28;
   __int64 v29;
-  __int64 v30;
-  unsigned __int64 v31;
-  char* v32;
+  struct {
+    __int64 v30;
+    unsigned __int64 v31;
+    char* v32;
+  } v30_;
 
   if (a3 >= 0xFFFFFFFFFFFFFFF7LL) {
     String_60a1d0(result);
@@ -2534,13 +2536,13 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
     v14 = fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v13, 16, 0);
     a2 = v12;
     v11 = (char*)v14;
-    v31 = a3;
-    v32 = (char*)v14;
-    v30 = v13 | 1;
+    v30_.v31 = a3;
+    v30_.v32 = (char*)v14;
+    v30_.v30 = v13 | 1;
     goto LABEL_9;
   }
-  LOBYTE(v30) = 2 * a3;
-  v11 = (char*)&v30 + 1;
+  LOBYTE(v30_.v30) = 2 * a3;
+  v11 = (char*)&v30_.v30 + 1;
   if (a3 != 0) {
   LABEL_9:
     result = memmove(v11, a2, a3);
@@ -2552,21 +2554,21 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
   v16 = *(__int64**)(v9 + 16);
   *a6 = 0;
   if (v15 == v16) {
-    v17 = v30 & 1;
+    v17 = v30_.v30 & 1;
   }
   else {
-    v17 = v30 & 1;
+    v17 = v30_.v30 & 1;
     if (v17 != 0) {
-      v18 = v31;
+      v18 = v30_.v31;
     }
     else {
-      v18 = (unsigned __int64)(unsigned __int8)v30 >> 1;
+      v18 = (unsigned __int64)(unsigned __int8)v30_.v30 >> 1;
     }
-    if ((v30 & 1) != 0) {
-      v19 = v32;
+    if ((v30_.v30 & 1) != 0) {
+      v19 = v30_.v32;
     }
     else {
-      v19 = (char*)&v30 + 1;
+      v19 = (char*)&v30_.v30 + 1;
     }
     do {
       v20 = *v15;
@@ -2613,14 +2615,14 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
       v15 += 2;
     } while (v15 != v16);
   }
-  if (v17 != 0 && v32 != nullptr) {
+  if (v17 != 0 && v30_.v32 != nullptr) {
     v29 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v29 = 56;
     }
     {
       nn_mem_StandardAllocator_Free_alt1(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v29, v32);
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v29, v30_.v32);
       return;
     }
   }

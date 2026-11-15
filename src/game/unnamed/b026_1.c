@@ -3623,9 +3623,11 @@ __int64 GameHr_191bab0(__int64 result, char a2, __int64* a3)
   __int64 v25;
   __int64 v26;
   __int64 v27[2];
-  __int64 v28;
-  unsigned __int64 v29;
-  char* v30;
+  struct {
+    __int64 v28;
+    unsigned __int64 v29;
+    char* v30;
+  } v28_;
 
   if (result == 0) {
     return result;
@@ -3651,13 +3653,13 @@ __int64 GameHr_191bab0(__int64 result, char a2, __int64* a3)
       v11 = (v7 | 7) + 1;
     }
     v10 = (char*)GameRoutine_651b90(*(_QWORD*)GameData_212bf68, v11, 16, 0);
-    v29 = v8;
-    v30 = v10;
-    v28 = v11 | 1;
+    v28_.v29 = v8;
+    v28_.v30 = v10;
+    v28_.v28 = v11 | 1;
     goto LABEL_13;
   }
-  LOBYTE(v28) = 2 * v7;
-  v10 = (char*)&v28 + 1;
+  LOBYTE(v28_.v28) = 2 * v7;
+  v10 = (char*)&v28_.v28 + 1;
   if (v7 != 0) {
   LABEL_13:
     GameRoutine_1a0b950(v10, v6, v8);
@@ -3678,17 +3680,17 @@ __int64 GameHr_191bab0(__int64 result, char a2, __int64* a3)
   else {
     v16 = *(_QWORD*)(v5 + 80);
   }
-  if ((v28 & 1) != 0) {
-    v17 = v29;
+  if ((v28_.v28 & 1) != 0) {
+    v17 = v28_.v29;
   }
   else {
-    v17 = (unsigned __int64)(unsigned __int8)v28 >> 1;
+    v17 = (unsigned __int64)(unsigned __int8)v28_.v28 >> 1;
   }
-  if ((v28 & 1) != 0) {
-    v18 = v30;
+  if ((v28_.v28 & 1) != 0) {
+    v18 = v28_.v30;
   }
   else {
-    v18 = (char*)&v28 + 1;
+    v18 = (char*)&v28_.v28 + 1;
   }
   if (v15 >= v17) {
     v19 = v17;
@@ -3728,7 +3730,7 @@ __int64 GameHr_191bab0(__int64 result, char a2, __int64* a3)
     LABEL_41:
       (*(void (**)(__int64))(*(_QWORD*)v23 + 16LL))(v23);
       result = GameRoutine_1a09c50(v23);
-      if ((v28 & 1) == 0) {
+      if ((v28_.v28 & 1) == 0) {
         return result;
       }
       goto LABEL_36;
@@ -3740,16 +3742,16 @@ __int64 GameHr_191bab0(__int64 result, char a2, __int64* a3)
     }
   }
 LABEL_35:
-  if ((v28 & 1) == 0) {
+  if ((v28_.v28 & 1) == 0) {
     return result;
   }
 LABEL_36:
-  if (v30 != nullptr) {
+  if (v28_.v30 != nullptr) {
     v26 = 128;
     if (*(_QWORD*)(*v9 + 200LL) == 0) {
       v26 = 56;
     }
-    return GameRoutine_1a0a4e0(*v9 + v26, (_QWORD)(v30));
+    return GameRoutine_1a0a4e0(*v9 + v26, (_QWORD)(v28_.v30));
   }
   return result;
 }

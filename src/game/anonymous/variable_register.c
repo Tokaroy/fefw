@@ -1930,9 +1930,11 @@ bool VariableRegister_832ec0(_QWORD* a1, _QWORD* a2)
   __int64 v57;
   __int64 v58;
   __int64 v59;
-  __int64 v60;
-  unsigned __int64 v61;
-  char* v62;
+  struct {
+    __int64 v60;
+    unsigned __int64 v61;
+    char* v62;
+  } v60_;
 
   v4 = 0xAAAAAAAAAAAAAAABLL * (a2 - a1);
   if (v4 > 2) {
@@ -2055,11 +2057,11 @@ LABEL_52:
   v35 = v17[1];
   *v17 = 0;
   v17[1] = 0;
-  v60 = v34;
-  v61 = v35;
+  v60_.v60 = v34;
+  v60_.v61 = v35;
   v36 = (char*)v17[2];
   v17[2] = 0;
-  v62 = v36;
+  v60_.v62 = v36;
   v37 = v18;
   while (1) {
     v38 = v37;
@@ -2073,18 +2075,18 @@ LABEL_52:
     if (v38 == -48) {
       break;
     }
-    if ((v60 & 1) != 0) {
-      v42 = v61;
+    if ((v60_.v60 & 1) != 0) {
+      v42 = v60_.v61;
     }
     else {
-      v42 = (unsigned __int64)(unsigned __int8)v60 >> 1;
+      v42 = (unsigned __int64)(unsigned __int8)v60_.v60 >> 1;
     }
     v43 = (unsigned __int8)v39[24];
-    if ((v60 & 1) != 0) {
-      v44 = v62;
+    if ((v60_.v60 & 1) != 0) {
+      v44 = v60_.v62;
     }
     else {
-      v44 = (char*)&v60 + 1;
+      v44 = (char*)&v60_.v60 + 1;
     }
     v45 = v39 + 25;
     v48 = v39 + 32;
@@ -2126,11 +2128,11 @@ LABEL_52:
   }
   v20 = a1;
 LABEL_31:
-  v21 = v61;
+  v21 = v60_.v61;
   ++v19;
-  *v20 = v60;
+  *v20 = v60_.v60;
   v20[1] = v21;
-  v20[2] = v62;
+  v20[2] = v60_.v62;
   if (v19 != 8) {
     goto LABEL_32;
   }
@@ -2208,9 +2210,11 @@ __int64 VariableRegister_833460(__int64 result, __int64 a2, __int64 a3,
   __int64 v69;
   char* v70;
   __int64 v71;
-  __int64 v72;
-  unsigned __int64 v73;
-  char* v74;
+  struct {
+    __int64 v72;
+    unsigned __int64 v73;
+    char* v74;
+  } v72_;
   __int64 v75;
   __int64 v76;
 
@@ -2328,12 +2332,12 @@ __int64 VariableRegister_833460(__int64 result, __int64 a2, __int64 a3,
       *v8 = 0;
       v8[1] = 0;
       v71 = v10;
-      v72 = v37;
-      v73 = v38;
+      v72_.v72 = v37;
+      v72_.v73 = v38;
       v39 = (char*)v8[2];
       v8[2] = 0;
-      v74 = v39;
-      v40 = (char*)&v72 + 1;
+      v72_.v74 = v39;
+      v40 = (char*)&v72_.v72 + 1;
       while (1) {
         v49 = *(_QWORD*)v13;
         v50 = *((_QWORD*)v13 + 2);
@@ -2344,9 +2348,9 @@ __int64 VariableRegister_833460(__int64 result, __int64 a2, __int64 a3,
         *(_WORD*)v13 = 0;
         if (v7 < v11) {
         LABEL_87:
-          v69 = v72;
-          v70 = v74;
-          v51[1] = v73;
+          v69 = v72_.v72;
+          v70 = v72_.v74;
+          v51[1] = v72_.v73;
           v51[2] = v70;
           *v51 = v69;
           return result;
@@ -2432,14 +2436,14 @@ __int64 VariableRegister_833460(__int64 result, __int64 a2, __int64 a3,
         else {
           v45 = *((unsigned __int8**)v13 + 2);
         }
-        if ((v72 & 1) != 0) {
-          v46 = v73;
+        if ((v72_.v72 & 1) != 0) {
+          v46 = v72_.v73;
         }
         else {
-          v46 = (unsigned __int64)(unsigned __int8)v72 >> 1;
+          v46 = (unsigned __int64)(unsigned __int8)v72_.v72 >> 1;
         }
-        if ((v72 & 1) != 0) {
-          v47 = v74;
+        if ((v72_.v72 & 1) != 0) {
+          v47 = v72_.v74;
         }
         else {
           v47 = v40;
@@ -2617,9 +2621,11 @@ __int64 VariableRegister_833860(__int64 result, __int64 a2, __int64 a3,
   char* v34;
   unsigned __int64 v35;
   unsigned __int64 v36;
-  __int64 v37;
-  unsigned __int64 v38;
-  char* v39;
+  struct {
+    __int64 v37;
+    unsigned __int64 v38;
+    char* v39;
+  } v37_;
   __int64 v40;
   __int64 v41;
 
@@ -2679,20 +2685,20 @@ __int64 VariableRegister_833860(__int64 result, __int64 a2, __int64 a3,
     v22 = v11[1];
     v23 = (char*)v11[2];
     v24 = (*v11 & 1) == 0;
-    v37 = *v11;
-    v38 = v22;
-    v39 = v23;
+    v37_.v37 = *v11;
+    v37_.v38 = v22;
+    v37_.v39 = v23;
     *v11 = 0;
     v11[1] = 0;
     v11[2] = 0;
     if (v24) {
-      v25 = (char*)&v37 + 1;
+      v25 = (char*)&v37_.v37 + 1;
     }
     else {
       v25 = v23;
     }
     if (v24) {
-      v26 = (unsigned __int8)v37 >> 1;
+      v26 = (unsigned __int8)v37_.v37 >> 1;
     }
     else {
       v26 = v22;
@@ -2740,10 +2746,10 @@ __int64 VariableRegister_833860(__int64 result, __int64 a2, __int64 a3,
       }
       v11 = v29;
     } while ((result & 0x80000000) != 0);
-    v36 = v38;
-    *v29 = v37;
+    v36 = v37_.v38;
+    *v29 = v37_.v37;
     v29[1] = v36;
-    v29[2] = (__int64)v39;
+    v29[2] = (__int64)v37_.v39;
   }
   return result;
 }
