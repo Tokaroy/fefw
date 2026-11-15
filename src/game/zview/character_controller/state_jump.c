@@ -5,7 +5,8 @@
 __int64 __cxa_guard_acquire(_QWORD);
 __int64 __cxa_guard_release(_QWORD);
 extern _UNKNOWN GameData_22110b8;
-extern __int64 GameData_22110ac;
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac;
 float StateJump_Unknown2(__int64 a1);
 
 float StateJump_Unknown2(__int64 a1)

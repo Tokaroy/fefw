@@ -36,6 +36,8 @@ __int64 ProcDivinationSeq_1964870(__int64 a1);
 __int64 ProcDivinationSeq_1964a60(__int64 a1, char a2);
 __int64 ProcDivinationSeq_1964e60(__int64 a1);
 unsigned int game_195b260(__int64, unsigned __int8, int);
+__int64 game_195b260_alt1(__int64, unsigned __int8, int) __asm__(
+    "game_195b260");
 
 __int64 ProcDivinationSeq_1964870(__int64 a1)
 {
@@ -193,7 +195,7 @@ LABEL_7:
   v15 = *(_QWORD*)(a1 + 48);
   v16 = *(_DWORD*)(a1 + 32);
   *(_BYTE*)(a1 + 56) = v13;
-  result = game_195b260(v15, v13, v16);
+  result = game_195b260_alt1(v15, v13, v16);
   v18 = *(_QWORD*)(a1 + 48);
   *(_DWORD*)(a1 + 60) = result;
   if ((int)result < *(unsigned __int16*)(v18 + 60)) {
@@ -270,15 +272,14 @@ LABEL_7:
               0x3FF0 |
           1;
     }
-    result =
-        (__int64)(game_UnitUtil_UniqueMap_Commit_89abc0(
-                      (void*)(&v37),
-                      *(_QWORD*)(*(_QWORD*)
-                                     game_TransporterConst_List_instance__ptr
-                                         [0] +
-                                 8LL),
-                      &v38, 1),
-                  (void*)(&v37));
+    game_UnitUtil_UniqueMap_Commit_89abc0(
+        (void*)(&v37),
+        *(_QWORD*)(*(_QWORD*)game_TransporterConst_List_instance__ptr[0] +
+                   8LL),
+        &v38, 1);
+    // The original returns what the call left in x0.
+    result = COERCE_AS(__typeof__(result),
+                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   }
   v35 = *(unsigned __int8*)(a1 + 56);
   if (*(_BYTE*)(a1 + 56) != 0) {

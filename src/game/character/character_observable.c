@@ -138,6 +138,7 @@ __int64 std___1___shared_weak_count___release_weak_alt1(_QWORD) __asm__(
     "std___1___shared_weak_count___release_weak");
 __int64 strcmp(_QWORD, _QWORD);
 bool game_108cee0(int);
+__int64 game_108cee0_alt1(int) __asm__("game_108cee0");
 extern _UNKNOWN game_g_random_mutex;
 extern __int128 GameData_1a82dd0;
 extern __int64* game_map_MapRandom_instance__ptr[3];
@@ -6159,7 +6160,7 @@ LABEL_37:
     }
     *(_BYTE*)(v2 + 385) = 0;
   }
-  result = game_108cee0(*(_DWORD*)(v4[9] + 116LL));
+  result = game_108cee0_alt1(*(_DWORD*)(v4[9] + 116LL));
   if ((result & 1) != 0) {
     v27 = *(_QWORD*)(v2 + 392);
     v28 = *(_QWORD*)(v2 + 400);
