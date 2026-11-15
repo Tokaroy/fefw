@@ -4850,7 +4850,7 @@ char* PrimitiveDrawManager_1997540(char* result, char* a2, char* a3, __int64 a4,
         v14 = *(_DWORD*)&result[4 * v12];
         if (*(int*)(v13 + 1440LL * v10 + 36) +
                 *(int*)(v13 + 1440LL * v10 + 32) <
-            *(_DWORD*)(v13 + 1440LL * v14 + 36) +
+            *(int*)(v13 + 1440LL * v14 + 36) +
                 *(int*)(v13 + 1440LL * v14 + 32)) {
           break;
         }
@@ -6060,6 +6060,9 @@ __int64 PrimitiveDrawManager_19987a0(__int64 a1)
     _QWORD v137[4];
   } v124_;
 
+  // The original copies these fields uninitialised.
+  __asm__ volatile("" : "+m"(v104), "+m"(v110), "+m"(v114), "+m"(v122),
+                   "+m"(v123));
   v1 = *(_DWORD**)(a1 + 18768);
   v3 = a1 + 17280;
   v4 = *(_QWORD*)(a1 + 18784);

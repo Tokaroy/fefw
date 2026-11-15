@@ -143,7 +143,7 @@ void game_combat_1065370(int** a1, double a2, long double a3)
   }
   else {
     if (((unsigned int)(v21 - 232551549) > 0x10 |
-         ((1 << (v21 - 125)) & 0x10401) == 0) &&
+         ((1 << ((v21 - 125) & 0x1F)) & 0x10401) == 0) &&
         v21 != 143741767) {
     LABEL_71:
       if ((*v4 & 0x212) == 0x12) {

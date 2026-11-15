@@ -12227,7 +12227,7 @@ LABEL_2:
   v11 = v9;
   while (1) {
     v9 = v11;
-    v12 = a2 - v11;
+    v12 = ((__int64)a2 - (__int64)v11) >> 2;
     if (v12 > 2) {
       break;
     }
@@ -45473,7 +45473,7 @@ __int64 GameHr_1352160(__int64 result, __int64* a2, __int64 a3, char a4)
     while (1) {
       while (1) {
         v7 = v8;
-        v9 = a2 - v8;
+        v9 = ((__int64)a2 - (__int64)v8) >> 3;
         if (v9 > 2) {
           if (v9 == 3) {
             v169 = *v8;
@@ -48657,7 +48657,7 @@ LABEL_2:
   v11 = v9;
   while (1) {
     v9 = v11;
-    v12 = a2 - v11;
+    v12 = ((__int64)a2 - (__int64)v11) >> 3;
     if (v12 > 2) {
       switch (v12) {
       case 3LL:

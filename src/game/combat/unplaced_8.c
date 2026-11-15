@@ -443,7 +443,9 @@ float game_combat_110ac10(__int64 a1, float result)
                         *(float*)(v11 + 40)));
     if (result < 0x1.0000000000000p-2f) {
       v12 = *(_QWORD*)(v11 + 368);
-      if ((CharacterAnimator_1079e10(v12) & 1) != 0) {
+      v22 = CharacterAnimator_1079e10(v12);
+      result = PSEUDO_REGISTER(float, "s0", "=w");
+      if ((v22 & 1) != 0) {
         result = CharacterAnimator_1079580(
             v12, -2109400973, -0x1.0000000000000p+0f, -0x1.0000000000000p+0f,
             0x1.0000000000000p+0f);

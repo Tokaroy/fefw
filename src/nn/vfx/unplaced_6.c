@@ -2632,7 +2632,7 @@ __int64 nn_vfx_5d80a0(__int64 result, __int64 a2, __int64 a3, __int64 a4)
       v9 = *(float*)(v8 + 8);
       __asm__ volatile("" ::"w"(v9));
     }
-    if (*(float*)v8 >= v9 &&
+    if (!(*(float*)v8 < v9) &&
         (*(float*)v8 > v9 || (signed __int32)*(_DWORD*)(v8 + 4) <
                                  (signed __int32)*(_DWORD*)(v8 + 12))) {
       v8 += 8;
@@ -2643,7 +2643,7 @@ __int64 nn_vfx_5d80a0(__int64 result, __int64 a2, __int64 a3, __int64 a4)
     v10 = *(float*)a4;
     __asm__ volatile("" ::"w"(v10));
   }
-  if (*(float*)v8 >= *(float*)a4) {
+  if (!(*(float*)v8 < *(float*)a4)) {
     if (*(float*)v8 > *(float*)a4) {
       return result;
     }
@@ -2676,14 +2676,14 @@ __int64 nn_vfx_5d80a0(__int64 result, __int64 a2, __int64 a3, __int64 a4)
         v14 = *(float*)(v13 + 8);
         __asm__ volatile("" ::"w"(v14));
       }
-      if (*(float*)v13 >= v14 &&
+      if (!(*(float*)v13 < v14) &&
           (*(float*)v13 > v14 || (signed __int32)*(_DWORD*)(v13 + 4) <
                                      (signed __int32)*(_DWORD*)(v13 + 12))) {
         v13 += 8;
         v6 = v12;
       }
     }
-    if (*(float*)v13 >= v10) {
+    if (!(*(float*)v13 < v10)) {
       break;
     }
   LABEL_12:
@@ -2693,7 +2693,7 @@ __int64 nn_vfx_5d80a0(__int64 result, __int64 a2, __int64 a3, __int64 a4)
       goto LABEL_26;
     }
   }
-  if (*(float*)v13 <= v10) {
+  if (!(*(float*)v13 > v10)) {
     if ((signed __int32)*(_DWORD*)(v13 + 4) < v11) {
       *(float*)v8 = v10;
       *(_DWORD*)(v8 + 4) = v11;

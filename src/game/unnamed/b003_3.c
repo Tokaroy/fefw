@@ -2941,7 +2941,8 @@ __int64 GameHr_5eb620(int a1)
     return 4;
   }
   if (a1 <= 5376) {
-    if ((unsigned int)(a1 - 4609) > 4 || ((1 << (a1 - 1)) & 0x13) == 0) {
+    if ((unsigned int)(a1 - 4609) > 4 ||
+        ((1 << ((a1 - 1) & 0x1F)) & 0x13) == 0) {
       if (a1 != 3586) {
         if (a1 != 5125) {
           goto LABEL_25;

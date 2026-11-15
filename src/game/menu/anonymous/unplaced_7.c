@@ -151,7 +151,7 @@ LABEL_2:
   v121 = a2;
   while (1) {
     v9 = v10;
-    v11 = a2 - v10;
+    v11 = ((__int64)a2 - (__int64)v10) >> 3;
     if (v11 > 2) {
       break;
     }

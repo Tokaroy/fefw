@@ -351,7 +351,7 @@ __int64 ActionAttack_Unknown5(__int64 a1)
     }
     v11 = *(_DWORD*)(v9 + 11784);
     v12 = v11 > 0x12;
-    v13 = 0x1FF7Fu >> v11;
+    v13 = 0x1FF7Fu >> (v11 & 0x1F);
     v14 = v12;
     v1 = v14 | v13;
     if (v10 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v10 + 8),
@@ -471,7 +471,7 @@ LABEL_55:
   }
   v39 = *(_DWORD*)(v37 + 11784);
   v12 = v39 > 0x12;
-  v40 = 0x1FF7Fu >> v39;
+  v40 = 0x1FF7Fu >> (v39 & 0x1F);
   v41 = v12;
   v42 = v41 | v40;
   if (v38 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v38 + 8),
@@ -1129,9 +1129,10 @@ LABEL_168:
   }
   v157 = *(_DWORD*)(*(_QWORD*)(a1 + 24) + 64LL);
   if ((unsigned int)(v157 - 989295305) <= 0x21 &&
-          ((1LL << ((unsigned __int8)v157 + 55)) & 0x200040007LL) != 0 ||
+          ((1LL << (((unsigned __int8)v157 + 55) & 0x3F)) & 0x200040007LL) !=
+              0 ||
       (unsigned int)(v158 = v157 + 2068235592) <= 0x12 &&
-          ((1 << v158) & 0x40003) != 0) {
+          ((1 << (v158 & 0x1F)) & 0x40003) != 0) {
     v159 = *(_QWORD**)(a1 + 8);
     v160 = v159[9];
     v161 = v159[10];
@@ -1301,9 +1302,9 @@ __int64 ActionAttack_1061280(__int64 result, unsigned __int8 a2, int a3,
   }
   v10 = v5[16];
   v11 = (unsigned int)(v10 - 989295305) > 0x21 ||
-        ((1LL << ((unsigned __int8)v10 + 55)) & 0x200040007LL) == 0;
+        ((1LL << (((unsigned __int8)v10 + 55) & 0x3F)) & 0x200040007LL) == 0;
   if (!v11 || ((v12 = v10 + 2068235592, v13 = v12 > 0x12,
-                v14 = (1 << v12) & 0x40003, !v13)
+                v14 = (1 << (v12 & 0x1F)) & 0x40003, !v13)
                    ? (v15 = v14 == 0)
                    : (v15 = true),
                !v15)) {
@@ -1497,7 +1498,7 @@ __int64 ActionAttack_1061280(__int64 result, unsigned __int8 a2, int a3,
           }
           v78 = *(_DWORD*)(v76 + 11784);
           v13 = v78 > 0x12;
-          v79 = 0x1FF7Fu >> v78;
+          v79 = 0x1FF7Fu >> (v78 & 0x1F);
           v80 = v13;
           v81 = v80 | v79;
           if (v77 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v77 + 8),

@@ -15513,6 +15513,7 @@ __n128 game_10f2ea0(float32x4_t* a1, __n128 result)
             v55 = 1;
             game_108db00_alt1((void*)((__int64*)&v53), v50, "Btl_Guard_Parry",
                               &v54, 1.0f);
+            result = PSEUDO_REGISTER(__n128, "v0", "=w");
             v51 = LANES128(v53).n128_u64[1];
             if (LANES128(v53).n128_u64[1] != 0 &&
                 atomic_fetch_add(
@@ -17141,8 +17142,9 @@ LABEL_51:
       v50 = 0x1.11570c0000000p-5f;
     }
     LANES128(v20).n128_u32[0] = LANES128(a1[4]).n128_u32[0];
-    v52 = game_111f520_alt1((v46 < 0x22) & (0x34C260000uLL >> v46),
-                            *(long double*)&v20, v19, v50);
+    v52 = game_111f520_alt1(
+        (v46 < 0x22) & (0x34C260000uLL >> (v46 & 0x3F)), *(long double*)&v20,
+        v19, v50);
     v47 = LANES128(a1[2]).n128_u8[8];
     LANES128(a1[4]).n128_f32[0] = v52;
   }
@@ -17151,7 +17153,7 @@ LABEL_51:
                                8LL) +
                     308LL) +
           0x1.99999a0000000p-1f;
-    if (LANES128(a1[4]).n128_f32[0] >= v25) {
+    if (!(LANES128(a1[4]).n128_f32[0] < v25)) {
       v25 = LANES128(a1[4]).n128_f32[0];
     }
     goto LABEL_64;

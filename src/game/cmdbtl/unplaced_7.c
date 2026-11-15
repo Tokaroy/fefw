@@ -167,7 +167,7 @@ LABEL_2:
   v8 = v7;
   while (1) {
     v7 = v8;
-    v9 = a2 - v8;
+    v9 = ((__int64)a2 - (__int64)v8) >> 3;
     v10 = v9 - 2;
     if (v9 > 2) {
       break;

@@ -5544,6 +5544,7 @@ void game_12c16e0(__int64* a1)
   v99 = *(_BYTE*)(*a1 + 540);
   v3 = *(_QWORD*)(v1 + 541);
   v101 = *(_DWORD*)(v1 + 549);
+  __asm__ volatile("" ::"r"(v99), "r"(v3), "r"(v101));
   LODWORD(v1) = *((_DWORD*)a1 + 2);
   v100 = v3;
   if ((int)v1 >= 1) {
@@ -11549,6 +11550,8 @@ void game_1514d20(__int64 a1)
       v3 = (const char*)(v4 + 1);
     }
   }
+  // The original calls strlen on a null name too.
+  __asm__("" : "+r"(v3));
   v5 = strlen_alt1(v3);
   v6 = (_QWORD*)GameRoutine_1a09ce0_alt1((__int64)&v53, v3, v5);
   v8 = v6[1];

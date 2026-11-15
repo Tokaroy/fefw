@@ -9372,7 +9372,7 @@ bool game_1214620(_DWORD* a1, int* a2)
   int v59;
   int v60;
 
-  v2 = a2 - (__typeof__(a2))a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 2;
   if (v2 > 2) {
     switch (v2) {
     case 3LL:

@@ -21,6 +21,8 @@ void __attribute__((noreturn)) GameRoutine_60a310(_QWORD);
 __int64 GameRoutine_6c90c0(_QWORD);
 __int64 GameRoutine_6e8bc0(_QWORD, _QWORD);
 bool GameRoutine_6e8e50(unsigned __int16*, __int64);
+__int64 GameRoutine_6e8e50_wide(unsigned __int16*,
+                                   __int64) __asm__("GameRoutine_6e8e50");
 __int64 GameRoutine_6ea8c0(_QWORD, long double);
 __int64 GameRoutine_74d660(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 GameRoutine_7545a0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
@@ -129,7 +131,7 @@ __int64 GameHr_74ae00(__int64 result, __int64 a2, unsigned __int16* a3,
   v15 = *(unsigned __int8**)(*(_QWORD*)(*GameData_212c878[0] + 64) + 8LL * *a3);
   v16 = v15[73];
   v17 = v15[72];
-  if (v17 > 7 || ((1LL << v16) & 0x7DC) == 0) {
+  if (v17 > 7 || ((1LL << (v16 & 0x3F)) & 0x7DC) == 0) {
     if (v17 > 7 || v16 != 1) {
       return result;
     }
@@ -157,7 +159,7 @@ __int64 GameHr_74ae00(__int64 result, __int64 a2, unsigned __int16* a3,
     }
   }
   else {
-    result = GameRoutine_6e8e50(a3, a2);
+    result = GameRoutine_6e8e50_wide(a3, a2);
     if ((result & 1) == 0) {
       return result;
     }
@@ -230,23 +232,23 @@ LABEL_46:
           if ((int)v20 >= v24) {
             v56 = *a4;
             for (i = ((_BYTE)v55 + 1) & 7; i != 0; v56 |= v58) {
-              v58 = 1LL << v24++;
+              v58 = 1LL << (v24++ & 0x3F);
               --i;
             }
             if (v55 >= 7) {
               v59 = -(int)v20;
               v60 = v24 + 7;
               do {
-                v61 = (1LL << ((unsigned __int8)v60 - 2)) |
-                      (1LL << ((unsigned __int8)v60 - 3)) |
-                      (1LL << ((unsigned __int8)v60 - 4)) |
-                      (1LL << ((unsigned __int8)v60 - 5)) |
-                      (1LL << ((unsigned __int8)v60 - 6)) |
-                      (1LL << ((unsigned __int8)v60 - 7)) | v56;
+                v61 = (1LL << (((unsigned __int8)v60 - 2) & 0x3F)) |
+                      (1LL << (((unsigned __int8)v60 - 3) & 0x3F)) |
+                      (1LL << (((unsigned __int8)v60 - 4) & 0x3F)) |
+                      (1LL << (((unsigned __int8)v60 - 5) & 0x3F)) |
+                      (1LL << (((unsigned __int8)v60 - 6) & 0x3F)) |
+                      (1LL << (((unsigned __int8)v60 - 7) & 0x3F)) | v56;
                 v62 = v60 - 1;
-                v63 = 1LL << v60;
+                v63 = 1LL << (v60 & 0x3F);
                 v60 += 8;
-                v56 = v63 | (1LL << v62) | v61;
+                v56 = v63 | (1LL << (v62 & 0x3F)) | v61;
               } while (v59 + v60 != 8);
             }
             *a4 = v56;
@@ -256,8 +258,10 @@ LABEL_46:
     }
     else {
       v36 = v33 <= 7 && v34 == 7;
-      if (v36 || (v33 <= 7 ? (v37 = ((1LL << v34) & 0x7DC) == 0) : (v37 = true),
-                  !v37)) {
+      if (v36 ||
+          (v33 <= 7 ? (v37 = ((1LL << (v34 & 0x3F)) & 0x7DC) == 0)
+                    : (v37 = true),
+           !v37)) {
         v38 = **(_DWORD**)(v13 + 8);
         if ((v38 & 0x200000) != 0 ||
             (v34 == 2 ? (v39 = (v38 & 0x800000) == 0) : (v39 = true),
@@ -276,23 +280,23 @@ LABEL_46:
                 if ((int)v20 >= v24) {
                   v46 = *a5;
                   for (j = ((_BYTE)v45 + 1) & 7; j != 0; v46 |= v48) {
-                    v48 = 1LL << v24++;
+                    v48 = 1LL << (v24++ & 0x3F);
                     --j;
                   }
                   if (v45 >= 7) {
                     v49 = -(int)v20;
                     v50 = v24 + 7;
                     do {
-                      v51 = (1LL << ((unsigned __int8)v50 - 2)) |
-                            (1LL << ((unsigned __int8)v50 - 3)) |
-                            (1LL << ((unsigned __int8)v50 - 4)) |
-                            (1LL << ((unsigned __int8)v50 - 5)) |
-                            (1LL << ((unsigned __int8)v50 - 6)) |
-                            (1LL << ((unsigned __int8)v50 - 7)) | v46;
+                      v51 = (1LL << (((unsigned __int8)v50 - 2) & 0x3F)) |
+                            (1LL << (((unsigned __int8)v50 - 3) & 0x3F)) |
+                            (1LL << (((unsigned __int8)v50 - 4) & 0x3F)) |
+                            (1LL << (((unsigned __int8)v50 - 5) & 0x3F)) |
+                            (1LL << (((unsigned __int8)v50 - 6) & 0x3F)) |
+                            (1LL << (((unsigned __int8)v50 - 7) & 0x3F)) | v46;
                       v52 = v50 - 1;
-                      v53 = 1LL << v50;
+                      v53 = 1LL << (v50 & 0x3F);
                       v50 += 8;
-                      v46 = v53 | (1LL << v52) | v51;
+                      v46 = v53 | (1LL << (v52 & 0x3F)) | v51;
                     } while (v49 + v50 != 8);
                   }
                   *a5 = v46;
