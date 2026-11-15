@@ -2381,7 +2381,20 @@ void game_map_7b0700(__int64 a1)
       v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v78 = COERCE_AS(__typeof__(v78), PSEUDO_REGISTER(__n128, "v0", "=w"));
-      if (v15 == nullptr || ((**v15)(v15) & 1) == 0) {
+      if (v15 == nullptr || (({
+                                __int64 v_ = (**v15)(v15);
+                                v52 = COERCE_AS(__typeof__(v52),
+                                                PSEUDO_REGISTER(__n128, "v0",
+                                                                "=w"));
+                                v7 = COERCE_AS(__typeof__(v7),
+                                               PSEUDO_REGISTER(__n128, "v0",
+                                                               "=w"));
+                                v78 = COERCE_AS(__typeof__(v78),
+                                                PSEUDO_REGISTER(__n128, "v0",
+                                                                "=w"));
+                                v_;
+                              }) &
+                              1) == 0) {
         goto LABEL_3;
       }
     }
@@ -2769,7 +2782,25 @@ void game_map_7b0700(__int64 a1)
       }
     }
     else {
-      if (!BattleSide_7a11b0(v17) && (BattleInfo_79d030(v17) & 1) == 0) {
+      if (!({
+            bool v_ = BattleSide_7a11b0(v17);
+            v52 = COERCE_AS(__typeof__(v52),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v78 = COERCE_AS(__typeof__(v78),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v_;
+          }) &&
+          (({
+             __int64 v_ = BattleInfo_79d030(v17);
+             v52 = COERCE_AS(__typeof__(v52),
+                             PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v7 = COERCE_AS(__typeof__(v7),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v78 = COERCE_AS(__typeof__(v78),
+                             PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v_;
+           }) & 1) == 0) {
         game_map_7aa980_alt1("SE_ACT_LD_Guard_Normal", v13, v52),
             v52 =
                 COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -2941,7 +2972,25 @@ void game_map_7b0700(__int64 a1)
         }
         goto LABEL_150;
       }
-      if (!BattleSide_7a11b0(v17) && (BattleInfo_79d030(v17) & 1) != 0) {
+      if (!({
+            bool v_ = BattleSide_7a11b0(v17);
+            v52 = COERCE_AS(__typeof__(v52),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v78 = COERCE_AS(__typeof__(v78),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+            v_;
+          }) &&
+          (({
+             __int64 v_ = BattleInfo_79d030(v17);
+             v52 = COERCE_AS(__typeof__(v52),
+                             PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v7 = COERCE_AS(__typeof__(v7),
+                            PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v78 = COERCE_AS(__typeof__(v78),
+                             PSEUDO_REGISTER(__n128, "v0", "=w"));
+             v_;
+           }) & 1) != 0) {
         v53 = *(_QWORD*)(v13 + 24);
         v54 = *(_QWORD*)(v17 + 24) == v53 || v53 == 0;
         if (!v54 && *(_BYTE*)(v1 + 2552) != 0) {

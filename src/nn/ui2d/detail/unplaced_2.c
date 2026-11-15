@@ -224,11 +224,11 @@ __int64 nn_ui2d_detail_5a4560(float* a1, float32x2_t** a2, int* a3, _DWORD** a4,
             LANES64(v59).n64_u64[0] =
                 LANES64_OF(vpadd_f32(v58, v58)).n64_u64[0];
             v60 = LANES64_OF(vdiv_f32(vmul_f32(v59, v59), v39)).n64_f32[0];
-            if (LANES64(v45).n64_f32[0] >= v60) {
-              v52 = LANES64(v45).n64_f32[0];
+            if (LANES64(v45).n64_f32[0] < v60) {
+              v52 = v60;
             }
             else {
-              v52 = v60;
+              v52 = LANES64(v45).n64_f32[0];
             }
           }
           goto LABEL_20;
@@ -236,11 +236,11 @@ __int64 nn_ui2d_detail_5a4560(float* a1, float32x2_t** a2, int* a3, _DWORD** a4,
       }
       LANES64(v54).n64_u64[0] = LANES64_OF(vmul_f32(v46, v46)).n64_u64[0];
       v55 = LANES64_OF(vpadd_f32(v54, v54)).n64_f32[0];
-      if (LANES64(v45).n64_f32[0] >= v55) {
-        v52 = LANES64(v45).n64_f32[0];
+      if (LANES64(v45).n64_f32[0] < v55) {
+        v52 = v55;
       }
       else {
-        v52 = v55;
+        v52 = LANES64(v45).n64_f32[0];
       }
     LABEL_20:
       v56 = sqrtf(v52);
@@ -250,7 +250,7 @@ __int64 nn_ui2d_detail_5a4560(float* a1, float32x2_t** a2, int* a3, _DWORD** a4,
       else {
         v88 = ceilf(sqrtf(v56 / v35));
         GameRoutine_59fe80(&v88, 0x1.0000000000000p+0f, 0x1.0000000000000p+10f);
-        v57 = 1 << -__clz((int)v88 - 1);
+        v57 = 1 << (-__clz((int)v88 - 1) & 31);
       }
       v61 = *a2;
       v62 = nn_ui2d_5a3850(&v83, &v84, &v85, (__int64)&v86_.v86, (__int64)a2,

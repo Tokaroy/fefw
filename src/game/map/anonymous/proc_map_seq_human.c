@@ -846,8 +846,14 @@ LABEL_244:
     }
   }
   v53 = GameData_212cfc0[0];
-  if (game_map_Cursor_Impl_Tick(*(_QWORD**)(*GameData_212cfc0[0] + 48), 0, a2,
-                                a3, a4, a5, a6, a7, a8, a9)) {
+  if (({
+        bool v_ = game_map_Cursor_Impl_Tick(
+            *(_QWORD**)(*GameData_212cfc0[0] + 48), 0, a2, a3, a4, a5, a6, a7,
+            a8, a9);
+        v54 = COERCE_AS(__typeof__(v54),
+                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+        v_;
+      })) {
     snd_Fade_Fade_10c830((__int64)v95, 0x0.0p+0f),
         v54 = COERCE_AS(__typeof__(v54),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));

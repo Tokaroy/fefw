@@ -130,6 +130,8 @@ bool game_6ed370(__int64);
 bool game_HasActiveSkill_843420(_DWORD*, _QWORD*);
 bool game_gameui_UnitUtil_CheckDangerCritical(__int64, __int64);
 bool nn_vfx_5d39a0(__int64, _QWORD*, int*, float32x4_t*, int, int, float);
+__int64 nn_vfx_5d39a0_alt1(__int64, _QWORD*, int*, float32x4_t*, int, int,
+                           float) __asm__("nn_vfx_5d39a0");
 char* GameHr_158f870(char* result, __int64, char, unsigned int);
 char* GameRoutine_a4dbe0(__int64, const char*, char);
 char* LayoutAccessor_1562060(char* result, __int64, const char*);
@@ -783,7 +785,7 @@ __int64 game_5dbbc0(__int64 result, float32x4_t* a2)
     v6 = *(_QWORD*)(result + 24);
     v362 = 0;
     v358 = 0;
-    result = nn_vfx_5d39a0(v6, &v358, &v362, a2, 1, 0, v5),
+    result = nn_vfx_5d39a0_alt1(v6, &v358, &v362, a2, 1, 0, v5),
     v335 = COERCE_AS(__typeof__(v335),
                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
     if (v362 != 0) {

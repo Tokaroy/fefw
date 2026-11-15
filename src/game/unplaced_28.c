@@ -2528,11 +2528,8 @@ __int64 game_1204820(__int64 a1, int a2, __int64 a3, __int64 a4)
     unsigned __int64 v61;
     int v62;
   } v60_;
-  struct {
-    _QWORD v63[4];
-    _QWORD* v64;
-  } v63_;
-  struct {
+  // Order and alignment put both objects at the original's frame offsets.
+  struct __attribute__((aligned(16))) {
     __int64 (**v65)();
     unsigned __int64 v66;
     __int64 v67;
@@ -2540,6 +2537,10 @@ __int64 game_1204820(__int64 a1, int a2, __int64 a3, __int64 a4)
     char gap140_[4];
     __int64* v69;
   } v65_;
+  struct __attribute__((aligned(16))) {
+    _QWORD v63[4];
+    _QWORD* v64;
+  } v63_;
   __int64 v70;
   __int64 v71;
 

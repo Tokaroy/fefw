@@ -3358,6 +3358,8 @@ LABEL_362:
 
 bool MaterialAnimModule_be6200(float* a1, __int64 a2, float a3)
 {
+
+#pragma clang fp contract(off)
   __int64 v3;
   __int64 v4;
   __int64 v5;
@@ -3424,11 +3426,11 @@ bool MaterialAnimModule_be6200(float* a1, __int64 a2, float a3)
             break;
           case 3:
             v19 = 1.0f;
-            v14 = 1.0f - (float)((float)(1.0f - v14) * (float)(1.0f - v14));
+            v14 = __builtin_elementwise_fma(-(1.0f - v14), 1.0f - v14, 1.0f);
             goto LABEL_24;
           case 4:
             v15 = v14 < 0.5f;
-            v16 = (float)(v14 * -2.0f) + 2.0f;
+            v16 = __builtin_elementwise_fma(v14, -2.0f, 2.0f);
             v14 = v14 * (float)(v14 + v14);
             v17 = (float)((float)(v16 * v16) * -0.5f) + 1.0f;
             if (!v15) {
@@ -3444,7 +3446,7 @@ bool MaterialAnimModule_be6200(float* a1, __int64 a2, float a3)
       LABEL_24:
         v18 = v19 - v14;
       LABEL_25:
-        v6 = (float)(v6 * v14) + (float)(v12 * v18);
+        v6 = __builtin_elementwise_fma(v12, v18, v6 * v14);
       }
     }
   LABEL_26:

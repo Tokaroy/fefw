@@ -932,9 +932,11 @@ __int64 ProcGameUIFade_15e1e60(__int64 a1, __int64 a2, __int64 a3)
   __int64 result;
   __int64 v154;
   __int64 v157;
+  // The pad puts the object at the original's frame offset.
   struct {
     _QWORD v159[4];
     _QWORD* v160;
+    _QWORD pad_;
   } v159_;
 
   v3 = a2;

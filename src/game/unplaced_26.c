@@ -1860,11 +1860,11 @@ __int64 game_5a42b0(__int64 a1, int a2)
     LANES64(v34).n64_u64[0] = LANES64_OF(vpadd_f32(v33, v33)).n64_u64[0];
     v35 = LANES64_OF(vdiv_f32(vmul_f32(v34, v34), v17)).n64_f32[0];
     v29 = *(float*)(a1 + 48);
-    if (LANES64(v19).n64_f32[0] >= v35) {
-      v30 = LANES64(v19).n64_f32[0];
+    if (LANES64(v19).n64_f32[0] < v35) {
+      v30 = v35;
     }
     else {
-      v30 = v35;
+      v30 = LANES64(v19).n64_f32[0];
     }
     goto LABEL_12;
   }
@@ -1873,11 +1873,11 @@ LABEL_9:
   LANES64(v27).n64_u64[0] = LANES64_OF(vmul_f32(v23, v23)).n64_u64[0];
   v28 = LANES64_OF(vpadd_f32(v27, v27)).n64_f32[0];
   v29 = *(float*)(a1 + 48);
-  if (LANES64(v19).n64_f32[0] >= v28) {
-    v30 = LANES64(v19).n64_f32[0];
+  if (LANES64(v19).n64_f32[0] < v28) {
+    v30 = v28;
   }
   else {
-    v30 = v28;
+    v30 = LANES64(v19).n64_f32[0];
   }
 LABEL_12:
   v31 = sqrtf(v30);
@@ -1886,7 +1886,7 @@ LABEL_12:
   }
   v36 = ceilf(sqrtf(v31 / v29));
   GameRoutine_59fe80(&v36, 0x1.0000000000000p+0f, 0x1.0000000000000p+10f);
-  return (unsigned int)(1 << -__clz((int)v36 - 1));
+  return (unsigned int)(1 << (-__clz((int)v36 - 1) & 31));
 }
 
 __int64 game_5a65c0(__int64 a1, int a2)
@@ -3508,7 +3508,7 @@ __int64* game_5e28e0(__int64* result, int a2)
         v7 = v4;
         v8 = 0;
         {
-          v23 = v2[3] + 4LL * v6 * a2;
+          v23 = v2[3] + 4LL * (int)(v6 * a2);
           __asm__ volatile("" ::"r"(v23));
         }
         v21 = a2;
@@ -3581,7 +3581,8 @@ __int64* game_5e28e0(__int64* result, int a2)
         a2 = v21;
       }
       if (v6 >= 1) {
-        GameRoutine_1a0ba50(v2[3] + 4LL * v6 * a2, 0, 4LL * (unsigned int)v6);
+        GameRoutine_1a0ba50(v2[3] + 4LL * (int)(v6 * a2), 0,
+                            4LL * (unsigned int)v6);
       }
       GameRoutine_5fcb80(v2[8] + 72LL * a2);
       return (__int64*)GameRoutine_5fcb70(v2[8] + 72LL * a2);
@@ -8060,7 +8061,7 @@ float game_1062d90(float* a1, float* a2)
   v6 = (float)(PSEUDO_UNFUSED(v3 * v3)) + (float)(v2 * v2);
   v7 = 0x0.0p+0f;
   v8 = 0x0.0p+0f;
-  if (v6 >= 0x1.0000000000000p-23f) {
+  if (!(v6 < 0x1.0000000000000p-23f)) {
     v9 = 0x1.0000000000000p+0f / sqrtf(v6);
     v8 = v2 * v9;
     v5 = v3 * v9;
@@ -8074,18 +8075,18 @@ float game_1062d90(float* a1, float* a2)
     __asm__ volatile("" ::"w"(v11));
   }
   v12 = (float)(PSEUDO_UNFUSED(v11 * v11)) + (float)(v10 * v10);
-  if (v12 >= 0x1.0000000000000p-23f) {
+  if (!(v12 < 0x1.0000000000000p-23f)) {
     v13 = 0x1.0000000000000p+0f / sqrtf(v12);
     v7 = v10 * v13;
     v4 = v11 * v13;
   }
   v14 = (float)(PSEUDO_UNFUSED(v5 * v4)) + (float)(v8 * v7);
   result = 0x0.0p+0f;
-  if (v14 < 0x1.fffffc0000000p-1f) {
+  if (!(v14 >= 0x1.fffffc0000000p-1f)) {
     if (v14 <= -0x1.fffffc0000000p-1f) {
       return 0x1.921fb60000000p+1f;
     }
-    v16 = sqrtf(0x1.0000000000000p+0f - (float)(v14 * v14));
+    v16 = sqrtf(__builtin_elementwise_fma(-v14, v14, 0x1.0000000000000p+0f));
     if (v14 >= 0x0.0p+0f) {
       {
         v21 = *(float*)GameData_212c2f0;
@@ -11642,14 +11643,15 @@ __int64 game_12e1990(__int64 a1, char** a2)
   __int16 v9;
   __int64 v10;
   __int64 v11;
-  struct {
-    _QWORD v13[4];
-    _QWORD* v14;
-  } v13_;
-  struct {
+  // Order and alignment put both objects at the original's frame offsets.
+  struct __attribute__((aligned(16))) {
     char* v15[4];
     char** v16;
   } v15_;
+  struct __attribute__((aligned(16))) {
+    _QWORD v13[4];
+    _QWORD* v14;
+  } v13_;
 
   v4 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
                                       1648, 16, 0);

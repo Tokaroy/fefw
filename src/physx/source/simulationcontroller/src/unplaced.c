@@ -18,10 +18,12 @@ __int64* physx_source_simulationcontroller_src_386600(__int64* result,
                                                       __int64 a2, char a3);
 __int64 physx_source_simulationcontroller_src_3893d0();
 
-void physx_source_simulationcontroller_src_310590(__int64** a1, double a2,
-                                                  double a3, double a4,
-                                                  double a5, float a6, float a7,
-                                                  double a8, float a9)
+// The original always calls sqrtf, with no inline fsqrt.
+__attribute__((no_builtin("sqrtf"))) void
+physx_source_simulationcontroller_src_310590(__int64** a1, double a2,
+                                             double a3, double a4, double a5,
+                                             float a6, float a7, double a8,
+                                             float a9)
 {
   float v9;
   float v10;

@@ -3057,7 +3057,7 @@ __int64 CharacterSituation_f991e0(__int64 a1, __int64* a2)
   v27 = *(_OWORD*)(a1 + 32);
   *((_QWORD*)&v27 + 1) =
       v25 | (unsigned int)(v26 << 16) |
-      (unsigned __int64)(*(unsigned __int8*)(v23 + v22 + 3) << 24);
+      (unsigned int)(*(unsigned __int8*)(v23 + v22 + 3) << 24);
   *(_OWORD*)(a1 + 32) = v27;
   v28 = *((int*)a2 + 5);
   v29 = a2[1];

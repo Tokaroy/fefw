@@ -1167,7 +1167,7 @@ __int64 game_hub_f5e370(__int128* a1, __int64* a2)
     v20 = *a1;
     *((_QWORD*)&v20 + 1) =
         v18 | (unsigned int)(v19 << 16) |
-        (unsigned __int64)(*(unsigned __int8*)(v16 + v15 + 3) << 24);
+        (unsigned int)(*(unsigned __int8*)(v16 + v15 + 3) << 24);
     *a1 = v20;
     v21 = *((int*)a2 + 5);
     v22 = a2[1];

@@ -3611,7 +3611,7 @@ LABEL_21:
   }
   LANES128(result).n128_u64[0] = *(_QWORD*)(a1 + 80);
   LANES64(v70).n64_u64[0] = *(unsigned __int64*)(a1 + 88);
-  LANES64(v70).n64_u32[1] = vmuls_lane_f32(v67, v70, 1);
+  LANES64(v70).n64_f32[1] = vmuls_lane_f32(v67, v70, 1);
   *(float32x2_t*)&LANES128(result).n128_i8[8] = v70;
   *(__n128*)(a1 + 80) = result;
   return result;
@@ -3698,6 +3698,14 @@ void game_map_f1d220(__int64 a1)
   void (**v77)(char*);
   __int64 v78;
   struct {
+    _BYTE v98[4];
+    int v99;
+    char gap264_[40];
+    char v100;
+  } v98_;
+  unsigned __int64 v101;
+  _QWORD* v102[2];
+  struct __attribute__((aligned(16))) {
     float32x4_t v79[5];
     __int64 v80;
     __int64 v81;
@@ -3721,14 +3729,6 @@ void game_map_f1d220(__int64 a1)
     __int64 v96;
     int v97;
   } v79_;
-  struct {
-    _BYTE v98[4];
-    int v99;
-    char gap264_[40];
-    char v100;
-  } v98_;
-  unsigned __int64 v101;
-  _QWORD* v102[2];
 
   *(_BYTE*)(a1 + 8) = 1;
   if (((*(__int64 (**)(__int64))(*(_QWORD*)a1 + 48LL))(a1) & 1) == 0) {
@@ -4538,6 +4538,7 @@ void game_map_f515e0(__int64 a1)
          v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s1", "=w")),
          v24 = COERCE_AS(__typeof__(v24), PSEUDO_REGISTER(__n128, "v1", "=w")),
          v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v2", "=w")),
+         v49 = COERCE_AS(__typeof__(v49), PSEUDO_REGISTER(__n128, "v3", "=w")),
          v52 = COERCE_AS(__typeof__(v52),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
          v53 = COERCE_AS(__typeof__(v53),
@@ -5468,8 +5469,8 @@ void game_map_f54ba0(__int64* a1, unsigned __int64 a2)
       v17 = (void (***)(void))v10;
       do {
         v18 = *v17;
+        ((void (*)(void (***)(void)))*v18)(v17);
         v17 += 8;
-        (*v18)();
       } while (v17 != v3);
       v10 = *a1;
     }

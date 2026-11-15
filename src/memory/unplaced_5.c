@@ -3313,7 +3313,8 @@ LABEL_30:
       ((long double (*)(float*)) * (_QWORD*)(*(_QWORD*)v13 + 16LL))(v13),
          v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s1", "=w")),
          v22 = COERCE_AS(__typeof__(v22), PSEUDO_REGISTER(__n128, "v1", "=w")),
-         v24 = COERCE_AS(__typeof__(v24), PSEUDO_REGISTER(__n128, "v2", "=w"));
+         v24 = COERCE_AS(__typeof__(v24), PSEUDO_REGISTER(__n128, "v2", "=w")),
+         v48 = COERCE_AS(__typeof__(v48), PSEUDO_REGISTER(__n128, "v3", "=w"));
   LANES128(v23).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(v22, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
           .n64_u64[0];

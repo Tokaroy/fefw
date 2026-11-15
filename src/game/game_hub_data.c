@@ -2739,7 +2739,7 @@ void GameHubData_Unknown9(__int64 a1, __int64 a2, int a3)
   v55 = *(_OWORD*)(a1 + 128);
   *((_QWORD*)&v55 + 1) =
       v53 | (unsigned int)(v54 << 16) |
-      (unsigned __int64)(*(unsigned __int8*)(v51 + v50 + 3) << 24);
+      (unsigned int)(*(unsigned __int8*)(v51 + v50 + 3) << 24);
   *(_OWORD*)(a1 + 128) = v55;
   v56 = *(int*)(a2 + 20);
   v57 = *(_QWORD*)(a2 + 8);
@@ -2824,7 +2824,7 @@ void GameHubData_Unknown9(__int64 a1, __int64 a2, int a3)
     v86 = *(_OWORD*)(a1 + 176);
     *((_QWORD*)&v86 + 1) =
         (unsigned int)v74 | (v85 << 16) |
-        (unsigned __int64)(*(unsigned __int8*)(v83 + v82 + 3) << 24);
+        (unsigned int)(*(unsigned __int8*)(v83 + v82 + 3) << 24);
     *(_OWORD*)(a1 + 176) = v86;
     v87 = *(int*)(a2 + 20);
     v88 = *(_QWORD*)(a2 + 8);
