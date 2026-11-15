@@ -335,8 +335,8 @@ bool OcclusionCulling_Unknown3(float32x4_t* a1, float32x4_t* a2)
     v42 = 0;
     v43 = vmulq_n_f32(v31, 0x1.0000000000000p+0f / LANES128(v31).n128_f32[3]);
     v44 = vmulq_n_f32(v28, 0x1.0000000000000p+0f / LANES128(v28).n128_f32[3]);
-    LANES128(v45).n128_u64[0] = 0x80000000800000LL;
-    LANES128(v45).n128_u64[1] = 0x80000000800000LL;
+    LANES128(v45).n128_u64[0] = 0xFF7FFFFFFF7FFFFFLL;
+    LANES128(v45).n128_u64[1] = 0xFF7FFFFFFF7FFFFFLL;
     v46 = vmulq_n_f32(v32, 0x1.0000000000000p+0f / LANES128(v32).n128_f32[3]);
     v47 = vmulq_n_f32(v24, 0x1.0000000000000p+0f / LANES128(v24).n128_f32[3]);
     v48 = vmulq_n_f32(v33, 0x1.0000000000000p+0f / LANES128(v33).n128_f32[3]);
@@ -369,7 +369,7 @@ bool OcclusionCulling_Unknown3(float32x4_t* a1, float32x4_t* a2)
                                                      LANES128(v44).n128_u64[0]),
                                                  vneg_f32(COERCE_AS(
                                                      float32x2_t,
-                                                     0x80000000800000LL))),
+                                                     0xFF7FFFFFFF7FFFFFLL))),
                                         COERCE_AS(float32x2_t,
                                                   LANES128(v43).n128_u64[0])),
                                     COERCE_AS(float32x2_t,

@@ -2586,8 +2586,8 @@ char* mocull_193e500(char* result, double a2, double a3, int32x4_t a4,
     LANES128(v18).n128_u32[0] = a8;
     LANES64(v904).n64_u64[0] = LANES128(v18).n128_u64[0];
     v905 = v19;
-    LANES128(v18).n128_u64[0] = 0x80000000800000LL;
-    LANES128(v18).n128_u64[1] = 0x80000000800000LL;
+    LANES128(v18).n128_u64[0] = 0xFF7FFFFFFF7FFFFFLL;
+    LANES128(v18).n128_u64[1] = 0xFF7FFFFFFF7FFFFFLL;
     v20 = vnegq_f32(v18);
     while (1) {
       if (v11 - v16 < 4) {

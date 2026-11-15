@@ -377,8 +377,8 @@ float math_712760(float* a1, float* a2, long double a3, double a4, double a5,
       v16 = a1[1];
       v15 = a1[2];
       if (v16 == 0x0.0p+0f) {
-        LANES128(v17).n128_u64[0] = 0x8000000080000000LL;
-        LANES128(v17).n128_u64[1] = 0x8000000080000000LL;
+        LANES128(v17).n128_u64[0] = 0x7FFFFFFF7FFFFFFFLL;
+        LANES128(v17).n128_u64[1] = 0x7FFFFFFF7FFFFFFFLL;
         *(float*)&a3 = -v16;
         *(_QWORD*)&a6 = 0;
         *(float*)&a3 =

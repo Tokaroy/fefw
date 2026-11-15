@@ -12596,7 +12596,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 3c1e60,2056,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock.cpp,_ZN5physx2Dy33createFinalizeSolverContacts4StepEPPNS_23PxsContactManagerOutputERNS0_13ThreadContextEPNS_22PxTGSSolverContactDescEffffffffRNS_21PxConstraintAllocatorE
 3c2bc0,1720,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock.cpp,_ZN5physx2Dy26setupSolverConstraintStep4EPNS0_30SolverConstraintShaderPrepDescEPNS_29PxTGSSolverConstraintPrepDescEffffRjRNS_21PxConstraintAllocatorEffb
 3c3320,2336,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock.cpp,_ZN5physx2Dy26setupSolverConstraintStep4EPNS_29PxTGSSolverConstraintPrepDescEffffRjRNS_21PxConstraintAllocatorEjffb
-3c4a10,2728,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock_impl.c,physx_Dy_solveContact4_Block_3c4a10
+3c4a10,2728,disputed,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock_impl.c,physx_Dy_solveContact4_Block_3c4a10
 3c54e0,1240,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock.cpp,_ZN5physx2Dy17writeBackContact4ERKNS_23PxConstraintBatchHeaderEPKNS_22PxSolverConstraintDescEPNS0_13SolverContextE
 3c59f0,3184,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock_impl.c,physx_Dy_solve1DStep4
 3c66a0,1240,verified,src/physx/source/lowleveldynamics/src/DyTGSContactPrepBlock.cpp,_ZN5physx2Dy12writeBack1D4ERKNS_23PxConstraintBatchHeaderEPKNS_22PxSolverConstraintDescEPNS0_13SolverContextE
@@ -13363,17 +13363,17 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 411680,2252,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_Z19sweepBox_ConvexGeomRKN5physx10PxGeometryERKNS_12PxTransformTIfEERKNS_13PxBoxGeometryES6_RKNS_2Gu3BoxERKNS_7PxVec3TIfEEfRNS_14PxGeomSweepHitENS_7PxFlagsINS_9PxHitFlag4EnumEtEEfPNS_20PxQueryThreadContextE
 412160,628,verified,src/physx/source/geomutils/src/unplaced_3.c,physx_source_geomutils_src_412160
 4123e0,1852,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_Z22sweepConvex_SphereGeomRKN5physx10PxGeometryERKNS_12PxTransformTIfEERKNS_20PxConvexMeshGeometryES6_RKNS_7PxVec3TIfEEfRNS_14PxGeomSweepHitENS_7PxFlagsINS_9PxHitFlag4EnumEtEEfPNS_20PxQueryThreadContextE
-412ce0,352,verified,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,sweepConvex_PlaneGeom
+412ce0,352,disputed,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,sweepConvex_PlaneGeom
 412fa0,340,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_Z23sweepConvex_CapsuleGeomRKN5physx10PxGeometryERKNS_12PxTransformTIfEERKNS_20PxConvexMeshGeometryES6_RKNS_7PxVec3TIfEEfRNS_14PxGeomSweepHitENS_7PxFlagsINS_9PxHitFlag4EnumEtEEfPNS_20PxQueryThreadContextE
 413100,400,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_Z19sweepConvex_BoxGeomRKN5physx10PxGeometryERKNS_12PxTransformTIfEERKNS_20PxConvexMeshGeometryES6_RKNS_7PxVec3TIfEEfRNS_14PxGeomSweepHitENS_7PxFlagsINS_9PxHitFlag4EnumEtEEfPNS_20PxQueryThreadContextE
 413290,3444,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_Z22sweepConvex_ConvexGeomRKN5physx10PxGeometryERKNS_12PxTransformTIfEERKNS_20PxConvexMeshGeometryES6_RKNS_7PxVec3TIfEEfRNS_14PxGeomSweepHitENS_7PxFlagsINS_9PxHitFlag4EnumEtEEfPNS_20PxQueryThreadContextE
 414060,628,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_ZN5physx2Gu21gjkRaycastPenetrationINS0_14RelativeConvexINS0_11ConvexHullVEEENS0_11LocalConvexIS3_EEEEbRKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tSF_SF_RSG_RSD_SK_fb
 4142e0,664,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_ZL23computeSweepConvexPlaneRKN5physx20PxConvexMeshGeometryEPNS_2Gu14ConvexHullDataERKjRKNS_12PxTransformTIfEERKNS_7PxVec3TIfEESF_
 414580,764,verified,src/physx/source/geomutils/src/GuSweepMTD.cpp,_ZN5physx2Cm23FastVertex2ShapeScaling4initERKNS_7PxVec3TIfEERKNS_7PxQuatTIfEE
-414880,2056,verified,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,sweepBox_ConvexGeom_414880
+414880,3252,verified,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,sweepBox_ConvexGeom_414880
 415610,52,verified,src/physx/source/geomutils/src/pcm/GuPCMContactConvexConvex.cpp,_ZN5physx2Gu14gjkPenetrationINS0_14RelativeConvexINS0_18ConvexHullNoScaleVEEENS0_11LocalConvexIS3_EEEENS0_9GjkStatusERKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tbPhSK_RhRNS0_9GjkOutputE
 415660,268,verified,src/physx/source/geomutils/src/gjk/GuGJKTest.cpp,_ZN5physx2Gu14gjkPenetrationINS0_9GjkConvexES2_EENS0_9GjkStatusERKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tbPhSG_PSA_SH_RhRNS0_9GjkOutputE
-416fe0,3076,verified,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,physx_Gu_gjkRaycast
+416fe0,3576,verified,src/physx/source/geomutils/src/GuSweepSharedTests_impl.c,physx_Gu_gjkRaycast
 417e00,52,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_ZN5physx2Gu14gjkPenetrationINS0_11LocalConvexINS0_8CapsuleVEEENS2_INS0_11ConvexHullVEEEEENS0_9GjkStatusERKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tbPhSK_RhRNS0_9GjkOutputE
 417e40,1076,disputed,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_ZN5physx2Gu14gjkPenetrationINS0_11LocalConvexINS0_8CapsuleVEEENS2_INS0_11ConvexHullVEEEEENS0_9GjkStatusERKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tbPhSK_PSE_SL_RhRNS0_9GjkOutputE
 4196e0,3800,verified,src/physx/source/geomutils/src/GuSweepSharedTests.cpp,_ZN5physx2Gu10gjkRaycastINS0_14RelativeConvexINS0_11ConvexHullVEEENS0_11LocalConvexIS3_EEEEbRKT_RKT0_RK13__Float32x4_tRK13__Float32x2_tSF_SF_RSG_RSD_SK_f
@@ -39524,7 +39524,7 @@ d28c30,228,verified,src/wld/unplaced.c,wld_d28c30
 d28d20,352,verified,src/wld/animctrl/graph.c,Graph_Destructor
 d28ec0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xd28ec0
 d28f20,300,verified,src/game/unnamed/b011_0.c,GameHr_d28f20
-d29060,640,verified,src/wld/animctrl/graph.c,Graph_d29060
+d29060,788,verified,src/wld/animctrl/graph.c,Graph_d29060
 d29910,340,verified,src/game/unnamed/b011_1.c,GameHr_d29910
 d29a80,456,verified,src/game/unnamed/b011_0.c,GameHr_d29a80
 d29c80,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -47009,7 +47009,7 @@ f8e8c0,240,verified,src/game/graphics/object_dissolve_module.c,ObjectDissolveMod
 f8e9d0,12,verified,src/game/game_trivial.cpp,_Z15GameStub_f8e9d0v
 f8e9e0,224,verified,src/game/graphics/game_observe_instant.c,GameObserveInstant_Destructor
 f8eb00,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xf8eb00
-f8eb50,756,disputed,src/game/unplaced_4.c,game_f8eb50
+f8eb50,816,disputed,src/game/unplaced_4.c,game_f8eb50
 f8eee0,468,verified,src/game/unnamed/e005_4.c,GameHr_f8eee0
 f8f140,616,verified,src/game/unplaced_11.c,game_f8f140
 f8f3e0,480,verified,src/game/unnamed/e005_4.c,GameHr_f8f3e0
@@ -47223,7 +47223,7 @@ fa4760,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 fa4780,772,verified,src/game/map/map_panel_sortie.c,game_map_MapPanelSortie_UpdateSortie_lambda0_Invoke
 fa4b50,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::MapPanelSortie::UpdateSortie()::$_0, void (int, int, int)>::target(std::type_info const&)"
 fa4b70,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::MapPanelSortie::UpdateSortie()::$_0, void (int, int, int)>::target_type()"
-fa4b80,836,disputed,src/game/unplaced_4.c,game_fa4b80
+fa4b80,800,disputed,src/game/unplaced_4.c,game_fa4b80
 fa4f80,1160,verified,src/game/unplaced_19.c,game_fa4f80
 fa54a0,440,verified,src/game/unnamed/e005_4.c,GameHr_fa54a0
 fa5660,8,verified,src/game/game_trivial.cpp,_Z15GameStub_fa5660m
@@ -47923,7 +47923,7 @@ fc6e20,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vect
 fc6e40,320,verified,src/game/templates/deque.cpp,_ZNSt3__114__split_bufferIPPN4game11UnrecoveredILj40EEENS_9allocatorIS5_EEE12emplace_backIJRS5_EEEvDpOT_
 fc6fa0,836,verified,src/game/unnamed/b014_0.c,GameHr_fc6fa0
 fc7360,580,verified,src/game/unnamed/b014_0.c,GameHr_fc7360
-fc76e0,992,disputed,src/game/unplaced_4.c,game_fc76e0
+fc76e0,1276,disputed,src/game/unplaced_4.c,game_fc76e0
 fc7e80,1468,verified,src/game/unnamed/b014_0.c,GameHr_fc7e80
 fc8470,788,verified,src/game/unnamed/b014_0.c,GameHr_fc8470
 fc90c0,312,verified,src/game/unnamed/b014_0.c,GameHr_fc90c0
@@ -58421,7 +58421,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 13140d0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 13140f0,312,verified,src/game/unnamed/b017_2.c,GameHr_13140f0
 1314240,1528,verified,src/game/gmap/camera.c,Camera_Unknown2_1314240
-1314a20,300,disputed,src/game/gmap/camera.c,Camera_Unknown3
+1314a20,564,verified,src/game/gmap/camera.c,Camera_Unknown3
 1314ca0,268,verified,src/game/gmap/camera.c,Camera_1314ca0
 1314db0,264,verified,src/game/gmap/camera.c,Camera_1314db0
 1314ec0,276,verified,src/game/gmap/camera.c,Camera_1314ec0
@@ -85063,7 +85063,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1938440,92,verified,src/game/templates/shared_ptr.cpp,_ZNSt3__120__shared_ptr_emplaceIN6mocull15VirtualOccluderENS_9allocatorIS2_EEED0Ev
 19384a0,56,verified,src/game/game_trivial_singletons.cpp,_Z16GameStub_19384a0m
 19384e0,44,verified,src/memory/new_delete.cpp,deleting destructor at 0x19384e0
-1938520,592,verified,src/gfx/render/occlusion_culling.c,OcclusionCulling_1938520
+1938520,612,verified,src/gfx/render/occlusion_culling.c,OcclusionCulling_1938520
 19387a0,1076,verified,src/gfx/render/unplaced_3.c,gfx_render_19387a0
 1938be0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 1938c00,280,verified,src/game/unnamed/b026_0.c,GameHr_1938c00
@@ -85103,8 +85103,8 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 193cbc0,604,verified,src/mocull/build_leader.c,BuildLeader_193cbc0
 193cec0,252,verified,src/game/unnamed/b026_0.c,GameHr_193cec0
 193d050,104,verified,src/game/unnamed/b026_0.c,GameHr_193d050
-193d0e0,3660,verified,src/mocull/unplaced_3.c,mocull_193d0e0
-193e500,10644,verified,src/mocull/unplaced_3.c,mocull_193e500
+193d0e0,4460,verified,src/mocull/unplaced_3.c,mocull_193d0e0
+193e500,11764,verified,src/mocull/unplaced_3.c,mocull_193e500
 19421e0,820,verified,src/mocull/unplaced.c,mocull_19421e0
 1942920,680,verified,src/mocull/build_worker.c,BuildWorker_1942920
 1942c80,1200,verified,src/mocull/unplaced_2.c,mocull_1942c80

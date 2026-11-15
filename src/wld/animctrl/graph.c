@@ -353,7 +353,7 @@ _QWORD* Graph_d29060(_QWORD* result, long double a2, double a3, double a4,
   LANES64(v30).n64_u64[0] = 0x80000000800000LL;
   v31 = *((float*)&v28 + 1);
   v32 = v7;
-  *(float32x2_t*)&v33 = vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL));
+  *(float32x2_t*)&v33 = vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL));
   do {
     LANES64(v34).n64_u64[0] = LANES64(*(v32)).n64_u64[0];
     v32 += 6;

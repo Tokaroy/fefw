@@ -134,11 +134,11 @@ bool ScreenAreaCulling_Unknown3(float32x4_t* a1, float32x2_t* a2)
           .n128_u64[0];
   LANES64(v11).n64_u64[0] =
       LANES64_OF(vmin_f32(COERCE_AS(float32x2_t, LANES128(v10).n128_u64[0]),
-                          vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL))))
+                          vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL))))
           .n64_u64[0];
   LANES64(v12).n64_u64[0] =
       LANES64_OF(vmax_f32(COERCE_AS(float32x2_t, LANES128(v10).n128_u64[0]),
-                          COERCE_AS(float32x2_t, 0x80000000800000LL)))
+                          COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL)))
           .n64_u64[0];
   v13 = vmlaq_lane_f32(vmulq_n_f32(v4, *(float*)&v8), v3,
                        COERCE_AS(float32x2_t, v8), 1);

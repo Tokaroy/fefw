@@ -4677,8 +4677,8 @@ __int64 cuda_driver_234680(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
     if (a4 != 0) {
       v9 = v20;
       if (a4 >= 8) {
-        LANES128(v11).n128_u64[0] = 0x300000003LL;
-        LANES128(v11).n128_u64[1] = 0x300000003LL;
+        LANES128(v11).n128_u64[0] = 0xFFFFFFFCFFFFFFFCLL;
+        LANES128(v11).n128_u64[1] = 0xFFFFFFFCFFFFFFFCLL;
         LANES128(v12).n128_u64[0] = 0x100000001LL;
         LANES128(v12).n128_u64[1] = 0x100000001LL;
         v13 = vdupq_n_s32(v20);

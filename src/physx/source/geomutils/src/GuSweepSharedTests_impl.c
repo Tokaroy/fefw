@@ -645,7 +645,7 @@ bool sweepBox_ConvexGeom_414880(__int64 a1, __int64 a2, int8x16_t* a3,
   LANES128(v56).n128_u64[0] = -1;
   LANES128(v56).n128_u64[1] = -1;
   LANES64(v57).n64_u64[0] =
-      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL)))
+      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL)))
           .n64_u64[0];
   while (1) {
     LANES64(v62).n64_u64[0] =
@@ -2013,7 +2013,7 @@ bool physx_Gu_gjkRaycast(float32x4_t* a1, __int64 a2, int8x16_t* a3,
   LANES128(v62).n128_u64[0] = -1;
   LANES128(v62).n128_u64[1] = -1;
   LANES64(v63).n64_u64[0] =
-      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL)))
+      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL)))
           .n64_u64[0];
   while (1) {
     LANES64(v68).n64_u64[0] =

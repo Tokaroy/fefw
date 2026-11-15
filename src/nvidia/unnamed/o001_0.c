@@ -1838,8 +1838,8 @@ __int64 CudaDriverHr_1f4ea0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
           v22 = 0;
           goto LABEL_9;
         }
-        ((uint64_t*)&v23)[0] = 0x100000001LL;
-        ((uint64_t*)&v23)[1] = 0x100000001LL;
+        ((uint64_t*)&v23)[0] = 0xFFFFFE00FFFFFE00LL;
+        ((uint64_t*)&v23)[1] = 0xFFFFFE00FFFFFE00LL;
         ((uint64_t*)&v24)[0] = 0xC0000000CLL;
         ((uint64_t*)&v24)[1] = 0xC0000000CLL;
         v25 = vdupq_n_s32(v21);

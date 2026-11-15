@@ -237,7 +237,7 @@ __int64 physx_source_geomutils_src_41bf20(__int64 a1, int32x4_t* a2, __int64 a3,
   v15 = 0;
   v156 = (__typeof__(v156)){0};
   LANES64(v16).n64_u64[0] =
-      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL)))
+      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL)))
           .n64_u64[0];
   v160 = (__typeof__(v160)){0};
   while (1) {
@@ -1212,7 +1212,7 @@ __int64 physx_source_geomutils_src_41cc60(__int64 a1, float* a2, __int64 a3,
   v17 = 0;
   v156 = (__typeof__(v156)){0};
   LANES64(v148).n64_u64[0] =
-      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0x80000000800000LL)))
+      LANES64_OF(vneg_f32(COERCE_AS(float32x2_t, 0xFF7FFFFFFF7FFFFFLL)))
           .n64_u64[0];
   v151 = (__typeof__(v151)){0};
   while (1) {

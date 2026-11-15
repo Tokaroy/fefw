@@ -827,8 +827,8 @@ __int64 Camera_Unknown3(__int64 result)
       v24 = v7;
     }
   }
-  LANES128(v8).n128_u64[0] = 0x8000000080000000LL;
-  LANES128(v8).n128_u64[1] = 0x8000000080000000LL;
+  LANES128(v8).n128_u64[0] = 0x7FFFFFFF7FFFFFFFLL;
+  LANES128(v8).n128_u64[1] = 0x7FFFFFFF7FFFFFFFLL;
   LANES128(v5).n128_u64[0] = 0;
   v9 = vbslq_s8(v8, v5, v25);
   v10 = *(_QWORD*)(*game_g_frame_clock_ptr[0] + 13224);
@@ -843,8 +843,8 @@ __int64 Camera_Unknown3(__int64 result)
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v13 + 16LL))(v13);
       std___1___shared_weak_count___release_weak(v13);
-      LANES128(v8).n128_u64[0] = 0x8000000080000000LL;
-      LANES128(v8).n128_u64[1] = 0x8000000080000000LL;
+      LANES128(v8).n128_u64[0] = 0x7FFFFFFF7FFFFFFFLL;
+      LANES128(v8).n128_u64[1] = 0x7FFFFFFF7FFFFFFFLL;
       LANES128(v5).n128_u64[0] = 0;
     }
     if (!(v11 <= 0.0)) {

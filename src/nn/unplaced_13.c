@@ -1691,7 +1691,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       v39 = -128;
     }
     LANES64(v42).n64_u64[0] =
-        LANES64_OF(vmax_s32(v41, COERCE_AS(int32x2_t, 0x7F0000007FLL)))
+        LANES64_OF(vmax_s32(v41, COERCE_AS(int32x2_t, 0xFFFFFF80FFFFFF80LL)))
             .n64_u64[0];
     if (v39 >= 127) {
       LOBYTE(v39) = 127;

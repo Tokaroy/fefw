@@ -10590,8 +10590,8 @@ void game_fcb290(__int64 a1, float32x4_t* a2, int a3, int a4, int a5, int a6,
                               &v20, (unsigned int)a6);
   LANES64(v16).n64_u32[0] = 0;
   LANES64(v16).n64_f32[1] = v15;
-  LANES128(v17).n128_u64[0] = 0x8000000080000000LL;
-  LANES128(v17).n128_u64[1] = 0x8000000080000000LL;
+  LANES128(v17).n128_u64[0] = 0x7FFFFFFF7FFFFFFFLL;
+  LANES128(v17).n128_u64[1] = 0x7FFFFFFF7FFFFFFFLL;
   LANES128(v18).n128_u64[0] =
       LANES64_OF(vadd_f32(COERCE_AS(float32x2_t,
                                     COERCE_UNSIGNED_INT((float)a4 *
