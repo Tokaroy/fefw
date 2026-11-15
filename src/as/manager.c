@@ -2638,9 +2638,11 @@ void Manager_d9a760(__int64 a1)
   __int64 v23;
   __int64 v24;
   __int64 v25;
-  __int64 v26;
-  unsigned __int64 v27;
-  char* v28;
+  struct {
+    __int64 v26;
+    unsigned __int64 v27;
+    char* v28;
+  } v26_;
   unsigned __int8* v29;
   unsigned __int8* v30;
 
@@ -2677,29 +2679,29 @@ void Manager_d9a760(__int64 a1)
         }
         v12 = fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v13, 16,
                                              0);
-        v27 = v8 + 9;
-        v28 = (char*)v12;
-        v26 = v13 | 1;
+        v26_.v27 = v8 + 9;
+        v26_.v28 = (char*)v12;
+        v26_.v26 = v13 | 1;
         v11 = v13 | 1;
       }
       else {
         v11 = 2 * v10;
         v12 = 0;
-        v27 = 0;
-        v28 = nullptr;
-        v26 = (unsigned __int8)(2 * v10);
+        v26_.v27 = 0;
+        v26_.v28 = nullptr;
+        v26_.v26 = (unsigned __int8)(2 * v10);
       }
       v14 = (v11 & 1) == 0;
       if ((v11 & 1) != 0) {
         v15 = (char*)v12;
       }
       else {
-        v15 = (char*)&v26 + 1;
+        v15 = (char*)&v26_.v26 + 1;
       }
       *(_QWORD*)v15 = *(_QWORD*)"PreReload";
       v15[8] = 100;
       if (v14) {
-        v16 = (char*)&v27 + 2;
+        v16 = (char*)&v26_.v27 + 2;
       }
       else {
         v16 = (char*)(v12 + 9);
@@ -2708,26 +2710,26 @@ void Manager_d9a760(__int64 a1)
         memmove(v16, v9, v8);
       }
       v16[v8] = 0;
-      if ((v26 & 1) != 0) {
-        v17 = v28;
+      if ((v26_.v26 & 1) != 0) {
+        v17 = v26_.v28;
       }
       else {
-        v17 = (char*)&v26 + 1;
+        v17 = (char*)&v26_.v26 + 1;
       }
-      if ((v26 & 1) != 0) {
-        v18 = v27;
+      if ((v26_.v26 & 1) != 0) {
+        v18 = v26_.v27;
       }
       else {
-        v18 = (unsigned __int64)(unsigned __int8)v26 >> 1;
+        v18 = (unsigned __int64)(unsigned __int8)v26_.v26 >> 1;
       }
       Manager_d9a500(a1, (__int64)v17, v18);
-      if ((v26 & 1) != 0 && v28 != nullptr) {
+      if ((v26_.v26 & 1) != 0 && v26_.v28 != nullptr) {
         v19 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v19 = 56;
         }
         v2 = nn_mem_StandardAllocator_Free(
-            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v28);
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v26_.v28);
       }
       v3 += 24;
     } while (v3 != v4);
@@ -2796,9 +2798,11 @@ void Manager_d9a9c0(__int64 a1)
   __int64 v23;
   __int64 v24;
   __int64 v25;
-  __int64 v26;
-  unsigned __int64 v27;
-  char* v28;
+  struct {
+    __int64 v26;
+    unsigned __int64 v27;
+    char* v28;
+  } v26_;
   unsigned __int8* v29;
   unsigned __int8* v30;
 
@@ -2835,29 +2839,29 @@ void Manager_d9a9c0(__int64 a1)
         }
         v12 = fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v13, 16,
                                              0);
-        v27 = v8 + 10;
-        v28 = (char*)v12;
-        v26 = v13 | 1;
+        v26_.v27 = v8 + 10;
+        v26_.v28 = (char*)v12;
+        v26_.v26 = v13 | 1;
         v11 = v13 | 1;
       }
       else {
         v11 = 2 * v10;
         v12 = 0;
-        v27 = 0;
-        v28 = nullptr;
-        v26 = (unsigned __int8)(2 * v10);
+        v26_.v27 = 0;
+        v26_.v28 = nullptr;
+        v26_.v26 = (unsigned __int8)(2 * v10);
       }
       v14 = (v11 & 1) == 0;
       if ((v11 & 1) != 0) {
         v15 = (char*)v12;
       }
       else {
-        v15 = (char*)&v26 + 1;
+        v15 = (char*)&v26_.v26 + 1;
       }
       *(_QWORD*)v15 = *(_QWORD*)"PostReload";
       *((_WORD*)v15 + 4) = 25697;
       if (v14) {
-        v16 = (char*)&v27 + 3;
+        v16 = (char*)&v26_.v27 + 3;
       }
       else {
         v16 = (char*)(v12 + 10);
@@ -2866,26 +2870,26 @@ void Manager_d9a9c0(__int64 a1)
         memmove(v16, v9, v8);
       }
       v16[v8] = 0;
-      if ((v26 & 1) != 0) {
-        v17 = v28;
+      if ((v26_.v26 & 1) != 0) {
+        v17 = v26_.v28;
       }
       else {
-        v17 = (char*)&v26 + 1;
+        v17 = (char*)&v26_.v26 + 1;
       }
-      if ((v26 & 1) != 0) {
-        v18 = v27;
+      if ((v26_.v26 & 1) != 0) {
+        v18 = v26_.v27;
       }
       else {
-        v18 = (unsigned __int64)(unsigned __int8)v26 >> 1;
+        v18 = (unsigned __int64)(unsigned __int8)v26_.v26 >> 1;
       }
       Manager_d9a500(a1, (__int64)v17, v18);
-      if ((v26 & 1) != 0 && v28 != nullptr) {
+      if ((v26_.v26 & 1) != 0 && v26_.v28 != nullptr) {
         v19 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v19 = 56;
         }
         v2 = nn_mem_StandardAllocator_Free(
-            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v28);
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v26_.v28);
       }
       v3 += 24;
     } while (v3 != v4);
@@ -2954,9 +2958,11 @@ void Manager_d9ac20(__int64 a1)
   __int64 v23;
   __int64 v24;
   __int64 v25;
-  __int64 v26;
-  unsigned __int64 v27;
-  char* v28;
+  struct {
+    __int64 v26;
+    unsigned __int64 v27;
+    char* v28;
+  } v26_;
   unsigned __int8* v29;
   unsigned __int8* v30;
 
@@ -2993,29 +2999,29 @@ void Manager_d9ac20(__int64 a1)
         }
         v12 = fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v13, 16,
                                              0);
-        v27 = v8 + 5;
-        v28 = (char*)v12;
-        v26 = v13 | 1;
+        v26_.v27 = v8 + 5;
+        v26_.v28 = (char*)v12;
+        v26_.v26 = v13 | 1;
         v11 = v13 | 1;
       }
       else {
         v11 = 2 * v10;
         v12 = 0;
-        v27 = 0;
-        v28 = nullptr;
-        v26 = (unsigned __int8)(2 * v10);
+        v26_.v27 = 0;
+        v26_.v28 = nullptr;
+        v26_.v26 = (unsigned __int8)(2 * v10);
       }
       v14 = (v11 & 1) == 0;
       if ((v11 & 1) != 0) {
         v15 = (char*)v12;
       }
       else {
-        v15 = (char*)&v26 + 1;
+        v15 = (char*)&v26_.v26 + 1;
       }
       v15[4] = 114;
       *(_DWORD*)v15 = 1702129221;
       if (v14) {
-        v16 = (char*)&v26 + 6;
+        v16 = (char*)&v26_.v26 + 6;
       }
       else {
         v16 = (char*)(v12 + 5);
@@ -3024,26 +3030,26 @@ void Manager_d9ac20(__int64 a1)
         memmove(v16, v9, v8);
       }
       v16[v8] = 0;
-      if ((v26 & 1) != 0) {
-        v17 = v28;
+      if ((v26_.v26 & 1) != 0) {
+        v17 = v26_.v28;
       }
       else {
-        v17 = (char*)&v26 + 1;
+        v17 = (char*)&v26_.v26 + 1;
       }
-      if ((v26 & 1) != 0) {
-        v18 = v27;
+      if ((v26_.v26 & 1) != 0) {
+        v18 = v26_.v27;
       }
       else {
-        v18 = (unsigned __int64)(unsigned __int8)v26 >> 1;
+        v18 = (unsigned __int64)(unsigned __int8)v26_.v26 >> 1;
       }
       Manager_d9a500(a1, (__int64)v17, v18);
-      if ((v26 & 1) != 0 && v28 != nullptr) {
+      if ((v26_.v26 & 1) != 0 && v26_.v28 != nullptr) {
         v19 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v19 = 56;
         }
         v2 = nn_mem_StandardAllocator_Free(
-            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v28);
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v19, v26_.v28);
       }
       v3 += 24;
     } while (v3 != v4);

@@ -546,12 +546,16 @@ __int64 Manager_c45700(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   __int64 v91;
   _QWORD v92[2];
   char* v93;
-  __int64 v94;
-  unsigned __int64 v95;
-  char* v96;
-  __int64 v97;
-  unsigned __int64 v98;
-  char* v99;
+  struct {
+    __int64 v94;
+    unsigned __int64 v95;
+    char* v96;
+  } v94_;
+  struct {
+    __int64 v97;
+    unsigned __int64 v98;
+    char* v99;
+  } v97_;
 
   v19 = a1;
   if (*(_BYTE*)(a1 + 224) == 1) {
@@ -819,7 +823,7 @@ LABEL_49:
       goto LABEL_85;
     }
   LABEL_89:
-    LOWORD(v97) = 0;
+    LOWORD(v97_.v97) = 0;
     goto LABEL_99;
   }
   v61 = 0;
@@ -849,44 +853,44 @@ LABEL_85:
     v71 = v69 | 1;
     v45 = v68;
     v62 = (char*)v70;
-    v95 = v46;
-    v96 = (char*)v70;
+    v94_.v95 = v46;
+    v94_.v96 = (char*)v70;
     v60 = v67;
     v55 = v66;
     v56 = v65;
     v50 = v64;
     v61 = v63;
-    v94 = v71;
+    v94_.v94 = v71;
   }
   else {
-    LOBYTE(v94) = 2 * v46;
-    v62 = (char*)&v94 + 1;
+    LOBYTE(v94_.v94) = 2 * v46;
+    v62 = (char*)&v94_.v94 + 1;
   }
   memmove(v62, v45, v46);
   v62[v46] = 0;
-  a1 = GameRoutine_1a0a680(&v94, 0, "Preset/", 7);
+  a1 = GameRoutine_1a0a680(&v94_.v94, 0, "Preset/", 7);
   v40 = *(_QWORD*)(a1 + 8);
   v72 = *(char**)(a1 + 16);
   v38 = *(char**)a1;
-  v97 = *(_QWORD*)a1;
-  v98 = v40;
-  v99 = v72;
+  v97_.v97 = *(_QWORD*)a1;
+  v97_.v98 = v40;
+  v97_.v99 = v72;
   *(_QWORD*)(a1 + 8) = 0;
   *(_QWORD*)(a1 + 16) = 0;
   *(_QWORD*)a1 = 0;
-  if ((v94 & 1) != 0 && v96 != nullptr) {
+  if ((v94_.v94 & 1) != 0 && v94_.v96 != nullptr) {
     v73 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v73 = 56;
     }
-    a1 = nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr +
-                                       v73, (_QWORD)(v96));
+    a1 = nn_mem_StandardAllocator_Free(
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v73, (_QWORD)(v94_.v96));
   }
 
 LABEL_99:
   if (v51 == 0) {
     v75 = 0;
-    LOWORD(v94) = 0;
+    LOWORD(v94_.v94) = 0;
     goto LABEL_114;
   }
   if (v51 >= 0xFFFFFFFFFFFFFFF7LL) {
@@ -915,9 +919,9 @@ LABEL_99:
   v77 = (__int64*)GameRoutine_1a0a680(v92, 0, "Preset/", 7);
   v79 = v77[1];
   v78 = (char*)v77[2];
-  v94 = *v77;
-  v95 = v79;
-  v96 = v78;
+  v94_.v94 = *v77;
+  v94_.v95 = v79;
+  v94_.v96 = v78;
   v77[1] = 0;
   v77[2] = 0;
   *v77 = 0;
@@ -929,27 +933,27 @@ LABEL_99:
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v80,
                                   (_QWORD)(v93));
   }
-  v75 = (unsigned __int8)v94;
-  v40 = v95;
-  v38 = v96;
+  v75 = (unsigned __int8)v94_.v94;
+  v40 = v94_.v95;
+  v38 = v94_.v96;
 
 LABEL_114:
-  if ((v97 & 1) != 0) {
-    v81 = v99;
+  if ((v97_.v97 & 1) != 0) {
+    v81 = v97_.v99;
   }
   else {
-    v81 = (char*)&v97 + 1;
+    v81 = (char*)&v97_.v97 + 1;
   }
-  if ((v97 & 1) != 0) {
-    v82 = v98;
+  if ((v97_.v97 & 1) != 0) {
+    v82 = v97_.v98;
   }
   else {
-    v82 = (unsigned __int64)(unsigned __int8)v97 >> 1;
+    v82 = (unsigned __int64)(unsigned __int8)v97_.v97 >> 1;
   }
   v83 = (v75 & 1) == 0;
   v84 = v75 >> 1;
   if (v83) {
-    v38 = (char*)&v94 + 1;
+    v38 = (char*)&v94_.v94 + 1;
   }
   if (!v83) {
     v84 = v40;
@@ -960,21 +964,21 @@ LABEL_114:
   if (v61 != 0) {
     result = GameRoutine_c6a240(*(_QWORD*)(*(_QWORD*)v19 + 392LL), v60, v61);
   }
-  if ((v94 & 1) != 0 && v96 != nullptr) {
+  if ((v94_.v94 & 1) != 0 && v94_.v96 != nullptr) {
     v86 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v86 = 56;
     }
     result = nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v86, (_QWORD)(v96));
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v86, (_QWORD)(v94_.v96));
   }
-  if ((v97 & 1) != 0 && v99 != nullptr) {
+  if ((v97_.v97 & 1) != 0 && v97_.v99 != nullptr) {
     v87 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v87 = 56;
     }
     return nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v87, (_QWORD)(v99));
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v87, (_QWORD)(v97_.v99));
   }
   return result;
 }

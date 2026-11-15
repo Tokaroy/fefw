@@ -1421,9 +1421,11 @@ __int64 memory_a19f00(__int64 result, __int64 a2)
     __int64 v152[2];
     __int64 v153;
   } v152_;
-  __int64 v154;
-  unsigned __int64 v155;
-  __int64 v156;
+  struct {
+    __int64 v154;
+    unsigned __int64 v155;
+    __int64 v156;
+  } v154_;
   int v157;
   char v158;
   char v159;
@@ -1799,29 +1801,29 @@ LABEL_19:
               }
               v54 = (char*)fw_memory_HeapManager_Allocate_alt2(
                   *(_QWORD*)fw_memory_g_heap_manager_ptr, v55, 16, 0);
-              v155 = v53;
-              v156 = (__int64)v54;
-              v154 = v55 | 1;
+              v154_.v155 = v53;
+              v154_.v156 = (__int64)v54;
+              v154_.v154 = v55 | 1;
             }
             else {
-              LOBYTE(v154) = 2 * v53;
-              v54 = (char*)&v154 + 1;
+              LOBYTE(v154_.v154) = 2 * v53;
+              v54 = (char*)&v154_.v154 + 1;
               if (v53 == 0) {
               LABEL_107:
                 v54[v53] = 0;
-                v56 = v154;
-                v57 = v156;
-                if ((v154 & 1) != 0) {
-                  v58 = (char*)v156;
+                v56 = v154_.v154;
+                v57 = v154_.v156;
+                if ((v154_.v154 & 1) != 0) {
+                  v58 = (char*)v154_.v156;
                 }
                 else {
-                  v58 = (char*)&v154 + 1;
+                  v58 = (char*)&v154_.v154 + 1;
                 }
-                if ((v154 & 1) != 0) {
-                  v59 = v155;
+                if ((v154_.v154 & 1) != 0) {
+                  v59 = v154_.v155;
                 }
                 else {
-                  v59 = (unsigned __int64)(unsigned __int8)v154 >> 1;
+                  v59 = (unsigned __int64)(unsigned __int8)v154_.v154 >> 1;
                 }
                 v60 = v59 + 24;
                 if (v59 + 24 >= 0xFFFFFFFFFFFFFFF7LL) {
@@ -2138,16 +2140,16 @@ LABEL_25:
     else {
       v28 = GameRoutine_27a290(v27 + 2392);
     }
-    WORD2(v155) = 0;
-    BYTE6(v155) = 0;
-    v156 = 0x400000007FLL;
+    WORD2(v154_.v155) = 0;
+    BYTE6(v154_.v155) = 0;
+    v154_.v156 = 0x400000007FLL;
     v158 = 0;
-    v154 = 0x3F80000000000000LL;
+    v154_.v154 = 0x3F80000000000000LL;
     v157 = 0xFFFF;
     v168 = -1;
     v185 = -1;
     v197 = -1;
-    LOBYTE(v155) = 127;
+    LOBYTE(v154_.v155) = 127;
     v159 = 127;
     v161 = 0;
     v160 = 0;
@@ -2187,9 +2189,9 @@ LABEL_25:
     v198 = 0;
     v199 = -1;
     v200 = 0;
-    BYTE3(v155) = 0;
-    *(_WORD*)((char*)&v155 + 1) = 0;
-    result = BaseNx_278a40(v28, (__int64)&v154, v26);
+    BYTE3(v154_.v155) = 0;
+    *(_WORD*)((char*)&v154_.v155 + 1) = 0;
+    result = BaseNx_278a40(v28, (__int64)&v154_.v154, v26);
     if ((result & 1) != 0) {
       result =
           SoundArchivePlayer_279410(v28, (const char*)&v201_.v201, 0x301u, v26);

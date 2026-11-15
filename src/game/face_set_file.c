@@ -138,23 +138,33 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
   __int64 v113;
   _QWORD* v114;
   _QWORD* v115;
-  __int64 v116;
-  unsigned __int64 v117;
-  char* v118;
-  __int64 v119;
-  unsigned __int64 v120;
-  char* v121;
+  struct {
+    __int64 v116;
+    unsigned __int64 v117;
+    char* v118;
+  } v116_;
+  struct {
+    __int64 v119;
+    unsigned __int64 v120;
+    char* v121;
+  } v119_;
   __int64 v122;
-  __int64 v123;
-  unsigned __int64 v124;
-  char* v125;
-  __int64 v126;
-  unsigned __int64 v127;
-  _BYTE* v128;
-  __int64 v129;
+  struct {
+    __int64 v123;
+    unsigned __int64 v124;
+    char* v125;
+  } v123_;
+  struct {
+    __int64 v126;
+    unsigned __int64 v127;
+    _BYTE* v128;
+  } v126_;
+  struct {
+    __int64 v129;
+    unsigned __int64 v130;
+    _BYTE* v131;
+  } v129_;
   __int64 v129s[3];
-  unsigned __int64 v130;
-  _BYTE* v131;
   _QWORD* v132;
 
   if (a2 != nullptr && *a2 == 65 && a2[1] == 70) {
@@ -256,29 +266,29 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v26 = (char*)v15[5];
                 }
                 if (v26 != nullptr) {
-                  v119 = (__int64)a2;
-                  v120 = strlen(a2);
-                  v121 = v26;
+                  v119_.v119 = (__int64)a2;
+                  v119_.v120 = strlen(a2);
+                  v119_.v121 = v26;
                   v122 = strlen(v26);
                   result = X8CALL_X0(
-                      __int64,
-                      GameRoutine_109ea80((void*)v129s, (__int64)&v119, 2));
-                  v129 = v129s[0];
-                  v130 = v129s[1];
-                  v131 = (_BYTE*)v129s[2];
+                      __int64, GameRoutine_109ea80((void*)v129s,
+                                                   (__int64)&v119_.v119, 2));
+                  v129_.v129 = v129s[0];
+                  v129_.v130 = v129s[1];
+                  v129_.v131 = (_BYTE*)v129s[2];
                   if ((*(_BYTE*)(v18 + 16) & 1) != 0 &&
                       *(_QWORD*)(v18 + 32) != 0) {
                     v27 = 128;
                     if (*(_QWORD*)(*v16 + 200) == 0) {
                       v27 = 56;
                     }
-                    result = nn_mem_StandardAllocator_Free(*v16 + v27,
-                        *(_QWORD*)(v18 + 32));
+                    result = nn_mem_StandardAllocator_Free(
+                        *v16 + v27, *(_QWORD*)(v18 + 32));
                   }
-                  v28 = v130;
-                  *(_QWORD*)(v18 + 16) = v129;
+                  v28 = v129_.v130;
+                  *(_QWORD*)(v18 + 16) = v129_.v129;
                   *(_QWORD*)(v18 + 24) = v28;
-                  *(_QWORD*)(v18 + 32) = v131;
+                  *(_QWORD*)(v18 + 32) = v129_.v131;
                 }
                 if (v13[6] != 0) {
                   v29 = v13[6];
@@ -290,15 +300,15 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   goto LABEL_278;
                 }
                 v114 = v13;
-                v117 = 0;
-                v118 = nullptr;
-                v116 = 0;
-                v127 = 0;
-                v128 = nullptr;
-                v125 = nullptr;
-                v126 = 0;
-                v123 = 0;
-                v124 = 0;
+                v116_.v117 = 0;
+                v116_.v118 = nullptr;
+                v116_.v116 = 0;
+                v126_.v127 = 0;
+                v126_.v128 = nullptr;
+                v123_.v125 = nullptr;
+                v126_.v126 = 0;
+                v123_.v123 = 0;
+                v123_.v124 = 0;
                 v30 = strlen(v29);
                 if (v30 >= 0xFFFFFFFFFFFFFFF7LL) {
                   goto LABEL_310;
@@ -309,29 +319,29 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 if (v30 >= 0x17) {
                   break;
                 }
-                v32 = (char*)&v119 + 1;
-                LOBYTE(v119) = 2 * v30;
+                v32 = (char*)&v119_.v119 + 1;
+                LOBYTE(v119_.v119) = 2 * v30;
                 if (v30 != 0) {
                   goto LABEL_60;
                 }
               LABEL_61:
                 v32[v31] = 0;
                 v34 = v4;
-                v35 = (unsigned __int8)v119;
-                v36 = v120;
-                v37 = v121;
-                if ((v119 & 1) != 0) {
-                  v38 = v120;
+                v35 = (unsigned __int8)v119_.v119;
+                v36 = v119_.v120;
+                v37 = v119_.v121;
+                if ((v119_.v119 & 1) != 0) {
+                  v38 = v119_.v120;
                 }
                 else {
-                  v38 = (unsigned __int64)(unsigned __int8)v119 >> 1;
+                  v38 = (unsigned __int64)(unsigned __int8)v119_.v119 >> 1;
                 }
                 if (v38 >= 1) {
-                  if ((v119 & 1) != 0) {
-                    v39 = v121;
+                  if ((v119_.v119 & 1) != 0) {
+                    v39 = v119_.v121;
                   }
                   else {
-                    v39 = (char*)&v119 + 1;
+                    v39 = (char*)&v119_.v119 + 1;
                   }
                   v40 = &v39[v38];
                 LABEL_69:
@@ -343,16 +353,18 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                     }
                     if (*v42 == 32) {
                       if (v42 != v40 && v42 - v39 != -1) {
-                        GameRoutine_1a0a8e0(&v119, v42 - v39, 1,
+                        GameRoutine_1a0a8e0(&v119_.v119, v42 - v39, 1,
                                             &GameData_1a9f09e, 0);
-                        v35 = (unsigned __int8)v119;
-                        v36 = v120;
-                        v37 = v121;
-                        v39 = (v119 & 1) != 0 ? v121 : (char*)&v119 + 1;
-                        v38 =
-                            (v119 & 1) != 0
-                                ? v120
-                                : (unsigned __int64)(unsigned __int8)v119 >> 1;
+                        v35 = (unsigned __int8)v119_.v119;
+                        v36 = v119_.v120;
+                        v37 = v119_.v121;
+                        v39 = (v119_.v119 & 1) != 0 ? v119_.v121
+                                                    : (char*)&v119_.v119 + 1;
+                        v38 = (v119_.v119 & 1) != 0
+                                  ? v119_.v120
+                                  : (unsigned __int64)(unsigned __int8)
+                                            v119_.v119 >>
+                                        1;
                         v40 = &v39[v38];
                         if (v38 > 0) {
                           goto LABEL_69;
@@ -366,7 +378,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 }
                 if ((v35 & 1) == 0) {
                   v36 = v35 >> 1;
-                  v37 = (char*)&v119 + 1;
+                  v37 = (char*)&v119_.v119 + 1;
                 }
                 v30 = memchr(v37, 40, v36);
                 v4 = v34;
@@ -404,18 +416,18 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                       }
                       v47 = (char*)fw_memory_HeapManager_Allocate(
                           fw_memory_g_heap_manager, v59, 16, 0);
-                      v130 = v46;
-                      v131 = v47;
-                      v129 = v59 | 1;
+                      v129_.v130 = v46;
+                      v129_.v131 = v47;
+                      v129_.v129 = v59 | 1;
                     }
                     else {
-                      v47 = (char*)&v129 + 1;
-                      LOBYTE(v129) = 2 * v46;
+                      v47 = (char*)&v129_.v129 + 1;
+                      LOBYTE(v129_.v129) = 2 * v46;
                       if (v43 == 0) {
                       LABEL_139:
-                        v60 = v126;
+                        v60 = v126_.v126;
                         v47[v46] = 0;
-                        if ((v60 & 1) != 0 && v128 != nullptr) {
+                        if ((v60 & 1) != 0 && v126_.v128 != nullptr) {
                           v61 = 128;
                           if (*(_QWORD*)(*(_QWORD*)
                                              fw_memory_g_heap_manager_ptr +
@@ -424,25 +436,26 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                           }
                           v30 = nn_mem_StandardAllocator_Free(
                               *(_QWORD*)fw_memory_g_heap_manager_ptr + v61,
-                              (__int64)v128);
+                              (__int64)v126_.v128);
                         }
-                        v126 = v129;
-                        v127 = v130;
-                        v62 = v120;
-                        v128 = v131;
-                        if ((v119 & 1) == 0) {
-                          v62 = (unsigned __int64)(unsigned __int8)v119 >> 1;
+                        v126_.v126 = v129_.v129;
+                        v126_.v127 = v129_.v130;
+                        v62 = v119_.v120;
+                        v126_.v128 = v129_.v131;
+                        if ((v119_.v119 & 1) == 0) {
+                          v62 = (unsigned __int64)(unsigned __int8)v119_.v119 >>
+                                1;
                         }
                         if (v43 >= v62) {
                           goto LABEL_311;
                         }
                         v55 = v43 + 1;
                         v63 = ~v43 + v44;
-                        if ((v119 & 1) != 0) {
-                          v57 = v121;
+                        if ((v119_.v119 & 1) != 0) {
+                          v57 = v119_.v121;
                         }
                         else {
-                          v57 = (char*)&v119 + 1;
+                          v57 = (char*)&v119_.v119 + 1;
                         }
                         if (v62 - v55 >= v63) {
                           v56 = v63;
@@ -457,9 +470,9 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                         if (v56 >= 0x17) {
                           goto LABEL_157;
                         }
-                        v58 = (char*)&v129 + 1;
+                        v58 = (char*)&v129_.v129 + 1;
                         v14 = v113;
-                        LOBYTE(v129) = 2 * v56;
+                        LOBYTE(v129_.v129) = 2 * v56;
                         if (v56 != 0) {
                           goto LABEL_161;
                         }
@@ -473,14 +486,14 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
               LABEL_101:
                 v30 = memchr(v29, 44, v31);
                 if (v30 == 0 || (v48 = v30 - v29, v30 - v29 == -1)) {
-                  v30 = GameRoutine_60a060(&v126, v29, v31);
+                  v30 = GameRoutine_60a060(&v126_.v126, v29, v31);
                   v15 = v112;
-                  if ((v123 & 1) != 0) {
-                    *v125 = 0;
-                    v124 = 0;
+                  if ((v123_.v123 & 1) != 0) {
+                    *v123_.v125 = 0;
+                    v123_.v124 = 0;
                   }
                   else {
-                    LOWORD(v123) = 0;
+                    LOWORD(v123_.v123) = 0;
                   }
                   v14 = v113;
                   v13 = v114;
@@ -506,22 +519,22 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   }
                   v50 = (char*)fw_memory_HeapManager_Allocate(
                       fw_memory_g_heap_manager, v51, 16, 0);
-                  v130 = v49;
-                  v131 = v50;
-                  v129 = v51 | 1;
+                  v129_.v130 = v49;
+                  v129_.v131 = v50;
+                  v129_.v129 = v51 | 1;
                 LABEL_118:
                   v30 = memmove(v50, v37, v49);
                   goto LABEL_119;
                 }
-                v50 = (char*)&v129 + 1;
-                LOBYTE(v129) = 2 * v49;
+                v50 = (char*)&v129_.v129 + 1;
+                LOBYTE(v129_.v129) = 2 * v49;
                 if (v49 != 0) {
                   goto LABEL_118;
                 }
               LABEL_119:
-                v52 = v126;
+                v52 = v126_.v126;
                 v50[v49] = 0;
-                if ((v52 & 1) != 0 && v128 != nullptr) {
+                if ((v52 & 1) != 0 && v126_.v128 != nullptr) {
                   v53 = 128;
                   if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr +
                                  200LL) == 0) {
@@ -529,14 +542,14 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   }
                   v30 = nn_mem_StandardAllocator_Free(
                       *(_QWORD*)fw_memory_g_heap_manager_ptr + v53,
-                      (__int64)v128);
+                      (__int64)v126_.v128);
                 }
-                v126 = v129;
-                v127 = v130;
-                v128 = v131;
-                v54 = v120;
-                if ((v119 & 1) == 0) {
-                  v54 = (unsigned __int64)(unsigned __int8)v119 >> 1;
+                v126_.v126 = v129_.v129;
+                v126_.v127 = v129_.v130;
+                v126_.v128 = v129_.v131;
+                v54 = v119_.v120;
+                if ((v119_.v119 & 1) == 0) {
+                  v54 = (unsigned __int64)(unsigned __int8)v119_.v119 >> 1;
                 }
                 if (v48 >= v54) {
                 LABEL_311:
@@ -544,11 +557,11 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 }
                 v55 = v48 + 1;
                 v56 = v54 - (v48 + 1);
-                if ((v119 & 1) != 0) {
-                  v57 = v121;
+                if ((v119_.v119 & 1) != 0) {
+                  v57 = v119_.v121;
                 }
                 else {
-                  v57 = (char*)&v119 + 1;
+                  v57 = (char*)&v119_.v119 + 1;
                 }
                 if (v56 >= 0xFFFFFFFFFFFFFFF7LL) {
                   goto LABEL_310;
@@ -567,108 +580,109 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v66 = v64 | 1;
                   v14 = v113;
                   v58 = (char*)v65;
-                  v130 = v56;
-                  v131 = (_BYTE*)v65;
-                  v129 = v66;
+                  v129_.v130 = v56;
+                  v129_.v131 = (_BYTE*)v65;
+                  v129_.v129 = v66;
                 LABEL_161:
                   v30 = memmove(v58, &v57[v55], v56);
                   goto LABEL_162;
                 }
-                v58 = (char*)&v129 + 1;
+                v58 = (char*)&v129_.v129 + 1;
                 v14 = v113;
-                LOBYTE(v129) = 2 * v56;
+                LOBYTE(v129_.v129) = 2 * v56;
                 if (v54 != v55) {
                   goto LABEL_161;
                 }
               LABEL_162:
-                v67 = v123;
+                v67 = v123_.v123;
                 v58[v56] = 0;
-                if ((v67 & 1) != 0 && v125 != nullptr) {
+                if ((v67 & 1) != 0 && v123_.v125 != nullptr) {
                   v68 = 128;
                   if (*(_QWORD*)(fw_memory_g_heap_manager + 200) == 0) {
                     v68 = 56;
                   }
-                  v30 = nn_mem_StandardAllocator_Free(fw_memory_g_heap_manager +
-                                                      v68, (__int64)v125);
+                  v30 = nn_mem_StandardAllocator_Free(
+                      fw_memory_g_heap_manager + v68, (__int64)v123_.v125);
                 }
                 v13 = v114;
                 v15 = v112;
-                v123 = v129;
-                v124 = v130;
-                v125 = v131;
+                v123_.v123 = v129_.v129;
+                v123_.v124 = v129_.v130;
+                v123_.v125 = v129_.v131;
               LABEL_168:
-                if ((v119 & 1) != 0 && v121 != nullptr) {
+                if ((v119_.v119 & 1) != 0 && v119_.v121 != nullptr) {
                   v69 = 128;
                   if (*(_QWORD*)(*v16 + 200) == 0) {
                     v69 = 56;
                   }
                   v30 = nn_mem_StandardAllocator_Free(*v16 + v69,
-                                                      (__int64)v121);
+                                                      (__int64)v119_.v121);
                 }
-                v70 = v123 & 1;
-                v71 = v128;
+                v70 = v123_.v123 & 1;
+                v71 = v126_.v128;
                 if (v70 != 0) {
-                  v72 = v124;
+                  v72 = v123_.v124;
                 }
                 else {
-                  v72 = (unsigned __int64)(unsigned __int8)v123 >> 1;
+                  v72 = (unsigned __int64)(unsigned __int8)v123_.v123 >> 1;
                 }
-                v73 = (unsigned __int8*)&v126 + 1;
-                if ((v126 & 1) != 0) {
-                  v73 = v128;
+                v73 = (unsigned __int8*)&v126_.v126 + 1;
+                if ((v126_.v126 & 1) != 0) {
+                  v73 = v126_.v128;
                 }
                 v74 = *v73;
                 if (v72 != 0) {
                   if ((unsigned int)(v74 - 58) > 0xFFFFFFF5) {
-                    if ((v116 & 1) != 0) {
+                    if ((v116_.v116 & 1) != 0) {
                       if (v70 != 0) {
-                        v77 = v125;
+                        v77 = v123_.v125;
                       }
                       else {
-                        v77 = (char*)&v123 + 1;
+                        v77 = (char*)&v123_.v123 + 1;
                       }
-                      SpineModel_64dde0(&v116, v77, v72);
-                      v70 = v123 & 1;
+                      SpineModel_64dde0(&v116_.v116, v77, v72);
+                      v70 = v123_.v123 & 1;
                     }
                     else if (v70 != 0) {
-                      GameRoutine_64df20(&v116, v125, v124);
+                      GameRoutine_64df20(&v116_.v116, v123_.v125, v123_.v124);
                       v70 = 1;
                     }
                     else {
-                      v116 = v123;
-                      v117 = v124;
-                      v118 = v125;
+                      v116_.v116 = v123_.v123;
+                      v116_.v117 = v123_.v124;
+                      v116_.v118 = v123_.v125;
                     }
-                    if ((v126 & 1) != 0) {
-                      v79 = v128;
+                    if ((v126_.v126 & 1) != 0) {
+                      v79 = v126_.v128;
                     }
                     else {
-                      v79 = (char*)&v126 + 1;
+                      v79 = (char*)&v126_.v126 + 1;
                     }
                   }
                   else {
-                    if ((v116 & 1) != 0) {
-                      if ((v126 & 1) != 0) {
-                        v76 = v127;
+                    if ((v116_.v116 & 1) != 0) {
+                      if ((v126_.v126 & 1) != 0) {
+                        v76 = v126_.v127;
                       }
                       else {
-                        v76 = (unsigned __int64)(unsigned __int8)v126 >> 1;
+                        v76 =
+                            (unsigned __int64)(unsigned __int8)v126_.v126 >> 1;
                       }
-                      SpineModel_64dde0(&v116, v73, v76);
+                      SpineModel_64dde0(&v116_.v116, v73, v76);
                     }
-                    else if ((v126 & 1) != 0) {
-                      GameRoutine_64df20(&v116, v128, v127);
+                    else if ((v126_.v126 & 1) != 0) {
+                      GameRoutine_64df20(&v116_.v116, v126_.v128, v126_.v127);
                     }
                     else {
-                      v116 = v126;
-                      v117 = v127;
-                      v118 = v128;
+                      v116_.v116 = v126_.v126;
+                      v116_.v117 = v126_.v127;
+                      v116_.v118 = v126_.v128;
                     }
                     if (v70 != 0) {
-                      v79 = v125;
+                      v79 = v123_.v125;
                     }
                     else {
-                      v79 = (char*)&v123 + 1;
+                      v79 = (char*)&v123_.v123 + 1;
                     }
                   }
                   v75 = atof(v79);
@@ -677,21 +691,22 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   }
                 }
                 else if ((unsigned int)(v74 - 48) > 9) {
-                  if ((v116 & 1) != 0) {
-                    if ((v126 & 1) != 0) {
-                      v78 = v127;
+                  if ((v116_.v116 & 1) != 0) {
+                    if ((v126_.v126 & 1) != 0) {
+                      v78 = v126_.v127;
                     }
                     else {
-                      v78 = (unsigned __int64)(unsigned __int8)v126 >> 1;
+                      v78 = (unsigned __int64)(unsigned __int8)v126_.v126 >> 1;
                     }
-                    v30 = SpineModel_64dde0(&v116, v73, v78);
+                    v30 = SpineModel_64dde0(&v116_.v116, v73, v78);
                     v75 = 1.0f;
                     if (v70 == 0) {
                       goto LABEL_222;
                     }
                   }
-                  else if ((v126 & 1) != 0) {
-                    v30 = GameRoutine_64df20(&v116, v128, v127);
+                  else if ((v126_.v126 & 1) != 0) {
+                    v30 =
+                        GameRoutine_64df20(&v116_.v116, v126_.v128, v126_.v127);
                     v75 = 1.0f;
                     if (v70 == 0) {
                       goto LABEL_222;
@@ -699,9 +714,9 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   }
                   else {
                     v75 = 1.0f;
-                    v116 = v126;
-                    v117 = v127;
-                    v118 = v128;
+                    v116_.v116 = v126_.v126;
+                    v116_.v117 = v126_.v127;
+                    v116_.v118 = v126_.v128;
                     if (v70 == 0) {
                       goto LABEL_222;
                     }
@@ -709,44 +724,44 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 }
                 else {
                   v75 = atof(v73);
-                  if ((v116 & 1) != 0) {
-                    *v118 = 0;
-                    v117 = 0;
+                  if ((v116_.v116 & 1) != 0) {
+                    *v116_.v118 = 0;
+                    v116_.v117 = 0;
                     if (v70 == 0) {
                       goto LABEL_222;
                     }
                   }
                   else {
-                    LOWORD(v116) = 0;
+                    LOWORD(v116_.v116) = 0;
                     if (v70 == 0) {
                       goto LABEL_222;
                     }
                   }
                 }
-                if (v125 != nullptr) {
+                if (v123_.v125 != nullptr) {
                   v80 = 128;
                   if (*(_QWORD*)(*v16 + 200) == 0) {
                     v80 = 56;
                   }
                   v30 = nn_mem_StandardAllocator_Free(*v16 + v80,
-                                                      (__int64)v125);
+                                                      (__int64)v123_.v125);
                 }
               LABEL_222:
-                if ((v126 & 1) != 0 && v128 != nullptr) {
+                if ((v126_.v126 & 1) != 0 && v126_.v128 != nullptr) {
                   v81 = 128;
                   if (*(_QWORD*)(*v16 + 200) == 0) {
                     v81 = 56;
                   }
                   v30 = nn_mem_StandardAllocator_Free(*v16 + v81,
-                                                      (__int64)v128);
+                                                      (__int64)v126_.v128);
                 }
                 if (v75 <= 0.0f) {
                   goto LABEL_261;
                 }
-                v82 = v116;
-                v83 = v117;
-                if ((v116 & 1) == 0) {
-                  v83 = (unsigned __int64)(unsigned __int8)v116 >> 1;
+                v82 = v116_.v116;
+                v83 = v116_.v117;
+                if ((v116_.v116 & 1) == 0) {
+                  v83 = (unsigned __int64)(unsigned __int8)v116_.v116 >> 1;
                 }
                 if (v83 == 0) {
                   v88 = *(unsigned __int8*)(v18 + 16);
@@ -780,20 +795,20 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                     v97 = v95 | 1;
                     v15 = v112;
                     v94 = (char*)v96;
-                    v120 = v91 + 6;
-                    v121 = (char*)v96;
-                    v119 = v97;
+                    v119_.v120 = v91 + 6;
+                    v119_.v121 = (char*)v96;
+                    v119_.v119 = v97;
                   }
                   else {
-                    v94 = (char*)&v119 + 1;
-                    v120 = 0;
-                    v121 = nullptr;
-                    v119 = (unsigned __int8)(2 * v93);
+                    v94 = (char*)&v119_.v119 + 1;
+                    v119_.v120 = 0;
+                    v119_.v121 = nullptr;
+                    v119_.v119 = (unsigned __int8)(2 * v93);
                     if (v91 == 0) {
                     LABEL_254:
                       strcpy(&v94[v91], "_Blink");
                       v16 = (__int64*)fw_memory_g_heap_manager_ptr;
-                      if ((v82 & 1) != 0 && v118 != nullptr) {
+                      if ((v82 & 1) != 0 && v116_.v118 != nullptr) {
                         v98 = 128;
                         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr +
                                        200LL) == 0) {
@@ -801,80 +816,81 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                         }
                         nn_mem_StandardAllocator_Free(
                             *(_QWORD*)fw_memory_g_heap_manager_ptr + v98,
-                            (__int64)v118);
+                            (__int64)v116_.v118);
                       }
                       v14 = v113;
                       v13 = v114;
-                      v116 = v119;
-                      v117 = v120;
-                      v87 = v121;
+                      v116_.v116 = v119_.v119;
+                      v116_.v117 = v119_.v120;
+                      v87 = v119_.v121;
                       goto LABEL_260;
                     }
                   }
                   memmove(v94, v92, v91);
                   goto LABEL_254;
                 }
-                v119 = (__int64)a2;
+                v119_.v119 = (__int64)a2;
                 v84 = strlen(a2);
-                v85 = v118;
+                v85 = v116_.v118;
                 if ((v82 & 1) == 0) {
-                  v85 = (char*)&v116 + 1;
+                  v85 = (char*)&v116_.v116 + 1;
                 }
-                v120 = v84;
-                v121 = v85;
+                v119_.v120 = v84;
+                v119_.v121 = v85;
                 v122 = strlen(v85);
-                GameRoutine_109ea80((void*)v129s, (__int64)&v119, 2);
-                v129 = v129s[0];
-                v130 = v129s[1];
-                v131 = (_BYTE*)v129s[2];
-                if ((v116 & 1) != 0 && v118 != nullptr) {
+                GameRoutine_109ea80((void*)v129s, (__int64)&v119_.v119, 2);
+                v129_.v129 = v129s[0];
+                v129_.v130 = v129s[1];
+                v129_.v131 = (_BYTE*)v129s[2];
+                if ((v116_.v116 & 1) != 0 && v116_.v118 != nullptr) {
                   v86 = 128;
                   if (*(_QWORD*)(*v16 + 200) == 0) {
                     v86 = 56;
                   }
-                  nn_mem_StandardAllocator_Free(*v16 + v86, (__int64)v118);
+                  nn_mem_StandardAllocator_Free(*v16 + v86,
+                                                (__int64)v116_.v118);
                 }
-                v116 = v129;
-                v117 = v130;
-                v87 = v131;
+                v116_.v116 = v129_.v129;
+                v116_.v117 = v129_.v130;
+                v87 = v129_.v131;
               LABEL_260:
-                v118 = v87;
+                v116_.v118 = v87;
               LABEL_261:
                 result = v18 + 112;
                 *(float*)(v18 + 12) = v75;
-                if ((__int64*)(v18 + 112) != &v116) {
+                if ((__int64*)(v18 + 112) != &v116_.v116) {
                   if ((*(_BYTE*)result & 1) != 0) {
-                    if ((v116 & 1) != 0) {
-                      v100 = v118;
+                    if ((v116_.v116 & 1) != 0) {
+                      v100 = v116_.v118;
                     }
                     else {
-                      v100 = (char*)&v116 + 1;
+                      v100 = (char*)&v116_.v116 + 1;
                     }
-                    if ((v116 & 1) != 0) {
-                      v101 = v117;
+                    if ((v116_.v116 & 1) != 0) {
+                      v101 = v116_.v117;
                     }
                     else {
-                      v101 = (unsigned __int64)(unsigned __int8)v116 >> 1;
+                      v101 = (unsigned __int64)(unsigned __int8)v116_.v116 >> 1;
                     }
                     result = SpineModel_64dde0(result, v100, v101);
                   }
-                  else if ((v116 & 1) != 0) {
-                    result = GameRoutine_64df20(result, v118, v117);
+                  else if ((v116_.v116 & 1) != 0) {
+                    result = GameRoutine_64df20(result, v116_.v118, v116_.v117);
                   }
                   else {
-                    v99 = v117;
-                    *(_QWORD*)result = v116;
+                    v99 = v116_.v117;
+                    *(_QWORD*)result = v116_.v116;
                     *(_QWORD*)(v18 + 120) = v99;
-                    *(_QWORD*)(v18 + 128) = v118;
+                    *(_QWORD*)(v18 + 128) = v116_.v118;
                   }
                 }
-                if ((v116 & 1) != 0 && v118 != nullptr) {
+                if ((v116_.v116 & 1) != 0 && v116_.v118 != nullptr) {
                   v102 = 128;
                   if (*(_QWORD*)(*v16 + 200) == 0) {
                     v102 = 56;
                   }
                   result = nn_mem_StandardAllocator_Free(*v16 + v102,
-                                                         (__int64)v118);
+                                                         (__int64)v116_.v118);
                 }
               LABEL_278:
                 if (v13[7] != 0) {
@@ -884,29 +900,29 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v103 = (char*)v15[7];
                 }
                 if (v103 != nullptr) {
-                  v119 = (__int64)a2;
-                  v120 = strlen(a2);
-                  v121 = v103;
+                  v119_.v119 = (__int64)a2;
+                  v119_.v120 = strlen(a2);
+                  v119_.v121 = v103;
                   v122 = strlen(v103);
                   result = X8CALL_X0(
-                      __int64,
-                      GameRoutine_109ea80((void*)v129s, (__int64)&v119, 2));
-                  v129 = v129s[0];
-                  v130 = v129s[1];
-                  v131 = (_BYTE*)v129s[2];
+                      __int64, GameRoutine_109ea80((void*)v129s,
+                                                   (__int64)&v119_.v119, 2));
+                  v129_.v129 = v129s[0];
+                  v129_.v130 = v129s[1];
+                  v129_.v131 = (_BYTE*)v129s[2];
                   if ((*(_BYTE*)(v18 + 400) & 1) != 0 &&
                       *(_QWORD*)(v18 + 416) != 0) {
                     v104 = 128;
                     if (*(_QWORD*)(*v16 + 200) == 0) {
                       v104 = 56;
                     }
-                    result = nn_mem_StandardAllocator_Free(*v16 + v104,
-                        *(_QWORD*)(v18 + 416));
+                    result = nn_mem_StandardAllocator_Free(
+                        *v16 + v104, *(_QWORD*)(v18 + 416));
                   }
-                  v105 = v130;
-                  *(_QWORD*)(v18 + 400) = v129;
+                  v105 = v129_.v130;
+                  *(_QWORD*)(v18 + 400) = v129_.v129;
                   *(_QWORD*)(v18 + 408) = v105;
-                  *(_QWORD*)(v18 + 416) = v131;
+                  *(_QWORD*)(v18 + 416) = v129_.v131;
                 }
                 if (v13[8] != 0) {
                   v106 = (char*)v13[8];
@@ -915,29 +931,29 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v106 = (char*)v15[8];
                 }
                 if (v106 != nullptr) {
-                  v119 = (__int64)a2;
-                  v120 = strlen(a2);
-                  v121 = v106;
+                  v119_.v119 = (__int64)a2;
+                  v119_.v120 = strlen(a2);
+                  v119_.v121 = v106;
                   v122 = strlen(v106);
                   result = X8CALL_X0(
-                      __int64,
-                      GameRoutine_109ea80((void*)v129s, (__int64)&v119, 2));
-                  v129 = v129s[0];
-                  v130 = v129s[1];
-                  v131 = (_BYTE*)v129s[2];
+                      __int64, GameRoutine_109ea80((void*)v129s,
+                                                   (__int64)&v119_.v119, 2));
+                  v129_.v129 = v129s[0];
+                  v129_.v130 = v129s[1];
+                  v129_.v131 = (_BYTE*)v129s[2];
                   if ((*(_BYTE*)(v18 + 208) & 1) != 0 &&
                       *(_QWORD*)(v18 + 224) != 0) {
                     v107 = 128;
                     if (*(_QWORD*)(*v16 + 200) == 0) {
                       v107 = 56;
                     }
-                    result = nn_mem_StandardAllocator_Free(*v16 + v107,
-                        *(_QWORD*)(v18 + 224));
+                    result = nn_mem_StandardAllocator_Free(
+                        *v16 + v107, *(_QWORD*)(v18 + 224));
                   }
-                  v108 = v130;
-                  *(_QWORD*)(v18 + 208) = v129;
+                  v108 = v129_.v130;
+                  *(_QWORD*)(v18 + 208) = v129_.v129;
                   *(_QWORD*)(v18 + 216) = v108;
-                  *(_QWORD*)(v18 + 224) = v131;
+                  *(_QWORD*)(v18 + 224) = v129_.v131;
                 }
                 if (v13[9] != 0) {
                   v109 = (char*)v13[9];
@@ -946,29 +962,29 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v109 = (char*)v15[9];
                 }
                 if (v109 != nullptr) {
-                  v119 = (__int64)a2;
-                  v120 = strlen(a2);
-                  v121 = v109;
+                  v119_.v119 = (__int64)a2;
+                  v119_.v120 = strlen(a2);
+                  v119_.v121 = v109;
                   v122 = strlen(v109);
                   result = X8CALL_X0(
-                      __int64,
-                      GameRoutine_109ea80((void*)v129s, (__int64)&v119, 2));
-                  v129 = v129s[0];
-                  v130 = v129s[1];
-                  v131 = (_BYTE*)v129s[2];
+                      __int64, GameRoutine_109ea80((void*)v129s,
+                                                   (__int64)&v119_.v119, 2));
+                  v129_.v129 = v129s[0];
+                  v129_.v130 = v129s[1];
+                  v129_.v131 = (_BYTE*)v129s[2];
                   if ((*(_BYTE*)(v18 + 304) & 1) != 0 &&
                       *(_QWORD*)(v18 + 320) != 0) {
                     v110 = 128;
                     if (*(_QWORD*)(*v16 + 200) == 0) {
                       v110 = 56;
                     }
-                    result = nn_mem_StandardAllocator_Free(*v16 + v110,
-                        *(_QWORD*)(v18 + 320));
+                    result = nn_mem_StandardAllocator_Free(
+                        *v16 + v110, *(_QWORD*)(v18 + 320));
                   }
-                  v17 = v130;
-                  *(_QWORD*)(v18 + 304) = v129;
+                  v17 = v129_.v130;
+                  *(_QWORD*)(v18 + 304) = v129_.v129;
                   *(_QWORD*)(v18 + 312) = v17;
-                  *(_QWORD*)(v18 + 320) = v131;
+                  *(_QWORD*)(v18 + 320) = v129_.v131;
                 }
                 v13 = v115;
                 v15 = v132;
@@ -983,9 +999,9 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 v33 = (v30 | 7) + 1;
               }
               v32 = (char*)fw_memory_HeapManager_Allocate(*v16, v33, 16, 0);
-              v120 = v31;
-              v121 = v32;
-              v119 = v33 | 1;
+              v119_.v120 = v31;
+              v119_.v121 = v32;
+              v119_.v119 = v33 | 1;
             LABEL_60:
               memcpy(v32, v29, v31);
               goto LABEL_61;

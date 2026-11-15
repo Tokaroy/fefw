@@ -737,9 +737,11 @@ __int64 GameHr_627640(__int64 a1, __int64 a2)
   _BYTE v77[256];
   __int64 v78;
   unsigned int v79;
-  __int64 v80;
-  unsigned int v81;
-  char* v82;
+  struct {
+    __int64 v80;
+    unsigned int v81;
+    char* v82;
+  } v80_;
   _QWORD v83[2];
   char* v84;
 
@@ -820,12 +822,12 @@ __int64 GameHr_627640(__int64 a1, __int64 a2)
         GameRoutine_1a09be0(v77, v4 + 972 + (v24 << 7));
         v26 = *(_BYTE*)(v4 + 323);
         v27 = *(unsigned __int8*)(v4 + 324);
-        GameRoutine_629480((void*)&v80, v77);
-        if ((v80 & 1) != 0) {
-          v28 = v82;
+        GameRoutine_629480((void*)&v80_.v80, v77);
+        if ((v80_.v80 & 1) != 0) {
+          v28 = v80_.v82;
         }
         else {
-          v28 = (char*)&v80 + 1;
+          v28 = (char*)&v80_.v80 + 1;
         }
         v29 = GameRoutine_1a09c70(v28);
         if (v29 >= 0xFFFFFFFFFFFFFFF7LL) {
@@ -854,14 +856,14 @@ __int64 GameHr_627640(__int64 a1, __int64 a2)
         }
         GameRoutine_1a0b940(v31, v28, v30);
       LABEL_42:
-        v33 = v80;
+        v33 = v80_.v80;
         v31[v30] = 0;
-        if ((v33 & 1) != 0 && v82 != nullptr) {
+        if ((v33 & 1) != 0 && v80_.v82 != nullptr) {
           v34 = 128;
           if (*(_QWORD*)(*(_QWORD*)GameData_212bf68 + 200LL) == 0) {
             v34 = 56;
           }
-          GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v34, v82);
+          GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v34, v80_.v82);
         }
         v35 = v84;
         v75 = v83[0];
@@ -871,13 +873,13 @@ __int64 GameHr_627640(__int64 a1, __int64 a2)
         else {
           v36 = (char*)v83 + 1;
         }
-        GameRoutine_629620((void*)&v80, a1, v36);
-        if (v81 != 0x2000) {
-          v37 = (char*)&GameData_21a65c8[2 * v81];
+        GameRoutine_629620((void*)&v80_.v80, a1, v36);
+        if (v80_.v81 != 0x2000) {
+          v37 = (char*)&GameData_21a65c8[2 * v80_.v81];
           v38 = *((_QWORD*)v37 + 1);
           if (v38 != 0) {
             v39 = *(_QWORD*)v37;
-            if (*(_QWORD*)v37 == v80) {
+            if (*(_QWORD*)v37 == v80_.v80) {
               if ((unsigned int)GameRoutine_1a09d30(v77, v38 + 184) != 0) {
                 goto LABEL_91;
               }
