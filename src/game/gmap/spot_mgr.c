@@ -10985,7 +10985,7 @@ __int64 SpotMgr_1338da0(__int64 result, __int64* a2, __int64 a3, char a4)
     while (1) {
       while (1) {
         v7 = v8;
-        v9 = a2 - v8;
+        v9 = ((__int64)a2 - (__int64)v8) >> 3;
         if (v9 > 2) {
           if (v9 == 3) {
             v169 = *v8;
@@ -12150,7 +12150,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
   float v118;
   int v119;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       v20 = *a1;
@@ -12167,7 +12167,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
       v26 = *(a2 - 1);
       v27 = *(float*)(v26 + 40);
       v28 = *(float*)(v26 + 32) < v24;
-      if ((float)((float)(v27 - v22) * (float)(v27 - v22)) > 100.0) {
+      if (!((float)((float)(v27 - v22) * (float)(v27 - v22)) <= 100.0)) {
         v28 = v27 < v22;
       }
       if (v25) {
@@ -12181,7 +12181,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
           v65 = *(float*)(v20 + 40);
           v66 = *(float*)(v64 + 40);
           v67 = *(float*)(v64 + 32) < *(float*)(v20 + 32);
-          if ((float)((float)(v66 - v65) * (float)(v66 - v65)) > 100.0) {
+          if (!((float)((float)(v66 - v65) * (float)(v66 - v65)) <= 100.0)) {
             v67 = v66 < v65;
           }
           if (!v67) {
@@ -12224,7 +12224,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
       v10 = a1[2];
       v11 = *(float*)(v10 + 40);
       v12 = *(float*)(v10 + 32) < v8;
-      if ((float)((float)(v11 - v6) * (float)(v11 - v6)) > 100.0) {
+      if (!((float)((float)(v11 - v6) * (float)(v11 - v6)) <= 100.0)) {
         v12 = v11 < v6;
       }
       if (v9) {
@@ -12240,7 +12240,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
           v96 = *(float*)(v4 + 40);
           v97 = *(float*)(v95 + 40);
           v98 = *(float*)(v95 + 32) < *(float*)(v4 + 32);
-          if ((float)((float)(v97 - v96) * (float)(v97 - v96)) > 100.0) {
+          if (!((float)((float)(v97 - v96) * (float)(v97 - v96)) <= 100.0)) {
             v98 = v97 < v96;
           }
           if (v98) {
@@ -12249,7 +12249,8 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
             v99 = *(float*)(v95 + 40);
             v100 = *(float*)(v14 + 40);
             v101 = *(float*)(v95 + 32) < *(float*)(v14 + 32);
-            if ((float)((float)(v99 - v100) * (float)(v99 - v100)) > 100.0) {
+            if (!((float)((float)(v99 - v100) * (float)(v99 - v100)) <=
+                  100.0)) {
               v101 = v99 < v100;
             }
             if (v101) {
@@ -12275,7 +12276,8 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
           v106 = *(float*)(v4 + 40);
           v107 = *(float*)(v105 + 40);
           v108 = *(float*)(v105 + 32) < *(float*)(v4 + 32);
-          if ((float)((float)(v107 - v106) * (float)(v107 - v106)) > 100.0) {
+          if (!((float)((float)(v107 - v106) * (float)(v107 - v106)) <=
+                100.0)) {
             v108 = v107 < v106;
           }
           if (!v108) {
@@ -12288,7 +12290,8 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
           v110 = *(float*)(v48 + 40);
           v111 = *(float*)(v109 + 40);
           v112 = *(float*)(v48 + 32) < *(float*)(v109 + 32);
-          if ((float)((float)(v110 - v111) * (float)(v110 - v111)) > 100.0) {
+          if (!((float)((float)(v110 - v111) * (float)(v110 - v111)) <=
+                100.0)) {
             v112 = v110 < v111;
           }
           if (!v112) {
@@ -12303,7 +12306,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
         v85 = *(float*)(v10 + 40);
         v86 = *(float*)(v5 + 40);
         v87 = *(float*)(v10 + 32) < *(float*)(v5 + 32);
-        if ((float)((float)(v85 - v86) * (float)(v85 - v86)) > 100.0) {
+        if (!((float)((float)(v85 - v86) * (float)(v85 - v86)) <= 100.0)) {
           v87 = v85 < v86;
         }
         if (v87) {
@@ -12323,7 +12326,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
           v58 = *(float*)(v10 + 40);
           v59 = *(float*)(v5 + 40);
           v60 = *(float*)(v10 + 32) < *(float*)(v5 + 32);
-          if ((float)((float)(v58 - v59) * (float)(v58 - v59)) > 100.0) {
+          if (!((float)((float)(v58 - v59) * (float)(v58 - v59)) <= 100.0)) {
             v60 = v58 < v59;
           }
           if (v60) {
@@ -12358,7 +12361,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
     v45 = a1[2];
     v46 = *(float*)(v45 + 40);
     v47 = *(float*)(v45 + 32) < v43;
-    if ((float)((float)(v46 - v41) * (float)(v46 - v41)) > 100.0) {
+    if (!((float)((float)(v46 - v41) * (float)(v46 - v41)) <= 100.0)) {
       v47 = v46 < v41;
     }
     if (v44) {
@@ -12372,7 +12375,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
         v92 = *(float*)(v39 + 40);
         v93 = *(float*)(v91 + 40);
         v94 = *(float*)(v91 + 32) < *(float*)(v39 + 32);
-        if ((float)((float)(v93 - v92) * (float)(v93 - v92)) > 100.0) {
+        if (!((float)((float)(v93 - v92) * (float)(v93 - v92)) <= 100.0)) {
           v94 = v93 < v92;
         }
         if (!v94) {
@@ -12386,7 +12389,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
         v114 = *(float*)(v48 + 40);
         v115 = *(float*)(v113 + 40);
         v116 = *(float*)(v48 + 32) < *(float*)(v113 + 32);
-        if ((float)((float)(v114 - v115) * (float)(v114 - v115)) > 100.0) {
+        if (!((float)((float)(v114 - v115) * (float)(v114 - v115)) <= 100.0)) {
           v116 = v114 < v115;
         }
         if (!v116) {
@@ -12402,7 +12405,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
         v52 = (float)(v117 - v118) * (float)(v117 - v118);
       LABEL_126:
         v119 = v54;
-        if (v52 > 100.0) {
+        if (!(v52 <= 100.0)) {
           v53 = v119;
         }
         if (!v53) {
@@ -12417,7 +12420,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
       v88 = *(float*)(v45 + 40);
       v89 = *(float*)(v40 + 40);
       v90 = *(float*)(v45 + 32) < *(float*)(v40 + 32);
-      if ((float)((float)(v88 - v89) * (float)(v88 - v89)) > 100.0) {
+      if (!((float)((float)(v88 - v89) * (float)(v88 - v89)) <= 100.0)) {
         v90 = v88 < v89;
       }
       if (v90) {
@@ -12431,7 +12434,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
       v61 = *(float*)(v45 + 40);
       v62 = *(float*)(v40 + 40);
       v63 = *(float*)(v45 + 32) < *(float*)(v40 + 32);
-      if ((float)((float)(v61 - v62) * (float)(v61 - v62)) > 100.0) {
+      if (!((float)((float)(v61 - v62) * (float)(v61 - v62)) <= 100.0)) {
         v63 = v61 < v62;
       }
       if (v63) {
@@ -12452,7 +12455,7 @@ bool SpotMgr_133a380(__int64* a1, __int64* a2)
     v17 = *(float*)(v15 + 40);
     v18 = *(float*)(*a1 + 40);
     v19 = *(float*)(v15 + 32) < *(float*)(*a1 + 32);
-    if ((float)((float)(v17 - v18) * (float)(v17 - v18)) > 100.0) {
+    if (!((float)((float)(v17 - v18) * (float)(v17 - v18)) <= 100.0)) {
       v19 = v17 < v18;
     }
     if (!v19) {
@@ -12476,7 +12479,7 @@ LABEL_28:
     v36 = v35 < *(float*)(*a1 + 32);
   }
   v38 = *(float*)(v32 + 32) < v35;
-  if ((float)((float)(v37 - v33) * (float)(v37 - v33)) > 100.0) {
+  if (!((float)((float)(v37 - v33) * (float)(v37 - v33)) <= 100.0)) {
     v38 = v37 < v33;
   }
   if (!v36) {
@@ -12486,7 +12489,7 @@ LABEL_28:
       v55 = *(float*)(v32 + 40);
       v56 = *(float*)(v29 + 40);
       v57 = *(float*)(v32 + 32) < *(float*)(v29 + 32);
-      if ((float)((float)(v55 - v56) * (float)(v55 - v56)) > 100.0) {
+      if (!((float)((float)(v55 - v56) * (float)(v55 - v56)) <= 100.0)) {
         v57 = v55 < v56;
       }
       if (v57) {
@@ -12505,7 +12508,7 @@ LABEL_28:
     v68 = *(float*)(v32 + 40);
     v69 = *(float*)(v29 + 40);
     v70 = *(float*)(v32 + 32) < *(float*)(v29 + 32);
-    if ((float)((float)(v68 - v69) * (float)(v68 - v69)) > 100.0) {
+    if (!((float)((float)(v68 - v69) * (float)(v68 - v69)) <= 100.0)) {
       v70 = v68 < v69;
     }
     if (!v70) {
@@ -12527,7 +12530,7 @@ LABEL_70:
     v77 = *(float*)(*v71 + 40);
     v78 = *(float*)(v76 + 40);
     v79 = *(float*)(*v71 + 32) < *(float*)(v76 + 32);
-    if ((float)((float)(v77 - v78) * (float)(v77 - v78)) > 100.0) {
+    if (!((float)((float)(v77 - v78) * (float)(v77 - v78)) <= 100.0)) {
       v79 = v77 < v78;
     }
     if (v79) {

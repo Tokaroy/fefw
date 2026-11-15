@@ -772,7 +772,7 @@ bool game_19a2f80(__int64* a1, __int64* a2, __int64* a3)
   char* v36;
   __int64 v37;
 
-  v3 = a2 - a1;
+  v3 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v3 > 2) {
     if (v3 != 3) {
       if (v3 == 4) {

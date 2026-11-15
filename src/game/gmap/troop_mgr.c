@@ -10166,6 +10166,7 @@ game_gmap_TroopMgr_Impl_UpdateVisibleTroops_closure_Invoke(_QWORD* result,
             v5[2] = v33;
             if (v8 != 0) {
               v32 = *v12;
+              v24 = v8;
               goto LABEL_42;
             }
             goto LABEL_45;

@@ -3034,7 +3034,7 @@ bool GameHr_9538c0(__int64* a1, __int64* a2)
   __int64 v23;
   __int64 v24;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 <= 2) {
     if ((unsigned __int64)v2 >= 2) {
       if (v2 == 2) {

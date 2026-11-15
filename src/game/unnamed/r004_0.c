@@ -1410,7 +1410,7 @@ bool GameHr_d4d480(__int64* a1, __int64* a2)
   __int64 v33;
   __int64 v34;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       v5 = *a1;
@@ -1909,7 +1909,7 @@ bool GameHr_e0abc0(unsigned __int64* a1, unsigned __int64* a2)
   unsigned __int64 v36;
   unsigned __int64 v37;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       v11 = *a1;

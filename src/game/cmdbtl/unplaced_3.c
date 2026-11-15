@@ -1567,7 +1567,7 @@ bool game_cmdbtl_18fd680(__int64* a1, __int64* a2, __int64*** a3)
     char v66;
   } v61_;
 
-  v6 = a2 - a1;
+  v6 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v6 <= 2) {
     if ((unsigned __int64)v6 >= 2) {
       if (v6 == 2) {

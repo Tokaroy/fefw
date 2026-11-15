@@ -61,7 +61,7 @@ bool wld_a8a220(int** a1, int** a2)
   int** v47;
   int v48;
 
-  v3 = a2 - a1;
+  v3 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v3 > 2) {
     if (v3 == 3) {
       v6 = *a1;

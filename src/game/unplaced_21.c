@@ -1055,7 +1055,7 @@ bool game_6f20e0(__int64* a1, __int64* a2)
   __int64 v32;
   __int64 v33;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       {
@@ -2075,7 +2075,7 @@ bool game_deb620(__int64* a1, __int64* a2)
   __int64 v32;
   __int64 v33;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       {
@@ -5797,7 +5797,7 @@ LABEL_2:
   v9 = v7;
   while (1) {
     v7 = v9;
-    v10 = a2 - v9;
+    v10 = ((__int64)a2 - (__int64)v9) >> 2;
     if (v10 <= 2) {
       if ((unsigned __int64)v10 < 2) {
         return result;

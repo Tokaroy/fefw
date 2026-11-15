@@ -447,7 +447,7 @@ LABEL_3:
   while (1) {
     v14 = v13;
     v11 = v12;
-    v15 = a2 - v12;
+    v15 = ((__int64)a2 - (__int64)v12) >> 3;
     if ((__int64)v15 > 2) {
       switch (v15) {
       case 3uLL:

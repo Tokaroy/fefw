@@ -22,7 +22,7 @@ extern _QWORD GameData_212d6d8;
 extern __int64* GameData_212e348;
 extern __int64* msg_MessageManager_instance__ptr[2];
 extern __int64 fw_memory_g_heap_manager_ptr;
-extern char* GameData_1a92aa6;
+extern char GameData_1a92aa6[];
 extern char* GameData_1afe93a;
 extern char* GameData_20660e0[8];
 extern char** msg_MessageManager_empty_text__ptr;

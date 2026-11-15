@@ -1110,7 +1110,7 @@ LABEL_2:
   v146 = a2;
   while (1) {
     v7 = v8;
-    v9 = a2 - v8;
+    v9 = ((__int64)a2 - (__int64)v8) >> 3;
     if (v9 > 2) {
       switch (v9) {
       case 3LL:
@@ -2104,7 +2104,7 @@ bool ProcTheaterCastingUnitMenu_192b500(_QWORD* a1, _QWORD* a2)
   unsigned __int8 v21;
   __int64 v22;
 
-  v4 = a2 - a1;
+  v4 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v4 > 2) {
     switch (v4) {
     case 3LL:

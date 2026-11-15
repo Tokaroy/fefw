@@ -1452,8 +1452,9 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
   float32x4_t v115;
   float32x4_t v116;
   float32x4_t v117;
-  __int64* v119;
+  // One object keeps the original's frame offsets of the set.
   struct {
+    __int64* v119;
     __int64* v120;
     __int64 v121;
   } v120_;
@@ -1465,7 +1466,7 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
   *(_QWORD*)(a1 + 64) = *(_QWORD*)(a1 + 56);
   v3 = (unsigned int*)a2[9];
   v4 = (unsigned int*)a2[10];
-  v119 = (__int64*)&v120_.v120;
+  v120_.v119 = (__int64*)&v120_.v120;
   if (v3 == v4) {
     goto LABEL_120;
   }
@@ -1681,8 +1682,8 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
           *(_QWORD*)(v55 + 8) = 0;
           *(_QWORD*)(v55 + 16) = v51;
           *v50 = (__int64*)v55;
-          if (*v119 != 0) {
-            v119 = (__int64*)*v119;
+          if (*v120_.v119 != 0) {
+            v120_.v119 = (__int64*)*v120_.v119;
             v56 = *v50;
           }
           else {
@@ -1730,8 +1731,8 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
           *(_QWORD*)(v62 + 8) = 0;
           *(_QWORD*)(v62 + 16) = v59;
           *v58 = (__int64*)v62;
-          if (*v119 != 0) {
-            v119 = (__int64*)*v119;
+          if (*v120_.v119 != 0) {
+            v120_.v119 = (__int64*)*v120_.v119;
             v63 = *v58;
           }
           else {
@@ -1778,8 +1779,8 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
           *(_QWORD*)(v68 + 8) = 0;
           *(_QWORD*)(v68 + 16) = v66;
           *v65 = (__int64*)v68;
-          if (*v119 != 0) {
-            v119 = (__int64*)*v119;
+          if (*v120_.v119 != 0) {
+            v120_.v119 = (__int64*)*v120_.v119;
             v7 = *v65;
           }
           else {
@@ -1797,8 +1798,8 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
     v93 = 0;
   }
   else {
-    v69 = v119;
-    if (v119 == (__int64*)&v120_.v120) {
+    v69 = v120_.v119;
+    if (v120_.v119 == (__int64*)&v120_.v120) {
       v117 = COERCE_AS(float32x4_t, GameData_1a82f20);
       v116 = COERCE_AS(float32x4_t, GameData_1a82ea0);
     }
@@ -1940,8 +1941,8 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
         v103 = (__int64*)v102;
         *(_QWORD*)(v102 + 16) = v101;
         *v98 = (__int64*)v102;
-        if (*v119 != 0) {
-          v119 = (__int64*)*v119;
+        if (*v120_.v119 != 0) {
+          v120_.v119 = (__int64*)*v120_.v119;
           v103 = *v98;
         }
         fw_containers_BalanceAfterInsert(v120_.v120, v103);
@@ -1988,7 +1989,7 @@ __int64 llvm_libcxx_21_libcxx_include___vector_193a2a0(__int64 a1, __int64* a2)
     v93 = 1;
     *(_BYTE*)(a1 + 24) = 1;
   }
-  GameHr_c1a240((__int64)&v119, v120_.v120);
+  GameHr_c1a240((__int64)&v120_.v119, v120_.v120);
   return v93;
 }
 

@@ -4517,7 +4517,7 @@ bool game_map_history_1234fe0(unsigned int** a1, unsigned int** a2)
   unsigned int* v33;
   unsigned int* v34;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       v5 = *a1;

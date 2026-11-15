@@ -172,7 +172,7 @@ LABEL_2:
   v9 = v7;
   while (1) {
     v7 = v9;
-    v10 = a2 - v9;
+    v10 = ((__int64)a2 - (__int64)v9) >> 3;
     if (v10 > 2) {
       switch (v10) {
       case 3LL:

@@ -4585,7 +4585,7 @@ bool game_map_a190c0(int* a1, int* a2, __int64* a3)
   v20 = COERCE_AS(__typeof__(v20), PSEUDO_REGISTER(float, "s0", "=w")),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w")),
   v9 = COERCE_AS(__typeof__(v9), PSEUDO_REGISTER(float, "s0", "=w"));
-  v6 = a2 - a1;
+  v6 = ((__int64)a2 - (__int64)a1) >> 2;
   if (v6 <= 2) {
     if ((unsigned __int64)v6 >= 2) {
       if (v6 == 2) {
@@ -4603,6 +4603,8 @@ bool game_map_a190c0(int* a1, int* a2, __int64* a3)
         }
         if (v8 == 0 ||
             ((*(void (**)(__int64, int*))(*(_QWORD*)v8 + 48LL))(v8, &v32),
+             v9 = COERCE_AS(__typeof__(v9),
+                            PSEUDO_REGISTER(float, "s0", "=w")),
              v10 = *a3, v32 = v7, (v11 = *(_QWORD*)(v10 + 32)) == 0)) {
         LABEL_30:
           GameRoutine_60a310(),

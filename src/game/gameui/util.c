@@ -22207,6 +22207,7 @@ game_gameui_Util_SetUnitStatus_lambda0_Invoke(PSEUDO_X8 x8_, __int64 result,
   int v92;
   bool v93;
   bool v94;
+  unsigned int v94b;
   unsigned __int8* v95;
   int v96;
   __int64 v97;
@@ -22263,31 +22264,28 @@ game_gameui_Util_SetUnitStatus_lambda0_Invoke(PSEUDO_X8 x8_, __int64 result,
           goto LABEL_165;
         }
       }
-      else if (
-          v8 == 0 ||
-          (v11 == 2
-               ? (v94 =
-                      (unsigned int)*(
-                          unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c878
-                                                                      [0] +
-                                                                  64) +
-                                                       8LL *
-                                                           (unsigned __int16)*v9) +
-                                            72LL) -
-                          5 >=
-                      2)
-               : (v94 = false),
-           !v94)) {
-        *(_DWORD*)a3 = v11;
-        *(_BYTE*)(a3 + 4) = v17;
-        *(_BYTE*)(a3 + 5) = 0;
-      LABEL_165:
-        *(_QWORD*)(a3 + 32) = 0;
-        *(_QWORD*)(a3 + 40) = 0;
-        *(_QWORD*)(a3 + 48) = 0;
-        *(_DWORD*)(a3 + 56) = 0;
-        *(_DWORD*)(a3 + 16) = v92;
-        goto LABEL_166;
+      else {
+        // The original reads the kind before it tests v11.
+        if (v8 != 0) {
+          v94b = *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(
+                                         *GameData_212c878[0] + 64) +
+                                     8LL * (unsigned __int16)*v9) +
+                                     72LL);
+          __asm__ volatile("" ::"r"(v94b));
+        }
+        v94 = v8 != 0 && v11 == 2 && v94b - 5 >= 2;
+        if (!v94) {
+          *(_DWORD*)a3 = v11;
+          *(_BYTE*)(a3 + 4) = v17;
+          *(_BYTE*)(a3 + 5) = 0;
+        LABEL_165:
+          *(_QWORD*)(a3 + 32) = 0;
+          *(_QWORD*)(a3 + 40) = 0;
+          *(_QWORD*)(a3 + 48) = 0;
+          *(_DWORD*)(a3 + 56) = 0;
+          *(_DWORD*)(a3 + 16) = v92;
+          goto LABEL_166;
+        }
       }
       v93 = (*(_BYTE*)(v5 + 1955) & 8) != 0;
       goto LABEL_164;

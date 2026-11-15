@@ -4623,7 +4623,7 @@ bool game_d722e0(float** a1, float** a2)
   float* v33;
   float* v34;
 
-  v2 = a2 - a1;
+  v2 = ((__int64)a2 - (__int64)a1) >> 3;
   if (v2 > 2) {
     if (v2 == 3) {
       v5 = *a1;
