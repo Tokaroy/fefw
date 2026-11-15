@@ -2050,7 +2050,7 @@ __int64 GameHr_174da00(__int64 a1, int a2)
     if (a2 == 1) {
       v6 = *(float*)(a1 + 40);
       v7 = *(float*)(a1 + 44);
-      v8 = (float)(*(float*)(GameData_2265ae0 + 104) * 16.683f) / 1000.0f;
+      v8 = (float)(*(float*)(GameData_2265ae0 + 104) * 0x1.0aefp+4f) / 1000.0f;
       if ((*(_DWORD*)(GameData_2265ed8 + 944) & 0xB) != 0) {
         v8 = v8 * 8.0f;
       }

@@ -13035,9 +13035,11 @@ bool GameHr_d387e0(unsigned __int8* a1, unsigned __int8* a2)
   __int64 v81;
   unsigned __int8* v83;
   int v84;
-  __int64 v85;
-  unsigned __int64 v86;
-  char* v87;
+  struct {
+    __int64 v85;
+    unsigned __int64 v86;
+    char* v87;
+  } v85_;
   int v88;
   __int64 v89;
   __int64 v90;
@@ -13165,11 +13167,11 @@ LABEL_49:
   *(_QWORD*)v16 = 0;
   *((_QWORD*)v16 + 1) = 0;
   *((_QWORD*)v16 + 2) = 0;
-  v85 = v31;
-  v86 = v32;
+  v85_.v85 = v31;
+  v85_.v86 = v32;
   v35 = *((_QWORD*)v16 + 4);
   v36 = *((_QWORD*)v16 + 5);
-  v87 = v33;
+  v85_.v87 = v33;
   LODWORD(v33) = *(_DWORD*)(v16 + 95);
   v88 = v34;
   *((_QWORD*)v16 + 4) = 0;
@@ -13242,18 +13244,18 @@ LABEL_49:
     if (v43 == -208) {
       break;
     }
-    if ((v85 & 1) != 0) {
-      v59 = v86;
+    if ((v85_.v85 & 1) != 0) {
+      v59 = v85_.v86;
     }
     else {
-      v59 = (unsigned __int64)(unsigned __int8)v85 >> 1;
+      v59 = (unsigned __int64)(unsigned __int8)v85_.v85 >> 1;
     }
     v60 = v50[104];
-    if ((v85 & 1) != 0) {
-      v61 = v87;
+    if ((v85_.v85 & 1) != 0) {
+      v61 = v85_.v87;
     }
     else {
-      v61 = (char*)&v85 + 1;
+      v61 = (char*)&v85_.v85 + 1;
     }
     v62 = (v60 & 1) == 0;
     v63 = v60 >> 1;
@@ -13305,12 +13307,12 @@ LABEL_49:
     }
   }
 LABEL_87:
-  v71 = v87;
-  *(_QWORD*)(v68 + 8) = v86;
+  v71 = v85_.v87;
+  *(_QWORD*)(v68 + 8) = v85_.v86;
   *(_QWORD*)(v68 + 16) = v71;
-  v72 = v85;
+  v72 = v85_.v85;
   v73 = v88;
-  BYTE1(v85) = 0;
+  BYTE1(v85_.v85) = 0;
   *(_QWORD*)v68 = v72;
   *(_DWORD*)(v68 + 24) = v73;
   if ((v50[240] & 1) != 0) {

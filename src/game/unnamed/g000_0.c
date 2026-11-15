@@ -2233,7 +2233,7 @@ LABEL_8:
     if ((v22 & 1) != 0) {
       result = v23[3];
       v24 = v22 - 1;
-      if (*v23 <= result) {
+      if (!(*v23 > result)) {
         v25 = v23[2];
         v26 = v23[1] - a2[1];
         *v23 = *v23 - *a2;
@@ -2260,7 +2260,7 @@ LABEL_8:
         do {
           v32 = *(v31 - 6);
           v33 = *(v31 - 3);
-          if (v32 <= v33) {
+          if (!(v32 > v33)) {
             v35 = *(v31 - 4);
             v36 = *(v31 - 5) - a2[1];
             *(v31 - 6) = v32 - *a2;
@@ -2274,7 +2274,7 @@ LABEL_8:
             *(v31 - 1) = v39;
             v34 = *v31;
             result = v31[3];
-            if (*v31 <= result) {
+            if (!(*v31 > result)) {
             LABEL_22:
               v40 = v31[2];
               v41 = v31[1] - a2[1];
@@ -2293,7 +2293,7 @@ LABEL_8:
           else {
             v34 = *v31;
             result = v31[3];
-            if (*v31 <= result) {
+            if (!(*v31 > result)) {
               goto LABEL_22;
             }
           }

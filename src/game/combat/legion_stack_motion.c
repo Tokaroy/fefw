@@ -24,8 +24,8 @@ __int64 LegionStackMotion_Unknown3(__int64 result)
     if (v4 != 0 && *(_QWORD*)(v4 + 8) != -1 && v1[7] != 0) {
       v6 = v1[1];
       if (v6 != 0) {
-        v3 =
-            (float)(*(float*)(*(_QWORD*)(v6 + 496) + 16LL) * 16.683f) / 1000.0f;
+        v3 = (float)(*(float*)(*(_QWORD*)(v6 + 496) + 16LL) * 0x1.0aefp+4f) /
+             1000.0f;
       }
     }
     v7 = fabsf(v3);

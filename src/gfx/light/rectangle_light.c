@@ -31,7 +31,7 @@ float RectangleLight_Unknown2(__int64 a1)
     goto LABEL_5;
   }
   if (v2 == 0) {
-    v3 = *(float*)(a1 + 288) * 3.1416f;
+    v3 = *(float*)(a1 + 288) * 0x1.921fb6p+1f;
   LABEL_5:
     v1 = v1 / (float)(v3 * *(float*)(a1 + 292));
   }

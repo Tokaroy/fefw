@@ -186,7 +186,7 @@ _QWORD* HitboxModule_Unknown5(_QWORD* result)
                                                           8LL) +
                                                496LL) +
                                     16LL) *
-                          16.683f) /
+                          0x1.0aefp+4f) /
                   1000.0f);
           if (v7 < 0.0f) {
             *(_DWORD*)(v5 + 152) = 0;

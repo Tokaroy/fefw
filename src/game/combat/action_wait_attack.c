@@ -36,11 +36,11 @@ __int64 ActionWaitAttack_Unknown6(__int64 a1)
   if (v6 == *(_DWORD*)(*(_QWORD*)(a1 + 8) + 96LL)) {
     if ((*(_BYTE*)(result + 113) & 0x80) != 0) {
       v3 = *GameData_212d448[0];
-      v7 = (float)(nn_os_ConvertToTimeSpan(
+      v7 = (float)((__int64)nn_os_ConvertToTimeSpan(
                        *(_QWORD*)(game_script_hub_g_frame_counter + 344)) /
                        1000 -
-                   *(_QWORD*)(v3 + 136)) /
-           1000000.0;
+                   *(__int64*)(v3 + 136)) /
+           1000000.0f;
       if (*(float*)&GameData_22355d8 > 0.0) {
         v8 = *(float*)&GameData_22355d8 + *(float*)(GameData_21d8778 + 460);
         if (v8 > v7) {

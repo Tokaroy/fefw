@@ -1212,7 +1212,7 @@ __int64 CombatLegionManager_e2c300(__int64 result)
     v2 = fabsf(
         (float)(*(float*)(*(_QWORD*)game_script_hub_g_frame_counter_ptr[0] +
                           160LL) *
-                16.683f) /
+                0x1.0aefp+4f) /
         1000.0f);
     if (v1 <= 0.0f) {
       if (v1 >= 0.0f || (v1 = v1 + v2) <= 0.0f) {

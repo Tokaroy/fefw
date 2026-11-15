@@ -155,9 +155,11 @@ __int64 ProcJobIntroCombat_a0ccc0(__int64 a1)
   __int64 v70;
   __int64 v71;
   __int64 v72;
-  __int64 v73;
-  unsigned __int64 v74;
-  char* v75;
+  struct {
+    __int64 v73;
+    unsigned __int64 v74;
+    char* v75;
+  } v73_;
   _QWORD v76[3];
   _BYTE v77[25];
   char v78[23];
@@ -347,13 +349,13 @@ LABEL_35:
       -2.5f;
   DWORD3(v35) = 0;
   *(_OWORD*)v76 = v35;
-  game_13f9460((void*)(&v73), v76);
+  game_13f9460((void*)(&v73_.v73), v76);
   v79 = 0;
-  v76[0] = v73;
-  *(_QWORD*)&v36 = v73;
+  v76[0] = v73_.v73;
+  *(_QWORD*)&v36 = v73_.v73;
   if (v89 == 1) {
     v81 = 0;
-    *((_QWORD*)&v36 + 1) = (unsigned int)v74;
+    *((_QWORD*)&v36 + 1) = (unsigned int)v73_.v74;
     v80 = v36;
     if ((v82 & 1) != 0 && v84 != 0) {
       v37 = 128;
@@ -387,7 +389,7 @@ LABEL_35:
     v87 = 0;
   }
   else {
-    *((_QWORD*)&v36 + 1) = (unsigned int)v74;
+    *((_QWORD*)&v36 + 1) = (unsigned int)v73_.v74;
     v81 = 0;
     v82 = 0;
     v83 = 0;
@@ -424,26 +426,26 @@ LABEL_35:
     }
     v45 = (char*)fw_memory_HeapManager_Allocate(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, v46, 16, 0);
-    v74 = v44;
-    v75 = v45;
-    v73 = v46 | 1;
+    v73_.v74 = v44;
+    v73_.v75 = v45;
+    v73_.v73 = v46 | 1;
     goto LABEL_72;
   }
-  LOBYTE(v73) = 2 * v43;
-  v45 = (char*)&v73 + 1;
+  LOBYTE(v73_.v73) = 2 * v43;
+  v45 = (char*)&v73_.v73 + 1;
   if (v43 != 0) {
   LABEL_72:
     memmove(v45, v42, v44);
   }
   v45[v44] = 0;
-  SceneManager_138c360(v40, v76, &v73, v77);
-  if ((v73 & 1) != 0 && v75 != nullptr) {
+  SceneManager_138c360(v40, v76, &v73_.v73, v77);
+  if ((v73_.v73 & 1) != 0 && v73_.v75 != nullptr) {
     v47 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v47 = 56;
     }
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v47,
-                                  v75);
+                                  v73_.v75);
   }
   if ((v76[0] & 1) != 0 && v76[2] != 0) {
     v48 = 128;
@@ -464,7 +466,7 @@ LABEL_35:
   v91 = 0;
   strcpy(v78, "_D");
   GameRoutine_682bc0(v76, &GameData_1acefbe);
-  JobFile_6774a0(&v73, &GameData_1aac336);
+  JobFile_6774a0(&v73_.v73, &GameData_1aac336);
   v50 = game_HashString(&GameData_1ab3d9f, v49);
   v51 = 0;
   if (v50 == 0) {
@@ -535,7 +537,7 @@ LABEL_35:
     }
   }
 LABEL_107:
-  SceneCharacterAppearance_14100c0((void*)(v92), v76, &v73, v51);
+  SceneCharacterAppearance_14100c0((void*)(v92), v76, &v73_.v73, v51);
   *(_OWORD*)v77 = *(_OWORD*)v92;
   v62 = *(unsigned __int8*)(v14 + 128);
   v63 = *(unsigned __int8*)(v14 + 129);

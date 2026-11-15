@@ -306,7 +306,7 @@ __int64 EveryFrameProc_Unknown3(__int64 a1)
 
   v2 = *(float*)(a1 + 196);
   v3 = *(float*)(a1 + 192) +
-       (float)((float)(*(float*)(*(_QWORD*)(a1 + 200) + 16LL) * 16.683f) /
+       (float)((float)(*(float*)(*(_QWORD*)(a1 + 200) + 16LL) * 0x1.0aefp+4f) /
                1000.0f);
   *(float*)(a1 + 192) = v3;
   if (v3 > v2) {

@@ -107,7 +107,7 @@ __int64 ProcHubUI_16340d0(__int64 result)
   v2 = GameData_225d640;
   if (GameData_225d640 != 0) {
     v3 = result;
-    if (*(float*)(result + 156) > 0.0f) {
+    if (!(*(float*)(result + 156) <= 0.0f)) {
       result = game_1636200(GameData_225d640, 0, result);
       v4 = *(__int64**)(result + 8);
       if (v4[2] != 0) {

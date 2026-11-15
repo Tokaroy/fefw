@@ -2658,7 +2658,7 @@ void nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection(__int64 a1,
                                                                         v13)) +
                                                         -0.00019841f) *
                                                 (float)(v13 * v13)) +
-                                        0.0083333f) *
+                                        0x1.111112p-7f) *
                                 (float)(v13 * v13)) +
                         -0.16667f) *
                 (float)(v13 * v13)) +
@@ -2968,7 +2968,7 @@ void nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection(__int64 a1,
                                                                         v157)) +
                                                         -0.00019841f) *
                                                 (float)(v157 * v157)) +
-                                        0.0083333f) *
+                                        0x1.111112p-7f) *
                                 (float)(v157 * v157)) +
                         -0.16667f) *
                 (float)(v157 * v157)) +

@@ -59,7 +59,7 @@ __int64 VectorGraphicsShapePathEllipse_Unknown8(__int64 a1)
     return 4;
   }
   else {
-    return (unsigned int)(4 * (int)(float)(3.1416f / v2) + 4);
+    return (unsigned int)(4 * (int)(float)(0x1.921fb6p+1f / v2) + 4);
   }
 }
 

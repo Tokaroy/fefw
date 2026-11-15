@@ -213,7 +213,7 @@ __int64 AnimLayerCtrlModule_Unknown6(__int64 a1)
   v2 = *(_QWORD*)(a1 + 40);
   if (v1 != v2) {
     v4 = (float)(*(float*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 496LL) + 16LL) *
-                 16.683f) /
+                 0x1.0aefp+4f) /
          1000.0f;
     do {
       GameRoutine_d2af80(v1, v4);

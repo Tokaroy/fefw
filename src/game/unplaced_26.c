@@ -2556,24 +2556,24 @@ float game_5bd9a0(_OWORD* a1, _OWORD* a2, __int64 a3, float a4, __int64 a5,
   v7 = *(_QWORD*)(a3 + 160);
   v8 = *(float*)(v7 + 2112);
   v9 = *(_DWORD*)(a3 + 172);
-  v10 = (float)(a4 * 3.1416f) + (float)(a4 * 3.1416f);
+  v10 = (float)(a4 * 0x1.921fb6p+1f) + (float)(a4 * 0x1.921fb6p+1f);
   if (*(_BYTE*)(v7 + 2105) == 0) {
     v10 = *(float*)(v7 + 2120);
   }
   *(_DWORD*)(a3 + 172) = 1103515245 * v9 + 12345;
   v11 = (float)(v10 + (float)(vcvts_n_f32_u32(v9, 0x20u) * v8)) +
         (float)(v8 * -0.5f);
-  v12 = v11 + (float)(roundf(v11 * 0.15915f) * -6.2832f);
-  if (v12 > 1.5708f) {
-    v13 = 3.1416f;
+  v12 = v11 + (float)(roundf(v11 * 0.15915f) * -0x1.921fb6p+2f);
+  if (v12 > 0x1.921fb6p+0f) {
+    v13 = 0x1.921fb6p+1f;
   LABEL_7:
     v12 = v13 - v12;
     v14 = -1.0f;
     goto LABEL_8;
   }
   v14 = 1.0f;
-  if (v12 < -1.5708f) {
-    v13 = -3.1416f;
+  if (v12 < -0x1.921fb6p+0f) {
+    v13 = -0x1.921fb6p+1f;
     goto LABEL_7;
   }
 LABEL_8:
@@ -2694,8 +2694,8 @@ float32x4_t game_5bdd90(_OWORD* a1, float32x4_t* a2, __int64 a3, float a4,
   v11 = __builtin_elementwise_fma(vcvts_n_f32_u32(v8, 0x20u),
                                   *(float*)(v7 + 2112), v9) +
         *(float*)(v7 + 2112) * -0.5f;
-  v12 = __builtin_elementwise_fma(roundf(v11 * 0x1.45f306p-3f),
-                                  -0x1.921fb6p+2f, v11);
+  v12 = __builtin_elementwise_fma(roundf(v11 * 0x1.45f306p-3f), -0x1.921fb6p+2f,
+                                  v11);
   if (!(v12 > 0x1.921fb6p+0f)) {
     v14 = 1.0f;
     if (!(v12 < -0x1.921fb6p+0f)) {

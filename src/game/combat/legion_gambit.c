@@ -1760,11 +1760,18 @@ game_combat_LegionGambit_MakeTimeline_Chariot_lambda1_Invoke(
   v14 = *(float**)(*(_QWORD*)v3 +
                    8LL * (((*(_DWORD*)(v3 + 88) - 1) & 0xFFFFFFFD) == 0) + 16);
   v15 = *(float*)(a1 + 4 * v5 + 24) + 0x1.3333340000000p+2f;
-  v16 = *(float*)(v13 + 40) + (float)(PSEUDO_UNFUSED(v15 * v14[34]));
-  v17 = *(float*)(v13 + 44) + (float)(PSEUDO_UNFUSED(v15 * v14[35]));
-  v18 = *(float*)(a1 + 20) + (float)(*(float*)(a1 + 16) * (float)(v5 - 1));
-  result = v16 + (float)(PSEUDO_UNFUSED(v18 * v14[36]));
-  v20 = v17 + (float)(PSEUDO_UNFUSED(v18 * v14[37]));
+  v16 = v15 * v14[34];
+  v17 = v15 * v14[35];
+  __asm__("" : "+w"(v16), "+w"(v17));
+  v16 = *(float*)(v13 + 40) + v16;
+  v17 = *(float*)(v13 + 44) + v17;
+  v18 = *(float*)(a1 + 20) +
+        (float)(*(float*)(a1 + 16) * (float)(int)(v5 - 1));
+  result = v18 * v14[36];
+  v20 = v18 * v14[37];
+  __asm__("" : "+w"(result), "+w"(v20));
+  result = v16 + result;
+  v20 = v17 + v20;
   *a3 = result;
   a3[1] = v20;
   {
@@ -1931,11 +1938,18 @@ game_combat_LegionGambit_MakeTimeline_Chariot_lambda3_Invoke(
   v14 = *(float**)(*(_QWORD*)v3 +
                    8LL * (((*(_DWORD*)(v3 + 88) - 1) & 0xFFFFFFFD) == 0) + 16);
   v15 = *(float*)(a1 + 4 * v5 + 24) + 0x1.6666660000000p+1f;
-  v16 = *(float*)(v13 + 40) + (float)(PSEUDO_UNFUSED(v15 * v14[34]));
-  v17 = *(float*)(v13 + 44) + (float)(PSEUDO_UNFUSED(v15 * v14[35]));
-  v18 = *(float*)(a1 + 20) + (float)(*(float*)(a1 + 16) * (float)(v5 - 1));
-  result = v16 + (float)(PSEUDO_UNFUSED(v18 * v14[36]));
-  v20 = v17 + (float)(PSEUDO_UNFUSED(v18 * v14[37]));
+  v16 = v15 * v14[34];
+  v17 = v15 * v14[35];
+  __asm__("" : "+w"(v16), "+w"(v17));
+  v16 = *(float*)(v13 + 40) + v16;
+  v17 = *(float*)(v13 + 44) + v17;
+  v18 = *(float*)(a1 + 20) +
+        (float)(*(float*)(a1 + 16) * (float)(int)(v5 - 1));
+  result = v18 * v14[36];
+  v20 = v18 * v14[37];
+  __asm__("" : "+w"(result), "+w"(v20));
+  result = v16 + result;
+  v20 = v17 + v20;
   *a3 = result;
   a3[1] = v20;
   {

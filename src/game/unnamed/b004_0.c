@@ -934,7 +934,7 @@ __int64 GameHr_5ec620(__int64 result, int a2)
         v34 = *(int*)(*(_QWORD*)(v5 + 56) + v12);
         do {
           v20 = *(float*)(v3[5] + v15);
-          if (fabsf(v20) >= 0.001 &&
+          if (!(fabsf(v20) < 0.001f) &&
               *(_BYTE*)(*(_QWORD*)(*v3 + 40LL) + v17) != 0) {
             v21 = *(_QWORD*)(*(_QWORD*)(*v3 + 16LL) + 8LL) +
                   16LL * ((unsigned int)*(

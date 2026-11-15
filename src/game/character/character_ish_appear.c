@@ -120,7 +120,7 @@ __int64 CharacterIshAppear_Unknown5(__int64 result)
     return result;
   }
   v14 = (float)(*(float*)(*(_QWORD*)(*(_QWORD*)(result + 8) + 496LL) + 16LL) *
-                16.683f) /
+                0x1.0aefp+4f) /
         1000.0f;
   result = GameRoutine_109fee0(result + 56, v12, v12 + v14);
   v15 = *(float*)(v5 + 84);

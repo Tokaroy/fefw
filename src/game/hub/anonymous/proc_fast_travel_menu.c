@@ -530,9 +530,11 @@ __int64 ProcFastTravelMenu_Unknown88(__int64 a1)
   const char* v19;
   __int64 v20;
   __int64 v21;
-  __int64 v22;
-  unsigned __int64 v23;
-  char* v24;
+  struct {
+    __int64 v22;
+    unsigned __int64 v23;
+    char* v24;
+  } v22_;
 
   GameRoutine_18f3a00(GameData_225e7a8);
   result = *(_QWORD*)(a1 + 336);
@@ -573,18 +575,18 @@ __int64 ProcFastTravelMenu_Unknown88(__int64 a1)
             if (v10 == 0 || (v11 = *(_BYTE**)(v10 + 80)) == nullptr ||
                 *v11 == 0) {
               v15 = 0;
-              LOWORD(v22) = 0;
+              LOWORD(v22_.v22) = 0;
             LABEL_30:
-              v17 = v23;
+              v17 = v22_.v23;
               if ((v15 & 1) == 0) {
                 v17 = v15 >> 1;
               }
               if (v17 != 0) {
                 if ((v15 & 1) != 0) {
-                  v18 = v24;
+                  v18 = v22_.v24;
                 }
                 else {
-                  v18 = (char*)&v22 + 1;
+                  v18 = (char*)&v22_.v22 + 1;
                 }
                 GameRoutine_1562060(a1 + 848, "T_Txt", v18);
                 v19 = "TxtOn";
@@ -593,14 +595,14 @@ __int64 ProcFastTravelMenu_Unknown88(__int64 a1)
                 v19 = "TxtOff";
               }
               GameRoutine_1562680(a1 + 848, v19, 1.0);
-              if ((v22 & 1) != 0 && v24 != nullptr) {
+              if ((v22_.v22 & 1) != 0 && v22_.v24 != nullptr) {
                 v20 = 128;
                 if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr +
                                200LL) == 0) {
                   v20 = 56;
                 }
                 nn_mem_StandardAllocator_Free(
-                    *(_QWORD*)fw_memory_g_heap_manager_ptr + v20, v24);
+                    *(_QWORD*)fw_memory_g_heap_manager_ptr + v20, v22_.v24);
               }
               goto LABEL_43;
             }
@@ -618,13 +620,13 @@ __int64 ProcFastTravelMenu_Unknown88(__int64 a1)
               }
               v14 = (char*)fw_memory_HeapManager_Allocate(
                   *(_QWORD*)fw_memory_g_heap_manager_ptr, v16, 16, 0);
-              v23 = v13;
-              v24 = v14;
-              v22 = v16 | 1;
+              v22_.v23 = v13;
+              v22_.v24 = v14;
+              v22_.v22 = v16 | 1;
             }
             else {
-              LOBYTE(v22) = 2 * v12;
-              v14 = (char*)&v22 + 1;
+              LOBYTE(v22_.v22) = 2 * v12;
+              v14 = (char*)&v22_.v22 + 1;
               if (v12 == 0) {
                 goto LABEL_29;
               }
@@ -632,7 +634,7 @@ __int64 ProcFastTravelMenu_Unknown88(__int64 a1)
             memmove(v14, v11, v13);
           LABEL_29:
             v14[v13] = 0;
-            v15 = (unsigned __int8)v22;
+            v15 = (unsigned __int8)v22_.v22;
             goto LABEL_30;
           }
           v7 = *(unsigned int*)(v5 + 84);

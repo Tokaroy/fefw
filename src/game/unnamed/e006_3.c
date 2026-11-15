@@ -471,9 +471,9 @@ void GameHr_10d7320(__int64 a1, __n128 a2)
     goto LABEL_38;
   }
   if (v4 == 3) {
-    v11 =
-        *(float*)(a1 + 60) +
-        (float)((float)(*(float*)(GameData_2265ef0 + 48) * -16.683f) / 1000.0f);
+    v11 = *(float*)(a1 + 60) +
+          (float)((float)(*(float*)(GameData_2265ef0 + 48) * -0x1.0aefp+4f) /
+                  1000.0f);
     *(float*)(a1 + 60) = v11;
     if (v11 > 0.0f) {
       goto LABEL_38;

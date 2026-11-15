@@ -20,7 +20,8 @@ float LegionStackDelay_Unknown3(__int64 a1)
   if (v3 != 0 && *(_QWORD*)(v3 + 8) != -1 && v1[7] != 0) {
     v5 = v1[1];
     if (v5 != 0) {
-      v2 = (float)(*(float*)(*(_QWORD*)(v5 + 496) + 16LL) * 16.683f) / 1000.0f;
+      v2 = (float)(*(float*)(*(_QWORD*)(v5 + 496) + 16LL) * 0x1.0aefp+4f) /
+           1000.0f;
     }
   }
   result = *(float*)(a1 + 52) - v2;

@@ -2409,8 +2409,8 @@ __int64 game_anonymous_812320(__int64 a1, __int64 a2, int a3)
         v328 = *(unsigned __int8*)(v325 + v324 + 2);
         *v12 = v324 + 4;
         *(float*)(v10 + 2892) =
-            (float)(v327 | (v328 << 16) |
-                    (*(unsigned __int8*)(v325 + v324 + 3) << 24));
+            (float)(unsigned int)(v327 | (v328 << 16) |
+                                  (*(unsigned __int8*)(v325 + v324 + 3) << 24));
         v329 = *v12;
         *v12 = v329 + 1;
         *(_DWORD*)(v10 + 2852) = *(unsigned __int8*)(*v8 + v329);
@@ -2577,8 +2577,8 @@ __int64 game_anonymous_812320(__int64 a1, __int64 a2, int a3)
         v349 = *(unsigned __int8*)(v346 + v345 + 2);
         *v12 = v345 + 4;
         *(float*)(v10 + 2964) =
-            (float)(v348 | (v349 << 16) |
-                    (*(unsigned __int8*)(v346 + v345 + 3) << 24));
+            (float)(unsigned int)(v348 | (v349 << 16) |
+                                  (*(unsigned __int8*)(v346 + v345 + 3) << 24));
         v350 = *v12;
         *v12 = v350 + 1;
         *(_DWORD*)(v10 + 2920) = *(unsigned __int8*)(*v8 + v350);

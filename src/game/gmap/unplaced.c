@@ -4615,7 +4615,7 @@ __int64 game_gmap_13410a0(__int64 result, int a2)
         }
       }
       v14 = v11 / v12;
-      if ((float)(v11 / v12) >= 0.5f) {
+      if (!((float)(v11 / v12) < 0.5f)) {
         v17 = *((float32x4_t*)v9 + 5);
         v18 = *((float32x4_t*)v9 + 6);
         v16 = *((float32x4_t*)v9 + 4);

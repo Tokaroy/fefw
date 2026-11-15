@@ -10,7 +10,7 @@ LightingAnimModule::~LightingAnimModule() = default;
 // The clock delta is scaled to 60 frames per second.
 void LightingAnimModule::UpdateStage1() {
   const float step =
-    speed_ * (object_->GetClock()->delta * 16.683f * 0.001f);
+    speed_ * (object_->GetClock()->delta * 0x1.0aefp+4f * 0.001f);
   if (!(step > 0)) {
     return;
   }

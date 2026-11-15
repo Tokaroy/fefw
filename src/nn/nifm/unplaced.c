@@ -1149,9 +1149,11 @@ __int64 nn_nifm_ImportMigrationNetworkProfile(_DWORD* a1, int* a2)
   char v142;
   char v143;
   char v144;
-  int v145;
-  char v146;
-  char v147;
+  struct {
+    int v145;
+    char v146;
+    char v147;
+  } v145_;
   char v148;
   char v149;
   char v150;
@@ -1778,7 +1780,8 @@ __int64 nn_nifm_ImportMigrationNetworkProfile(_DWORD* a1, int* a2)
                                                                             391) !=
                                                                           0) {
                                                                         v93 =
-                                                                            (char*)&v145;
+                                                                            (char*)&v145_
+                                                                                .v145;
                                                                         v144 = *(
                                                                             (_BYTE*)
                                                                                 v39 +
@@ -1816,21 +1819,21 @@ __int64 nn_nifm_ImportMigrationNetworkProfile(_DWORD* a1, int* a2)
           }
         LABEL_165:
           *v93 = 0;
-          v94 = (char*)&v145 + 1;
+          v94 = (char*)&v145_.v145 + 1;
           if (*((_BYTE*)v39 + 393) != 0) {
-            BYTE1(v145) = *((_BYTE*)v39 + 393);
-            v94 = (char*)&v145 + 2;
+            BYTE1(v145_.v145) = *((_BYTE*)v39 + 393);
+            v94 = (char*)&v145_.v145 + 2;
             if (*((_BYTE*)v39 + 394) != 0) {
-              BYTE2(v145) = *((_BYTE*)v39 + 394);
-              v94 = (char*)&v145 + 3;
+              BYTE2(v145_.v145) = *((_BYTE*)v39 + 394);
+              v94 = (char*)&v145_.v145 + 3;
               if (*((_BYTE*)v39 + 395) != 0) {
-                HIBYTE(v145) = *((_BYTE*)v39 + 395);
-                v94 = &v146;
+                HIBYTE(v145_.v145) = *((_BYTE*)v39 + 395);
+                v94 = &v145_.v146;
                 if (*((_BYTE*)v39 + 396) != 0) {
-                  v146 = *((_BYTE*)v39 + 396);
-                  v94 = &v147;
+                  v145_.v146 = *((_BYTE*)v39 + 396);
+                  v94 = &v145_.v147;
                   if (*((_BYTE*)v39 + 397) != 0) {
-                    v147 = *((_BYTE*)v39 + 397);
+                    v145_.v147 = *((_BYTE*)v39 + 397);
                     v94 = &v148;
                     if (*((_BYTE*)v39 + 398) != 0) {
                       v148 = *((_BYTE*)v39 + 398);

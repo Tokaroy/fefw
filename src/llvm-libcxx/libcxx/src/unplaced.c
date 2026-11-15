@@ -4306,9 +4306,11 @@ unsigned __int64* llvmlibcxx_libcxx_7d5dc0(unsigned __int64* a1,
   char* v23;
   unsigned __int64 v24;
   unsigned __int64 v25;
-  __int64 v27;
-  unsigned __int64 v28;
-  char* v29;
+  struct {
+    __int64 v27;
+    unsigned __int64 v28;
+    char* v29;
+  } v27_;
 
   v3 = *a1;
   v4 = a1[1];
@@ -4417,31 +4419,31 @@ unsigned __int64* llvmlibcxx_libcxx_7d5dc0(unsigned __int64* a1,
     v22 = SdkRoutine_85e050(v21);
     a2 = v20;
     v19 = (char*)v22;
-    v28 = v9;
-    v29 = (char*)v22;
-    v27 = v21 | 1;
+    v27_.v28 = v9;
+    v27_.v29 = (char*)v22;
+    v27_.v27 = v21 | 1;
   }
   else {
-    LOBYTE(v27) = 2 * v9;
-    v19 = (char*)&v27 + 1;
+    LOBYTE(v27_.v27) = 2 * v9;
+    v19 = (char*)&v27_.v27 + 1;
   }
   memcpy_plt(v19, a2, v9);
   v19[v9] = 0;
-  if ((v27 & 1) != 0) {
-    v23 = v29;
+  if ((v27_.v27 & 1) != 0) {
+    v23 = v27_.v29;
   }
   else {
-    v23 = (char*)&v27 + 1;
+    v23 = (char*)&v27_.v27 + 1;
   }
-  if ((v27 & 1) != 0) {
-    v24 = v28;
+  if ((v27_.v27 & 1) != 0) {
+    v24 = v27_.v28;
   }
   else {
-    v24 = (unsigned __int64)(unsigned __int8)v27 >> 1;
+    v24 = (unsigned __int64)(unsigned __int8)v27_.v27 >> 1;
   }
   SdkRoutine_86fc80(a1, v23, v24);
-  if ((v27 & 1) != 0) {
-    SdkRoutine_857220(v29, v27 & 0xFFFFFFFFFFFFFFFELL);
+  if ((v27_.v27 & 1) != 0) {
+    SdkRoutine_857220(v27_.v29, v27_.v27 & 0xFFFFFFFFFFFFFFFELL);
   }
   return a1;
 }

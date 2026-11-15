@@ -5478,7 +5478,7 @@ _QWORD* HubNatives_ccaff0()
            *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) != 0 ||
            *(int*)(GameData_21f3d10 + 152) > 0 ||
            (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
-                           16.683f) /
+                           0x1.0aefp+4f) /
                    1000.0f) <= 0.0f)) {
     v5 = as_g_script_manager;
     v6 = *(_QWORD*)(v5 +
@@ -5539,7 +5539,7 @@ _QWORD* HubNatives_ccb180()
            *(_BYTE*)(game_hub_ProcHubSeqView_instance_ + 139) != 0 ||
            *(int*)(GameData_21f3d10 + 152) > 0 ||
            (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
-                           16.683f) /
+                           0x1.0aefp+4f) /
                    1000.0f) <= 0.0f)) {
     v4 = as_g_script_manager;
     v5 = *(_QWORD*)(v4 +

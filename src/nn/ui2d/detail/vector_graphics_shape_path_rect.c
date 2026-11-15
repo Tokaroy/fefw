@@ -70,15 +70,15 @@ __int64 VectorGraphicsShapePathRect_Unknown8(__int64 a1)
   float v2;
 
   v1 = *(float*)(a1 + 56);
-  if (v1 <= 0.0f) {
+  if (!(v1 > 0.0f)) {
     return 1;
   }
   v2 = acosf((float)(-2.0f / v1) + 1.0f);
-  if (v2 <= 0.0f) {
+  if (!(v2 > 0.0f)) {
     return 8;
   }
   else {
-    return (unsigned int)(4 * (int)(float)(3.1416f / v2) + 8);
+    return (unsigned int)(4 * (int)(float)(0x1.921fb6p+1f / v2) + 8);
   }
 }
 

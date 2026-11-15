@@ -2559,52 +2559,52 @@ __int64 GameHr_593440(__int64* a1, __int64 a2, int a3, float* a4)
     }
   }
 LABEL_20:
-  if (*(float*)(v5 + 160) < 0.000061035f) {
+  if (*(float*)(v5 + 160) < 0x1p-14f) {
     return 0;
   }
-  if (*(float*)(v5 + 164) < 0.000061035f) {
+  if (*(float*)(v5 + 164) < 0x1p-14f) {
     return 1;
   }
-  if (*(float*)(v5 + 168) < 0.000061035f) {
+  if (*(float*)(v5 + 168) < 0x1p-14f) {
     return 2;
   }
-  if (*(float*)(v5 + 172) < 0.000061035f) {
+  if (*(float*)(v5 + 172) < 0x1p-14f) {
     return 3;
   }
-  if (*(float*)(v5 + 176) < 0.000061035f) {
+  if (*(float*)(v5 + 176) < 0x1p-14f) {
     return 4;
   }
-  if (*(float*)(v5 + 180) < 0.000061035f) {
+  if (*(float*)(v5 + 180) < 0x1p-14f) {
     return 5;
   }
-  if (*(float*)(v5 + 184) < 0.000061035f) {
+  if (*(float*)(v5 + 184) < 0x1p-14f) {
     return 6;
   }
-  if (*(float*)(v5 + 188) < 0.000061035f) {
+  if (*(float*)(v5 + 188) < 0x1p-14f) {
     return 7;
   }
-  if (*(float*)(v5 + 192) < 0.000061035f) {
+  if (*(float*)(v5 + 192) < 0x1p-14f) {
     return 8;
   }
-  if (*(float*)(v5 + 196) < 0.000061035f) {
+  if (*(float*)(v5 + 196) < 0x1p-14f) {
     return 9;
   }
-  if (*(float*)(v5 + 200) < 0.000061035f) {
+  if (*(float*)(v5 + 200) < 0x1p-14f) {
     return 10;
   }
-  if (*(float*)(v5 + 204) < 0.000061035f) {
+  if (*(float*)(v5 + 204) < 0x1p-14f) {
     return 11;
   }
-  if (*(float*)(v5 + 208) < 0.000061035f) {
+  if (*(float*)(v5 + 208) < 0x1p-14f) {
     return 12;
   }
-  if (*(float*)(v5 + 212) < 0.000061035f) {
+  if (*(float*)(v5 + 212) < 0x1p-14f) {
     return 13;
   }
-  if (*(float*)(v5 + 216) < 0.000061035f) {
+  if (*(float*)(v5 + 216) < 0x1p-14f) {
     return 14;
   }
-  if (*(float*)(v5 + 220) < 0.000061035f) {
+  if (*(float*)(v5 + 220) < 0x1p-14f) {
     return 15;
   }
   return 16;

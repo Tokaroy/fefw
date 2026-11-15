@@ -8525,9 +8525,11 @@ __int64 GameHr_19bf2f0(__int64* a1)
   __int64 v22;
   _DWORD v23[64];
   _DWORD* v24;
-  __int64 v25;
-  __int64 v26;
-  char* v27;
+  struct {
+    __int64 v25;
+    __int64 v26;
+    char* v27;
+  } v25_;
   __int64 v28;
   _BYTE v29[8];
   char v30;
@@ -8550,14 +8552,14 @@ __int64 GameHr_19bf2f0(__int64* a1)
   v24 = v23;
   v29[0] = 0;
   v30 = 0;
-  v27 = (char*)v18;
+  v25_.v27 = (char*)v18;
   v28 = 12;
   v18[0] = v3;
   v33 = 0;
   v34 = 1;
-  v25 = (__int64)v19;
-  v26 = 1;
-  v4 = GameRoutine_6380e0(v31, &v25);
+  v25_.v25 = (__int64)v19;
+  v25_.v26 = 1;
+  v4 = GameRoutine_6380e0(v31, &v25_.v25);
   if (v30 == 1) {
     v4 = GameRoutine_1a0a200(v29);
   }
@@ -8574,13 +8576,13 @@ __int64 GameHr_19bf2f0(__int64* a1)
       v8 = (v20 | 7) + 1;
     }
     v7 = (char*)GameRoutine_651b90(GameData_2265ee0, v8, 16, 0);
-    v26 = v5;
-    v27 = v7;
-    v25 = v8 | 1;
+    v25_.v26 = v5;
+    v25_.v27 = v7;
+    v25_.v25 = v8 | 1;
   }
   else {
-    LOBYTE(v25) = 2 * v20;
-    v7 = (char*)&v25 + 1;
+    LOBYTE(v25_.v25) = 2 * v20;
+    v7 = (char*)&v25_.v25 + 1;
     if (v20 == 0) {
       goto LABEL_12;
     }
@@ -8597,11 +8599,11 @@ LABEL_12:
     GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v10, (_QWORD)(v9));
   }
   v11 = *GameData_212c018[0];
-  if ((v25 & 1) != 0) {
-    v12 = v27;
+  if ((v25_.v25 & 1) != 0) {
+    v12 = v25_.v27;
   }
   else {
-    v12 = (char*)&v25 + 1;
+    v12 = (char*)&v25_.v25 + 1;
   }
   v13 = GameRoutine_1a09c70(v12);
   v19[0] = v12;
@@ -8615,14 +8617,15 @@ LABEL_12:
   if (v21 != nullptr) {
     result = GameRoutine_1a09c50(v21);
   }
-  v16 = v25;
+  v16 = v25_.v25;
   a1[2] = v14;
-  if ((v16 & 1) != 0 && v27 != nullptr) {
+  if ((v16 & 1) != 0 && v25_.v27 != nullptr) {
     v17 = 128;
     if (*(_QWORD*)(*(_QWORD*)GameData_212bf68 + 200LL) == 0) {
       v17 = 56;
     }
-    return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v17, (_QWORD)(v27));
+    return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v17,
+                               (_QWORD)(v25_.v27));
   }
   return result;
 }

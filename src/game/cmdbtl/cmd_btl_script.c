@@ -45,9 +45,11 @@ __int64 CmdBtlScript_Destructor(_QWORD* a1)
   _QWORD* v10;
   __int64 v11;
   __int64 result;
-  __int64 v13;
-  __int64 v14;
-  char* v15;
+  struct {
+    __int64 v13;
+    __int64 v14;
+    char* v15;
+  } v13_;
 
   *a1 = game_cmdbtl_CmdBtlScript_vtable;
   a1[1] = GameData_1fed858;
@@ -80,13 +82,13 @@ __int64 CmdBtlScript_Destructor(_QWORD* a1)
     }
     v7 = (char*)fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v9, 16,
                                                0);
-    v14 = v6;
-    v15 = v7;
-    v13 = v9 | 1;
+    v13_.v14 = v6;
+    v13_.v15 = v7;
+    v13_.v13 = v9 | 1;
   }
   else {
-    LOBYTE(v13) = 2 * v5;
-    v7 = (char*)&v13 + 1;
+    LOBYTE(v13_.v13) = 2 * v5;
+    v7 = (char*)&v13_.v13 + 1;
     if (v5 == 0) {
       goto LABEL_16;
     }
@@ -95,8 +97,8 @@ __int64 CmdBtlScript_Destructor(_QWORD* a1)
 
 LABEL_16:
   v7[v6] = 0;
-  v8 = (unsigned __int8)v13;
-  v3 = v14;
+  v8 = (unsigned __int8)v13_.v13;
+  v3 = v13_.v14;
 
 LABEL_17:
   v10 = (_QWORD*)GameData_212eb28;
@@ -107,13 +109,13 @@ LABEL_17:
     GameRoutine_629ac0(*as_g_script_manager_ptr,
                        *(_QWORD*)GameData_212eb28 + 16LL);
   }
-  if ((v8 & 1) != 0 && v15 != nullptr) {
+  if ((v8 & 1) != 0 && v13_.v15 != nullptr) {
     v11 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v11,
-                                  v15);
+                                  v13_.v15);
   }
   result = ScriptBase_Destructor(v1);
   *a1 = GameData_1fed8f0;

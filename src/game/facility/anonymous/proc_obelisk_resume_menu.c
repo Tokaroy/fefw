@@ -1747,9 +1747,11 @@ __int64 ProcObeliskResumeMenu_1727400(__int64* a1)
   __int64 v26;
   __int64 v27;
   __int64 v28;
-  __int64 v29;
-  __int64 v30;
-  char* v31;
+  struct {
+    __int64 v29;
+    __int64 v30;
+    char* v31;
+  } v29_;
   __int64 vars0;
 
   v1 = *(unsigned __int8*)a1;
@@ -1784,23 +1786,23 @@ __int64 ProcObeliskResumeMenu_1727400(__int64* a1)
       }
       result =
           fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v13, 16, 0);
-      v30 = v7 + 24;
-      v31 = (char*)result;
-      v29 = v13 | 1;
+      v29_.v30 = v7 + 24;
+      v29_.v31 = (char*)result;
+      v29_.v29 = v13 | 1;
       v12 = v13 | 1;
     }
     else {
       v12 = 2 * v11;
       result = 0;
-      v30 = 0;
-      v31 = nullptr;
-      v29 = (unsigned __int8)(2 * v11);
+      v29_.v30 = 0;
+      v29_.v31 = nullptr;
+      v29_.v29 = (unsigned __int8)(2 * v11);
     }
     if ((v12 & 1) != 0) {
       v14 = (char*)result;
     }
     else {
-      v14 = (char*)&v29 + 1;
+      v14 = (char*)&v29_.v29 + 1;
     }
     qmemcpy(v14, "Layout/Textures/Chapter/", 24);
     if ((v12 & 1) != 0) {
@@ -1821,11 +1823,11 @@ __int64 ProcObeliskResumeMenu_1727400(__int64* a1)
       result = nn_mem_StandardAllocator_Free(
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v16, v2);
     }
-    v17 = v30;
-    *a1 = v29;
+    v17 = v29_.v30;
+    *a1 = v29_.v29;
     a1[1] = v17;
     v3 = v17;
-    a1[2] = (__int64)v31;
+    a1[2] = (__int64)v29_.v31;
     v18 = *(unsigned __int8*)a1;
     v2 = (char*)a1[2];
     v5 = v18 & 1;
@@ -1875,15 +1877,15 @@ __int64 ProcObeliskResumeMenu_1727400(__int64* a1)
         }
         v25 = (char*)fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager,
                                                     v26, 16, 0);
-        v30 = v20 + 5;
-        v31 = v25;
-        v29 = v26 | 1;
+        v29_.v30 = v20 + 5;
+        v29_.v31 = v25;
+        v29_.v29 = v26 | 1;
       }
       else {
-        v30 = 0;
-        v31 = nullptr;
-        v29 = (unsigned __int8)(2 * v24);
-        v25 = (char*)&v29 + 1;
+        v29_.v30 = 0;
+        v29_.v31 = nullptr;
+        v29_.v29 = (unsigned __int8)(2 * v24);
+        v25 = (char*)&v29_.v29 + 1;
         if (v20 == 0) {
         LABEL_58:
           strcpy(&v25[v20], ".bntx");
@@ -1896,10 +1898,10 @@ __int64 ProcObeliskResumeMenu_1727400(__int64* a1)
             result = nn_mem_StandardAllocator_Free(
                 *(_QWORD*)fw_memory_g_heap_manager_ptr + v27, v2);
           }
-          v28 = v30;
-          *a1 = v29;
+          v28 = v29_.v30;
+          *a1 = v29_.v29;
           a1[1] = v28;
-          a1[2] = (__int64)v31;
+          a1[2] = (__int64)v29_.v31;
           return result;
         }
       }

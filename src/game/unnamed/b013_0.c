@@ -2210,9 +2210,11 @@ unsigned __int64 GameHr_eac3f0(unsigned __int64 result)
   unsigned __int64 v8;
   char* v9;
   __int64 v10;
-  __int64 v11;
-  unsigned __int64 v12;
-  char* v13;
+  struct {
+    __int64 v11;
+    unsigned __int64 v12;
+    char* v13;
+  } v11_;
 
   if (GameData_22054a8 == 0) {
     GameData_22054a8 = result;
@@ -2234,7 +2236,7 @@ unsigned __int64 GameHr_eac3f0(unsigned __int64 result)
   }
   v2 = GameData_2216810;
   if (GameData_2216810 == 0) {
-    LOWORD(v11) = 0;
+    LOWORD(v11_.v11) = 0;
     goto LABEL_19;
   }
   if (*(_QWORD*)(GameData_2216810 + 32) != 0) {
@@ -2256,13 +2258,13 @@ unsigned __int64 GameHr_eac3f0(unsigned __int64 result)
       v6 = (result | 7) + 1;
     }
     v5 = (char*)GameRoutine_651b90(GameData_2265ee0, v6, 16, 0);
-    v12 = v4;
-    v13 = v5;
-    v11 = v6 | 1;
+    v11_.v12 = v4;
+    v11_.v13 = v5;
+    v11_.v11 = v6 | 1;
   }
   else {
-    LOBYTE(v11) = 2 * result;
-    v5 = (char*)&v11 + 1;
+    LOBYTE(v11_.v11) = 2 * result;
+    v5 = (char*)&v11_.v11 + 1;
     if (result == 0) {
       goto LABEL_18;
     }
@@ -2270,8 +2272,8 @@ unsigned __int64 GameHr_eac3f0(unsigned __int64 result)
   result = GameRoutine_1a0b940(v5, v3, v4);
 LABEL_18:
   v5[v4] = 0;
-  v2 = (unsigned __int8)v11;
-  v1 = v12;
+  v2 = (unsigned __int8)v11_.v11;
+  v1 = v11_.v12;
 LABEL_19:
   v7 = v2 & 1;
   v8 = v2 >> 1;
@@ -2280,20 +2282,20 @@ LABEL_19:
   }
   if (v8 != 0) {
     if (v7 != 0) {
-      v9 = v13;
+      v9 = v11_.v13;
     }
     else {
-      v9 = (char*)&v11 + 1;
+      v9 = (char*)&v11_.v11 + 1;
     }
     result = GameRoutine_11956a0(GameData_22054a8 + 8, v9);
-    v7 = v11 & 1;
+    v7 = v11_.v11 & 1;
   }
-  if (v7 != 0 && v13 != nullptr) {
+  if (v7 != 0 && v11_.v13 != nullptr) {
     v10 = 128;
     if (*(_QWORD*)(*(_QWORD*)GameData_212bf68 + 200LL) == 0) {
       v10 = 56;
     }
-    return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v10, v13);
+    return GameRoutine_1a0a4e0(*(_QWORD*)GameData_212bf68 + v10, v11_.v13);
   }
   return result;
 }
