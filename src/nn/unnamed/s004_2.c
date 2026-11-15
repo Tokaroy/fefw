@@ -1776,7 +1776,7 @@ __int64 SdkHr_6a5840(__int64 a1, _DWORD* a2, unsigned __int64 a3, int a4,
       v7 = v10;
     } while ((unsigned __int64)v10 < v9);
   }
-  v41 = &a2[14 * a5];
+  v41 = &a2[14 * (__int64)a5];
   v41[108] = a4;
   *((_QWORD*)v41 + 55) = a3;
   return 1;

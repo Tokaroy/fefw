@@ -419,7 +419,8 @@ status_t SampleTable::setTimeToSampleParams(
         return ERROR_OUT_OF_RANGE;
     }
 
-    mTimeToSample = new (std::nothrow) uint32_t[mTimeToSampleCount * 2];
+    // This build allocates one spare entry past the table.
+    mTimeToSample = new (std::nothrow) uint32_t[mTimeToSampleCount * 2 + 1];
     if (!mTimeToSample) {
         ALOGE("Cannot allocate time-to-sample table with %llu entries.",
                 (unsigned long long)mTimeToSampleCount);

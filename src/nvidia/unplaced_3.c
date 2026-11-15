@@ -9794,13 +9794,16 @@ __int64 nvidia_623fe0(__int64* a1, unsigned __int64 a2)
         return result;
       }
       v7 = *a1;
+      // The barriers keep clang from folding the stores into memset.
       for (i = ((_BYTE)a2 - (_BYTE)v5) & 7; i != 0; --i) {
         *(_DWORD*)(v7 + 4 * v5++) = 0;
+        __asm__ volatile("" : "+r"(v5));
       }
       if (v6 <= 0xFFFFFFFFFFFFFFF8LL) {
         v9 = a2 - v5;
         v10 = (_QWORD*)(v7 + 4 * v5 + 16);
         do {
+          __asm__ volatile("" : "+r"(v10));
           *(v10 - 2) = 0;
           *(v10 - 1) = 0;
           v9 -= 8LL;

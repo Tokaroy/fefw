@@ -4590,8 +4590,8 @@ __int64 nn_gs_48d060(_QWORD* a1)
     v24 = nullptr;
     if ((v2 & 0xFFF) != 0) {
       if ((v2 & 0x3FF) == 0) {
-        SdkRoutine_47c140_alt1(*(_QWORD*)(v1 + 80), v1 + 88, v2,
-                               (unsigned __int64*)&v24);
+        SdkRoutine_47c140(*(_QWORD*)(v1 + 80), v1 + 88, v2, (_QWORD)&v24,
+                          v1 + 120);
         result = nn_gs_47b000(v1 + 128, &v24);
         v14 = v24;
         v24 = nullptr;

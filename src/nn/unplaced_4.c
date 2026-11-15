@@ -14769,7 +14769,7 @@ __int64 nn_69abc0(_QWORD* a1)
         v21_.v23 = 4;
         v21_.v21[0] = 0x2800010001LL;
         v21_.v21[1] = v14;
-        ((void(__attribute__((noreturn))*)(
+        ((void(*)(
             _QWORD*, __int64, __int64))SdkData_ea8308[0])(v21_.v21, v9, v10);
       }
     }
@@ -14785,7 +14785,7 @@ __int64 nn_69abc0(_QWORD* a1)
         v21_.v21[0] = 0x4000090003LL;
         v21_.v21[1] = v16;
         v21_.v25 = v18;
-        ((void(__attribute__((noreturn))*)(
+        ((void(*)(
             _QWORD*, __int64, __int64))SdkData_ea83a0[0])(v21_.v21, v9, v10);
       }
     }
@@ -15252,9 +15252,9 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
   __int64 v32;
   __int64 v33;
   __int64 v34;
-  void(__attribute__((noreturn)) * v35)(_QWORD*, __int64, __int64);
+  void (*v35)(_QWORD*, __int64, __int64);
   __int64 v36;
-  void(__attribute__((noreturn)) * v37)(_QWORD*, __int64, __int64);
+  void (*v37)(_QWORD*, __int64, __int64);
   __int64 v38;
   unsigned int v39;
   struct {
@@ -15298,6 +15298,10 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
                   PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
   if ((_BYTE)v39 != 0) {
     v10 = *(_QWORD**)(a1 + 120);
+    if (v10 != nullptr) {
+      // The original reads the head before it tests the count.
+      __asm__ volatile("" ::"r"(*v10));
+    }
     if (v10 != nullptr && *v10 != 0 && (_DWORD)v5 != 0) {
       v13 = (__int64*)(a3 + 16);
       v5 = (unsigned int)v5;
@@ -15348,7 +15352,7 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
                     COERCE_AS(__typeof__(v34),
                               PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
             v35 =
-                *(void(__attribute__((noreturn))**)(_QWORD*, __int64, __int64))(
+                *(void(**)(_QWORD*, __int64, __int64))(
                     (char*)((__int64*)0x48LL) + (_QWORD)v15);
             if (v35 != nullptr) {
               if (v7 != 0) {
@@ -15368,7 +15372,7 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
             }
             else if (v7 != 0) {
               v37 = *(
-                  void(__attribute__((noreturn))**)(_QWORD*, __int64, __int64))(
+                  void(**)(_QWORD*, __int64, __int64))(
                   (char*)((_UNKNOWN*)0xC0LL) + (_QWORD)v15);
               if (v37 != nullptr) {
                 v38 = *(_QWORD*)(v7 + 16);

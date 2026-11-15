@@ -10,7 +10,6 @@ __int64 interleave_hadamard(__int64, int, int, unsigned __int64);
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
 __int64 quant_partition(int*, void*, int, int, int, _WORD*, int, unsigned int,
                         int);
-extern int* SdkData_e877c0;
 extern unsigned __int8 SdkData_bb1850[16];
 extern unsigned __int8 SdkData_bb32f0[16];
 __int64 bands_2c9e60(__int64 result, int a2, unsigned int a3);
@@ -167,8 +166,6 @@ __int64 bands_2cb1e0(__int64 a1, void* a2, unsigned int a3, int a4, int a5,
   int v15;
   _WORD* v17;
   int v18;
-  char v19;
-  unsigned __int64 v20;
   __int64* v21;
   int v22;
   unsigned int v23;
@@ -468,16 +465,8 @@ __int64 bands_2cb1e0(__int64 a1, void* a2, unsigned int a3, int a4, int a5,
     }
     return 1;
   }
-  v19 = __clz(a5 & -a5);
-  v20 = ((unsigned int)SdkData_e877c0[(unsigned int)a5 >> (-v19 & 31)] *
-         (unsigned __int64)(a3 >> ~v19)) >>
-        32;
-  if (a3 - a5 * (_DWORD)v20 < a5) {
-    v14 = v20;
-  }
-  else {
-    v14 = v20 + 1;
-  }
+  // celt_udiv reads a reciprocal table here, its quotient is exact.
+  v14 = a3 / a5;
   v15 = *(_DWORD*)a1;
   if (a3 == 1) {
     goto LABEL_12;

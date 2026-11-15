@@ -204,7 +204,11 @@ LABEL_23:
 LABEL_24:
   if ((a7 & 1) != 0 && (v35_.v37 & 1) != 0) {
     for (i = (char*)(a5[31] & 0xFFFFFFFFFFFFFFF0LL); i < v14; i += 16) {
-      __arm_mte_set_tag(i);
+      __asm__ volatile(".arch_extension memtag\n"
+                       "stg %[Ptr], [%[Ptr]]\n"
+                       :
+                       : [Ptr] "r"(i)
+                       : "memory");
     }
   }
   memcpy_plt((__int64)v25_.v25, (__int64)a5, 0x110u);

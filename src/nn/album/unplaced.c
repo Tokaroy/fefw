@@ -133,7 +133,7 @@ __int64 nn_album_1c3300(__int64* a1)
     }
     else {
       if (SdkData_ea1b88 == 1) {
-        v1 = ((__int64 (*)(void))nn_album_ConvertCapsrvResult_plt)();
+        v1 = nn_album_ConvertCapsrvResult_plt(v8);
       LABEL_26:
         v17 = 0;
         goto LABEL_27;

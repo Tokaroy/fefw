@@ -510,8 +510,11 @@ bool AndroidMediaMuxer::GetH264NalUnitStartPositionAndNalSize(
     return false;
   }
 
+  // The original keeps its loads and stores in order even when the
+  // pointers alias.
   uint8_t* data = *ppData;
   const size_t size = *pSize;
+  __asm__ volatile("" ::: "memory");
   *ppNalUnit = nullptr;
   *pNalUnitSize = 0;
   if (size < 3) {
@@ -534,29 +537,31 @@ bool AndroidMediaMuxer::GetH264NalUnitStartPositionAndNalSize(
 
   offset += 3;
   const size_t startOffset = offset;
+  size_t endOffset = size;
   for (;;) {
     while (offset < size && data[offset] != 0x01) {
       ++offset;
     }
 
+    // A unit running to the end of the data keeps its trailing zeros.
     if (offset == size) {
       offset = size + 2;
       break;
     }
 
     if (data[offset - 1] == 0x00 && data[offset - 2] == 0x00) {
+      endOffset = offset - 2;
+      while (endOffset > startOffset + 1 && data[endOffset - 1] == 0x00) {
+        --endOffset;
+      }
       break;
     }
 
     ++offset;
   }
 
-  size_t endOffset = offset - 2;
-  while (endOffset > startOffset + 1 && data[endOffset - 1] == 0x00) {
-    --endOffset;
-  }
-
   *ppNalUnit = &data[startOffset];
+  __asm__ volatile("" ::: "memory");
   *pNalUnitSize = endOffset - startOffset;
   if (offset + 2 < size) {
     *ppData = &data[offset - 2];

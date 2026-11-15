@@ -978,7 +978,7 @@ __int64 loadGlyph(__int64 a1, __int64 a2, __int64 a3, unsigned int a4)
       v74 = (_DWORD*)(v72 + 4 * v73);
       v77 = 0;
       memset(v76, 0, sizeof(v76));
-      LODWORD(v73) = (v74[1] + *v74) / 2;
+      LODWORD(v73) = ((int)v74[1] + (int)*v74) / 2;
       v74[2] = v73;
       *(_DWORD*)(*(_QWORD*)(a3 + 376) + 4LL * *(int*)(a3 + 976) + 12) = v73;
       *(_DWORD*)(*(_QWORD*)(a3 + 376) + 4LL * *(int*)(a3 + 976) + 24) = v73;

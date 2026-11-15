@@ -1707,6 +1707,8 @@ size_t GetIoctlParameterLength(uint32_t command) {
     return -1;
   }
   int count = GetIoctlBuffers(command, data, length, buffers, sizes);
+  // The original keeps the upper bound check that clang folds away.
+  __asm__ volatile("" : "+r"(count));
   if (count < 1 || count > IoctlBufferCountMax) {
     SetLastErrorImpl(EInval);
     return -1;

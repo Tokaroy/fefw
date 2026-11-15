@@ -63,7 +63,6 @@ __int64 strlen_plt(_QWORD);
 
 __int64 tolower_plt(_QWORD);
 
-bool charconv_7ced40_alt1(int) __asm__("charconv_7ced40");
 
 char* std___1___fs_filesystem_path___filename(void* this_);
 
@@ -1991,7 +1990,7 @@ LABEL_31:
       while (1) {
         v33 = *v27++;
         v32 = v33;
-        result = charconv_7ced40_alt1(v33);
+        result = charconv_7ced40(v33);
         if ((result & 1) == 0) {
           break;
         }

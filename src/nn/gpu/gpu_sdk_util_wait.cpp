@@ -127,6 +127,7 @@ void PrepareMappingWait(MappingMap* map, uint64_t* pOutLast,
       ReleaseWaitTimeout.nanoseconds) {
       TraceFence(*pHandle);
       ProcessAllJobs(allocator, map);
+      start = now;
     }
   }
 }

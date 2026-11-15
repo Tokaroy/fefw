@@ -21,6 +21,16 @@ __int64
 std___1___introsort_7c1c00_alt1(void) __asm__("std___1___introsort_7c1c00");
 bool algorithm_7cca80_alt1(__int128*, __int128*) __asm__("algorithm_7cca80");
 __int64 algorithm_7cc460_alt1(double*, double*) __asm__("algorithm_7cc460");
+__int64 algorithm_7c3100_alt1(unsigned __int8*, unsigned __int8*)
+  __asm__("algorithm_7c3100");
+__int64 algorithm_7c40a0_alt1(unsigned int*, unsigned int*)
+  __asm__("algorithm_7c40a0");
+__int64 algorithm_7c4f20_alt1(char*, char*) __asm__("algorithm_7c4f20");
+__int64 algorithm_7c5f40_alt1(__int16*, __int16*) __asm__("algorithm_7c5f40");
+__int64 algorithm_7c6e00_alt1(unsigned __int16*, unsigned __int16*)
+  __asm__("algorithm_7c6e00");
+__int64 algorithm_7c7c40_alt1(int*, int*) __asm__("algorithm_7c7c40");
+__int64 algorithm_7c8a60_alt1(__int64*, __int64*) __asm__("algorithm_7c8a60");
 char* SdkRoutine_7c5220(char*, char*, char*);
 double* SdkRoutine_7cc740(double*, double*, double*);
 int* SdkRoutine_7c7f20(int*, int*, int*);
@@ -743,7 +753,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v57 + 1;
     v60 = v59;
-    result = algorithm_7c3100(v57 + 1, a2),
+    result = algorithm_7c3100_alt1(v57 + 1, a2),
     v56 = COERCE_AS(__typeof__(v56),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v58 = COERCE_AS(__typeof__(v58),
@@ -1655,7 +1665,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v55 + 1;
     v58 = v57;
-    result = (unsigned int*)algorithm_7c40a0(v55 + 1, a2),
+    result = (unsigned int*)algorithm_7c40a0_alt1(v55 + 1, a2),
     v54 = COERCE_AS(__typeof__(v54),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v56 = COERCE_AS(__typeof__(v56),
@@ -2396,7 +2406,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v57 + 1;
     v60 = v59;
-    result = algorithm_7c4f20(v57 + 1, a2),
+    result = algorithm_7c4f20_alt1(v57 + 1, a2),
     v56 = COERCE_AS(__typeof__(v56),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v58 = COERCE_AS(__typeof__(v58),
@@ -3335,7 +3345,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = (unsigned __int64)(v56 + 1);
     v59 = v58;
-    result = algorithm_7c5f40(v56 + 1, (__int16*)a2),
+    result = algorithm_7c5f40_alt1(v56 + 1, (__int16*)a2),
     v55 = COERCE_AS(__typeof__(v55),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v57 = COERCE_AS(__typeof__(v57),
@@ -4041,7 +4051,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v56 + 1;
     v59 = v58;
-    result = algorithm_7c6e00(v56 + 1, a2),
+    result = algorithm_7c6e00_alt1(v56 + 1, a2),
     v55 = COERCE_AS(__typeof__(v55),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v57 = COERCE_AS(__typeof__(v57),
@@ -4730,7 +4740,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v55 + 1;
     v58 = v57;
-    result = (int*)algorithm_7c7c40(v55 + 1, a2),
+    result = (int*)algorithm_7c7c40_alt1(v55 + 1, a2),
     v54 = COERCE_AS(__typeof__(v54),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v56 = COERCE_AS(__typeof__(v56),
@@ -5424,7 +5434,7 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v8 = v54 + 1;
     v57 = v56;
-    result = (__int64*)algorithm_7c8a60(v54 + 1, a2),
+    result = (__int64*)algorithm_7c8a60_alt1(v54 + 1, a2),
     v53 = COERCE_AS(__typeof__(v53),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r")),
     v55 = COERCE_AS(__typeof__(v55),

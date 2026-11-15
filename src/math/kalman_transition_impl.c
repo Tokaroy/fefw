@@ -430,27 +430,29 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
   unsigned __int64 v400;
   unsigned __int64 v401;
   struct {
-    unsigned __int64 v402;
-    unsigned __int64 v403;
-  } v402_;
-  struct {
-    _QWORD v404[5];
-    __int64 v405;
-    __int64 v406;
-    __int64 v407;
-    __int64 v408;
-    __int64 v409;
-    __int64 v410;
-    __int64 v411;
-    __int64 v412;
-    __int64 v413;
-    __int64 v414;
-    unsigned __int64 v415;
-    char gap1816_[264];
-    __int64 v416;
-    char gap2088_[16];
-    unsigned __int64 v417;
-  } v404_;
+    struct {
+      unsigned __int64 v402;
+      unsigned __int64 v403;
+    } v402_;
+    struct {
+      _QWORD v404[5];
+      __int64 v405;
+      __int64 v406;
+      __int64 v407;
+      __int64 v408;
+      __int64 v409;
+      __int64 v410;
+      __int64 v411;
+      __int64 v412;
+      __int64 v413;
+      __int64 v414;
+      unsigned __int64 v415;
+      char gap1816_[264];
+      __int64 v416;
+      char gap2088_[16];
+      unsigned __int64 v417;
+    } v404_;
+  } vk_;
 
   v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
   v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
@@ -479,10 +481,10 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
   memset(v398, 0, sizeof(v398));
   v393_.v397 = 0;
   v393_.v396 = 0;
-  v402_.v403 = 0;
-  memset(v404_.v404, 0, 32);
+  vk_.v402_.v403 = 0;
+  memset(vk_.v404_.v404, 0, 32);
   v401 = v14;
-  v402_.v402 = v18;
+  vk_.v402_.v402 = v18;
   if (v18 != 0) {
     v19 = &v17[v399];
     v20 = v19[33 * v399];
@@ -502,7 +504,7 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
     else {
       v33 = v18 & 0xFFFFFFFFFFFFFFFELL;
       v34 = (float*)(a3 + 2);
-      v35 = (float*)v404_.v404;
+      v35 = (float*)vk_.v404_.v404;
       v31 = 6 * (((v18 & 0xFFFFFFFFFFFFFFFELL) - 2) >> 1) + 6;
       do {
         v36 = *(v34 - 2);
@@ -540,33 +542,33 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
       v46 = *(float*)((char*)a3 + v44 + 12);
       v47 = (float)((float)(v45 * v20) + 0x0.0p+0f) + (float)(v46 * v21);
       v48 = *(float*)((char*)a3 + v44 + 16);
-      *(float*)((char*)&v404_.v404[-1] + v44) = v47 + (float)(v48 * v22);
-      *(float*)((char*)&v402_.v403 + v44 + 4) =
+      *(float*)((char*)&vk_.v404_.v404[-1] + v44) = v47 + (float)(v48 * v22);
+      *(float*)((char*)&vk_.v402_.v403 + v44 + 4) =
           (float)((float)((float)(v45 * v24) + 0x0.0p+0f) +
                   (float)(v46 * v25)) +
           (float)(v48 * v26);
-      *(float*)((char*)v404_.v404 + v44) =
+      *(float*)((char*)vk_.v404_.v404 + v44) =
           (float)((float)((float)(v45 * v28) + 0x0.0p+0f) +
                   (float)(v46 * v29)) +
           (float)(v48 * v30);
     }
   }
-  v49 = v404_.v404[0];
-  v50 = v404_.v404[1];
-  v404_.v417 = v16;
-  memset(v404_.v404, 0, sizeof(v404_.v404));
+  v49 = vk_.v404_.v404[0];
+  v50 = vk_.v404_.v404[1];
+  vk_.v404_.v417 = v16;
+  memset(vk_.v404_.v404, 0, sizeof(vk_.v404_.v404));
   v383 = v49;
-  v384_.v384 = __PAIR128__(v404_.v404[2], v50);
-  v384_.v385 = v404_.v404[3];
-  v51 = v402_.v402;
-  v52 = v402_.v403;
-  v402_.v403 = v18;
-  v381 = v402_.v402;
+  v384_.v384 = __PAIR128__(vk_.v404_.v404[2], v50);
+  v384_.v385 = vk_.v404_.v404[3];
+  v51 = vk_.v402_.v402;
+  v52 = vk_.v402_.v403;
+  vk_.v402_.v403 = v18;
+  v381 = vk_.v402_.v402;
   v382 = v52;
-  if (v402_.v402 != 0 && v18 != 0) {
+  if (vk_.v402_.v402 != 0 && v18 != 0) {
     v53 = 0;
     v54 = 0;
-    v55 = &v404_.v404[1];
+    v55 = &vk_.v404_.v404[1];
     while (1) {
       v56 = (float*)&v382 + 3 * v54;
       v57 = *v56;
@@ -640,7 +642,7 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
     v79 = v60 + v53;
     v80 = (float*)a3 + 3 * v60 + 4;
     v81 = v18 & 7;
-    v82 = (float*)v404_.v404 + v79;
+    v82 = (float*)vk_.v404_.v404 + v79;
     do {
       --v81;
       v83 = (float)((float)(v57 * *(v80 - 2)) + 0x0.0p+0f) +
@@ -652,9 +654,9 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
     goto LABEL_13;
   }
 LABEL_23:
-  qmemcpy(v392, v404_.v404, sizeof(v392));
-  v390_.v391 = v402_.v403;
-  v390_.v390 = v402_.v402;
+  qmemcpy(v392, vk_.v404_.v404, sizeof(v392));
+  v390_.v391 = vk_.v402_.v403;
+  v390_.v390 = vk_.v402_.v402;
   SdkRoutine_87a100(&v390_.v390),
       v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
       v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
@@ -739,7 +741,7 @@ LABEL_23:
     goto LABEL_28;
   }
 LABEL_38:
-  memset(v404_.v404, 0, sizeof(v404_.v404));
+  memset(vk_.v404_.v404, 0, sizeof(vk_.v404_.v404));
   qmemcpy(v388, &v392[1], sizeof(v388));
   v389[0] = v392[4];
   v386[1] = v390_.v391;
@@ -747,14 +749,14 @@ LABEL_38:
   v387 = v392[0];
   v112 = *a4;
   v113 = a4[1];
-  v402_.v402 = v112;
-  v402_.v403 = v113;
+  vk_.v402_.v402 = v112;
+  vk_.v402_.v403 = v113;
   if (v112 != 0 && v113 != 0) {
     v114 = 0;
     v115 = 0;
     v116 = (float*)(a4 + 3);
     v117 = v388;
-    v118 = &v404_.v404[1];
+    v118 = &vk_.v404_.v404[1];
     while (v113 < 8) {
       v119 = 0;
       if ((v113 & 7) != 0) {
@@ -806,7 +808,7 @@ LABEL_38:
   LABEL_48:
     v135 = v119 + v114;
     v136 = v113 & 7;
-    v137 = (float*)v404_.v404 + v119 + v114;
+    v137 = (float*)vk_.v404_.v404 + v119 + v114;
     v138 = (float*)&v388[-1] + v135;
     v139 = (float*)a4 + v135 + 4;
     do {
@@ -819,23 +821,24 @@ LABEL_38:
     goto LABEL_41;
   }
 LABEL_51:
-  qmemcpy(v393_.v395, v404_.v404, sizeof(v393_.v395));
-  v393_.v394 = v402_.v403;
-  v393_.v393 = v402_.v402;
+  qmemcpy(v393_.v395, vk_.v404_.v404, sizeof(v393_.v395));
+  v393_.v394 = vk_.v402_.v403;
+  v393_.v393 = vk_.v402_.v402;
   v143 = (void*)SdkRoutine_87a110(&v393_.v393),
   v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
   v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   v145 = v393_.v394;
   qmemcpy(v398, v393_.v395, sizeof(v398));
   v393_.v397 = v393_.v394;
-  v404_.v404[0] = v393_.v394;
+  vk_.v404_.v404[0] = v393_.v394;
   v393_.v396 = v393_.v393;
   if (v393_.v394 == 0) {
     goto LABEL_70;
   }
-  v402_.v403 = 0;
-  v402_.v402 = 0;
-  v143 = (void*)memset_plt((void*)&v402_.v402, nullptr, 4 * (int)v393_.v394),
+  vk_.v402_.v403 = 0;
+  vk_.v402_.v402 = 0;
+  v143 = (void*)memset_plt((void*)&vk_.v402_.v402, nullptr,
+                           4 * (int)v393_.v394),
   v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
   v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   v146 = v393_.v396;
@@ -852,7 +855,7 @@ LABEL_51:
         goto LABEL_61;
       }
     LABEL_54:
-      *((float*)&v402_.v402 + v148++) = v153;
+      *((float*)&vk_.v402_.v402 + v148++) = v153;
       ++v151;
       v149 = (_QWORD*)((char*)v149 + 4);
       if (v148 == v145) {
@@ -900,9 +903,9 @@ LABEL_51:
     goto LABEL_54;
   }
 LABEL_64:
-  v387 = v404_.v404[0];
-  if (v404_.v404[0] != 0) {
-    v143 = (void*)memcpy_plt(v386, &v402_.v402, 4LL * v404_.v404[0]),
+  v387 = vk_.v404_.v404[0];
+  if (vk_.v404_.v404[0] != 0) {
+    v143 = (void*)memcpy_plt(v386, &vk_.v402_.v402, 4LL * vk_.v404_.v404[0]),
     v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
     v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
     v168 = *(_QWORD*)(a2 + 16);
@@ -982,22 +985,22 @@ LABEL_72:
   v367 = v11;
   v174 = a1[1];
   v175 = *a3;
-  v176 = v404_.v404;
+  v176 = vk_.v404_.v404;
   v368 = result;
   v389[45] = 0;
-  v404_.v416 = 0;
-  v402_.v402 = v175;
-  v402_.v403 = v174;
-  memset_plt((void*)v404_.v404, nullptr, 396),
+  vk_.v404_.v416 = 0;
+  vk_.v402_.v402 = v175;
+  vk_.v402_.v403 = v174;
+  memset_plt((void*)vk_.v404_.v404, nullptr, 396),
       v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
       v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   if (v175 != 0 && v174 != 0) {
     v177 = 0;
     v178 = (char*)a1 + 132 * v15;
-    v179 = &v404_.v404[1];
+    v179 = &vk_.v404_.v404[1];
     v180 = (float*)(v178 + 24);
     v181 = v178 + 16;
-    v182 = (char*)a1 + 132 * v404_.v417;
+    v182 = (char*)a1 + 132 * vk_.v404_.v417;
     v183 = (char*)a1 + 132 * v14;
     v184 = (float*)(v183 + 24);
     v185 = v183 + 16;
@@ -1093,7 +1096,7 @@ LABEL_72:
     goto LABEL_75;
   }
 LABEL_85:
-  memcpy_plt(&v381, &v402_.v402, 416),
+  memcpy_plt(&v381, &vk_.v402_.v402, 416),
       v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
       v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   v225 = v381;
@@ -1160,10 +1163,10 @@ LABEL_85:
     goto LABEL_88;
   }
 LABEL_98:
-  v404_.v416 = 0;
-  v402_.v402 = v226;
-  v402_.v403 = v145;
-  memset_plt((void*)v404_.v404, nullptr, 396),
+  vk_.v404_.v416 = 0;
+  vk_.v402_.v402 = v226;
+  vk_.v402_.v403 = v145;
+  memset_plt((void*)vk_.v404_.v404, nullptr, 396),
       v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
       v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   if (v226 != 0 && v145 != 0) {
@@ -1229,7 +1232,7 @@ LABEL_98:
           ++v251;
           ++v253;
           v252 = (_QWORD*)((char*)v252 + 4);
-          *((float*)v404_.v404 + v254) = v256;
+          *((float*)vk_.v404_.v404 + v254) = v256;
         } while (v251 != v145);
         ++v249;
         v250 = (_QWORD*)((char*)v250 + 12);
@@ -1241,7 +1244,7 @@ LABEL_98:
     }
     v285 = v226 & 7;
     if (v226 >= 8) {
-      v287 = (char*)&v404_.v404[4] + 4;
+      v287 = (char*)&vk_.v404_.v404[4] + 4;
       v288 = 0;
       v289 = -(__int64)(v226 & 0xFFFFFFFFFFFFFFF8LL);
       do {
@@ -1294,7 +1297,7 @@ LABEL_98:
       v286 = 0;
     }
     if (v285 != 0) {
-      v297 = (void*)((char*)v404_.v404 + 12 * v286);
+      v297 = (void*)((char*)vk_.v404_.v404 + 12 * v286);
       do {
         memset_plt(v297, nullptr, 4 * v145),
             v173 = COERCE_AS(__typeof__(v173),
@@ -1307,27 +1310,27 @@ LABEL_98:
     }
   }
 LABEL_129:
-  memcpy_plt(&v381, &v402_.v402, 416),
+  memcpy_plt(&v381, &vk_.v402_.v402, 416),
       v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
       v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
   v299 = v381;
   memset(v379_.v379, 0, sizeof(v379_.v379));
-  v404_.v415 = v381;
+  vk_.v404_.v415 = v381;
   if (v381 != 0) {
-    v404_.v414 = 0;
-    v404_.v413 = 0;
-    v404_.v412 = 0;
-    v404_.v411 = 0;
-    v404_.v410 = 0;
-    v404_.v409 = 0;
-    v404_.v408 = 0;
-    v404_.v407 = 0;
-    v404_.v406 = 0;
-    v404_.v405 = 0;
-    memset(v404_.v404, 0, sizeof(v404_.v404));
-    v402_.v403 = 0;
-    v402_.v402 = 0;
-    memset_plt((void*)&v402_.v402, nullptr, 4 * v381),
+    vk_.v404_.v414 = 0;
+    vk_.v404_.v413 = 0;
+    vk_.v404_.v412 = 0;
+    vk_.v404_.v411 = 0;
+    vk_.v404_.v410 = 0;
+    vk_.v404_.v409 = 0;
+    vk_.v404_.v408 = 0;
+    vk_.v404_.v407 = 0;
+    vk_.v404_.v406 = 0;
+    vk_.v404_.v405 = 0;
+    memset(vk_.v404_.v404, 0, sizeof(vk_.v404_.v404));
+    vk_.v402_.v403 = 0;
+    vk_.v402_.v402 = 0;
+    memset_plt((void*)&vk_.v402_.v402, nullptr, 4 * v381),
         v173 = COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
         v284 = COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
     v300 = v382;
@@ -1344,7 +1347,7 @@ LABEL_129:
           goto LABEL_139;
         }
       LABEL_132:
-        *((float*)&v402_.v402 + v303++) = v307;
+        *((float*)&vk_.v402_.v402 + v303++) = v307;
         v305 = (unsigned __int128*)((char*)v305 + 12);
         v302 += 3;
         if (v303 == v299) {
@@ -1392,30 +1395,30 @@ LABEL_129:
       goto LABEL_132;
     }
   LABEL_142:
-    v377_.v378 = v404_.v415;
-    if (v404_.v415 != 0) {
-      memcpy_plt(v376, &v402_.v402, 4 * v404_.v415),
+    v377_.v378 = vk_.v404_.v415;
+    if (vk_.v404_.v415 != 0) {
+      memcpy_plt(v376, &vk_.v402_.v402, 4 * vk_.v404_.v415),
           v173 =
               COERCE_AS(__typeof__(v173), PSEUDO_REGISTER(double, "d0", "=w")),
           v284 =
               COERCE_AS(__typeof__(v284), PSEUDO_REGISTER(double, "d0", "=w"));
       v323 = v377_.v378;
-      v404_.v415 = v377_.v378;
+      vk_.v404_.v415 = v377_.v378;
       if (v377_.v378 != 0) {
-        v404_.v414 = 0;
-        v404_.v413 = 0;
-        v404_.v412 = 0;
-        v404_.v411 = 0;
-        v404_.v410 = 0;
-        v404_.v409 = 0;
-        v404_.v408 = 0;
-        v404_.v407 = 0;
-        v404_.v406 = 0;
-        v404_.v405 = 0;
-        memset(v404_.v404, 0, sizeof(v404_.v404));
-        v402_.v403 = 0;
-        v402_.v402 = 0;
-        memset_plt((void*)&v402_.v402, nullptr, 4 * v377_.v378),
+        vk_.v404_.v414 = 0;
+        vk_.v404_.v413 = 0;
+        vk_.v404_.v412 = 0;
+        vk_.v404_.v411 = 0;
+        vk_.v404_.v410 = 0;
+        vk_.v404_.v409 = 0;
+        vk_.v404_.v408 = 0;
+        vk_.v404_.v407 = 0;
+        vk_.v404_.v406 = 0;
+        vk_.v404_.v405 = 0;
+        memset(vk_.v404_.v404, 0, sizeof(vk_.v404_.v404));
+        vk_.v402_.v403 = 0;
+        vk_.v402_.v402 = 0;
+        memset_plt((void*)&vk_.v402_.v402, nullptr, 4 * v377_.v378),
             v173 = COERCE_AS(__typeof__(v173),
                              PSEUDO_REGISTER(double, "d0", "=w")),
             v284 = COERCE_AS(__typeof__(v284),
@@ -1423,7 +1426,7 @@ LABEL_129:
         v324 = v323 & 7;
         v325 = 0;
         if (v323 >= 8) {
-          v326 = (float*)v404_.v404;
+          v326 = (float*)vk_.v404_.v404;
           v327 = 0;
           v328 = (float*)&v377_.v377;
           do {
@@ -1447,7 +1450,7 @@ LABEL_129:
           v325 = -v327;
         }
         if ((v323 & 7) != 0) {
-          v334 = (float*)&v402_.v402 + v325;
+          v334 = (float*)&vk_.v402_.v402 + v325;
           v335 = (float*)&v376[v325];
           do {
             v336 = *v335++;
@@ -1455,9 +1458,9 @@ LABEL_129:
             *v334++ = -v336;
           } while (v324 != 0);
         }
-        v379_.v380 = v404_.v415;
-        if (v404_.v415 != 0) {
-          memcpy_plt(v379_.v379, &v402_.v402, 4 * v404_.v415),
+        v379_.v380 = vk_.v404_.v415;
+        if (vk_.v404_.v415 != 0) {
+          memcpy_plt(v379_.v379, &vk_.v402_.v402, 4 * vk_.v404_.v415),
               v173 = COERCE_AS(__typeof__(v173),
                                PSEUDO_REGISTER(double, "d0", "=w")),
               v284 = COERCE_AS(__typeof__(v284),
