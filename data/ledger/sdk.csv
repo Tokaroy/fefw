@@ -6324,7 +6324,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 1891f0,312,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail12_GLOBAL__N_121AllocateMessageBufferEm
 189340,548,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail12_GLOBAL__N_117SerializeMessagesEPvmPKNS0_7MMsgHdrEmb
 189580,532,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail12_GLOBAL__N_119DeserializeMessagesEPNS0_7MMsgHdrEmPKvmb
-1897b0,536,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail4SendEiPKvmNS0_7MsgFlagE
+1897b0,552,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail4SendEiPKvmNS0_7MsgFlagE
 1899f0,552,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail4SendEiPKvmi
 189c30,636,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail6SendToEiPKvmNS0_7MsgFlagEPKNS0_8SockAddrEj
 189ec0,636,verified,src/nn/socket/detail/socket_api_client.cpp,_ZN2nn6socket6detail6SendToEiPKvmiPK8sockaddrj
@@ -9812,7 +9812,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 232720,16,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio12SplitterInfo9SetInUsedEb
 232730,16,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio12SplitterInfo15SetChannelCountEi
 232740,16,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio12SplitterInfo13SetSampleRateEi
-232760,136,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio19SplitterInfoManager19ReleaseSplitterInfoEPNS0_12SplitterInfoE
+232760,264,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio19SplitterInfoManager19ReleaseSplitterInfoEPNS0_12SplitterInfoE
 232970,64,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio23SplitterDestinationData8FinalizeEv
 2329c0,572,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio19SplitterInfoManager17UpdateInParameterEPv
 232c20,188,verified,src/nn/audio/splitter_info_manager.cpp,_ZN2nn5audio12SplitterInfo14StoreParameterEPNS0_8renderer3ipc8Splitter10UpdateDataILi0EEE
@@ -23469,7 +23469,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5f34a0,1028,verified,src/nvidia/nvos/hos/dlmalloc.c,dlmalloc_5f34a0
 5f3930,308,verified,src/nvidia/nvos/hos/dlmalloc.c,dlmalloc_5f3930
 5f3a80,480,verified,src/nn/unnamed/s900_0.c,SdkHr_5f3a80
-5f3f60,536,verified,src/nn/unnamed/s003_0.c,SdkHr_5f3f60
+5f3f60,556,verified,src/nn/unnamed/s003_0.c,SdkHr_5f3f60
 5f4190,196,verified,src/nvidia/nvos/hos/dlmalloc.c,dlmalloc_5f4190
 5f4280,1196,verified,src/nvidia/nvos/hos/dlmalloc.c,dlmalloc_5f4280
 5f47a0,2304,verified,src/nvidia/nvos/hos/dlmalloc.c,dlmalloc_5f47a0
@@ -26375,8 +26375,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6650a0,328,verified,src/nn/unplaced_11.c,nn_6650a0
 6650b0,264,verified,src/nn/unnamed/s004_0.c,SdkHr_6650b0
 6651c0,96,verified,src/nn/unnamed/s004_0.c,SdkHr_6651c0
-665220,972,verified,src/nn/unnamed/s004_0.c,SdkHr_665220
-665b40,1240,verified,src/nn/unnamed/s004_0.c,SdkHr_665b40
+665220,992,verified,src/nn/unnamed/s004_0.c,SdkHr_665220
+665b40,1372,verified,src/nn/unnamed/s004_0.c,SdkHr_665b40
 666540,348,verified,src/nn/unnamed/s004_0.c,SdkHr_666540
 6666a0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6666a0v
 6666b0,60,verified,src/nn/unnamed/s004_0.c,SdkHr_6666b0
@@ -26520,7 +26520,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 667d90,12,verified,src/nn/unnamed/u000_1.c,SdkHr_667d90
 667da0,32,verified,src/nn/unnamed/s004_0.c,SdkHr_667da0
 667dc0,12,verified,src/nn/unnamed/u000_1.c,SdkHr_667dc0
-667dd0,100,verified,src/nn/unnamed/s004_0.c,SdkHr_667dd0
+667dd0,112,verified,src/nn/unnamed/s004_0.c,SdkHr_667dd0
 667e40,32,verified,src/nn/unnamed/s004_0.c,SdkHr_667e40
 667e60,12,verified,src/nn/unnamed/u000_1.c,SdkHr_667e60
 668260,612,verified,src/nn/unplaced_3.c,nn_668260
@@ -26531,12 +26531,12 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6685a0,100,verified,src/nn/unnamed/s004_0.c,SdkHr_6685a0
 668610,132,verified,src/nn/unnamed/s004_0.c,SdkHr_668610
 6686a0,40,verified,src/nn/unnamed/s004_0.c,SdkHr_6686a0
-6686e0,60,verified,src/nn/unnamed/s004_0.c,SdkHr_6686e0
-668760,60,verified,src/nn/unnamed/s004_0.c,SdkHr_668760
+6686e0,104,verified,src/nn/unnamed/s004_0.c,SdkHr_6686e0
+668760,208,verified,src/nn/unnamed/s004_0.c,SdkHr_668760
 668910,344,verified,src/nn/unnamed/s004_0.c,SdkHr_668910
 668c20,12,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_668c20mmmm
 668ee0,20,verified,src/nn/unnamed/u000_2.c,SdkHr_668ee0
-668f00,180,verified,src/nn/unnamed/s004_0.c,SdkHr_668f00
+668f00,200,verified,src/nn/unnamed/s004_0.c,SdkHr_668f00
 669000,368,verified,src/nn/unnamed/s004_0.c,SdkHr_669000
 669170,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_669170mm
 669180,224,verified,src/nn/unplaced_8.c,nn_669180
@@ -26802,7 +26802,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 678050,92,verified,src/nn/unplaced_4.c,nn_678050
 6780b0,84,verified,src/nn/unplaced_4.c,nn_6780b0
 678ac0,420,verified,src/nn/unplaced_4.c,nn_678ac0
-678d00,840,verified,src/nn/unnamed/s004_0.c,SdkHr_678d00
+678d00,848,verified,src/nn/unnamed/s004_0.c,SdkHr_678d00
 6790b0,1024,verified,src/nn/unplaced_4.c,nn_6790b0
 6794b0,516,verified,src/nn/unplaced_4.c,nn_6794b0
 6796c0,1584,verified,src/nn/unplaced_4.c,nn_6796c0
@@ -26815,7 +26815,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 67a310,120,verified,src/nn/unnamed/s004_0.c,SdkHr_67a310
 67a390,868,verified,src/nn/unplaced_4.c,nn_67a390
 67a700,644,verified,src/nn/unnamed/t001_0.c,SdkHr_67a700
-67a990,124,verified,src/nn/unnamed/s004_0.c,SdkHr_67a990
+67a990,148,verified,src/nn/unnamed/s004_0.c,SdkHr_67a990
 67aa40,532,verified,src/nn/unnamed/a001_0.c,SdkHr_67aa40
 67ac60,392,verified,src/nn/unnamed/s004_0.c,SdkHr_67ac60
 67b360,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67b360
@@ -26827,8 +26827,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 67bfc0,1032,verified,src/nn/unplaced_4.c,nn_67bfc0
 67c480,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67c480
 67c500,1008,verified,src/nn/unplaced_4.c,nn_67c500
-67c9a0,288,verified,src/nn/unnamed/s004_0.c,SdkHr_67c9a0
-67cb10,288,verified,src/nn/unnamed/s004_0.c,SdkHr_67cb10
+67c9a0,368,verified,src/nn/unnamed/s004_0.c,SdkHr_67c9a0
+67cb10,340,verified,src/nn/unnamed/s004_0.c,SdkHr_67cb10
 67cc80,1100,verified,src/nn/unplaced_4.c,nn_67cc80
 67d0f0,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67d0f0
 67d180,1080,verified,src/nn/unplaced_4.c,nn_67d180
@@ -27669,7 +27669,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6b9890,188,verified,src/nn/hid/detail/hid_digitizer_state.cpp,_ZN2nn3hid6detail19InitializeDigitizerEv
 6b9950,152,verified,src/nn/hid/detail/hid_digitizer_state.cpp,_ZN2nn3hid6detail17FinalizeDigitizerEv
 6b9a00,416,verified,src/nn/hid/detail/hid_digitizer_state.cpp,_ZN2nn3hid6detail17GetDigitizerStateEPNS0_14DigitizerStateE
-6b9c00,448,verified,src/nn/hid/detail/hid_digitizer_state.cpp,_ZN2nn3hid6detail18GetDigitizerStatesEPiPNS0_14DigitizerStateEi
+6b9c00,268,verified,src/nn/hid/detail/hid_digitizer_state.cpp,_ZN2nn3hid6detail18GetDigitizerStatesEPiPNS0_14DigitizerStateEi
 6b9e10,96,verified,src/nn/hid/detail/unplaced.c,nn_hid_detail_6b9e10
 6b9ea0,72,verified,src/nn/hid/detail/unplaced.c,nn_hid_detail_6b9ea0
 6b9f10,224,verified,src/nn/hid/detail/hid_gesture_state.cpp,_ZN2nn3hid6detail17InitializeGestureEii
@@ -32019,7 +32019,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7b0270,72,verified,src/musl/src/math/powl.c,powl
 7b02c0,896,verified,src/nnmusl/math/sincosf.c,sincosf
 7b0640,424,verified,src/nnmusl/math/sinf.c,sinf
-7b0860,1256,verified,src/musl/src/math/tgamma.c,tgamma
+7b0860,1264,verified,src/musl/src/math/tgamma.c,tgamma
 7b0da0,32,verified,src/nnmusl/nnmusl_math_ld.c,tgammal
 7b0dc0,128,verified,src/musl/src/math/__cos.c,__cos
 7b0e40,72,verified,src/musl/src/math/__cosdf.c,__cosdf
@@ -34071,9 +34071,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 837920,148,verified,src/nn/unnamed/s006_0.c,SdkHr_837920
 8379c0,300,verified,src/nn/unnamed/s006_0.c,SdkHr_8379c0
 837af0,392,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_parseUnscopedName
-837c80,1296,verified,src/nn/unnamed/s006_3.c,SdkHr_837c80
+837c80,1336,verified,src/nn/unnamed/s006_3.c,SdkHr_837c80
 838200,156,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_838200
-8382a0,936,verified,src/nn/unnamed/s006_3.c,SdkHr_8382a0
+8382a0,956,verified,src/nn/unnamed/s006_3.c,SdkHr_8382a0
 838670,308,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_parseDecltype
 8387c0,736,verified,src/nn/unnamed/s900_1.c,SdkHr_8387c0
 838aa0,1364,verified,src/llvm-libcxx/libcxxabi/src/unplaced_3.c,llvm_libcxx_libcxxabi_src_838aa0
@@ -34092,7 +34092,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 83abe0,180,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83abe0
 83aca0,180,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83aca0
 83ad60,184,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83ad60
-83ae20,2464,verified,src/nn/unnamed/s006_3.c,SdkHr_83ae20
+83ae20,2504,verified,src/nn/unnamed/s006_3.c,SdkHr_83ae20
 83bba0,976,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_parseFunctionParam
 83bf80,636,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_parseBracedExpr
 83c200,160,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_parsePointerToMemberConversionExpr
@@ -34330,7 +34330,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 84c2c0,268,verified,src/llvm-libcxx/libcxxabi/src/fallback_malloc_impl.c,anonymous_fallback_malloc
 84c3fc,52,verified,src/llvm-libcxx/libcxxabi/src/fallback_malloc_impl.c,fallback_malloc_84c3fc
 84c430,84,verified,src/llvm-libcxx/libcxxabi/src/fallback_malloc.cpp,_ZN10__cxxabiv122__calloc_with_fallbackEmm
-84c4a0,156,verified,src/llvm-libcxx/libcxxabi/src/fallback_malloc_impl.c,__cxxabiv1___aligned_free_with_fallback
+84c4a0,184,verified,src/llvm-libcxx/libcxxabi/src/fallback_malloc_impl.c,__cxxabiv1___aligned_free_with_fallback
 84c5d0,4,verified,src/llvm-libcxx/libcxxabi/src/private_typeinfo.cpp,_ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev
 84c5e0,48,verified,src/llvm-libcxx/libcxxabi/src/private_typeinfo.cpp,_ZN10__cxxabiv123__fundamental_type_infoD0Ev
 84c610,48,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_84c610m
