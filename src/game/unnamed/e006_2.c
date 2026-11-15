@@ -2151,7 +2151,7 @@ __int64 GameHr_106b140(__int64 result, float* a2, float a3)
       v13 = a2[1] - v12[11];
       v14 = *a2 - v12[10];
       v15 = (float)(v13 * v13) + (float)(v14 * v14);
-      if (v15 >= 0.00000011921f) {
+      if (!(v15 < 0x1.0000000000000p-23f)) {
         v23 = 1.0f / sqrtf(v15);
         v17 = v14 * v23;
         v16 = v13 * v23;

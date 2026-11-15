@@ -4976,7 +4976,7 @@ __int64 GameHr_9ae660(__int64 result, __int64 a2)
     *(_DWORD*)(v34 + 16) = v25;
     *(_DWORD*)(v34 + 20) = 0;
     v37 = (float)(unsigned __int64)(GameData_21f6188 + 1);
-    if ((float)(*(float*)&GameData_21f6190 * (float)v16) >= v37) {
+    if (!((float)(*(float*)&GameData_21f6190 * (float)v16) < v37)) {
       result = v59;
     }
     else {

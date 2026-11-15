@@ -3658,7 +3658,7 @@ LABEL_24:
     *(_QWORD*)(v28 + 49) = *(_QWORD*)v72;
     *(_QWORD*)(v28 + 56) = *(_QWORD*)&v72[7];
     v31 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 504) + 1LL);
-    if (v22 != 0 && (float)(v29 * (float)v22) >= v31) {
+    if (v22 != 0 && !((float)(v29 * (float)v22) < v31)) {
       goto LABEL_113;
     }
     v32 = v31 / v29;

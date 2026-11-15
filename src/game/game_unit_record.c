@@ -1039,7 +1039,7 @@ __int64 GameUnitRecord_130b980(_QWORD* a1, __int64 a2)
           *(_QWORD*)(v70 + 72) = v69;
           v3 = v91;
           v76 = (float)(unsigned __int64)(v73 + 1);
-          if (v95 != 0 && (float)(v74 * (float)v95) >= v76) {
+          if (v95 != 0 && !((float)(v74 * (float)v95) < v76)) {
             v19 = v96;
             a2 = v92;
             v71 = v93;

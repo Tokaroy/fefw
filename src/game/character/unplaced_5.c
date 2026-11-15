@@ -880,7 +880,7 @@ void game_character_11182e0(__int128* a1)
     *((_DWORD*)a1 + 15) =
         -1 - 1431655765 * ((unsigned __int64)(*((_QWORD*)a1 + 5) - v11) >> 4);
   }
-  if (v12 >= *((float*)a1 + 6) || v13 >= *((float*)a1 + 7)) {
+  if (!(v12 < *((float*)a1 + 6)) || !(v13 < *((float*)a1 + 7))) {
     v14 = (int*)&GameData_1bb2498;
     v15 = 2;
     do {
@@ -920,7 +920,7 @@ void game_character_11182e0(__int128* a1)
       else {
         v21 = LANES128(v31).n128_f32[1];
       }
-      if (vabds_f32(*((float*)a1 + 1), v21) <= 0x1.8000000000000p+0f) {
+      if (!(vabds_f32(*((float*)a1 + 1), v21) > 0x1.8000000000000p+0f)) {
         v22 = *((float*)a1 + 4);
         LANES128(v31).n128_f32[1] = v21 + (float)(v22 + 0x1.6666660000000p-1f);
         collision_672120((void*)((__int64)&v36_.v36), (__int128*)&v31,

@@ -5904,7 +5904,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     v34 = (float*)&v67;
     while (1) {
       v35 = *(v34 - 3);
-      if (v35 >= v29) {
+      if (!(v35 < v29)) {
         v35 = v29;
         v36 = v33 + 1;
         v37 = *(v34 - 2);
@@ -5912,7 +5912,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
         if (v37 < v35) {
         LABEL_33:
           v39 = v36 + 1;
-          if (v37 >= v35) {
+          if (!(v37 < v35)) {
             goto LABEL_34;
           }
           goto LABEL_50;
@@ -5929,7 +5929,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       }
       v38 = v35;
       v39 = v36 + 1;
-      if (v37 >= v35) {
+      if (!(v37 < v35)) {
       LABEL_34:
         v40 = *(v34 - 1);
         v41 = v40;
@@ -5945,7 +5945,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v40 < v38) {
       LABEL_35:
         v42 = v39 + 1;
-        if (v40 >= v38) {
+        if (!(v40 < v38)) {
           goto LABEL_36;
         }
         goto LABEL_52;
@@ -5953,7 +5953,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_51:
       v41 = v38;
       v42 = v39 + 1;
-      if (v40 >= v38) {
+      if (!(v40 < v38)) {
       LABEL_36:
         v43 = *v34;
         v44 = *v34;
@@ -5969,7 +5969,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (*v34 < v41) {
       LABEL_37:
         v45 = v42 + 1;
-        if (v43 >= v41) {
+        if (!(v43 < v41)) {
           goto LABEL_38;
         }
         goto LABEL_54;
@@ -5977,7 +5977,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_53:
       v44 = v41;
       v45 = v42 + 1;
-      if (v43 >= v41) {
+      if (!(v43 < v41)) {
       LABEL_38:
         v46 = v34[1];
         v47 = v46;
@@ -5993,7 +5993,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v46 < v44) {
       LABEL_39:
         v48 = v45 + 1;
-        if (v46 >= v44) {
+        if (!(v46 < v44)) {
           goto LABEL_40;
         }
         goto LABEL_56;
@@ -6001,7 +6001,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_55:
       v47 = v44;
       v48 = v45 + 1;
-      if (v46 >= v44) {
+      if (!(v46 < v44)) {
       LABEL_40:
         v49 = v34[2];
         v50 = v49;
@@ -6017,7 +6017,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v49 < v47) {
       LABEL_41:
         v51 = v48 + 1;
-        if (v49 >= v47) {
+        if (!(v49 < v47)) {
           goto LABEL_42;
         }
         goto LABEL_58;
@@ -6025,7 +6025,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_57:
       v50 = v47;
       v51 = v48 + 1;
-      if (v49 >= v47) {
+      if (!(v49 < v47)) {
       LABEL_42:
         v52 = v34[3];
         v53 = v52;
@@ -6041,7 +6041,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v52 < v50) {
       LABEL_43:
         v54 = v51 + 1;
-        if (v52 >= v50) {
+        if (!(v52 < v50)) {
           goto LABEL_44;
         }
         goto LABEL_60;
@@ -6049,7 +6049,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_59:
       v53 = v50;
       v54 = v51 + 1;
-      if (v52 >= v50) {
+      if (!(v52 < v50)) {
       LABEL_44:
         v55 = v34[4];
         v29 = v55;

@@ -2503,7 +2503,7 @@ float game_menu_16df380(__int64 a1)
           v19 = *(_DWORD*)(a1 + 564);
           v20 = *(_DWORD*)(a1 + 560);
           v21 = v17 + *(float*)(as_g_base_frame_counter + 48);
-          if (v21 <= 0x1.0000000000000p+3f) {
+          if (!(v21 > 0x1.0000000000000p+3f)) {
             v18 = v21;
           }
           *(float*)(a1 + 568) = v18;

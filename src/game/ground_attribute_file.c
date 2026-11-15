@@ -501,7 +501,7 @@ void GroundAttributeFile_Unknown4()
     *(_DWORD*)(v28 + 16) = v16;
     *(_QWORD*)(v28 + 24) = v14;
     v32 = (float)(unsigned __int64)(v29 + 1);
-    if (v13 != 0 && (float)(v30 * (float)v13) >= v32) {
+    if (v13 != 0 && !((float)(v30 * (float)v13) < v32)) {
       goto LABEL_128;
     }
     v33 = v32 / v30;

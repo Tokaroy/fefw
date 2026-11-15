@@ -1242,8 +1242,8 @@ _QWORD* GameConst_7f9b60(unsigned __int64 a1, __int64* a2)
 LABEL_21:
   v10 = (float)(unsigned __int64)(GameData_21d9fa8 + 1);
   if (GameData_21d9f98 != 0 &&
-      (float)(*(float*)&GameData_21d9fb0 *
-              (float)(unsigned __int64)GameData_21d9f98) >= v10) {
+      !((float)(*(float*)&GameData_21d9fb0 *
+                (float)(unsigned __int64)GameData_21d9f98) < v10)) {
     return nullptr;
   }
   v12 = v10 / *(float*)&GameData_21d9fb0;

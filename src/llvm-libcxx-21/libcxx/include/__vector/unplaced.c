@@ -2396,7 +2396,7 @@ LABEL_18:
     v29[4] = v34;
     v29[5] = v10;
     v35 = (float)(unsigned __int64)(*((_QWORD*)a1 + 5) + 1LL);
-    if (v16 != 0 && (float)(v32 * (float)v16) >= v35) {
+    if (v16 != 0 && !((float)(v32 * (float)v16) < v35)) {
     LABEL_125:
       v64 = *((_QWORD*)a1 + 2);
       v65 = *(_QWORD**)(v64 + 8 * v3);

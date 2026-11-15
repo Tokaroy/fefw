@@ -3795,7 +3795,7 @@ LABEL_56:
   *(_BYTE*)(v28 + 24) = 0;
   *(_QWORD*)(v28 + 16) = v29;
   v31 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 80) + 1LL);
-  if (v21 != 0 && (float)(v30 * (float)v21) >= v31) {
+  if (v21 != 0 && !((float)(v30 * (float)v21) < v31)) {
     goto LABEL_122;
   }
   v32 = v31 / v30;

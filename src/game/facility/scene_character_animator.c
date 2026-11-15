@@ -1448,7 +1448,7 @@ LABEL_57:
   }
   v37 = strlen_alt1(v36);
   GameHr_1412f00(a1, v36, v37);
-  if (*(float*)(a1 + 64) <= 0x0.0p+0f) {
+  if (!(*(float*)(a1 + 64) > 0x0.0p+0f)) {
     LODWORD(v39) = 0;
   }
   else {

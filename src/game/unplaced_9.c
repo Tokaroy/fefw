@@ -12253,7 +12253,7 @@ __int64 game_615760(__int64 a1, __int64 a2)
     *(_QWORD*)(v24 + 16) = v12;
     *(_DWORD*)(v24 + 24) = 0;
     v27 = (float)(unsigned __int64)(v25 + 1);
-    if (v15 != 0 && (float)(v26 * (float)v15) >= v27) {
+    if (v15 != 0 && !((float)(v26 * (float)v15) < v27)) {
       goto LABEL_92;
     }
     v28 = v27 / v26;

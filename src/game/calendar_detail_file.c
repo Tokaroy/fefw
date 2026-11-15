@@ -267,7 +267,7 @@ void CalendarDetailFile_12c7260(__int64 a1)
           *(_QWORD*)(v26 + 32) = v28;
           *(_QWORD*)(v26 + 40) = v28;
           v32 = (float)(unsigned __int64)(v31 + 1);
-          if (v19 != 0 && (float)(v30 * (float)v19) >= v32) {
+          if (v19 != 0 && !((float)(v30 * (float)v19) < v32)) {
             goto LABEL_118;
           }
           v33 = v19 < 3 || (v19 & (v19 - 1)) != 0;

@@ -2405,7 +2405,7 @@ LABEL_244:
     v84 = v127;
   }
   v130 = (float)(unsigned __int64)(GameData_21d9d98 + 1);
-  if (v68 != 0 && (float)(*(float*)&GameData_21d9da0 * (float)v68) >= v130) {
+  if (v68 != 0 && !((float)(*(float*)&GameData_21d9da0 * (float)v68) < v130)) {
     v102 = (__int64*)fw_memory_g_heap_manager_ptr;
   }
   else {
@@ -4176,7 +4176,7 @@ bool GameHr_7ecc80(__int64 a1, __int64 a2, unsigned __int8* a3)
     LABEL_317:
       v156 = *(float*)(a1 + 384);
       v157 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 376) + 1LL);
-      if (v148 != 0 && (float)(v156 * (float)v148) >= v157) {
+      if (v148 != 0 && !((float)(v156 * (float)v148) < v157)) {
         goto LABEL_319;
       }
       v161 = v157 / v156;

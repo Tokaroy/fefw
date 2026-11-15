@@ -1516,7 +1516,7 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
           v31 = powf_alt1(*(float*)(v27 + 12), v36);
           v32 = LANES128(v26[4]).n128_f32[1];
           v33 = COERCE_AS(float32x4_t, GameData_1a837f0);
-          if (fabsf(v32) >= 0x1.0624de0000000p-10f) {
+          if (!(fabsf(v32) < 0x1.0624de0000000p-10f)) {
             v33 = *v26;
           }
           LANES128(v11).n128_u64[0] = __PAIR64__(LODWORD(v34), LODWORD(v35));

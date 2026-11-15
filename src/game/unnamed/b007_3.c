@@ -731,7 +731,7 @@ __int64 GameHr_940640(_QWORD* a1, __int64** a2)
     v5 = (*(__int64 (**)(_QWORD*))(*a1 + 24LL))(a1);
     v6 = a1[1];
     v7 = a2[1] - *a2;
-    if (v7 > 0xAAAAAAAAAAAAAAABLL * ((a1[3] - v6) >> 5)) {
+    if (v7 > 0xAAAAAAAAAAAAAAABLL * ((__int64)(a1[3] - v6) >> 5)) {
       if (v7 > 0x2AAAAAAAAAAAAAALL) {
       LABEL_56:
         GameRoutine_9433f0(v5);

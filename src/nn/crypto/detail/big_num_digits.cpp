@@ -545,7 +545,9 @@ bool BigNum::TestPrimality(const Digit* a, int digits,
   Copy(aMinusOne, a, digits);
   Decrement(aMinusOne, digits);
 
+  // The original tests each block even when it follows a valid one.
   Digit* m = allocator->Allocate(digits);
+  __asm__ volatile("" : "+r"(m));
   if (m == nullptr) {
     return false;
   }
@@ -566,6 +568,7 @@ bool BigNum::TestPrimality(const Digit* a, int digits,
   }
 
   Digit* x = allocator->Allocate(digits);
+  __asm__ volatile("" : "+r"(x));
   if (x == nullptr) {
     return false;
   }
@@ -573,6 +576,7 @@ bool BigNum::TestPrimality(const Digit* a, int digits,
   for (int round = 0; round < rounds; ++round) {
     GenerateCryptographicallyRandomBytes(x, sizeof(Digit) * digits);
     Digit* quotient = allocator->Allocate(digits);
+    __asm__ volatile("" : "+r"(quotient));
     if (quotient == nullptr) {
       return false;
     }

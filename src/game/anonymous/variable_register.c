@@ -3022,7 +3022,7 @@ unsigned __int64 game_anonymous_VariableRegister_RegisterKeyMap_closure_Invoke(
     *(_QWORD*)(result + 32) = *((_QWORD*)v6 + 1);
     v23 = *(float*)(v7 + 648);
     v24 = (float)(unsigned __int64)(*(_QWORD*)(v7 + 640) + 1LL);
-    if (v9 != 0 && (float)(v23 * (float)v9) >= v24) {
+    if (v9 != 0 && !((float)(v23 * (float)v9) < v24)) {
       goto LABEL_119;
     }
     v25 = v24 / v23;

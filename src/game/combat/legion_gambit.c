@@ -220,18 +220,18 @@ __int64 LegionGambit_e4bd20(__int64 result)
   LABEL_20:
     v17 = *(float*)(result + 216);
     v18 = fabsf(v1);
-    if (v17 <= 0x0.0p+0f) {
-      if (v17 >= 0x0.0p+0f) {
+    if (!(v17 > 0x0.0p+0f)) {
+      if (!(v17 < 0x0.0p+0f)) {
         goto LABEL_26;
       }
       v17 = v18 + v17;
-      if (v17 <= 0x0.0p+0f) {
+      if (!(v17 > 0x0.0p+0f)) {
         goto LABEL_26;
       }
     }
     else {
       v17 = v17 - v18;
-      if (v17 >= 0x0.0p+0f) {
+      if (!(v17 < 0x0.0p+0f)) {
         goto LABEL_26;
       }
     }

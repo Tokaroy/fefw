@@ -4053,7 +4053,7 @@ __int64 game_menu_1820a00()
     v13 = *(float*)&GameData_226b238;
     *(_QWORD*)(v10 + 128) = v3[14];
     v14 = (float)(unsigned __int64)(GameData_226b230 + 1);
-    if (v2 != 0 && (float)(v13 * (float)v2) >= v14) {
+    if (v2 != 0 && !((float)(v13 * (float)v2) < v14)) {
       goto LABEL_98;
     }
     v15 = v14 / v13;

@@ -4646,7 +4646,7 @@ LABEL_8:
         *primeEm = 0;
         primeEm[1] = v49;
         v1393 = (float)v1392;
-        if (v48 != 0 && (float)(v1390 * (float)v48) >= v1393) {
+        if (v48 != 0 && !((float)(v1390 * (float)v48) < v1393)) {
           goto LABEL_740;
         }
         v1394 = v1393 / v1390;

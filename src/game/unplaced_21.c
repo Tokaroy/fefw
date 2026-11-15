@@ -1729,7 +1729,7 @@ __int64 game_d775b0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float* a5)
   v18 = (float)(PSEUDO_UNFUSED(v15 * v15)) + (float)(v14 * v14);
   v19 = (float)(PSEUDO_UNFUSED(v17 * v17)) + (float)(v16 * v16);
   if (v18 != v19) {
-    if (v18 >= v19) {
+    if (!(v18 < v19)) {
       return result;
     }
   LABEL_17:
@@ -1837,12 +1837,12 @@ __int64 game_d775b0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float* a5)
         v46 = v46 / v55;
         v47 = v47 / v55;
       }
-      if (v54 <=
-          (float)((float)(PSEUDO_UNFUSED(v42 * v47)) + (float)(v41 * v46))) {
+      if (!(v54 >
+            (float)((float)(PSEUDO_UNFUSED(v42 * v47)) + (float)(v41 * v46)))) {
         return result;
       }
     }
-    else if (v43 >= v44) {
+    else if (!(v43 < v44)) {
       return result;
     }
     *(_DWORD*)a2 = *(_DWORD*)a3;
@@ -1949,12 +1949,12 @@ __int64 game_d775b0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float* a5)
         v71 = v71 / v80;
         v72 = v72 / v80;
       }
-      if (v79 <=
-          (float)((float)(PSEUDO_UNFUSED(v67 * v72)) + (float)(v66 * v71))) {
+      if (!(v79 >
+            (float)((float)(PSEUDO_UNFUSED(v67 * v72)) + (float)(v66 * v71)))) {
         return result;
       }
     }
-    else if (v68 >= v69) {
+    else if (!(v68 < v69)) {
       return result;
     }
     *(_DWORD*)a1 = *(_DWORD*)a2;

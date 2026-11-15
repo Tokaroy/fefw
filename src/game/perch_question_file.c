@@ -222,7 +222,7 @@ void PerchQuestionFile_Unknown4()
     *(_QWORD*)(v23 + 24) = v13;
     *(_BYTE*)(v23 + 16) = v25;
     v27 = (float)(unsigned __int64)(GameData_224adc8 + 1);
-    if (v16 != 0 && (float)(v26 * (float)v16) >= v27) {
+    if (v16 != 0 && !((float)(v26 * (float)v16) < v27)) {
     LABEL_107:
       v52 = GameData_224adb0;
       v53 = *(__int64**)(GameData_224adb0 + 8 * v0);

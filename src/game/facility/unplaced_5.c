@@ -3576,7 +3576,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
   GameHr_144e680(a1);
   v9 = *(float*)(a1 + 40);
   v8 = *(float*)(a1 + 44);
-  if (v8 >= v9) {
+  if (!(v8 < v9)) {
     v16 = *(float32x4_t*)(a1 + 64);
   }
   else {
@@ -3605,7 +3605,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
   *(_OWORD*)(a1 + 80) = v17;
   v19 = *(float*)(a1 + 120);
   v18 = *(float*)(a1 + 124);
-  if (v18 >= v19) {
+  if (!(v18 < v19)) {
     v26 = *(float*)(a1 + 132);
   }
   else {
@@ -3615,7 +3615,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
         v18 + (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
                               0x1.0aef000000000p+4f) /
                       0x1.f400000000000p+9f);
-    if (v19 >= v22) {
+    if (!(v19 < v22)) {
       v23 = v22;
     }
     else {
@@ -3629,7 +3629,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
   *(float*)(a1 + 136) = v26;
   v28 = *(float*)(a1 + 160);
   v27 = *(float*)(a1 + 164);
-  if (v27 >= v28) {
+  if (!(v27 < v28)) {
     v35 = *(float*)(a1 + 172);
   }
   else {
@@ -3639,7 +3639,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
         v27 + (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
                               0x1.0aef000000000p+4f) /
                       0x1.f400000000000p+9f);
-    if (v28 >= v31) {
+    if (!(v28 < v31)) {
       v32 = v31;
     }
     else {
@@ -3653,7 +3653,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
   *(float*)(a1 + 176) = v35;
   v37 = *(float*)(a1 + 200);
   v36 = *(float*)(a1 + 204);
-  if (v36 >= v37) {
+  if (!(v36 < v37)) {
     v44 = *(float*)(a1 + 212);
   }
   else {
@@ -3663,7 +3663,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
         v36 + (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
                               0x1.0aef000000000p+4f) /
                       0x1.f400000000000p+9f);
-    if (v37 >= v40) {
+    if (!(v37 < v40)) {
       v41 = v40;
     }
     else {
@@ -3677,7 +3677,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
   *(float*)(a1 + 216) = v44;
   v46 = *(float*)(a1 + 240);
   v45 = *(float*)(a1 + 244);
-  if (v45 >= v46) {
+  if (!(v45 < v46)) {
     v53 = *(float*)(a1 + 252);
   }
   else {
@@ -3687,7 +3687,7 @@ __int64 game_facility_144e320(__int64 a1, float a2)
         v45 + (float)((float)(*(float*)(game_script_hub_g_frame_counter + 160) *
                               0x1.0aef000000000p+4f) /
                       0x1.f400000000000p+9f);
-    if (v46 >= v49) {
+    if (!(v46 < v49)) {
       v50 = v49;
     }
     else {

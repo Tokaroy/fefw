@@ -284,7 +284,7 @@ _QWORD* game_anonymous_TimelineMap_Build_closure_Invoke(_QWORD* result,
     v27 = result;
     v28 = v8[8];
     v29 = (float)(unsigned __int64)(*((_QWORD*)v8 + 3) + 1LL);
-    if (v11 != 0 && (float)(v28 * (float)v11) >= v29) {
+    if (v11 != 0 && !((float)(v28 * (float)v11) < v29)) {
       goto LABEL_118;
     }
     v30 = v29 / v28;

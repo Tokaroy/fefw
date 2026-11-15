@@ -839,7 +839,7 @@ void RelianceTalkFile_Unknown4()
     LABEL_229:
       v115 = (float)(unsigned __int64)(GameData_21f22d0 + 1);
       if (v108 != 0 &&
-          (float)(*(float*)&GameData_21f22d8 * (float)v108) >= v115) {
+          !((float)(*(float*)&GameData_21f22d8 * (float)v108) < v115)) {
         goto LABEL_231;
       }
       v119 = v115 / *(float*)&GameData_21f22d8;

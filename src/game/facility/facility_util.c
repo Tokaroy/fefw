@@ -619,10 +619,10 @@ __int64 FacilityUtil_948800(__int64 a1, __int64** a2)
   if (game_GameModeData_instance_ != 0) {
     v8 = 0x1.0000000000000p+0;
     v9 = (double)v6 / -0x1.9000000000000p+6 + 0x1.0000000000000p+0;
-    if (v9 <= 0x1.0000000000000p+0) {
+    if (!(v9 > 0x1.0000000000000p+0)) {
       v8 = (double)v6 / -0x1.9000000000000p+6 + 0x1.0000000000000p+0;
     }
-    if (v9 >= 0x1.47ae147ae147bp-7) {
+    if (!(v9 < 0x1.47ae147ae147bp-7)) {
       v10 = v8;
     }
     else {
@@ -633,7 +633,7 @@ __int64 FacilityUtil_948800(__int64 a1, __int64** a2)
       v11 = 1;
     }
     v12 = (*(_DWORD*)(game_GameModeData_instance_ + 72) - v11) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 72) - v11) >> 31);
+          ~((int)(*(_DWORD*)(game_GameModeData_instance_ + 72) - v11) >> 31);
     if (v12 >= 9999999) {
       v12 = 9999999;
     }

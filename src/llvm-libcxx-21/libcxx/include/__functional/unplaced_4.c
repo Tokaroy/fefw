@@ -2218,7 +2218,7 @@ void llvm_libcxx_21_libcxx_include___functional_c0e160(__int64 a1, __int64 a2)
         v48[5] = v20;
         v50 = *(float*)(v2 + 32);
         v51 = (float)(unsigned __int64)(*(_QWORD*)(v2 + 24) + 1LL);
-        if (v32 != 0 && (float)(v50 * (float)v32) >= v51) {
+        if (v32 != 0 && !((float)(v50 * (float)v32) < v51)) {
           goto LABEL_147;
         }
         v52 = v32 < 3 || (v32 & (v32 - 1)) != 0;

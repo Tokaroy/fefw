@@ -17094,7 +17094,7 @@ void game_1367b60(__int64 a1, _QWORD* a2)
         }
         v24 = *(float*)(a1 + 1232);
         v25 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 1224) + 1LL);
-        if (v9 != 0 && (float)(v24 * (float)v9) >= v25) {
+        if (v9 != 0 && !((float)(v24 * (float)v9) < v25)) {
           goto LABEL_115;
         }
         v26 = v25 / v24;

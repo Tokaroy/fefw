@@ -834,6 +834,8 @@ LABEL_13:
       }
     }
     v30 = nullptr;
+    /* The original also loads through a null match, keep the end check. */
+    __asm__("" : "+r"(v30));
   LABEL_39:
     *(_QWORD*)(v19 + 224) = v30;
     *(_QWORD*)(v19 + 216) = Impl_1326420(*v30);

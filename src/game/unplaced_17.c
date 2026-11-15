@@ -9774,7 +9774,7 @@ void game_18c3220(__int64 a1)
                               memory_order_relaxed);
     v33 = *(float*)(a1 + 184);
     v34 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 176) + 1LL);
-    if (v25 != 0 && (float)(v33 * (float)v25) >= v34) {
+    if (v25 != 0 && !((float)(v33 * (float)v25) < v34)) {
     LABEL_117:
       v63 = *(_QWORD***)(a1 + 152);
       v64 = *v63;
@@ -9863,7 +9863,7 @@ void game_18c3220(__int64 a1)
       v74[4] = v75 + 2;
       v76 = *(float*)(a1 + 224);
       v77 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 216) + 1LL);
-      if (v69 != 0 && (float)(v76 * (float)v69) >= v77) {
+      if (v69 != 0 && !((float)(v76 * (float)v69) < v77)) {
         goto LABEL_203;
       }
       v78 = v77 / v76;

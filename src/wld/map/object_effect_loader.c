@@ -786,7 +786,7 @@ void wld_map_ObjectEffectLoader_LoadAsync_lambda0_Invoke(__int64 a1,
               v61[4] = v65;
               v61[5] = 0;
               v66 = (float)(v166_.v167 + 1);
-              if (v48 != 0 && (float)(v64 * (float)v48) >= v66) {
+              if (v48 != 0 && !((float)(v64 * (float)v48) < v66)) {
               LABEL_185:
                 v91 = v164_.v164;
                 v92 = *(_QWORD**)(v164_.v164 + 8 * v40);

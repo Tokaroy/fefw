@@ -1876,7 +1876,7 @@ __int64 GameRecord_99e5e0(__int64 a1, __int64* a2)
               v109 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 64) + 1LL);
               *(_QWORD*)(v106 + 48) = v127;
               *(_QWORD*)(v106 + 56) = v104;
-              if (v96 != 0 && (float)(v107 * (float)v96) >= v109) {
+              if (v96 != 0 && !((float)(v107 * (float)v96) < v109)) {
                 v54 = v126;
                 v97 = v124;
               }

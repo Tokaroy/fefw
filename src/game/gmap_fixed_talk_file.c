@@ -185,7 +185,7 @@ void GmapFixedTalkFile_Unknown4()
       v30[2] = v18;
       v30[3] = 0;
       v33 = (float)(unsigned __int64)(v31 + 1);
-      if (v15 != 0 && (float)(v32 * (float)v15) >= v33) {
+      if (v15 != 0 && !((float)(v32 * (float)v15) < v33)) {
         goto LABEL_129;
       }
       v34 = v33 / v32;

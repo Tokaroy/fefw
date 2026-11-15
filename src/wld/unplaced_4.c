@@ -5913,7 +5913,7 @@ void wld_c11000(__int64 a1)
       v144[3] = v135;
       v144[4] = v133;
       v148 = (float)(unsigned __int64)(v145 + 1);
-      if (v137 != 0 && (float)(v146 * (float)v137) >= v148) {
+      if (v137 != 0 && !((float)(v146 * (float)v137) < v148)) {
         goto LABEL_273;
       }
       v149 = v148 / v146;
@@ -8510,7 +8510,7 @@ LABEL_166:
       v144[7] = 0;
       v144[5] = 0;
       v158 = (float)(unsigned __int64)(v156 + 1);
-      if (v140 != 0 && (float)(v157 * (float)v140) >= v158) {
+      if (v140 != 0 && !((float)(v157 * (float)v140) < v158)) {
       LABEL_379:
         v185 = *(_QWORD*)(v3 + 144);
         v186 = *(_QWORD**)(v185 + 8 * v1);

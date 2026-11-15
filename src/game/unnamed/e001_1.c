@@ -7877,7 +7877,7 @@ LABEL_27:
     *(_DWORD*)(v24 + 16) = v18;
     *(_QWORD*)(v24 + 24) = v14;
     v28 = (float)(v25 + 1);
-    if (v16 != 0 && (float)(v26 * (float)v16) >= v28) {
+    if (v16 != 0 && !((float)(v26 * (float)v16) < v28)) {
       goto LABEL_117;
     }
     v29 = v28 / v26;

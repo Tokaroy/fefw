@@ -349,7 +349,8 @@ LABEL_33:
         v38 = *(int*)(a1 + 24);
         v39 = *(_QWORD*)(*(_QWORD*)(v33 + 312) + v36);
         v40 = *(_QWORD*)(v39 + 264);
-        v41 = 0xAAAAAAAAAAAAAAABLL * ((*(_QWORD*)(v39 + 272) - v40) >> 3);
+        v41 = 0xAAAAAAAAAAAAAAABLL *
+              ((__int64)(*(_QWORD*)(v39 + 272) - v40) >> 3);
         if (v41 > v38 && *(_BYTE*)(v40 + 24LL * (int)v38 + 20) == 1) {
           v42 = v40 + 24LL * (int)v38;
           v44 = *(unsigned __int8*)(v42 + 21);
@@ -358,7 +359,8 @@ LABEL_33:
             *v43 = v37;
             Material_ade2c0(v39, a2);
             v40 = *(_QWORD*)(v39 + 264);
-            v41 = 0xAAAAAAAAAAAAAAABLL * ((*(_QWORD*)(v39 + 272) - v40) >> 3);
+            v41 = 0xAAAAAAAAAAAAAAABLL *
+                  ((__int64)(*(_QWORD*)(v39 + 272) - v40) >> 3);
           }
         }
         v45 = *(int*)(a1 + 28);

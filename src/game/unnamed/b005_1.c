@@ -1976,7 +1976,7 @@ float GameHr_734f90(__int64 a1)
 
   v2 = *(float*)(a1 + 8);
   v1 = *(float*)(a1 + 12);
-  if (v1 >= v2) {
+  if (!(v1 < v2)) {
     return *(float*)(a1 + 32);
   }
   else {
@@ -15630,7 +15630,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                       PSEUDO_REGISTER(float, "s0", "=w")),
                       v98 = COERCE_AS(__typeof__(v98),
                                       PSEUDO_REGISTER(float, "s0", "=w"));
-                  if (v110 >= v111) {
+                  if (!(v110 < v111)) {
                     v112 = *v107;
                     do {
                       v116 = v102;
@@ -16075,7 +16075,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                           v98 = COERCE_AS(__typeof__(v98),
                                           PSEUDO_REGISTER(float, "s0", "=w"));
                       v107 = v116;
-                    } while (v114 >= v115);
+                    } while (!(v114 < v115));
                     *v116 = v112;
                   }
                 }
@@ -17558,7 +17558,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                               PSEUDO_REGISTER(float, "s0", "=w")),
               v98 = COERCE_AS(__typeof__(v98),
                               PSEUDO_REGISTER(float, "s0", "=w"));
-          if (v50 >= v51) {
+          if (!(v50 < v51)) {
             v56 = a1 + 1;
             do {
               v10 = v56;
@@ -17762,7 +17762,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v59 >= v60);
+            } while (!(v59 < v60));
           }
           else {
             v10 = a1;
@@ -17964,7 +17964,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v54 >= v55);
+            } while (!(v54 < v55));
           }
           v61 = a2;
           if (v10 < a2) {
@@ -18370,7 +18370,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v69 >= v70);
+            } while (!(v69 < v70));
             do {
               v71 = *--v61;
               Camera_7c0910(*a3, v47),
@@ -19082,7 +19082,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v31 >= v32);
+          } while (!(v31 < v32));
         }
         else {
           do {
@@ -19282,7 +19282,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v27 >= v28);
+          } while (!(v27 < v28));
         }
         if (v23 >= a2) {
           v44 = v23 - 1;
@@ -19695,7 +19695,7 @@ void GameHr_75a980(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v42 >= v43);
+          } while (!(v42 < v43));
         } while (v33 < v34);
         v44 = v33 - 1;
         if (a1 != v44) {

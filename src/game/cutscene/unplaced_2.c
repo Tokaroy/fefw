@@ -150,7 +150,7 @@ float game_cutscene_17fb4a0(__int64* a1, float a2, float a3)
     v26 = *v22 | ((unsigned __int64)v22[1] << 32);
     v27 = (int)*(float*)(v13 + 4 * v24);
   LABEL_20:
-    if (v20 <= *(float*)&v26) {
+    if (!(v20 > *(float*)&v26)) {
       break;
     }
     ++v23;

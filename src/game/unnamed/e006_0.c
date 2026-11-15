@@ -2532,7 +2532,7 @@ LABEL_22:
         v133_.v135 = nullptr;
         *(_QWORD*)(v74 + 56) = v81;
         *(_QWORD*)(v74 + 64) = v83;
-        if (v57 != 0 && (float)(v77 * (float)v57) >= v82) {
+        if (v57 != 0 && !((float)(v77 * (float)v57) < v82)) {
         LABEL_197:
           v110 = *a1;
           v111 = *(__int64**)(*a1 + 8 * v23);

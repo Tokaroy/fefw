@@ -1393,17 +1393,17 @@ bool nn_vfx_5d79a0(_QWORD* a1, float* a2)
     if (v2 == 3) {
       v19 = *((float*)a1 + 2);
       if (v19 < *(float*)a1 ||
-          v19 <= *(float*)a1 && (signed __int32)*((_DWORD*)a1 + 3) >=
-                                    (signed __int32)*((_DWORD*)a1 + 1)) {
+          !(v19 > *(float*)a1) && (signed __int32)*((_DWORD*)a1 + 3) >=
+                                      (signed __int32)*((_DWORD*)a1 + 1)) {
         v20 = *(a2 - 2);
-        if (v20 >= v19 &&
+        if (!(v20 < v19) &&
             (v20 > v19 || (signed __int32)*((_DWORD*)a2 - 1) <
                               (signed __int32)*((_DWORD*)a1 + 3))) {
           v21 = a1[1];
           a1[1] = *((_QWORD*)a2 - 1);
           *((_QWORD*)a2 - 1) = v21;
           v22 = *((float*)a1 + 2);
-          if (v22 >= *(float*)a1 &&
+          if (!(v22 < *(float*)a1) &&
               (v22 > *(float*)a1 || (signed __int32)*((_DWORD*)a1 + 3) <
                                         (signed __int32)*((_DWORD*)a1 + 1))) {
             v23 = *a1;
@@ -1414,13 +1414,13 @@ bool nn_vfx_5d79a0(_QWORD* a1, float* a2)
         return true;
       }
       v30 = *(a2 - 2);
-      if (v30 < v19 || v30 <= v19 && (signed __int32)*((_DWORD*)a2 - 1) >=
-                                         (signed __int32)*((_DWORD*)a1 + 3)) {
+      if (v30 < v19 || !(v30 > v19) && (signed __int32)*((_DWORD*)a2 - 1) >=
+                                           (signed __int32)*((_DWORD*)a1 + 3)) {
         v31 = *a1;
         *a1 = a1[1];
         a1[1] = v31;
         v32 = *(a2 - 2);
-        if (v32 >= *(float*)&v31 &&
+        if (!(v32 < *(float*)&v31) &&
             (v32 > *(float*)&v31 ||
              (signed __int32)*((_DWORD*)a2 - 1) < SHIDWORD(v31))) {
           a1[1] = *((_QWORD*)a2 - 1);
@@ -1442,12 +1442,13 @@ bool nn_vfx_5d79a0(_QWORD* a1, float* a2)
         GameRoutine_5d7520(a1, a1 + 1, a1 + 2, a1 + 3);
         v9 = *(a2 - 2);
         v10 = *((float*)a1 + 6);
-        if (v9 >= v10 && (v9 > v10 || (signed __int32)*((_DWORD*)a2 - 1) <
-                                          (signed __int32)*((_DWORD*)a1 + 7))) {
+        if (!(v9 < v10) &&
+            (v9 > v10 || (signed __int32)*((_DWORD*)a2 - 1) <
+                             (signed __int32)*((_DWORD*)a1 + 7))) {
           v11 = *v6;
           *v6 = *((_QWORD*)a2 - 1);
           *((_QWORD*)a2 - 1) = v11;
-          if (*(float*)v6 >= *v5 &&
+          if (!(*(float*)v6 < *v5) &&
               (*(float*)v6 > *v5 || (signed __int32)*((_DWORD*)a1 + 7) <
                                         (signed __int32)*((_DWORD*)a1 + 5))) {
             v12 = *v6;
@@ -1456,13 +1457,14 @@ bool nn_vfx_5d79a0(_QWORD* a1, float* a2)
             v15 = COERCE_FLOAT(*v6);
             *(_QWORD*)v5 = *v6;
             *v6 = v14;
-            if (v13 <= v15 && (v13 < v15 || (signed __int32)*((_DWORD*)a1 + 3) >
-                                                SHIDWORD(v12))) {
+            if (!(v13 > v15) &&
+                (v13 < v15 ||
+                 (signed __int32)*((_DWORD*)a1 + 3) > SHIDWORD(v12))) {
               v16 = *(float*)a1;
               v17 = a1[1];
               a1[1] = v12;
               a1[2] = v17;
-              if (v16 <= v15 &&
+              if (!(v16 > v15) &&
                   (v16 < v15 ||
                    (signed __int32)*((_DWORD*)a1 + 1) > SHIDWORD(v12))) {
                 v18 = *a1;
@@ -1485,8 +1487,8 @@ bool nn_vfx_5d79a0(_QWORD* a1, float* a2)
   if (v2 == 2) {
     v3 = *(a2 - 2);
     if (v3 < *(float*)a1 ||
-        v3 <= *(float*)a1 && (signed __int32)*((_DWORD*)a2 - 1) >=
-                                 (signed __int32)*((_DWORD*)a1 + 1)) {
+        !(v3 > *(float*)a1) && (signed __int32)*((_DWORD*)a2 - 1) >=
+                                   (signed __int32)*((_DWORD*)a1 + 1)) {
       return true;
     }
     goto LABEL_57;
@@ -1496,15 +1498,16 @@ LABEL_32:
   v25 = *(float*)a1;
   v26 = (float*)(a1 + 2);
   if (v24 < *(float*)a1 ||
-      v24 <= *(float*)a1 && (signed __int32)*((_DWORD*)a1 + 3) >=
-                                (signed __int32)*((_DWORD*)a1 + 1)) {
-    if (*v26 >= v24 && (*v26 > v24 || (signed __int32)*((_DWORD*)a1 + 5) <
-                                          (signed __int32)*((_DWORD*)a1 + 3))) {
+      !(v24 > *(float*)a1) && (signed __int32)*((_DWORD*)a1 + 3) >=
+                                  (signed __int32)*((_DWORD*)a1 + 1)) {
+    if (!(*v26 < v24) &&
+        (*v26 > v24 || (signed __int32)*((_DWORD*)a1 + 5) <
+                           (signed __int32)*((_DWORD*)a1 + 3))) {
       v28 = a1[1];
       v27 = a1[2];
       a1[1] = v27;
       a1[2] = v28;
-      if (v25 <= *(float*)&v27 &&
+      if (!(v25 > *(float*)&v27) &&
           (v25 < *(float*)&v27 ||
            (signed __int32)*((_DWORD*)a1 + 1) > SHIDWORD(v27))) {
         v29 = *a1;
@@ -1515,8 +1518,9 @@ LABEL_32:
   }
   else {
     v33 = *v26;
-    if (*v26 >= v24 && (*v26 > v24 || (signed __int32)*((_DWORD*)a1 + 5) <
-                                          (signed __int32)*((_DWORD*)a1 + 3))) {
+    if (!(*v26 < v24) &&
+        (*v26 > v24 || (signed __int32)*((_DWORD*)a1 + 5) <
+                           (signed __int32)*((_DWORD*)a1 + 3))) {
       v34 = *a1;
       *a1 = a1[2];
       goto LABEL_61;
@@ -1525,7 +1529,7 @@ LABEL_32:
     v35 = COERCE_FLOAT(*a1);
     *a1 = a1[1];
     a1[1] = v34;
-    if (v33 >= v35 &&
+    if (!(v33 < v35) &&
         (v33 > v35 || (signed __int32)*((_DWORD*)a1 + 5) < SHIDWORD(v34))) {
       a1[1] = a1[2];
     LABEL_61:
@@ -1540,7 +1544,7 @@ LABEL_32:
   v39 = 0;
   while (1) {
     v40 = *v37;
-    if (*v37 >= *v26) {
+    if (!(*v37 < *v26)) {
       v41 = *((_DWORD*)v37 + 1);
       if (*v37 > *v26 || v41 < (signed __int32)*((_DWORD*)v26 + 1)) {
         *(_QWORD*)v37 = *(_QWORD*)v26;
@@ -1552,7 +1556,7 @@ LABEL_32:
             v26 = (float*)(v43 + 16);
             goto LABEL_65;
           }
-          if (v44 >= v40 &&
+          if (!(v44 < v40) &&
               v41 >= (signed __int32)*(_DWORD*)((char*)a1 + v42 + 12)) {
             goto LABEL_65;
           }

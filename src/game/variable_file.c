@@ -766,7 +766,7 @@ LABEL_138:
         v96[4] = 0;
         v96[5] = 0;
         v101 = (float)(unsigned __int64)(v99 + 1);
-        if (v93 != 0 && (float)(v100 * (float)v93) >= v101) {
+        if (v93 != 0 && !((float)(v100 * (float)v93) < v101)) {
           goto LABEL_277;
         }
         v102 = v101 / v100;

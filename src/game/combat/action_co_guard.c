@@ -60,7 +60,7 @@ float ActionCoGuard_Unknown5(__int64 a1)
   *(float*)&v6 = *(float*)&v8 - *(float*)(v2 + 40);
   v7 = (float)(v5 * v5) + (float)(*(float*)&v6 * *(float*)&v6);
   *(float*)&v8 = sqrtf(v7);
-  if (v7 >= 0x1.0000000000000p-23) {
+  if (!(v7 < 0x1.0000000000000p-23)) {
     v10 = *(float*)&v6 * (float)(1.0 / *(float*)&v8);
     v9 = v5 * (float)(1.0 / *(float*)&v8);
   }

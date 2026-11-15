@@ -430,7 +430,7 @@ void DisposFile_Unknown4()
   LABEL_85:
     v15 = (__int64*)fw_memory_g_heap_manager_ptr;
     v50 = (float)(unsigned __int64)(GameData_21ca230 + 1);
-    if (v42 != 0 && (float)(*(float*)&GameData_21ca238 * (float)v42) >= v50) {
+    if (v42 != 0 && !((float)(*(float*)&GameData_21ca238 * (float)v42) < v50)) {
       goto LABEL_87;
     }
     v54 = v50 / *(float*)&GameData_21ca238;

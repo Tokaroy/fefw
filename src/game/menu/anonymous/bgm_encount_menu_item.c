@@ -424,7 +424,7 @@ __int64 BgmEncountMenuItem_DownCall(_QWORD* a1, char a2)
   v4 = a1[19];
   if ((a1[23] & 1) == 0) {
     if ((a2 & 1) != 0) {
-      v5 = 0xAAAAAAAAAAAAAAABLL * ((a1[20] - v4) >> 3);
+      v5 = 0xAAAAAAAAAAAAAAABLL * ((__int64)(a1[20] - v4) >> 3);
     LABEL_7:
       v7 = v5 - 1;
       *((_BYTE*)a1 + 184) = 1;

@@ -1944,8 +1944,8 @@ LABEL_18:
            (v19 & v18) != 0)) {
         v20 = *(float*)v2;
         v21 = fabsf(LANES128(a1[9]).n128_f32[0]);
-        if (*(float*)v2 <= 0x0.0p+0f) {
-          if (*(float*)v2 >= 0x0.0p+0f || (v20 = v20 + v21) <= 0x0.0p+0f) {
+        if (!(*(float*)v2 > 0x0.0p+0f)) {
+          if (!(*(float*)v2 < 0x0.0p+0f) || !((v20 = v20 + v21) > 0x0.0p+0f)) {
           LABEL_35:
             *(float*)v2 = v20;
             if (v20 != 0x0.0p+0f) {
@@ -1956,7 +1956,7 @@ LABEL_18:
         }
         else {
           v20 = v20 - v21;
-          if (v20 >= 0x0.0p+0f) {
+          if (!(v20 < 0x0.0p+0f)) {
             goto LABEL_35;
           }
         }

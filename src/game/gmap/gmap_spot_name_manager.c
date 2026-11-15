@@ -2291,7 +2291,7 @@ __int64 GmapSpotNameManager_199f1d0(__int64 result, __int64 a2, __int64 a3)
 
   v3 = *(float*)(a2 + 96);
   v4 = *(float*)(a3 + 96);
-  if (v3 >= *(float*)(result + 96)) {
+  if (!(v3 < *(float*)(result + 96))) {
     if (v4 < v3) {
       v14 = *(_QWORD*)(a2 + 8);
       v40_.v40[0] = *(_QWORD*)a2;

@@ -869,9 +869,9 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
                         0x1.0aef000000000p+4f) /
                 0x1.f400000000000p+9f) /
         0x1.3333340000000p-1f);
-    if (v2 <= 0x1.0000000000000p+0f) {
-      if (v2 >= 0x1.0000000000000p+0f ||
-          (v2 = v2 + v3) <= 0x1.0000000000000p+0f) {
+    if (!(v2 > 0x1.0000000000000p+0f)) {
+      if (!(v2 < 0x1.0000000000000p+0f) ||
+          !((v2 = v2 + v3) > 0x1.0000000000000p+0f)) {
       LABEL_8:
         v4 = *(float32x4_t*)(a1 + 32);
         v5 = *(float32x4_t*)(a1 + 64);
@@ -879,10 +879,10 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
         v132 = v2;
         v127 = v5;
         v129 = v4;
-        if (v2 >= 0x1.0000000000000p-1f) {
+        if (!(v2 < 0x1.0000000000000p-1f)) {
           v11 = (float)(v2 + -0x1.0000000000000p-1f) +
                 (float)(v2 + -0x1.0000000000000p-1f);
-          if (v11 <= 0x1.0000000000000p+0f) {
+          if (!(v11 > 0x1.0000000000000p+0f)) {
             v12 = (float)(v2 + -0x1.0000000000000p-1f) +
                   (float)(v2 + -0x1.0000000000000p-1f);
           }
@@ -891,7 +891,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
           }
           v13 = 0x1.0000000000000p+0f -
                 fminf(fmaxf(v12, 0x0.0p+0f), 0x1.0000000000000p+0f);
-          if (v11 >= 0x0.0p+0f) {
+          if (!(v11 < 0x0.0p+0f)) {
             v9 = v13;
           }
           else {
@@ -901,7 +901,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
         }
         else {
           v6 = v2 + v2;
-          if ((float)(v2 + v2) <= 0x1.0000000000000p+0f) {
+          if (!((float)(v2 + v2) > 0x1.0000000000000p+0f)) {
             v7 = v2 + v2;
           }
           else {
@@ -910,7 +910,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
           v8 = (float)(fminf(fmaxf(v7, 0x0.0p+0f), 0x1.0000000000000p+0f) *
                        0x1.99999a0000000p-1f) +
                0x1.99999a0000000p-3f;
-          if (v6 >= 0x0.0p+0f) {
+          if (!(v6 < 0x0.0p+0f)) {
             v9 = v8;
           }
           else {
@@ -967,7 +967,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
     }
     else {
       v2 = v2 - v3;
-      if (v2 >= 0x1.0000000000000p+0f) {
+      if (!(v2 < 0x1.0000000000000p+0f)) {
         goto LABEL_8;
       }
     }
@@ -1070,12 +1070,12 @@ LABEL_42:
   v41 = fabsf(v39 + v39);
   if (v40 > 0x1.0000000000000p+0f) {
     v40 = v40 - v41;
-    if (v40 >= 0x1.0000000000000p+0f) {
+    if (!(v40 < 0x1.0000000000000p+0f)) {
       goto LABEL_68;
     }
   }
-  else if (v40 >= 0x1.0000000000000p+0f ||
-           (v40 = v40 + v41) <= 0x1.0000000000000p+0f) {
+  else if (!(v40 < 0x1.0000000000000p+0f) ||
+           !((v40 = v40 + v41) > 0x1.0000000000000p+0f)) {
   LABEL_68:
     v42 = *(float*)(v38 + 32);
     v43 = v39 + *(float*)(a1 + 120);
@@ -1202,7 +1202,7 @@ LABEL_42:
     v60 = vaddq_f32(v57, vmulq_n_f32(v59, v39));
     v61 = (float)(*(float*)(a1 + 120) + -0x1.0000000000000p+0f) /
           0x1.2000000000000p+3f;
-    if (v61 <= 0x1.0000000000000p+0f) {
+    if (!(v61 > 0x1.0000000000000p+0f)) {
       v62 = (float)(*(float*)(a1 + 120) + -0x1.0000000000000p+0f) /
             0x1.2000000000000p+3f;
     }
@@ -1210,7 +1210,7 @@ LABEL_42:
       v62 = 0x1.0000000000000p+0f;
     }
     v63 = (float)(v62 * 0x1.0000000000000p+3f) + 0x1.0000000000000p+0f;
-    if (v61 >= 0x0.0p+0f) {
+    if (!(v61 < 0x0.0p+0f)) {
       v64 = v63;
     }
     else {

@@ -5922,7 +5922,7 @@ void game_9a3bc0(int a1, const char* a2)
     *(_QWORD*)(v40 + 16) = v7;
     *(_DWORD*)(v40 + 24) = (unsigned __int16)v24 | 0x10000;
     v44 = (float)(unsigned __int64)(v41 + 1);
-    if (v33 != 0 && (float)(v42 * (float)v33) >= v44) {
+    if (v33 != 0 && !((float)(v42 * (float)v33) < v44)) {
       goto LABEL_134;
     }
     v45 = v44 / v42;
@@ -6911,7 +6911,7 @@ LABEL_174:
     LABEL_210:
       v108 = (float)(unsigned __int64)(GameData_21f7d10 + 1);
       if (v99 != 0 &&
-          (float)(*(float*)&GameData_21f7d18 * (float)v99) >= v108) {
+          !((float)(*(float*)&GameData_21f7d18 * (float)v99) < v108)) {
         goto LABEL_212;
       }
       v112 = v108 / *(float*)&GameData_21f7d18;
@@ -7426,7 +7426,7 @@ __int64 game_9be300(__int64 result, __int64 a2)
       v27[4] = v18;
       v27[5] = v65;
       v31 = (float)(unsigned __int64)(v30 + 1);
-      if (v20 != 0 && (float)(v28 * (float)v20) >= v31) {
+      if (v20 != 0 && !((float)(v28 * (float)v20) < v31)) {
       LABEL_116:
         v58 = *(_QWORD*)v4;
         v59 = *(_QWORD**)(*(_QWORD*)v4 + 8 * v2);
@@ -12056,7 +12056,7 @@ LABEL_168:
             *(_QWORD*)(v323 + 48) = 0;
             v324 = *((float*)v106 + 84);
             v325 = (float)(unsigned __int64)(v106[41] + 1LL);
-            if (v317 != 0 && (float)(v324 * (float)v317) >= v325) {
+            if (v317 != 0 && !((float)(v324 * (float)v317) < v325)) {
               ii = (__int64*)fw_memory_g_heap_manager_ptr;
             }
             else {

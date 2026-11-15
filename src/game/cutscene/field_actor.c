@@ -1670,7 +1670,7 @@ __int64 FieldActor_1802740(_QWORD* a1, _QWORD* a2, char a3)
   v40 = a1[8];
   v42 = a1 + 7;
   *(float*)v47 = v39;
-  if (v41 == v40 || *(float*)(v40 - 4) <= v39) {
+  if (v41 == v40 || !(*(float*)(v40 - 4) > v39)) {
     result = AnimCtrlModule_a78450(v42, v47);
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v38 + 8),
