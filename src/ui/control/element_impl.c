@@ -1207,9 +1207,11 @@ __int64 Element_1887de0(__int64 result, __int64* a2, __int64 a3, __int64 a4)
   _QWORD v41[2];
   _QWORD* v42;
   __int64 v43;
-  __int64 v44;
-  unsigned __int64 v45;
-  char* v46;
+  struct {
+    __int64 v44;
+    unsigned __int64 v45;
+    char* v46;
+  } v44_;
 
   v4 = (_QWORD*)result;
   if (a4 == 0) {
@@ -1232,13 +1234,13 @@ __int64 Element_1887de0(__int64 result, __int64* a2, __int64 a3, __int64 a4)
     }
     v10 = (char*)fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v11,
                                                 16, 0);
-    v45 = v9;
-    v46 = v10;
-    v44 = v11 | 1;
+    v44_.v45 = v9;
+    v44_.v46 = v10;
+    v44_.v44 = v11 | 1;
   }
   else {
-    LOBYTE(v44) = 2 * v8;
-    v10 = (char*)&v44 + 1;
+    LOBYTE(v44_.v44) = 2 * v8;
+    v10 = (char*)&v44_.v44 + 1;
     if (v8 == 0) {
       goto LABEL_12;
     }
@@ -1248,14 +1250,14 @@ __int64 Element_1887de0(__int64 result, __int64* a2, __int64 a3, __int64 a4)
 LABEL_12:
   v10[v9] = 0;
   do {
-    v12 = v46;
+    v12 = v44_.v46;
     v13 = *(_QWORD*)(v5 + 80);
-    v14 = (unsigned __int64)(unsigned __int8)v44 >> 1;
-    if ((v44 & 1) != 0) {
-      v14 = v45;
+    v14 = (unsigned __int64)(unsigned __int8)v44_.v44 >> 1;
+    if ((v44_.v44 & 1) != 0) {
+      v14 = v44_.v45;
     }
     else {
-      v12 = (char*)&v44 + 1;
+      v12 = (char*)&v44_.v44 + 1;
     }
     v41[0] = v12;
     v41[1] = v14;
@@ -1383,7 +1385,7 @@ LABEL_12:
         v26 = v33;
       }
     }
-    result = GameRoutine_60a060(&v44, v29, v26);
+    result = GameRoutine_60a060(&v44_.v44, v29, v26);
     v18 = 0;
     v19 = v4[1];
     if (v19 != 0) {
@@ -1394,13 +1396,13 @@ LABEL_12:
   v4[1] = 0;
 
 LABEL_57:
-  if ((v44 & 1) != 0 && v46 != nullptr) {
+  if ((v44_.v44 & 1) != 0 && v44_.v46 != nullptr) {
     v38 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v38 = 56;
     }
     return nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v38, (_QWORD)(v46));
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v38, (_QWORD)(v44_.v46));
   }
   return result;
 }

@@ -364,9 +364,11 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
   __int64 v44;
   _QWORD* v45;
   __int64 v46;
-  __int64 v47;
-  unsigned __int64 v48;
-  char* v49;
+  struct {
+    __int64 v47;
+    unsigned __int64 v48;
+    char* v49;
+  } v47_;
   __int64 v50;
   __int64 v51;
   __int64 v52;
@@ -389,9 +391,11 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
   int v69;
   _QWORD v70[4];
   _QWORD v71[6];
-  __int64 v72;
-  unsigned __int64 v73;
-  __int128 v74;
+  struct {
+    __int64 v72;
+    unsigned __int64 v73;
+    __int128 v74;
+  } v72_;
   __int64 v75;
   __int64 v76;
   __int64 v77;
@@ -440,13 +444,13 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
           v12 = (v9 | 7) + 1;
         }
         v11 = (char*)NgxRoutine_420(v12);
-        v48 = v10;
-        v49 = v11;
-        v47 = v12 | 1;
+        v47_.v48 = v10;
+        v47_.v49 = v11;
+        v47_.v47 = v12 | 1;
       }
       else {
-        v11 = (char*)&v47 + 1;
-        LOBYTE(v47) = 2 * v9;
+        v11 = (char*)&v47_.v47 + 1;
+        LOBYTE(v47_.v47) = 2 * v9;
         if (v9 == 0) {
           goto LABEL_15;
         }
@@ -455,12 +459,12 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
     LABEL_15:
       v11[v10] = 0;
       v13 = *(_DWORD*)(v8 + 256);
-      v72 = (__int64)&v47;
-      v14 = NgxRoutine_ba400(&v81, &v47, v7, &v72, v71);
-      v15 = v47;
+      v72_.v72 = (__int64)&v47_.v47;
+      v14 = NgxRoutine_ba400(&v81, &v47_.v47, v7, &v72_.v72, v71);
+      v15 = v47_.v47;
       *(_DWORD*)(v14 + 40) = v13;
       if ((v15 & 1) != 0) {
-        NgxRoutine_430(v49, v47 & 0xFFFFFFFFFFFFFFFELL);
+        NgxRoutine_430(v47_.v49, v47_.v47 & 0xFFFFFFFFFFFFFFFELL);
       }
       ++v6;
       v8 += 260;
@@ -479,21 +483,22 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
       v19 = (v16 | 7) + 1;
     }
     v18 = (char*)NgxRoutine_420(v19);
-    v48 = v17;
-    v49 = v18;
-    v47 = v19 | 1;
+    v47_.v48 = v17;
+    v47_.v49 = v18;
+    v47_.v47 = v19 | 1;
     goto LABEL_25;
   }
-  LOBYTE(v47) = 2 * v16;
-  v18 = (char*)&v47 + 1;
+  LOBYTE(v47_.v47) = 2 * v16;
+  v18 = (char*)&v47_.v47 + 1;
   if (v16 != 0) {
   LABEL_25:
     memcpy_plt(v18, "VK_NVX_binary_import", v17);
   }
   v18[v17] = 0;
-  v72 = (__int64)&v47;
+  v72_.v72 = (__int64)&v47_.v47;
   v21 = false;
-  if (*(_DWORD*)(NgxRoutine_ba840(&v81, &v47, NgxData_952228, &v72, v71) +
+  if (*(_DWORD*)(NgxRoutine_ba840(&v81, &v47_.v47, NgxData_952228, &v72_.v72,
+                                  v71) +
                  40) <= 1u) {
     goto LABEL_38;
   }
@@ -511,27 +516,27 @@ __int64 ngx_cubin_vulkan_b7160(__int64 a1, _QWORD* a2)
       v25 = (v22 | 7) + 1;
     }
     v24 = (char*)NgxRoutine_420(v25);
-    v73 = v23;
-    *(_QWORD*)&v74 = v24;
-    v72 = v25 | 1;
+    v72_.v73 = v23;
+    *(_QWORD*)&v72_.v74 = v24;
+    v72_.v72 = v25 | 1;
     goto LABEL_35;
   }
-  LOBYTE(v72) = 2 * v22;
-  v24 = (char*)&v72 + 1;
+  LOBYTE(v72_.v72) = 2 * v22;
+  v24 = (char*)&v72_.v72 + 1;
   if (v22 != 0) {
   LABEL_35:
     memcpy_plt(v24, "VK_NVX_image_view_handle", v23);
   }
   v24[v23] = 0;
-  v71[0] = &v72;
-  v21 = *(_DWORD*)(NgxRoutine_ba840(&v81, &v72, NgxData_952228, v71, v61) +
+  v71[0] = &v72_.v72;
+  v21 = *(_DWORD*)(NgxRoutine_ba840(&v81, &v72_.v72, NgxData_952228, v71, v61) +
                    40) > 2u;
-  if ((v72 & 1) != 0) {
-    NgxRoutine_430(v74, v72 & 0xFFFFFFFFFFFFFFFELL);
+  if ((v72_.v72 & 1) != 0) {
+    NgxRoutine_430(v72_.v74, v72_.v72 & 0xFFFFFFFFFFFFFFFELL);
   }
 LABEL_38:
-  if ((v47 & 1) != 0) {
-    NgxRoutine_430(v49, v47 & 0xFFFFFFFFFFFFFFFELL);
+  if ((v47_.v47 & 1) != 0) {
+    NgxRoutine_430(v47_.v49, v47_.v47 & 0xFFFFFFFFFFFFFFFELL);
     if (v21) {
     LABEL_40:
       *(_BYTE*)(a1 + 1628) = 1;
@@ -606,20 +611,20 @@ LABEL_38:
 LABEL_58:
   NgxRoutine_430(v46, v20);
   v35 = *(_QWORD*)(a1 + 840);
-  v72 = 31;
-  v73 = 0;
-  *(_QWORD*)&v74 = 0x100000000LL;
-  *((_QWORD*)&v74 + 1) = 1;
+  v72_.v72 = 31;
+  v72_.v73 = 0;
+  *(_QWORD*)&v72_.v74 = 0x100000000LL;
+  *((_QWORD*)&v72_.v74 + 1) = 1;
   v77 = 0x3F80000000000000LL;
   v78 = 0;
   v79 = 0;
   v80 = 0;
   v75 = 0x200000002LL;
   v76 = 2;
-  vkCreateSampler_plt(v35, &v72, 0, a1 + 960);
+  vkCreateSampler_plt(v35, &v72_.v72, 0, a1 + 960);
   v36 = *(_QWORD*)(a1 + 840);
-  *(_QWORD*)((char*)&v74 + 4) = 0;
-  vkCreateSampler_plt(v36, &v72, 0, a1 + 976);
+  *(_QWORD*)((char*)&v72_.v74 + 4) = 0;
+  vkCreateSampler_plt(v36, &v72_.v72, 0, a1 + 976);
   vkGetPhysicalDeviceMemoryProperties_plt(*(_QWORD*)(a1 + 848), a1 + 1104);
   v37 = *(_QWORD*)(a1 + 840);
   memset(&v71[2], 0, 32);
@@ -650,14 +655,14 @@ LABEL_58:
       v39 = *(_QWORD*)(a1 + 840);
       v59[4] = &NgxData_2669fb4;
       if ((unsigned int)vkCreateShaderModule_plt(v39, v59, 0, &v60) == 0) {
-        v47 = 0;
-        v48 = 0;
-        v49 = nullptr;
+        v47_.v47 = 0;
+        v47_.v48 = 0;
+        v47_.v49 = nullptr;
         v50 = 0;
         v40 = *(_QWORD*)(a1 + 840);
         v51 = 0;
         v52 = 0;
-        LODWORD(v47) = 29;
+        LODWORD(v47_.v47) = 29;
         v41 = *(_QWORD*)(a1 + 1640);
         v57 = 0;
         v58 = 0;
@@ -667,7 +672,7 @@ LABEL_58:
         HIDWORD(v52) = 32;
         v53 = v60;
         v54 = "main";
-        if ((unsigned int)vkCreateComputePipelines_plt(v40, 0, 1, &v47, 0,
+        if ((unsigned int)vkCreateComputePipelines_plt(v40, 0, 1, &v47_.v47, 0,
                                                        a1 + 1664) == 0) {
           vkDestroyShaderModule_plt(*(_QWORD*)(a1 + 840), v60, 0);
           *(_WORD*)(a1 + 816) = 257;

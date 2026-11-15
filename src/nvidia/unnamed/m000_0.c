@@ -614,21 +614,27 @@ __int64 NgxHr_d1d00(_QWORD* a1, _QWORD* a2, char a3, __int64 a4, __int16 a5,
   char* v210;
   char* v212;
   int v213;
-  __int64 v214;
-  unsigned __int64 v215;
-  char* v216;
+  struct {
+    __int64 v214;
+    unsigned __int64 v215;
+    char* v216;
+  } v214_;
   __int64 v217;
   unsigned __int64 v218;
   unsigned __int8* v219;
   __int64 v220;
   unsigned __int64 v221;
   unsigned __int8* v222;
-  __int64 v223;
-  unsigned __int64 v224;
-  char* v225;
-  __int64 v226;
-  unsigned __int64 v227;
-  _BYTE* v228;
+  struct {
+    __int64 v223;
+    unsigned __int64 v224;
+    char* v225;
+  } v223_;
+  struct {
+    __int64 v226;
+    unsigned __int64 v227;
+    _BYTE* v228;
+  } v226_;
   char v229[4];
   char v230[4];
   _BYTE v231[4];
@@ -681,23 +687,23 @@ LABEL_4:
   v16 = nullptr;
 LABEL_13:
   v200 = a6;
-  v227 = 0;
-  v228 = nullptr;
-  v225 = nullptr;
-  v226 = 0;
-  v223 = 0;
-  v224 = 0;
+  v226_.v227 = 0;
+  v226_.v228 = nullptr;
+  v223_.v225 = nullptr;
+  v226_.v226 = 0;
+  v223_.v223 = 0;
+  v223_.v224 = 0;
   v221 = 0;
   v222 = nullptr;
   v219 = nullptr;
   v220 = 0;
   v217 = 0;
   v218 = 0;
-  v215 = 0;
-  v216 = nullptr;
-  v214 = 0;
-  NgxRoutine_d3a70(a3 & 1, a4, v231, v230, v229, &v226, &v223, &v220, &v217,
-                   &v213);
+  v214_.v215 = 0;
+  v214_.v216 = nullptr;
+  v214_.v214 = 0;
+  NgxRoutine_d3a70(a3 & 1, a4, v231, v230, v229, &v226_.v226, &v223_.v223,
+                   &v220, &v217, &v213);
   v18 = v232;
   v19 = 0;
   v20 = nullptr;
@@ -776,21 +782,21 @@ LABEL_13:
           v77 = *(char**)(*a1 + 24LL);
           if (v77 == *(char**)(*a1 + 32LL)) {
             v78 = (*(__int64 (**)(_QWORD*))(*v76 + 80LL))(v76);
-            v79 = (unsigned __int8)v214;
-            if ((v214 & 1) == 0) {
+            v79 = (unsigned __int8)v214_.v214;
+            if ((v214_.v214 & 1) == 0) {
               goto LABEL_148;
             }
           }
           else {
             v78 = *v77;
             v76[3] = v77 + 1;
-            v79 = (unsigned __int8)v214;
-            if ((v214 & 1) == 0) {
+            v79 = (unsigned __int8)v214_.v214;
+            if ((v214_.v214 & 1) == 0) {
             LABEL_148:
               if ((_DWORD)v79 != 44) {
-                v99 = (char*)&v214 + 1;
+                v99 = (char*)&v214_.v214 + 1;
                 v81 = v79 >> 1;
-                LOBYTE(v214) = v79 + 2;
+                LOBYTE(v214_.v214) = v79 + 2;
               LABEL_216:
                 v107 = &v99[v81];
                 while (1) {
@@ -855,34 +861,34 @@ LABEL_13:
                   v165 = *(char**)(*a1 + 24LL);
                   if (v165 == *(char**)(*a1 + 32LL)) {
                     v78 = (*(__int64 (**)(_QWORD*))(*v164 + 80LL))(v164);
-                    v166 = (unsigned __int8)v214;
-                    if ((v214 & 1) != 0) {
+                    v166 = (unsigned __int8)v214_.v214;
+                    if ((v214_.v214 & 1) != 0) {
                       goto LABEL_366;
                     }
                   LABEL_363:
-                    v167 = (char*)&v214 + 1;
+                    v167 = (char*)&v214_.v214 + 1;
                     v168 = 22;
                     v169 = 48;
                     if ((_DWORD)v166 == 44) {
                       goto LABEL_374;
                     }
-                    LOBYTE(v214) = v166 + 2;
-                    v107 = (char*)&v214 + (v166 >> 1) + 1;
+                    LOBYTE(v214_.v214) = v166 + 2;
+                    v107 = (char*)&v214_.v214 + (v166 >> 1) + 1;
                   }
                   else {
                     v78 = *v165;
                     v164[3] = v165 + 1;
-                    v166 = (unsigned __int8)v214;
-                    if ((v214 & 1) == 0) {
+                    v166 = (unsigned __int8)v214_.v214;
+                    if ((v214_.v214 & 1) == 0) {
                       goto LABEL_363;
                     }
                   LABEL_366:
-                    v167 = v216;
-                    v170 = v214 & 0xFFFFFFFFFFFFFFFELL;
-                    v168 = (v214 & 0xFFFFFFFFFFFFFFFELL) - 1;
-                    if (v215 != v168) {
-                      v173 = (__int64)v216;
-                      v168 = v215;
+                    v167 = v214_.v216;
+                    v170 = v214_.v214 & 0xFFFFFFFFFFFFFFFELL;
+                    v168 = (v214_.v214 & 0xFFFFFFFFFFFFFFFELL) - 1;
+                    if (v214_.v215 != v168) {
+                      v173 = (__int64)v214_.v216;
+                      v168 = v214_.v215;
                       goto LABEL_379;
                     }
                     v169 = -9;
@@ -908,28 +914,28 @@ LABEL_13:
                     if (v170 != 23) {
                       NgxRoutine_430(v167, v170);
                     }
-                    v216 = (char*)v173;
-                    v214 = v169 | 1;
+                    v214_.v216 = (char*)v173;
+                    v214_.v214 = v169 | 1;
                   LABEL_379:
-                    v215 = v168 + 1;
+                    v214_.v215 = v168 + 1;
                     v107 = (char*)(v173 + v168);
                   }
                 }
               }
-              v80 = (char*)&v214 + 1;
+              v80 = (char*)&v214_.v214 + 1;
               v81 = 22;
               v82 = 48;
               goto LABEL_159;
             }
           }
-          v80 = v216;
-          v83 = v214 & 0xFFFFFFFFFFFFFFFELL;
-          v81 = (v214 & 0xFFFFFFFFFFFFFFFELL) - 1;
-          if (v215 != v81) {
-            v99 = v216;
-            v81 = v215;
+          v80 = v214_.v216;
+          v83 = v214_.v214 & 0xFFFFFFFFFFFFFFFELL;
+          v81 = (v214_.v214 & 0xFFFFFFFFFFFFFFFELL) - 1;
+          if (v214_.v215 != v81) {
+            v99 = v214_.v216;
+            v81 = v214_.v215;
           LABEL_215:
-            v215 = v81 + 1;
+            v214_.v215 = v81 + 1;
             goto LABEL_216;
           }
           if (v81 >= 0x7FFFFFFFFFFFFFF3LL) {
@@ -957,8 +963,8 @@ LABEL_13:
           if (v83 != 23) {
             NgxRoutine_430(v80, v83);
           }
-          v216 = v99;
-          v214 = v82 | 1;
+          v214_.v216 = v99;
+          v214_.v214 = v82 | 1;
           goto LABEL_215;
         }
       }
@@ -980,10 +986,10 @@ LABEL_13:
           v22 = 1;
         }
         else {
-          v187 = v227;
+          v187 = v226_.v227;
           v22 = 1;
-          if ((v226 & 1) == 0) {
-            v187 = (unsigned __int64)(unsigned __int8)v226 >> 1;
+          if ((v226_.v226 & 1) == 0) {
+            v187 = (unsigned __int64)(unsigned __int8)v226_.v226 >> 1;
           }
           if (v212 - v18 >= 5 && v187 != 0) {
             v188 = v212 - 4;
@@ -998,15 +1004,15 @@ LABEL_13:
                 v192 = v189 >= v190;
                 v189 += 4;
               } while (!v192);
-              v193 = (unsigned __int64)(unsigned __int8)v226 >> 1;
-              if ((v226 & 1) != 0) {
-                v194 = v228;
+              v193 = (unsigned __int64)(unsigned __int8)v226_.v226 >> 1;
+              if ((v226_.v226 & 1) != 0) {
+                v194 = v226_.v228;
               }
               else {
-                v194 = (char*)&v226 + 1;
+                v194 = (char*)&v226_.v226 + 1;
               }
-              if ((v226 & 1) != 0) {
-                v193 = v227;
+              if ((v226_.v226 & 1) != 0) {
+                v193 = v226_.v227;
               }
               v195 = v18;
               v196 = &v194[v193];
@@ -1024,7 +1030,7 @@ LABEL_13:
                 }
               }
             }
-            v194 = (v226 & 1) != 0 ? v228 : (char*)&v226 + 1;
+            v194 = (v226_.v226 & 1) != 0 ? v226_.v228 : (char*)&v226_.v226 + 1;
           LABEL_441:
             v198 = (unsigned __int8)*v194;
             v22 = 1;
@@ -1123,16 +1129,16 @@ LABEL_13:
     }
     if (v26 == 2) {
       if (v20 != nullptr || v19 < 2) {
-        v70 = (unsigned __int8)v223;
+        v70 = (unsigned __int8)v223_.v223;
         v208 = v18;
-        v72 = v224;
-        v71 = v225;
-        v73 = (v223 & 1) == 0;
-        if ((v223 & 1) != 0) {
-          v74 = v225;
+        v72 = v223_.v224;
+        v71 = v223_.v225;
+        v73 = (v223_.v223 & 1) == 0;
+        if ((v223_.v223 & 1) != 0) {
+          v74 = v223_.v225;
         }
         else {
-          v74 = (char*)&v223 + 1;
+          v74 = (char*)&v223_.v223 + 1;
         }
         if (v19 != 0 && (unsigned __int8)v231[v19 - 1] <= 1u) {
         LABEL_164:
@@ -1160,15 +1166,15 @@ LABEL_13:
             v88 = v74;
           }
         LABEL_218:
-          v108 = v215;
+          v108 = v214_.v215;
           v109 = v88 - v74;
-          if ((v214 & 1) == 0) {
-            v108 = (unsigned __int64)(unsigned __int8)v214 >> 1;
+          if ((v214_.v214 & 1) == 0) {
+            v108 = (unsigned __int64)(unsigned __int8)v214_.v214 >> 1;
           }
           if (v109 <= v108) {
-            v110 = (char*)&v214 + 1;
-            if ((v214 & 1) != 0) {
-              v110 = v216;
+            v110 = (char*)&v214_.v214 + 1;
+            if ((v214_.v214 & 1) != 0) {
+              v110 = v214_.v216;
             }
             if ((unsigned int)NgxRoutine_e3110(&v110[v108 - v109], v74) == 0) {
               v74 = v88;
@@ -1183,16 +1189,16 @@ LABEL_13:
           v20 = nullptr;
           goto LABEL_19;
         }
-        v70 = (unsigned __int8)v223;
+        v70 = (unsigned __int8)v223_.v223;
         v208 = v18;
-        v72 = v224;
-        v71 = v225;
-        v73 = (v223 & 1) == 0;
-        if ((v223 & 1) != 0) {
-          v74 = v225;
+        v72 = v223_.v224;
+        v71 = v223_.v225;
+        v73 = (v223_.v223 & 1) == 0;
+        if ((v223_.v223 & 1) != 0) {
+          v74 = v223_.v225;
         }
         else {
-          v74 = (char*)&v223 + 1;
+          v74 = (char*)&v223_.v223 + 1;
         }
         if ((unsigned __int8)v231[v19 - 1] <= 1u) {
           goto LABEL_164;
@@ -1203,7 +1209,7 @@ LABEL_13:
         v112 = v71;
       }
       else {
-        v112 = (char*)&v223 + 1;
+        v112 = (char*)&v223_.v223 + 1;
       }
       if ((v70 & 1) != 0) {
         v111 = v72;
@@ -1212,13 +1218,13 @@ LABEL_13:
         if (v74 == i) {
         LABEL_260:
           if ((a5 & 0x200) != 0) {
-            v122 = v225;
-            v123 = (unsigned __int64)(unsigned __int8)v223 >> 1;
-            if ((v223 & 1) != 0) {
-              v123 = v224;
+            v122 = v223_.v225;
+            v123 = (unsigned __int64)(unsigned __int8)v223_.v223 >> 1;
+            if ((v223_.v223 & 1) != 0) {
+              v123 = v223_.v224;
             }
             else {
-              v122 = (char*)&v223 + 1;
+              v122 = (char*)&v223_.v223 + 1;
             }
             v18 = v208;
             v56 = v74 == &v122[v123];
@@ -1291,14 +1297,14 @@ LABEL_13:
         else {
           v119[3] = v120 + 1;
         }
-        v121 = (char*)&v223 + 1;
-        if ((v223 & 1) != 0) {
-          v121 = v225;
+        v121 = (char*)&v223_.v223 + 1;
+        if ((v223_.v223 & 1) != 0) {
+          v121 = v223_.v225;
         }
-        v114 = (unsigned __int64)(unsigned __int8)v223 >> 1;
+        v114 = (unsigned __int64)(unsigned __int8)v223_.v223 >> 1;
         ++v74;
-        if ((v223 & 1) != 0) {
-          v114 = v224;
+        if ((v223_.v223 & 1) != 0) {
+          v114 = v223_.v224;
         }
       }
     }
@@ -1530,11 +1536,11 @@ LABEL_13:
         }
         else {
         LABEL_63:
-          if ((v226 & 1) != 0) {
-            v35 = v227;
+          if ((v226_.v226 & 1) != 0) {
+            v35 = v226_.v227;
           }
           else {
-            v35 = (unsigned __int64)(unsigned __int8)v226 >> 1;
+            v35 = (unsigned __int64)(unsigned __int8)v226_.v226 >> 1;
           }
           if (v35 == 0 || v27 == 0 || v32 != (unsigned __int8)v229[0]) {
             goto LABEL_127;
@@ -1882,7 +1888,7 @@ LABEL_444:
   v22 = 0;
   *v200 |= 4u;
 LABEL_445:
-  if ((v214 & 1) == 0) {
+  if ((v214_.v214 & 1) == 0) {
     if ((v217 & 1) == 0) {
       goto LABEL_447;
     }
@@ -1892,12 +1898,12 @@ LABEL_445:
       goto LABEL_454;
     }
   LABEL_448:
-    if ((v223 & 1) == 0) {
+    if ((v223_.v223 & 1) == 0) {
       goto LABEL_449;
     }
   LABEL_455:
-    NgxRoutine_430(v225, v223 & 0xFFFFFFFFFFFFFFFELL);
-    if ((v226 & 1) != 0) {
+    NgxRoutine_430(v223_.v225, v223_.v223 & 0xFFFFFFFFFFFFFFFELL);
+    if ((v226_.v226 & 1) != 0) {
       goto LABEL_456;
     }
   LABEL_450:
@@ -1908,7 +1914,7 @@ LABEL_445:
     ((void (*)(char*))v203)(v18);
     return v22;
   }
-  NgxRoutine_430(v216, v214 & 0xFFFFFFFFFFFFFFFELL);
+  NgxRoutine_430(v214_.v216, v214_.v214 & 0xFFFFFFFFFFFFFFFELL);
   if ((v217 & 1) != 0) {
     goto LABEL_453;
   }
@@ -1918,15 +1924,15 @@ LABEL_447:
   }
 LABEL_454:
   NgxRoutine_430(v222, v220 & 0xFFFFFFFFFFFFFFFELL);
-  if ((v223 & 1) != 0) {
+  if ((v223_.v223 & 1) != 0) {
     goto LABEL_455;
   }
 LABEL_449:
-  if ((v226 & 1) == 0) {
+  if ((v226_.v226 & 1) == 0) {
     goto LABEL_450;
   }
 LABEL_456:
-  NgxRoutine_430(v228, v226 & 0xFFFFFFFFFFFFFFFELL);
+  NgxRoutine_430(v226_.v228, v226_.v226 & 0xFFFFFFFFFFFFFFFELL);
   if (v18 != nullptr) {
     goto LABEL_457;
   }
@@ -2150,9 +2156,11 @@ __int64 NgxHr_d4040(_QWORD* a1, _QWORD* a2, char a3, __int64 a4, __int16 a5,
   __int64 v231;
   unsigned __int64 v232;
   char* v233;
-  __int64 v234;
-  unsigned __int64 v235;
-  _BYTE* v236;
+  struct {
+    __int64 v234;
+    unsigned __int64 v235;
+    _BYTE* v236;
+  } v234_;
   int v237;
   int v238;
   _BYTE v239[4];
@@ -2212,10 +2220,10 @@ LABEL_5:
   a2 = nullptr;
 LABEL_14:
   v210 = a6;
-  v235 = 0;
-  v236 = nullptr;
+  v234_.v235 = 0;
+  v234_.v236 = nullptr;
   v233 = nullptr;
-  v234 = 0;
+  v234_.v234 = 0;
   v231 = 0;
   v232 = 0;
   v229 = 0;
@@ -2227,8 +2235,8 @@ LABEL_14:
   v223 = 0;
   v224 = nullptr;
   v222 = 0;
-  NgxRoutine_d5c30(a3 & 1, a4, v239, &v238, &v237, &v234, &v231, &v228, &v225,
-                   &v221);
+  NgxRoutine_d5c30(a3 & 1, a4, v239, &v238, &v237, &v234_.v234, &v231, &v228,
+                   &v225, &v221);
   v23 = v240;
   v213 = nullptr;
   v220 = 0;
@@ -2804,11 +2812,11 @@ LABEL_14:
             if (((*(__int64 (**)(__int64, __int64, _QWORD))(
                      *(_QWORD*)a8 + 24LL))(a8, 2048, v41) &
                  1) == 0) {
-              if ((v234 & 1) != 0) {
-                v44 = v235;
+              if ((v234_.v234 & 1) != 0) {
+                v44 = v234_.v235;
               }
               else {
-                v44 = (unsigned __int64)(unsigned __int8)v234 >> 1;
+                v44 = (unsigned __int64)(unsigned __int8)v234_.v234 >> 1;
               }
               if (v44 == 0 || v33 == 0 || v41 != v237) {
                 goto LABEL_122;
@@ -3303,10 +3311,10 @@ LABEL_354:
     v196 = 1;
   }
   else {
-    v197 = v235;
+    v197 = v234_.v235;
     v196 = 1;
-    if ((v234 & 1) == 0) {
-      v197 = (unsigned __int64)(unsigned __int8)v234 >> 1;
+    if ((v234_.v234 & 1) == 0) {
+      v197 = (unsigned __int64)(unsigned __int8)v234_.v234 >> 1;
     }
     if (v25 - v23 >= 5 && v197 != 0) {
       v198 = v25 - 4;
@@ -3321,15 +3329,15 @@ LABEL_354:
           v202 = v199 >= v200;
           v199 += 4;
         } while (!v202);
-        v203 = (unsigned __int64)(unsigned __int8)v234 >> 1;
-        if ((v234 & 1) != 0) {
-          v204 = v236;
+        v203 = (unsigned __int64)(unsigned __int8)v234_.v234 >> 1;
+        if ((v234_.v234 & 1) != 0) {
+          v204 = v234_.v236;
         }
         else {
-          v204 = (char*)&v234 + 1;
+          v204 = (char*)&v234_.v234 + 1;
         }
-        if ((v234 & 1) != 0) {
-          v203 = v235;
+        if ((v234_.v234 & 1) != 0) {
+          v203 = v234_.v235;
         }
         v205 = v23;
         v206 = &v204[v203];
@@ -3347,7 +3355,7 @@ LABEL_354:
           }
         }
       }
-      v204 = (v234 & 1) != 0 ? v236 : (char*)&v234 + 1;
+      v204 = (v234_.v234 & 1) != 0 ? v234_.v236 : (char*)&v234_.v234 + 1;
     LABEL_420:
       v208 = (unsigned __int8)*v204;
       v196 = 1;
@@ -3373,7 +3381,7 @@ LABEL_354:
     }
   LABEL_434:
     NgxRoutine_430(v233, (4 * v231) & 0xFFFFFFFFFFFFFFF8LL);
-    if ((v234 & 1) != 0) {
+    if ((v234_.v234 & 1) != 0) {
       goto LABEL_435;
     }
   LABEL_429:
@@ -3398,11 +3406,11 @@ LABEL_433:
     goto LABEL_434;
   }
 LABEL_428:
-  if ((v234 & 1) == 0) {
+  if ((v234_.v234 & 1) == 0) {
     goto LABEL_429;
   }
 LABEL_435:
-  NgxRoutine_430(v236, v234 & 0xFFFFFFFFFFFFFFFELL);
+  NgxRoutine_430(v234_.v236, v234_.v234 & 0xFFFFFFFFFFFFFFFELL);
   if (v23 != nullptr) {
     goto LABEL_436;
   }

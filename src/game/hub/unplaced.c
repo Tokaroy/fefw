@@ -8591,9 +8591,11 @@ void game_hub_dfc300(__int64 a1, int a2, float a3, __int64 a4, __int64 a5,
   unsigned __int64 v62[12];
   int v63;
   char v64;
-  __int64 v65;
-  __int64 v66;
-  char* v67;
+  struct {
+    __int64 v65;
+    __int64 v66;
+    char* v67;
+  } v65_;
   _QWORD v68[6];
   char v69;
   __int64 v70;
@@ -8717,24 +8719,24 @@ LABEL_19:
   else {
     v37 = (const char*)(*(_QWORD*)GameData_212dbb8[0] + 65LL);
   }
-  std___1_to_string_1a0abd0((void*)(&v65), *(_QWORD*)(a1 + 72));
-  if ((v65 & 1) != 0) {
-    v38 = v67;
+  std___1_to_string_1a0abd0((void*)(&v65_.v65), *(_QWORD*)(a1 + 72));
+  if ((v65_.v65 & 1) != 0) {
+    v38 = v65_.v67;
   }
   else {
-    v38 = (char*)&v65 + 1;
+    v38 = (char*)&v65_.v65 + 1;
   }
   sprintf(v75, "%s::%s", "Object", v38);
   sprintf(v62, "%s=%s", v37, (const char*)v75);
   GameRoutine_60a020_alt2(v68, v62);
   v39 = (_QWORD*)fw_memory_g_heap_manager_ptr;
-  if ((v65 & 1) != 0 && v67 != nullptr) {
+  if ((v65_.v65 & 1) != 0 && v65_.v67 != nullptr) {
     v40 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v40 = 56;
     }
     nn_mem_StandardAllocator_Free_alt2(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v40, v67);
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v40, v65_.v67);
   }
   v41 = *(unsigned __int8*)(*(_QWORD*)v36 + 64LL);
   v42 = (v41 & 1) == 0;
@@ -8783,11 +8785,11 @@ LABEL_19:
   v61 = v51;
   v52 = *(_QWORD*)GameData_212dc68;
   atomic_fetch_add_explicit(v49, 1u, memory_order_relaxed);
-  EventManager_cbbcc0((void*)(&v65), v52, 1, &v60);
-  v54 = v65;
-  v55 = v66;
-  if (v66 != 0) {
-    atomic_fetch_add_explicit((atomic_ullong* volatile)(v66 + 16), 1u,
+  EventManager_cbbcc0((void*)(&v65_.v65), v52, 1, &v60);
+  v54 = v65_.v65;
+  v55 = v65_.v66;
+  if (v65_.v66 != 0) {
+    atomic_fetch_add_explicit((atomic_ullong* volatile)(v65_.v66 + 16), 1u,
                               memory_order_relaxed);
   }
   v56 = *(_QWORD*)(a1 + 712);

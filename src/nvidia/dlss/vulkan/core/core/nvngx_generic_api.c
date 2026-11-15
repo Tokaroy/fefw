@@ -204,12 +204,16 @@ __int64 NGXValidateIdentifier(__int64 a1)
   char v26;
   char* v27;
   unsigned int v28;
-  __int64 v29;
-  unsigned __int64 v30;
-  char* v31;
-  __int64 v32;
-  unsigned __int64 v33;
-  unsigned __int8* v34;
+  struct {
+    __int64 v29;
+    unsigned __int64 v30;
+    char* v31;
+  } v29_;
+  struct {
+    __int64 v32;
+    unsigned __int64 v33;
+    unsigned __int8* v34;
+  } v32_;
 
   if (*(_DWORD*)a1 != 1 || *(_DWORD*)(a1 + 16) != 0) {
     return 1;
@@ -229,36 +233,36 @@ __int64 NGXValidateIdentifier(__int64 a1)
       v7 = (v4 | 7) + 1;
     }
     v6 = (char*)NgxRoutine_420(v7);
-    v33 = v5;
-    v34 = (unsigned __int8*)v6;
-    v32 = v7 | 1;
+    v32_.v33 = v5;
+    v32_.v34 = (unsigned __int8*)v6;
+    v32_.v32 = v7 | 1;
     goto LABEL_13;
   }
-  LOBYTE(v32) = 2 * v4;
-  v6 = (char*)&v32 + 1;
+  LOBYTE(v32_.v32) = 2 * v4;
+  v6 = (char*)&v32_.v32 + 1;
   if (v4 != 0) {
   LABEL_13:
     memmove_plt(v6, v3, v5);
   }
   v6[v5] = 0;
-  v8 = (unsigned __int8)v32;
-  v9 = v33;
-  v10 = v32 & 1;
-  v11 = (unsigned __int64)(unsigned __int8)v32 >> 1;
+  v8 = (unsigned __int8)v32_.v32;
+  v9 = v32_.v33;
+  v10 = v32_.v32 & 1;
+  v11 = (unsigned __int64)(unsigned __int8)v32_.v32 >> 1;
   v12 = v10 == 0;
   if (v10 != 0) {
-    v13 = v33;
+    v13 = v32_.v33;
   }
   else {
-    v13 = (unsigned __int64)(unsigned __int8)v32 >> 1;
+    v13 = (unsigned __int64)(unsigned __int8)v32_.v32 >> 1;
   }
   if (v13 >= 2) {
     while (1) {
       if (v12) {
-        v14 = (unsigned __int8*)&v32 + 1;
+        v14 = (unsigned __int8*)&v32_.v32 + 1;
       }
       else {
-        v14 = v34;
+        v14 = v32_.v34;
       }
       v15 = *v14;
       if (v15 > 0x5A) {
@@ -281,10 +285,10 @@ __int64 NGXValidateIdentifier(__int64 a1)
       }
       v16 = v13 - 2;
       if (v12) {
-        v17 = (char*)&v32 + 2;
+        v17 = (char*)&v32_.v32 + 2;
       }
       else {
-        v17 = (char*)(v34 + 1);
+        v17 = (char*)(v32_.v34 + 1);
       }
       if (v16 >= 0xFFFFFFFFFFFFFFF7LL) {
         goto LABEL_77;
@@ -297,38 +301,38 @@ __int64 NGXValidateIdentifier(__int64 a1)
           v19 = (v16 | 7) + 1;
         }
         v18 = (char*)NgxRoutine_420(v19);
-        v30 = v16;
-        v31 = v18;
-        v29 = v19 | 1;
+        v29_.v30 = v16;
+        v29_.v31 = v18;
+        v29_.v29 = v19 | 1;
       }
       else {
-        v18 = (char*)&v29 + 1;
-        LOBYTE(v29) = 2 * v16;
+        v18 = (char*)&v29_.v29 + 1;
+        LOBYTE(v29_.v29) = 2 * v16;
         if (v13 == 2) {
-          BYTE1(v29) = 0;
-          if ((v32 & 1) != 0) {
+          BYTE1(v29_.v29) = 0;
+          if ((v32_.v32 & 1) != 0) {
             goto LABEL_50;
           }
           goto LABEL_19;
         }
       }
       memmove_plt(v18, v17, v16);
-      v20 = v32;
+      v20 = v32_.v32;
       v18[v16] = 0;
       if ((v20 & 1) != 0) {
       LABEL_50:
-        NgxRoutine_430(v34, v32 & 0xFFFFFFFFFFFFFFFELL);
+        NgxRoutine_430(v32_.v34, v32_.v32 & 0xFFFFFFFFFFFFFFFELL);
       }
     LABEL_19:
-      v9 = v30;
-      v32 = v29;
-      v33 = v30;
-      v34 = (unsigned __int8*)v31;
-      v8 = (unsigned __int8)v29;
-      v13 = (unsigned __int8)v29 >> 1;
-      v12 = (v29 & 1) == 0;
-      if ((v29 & 1) != 0) {
-        v13 = v30;
+      v9 = v29_.v30;
+      v32_.v32 = v29_.v29;
+      v32_.v33 = v29_.v30;
+      v32_.v34 = (unsigned __int8*)v29_.v31;
+      v8 = (unsigned __int8)v29_.v29;
+      v13 = (unsigned __int8)v29_.v29 >> 1;
+      v12 = (v29_.v29 & 1) == 0;
+      if ((v29_.v29 & 1) != 0) {
+        v13 = v29_.v30;
       }
       if (v13 <= 1) {
       LABEL_51:
@@ -351,10 +355,10 @@ __int64 NGXValidateIdentifier(__int64 a1)
     v25 = 0;
     v26 = 0;
     if (v10 != 0) {
-      v27 = (char*)v34;
+      v27 = (char*)v32_.v34;
     }
     else {
-      v27 = (char*)&v32 + 1;
+      v27 = (char*)&v32_.v32 + 1;
     }
     do {
       if (v27[v23] != 45) {
@@ -413,7 +417,7 @@ __int64 NGXValidateIdentifier(__int64 a1)
   }
   if (v10 != 0) {
     v28 = result;
-    NgxRoutine_430(v34, v32 & 0xFFFFFFFFFFFFFFFELL);
+    NgxRoutine_430(v32_.v34, v32_.v32 & 0xFFFFFFFFFFFFFFFELL);
     return v28;
   }
   return result;

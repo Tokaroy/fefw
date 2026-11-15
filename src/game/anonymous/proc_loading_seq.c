@@ -241,9 +241,11 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
   __int64 v36;
   _BYTE v37[256];
   _BYTE* v38;
-  __int64 v39;
-  __int64 v40;
-  char* v41;
+  struct {
+    __int64 v39;
+    __int64 v40;
+    char* v41;
+  } v39_;
   __int64 v42;
   _BYTE v43[8];
   char v44;
@@ -279,8 +281,8 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
   v47 = 0;
   v48 = 1;
   v43[0] = 0;
-  v39 = (__int64)v33;
-  v40 = 1;
+  v39_.v39 = (__int64)v33;
+  v39_.v40 = 1;
   v33[0] = v37;
   v33[1] = 256;
   v38 = v37;
@@ -292,9 +294,9 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
   v32[0] = v7 % 9;
   v45[0] = "Wait{:02}";
   v45[1] = "";
-  v41 = (char*)v32;
+  v39_.v41 = (char*)v32;
   v42 = 3;
-  v9 = GameRoutine_6380e0(v45, &v39, v8);
+  v9 = GameRoutine_6380e0(v45, &v39_.v39, v8);
   if (v44 == 1) {
     v9 = std___1_locale_Destroy_locale(v43);
   }
@@ -312,13 +314,13 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
     }
     v12 = (char*)fw_memory_HeapManager_Allocate_alt1(fw_memory_g_heap_manager,
                                                      v13, 16, 0);
-    v40 = v10;
-    v41 = v12;
-    v39 = v13 | 1;
+    v39_.v40 = v10;
+    v39_.v41 = v12;
+    v39_.v39 = v13 | 1;
     goto LABEL_13;
   }
-  LOBYTE(v39) = 2 * v34;
-  v12 = (char*)&v39 + 1;
+  LOBYTE(v39_.v39) = 2 * v34;
+  v12 = (char*)&v39_.v39 + 1;
   if (v34 != 0) {
   LABEL_13:
     memmove(v12, v11, v10);
@@ -333,11 +335,11 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
     nn_mem_StandardAllocator_Free_alt1(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v15, v14);
   }
-  if ((v39 & 1) != 0) {
-    v16 = v41;
+  if ((v39_.v39 & 1) != 0) {
+    v16 = v39_.v41;
   }
   else {
-    v16 = (char*)&v39 + 1;
+    v16 = (char*)&v39_.v39 + 1;
   }
   LayoutAccessor_1562680(&GameData_21f7fb0, v16, 1.0);
   v17 = game_820d50(20);
@@ -381,13 +383,13 @@ __int64 ProcLoadingSeq_9b80e0(__int64 result)
       *(_WORD*)(v1 + 136) |= 0x80u;
     }
   }
-  if ((v39 & 1) != 0 && v41 != nullptr) {
+  if ((v39_.v39 & 1) != 0 && v39_.v41 != nullptr) {
     v31 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v31 = 56;
     }
     return nn_mem_StandardAllocator_Free_alt1(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v31, v41);
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v31, v39_.v41);
   }
   return result;
 }

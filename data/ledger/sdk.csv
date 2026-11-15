@@ -327,7 +327,7 @@ ffe0,36,verified,src/nn/crypto/detail/sha3_impl.cpp,_ZNK2nn6crypto6detail8Sha3Im
 11140,112,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator22AllocateFromWorkBufferEPNS1_6BigNumEi
 111b0,28,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator16FreeToWorkBufferEPNS1_6BigNumEi
 111d0,412,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator10InitializeEmPvm
-11380,644,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator13GeneratePrimeEPNS1_6BigNumES4_i
+11380,648,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator13GeneratePrimeEPNS1_6BigNumES4_i
 11610,360,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZN2nn6crypto6detail19RsaKeyPairGenerator8GenerateEv
 11780,104,verified,src/nn/crypto/detail/rsa_key_pair_generator.cpp,_ZNK2nn6crypto6detail19RsaKeyPairGenerator10GetKeyPairEPvmS3_mS3_m
 117f0,8,verified,src/nn/crypto/detail/xts_mode_impl.cpp,_ZN2nn6crypto6detail11XtsModeImplD2Ev
@@ -1587,7 +1587,7 @@ a1040,100,verified,src/nn/util/util_compression.cpp,_ZN2nn4util43InitializeStrea
 a10b0,4,verified,src/nn/util/util_compression.cpp,_ZN2nn4util23StreamingDecompressZlibEPmS1_PvmPKvmPNS0_30StreamingDecompressZlibContextE
 a1200,4,verified,src/nn/util/util_compression.cpp,_ZN2nn4util23StreamingDecompressGzipEPmS1_PvmPKvmPNS0_30StreamingDecompressZlibContextE
 a1210,4,verified,src/nn/util/util_compression.cpp,_ZN2nn4util26StreamingDecompressDeflateEPmS1_PvmPKvmPNS0_30StreamingDecompressZlibContextE
-a1220,108,verified,src/nn/util/string_builder.cpp,_ZN2nn4util6MemmemEPKvmS2_m
+a1220,96,disputed,src/nn/util/string_builder.cpp,_ZN2nn4util6MemmemEPKvmS2_m
 a1290,24,verified,src/nn/util/string_builder.cpp,_ZN2nn4util13StringBuilderC2EPcm
 a12b0,24,verified,src/nn/util/string_builder.cpp,_ZN2nn4util13StringBuilder5ClearEv
 a12d0,24,verified,src/nn/util/string_builder.cpp,_ZN2nn4util13StringBuilderC2ENS_4SpanIcEE
@@ -3989,7 +3989,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 120320,140,verified,src/nn/fs/fs_rom_path_tool.cpp,_ZN2nn2fs11RomPathTool10PathParser20GetNextDirectoryNameEPNS1_12RomEntryNameE
 1203c0,40,verified,src/nn/fs/fs_rom_path_tool.cpp,_ZNK2nn2fs11RomPathTool10PathParser18GetAsDirectoryNameEPNS1_12RomEntryNameE
 1203f0,40,verified,src/nn/fs/fs_rom_path_tool.cpp,_ZNK2nn2fs11RomPathTool10PathParser13GetAsFileNameEPNS1_12RomEntryNameE
-120420,304,verified,src/nn/fs/fs_rom_path_tool.cpp,_ZN2nn2fs11RomPathTool22GetParentDirectoryNameEPNS1_12RomEntryNameERKS2_PKc
+120420,272,verified,src/nn/fs/fs_rom_path_tool.cpp,_ZN2nn2fs11RomPathTool22GetParentDirectoryNameEPNS1_12RomEntryNameERKS2_PKc
 120570,32,verified,src/nn/fs/fs_file_storage.cpp,_ZN2nn2fs11FileStorageC2Ev
 120590,32,verified,src/nn/fs/fs_file_storage.cpp,_ZN2nn2fs11FileStorageC2EPNS0_3fsa5IFileE
 1205b0,48,verified,src/nn/fs/fs_file_storage.cpp,_ZN2nn2fs11FileStorageC2ENSt3__110shared_ptrINS0_3fsa5IFileEEE
@@ -5777,7 +5777,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 177a00,24,verified,src/nn/ro/unplaced.c,unplaced_177a00
 177a20,372,verified,src/nn/ro/unplaced.c,nn_ro_ProtectRelro
 177ba0,132,verified,src/nn/ro/unplaced.c,nn_ro_detail_GetExceptionInfo
-177e60,348,verified,src/nn/ro/ro_module.cpp,_ZN2nn2ro6detail8RoModule13BindVariablesEPKS2_
+177e60,384,verified,src/nn/ro/ro_module.cpp,_ZN2nn2ro6detail8RoModule13BindVariablesEPKS2_
 178000,180,verified,src/nn/ro/ro_module.cpp,_ZN2nn2ro6detail8RoModule16RestoreVariablesEPS2_
 1780c0,324,verified,src/nn/ro/ro_module.cpp,_ZN2nn2ro6detail8RoModule15RevertReferenceEPS2_PFvPKcE
 178220,164,verified,src/nn/ro/ro_module.cpp,_ZN2nn2ro6detail8RoModule16RestoreFunctionsEPS2_PFvPKcE
@@ -9106,7 +9106,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 1f68c0,392,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl10InitializeEPvmi
 1f6a60,124,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl5ResetEv
 1f6ae0,124,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl8FinalizeEv
-1f6b60,1312,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl7AnalyzeEPKsi
+1f6b60,1284,disputed,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl7AnalyzeEPKsi
 1f7090,148,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl20CalcKWeightingFilterEif
 1f7140,1396,verified,src/nn/audio/loudness_calculator.cpp,_ZN2nn5audio6detail22LoudnessCalculatorImpl4CalcEv
 1f7700,780,verified,src/nn/audio/ne10/modules/dsp/NE10_fft.c,nnaudiodetail_ne10_factor
@@ -12234,7 +12234,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 32ace0,68,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec24ResetHardwareOpusDecoderEPNS0_23HardwareOpusDecoderTypeE
 32ad30,196,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec47GetHardwareOpusMultiStreamDecoderWorkBufferSizeEiiiii
 32ae00,192,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec47GetHardwareOpusMultiStreamDecoderWorkBufferSizeEiiii
-32aec0,428,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec40InitializeHardwareOpusMultiStreamDecoderEPNS0_34HardwareOpusMultiStreamDecoderTypeEiiiiPKhPvmi
+32aec0,428,disputed,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec40InitializeHardwareOpusMultiStreamDecoderEPNS0_34HardwareOpusMultiStreamDecoderTypeEiiiiPKhPvmi
 32b090,88,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec38FinalizeHardwareOpusMultiStreamDecoderEPNS0_34HardwareOpusMultiStreamDecoderTypeE
 32b0f0,8,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec43GetHardwareOpusMultiStreamDecoderSampleRateEPKNS0_34HardwareOpusMultiStreamDecoderTypeE
 32b100,8,verified,src/nn/codec/opus/hardware_opus_decoder_service.cpp,_ZN2nn5codec45GetHardwareOpusMultiStreamDecoderChannelCountEPKNS0_34HardwareOpusMultiStreamDecoderTypeE
@@ -16537,7 +16537,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 4bc330,8,verified,src/nn/sdk_trivial_more.cpp,_Z14SdkStub_4bc330m
 4bc340,24,verified,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabaseD2Ev
 4bc360,192,verified,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabase29IsBrokenDatabaseWithClearFlagEv
-4bc420,96,disputed,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabase10InitializeEv
+4bc420,108,disputed,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabase10InitializeEv
 4bc490,32,verified,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabase8FinalizeEv
 4bc4b0,16,verified,src/nn/mii/mii_database.cpp,_ZNK2nn3mii15PrivateDatabase11IsAvailableEv
 4bc4c0,76,verified,src/nn/mii/mii_database.cpp,_ZN2nn3mii15PrivateDatabase9IsUpdatedEi
@@ -24565,7 +24565,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6375c0,220,verified,src/nvidia/unplaced_6.c,nvidia_6375c0
 6376a0,132,verified,src/nvidia/unplaced_6.c,nvidia_6376a0
 637730,72,verified,src/nn/unnamed/s003_1.c,SdkHr_637730
-637780,120,verified,src/nn/unnamed/s003_1.c,SdkHr_637780
+637780,124,verified,src/nn/unnamed/s003_1.c,SdkHr_637780
 637800,60,verified,src/nvidia/unplaced_6.c,nvidia_637800
 637840,328,verified,src/nvidia/unplaced_6.c,nvidia_637840
 637990,112,verified,src/nvidia/unplaced_6.c,nvidia_637990
@@ -32130,7 +32130,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7b7960,156,verified,src/musl/src/math/fminl.c,fminl
 7b7a00,368,verified,src/musl/src/math/fmod.c,fmod
 7b7ba0,360,verified,src/musl/src/math/fmodf.c,fmodf
-7b7d40,608,verified,src/musl/src/math/fmodl_impl.c,fmodl
+7b7d40,612,verified,src/musl/src/math/fmodl_impl.c,fmodl
 7b7fb0,124,verified,src/musl/src/math/frexp.c,frexp
 7b8030,124,verified,src/musl/src/math/frexpf.c,frexpf
 7b80b0,208,verified,src/musl/src/math/frexpl.c,frexpl

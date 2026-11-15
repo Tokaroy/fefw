@@ -40,9 +40,11 @@ void WatchingArenaFile_Unknown4()
   char* v12;
   unsigned __int64 v13;
   __int64 v14;
-  __int64 v15;
-  unsigned __int64 v16;
-  char* v17;
+  struct {
+    __int64 v15;
+    unsigned __int64 v16;
+    char* v17;
+  } v15_;
   _BYTE v18[520];
 
   v0 = GameData_212cc78[0];
@@ -62,57 +64,57 @@ void WatchingArenaFile_Unknown4()
       if (v5 >= 0x17) {
         break;
       }
-      v7 = (char*)&v15 + 1;
-      LOBYTE(v15) = 2 * v5;
+      v7 = (char*)&v15_.v15 + 1;
+      LOBYTE(v15_.v15) = 2 * v5;
       if (v5 != 0) {
         goto LABEL_12;
       }
     LABEL_13:
       v7[v6] = 0;
       v9 = *(__int64**)(v4 + 24);
-      if (v9 == &v15) {
+      if (v9 == &v15_.v15) {
         goto LABEL_25;
       }
       if ((*(_BYTE*)v9 & 1) != 0) {
-        if ((v15 & 1) != 0) {
-          v12 = v17;
+        if ((v15_.v15 & 1) != 0) {
+          v12 = v15_.v17;
         }
         else {
-          v12 = (char*)&v15 + 1;
+          v12 = (char*)&v15_.v15 + 1;
         }
-        if ((v15 & 1) != 0) {
-          v13 = v16;
+        if ((v15_.v15 & 1) != 0) {
+          v13 = v15_.v16;
         }
         else {
-          v13 = (unsigned __int64)(unsigned __int8)v15 >> 1;
+          v13 = (unsigned __int64)(unsigned __int8)v15_.v15 >> 1;
         }
         GameRoutine_64dde0(v9, v12, v13);
       LABEL_25:
-        if ((v15 & 1) != 0) {
+        if ((v15_.v15 & 1) != 0) {
           goto LABEL_26;
         }
         goto LABEL_3;
       }
-      if ((v15 & 1) != 0) {
-        GameRoutine_64df20(v9, v17, v16);
-        if ((v15 & 1) != 0) {
+      if ((v15_.v15 & 1) != 0) {
+        GameRoutine_64df20(v9, v15_.v17, v15_.v16);
+        if ((v15_.v15 & 1) != 0) {
         LABEL_26:
-          if (v17 != nullptr) {
+          if (v15_.v17 != nullptr) {
             v14 = 128;
             if (*(_QWORD*)(*v3 + 200LL) == 0) {
               v14 = 56;
             }
-            nn_mem_StandardAllocator_Free(*v3 + v14, v17);
+            nn_mem_StandardAllocator_Free(*v3 + v14, v15_.v17);
           }
         }
       }
       else {
-        v10 = v15;
-        v11 = v17;
-        v9[1] = v16;
+        v10 = v15_.v15;
+        v11 = v15_.v17;
+        v9[1] = v15_.v16;
         v9[2] = (__int64)v11;
         *v9 = v10;
-        if ((v15 & 1) != 0) {
+        if ((v15_.v15 & 1) != 0) {
           goto LABEL_26;
         }
       }
@@ -130,9 +132,9 @@ void WatchingArenaFile_Unknown4()
       v8 = (v5 | 7) + 1;
     }
     v7 = (char*)fw_memory_HeapManager_Allocate(*v3, v8, 16, 0);
-    v16 = v6;
-    v17 = v7;
-    v15 = v8 | 1;
+    v15_.v16 = v6;
+    v15_.v17 = v7;
+    v15_.v15 = v8 | 1;
   LABEL_12:
     memcpy(v7, v18, v6);
     goto LABEL_13;

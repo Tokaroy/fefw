@@ -100,14 +100,18 @@ void hub_init_OverrideInitLocator(unsigned __int8* a1)
   __int64 v53;
   __int64 v54;
   char v55;
-  __int64 v56;
-  unsigned __int64 v57;
-  char* v58;
+  struct {
+    __int64 v56;
+    unsigned __int64 v57;
+    char* v58;
+  } v56_;
   unsigned __int8* v59;
   unsigned __int8* v60;
-  __int64 v61;
-  unsigned __int64 v62;
-  char* v63;
+  struct {
+    __int64 v61;
+    unsigned __int64 v62;
+    char* v63;
+  } v61_;
 
   v2 = *as_g_script_manager_ptr;
   v3 = *(
@@ -137,28 +141,28 @@ void hub_init_OverrideInitLocator(unsigned __int8* a1)
   (*(void (**)(__int64))(*v5 + v6))((__int64)v5);
 LABEL_9:
   if ((*(_BYTE*)(GameData_21f3d10 + 40) & 1) != 0) {
-    fw_text_String_CopyTerminated(&v61, *(_QWORD*)(GameData_21f3d10 + 56),
+    fw_text_String_CopyTerminated(&v61_.v61, *(_QWORD*)(GameData_21f3d10 + 56),
                                   *(_QWORD*)(GameData_21f3d10 + 48));
   }
   else {
     v7 = *(_QWORD*)(GameData_21f3d10 + 48);
     v8 = *(char**)(GameData_21f3d10 + 56);
-    v61 = *(_QWORD*)(GameData_21f3d10 + 40);
-    v62 = v7;
-    v63 = v8;
+    v61_.v61 = *(_QWORD*)(GameData_21f3d10 + 40);
+    v61_.v62 = v7;
+    v61_.v63 = v8;
   }
-  if ((v61 & 1) != 0) {
-    v9 = v62;
+  if ((v61_.v61 & 1) != 0) {
+    v9 = v61_.v62;
   }
   else {
-    v9 = (unsigned __int64)(unsigned __int8)v61 >> 1;
+    v9 = (unsigned __int64)(unsigned __int8)v61_.v61 >> 1;
   }
   v10 = *a1;
-  if ((v61 & 1) != 0) {
-    v11 = v63;
+  if ((v61_.v61 & 1) != 0) {
+    v11 = v61_.v63;
   }
   else {
-    v11 = (char*)&v61 + 1;
+    v11 = (char*)&v61_.v61 + 1;
   }
   v12 = (v10 & 1) == 0;
   v13 = v10 >> 1;
@@ -182,7 +186,7 @@ LABEL_9:
       v15);
   v16 = v59;
   if (v60 != v59) {
-    LocatorDispos_db2180((void*)(&v56), (unsigned __int8*)&v61, v59);
+    LocatorDispos_db2180((void*)(&v56_.v56), (unsigned __int8*)&v61_.v61, v59);
     if (*(_BYTE*)(GameData_21f3d10 + 9) == 1) {
       LOBYTE(v34) = 0;
       v46 = 0;
@@ -198,27 +202,27 @@ LABEL_9:
       LODWORD(v52) = 0;
       v46 = 1;
       if ((v49 & 1) != 0) {
-        if ((v56 & 1) != 0) {
-          v23 = v58;
+        if ((v56_.v56 & 1) != 0) {
+          v23 = v56_.v58;
         }
         else {
-          v23 = (char*)&v56 + 1;
+          v23 = (char*)&v56_.v56 + 1;
         }
-        if ((v56 & 1) != 0) {
-          v24 = v57;
+        if ((v56_.v56 & 1) != 0) {
+          v24 = v56_.v57;
         }
         else {
-          v24 = (unsigned __int64)(unsigned __int8)v56 >> 1;
+          v24 = (unsigned __int64)(unsigned __int8)v56_.v56 >> 1;
         }
         SpineModel_64dde0(&v49, v23, v24);
       }
-      else if ((v56 & 1) != 0) {
-        GameRoutine_64df20(&v49, v58, v57);
+      else if ((v56_.v56 & 1) != 0) {
+        GameRoutine_64df20(&v49, v56_.v58, v56_.v57);
       }
       else {
-        v49 = v56;
-        v50 = v57;
-        v51 = v58;
+        v49 = v56_.v56;
+        v50 = v56_.v57;
+        v51 = v56_.v58;
       }
       if ((GameRoutine_d85ce0(&v34) & 1) != 0) {
         *(_BYTE*)(*(_QWORD*)GameData_212dbd8[0] + 8LL) = 1;
@@ -293,13 +297,13 @@ LABEL_9:
             *(_QWORD*)fw_memory_g_heap_manager_ptr + v22, v36);
       }
     }
-    if ((v56 & 1) != 0 && v58 != nullptr) {
+    if ((v56_.v56 & 1) != 0 && v56_.v58 != nullptr) {
       v27 = 128;
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v27 = 56;
       }
       nn_mem_StandardAllocator_Free(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v27, v58);
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v27, v56_.v58);
     }
     v16 = v59;
   }
@@ -338,13 +342,13 @@ LABEL_9:
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v32, v16);
     }
   }
-  if ((v61 & 1) != 0 && v63 != nullptr) {
+  if ((v61_.v61 & 1) != 0 && v61_.v63 != nullptr) {
     v33 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v33 = 56;
     }
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v33,
-                                  v63);
+                                  v61_.v63);
   }
 }
 

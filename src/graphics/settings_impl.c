@@ -63,12 +63,16 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
   int v48;
   __int64 v49;
   __int64 v50;
-  __int64 v51;
-  unsigned __int64 v52;
-  char* v53;
-  __int64 v54;
-  unsigned __int64 v55;
-  char* v56;
+  struct {
+    __int64 v51;
+    unsigned __int64 v52;
+    char* v53;
+  } v51_;
+  struct {
+    __int64 v54;
+    unsigned __int64 v55;
+    char* v56;
+  } v54_;
 
   v6 = (_QWORD*)fw_memory_g_heap_manager_ptr;
   v7 = (char*)fw_memory_HeapManager_Allocate(
@@ -88,29 +92,29 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
       v11 = (a3 | 7) + 1;
     }
     v10 = (char*)fw_memory_HeapManager_Allocate(*v6, v11, 16, 0);
-    v52 = a3;
-    v53 = v10;
-    v51 = v11 | 1;
+    v51_.v52 = a3;
+    v51_.v53 = v10;
+    v51_.v51 = v11 | 1;
     goto LABEL_9;
   }
-  LOBYTE(v51) = 2 * a3;
-  v10 = (char*)&v51 + 1;
+  LOBYTE(v51_.v51) = 2 * a3;
+  v10 = (char*)&v51_.v51 + 1;
   if (a3 != 0) {
   LABEL_9:
     memmove(v10, a2, a3);
   }
   v10[a3] = 0;
-  if ((v51 & 1) != 0) {
-    v12 = v53;
+  if ((v51_.v51 & 1) != 0) {
+    v12 = v51_.v53;
   }
   else {
-    v12 = (char*)&v51 + 1;
+    v12 = (char*)&v51_.v51 + 1;
   }
-  if ((v51 & 1) != 0) {
-    v13 = v52;
+  if ((v51_.v51 & 1) != 0) {
+    v13 = v51_.v52;
   }
   else {
-    v13 = (unsigned __int64)(unsigned __int8)v51 >> 1;
+    v13 = (unsigned __int64)(unsigned __int8)v51_.v51 >> 1;
   }
   v14 = (__int64**)GameRoutine_1a09ce0(v35, v12, v13);
   v16 = v14[1];
@@ -124,9 +128,9 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
   v17 = (__int64*)GameRoutine_1a09ce0(&v40, ".set", 4);
   v19 = v17[1];
   v18 = (char*)v17[2];
-  v54 = *v17;
-  v55 = v19;
-  v56 = v18;
+  v54_.v54 = *v17;
+  v54_.v55 = v19;
+  v54_.v56 = v18;
   v17[1] = 0;
   v17[2] = 0;
   *v17 = 0;
@@ -137,12 +141,12 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
     }
     nn_mem_StandardAllocator_Free(*v6 + v20, v42);
   }
-  if ((v51 & 1) != 0 && v53 != nullptr) {
+  if ((v51_.v51 & 1) != 0 && v51_.v53 != nullptr) {
     v21 = 128;
     if (*(_QWORD*)(*v6 + 200LL) == 0) {
       v21 = 56;
     }
-    nn_mem_StandardAllocator_Free(*v6 + v21, v53);
+    nn_mem_StandardAllocator_Free(*v6 + v21, v51_.v53);
   }
   if ((v35[0] & 1) != 0 && v36 != nullptr) {
     v22 = 128;
@@ -152,33 +156,33 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
     nn_mem_StandardAllocator_Free(*v6 + v22, v36);
   }
   v23 = game_g_frame_clock_ptr[0];
-  if ((v54 & 1) != 0) {
-    v24 = v55;
+  if ((v54_.v54 & 1) != 0) {
+    v24 = v54_.v55;
   }
   else {
-    v24 = (unsigned __int64)(unsigned __int8)v54 >> 1;
+    v24 = (unsigned __int64)(unsigned __int8)v54_.v54 >> 1;
   }
-  if ((v54 & 1) != 0) {
-    v25 = v56;
+  if ((v54_.v54 & 1) != 0) {
+    v25 = v54_.v56;
   }
   else {
-    v25 = (char*)&v54 + 1;
+    v25 = (char*)&v54_.v54 + 1;
   }
   result = (*(__int64 (**)(_QWORD, char*, unsigned __int64, __int64))(
       **(_QWORD**)(*game_g_frame_clock_ptr[0] + 13432) + 96LL))(
       *(_QWORD*)(*game_g_frame_clock_ptr[0] + 13432), v25, v24, 255);
   if ((result & 1) != 0) {
-    if ((v54 & 1) != 0) {
-      v27 = v56;
+    if ((v54_.v54 & 1) != 0) {
+      v27 = v54_.v56;
     }
     else {
-      v27 = (char*)&v54 + 1;
+      v27 = (char*)&v54_.v54 + 1;
     }
-    if ((v54 & 1) != 0) {
-      v28 = v55;
+    if ((v54_.v54 & 1) != 0) {
+      v28 = v54_.v55;
     }
     else {
-      v28 = (unsigned __int64)(unsigned __int8)v54 >> 1;
+      v28 = (unsigned __int64)(unsigned __int8)v54_.v54 >> 1;
     }
     v29 = (*(__int64 (**)(_QWORD, char*, unsigned __int64, __int64))(
         **(_QWORD**)(*v23 + 13432) + 56LL))(*(_QWORD*)(*v23 + 13432), v27, v28,
@@ -214,12 +218,12 @@ __int64 Settings_aa1690(__int64 a1, __int64 a2, unsigned __int64 a3)
     }
     result = GameRoutine_634d80(*(_QWORD*)(v31 + 8), v31);
   }
-  if ((v54 & 1) != 0 && v56 != nullptr) {
+  if ((v54_.v54 & 1) != 0 && v54_.v56 != nullptr) {
     v33 = 128;
     if (*(_QWORD*)(*v6 + 200LL) == 0) {
       v33 = 56;
     }
-    return nn_mem_StandardAllocator_Free(*v6 + v33, v56);
+    return nn_mem_StandardAllocator_Free(*v6 + v33, v54_.v56);
   }
   return result;
 }

@@ -1312,9 +1312,11 @@ unsigned __int64 SceneCharacter_13ffb80(unsigned __int64 result)
   bool v18;
   bool v19;
   __int64 v20;
-  __int64 v21;
-  unsigned __int64 v22;
-  char* v23;
+  struct {
+    __int64 v21;
+    unsigned __int64 v22;
+    char* v23;
+  } v21_;
   _QWORD v24[2];
 
   if ((*(_BYTE*)(result + 104) & 1) == 0) {
@@ -1340,13 +1342,13 @@ unsigned __int64 SceneCharacter_13ffb80(unsigned __int64 result)
       }
       v5 = (char*)fw_memory_HeapManager_Allocate(fw_memory_g_heap_manager, v6,
                                                  16, 0);
-      v22 = v4;
-      v23 = v5;
-      v21 = v6 | 1;
+      v21_.v22 = v4;
+      v21_.v23 = v5;
+      v21_.v21 = v6 | 1;
     }
     else {
-      LOBYTE(v21) = 2 * result;
-      v5 = (char*)&v21 + 1;
+      LOBYTE(v21_.v21) = 2 * result;
+      v5 = (char*)&v21_.v21 + 1;
       if (result == 0) {
       LABEL_14:
         v5[v4] = 0;
@@ -1354,7 +1356,7 @@ unsigned __int64 SceneCharacter_13ffb80(unsigned __int64 result)
         v8 = *(_QWORD*)(v2 + 216);
         if (v7 == v8) {
           v18 = false;
-          if ((v21 & 1) == 0) {
+          if ((v21_.v21 & 1) == 0) {
           LABEL_34:
             if (!v18) {
               *(_BYTE*)(v1 + 104) = 1;
@@ -1365,14 +1367,14 @@ unsigned __int64 SceneCharacter_13ffb80(unsigned __int64 result)
         else {
           v9 = v7 + 8;
           do {
-            v10 = v23;
+            v10 = v21_.v23;
             v11 = *(_QWORD*)(v9 - 8);
-            v12 = (unsigned __int64)(unsigned __int8)v21 >> 1;
-            if ((v21 & 1) != 0) {
-              v12 = v22;
+            v12 = (unsigned __int64)(unsigned __int8)v21_.v21 >> 1;
+            if ((v21_.v21 & 1) != 0) {
+              v12 = v21_.v22;
             }
             else {
-              v10 = (char*)&v21 + 1;
+              v10 = (char*)&v21_.v21 + 1;
             }
             v24[0] = v10;
             v24[1] = v12;
@@ -1391,17 +1393,17 @@ unsigned __int64 SceneCharacter_13ffb80(unsigned __int64 result)
             v19 = v17 == result || v9 == v8;
             v9 += 8;
           } while (!v19);
-          if ((v21 & 1) == 0) {
+          if ((v21_.v21 & 1) == 0) {
             goto LABEL_34;
           }
         }
-        if (v23 != nullptr) {
+        if (v21_.v23 != nullptr) {
           v20 = 128;
           if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
             v20 = 56;
           }
           result = nn_mem_StandardAllocator_Free(
-              *(_QWORD*)fw_memory_g_heap_manager_ptr + v20, (_QWORD)(v23));
+              *(_QWORD*)fw_memory_g_heap_manager_ptr + v20, (_QWORD)(v21_.v23));
         }
         goto LABEL_34;
       }

@@ -2011,9 +2011,11 @@ void GameHr_10c0240(__int64 a1, char* a2, long double a3)
   __int64 v26;
   float v27;
   _BYTE* v28;
-  __int64 v29;
-  _QWORD* v30;
-  char* v31;
+  struct {
+    __int64 v29;
+    _QWORD* v30;
+    char* v31;
+  } v29_;
 
   if (*(_BYTE*)(a1 + 48) != 1) {
     return;
@@ -2035,7 +2037,7 @@ void GameHr_10c0240(__int64 a1, char* a2, long double a3)
   v8 = v6 == 0 || v7 == nullptr;
   if (v8 || (v9 = *v7, *v7 == 0)) {
     v14 = 0;
-    BYTE1(v29) = 0;
+    BYTE1(v29_.v29) = 0;
     goto LABEL_21;
   }
   v10 = a1;
@@ -2052,13 +2054,13 @@ void GameHr_10c0240(__int64 a1, char* a2, long double a3)
       v15 = (v11 | 7) + 1;
     }
     v13 = (char*)GameRoutine_651b90(GameData_2265ee0, v15, 16, 0);
-    v30 = (_QWORD*)v12;
-    v31 = v13;
-    v29 = v15 | 1;
+    v29_.v30 = (_QWORD*)v12;
+    v29_.v31 = v13;
+    v29_.v29 = v15 | 1;
   }
   else {
-    LOBYTE(v29) = 2 * v11;
-    v13 = (char*)&v29 + 1;
+    LOBYTE(v29_.v29) = 2 * v11;
+    v13 = (char*)&v29_.v29 + 1;
     if (v11 == 0) {
       goto LABEL_20;
     }
@@ -2067,8 +2069,8 @@ void GameHr_10c0240(__int64 a1, char* a2, long double a3)
 LABEL_20:
   v13[v12] = 0;
   a1 = v10;
-  v14 = (unsigned __int8)v29;
-  v7 = v30;
+  v14 = (unsigned __int8)v29_.v29;
+  v7 = v29_.v30;
 LABEL_21:
   v16 = *(unsigned __int8*)(a1 + 16);
   if ((v16 & 1) != 0) {
@@ -2087,10 +2089,10 @@ LABEL_21:
       v18 = a1 + 17;
     }
     if ((v14 & 1) != 0) {
-      v20 = v31;
+      v20 = v29_.v31;
     }
     else {
-      v20 = (char*)&v29 + 1;
+      v20 = (char*)&v29_.v29 + 1;
     }
     v8 = (unsigned int)GameRoutine_1a09cf0(v18, v20, v17) == 0;
     a1 = v19;
@@ -2103,15 +2105,15 @@ LABEL_21:
   v21 = 0;
   if ((v14 & 1) != 0) {
   LABEL_38:
-    a2 = v31;
-    if (v31 != nullptr) {
+    a2 = v29_.v31;
+    if (v29_.v31 != nullptr) {
       v22 = a1;
       v23 = 128;
       if (*(_QWORD*)(*(_QWORD*)GameData_212bf68 + 200LL) == 0) {
         v23 = 56;
       }
       ((__int64 (*)(__int64, __int64))GameRoutine_1a0a4e0)(
-          *(_QWORD*)GameData_212bf68 + v23, (__int64)v31);
+          *(_QWORD*)GameData_212bf68 + v23, (__int64)v29_.v31);
       a1 = v22;
     }
   }
