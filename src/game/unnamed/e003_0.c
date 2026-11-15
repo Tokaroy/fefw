@@ -757,7 +757,7 @@ __int64 GameHr_a8fde0(__int64 result, __int64 a2, __int64 a3, float a4,
 
   v7 = *(float*)(a3 + 32);
   v8 = *(float*)(a2 + 32) + v7;
-  if (!(v8 < 0.00000011921f)) {
+  if (!(v8 < 0x1p-23f)) {
     v9 = v7 / v8;
     v11 = (unsigned __int64*)result;
     if (!(v9 > 1.0f)) {

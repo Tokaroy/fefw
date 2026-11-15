@@ -6388,7 +6388,7 @@ __int64 nvidia_61e910(__int64 a1)
           break;
         }
       }
-      if (fabsf(*(float*)(v11 + 156) + -1.0f) >= 0.00000011921f) {
+      if (fabsf(*(float*)(v11 + 156) + -1.0f) >= 0x1p-23f) {
         break;
       }
       if (--v9 == 0) {

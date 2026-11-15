@@ -360,7 +360,7 @@ __int64 ObjectGroup_c25d60(__int64 a1, __int64 a2)
     if (v6 != 0) {
       (*(void (**)(__int64))(*(_QWORD*)v6 + 48LL))(v6);
     }
-    if (fabsf(*((float*)&v5 + 1)) >= 0.00000011921f) {
+    if (fabsf(*((float*)&v5 + 1)) >= 0x1p-23f) {
       if (*((float*)&v5 + 1) > 0.0f) {
         GameRoutine_14a16a0(&v9, 1, *((float*)&v5 + 1));
         goto LABEL_18;

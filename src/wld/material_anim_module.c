@@ -3407,7 +3407,7 @@ bool MaterialAnimModule_be6200(float* a1, __int64 a2, float a3)
     else {
       v11 = *(float*)(v9 - 12);
       v6 = *(float*)(v9 + 4);
-      if (!(vabds_f32(v10, v11) < 0.00000011921f)) {
+      if (!(vabds_f32(v10, v11) < 0x1p-23f)) {
         v12 = *(float*)(v9 - 8);
         v13 = *(_DWORD*)(v9 + 8);
         v14 = (float)(a3 - v11) / (float)(v10 - v11);

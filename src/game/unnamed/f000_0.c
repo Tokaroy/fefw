@@ -3387,7 +3387,7 @@ __int64 GameHr_a85ad0(__int64 result, float a2)
 
   v3 = *(_QWORD*)(result + 24);
   v2 = *(_QWORD*)(result + 32);
-  if (a2 <= 0.00000011921f) {
+  if (a2 <= 0x1p-23f) {
     if (v2 == v3) {
       return result;
     }

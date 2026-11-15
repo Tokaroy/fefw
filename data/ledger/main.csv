@@ -13633,7 +13633,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 463400,660,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2Gu10ConvexCoreL11contactFaceILNS1_4Type4EnumE5EEEjRKNS_7PxVec3TIfEES8_PKvRS6_PS6_
 4636a0,2160,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2Gu10ConvexCoreL11contactFaceILNS1_4Type4EnumE6EEEjRKNS_7PxVec3TIfEES8_PKvRS6_PS6_
 4641e0,1052,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2GuL12rotatePointsERKNS_7PxVec3TIfEES4_S4_PS2_j
-464600,888,verified,src/game/unnamed/f000_0.c,GameHr_464600
+464600,888,disputed,src/game/unnamed/f000_0.c,GameHr_464600
 4649c0,1772,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2Gu11FaceClipper7clip2x2Ev
 4650e0,812,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2Gu11FaceClipper7clipNxNEv
 465520,1276,verified,src/physx/source/geomutils/src/contact/GuContactConvexCoreConvex.cpp,_ZN5physx2Gu11FaceClipper11makePolygonEPNS_7PxVec3TIfEERj
@@ -31299,7 +31299,7 @@ a8e9a0,788,verified,src/game/unplaced_16.c,game_a8e9a0
 a8ed00,284,verified,src/game/unplaced_16.c,game_a8ed00
 a8ee40,560,verified,src/game/unnamed/b009_0.c,GameHr_a8ee40
 a8f100,1768,verified,src/game/unplaced_10.c,game_a8f100
-a8fde0,1080,verified,src/game/unnamed/e003_0.c,GameHr_a8fde0
+a8fde0,1092,verified,src/game/unnamed/e003_0.c,GameHr_a8fde0
 a90260,496,verified,src/game/unnamed/b009_0.c,GameHr_a90260
 a90460,744,verified,src/game/unnamed/b009_0.c,GameHr_a90460
 a90770,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -78967,7 +78967,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 18086a0,964,verified,src/game/cutscene/prop_actor.c,PropActor_Unknown7
 1808aa0,352,verified,src/game/cutscene/prop_actor.c,PropActor_Unknown9
 1808c00,184,verified,src/game/cutscene/particle_actor.c,ParticleActor_Unknown8
-1808cc0,552,verified,src/game/cutscene/particle_actor.c,ParticleActor_Unknown4
+1808cc0,588,verified,src/game/cutscene/particle_actor.c,ParticleActor_Unknown4
 1808f40,2496,verified,src/game/cutscene/unplaced_7.c,game_cutscene_1808f40
 1809b10,96,verified,src/game/cutscene/particle_actor.c,ParticleActor_Unknown9
 1809b80,572,verified,src/game/unnamed/b024_1.c,GameHr_1809b80

@@ -862,7 +862,7 @@ __int64 game_combat_LegionStackAttack_OnEnter_lambda2_Invoke(__int64 result,
     v9 = v8 - *(float*)(v5 + 20);
     v10 = v7 - *(float*)(v5 + 16);
     v11 = (float)(v9 * v9) + (float)(v10 * v10);
-    if (v11 >= 0.00000011921f) {
+    if (v11 >= 0x1p-23f) {
       v14 = 1.0f / sqrtf(v11);
       v13 = v10 * v14;
       v12 = v9 * v14;
