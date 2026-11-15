@@ -2970,7 +2970,7 @@ __int64 StreamSoundPlayer_29a8e0(__int64 result, __int64 a2, double a3,
     v8 = *(unsigned __int8*)(a2 + 26);
     v10 = result;
     v11 = *(_BYTE*)(a2 + 33);
-    v12 = (float)LODWORD(a4);
+    v12 = (float)(unsigned __int8)LODWORD(a4);
     if (v8 >= 2) {
       v13 = -64;
     }
@@ -2996,14 +2996,14 @@ __int64 StreamSoundPlayer_29a8e0(__int64 result, __int64 a2, double a3,
     v20 = *(_QWORD*)(result + 160);
     v21 = *(_QWORD*)(result + 120);
     v22 = *(_QWORD*)(result + 128);
-    v23 = (float)v16;
+    v23 = (float)(unsigned __int8)v16;
     *((_QWORD*)&v122 + 1) = *(_QWORD*)(result + 152);
     v123 = v20;
     v24 = *(float*)(a2 + 44);
     v25 = *(_QWORD*)(result + 112);
     LOBYTE(a8) = *(_BYTE*)(a2 + 31);
-    v26 = (float)LODWORD(v15);
-    v27 = (float)LODWORD(a7);
+    v26 = (float)(unsigned __int8)LODWORD(v15);
+    v27 = (float)(unsigned __int8)LODWORD(a7);
     v28 = *(float*)(a2 + 52);
     v29 = *(float*)(a2 + 56);
     v30 = *(float*)(result + 72);
@@ -3024,7 +3024,7 @@ __int64 StreamSoundPlayer_29a8e0(__int64 result, __int64 a2, double a3,
     v40 = *(unsigned __int8*)(a2 + 32);
     *((_QWORD*)&v120 + 1) = v22;
     v121 = v35;
-    v41 = (float)LODWORD(a8) / 0x1.fc00000000000p+6f;
+    v41 = (float)(unsigned __int8)LODWORD(a8) / 0x1.fc00000000000p+6f;
     v42 = *(unsigned __int8*)(result + 88);
     *(_QWORD*)&v122 = v36;
     v43 = (float)(v31 * v32) > 0x1.0000000000000p+2f && v38 == 1;
@@ -3099,9 +3099,10 @@ __int64 StreamSoundPlayer_29a8e0(__int64 result, __int64 a2, double a3,
       v77 = v11;
       v78 = 0;
       v79 = vcvts_n_f32_u32(v40, 6u) + v52;
-      v80 =
-          (float)((float)((float)LODWORD(v54) / 0x1.fc00000000000p+6f) * v30) *
-          v75;
+      v80 = (float)((float)((float)(unsigned __int8)LODWORD(v54) /
+                            0x1.fc00000000000p+6f) *
+                    v30) *
+            v75;
       do {
         v81 = *(_QWORD*)(a2 + 8 + 8 * v78);
         v82 = *(_QWORD*)(v81 + 8);

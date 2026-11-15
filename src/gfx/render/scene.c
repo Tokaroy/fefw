@@ -250,9 +250,11 @@ __int64 gfx_render_Scene_Update(__int64 result)
   _QWORD* v151;
   __int64 v152;
   __int64 v153;
+  // The tail keeps v154 at the original frame offset.
   struct {
     _QWORD v154[4];
     _QWORD* v155;
+    char tail[8];
   } v154_;
 
   if (*(_BYTE*)(result + 48) != 1) {

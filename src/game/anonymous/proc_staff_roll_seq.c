@@ -547,7 +547,7 @@ void ProcStaffRollSeq_Unknown2(__int64 a1)
     else {
       v18 = v17 * 0x1.119ce00000000p-6f;
     }
-    v19 = v15 + (float)(v18 * 0x1.f400000000000p+9f);
+    v19 = __builtin_fmaf(v18, 0x1.f400000000000p+9f, v15);
     *(float*)(a1 + 180) = v19;
     v20 = (float)*(unsigned int*)(v16 + 32);
     if (v15 >= v20 || v19 < v20) {

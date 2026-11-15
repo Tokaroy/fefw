@@ -113,8 +113,8 @@ extern __int64 GameData_2258178;
 extern __int64 game_g_game_setting_ptr;
 float Camera_1315570_alt1(__int64, double, double,
                           long double) __asm__("Camera_1315570");
-float Cursor_734120_alt1(_QWORD, _QWORD, float, float,
-                         long double) __asm__("Cursor_734120");
+float Cursor_734120_alt1(_QWORD, _QWORD, float, float, long double,
+                         float) __asm__("Cursor_734120");
 __int64 Camera_1315b10(__int64 a1, long double a2);
 
 float Camera_Unknown2_1314240(__int64 a1)
@@ -1670,6 +1670,8 @@ __int64 Camera_1315b10(__int64 a1, long double a2)
   __int128 v157;
   __int64 v158;
   void* v159;
+  float v160;
+  float v161;
 
   v3 = game_g_game_setting_ptr;
   v4 = game_script_hub_g_frame_counter_ptr[0];
@@ -1947,9 +1949,9 @@ LABEL_91:
       LODWORD(v49) = *(_DWORD*)(a1 + 668);
       v50 = *(float*)(a1 + 688);
       if (*(float*)&v49 < *(float*)(a1 + 664)) {
-        v50 = Cursor_734120_alt1(*(unsigned int*)(a1 + 672),
-                                 *(unsigned int*)(a1 + 676),
-                                 *(float*)(a1 + 684), v50, v49);
+        v50 = Cursor_734120_alt1(
+            *(unsigned int*)(a1 + 672), *(unsigned int*)(a1 + 676),
+            *(float*)(a1 + 684), v50, v49, *(float*)(a1 + 664));
       }
       v51 = 0x1.99999a0000000p-2 - (float)(v50 * 0x1.99999a0000000p-2);
       *(_QWORD*)&v48 = 0;
@@ -2045,7 +2047,8 @@ LABEL_91:
   if (*(_BYTE*)(a1 + 964) == 1) {
     LODWORD(v70) = *(_DWORD*)(a1 + 708);
     v72 = *(float*)(a1 + 728);
-    if (*(float*)&v70 >= *(float*)(a1 + 704)) {
+    v160 = *(float*)(a1 + 704);
+    if (!(*(float*)&v70 < v160)) {
       goto LABEL_161;
     }
     v73 = *(float*)(a1 + 724);
@@ -2055,26 +2058,27 @@ LABEL_91:
   else {
     LODWORD(v70) = *(_DWORD*)(a1 + 668);
     v72 = *(float*)(a1 + 688);
-    if (*(float*)&v70 >= *(float*)(a1 + 664)) {
+    v160 = *(float*)(a1 + 664);
+    if (!(*(float*)&v70 < v160)) {
       goto LABEL_161;
     }
     v73 = *(float*)(a1 + 684);
     v74 = *(unsigned int*)(a1 + 672);
     v75 = *(unsigned int*)(a1 + 676);
   }
-  v72 = Cursor_734120_alt1(v74, v75, v73, v72, v70);
+  v72 = Cursor_734120_alt1(v74, v75, v73, v72, v70, v160);
 LABEL_161:
   LODWORD(v70) = *(_DWORD*)(a1 + 796);
   v76 = *(float*)(a1 + 792);
   v77 = *(_OWORD*)(a1 + 832);
   v78 = v67 - v66;
-  if (*(float*)&v70 >= v76) {
+  if (!(*(float*)&v70 < v76)) {
     LODWORD(v79) = HIDWORD(*(_QWORD*)(a1 + 832));
   }
   else {
     LANES128(v69).n128_f32[0] = Cursor_734120_alt1(
         *(unsigned int*)(a1 + 800), *(unsigned int*)(a1 + 804),
-        *(float*)(a1 + 816), *(float*)&v77, v70);
+        *(float*)(a1 + 816), *(float*)&v77, v70, v76);
     v79 = *(float*)(a1 + 836);
     LODWORD(v70) = *(_DWORD*)(a1 + 796);
     v76 = *(float*)(a1 + 792);
@@ -2085,7 +2089,7 @@ LABEL_161:
   if (*(float*)&v70 < v76) {
     LANES128(v69).n128_f32[0] = Cursor_734120_alt1(
         *(unsigned int*)(a1 + 800), *(unsigned int*)(a1 + 804),
-        *(float*)(a1 + 820), v79, v70);
+        *(float*)(a1 + 820), v79, v70, v76);
     LODWORD(v70) = *(_DWORD*)(a1 + 796);
     v76 = *(float*)(a1 + 792);
     v79 = LANES128(v69).n128_f32[0];
@@ -2096,14 +2100,14 @@ LABEL_161:
     v153 = v79;
     LANES128(v69).n128_f32[0] = Cursor_734120_alt1(
         *(unsigned int*)(a1 + 800), *(unsigned int*)(a1 + 804),
-        *(float*)(a1 + 824), v81, v70);
+        *(float*)(a1 + 824), v81, v70, v76);
     v79 = v153;
     v81 = LANES128(v69).n128_f32[0];
   }
   v83 = *(float*)(a1 + 928);
   v84 = *(float*)(a1 + 936);
-  v85 = v83 - (float)(v84 * 0.5);
-  v86 = (float)(v83 + (float)(v84 * 0.5)) - v82;
+  v85 = __builtin_fmaf(-v84, 0.5f, v83);
+  v86 = __builtin_fmaf(v84, 0.5f, v83) - v82;
   v87 = v82 + v85;
   if (v86 >= v155) {
     v86 = v155;
@@ -2113,8 +2117,8 @@ LABEL_161:
     v86 = v87;
   }
   v89 = *(float*)(a1 + 940);
-  v90 = v88 - (float)(v89 * 0.5);
-  v91 = (float)(v88 + (float)(v89 * 0.5)) - v82;
+  v90 = __builtin_fmaf(-v89, 0.5f, v88);
+  v91 = __builtin_fmaf(v89, 0.5f, v88) - v82;
   v92 = v82 + v90;
   if (v91 >= v81) {
     v91 = v81;
@@ -2135,7 +2139,7 @@ LABEL_161:
     LANES128(v69).n128_f32[0] = 0.0;
   }
   *(_DWORD*)(a1 + 888) = LANES128(v69).n128_u32[0];
-  if (LANES128(v69).n128_f32[0] <= 0.0) {
+  if (!(LANES128(v69).n128_f32[0] > 0.0)) {
     *(_QWORD*)(a1 + 888) = 0;
   }
   else {
@@ -2209,14 +2213,18 @@ LABEL_161:
     if (*(float*)&v118 < *(float*)(a1 + 584)) {
       v120 = Cursor_734120_alt1(*(unsigned int*)(a1 + 592),
                                 *(unsigned int*)(a1 + 596), *(float*)(a1 + 604),
-                                v120, v118);
+                                v120, v118, *(float*)(a1 + 584));
     }
     v121 = 1.0 - v72;
-    v122 = v120 + (float)((float)(1.0 - v72) * (float)(v58 - v120));
+    v161 = v121 * (float)(v58 - v120);
+    __asm__("" : "+w"(v161));
+    v122 = v120 + v161;
   }
   else {
     v121 = 1.0 - v72;
-    v122 = v59 + (float)((float)(v58 - v59) * (float)(1.0 - v72));
+    v161 = (float)(v58 - v59) * v121;
+    __asm__("" : "+w"(v161));
+    v122 = v59 + v161;
   }
   v123 = game_GameModeData_instance_;
   *(float*)(a1 + 260) = v117;
@@ -2242,9 +2250,13 @@ LABEL_161:
   }
   v128 = *(unsigned __int8*)(a1 + 965);
   *(_DWORD*)(a1 + 268) = 0;
-  *(float*)(a1 + 272) = v126 + (float)(v121 * (float)(v125 - v126));
+  v161 = v121 * (float)(v125 - v126);
+  __asm__("" : "+w"(v161));
+  *(float*)(a1 + 272) = v126 + v161;
   if (v128 != 1) {
-    *(float*)(a1 + 256) = v62 + (float)((float)(v63 - v62) * v72);
+    v161 = (float)(v63 - v62) * v72;
+    __asm__("" : "+w"(v161));
+    *(float*)(a1 + 256) = v62 + v161;
     v144 = v156;
     goto LABEL_215;
   }
@@ -2254,7 +2266,7 @@ LABEL_161:
   if (*(float*)&v118 < v129) {
     v131 = Cursor_734120_alt1(*(unsigned int*)(a1 + 752),
                               *(unsigned int*)(a1 + 756), *(float*)(a1 + 764),
-                              v130, v118);
+                              v130, v118, v129);
     v129 = *(float*)(a1 + 744);
     v130 = v131;
   }
@@ -2317,7 +2329,7 @@ LABEL_161:
     }
     goto LABEL_215;
   }
-  if (v138 > 0.0) {
+  if (!(v138 <= 0.0)) {
     goto LABEL_212;
   }
 LABEL_221:

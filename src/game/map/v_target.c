@@ -2489,9 +2489,11 @@ __int64 game_map_VTarget_EnumerateSubTarget(__int64 a1, unsigned int a2)
   __int64 v54;
   __int64 v55;
   __int64 v56;
+  // The tail keeps v57 at the original frame offset.
   struct {
     _QWORD v57[4];
     _QWORD* v58;
+    char tail[8];
   } v57_;
 
   if ((a2 & 0x80000000) == 0) {

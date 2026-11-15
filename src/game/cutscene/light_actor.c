@@ -1487,7 +1487,7 @@ LABEL_11:
                 LANES128(v26).n128_u64[1] = *(unsigned int*)(v24 + 8);
                 if (v25 >= 6) {
                   LANES128(v23).n128_u64[0] = *(_QWORD*)(v24 + 12);
-                  LANES128(v23).n128_u32[2] = *(_DWORD*)(v24 + 20);
+                  LANES128(v23).n128_u64[1] = *(unsigned int*)(v24 + 20);
                 }
               }
               v34 = *(_OWORD*)(v22 + 64);
@@ -1496,9 +1496,9 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v34 <= 0xFFFFFFFD) {
                 v37 = a3 - *(float*)(v22 + 8);
                 v35 = 0.0;
-                if (v37 > 0.0) {
+                if (!(v37 <= 0.0)) {
                   v35 = 1.0;
-                  if (v37 < *((float*)&v34 + 1)) {
+                  if (!(v37 >= *((float*)&v34 + 1))) {
                     v159 = v26;
                     v161 = v23;
                     v38 = v21;
@@ -1516,7 +1516,9 @@ LABEL_11:
                   }
                 }
               }
-              a1[3] = vaddq_f32(v26, vmulq_n_f32(vsubq_f32(v23, v26), v35));
+              v23 = vmulq_n_f32(vsubq_f32(v23, v26), v35);
+              __asm__("" : "+w"(v23));
+              a1[3] = vaddq_f32(v26, v23);
             }
             if (atomic_fetch_add((atomic_ullong* volatile)(v21 + 8),
                                  0xFFFFFFFFFFFFFFFFLL) == 0) {

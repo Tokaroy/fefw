@@ -1962,7 +1962,7 @@ LABEL_21:
   }
   else {
     v70 = v99;
-    v71 = &as_g_context_slots_alt1[2 * (unsigned int)v46];
+    v71 = &as_g_context_slots_alt1[2 * (unsigned __int64)(unsigned int)v46];
     if (v71[1] != 0) {
       if (*v71 == v99) {
         v72 = v71[1];
@@ -2034,7 +2034,7 @@ LABEL_44:
     nn_os_UnlockMutex(a1 + 4792);
   }
   if ((v98 & 1) != 0 ||
-      (v91 = &as_g_context_slots_alt1[2 * (unsigned int)v46],
+      (v91 = &as_g_context_slots_alt1[2 * (unsigned __int64)(unsigned int)v46],
        (v92 = v91[1]) == 0) ||
       *v91 != v70) {
   LABEL_62:

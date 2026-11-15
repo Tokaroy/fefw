@@ -548,17 +548,17 @@ unsigned __int64 game_a794a0(unsigned __int64 result, __int64* a2,
   v6 = v4[28];
   v8 = v4[29];
   LANES128(v9).n128_u64[0] = 0;
-  HIDWORD(v5) = sqrtf(
+  HIDWORD(v5) = __builtin_elementwise_sqrt(
       (float)(LANES128_OF(vmulq_f32(v6, v6)).n128_f32[1] +
               (float)(LANES128(v6).n128_f32[0] * LANES128(v6).n128_f32[0])) +
       (float)(COERCE_FLOAT(LANES128(v4[28]).n128_u64[1]) *
               LANES128(v6).n128_f32[2]));
-  v10 = sqrtf(
+  v10 = __builtin_elementwise_sqrt(
       (float)(LANES128_OF(vmulq_f32(v7, v7)).n128_f32[1] +
               (float)(LANES128(v7).n128_f32[0] * LANES128(v7).n128_f32[0])) +
       (float)(COERCE_FLOAT(LANES128(v4[27]).n128_u64[1]) *
               LANES128(v7).n128_f32[2]));
-  LANES128(v9).n128_u64[1] = COERCE_UNSIGNED_INT(sqrtf(
+  LANES128(v9).n128_u64[1] = COERCE_UNSIGNED_INT(__builtin_elementwise_sqrt(
       (float)(LANES128_OF(vmulq_f32(v8, v8)).n128_f32[1] +
               (float)(LANES128(v8).n128_f32[0] * LANES128(v8).n128_f32[0])) +
       (float)(COERCE_FLOAT(LANES128(v4[29]).n128_u64[1]) *
@@ -669,19 +669,19 @@ unsigned __int64 game_a794a0(unsigned __int64 result, __int64* a2,
   v41 = a3[1];
   v42 = a3[2];
   v43 = vaddq_f32(v4[30], v40);
-  *(float*)&v44 =
-      sqrtf((float)(LANES128_OF(vmulq_f32(*a3, *a3)).n128_f32[1] +
-                    (float)(COERCE_FLOAT(*a3) * COERCE_FLOAT(*a3))) +
-            (float)(COERCE_FLOAT(LANES128(*(a3)).n128_u64[1]) *
-                    COERCE_FLOAT(LANES128(*(a3)).n128_u64[1])));
+  *(float*)&v44 = __builtin_elementwise_sqrt(
+      (float)(LANES128_OF(vmulq_f32(*a3, *a3)).n128_f32[1] +
+              (float)(COERCE_FLOAT(*a3) * COERCE_FLOAT(*a3))) +
+      (float)(COERCE_FLOAT(LANES128(*(a3)).n128_u64[1]) *
+              COERCE_FLOAT(LANES128(*(a3)).n128_u64[1])));
   LANES128(v6).n128_u32[0] = 0;
   LANES128(v40).n128_u64[0] = 0;
-  LANES128(v6).n128_u32[1] = sqrtf(
+  LANES128(v6).n128_u32[1] = __builtin_elementwise_sqrt(
       (float)(LANES128_OF(vmulq_f32(v41, v41)).n128_f32[1] +
               (float)(LANES128(v41).n128_f32[0] * LANES128(v41).n128_f32[0])) +
       (float)(COERCE_FLOAT(LANES128(a3[1]).n128_u64[1]) *
               LANES128(v41).n128_f32[2]));
-  LANES128(v40).n128_u64[1] = COERCE_UNSIGNED_INT(sqrtf(
+  LANES128(v40).n128_u64[1] = COERCE_UNSIGNED_INT(__builtin_elementwise_sqrt(
       (float)(LANES128_OF(vmulq_f32(v42, v42)).n128_f32[1] +
               (float)(LANES128(v42).n128_f32[0] * LANES128(v42).n128_f32[0])) +
       (float)(COERCE_FLOAT(LANES128(a3[2]).n128_u64[1]) *

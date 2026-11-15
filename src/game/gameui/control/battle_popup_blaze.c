@@ -1606,7 +1606,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
       __asm__ volatile("" ::"r"(v47));
     }
     if (v47 != 0) {
-      *(_QWORD*)&a2 = *(_QWORD*)(a1 + 208);
+      *(unsigned __int128*)&a2 = *(unsigned __int64*)(a1 + 208);
       for (m = 0; m < v47; ++m) {
         if ((int)v47 > (int)m) {
           {

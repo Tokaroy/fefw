@@ -820,13 +820,13 @@ float* game_zview_d15100(float* a1, char a2, double a3, double a4, double a5,
                             0x1.99999a0000000p-4f) +
                     0x1.0000000000000p+1f);
   if (v19 != 0) {
-    LOBYTE(v18) = *(_BYTE*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c998[0] + 64) +
-                                       8LL * *(unsigned __int8*)(v19 + 1944)) +
-                            49LL);
-    v20 = v20 +
-          (float)((float)((float)(0x1.0000000000000p+0f / (float)LODWORD(v18)) *
-                          0x1.921fb60000000p+2f) *
-                  0x1.0000000000000p-1f);
+    v18 = (float)*(unsigned __int8*)(
+        *(_QWORD*)(*(_QWORD*)(*GameData_212c998[0] + 64) +
+                   8LL * *(unsigned __int8*)(v19 + 1944)) +
+        49LL);
+    v20 = v20 + (float)((float)((float)(0x1.0000000000000p+0f / v18) *
+                                0x1.921fb60000000p+2f) *
+                        0x1.0000000000000p-1f);
   }
   LODWORD(a3) = *(_DWORD*)(*(_QWORD*)(v9 + 16) + 576LL);
   v21 = *(_OWORD*)(v12 + 560);

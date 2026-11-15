@@ -27219,6 +27219,8 @@ void game_11cb1c0(__int64 a1, long double a2)
     __int64 v158;
   } v150_;
 
+  // The original reads these frame slots uninitialised on some paths.
+  __asm__ volatile("" : "+m"(v133), "+m"(v134), "+m"(v135), "+m"(v137));
   v105 = COERCE_AS(__typeof__(v105),
                    PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
   v57 = COERCE_AS(__typeof__(v57),

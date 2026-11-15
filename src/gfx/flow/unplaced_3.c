@@ -1720,7 +1720,7 @@ __int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3)
   v128 = COERCE_AS(__typeof__(v128), PSEUDO_REGISTER(__n128, "v2", "=w")),
   v132 = COERCE_AS(__typeof__(v132), PSEUDO_REGISTER(__n128, "v3", "=w"));
   {
-    v239 = *(_QWORD*)&v4[2 * a1[104]];
+    v239 = *(_QWORD*)&v4[2 * (int)a1[104]];
     __asm__ volatile("" ::"r"(v239));
   }
   v240 = (*(__int64 (**)(__int64))(*(_QWORD*)v239 + 56LL))(v239),

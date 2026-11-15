@@ -122,13 +122,13 @@ __int64 RoundRectShape_5a2080(__int64 a1)
   v42 = COERCE_AS(__typeof__(v42), PSEUDO_REGISTER(float, "s0", "=w"));
   v3 = *(_DWORD*)(a1 + 72);
   v4 = v2;
-  if (*(float*)(a1 + 64) <= 0x1.0000000000000p+0f) {
+  if (!(*(float*)(a1 + 64) > 0x1.0000000000000p+0f)) {
     v5 = *(float*)(a1 + 64);
   }
   else {
     v5 = 0x1.0000000000000p+0f;
   }
-  if (*(float*)(a1 + 68) <= 0x1.0000000000000p+0f) {
+  if (!(*(float*)(a1 + 68) > 0x1.0000000000000p+0f)) {
     v6 = *(float*)(a1 + 68);
   }
   else {
@@ -533,9 +533,9 @@ LABEL_29:
     v4 += 8;
   }
 LABEL_72:
-  if ((float)(v5 + v5) >= 0x1.0000000000000p+1f) {
+  if (!((float)(v5 + v5) < 0x1.0000000000000p+1f)) {
     v44 = v48;
-    if ((float)(v49 + v49) >= 0x1.0000000000000p+1f) {
+    if (!((float)(v49 + v49) < 0x1.0000000000000p+1f)) {
       return v4;
     }
     goto LABEL_109;
@@ -719,7 +719,7 @@ LABEL_107:
   v4 += 12;
   if ((GameRoutine_5b2490(a1) & 4) == 0) {
   LABEL_89:
-    if ((float)(v49 + v49) >= 0x1.0000000000000p+1f) {
+    if (!((float)(v49 + v49) < 0x1.0000000000000p+1f)) {
       return v4;
     }
     goto LABEL_109;
@@ -730,7 +730,7 @@ LABEL_108:
       0x1.0000000000000p+0f -
       (float)((float)(v44 * 0x1.0000000000000p-1f) + 0x1.0000000000000p-1f);
   v4 += 8;
-  if ((float)(v49 + v49) >= 0x1.0000000000000p+1f) {
+  if (!((float)(v49 + v49) < 0x1.0000000000000p+1f)) {
     return v4;
   }
 LABEL_109:

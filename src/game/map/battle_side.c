@@ -591,6 +591,7 @@ unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result)
   _QWORD v177[4];
   _QWORD* v178;
   int v179;
+  unsigned __int64 v180;
 
   v1 = *(_QWORD*)(result + 24);
   v2 = *(_QWORD*)(result + 8);
@@ -815,7 +816,10 @@ unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result)
                       v140 = 2;
                     }
                     else {
-                      v159 = BattleInfo_79d360(v3);
+                      v159 = BattleInfo_79d360(v3),
+                      v180 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
+                      v160 = COERCE_AS(float, (unsigned int)v180);
+                      v161 = COERCE_AS(float, (unsigned int)(v180 >> 32));
                       if ((v159 & 0x800000000000LL) != 0) {
                         v163 = (SHIDWORD(v159) >> 16) & (SHIDWORD(v159) >> 31);
                         if ((v159 & 0x8000u) == 0LL) {
@@ -844,7 +848,10 @@ unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result)
                       else {
                         v162 = HIDWORD(v159) & 0x7FFF;
                       }
-                      result = BattleInfo_79d360(v142 + 2);
+                      result = BattleInfo_79d360(v142 + 2),
+                      v180 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
+                      v167 = COERCE_AS(float, (unsigned int)v180);
+                      v168 = COERCE_AS(float, (unsigned int)(v180 >> 32));
                       if ((result & 0x800000000000LL) != 0) {
                         LODWORD(v169) =
                             (SHIDWORD(result) >> 16) & (SHIDWORD(result) >> 31);
@@ -1138,7 +1145,10 @@ unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result)
       }
       goto LABEL_141;
     }
-    v25 = BattleSide_7a1270_alt1(v3);
+    v25 = BattleSide_7a1270_alt1(v3),
+    v180 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
+    v26 = COERCE_AS(float, (unsigned int)v180);
+    v27 = COERCE_AS(float, (unsigned int)(v180 >> 32));
     if ((v25 & 0x800000000000LL) != 0) {
       v38 = (SHIDWORD(v25) >> 16) & (SHIDWORD(v25) >> 31);
       if ((v25 & 0x8000u) == 0LL) {

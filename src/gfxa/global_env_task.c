@@ -825,10 +825,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
   __int64* v272;
   int8x16_t v273;
   unsigned int v274;
-  __int64 v275;
-  __int64 v276;
-  __int64** v277;
-  __int64 v278;
+  unsigned __int64 v275;
+  unsigned __int64 v278;
   __int128 v279;
   __int64 v280;
   unsigned int v281;
@@ -5066,26 +5064,20 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                   }
                   *(float32x4_t*)(*(_QWORD*)(v3 + 120) + 208LL) =
                       vsubq_f32(COERCE_AS(float32x4_t, 0), v273);
-                  v275 = 128;
-                  if (BYTE4(v384) != 0) {
-                    v275 = 92;
-                  }
                   *(_DWORD*)(*(_QWORD*)(v3 + 120) + 224LL) =
-                      *(_DWORD*)((char*)&v374 + v275);
-                  v276 = 92;
+                      BYTE4(v384) != 0 ? (unsigned int)v384 : v388;
                   if ((_BYTE)v442 != 0) {
-                    v276 = 84;
+                    *(_QWORD*)&v279 = v440;
+                    v275 = (unsigned int)v441;
                   }
-                  v277 = &(&v374)[v276];
-                  v278 = 824;
-                  if (BYTE4(v452) != 0) {
-                    v278 = 788;
+                  else {
+                    *(_QWORD*)&v279 = v447;
+                    v275 = (unsigned int)v448;
                   }
-                  *(_QWORD*)&v279 = *v277;
+                  v278 = BYTE4(v452) != 0 ? (unsigned int)v452
+                                          : (unsigned int)v456;
                   *((_QWORD*)&v279 + 1) =
-                      *((unsigned int*)v277 + 2) |
-                      ((unsigned __int64)*(unsigned int*)((char*)&v374 + v278)
-                       << 32);
+                      v275 | ((unsigned __int64)v278 << 32);
                   *(_OWORD*)(*(_QWORD*)(v3 + 120) + 240LL) = v279;
                   v280 = *(_QWORD*)(v3 + 120);
                   *(_QWORD*)(v280 + 280) = v371;

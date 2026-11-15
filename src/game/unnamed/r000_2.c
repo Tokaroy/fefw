@@ -312,7 +312,7 @@ __int64 GameHr_5926a0(__int64 result, __int64 a2, __int64 a3)
     v52 = *v16;
     v18 = VectorGraphicsTexture_5987a0(v14);
     GameRoutine_5fe0a0_alt1(
-        a3, *(_DWORD*)(v17 + 4LL * v18 * (unsigned __int8)v13), 4u,
+        a3, *(_DWORD*)(v17 + 4LL * (int)(v18 * (unsigned __int8)v13)), 4u,
         (unsigned int*)(*(_QWORD*)(v8 + 144) + 8LL), (unsigned int*)&v52);
     v19 = GameRoutine_577d40_alt1(*(_QWORD*)(a2 + 184), v11);
     GameRoutine_58c820(a3, a2, v19);
@@ -365,7 +365,7 @@ __int64 GameHr_5926a0(__int64 result, __int64 a2, __int64 a3)
     v52 = *v30;
     v32 = VectorGraphicsTexture_5987a0(v28);
     GameRoutine_5fe0a0_alt1(
-        a3, *(_DWORD*)(v31 + 4LL * v32 * (unsigned __int8)v27), 4u,
+        a3, *(_DWORD*)(v31 + 4LL * (int)(v32 * (unsigned __int8)v27)), 4u,
         (unsigned int*)(*(_QWORD*)(v8 + 136) + 8LL), (unsigned int*)&v52);
     v33 = GameRoutine_577d40_alt1(*(_QWORD*)(a2 + 184), v25);
     GameRoutine_58c820(a3, a2, v33);
@@ -410,7 +410,7 @@ __int64 GameHr_5926a0(__int64 result, __int64 a2, __int64 a3)
     v52 = *v43;
     v45 = VectorGraphicsTexture_5987a0(v41);
     GameRoutine_5fe0a0_alt1(
-        a3, *(_DWORD*)(v44 + 4LL * v45 * (unsigned __int8)v40), 4u,
+        a3, *(_DWORD*)(v44 + 4LL * (int)(v45 * (unsigned __int8)v40)), 4u,
         (unsigned int*)(*(_QWORD*)(v8 + 128) + 8LL), (unsigned int*)&v52);
     v46 = GameRoutine_577d40_alt1(*(_QWORD*)(a2 + 184), v39);
     GameRoutine_58c820(a3, a2, v46);
