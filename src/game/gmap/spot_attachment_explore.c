@@ -873,7 +873,9 @@ LABEL_74:
     }
     if ((*(int (**)(_QWORD*))(*a1 + 248LL))(a1) < v28 ||
         ((v45 = a1[4], v46 = (unsigned __int8)Impl_13261c0_alt1(v45),
-          v47 = *(_QWORD**)(v45 + 144), v46 == 5)
+          v47 = *(_QWORD**)(v45 + 144),
+          // The pointer is read before the state test.
+          ({ __asm__ volatile("" : "+r"(v47)); }), v46 == 5)
              ? (v48 = v47 == nullptr)
              : (v48 = true),
          v48)) {

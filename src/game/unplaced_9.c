@@ -9136,6 +9136,7 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
   v9 = *a5;
   v10 = *(float*)(*(_QWORD*)(a6 + 16) + 2464LL);
   LANES128(*(a5)).n128_f32[0] = v10;
+  v11 = COERCE_AS(float32x4_t, v9);
   LANES128(v11).n128_f32[0] = v10;
   LANES128(v11).n128_u32[1] = *(_DWORD*)(*(_QWORD*)(a6 + 16) + 2468LL);
   *a5 = v11;
@@ -9171,13 +9172,14 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
             (float)(v49 * (float)(*a8 * *a9)) * LANES128(v11).n128_f32[0];
         v51 = LANES128(v11).n128_u64[1];
         LANES128(*(a5)).n128_u32[0] = v50;
+        v52 = COERCE_AS(int8x16_t, v11);
         LANES128(v52).n128_u64[0] = __PAIR64__(
             COERCE_UNSIGNED_INT(vmuls_lane_f32(
                 v49 * (float)(a8[1] * a9[1]),
                 COERCE_AS(float32x2_t, LANES128(v11).n128_u64[0]), 1)),
             v50);
         *a5 = v52;
-        LANES128(v52).n128_u32[2] =
+        LANES128(v52).n128_f32[2] =
             vmuls_lane_f32(v49 * (float)(a8[2] * a9[2]), v11, 2);
         *a5 = v52;
         *(float*)&a1 = vmuls_lane_f32(*(float*)&a1 * a8[3], v11, 3);

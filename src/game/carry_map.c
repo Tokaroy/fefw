@@ -294,7 +294,7 @@ LABEL_25:
 LABEL_26:
   v18 = v6[8];
   v19 = (float)(unsigned __int64)(*((_QWORD*)v6 + 3) + 1LL);
-  if (v7 != 0 && (float)(v18 * (float)v7) >= v19) {
+  if (v7 != 0 && !((float)(v18 * (float)v7) < v19)) {
     goto LABEL_121;
   }
   v20 = v19 / v18;

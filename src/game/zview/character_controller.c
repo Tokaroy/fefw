@@ -39,7 +39,8 @@ extern __int64 (*game_zview_CharacterController_StateGuard_Start_vtable[])();
 extern __int64 (*game_zview_CharacterController_vtable[])();
 extern __int64 GameData_212eca0;
 extern __int64 GameData_220b6f0;
-extern __int64 GameData_22110ac;
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac;
 extern __int64 fw_memory_g_heap_manager;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64* GameData_212db48[3];
@@ -284,7 +285,6 @@ void CharacterController_d0d7c0(__int64 a1);
 _QWORD*
 CharacterController_d3f410_alt3(_QWORD* result,
                                 int) __asm__("CharacterController_d3f410");
-typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
 extern GameAlign_22110ac GameData_22110ac_alt1 __asm__("GameData_22110ac");
 void CharacterController_StateJump_Unknown4(__int64 a1);
 __int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
@@ -2597,6 +2597,7 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
   __int64 v87;
   float v88;
   __int64* v89;
+  __int64 hit;
   __int64 v90;
   _QWORD v91[5];
   _QWORD v92[5];
@@ -2766,9 +2767,11 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
     v92[1] = 0;
     v91[0] = 0x4020000040200000LL;
     v91[1] = 0;
-    if ((CharacterController_d40860(v14, (__int64)&v93_.v93, (__int64)v92,
-                                    (__int64)v91) &
-         1) != 0) {
+    hit = CharacterController_d40860(v14, (__int64)&v93_.v93, (__int64)v92,
+                                     (__int64)v91);
+    // The body is in this unit, hide what clang knows of it.
+    __asm__("" : "+r"(hit));
+    if ((hit & 1) != 0) {
       GameRoutine_d40750(v14, (__int64)&v93_.v93, (__int64)v92, (__int64)v91);
       v15 = *(_QWORD*)(a1 + 8);
       if ((*(_BYTE*)(v15 + 848) & 1) == 0) {
@@ -4483,7 +4486,7 @@ LABEL_108:
   v87 = fabsf(*(float*)(*(_QWORD*)(*(_QWORD*)(v85 + 8) + 8LL) + 228LL));
   if (v86 > 0x0.0p+0f) {
     v86 = v86 - v87;
-    if (v86 >= 0x0.0p+0f) {
+    if (!(v86 < 0x0.0p+0f)) {
       goto LABEL_143;
     }
   LABEL_142:
@@ -4502,7 +4505,7 @@ LABEL_143:
   v89 = fabsf(*(float*)(*(_QWORD*)(*(_QWORD*)(v85 + 8) + 8LL) + 228LL));
   if (v88 > 0x0.0p+0f) {
     v88 = v88 - v89;
-    if (v88 >= 0x0.0p+0f) {
+    if (!(v88 < 0x0.0p+0f)) {
       goto LABEL_149;
     }
     goto LABEL_148;
@@ -5409,7 +5412,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
     do {
       v103 = *(_OWORD*)&v97[4 * v99];
       v102 = *(_QWORD*)(a1 + 112);
-      HIDWORD(v103) = 0;
+      DWORDn(v103, 3) = 0;
       if (v98 < v102) {
         *(_OWORD*)v98 = v103;
         *(_DWORD*)(v98 + 16) = v99;
@@ -6195,10 +6198,12 @@ void CharacterController_StateAttack_Unknown4(__int64 a1)
                 0x1.0000000000000p+0f);
     v13 = *(_QWORD*)(a1 + 328);
     v14 = *(_BYTE*)(v13 + 104);
-    v15 = (float)(PSEUDO_UNFUSED(v11 * *((float*)&GameData_22110c0 + 1))) +
-          (float)(*(float*)&GameData_22110c0 * v12);
-    v16 = (float)(PSEUDO_UNFUSED(*((float*)&GameData_22110c0 + 1) * v12)) -
-          (float)(*(float*)&GameData_22110c0 * v11);
+    v15 = v11 * *((float*)&GameData_22110c0 + 1);
+    __asm__("" : "+w"(v15));
+    v15 = v15 + *(float*)&GameData_22110c0 * v12;
+    v16 = *((float*)&GameData_22110c0 + 1) * v12;
+    __asm__("" : "+w"(v16));
+    v16 = v16 - *(float*)&GameData_22110c0 * v11;
     *(float*)(v13 + 96) = v15;
     *(float*)(v13 + 100) = v16;
     if ((v14 & 1) == 0) {

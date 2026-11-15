@@ -1229,7 +1229,7 @@ LABEL_35:
         v118 = (_BYTE*)*v53;
         v119 = *(float*)(*v53 + 144);
         if ((*(_BYTE*)(*v53 + 148) & 1) != 0) {
-          if (v109 <= v119) {
+          if (!(v109 <= v119)) {
             goto LABEL_139;
           }
           v120 = snd_g_proxy;

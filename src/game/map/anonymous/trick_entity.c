@@ -1116,7 +1116,8 @@ LABEL_9:
   *(_DWORD*)(a2 + 20) = v30 + 3;
   v34 = *(unsigned __int8*)(v31 + v30 + 2);
   *(_DWORD*)(a2 + 20) = v30 + 4;
-  v35 = v33 | (v34 << 16) | (*(unsigned __int8*)(v31 + v30 + 3) << 24);
+  v35 = (unsigned int)(v33 | (v34 << 16) |
+                       (*(unsigned __int8*)(v31 + v30 + 3) << 24));
   if ((_DWORD)v35 != 0) {
     v36 = *(_QWORD*)(GameData_21ca060 + 136);
     if (v36 != 0 && *(_QWORD*)(GameData_21ca060 + 152) != 0) {
@@ -1189,7 +1190,8 @@ LABEL_45:
   *(_DWORD*)(a2 + 20) = v60 + 3;
   v64 = *(unsigned __int8*)(v61 + v60 + 2);
   *(_DWORD*)(a2 + 20) = v60 + 4;
-  v65 = v63 | (v64 << 16) | (*(unsigned __int8*)(v61 + v60 + 3) << 24);
+  v65 = (unsigned int)(v63 | (v64 << 16) |
+                       (*(unsigned __int8*)(v61 + v60 + 3) << 24));
   if ((_DWORD)v65 == 0) {
     goto LABEL_69;
   }

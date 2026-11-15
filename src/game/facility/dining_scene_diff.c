@@ -1393,6 +1393,8 @@ __int64 game_facility_DiningSceneDiff_LoadProp(__int64 a1)
 
 __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
 {
+  __int64 ownTable;
+  __int64 otherTable;
   __int64 v1;
   __int64 v2;
   __int64* v3;
@@ -1504,9 +1506,14 @@ __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
         goto LABEL_23;
       }
       v12 = *(_QWORD*)(v2 + 72);
-      if (v12 != 0 && *(_QWORD*)(v10[3] + 1672LL) ==
-                          *(_QWORD*)(*(_QWORD*)(v12 + 24) + 1672LL)) {
-        goto LABEL_20;
+      if (v12 != 0) {
+        ownTable = *(_QWORD*)(v10[3] + 1672LL);
+        otherTable = *(_QWORD*)(*(_QWORD*)(v12 + 24) + 1672LL);
+        // Both tables are read even when the first slot is empty.
+        __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
+        if (ownTable == otherTable) {
+          goto LABEL_20;
+        }
       }
     }
   }
@@ -1569,9 +1576,13 @@ LABEL_25:
         goto LABEL_53;
       }
       v23 = *(_QWORD*)(v2 + 72);
-      if (v23 != 0 && *(_QWORD*)(v21[3] + 1672LL) ==
-                          *(_QWORD*)(*(_QWORD*)(v23 + 24) + 1672LL)) {
-        goto LABEL_44;
+      if (v23 != 0) {
+        ownTable = *(_QWORD*)(v21[3] + 1672LL);
+        otherTable = *(_QWORD*)(*(_QWORD*)(v23 + 24) + 1672LL);
+        __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
+        if (ownTable == otherTable) {
+          goto LABEL_44;
+        }
       }
     }
   }
@@ -1628,8 +1639,14 @@ LABEL_55:
   }
   else {
     v36 = *(_QWORD*)(v2 + 72);
-    if (v36 == 0 || *(_QWORD*)(*(_QWORD*)(result + 24) + 1672LL) !=
-                        *(_QWORD*)(*(_QWORD*)(v36 + 24) + 1672LL)) {
+    if (v36 == 0) {
+      goto LABEL_75;
+    }
+    ownTable = *(_QWORD*)(*(_QWORD*)(result + 24) + 1672LL);
+    otherTable = *(_QWORD*)(*(_QWORD*)(v36 + 24) + 1672LL);
+    // Both tables are read even when the first slot is empty.
+    __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
+    if (ownTable != otherTable) {
       goto LABEL_75;
     }
   }

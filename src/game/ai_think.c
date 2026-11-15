@@ -33175,6 +33175,9 @@ LABEL_210:
 __int64 AIThink_129e880(__int64 result, __int64 a2, int a3, __int64 a4, int a5,
                         int a6)
 {
+  __int64 skillIndex;
+  __int64 skillTable;
+  __int64 skillWanted;
   unsigned __int64 v6;
   unsigned __int64 v7;
   __int64 v13;
@@ -33413,12 +33416,14 @@ LABEL_24:
   v28 = *(unsigned int*)(v13 + 15840);
   if ((int)v28 >= 1) {
     v29 = (_DWORD*)(v13 + 7656);
-    while (
-        *((_BYTE*)v29 - 6) != 1 || *((_BYTE*)v29 - 4) != 14 ||
-        *(_QWORD*)(*(_QWORD*)(GameData_21c99b0 + 64) + 8LL * (*v29 & 0xFFF)) !=
-            *(_QWORD*)(*(_QWORD*)(GameData_21c99b0 + 64) +
-                       8LL * *(int*)((char*)((_UNKNOWN*)0x5CLL) +
-                                     game_g_shared_system_skills_ptr))) {
+    skillIndex = *(int*)((char*)((_UNKNOWN*)0x5CLL) +
+                         game_g_shared_system_skills_ptr);
+    skillTable = *(_QWORD*)(GameData_21c99b0 + 64);
+    skillWanted = *(_QWORD*)(skillTable + 8LL * skillIndex);
+    // The wanted skill is read before the loop, even when no unit matches.
+    __asm__ volatile("" : "+r"(skillWanted));
+    while (*((_BYTE*)v29 - 6) != 1 || *((_BYTE*)v29 - 4) != 14 ||
+           *(_QWORD*)(skillTable + 8LL * (*v29 & 0xFFF)) != skillWanted) {
       --v28;
       v29 += 16;
       if (v28 == 0) {
@@ -33704,6 +33709,8 @@ void game_AIThink_ActionSpecialAttack_lambda0_Invoke(__int64 a1, _DWORD* a2)
 
 __int64 game_AIThink_EntrustSpecialTo_lambda1_Invoke(__int64 a1, int* a2)
 {
+  int wantLo;
+  int wantHi;
   __int64 v2;
   __int64 v4;
   __int64 result;
@@ -33758,7 +33765,6 @@ __int64 game_AIThink_EntrustSpecialTo_lambda1_Invoke(__int64 a1, int* a2)
   __int64 v56;
   int v57;
   int v58;
-  bool v59;
   __int64 v60;
   _BYTE v61[4];
 
@@ -34050,13 +34056,15 @@ LABEL_41:
       goto LABEL_101;
     }
   }
-  if (*(_DWORD*)v52 < v51 || (v58 = *(_DWORD*)(v52 + 28)) < 0 ||
-      (*(_DWORD*)v52 <= v51
-           ? (v59 = (v58 | (*(_DWORD*)(v52 + 32) << 16)) <=
-                    (*(_DWORD*)(*(_QWORD*)(a1 + 56) + 12LL) |
-                     (*(_DWORD*)(*(_QWORD*)(a1 + 56) + 16LL) << 16)))
-           : (v59 = true),
-       !v59)) {
+  if (*(_DWORD*)v52 < v51 || (v58 = *(_DWORD*)(v52 + 28)) < 0) {
+    goto LABEL_101;
+  }
+  wantLo = *(_DWORD*)(*(_QWORD*)(a1 + 56) + 12LL);
+  wantHi = *(_DWORD*)(*(_QWORD*)(a1 + 56) + 16LL);
+  // Both fields are read before the order test.
+  __asm__ volatile("" : "+r"(wantLo), "+r"(wantHi));
+  if (*(_DWORD*)v52 <= v51 &&
+      !((v58 | (*(_DWORD*)(v52 + 32) << 16)) <= (wantLo | (wantHi << 16)))) {
   LABEL_101:
     *(_DWORD*)v52 = v51;
     *(_QWORD*)(*(_QWORD*)(a1 + 72) + 8LL) =

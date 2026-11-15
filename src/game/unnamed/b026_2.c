@@ -2836,7 +2836,8 @@ __int64 GameHr_1988120(__int64 a1, _QWORD* a2)
           if ((v53 & 0x80000000) != 0 ||
               (v55 = *(_QWORD*)(v54 + 264),
                (__int64)(0xAAAAAAAAAAAAAAABLL *
-                         ((*(_QWORD*)(v54 + 272) - v55) >> 3)) <= v53)) {
+                         ((__int64)(*(_QWORD*)(v54 + 272) - v55) >> 3)) <=
+                   v53)) {
             v56 = 0;
           }
           else {
@@ -6614,7 +6615,8 @@ __int64 GameHr_19ae900(__int64 result, int a2)
       if (v21 != 0) {
         v22 = __dynamic_cast(v21, GameData_212d670[0], GameData_212fc70[0], 0);
         if (v22 != 0) {
-          v23 = -(float)((float)(*(_DWORD*)(v7 + 228) - *(_DWORD*)(v7 + 224)) *
+          v23 = -(float)((float)(int)(*(_DWORD*)(v7 + 228) -
+                                     *(_DWORD*)(v7 + 224)) *
                          fminf(fmaxf((float)(v13 + -0x1.4000000000000p+8f) /
                                          (float)(v14 + -0x1.4000000000000p+8f),
                                      0x0.0p+0f),

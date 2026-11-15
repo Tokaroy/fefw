@@ -45,7 +45,7 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
       }
       else {
         *(_DWORD*)(a2 + 304) = *(_DWORD*)&v8[*((unsigned int*)v8 + 1)];
-        *(_DWORD*)(a2 + 308) = *(_DWORD*)&v8[*((unsigned int*)v8 + 1) + 4];
+        *(_DWORD*)(a2 + 308) = *(_DWORD*)&v8[*((unsigned int*)v8 + 1) + 4LL];
         v9 = *(unsigned int*)v8;
         if (strcmp("__CUS_Vec2_1", &v8[v9]) != 0) {
         LABEL_7:
@@ -69,7 +69,7 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
       }
     LABEL_24:
       *(_DWORD*)(a2 + 336) = *(_DWORD*)&v10[*((unsigned int*)v8 + 1)];
-      *(_DWORD*)(a2 + 340) = *(_DWORD*)&v10[*((unsigned int*)v8 + 1) + 4];
+      *(_DWORD*)(a2 + 340) = *(_DWORD*)&v10[*((unsigned int*)v8 + 1) + 4LL];
       v9 = *(unsigned int*)v10;
       if (strcmp("__CUS_Vec2_3", &v10[v9]) != 0) {
       LABEL_9:
@@ -93,8 +93,8 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
       }
     LABEL_26:
       *(_DWORD*)(a2 + 368) = *(_DWORD*)&v11[*((unsigned int*)v8 + 1)];
-      *(_DWORD*)(a2 + 372) = *(_DWORD*)&v11[*((unsigned int*)v8 + 1) + 4];
-      *(_DWORD*)(a2 + 376) = *(_DWORD*)&v11[*((unsigned int*)v8 + 1) + 8];
+      *(_DWORD*)(a2 + 372) = *(_DWORD*)&v11[*((unsigned int*)v8 + 1) + 4LL];
+      *(_DWORD*)(a2 + 376) = *(_DWORD*)&v11[*((unsigned int*)v8 + 1) + 8LL];
       v9 = *(unsigned int*)v11;
       if (strcmp("__CUS_Vec3_1", &v11[v9]) != 0) {
       LABEL_11:
@@ -119,8 +119,8 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
       }
     LABEL_28:
       *(_DWORD*)(a2 + 400) = *(_DWORD*)&v12[*((unsigned int*)v8 + 1)];
-      *(_DWORD*)(a2 + 404) = *(_DWORD*)&v12[*((unsigned int*)v8 + 1) + 4];
-      *(_DWORD*)(a2 + 408) = *(_DWORD*)&v12[*((unsigned int*)v8 + 1) + 8];
+      *(_DWORD*)(a2 + 404) = *(_DWORD*)&v12[*((unsigned int*)v8 + 1) + 4LL];
+      *(_DWORD*)(a2 + 408) = *(_DWORD*)&v12[*((unsigned int*)v8 + 1) + 8LL];
       v9 = *(unsigned int*)v12;
       if (strcmp("__CUS_Vec3_3", &v12[v9]) != 0) {
       LABEL_13:
@@ -146,12 +146,13 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
     LABEL_30:
       *(float*)(a2 + 432) =
           (float)*(int*)&v13[*((unsigned int*)v8 + 1)] / 0x1.fe00000000000p+7f;
-      *(float*)(a2 + 436) = (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 4] /
+      *(float*)(a2 + 436) = (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 4LL] /
                             0x1.fe00000000000p+7f;
-      *(float*)(a2 + 440) = (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 8] /
+      *(float*)(a2 + 440) = (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 8LL] /
                             0x1.fe00000000000p+7f;
-      *(float*)(a2 + 444) = (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 12] /
-                            0x1.fe00000000000p+7f;
+      *(float*)(a2 + 444) =
+          (float)*(int*)&v13[*((unsigned int*)v8 + 1) + 12LL] /
+          0x1.fe00000000000p+7f;
       v9 = *(unsigned int*)v13;
       if (strcmp("__CUS_Rgba_1", &v13[v9]) != 0) {
       LABEL_15:
@@ -185,12 +186,13 @@ void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
     LABEL_32:
       *(float*)(a2 + 464) =
           (float)*(int*)&v14[*((unsigned int*)v8 + 1)] / 0x1.fe00000000000p+7f;
-      *(float*)(a2 + 468) = (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 4] /
+      *(float*)(a2 + 468) = (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 4LL] /
                             0x1.fe00000000000p+7f;
-      *(float*)(a2 + 472) = (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 8] /
+      *(float*)(a2 + 472) = (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 8LL] /
                             0x1.fe00000000000p+7f;
-      *(float*)(a2 + 476) = (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 12] /
-                            0x1.fe00000000000p+7f;
+      *(float*)(a2 + 476) =
+          (float)*(int*)&v14[*((unsigned int*)v8 + 1) + 12LL] /
+          0x1.fe00000000000p+7f;
       v9 = *(unsigned int*)v14;
       if (strcmp("__CUS_Rgba_3", &v14[v9]) != 0) {
       LABEL_17:

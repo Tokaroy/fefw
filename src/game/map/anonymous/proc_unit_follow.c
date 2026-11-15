@@ -254,7 +254,7 @@ void ProcUnitFollow_Unknown2(__int64 a1, long double a2)
             (float)((float)(*(float*)&v9 * v6) * 0x1.4000000000000p-1);
       v11 = *(float*)(v2 + 356);
       *(float*)(v2 + 360) = v10;
-      if (v10 <= v11) {
+      if (!(v10 > v11)) {
         v13 = *(_DWORD*)(v2 + 352);
       }
       else {

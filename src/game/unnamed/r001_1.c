@@ -936,7 +936,8 @@ __int64 GameHr_78e5d0(__int64 a1)
       *(char*)(*GameData_212cff0[0] + 12LL * v1 + 12414) < 0) {
     v1 = *(_DWORD*)(a1 + 272);
     if ((v1 & 0x80000000) != 0) {
-      goto LABEL_85;
+      v7 = (__int64)&GameData_1b47d78;
+      goto LABEL_entry;
     }
     v4 = *GameData_212cff0[0];
     v5 = 64;
@@ -946,8 +947,9 @@ __int64 GameHr_78e5d0(__int64 a1)
   }
   v6 = v4 + v5;
   v7 = v6 + 12LL * v1 + 4;
-  if ((*(char*)(v6 + 12LL * v1 + 5) & 0x80000000) == 0 &&
-      (*(char*)(v6 + 12LL * v1 + 6) & 0x80000000) == 0) {
+LABEL_entry:
+  if ((*(char*)(v7 + 1) & 0x80000000) == 0 &&
+      (*(char*)(v7 + 2) & 0x80000000) == 0) {
     v8 = (_DWORD*)*GameData_212cff0[0];
     v9 = *(unsigned __int8*)(*GameData_212cff0[0] + 32);
     if (v9 == 10) {
@@ -979,7 +981,7 @@ __int64 GameHr_78e5d0(__int64 a1)
       v16 = (char*)GameData_212d208;
     }
     else {
-      v16 = (char*)&v8[3 * v15 + 17];
+      v16 = (char*)&v8[3 * (unsigned __int64)(unsigned int)v15 + 17];
     }
     if ((v16[1] & 0x80000000) == 0 && (v16[2] & 0x80000000) == 0) {
       if ((unsigned int)(v9 - 3) < 3) {

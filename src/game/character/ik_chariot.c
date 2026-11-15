@@ -1200,18 +1200,18 @@ void game_character_IKChariot_IKChariot_lambda1_Invoke(__int64 a1, __int64 a2,
           .n64_u64[0];
   *(int8x8_t*)&LANES128(v103.val[0]).n128_i8[8] =
       vqtbl2_s8(v104, COERCE_AS(int8x8_t, 0xF0E0D0C0B0A0908LL));
-  v104.val[1] = vmlaq_laneq_f32(
-      vmlaq_lane_f32(vmulq_n_f32(v105.val[0], COERCE_FLOAT(*(_OWORD*)&v5[2])),
+  v104.val[1] = vfmaq_laneq_f32(
+      vfmaq_lane_f32(vmulq_n_f32(v105.val[0], COERCE_FLOAT(*(_OWORD*)&v5[2])),
                      v105.val[1],
                      COERCE_AS(float32x2_t, LANES128(v5[2]).n128_u64[0]), 1),
       v103.val[0], v5[2], 2);
-  *v5 = vmlaq_laneq_f32(
-      vmlaq_lane_f32(vmulq_n_f32(v105.val[0], LANES128(v69).n128_f32[0]),
+  *v5 = vfmaq_laneq_f32(
+      vfmaq_lane_f32(vmulq_n_f32(v105.val[0], LANES128(v69).n128_f32[0]),
                      v105.val[1],
                      COERCE_AS(float32x2_t, LANES128(v69).n128_u64[0]), 1),
       v103.val[0], v69, 2);
-  v5[1] = vmlaq_laneq_f32(
-      vmlaq_lane_f32(vmulq_n_f32(v105.val[0], LANES128(v70).n128_f32[0]),
+  v5[1] = vfmaq_laneq_f32(
+      vfmaq_lane_f32(vmulq_n_f32(v105.val[0], LANES128(v70).n128_f32[0]),
                      v105.val[1],
                      COERCE_AS(float32x2_t, LANES128(v70).n128_u64[0]), 1),
       v103.val[0], v70, 2);

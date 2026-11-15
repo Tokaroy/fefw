@@ -3700,7 +3700,7 @@ LABEL_10:
         LABEL_71:
           v42 = *(float*)(a1 + 1192);
           v43 = (float)(unsigned __int64)(*(_QWORD*)(a1 + 1184) + 1LL);
-          if (v26 != 0 && (float)(v42 * (float)v26) >= v43) {
+          if (v26 != 0 && !((float)(v42 * (float)v26) < v43)) {
             goto LABEL_73;
           }
           v47 = v43 / v42;
@@ -9561,6 +9561,8 @@ void game_18c3220(__int64 a1)
   unsigned __int64 v157;
   char* v158;
   __int64 v159;
+  __int64 hudLayout;
+  _BOOL8 hudStale;
   _QWORD v160[2];
   struct {
     const char* v161;
@@ -9590,11 +9592,22 @@ void game_18c3220(__int64 a1)
     LayoutEx_58d200(v5, "N_HudPool");
     *(_BYTE*)(*(_QWORD*)(a1 + 136) + 88LL) &= ~1u;
     v7 = std___1___shared_weak_count_lock(*(_QWORD*)(a1 + 32));
-    if (v7 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v7 + 8),
-                                    0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v8 = v7;
-      (*(void (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
-      std___1___shared_weak_count___release_weak_alt1(v8);
+    hudStale = 1;
+    if (v7 != 0) {
+      hudLayout = *(_QWORD*)(a1 + 24);
+      if (hudLayout != 0) {
+        hudStale = (*(_BYTE*)(hudLayout + 24) != 0 ? hudLayout + 152 : 0) !=
+                   *(_QWORD*)(a1 + 40);
+      }
+      if (atomic_fetch_add((atomic_ullong* volatile)(v7 + 8),
+                           0xFFFFFFFFFFFFFFFFLL) == 0) {
+        v8 = v7;
+        (*(void (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+        std___1___shared_weak_count___release_weak_alt1(v8);
+      }
+    }
+    if (v7 == 0 || hudStale) {
+      (void)*(volatile _QWORD*)(*(_QWORD*)(a1 + 32) + 8LL);
     }
     Pane_58dee0(*(_QWORD*)(*(_QWORD*)(a1 + 40) + 24LL), *(_QWORD*)(a1 + 136));
   }
@@ -9611,11 +9624,22 @@ void game_18c3220(__int64 a1)
     LayoutEx_58d200(v10, "N_HudRoot");
     *(_BYTE*)(*(_QWORD*)(a1 + 128) + 88LL) |= 1u;
     v12 = std___1___shared_weak_count_lock(*(_QWORD*)(a1 + 32));
-    if (v12 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
-                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v13 = v12;
-      (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
-      std___1___shared_weak_count___release_weak_alt1(v13);
+    hudStale = 1;
+    if (v12 != 0) {
+      hudLayout = *(_QWORD*)(a1 + 24);
+      if (hudLayout != 0) {
+        hudStale = (*(_BYTE*)(hudLayout + 24) != 0 ? hudLayout + 152 : 0) !=
+                   *(_QWORD*)(a1 + 40);
+      }
+      if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
+                           0xFFFFFFFFFFFFFFFFLL) == 0) {
+        v13 = v12;
+        (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
+        std___1___shared_weak_count___release_weak_alt1(v13);
+      }
+    }
+    if (v12 == 0 || hudStale) {
+      (void)*(volatile _QWORD*)(*(_QWORD*)(a1 + 32) + 8LL);
     }
     Pane_58dee0(*(_QWORD*)(*(_QWORD*)(a1 + 40) + 24LL), *(_QWORD*)(a1 + 128));
   }

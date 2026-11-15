@@ -665,7 +665,10 @@ LABEL_121:
     }
     v75 = v73 != 0;
   }
-  v76 = (v69 == 3) & (*(unsigned __int8*)(v51 + 178) >> 2);
+  v76 = *(unsigned __int8*)(v51 + 178);
+  // The flag byte is read whatever the mode.
+  __asm__ volatile("" : "+r"(v76));
+  v76 = (v69 == 3) & (v76 >> 2);
   v77 = v81_.v81;
   if (v81_.v81 != 0) {
   LABEL_133:
