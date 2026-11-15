@@ -154,7 +154,6 @@ __int64 GameRoutine_834b40();
 __int64 GameRoutine_834c40(__int64 result, __int64*,
                            __int64 (**)(__int64, __int64), unsigned __int64,
                            __int64*, signed __int64);
-__int64 GameVariable_827530_alt1(__int64) __asm__("GameVariable_827530");
 __int64 Situation_7671b0(__int64);
 __int64 __cxa_guard_acquire(_QWORD);
 __int64 __cxa_guard_release(_QWORD);
@@ -4168,6 +4167,8 @@ __int64 GameVariable_829dc0(__int64 a1)
     char gap160_[16];
     __int64 (**v345)(__int64, __int64);
   } v343_;
+  __int64 v346;
+  __int64 v347;
 
   GameRoutine_82d5c0(a1, 0xFu);
   GameRoutine_82d5c0(a1, 0xCu);
@@ -6051,6 +6052,9 @@ LABEL_97:
         GameRoutine_834c40(v320, v321,
                            (__int64 (**)(__int64, __int64))&v343_.v343,
                            ((__int64)v321 - v320) >> 3, nullptr, v325);
+        // The registers 0x827530 gets past x0, as this call left them.
+        v346 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
+        v347 = PSEUDO_REGISTER(unsigned long long, "x2", "=r");
       }
       else {
         v322 = ((__int64)v321 - v320) >> 3;
@@ -6077,11 +6081,13 @@ LABEL_97:
         }
         nn_mem_StandardAllocator_Free(
             *(_QWORD*)fw_memory_g_heap_manager_ptr + v327, v326);
+        v346 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
+        v347 = PSEUDO_REGISTER(unsigned long long, "x2", "=r");
       }
       v343_.v343 = GameData_1f9f8a0;
       v343_.v344 = (__int64*)a1;
       v343_.v345 = (__int64 (**)(__int64, __int64))&v343_.v343;
-      GameVariable_827530_alt1((__int64)&v343_.v343);
+      GameVariable_827530((__int64)&v343_.v343, v346, v347);
       result = (__int64)v343_.v345;
       if (v343_.v345 == (__int64 (**)(__int64, __int64))&v343_.v343) {
         v329 = 32;

@@ -537,14 +537,18 @@ __int64 game_hub_Locator_GetRegisterPos(__int64 a1, _QWORD* a2, _DWORD* a3)
   _QWORD* v23;
   __int64 v24;
   __int64 v25;
-  _BYTE v26[32];
-  _BYTE* v27;
-  _QWORD v28[2];
-  __int64 v29;
+  struct {
+    _BYTE v26[32];
+    _BYTE* v27;
+    char gap40_[16];
+    _QWORD v28[2];
+    __int64 v29;
+  } v26_;
   char v30;
 
-  LocatorDispos_db1f30((void*)(v28), (char*)(a1 + 376));
-  v6 = (__int64**)game_ff5c20(*(_QWORD*)(*GameData_212ebe0 + 8) + 24LL, v28);
+  LocatorDispos_db1f30((void*)(v26_.v28), (char*)(a1 + 376));
+  v6 = (__int64**)game_ff5c20(*(_QWORD*)(*GameData_212ebe0 + 8) + 24LL,
+                              v26_.v28);
   v7 = *v6;
   v8 = v6[1];
   v9 = (_QWORD*)fw_memory_g_heap_manager_ptr;
@@ -556,21 +560,22 @@ __int64 game_hub_Locator_GetRegisterPos(__int64 a1, _QWORD* a2, _DWORD* a3)
     v23[2] = a1;
     v23[3] = a2;
     v23[4] = a3;
-    v27 = v23;
+    v26_.v27 = v23;
     *v23 = GameData_1fe1b28;
     v23[1] = &v30;
-    EventManager_cbc720(v22, v28, v26);
-    result = (__int64)v27;
-    if (v27 == v26) {
+    EventManager_cbc720(v22, v26_.v28, v26_.v26);
+    result = (__int64)v26_.v27;
+    if (v26_.v27 == v26_.v26) {
       v24 = 32;
     }
     else {
-      if (v27 == nullptr) {
+      if (v26_.v27 == nullptr) {
         goto LABEL_22;
       }
       v24 = 40;
     }
-    result = (*(__int64 (**)(__int64))(*(_QWORD*)v27 + v24))((__int64)v27);
+    result = (*(__int64 (**)(__int64))(*(_QWORD*)v26_.v27 + v24))(
+        (__int64)v26_.v27);
     goto LABEL_22;
   }
   v10 = *(unsigned __int8*)(a1 + 704);
@@ -615,12 +620,12 @@ __int64 game_hub_Locator_GetRegisterPos(__int64 a1, _QWORD* a2, _DWORD* a3)
   *(_OWORD*)a2 = v21;
   *a3 = *(_DWORD*)(*v7 + 196);
 LABEL_22:
-  if ((v28[0] & 1) != 0 && v29 != 0) {
+  if ((v26_.v28[0] & 1) != 0 && v26_.v29 != 0) {
     v25 = 128;
     if (*(_QWORD*)(*v9 + 200LL) == 0) {
       v25 = 56;
     }
-    return nn_mem_StandardAllocator_Free_alt1(*v9 + v25, v29);
+    return nn_mem_StandardAllocator_Free_alt1(*v9 + v25, v26_.v29);
   }
   return result;
 }

@@ -1058,9 +1058,9 @@ __int64* nn_vfx_5d6100(__int64 a1, unsigned __int64 a2)
   v4 = a1 + 8;
   v5 = *(float*)(a1 + 8);
   v6 = *(float*)a1;
-  if (v5 <= *(float*)a1) {
+  if (!(v5 > *(float*)a1)) {
     v10 = 0;
-    while (v5 < v6 || *(_DWORD*)(v4 + 4) < v3) {
+    while (v5 < v6 || *(int*)(v4 + 4) < v3) {
       v11 = *(float*)(v4 + 8);
       v4 += 8LL;
       v5 = v11;
@@ -1079,7 +1079,7 @@ __int64* nn_vfx_5d6100(__int64 a1, unsigned __int64 a2)
         a2 -= 8LL;
         v13 = v12 < v6;
       } while (v12 > v6);
-    } while (!v13 && *(_DWORD*)(a2 + 4) >= v3);
+    } while (!v13 && *(int*)(a2 + 4) >= v3);
   }
   else {
   LABEL_2:
@@ -1091,7 +1091,7 @@ __int64* nn_vfx_5d6100(__int64 a1, unsigned __int64 a2)
         if (v7 > v6) {
           break;
         }
-        if (!v8 && *(_DWORD*)(a2 + 4) >= v3 && v4 < a2) {
+        if (!v8 && *(int*)(a2 + 4) >= v3 && v4 < a2) {
           continue;
         }
         goto LABEL_19;
@@ -1111,14 +1111,14 @@ LABEL_19:
         v17 = *(float*)(v14 + 8);
         v14 += 8LL;
         v18 = v17;
-      } while (v17 <= v6 && (v18 < v6 || *(_DWORD*)(v14 + 4) < v3));
+      } while (!(v17 > v6) && (v18 < v6 || *(int*)(v14 + 4) < v3));
       do {
         do {
           v19 = *(float*)(v15 - 8);
           v15 -= 8LL;
           v20 = v19 < v6;
         } while (v19 > v6);
-      } while (!v20 && *(_DWORD*)(v15 + 4) >= v3);
+      } while (!v20 && *(int*)(v15 + 4) >= v3);
     } while (v14 < v15);
   }
   if (a1 != v14 - 8) {

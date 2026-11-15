@@ -207,7 +207,7 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
           }
           if (v15 != 0) {
             nn_vfx_5d6ac0(*a2, (float*)(*a2 + 8LL * v15), (__int64)&v46,
-                          (2 * __clz(v15)) ^ 0x7E, 1, a7);
+                          (2 * __clz((__int64)v15)) ^ 0x7E, 1, a7);
           }
         }
       }
@@ -302,12 +302,12 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
             0) {
           if (v20 != 0) {
             nn_vfx_5d8200(v44, (float*)(v44 + 8LL * v20), (__int64)&v47,
-                          (2 * __clz(v20)) ^ 0x7E, 1);
+                          (2 * __clz((__int64)v20)) ^ 0x7E, 1);
           }
         }
         else if (v20 != 0) {
           nn_vfx_5d9c60(v44, (float*)(v44 + 8LL * v20), (__int64)&v48,
-                        (2 * __clz(v20)) ^ 0x7E, 1);
+                        (2 * __clz((__int64)v20)) ^ 0x7E, 1);
         }
         return v7 <= v8;
       }
@@ -334,7 +334,7 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
     }
     if (v42 != 0) {
       GameRoutine_5d5380(*a2, (float*)(*a2 + 8LL * v42), (__int64)&v45,
-                         (2 * __clz(v42)) ^ 0x7E, 1, a7);
+                         (2 * __clz((__int64)v42)) ^ 0x7E, 1, a7);
     }
   }
   return v7 <= v8;

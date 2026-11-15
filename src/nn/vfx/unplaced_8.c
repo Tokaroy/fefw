@@ -42,6 +42,8 @@ void nn_vfx_5d0a40(__int64 a1, __int64 a2)
   __int64 v28;
   float v29;
   float v30;
+  float32x4_t v31;
+  float32x4_t v32;
 
   v2 = *(_QWORD*)(a2 + 1048);
   v3 = *(_QWORD*)(v2 + 24);
@@ -70,7 +72,10 @@ void nn_vfx_5d0a40(__int64 a1, __int64 a2)
             v19 = (float32x4_t*)LANES128(v19[5]).n128_u64[1];
             ++v20;
             LANES128(v22).n128_u64[1] = *(unsigned int*)(v5 + 64);
-            v19[1] = vmulq_n_f32(vaddq_f32(v19[1], vmulq_n_f32(v22, v8)), v21);
+            v31 = vmulq_n_f32(v22, v8);
+            // Unfused in the original.
+            __asm__("" : "+w"(v31));
+            v19[1] = vmulq_n_f32(vaddq_f32(v19[1], v31), v21);
             v18 = *(_DWORD*)(v15 + 112);
           } while (v20 < v18);
           if (v18 >= 1) {
@@ -79,7 +84,9 @@ void nn_vfx_5d0a40(__int64 a1, __int64 a2)
             do {
               v23 = (float32x4_t*)LANES128(v23[5]).n128_u64[1];
               ++v24;
-              v7 = COERCE_LONG_DOUBLE(vaddq_f32(*v23, vmulq_n_f32(v23[1], v8)));
+              v32 = vmulq_n_f32(v23[1], v8);
+              __asm__("" : "+w"(v32));
+              v7 = COERCE_LONG_DOUBLE(vaddq_f32(*v23, v32));
               *(long double*)v23 = v7;
               v18 = *(_DWORD*)(v15 + 112);
             } while (v24 < v18);
@@ -95,8 +102,8 @@ void nn_vfx_5d0a40(__int64 a1, __int64 a2)
         if (floorf(v25) > floorf(v26)) {
           *(_DWORD*)(v15 + 112) = --v18;
         }
-        v12 = v9 + 80LL * v17 * v16;
-        *(float*)&v7 = (float)(*(_DWORD*)(v15 + 116) - v18);
+        v12 = v9 + 80LL * (v17 * v16);
+        *(float*)&v7 = (float)(*(int*)(v15 + 116) - v18);
         v13 = *(_DWORD*)(v5 + 40);
         if (v13 != 0) {
           v6 = SuperStripeSystem_5d0320(*(float*)&v7 * (float)(v13 + 1), v6,

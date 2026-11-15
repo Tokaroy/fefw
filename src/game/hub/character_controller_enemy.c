@@ -2221,8 +2221,8 @@ __int64 CharacterControllerEnemy_10c5990(__int64 a1, char a2)
       if ((a2 & 1) != 0) {
         v11 = CharacterControllerEnemy_10c3df0(a1);
         v12 = *(_QWORD*)(a1 + 8);
-        if (v11 >= (float)(*(float*)(*(_QWORD*)(v12 + 800) + 32LL) *
-                           0x1.0000000000000p-1f)) {
+        if (!(v11 < (float)(*(float*)(*(_QWORD*)(v12 + 800) + 32LL) *
+                            0x1.0000000000000p-1f))) {
           goto LABEL_27;
         }
       }
@@ -2245,8 +2245,8 @@ __int64 CharacterControllerEnemy_10c5990(__int64 a1, char a2)
         goto LABEL_27;
       }
       if ((*(_BYTE*)(a1 + 36) & 1) == 0 &&
-          LANES64_OF(game_hub_10c3b70((_QWORD*)a1)).n64_f32[0] >=
-              *(float*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 800LL) + 36LL)) {
+          !(LANES64_OF(game_hub_10c3b70((_QWORD*)a1)).n64_f32[0] <
+            *(float*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 800LL) + 36LL))) {
       LABEL_27:
         v15 = *(_QWORD*)(GameData_21f3c98 + 128);
         if (v15 != 0) {

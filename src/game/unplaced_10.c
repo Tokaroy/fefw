@@ -1194,7 +1194,8 @@ extern __int64 GameData_220d5e8;
 extern __int64 GameData_220d5f0;
 extern __int64 GameData_220d608;
 extern __int64 GameData_220d610;
-extern __int64 GameData_22110ac;
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac;
 extern __int64 GameData_22110c0;
 extern __int64 GameData_2213840;
 extern __int64 GameData_2213848;
@@ -9219,12 +9220,12 @@ float game_d27af0(float a1, float a2, float a3, float a4, __int64 a5)
     v14 = 0x0.0p+0f;
     if ((float)(a3 - a1) != 0x0.0p+0f) {
       v15 = (float)(fabsf(v12) - a1) / (float)(a3 - a1);
-      v16 = 0x1.0000000000000p+0f;
-      if (v15 <= 0x1.0000000000000p+0f) {
-        v16 = v15;
+      v16 = v15;
+      if (v15 > 0x1.0000000000000p+0f) {
+        v16 = 0x1.0000000000000p+0f;
       }
-      if (v15 >= 0x0.0p+0f) {
-        if (v16 <= 0x0.0p+0f) {
+      if (!(v15 < 0x0.0p+0f)) {
+        if (!(v16 > 0x0.0p+0f)) {
           v14 = v16;
         }
         else {
@@ -9236,11 +9237,11 @@ float game_d27af0(float a1, float a2, float a3, float a4, __int64 a5)
     }
     if ((float)(a3 - a2) != 0x0.0p+0f) {
       v17 = (float)(fabsf(v11) - a2) / (float)(a3 - a2);
-      v18 = 0x1.0000000000000p+0f;
-      if (v17 <= 0x1.0000000000000p+0f) {
-        v18 = v17;
+      v18 = v17;
+      if (v17 > 0x1.0000000000000p+0f) {
+        v18 = 0x1.0000000000000p+0f;
       }
-      if (v17 >= 0x0.0p+0f && v18 > 0x0.0p+0f) {
+      if (!(v17 < 0x0.0p+0f) && v18 > 0x0.0p+0f) {
         fmaxf(powf(v18, a4), 0x0.0p+0f),
             v10 = COERCE_AS(__typeof__(v10),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));

@@ -60,11 +60,11 @@ game_facility_IProcFacilitySceneCombat_CopyCombatCameraProperty(__n128 result)
   struct {
     _QWORD v7[4];
     _QWORD* v8;
-  } v7_;
-  struct {
+    char gap40_[8];
     _QWORD v9[4];
     _QWORD* v10;
-  } v9_;
+    char gap88_[8];
+  } v7_;
 
   if (GameData_21ec7b0 != 0) {
     v1 = *(_QWORD*)(GameData_21f4000 + 264);
@@ -81,19 +81,22 @@ game_facility_IProcFacilitySceneCombat_CopyCombatCameraProperty(__n128 result)
         }
         v7_.v7[0] = GameData_2043b48;
         v7_.v8 = v7_.v7;
-        v9_.v10 = v9_.v9;
-        v9_.v9[0] = GameData_2043b48;
-        GameRoutine_14514d0(v9_.v9, (_QWORD*)(v2 + 272));
-        if (v9_.v10 == v9_.v9) {
+        v7_.v10 = v7_.v9;
+        v7_.v9[0] = GameData_2043b48;
+        GameRoutine_14514d0(v7_.v9, (_QWORD*)(v2 + 272));
+        // The calls leave q0 for the result.
+        result = PSEUDO_REGISTER(__n128, "v0", "=w");
+        if (v7_.v10 == v7_.v9) {
           v5 = 32;
         }
         else {
-          if (v9_.v10 == nullptr) {
+          if (v7_.v10 == nullptr) {
             goto LABEL_10;
           }
           v5 = 40;
         }
-        (*(void (**)(__int64))(*v9_.v10 + v5))((__int64)v9_.v10);
+        (*(void (**)(__int64))(*v7_.v10 + v5))((__int64)v7_.v10);
+        result = PSEUDO_REGISTER(__n128, "v0", "=w");
       LABEL_10:
         if (v7_.v8 == v7_.v7) {
           v6 = 32;
@@ -105,6 +108,7 @@ game_facility_IProcFacilitySceneCombat_CopyCombatCameraProperty(__n128 result)
           v6 = 40;
         }
         (*(void (**)(__int64))(*v7_.v8 + v6))((__int64)v7_.v8);
+        result = PSEUDO_REGISTER(__n128, "v0", "=w");
       LABEL_15:
         if (atomic_fetch_add((atomic_ullong* volatile)(v4 + 8),
                              0xFFFFFFFFFFFFFFFFLL) == 0) {

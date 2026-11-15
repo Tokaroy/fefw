@@ -492,7 +492,7 @@ __int64 CmdbtlPartyNatives_e738c0(__int64 a1, unsigned int a2)
     if (v7 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v7 + 8),
                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
-      std___1___shared_weak_count___release_weak();
+      std___1___shared_weak_count___release_weak_alt3(v7);
     }
   }
   *(_QWORD*)(a1 + 48) = v2;
@@ -534,11 +534,11 @@ __int64 CmdbtlPartyNatives_e738c0(__int64 a1, unsigned int a2)
     }
     else {
       (*(void (**)(_QWORD*))(*v14 + 16LL))(v14);
-      std___1___shared_weak_count___release_weak();
+      std___1___shared_weak_count___release_weak_alt3((__int64)v14);
       if (atomic_fetch_add(v15, 0xFFFFFFFFFFFFFFFFLL) == 0) {
       LABEL_20:
         (*(void (**)(_QWORD*))(*v14 + 16LL))(v14);
-        std___1___shared_weak_count___release_weak();
+        std___1___shared_weak_count___release_weak_alt3((__int64)v14);
       }
     }
   }
@@ -584,7 +584,7 @@ __int64 CmdbtlPartyNatives_e738c0(__int64 a1, unsigned int a2)
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v34 + 16), 1u,
                                 memory_order_relaxed);
       CmdbtlPartyNatives_e73070((_QWORD*)a1, v32);
-      result = std___1___shared_weak_count___release_weak();
+      result = std___1___shared_weak_count___release_weak_alt3(v34);
     }
     v19 = v34;
     if (v34 == 0) {
@@ -594,7 +594,7 @@ __int64 CmdbtlPartyNatives_e738c0(__int64 a1, unsigned int a2)
     if (atomic_fetch_add((atomic_ullong* volatile)(v19 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v19 + 16LL))(v19);
-      result = std___1___shared_weak_count___release_weak();
+      result = std___1___shared_weak_count___release_weak_alt3(v19);
     }
   }
 
@@ -614,7 +614,7 @@ LABEL_35:
   if (v23 == 0) {
     v25 = *(_QWORD*)(a1 + 40);
     v24 = *(_QWORD*)(a1 + 48);
-    result = std___1___shared_weak_count___release_weak();
+    result = std___1___shared_weak_count___release_weak_alt3(v22);
     if (v24 == v25) {
       return result;
     }
@@ -624,18 +624,18 @@ LABEL_35:
     if (atomic_fetch_add((atomic_ullong* volatile)(v23 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v23 + 16LL))(v23);
-      std___1___shared_weak_count___release_weak();
+      std___1___shared_weak_count___release_weak_alt3(v23);
     }
-    return std___1___shared_weak_count___release_weak();
+    return std___1___shared_weak_count___release_weak_alt3(v22);
   }
   v27 = *(_QWORD*)(a1 + 40);
   v26 = *(_QWORD*)(a1 + 48);
   if (atomic_fetch_add((atomic_ullong* volatile)(v23 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v23 + 16LL))(v23);
-    std___1___shared_weak_count___release_weak();
+    std___1___shared_weak_count___release_weak_alt3(v23);
   }
-  result = std___1___shared_weak_count___release_weak();
+  result = std___1___shared_weak_count___release_weak_alt3(v22);
   if (v26 != v27) {
   LABEL_47:
     v28 = *(__int64**)(a1 + 40);
@@ -646,7 +646,7 @@ LABEL_35:
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v29 + 16), 1u,
                                 memory_order_relaxed);
       CmdbtlPartyNatives_e73070((_QWORD*)a1, v31);
-      return std___1___shared_weak_count___release_weak();
+      return std___1___shared_weak_count___release_weak_alt3(v29);
     }
     return CmdbtlPartyNatives_e73070((_QWORD*)a1, v31);
   }

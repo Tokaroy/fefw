@@ -2216,7 +2216,7 @@ float CombatLegionManager_e2d770(__int64 a1, float* a2, float* a3, float* a4,
   v17 = v14 - v12;
   v18 = (float)(PSEUDO_UNFUSED(v16 * v16)) + (float)(v17 * v17);
   v19 = 0x0.0p+0f;
-  if (v18 >= 0x1.0000000000000p-23f) {
+  if (!(v18 < 0x1.0000000000000p-23f)) {
     v20 = 0x1.0000000000000p+0f / sqrtf(v18);
     v19 = v17 * v20;
     v10 = v16 * v20;
@@ -2226,17 +2226,17 @@ float CombatLegionManager_e2d770(__int64 a1, float* a2, float* a3, float* a4,
   v23 = v13 - v22;
   v24 = v12 - *a4;
   v25 = (float)(PSEUDO_UNFUSED(v23 * v23)) + (float)(v24 * v24);
-  if (v25 >= 0x1.0000000000000p-23f) {
+  if (!(v25 < 0x1.0000000000000p-23f)) {
     v26 = 0x1.0000000000000p+0f / sqrtf(v25);
     v9 = v24 * v26;
     v8 = v23 * v26;
   }
-  if ((float)((float)(PSEUDO_UNFUSED(v10 * v8)) + (float)(v19 * v9)) <=
-      0x0.0p+0f) {
+  if (!((float)((float)(PSEUDO_UNFUSED(v10 * v8)) + (float)(v19 * v9)) >
+        0x0.0p+0f)) {
     v27 = v15 - v22;
     v28 = v14 - v21;
     v29 = (float)(PSEUDO_UNFUSED(v27 * v27)) + (float)(v28 * v28);
-    if (v29 >= 0x1.0000000000000p-23f) {
+    if (!(v29 < 0x1.0000000000000p-23f)) {
       v32 = 0x1.0000000000000p+0f / sqrtf(v29);
       v31 = v28 * v32;
       v30 = v27 * v32;
@@ -2245,12 +2245,14 @@ float CombatLegionManager_e2d770(__int64 a1, float* a2, float* a3, float* a4,
       v30 = 0x1.0000000000000p+0f;
       v31 = 0x0.0p+0f;
     }
-    if ((float)((float)(PSEUDO_UNFUSED(v10 * v30)) + (float)(v19 * v31)) >=
-        0x0.0p+0f) {
+    if (!((float)((float)(PSEUDO_UNFUSED(v10 * v30)) + (float)(v19 * v31)) <
+          0x0.0p+0f)) {
       v33 = (float)(PSEUDO_UNFUSED(v10 * (float)(v22 - v13))) +
             (float)(v19 * (float)(v21 - v12));
       v34 = v19 * v33;
       v35 = v10 * v33;
+      // Unfused in the original.
+      __asm__("" : "+w"(v34), "+w"(v35));
       v14 = v12 + v34;
       v15 = v13 + v35;
     }
@@ -2266,13 +2268,13 @@ float CombatLegionManager_e2d770(__int64 a1, float* a2, float* a3, float* a4,
   v40 = (float)(PSEUDO_UNFUSED(v36 * v36)) + (float)(v37 * v37);
   v41 = 0x0.0p+0f;
   v42 = 0x0.0p+0f;
-  if (v40 >= 0x1.0000000000000p-23f) {
+  if (!(v40 < 0x1.0000000000000p-23f)) {
     v43 = 0x1.0000000000000p+0f / sqrtf(v40);
     v42 = v37 * v43;
     v39 = v36 * v43;
   }
   v44 = (float)(PSEUDO_UNFUSED(v6 * v6)) + (float)(v5 * v5);
-  if (v44 >= 0x1.0000000000000p-23f) {
+  if (!(v44 < 0x1.0000000000000p-23f)) {
     v45 = 0x1.0000000000000p+0f / sqrtf(v44);
     v41 = v5 * v45;
     v38 = v6 * v45;
@@ -2282,12 +2284,12 @@ float CombatLegionManager_e2d770(__int64 a1, float* a2, float* a3, float* a4,
   v46 = sqrtf(
       (float)(PSEUDO_UNFUSED((float)(v15 - a2[1]) * (float)(v15 - a2[1]))) +
       (float)((float)(v14 - *a2) * (float)(v14 - *a2)));
-  if ((float)((float)(PSEUDO_UNFUSED(v39 * v38)) + (float)(v42 * v41)) <=
+  if ((float)((float)(PSEUDO_UNFUSED(v39 * v38)) + (float)(v42 * v41)) >
       0x0.0p+0f) {
-    return -v46;
+    return v46;
   }
   else {
-    return v46;
+    return -v46;
   }
 }
 

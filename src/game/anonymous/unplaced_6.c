@@ -17,6 +17,7 @@ char* GameRoutine_6e7840(char*, char*, char*);
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_GameModeData_instance_;
 int strcmp(const char*, const char*);
+__int64 strcmp_alt1(const char*, const char*) __asm__("strcmp");
 unsigned __int64 GameRoutine_682bc0(_QWORD*, __int64);
 unsigned __int64 ProcAfterEpisodeSeq_19bac40(unsigned __int64 result);
 void __attribute__((noreturn)) String_60a250(const char*);
@@ -605,7 +606,7 @@ __int64 game_anonymous_19bc420(__int64 a1, unsigned __int64 a2, const char* a3)
           GameRoutine_682bc0(&v49_.v49, *(_QWORD*)(*v9 + 32));
           result = GameConverge_8e7ca0(*(_QWORD*)(v10 + 176), v49_.v49);
           if (((result & 1) == 0 || v9[2] != 0) && *(_OWORD*)(v9 + 1) != 0) {
-            result = strcmp(*(const char**)(*v9 + 32), a3);
+            result = strcmp_alt1(*(const char**)(*v9 + 32), a3);
             if ((_DWORD)result == 0) {
               break;
             }

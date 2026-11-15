@@ -839,6 +839,8 @@ float32x4_t nn_g3d_5f96c0(__int64 a1, float32x4_t* a2, float32x4_t result)
     v66_.v67 = v20;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v21 + 16LL))(
         v21, &v68_.v68, v66_.v66);
+    result = COERCE_AS(__typeof__(result),
+                       PSEUDO_REGISTER(__n128, "v0", "=w"));
     v19 = v70 + 1;
     v70 = v19;
     if (v19 >= v5) {
@@ -906,6 +908,8 @@ float32x4_t nn_g3d_5f96c0(__int64 a1, float32x4_t* a2, float32x4_t result)
             v66_.v66[1] = v4 + v51 + 16;
             (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v49 + 16LL))(
                 v49, &v68_.v68, v66_.v66);
+            result = COERCE_AS(__typeof__(result),
+                               PSEUDO_REGISTER(__n128, "v0", "=w"));
             v19 = v70;
           }
         }
@@ -1199,6 +1203,8 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
     v73_.v74 = v24;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v25 + 16LL))(
         v25, &v75_.v75, v73_.v73);
+    result = COERCE_AS(__typeof__(result),
+                       PSEUDO_REGISTER(__n128, "v0", "=w"));
     v22 = v78 + 1;
     v78 = v22;
     if (v22 >= v5) {
@@ -1314,6 +1320,8 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
         v73_.v74 = v55 + 96LL * v22;
         (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v56 + 16LL))(
             v56, &v75_.v75, v73_.v73);
+        result = COERCE_AS(__typeof__(result),
+                           PSEUDO_REGISTER(__n128, "v0", "=w"));
         v22 = v78;
       }
     LABEL_11:

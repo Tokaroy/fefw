@@ -929,7 +929,7 @@ bool TransporterConst_89ca00(unsigned __int16* a1)
   v5 = *(_QWORD*)(game_TransporterConst_List_instance_ + 8);
   if ((((0x10000000000LL << v3) | (1LL << *(_BYTE*)(v2 + 73))) &
        0xFFBFFFFFFFA39FFFLL) != 0) {
-    return *(_DWORD*)(v5 + 84) < *(_DWORD*)(v5 + 72);
+    return *(int*)(v5 + 84) < *(int*)(v5 + 72);
   }
   v8 = GameRoutine_89aac0(*(_QWORD**)(game_TransporterConst_List_instance_ + 8),
                           a1);

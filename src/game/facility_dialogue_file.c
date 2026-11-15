@@ -347,7 +347,7 @@ LABEL_19:
     }
   }
   v25 = X8CALL_X0(__int64, FacilityDialogueFile_196e2b0(
-                               (void*)((unsigned int)v17), v21, a2, a3));
+                               (void*)v17, v21, a2, a3));
   result = v21;
   if ((v25 & 1) == 0) {
     return 0;

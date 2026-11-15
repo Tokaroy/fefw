@@ -158,6 +158,7 @@ __int64 game_zview_CharacterModel_SetActiveSignal(__int64 result, char);
 __int64 wld_AnimCtrlModule_SetRootMotionBone(__int64 result, __int64, __int64,
                                              int);
 bool GameRoutine_108cb20(int);
+__int64 GameRoutine_108cb20_alt1(int) __asm__("GameRoutine_108cb20");
 __int64 GameHr_e5fa20(_DWORD*);
 __int64 game_zview_cee580(_QWORD*);
 void game_map_zv_f56340(__int64, int);
@@ -1524,7 +1525,7 @@ __int64 ProcMapSeqZoomViewer_fb13e0(__int64 result, char a2)
   }
   if (*(_BYTE*)(v3 + 284) == 1) {
     v18 = *(_DWORD*)(v3 + 280);
-    if (v18 == 0 || ((result = GameRoutine_108cb20(v18)) & 1) != 0) {
+    if (v18 == 0 || ((result = GameRoutine_108cb20_alt1(v18)) & 1) != 0) {
       v19 = v18 == 119788728 ? 0 : v18;
       if (*((_DWORD*)v6 + 28) != v19) {
         *((_DWORD*)v6 + 28) = v19;

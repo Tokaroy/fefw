@@ -1315,6 +1315,8 @@ float32x4_t nn_g3d_5f9b20(__int64 a1, float32x4_t* a2, float32x4_t result)
     v79_.v80 = v20;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v21 + 16LL))(
         v21, &v81_.v81, v79_.v79);
+    result = COERCE_AS(__typeof__(result),
+                       PSEUDO_REGISTER(__n128, "v0", "=w"));
     v19 = v83 + 1;
     v83 = v19;
     if (v19 >= v5) {
@@ -1374,6 +1376,8 @@ float32x4_t nn_g3d_5f9b20(__int64 a1, float32x4_t* a2, float32x4_t result)
         v79_.v79[1] = v4 + v64 + 16;
         (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v62 + 16LL))(
             v62, &v81_.v81, v79_.v79);
+        result = COERCE_AS(__typeof__(result),
+                           PSEUDO_REGISTER(__n128, "v0", "=w"));
         v19 = v83;
       }
       v83 = ++v19;

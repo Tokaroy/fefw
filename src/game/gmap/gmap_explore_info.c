@@ -82,11 +82,13 @@ __int64 GmapExploreInfo_135c2e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   __int64 v28;
   char* v29;
   char* v30;
+  __int64 v31;
   struct {
     __int64 v32;
     char* v33;
   } v32_;
 
+  v31 = a2;
   if ((a2 & 1) != 0) {
     if (*(_BYTE*)(a1 + 88) == 1) {
       v9 = *(char**)(a1 + 8);
@@ -187,6 +189,8 @@ __int64 GmapExploreInfo_135c2e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   *(_DWORD*)((char*)((__int128*)0x10LL) + (_QWORD)v20 + 8) = v22;
   *(_DWORD*)((char*)((__int128*)0x10LL) + (_QWORD)v20 + 12) = v24;
   nn_os_UnlockMutex(&game_g_random_mutex);
+  // The flag name getters get x1 as the calls before left it.
+  v31 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
   v25 = *(__int64**)(a1 + 8);
   v26 = *(__int64**)(a1 + 16);
   if (v25 == v26) {
@@ -207,15 +211,17 @@ __int64 GmapExploreInfo_135c2e0(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
 LABEL_33:
   if (*(_BYTE*)(v13 + 57) == 1) {
     v29 = game_GmapExploreData_GetObtainedFirstFlagName_alt1(
-        *(_QWORD*)a1, a2, a3, a4, a5, a6, a7, a8);
+        *(_QWORD*)a1, v31, a3, a4, a5, a6, a7, a8);
+    v31 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
     if (v29 != nullptr) {
       v32_.v33 = v29;
       v32_.v32 = game_HashString_alt1((__int64)v29);
       game_VariableManager_SetFlag_alt1((__int64)&v32_.v32, 1);
+      v31 = PSEUDO_REGISTER(unsigned long long, "x1", "=r");
     }
   }
   if (*(_BYTE*)(v13 + 58) == 1) {
-    v30 = game_GmapExploreData_GetShowRareFlagName_alt1(*(_QWORD*)a1, a2, a3,
+    v30 = game_GmapExploreData_GetShowRareFlagName_alt1(*(_QWORD*)a1, v31, a3,
                                                         a4, a5, a6, a7, a8);
     if (v30 != nullptr) {
       v32_.v33 = v30;

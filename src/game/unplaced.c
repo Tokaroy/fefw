@@ -709,10 +709,6 @@ extern __int64 (*GameData_1f93088[])();
 
 extern __int64 (*GameData_1ff8cd8[])();
 
-extern __int64 (*Route_Destructor_727b20_ptr[])();
-
-extern __int64 (*Route_Destructor_727ba0_ptr[])();
-
 extern __int64 (*game_InterpolatorVector3_vtable[])();
 
 extern __int64 (*game_map_Cursor_Impl_vtable[])();
@@ -7885,8 +7881,8 @@ __int64 game_723200(__int64 result)
   *(_DWORD*)(v50 + 160) = 0;
   *(_BYTE*)(v50 + 164) = 9;
   *(_QWORD*)v50 = game_map_Route_vtable;
-  *(_QWORD*)(v50 + 8) = Route_Destructor_727b20_ptr;
-  *(_QWORD*)(v50 + 24) = Route_Destructor_727ba0_ptr;
+  *(_QWORD*)(v50 + 8) = game_map_Route_vtable + 6;
+  *(_QWORD*)(v50 + 24) = game_map_Route_vtable + 10;
   *GameData_212cfd8[0] = v50;
   v51 = fw_memory_HeapManager_Allocate(*v4, 16, 16, 0);
   v52 = (_QWORD*)v51;
@@ -8683,7 +8679,7 @@ _QWORD* game_741260(_QWORD* result, const char* a2, int a3)
             v25 = *(_QWORD*)(*v4 + 8 * v23);
             if (v25 != 0) {
               v26 = *(_QWORD*)(v8 + 8 * v23);
-              if (*(_DWORD*)(v25 + 592) <= (int)*(unsigned __int8*)(v26 + 56)) {
+              if (*(int*)(v25 + 592) <= (int)*(unsigned __int8*)(v26 + 56)) {
                 v27 = *(_QWORD*)(GameData_21ca310 + 56);
                 v28 = *(_QWORD*)(v27 + 556216);
                 if (v28 != 0) {

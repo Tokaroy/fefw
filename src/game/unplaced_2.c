@@ -921,7 +921,6 @@ bool game_878240(const char** a1, __int64 a2, __int64 a3);
 bool game_8784c0(const char** a1, __int64 a2);
 bool game_878d80(const char** a1);
 __attribute__((swiftcall)) void game_9470c0(PSEUDO_X8 x8_, __int64 a1);
-bool GameRoutine_90c9e0_alt1(__int64) __asm__("GameRoutine_90c9e0");
 typedef __int64 GameAlign_21f430c __attribute__((aligned(4)));
 extern GameAlign_21f430c GameData_21f430c_alt1 __asm__("GameData_21f430c");
 
@@ -5475,7 +5474,7 @@ __int64 game_90d5a0(__int64 result)
   }
   v11 = 0;
   do {
-    result = GameRoutine_90c9e0_alt1(v1 + 32 * v11);
+    result = GameRoutine_90c9e0(v1 + 32 * v11);
     v1 = *(_QWORD*)(v3 + 8);
     if ((result & 1) == 0) {
       goto LABEL_23;
@@ -5544,7 +5543,7 @@ __int64 game_90d5a0(__int64 result)
   if ((int)v12 >= 1) {
     v31 = 0;
     while (1) {
-      result = GameRoutine_90c9e0_alt1(v1 + 32 * v31);
+      result = GameRoutine_90c9e0(v1 + 32 * v31);
       v1 = *(_QWORD*)(v3 + 8);
       if ((result & 1) == 0) {
         v32 = v1 + 32 * v31;

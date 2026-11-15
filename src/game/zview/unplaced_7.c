@@ -4,8 +4,8 @@
 
 __int64 fw_memory_HeapManager_Allocate(__int64, __int64, __int64, unsigned int);
 __int64 memcpy(__int64, __int64, unsigned __int64);
-bool GameRoutine_d24440(float, __int64, __int64, float32x4_t*, float32x4_t*,
-                        __int64);
+__int64 GameRoutine_d24440(float, __int64, __int64, float32x4_t*,
+                           float32x4_t*, __int64);
 extern __int64 fw_memory_g_heap_manager_ptr;
 void __attribute__((noreturn)) GameRoutine_60a210();
 void __attribute__((noreturn)) GameRoutine_cf38d0();
@@ -134,8 +134,7 @@ __attribute__((swiftcall)) void game_zview_d24620(PSEUDO_X8 x8_, __int64 a1,
               goto LABEL_28;
             }
             v25 = a3;
-            LOBYTE(a1) =
-                GameRoutine_d24440(0x1.0000000000000p+0f, a1, a2, a3, v12, v23);
+            a1 = GameRoutine_d24440(0x1.0000000000000p+0f, a1, a2, a3, v12, v23);
             if ((a1 & 1) != 0) {
               break;
             }

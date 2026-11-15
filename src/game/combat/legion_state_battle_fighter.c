@@ -2317,7 +2317,7 @@ LABEL_5:
   if ((v23 & (v20 < v22)) != 0) {
     v22 = v20;
   }
-  if (v19 >= (float)((float)(v17 + v22) * (float)(v17 + v22))) {
+  if (!(v19 < (float)((float)(v17 + v22) * (float)(v17 + v22)))) {
     goto LABEL_16;
   }
   v24 = 4;
