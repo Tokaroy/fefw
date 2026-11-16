@@ -552,6 +552,7 @@ __int64 FloatingHelp_18a4fa0(__int64 a1, __int64** a2)
       v18 = (__int64*)*v18;
     } while (v18 != v15 && v18 != nullptr);
   }
+  __asm__ volatile("" ::"r"(v18));
   v20 = v86_.v87;
   v21 = v86_.v86;
   v22 = *((_BYTE*)v13 + 88) | 0x10;
