@@ -1226,7 +1226,7 @@ void CharacterRotate_d521c0(__int64 a1)
       *(_BYTE*)(a1 + 108) = 1;
       goto LABEL_20;
     }
-    if (v8 > v7) {
+    if (!(v8 <= v7)) {
     LABEL_15:
       if (*(_BYTE*)(a1 + 320) != 1) {
         goto LABEL_26;
@@ -1240,7 +1240,7 @@ void CharacterRotate_d521c0(__int64 a1)
     *(float*)(a1 + 96) = v7;
   }
   else {
-    if (v8 > v7) {
+    if (!(v8 <= v7)) {
       goto LABEL_15;
     }
     *(_DWORD*)(a1 + 96) = 0;

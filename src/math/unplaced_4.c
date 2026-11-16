@@ -6607,7 +6607,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
         v13 = (float*)a1 + 203;
         v14 = 0;
         v15 = 0;
-        while (v12 < 8) {
+        while (!(v12 >= 8)) {
           v16 = 0;
           v17 = 0x0.0p+0f;
           if ((v12 & 7) != 0) {
@@ -6701,7 +6701,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
       v35 = v181_.v182 == 0;
       if (v184_.v185 != 0 && v181_.v182 != 0) {
         v36 = v184_.v185 & 7;
-        if (v184_.v185 - 1 < 7) {
+        if (!(v184_.v185 - 1 >= 7)) {
           v37 = 0;
           if ((v184_.v185 & 7) == 0) {
             goto LABEL_29;
@@ -6746,7 +6746,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
       }
     LABEL_29:
       v38 = v34 - v33;
-      if ((float)(v34 - v33) > 0x0.0p+0f) {
+      if (!((float)(v34 - v33) <= 0x0.0p+0f)) {
         v39 = a1[97];
         v40 = v4 + 1;
         v188_.v206 = v35;
@@ -6754,11 +6754,11 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
         if (v4 + 1 != v11 || v40 != v39) {
           v42 = a1 + 96;
           v176 = v39;
-          if (v40 < 0x22) {
+          if (!(v40 >= 0x22)) {
             v48 = v40 - v11;
             v173 = a1 + 96;
             *v42 = v40;
-            if (v40 > v11 && v176 != 0) {
+            if (!(v40 <= v11) && v176 != 0) {
               v49 = 33 * v11;
               v50 = v48 & 7;
               v51 = 4 * v176;
@@ -7178,7 +7178,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
             }
             v83 = v176;
             a1[97] = v40;
-            if (v40 > v176) {
+            if (!(v40 <= v176)) {
               v84 = 4 * (v40 - v176);
               v85 = v40 & 7;
               if (v4 >= 7) {
@@ -7648,7 +7648,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
               v44 = v4 + 1;
             }
             if (v11 != 0 && v176 != 0) {
-              if (v40 < v176) {
+              if (!(v40 >= v176)) {
                 v43 = v4 + 1;
               }
               v45 = v44 & 7;
@@ -8437,7 +8437,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
                   *((float*)a1 + v154 + 1286) -
                   (float)(PSEUDO_UNFUSED(v152 * v180[v154]));
               ++v154;
-            } while (v154 < a1[660]);
+            } while (!(v154 >= a1[660]));
             goto LABEL_116;
           }
         LABEL_127:

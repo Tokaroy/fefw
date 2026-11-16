@@ -1373,11 +1373,11 @@ __int64 LightActor_Unknown4(float32x4_t* a1, double a2, float a3)
   v3 = LANES128(a1[39]).n128_u64[1];
   v6 = (LANES128(a1[40]).n128_u64[0] - v3) >> 2;
   do {
-    if ((int)v6 < 1) {
+    if (!((int)v6 >= 1)) {
       goto LABEL_10;
     }
     LODWORD(v6) = v6 - 1;
-  } while (*(float*)(v3 + 4LL * (unsigned int)v6) > a3);
+  } while (!(*(float*)(v3 + 4LL * (unsigned int)v6) <= a3));
   if ((v6 & 0x80000000) != 0) {
     goto LABEL_10;
   }
@@ -1479,7 +1479,7 @@ LABEL_11:
               v23 = *(float32x4_t*)GameData_212c540;
               v24 = *(_QWORD*)(v22 + 120);
               v25 = (*(_QWORD*)(v22 + 128) - v24) >> 2;
-              if (v25 < 3) {
+              if (!(v25 >= 3)) {
                 v26 = *(float32x4_t*)GameData_212c540;
               }
               else {
@@ -1502,7 +1502,7 @@ LABEL_11:
                     v159 = v26;
                     v161 = v23;
                     v38 = v21;
-                    if ((unsigned int)(v36 - 1) > 2) {
+                    if (!((unsigned int)(v36 - 1) <= 2)) {
                       v39 = 0;
                     }
                     else {
@@ -1556,11 +1556,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v48 <= 0xFFFFFFFD) {
                 v51 = a3 - v50;
                 v49 = 0.0;
-                if (v51 > 0.0) {
+                if (!(v51 <= 0.0)) {
                   v49 = 1.0;
-                  if (v51 < *((float*)&v48 + 1)) {
+                  if (!(v51 >= *((float*)&v48 + 1))) {
                     v52 = (int)*(float*)&v48 - 1;
-                    if (v52 > 2) {
+                    if (!(v52 <= 2)) {
                       v53 = 0;
                     }
                     else {
@@ -1610,11 +1610,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v62 <= 0xFFFFFFFD) {
                 v65 = a3 - v64;
                 v63 = 0.0;
-                if (v65 > 0.0) {
+                if (!(v65 <= 0.0)) {
                   v63 = 1.0;
-                  if (v65 < *((float*)&v62 + 1)) {
+                  if (!(v65 >= *((float*)&v62 + 1))) {
                     v66 = (int)*(float*)&v62 - 1;
-                    if (v66 > 2) {
+                    if (!(v66 <= 2)) {
                       v67 = 0;
                     }
                     else {
@@ -1666,11 +1666,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v77 <= 0xFFFFFFFD) {
                 v80 = a3 - v79;
                 v78 = 0.0;
-                if (v80 > 0.0) {
+                if (!(v80 <= 0.0)) {
                   v78 = 1.0;
-                  if (v80 < *((float*)&v77 + 1)) {
+                  if (!(v80 >= *((float*)&v77 + 1))) {
                     v81 = (int)*(float*)&v77 - 1;
-                    if (v81 > 2) {
+                    if (!(v81 <= 2)) {
                       v82 = 0;
                     }
                     else {
@@ -1722,11 +1722,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v91 <= 0xFFFFFFFD) {
                 v94 = a3 - v93;
                 v92 = 0.0;
-                if (v94 > 0.0) {
+                if (!(v94 <= 0.0)) {
                   v92 = 1.0;
-                  if (v94 < *((float*)&v91 + 1)) {
+                  if (!(v94 >= *((float*)&v91 + 1))) {
                     v95 = (int)*(float*)&v91 - 1;
-                    if (v95 > 2) {
+                    if (!(v95 <= 2)) {
                       v96 = 0;
                     }
                     else {
@@ -1776,11 +1776,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v105 <= 0xFFFFFFFD) {
                 v108 = a3 - v107;
                 v106 = 0.0;
-                if (v108 > 0.0) {
+                if (!(v108 <= 0.0)) {
                   v106 = 1.0;
-                  if (v108 < *((float*)&v105 + 1)) {
+                  if (!(v108 >= *((float*)&v105 + 1))) {
                     v109 = (int)*(float*)&v105 - 1;
-                    if (v109 > 2) {
+                    if (!(v109 <= 2)) {
                       v110 = 0;
                     }
                     else {
@@ -1859,11 +1859,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v126 <= 0xFFFFFFFD) {
                 v129 = a3 - v128;
                 v127 = 0.0;
-                if (v129 > 0.0) {
+                if (!(v129 <= 0.0)) {
                   v127 = 1.0;
-                  if (v129 < *((float*)&v126 + 1)) {
+                  if (!(v129 >= *((float*)&v126 + 1))) {
                     v130 = (int)*(float*)&v126 - 1;
-                    if (v130 > 2) {
+                    if (!(v130 <= 2)) {
                       v131 = 0;
                     }
                     else {
@@ -1913,11 +1913,11 @@ LABEL_11:
               if ((unsigned int)(int)*(float*)&v140 <= 0xFFFFFFFD) {
                 v143 = a3 - v142;
                 v141 = 0.0;
-                if (v143 > 0.0) {
+                if (!(v143 <= 0.0)) {
                   v141 = 1.0;
-                  if (v143 < *((float*)&v140 + 1)) {
+                  if (!(v143 >= *((float*)&v140 + 1))) {
                     v144 = (int)*(float*)&v140 - 1;
-                    if (v144 > 2) {
+                    if (!(v144 <= 2)) {
                       v145 = 0;
                     }
                     else {

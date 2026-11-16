@@ -1101,7 +1101,7 @@ void SeqVoice_129fc0(__int64 a1)
     *(float*)(a1 + 5936) =
         (*(float (**)(__int64))(*(_QWORD*)(v12 - 5592) + 520LL))(v12 - 5592);
   }
-  else if (*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) < 0x0.0p+0f ||
+  else if (!(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) >= 0x0.0p+0f) ||
            snd_Param_isEnvelopeReleased_alt1(a1 + 40) ||
            snd_Param_isEnvelopeFading_alt1(a1 + 40) ||
            snd_Param_isEnvelopeEnded_alt1(a1 + 40)) {

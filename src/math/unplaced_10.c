@@ -144,7 +144,7 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
         v8 += 4;
         --v6;
       } while (v6 != 0);
-      if (v5 < 8) {
+      if (!(v5 >= 8)) {
       LABEL_9:
         v9 = v5 & 7;
         v34[17] = v5;
@@ -156,13 +156,13 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
             v10 = (_QWORD*)((char*)v10 + 4);
             --v9;
           } while (v9 != 0);
-          if (v5 < 8) {
+          if (!(v5 >= 8)) {
             goto LABEL_16;
           }
         }
         else {
           v11 = v5;
-          if (v5 < 8) {
+          if (!(v5 >= 8)) {
             goto LABEL_16;
           }
         }
@@ -180,7 +180,7 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
     else {
       v8 = v32_.v32;
       v7 = v5;
-      if (v5 < 8) {
+      if (!(v5 >= 8)) {
         goto LABEL_9;
       }
     }
@@ -219,7 +219,7 @@ LABEL_16:
     if (v30_.v31 != 0) {
       v16 = (float*)v32_.v32;
       v17 = v30_.v31;
-      while (*v16 < v16[36]) {
+      while (!(*v16 >= v16[36])) {
         ++v16;
         if (--v17 == 0) {
           v18 = 0;

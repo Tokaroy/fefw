@@ -469,7 +469,7 @@ __attribute__((swiftcall)) void math_622ac0(PSEUDO_X8 x8_, float32x2_t* a1)
           *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
       v38 = -*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 +
                        12);
-      if (v6 > LANES128(v2).n128_f32[0]) {
+      if (!(v6 <= LANES128(v2).n128_f32[0])) {
         v39 = v6 / LANES128(v2).n128_f32[0];
         v40 = -0x1.921fb60000000p+0f;
       LABEL_46:
@@ -797,7 +797,7 @@ __attribute__((swiftcall)) void math_622ac0(PSEUDO_X8 x8_, float32x2_t* a1)
           *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
       v49 = -*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 +
                        12);
-      if (v6 > LANES128(v2).n128_f32[0]) {
+      if (!(v6 <= LANES128(v2).n128_f32[0])) {
         v50 = v6 / LANES128(v2).n128_f32[0];
         v51 = -0x1.921fb60000000p+0f;
       LABEL_72:
@@ -881,8 +881,8 @@ __attribute__((swiftcall)) void math_622ac0(PSEUDO_X8 x8_, float32x2_t* a1)
       goto LABEL_5;
     }
   }
-  if (v17 < 0x0.0p+0f) {
-    if (v16 < 0x0.0p+0f) {
+  if (!(v17 >= 0x0.0p+0f)) {
+    if (!(v16 >= 0x0.0p+0f)) {
       v52 = v17 / v16;
       v23 = v17 > v16;
       v53 = v16 / v17;
@@ -1050,7 +1050,7 @@ __attribute__((swiftcall)) void math_622ac0(PSEUDO_X8 x8_, float32x2_t* a1)
     v18 = v98 + v97;
     goto LABEL_5;
   }
-  if (v16 < 0x0.0p+0f) {
+  if (!(v16 >= 0x0.0p+0f)) {
     v91 = -v16;
     v69 = v17 < (float)-v16;
     v92 = *(float*)GameData_212c2f0;
@@ -1129,7 +1129,7 @@ __attribute__((swiftcall)) void math_622ac0(PSEUDO_X8 x8_, float32x2_t* a1)
   v132 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
   v133 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
   v134 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
-  if (v17 < v16) {
+  if (!(v17 >= v16)) {
     v143 = v17 / v16;
     v144 = 0x1.921fb60000000p+0f;
     v145 =
@@ -1582,7 +1582,7 @@ LABEL_5:
                                               (_QWORD)GameData_212c2f0 + 12)) *
                             (float)(v152 * v152)) +
                     0x1.0000000000000p+0f)));
-    if (v124 > 0x1.6a09e60000000p-1f) {
+    if (!(v124 <= 0x1.6a09e60000000p-1f)) {
       v127 = v154;
     }
     else {

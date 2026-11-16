@@ -7486,7 +7486,7 @@ void GameManager_a32d60(__int64 a1, __int64 a2, float* a3, float* a4)
       v13 =
           snd_fnd_calcDistance_fe090_alt1((float*)&v36_.v36, (float*)&v33_.v33);
       v14 = (*(float (**)(__int64))(*(_QWORD*)a2 + 112LL))(a2);
-      if (v14 <= 0x0.0p+0f || v13 < v14) {
+      if (v14 <= 0x0.0p+0f || !(v13 >= v14)) {
         v26_.v26[0] = v12;
         v26_.v26[1] = v33_.v34;
         v26_.v27 = v33_.v35;
@@ -7496,7 +7496,7 @@ void GameManager_a32d60(__int64 a1, __int64 a2, float* a3, float* a4)
         game_a3aba0((void*)(&v28_.v28), a1 + 544, v26_.v26, v24_.v24,
                     0x1.0000000000000p+0f);
         if ((v28_.v28 & 1) != 0 || (v28_.v28 & 0x100) != 0) {
-          if (v31_.v32 < 1) {
+          if (!(v31_.v32 >= 1)) {
             v19 = 0x0.0p+0f;
           }
           else {

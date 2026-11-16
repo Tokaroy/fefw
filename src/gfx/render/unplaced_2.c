@@ -2767,7 +2767,7 @@ void gfx_render_b853e0(__int64 a1, _QWORD* a2)
       (float)(*(float*)(v17 + 160) * 0x1.0aef000000000p+4f) /
       0x1.f400000000000p+9f;
   v18 = *(_QWORD*)(a1 + 16);
-  if (*(int*)v18 < 1) {
+  if (!(*(int*)v18 >= 1)) {
     v20 = 0;
     v226 = 0;
   }
@@ -2797,8 +2797,8 @@ void gfx_render_b853e0(__int64 a1, _QWORD* a2)
   else {
     v25 = 0;
   }
-  if (LANES128_OF(vbslq_s8(vdupq_n_s32(v25), v22[3], v24)).n128_f32[1] >
-      0x0.0p+0f) {
+  if (!(LANES128_OF(vbslq_s8(vdupq_n_s32(v25), v22[3], v24)).n128_f32[1] <=
+        0x0.0p+0f)) {
     v26 = GameRoutine_b3f800((_QWORD*)(*(_QWORD*)(v18 + 288) + 592LL), "Moon"),
     v105 = COERCE_AS(__typeof__(v105), PSEUDO_REGISTER(__n128, "v1", "=w")),
     v106 = COERCE_AS(__typeof__(v106), PSEUDO_REGISTER(__n128, "v2", "=w")),
@@ -2930,7 +2930,7 @@ void gfx_render_b853e0(__int64 a1, _QWORD* a2)
     v52 = v51 + 1;
     v53 = (unsigned int)((v49 + 1) % (v51 + 1));
     *(_DWORD*)(a1 + 232) = v53;
-    if (v52 < 1) {
+    if (!(v52 >= 1)) {
       v56 = 0;
     }
     else {
@@ -3010,7 +3010,8 @@ void gfx_render_b853e0(__int64 a1, _QWORD* a2)
       v115 = COERCE_AS(__typeof__(v115), PSEUDO_REGISTER(__n128, "v3", "=w"));
   v79 = (unsigned int)(v45 - 1);
   v80 = v232[(unsigned int)v79];
-  if (v80 < (*(float (**)(unsigned __int64))(*(_QWORD*)v226 + 64LL))(v226)) {
+  if (!(v80 >=
+        (*(float (**)(unsigned __int64))(*(_QWORD*)v226 + 64LL))(v226))) {
     v83 = v224;
   }
   else {

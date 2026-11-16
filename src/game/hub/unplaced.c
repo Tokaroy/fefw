@@ -3919,7 +3919,7 @@ __attribute__((swiftcall)) void game_hub_cdf420(PSEUDO_X8 x8_, __int64 a1,
   }
   else {
     *(float*)(a1 + 8) = a4;
-    if (a4 > 0.0f) {
+    if (!(a4 <= 0.0f)) {
       goto LABEL_21;
     }
   }

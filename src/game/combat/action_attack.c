@@ -2014,7 +2014,7 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v13 + 8), 1u,
                                 memory_order_relaxed);
     }
-    if (*(float*)(result + 8) < v9) {
+    if (!(*(float*)(result + 8) >= v9)) {
       v14 = true;
       if (v13 == 0) {
         goto LABEL_18;
@@ -2055,10 +2055,10 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
     else {
       v17 = 954437177 * ((unsigned __int64)(v16 - v15) >> 4) - 1;
       v18 = *(_DWORD*)(v6 + 56);
-      if (v18 < v17) {
+      if (!(v18 >= v17)) {
         v17 = *(_DWORD*)(v6 + 56);
       }
-      if (v18 < 0) {
+      if (!(v18 >= 0)) {
         v17 = 0;
       }
       v19 = (__int64*)(v15 + 144LL * v17);

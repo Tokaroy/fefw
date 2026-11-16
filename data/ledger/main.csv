@@ -3132,7 +3132,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 129740,388,disputed,src/snd/seq_voice.c,SeqVoice_129740
 1299c0,404,verified,src/snd/seq_voice.c,SeqVoice_1299c0
 129b60,1064,verified,src/game/unnamed/b000_1.c,GameHr_129b60
-129fc0,432,disputed,src/snd/seq_voice.c,SeqVoice_129fc0
+129fc0,432,verified,src/snd/seq_voice.c,SeqVoice_129fc0
 12a180,448,verified,src/snd/seq_voice.c,SeqVoice_12a180
 12a340,1472,verified,src/snd/seq_voice.c,SeqVoice_12a340
 12a920,916,verified,src/snd/seq_voice.c,SeqVoice_12a920
@@ -6144,7 +6144,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 18e930,56,verified,src/snd/wave_voice.cpp,_ZThn5592_N3snd9WaveVoiceD0Ev
 18e970,828,verified,src/snd/wave_voice.cpp,_ZN3snd9WaveVoice12updateTargetEv
 18ecb0,60,verified,src/snd/wave_voice.cpp,_ZN3snd9WaveVoice9addToSlotEv
-18ecf0,1236,disputed,src/snd/wave_voice.c,WaveVoice_Unknown96
+18ecf0,1236,verified,src/snd/wave_voice.c,WaveVoice_Unknown96
 18f1d0,220,verified,src/snd/wave_voice.cpp,_ZN3snd9WaveVoice4loadEv
 18f2b0,12,verified,src/snd/wave_voice.cpp,_ZNK3snd9WaveVoice9isLoadingEv
 18f2c0,168,verified,src/snd/wave_voice.cpp,_ZN3snd9WaveVoice11checkLoadedEv
@@ -38340,7 +38340,7 @@ cded20,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xcded20
 cded70,344,verified,src/game/unnamed/f000_0.c,GameHr_cded70
 cdeee0,580,verified,src/game/unnamed/b010_2.c,GameHr_cdeee0
 cdf140,696,verified,src/game/hub/unplaced.c,game_hub_cdf140
-cdf420,716,disputed,src/game/hub/unplaced.c,game_hub_cdf420
+cdf420,716,verified,src/game/hub/unplaced.c,game_hub_cdf420
 cdf710,4,verified,src/game/singleton/singletons.cpp,_ZN4game9SingletonINS_3hub13CameraManagerELb0EE10InitializeEv
 cdf720,4,verified,src/game/singleton/singletons.cpp,_ZN4game9SingletonINS_3hub13CameraManagerELb0EE8FinalizeEv
 cdf730,52,verified,src/game/singleton/singletons.cpp,_ZN4game9SingletonINS_3hub13CameraManagerELb0EED2Ev
@@ -39953,7 +39953,7 @@ d519c0,1176,verified,src/game/zview/character_rotate.c,CharacterRotate_d519c0
 d51e80,368,verified,src/game/unnamed/b011_1.c,GameHr_d51e80
 d52000,120,verified,src/game/unnamed/b011_1.c,GameHr_d52000
 d52080,304,verified,src/game/zview/character_rotate.c,CharacterRotate_d52080
-d521c0,364,disputed,src/game/zview/character_rotate.c,CharacterRotate_d521c0
+d521c0,364,verified,src/game/zview/character_rotate.c,CharacterRotate_d521c0
 d523c0,228,verified,src/game/unplaced_3.c,game_d523c0
 d52540,896,verified,src/game/hub/manager.c,Manager_Destructor_d52540
 d52950,512,verified,src/game/hub/manager.c,game_hub_Manager_SetCaptureOnlyCallback
@@ -49777,7 +49777,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1063ac0,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::ActionAttack::OnEnter()::$_2, void (game::character::SignalRoot*)>::__clone(__base*)"
 1063ae0,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::ActionAttack::OnEnter()::$_2, void (game::character::SignalRoot*)>::destroy()"
 1063af0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::ActionAttack::OnEnter()::$_2, void (game::character::SignalRoot*)>::destroy_deallocate()"
-1063b00,892,disputed,src/game/combat/action_attack.c,game_combat_ActionAttack_OnEnter_lambda2_Invoke
+1063b00,188,disputed,src/game/combat/action_attack.c,game_combat_ActionAttack_OnEnter_lambda2_Invoke
 1063f30,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::ActionAttack::OnEnter()::$_2, void (game::character::SignalRoot*)>::target(std::type_info const&)"
 1063f50,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::ActionAttack::OnEnter()::$_2, void (game::character::SignalRoot*)>::target_type()"
 1063f60,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
