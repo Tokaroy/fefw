@@ -1388,11 +1388,11 @@ void game_character_IKChariot_IKChariot_lambda3_Invoke(__int64 a1, __int64 a2,
       if (v21 > 0x1.0000000000000p+0f) {
         v21 = 0x1.0000000000000p+0f;
       }
-      if (v21 >= -0x1.0000000000000p+0f) {
+      if (!(v21 < -0x1.0000000000000p+0f)) {
         v19 = v21;
       }
       v22 = sqrtf(0x1.0000000000000p+0f - (float)(v19 * v19));
-      if (v19 >= 0x0.0p+0f) {
+      if (!(v19 < 0x0.0p+0f)) {
         v28 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
         v29 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
         v30 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 +
@@ -1465,7 +1465,7 @@ void game_character_IKChariot_IKChariot_lambda3_Invoke(__int64 a1, __int64 a2,
           v24 = v34;
         }
       }
-      else if (v19 >= -0x1.6a09e60000000p-1f) {
+      else if (!(v19 < -0x1.6a09e60000000p-1f)) {
         v25 = (float)-v19 / v22;
         v24 = (float)(PSEUDO_UNFUSED(
                   v25 *
@@ -1570,7 +1570,7 @@ void game_character_IKChariot_IKChariot_lambda3_Invoke(__int64 a1, __int64 a2,
         v42 = -(float)((float)((float)(v40 / 0x1.921fb60000000p+0f) +
                                -0x1.0000000000000p+0f) *
                        v24);
-        if (v41 >= 0x1.0000000000000p+0f) {
+        if (!(v41 < 0x1.0000000000000p+0f)) {
           v45 = (float*)(v3 + 268);
           goto LABEL_35;
         }
@@ -1582,10 +1582,10 @@ void game_character_IKChariot_IKChariot_lambda3_Invoke(__int64 a1, __int64 a2,
           v44 = 0x1.0000000000000p+0f -
                 powf(0x1.0000000000000p+0f - v41, v43 * 0x1.df851e0000000p+4f);
           v45 = (float*)(v3 + 268);
-          if (v44 <= 0x0.0p+0f) {
+          if (!(v44 > 0x0.0p+0f)) {
             v42 = *(float*)(v3 + 268);
           }
-          else if (v44 >= 0x1.0000000000000p+0f) {
+          else if (!(v44 < 0x1.0000000000000p+0f)) {
             v42 = v61;
           }
           else {

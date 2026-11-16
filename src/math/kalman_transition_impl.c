@@ -574,7 +574,7 @@ __int64 nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_70cc40(
       v57 = *v56;
       v58 = v56[1];
       v59 = v56[2];
-      if (v18 >= 8) {
+      if (!(v18 < 8)) {
         break;
       }
       v60 = 0;
@@ -697,7 +697,7 @@ LABEL_23:
       v92 -= 3;
       *((float*)v392 + 3 * v90 + v94) = v97;
       *((float*)v392 + 3 * v94 + v90) = v97;
-      if (v94 <= v90) {
+      if (!(v94 > v90)) {
         goto LABEL_25;
       }
     }
@@ -911,7 +911,7 @@ LABEL_64:
     v168 = *(_QWORD*)(a2 + 16);
     if (v387 != 0 && v168 != 0) {
       v169 = v387 & 7;
-      if ((unsigned __int64)(v387 - 1) >= 7) {
+      if (!((unsigned __int64)(v387 - 1) < 7)) {
         v171 = 0x0.0p+0f;
         v271 = (float*)(a2 + 16);
         v272 = 0;
@@ -1011,7 +1011,7 @@ LABEL_72:
       v189 = *v188;
       v190 = v188[1];
       v191 = v188[2];
-      if (v174 >= 8) {
+      if (!(v174 < 8)) {
         break;
       }
       v192 = 0;
@@ -1243,7 +1243,7 @@ LABEL_98:
       }
     }
     v285 = v226 & 7;
-    if (v226 >= 8) {
+    if (!(v226 < 8)) {
       v287 = (char*)&vk_.v404_.v404[4] + 4;
       v288 = 0;
       v289 = -(__int64)(v226 & 0xFFFFFFFFFFFFFFF8LL);
@@ -1425,7 +1425,7 @@ LABEL_129:
                              PSEUDO_REGISTER(double, "d0", "=w"));
         v324 = v323 & 7;
         v325 = 0;
-        if (v323 >= 8) {
+        if (!(v323 < 8)) {
           v326 = (float*)vk_.v404_.v404;
           v327 = 0;
           v328 = (float*)&v377_.v377;

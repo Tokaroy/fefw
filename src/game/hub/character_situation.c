@@ -672,13 +672,13 @@ void game_hub_CharacterSituation_Rebuild(__int64 a1, _DWORD* a2)
     }
     v17 = GameData_212f0f0[2 * v16];
     v18 = strlen(v17);
-    if (v18 >= 0xFFFFFFFFFFFFFFF7LL) {
+    if (!(v18 < 0xFFFFFFFFFFFFFFF7LL)) {
     LABEL_473:
       String_60a1d0(v18);
     }
     v20 = v18;
     v21 = v10;
-    if (v18 >= 0x17) {
+    if (!(v18 < 0x17)) {
       if ((v18 | 7) == 0x17) {
         v23 = 26;
       }
@@ -714,7 +714,7 @@ void game_hub_CharacterSituation_Rebuild(__int64 a1, _DWORD* a2)
       v25 = (char*)&v262_.v262 + 1;
     }
     v26 = v24 + 9;
-    if (v24 + 9 >= 0xFFFFFFFFFFFFFFF7LL) {
+    if (!(v24 + 9 < 0xFFFFFFFFFFFFFFF7LL)) {
       goto LABEL_473;
     }
     if (v26 > 0x16) {
@@ -782,8 +782,8 @@ void game_hub_CharacterSituation_Rebuild(__int64 a1, _DWORD* a2)
     if (0x5555555555555556LL * ((__int64)(v12 - v21) >> 3) > v34) {
       v34 = 0x5555555555555556LL * ((__int64)(v12 - v21) >> 3);
     }
-    if (0xAAAAAAAAAAAAAAABLL * ((__int64)(v12 - v21) >> 3) >=
-        0x555555555555555LL) {
+    if (!(0xAAAAAAAAAAAAAAABLL * ((__int64)(v12 - v21) >> 3) <
+          0x555555555555555LL)) {
       v35 = 0xAAAAAAAAAAAAAAALL;
     }
     else {
@@ -1234,7 +1234,7 @@ void game_hub_CharacterSituation_Rebuild(__int64 a1, _DWORD* a2)
           if (2 * v114 > v113) {
             v113 = 2 * v114;
           }
-          if (v114 >= 0x199999999999999LL) {
+          if (!(v114 < 0x199999999999999LL)) {
             v115 = 0x333333333333333LL;
           }
           else {
@@ -1726,7 +1726,7 @@ void game_hub_CharacterSituation_Rebuild(__int64 a1, _DWORD* a2)
           else {
             v212 = fmodf(*(float*)(v200 + 404) - LANES128(v202[3]).n128_f32[0],
                          0x1.6800000000000p+8);
-            if (v212 >= 0.0) {
+            if (!(v212 < 0.0)) {
               v213 = v212 + 0.0;
             }
             else {

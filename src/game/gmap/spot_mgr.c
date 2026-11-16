@@ -925,7 +925,7 @@ void SpotMgr_Unknown2(__int64 a1)
       if (v30 != 0 || *(_DWORD*)(v26 + 52) == 13) {
         v32 = (unsigned __int64*)v15[7];
         v31 = v15[8];
-        if ((unsigned __int64)v32 >= v31) {
+        if (!((unsigned __int64)v32 < v31)) {
           v34 = v15[6];
           v35 = (char*)v32 - v34;
           v36 = ((__int64)v32 - v34) >> 3;
@@ -937,7 +937,7 @@ void SpotMgr_Unknown2(__int64 a1)
           if (v38 >> 2 > v37) {
             v37 = v38 >> 2;
           }
-          if ((unsigned __int64)v38 >= 0x7FFFFFFFFFFFFFF8LL) {
+          if (!((unsigned __int64)v38 < 0x7FFFFFFFFFFFFFF8LL)) {
             v39 = 0x1FFFFFFFFFFFFFFFLL;
           }
           else {
@@ -983,7 +983,7 @@ void SpotMgr_Unknown2(__int64 a1)
           v47 = v46 - 1;
           if ((v46 & (v46 - 1)) != 0) {
             v48 = v29;
-            if (v46 <= v29) {
+            if (!(v46 > v29)) {
               v48 = (unsigned int)v29 % (unsigned int)v46;
             }
           }
@@ -1019,7 +1019,7 @@ void SpotMgr_Unknown2(__int64 a1)
                   }
                 }
                 else {
-                  if (v51 >= v46) {
+                  if (!(v51 < v46)) {
                     v51 %= v46;
                   }
                   if (v51 != v48) {
@@ -1055,7 +1055,7 @@ void SpotMgr_Unknown2(__int64 a1)
             if (v59 >> 2 > v58) {
               v58 = v59 >> 2;
             }
-            if ((unsigned __int64)v59 >= 0x7FFFFFFFFFFFFFF8LL) {
+            if (!((unsigned __int64)v59 < 0x7FFFFFFFFFFFFFF8LL)) {
               v60 = 0x1FFFFFFFFFFFFFFFLL;
             }
             else {
@@ -1097,7 +1097,7 @@ void SpotMgr_Unknown2(__int64 a1)
         else {
           v63 = (unsigned __int64*)v15[13];
           v62 = v15[14];
-          if ((unsigned __int64)v63 >= v62) {
+          if (!((unsigned __int64)v63 < v62)) {
             v65 = v15[12];
             v66 = (char*)v63 - v65;
             v67 = ((__int64)v63 - v65) >> 3;
@@ -1109,7 +1109,7 @@ void SpotMgr_Unknown2(__int64 a1)
             if (v69 >> 2 > v68) {
               v68 = v69 >> 2;
             }
-            if ((unsigned __int64)v69 >= 0x7FFFFFFFFFFFFFF8LL) {
+            if (!((unsigned __int64)v69 < 0x7FFFFFFFFFFFFFF8LL)) {
               v70 = 0x1FFFFFFFFFFFFFFFLL;
             }
             else {
@@ -1195,7 +1195,7 @@ void SpotMgr_Unknown2(__int64 a1)
         if ((v91 & (v91 - 1)) != 0) {
           v94 = v468;
           v95 = v90;
-          if (v91 <= v90) {
+          if (!(v91 > v90)) {
             v95 = v90 % (unsigned int)v91;
           }
         }
@@ -1233,7 +1233,7 @@ void SpotMgr_Unknown2(__int64 a1)
           if (v98 == v90) {
             break;
           }
-          if (v98 >= v91) {
+          if (!(v98 < v91)) {
             v98 %= v91;
           }
           if (v98 != v95) {
@@ -1267,7 +1267,7 @@ void SpotMgr_Unknown2(__int64 a1)
         if ((__int64)(v88 - v87) >> 2 > v104) {
           v104 = (__int64)(v88 - v87) >> 2;
         }
-        if (v88 - v87 >= 0x7FFFFFFFFFFFFFF8LL) {
+        if (!(v88 - v87 < 0x7FFFFFFFFFFFFFF8LL)) {
           v105 = 0x1FFFFFFFFFFFFFFFLL;
         }
         else {
@@ -1383,7 +1383,7 @@ void SpotMgr_Unknown2(__int64 a1)
               *((float*)v115 + 28) = v131;
               do {
                 v137 = (float)(v133 - 1) / 0x1.e000000000000p+5f;
-                if (v137 >= 0x1.0000000000000p-1f) {
+                if (!(v137 < 0x1.0000000000000p-1f)) {
                   v140 = *((float32x4_t*)v115 + 5);
                   v143 = *((float32x4_t*)v115 + 6);
                   v139 = *((float32x4_t*)v115 + 4);
@@ -1417,7 +1417,7 @@ void SpotMgr_Unknown2(__int64 a1)
                 v146 = v138 * (float)(v138 * v138);
                 v147 = *v144;
                 v148 = (float)v133 / 0x1.e000000000000p+5f;
-                if (v148 >= 0x1.0000000000000p-1f) {
+                if (!(v148 < 0x1.0000000000000p-1f)) {
                   v151 = *((float32x4_t*)v115 + 5);
                   v154 = *((float32x4_t*)v115 + 6);
                   v150 = *((float32x4_t*)v115 + 4);
@@ -1486,7 +1486,7 @@ void SpotMgr_Unknown2(__int64 a1)
                   if ((__int64)(v134 - v136) >> 1 > v162) {
                     v162 = (__int64)(v134 - v136) >> 1;
                   }
-                  if (v134 - v136 >= 0x7FFFFFFFFFFFFFFCLL) {
+                  if (!(v134 - v136 < 0x7FFFFFFFFFFFFFFCLL)) {
                     v163 = 0x3FFFFFFFFFFFFFFFLL;
                   }
                   else {
@@ -1538,7 +1538,7 @@ void SpotMgr_Unknown2(__int64 a1)
                 v170 =
                     (float)((float)(unsigned int)v169 + 0x1.0000000000000p-1f) /
                     0x1.e000000000000p+5f;
-                if (v170 >= 0x1.0000000000000p-1f) {
+                if (!(v170 < 0x1.0000000000000p-1f)) {
                   v173 = *((float32x4_t*)v115 + 5);
                   v176 = *((float32x4_t*)v115 + 6);
                   v172 = *((float32x4_t*)v115 + 4);
@@ -1587,7 +1587,7 @@ void SpotMgr_Unknown2(__int64 a1)
               v181 = *(_QWORD**)(v87 + 8 * v113);
               v183 = (float32x4_t***)v181[7];
               v182 = v181[8];
-              if ((unsigned __int64)v183 >= v182) {
+              if (!((unsigned __int64)v183 < v182)) {
                 v185 = v181[6];
                 v186 = (char*)v183 - v185;
                 v187 = ((__int64)v183 - v185) >> 3;
@@ -1599,7 +1599,7 @@ void SpotMgr_Unknown2(__int64 a1)
                 if (v189 >> 2 > v188) {
                   v188 = v189 >> 2;
                 }
-                if ((unsigned __int64)v189 >= 0x7FFFFFFFFFFFFFF8LL) {
+                if (!((unsigned __int64)v189 < 0x7FFFFFFFFFFFFFF8LL)) {
                   v190 = 0x1FFFFFFFFFFFFFFFLL;
                 }
                 else {
@@ -1757,7 +1757,7 @@ void SpotMgr_Unknown2(__int64 a1)
                 if (v230 >> 2 > v229) {
                   v229 = v230 >> 2;
                 }
-                if ((unsigned __int64)v230 >= 0x7FFFFFFFFFFFFFF8LL) {
+                if (!((unsigned __int64)v230 < 0x7FFFFFFFFFFFFFF8LL)) {
                   v231 = 0x1FFFFFFFFFFFFFFFLL;
                 }
                 else {
@@ -1875,7 +1875,7 @@ void SpotMgr_Unknown2(__int64 a1)
                 if (v297 >> 2 > v296) {
                   v296 = v297 >> 2;
                 }
-                if ((unsigned __int64)v297 >= 0x7FFFFFFFFFFFFFF8LL) {
+                if (!((unsigned __int64)v297 < 0x7FFFFFFFFFFFFFF8LL)) {
                   v298 = 0x1FFFFFFFFFFFFFFFLL;
                 }
                 else {
@@ -1931,7 +1931,7 @@ void SpotMgr_Unknown2(__int64 a1)
             if (v312 >> 2 > v311) {
               v311 = v312 >> 2;
             }
-            if ((unsigned __int64)v312 >= 0x7FFFFFFFFFFFFFF8LL) {
+            if (!((unsigned __int64)v312 < 0x7FFFFFFFFFFFFFF8LL)) {
               v313 = 0x1FFFFFFFFFFFFFFFLL;
             }
             else {
@@ -2046,7 +2046,7 @@ void SpotMgr_Unknown2(__int64 a1)
                   if (v339 >> 2 > v338) {
                     v338 = v339 >> 2;
                   }
-                  if ((unsigned __int64)v339 >= 0x7FFFFFFFFFFFFFF8LL) {
+                  if (!((unsigned __int64)v339 < 0x7FFFFFFFFFFFFFF8LL)) {
                     v340 = 0x1FFFFFFFFFFFFFFFLL;
                   }
                   else {
@@ -2102,7 +2102,7 @@ void SpotMgr_Unknown2(__int64 a1)
               if (v353 >> 2 > v352) {
                 v352 = v353 >> 2;
               }
-              if ((unsigned __int64)v353 >= 0x7FFFFFFFFFFFFFF8LL) {
+              if (!((unsigned __int64)v353 < 0x7FFFFFFFFFFFFFF8LL)) {
                 v354 = 0x1FFFFFFFFFFFFFFFLL;
               }
               else {
@@ -2176,7 +2176,7 @@ void SpotMgr_Unknown2(__int64 a1)
         v248 = v246 - 1;
         if ((v246 & (v246 - 1)) != 0) {
           v249 = v245;
-          if (v246 <= v245) {
+          if (!(v246 > v245)) {
             v249 = v245 % (unsigned int)v246;
           }
         }
@@ -2213,7 +2213,7 @@ void SpotMgr_Unknown2(__int64 a1)
           if (v252 == v245) {
             break;
           }
-          if (v252 >= v246) {
+          if (!(v252 < v246)) {
             v252 %= v246;
           }
           if (v252 != v249) {
@@ -2249,7 +2249,7 @@ void SpotMgr_Unknown2(__int64 a1)
           }
           else {
           LABEL_277:
-            if (v258 >= 0x18) {
+            if (!(v258 < 0x18)) {
               v256 += 16;
               while (1) {
                 if (*((_QWORD*)v256 - 2) == v254) {
@@ -2294,7 +2294,7 @@ void SpotMgr_Unknown2(__int64 a1)
         v263 = v261 - 1;
         if ((v261 & (v261 - 1)) != 0) {
           v264 = *(unsigned int*)(v254 + 96);
-          if (v261 <= v262) {
+          if (!(v261 > v262)) {
             v264 = (unsigned int)v262 % (unsigned int)v261;
           }
         }
@@ -2330,7 +2330,7 @@ void SpotMgr_Unknown2(__int64 a1)
         while (2) {
           v269 = *(_QWORD*)(v268 + 8);
           if (v269 != v262) {
-            if (v269 >= v261) {
+            if (!(v269 < v261)) {
               v269 %= v261;
             }
             if (v269 != v264) {
@@ -2348,7 +2348,7 @@ void SpotMgr_Unknown2(__int64 a1)
         }
       LABEL_311:
         if ((v261 & v263) != 0) {
-          if (v261 <= v262) {
+          if (!(v261 > v262)) {
             v262 %= v261;
           }
         }
@@ -2372,7 +2372,7 @@ void SpotMgr_Unknown2(__int64 a1)
           if (*(_QWORD*)v268 != 0) {
             v274 = *(_QWORD*)(*(_QWORD*)v268 + 8LL);
             if ((v261 & v263) != 0) {
-              if (v274 >= v261) {
+              if (!(v274 < v261)) {
                 v274 %= v261;
               }
               if (v274 == v262) {
@@ -2386,7 +2386,7 @@ void SpotMgr_Unknown2(__int64 a1)
           *(_QWORD*)(v266 + 8 * v262) = 0;
           goto LABEL_332;
         }
-        if (v273 >= v261) {
+        if (!(v273 < v261)) {
           v273 %= v261;
         }
         if (v273 != v262) {
@@ -2397,7 +2397,7 @@ void SpotMgr_Unknown2(__int64 a1)
         if (*(_QWORD*)v268 != 0) {
           v276 = *(_QWORD*)(v275 + 8);
           if ((v261 & v263) != 0) {
-            if (v276 >= v261) {
+            if (!(v276 < v261)) {
               v276 %= v261;
             }
             if (v276 != v262) {
@@ -2438,7 +2438,7 @@ void SpotMgr_Unknown2(__int64 a1)
           }
           else {
           LABEL_346:
-            if (v280 >= 0x18) {
+            if (!(v280 < 0x18)) {
               v279 += 16;
               while (1) {
                 if (*((_QWORD*)v279 - 2) == v254) {
@@ -2594,7 +2594,7 @@ LABEL_467:
     v375 = v372 - 1;
     if ((v372 & (v372 - 1)) != 0) {
       v376 = *v370;
-      if (v372 <= v374) {
+      if (!(v372 > v374)) {
         v376 = (unsigned int)v374 % (unsigned int)v372;
       }
     }
@@ -2615,11 +2615,11 @@ LABEL_467:
         }
       }
       v385 = strlen_alt1(v382);
-      if (v385 >= 0xFFFFFFFFFFFFFFF7LL) {
+      if (!(v385 < 0xFFFFFFFFFFFFFFF7LL)) {
         String_60a1d0_alt1();
       }
       v386 = v385;
-      if (v385 >= 0x17) {
+      if (!(v385 < 0x17)) {
         if ((v385 | 7) == 0x17) {
           v388 = 26;
         }
@@ -2655,7 +2655,7 @@ LABEL_467:
       v481_.v481 = v383;
       v391 = (__int64*)v468[16];
       v390 = v468[17];
-      if ((unsigned __int64)v391 >= v390) {
+      if (!((unsigned __int64)v391 < v390)) {
         v393 = v468[15];
         v394 = (char*)v391 - v393;
         v395 = ((__int64)v391 - v393) >> 3;
@@ -2667,7 +2667,7 @@ LABEL_467:
         if (v397 >> 2 > v396) {
           v396 = v397 >> 2;
         }
-        if ((unsigned __int64)v397 >= 0x7FFFFFFFFFFFFFF8LL) {
+        if (!((unsigned __int64)v397 < 0x7FFFFFFFFFFFFFF8LL)) {
           v398 = 0x1FFFFFFFFFFFFFFFLL;
         }
         else {
@@ -2714,7 +2714,7 @@ LABEL_467:
         v406 = v405 - 1;
         if ((v405 & (v405 - 1)) != 0) {
           v407 = v404;
-          if (v405 <= v404) {
+          if (!(v405 > v404)) {
             v407 = (unsigned int)v404 % (unsigned int)v405;
           }
         }
@@ -2750,7 +2750,7 @@ LABEL_467:
                 }
               }
               else {
-                if (v410 >= v405) {
+                if (!(v410 < v405)) {
                   v410 %= v405;
                 }
                 if (v410 != v407) {
@@ -2789,7 +2789,7 @@ LABEL_467:
       if (v379 == v374) {
         break;
       }
-      if (v379 >= v372) {
+      if (!(v379 < v372)) {
         v379 %= v372;
       }
       if (v379 != v376) {
@@ -2921,7 +2921,7 @@ LABEL_551:
       v438 = v436 - 1;
       if ((v436 & (v436 - 1)) != 0) {
         v439 = v435;
-        if (v435 >= v436) {
+        if (!(v435 < v436)) {
           v439 = v435 % v436;
         }
       }
@@ -2957,7 +2957,7 @@ LABEL_551:
         if (v442 == v435) {
           break;
         }
-        if (v442 >= v436) {
+        if (!(v442 < v436)) {
           v442 %= v436;
         }
         if (v442 != v439) {
@@ -2994,7 +2994,7 @@ LABEL_551:
       v448 = v446 - 1;
       if ((v446 & (v446 - 1)) != 0) {
         v449 = v445;
-        if (v445 >= v446) {
+        if (!(v445 < v446)) {
           v449 = v445 % v446;
         }
       }
@@ -3028,7 +3028,7 @@ LABEL_551:
       while (2) {
         v452 = v451[1];
         if (v452 != v445) {
-          if (v452 >= v446) {
+          if (!(v452 < v446)) {
             v452 %= v446;
           }
           if (v452 != v449) {

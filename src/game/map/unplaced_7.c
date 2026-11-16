@@ -251,7 +251,7 @@ LABEL_10:
         *(float*)&v10 =
             vmuls_lane_f32(LANES128(v12).n128_f32[2], v12, 2) +
             (float)(LANES128(v12).n128_f32[0] * LANES128(v12).n128_f32[0]);
-        if (*(float*)&v10 >= 0x1.0000000000000p-4f) {
+        if (!(*(float*)&v10 < 0x1.0000000000000p-4f)) {
           v13 = 0x0.0p+0f;
           if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, 1065353216LL),
                                    COERCE_AS(float32x2_t, 1065353216LL)))
@@ -342,10 +342,10 @@ LABEL_10:
                 *(_QWORD*)(v22 + 48) + 16LL))((void*)&v37, v22 + 48)),
         v10 = COERCE_AS(__typeof__(v10), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v23 = vsubq_f32(*(float32x4_t*)&v38, v37);
-        if ((float)(vmuls_lane_f32(LANES128(v23).n128_f32[2], v23, 2) +
-                    (float)(LANES128(v23).n128_f32[0] *
-                            LANES128(v23).n128_f32[0])) >=
-            0x1.0000000000000p-4f) {
+        if (!((float)(vmuls_lane_f32(LANES128(v23).n128_f32[2], v23, 2) +
+                      (float)(LANES128(v23).n128_f32[0] *
+                              LANES128(v23).n128_f32[0])) <
+              0x1.0000000000000p-4f)) {
           v24 = 0x0.0p+0f;
           if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, 1065353216LL),
                                    COERCE_AS(float32x2_t, 1065353216LL)))

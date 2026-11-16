@@ -12467,7 +12467,7 @@ void game_10e91c0(_QWORD* a1, float32x4_t* a2, float32x4_t* a3)
       v31 = a1[4] + 1LL;
       a1[4] = v31;
       a1[5] = v30;
-      if (v31 >= 0xAA) {
+      if (!(v31 < 0xAA)) {
         v32 = (__int64*)a1[1];
         v33 = *v32;
         if (*v32 != 0) {

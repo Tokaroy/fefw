@@ -12672,7 +12672,7 @@ LABEL_31:
     }
   }
   v28 = *(_DWORD*)(*(_QWORD*)a1 + 20LL);
-  if (v28 >= 0xA) {
+  if (!(v28 < 0xA)) {
     String_60a250("bitset test argument out of range");
   }
   v29 = *(_QWORD*)(v26 + 392);
@@ -12713,7 +12713,7 @@ LABEL_31:
   if (v50[1] != 0 || v50[3] == 0 || v50[12] == 0 || v50[10] == 0) {
     if (v49 != 0 && *(_DWORD*)(v49 + 16) == *(_DWORD*)(a1 + 8)) {
       v52 = *(unsigned int*)(v49 + 36);
-      if ((int)v52 >= 1) {
+      if (!((int)v52 < 1)) {
         v53 = v49 + 40;
         v54 = 0;
         while (1) {
@@ -12896,8 +12896,8 @@ LABEL_63:
       v77 = 0;
       do {
         v78 = LANES128(v74[11]).n128_u64[0] + v77;
-        if ((float)(LANES128(v74[4]).n128_f32[1] - *(float*)(v78 + 8)) >=
-            *(float*)(v78 + 12)) {
+        if (!((float)(LANES128(v74[4]).n128_f32[1] - *(float*)(v78 + 8)) <
+              *(float*)(v78 + 12))) {
           *(_QWORD*)(v78 + 16) = 0;
         }
         else if (*(_QWORD*)(v78 + 16) == 0) {
@@ -12947,7 +12947,7 @@ LABEL_63:
                   LANES128(v103).n128_f32[2], 0x0.0p+0f, 0x1.0000000000000p+0f);
               snd_Fade_Destroy_Fade(&v105_.v105);
               v100 = *(_QWORD*)(a1 + 40);
-              if (v100 >= *(_QWORD*)(a1 + 48)) {
+              if (!(v100 < *(_QWORD*)(a1 + 48))) {
                 v101 = GameRoutine_1488940((__int64*)(a1 + 32), (__int64)v107);
               }
               else {

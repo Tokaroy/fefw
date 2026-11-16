@@ -2401,7 +2401,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
     v5 = *(float*)(a1 + 56);
     v4 = *(float*)(a1 + 60);
     v6 = *(_OWORD*)(a1 + 96);
-    if (v4 >= v5) {
+    if (!(v4 < v5)) {
       LODWORD(v7) = HIDWORD(*(_QWORD*)(a1 + 96));
     }
     else {

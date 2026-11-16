@@ -590,7 +590,7 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
   v198_.v198[1] = a1;
   v198_.v199 = v198_.v198;
   v7 = (_QWORD*)v6[35];
-  if ((unsigned __int64)v7 >= v6[36]) {
+  if (!((unsigned __int64)v7 < v6[36])) {
     v9 = GameRoutine_dac2c0_alt1(v6 + 34, v6 + 42, (__int64)v198_.v198),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -676,7 +676,7 @@ LABEL_24:
   v194_.v194[1] = a1;
   v194_.v195 = v194_.v194;
   v18 = (_QWORD*)v17[38];
-  if ((unsigned __int64)v18 >= v17[39]) {
+  if (!((unsigned __int64)v18 < v17[39])) {
     v21 = GameRoutine_dac4e0_alt1(v17 + 37, v17 + 43, (__int64)v194_.v194),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -742,7 +742,7 @@ LABEL_37:
   v28[1] = a1;
   v30 = *(_QWORD**)(a1 + 96);
   v29 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v30 >= v29) {
+  if (!((unsigned __int64)v30 < v29)) {
     v32 = *v3;
     v33 = (signed __int64)v30 - *v3;
     v34 = (v33 >> 3) + 1;
@@ -753,7 +753,7 @@ LABEL_37:
     if (v35 >> 2 > v34) {
       v34 = v35 >> 2;
     }
-    if ((unsigned __int64)v35 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v35 < 0x7FFFFFFFFFFFFFF8LL)) {
       v36 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -805,7 +805,7 @@ LABEL_37:
   *(_QWORD*)v43 = game_hub_CharacterControllerEnemy_StateReturn_vtable;
   *(_QWORD*)(v43 + 8) = a1;
   v44 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v31 >= v44) {
+  if (!((unsigned __int64)v31 < v44)) {
     v46 = *v3;
     v47 = (signed __int64)v31 - *v3;
     v48 = (v47 >> 3) + 1;
@@ -816,7 +816,7 @@ LABEL_37:
     if (v49 >> 2 > v48) {
       v48 = v49 >> 2;
     }
-    if ((unsigned __int64)v49 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v49 < 0x7FFFFFFFFFFFFFF8LL)) {
       v50 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -867,7 +867,7 @@ LABEL_37:
   *v57 = game_hub_CharacterControllerEnemy_StatePatrol_vtable;
   v57[1] = a1;
   v58 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v45 >= v58) {
+  if (!((unsigned __int64)v45 < v58)) {
     v60 = *v3;
     v61 = (signed __int64)v45 - *v3;
     v62 = (v61 >> 3) + 1;
@@ -878,7 +878,7 @@ LABEL_37:
     if (v63 >> 2 > v62) {
       v62 = v63 >> 2;
     }
-    if ((unsigned __int64)v63 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v63 < 0x7FFFFFFFFFFFFFF8LL)) {
       v64 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -932,7 +932,7 @@ LABEL_37:
   *(_QWORD*)v71 = game_hub_CharacterControllerEnemy_StateDiscovery_vtable;
   *(_QWORD*)(v71 + 8) = a1;
   v72 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v59 >= v72) {
+  if (!((unsigned __int64)v59 < v72)) {
     v74 = *v3;
     v75 = (signed __int64)v59 - *v3;
     v76 = (v75 >> 3) + 1;
@@ -943,7 +943,7 @@ LABEL_37:
     if (v77 >> 2 > v76) {
       v76 = v77 >> 2;
     }
-    if ((unsigned __int64)v77 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v77 < 0x7FFFFFFFFFFFFFF8LL)) {
       v78 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1016,7 +1016,7 @@ LABEL_37:
   *(_OWORD*)(v85 + 32) = GameData_21a6120;
   v87 = *(__int64**)(a1 + 96);
   v86 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v87 >= v86) {
+  if (!((unsigned __int64)v87 < v86)) {
     v89 = *v3;
     v90 = (signed __int64)v87 - *v3;
     v91 = (v90 >> 3) + 1;
@@ -1027,7 +1027,7 @@ LABEL_37:
     if (v92 >> 2 > v91) {
       v91 = v92 >> 2;
     }
-    if ((unsigned __int64)v92 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v92 < 0x7FFFFFFFFFFFFFF8LL)) {
       v93 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1078,7 +1078,7 @@ LABEL_37:
   *v100 = game_hub_CharacterControllerEnemy_StateEscape_vtable;
   v100[1] = a1;
   v101 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v88 >= v101) {
+  if (!((unsigned __int64)v88 < v101)) {
     v103 = *v3;
     v104 = (signed __int64)v88 - *v3;
     v105 = (v104 >> 3) + 1;
@@ -1089,7 +1089,7 @@ LABEL_37:
     if (v106 >> 2 > v105) {
       v105 = v106 >> 2;
     }
-    if ((unsigned __int64)v106 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v106 < 0x7FFFFFFFFFFFFFF8LL)) {
       v107 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1141,7 +1141,7 @@ LABEL_37:
   *v114 = game_hub_CharacterControllerEnemy_StateStationary_vtable;
   v114[1] = a1;
   v115 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v102 >= v115) {
+  if (!((unsigned __int64)v102 < v115)) {
     v117 = *v3;
     v118 = (signed __int64)v102 - *v3;
     v119 = (v118 >> 3) + 1;
@@ -1152,7 +1152,7 @@ LABEL_37:
     if (v120 >> 2 > v119) {
       v119 = v120 >> 2;
     }
-    if ((unsigned __int64)v120 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v120 < 0x7FFFFFFFFFFFFFF8LL)) {
       v121 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1204,7 +1204,7 @@ LABEL_37:
   *(_QWORD*)v128 = game_hub_CharacterControllerEnemy_StateLostSight_vtable;
   *(_QWORD*)(v128 + 8) = a1;
   v129 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v116 >= v129) {
+  if (!((unsigned __int64)v116 < v129)) {
     v131 = *v3;
     v132 = (signed __int64)v116 - *v3;
     v133 = (v132 >> 3) + 1;
@@ -1215,7 +1215,7 @@ LABEL_37:
     if (v134 >> 2 > v133) {
       v133 = v134 >> 2;
     }
-    if ((unsigned __int64)v134 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v134 < 0x7FFFFFFFFFFFFFF8LL)) {
       v135 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1266,7 +1266,7 @@ LABEL_37:
   *v142 = game_hub_CharacterControllerEnemy_StateDamaged_vtable;
   v142[1] = a1;
   v143 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v130 >= v143) {
+  if (!((unsigned __int64)v130 < v143)) {
     v145 = *v3;
     v146 = (signed __int64)v130 - *v3;
     v147 = (v146 >> 3) + 1;
@@ -1277,7 +1277,7 @@ LABEL_37:
     if (v148 >> 2 > v147) {
       v147 = v148 >> 2;
     }
-    if ((unsigned __int64)v148 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v148 < 0x7FFFFFFFFFFFFFF8LL)) {
       v149 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1328,7 +1328,7 @@ LABEL_37:
   *v156 = game_hub_CharacterControllerEnemy_StateEncounted_vtable;
   v156[1] = a1;
   v157 = *(_QWORD*)(a1 + 104);
-  if ((unsigned __int64)v144 >= v157) {
+  if (!((unsigned __int64)v144 < v157)) {
     v159 = *v3;
     v160 = (signed __int64)v144 - *v3;
     v161 = (v160 >> 3) + 1;
@@ -1339,7 +1339,7 @@ LABEL_37:
     if (v162 >> 2 > v161) {
       v161 = v162 >> 2;
     }
-    if ((unsigned __int64)v162 >= 0x7FFFFFFFFFFFFFF8LL) {
+    if (!((unsigned __int64)v162 < 0x7FFFFFFFFFFFFFF8LL)) {
       v163 = 0x1FFFFFFFFFFFFFFFLL;
     }
     else {
@@ -1408,7 +1408,7 @@ LABEL_37:
   if (v176 >> 2 > v175) {
     v175 = v176 >> 2;
   }
-  if ((unsigned __int64)v176 >= 0x7FFFFFFFFFFFFFF8LL) {
+  if (!((unsigned __int64)v176 < 0x7FFFFFFFFFFFFFF8LL)) {
     v177 = 0x1FFFFFFFFFFFFFFFLL;
   }
   else {
@@ -1505,7 +1505,7 @@ LABEL_214:
   }
 LABEL_229:
   v189 = *(float*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 800LL) + 52LL);
-  if (v189 <= 0x0.0p+0f) {
+  if (!(v189 > 0x0.0p+0f)) {
     if (*(_BYTE*)(a1 + 44) != 1) {
       return;
     }

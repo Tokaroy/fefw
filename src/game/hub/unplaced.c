@@ -5263,9 +5263,9 @@ __attribute__((swiftcall)) void game_hub_d6ae60(PSEUDO_X8 x8_, float* a1,
     v40 = v40 / v41;
   }
   LANES64(v39).n64_f32[1] = v40;
-  if ((float)(LANES64_OF(vmul_f32(v36, v39)).n64_f32[1] +
-              (float)(LANES64(v36).n64_f32[0] * LANES64(v39).n64_f32[0])) <=
-      0x0.0p+0f) {
+  if (!((float)(LANES64_OF(vmul_f32(v36, v39)).n64_f32[1] +
+                (float)(LANES64(v36).n64_f32[0] * LANES64(v39).n64_f32[0])) >
+        0x0.0p+0f)) {
     LANES64(v42).n64_f32[0] = LANES128(v35).n128_f32[0] - *(float*)&v28;
     v43 = LANES128(v35).n128_f32[2] - v31;
     if ((float)(LANES128(v35).n128_f32[0] - *(float*)&v28) != 0x0.0p+0f ||
@@ -5276,9 +5276,9 @@ __attribute__((swiftcall)) void game_hub_d6ae60(PSEUDO_X8 x8_, float* a1,
       v43 = v43 / v44;
     }
     LANES64(v42).n64_f32[1] = v43;
-    if ((float)(LANES64_OF(vmul_f32(v36, v42)).n64_f32[1] +
-                (float)(LANES64(v36).n64_f32[0] * LANES64(v42).n64_f32[0])) >=
-        0x0.0p+0f) {
+    if (!((float)(LANES64_OF(vmul_f32(v36, v42)).n64_f32[1] +
+                  (float)(LANES64(v36).n64_f32[0] * LANES64(v42).n64_f32[0])) <
+          0x0.0p+0f)) {
       v45 = (float)(PSEUDO_UNFUSED((float)(v31 - LANES128(v34).n128_f32[2]) *
                                    LANES64(v36).n64_f32[1])) +
             (float)(LANES64(v36).n64_f32[0] *

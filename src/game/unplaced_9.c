@@ -1645,7 +1645,7 @@ float game_55ca90(__int64 a1, float32x4_t* a2, float32x2_t* a3, __int64 a4,
   float v27;
   float v28;
 
-  if (*(int*)(a1 + 152) >= 1) {
+  if (!(*(int*)(a1 + 152) < 1)) {
     v5 = *(float32x4_t**)(a4 + 24);
     if (v5 != nullptr) {
       v6 = v5[1];

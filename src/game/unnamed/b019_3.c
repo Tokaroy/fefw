@@ -499,7 +499,7 @@ __int64 GameHr_14b8ca0(__int64 a1)
     game_14a1cc0(v3, 0x1.0000000000000p+0f),
         v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(__n128, "v0", "=w"));
     v6 = (_QWORD*)GameData_224b6a0;
-    if (GameData_224b6a0 >= (unsigned __int64)GameData_224b6a8) {
+    if (!(GameData_224b6a0 < (unsigned __int64)GameData_224b6a8)) {
       v9 = GameRoutine_14a36c0_alt1(&GameData_224b698, (__int64*)(a1 + 56),
                                     &v14),
       v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(__n128, "v0", "=w"));
@@ -541,7 +541,7 @@ __int64 GameHr_14b8ca0(__int64 a1)
       *(_QWORD*)&v4 = 0;
     }
     else {
-      if (*(float*)(a1 + 16) <= 0x0.0p+0f) {
+      if (!(*(float*)(a1 + 16) > 0x0.0p+0f)) {
         if (((*(__int64 (**)(__int64, int*, __int64))(
                  *(_QWORD*)(a1 + 8) + 8LL))(a1 + 8, &v13, a1 + 40) &
              1) != 0) {

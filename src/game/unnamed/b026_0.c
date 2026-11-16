@@ -4801,7 +4801,7 @@ LABEL_2:
   while (1) {
     v9 = v11;
     v12 = ((char*)a2 - (char*)v11) >> 4;
-    if (v12 <= 2) {
+    if (!(v12 > 2)) {
       if ((unsigned __int64)v12 < 2) {
         return result;
       }
@@ -4874,7 +4874,7 @@ LABEL_2:
       return result;
     }
   LABEL_10:
-    if (v12 <= 23) {
+    if (!(v12 > 23)) {
       v168 = v11 + 2;
       v170 = v11 == a2 || v168 == a2;
       if ((a5 & 1) != 0) {
@@ -4947,10 +4947,10 @@ LABEL_2:
         v181 = (unsigned __int64)(v12 - 2) >> 1;
         v182 = v181;
         do {
-          if (v181 >= v182) {
+          if (!(v181 < v182)) {
             v185 = (2 * (v182 & 0x3FFFFFFFFFFFFFFFLL)) | 1;
             v186 = &v11[2 * v185];
-            if ((__int64)(2 * v182 + 2) >= v12) {
+            if (!((__int64)(2 * v182 + 2) < v12)) {
               v187 = **(_QWORD**)(a3 + 8);
             }
             else {
@@ -4962,8 +4962,8 @@ LABEL_2:
               }
             }
             v188 = &v11[2 * v182];
-            if (*(float*)((char*)v186 + v187) <=
-                *(float*)((char*)v188 + v187)) {
+            if (!(*(float*)((char*)v186 + v187) >
+                  *(float*)((char*)v188 + v187))) {
               v189 = v188[1];
               v238 = *v188;
               v239 = v189;
@@ -4987,7 +4987,7 @@ LABEL_2:
                 v190 = *(float*)((char*)v186 + v195);
                 v191 = *(float*)((char*)&v238 + v195);
                 v188 = v192;
-              } while (v190 <= v191);
+              } while (!(v190 > v191));
               v183 = v239;
               *v192 = v238;
               v192[1] = v183;
@@ -5017,7 +5017,7 @@ LABEL_2:
             v198 = v197[1];
             *v200 = *v197;
             v200[1] = v198;
-          } while (v196 <= (__int64)((unsigned __int64)(v12 - 2) >> 1));
+          } while (!(v196 > (__int64)((unsigned __int64)(v12 - 2) >> 1)));
           a2 -= 2;
           if (v197 == a2) {
             *v197 = v236;
@@ -5069,9 +5069,9 @@ LABEL_2:
     v13 = &v11[2 * ((unsigned __int64)v12 >> 1)];
     v14 = **(_QWORD**)(a3 + 8);
     v15 = *(float*)((char*)v10 + v14);
-    if ((unsigned __int64)v12 >= 0x81) {
+    if (!((unsigned __int64)v12 < 0x81)) {
       v16 = *(float*)((char*)v13 + v14);
-      if (v16 <= *(float*)((char*)v11 + v14)) {
+      if (!(v16 > *(float*)((char*)v11 + v14))) {
         if (v15 > v16) {
           v24 = *v13;
           v25 = v13[1];
@@ -5121,7 +5121,7 @@ LABEL_2:
       v40 = **(_QWORD**)(a3 + 8);
       v41 = *(float*)((char*)v13 + v40 - 16);
       v42 = *(float*)((char*)v235 + v40);
-      if (v41 <= *(float*)((char*)v11 + v40 + 16)) {
+      if (!(v41 > *(float*)((char*)v11 + v40 + 16))) {
         if (v42 > v41) {
           v46 = *(v13 - 2);
           v47 = *(v13 - 1);
@@ -5171,7 +5171,7 @@ LABEL_2:
       v58 = **(_QWORD**)(a3 + 8);
       v59 = *(float*)((char*)v13 + v58 + 16);
       v60 = *(float*)((char*)v234 + v58);
-      if (v59 <= *(float*)((char*)v11 + v58 + 32)) {
+      if (!(v59 > *(float*)((char*)v11 + v58 + 32))) {
         if (v60 > v59) {
           v64 = v13[2];
           v65 = v13[3];
@@ -5219,7 +5219,7 @@ LABEL_2:
       v72 = **(_QWORD**)(a3 + 8);
       v73 = *(float*)((char*)v13 + v72);
       v74 = *(float*)((char*)v57 + v72);
-      if (v73 <= *(float*)((char*)v39 + v72)) {
+      if (!(v73 > *(float*)((char*)v39 + v72))) {
         if (v74 > v73) {
           v79 = *v13;
           v80 = v13[1];
@@ -5278,7 +5278,7 @@ LABEL_2:
       goto LABEL_59;
     }
     v20 = *(float*)((char*)v11 + v14);
-    if (v20 <= *(float*)((char*)v13 + v14)) {
+    if (!(v20 > *(float*)((char*)v13 + v14))) {
       if (v15 > v20) {
         v30 = *v11;
         v31 = v11[1];
@@ -5302,14 +5302,13 @@ LABEL_2:
     }
     v22 = *v13;
     v21 = v13[1];
-    if (v15 <= v20) {
+    if (!(v15 > v20)) {
       v52 = v11[1];
       *v13 = *v11;
       v13[1] = v52;
       *v11 = v22;
       v11[1] = v21;
-      if (*(float*)((char*)v10 + **(_QWORD**)(a3 + 8)) <=
-          *(float*)((char*)v11 + **(_QWORD**)(a3 + 8))) {
+      if (!(*(float*)((char*)v10 + **(_QWORD**)(a3 + 8)) > *(float*)((char*)v11 + **(_QWORD**)(a3 + 8)))) {
         goto LABEL_59;
       }
       v53 = *(a2 - 1);
@@ -5369,9 +5368,9 @@ LABEL_2:
         v102 = *(float*)((char*)v101 + v100);
         v103 = v101 - 2;
         v101 -= 2;
-      } while (v102 <= v97);
+      } while (!(v102 > v97));
     LABEL_70:
-      if (v99 >= v103) {
+      if (!(v99 < v103)) {
         goto LABEL_80;
       }
       v107 = v99;
@@ -5394,7 +5393,7 @@ LABEL_2:
         do {
           v116 = *(float*)((char*)v108 + v115);
           v108 -= 2;
-        } while (v116 <= v113);
+        } while (!(v116 > v113));
       } while (v107 < v108);
       v117 = v107 - 2;
       if (v11 != v107 - 2) {
@@ -5430,16 +5429,16 @@ LABEL_2:
       v238 = *v11;
       v239 = v122;
       v123 = *(float*)((char*)&v238 + v93);
-      if (v123 <= *(float*)((char*)v10 + v93)) {
+      if (!(v123 > *(float*)((char*)v10 + v93))) {
         v126 = (unsigned __int64)(v11 + 2);
         do {
           v11 = (__int64*)v126;
-          if (v126 >= (unsigned __int64)a2) {
+          if (!(v126 < (unsigned __int64)a2)) {
             break;
           }
           v127 = *(float*)(v126 + v93);
           v126 += 16LL;
-        } while (v123 <= v127);
+        } while (!(v123 > v127));
       }
       else {
         v124 = v11;
@@ -5447,7 +5446,7 @@ LABEL_2:
           v125 = *(float*)((char*)v124 + v93 + 16);
           v11 = v124 + 2;
           v124 += 2;
-        } while (v123 <= v125);
+        } while (!(v123 > v125));
       }
       v128 = a2;
       if (v11 < a2) {
@@ -5472,7 +5471,7 @@ LABEL_2:
         do {
           v137 = *(float*)((char*)v11 + v135 + 16);
           v11 += 2;
-        } while (v136 <= v137);
+        } while (!(v136 > v137));
         v138 = v135 - 16;
         do {
           v139 = *(float*)((char*)v128 + v138);
@@ -5495,7 +5494,7 @@ LABEL_2:
   v162 = **(_QWORD**)(a3 + 8);
   v163 = *(float*)((char*)v11 + v162 + 16);
   v164 = *(float*)((char*)v10 + v162);
-  if (v163 <= *(float*)((char*)v11 + v162)) {
+  if (!(v163 > *(float*)((char*)v11 + v162))) {
     if (v164 > v163) {
       v215 = v11[2];
       v216 = v11[3];
@@ -5520,15 +5519,14 @@ LABEL_2:
   else {
     v166 = *v11;
     v165 = v11[1];
-    if (v164 <= v163) {
+    if (!(v164 > v163)) {
       v231 = *v161;
       v232 = v11[3];
       v11[2] = v166;
       v11[3] = v165;
       *v11 = v231;
       v11[1] = v232;
-      if (*(float*)((char*)v10 + **(_QWORD**)(a3 + 8)) <=
-          *(float*)((char*)v161 + **(_QWORD**)(a3 + 8))) {
+      if (!(*(float*)((char*)v10 + **(_QWORD**)(a3 + 8)) > *(float*)((char*)v161 + **(_QWORD**)(a3 + 8)))) {
         return result;
       }
       v233 = *(a2 - 1);

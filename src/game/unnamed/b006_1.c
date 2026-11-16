@@ -1732,13 +1732,13 @@ __int64 GameHr_7c2820(__int64 a1, float a2)
     LODWORD(v11) = *(_DWORD*)(a1 + 88);
   }
   v13 = *(unsigned __int8*)(a1 + 80);
-  if (v12 >= *(float*)&v11) {
+  if (!(v12 < *(float*)&v11)) {
     v14 = *(float*)&v11;
   }
   else {
     v14 = v12;
   }
-  if (*(float*)&v11 >= v10) {
+  if (!(*(float*)&v11 < v10)) {
     *(float*)&v11 = v14;
   }
   else {
@@ -1752,7 +1752,7 @@ __int64 GameHr_7c2820(__int64 a1, float a2)
   }
   else {
     v16 = 0x1.8000000000000p-1f;
-    if (*(float*)(a1 + 64) <= 0x1.8000000000000p-1f) {
+    if (!(*(float*)(a1 + 64) > 0x1.8000000000000p-1f)) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(a1 + 56) + 8LL))(a1 + 56, &v21, a1 + 88);
       if ((result & 1) == 0) {

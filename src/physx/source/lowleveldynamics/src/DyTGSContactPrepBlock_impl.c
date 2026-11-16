@@ -718,7 +718,7 @@ int32x4_t** physx_Dy_solveContact4_Block_3c4a10(unsigned int* a1, __int64 a2,
                            COERCE_AS(float32x2_t, LANES128(v124).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v124).n128_u64[0])))
                        .n64_f32[0];
-            if (v299 <= v128) {
+            if (!(v299 > v128)) {
               v125 = v128;
             }
             v299 = v125;

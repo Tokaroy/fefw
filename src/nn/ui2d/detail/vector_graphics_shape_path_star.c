@@ -171,7 +171,7 @@ void VectorGraphicsShapePathStar_Unknown5(__int64 a1, __int64 a2, float a3)
     v31 = atomic_load(*((unsigned __int64**)v17 + 8));
     v32 = atomic_load(v30);
     v25 = *((_QWORD*)v17 + 3);
-    if (v32 + v31 <= v25) {
+    if (!(v32 + v31 > v25)) {
       goto LABEL_7;
     }
   }
@@ -179,7 +179,7 @@ void VectorGraphicsShapePathStar_Unknown5(__int64 a1, __int64 a2, float a3)
     v27 = *((_QWORD*)v17 + 8);
     v28 = *((_QWORD*)v17 + 9);
     v25 = *((_QWORD*)v17 + 3);
-    if (v28 + v27 <= v25) {
+    if (!(v28 + v27 > v25)) {
     LABEL_7:
       v23 = add + v21;
       goto LABEL_9;
@@ -190,7 +190,7 @@ LABEL_11:
 LABEL_12:
   *(_DWORD*)(a1 + 48) = v20;
   *(_QWORD*)(a1 + 40) = (v22 + v29 + 7) & 0xFFFFFFFFFFFFFFF8LL;
-  if (v16 >= 1) {
+  if (!(v16 < 1)) {
     v33 = 0;
     v34 = 0;
     v35 = 0;
@@ -243,7 +243,7 @@ LABEL_12:
         LANES64(v70).n64_u64[0] = LANES64_OF(vpadd_f32(v69, v69)).n64_u64[0];
         PSEUDO_LOW_LANE64(v71, n64_u64, 0);
         PSEUDO_LOW_LANE64(v72, n64_u64, 0);
-        if (LANES64_OF(vsqrt_f32(v70)).n64_f32[0] >= 0x1.0000000000000p-12f) {
+        if (!(LANES64_OF(vsqrt_f32(v70)).n64_f32[0] < 0x1.0000000000000p-12f)) {
           LANES64(v73).n64_u64[0] = LANES64_OF(vrsqrte_f32(v70)).n64_u64[0];
           LANES64(v74).n64_u64[0] =
               LANES64_OF(vmul_f32(v73, vrsqrts_f32(v73, vmul_f32(v70, v73))))
@@ -259,7 +259,7 @@ LABEL_12:
         LANES64(v65).n64_f32[1] = v61;
         LANES64(v75).n64_u64[0] = LANES64_OF(vmul_f32(v65, v65)).n64_u64[0];
         LANES64(v76).n64_u64[0] = LANES64_OF(vpadd_f32(v75, v75)).n64_u64[0];
-        if (LANES64_OF(vsqrt_f32(v76)).n64_f32[0] >= 0x1.0000000000000p-12f) {
+        if (!(LANES64_OF(vsqrt_f32(v76)).n64_f32[0] < 0x1.0000000000000p-12f)) {
           LANES64(v77).n64_u64[0] = LANES64_OF(vrsqrte_f32(v76)).n64_u64[0];
           LANES64(v78).n64_u64[0] =
               LANES64_OF(vmul_f32(v77, vrsqrts_f32(v77, vmul_f32(v76, v77))))
@@ -285,7 +285,7 @@ LABEL_12:
         LANES64(v80).n64_u64[0] = LANES64_OF(vpadd_f32(v79, v79)).n64_u64[0];
         PSEUDO_LOW_LANE64(v81, n64_u64, 0);
         PSEUDO_LOW_LANE64(v82, n64_u64, 0);
-        if (LANES64_OF(vsqrt_f32(v80)).n64_f32[0] >= 0x1.0000000000000p-12f) {
+        if (!(LANES64_OF(vsqrt_f32(v80)).n64_f32[0] < 0x1.0000000000000p-12f)) {
           LANES64(v83).n64_u64[0] = LANES64_OF(vrsqrte_f32(v80)).n64_u64[0];
           LANES64(v84).n64_u64[0] =
               LANES64_OF(vmul_f32(v83, vrsqrts_f32(v83, vmul_f32(v80, v83))))
@@ -310,7 +310,7 @@ LABEL_12:
         LANES64(v91).n64_u64[0] = LANES64_OF(vmul_f32(v90, v90)).n64_u64[0];
         LANES64(v92).n64_u64[0] = LANES64_OF(vpadd_f32(v91, v91)).n64_u64[0];
         v93 = LANES64_OF(vsqrt_f32(v92)).n64_f32[0];
-        if (v93 >= 0x1.0000000000000p-12f) {
+        if (!(v93 < 0x1.0000000000000p-12f)) {
           LANES64(v94).n64_u64[0] = LANES64_OF(vrsqrte_f32(v92)).n64_u64[0];
           LANES64(v95).n64_u64[0] =
               LANES64_OF(vmul_f32(v94, vrsqrts_f32(v94, vmul_f32(v92, v94))))
@@ -342,7 +342,7 @@ LABEL_12:
                         24LL *
                             (unsigned int)((v41 - 1) % *(_DWORD*)(a1 + 48))) =
             vmul_n_f32(v81, v36 * v101);
-        if (v93 >= 0x1.0000000000000p-12f) {
+        if (!(v93 < 0x1.0000000000000p-12f)) {
           LANES64(v102).n64_u64[0] = LANES64_OF(vrsqrte_f32(v92)).n64_u64[0];
           LANES64(v103).n64_u64[0] =
               LANES64_OF(vmul_f32(v102, vrsqrts_f32(v102, vmul_f32(v92, v102))))
@@ -359,7 +359,8 @@ LABEL_12:
         LANES64(v65).n64_f32[1] = v61;
         LANES64(v104).n64_u64[0] = LANES64_OF(vmul_f32(v65, v65)).n64_u64[0];
         LANES64(v105).n64_u64[0] = LANES64_OF(vpadd_f32(v104, v104)).n64_u64[0];
-        if (LANES64_OF(vsqrt_f32(v105)).n64_f32[0] >= 0x1.0000000000000p-12f) {
+        if (!(LANES64_OF(vsqrt_f32(v105)).n64_f32[0] <
+              0x1.0000000000000p-12f)) {
           LANES64(v106).n64_u64[0] = LANES64_OF(vrsqrte_f32(v105)).n64_u64[0];
           LANES64(v107).n64_u64[0] =
               LANES64_OF(
@@ -393,7 +394,7 @@ LABEL_12:
     } while (v40 != v34);
     v20 = *(_DWORD*)(a1 + 48);
   }
-  if (v20 >= 1) {
+  if (!(v20 < 1)) {
     v109 = 0;
     v110 = 0;
     do {

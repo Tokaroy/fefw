@@ -124,7 +124,7 @@ __int64 sweepConvex_PlaneGeom(float a1, float a2, __int64 a3, float* a4,
       v42 = a7[2];
       v43 = (float)((float)(PSEUDO_UNFUSED(v41 * v28)) + (float)(*a7 * v27)) +
             (float)(v42 * v29);
-      if (fabsf(v43) >= 0x1.ad7f2a0000000p-24f) {
+      if (!(fabsf(v43) < 0x1.ad7f2a0000000p-24f)) {
         v44 = *(v37 - 2);
         v45 = *(v37 - 1);
         v46 = v44 * v33;
@@ -169,7 +169,7 @@ __int64 sweepConvex_PlaneGeom(float a1, float a2, __int64 a3, float* a4,
         v56 = v62 + (float)((float)((float)(PSEUDO_UNFUSED(v28 * v54)) +
                                     (float)(v55 * v27)) +
                             (float)(v53 * v29));
-        if (v56 <= 0x0.0p+0f) {
+        if (!(v56 > 0x0.0p+0f)) {
           if ((v10 & 0x200) != 0) {
             *(_WORD*)(a8 + 4) = 3;
             GameRoutine_4223a0(v63_.v63, a5, a6, (float*)a8);

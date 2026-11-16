@@ -241,7 +241,7 @@ __int64 WaveVoice_18d880(__int64 a1, __int64 a2)
     goto LABEL_20;
   }
   v23 = snd_Voice_getFeature0(a1);
-  if (v23 <= 2) {
+  if (!(v23 > 2)) {
     if (v23 == 1) {
       *(_BYTE*)(a1 + 5907) = 1;
       if (!snd_Voice_hasFeature1(a1)) {
@@ -283,7 +283,7 @@ __int64 WaveVoice_18d880(__int64 a1, __int64 a2)
   }
 LABEL_21:
   v24 = snd_Voice_getFeature1(a1) - 2;
-  if (v24 <= 3) {
+  if (!(v24 > 3)) {
     *(_BYTE*)(a1 + 2 * v24 + 5909) = 1;
   }
 LABEL_23:
@@ -438,9 +438,9 @@ LABEL_23:
     v52 = (*v51)++;
     v53 = v52 > 0;
     v54 = *(int**)(a1 + 5656);
-    if (*v54 >= v50) {
+    if (!(*v54 < v50)) {
       *v54 = 0;
-      if (v52 <= 0) {
+      if (!(v52 > 0)) {
         break;
       }
       goto LABEL_68;

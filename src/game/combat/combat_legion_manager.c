@@ -2697,7 +2697,7 @@ void CombatLegionManager_e2ddb0(__int64 a1, __int64 a2, __int64 a3)
     v11 = 0x0.0p+0f;
     v12 = (float)(PSEUDO_UNFUSED(v9 * v9)) + (float)(v10 * v10);
     v13 = 0x1.0000000000000p+0f;
-    if (v12 >= 0x1.0000000000000p-23f) {
+    if (!(v12 < 0x1.0000000000000p-23f)) {
       v14 = 0x1.0000000000000p+0f / sqrtf(v12);
       v11 = v10 * v14;
       v13 = v9 * v14;

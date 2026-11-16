@@ -556,7 +556,7 @@ void ProcMapSeqZoomViewer_faf660(_QWORD* a1)
   v5 = *(_DWORD*)(v4 + 592);
   v6 = *(char*)(v4 + 584) + 256;
   v7 = (float)(unsigned int)(v5 - 1) * 0x1.4000000000000p+1f;
-  if (v5 <= 0) {
+  if (!(v5 > 0)) {
     v7 = 0x0.0p+0f;
   }
   LANES128(v8).n128_u64[0] = COERCE_UNSIGNED_INT(
@@ -724,7 +724,7 @@ void ProcMapSeqZoomViewer_faf660(_QWORD* a1)
       v32 = v34 + 1;
       if (v36 == 47) {
         if (v31 + 1 != v32) {
-          if (v31 - v32 >= v31) {
+          if (!(v31 - v32 < v31)) {
             String_60a250("string_view::substr"),
                 v23 =
                     COERCE_AS(__typeof__(v23),
@@ -888,7 +888,7 @@ LABEL_65:
               0x1.0000000000000p+0f);
   v52 = (float)(unsigned int)(v49 - 1) * 0x1.4000000000000p+1f;
   LANES128(v53).n128_u64[1] = v51;
-  if (v49 <= 0) {
+  if (!(v49 > 0)) {
     v52 = 0x0.0p+0f;
   }
   v79 = v53;

@@ -1415,7 +1415,7 @@ __int64 game_d5da40(__int64 a1, __int64 a2, __int64 a3)
     v6[9] = 0;
     if (v11 != 0) {
       v12 = v11 & 7;
-      if (v11 >= 8) {
+      if (!(v11 < 8)) {
         v14 = v11 & 0xFFFFFFFFFFFFFFF8LL;
         v13 = 0;
         do {
@@ -1455,7 +1455,7 @@ __int64 game_d5da40(__int64 a1, __int64 a2, __int64 a3)
   v156_.v159 = 0;
   WORD2(v156_.v156) = v20;
   if (v17 != v18) {
-    if (0xCCCCCCCCCCCCCCCDLL * (v19 >> 4) >= 0x333333333333334LL) {
+    if (!(0xCCCCCCCCCCCCCCCDLL * (v19 >> 4) < 0x333333333333334LL)) {
       GameRoutine_d5e820();
     }
     v21 = fw_memory_HeapManager_Allocate(*v7, (char*)v17 - (char*)v18, 16, 0);
@@ -1539,14 +1539,14 @@ __int64 game_d5da40(__int64 a1, __int64 a2, __int64 a3)
         v129_.v132 = 0;
         v129_.v130 = nullptr;
       }
-      if (v27 <= 0x1AF286BCA1AF286LL) {
+      if (!(v27 > 0x1AF286BCA1AF286LL)) {
         v30 = 0x86BCA1AF286BCA1BLL * (v24 >> 3);
         v31 = 2 * v30;
-        if (2 * v30 <= v27) {
+        if (!(2 * v30 > v27)) {
           v31 = v27;
         }
         v32 = v30 >= 0xD79435E50D7943LL ? 0x1AF286BCA1AF286LL : v31;
-        if (v32 <= 0x1AF286BCA1AF286LL) {
+        if (!(v32 > 0x1AF286BCA1AF286LL)) {
           v7 = (__int64*)fw_memory_g_heap_manager_ptr;
           v33 = 152 * v32;
           v34 = fw_memory_HeapManager_Allocate(
@@ -2022,7 +2022,7 @@ LABEL_156:
       LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v110).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v110).n128_u64[0])))
           .n64_u64[0];
-  if (*(float*)&v69 >= 0x1.9000000000000p+6f) {
+  if (!(*(float*)&v69 < 0x1.9000000000000p+6f)) {
     goto LABEL_134;
   }
   LODWORD(v137_.v138) = 1061997773;

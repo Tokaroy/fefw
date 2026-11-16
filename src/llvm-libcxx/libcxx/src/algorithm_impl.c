@@ -14337,7 +14337,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       *(a2 - 1) = v29;
       v32 = *a1;
       v31 = a1[1];
-      if (v30 >= v31) {
+      if (!(v30 < v31)) {
         v32 = a1[1];
         v31 = v30;
       }
@@ -14353,7 +14353,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       else {
         v49 = a1[2];
       }
-      if (*a1 >= v47) {
+      if (!(*a1 < v47)) {
         v47 = *a1;
       }
       a1[2] = v47;
@@ -14365,7 +14365,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       else {
         v51 = *(a2 - 1);
       }
-      if (v48 >= v50) {
+      if (!(v48 < v50)) {
         v50 = v48;
       }
       *(a2 - 1) = v50;
@@ -14448,7 +14448,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       v14 = *((_DWORD*)a1 + 2);
       v13 = a1[3];
       v15 = a1[1];
-      if (v12 >= v13) {
+      if (!(v12 < v13)) {
         v14 = *((_DWORD*)a1 + 3);
         v13 = v12;
       }
@@ -14461,7 +14461,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       else {
         v17 = *(a2 - 1);
       }
-      if (v15 >= v16) {
+      if (!(v15 < v16)) {
         v16 = v15;
       }
       *(a2 - 1) = v16;
@@ -14477,7 +14477,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       if (v19 < *a1) {
         v19 = *a1;
       }
-      if (v21 >= v20) {
+      if (!(v21 < v20)) {
         v18 = a1[2];
         v20 = v21;
       }
@@ -14490,7 +14490,7 @@ bool algorithm_7cb660(float* a1, float* a2)
       if (v19 < v17) {
         v19 = v17;
       }
-      if (v22 >= v20) {
+      if (!(v22 < v20)) {
         v17 = v20;
       }
       *a1 = v18;
@@ -14525,7 +14525,7 @@ bool algorithm_7cb660(float* a1, float* a2)
     else {
       v38 = a1[2];
     }
-    if (v35 >= v34) {
+    if (!(v35 < v34)) {
       v34 = a1[1];
     }
     if (v34 < v36) {
@@ -14591,7 +14591,7 @@ bool algorithm_7cb660(float* a1, float* a2)
   }
   v24 = *(a2 - 1);
   v25 = *a1;
-  if (v24 >= *a1) {
+  if (!(v24 < *a1)) {
     return true;
   }
   *a1 = v24;

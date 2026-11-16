@@ -932,7 +932,7 @@ void nn_g3d_5f1f50(__int64* a1, __int64 a2, float a3)
             v36 = powf_alt1(*(v9 - 3), a3);
             v37 = LANES128(v19[4]).n128_f32[1];
             v38 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (fabsf(v37) >= 0x1.0624de0000000p-10f) {
+            if (!(fabsf(v37) < 0x1.0624de0000000p-10f)) {
               v38 = *v19;
             }
             v4 = a3;

@@ -766,11 +766,13 @@ float32x4_t* game_hub_PopupController_TryScreenRaycast(float32x4_t* result)
                                LANES128_OF(vextq_s8(v18, v18, 8u)).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0])))
                   .n64_u64[0];
-          if (LANES64_OF(
-                  vpadd_f32(COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0]),
-                            COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0])))
-                  .n64_f32[0] <= (float)((float)(v9 + 0x1.8000000000000p+1f) *
-                                         (float)(v9 + 0x1.8000000000000p+1f))) {
+          if (!(LANES64_OF(
+                    vpadd_f32(
+                        COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0]),
+                        COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0])))
+                    .n64_f32[0] >
+                (float)((float)(v9 + 0x1.8000000000000p+1f) *
+                        (float)(v9 + 0x1.8000000000000p+1f)))) {
             v23 = 0;
             v22 = 0x100000001LL;
             v19 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
@@ -794,7 +796,7 @@ float32x4_t* game_hub_PopupController_TryScreenRaycast(float32x4_t* result)
               v4 = 0x1.99999a0000000p-3f;
             LABEL_18:
               v5 = v4;
-              if (LANES128(result[5]).n128_f32[3] >= v4) {
+              if (!(LANES128(result[5]).n128_f32[3] < v4)) {
                 v5 = LANES128(result[5]).n128_f32[3];
               }
               goto LABEL_42;
@@ -808,18 +810,18 @@ float32x4_t* game_hub_PopupController_TryScreenRaycast(float32x4_t* result)
                             104LL) *
                   0x1.0aef000000000p+4f) /
           0x1.f400000000000p+9f);
-      if (v5 <= 0x0.0p+0f) {
-        if (v5 >= 0x0.0p+0f) {
+      if (!(v5 > 0x0.0p+0f)) {
+        if (!(v5 < 0x0.0p+0f)) {
           goto LABEL_42;
         }
         v5 = v5 + v20;
-        if (v5 <= 0x0.0p+0f) {
+        if (!(v5 > 0x0.0p+0f)) {
           goto LABEL_42;
         }
       }
       else {
         v5 = v5 - v20;
-        if (v5 >= 0x0.0p+0f) {
+        if (!(v5 < 0x0.0p+0f)) {
           goto LABEL_42;
         }
       }

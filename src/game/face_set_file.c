@@ -177,7 +177,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
         v7 = v5 - 1;
         if ((v5 & (v5 - 1)) != 0) {
           v8 = result;
-          if (result >= v5) {
+          if (!(result < v5)) {
             v8 = result % v5;
           }
         }
@@ -210,7 +210,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
               if (v11 == result) {
                 break;
               }
-              if (v11 >= v5) {
+              if (!(v11 < v5)) {
                 v11 %= v5;
               }
               if (v11 != v8) {
@@ -310,13 +310,13 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 v123_.v123 = 0;
                 v123_.v124 = 0;
                 v30 = strlen(v29);
-                if (v30 >= 0xFFFFFFFFFFFFFFF7LL) {
+                if (!(v30 < 0xFFFFFFFFFFFFFFF7LL)) {
                   goto LABEL_310;
                 }
                 v31 = v30;
                 v112 = v15;
                 v113 = v14;
-                if (v30 >= 0x17) {
+                if (!(v30 < 0x17)) {
                   break;
                 }
                 v32 = (char*)&v119_.v119 + 1;
@@ -336,7 +336,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 else {
                   v38 = (unsigned __int64)(unsigned __int8)v119_.v119 >> 1;
                 }
-                if (v38 >= 1) {
+                if (!(v38 < 1)) {
                   if ((v119_.v119 & 1) != 0) {
                     v39 = v119_.v121;
                   }
@@ -374,7 +374,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                     }
                     v41 = v42 + 1;
                     v38 = v40 - v41;
-                  } while (v40 - v41 >= 1);
+                  } while (!(v40 - v41 < 1));
                 }
                 if ((v35 & 1) == 0) {
                   v36 = v35 >> 1;
@@ -398,16 +398,16 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                     v45 = (unsigned __int8)v37[--v44];
                   } while (v45 != 41);
                   if (v43 < v44 && v44 != -1) {
-                    if (v36 >= v43) {
+                    if (!(v36 < v43)) {
                       v46 = v43;
                     }
                     else {
                       v46 = v36;
                     }
-                    if (v46 >= 0xFFFFFFFFFFFFFFF7LL) {
+                    if (!(v46 < 0xFFFFFFFFFFFFFFF7LL)) {
                       goto LABEL_310;
                     }
-                    if (v46 >= 0x17) {
+                    if (!(v46 < 0x17)) {
                       if ((v46 | 7) == 0x17) {
                         v59 = 26;
                       }
@@ -446,7 +446,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                           v62 = (unsigned __int64)(unsigned __int8)v119_.v119 >>
                                 1;
                         }
-                        if (v43 >= v62) {
+                        if (!(v43 < v62)) {
                           goto LABEL_311;
                         }
                         v55 = v43 + 1;
@@ -457,17 +457,17 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                         else {
                           v57 = (char*)&v119_.v119 + 1;
                         }
-                        if (v62 - v55 >= v63) {
+                        if (!(v62 - v55 < v63)) {
                           v56 = v63;
                         }
                         else {
                           v56 = v62 - v55;
                         }
-                        if (v56 >= 0xFFFFFFFFFFFFFFF7LL) {
+                        if (!(v56 < 0xFFFFFFFFFFFFFFF7LL)) {
                           goto LABEL_310;
                         }
                         v16 = &fw_memory_g_heap_manager;
-                        if (v56 >= 0x17) {
+                        if (!(v56 < 0x17)) {
                           goto LABEL_157;
                         }
                         v58 = (char*)&v129_.v129 + 1;
@@ -500,17 +500,17 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v16 = (__int64*)fw_memory_g_heap_manager_ptr;
                   goto LABEL_168;
                 }
-                if (v36 >= v48) {
+                if (!(v36 < v48)) {
                   v49 = v30 - v29;
                 }
                 else {
                   v49 = v36;
                 }
-                if (v49 >= 0xFFFFFFFFFFFFFFF7LL) {
+                if (!(v49 < 0xFFFFFFFFFFFFFFF7LL)) {
                 LABEL_310:
                   String_60a1d0(v30);
                 }
-                if (v49 >= 0x17) {
+                if (!(v49 < 0x17)) {
                   if ((v49 | 7) == 0x17) {
                     v51 = 26;
                   }
@@ -551,7 +551,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 if ((v119_.v119 & 1) == 0) {
                   v54 = (unsigned __int64)(unsigned __int8)v119_.v119 >> 1;
                 }
-                if (v48 >= v54) {
+                if (!(v48 < v54)) {
                 LABEL_311:
                   String_60a230(v30);
                 }
@@ -563,11 +563,11 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                 else {
                   v57 = (char*)&v119_.v119 + 1;
                 }
-                if (v56 >= 0xFFFFFFFFFFFFFFF7LL) {
+                if (!(v56 < 0xFFFFFFFFFFFFFFF7LL)) {
                   goto LABEL_310;
                 }
                 v16 = &fw_memory_g_heap_manager;
-                if (v56 >= 0x17) {
+                if (!(v56 < 0x17)) {
                 LABEL_157:
                   if ((v56 | 7) == 0x17) {
                     v64 = 26;
@@ -755,7 +755,7 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                   v30 = nn_mem_StandardAllocator_Free(*v16 + v81,
                                                       (__int64)v126_.v128);
                 }
-                if (v75 <= 0.0f) {
+                if (!(v75 > 0.0f)) {
                   goto LABEL_261;
                 }
                 v82 = v116_.v116;
@@ -780,10 +780,10 @@ unsigned __int64 FaceSetFile_10acb20(unsigned __int64 result, _BYTE* a2)
                     v92 = *(_QWORD*)(v18 + 32);
                   }
                   v93 = v91 + 6;
-                  if (v91 + 6 >= 0xFFFFFFFFFFFFFFF7LL) {
+                  if (!(v91 + 6 < 0xFFFFFFFFFFFFFFF7LL)) {
                     goto LABEL_310;
                   }
-                  if (v93 >= 0x17) {
+                  if (!(v93 < 0x17)) {
                     if ((v93 | 7) == 0x17) {
                       v95 = 26;
                     }

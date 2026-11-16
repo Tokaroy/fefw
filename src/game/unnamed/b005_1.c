@@ -8164,7 +8164,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
               return;
             }
           }
-          if (v11 <= 23) {
+          if (!(v11 > 23)) {
             v81 = v10 + 1;
             v83 = v10 == a2 || v81 == a2;
             if ((a5 & 1) != 0) {
@@ -9007,7 +9007,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
               v166 = v99;
               do {
                 v100 = v99;
-                if (v166 >= v99) {
+                if (!(v166 < v99)) {
                   v101 = (2 * (v99 & 0x3FFFFFFFFFFFFFFFLL)) | 1;
                   v102 = &a1[v101];
                   if (2 * v99 + 2 < v11) {
@@ -9409,7 +9409,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                       PSEUDO_REGISTER(float, "s0", "=w")),
                       v98 = COERCE_AS(__typeof__(v98),
                                       PSEUDO_REGISTER(float, "s0", "=w"));
-                  if (v110 <= v111) {
+                  if (!(v110 > v111)) {
                     v112 = *v107;
                     do {
                       v116 = v102;
@@ -9854,7 +9854,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                           v98 = COERCE_AS(__typeof__(v98),
                                           PSEUDO_REGISTER(float, "s0", "=w"));
                       v107 = v116;
-                    } while (v114 <= v115);
+                    } while (!(v114 > v115));
                     *v116 = v112;
                   }
                 }
@@ -10076,7 +10076,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                     }
                   }
                   *v127 = *v125;
-                } while (v124 <= (__int64)((unsigned __int64)(v11 - 2) >> 1));
+                } while (!(v124 > (__int64)((unsigned __int64)(v11 - 2) >> 1)));
                 v134 = v164 - 1;
                 if (v125 == v164 - 1) {
                   v122 = v164 - 1;
@@ -11337,11 +11337,11 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                               PSEUDO_REGISTER(float, "s0", "=w")),
               v98 = COERCE_AS(__typeof__(v98),
                               PSEUDO_REGISTER(float, "s0", "=w"));
-          if (v50 <= v51) {
+          if (!(v50 > v51)) {
             v56 = a1 + 1;
             do {
               v10 = v56;
-              if (v56 >= a2) {
+              if (!(v56 < a2)) {
                 break;
               }
               ++v56;
@@ -11541,7 +11541,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v59 <= v60);
+            } while (!(v59 > v60));
           }
           else {
             v10 = a1;
@@ -11743,7 +11743,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v54 <= v55);
+            } while (!(v54 > v55));
           }
           v61 = a2;
           if (v10 < a2) {
@@ -12149,7 +12149,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                   PSEUDO_REGISTER(float, "s0", "=w")),
                   v98 = COERCE_AS(__typeof__(v98),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
-            } while (v69 <= v70);
+            } while (!(v69 > v70));
             do {
               v71 = *--v61;
               GameRoutine_7c0910_alt1(*a3, v47),
@@ -12662,7 +12662,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
         v24 = a2;
         if (v19 == 1) {
           do {
-            if (v23 >= a2) {
+            if (!(v23 < a2)) {
               break;
             }
             v29 = *--a2;
@@ -12861,7 +12861,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v31 <= v32);
+          } while (!(v31 > v32));
         }
         else {
           do {
@@ -13061,9 +13061,9 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v27 <= v28);
+          } while (!(v27 > v28));
         }
-        if (v23 >= a2) {
+        if (!(v23 < a2)) {
           v44 = v23 - 1;
           if (a1 == v23 - 1) {
             goto LABEL_33;
@@ -13474,7 +13474,7 @@ void GameHr_759860(__int64* a1, __int64* a2, __int64* a3, __int64 a4, char a5)
                                 PSEUDO_REGISTER(float, "s0", "=w")),
                 v98 = COERCE_AS(__typeof__(v98),
                                 PSEUDO_REGISTER(float, "s0", "=w"));
-          } while (v42 <= v43);
+          } while (!(v42 > v43));
         } while (v33 < v34);
         v44 = v33 - 1;
         if (a1 != v44) {

@@ -599,7 +599,7 @@ float nn_vfx_5ce320(__int64 a1, __int64 a2, __int64 a3, float* a4, char a5)
           __asm__ volatile("" ::"w"(v89));
         }
         v42[4] = v89;
-        if (*(int*)(a3 + 112) >= 2) {
+        if (!(*(int*)(a3 + 112) < 2)) {
           v90 = 1;
           LANES128(v89).n128_u32[3] = 0;
           {
@@ -735,7 +735,7 @@ float nn_vfx_5ce320(__int64 a1, __int64 a2, __int64 a3, float* a4, char a5)
         *(float32x4_t*)v26 = v35;
         *(_QWORD*)(a3 + 72) = *(_QWORD*)(v26 + 8);
         *(_QWORD*)(a3 + 64) = *(_QWORD*)v26;
-        if (*(int*)(a3 + 112) >= 2) {
+        if (!(*(int*)(a3 + 112) < 2)) {
           v95 = 1;
           LANES128(v96).n128_u32[3] = 0;
           LANES128(v96).n128_f32[0] = (float)(v368 * v367) * a4[14];
@@ -1006,7 +1006,7 @@ float nn_vfx_5ce320(__int64 a1, __int64 a2, __int64 a3, float* a4, char a5)
                   vpadd_f32(COERCE_AS(float32x2_t, LANES128(v206).n128_u64[0]),
                             COERCE_AS(float32x2_t, LANES128(v206).n128_u64[0])))
                   .n64_u64[0];
-          if (LANES128(v206).n128_f32[0] >= 0x1.4f8b580000000p-17f) {
+          if (!(LANES128(v206).n128_f32[0] < 0x1.4f8b580000000p-17f)) {
             LANES128(v206).n128_u64[1] = LANES128(v206).n128_u64[0];
             v207 = vrsqrteq_f32(v206);
             v208 = vmulq_f32(v207, vrsqrtsq_f32(v207, vmulq_f32(v206, v207)));
@@ -1030,8 +1030,8 @@ float nn_vfx_5ce320(__int64 a1, __int64 a2, __int64 a3, float* a4, char a5)
                         COERCE_AS(float32x2_t, LANES128(v210).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v210).n128_u64[0])))
                     .n64_u32[0];
-            if (fabsf(fabsf(v211) + -0x1.0000000000000p+0f) >=
-                0x1.4f8b580000000p-17f) {
+            if (!(fabsf(fabsf(v211) + -0x1.0000000000000p+0f) <
+                  0x1.4f8b580000000p-17f)) {
               LANES128(v216).n128_u64[0] =
                   LANES64_OF(
                       vqtbl1_s8(v209, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
@@ -1143,7 +1143,7 @@ float nn_vfx_5ce320(__int64 a1, __int64 a2, __int64 a3, float* a4, char a5)
                 vpadd_f32(COERCE_AS(float32x2_t, LANES128(v145).n128_u64[0]),
                           COERCE_AS(float32x2_t, LANES128(v145).n128_u64[0])))
                 .n64_u64[0];
-        if (LANES128(v145).n128_f32[0] >= 0x1.4f8b580000000p-17f) {
+        if (!(LANES128(v145).n128_f32[0] < 0x1.4f8b580000000p-17f)) {
           LANES128(v145).n128_u64[1] = LANES128(v145).n128_u64[0];
           {
             v148 = v141[2];
@@ -2210,7 +2210,7 @@ LABEL_66:
     }
     else {
       v281 = v280 & 3;
-      if ((unsigned int)v280 >= 4) {
+      if (!((unsigned int)v280 < 4)) {
         v282 = (__typeof__(v282)){0};
         v283 = 0;
         v291 = v280;
@@ -2442,7 +2442,7 @@ LABEL_112:
       LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v317).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v317).n128_u64[0])))
           .n64_u64[0];
-  if (LANES128(v317).n128_f32[0] <= 0x0.0p+0f) {
+  if (!(LANES128(v317).n128_f32[0] > 0x0.0p+0f)) {
     LANES128(v89).n128_u32[0] = 0;
     *(_OWORD*)(v26 + 48) = GameData_1a83610;
     if (*(int*)(a3 + 112) < 2) {
@@ -2751,7 +2751,7 @@ unsigned __int64 nn_vfx_5dac20(float* a1, float* a2)
     v4 = *a1;
     __asm__ volatile("" ::"w"(v4));
   }
-  if (*a1 >= 0x0.0p+0f) {
+  if (!(*a1 < 0x0.0p+0f)) {
     v14 = 8;
     v7 = (unsigned __int64)a1;
     do {
@@ -2769,7 +2769,7 @@ unsigned __int64 nn_vfx_5dac20(float* a1, float* a2)
           __asm__ volatile("" ::"w"(v16));
         }
         a2 -= 2;
-      } while (v16 <= v4);
+      } while (!(v16 > v4));
     }
     else if (v7 < (unsigned __int64)a2) {
       v17 = a2 - 2;
@@ -2795,7 +2795,7 @@ unsigned __int64 nn_vfx_5dac20(float* a1, float* a2)
     if (v6 < 0x0.0p+0f) {
       break;
     }
-    if (v6 <= v4) {
+    if (!(v6 > v4)) {
       goto LABEL_7;
     }
   LABEL_4:;
@@ -2824,7 +2824,7 @@ LABEL_7:
           goto LABEL_38;
         }
       }
-    } while (v9 >= v4);
+    } while (!(v9 < v4));
   }
   else if (v7 < (unsigned __int64)a2) {
     do {
@@ -2868,7 +2868,7 @@ LABEL_38:
             if (v26 < 0x0.0p+0f) {
               break;
             }
-            if (v27 <= v4) {
+            if (!(v27 > v4)) {
               goto LABEL_50;
             }
           }
@@ -2889,7 +2889,7 @@ LABEL_38:
               goto LABEL_40;
             }
           }
-        } while (v29 >= v4);
+        } while (!(v29 < v4));
       }
       else {
         do {
@@ -2905,7 +2905,7 @@ LABEL_38:
             __asm__ volatile("" ::"w"(v25));
           }
           v22 -= 2;
-        } while (v25 <= v4);
+        } while (!(v25 > v4));
       }
     LABEL_40:;
     } while (v21 < (unsigned __int64)v22);

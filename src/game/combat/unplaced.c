@@ -2213,7 +2213,7 @@ void game_combat_e44050(float32x4_t* a1)
   LABEL_16:
     v14 = v9 - v11;
     v15 = (float)(PSEUDO_UNFUSED(v14 * v14)) + (float)(v12 * v12);
-    if (v15 >= 0x1.0000000000000p-23f) {
+    if (!(v15 < 0x1.0000000000000p-23f)) {
       v18 = 0x1.0000000000000p+0f / sqrtf(v15);
       v17 = v12 * v18;
       v16 = v14 * v18;
@@ -2245,7 +2245,7 @@ LABEL_20:
     LANES128(a1[1]).n128_u32[0] = LANES128(a1[1]).n128_u32[2];
     LANES128(a1[1]).n128_u32[1] = v19;
   }
-  if (LANES128(a1[8]).n128_i32[0] <= 0) {
+  if (!(LANES128(a1[8]).n128_i32[0] > 0)) {
     LANES128(v39).n128_u64[0] = 0x3F80000000000000LL;
     v20 = game_combat_e401e0((float*)&v39, (float*)&a1[1]);
     LANES128(v39).n128_u64[0] = 0x3F80000000000000LL;
@@ -2264,7 +2264,7 @@ LABEL_20:
     }
     v27 = v23 * LANES128(a1[6]).n128_f32[2];
     v28 = GameRoutine_1a0a6a0(v21 - v20, 0x1.921fb60000000p+2f);
-    if (v28 >= 0x0.0p+0f) {
+    if (!(v28 < 0x0.0p+0f)) {
       v29 = v28 + 0x0.0p+0f;
     }
     else {
@@ -2275,18 +2275,18 @@ LABEL_20:
     }
     v30 = fabsf(v27);
     v31 = v20 + v29;
-    if (v20 <= v31) {
-      if (v20 >= v31) {
+    if (!(v20 > v31)) {
+      if (!(v20 < v31)) {
         goto LABEL_41;
       }
       v20 = v20 + v30;
-      if (v20 <= v31) {
+      if (!(v20 > v31)) {
         goto LABEL_41;
       }
     }
     else {
       v20 = v20 - v30;
-      if (v20 >= v31) {
+      if (!(v20 < v31)) {
       LABEL_41:
         v32 = GameRoutine_1a0a6a0(v20 + 0x1.921fb60000000p+1f,
                                   0x1.921fb60000000p+2f) +
@@ -3239,7 +3239,7 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
   v16 = 1.0;
   v17 = sqrtf(v15);
   v18 = v17 / (float)(*(float*)(result + 108) * 0x1.e666660000000p-1);
-  if (v18 <= 1.0) {
+  if (!(v18 > 1.0)) {
     v19 = v17 / (float)(*(float*)(result + 108) * 0x1.e666660000000p-1);
   }
   else {
@@ -3254,7 +3254,7 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
     v21 = v19;
   }
   if (v21 > 0.0) {
-    if (v15 >= 0x1.0000000000000p-23) {
+    if (!(v15 < 0x1.0000000000000p-23)) {
       *(float*)&a2 = v13 * (float)(1.0 / v17);
       v16 = v14 * (float)(1.0 / v17);
     }
@@ -3270,9 +3270,9 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
     *(float*)&a2 =
         *(float*)&a2 + (float)(roundf(*(float*)&a2 * 0x1.45f3060000000p-3) *
                                -0x1.921fb60000000p+2);
-    if (*(float*)&a2 <= 0x1.921fb60000000p+0) {
+    if (!(*(float*)&a2 > 0x1.921fb60000000p+0)) {
       v27 = 1.0;
-      if (*(float*)&a2 >= -0x1.921fb60000000p+0) {
+      if (!(*(float*)&a2 < -0x1.921fb60000000p+0)) {
         goto LABEL_16;
       }
       v26 = -0x1.921fb60000000p+1;
@@ -3350,7 +3350,7 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
     v31 = (float)((float)(v29 + (float)(v28 * -0.0)) *
                   (float)(v29 + (float)(v28 * -0.0))) +
           (float)(v30 * v30);
-    if (v31 >= 0x1.0000000000000p-23) {
+    if (!(v31 < 0x1.0000000000000p-23)) {
       *(float*)&a2 = v30 * (float)(1.0 / sqrtf(v31));
     }
   }
@@ -3396,7 +3396,7 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
   v39 = *(_QWORD*)(*(_QWORD*)(result + 8) + 104LL);
   *(_QWORD*)&a6 = 0;
   LODWORD(a8) = 1060320051;
-  if ((float)(v21 + v21) <= 1.0) {
+  if (!((float)(v21 + v21) > 1.0)) {
     v40 = v21 + v21;
   }
   else {
@@ -3404,20 +3404,20 @@ __int64 game_combat_e45210(__int64 result, long double a2, long double a3,
   }
   v41 = (float)(fminf(fmaxf(v40, 0.0), 1.0) * 0x1.6666660000000p-1) +
         0x1.3333340000000p-2;
-  if ((float)(v21 + v21) >= 0.0) {
+  if (!((float)(v21 + v21) < 0.0)) {
     *(float*)&a3 = v41;
   }
   else {
     *(float*)&a3 = 0x1.3333340000000p-2;
   }
   v42 = (float)(v21 + -0.5) + (float)(v21 + -0.5);
-  if (v42 <= 1.0) {
+  if (!(v42 > 1.0)) {
     *(float*)&a7 = (float)(v21 + -0.5) + (float)(v21 + -0.5);
   }
   else {
     *(float*)&a7 = 1.0;
   }
-  if (v42 >= 0.0) {
+  if (!(v42 < 0.0)) {
     *(float*)&a5 = *(float*)&a7;
   }
   else {

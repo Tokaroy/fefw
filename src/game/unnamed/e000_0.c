@@ -3181,7 +3181,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
       v19 = 0;
       v20 = *(_DWORD*)(a1 + 4204);
       do {
-        if (v3 >= 1) {
+        if (!(v3 < 1)) {
           v21 = v3;
           v22 = 0;
           v23 = 2 * v3;
@@ -3201,7 +3201,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
             *(float*)(a1 + 108 + 4LL * v20) = vcvts_n_f32_s32(
                 v35 / 2 + v34 / 2 + (v33 / 2 + v32 / 2) / 2, 0xFu);
             v36 = *(_DWORD*)(a1 + 4204);
-            if (v36 <= 1022) {
+            if (!(v36 > 1022)) {
               v20 = v36 + 1;
             }
             else {
@@ -3302,10 +3302,10 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
     a2 = v39;
     a3 = v38;
     v18 = (float*)(v37 + 4208);
-    if (v42 <= -0x1.4000000000000p+6f) {
+    if (!(v42 > -0x1.4000000000000p+6f)) {
       goto LABEL_36;
     }
-    if (v42 <= -0x1.e000000000000p+5f) {
+    if (!(v42 > -0x1.e000000000000p+5f)) {
       v43 = *(_DWORD*)(a1 + 4212);
       if (v43 < 1) {
         goto LABEL_42;
@@ -3313,7 +3313,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
       v45 = (unsigned int)v43 >= 0x14;
       v46 = v43 - 20;
     }
-    else if (v42 <= -0x1.4000000000000p+5f) {
+    else if (!(v42 > -0x1.4000000000000p+5f)) {
       v43 = *(_DWORD*)(a1 + 4212);
       if (v43 < 1) {
         goto LABEL_42;
@@ -3325,9 +3325,9 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
       if (v42 > -0x1.e000000000000p+4f) {
         if (v42 > -0x1.6000000000000p+4f) {
           v43 = *(_DWORD*)(a1 + 4212);
-          if (v42 >= -0x1.4000000000000p+3f) {
-            if (v43 <= 999) {
-              if (v43 >= 980) {
+          if (!(v42 < -0x1.4000000000000p+3f)) {
+            if (!(v43 > 999)) {
+              if (!(v43 < 980)) {
                 v81 = 980;
               }
               else {
@@ -3337,8 +3337,8 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
               goto LABEL_41;
             }
           }
-          else if (v43 <= 999) {
-            if (v43 >= 990) {
+          else if (!(v43 > 999)) {
+            if (!(v43 < 990)) {
               v44 = 990;
             }
             else {
@@ -3349,13 +3349,13 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
           }
         LABEL_43:
           *(_DWORD*)(a1 + 4204) = v8;
-          if (v7 >= 1) {
+          if (!(v7 < 1)) {
             v47 = *a3;
-            if (*a3 >= 1) {
+            if (!(*a3 < 1)) {
               v48 = 0;
               v49 = 1000 - v43;
               do {
-                if (v47 >= 1) {
+                if (!(v47 < 1)) {
                   v50 = v47;
                   v51 = 0;
                   v52 = 2 * v47;
@@ -3390,7 +3390,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
                             v70 / 2 + (v69 / 2 + v68 / 2) / 2,
                         0xFu);
                     v71 = *(_DWORD*)(a1 + 4204);
-                    if (v71 <= 1022) {
+                    if (!(v71 > 1022)) {
                       v72 = v71 + 1;
                     }
                     else {
@@ -3474,7 +3474,7 @@ void GameHr_1768c0(__int64 a1, __int64 a2, int* a3)
           return;
         }
         v43 = *(_DWORD*)(a1 + 4212);
-        if (v43 >= 1) {
+        if (!(v43 < 1)) {
           *(_DWORD*)(a1 + 4212) = --v43;
         }
       LABEL_42:

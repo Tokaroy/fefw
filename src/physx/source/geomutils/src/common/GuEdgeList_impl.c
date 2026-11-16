@@ -407,7 +407,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
         v34 = *(unsigned int*)(a4 + 4 * v33);
         v35 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v33 + 1));
         v36 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v33 + 2));
-        if (v19 >= 2) {
+        if (!(v19 < 2)) {
           goto LABEL_31;
         }
       }
@@ -415,7 +415,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
         v34 = *(unsigned __int16*)(v6 + 2 * v33);
         v35 = *(unsigned __int16*)(v6 + 2LL * (unsigned int)(v33 + 1));
         v36 = *(unsigned __int16*)(v6 + 2LL * (unsigned int)(v33 + 2));
-        if (v19 >= 2) {
+        if (!(v19 < 2)) {
         LABEL_31:
           v308 = v15;
           v310 = v8;
@@ -771,16 +771,16 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                     v246 = v243 * v249;
                   }
                   v15 = v308;
-                  if ((float)((float)((float)(PSEUDO_UNFUSED(
-                                          v245 *
-                                          *(float*)(a6 + 12LL * v228 + 4))) +
-                                      (float)(*(float*)(a6 + 12LL * v228) *
-                                              v244)) +
-                              (float)(*(float*)(a6 + 12LL * v228 + 8) *
-                                      v246)) >=
-                      (float)((float)((float)(PSEUDO_UNFUSED(v245 * v231)) +
-                                      (float)(v230 * v244)) +
-                              (float)(v234 * v246))) {
+                  if (!((float)((float)((float)(PSEUDO_UNFUSED(
+                                            v245 *
+                                            *(float*)(a6 + 12LL * v228 + 4))) +
+                                        (float)(*(float*)(a6 + 12LL * v228) *
+                                                v244)) +
+                                (float)(*(float*)(a6 + 12LL * v228 + 8) *
+                                        v246)) <
+                        (float)((float)((float)(PSEUDO_UNFUSED(v245 * v231)) +
+                                        (float)(v230 * v244)) +
+                                (float)(v234 * v246)))) {
                     LODWORD(v8) = v310;
                     v6 = v311;
                     v18 = false;
@@ -1129,7 +1129,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
   }
   v284 = *((_QWORD*)a1 + 4);
   v285 = v283 & 7;
-  if (v283 >= 8) {
+  if (!(v283 < 8)) {
     v287 = (_BYTE*)(v300 + 3);
     v288 = (_WORD*)(v284 + 32);
     v289 = 0;
