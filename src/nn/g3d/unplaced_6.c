@@ -41,7 +41,7 @@ float nn_g3d_5e4080(__int64 a1, __int64 a2, float a3)
     v4 = *(float*)a2;
     __asm__ volatile("" ::"w"(v4));
   }
-  if (a3 < *(float*)a2 || (v7 = *(float*)(a2 + 4)) <= a3) {
+  if (a3 < *(float*)a2 || !((v7 = *(float*)(a2 + 4)) > a3)) {
     {
       v8 = *(float*)(a1 + 24);
       __asm__ volatile("" ::"w"(v8));
@@ -62,7 +62,7 @@ float nn_g3d_5e4080(__int64 a1, __int64 a2, float a3)
       v13 = *(unsigned __int16*)(a1 + 18);
       __asm__ volatile("" ::"r"(v13));
     }
-    if (v13 <= v12) {
+    if (!(v13 > v12)) {
       *(_DWORD*)(a2 + 8) = v13 - 1;
     }
     ((void (*)(__int64, __int64, float))

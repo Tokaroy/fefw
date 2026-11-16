@@ -2854,9 +2854,10 @@ __int64 CharacterControllerEnemy_StateWait_Unknown4(__int64 result, double a2,
   v4 = result;
   if (((*(_BYTE*)(*(_QWORD*)GameData_212dbb8[0] + 232LL) & 2) != 0 ||
        *(_BYTE*)(*(_QWORD*)GameData_212dbb8[0] + 10LL) == 1) &&
-      (v5 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v3 + 8) + 24LL) + 8LL) +
-                       328LL),
-       result = GameRoutine_d60750(v5), *(float*)(v5 + 376) > 0x0.0p+0f) &&
+      (!(v5 = *(
+             _QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v3 + 8) + 24LL) + 8LL) +
+                      328LL),
+         result = GameRoutine_d60750(v5), *(float*)(v5 + 376) <= 0x0.0p+0f)) &&
       (unsigned int)((result = CharacterControllerEnemy_10c5990(v3, 1)) - 1) <=
           1) {
     if (*(_BYTE*)(v3 + 76) != 1 || *(_DWORD*)(v3 + 72) != 3) {
@@ -2885,10 +2886,10 @@ __int64 CharacterControllerEnemy_StateWait_Unknown4(__int64 result, double a2,
                             LANES128_OF(vextq_s8(v12, v12, 8u)).n128_u64[0]),
                   COERCE_AS(float32x2_t, LANES128(v12).n128_u64[0])))
               .n64_u64[0];
-      if (LANES64_OF(
-              vpadd_f32(COERCE_AS(float32x2_t, LANES128(v12).n128_u64[0]),
-                        COERCE_AS(float32x2_t, LANES128(v12).n128_u64[0])))
-              .n64_f32[0] > 0x1.0000000000000p+2f) {
+      if (!(LANES64_OF(
+                vpadd_f32(COERCE_AS(float32x2_t, LANES128(v12).n128_u64[0]),
+                          COERCE_AS(float32x2_t, LANES128(v12).n128_u64[0])))
+                .n64_f32[0] <= 0x1.0000000000000p+2f)) {
         if (*(_BYTE*)(v7 + 76) != 1 || *(_DWORD*)(v7 + 72) != 1) {
           *(_DWORD*)(v7 + 80) = 1;
           *(_BYTE*)(v7 + 84) = 1;
@@ -2898,7 +2899,7 @@ __int64 CharacterControllerEnemy_StateWait_Unknown4(__int64 result, double a2,
         }
         v14 = *(_QWORD*)(v4 + 8);
         v15 = *(float*)(v14 + 176);
-        if (v15 < 0x1.0000000000000p+1f) {
+        if (!(v15 >= 0x1.0000000000000p+1f)) {
           v15 = 0x1.0000000000000p+1f;
         }
         *(float*)(v14 + 176) = v15;

@@ -1059,7 +1059,7 @@ __int64* GameHr_109fee0(__int64* result, long double a2, float a3)
     v6 = *(float*)&a2 <= a3 ? a3 : *(float*)&a2;
     v7 = *(float*)&a2 <= a3 ? *(float*)&a2 : a3;
     if (v3 != v4) {
-      if (*(float*)&a2 <= a3) {
+      if (!(*(float*)&a2 > a3)) {
         v8 = 1.0;
       }
       else {
@@ -1069,7 +1069,7 @@ __int64* GameHr_109fee0(__int64* result, long double a2, float a3)
         while (1) {
           LODWORD(a2) = *(_DWORD*)v3;
           v9 = *(float*)(v3 + 4);
-          if (v9 >= 0.0) {
+          if (!(v9 < 0.0)) {
             v11 = v6 <= v9 && *(float*)&a2 < v6;
             if (!v11 &&
                 (v9 < v6 ? (v12 = v6 > *(float*)&a2) : (v12 = true), v12)) {
@@ -1084,7 +1084,7 @@ __int64* GameHr_109fee0(__int64* result, long double a2, float a3)
             }
           }
           else {
-            if (v7 >= *(float*)&a2 || *(float*)&a2 > v6) {
+            if (!(v7 < *(float*)&a2) || !(*(float*)&a2 <= v6)) {
               goto LABEL_15;
             }
             v21 = 1.0;
@@ -1105,7 +1105,7 @@ __int64* GameHr_109fee0(__int64* result, long double a2, float a3)
       do {
         v15 = *(float*)v3;
         v16 = *(float*)(v3 + 4);
-        if (v16 >= 0.0) {
+        if (!(v16 < 0.0)) {
           v18 = v6 <= v16 && v15 < v6;
           if (v18 || (v16 < v6 ? (v19 = v6 > v15) : (v19 = true), !v19)) {
             v21 = ((float (*)(void))GameRoutine_10a00a0)();
@@ -1120,12 +1120,12 @@ __int64* GameHr_109fee0(__int64* result, long double a2, float a3)
             goto LABEL_44;
           }
           v20 = v7 <= v16 && v15 < v7;
-          if (v20 || v16 < v7 && v7 <= v15) {
+          if (v20 || !(v16 >= v7) && !(v7 > v15)) {
             v21 = v8;
             goto LABEL_42;
           }
         }
-        else if (v7 <= v15 && v15 <= v6) {
+        else if (!(v7 > v15) && !(v15 > v6)) {
           v21 = 1.0;
           goto LABEL_42;
         }

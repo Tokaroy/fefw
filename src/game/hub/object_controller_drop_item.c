@@ -920,7 +920,7 @@ __int64 game_hub_ObjectControllerDropItem_PlayGetItem(__int64 a1)
         }
         v14 = powf(v9, v10),
         v29 = COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
-        if (*(float*)(a1 + 80) >= 0x1.0000000000000p+0f) {
+        if (!(*(float*)(a1 + 80) < 0x1.0000000000000p+0f)) {
           if (*(_BYTE*)(a1 + 48) == 1) {
             *(_BYTE*)(a1 + 48) = 0;
           }
@@ -1043,7 +1043,7 @@ LABEL_42:
   v35 = *(_QWORD*)(*GameData_212cbf0[0] + 96);
   if ((v35 & (v35 - 1)) != 0) {
     v36 = v33;
-    if (v33 >= v35) {
+    if (!(v33 < v35)) {
       v36 = v33 % v35;
     }
     v37 = *(_QWORD**)(*(_QWORD*)(v34 + 88) + 8 * v36);
@@ -1141,7 +1141,7 @@ LABEL_42:
         goto LABEL_76;
       }
       v54 = LANES128(v44).n128_f32[0] + v52;
-      if (v54 <= *(float*)&GameData_21a6120) {
+      if (!(v54 > *(float*)&GameData_21a6120)) {
         goto LABEL_76;
       }
     LABEL_74:
@@ -1157,7 +1157,7 @@ LABEL_42:
     v55 = fabsf(v47 * fabsf(LANES128(v51).n128_f32[1]));
     if (v53 > *((float*)&GameData_21a6120 + 1)) {
       v53 = v53 - v55;
-      if (v53 >= *((float*)&GameData_21a6120 + 1)) {
+      if (!(v53 < *((float*)&GameData_21a6120 + 1))) {
         goto LABEL_82;
       }
     LABEL_81:
@@ -1172,15 +1172,15 @@ LABEL_42:
     }
   LABEL_82:
     v56 = fabsf(v47 * fabsf(LANES128(v51).n128_f32[2]));
-    if (LANES128(v44).n128_f32[2] <= *((float*)&GameData_21a6120 + 2)) {
+    if (!(LANES128(v44).n128_f32[2] > *((float*)&GameData_21a6120 + 2))) {
       v57 = COERCE_AS(float32x4_t, v130);
       v58 = v133;
-      if (LANES128(v44).n128_f32[2] >= *((float*)&GameData_21a6120 + 2)) {
+      if (!(LANES128(v44).n128_f32[2] < *((float*)&GameData_21a6120 + 2))) {
         goto LABEL_88;
       }
       LANES128(v44).n128_f32[0] = LANES128(v44).n128_f32[2] + v56;
-      if ((float)(LANES128(v44).n128_f32[2] + v56) <=
-          *((float*)&GameData_21a6120 + 2)) {
+      if (!((float)(LANES128(v44).n128_f32[2] + v56) >
+            *((float*)&GameData_21a6120 + 2))) {
         goto LABEL_88;
       }
       goto LABEL_87;
@@ -1243,7 +1243,7 @@ LABEL_42:
         goto LABEL_101;
       }
       v73 = LANES128(v60).n128_f32[0] + v71;
-      if (v73 <= LANES128(v58).n128_f32[0]) {
+      if (!(v73 > LANES128(v58).n128_f32[0])) {
         goto LABEL_101;
       }
     LABEL_99:
@@ -1259,8 +1259,8 @@ LABEL_42:
     v74 = fabsf(v65 * fabsf(LANES128(v70).n128_f32[1]));
     if (LANES128(v60).n128_f32[1] > LANES128(v58).n128_f32[1]) {
       v72 = LANES128(v60).n128_f32[1] - v74;
-      if ((float)(LANES128(v60).n128_f32[1] - v74) >=
-          LANES128(v58).n128_f32[1]) {
+      if (!((float)(LANES128(v60).n128_f32[1] - v74) <
+            LANES128(v58).n128_f32[1])) {
         goto LABEL_107;
       }
     LABEL_106:
@@ -1278,8 +1278,8 @@ LABEL_42:
     v75 = fabsf(v65 * fabsf(LANES128(v70).n128_f32[2]));
     if (LANES128(v60).n128_f32[2] > LANES128(v58).n128_f32[2]) {
       LANES128(v60).n128_f32[0] = LANES128(v60).n128_f32[2] - v75;
-      if ((float)(LANES128(v60).n128_f32[2] - v75) >=
-          LANES128(v58).n128_f32[2]) {
+      if (!((float)(LANES128(v60).n128_f32[2] - v75) <
+            LANES128(v58).n128_f32[2])) {
         goto LABEL_113;
       }
     LABEL_112:
@@ -1336,7 +1336,7 @@ LABEL_42:
                 ~((signed __int32)(*(int*)(game_GameModeData_instance_ + 72) +
                                    v83) >>
                   31);
-          if (v84 >= 9999999) {
+          if (!(v84 < 9999999)) {
             v84 = 9999999;
           }
           *(_DWORD*)(game_GameModeData_instance_ + 72) = v84;
@@ -1515,7 +1515,7 @@ LABEL_42:
           v137_.v138 = nullptr;
         }
         v97 = (__int64**)v96[5];
-        if ((unsigned __int64)v97 >= v96[6]) {
+        if (!((unsigned __int64)v97 < v96[6])) {
           v99 = game_hub_e1cee0(v96 + 4, &v135_.v135),
           v29 = COERCE_AS(__typeof__(v29), PSEUDO_REGISTER(__n128, "v0", "=w"));
         }

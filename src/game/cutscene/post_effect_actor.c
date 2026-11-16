@@ -9887,11 +9887,11 @@ __int64 PostEffectActor_Unknown5(__int64 result, float a2)
   v2 = *(_QWORD*)(result + 32);
   v3 = (unsigned __int64)(*(_QWORD*)(result + 40) - v2) >> 2;
   do {
-    if ((int)v3 < 1) {
+    if (!((int)v3 >= 1)) {
       return result;
     }
     LODWORD(v3) = v3 - 1;
-  } while (*(float*)(v2 + 4LL * (unsigned int)v3) > a2);
+  } while (!(*(float*)(v2 + 4LL * (unsigned int)v3) <= a2));
   if ((v3 & 0x80000000) == 0) {
     v4 = (__int64*)(*(_QWORD*)(result + 8) + 24 * (v3 & 0x7FFFFFFF));
     result = v4[1];
@@ -9979,11 +9979,11 @@ __int64 PostEffectActor_Unknown5(__int64 result, float a2)
         if ((unsigned int)(int)*(float*)&v8 <= 0xFFFFFFFD) {
           v11 = a2 - v10;
           *(_QWORD*)&v6 = 0;
-          if (v11 > 0x0.0p+0f) {
+          if (!(v11 <= 0x0.0p+0f)) {
             LODWORD(v6) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-            if (v11 < *((float*)&v8 + 1)) {
+            if (!(v11 >= *((float*)&v8 + 1))) {
               v12 = (int)*(float*)&v8 - 1;
-              if (v12 > 2) {
+              if (!(v12 <= 2)) {
                 v13 = 0;
               }
               else {

@@ -744,9 +744,10 @@ __int64 Camera_7beed0(__int64 a1)
     v5 = true;
   }
   if (game_ProcGameSkipView_instance_ != 0 &&
-      (unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ + 152) -
-              1 <=
-          2) {
+      !((unsigned int)*(unsigned __int8*)(game_ProcGameSkipView_instance_ +
+                                          152) -
+            1 >
+        2)) {
     v6 = *(_DWORD*)(game_ProcGameSkipView_instance_ + 156);
     v7 = (v6 & 8) != 0 ? 2 : 3;
     if ((v7 & v6) == 0) {
@@ -1024,9 +1025,9 @@ LABEL_128:
     }
   LABEL_145:
     v33 = *(float*)(v9 + 972);
-    if (v33 <= 0.25) {
+    if (!(v33 > 0.25)) {
       v35 = 0.0;
-      if (v33 >= -0.25) {
+      if (!(v33 < -0.25)) {
         goto LABEL_169;
       }
       v34 = 0.25;
@@ -1112,7 +1113,7 @@ LABEL_161:
     v48 = game_g_frame_clock_ptr[0];
     v49 =
         0x1.e000000000000p+5 / (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
-    if (v49 <= 0.0) {
+    if (!(v49 > 0.0)) {
       v49 = 1.0;
     }
     v50 = (float)(v35 * v49) + (float)(v35 * v49);
@@ -1124,13 +1125,13 @@ LABEL_161:
     }
     v52 = v50 + v51;
     v53 = *(unsigned __int8*)(a1 + 80);
-    if (v46 >= v52) {
+    if (!(v46 < v52)) {
       v54 = v52;
     }
     else {
       v54 = v46;
     }
-    if (v52 >= v45) {
+    if (!(v52 < v45)) {
       v55 = v54;
     }
     else {
@@ -1144,12 +1145,12 @@ LABEL_161:
     }
     else {
       v56 = 0.75;
-      if (*(float*)(a1 + 64) <= 0.75) {
+      if (!(*(float*)(a1 + 64) > 0.75)) {
         result = (*(__int64 (**)(__int64, _DWORD*, __int64))(
             *(_QWORD*)(a1 + 56) + 8LL))(a1 + 56, v68, a1 + 88);
         if ((result & 1) == 0) {
           v59 = 0;
-          if (v46 <= v55) {
+          if (!(v46 > v55)) {
             goto LABEL_193;
           }
           goto LABEL_200;
@@ -1169,13 +1170,13 @@ LABEL_161:
     *(_DWORD*)(a1 + 68) = 0;
     *(_WORD*)(a1 + 80) = 256;
     v59 = 1;
-    if (v46 <= v55) {
+    if (!(v46 > v55)) {
     LABEL_193:
       v60 = 0.0;
       v61 = *GameData_212d280;
       if (*(_DWORD*)(a1 + 408) + 1 == *GameData_212d280) {
         v62 = 0x1.e000000000000p+5 / (float)*(int*)(*v48 + 476);
-        if (v62 <= 0.0) {
+        if (!(v62 > 0.0)) {
           v62 = 1.0;
         }
         v60 = *(float*)(a1 + 404) + v62;
@@ -1191,10 +1192,10 @@ LABEL_161:
     *(_QWORD*)(a1 + 404) = 0;
   LABEL_201:
     v63 = 1.0;
-    if (v35 <= 0.0) {
+    if (!(v35 > 0.0)) {
       v63 = v35;
     }
-    if (v63 >= 0.0) {
+    if (!(v63 < 0.0)) {
       v64 = v63;
     }
     else {

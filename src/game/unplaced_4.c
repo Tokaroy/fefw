@@ -6469,7 +6469,7 @@ void game_f8eb50(__int64 a1)
                 .n64_f32[0] /
             v18;
         v21 = fmodf(LANES128(v12[4]).n128_f32[0] - v9, 0x1.6800000000000p+8f);
-        if (v21 >= 0x0.0p+0f) {
+        if (!(v21 < 0x0.0p+0f)) {
           v22 = v21 + 0x0.0p+0f;
         }
         else {
@@ -6482,7 +6482,7 @@ void game_f8eb50(__int64 a1)
         v24 = fmodf(*(float*)(a1 + 68) - v8, 0x1.6800000000000p+8f);
         v12 = (float32x4_t*)a1;
         v25 = fmaxf(v23, 0x0.0p+0f);
-        if (v24 >= 0x0.0p+0f) {
+        if (!(v24 < 0x0.0p+0f)) {
           v26 = v24 + 0x0.0p+0f;
         }
         else {

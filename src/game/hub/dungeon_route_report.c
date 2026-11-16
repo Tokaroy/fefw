@@ -626,17 +626,17 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
   } v93_;
 
   v13 = *(_DWORD*)(a1 + 16);
-  if (v13 >= 1) {
+  if (!(v13 < 1)) {
     v14 = 0x1.8000000000000p-1f;
     v16 = game_script_hub_g_frame_counter_ptr[0];
     v92 = a3;
     v91 = v13;
-    if (v13 / (int)((((*(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2088LL) -
-                       *(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2080LL)) >>
-                      2) &
-                     0xFFFFFFFE) +
-                    2) <=
-        1) {
+    if (!(v13 / (int)((((*(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2088LL) -
+                         *(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2080LL)) >>
+                        2) &
+                       0xFFFFFFFE) +
+                      2) >
+          1)) {
       v17 = 1;
     }
     else {
@@ -649,23 +649,23 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
     }
     while (1) {
       LODWORD(v18) = atomic_fetch_add(a3, v17);
-      if ((int)v18 < v13) {
+      if (!((int)v18 >= v13)) {
         break;
       }
     LABEL_6:
-      if (v17 >> 1 <= 1) {
+      if (!(v17 >> 1 > 1)) {
         v17 = 1;
       }
       else {
         v17 >>= 1;
       }
-      if ((int)v18 >= v13) {
+      if (!((int)v18 < v13)) {
         return;
       }
     }
     v19 = v18 + v17;
     v18 = (int)v18;
-    if ((int)(v18 + v17) >= v13) {
+    if (!((int)(v18 + v17) < v13)) {
       v19 = v13;
     }
     v20 = v19;
@@ -686,11 +686,11 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
       if (v29 != 0) {
         v31 = *(_QWORD*)(*(_QWORD*)(*GameData_212d458[0] + 88) + 8LL);
         v32 = *(_QWORD*)(*(_QWORD*)(*GameData_212d458[0] + 88) + 16LL) - v31;
-        if (v32 >= 0x21) {
+        if (!(v32 < 0x21)) {
           v34 = v22[14];
           v33 = v22[15];
           v35 = v23 - v28;
-          if ((float)(v23 - v28) >= v34 && v35 <= v33) {
+          if (!((float)(v23 - v28) < v34) && !(v35 > v33)) {
             v58 = v32 >> 5;
             v59 = v31 + 52;
             v60 = 0;
@@ -702,14 +702,14 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                     1;
               v64 = (float32x4_t*)(v31 + 32 * v63);
               v65 = LANES128(v64[1]).n128_f32[1];
-              if (v65 <= v35) {
+              if (!(v65 > v35)) {
                 v66 = *(float*)(v59 + 32 * v63);
-                if (v35 < v66) {
+                if (!(v35 >= v66)) {
                   break;
                 }
               }
               v67 = (v60 + v62) / 2;
-              if (v35 <= v65) {
+              if (!(v35 > v65)) {
                 v68 = v62 == v67;
                 v62 = (v60 + v62) / 2;
                 if (v68) {
@@ -726,11 +726,11 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
             }
             v69 = *v64;
             v70 = v66 - v65;
-            if (v70 > 0x0.0p+0f) {
+            if (!(v70 <= 0x0.0p+0f)) {
               v69 = vaddq_f32(v69, vmulq_n_f32(vsubq_f32(v64[2], v69),
                                                (float)(v35 - v65) / v70));
             }
-            if (v23 >= v34 && v23 <= v33) {
+            if (!(v23 < v34) && !(v23 > v33)) {
               v71 = 0;
               while (1) {
                 v72 = (__int64)(int)(v71 + v61 +
@@ -738,14 +738,14 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                       1;
                 v73 = (float32x4_t*)(v31 + 32 * v72);
                 v74 = LANES128(v73[1]).n128_f32[1];
-                if (v74 <= v23) {
+                if (!(v74 > v23)) {
                   v75 = *(float*)(v59 + 32 * v72);
-                  if (v23 < v75) {
+                  if (!(v23 >= v75)) {
                     break;
                   }
                 }
                 v76 = (v71 + v61) / 2;
-                if (v23 <= v74) {
+                if (!(v23 > v74)) {
                   v68 = v61 == v76;
                   v61 = (v71 + v61) / 2;
                   if (v68) {
@@ -762,7 +762,7 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
               }
               v77 = *v73;
               v78 = v75 - v74;
-              if (v78 > 0x0.0p+0f) {
+              if (!(v78 <= 0x0.0p+0f)) {
                 v77 = vaddq_f32(v77, vmulq_n_f32(vsubq_f32(v73[2], v77),
                                                  (float)(v23 - v74) / v78));
               }
@@ -776,12 +776,12 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                               LANES128_OF(vextq_s8(v80, v80, 8u)).n128_u64[0]),
                           COERCE_AS(float32x2_t, LANES128(v80).n128_u64[0])))
                       .n64_u64[0];
-              if (LANES64_OF(
-                      vpadd_f32(
-                          COERCE_AS(float32x2_t, LANES128(v80).n128_u64[0]),
-                          COERCE_AS(float32x2_t, LANES128(v80).n128_u64[0])))
-                      .n64_f32[0] >
-                  (float)((float)(v28 * v14) * (float)(v28 * v14))) {
+              if (!(LANES64_OF(
+                        vpadd_f32(
+                            COERCE_AS(float32x2_t, LANES128(v80).n128_u64[0]),
+                            COERCE_AS(float32x2_t, LANES128(v80).n128_u64[0])))
+                        .n64_f32[0] <=
+                    (float)((float)(v28 * v14) * (float)(v28 * v14)))) {
                 v81 = LANES128(v79).n128_f32[2];
                 v90 = v79;
                 v82 = vaddq_f32(v69, COERCE_AS(float32x4_t, GameData_1a83610));
@@ -802,20 +802,20 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                 v14 = 0x1.8000000000000p-1f;
                 v30 = 0x1.0000000000000p+0f;
                 v86 = fabsf(v85) + -0x1.0000000000000p+0f;
-                if (v86 < 0x0.0p+0f) {
+                if (!(v86 >= 0x0.0p+0f)) {
                   v86 = 0x0.0p+0f;
                 }
-                if (v85 >= 0x0.0p+0f) {
+                if (!(v85 < 0x0.0p+0f)) {
                   v87 = v86;
                 }
                 else {
                   v87 = -v86;
                 }
                 v88 = 0x1.9000000000000p+4f;
-                if (v87 <= 0x1.9000000000000p+4f) {
+                if (!(v87 > 0x1.9000000000000p+4f)) {
                   v88 = v87;
                 }
-                if (v87 >= -0x1.9000000000000p+4f) {
+                if (!(v87 < -0x1.9000000000000p+4f)) {
                   v89 = v88;
                 }
                 else {
@@ -833,10 +833,10 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                                   0x1.0aef000000000p+4f) /
                           0x1.f400000000000p+9f) /
                   0x1.99999a0000000p-3f);
-      if (v37 <= v30) {
-        if (v37 < v30) {
+      if (!(v37 > v30)) {
+        if (!(v37 >= v30)) {
           v37 = v37 + v38;
-          if (v37 > v30) {
+          if (!(v37 <= v30)) {
           LABEL_32:
             v37 = v30;
           }
@@ -844,12 +844,12 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
       }
       else {
         v37 = v37 - v38;
-        if (v37 < v30) {
+        if (!(v37 >= v30)) {
           goto LABEL_32;
         }
       }
       LANES128(*(v21)).n128_f32[3] = v37;
-      if (v37 > 0x0.0p+0f) {
+      if (!(v37 <= 0x0.0p+0f)) {
         v39 = (float*)LANES128(v21[1]).n128_u64[1];
         v40 = LANES128(v21[1]).n128_f32[0];
         v41 = 0x0.0p+0f;
@@ -858,7 +858,7 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
         if (v43 != 0x0.0p+0f) {
           v44 = (float)(v40 - v42) / v43;
           v41 = v44 <= 0x1.0000000000000p+0f ? v44 : 0x1.0000000000000p+0f;
-          if (v44 < 0x0.0p+0f) {
+          if (!(v44 >= 0x0.0p+0f)) {
             v41 = 0x0.0p+0f;
           }
         }
@@ -868,13 +868,13 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
         v47 = 0x0.0p+0f;
         if (v46 != 0x0.0p+0f) {
           v48 = (float)(v40 - v45) / v46;
-          if (v48 <= 0x1.0000000000000p+0f) {
+          if (!(v48 > 0x1.0000000000000p+0f)) {
             v49 = (float)(v40 - v45) / v46;
           }
           else {
             v49 = 0x1.0000000000000p+0f;
           }
-          if (v48 >= 0x0.0p+0f) {
+          if (!(v48 < 0x0.0p+0f)) {
             v47 = v49;
           }
           else {
@@ -888,7 +888,7 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
         v37 = v50 * powf(v47, 0x1.0000000000000p-1f);
       }
       LANES128(v21[3]).n128_f32[2] = v37;
-      if (v37 <= 0x0.0p+0f) {
+      if (!(v37 > 0x0.0p+0f)) {
         LANES128(v21[4]).n128_u64[0] = -1;
       }
       else {
@@ -936,7 +936,7 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
         LANES128(v21[5]).n128_u64[0] = 0;
       }
     LABEL_15:
-      if (++v18 >= v20) {
+      if (!(++v18 < v20)) {
         a3 = v92;
         v13 = v91;
         goto LABEL_6;

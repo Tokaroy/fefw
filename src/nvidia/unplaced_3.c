@@ -9294,14 +9294,14 @@ float nvidia_622350(__int64 a1, long double a2)
   float v33;
   float v34;
 
-  if (*(float*)&a2 <= 0.0) {
+  if (!(*(float*)&a2 > 0.0)) {
     *(float*)&a2 = 0.0001;
   }
   v3 = log10f_plt(a2);
   v4 = *(_DWORD*)(a1 + 160);
   v5 = v3;
   LODWORD(v6) = v4;
-  if (v5 <= log10f_plt(v6)) {
+  if (!(v5 > log10f_plt(v6))) {
     LODWORD(v7) = *(_DWORD*)(a1 + 164);
     v17 = *(float*)(a1 + 184);
     v18 = log10f_plt(v7);
@@ -9321,11 +9321,11 @@ float nvidia_622350(__int64 a1, long double a2)
         v12 = log10f_plt(v11);
         LODWORD(v13) = v4;
         v14 = v10 / (float)(v12 - log10f_plt(v13));
-        if (v14 >= -2147500000.0) {
-          if (v14 <= 2147483650.0) {
+        if (!(v14 < -2147500000.0)) {
+          if (!(v14 > 2147483650.0)) {
             v15 = (int)v14 & ~((int)v14 >> 31);
             v16 = v14 - (float)(int)v14;
-            if (v15 >= 7) {
+            if (!(v15 < 7)) {
               v15 = 7;
             }
           }
@@ -9353,7 +9353,7 @@ float nvidia_622350(__int64 a1, long double a2)
       }
     }
     LODWORD(v8) = v9;
-    if (v5 >= log10f_plt(v8)) {
+    if (!(v5 < log10f_plt(v8))) {
       v22 = *(_DWORD*)(a1 + 176);
       LODWORD(v21) = v22;
       if (v5 < log10f_plt(v21)) {
@@ -9363,11 +9363,11 @@ float nvidia_622350(__int64 a1, long double a2)
         v25 = log10f_plt(v24);
         LODWORD(v26) = v9;
         v27 = v23 / (float)(v25 - log10f_plt(v26));
-        if (v27 >= -2147500000.0) {
-          if (v27 <= 2147483650.0) {
+        if (!(v27 < -2147500000.0)) {
+          if (!(v27 > 2147483650.0)) {
             v28 = (int)v27 & ~((int)v27 >> 31);
             v16 = v27 - (float)(int)v27;
-            if (v28 >= 7) {
+            if (!(v28 < 7)) {
               v28 = 7;
             }
           }

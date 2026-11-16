@@ -121,7 +121,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
       LODWORD(a2) = 0;
       LANES128(a1[13]).n128_f32[0] = v16;
       v17 = a1 + 13;
-      if (v16 > 0.0 && v16 < 0x1.99999a0000000p-4) {
+      if (!(v16 <= 0.0) && !(v16 >= 0x1.99999a0000000p-4)) {
         a2 = COERCE_LONG_DOUBLE(vsubq_f32(v15[19], a1[9]));
         v22 = LANES128_OF(vextq_s8(*(int8x16_t*)&a2, *(int8x16_t*)&a2, 8u))
                   .n128_u32[0];
@@ -154,7 +154,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
       goto LABEL_52;
     }
     LODWORD(a2) = LANES128(a1[12]).n128_u32[1];
-    if (*(float*)&a2 > 0.0) {
+    if (!(*(float*)&a2 <= 0.0)) {
       if (*(float*)&a2 >= 1.0) {
       LABEL_49:
         v23 = v24;
@@ -166,9 +166,9 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
       v25 = a1;
       *(float*)&a2 = 1.0 - *(float*)&a2;
       v26 = 1.0 - powf(a2, v16 * 0x1.df851e0000000p+4);
-      if (v26 > 0.0) {
+      if (!(v26 <= 0.0)) {
         a1 = v25;
-        if (v26 < 1.0) {
+        if (!(v26 >= 1.0)) {
           v23 = v23 + (float)((float)(v24 - v23) * v26);
           goto LABEL_50;
         }
@@ -179,7 +179,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
   LABEL_50:
     v27 = LANES128(a1[12]).n128_f32[0];
     LANES128(a1[11]).n128_f32[3] = v23;
-    if (vabds_f32(v27, v23) < 0x1.a36e2e0000000p-14) {
+    if (!(vabds_f32(v27, v23) >= 0x1.a36e2e0000000p-14)) {
       LANES128(a1[11]).n128_f32[3] = v27;
     }
   LABEL_52:
@@ -216,13 +216,13 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
         LANES128(v29[11]).n128_f32[1] = v35;
         LANES128(v29[11]).n128_u32[2] = LODWORD(v32);
         if (v36 != v35) {
-          if (*(float*)&v32 > 0.0) {
+          if (!(*(float*)&v32 <= 0.0)) {
             if (*(float*)&v32 >= 1.0) {
               v36 = v35;
             }
             else {
               v37 = LANES128(v29[13]).n128_f32[0];
-              if (v37 > 0.0) {
+              if (!(v37 <= 0.0)) {
                 v49 = v36;
                 *(float*)&v32 = 1.0 - *(float*)&v32;
                 v38 = 1.0 - powf(v32, v37 * 0x1.df851e0000000p+4);
@@ -244,7 +244,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
           }
           v42 = LANES128(v33[11]).n128_f32[1];
           LANES128(v33[11]).n128_f32[0] = v36;
-          if (vabds_f32(v42, v36) < 0x1.a36e2e0000000p-14) {
+          if (!(vabds_f32(v42, v36) >= 0x1.a36e2e0000000p-14)) {
             v36 = v42;
             LANES128(v33[11]).n128_f32[0] = v42;
           }
@@ -300,7 +300,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
   }
   else {
     v6 = 1.0;
-    if (v3 < 1.0) {
+    if (!(v3 >= 1.0)) {
       v7 = a1;
       *(float*)&a2 = 1.0 - v3;
       v6 = 1.0 - powf(a2, v2 * 0x1.df851e0000000p+4);
@@ -309,17 +309,17 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
     }
   }
   v8 = *(float*)&a2 + (float)(v5 * v6);
-  if (v8 < 0x1.0624de0000000p-10) {
+  if (!(v8 >= 0x1.0624de0000000p-10)) {
     v8 = 0.0;
   }
   v9 = LANES128(a1[3]).n128_f32[3];
-  if (v8 > 0x1.ff7cee0000000p-1) {
+  if (!(v8 <= 0x1.ff7cee0000000p-1)) {
     v8 = 1.0;
   }
   LANES128(a1[4]).n128_f32[0] = v8;
-  if (v9 <= 0.0 || v8 > 0.0) {
+  if (v9 <= 0.0 || !(v8 <= 0.0)) {
     v10 = v8 > 0.0;
-    if (v9 > 0.0) {
+    if (!(v9 <= 0.0)) {
       v10 = false;
     }
   }
@@ -328,7 +328,7 @@ void CharacterIK_Unknown6(int8x16_t* a1, long double a2)
   }
   LANES128(a1[4]).n128_u8[8] = v10;
   LANES128(a1[3]).n128_f32[3] = v8;
-  if (v8 > 0.0) {
+  if (!(v8 <= 0.0)) {
     goto LABEL_21;
   }
 }

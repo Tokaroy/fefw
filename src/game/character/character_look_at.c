@@ -349,7 +349,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LANES64(result[12]).n64_u32[0] = v1;
   v3 = (float)(*(float*)(*(_QWORD*)(v2 + 496) + 16LL) * 0x1.0aef000000000p+4f) /
        0x1.f400000000000p+9f;
-  if (v3 > 0x0.0p+0f) {
+  if (!(v3 <= 0x0.0p+0f)) {
     v4 = LANES64(result[13]).n64_f32[0];
     v5 = LANES64(result[13]).n64_f32[1];
     if (v1 != 0) {
@@ -364,7 +364,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
     }
     else {
       v8 = 0x1.0000000000000p+0f;
-      if (v5 < 0x1.0000000000000p+0f) {
+      if (!(v5 >= 0x1.0000000000000p+0f)) {
         v9 = result;
         v8 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v5,
                                           v3 * 0x1.df851e0000000p+4f);
@@ -373,11 +373,11 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       }
     }
     v10 = v4 + (float)(v7 * v8);
-    if (v10 < 0x1.0624de0000000p-10f) {
+    if (!(v10 >= 0x1.0624de0000000p-10f)) {
       v10 = 0x0.0p+0f;
     }
     v11 = LANES64(result[12]).n64_f32[1];
-    if (v10 > 0x1.ff7cee0000000p-1f) {
+    if (!(v10 <= 0x1.ff7cee0000000p-1f)) {
       v10 = 0x1.0000000000000p+0f;
     }
     LANES64(result[13]).n64_f32[0] = v10;
@@ -405,7 +405,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       goto LABEL_31;
     }
     v16 = LANES64(result[58]).n64_f32[0];
-    if (v16 > 0x0.0p+0f) {
+    if (!(v16 <= 0x0.0p+0f)) {
       if (v16 >= 0x1.0000000000000p+0f) {
       LABEL_28:
         v13 = v14;
@@ -417,9 +417,9 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       v17 = result;
       v18 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v16,
                                          v15 * 0x1.df851e0000000p+4f);
-      if (v18 > 0x0.0p+0f) {
+      if (!(v18 <= 0x0.0p+0f)) {
         result = v17;
-        if (v18 < 0x1.0000000000000p+0f) {
+        if (!(v18 >= 0x1.0000000000000p+0f)) {
           v13 = v13 + (float)((float)(v14 - v13) * v18);
           goto LABEL_29;
         }
@@ -430,7 +430,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_29:
     v19 = LANES64(result[57]).n64_f32[1];
     LANES64(result[57]).n64_f32[0] = v13;
-    if (vabds_f32(v19, v13) < 0x1.a36e2e0000000p-14f) {
+    if (!(vabds_f32(v19, v13) >= 0x1.a36e2e0000000p-14f)) {
       LANES64(result[57]).n64_f32[0] = v19;
     }
   LABEL_31:
@@ -440,7 +440,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       goto LABEL_41;
     }
     v22 = LANES64(result[59]).n64_f32[1];
-    if (v22 > 0x0.0p+0f) {
+    if (!(v22 <= 0x0.0p+0f)) {
       if (v22 >= 0x1.0000000000000p+0f) {
       LABEL_38:
         v20 = v21;
@@ -452,9 +452,9 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       v23 = result;
       v24 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v22,
                                          v15 * 0x1.df851e0000000p+4f);
-      if (v24 > 0x0.0p+0f) {
+      if (!(v24 <= 0x0.0p+0f)) {
         result = v23;
-        if (v24 < 0x1.0000000000000p+0f) {
+        if (!(v24 >= 0x1.0000000000000p+0f)) {
           v20 = v20 + (float)((float)(v21 - v20) * v24);
           goto LABEL_39;
         }
@@ -465,7 +465,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_39:
     v25 = LANES64(result[59]).n64_f32[0];
     LANES64(result[58]).n64_f32[1] = v20;
-    if (vabds_f32(v25, v20) < 0x1.a36e2e0000000p-14f) {
+    if (!(vabds_f32(v25, v20) >= 0x1.a36e2e0000000p-14f)) {
       LANES64(result[58]).n64_f32[1] = v25;
     }
   LABEL_41:
@@ -475,7 +475,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       goto LABEL_51;
     }
     v28 = LANES64(result[61]).n64_f32[0];
-    if (v28 > 0x0.0p+0f) {
+    if (!(v28 <= 0x0.0p+0f)) {
       if (v28 >= 0x1.0000000000000p+0f) {
       LABEL_48:
         v26 = v27;
@@ -487,9 +487,9 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       v29 = result;
       v30 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v28,
                                          v15 * 0x1.df851e0000000p+4f);
-      if (v30 > 0x0.0p+0f) {
+      if (!(v30 <= 0x0.0p+0f)) {
         result = v29;
-        if (v30 < 0x1.0000000000000p+0f) {
+        if (!(v30 >= 0x1.0000000000000p+0f)) {
           v26 = v26 + (float)((float)(v27 - v26) * v30);
           goto LABEL_49;
         }
@@ -500,7 +500,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_49:
     v31 = LANES64(result[60]).n64_f32[1];
     LANES64(result[60]).n64_f32[0] = v26;
-    if (vabds_f32(v31, v26) < 0x1.a36e2e0000000p-14f) {
+    if (!(vabds_f32(v31, v26) >= 0x1.a36e2e0000000p-14f)) {
       LANES64(result[60]).n64_f32[0] = v31;
     }
   LABEL_51:
@@ -510,7 +510,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       goto LABEL_61;
     }
     v34 = LANES64(result[62]).n64_f32[1];
-    if (v34 > 0x0.0p+0f) {
+    if (!(v34 <= 0x0.0p+0f)) {
       if (v34 >= 0x1.0000000000000p+0f) {
       LABEL_58:
         v32 = v33;
@@ -522,9 +522,9 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       v35 = result;
       v36 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v34,
                                          v15 * 0x1.df851e0000000p+4f);
-      if (v36 > 0x0.0p+0f) {
+      if (!(v36 <= 0x0.0p+0f)) {
         result = v35;
-        if (v36 < 0x1.0000000000000p+0f) {
+        if (!(v36 >= 0x1.0000000000000p+0f)) {
           v32 = v32 + (float)((float)(v33 - v32) * v36);
           goto LABEL_59;
         }
@@ -535,7 +535,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_59:
     v37 = LANES64(result[62]).n64_f32[0];
     LANES64(result[61]).n64_f32[1] = v32;
-    if (vabds_f32(v37, v32) < 0x1.a36e2e0000000p-14f) {
+    if (!(vabds_f32(v37, v32) >= 0x1.a36e2e0000000p-14f)) {
       LANES64(result[61]).n64_f32[1] = v37;
     }
   LABEL_61:
@@ -568,7 +568,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       return result;
     }
     v40 = LANES64(result[19]).n64_f32[0];
-    if (v40 > 0x0.0p+0f) {
+    if (!(v40 <= 0x0.0p+0f)) {
       if (v40 >= 0x1.0000000000000p+0f) {
       LABEL_68:
         v38 = v39;
@@ -580,9 +580,9 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       v41 = result;
       v42 = 0x1.0000000000000p+0f - powf(result, 0x1.0000000000000p+0f - v40,
                                          v15 * 0x1.df851e0000000p+4f);
-      if (v42 > 0x0.0p+0f) {
+      if (!(v42 <= 0x0.0p+0f)) {
         result = v41;
-        if (v42 < 0x1.0000000000000p+0f) {
+        if (!(v42 >= 0x1.0000000000000p+0f)) {
           v38 = v38 + (float)((float)(v39 - v38) * v42);
           goto LABEL_69;
         }
@@ -593,7 +593,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_69:
     v43 = LANES64(result[18]).n64_f32[1];
     LANES64(result[18]).n64_f32[0] = v38;
-    if (vabds_f32(v43, v38) < 0x1.a36e2e0000000p-14f) {
+    if (!(vabds_f32(v43, v38) >= 0x1.a36e2e0000000p-14f)) {
       LANES64(result[18]).n64_f32[0] = v43;
     }
     goto LABEL_71;

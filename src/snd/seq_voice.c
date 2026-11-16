@@ -1704,7 +1704,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
     if (v9 == 0 || ((result = (*(__int64 (**)(__int64))(*(_QWORD*)(v9 - 5592) +
                                                         376LL))(v9 - 5592)) &
                     1) == 0) {
-      if (*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) < 0x0.0p+0f) {
+      if (!(*(float*)(*(_QWORD*)(v2 + 5648) + 256LL) >= 0x0.0p+0f)) {
         return (*(__int64 (**)(__int64))(*(_QWORD*)v2 + 264LL))(v2);
       }
       if (snd_Param_isEnvelopeReleased_alt1(v2 + 40)) {
@@ -1849,7 +1849,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
       if (((*(__int64 (**)(__int64*))(*v29 + 376))(v29) & 1) != 0) {
         v32 = *(_QWORD*)(v2 + 6096);
         LODWORD(v33) = *(_DWORD*)(v32 + 24);
-        if ((int)v33 > 1) {
+        if (!((int)v33 <= 1)) {
           v34 = 1;
           do {
             WaveMultiVoice_182ed0_alt1(
@@ -1859,7 +1859,7 @@ __int64 SeqVoice_12b0e0(__int64 result)
             v32 = *(_QWORD*)(v2 + 6096);
             ++v34;
             v33 = *(int*)(v32 + 24);
-          } while (v34 < v33);
+          } while (!(v34 >= v33));
         }
         if ((int)v33 >= 1) {
           v35 = 0;
@@ -1870,12 +1870,12 @@ __int64 SeqVoice_12b0e0(__int64 result)
                     664LL * *(unsigned __int8*)(*(_QWORD*)v32 + v35));
             v32 = *(_QWORD*)(v2 + 6096);
             ++v35;
-          } while (v35 < *(int*)(v32 + 24));
+          } while (!(v35 >= *(int*)(v32 + 24)));
         }
       }
     }
     *(float*)&v30 = v47_.v60;
-    if (v47_.v60 > *(float*)(v2 + 5788)) {
+    if (!(v47_.v60 <= *(float*)(v2 + 5788))) {
       *(float*)(v2 + 5788) = v47_.v60;
       v36 = snd_g_memory_ptr[0];
       if ((v47_.v58 & 1) == 0) {

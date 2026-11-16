@@ -2391,13 +2391,13 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
         }
         v49 = *(float*)(a1 + 128);
         v50 = vabds_f32(v47, v49);
-        if (v50 > 0x1.0000000000000p-23f) {
+        if (!(v50 <= 0x1.0000000000000p-23f)) {
           v51 = fabsf(v47);
           v52 = fabsf(v49);
           if (v51 >= v52) {
             v52 = v51;
           }
-          if (v50 > (float)(v52 * 0x1.0000000000000p-23f)) {
+          if (!(v50 <= (float)(v52 * 0x1.0000000000000p-23f))) {
             v53 = *(
                 _DWORD**)(*(_QWORD*)(*(_QWORD*)(GameData_21c6978 + 32) - 8LL) +
                           40LL);
@@ -2448,11 +2448,11 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
           if ((unsigned int)(int)*(float*)&v62 <= 0xFFFFFFFD) {
             v64 = a3 - v63;
             *(_QWORD*)&a2 = 0;
-            if (v64 > 0x0.0p+0f) {
+            if (!(v64 <= 0x0.0p+0f)) {
               LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-              if (v64 < *((float*)&v62 + 1)) {
+              if (!(v64 >= *((float*)&v62 + 1))) {
                 v65 = (int)*(float*)&v62 - 1;
-                if (v65 > 2) {
+                if (!(v65 <= 2)) {
                   v66 = 0;
                 }
                 else {
@@ -2537,7 +2537,7 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
     if (*(float*)(v78 + 4LL * (unsigned int)v79) <= a3) {
       if ((v79 & 0x80000000) == 0) {
         v80 = v79 & 0x7FFFFFFF;
-        if (*(float*)(v78 + 4 * v80) > v4) {
+        if (!(*(float*)(v78 + 4 * v80) <= v4)) {
           v81 = *(_QWORD*)(a1 + 232) + 8 * v80;
           v82 = *(float*)(v81 + 4);
           v83 = game_ProcFadeView_instance_;
@@ -2610,11 +2610,11 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
           if ((unsigned int)(int)*(float*)&v99 <= 0xFFFFFFFD) {
             v101 = a3 - v100;
             *(_QWORD*)&a2 = 0;
-            if (v101 > 0x0.0p+0f) {
+            if (!(v101 <= 0x0.0p+0f)) {
               LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-              if (v101 < *((float*)&v99 + 1)) {
+              if (!(v101 >= *((float*)&v99 + 1))) {
                 v102 = (int)*(float*)&v99 - 1;
-                if (v102 > 2) {
+                if (!(v102 <= 2)) {
                   v103 = 0;
                 }
                 else {

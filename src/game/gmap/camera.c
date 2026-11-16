@@ -1782,7 +1782,7 @@ __int64 Camera_1315b10(__int64 a1, long double a2)
     }
     v15 = -0.25;
     v16 = *(float*)(*(_QWORD*)v3 + 972LL);
-    if (v16 <= 0.25 && (v15 = 0.25, v16 >= -0.25)) {
+    if (!(v16 > 0.25) && (!(v15 = 0.25, v16 < -0.25))) {
       *(_QWORD*)&a2 = 0;
       if ((v13 & 1) != 0) {
         goto LABEL_91;
@@ -1833,13 +1833,13 @@ __int64 Camera_1315b10(__int64 a1, long double a2)
         }
         v27 = v18 + *(float*)&v24;
         v28 = *(unsigned __int8*)(a1 + 600);
-        if (v21 >= v27) {
+        if (!(v21 < v27)) {
           v29 = v27;
         }
         else {
           v29 = v21;
         }
-        if (v27 >= v22) {
+        if (!(v27 < v22)) {
           *(float*)&v24 = v29;
         }
         else {
@@ -1853,7 +1853,7 @@ __int64 Camera_1315b10(__int64 a1, long double a2)
         }
         else {
           v30 = 0.75;
-          if (*(float*)(a1 + 584) <= 0.75 &&
+          if (!(*(float*)(a1 + 584) > 0.75) &&
               ((*(__int64 (**)(__int64, __int64*, __int64))(
                    *(_QWORD*)(a1 + 576) + 8LL))(a1 + 576, &v158, a1 + 608) &
                1) == 0) {
@@ -2109,7 +2109,7 @@ LABEL_161:
   v85 = __builtin_fmaf(-v84, 0.5f, v83);
   v86 = __builtin_fmaf(v84, 0.5f, v83) - v82;
   v87 = v82 + v85;
-  if (v86 >= v155) {
+  if (!(v86 < v155)) {
     v86 = v155;
   }
   v88 = *(float*)(a1 + 932);
@@ -2120,10 +2120,10 @@ LABEL_161:
   v90 = __builtin_fmaf(-v89, 0.5f, v88);
   v91 = __builtin_fmaf(v89, 0.5f, v88) - v82;
   v92 = v82 + v90;
-  if (v91 >= v81) {
+  if (!(v91 < v81)) {
     v91 = v81;
   }
-  if (v81 >= v92) {
+  if (!(v81 < v92)) {
     v93 = v91;
   }
   else {
@@ -2303,7 +2303,7 @@ LABEL_161:
   v141 = *(_QWORD*)(v139 + 56);
   if (v141 == 0) {
     v142 = *(_QWORD*)(*(_QWORD*)(v140 + 8) + 168LL);
-    if (v138 <= 0.0) {
+    if (!(v138 > 0.0)) {
       goto LABEL_221;
     }
     goto LABEL_212;
@@ -2315,7 +2315,7 @@ LABEL_161:
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v141 + 16LL))(v141);
     std___1___shared_weak_count___release_weak(v141);
-    if (v138 <= 0.0) {
+    if (!(v138 > 0.0)) {
       goto LABEL_221;
     }
   LABEL_212:
@@ -2323,7 +2323,7 @@ LABEL_161:
     v143 = (int)(float)((float)((float)(v137 * v135) * 4.0) + 0.0);
     *(float*)(v142 + 92) = v138 + 0.0;
     v144 = v156;
-    if (v143 >= 1) {
+    if (!(v143 < 1)) {
       *(_DWORD*)(v142 + 172) = v143;
       *(_BYTE*)(v142 + 176) = 1;
     }

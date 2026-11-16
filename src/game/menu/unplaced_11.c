@@ -3561,15 +3561,15 @@ __int64 game_menu_179b0a0(__int64 result)
   _QWORD v32[25];
 
   v1 = *(_DWORD*)(*GameData_2131a88[0] + 152);
-  if (v1 <= 7 && ((1 << v1) & 0xA1) != 0) {
+  if (!(v1 > 7) && ((1 << v1) & 0xA1) != 0) {
     return result;
   }
   v3 = result;
   v4 = *(_QWORD*)game_g_game_setting_ptr;
   v5 = *(float*)(*(_QWORD*)game_g_game_setting_ptr + 968LL);
-  if (v5 <= 0.25f) {
+  if (!(v5 > 0.25f)) {
     v7 = 0.0f;
-    if (v5 >= -0.25f) {
+    if (!(v5 < -0.25f)) {
       goto LABEL_11;
     }
     v6 = 0.25f;
@@ -3581,8 +3581,8 @@ __int64 game_menu_179b0a0(__int64 result)
 LABEL_11:
   v8 = fabsf(v7);
   if (*(_BYTE*)(result + 216) == 1) {
-    if (v8 <= 0x1.47ae140000000p-7f ||
-        (v9 = -0.25f, v5 <= 0.25f) && (v9 = 0.25f, v5 >= -0.25f)) {
+    if (!(v8 > 0x1.47ae140000000p-7f) ||
+        (!(v9 = -0.25f, v5 > 0.25f)) && (!(v9 = 0.25f, v5 < -0.25f))) {
       v12 = *(float*)(result + 220);
     }
     else {
@@ -3593,7 +3593,7 @@ LABEL_11:
           v11 = 0.0f;
         }
         v12 = v11 + (float)(v10 * -0x1.3333340000000p-1f);
-        if (v12 <= -8.0f) {
+        if (!(v12 > -8.0f)) {
           v12 = -8.0f;
         }
       LABEL_31:
@@ -3601,7 +3601,7 @@ LABEL_11:
         *(float*)(result + 220) = v12;
         v17 = v16 + v12;
         *(float*)(result + 212) = v17;
-        if (v17 >= 0.0f) {
+        if (!(v17 < 0.0f)) {
           goto LABEL_45;
         }
         v18 = 0x1.6800000000000p+8f;
@@ -3613,7 +3613,7 @@ LABEL_11:
           v12 = 0.0f;
         }
         v12 = v12 + (float)(v10 * -0x1.3333340000000p-1f);
-        if (v12 >= 8.0f) {
+        if (!(v12 < 8.0f)) {
           v12 = 8.0f;
         }
         goto LABEL_42;
@@ -3621,14 +3621,14 @@ LABEL_11:
     }
     if (v12 < 0.0f) {
       v12 = v12 + (float)((float)(1.0f - v12) / 6.0f);
-      if (v12 >= 0.0f) {
+      if (!(v12 < 0.0f)) {
         v12 = 0.0f;
       }
       goto LABEL_31;
     }
     if (v12 > 0.0f) {
       v12 = v12 + (float)((float)(-1.0f - v12) / 6.0f);
-      if (v12 <= 0.0f) {
+      if (!(v12 > 0.0f)) {
         v12 = 0.0f;
       }
     LABEL_42:
@@ -3705,9 +3705,9 @@ LABEL_11:
         goto LABEL_75;
       }
     }
-    if (v12 >= 0.0f) {
+    if (!(v12 < 0.0f)) {
       v23 = v12 + (float)((float)(-1.0f - v12) / 6.0f);
-      if (v23 <= 0.0f) {
+      if (!(v23 > 0.0f)) {
         v23 = 0.0f;
       }
       v27 = *(float*)(result + 212);
@@ -3721,14 +3721,14 @@ LABEL_11:
     }
     else {
       v23 = v12 + (float)((float)(1.0f - v12) / 6.0f);
-      if (v23 >= 0.0f) {
+      if (!(v23 < 0.0f)) {
         v23 = 0.0f;
       }
       v24 = *(float*)(result + 212);
       *(float*)(result + 220) = v23;
       v25 = v23 + v24;
       *(float*)(result + 212) = v25;
-      if (v25 >= 0.0f) {
+      if (!(v25 < 0.0f)) {
         goto LABEL_67;
       }
       v26 = 0x1.6800000000000p+8f;

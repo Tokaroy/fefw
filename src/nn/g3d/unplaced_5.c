@@ -357,13 +357,13 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
         LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v58).n128_u64[0]),
                              COERCE_AS(float32x2_t, LANES128(v58).n128_u64[0])))
             .n64_f32[0];
-    if (v59 < 0x0.0p+0f) {
+    if (!(v59 >= 0x0.0p+0f)) {
       v60 = -v59;
     }
     else {
       v60 = v59;
     }
-    if (v59 < 0x0.0p+0f) {
+    if (!(v59 >= 0x0.0p+0f)) {
       v61 = -0x1.0000000000000p+0f;
     }
     else {
@@ -372,7 +372,7 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     v62 = sqrtf(0x1.0000000000000p+0f - (float)(v60 * v60));
     v63 = a4 / v56;
     v64 = -LANES64(v5).n64_f32[0];
-    if (v60 >= 0x0.0p+0f) {
+    if (!(v60 < 0x0.0p+0f)) {
       v68 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
       v69 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
       v70 =
@@ -439,11 +439,11 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
                                                (_QWORD)GameData_212c2f0 + 12)) *
                              (float)(v72 * v72)) +
                   0x1.0000000000000p+0f);
-      if (v60 <= 0x1.6a09e60000000p-1f) {
+      if (!(v60 > 0x1.6a09e60000000p-1f)) {
         v66 = v73;
       }
     }
-    else if (v60 >= -0x1.6a09e60000000p-1f) {
+    else if (!(v60 < -0x1.6a09e60000000p-1f)) {
       v67 = (float)-v60 / v62;
       v66 =
           (float)(PSEUDO_UNFUSED(
@@ -582,13 +582,13 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     LANES64(v96).n64_u64[0] = LANES64_OF(vmul_f32(v92, v94)).n64_u64[0];
     v97 = (float)(0x1.0000000000000p+0f / v91) * LANES64(v96).n64_f32[0];
     v98 = vmuls_lane_f32(v61, v96, 1) * v95;
-    if (v60 <= 0x1.fffeb00000000p-1f) {
+    if (!(v60 > 0x1.fffeb00000000p-1f)) {
       v99 = v97;
     }
     else {
       v99 = v82;
     }
-    if (v60 > 0x1.fffeb00000000p-1f) {
+    if (!(v60 <= 0x1.fffeb00000000p-1f)) {
       v98 = v84;
     }
     result[2] = vmlaq_n_f32(vmulq_n_f32(v47, v99), v57, v98);
