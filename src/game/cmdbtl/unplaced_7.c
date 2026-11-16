@@ -12,7 +12,7 @@ extern __int64 GameData_21f61c0;
 extern __int64 GameData_2241720;
 extern int GameData_21f61c8;
 __int64 game_cmdbtl_e63390();
-__int64 game_cmdbtl_1639f60(__int64 result, __int64* a2, __int64 a3, char a4);
+void game_cmdbtl_1639f60(__int64 result, __int64* a2, __int64 a3, char a4);
 
 __int64 game_cmdbtl_e63390()
 {
@@ -41,7 +41,7 @@ __int64 game_cmdbtl_e63390()
   return result;
 }
 
-__int64 game_cmdbtl_1639f60(__int64 result, __int64* a2, __int64 a3, char a4)
+void game_cmdbtl_1639f60(__int64 result, __int64* a2, __int64 a3, char a4)
 {
   __int64* v7;
   __int64* v8;
@@ -173,7 +173,7 @@ LABEL_2:
       break;
     }
     if ((unsigned __int64)v9 < 2) {
-      return result;
+      return;
     }
     if (v9 == 2) {
       result = ((__int64 (*)(__int64, __int64))ui_game_15b75f0)(*(a2 - 1), *v8);
@@ -182,9 +182,9 @@ LABEL_2:
         *v8 = *(a2 - 1);
       LABEL_105:
         *(a2 - 1) = v78;
-        return result;
+        return;
       }
-      return result;
+      return;
     }
   LABEL_10:
     if (v9 <= 23) {
@@ -243,7 +243,7 @@ LABEL_2:
           v81 = v7 + 1;
         } while (v7 + 1 != a2);
       }
-      return result;
+      return;
     }
     if (a3 == 0) {
       if (v8 != a2) {
@@ -351,7 +351,7 @@ LABEL_2:
           v101 = v9-- <= 2;
         } while (!v101);
       }
-      return result;
+      return;
     }
     v11 = &v8[(unsigned __int64)v9 >> 1];
     if ((unsigned __int64)v9 < 0x81) {
@@ -580,11 +580,11 @@ LABEL_2:
         if (!v62) {
           goto LABEL_2;
         }
-        return result;
+        return;
       }
       if (!v62) {
       LABEL_78:
-        result = game_cmdbtl_1639f60((__int64)v7, v61, a3, a4 & 1);
+        game_cmdbtl_1639f60((__int64)v7, v61, a3, a4 & 1);
         a4 = 0;
         v8 = v61 + 1;
       }
@@ -641,21 +641,22 @@ LABEL_2:
   }
   if (v9 != 3) {
     if (v9 == 4) {
-      return GameRoutine_163a9f0(v8, v8 + 1, v8 + 2, a2 - 1);
+      GameRoutine_163a9f0(v8, v8 + 1, v8 + 2, a2 - 1);
+      return;
     }
     if (v9 == 5) {
       GameRoutine_163a9f0(v8, v8 + 1, v8 + 2, v8 + 3);
       result =
           ((__int64 (*)(__int64, __int64))ui_game_15b75f0)(*(a2 - 1), v8[3]);
       if ((result & 1) == 0) {
-        return result;
+        return;
       }
       v71 = v8[3];
       v8[3] = *(a2 - 1);
       *(a2 - 1) = v71;
       result = ((__int64 (*)(__int64, __int64))ui_game_15b75f0)(v8[3], v8[2]);
       if ((result & 1) == 0) {
-        return result;
+        return;
       }
       v73 = v8[2];
       v72 = v8[3];
@@ -664,7 +665,7 @@ LABEL_2:
       v8[3] = v73;
       result = ((__int64 (*)(__int64, __int64))ui_game_15b75f0)(v72, v74);
       if ((result & 1) == 0) {
-        return result;
+        return;
       }
       v76 = v8[1];
       v75 = v8[2];
@@ -679,7 +680,7 @@ LABEL_2:
   result = ((__int64 (*)(__int64, __int64))ui_game_15b75f0)(*(a2 - 1), v8[1]);
   if (!v79) {
     if ((result & 1) == 0) {
-      return result;
+      return;
     }
     v117 = v8[1];
     v8[1] = *(a2 - 1);
@@ -693,7 +694,7 @@ LABEL_2:
       *v8 = v8[1];
       v8[1] = v118;
     }
-    return result;
+    return;
   }
   v80 = *v8;
   if ((result & 1) != 0) {
@@ -710,7 +711,7 @@ LABEL_2:
       goto LABEL_105;
     }
   }
-  return result;
+  return;
 }
 
 #pragma GCC visibility pop

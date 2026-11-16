@@ -69743,7 +69743,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1638ca0,8,verified,src/game/cmdbtl/unit_menu_item.cpp,_ZN4game6cmdbtl12_GLOBAL__N_112UnitMenuItem9Unknown72Ev
 1638d20,2832,verified,src/game/templates/introsort.cpp,_ZNSt3__111__introsortINS_17_ClassicAlgPolicyERPFbPN4game11UnrecoveredILj201EEES5_EPS5_Lb0EEEvT1_SA_T0_NS_15iterator_traitsISA_E15difference_typeEb
 1639680,340,verified,src/game/unnamed/b021_1.c,GameHr_1639680
-1639f60,2272,disputed,src/game/cmdbtl/unplaced_7.c,game_cmdbtl_1639f60
+1639f60,2272,verified,src/game/cmdbtl/unplaced_7.c,game_cmdbtl_1639f60
 163a9f0,308,verified,src/game/unnamed/b021_1.c,GameHr_163a9f0
 163ab40,644,verified,src/game/unnamed/b021_2.c,GameHr_163ab40
 163adf0,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cmdbtl::CmdBtlUnitSelectMenu::GetSortieCount()::$_0, bool (game::cmdbtl::(anonymous namespace)::UnitMenuItem*)>::deleting destructor"
