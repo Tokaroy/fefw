@@ -1687,6 +1687,7 @@ a6640,84,verified,src/nn/util/util_format_string.cpp,_ZN2nn4util14TVFormatString
 a66a0,164,verified,src/nn/util/util_format_string.cpp,_ZN2nn4util13TFormatStringEPFvmPKciEmS2_z
 a6750,116,verified,src/nn/util/util_format_string.cpp,_ZN2nn4util10TVSNPrintfEPcmPKcSt9__va_list
 a67d0,196,verified,src/nn/util/util_format_string.cpp,_ZN2nn4util9TSNPrintfEPcmPKcz
+a68a0,1660,disputed,src/nn/util/unplaced_2.c,nn_util_a68a0
 a7120,764,verified,src/nn/util/unplaced.c,nn_util_a7120
 a7480,92,verified,src/nn/util/unplaced.c,nn_util_a7480
 a74e0,56,verified,src/nn/util/utf.cpp,_ZN2nn4util30ConvertStringUtf8ToUtf16NativeEPtiPKci
@@ -2813,6 +2814,7 @@ da8f0,168,verified,src/nn/fs/unplaced.c,nn_fs_da8f0
 da9a0,576,disputed,src/nn/fs/unplaced.c,nn_fs_da9a0
 dad00,492,verified,src/nn/fs/unplaced.c,nn_fs_dad00
 daf00,412,verified,src/nn/fs/unplaced.c,nn_fs_daf00
+db130,392,disputed,src/nn/fs/unplaced.c,nn_fs_db130
 db3c0,280,verified,src/nn/fs/unplaced.c,nn_fs_db3c0
 db4e0,240,verified,src/nn/fs/unplaced.c,nn_fs_db4e0
 db5d0,56,verified,src/nn/fs/unplaced.c,nn_fs_db5d0
@@ -5919,6 +5921,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 17cfb0,192,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_ProcessAsSession_17cfb0
 17d070,248,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_ProcessInvokeRequest
 17d170,216,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_ProcessInvokeRequestWithDefer
+17d250,392,verified,src/nn/sf/v1/unplaced_2.c,nn_sf_v1_17d250
 17d3e0,236,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_ProcessAuto
 17d4d0,88,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_WaitAndProcessAutoImpl
 17d530,68,verified,src/nn/sf/v1/hipc_all_in_one_server_manager_base.c,nn_sf_hipc_server_v1_detail_HipcAllInOneServerManagerBase_WaitAndProcessAuto
@@ -5949,6 +5952,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 17ec50,172,verified,src/nn/sf/unplaced.c,nn_sf_17ec50
 17ed00,268,verified,src/nn/sf/unplaced.c,nn_sf_17ed00
 17ee10,1420,verified,src/nn/sf/unplaced.c,nn_sf_17ee10
+17f530,220,verified,src/nn/sf/unplaced_2.c,nn_sf_17f530
 17f6d0,212,verified,src/nn/sf/unplaced.c,nn_sf_17f6d0
 17f7d0,16,verified,src/nn/sdk_trivial_more.cpp,_Z14SdkStub_17f7d0mm
 17f7e0,16,verified,src/nn/sdk_trivial_more.cpp,_Z14SdkStub_17f7e0mm
@@ -7800,7 +7804,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 1c933c,48,verified,src/nn/am/am_interface_accessors_impl.c,nn_am_FinalizeSystemApplicationInterfaces
 1c936c,12,verified,src/nn/am/am_interface_accessors.cpp,_ZN2nn2am23GetAppletResourceUserIdEv
 1c9378,324,verified,src/nn/am/unplaced.c,nn_am_InitializeSystemProcessInterfaces
+1c94cc,128,verified,src/nn/am/unplaced_8.c,nn_am_1c94cc
 1c9568,108,verified,src/nn/unnamed/s000_2.c,SdkHr_1c9568
+1c95d8,116,verified,src/nn/am/unplaced_8.c,nn_am_1c95d8
 1c965c,12,verified,src/nn/unnamed/u000_0.c,SdkHr_1c965c
 1c9668,120,verified,src/nn/unnamed/s000_2.c,SdkHr_1c9668
 1c96e4,124,verified,src/nn/unnamed/s000_2.c,SdkHr_1c96e4
@@ -11832,6 +11838,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 2dff40,492,verified,src/opus/celt/cwrs.c,decode_pulses
 2e0150,76,verified,src/opus/celt/entcode.c,ec_tell_frac
 2e01a0,276,verified,src/opus/celt/entdec.c,ec_dec_init
+2e02c0,108,verified,src/opus/celt/unplaced_7.c,opus_celt_2e02c0
 2e0330,40,verified,src/opus/celt/entdec.c,ec_decode_bin
 2e0360,184,verified,src/opus/celt/entdec.c,ec_dec_update
 2e0420,176,verified,src/opus/celt/entdec.c,ec_dec_bit_logp
@@ -13717,6 +13724,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 3fefe0,148,verified,src/nn/ec/ec_shop_service_access_server.cpp,_ZN2nn2ec6detail23ShopServiceAccessServer5ProxyD2Ev
 3ff080,140,verified,src/nn/ec/ec_shop_service_access_server.cpp,_ZN2nn2ec6detail23ShopServiceAccessServer5Proxy8FinalizeEv
 3ff110,576,verified,src/nn/ec/ec_shop_service_access_server_impl.c,nn_ec_detail_ShopServiceAccessServer_Proxy_Initialize
+3ff360,276,verified,src/nn/ec/unplaced_6.c,nn_ec_3ff360
 3ff480,96,verified,src/nn/ec/ec_shop_service_access_server.cpp,_ZN2nn2ec6detail23ShopServiceAccessServer5Proxy23CreateAccessorInterfaceEPNS_2sf13SharedPointerINS_3nim6detail20IShopServiceAccessorEEERKh
 3ff4e0,8,verified,src/nn/ec/ec_shop_service_access_server.cpp,_ZN2nn2ec6detail23ShopServiceAccessServer5Proxy11AcquireImplEv
 3ff4f0,80,verified,src/nn/ec/ec_shop_service_access_server.cpp,_ZN2nn2ec6detail23ShopServiceAccessServer5Proxy6AttachEPNS0_19ShopServiceAccessorE
@@ -16982,6 +16990,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 4cdac0,28,verified,src/nn/movie/detail/base_media_extractor.c,nn_movie_detail_BaseMediaExtractor_TrackInfo_TrackInfo
 4cdae0,212,verified,src/nn/movie/detail/base_media_extractor.c,nn_movie_detail_BaseMediaExtractor_TrackInfo_Destroy_TrackInfo
 4cdbc0,172,verified,src/nn/movie/detail/base_media_extractor.c,nn_movie_detail_BaseMediaExtractor_BaseMediaExtractor
+4cdc70,164,verified,src/nn/movie/detail/unplaced_5.c,nn_movie_detail_4cdc70
 4cdd20,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_4cdd20m
 4cdd30,48,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_4cdd30m
 4cdd60,52,verified,src/nn/movie/detail/base_media_extractor.c,nn_movie_detail_BaseMediaExtractor_Destroy_BaseMediaExtractor
@@ -23447,6 +23456,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5efbf0,108,verified,src/nvidia/nvu_hash.cpp,NvUHashGet
 5efc60,156,verified,src/nvidia/nvu_hash.cpp,NvUHashSearch
 5efd00,352,verified,src/nvidia/nvu_hash.cpp,NvUHashInsert
+5efe60,660,verified,src/nvidia/unplaced_33.c,nvidia_5efe60
 5f0120,296,verified,src/nvidia/nvu_hash.cpp,NvUHashRemove
 5f0260,248,verified,src/nvidia/nvu_hash.cpp,NvUHashReplace
 5f0360,116,verified,src/nvidia/nvu_hash.cpp,NvUHashNextEntry
@@ -23538,6 +23548,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5f62d0,32,verified,src/nvidia/nvos_sync.cpp,NvOsBusyWaitNS
 5f62f0,8,verified,src/nvidia/nvos_sync.cpp,NvOsTlsAlloc
 5f6300,384,verified,src/nvidia/nvos_log.cpp,NvOsTlsAllocWithDestructor
+5f6490,432,verified,src/nvidia/unplaced_33.c,nvidia_5f6490
 5f6640,132,verified,src/nvidia/nvos_log.cpp,NvOsTlsFree
 5f66d0,52,verified,src/nvidia/nvos_misc.cpp,NvOsTlsGet
 5f6710,296,verified,src/nvidia/nvos_log.cpp,NvOsTlsSet
@@ -23688,6 +23699,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5fb440,152,verified,src/nvidia/unplaced.c,unplaced_5fb440
 5fb4f0,72,verified,src/nvidia/unplaced.c,nvidia_5fb4f0
 5fb540,124,verified,src/nvidia/unplaced.c,nvidia_5fb540
+5fb5c0,148,verified,src/nvidia/unplaced_33.c,nvidia_5fb5c0
 5fb660,168,verified,src/nvidia/unplaced.c,hosFinalizeEvents
 5fb720,356,verified,src/nvidia/unplaced.c,hosSetupSystemEvents
 5fb8a0,108,verified,src/nn/unnamed/s003_0.c,SdkHr_5fb8a0
@@ -24507,6 +24519,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6334e0,96,verified,src/nvidia/unplaced_6.c,nvidia_6334e0
 633540,104,verified,src/nvidia/unplaced_6.c,nvidia_633540
 6335b0,188,verified,src/nvidia/unplaced_6.c,nvidia_6335b0
+633670,168,verified,src/nvidia/unplaced_33.c,nvidia_633670
 633720,176,verified,src/nvidia/unplaced_6.c,nvidia_633720
 633860,172,verified,src/nvidia/unplaced_6.c,nvidia_633860
 633910,320,verified,src/nvidia/nvstl/impl/nvstl_mutex_impl_nvos_inline.c,nvstl_mutex_impl_nvos_633910
@@ -24916,9 +24929,11 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 645de0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_645de0v
 645df0,12,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_645df0m
 645e00,716,verified,src/nvidia/unplaced_8.c,nvidia_645e00
+6460f0,68,verified,src/nvidia/unplaced_33.c,nvidia_6460f0
 646140,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_646140v
 646150,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_646150v
 646160,8,verified,src/nn/sdk_trivial_forwarders.cpp,_Z14SdkStub_646160m
+646360,64,verified,src/nn/unplaced_16.c,nn_646360
 6463a0,288,verified,src/nvidia/unplaced_8.c,unplaced_8_6463a0
 6464f0,12,verified,src/nvidia/unplaced_8.c,unplaced_8_6464f0
 646500,12,verified,src/nvidia/unplaced_8.c,unplaced_8_646500
@@ -24940,6 +24955,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 646600,12,verified,src/nvidia/unplaced_8.c,unplaced_8_646600
 646610,12,verified,src/nvidia/unplaced_8.c,nvidia_646610
 646620,240,verified,src/nvidia/unplaced_8.c,nvidia_646620
+646740,64,verified,src/nvidia/unplaced_33.c,nvidia_646740
 646780,12,verified,src/nvidia/unplaced_8.c,unplaced_8_646780
 646790,12,verified,src/nvidia/unplaced_8.c,unplaced_8_646790
 6467a0,12,verified,src/nvidia/unplaced_8.c,unplaced_8_6467a0
@@ -25074,6 +25090,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 64b420,180,verified,src/nvidia/unplaced_9.c,nvidia_64b420
 64b4e0,572,verified,src/nvidia/unplaced_23.c,nvidia_64b4e0
 64b750,488,verified,src/nvidia/unplaced_23.c,nvidia_64b750
+64b9e0,1068,verified,src/nvidia/unplaced_33.c,nvidia_64b9e0
 64be80,1976,disputed,src/nvidia/unplaced_29.c,nvidia_64be80
 64ca20,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca20
 64ca80,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca80
@@ -25139,6 +25156,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 650070,12,verified,src/nn/unnamed/u000_1.c,SdkHr_650070
 650080,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_650080mj
 6500a0,1524,verified,src/nn/unplaced_3.c,nn_6500a0
+650730,700,verified,src/nn/unplaced_16.c,nn_650730
 6509f0,20,verified,src/nn/unnamed/u000_1.c,SdkHr_6509f0
 650a10,288,verified,src/nn/unnamed/s003_2.c,SdkHr_650a10
 650b30,84,verified,src/nn/unnamed/s003_2.c,SdkHr_650b30
@@ -26161,6 +26179,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65d7b0,152,verified,src/nn/unnamed/s003_2.c,SdkHr_65d7b0
 65d850,236,verified,src/nn/unplaced_3.c,nn_65d850
 65d940,84,verified,src/nn/unnamed/s003_2.c,SdkHr_65d940
+65d9a0,484,verified,src/nn/unplaced_16.c,nn_65d9a0
 65dbc0,360,verified,src/nn/unplaced_8.c,nn_65dbc0
 65dd30,48,verified,src/nn/unnamed/s003_2.c,SdkHr_65dd30
 65dd60,612,verified,src/nn/unplaced_8.c,nn_65dd60
@@ -26638,6 +26657,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66b8a0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_66b8a0m
 66b8b0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_66b8b0m
 66b8c0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_66b8c0m
+66b8d0,164,verified,src/nn/unplaced_16.c,nn_66b8d0
 66b980,172,verified,src/nn/unnamed/s004_0.c,SdkHr_66b980
 66ba40,644,verified,src/nn/unnamed/s004_0.c,SdkHr_66ba40
 66bce0,12,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_66bce0mmmm
@@ -26742,6 +26762,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66ff80,348,verified,src/nn/unnamed/s004_0.c,SdkHr_66ff80
 670290,152,verified,src/nn/unnamed/s004_0.c,SdkHr_670290
 670330,20,verified,src/nn/unnamed/u000_2.c,SdkHr_670330
+670360,340,verified,src/nn/unplaced_16.c,nn_670360
 6704c0,412,verified,src/nn/unnamed/s004_0.c,SdkHr_6704c0
 670690,96,verified,src/nn/unnamed/s004_0.c,SdkHr_670690
 670700,1676,verified,src/nn/unplaced_4.c,nn_670700
@@ -26784,7 +26805,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 672d00,224,verified,src/nn/unnamed/s004_0.c,SdkHr_672d00
 672de0,212,verified,src/nn/unnamed/s004_0.c,SdkHr_672de0
 672ec0,20,verified,src/nn/unnamed/u000_2.c,SdkHr_672ec0
+672ee0,148,verified,src/nn/unplaced_16.c,nn_672ee0
 672f80,220,verified,src/nn/unnamed/s004_0.c,SdkHr_672f80
+673060,88,verified,src/nn/unplaced_16.c,nn_673060
 6730c0,176,verified,src/nn/unnamed/s004_0.c,SdkHr_6730c0
 673180,160,verified,src/nn/unnamed/t001_0.c,SdkHr_673180
 673240,468,verified,src/nn/unnamed/s004_0.c,SdkHr_673240
@@ -27060,6 +27083,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 69ae00,180,verified,src/nn/unnamed/s004_1.c,SdkHr_69ae00
 69aee0,52,verified,src/nn/unnamed/s004_1.c,SdkHr_69aee0
 69af20,212,verified,src/nn/unplaced_4.c,nn_69af20
+69b010,260,verified,src/nn/unplaced_16.c,nn_69b010
 69b120,196,verified,src/nn/unplaced_4.c,nn_69b120
 69b220,356,verified,src/nn/unplaced_4.c,nn_69b220
 69b3e0,324,verified,src/nn/unplaced_4.c,nn_69b3e0
@@ -27295,6 +27319,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6a4dd0,16,verified,src/nn/unplaced_5.c,nn_6a4dd0
 6a4e70,380,verified,src/nn/unplaced_5.c,nn_6a4e70
 6a4ff0,188,verified,src/nn/unplaced_5.c,nn_6a4ff0
+6a50c0,496,verified,src/nn/unplaced_16.c,nn_6a50c0
 6a52b0,20,verified,src/nn/unnamed/u000_2.c,SdkHr_6a52b0
 6a52d0,16,verified,src/nn/unnamed/u000_2.c,SdkHr_6a52d0
 6a52e0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6a52e0v
@@ -28231,7 +28256,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6cf720,2360,verified,src/audio/butterworth.cpp,nerd::Butterworth::Apply4
 6d0060,4576,verified,src/audio/butterworth_six.cpp,nerd::Butterworth::Apply6
 6d12b0,88,verified,src/nerd/gyro_pointing/vibration_decoder.c,nerd_VibrationDecoder_Init
+6d1310,52,verified,src/nerd/gyro_pointing/unplaced_6.c,nerd_gyro_pointing_6d1310
 6d1360,336,verified,src/nerd/gyro_pointing/vibration_decoder.c,nerd_VibrationDecoder_DoGenerateChunk
+6d14c0,28,verified,src/nerd/gyro_pointing/unplaced_6.c,nerd_gyro_pointing_6d14c0
 6d14e0,504,verified,src/nerd/gyro_pointing/vibration_encoder.c,nerd_VibrationEncoder_Init_6d14e0
 6d16e0,32,verified,src/nerd/gyro_pointing/vibration_encoder.c,nerd_VibrationEncoder_Init_6d16e0
 6d1700,700,verified,src/nerd/gyro_pointing/vibration_encoder.c,nerd_VibrationEncoder_ProcessChunk
@@ -30017,18 +30044,19 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 701e90,476,verified,src/math/unplaced_4.c,linear_algebra_701e90
 702080,512,verified,src/math/unplaced_6.c,math_702080
 702b40,1592,verified,src/math/matrix.cpp,_ZN4nerd14linear_algebra17NormalizeDiagonalIfLl27EEENS0_7LMatrixIT_XT0_EXT0_ENS0_11LMatrixType5DenseILb1EEEEES7_
+7035b0,2532,verified,src/math/unplaced_14.c,math_7035b0
 704160,2160,verified,src/math/inversion.cpp,_ZN4nerd23GaussJordanInversionROKIfEEbPT_mS2_mm
 704a60,1392,verified,src/math/symmetric_inverse.cpp,fw::math::InverseSymmetricFixed27
 7050a0,1348,verified,src/math/symmetric_inverse.cpp,fw::math::CholeskyFixed27
 705650,8,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZN4nerd13gyro_pointing16GyroPointingCore21SetProcessingTimestepENS_4Unit12BaseQuantityIfNSt3__15ratioILl0ELl1EEEJS6_S6_NS5_ILl1ELl1EEES6_EEE
-705660,3072,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate
+705660,3056,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate
 706280,756,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration
 706580,128,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore14GetOrientationEv
 706600,8,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore17GetIntegrityStateEv
 706610,24,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZN4nerd13gyro_pointing16GyroPointingCore21UpdateIfEnoughSamplesEv
-706640,124,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Update
+706640,388,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Update
 70a5e0,352,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate
-70a740,1440,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation
+70a740,1440,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation
 70ace0,144,verified,src/nerd/gyro_pointing/unplaced_2.c,nerd_gyro_pointing_70ace0
 70ad80,780,verified,src/math/unplaced_4.c,linear_algebra_70ad80
 70b0c0,2632,verified,src/math/unplaced_6.c,math_70b0c0
@@ -30116,6 +30144,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7257a0,80,verified,src/math/indexed_matrix_impl.c,indexed_matrix_7257a0
 725960,1588,verified,src/math/indexed_matrix.cpp,_ZN4nerd14linear_algebra21LMakeSymmetricInPlaceIfLl6ENS0_11LMatrixType4ViewIRNS0_7LVectorImLl6ELb0ENS0_11LVectorType5DenseEEES8_EEEEvRNS0_7LMatrixIT_XT0_EXT0_ET1_EE
 725fa0,1260,verified,src/math/indexed_matrix.cpp,_ZN4nerd14linear_algebramlIffLl3ELl3ELln33ENS0_11LMatrixType5DenseILb1EEENS2_4ViewIRNS0_7LVectorImLl3ELb0ENS0_11LVectorType5DenseEEENS6_ImLln33ELb0ENS7_5RangeEEEEEEEDaRKNS0_7LMatrixIT_XT1_EXT2_ET4_EERKNSE_IT0_XT2_EXT3_ET5_EE
+7264c0,544,disputed,src/math/unplaced_14.c,math_7264c0
 726720,1044,verified,src/math/unplaced_4.c,math_726720
 726b80,296,verified,src/math/unplaced_4.c,math_726b80
 727520,1784,disputed,src/math/unplaced_4.c,math_727520
@@ -30127,6 +30156,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 729580,1640,disputed,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_729580
 729c20,1836,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_729c20
 72a580,936,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates
+72a940,400,verified,src/nerd/gyro_pointing/unplaced_6.c,nerd_gyro_pointing_72a940
 72b170,764,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection
 72ba70,1156,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints
 72bfd0,100,verified,src/nn/unnamed/s005_0.c,SdkHr_72bfd0
@@ -30160,6 +30190,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 731e80,1948,verified,src/math/matrix_vector.cpp,_ZN4nerd14linear_algebramlIffLl21ELb0ENS0_11LMatrixType5DenseILb1EEENS0_11LVectorType5DenseEEEDaRKNS0_7LMatrixIT_XT1_EXT1_ENS2_10TriangularIXT2_ET3_EEEERKNS0_7LVectorIT0_XT1_ELb0ET4_EE
 732620,1252,verified,src/math/indexed_matrix.cpp,_ZN4nerd14linear_algebra28LSymmetricProductLSLTInPlaceIfLl21ENS0_11LMatrixType5DenseILb1EEEEEvRKNS0_7LMatrixIT_XT0_EXT0_ENS2_10TriangularILb0ET1_EEEERNS5_IS6_XT0_EXT0_ES4_EE
 732b60,584,verified,src/math/unplaced_4.c,math_732b60
+732db0,452,verified,src/math/unplaced_14.c,math_732db0
 732f80,2616,verified,src/math/tridiagonal.cpp,fw::math::Tridiagonalize21
 733a20,1364,verified,src/math/unplaced_5.c,math_733a20
 733f80,840,verified,src/math/unplaced_4.c,math_733f80
@@ -34004,6 +34035,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 831940,156,verified,src/llvm-libcxx/libcxx/src/strstream_impl.c,std___1_strstreambuf_strstreambuf_831940
 8319e0,176,verified,src/llvm-libcxx/libcxx/src/strstream_impl.c,std___1_strstreambuf_strstreambuf_8319e0
 831a90,156,verified,src/llvm-libcxx/libcxx/src/strstream_impl.c,std___1_strstreambuf_strstreambuf_831a90
+831b30,120,verified,src/llvm-libcxx/libcxx/src/unplaced_11.c,llvm_libcxx_libcxx_src_831b30
 831bb0,48,verified,src/llvm-libcxx/libcxx/src/strstream.cpp,_ZNSt3__112strstreambufD0Ev
 831be0,232,verified,src/llvm-libcxx/libcxx/src/strstream_impl.c,std___1_strstreambuf_swap
 831cd0,36,verified,src/llvm-libcxx/libcxx/src/strstream.cpp,_ZNSt3__112strstreambuf6freezeEb
@@ -34054,7 +34086,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 835ee0,140,verified,src/nn/unnamed/s006_2.c,SdkHr_835ee0
 836230,200,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle.cpp,_ZN12_GLOBAL__N_116itanium_demangle14PODSmallVectorIPNS1_IPNS0_4NodeELm8EEELm4EE9push_backERKS5_
 836300,156,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_anonymous_itanium_demangle_EnableIfAttr_anonymous_itanium_demangle_NodeArray
-8363a0,288,disputed,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray
+8363a0,288,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray
 8364d0,224,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_8364d0
 8365b0,536,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle.cpp,_ZN12_GLOBAL__N_116itanium_demangle22AbstractManglingParserINS0_14ManglingParserINS_16DefaultAllocatorEEES3_E18SaveTemplateParamsD2Ev
 8367d0,168,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_8367d0
@@ -34299,7 +34331,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 84b8a0,148,verified,src/llvm-libcxx/libcxxabi/src/cxa_vector.cpp,__cxa_vec_dtor
 84b960,84,verified,src/llvm-libcxx/libcxxabi/src/cxa_vector.cpp,__cxa_vec_cleanup
 84b9c0,176,verified,src/llvm-libcxx/libcxxabi/src/cxa_vector.cpp,__cxa_vec_delete
+84baa0,184,verified,src/llvm-libcxx/libcxxabi/src/unplaced_7.c,llvm_libcxx_libcxxabi_src_84baa0
 84bb68,4,verified,src/llvm-libcxx/libcxxabi/src/cxa_vector_impl.c,cxa_vector_84bb68
+84bba0,208,verified,src/llvm-libcxx/libcxxabi/src/unplaced_7.c,llvm_libcxx_libcxxabi_src_84bba0
 84bc78,4,verified,src/llvm-libcxx/libcxxabi/src/unplaced.c,llvmlibcxx_libcxxabi_84bc78
 84bcb0,24,verified,src/llvm-libcxx/libcxxabi/src/cxa_virtual_impl.c,__cxa_pure_virtual
 84bcd0,24,verified,src/llvm-libcxx/libcxxabi/src/cxa_virtual_impl.c,__cxa_deleted_virtual

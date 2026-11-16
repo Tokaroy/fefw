@@ -106,6 +106,7 @@ __int64 SceneManager_138e5e0(__int64);
 __int64 game_facility_14107c0(__int64, __int64);
 void SceneCharacter_1401550(__int64, __int64);
 __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1);
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 
 __n128 game_facility_DiningSceneDiff_Initialize(unsigned __int64 a1, __int64 a2)
 {
@@ -252,7 +253,8 @@ __n128 game_facility_DiningSceneDiff_Initialize(unsigned __int64 a1, __int64 a2)
     goto LABEL_34;
   }
   if ((f_.v41[0] & 1) != 0) {
-    GameRoutine_64df20(v13, *(__int64*)&f_.v41[16], *(unsigned __int64*)&f_.v41[8]),
+    GameRoutine_64df20(v13, *(__int64*)&f_.v41[16],
+                       *(unsigned __int64*)&f_.v41[8]),
         result =
             COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
     if (*(_QWORD*)(a1 + 80) == 0) {
@@ -1394,8 +1396,9 @@ __int64 game_facility_DiningSceneDiff_LoadProp(__int64 a1)
 
 __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
 {
-  __int64 ownTable;
-  __int64 otherTable;
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64* v3;
@@ -1435,13 +1438,14 @@ __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
   __int64 v37;
   __int64 v38;
   struct {
-    char gap0_[8];
     __int64 v39;
     __int64 v40;
     __int64 v41;
+  } v39_;
+  struct {
     _BYTE v42[16];
     __int64 v43;
-  } f_;
+  } v42_;
 
   v1 = *(_QWORD*)(a1 + 8);
   v2 = *(_QWORD*)(*(_QWORD*)(v1 + 96) + 56LL);
@@ -1455,28 +1459,28 @@ __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
   v7 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
                                       32, 16, 0);
   *(_BYTE*)(v7 + 29) = 0;
-  f_.v39 = 33;
-  f_.v40 = 29;
-  f_.v41 = v7;
+  v39_.v39 = 33;
+  v39_.v40 = 29;
+  v39_.v41 = v7;
   *(_QWORD*)v7 = 0x83E3A383E3AD82E3LL;
   *(_QWORD*)(v7 + 8) = 0x5F8583E6A8A1E8A9LL;
   *(_QWORD*)(v7 + 16) = 0xE55F82A0E59FA3E9LL;
   *(_QWORD*)(v7 + 21) = 0x9F9CE69D88E55F82LL;
-  game_facility_14107c0((__int64)f_.v42, (__int64)&f_.v39);
-  SceneCharacter_1401550(v6, (__int64)f_.v42);
-  if ((f_.v42[0] & 1) != 0 && f_.v43 != 0) {
+  game_facility_14107c0((__int64)v42_.v42, (__int64)&v39_.v39);
+  SceneCharacter_1401550(v6, (__int64)v42_.v42);
+  if ((v42_.v42[0] & 1) != 0 && v42_.v43 != 0) {
     v8 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v8 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v8, f_.v43);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v8, v42_.v43);
   }
-  if ((f_.v39 & 1) != 0 && f_.v41 != 0) {
+  if ((v39_.v39 & 1) != 0 && v39_.v41 != 0) {
     v9 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v9 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v9, f_.v41);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v9, v39_.v41);
   }
   if (v2 != 0 && *(_BYTE*)(v2 + 32) != 0) {
     v10 = SceneCharacter_14020c0(v6);
@@ -1506,14 +1510,9 @@ __int64 game_facility_DiningSceneDiff_Initialize_lambda1_Invoke(__int64 a1)
         goto LABEL_23;
       }
       v12 = *(_QWORD*)(v2 + 72);
-      if (v12 != 0) {
-        ownTable = *(_QWORD*)(v10[3] + 1672LL);
-        otherTable = *(_QWORD*)(*(_QWORD*)(v12 + 24) + 1672LL);
-        // Both tables are read even when the first slot is empty.
-        __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
-        if (ownTable == otherTable) {
-          goto LABEL_20;
-        }
+      if (v12 != 0 && *(_QWORD*)(v10[3] + 1672LL) ==
+                          *(_QWORD*)(*(_QWORD*)(v12 + 24) + 1672LL)) {
+        goto LABEL_20;
       }
     }
   }
@@ -1530,28 +1529,28 @@ LABEL_25:
   v17 = v16;
   v18 = fw_memory_HeapManager_Allocate(*v5, 32, 16, 0);
   *(_BYTE*)(v18 + 29) = 0;
-  f_.v39 = 33;
-  f_.v40 = 29;
-  f_.v41 = v18;
+  v39_.v39 = 33;
+  v39_.v40 = 29;
+  v39_.v41 = v18;
   *(_QWORD*)v18 = 0x83E3A383E3AD82E3LL;
   *(_QWORD*)(v18 + 8) = 0x5F8583E6A8A1E8A9LL;
   *(_QWORD*)(v18 + 16) = 0xE55F82A0E59FA3E9LL;
   *(_QWORD*)(v18 + 21) = 0x9F9CE69D88E55F82LL;
-  game_facility_14107c0((__int64)f_.v42, (__int64)&f_.v39);
-  SceneCharacter_1401550(v17, (__int64)f_.v42);
-  if ((f_.v42[0] & 1) != 0 && f_.v43 != 0) {
+  game_facility_14107c0((__int64)v42_.v42, (__int64)&v39_.v39);
+  SceneCharacter_1401550(v17, (__int64)v42_.v42);
+  if ((v42_.v42[0] & 1) != 0 && v42_.v43 != 0) {
     v19 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v19 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v19, f_.v43);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v19, v42_.v43);
   }
-  if ((f_.v39 & 1) != 0 && f_.v41 != 0) {
+  if ((v39_.v39 & 1) != 0 && v39_.v41 != 0) {
     v20 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v20 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v20, f_.v41);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v20, v39_.v41);
   }
   if (v2 != 0 && *(_BYTE*)(v2 + 32) != 0) {
     v21 = SceneCharacter_14020c0(v17);
@@ -1576,13 +1575,9 @@ LABEL_25:
         goto LABEL_53;
       }
       v23 = *(_QWORD*)(v2 + 72);
-      if (v23 != 0) {
-        ownTable = *(_QWORD*)(v21[3] + 1672LL);
-        otherTable = *(_QWORD*)(*(_QWORD*)(v23 + 24) + 1672LL);
-        __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
-        if (ownTable == otherTable) {
-          goto LABEL_44;
-        }
+      if (v23 != 0 && *(_QWORD*)(v21[3] + 1672LL) ==
+                          *(_QWORD*)(*(_QWORD*)(v23 + 24) + 1672LL)) {
+        goto LABEL_44;
       }
     }
   }
@@ -1599,28 +1594,28 @@ LABEL_55:
   v31 = result;
   v32 = fw_memory_HeapManager_Allocate(*v5, 32, 16, 0);
   *(_BYTE*)(v32 + 29) = 0;
-  f_.v39 = 33;
-  f_.v40 = 29;
-  f_.v41 = v32;
+  v39_.v39 = 33;
+  v39_.v40 = 29;
+  v39_.v41 = v32;
   *(_QWORD*)v32 = 0x83E3A383E3AD82E3LL;
   *(_QWORD*)(v32 + 8) = 0x5F8583E6A8A1E8A9LL;
   *(_QWORD*)(v32 + 16) = 0xE55F82A0E59FA3E9LL;
   *(_QWORD*)(v32 + 21) = 0x9F9CE69D88E55F82LL;
-  game_facility_14107c0((__int64)f_.v42, (__int64)&f_.v39);
-  SceneCharacter_1401550(v31, (__int64)f_.v42);
-  if ((f_.v42[0] & 1) != 0 && f_.v43 != 0) {
+  game_facility_14107c0((__int64)v42_.v42, (__int64)&v39_.v39);
+  SceneCharacter_1401550(v31, (__int64)v42_.v42);
+  if ((v42_.v42[0] & 1) != 0 && v42_.v43 != 0) {
     v33 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v33 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v33, f_.v43);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v33, v42_.v43);
   }
-  if ((f_.v39 & 1) != 0 && f_.v41 != 0) {
+  if ((v39_.v39 & 1) != 0 && v39_.v41 != 0) {
     v34 = 128;
     if (*(_QWORD*)(*v5 + 200) == 0) {
       v34 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v5 + v34, f_.v41);
+    nn_mem_StandardAllocator_Free_alt3(*v5 + v34, v39_.v41);
   }
   if (v2 == 0) {
     goto LABEL_75;
@@ -1639,14 +1634,8 @@ LABEL_55:
   }
   else {
     v36 = *(_QWORD*)(v2 + 72);
-    if (v36 == 0) {
-      goto LABEL_75;
-    }
-    ownTable = *(_QWORD*)(*(_QWORD*)(result + 24) + 1672LL);
-    otherTable = *(_QWORD*)(*(_QWORD*)(v36 + 24) + 1672LL);
-    // Both tables are read even when the first slot is empty.
-    __asm__ volatile("" : "+r"(ownTable), "+r"(otherTable));
-    if (ownTable != otherTable) {
+    if (v36 == 0 || *(_QWORD*)(*(_QWORD*)(result + 24) + 1672LL) !=
+                        *(_QWORD*)(*(_QWORD*)(v36 + 24) + 1672LL)) {
       goto LABEL_75;
     }
   }

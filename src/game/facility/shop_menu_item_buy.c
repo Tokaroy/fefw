@@ -471,6 +471,9 @@ LABEL_14:
 
 __int64 ShopMenuItem_Buy_Unknown2(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   bool v4;
@@ -481,10 +484,11 @@ __int64 ShopMenuItem_Buy_Unknown2(__int64 a1)
   struct {
     _QWORD v10[4];
     _QWORD* v11;
-    char gap40_[8];
+  } v10_;
+  struct {
     _QWORD v12[4];
     _QWORD* v13;
-  } f_;
+  } v12_;
 
   v2 = *(_QWORD*)(a1 - 88);
   v4 = false;
@@ -498,32 +502,32 @@ __int64 ShopMenuItem_Buy_Unknown2(__int64 a1)
   if (!v4 && (v5 & 1) == 0) {
     return (*(__int64 (**)(__int64))(*(_QWORD*)a1 + 56LL))(a1);
   }
-  f_.v12[0] = GameData_20f73c0;
-  f_.v12[1] = a1;
-  f_.v11 = f_.v10;
-  f_.v13 = f_.v12;
-  f_.v10[0] = GameData_20f7440;
-  v7 = (*(__int64 (**)(__int64, _QWORD*, _QWORD*))(*(_QWORD*)a1 + 40LL))(
-      a1, f_.v12, f_.v10);
-  if (f_.v11 == f_.v10) {
+  v12_.v12[0] = GameData_20f73c0;
+  v12_.v12[1] = a1;
+  v10_.v11 = v10_.v10;
+  v12_.v13 = v12_.v12;
+  v10_.v10[0] = GameData_20f7440;
+  v7 = (*(__int64 (**)(__int64, __int64, __int64))(*(_QWORD*)a1 + 40LL))(
+      a1, (__int64)v12_.v12, (__int64)v10_.v10);
+  if (v10_.v11 == v10_.v10) {
     v8 = 32;
   }
   else {
-    if (f_.v11 == nullptr) {
+    if (v10_.v11 == nullptr) {
       goto LABEL_14;
     }
     v8 = 40;
   }
-  (*(void (**)(__int64))(*f_.v11 + v8))((__int64)f_.v11);
+  (*(void (**)(__int64))(*v10_.v11 + v8))((__int64)v10_.v11);
 LABEL_14:
-  if (f_.v13 == f_.v12) {
+  if (v12_.v13 == v12_.v12) {
     v9 = 32;
     goto LABEL_18;
   }
-  if (f_.v13 != nullptr) {
+  if (v12_.v13 != nullptr) {
     v9 = 40;
   LABEL_18:
-    (*(void (**)(__int64))(*f_.v13 + v9))((__int64)f_.v13);
+    (*(void (**)(__int64))(*v12_.v13 + v9))((__int64)v12_.v13);
   }
   (*(void (**)(__int64, __int64))(*(_QWORD*)a1 + 48LL))(a1, v7);
   return 12;

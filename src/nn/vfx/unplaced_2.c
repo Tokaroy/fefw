@@ -22,6 +22,8 @@ __int64 nn_vfx_5c8fa0(__int64 a1);
 bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
                    int a6, long double a7);
 __int64 nn_vfx_bc7ac0(__int64 a1, __int64 a2);
+__int64 nn_vfx_5d5380(__int64 result, float*, __int64, __int64, char,
+                      long double);
 
 __int64 nn_vfx_5c8fa0(__int64 a1)
 {
@@ -163,10 +165,12 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
   int v42;
   __int64 j;
   __int64 v44;
-  char v45;
-  char v46;
-  char v47;
-  char v48;
+  struct {
+    char v45;
+    char v46;
+    char v47;
+    char v48;
+  } v45_;
 
   v7 = LANES128(a4[2]).n128_i32[2];
   v8 = *(_DWORD*)(a1 + 4792);
@@ -206,8 +210,8 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
             v14 += 32;
           }
           if (v15 != 0) {
-            nn_vfx_5d6ac0(*a2, (float*)(*a2 + 8LL * v15), (__int64)&v46,
-                          (2 * __clz((__int64)v15)) ^ 0x7E, 1, a7);
+            nn_vfx_5d6ac0(*a2, (float*)(*a2 + 8LL * v15), (__int64)&v45_.v46,
+                          (2 * __clz((unsigned long long)(v15))) ^ 0x7E, 1, a7);
           }
         }
       }
@@ -301,13 +305,13 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
         if (*(_BYTE*)(*(_QWORD*)(LANES128(a4[35]).n128_u64[1] + 16) + 2203LL) !=
             0) {
           if (v20 != 0) {
-            nn_vfx_5d8200(v44, (float*)(v44 + 8LL * v20), (__int64)&v47,
-                          (2 * __clz((__int64)v20)) ^ 0x7E, 1);
+            nn_vfx_5d8200(v44, (float*)(v44 + 8LL * v20), (__int64)&v45_.v47,
+                          (2 * __clz((unsigned long long)(v20))) ^ 0x7E, 1);
           }
         }
         else if (v20 != 0) {
-          nn_vfx_5d9c60(v44, (float*)(v44 + 8LL * v20), (__int64)&v48,
-                        (2 * __clz((__int64)v20)) ^ 0x7E, 1);
+          nn_vfx_5d9c60(v44, (float*)(v44 + 8LL * v20), (__int64)&v45_.v48,
+                        (2 * __clz((unsigned long long)(v20))) ^ 0x7E, 1);
         }
         return v7 <= v8;
       }
@@ -333,8 +337,8 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
       v41 += 32;
     }
     if (v42 != 0) {
-      GameRoutine_5d5380(*a2, (float*)(*a2 + 8LL * v42), (__int64)&v45,
-                         (2 * __clz((__int64)v42)) ^ 0x7E, 1, a7);
+      nn_vfx_5d5380(*a2, (float*)(*a2 + 8LL * v42), (__int64)&v45_.v45,
+                    (2 * __clz((unsigned long long)(v42))) ^ 0x7E, 1, a7);
     }
   }
   return v7 <= v8;

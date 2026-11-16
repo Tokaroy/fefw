@@ -1064,6 +1064,9 @@ _QWORD* GameHr_104e1a0(_QWORD* a1)
 
 void GameHr_106fae0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64* v2;
   __int64 v3;
   __int64 v4;
@@ -1079,7 +1082,7 @@ void GameHr_106fae0(__int64 a1)
   _QWORD* v14;
   _QWORD* v15;
   __int64 v16;
-  unsigned __int64 v17;
+  __int64 v17;
   __int64 v18;
   __int64 v19;
   __int64 v20;
@@ -1091,20 +1094,21 @@ void GameHr_106fae0(__int64 a1)
   __int64 v26;
   _QWORD v27[2];
   struct {
-    char gap0_[24];
     __int64 v28;
     __int64 v29;
     __int64 v30;
+  } v28_;
+  struct {
     _QWORD v31[4];
     _QWORD* v32;
-  } f_;
+  } v31_;
 
   v2 = (__int64*)fw_memory_g_heap_manager_ptr;
   v3 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
                                       30720, 16, 0);
   v4 = -30720;
-  f_.v28 = v3;
-  f_.v30 = v3 + 30720;
+  v28_.v28 = v3;
+  v28_.v30 = v3 + 30720;
   do {
     v5 = (_QWORD*)(v3 + v4);
     v4 += 960;
@@ -1129,9 +1133,9 @@ void GameHr_106fae0(__int64 a1)
     v5[3952] = 0;
     v5[3958] = 0;
   } while (v4 != 0);
-  f_.v29 = v3 + 30720;
+  v28_.v29 = v3 + 30720;
   v27[0] = a1;
-  v27[1] = &f_.v28;
+  v27[1] = &v28_.v28;
   v6 = (__int64*)GameData_21323e8[0];
   fw_world_JobContext_Drain(*(unsigned int**)GameData_21323e8[0]);
   v7 = *v6;
@@ -1161,31 +1165,31 @@ void GameHr_106fae0(__int64 a1)
   v17 = v13[3];
   v13[3] = (unsigned __int64)v15;
   if (v17 != 0) {
-    (*(void (**)(unsigned __int64))(*(_QWORD*)v17 + 8LL))(v17);
+    (*(void (**)(__int64))(*(_QWORD*)v17 + 8LL))(v17);
   }
   atomic_store(v12, v13);
   v15[1] = v7;
   *((_DWORD*)v15 + 4) = v12;
-  f_.v31[0] = GameData_20063c0;
-  f_.v31[1] = 640;
-  f_.v32 = f_.v31;
-  f_.v31[2] = v27;
-  fw_world_SwapCallables(f_.v31, v15 + 4);
-  if (f_.v32 == f_.v31) {
+  v31_.v31[0] = GameData_20063c0;
+  v31_.v31[1] = 640;
+  v31_.v32 = v31_.v31;
+  v31_.v31[2] = v27;
+  fw_world_SwapCallables(v31_.v31, v15 + 4);
+  if (v31_.v32 == v31_.v31) {
     v18 = 32;
     goto LABEL_15;
   }
-  if (f_.v32 != nullptr) {
+  if (v31_.v32 != nullptr) {
     v18 = 40;
   LABEL_15:
-    (*(void (**)(__int64))(*f_.v32 + v18))((__int64)f_.v32);
+    (*(void (**)(__int64))(*v31_.v32 + v18))((__int64)v31_.v32);
   }
   fw_world_JobQueue_Submit(*(_QWORD*)(v7 + 16), v12);
   fw_world_JobContext_Wait(*v6, v12);
-  v19 = f_.v28;
-  v20 = f_.v29;
-  if (f_.v28 == f_.v29) {
-    if (f_.v28 == 0) {
+  v19 = v28_.v28;
+  v20 = v28_.v29;
+  if (v28_.v28 == v28_.v29) {
+    if (v28_.v28 == 0) {
       return;
     }
   }
@@ -1197,13 +1201,13 @@ void GameHr_106fae0(__int64 a1)
       }
       v19 += 48;
     } while (v19 != v20);
-    v19 = f_.v28;
-    if (f_.v28 == 0) {
+    v19 = v28_.v28;
+    if (v28_.v28 == 0) {
       return;
     }
   }
-  v22 = f_.v29;
-  if (v19 == f_.v29) {
+  v22 = v28_.v29;
+  if (v19 == v28_.v29) {
   LABEL_32:
     v26 = 128;
     if (*(_QWORD*)(*v2 + 200) == 0) {
@@ -1228,9 +1232,9 @@ void GameHr_106fae0(__int64 a1)
   LABEL_27:
     v22 = v25;
   } while (v25 != v19);
-  f_.v29 = v19;
-  v19 = f_.v28;
-  if (f_.v28 != 0) {
+  v28_.v29 = v19;
+  v19 = v28_.v28;
+  if (v28_.v28 != 0) {
     goto LABEL_32;
   }
 }

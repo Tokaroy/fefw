@@ -134,6 +134,10 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
 void ITarget_776720(__int64 a1, char a2, char a3, unsigned __int8 a4,
                     _DWORD* a5, __int64 a6);
 __int64 game_map_ITarget_EachSelectable(__int64 a1, __int64 a2, __int64 a3);
+__int64* game_UnitPool_Get_alt3(_BYTE*);
+__int64 TargetEnumerator_77c150_alt2(__int64 result, __int64*, int, int);
+__int64 TargetEnumerator_77e300_alt1(__int64, _WORD*, __int64);
+void __attribute__((noreturn)) GameRoutine_60a310_alt3();
 
 __int64 ITarget_772f60(__int64 a1, __int64 a2)
 {
@@ -3969,6 +3973,9 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_CloneInto(_QWORD* a1,
 __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
                                                            int* a3)
 {
+
+#pragma clang fp contract(on)
+
   int v3;
   int v4;
   __int64 v5;
@@ -3978,20 +3985,15 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
   __int64 v10;
   __int64* v11;
   __int64 v12;
-  __int64* v13;
   __int64 result;
   struct {
-    char gap0_[11];
-    char v15[5];
-    int v16;
-    _BYTE v17[4];
-    char v18;
-  } f_;
-  _BYTE v19[7];
-  int v20;
+    _BYTE v14[4];
+    char v15;
+    _BYTE v16[7];
+    char gap32_[28];
+    int v17;
+  } v14_;
 
-  v11 = COERCE_AS(__typeof__(v11),
-                  PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v3 = *a2;
   v4 = *a3;
   v6 = *(__int64**)(a1 + 16);
@@ -3999,37 +4001,30 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
   if (v5 != 0) {
     LODWORD(v5) = *(_WORD*)(v5 + 16) & 0xFFF;
   }
-  v20 = v5;
-  TargetEnumerator_77c150_alt1((__int64)f_.v17, v6, v3, v4),
-      v11 = COERCE_AS(__typeof__(v11),
-                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  if (v19[0] != 0) {
-    v8 = game_UnitPool_Get_alt2(v19),
-    v11 = COERCE_AS(__typeof__(v11),
-                    PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+  v14_.v17 = v5;
+  TargetEnumerator_77c150_alt2((__int64)v14_.v14, v6, v3, v4);
+  if (v14_.v16[0] != 0) {
+    v8 = game_UnitPool_Get_alt3(v14_.v16);
   }
   else {
     v8 = nullptr;
   }
-  if ((TargetEnumerator_77e300((__int64)v6, &v20, v8) & 1) == 0) {
-    v13 = *(__int64**)(a1 + 64);
-    f_.v16 = 0;
-    *(_WORD*)&f_.v15[3] = -1;
-    strcpy(f_.v15, "\t\b");
-    if (v13 != nullptr) {
-      v12 = *v13;
+  if ((TargetEnumerator_77e300_alt1((__int64)v6, &v14_.v17, (__int64)v8) & 1) ==
+      0) {
+    v11 = *(__int64**)(a1 + 64);
+    if (v11 != nullptr) {
+      v12 = *v11;
       goto LABEL_14;
     }
   LABEL_15:
-    GameRoutine_60a310_alt2(),
-        v11 = COERCE_AS(__typeof__(v11),
-                        PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+    GameRoutine_60a310_alt3();
   }
-  v9 = f_.v18;
-  f_.v18 |= 8u;
-  v10 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) + 8LL * (v20 & 0xFFF));
+  v9 = v14_.v15;
+  v14_.v15 |= 8u;
+  v10 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
+                   8LL * (v14_.v17 & 0xFFF));
   if (v10 != 0 && (unsigned int)*(unsigned __int8*)(v10 + 250) - 15 <= 1) {
-    f_.v18 = v9 | 9;
+    v14_.v15 = v9 | 9;
   }
   v11 = *(__int64**)(a1 + 64);
   if (v11 == nullptr) {
@@ -4037,9 +4032,7 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
   }
   v12 = *v11;
 LABEL_14:
-  result = (*(__int64 (**)(__int64))(v12 + 48))((__int64)v11),
-  v11 = COERCE_AS(__typeof__(v11),
-                  PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+  result = (*(__int64 (**)(__int64))(v12 + 48))((__int64)v11);
   **(_BYTE**)(a1 + 80) = 1;
   return result;
 }

@@ -110,7 +110,8 @@ char* anonymous_itanium_demangle_AbstractManglingParser_make_833dc0(__int64 a1,
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_make_anonymous_itanium_demangle_EnableIfAttr_anonymous_itanium_demangle_NodeArray(
     __int64 a1, __int64 a2, __int64 a3);
-__int64 anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
+__int64
+anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray_alt1(
     _QWORD* a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5,
     __int64 a6, __int64 a7, __int64 a8, __int64 a9);
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_8364d0(
@@ -362,6 +363,13 @@ __int64 anonymous_itanium_demangle_AbstractManglingParser_parseQualifiedType(
 __int64 anonymous_itanium_demangle_ReferenceType_collapse(__int64 a1,
                                                           signed int a2,
                                                           __int64 a3);
+__int64 malloc_plt_alt2(unsigned __int64);
+__int64 memmove_plt_alt2(__int64, __int64, unsigned __int64);
+void __attribute__((noreturn)) SdkRoutine_84c1f0_alt2(__int64, ...);
+void __attribute__((noreturn)) std_terminate_plt_alt2(void);
+unsigned __int128
+anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
+    _QWORD* a1, unsigned __int64 a2);
 
 __int64 __cxa_demangle(__int64 a1, __int64 a2, unsigned __int64* a3, int* a4)
 {
@@ -794,80 +802,80 @@ anonymous_itanium_demangle_AbstractManglingParser_make_anonymous_itanium_demangl
   return result;
 }
 
-__int64 anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
-    _QWORD* a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5,
-    __int64 a6, __int64 a7, __int64 a8, __int64 a9)
-{
-  __int64 v9;
-  __int64 v10;
-  unsigned __int64 v11;
-  _QWORD* v12;
-  __int64 v13;
-  unsigned __int64 v16;
-  __int64 v17;
-  _QWORD* v18;
-  __int64 v19;
-  __int64 v21;
-  __int64 v22;
-  __int64 v23;
-  __int64 v24;
-  __int64 v25;
-  __int64 v26;
-  __int64 v27;
-  __int64 v28;
+unsigned __int128
 
-  v9 = a1[2];
-  v10 = a1[3];
-  v11 = (v10 - v9) >> 3;
-  if (a2 > v11) {
-    SdkRoutine_84c1f0("libc++abi: ");
+anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
+    _QWORD* a1, unsigned __int64 a2)
+{
+
+#pragma clang fp contract(on)
+
+  __int64 v2;
+  __int64 v3;
+  unsigned __int64 v4;
+  _QWORD* v5;
+  __int64 v6;
+  unsigned __int64 v9;
+  __int64 v10;
+  _QWORD* v11;
+  __int64 v12;
+  _QWORD* v13;
+  unsigned __int128 result;
+
+  v2 = a1[2];
+  v3 = a1[3];
+  v4 = (v3 - v2) >> 3;
+  if (a2 > v4) {
+    SdkRoutine_84c1f0_alt2((__int64)"libc++abi: ");
   }
-  v12 = (_QWORD*)a1[614];
-  v13 = v9 + 8 * a2;
-  v16 = ((_DWORD)v10 - (_DWORD)v13 + 15) & 0xFFFFFFF0;
-  v17 = v12[1];
-  if (v17 + v16 >= 0xFF0) {
-    if (v16 >= 0xFF1) {
-      v18 = (_QWORD*)malloc_plt(v16 + 16);
-      if (v18 != nullptr) {
-        *v18 = *v12;
-        v18[1] = 0;
-        *v12 = v18;
-        v19 = (__int64)(v18 + 2);
-        if (v10 == v13) {
-          goto LABEL_11;
-        }
-        goto LABEL_10;
-      }
+  v5 = (_QWORD*)a1[614];
+  v6 = v2 + 8 * a2;
+  v9 = ((int)v3 - (int)v6 + 15) & 0xFFFFFFF0;
+  v10 = v5[1];
+  if (v10 + v9 < 0xFF0) {
+    goto LABEL_9;
+  }
+  if (v9 < 0xFF1) {
+    v13 = (_QWORD*)malloc_plt_alt2(0x1000u);
+    if (v13 == nullptr) {
     LABEL_15:
-      v21 = std_terminate_plt(v18);
-      return anonymous_itanium_demangle_AbstractManglingParser_make_8364d0_alt1(
-          v21, v22, v23, v24, v25, v26, v27, v28, a9);
+      std_terminate_plt_alt2();
     }
-    v18 = (_QWORD*)malloc_plt(4096);
-    if (v18 == nullptr) {
-      goto LABEL_15;
+    v10 = 0;
+    *v13 = v5;
+    v13[1] = 0;
+    v5 = v13;
+    a1[614] = v13;
+  LABEL_9:
+    v5[1] = v10 + v9;
+    v12 = (__int64)v5 + v10 + 16;
+    if (v3 == v6) {
+      goto LABEL_11;
     }
-    v17 = 0;
-    *v18 = v12;
-    v18[1] = 0;
-    v12 = v18;
-    a1[614] = v18;
+    goto LABEL_10;
   }
-  v12[1] = v17 + v16;
-  v19 = (__int64)v12 + v17 + 16;
-  if (v10 != v13) {
+  v11 = (_QWORD*)malloc_plt_alt2(v9 + 16);
+  if (v11 == nullptr) {
+    goto LABEL_15;
+  }
+  *v11 = *v5;
+  v11[1] = 0;
+  *v5 = v11;
+  v12 = (__int64)(v11 + 2);
+  if (v3 != v6) {
   LABEL_10:
-    memmove_plt(v19, v13, v10 - v13);
-    v9 = a1[2];
-    v11 = (a1[3] - v9) >> 3;
+    memmove_plt_alt2(v12, v6, v3 - v6);
+    v2 = a1[2];
+    v4 = (signed __int64)(a1[3] - v2) >> 3;
   }
 LABEL_11:
-  if (a2 > v11) {
-    SdkRoutine_84c1f0("libc++abi: shrinkToSize() can't expand!");
+  if (a2 > v4) {
+    SdkRoutine_84c1f0_alt2((__int64)"libc++abi: shrinkToSize() can't expand!");
   }
-  a1[3] = v9 + 8 * a2;
-  return v19;
+  *((_QWORD*)&result + 1) = (v3 - v6) >> 3;
+  *(_QWORD*)&result = v12;
+  a1[3] = v2 + 8 * a2;
+  return result;
 }
 
 __int64 anonymous_itanium_demangle_AbstractManglingParser_make_8364d0(

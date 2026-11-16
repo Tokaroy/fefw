@@ -697,6 +697,9 @@ __int64 ProcFastTravelMenu_Unknown92(__int64 a1)
 
 __int64 game_hub_anonymous_ProcFastTravelMenu_ZRCall(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   unsigned int v3;
   int v5;
   int v6;
@@ -705,10 +708,11 @@ __int64 game_hub_anonymous_ProcFastTravelMenu_ZRCall(__int64 a1)
   struct {
     _QWORD v11[4];
     _QWORD* v12;
-    char gap40_[8];
+  } v11_;
+  struct {
     _QWORD v13[4];
     _QWORD* v14;
-  } f_;
+  } v13_;
 
   if (game_GameModeData_instance_ == 0) {
     return 0;
@@ -727,7 +731,7 @@ __int64 game_hub_anonymous_ProcFastTravelMenu_ZRCall(__int64 a1)
     else if (v3 == 1) {
       v6 = *(unsigned __int8*)(game_GameModeData_instance_ + 15);
       if ((unsigned int)(v6 - 2) >= 3) {
-        if (v6 == 1 && v5 <= 2) {
+        if (v6 == 1 & v5 <= 2) {
           return 0;
         }
       }
@@ -735,34 +739,34 @@ __int64 game_hub_anonymous_ProcFastTravelMenu_ZRCall(__int64 a1)
         return 0;
       }
     }
-    f_.v11[0] = GameData_2082b88;
-    f_.v13[0] = GameData_2082b88;
-    f_.v12 = f_.v11;
-    f_.v14 = f_.v13;
-    GameRoutine_654050(f_.v13, (_QWORD*)(a1 + 288));
-    if (f_.v14 == f_.v13) {
+    v11_.v11[0] = GameData_2082b88;
+    v13_.v13[0] = GameData_2082b88;
+    v11_.v12 = v11_.v11;
+    v13_.v14 = v13_.v13;
+    GameRoutine_654050(v13_.v13, (_QWORD*)(a1 + 288));
+    if (v13_.v14 == v13_.v13) {
       v9 = 32;
     }
     else {
-      if (f_.v14 == nullptr) {
+      if (v13_.v14 == nullptr) {
         goto LABEL_21;
       }
       v9 = 40;
     }
-    (*(void (**)(__int64))(*f_.v14 + v9))((__int64)f_.v14);
+    (*(void (**)(__int64))(*v13_.v14 + v9))((__int64)v13_.v14);
   LABEL_21:
-    if (f_.v12 == f_.v11) {
+    if (v11_.v12 == v11_.v11) {
       v10 = 32;
     }
     else {
-      if (f_.v12 == nullptr) {
+      if (v11_.v12 == nullptr) {
       LABEL_26:
         GmapSpotList_167b840(a1, 0, 0);
         return 9;
       }
       v10 = 40;
     }
-    (*(void (**)(__int64))(*f_.v12 + v10))((__int64)f_.v12);
+    (*(void (**)(__int64))(*v11_.v12 + v10))((__int64)v11_.v12);
     goto LABEL_26;
   }
   return v3;

@@ -139,6 +139,50 @@ __attribute__((swiftcall)) void nerd_gyro_pointing_70ace0(PSEUDO_X8, __int64,
 __attribute__((swiftcall)) void nerd_gyro_pointing_720480(PSEUDO_X8, __int64*,
                                                           float*);
 __int64 math_711380(__int64*);
+__int64 SdkRoutine_879cb0_alt1(__int64, unsigned __int64, __int64,
+                               unsigned __int64, unsigned __int64);
+__int64 SdkRoutine_879f80_alt1();
+__int64 SdkRoutine_879f90_alt1();
+__int64 SdkRoutine_879fa0_alt1();
+__int64 SdkRoutine_879fb0_alt1(__int64, __int64, __int64, __int64, __int64);
+__int64 SdkRoutine_879fd0_alt1(__int64, __int64, __int64, __int64, __int64);
+__int64 SdkRoutine_879fe0_alt1(__int64, __int64, __int64, __int64, __int64,
+                               float);
+__int64 SdkRoutine_87a000_alt1(__int64, __int64, __int64, __int64, __int64);
+__int64 SdkRoutine_87a020_alt1(__int64, __int64, __int64, __int64, __int64);
+__int64 SdkRoutine_87a050_alt1(__int64, __int64, __int64, __int64, __int64,
+                               float);
+__int64 memcpy_plt_alt1(__int64, __int64, unsigned __int64);
+__int64 memset_plt_alt2(__int64, int, unsigned __int64);
+__int64 nerd_gyro_pointing_GyroPointingCore_Recover_plt_alt1(__int64, bool);
+__int64
+nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate_plt_alt1(
+    __int64, __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddRelativeRotationVariable_plt_alt1(
+    __int64, __int64, __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddUnbiasedGyrVariable_plt_alt1(
+    __int64, __int64, __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances_plt_alt1(
+    __int64, float);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt_alt1(__int64);
+__int64 nerd_gyro_pointing_GyroPointingKalmanFilter_PushParameterState_plt_alt1(
+    __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveRelativeRotationVariable_plt_alt1(
+    __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveUnbiasedGyrVariable_plt_alt1(
+    __int64);
+__int64
+nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates_plt_alt1(
+    __int64);
+void math_711380_alt1(__int64*);
+void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_plt_alt1(
+    __int64, float, float, float, float);
 
 void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                                                __int64 a2)
@@ -1123,14 +1167,16 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v52;
   float v53;
   char v54;
+  __int64* v55;
   __int64* v56;
+  __int64 v57;
   __int64* v58;
   __int64 v59;
   __int64* v60;
   __int64 v61;
-  __int64* v62;
+  _BYTE* v62;
   __int64 v63;
-  _BYTE* v64;
+  __int64 v64;
   __int64 v65;
   __int64 v66;
   __int64 v67;
@@ -1138,9 +1184,9 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   __int64 v69;
   __int64 v70;
   __int64 v71;
-  __int64 v72;
+  _BYTE* v72;
   __int64 v73;
-  _BYTE* v74;
+  __int64 v74;
   __int64 v75;
   __int64 v76;
   __int64 v77;
@@ -1148,166 +1194,166 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   __int64 v79;
   __int64 v80;
   __int64 v81;
-  __int64 v82;
-  __int64 v83;
+  float v82;
+  float* v83;
   float v84;
-  float* v85;
+  float v85;
   float v86;
-  float v87;
-  float v88;
-  __int64 v89;
+  __int64 v87;
+  __int64 v88;
+  __int64* v89;
   __int64 v90;
   __int64* v91;
   __int64 v92;
-  __int64* v93;
-  __int64 v94;
-  __int64 v95;
-  float v96;
-  __int64* v97;
-  __int64 v98;
+  __int64 v93;
+  float v94;
+  __int64* v95;
+  __int64 v96;
+  float v97;
+  __int64* v98;
   float v99;
   __int64* v100;
-  float v101;
-  __int64* v102;
-  __int64* v103;
-  __int64 v104;
-  float v105;
-  __int64* v106;
-  __int64* v107;
-  __int64 v108;
-  float v109;
-  __int64* v110;
-  __int64* v111;
-  __int64 v112;
+  __int64* v101;
+  __int64 v102;
+  float v103;
+  __int64* v104;
+  __int64* v105;
+  __int64 v106;
+  float v107;
+  __int64* v108;
+  __int64* v109;
+  __int64 v110;
+  float v111;
+  float v112;
   float v113;
   float v114;
-  float v115;
-  float v116;
-  bool v117;
-  char v118;
-  float v119;
-  __int64 v120;
-  __int64 v121;
+  bool v115;
+  char v116;
+  float v117;
+  __int64 v118;
+  __int64 v119;
+  float v120;
+  float v121;
   float v122;
   float v123;
-  float v124;
+  char v124;
   float v125;
-  char v126;
-  float v127;
-  __int64* v128;
-  __int64 v129;
+  __int64* v126;
+  __int64 v127;
+  float v128;
+  float v129;
   float v130;
   float v131;
   float v132;
   float v133;
-  float v134;
+  char v134;
   float v135;
-  char v136;
-  float v137;
-  __int64* v138;
+  __int64* v136;
+  __int64 v137;
+  float v138;
   __int64 v139;
-  float v140;
-  float v141;
+  __int64 v140;
+  __int64 v141;
   float v142;
-  __int64 v143;
-  char v144;
+  float v143;
+  __int64 v144;
   __int64 v145;
-  float v146;
-  char v147;
-  __int64 v148;
-  __int64 v149;
-  float v150;
-  float v151;
-  __int64 v152;
-  __int64 v153;
-  char v154;
-  float v155;
+  char v146;
+  float v147;
+  char v148;
+  float v149;
+  __int64 v150;
+  __int64 v151;
+  float v152;
+  float v153;
+  __int64 v154;
+  __int64 v155;
   char v156;
   float v157;
-  __int64 v158;
-  __int64 v159;
-  float v160;
-  float v161;
+  char v158;
+  float v159;
+  __int64 v160;
+  __int64 v161;
   __int64 v162;
   __int64 v163;
-  char v164;
-  float v165;
-  char v166;
-  float v167;
-  __int64 v168;
-  __int64 v169;
-  __int64 v170;
+  __int64 v164;
+  __int64 v165;
+  __int64 v166;
+  __int64 v167;
+  bool v168;
+  float v169;
+  char v170;
   __int64 v171;
   __int64 v172;
   __int64 v173;
-  __int64 v174;
-  __int64 v175;
-  bool v176;
-  float v177;
+  float v174;
+  float v175;
+  float v176;
+  bool v177;
   char v178;
-  __int64 v179;
-  __int64 v180;
+  float v179;
+  char v180;
   __int64 v181;
-  float v182;
+  __int64 v182;
   float v183;
   float v184;
-  bool v185;
-  char v186;
+  float v185;
+  float v186;
   float v187;
-  char v188;
-  __int64 v189;
-  __int64 v190;
+  float v188;
+  bool v189;
+  char v190;
   float v191;
-  float v192;
-  float v193;
-  float v194;
-  float v195;
-  float v196;
-  bool v197;
-  char v198;
-  float v199;
-  char v200;
-  __int64 v201;
-  __int64 v202;
-  __int64 v203;
+  char v192;
+  __int64 v193;
+  __int64 v194;
+  __int64 v195;
+  __int64 v196;
+  float v197;
+  __int64* v198;
+  __int64 v199;
+  __int64 v200;
+  float v201;
+  float v202;
+  __int64* v203;
   __int64 v204;
-  float v205;
-  __int64* v206;
+  __int64 v205;
+  float v206;
   __int64 v207;
   __int64 v208;
-  float v209;
+  __int64 v209;
   float v210;
-  __int64* v211;
-  __int64 v212;
-  __int64 v213;
+  __int64 v211;
+  float v212;
+  float v213;
   float v214;
-  __int64 v215;
-  __int64 v216;
-  __int64 v217;
+  float v215;
+  float v216;
+  float v217;
   float v218;
-  __int64 v219;
+  float v219;
   float v220;
   float v221;
   float v222;
   float v223;
   float v224;
   float v225;
-  float v226;
-  float v227;
-  float v228;
-  float v229;
-  float v230;
-  float v231;
-  float v232;
-  float v233;
+  int v226;
+  _DWORD* v227;
+  int v228;
+  __int64 v229;
+  __int64 v230;
+  int v231;
+  __int64 v232;
+  __int64 v233;
   int v234;
-  _DWORD* v235;
+  int v235;
   int v236;
-  __int64 v237;
-  __int64 v238;
+  int v237;
+  int v238;
   int v239;
-  __int64 v240;
-  __int64 v241;
+  int v240;
+  int v241;
   int v242;
   int v243;
   int v244;
@@ -1317,27 +1363,27 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   int v248;
   int v249;
   int v250;
-  int v251;
-  int v252;
-  int v253;
-  int v254;
-  int v255;
-  int v256;
-  int v257;
-  int v258;
-  __int64* v259;
-  __int64 v260;
-  unsigned __int64 v261;
-  __int64* v262;
-  __int64 v263;
-  bool v264;
-  __int64* v265;
-  unsigned __int64* v266;
-  float* v267;
-  unsigned __int64 v268;
-  __int64 v269;
+  __int64* v251;
+  __int64 v252;
+  unsigned __int64 v253;
+  __int64* v254;
+  __int64 v255;
+  bool v256;
+  __int64* v257;
+  unsigned __int64* v258;
+  float* v259;
+  unsigned __int64 v260;
+  __int64 v261;
+  float v262;
+  float* v263;
+  float v264;
+  float v265;
+  float v266;
+  float v267;
+  float v268;
+  float v269;
   float v270;
-  float* v271;
+  float v271;
   float v272;
   float v273;
   float v274;
@@ -1356,237 +1402,239 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v287;
   float v288;
   float v289;
-  float v290;
-  float v291;
-  float v292;
+  __int64 v290;
+  __int64 v291;
+  __int64 v292;
   float v293;
   float v294;
   float v295;
-  float v296;
-  float v297;
-  __int64 v298;
+  __int64* v296;
+  __int64 v297;
+  __int64* v298;
   __int64 v299;
-  __int64 v300;
-  float v301;
-  float v302;
-  float v303;
+  __int64* v300;
+  __int64 v301;
+  __int64 v302;
+  __int64 v303;
   __int64* v304;
   __int64 v305;
-  __int64* v306;
+  __int64 v306;
   __int64 v307;
-  __int64* v308;
-  __int64 v309;
+  unsigned __int64 v308;
+  float* v309;
   __int64 v310;
-  __int64 v311;
-  __int64* v312;
-  __int64 v313;
-  __int64 v314;
-  __int64 v315;
-  unsigned __int64 v316;
-  float* v317;
-  __int64 v318;
+  float v311;
+  float* v312;
+  float v313;
+  float v314;
+  float v315;
+  float v316;
+  float v317;
+  float v318;
   float v319;
-  float* v320;
-  float v321;
-  float v322;
-  float v323;
-  float v324;
-  float v325;
-  float v326;
-  float v327;
-  unsigned __int64 v328;
-  char* v329;
-  __int64 v330;
-  char* v331;
-  __int64 v332;
-  __int64 v333;
-  unsigned __int64 v334;
-  float* v335;
-  __int64 v336;
+  unsigned __int64 v320;
+  char* v321;
+  __int64 v322;
+  char* v323;
+  __int64 v324;
+  __int64 v325;
+  unsigned __int64 v326;
+  float* v327;
+  __int64 v328;
+  float v329;
+  float* v330;
+  float v331;
+  float v332;
+  float v333;
+  float v334;
+  float v335;
+  float v336;
   float v337;
-  float* v338;
-  float v339;
-  float v340;
-  float v341;
-  float v342;
-  float v343;
-  float v344;
+  unsigned __int64 v338;
+  char* v339;
+  __int64 v340;
+  char* v341;
+  unsigned __int64 v342;
+  float* v343;
+  __int64 v344;
   float v345;
-  unsigned __int64 v346;
-  char* v347;
-  __int64 v348;
-  char* v349;
-  unsigned __int64 v350;
-  float* v351;
-  __int64 v352;
+  float* v346;
+  float v347;
+  float v348;
+  float v349;
+  float v350;
+  float v351;
+  float v352;
   float v353;
-  float* v354;
+  float v354;
   float v355;
   float v356;
   float v357;
   float v358;
   float v359;
-  float v360;
-  float v361;
+  char v360;
+  unsigned __int64 v361;
   float v362;
-  float v363;
-  float v364;
+  __int64 v363;
+  __int64 v364;
   float v365;
   float v366;
   float v367;
-  char v369;
+  float v368;
+  unsigned __int64 v369;
   unsigned __int64 v370;
-  float v371;
+  __int64 v371;
   __int64 v372;
-  __int64 v373;
-  float v374;
-  float v375;
-  float v376;
-  float v377;
-  unsigned __int64 v379;
-  unsigned __int64 v380;
-  __int64 v381;
+  _BYTE* v373;
+  __int64* v374;
+  char* v375;
+  char* v376;
+  __int64 v377;
+  __int64 v378;
+  __int64 v379;
+  __int64 v380;
+  char* v381;
   __int64 v382;
-  _BYTE* v383;
-  __int64* v384;
-  char* v385;
-  char* v386;
+  char* v383;
+  __int64 v384;
+  __int64* v385;
+  _BYTE* v386;
   __int64 v387;
-  __int64 v388;
+  char* v388;
   __int64 v389;
   __int64 v390;
-  char* v391;
+  __int64 v391;
   __int64 v392;
-  char* v393;
-  __int64 v394;
-  __int64* v395;
-  _BYTE* v396;
+  unsigned __int64 v393;
+  unsigned __int64 v394;
+  __int64 v395;
+  __int64 v396;
   __int64 v397;
-  char* v398;
+  __int64 v398;
   __int64 v399;
   __int64 v400;
-  __int64 v401;
+  __int64* v401;
   __int64 v402;
-  unsigned __int64 v403;
-  unsigned __int64 v404;
+  __int64 v403;
+  __int64* v404;
   __int64 v405;
   __int64 v406;
-  __int64 v407;
-  __int64 v408;
-  __int64 v409;
-  __int64 v410;
-  __int64* v411;
+  float v407;
+  float v408;
+  float v409;
+  float v410;
+  __int64 v411;
   __int64 v412;
   __int64 v413;
-  __int64* v414;
+  float v414;
   __int64 v415;
   __int64 v416;
-  float v417;
+  __int64 v417;
   float v418;
-  float v419;
-  float v420;
+  __int64 v419;
+  __int64 v420;
   __int64 v421;
-  __int64 v422;
-  __int64 v423;
-  float v424;
-  __int64 v425;
-  __int64 v426;
-  __int64 v427;
-  float v428;
+  int v422;
+  int v423;
+  int v424;
+  float v425;
+  unsigned int v426;
+  unsigned int v427;
+  unsigned __int64 v428;
   __int64 v429;
   __int64 v430;
-  __int64 v431;
-  int v432;
-  int v433;
-  int v434;
-  float v435;
-  unsigned int v436;
-  unsigned int v437;
-  unsigned __int64 v438;
+  unsigned __int64 v431;
+  __int64* v432;
+  __int64 v433;
+  __int64* v434;
+  __int64 v435;
+  __int64 v436;
+  unsigned __int64 v437;
+  float* v438;
   __int64 v439;
-  __int64 v440;
-  unsigned __int64 v441;
-  __int64* v442;
-  __int64 v443;
-  __int64* v444;
-  __int64 v445;
-  __int64 v446;
-  unsigned __int64 v447;
-  float* v448;
-  __int64 v449;
-  float v450;
-  float* v451;
-  float v452;
-  float v453;
-  float v454;
+  float v440;
+  float* v441;
+  float v442;
+  float v443;
+  float v444;
+  float v445;
+  unsigned __int64 v446;
+  char* v447;
+  __int64 v448;
+  char* v449;
+  __int64 v450;
+  __int64 v451;
+  unsigned __int64 v452;
+  float* v453;
+  __int64 v454;
   float v455;
-  unsigned __int64 v456;
-  char* v457;
-  __int64 v458;
-  char* v459;
-  __int64 v460;
-  __int64 v461;
-  unsigned __int64 v462;
-  float* v463;
-  __int64 v464;
-  float v465;
+  float* v456;
+  float v457;
+  float v458;
+  float v459;
+  float v460;
+  unsigned __int64 v461;
+  char* v462;
+  __int64 v463;
+  char* v464;
+  unsigned __int64 v465;
   float* v466;
-  float v467;
+  __int64 v467;
   float v468;
-  float v469;
+  float* v469;
   float v470;
-  unsigned __int64 v471;
-  char* v472;
-  __int64 v473;
-  char* v474;
-  unsigned __int64 v475;
-  float* v476;
+  float v471;
+  float v472;
+  float v473;
+  __int64 v474;
+  __int64 v475;
+  __int64 v476;
   __int64 v477;
   float v478;
-  float* v479;
-  float v480;
+  __int64 v479;
+  __int64 v480;
   float v481;
   float v482;
-  float v483;
+  __int64 v483;
   __int64 v484;
-  __int64 v485;
-  __int64 v486;
+  float v485;
+  float v486;
   __int64 v487;
   float v488;
-  __int64 v489;
-  __int64 v490;
-  float v491;
+  float v489;
+  float v490;
+  __int64 v491;
   float v492;
-  __int64 v493;
-  __int64 v494;
+  float v493;
+  float v494;
   float v495;
-  float v496;
-  __int64 v497;
+  __int64 v496;
+  float v497;
   float v498;
   float v499;
   float v500;
   __int64 v501;
   float v502;
-  float v503;
+  unsigned int v503;
   float v504;
   float v505;
-  __int64 v506;
+  float v506;
   float v507;
   float v508;
-  float v509;
-  float v510;
-  __int64 v511;
-  float v512;
-  unsigned int v513;
+  __int64 v509;
+  __int64 v510;
+  float v511;
+  unsigned int v512;
+  float v513;
   float v514;
   float v515;
   float v516;
   float v517;
   float v518;
-  __int64 v519;
-  __int64 v520;
+  float v519;
+  float v520;
   float v521;
-  unsigned int v522;
+  float v522;
   float v523;
   float v524;
   float v525;
@@ -1605,22 +1653,22 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v538;
   float v539;
   float v540;
-  float v541;
+  __int64 v541;
   float v542;
   float v543;
   float v544;
   float v545;
-  float v546;
+  __int64 v546;
   float v547;
   float v548;
   float v549;
   float v550;
-  __int64 v551;
+  float v551;
   float v552;
   float v553;
   float v554;
   float v555;
-  __int64 v556;
+  float v556;
   float v557;
   float v558;
   float v559;
@@ -1733,40 +1781,43 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v666;
   float v667;
   float v668;
-  float v669;
+  __int64 v669;
   float v670;
   float v671;
   float v672;
   float v673;
   float v674;
-  float v675;
-  float v676;
-  float v677;
-  float v678;
-  __int64 v679;
-  float v680;
-  float v681;
-  float v682;
-  float v683;
-  float v687;
-  __int64 v688;
-  __int64 v689;
-  unsigned __int64* v690;
-  __int64 v691;
-  _DWORD* v692;
-  int v693;
-  int v694;
-  int v695;
-  int v696;
-  int v697;
-  _BYTE* v698;
-  int* v699;
-  _DWORD* v700;
-  int v701;
-  float v702;
+  __int64 v675;
+  __int64 v676;
+  unsigned __int64* v677;
+  __int64 v678;
+  _DWORD* v679;
+  int v680;
+  int v681;
+  int v682;
+  int v683;
+  int v684;
+  _BYTE* v685;
+  int* v686;
+  _DWORD* v687;
+  int v688;
+  float v689;
+  float v690;
+  float v691;
+  __int64 v692;
+  float v693;
+  float v694;
+  float v695;
+  float v696;
+  float v697;
+  float v698;
+  float v699;
+  float v700;
+  float v701;
+  unsigned __int64 v702;
   float v703;
   float v704;
-  __int64 v705;
+  float v705;
   float v706;
   float v707;
   float v708;
@@ -1776,31 +1827,31 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v712;
   float v713;
   float v714;
-  unsigned __int64 v715;
+  float v715;
   float v716;
-  float v717;
+  __int64* v717;
   float v718;
   float v719;
-  float v720;
+  __int64 v720;
   float v721;
-  float v722;
+  char v722;
   float v723;
-  float v724;
-  float v725;
+  __int64 v724;
+  __int64 v725;
   float v726;
   float v727;
   float v728;
   float v729;
-  __int64* v730;
+  float v730;
   float v731;
   float v732;
-  __int64 v733;
+  float v733;
   float v734;
-  char v735;
+  float v735;
   float v736;
-  __int64 v737;
-  __int64 v738;
-  float v739;
+  float v737;
+  float v738;
+  __int64 v739;
   float v740;
   float v741;
   float v742;
@@ -1809,44 +1860,44 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v745;
   float v746;
   float v747;
-  float v748;
+  unsigned int v748;
   float v749;
   float v750;
   float v751;
-  __int64 v752;
+  float v752;
   float v753;
-  float v754;
-  float v755;
+  unsigned int v754;
+  __int64 v755;
   float v756;
   float v757;
   float v758;
   float v759;
   float v760;
-  unsigned int v761;
-  float v762;
+  float v761;
+  __int64* v762;
   float v763;
   float v764;
   float v765;
   float v766;
-  unsigned int v767;
-  __int64 v768;
+  __int64 v767;
+  float v768;
   float v769;
   float v770;
   float v771;
-  float v772;
+  __int64 v772;
   float v773;
   float v774;
-  __int64* v775;
+  float v775;
   float v776;
   float v777;
   float v778;
   float v779;
-  __int64 v780;
+  float v780;
   float v781;
   float v782;
   float v783;
   float v784;
-  __int64 v785;
+  float v785;
   float v786;
   float v787;
   float v788;
@@ -1860,98 +1911,98 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   float v796;
   float v797;
   float v798;
-  float v799;
+  unsigned int v799;
   float v800;
   float v801;
   float v802;
   float v803;
   float v804;
-  float v805;
-  float v806;
+  float v805[2];
+  __int64 v806;
   float v807;
-  float v808;
-  float v809;
+  __int64 v808;
+  int v809;
   float v810;
-  float v811;
-  unsigned int v812;
-  float v813;
-  float v814;
-  float v815;
-  float v816;
-  float v817;
-  float v818[2];
-  __int64 v819;
-  float v820;
-  __int64 v821;
-  int v822;
-  float v823;
-  __int64 v824;
-  int v825;
-  float v826[9];
+  __int64 v811;
+  int v812;
+  float v813[9];
   struct {
+    __int64 v814;
+    __int64 v815;
+    __int64 v816;
+    __int64 v817;
+    float v818;
+  } v814_;
+  _QWORD v819[3];
+  struct {
+    unsigned __int64 v820;
+    unsigned __int64 v821;
+    __int64 v822;
+    __int64 v823;
+    __int64 v824;
+    float v825;
+    int v826;
     __int64 v827;
     __int64 v828;
-    __int64 v829;
-    __int64 v830;
-    float v831;
-  } v827_;
-  _QWORD v832[3];
+    float v829;
+    int v830;
+  } v820_;
+  struct {
+    unsigned __int64 v831;
+    unsigned __int64 v832;
+  } v831_;
   struct {
     unsigned __int64 v833;
-    unsigned __int64 v834;
+    __int64 v834;
     __int64 v835;
     __int64 v836;
     __int64 v837;
-    float v838;
-    int v839;
-    __int64 v840;
-    __int64 v841;
-    float v842;
-    int v843;
+    __int64 v838;
+    __int64 v839;
   } v833_;
-  struct {
-    unsigned __int64 v844;
-    unsigned __int64 v845;
-  } v844_;
-  struct {
-    unsigned __int64 v846;
-    __int64 v847;
-    __int64 v848;
-    __int64 v849;
-    __int64 v850;
-    __int64 v851;
-    __int64 v852;
-  } v846_;
+  __int64 v840;
+  __int64 v841;
+  __int64 v842;
+  __int64* v843;
+  __int64 v844;
+  __int64 v845;
+  __int64* v846;
+  __int64 v847;
+  __int64 v848;
+  __int64 v849;
+  __int64 v850;
+  unsigned int v851;
+  __int64 v852;
   __int64 v853;
-  __int64 v854;
+  unsigned int v854;
   __int64 v855;
-  __int64* v856;
-  __int64 v857;
+  __int64 v856;
+  unsigned int v857;
   __int64 v858;
-  __int64* v859;
-  __int64 v860;
+  __int64 v859;
+  unsigned int v860;
   __int64 v861;
   __int64 v862;
-  __int64 v863;
-  unsigned int v864;
+  unsigned int v863;
+  __int64 v864;
   __int64 v865;
-  __int64 v866;
-  unsigned int v867;
+  unsigned int v866;
+  __int64 v867[2];
   __int64 v868;
-  __int64 v869;
-  unsigned int v870;
+  __int128 v869;
+  __int64 v870;
   __int64 v871;
   __int64 v872;
-  unsigned int v873;
+  __int64 v873;
   __int64 v874;
   __int64 v875;
-  unsigned int v876;
+  __int64 v876;
   __int64 v877;
   __int64 v878;
-  unsigned int v879;
-  __int64 v880[2];
+  __int64 v879;
+  __int64 v880;
   __int64 v881;
-  __int128 v882;
+  __int64 v882;
   __int64 v883;
   __int64 v884;
   __int64 v885;
@@ -1974,9 +2025,9 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   __int64 v902;
   __int64 v903;
   __int64 v904;
-  __int64 v905;
-  __int64 v906;
-  __int64 v907;
+  _BYTE v905[184];
+  __int64* v906;
+  unsigned __int64 v907;
   __int64 v908;
   __int64 v909;
   __int64 v910;
@@ -1987,138 +2038,125 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
   __int64 v915;
   __int64 v916;
   __int64 v917;
-  _BYTE v918[184];
-  __int64* v919;
-  unsigned __int64 v920;
+  __int64 v918;
+  __int64 v919;
+  __int64 v920;
   __int64 v921;
   __int64 v922;
   __int64 v923;
   __int64 v924;
   __int64 v925;
   __int64 v926;
-  __int64 v927;
+  __int64* v927;
   __int64 v928;
   __int64 v929;
-  __int64 v930;
+  __int64* v930;
   __int64 v931;
   __int64 v932;
-  __int64 v933;
+  __int64* v933;
   __int64 v934;
   __int64 v935;
   __int64 v936;
   __int64 v937;
   __int64 v938;
   __int64 v939;
-  __int64* v940;
+  __int64 v940;
   __int64 v941;
   __int64 v942;
-  __int64* v943;
+  __int64 v943;
   __int64 v944;
   __int64 v945;
-  __int64* v946;
+  __int64 v946;
   __int64 v947;
   __int64 v948;
-  __int64 v949;
+  __int64* v949;
   __int64 v950;
   __int64 v951;
-  __int64 v952;
+  __int64* v952;
   __int64 v953;
   __int64 v954;
-  __int64 v955;
+  __int64* v955;
   __int64 v956;
   __int64 v957;
   __int64 v958;
   __int64 v959;
   __int64 v960;
   __int64 v961;
-  __int64* v962;
+  __int64 v962;
   __int64 v963;
   __int64 v964;
-  __int64* v965;
+  __int64 v965;
   __int64 v966;
   __int64 v967;
-  __int64* v968;
+  __int64 v968;
   __int64 v969;
   __int64 v970;
   __int64 v971;
   __int64 v972;
   __int64 v973;
   __int64 v974;
-  __int64 v975;
-  __int64 v976;
+  float v975;
+  __int16 v976;
   __int64 v977;
-  __int64 v978;
-  __int64 v979;
+  float v978;
+  __int16 v979;
   __int64 v980;
-  __int64 v981;
-  __int64 v982;
+  float v981;
+  __int16 v982;
   __int64 v983;
-  __int64 v984;
-  __int64 v985;
+  float v984;
+  __int16 v985;
   __int64 v986;
-  __int64 v987;
-  float v988;
-  __int16 v989;
-  __int64 v990;
-  float v991;
-  __int16 v992;
-  __int64 v993;
-  float v994;
-  __int16 v995;
-  __int64 v996;
-  float v997;
+  int v987;
+  __int16 v988;
+  __int64 v989;
+  int v990;
+  __int16 v991;
+  __int64 v992;
+  int v993;
+  __int16 v994;
+  __int64 v995;
+  __int16 v996;
+  __int64 v997;
   __int16 v998;
   __int64 v999;
-  int v1000;
-  __int16 v1001;
-  __int64 v1002;
-  int v1003;
+  __int16 v1000;
+  __int64 v1001;
+  __int16 v1002;
+  unsigned __int64 v1003;
   __int16 v1004;
-  __int64 v1005;
-  int v1006;
-  __int16 v1007;
+  unsigned __int64 v1005;
+  __int16 v1006;
+  unsigned __int64 v1007;
   __int64 v1008;
-  __int16 v1009;
-  __int64 v1010;
-  __int16 v1011;
+  _QWORD v1009[4];
+  int v1010;
+  _QWORD v1011[10];
   __int64 v1012;
-  __int16 v1013;
+  __int64 v1013;
   __int64 v1014;
-  __int16 v1015;
-  unsigned __int64 v1016;
-  __int16 v1017;
-  unsigned __int64 v1018;
-  __int16 v1019;
-  unsigned __int64 v1020;
+  __int64 v1015;
+  __int64 v1016[2];
+  _QWORD v1017[6];
+  __int64 v1018;
+  __int64 v1019;
+  __int64 v1020;
   __int64 v1021;
-  _QWORD v1022[4];
-  int v1023;
-  _QWORD v1024[10];
+  __int64 v1022;
+  __int64 v1023;
+  __int64 v1024;
   __int64 v1025;
   __int64 v1026;
   __int64 v1027;
   __int64 v1028;
-  __int64 v1029[2];
-  _QWORD v1030[6];
+  __int64 v1029;
+  __int64 v1030;
   __int64 v1031;
   __int64 v1032;
   __int64 v1033;
   __int64 v1034;
   __int64 v1035;
   __int64 v1036;
-  __int64 v1037;
-  __int64 v1038;
-  __int64 v1039;
-  __int64 v1040;
-  __int64 v1041;
-  __int64 v1042;
-  __int64 v1043;
-  __int64 v1044;
-  __int64 v1045;
-  __int64 v1046;
-  __int64 v1047;
-  __int64 v1048;
-  __int64 v1049;
 
   v1 = this_ + 12288;
   if (*(_BYTE*)(this_ + 15552) == 1) {
@@ -2129,63 +2167,64 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
     v6 = *(float*)(this_ + 15284);
     v7 = *(float*)(this_ + 15280);
     *(_BYTE*)(this_ + 15552) = 0;
-    v988 = 0x0.0p+0f;
-    v987 = 0;
-    v986 = 0;
-    v985 = 0;
-    v984 = 0;
-    v1025 = v2;
+    v975 = 0x0.0p+0f;
+    v974 = 0;
+    v973 = 0;
+    v972 = 0;
+    v971 = 0;
+    v1012 = v2;
     v8 = *(_QWORD*)(this_ + 15536);
-    v1026 = v4;
+    v1013 = v4;
     v9 = *(_QWORD*)(this_ + 15544);
-    v815 = v3;
+    v802 = v3;
     v10 = *(float*)(this_ + 15412);
-    v1027 = v8;
+    v1014 = v8;
     v11 = *(_QWORD*)(this_ + 15488);
-    v1028 = v9;
+    v1015 = v9;
     v12 = *(_QWORD*)(this_ + 15496);
-    v813 = v10;
+    v800 = v10;
     v13 = *(float*)(this_ + 15416);
-    v1024[6] = v11;
+    v1011[6] = v11;
     v14 = *(_QWORD*)(this_ + 15504);
-    v1024[7] = v12;
+    v1011[7] = v12;
     v15 = *(_QWORD*)(this_ + 15512);
-    v805 = v13;
+    v792 = v13;
     v16 = *(float*)(this_ + 15276);
-    v1024[8] = v14;
+    v1011[8] = v14;
     v17 = *(_QWORD*)(this_ + 15456);
-    v1024[9] = v15;
-    v1024[2] = v17;
-    v817 = v16;
+    v1011[9] = v15;
+    v1011[2] = v17;
+    v804 = v16;
     v18 = *(float*)(this_ + 15288);
-    v1024[3] = *(_QWORD*)(this_ + 15464);
-    v741 = v18;
-    v744 = v6;
-    v1024[4] = *(_QWORD*)(this_ + 15472);
-    v1024[5] = *(_QWORD*)(this_ + 15480);
-    v1024[0] = *(_QWORD*)(this_ + 15440);
-    v1024[1] = *(_QWORD*)(this_ + 15448);
-    v1022[1] = *(_QWORD*)(this_ + 8464);
-    v1022[2] = *(_QWORD*)(this_ + 8472);
-    v1022[3] = *(_QWORD*)(this_ + 8480);
-    v1023 = *(_DWORD*)(this_ + 8488);
-    v1022[0] = *(_QWORD*)(this_ + 8456);
-    if ((SdkRoutine_879cb0(v1022, 3, &v984, 3, 3) & 1) == 0) {
-      v1023 = 0;
-      memset(v1022, 0, sizeof(v1022));
+    v1011[3] = *(_QWORD*)(this_ + 15464);
+    v728 = v18;
+    v731 = v6;
+    v1011[4] = *(_QWORD*)(this_ + 15472);
+    v1011[5] = *(_QWORD*)(this_ + 15480);
+    v1011[0] = *(_QWORD*)(this_ + 15440);
+    v1011[1] = *(_QWORD*)(this_ + 15448);
+    v1009[1] = *(_QWORD*)(this_ + 8464);
+    v1009[2] = *(_QWORD*)(this_ + 8472);
+    v1009[3] = *(_QWORD*)(this_ + 8480);
+    v1010 = *(_DWORD*)(this_ + 8488);
+    v1009[0] = *(_QWORD*)(this_ + 8456);
+    if ((SdkRoutine_879cb0_alt1((__int64)v1009, 3u, (__int64)&v971, 3u, 3u) &
+         1) == 0) {
+      v1010 = 0;
+      memset(v1009, 0, sizeof(v1009));
     }
     v19 = *(float*)(v5 + 15304);
-    v20 = v984;
-    v21 = *(float*)&v985;
-    v22 = *(float*)&v986;
+    v20 = v971;
+    v21 = *(float*)&v972;
+    v22 = *(float*)&v973;
     v23 = *(float*)(v5 + 15292);
     v24 = *(float*)(v5 + 15296);
     v25 = *(float*)(v5 + 15300);
-    v747 = v7;
-    v809 = *((float*)&v985 + 1);
-    v801 = *((float*)&v986 + 1);
-    v26 = v987;
-    v794 = v988;
+    v734 = v7;
+    v796 = *((float*)&v972 + 1);
+    v788 = *((float*)&v973 + 1);
+    v26 = v974;
+    v781 = v975;
     if (v19 < 0x0.0p+0f) {
       v23 = -v23;
       v24 = -v24;
@@ -2204,11 +2243,11 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
     v33 = 0x0.0p+0f;
     v34 = *(float*)(v5 + 15276);
     v35 =
-        (float)((float)((float)(v809 * v30) + 0x0.0p+0f) + (float)(v22 * v31)) +
-        (float)(v801 * v32);
+        (float)((float)((float)(v796 * v30) + 0x0.0p+0f) + (float)(v22 * v31)) +
+        (float)(v788 * v32);
     v36 = (float)((float)((float)(*(float*)&v26 * v30) + 0x0.0p+0f) +
                   (float)(*((float*)&v26 + 1) * v31)) +
-          (float)(v794 * v32);
+          (float)(v781 * v32);
     v37 = (float)((float)((float)((float)(*(float*)&v20 * v30) + 0x0.0p+0f) +
                           (float)(*((float*)&v20 + 1) * v31)) +
                   (float)(v21 * v32)) /
@@ -2228,43 +2267,43 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
     *(_QWORD*)(v5 + 15276) = 0;
     *(_QWORD*)(v5 + 15384) = 0;
     *(_DWORD*)(v5 + 15304) = 1065353216;
-    v797 = v40;
-    v795 = *(float*)(v5 + 15312);
-    v791 = *(float*)(v5 + 15316);
+    v784 = v40;
+    v782 = *(float*)(v5 + 15312);
+    v778 = *(float*)(v5 + 15316);
     v44 = *(float*)(v5 + 15320);
     *(_QWORD*)(v5 + 15308) = 0;
     *(_QWORD*)(v5 + 15316) = 0;
-    v788 = v44;
-    v786 = *(float*)(v5 + 15324);
-    v784 = *(float*)(v5 + 15328);
-    v782 = *(float*)(v5 + 15332);
+    v775 = v44;
+    v773 = *(float*)(v5 + 15324);
+    v771 = *(float*)(v5 + 15328);
+    v769 = *(float*)(v5 + 15332);
     v45 = *(float*)(v5 + 15336);
     *(_QWORD*)(v5 + 15324) = 0;
     *(_QWORD*)(v5 + 15332) = 0;
-    v781 = v45;
-    v779 = *(float*)(v5 + 15340);
-    v46 = v815 + v37;
-    v47 = v813 + v38;
-    v774 = v42;
-    v776 = *(float*)(v5 + 15344);
+    v768 = v45;
+    v766 = *(float*)(v5 + 15340);
+    v46 = v802 + v37;
+    v47 = v800 + v38;
+    v761 = v42;
+    v763 = *(float*)(v5 + 15344);
     v48 = *(float*)(v5 + 15360);
-    v49 = v805 + (float)(v36 / v34);
+    v49 = v792 + (float)(v36 / v34);
     v50 = *(float*)(v5 + 15348);
     v51 = *(float*)(v5 + 15352);
     *(_QWORD*)(v5 + 15340) = 0;
     *(_QWORD*)(v5 + 15348) = 0;
-    v777 = v48;
-    v770 = v51;
-    v772 = v50;
-    v799 = *(float*)(v5 + 15364);
+    v764 = v48;
+    v757 = v51;
+    v759 = v50;
+    v786 = *(float*)(v5 + 15364);
     v52 = *(float*)(v5 + 15368);
     *(_QWORD*)(v5 + 15356) = 0;
     *(_QWORD*)(v5 + 15364) = 0;
-    v802 = v52;
+    v789 = v52;
     v53 = *(float*)(v5 + 15372);
     *(_QWORD*)(v5 + 15372) = 0;
     *(_BYTE*)(v5 + 15380) = 0;
-    v806 = v53;
+    v793 = v53;
     if (!v41) {
       v54 = *(_BYTE*)(v1 + 3108);
       *(float*)(v5 + 15400) = v33;
@@ -2274,4401 +2313,4087 @@ __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_)
         *(_BYTE*)(v1 + 3108) = 1;
       }
     }
-    nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate_plt(v5,
-                                                                        v1024);
-    nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_plt(
-        v5, v46, v47, v49, v817);
-    memset_plt((void*)&v984, nullptr, 4096);
-    v56 = *(__int64**)(v5 + 8200);
-    v980 = 0;
-    v958 = 0;
-    v957 = 0;
-    v956 = 0;
-    v955 = 0;
-    v982 = 6;
-    v983 = 9;
-    v960 = 6;
-    v961 = 9;
-    v954 = 0;
-    v953 = 0;
-    v952 = 0;
-    v951 = 0;
-    v949 = 0;
-    v950 = 0;
-    v1021 = 0;
-    v962 = v56;
-    v963 = *(_QWORD*)(v5 + 8208);
-    v964 = *(_QWORD*)(v5 + 8216);
-    v965 = *(__int64**)(v5 + 8240);
-    v966 = *(_QWORD*)(v5 + 8248);
-    v967 = *(_QWORD*)(v5 + 8256);
-    v968 = *(__int64**)(v5 + 8280);
-    v969 = *(_QWORD*)(v5 + 8288);
-    v970 = *(_QWORD*)(v5 + 8296);
-    v971 = *(_QWORD*)(v5 + 8344);
-    v972 = *(_QWORD*)(v5 + 8352);
-    v973 = *(_QWORD*)(v5 + 8360);
-    v974 = *(_QWORD*)(v5 + 8368);
-    v975 = *(_QWORD*)(v5 + 8376);
-    v976 = *(_QWORD*)(v5 + 8384);
-    v977 = *(_QWORD*)(v5 + 8392);
-    v978 = *(_QWORD*)(v5 + 8400);
-    v979 = *(_QWORD*)(v5 + 8408);
-    v981 = 3;
-    v959 = 3;
-    memset_plt((void*)&v917, nullptr, 504);
-    SdkRoutine_879f80((void*)(v1029), &v984, &v949);
-    v58 = &v984 + 2 * v1021;
+    nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate_plt_alt1(
+        v5, (__int64)v1011);
+    nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_plt_alt1(
+        v5, v46, v47, v49, v804);
+    memset_plt_alt2((__int64)&v971, 0, 0x1000u);
+    v55 = *(__int64**)(v5 + 8200);
+    v967 = 0;
+    v945 = 0;
+    v944 = 0;
+    v943 = 0;
+    v942 = 0;
+    v969 = 6;
+    v970 = 9;
+    v947 = 6;
+    v948 = 9;
+    v941 = 0;
+    v940 = 0;
+    v939 = 0;
+    v938 = 0;
+    v936 = 0;
+    v937 = 0;
+    v1008 = 0;
+    v949 = v55;
+    v950 = *(_QWORD*)(v5 + 8208);
+    v951 = *(_QWORD*)(v5 + 8216);
+    v952 = *(__int64**)(v5 + 8240);
+    v953 = *(_QWORD*)(v5 + 8248);
+    v954 = *(_QWORD*)(v5 + 8256);
+    v955 = *(__int64**)(v5 + 8280);
+    v956 = *(_QWORD*)(v5 + 8288);
+    v957 = *(_QWORD*)(v5 + 8296);
+    v958 = *(_QWORD*)(v5 + 8344);
+    v959 = *(_QWORD*)(v5 + 8352);
+    v960 = *(_QWORD*)(v5 + 8360);
+    v961 = *(_QWORD*)(v5 + 8368);
+    v962 = *(_QWORD*)(v5 + 8376);
+    v963 = *(_QWORD*)(v5 + 8384);
+    v964 = *(_QWORD*)(v5 + 8392);
+    v965 = *(_QWORD*)(v5 + 8400);
+    v966 = *(_QWORD*)(v5 + 8408);
+    v968 = 3;
+    v946 = 3;
+    memset_plt_alt2((__int64)&v904, 0, 0x1F8u);
+    SdkRoutine_879f80_alt1();
+    v56 = &v971 + 2 * v1008;
+    *((_WORD*)v56 + 2) = 0;
+    v56[1] = 0;
+    v57 = v1008++;
+    v58 = &v971 + 2 * v1008;
     *((_WORD*)v58 + 2) = 0;
     v58[1] = 0;
-    v59 = v1021++;
-    v60 = &v984 + 2 * v1021;
+    v59 = v1008++;
+    v60 = &v971 + 2 * v1008;
     *((_WORD*)v60 + 2) = 0;
     v60[1] = 0;
-    v61 = v1021++;
-    v62 = &v984 + 2 * v1021;
-    *((_WORD*)v62 + 2) = 0;
-    v62[1] = 0;
-    v63 = v1021++;
-    memcpy_plt(&v917, v1029, 432);
-    v940 = &v984;
-    v941 = v59;
-    v64 = &v918[24 * v958 - 8];
-    v942 = 0;
-    v943 = &v984;
-    v944 = v61;
-    v945 = 0;
-    v946 = &v984;
-    v947 = v63;
-    v948 = 0;
-    v65 = *(_QWORD*)v64;
-    v67 = *((_QWORD*)v64 + 3);
-    v66 = *((_QWORD*)v64 + 4);
-    v69 = *((_QWORD*)v64 + 6);
-    v68 = *((_QWORD*)v64 + 7);
-    v762 = *((float*)v64 + 10);
-    v765 = *((float*)v64 + 4);
-    v756 = *(float*)(v5 + 8184);
-    v759 = *((float*)v64 + 16);
-    if (*(_QWORD*)v64 != 0) {
-      v70 = v65 + 16LL * *(_QWORD*)(v65 + 4096);
-      *(_WORD*)(v70 + 4) = (unsigned __int8)*((_QWORD*)v64 + 1);
-      *(_QWORD*)(v70 + 8) = 1065353216;
-      v733 = *(_QWORD*)(v65 + 4096);
-      *(_QWORD*)(v65 + 4096) = v733 + 1;
-      v754 = *(float*)(v5 + 8188);
-      if (v67 != 0) {
+    v61 = v1008++;
+    memcpy_plt_alt1((__int64)&v904, (__int64)v1016, 0x1B0u);
+    v927 = &v971;
+    v928 = v57;
+    v62 = &v905[24 * v945 - 8];
+    v929 = 0;
+    v930 = &v971;
+    v931 = v59;
+    v932 = 0;
+    v933 = &v971;
+    v934 = v61;
+    v935 = 0;
+    v63 = *(_QWORD*)v62;
+    v65 = *((_QWORD*)v62 + 3);
+    v64 = *((_QWORD*)v62 + 4);
+    v67 = *((_QWORD*)v62 + 6);
+    v66 = *((_QWORD*)v62 + 7);
+    v749 = *((float*)v62 + 10);
+    v752 = *((float*)v62 + 4);
+    v743 = *(float*)(v5 + 8184);
+    v746 = *((float*)v62 + 16);
+    if (*(_QWORD*)v62 != 0) {
+      v68 = v63 + 16LL * *(_QWORD*)(v63 + 4096);
+      *(_WORD*)(v68 + 4) = (unsigned __int8)*((_QWORD*)v62 + 1);
+      *(_QWORD*)(v68 + 8) = 1065353216;
+      v720 = *(_QWORD*)(v63 + 4096);
+      *(_QWORD*)(v63 + 4096) = v720 + 1;
+      v741 = *(float*)(v5 + 8188);
+      if (v65 != 0) {
       LABEL_13:
-        v71 = v67 + 16LL * *(_QWORD*)(v67 + 4096);
-        *(_BYTE*)(v71 + 4) = v66;
-        *(_BYTE*)(v71 + 5) = 0;
-        *(_QWORD*)(v71 + 8) = 1065353216;
-        v72 = *(_QWORD*)(v67 + 4096);
-        *(_QWORD*)(v67 + 4096) = v72 + 1;
+        v69 = v65 + 16LL * *(_QWORD*)(v65 + 4096);
+        *(_BYTE*)(v69 + 4) = v64;
+        *(_BYTE*)(v69 + 5) = 0;
+        *(_QWORD*)(v69 + 8) = 1065353216;
+        v70 = *(_QWORD*)(v65 + 4096);
+        *(_QWORD*)(v65 + 4096) = v70 + 1;
         goto LABEL_16;
       }
     }
     else {
-      LOBYTE(v733) = -1;
-      v754 = *(float*)(v5 + 8188);
-      if (v67 != 0) {
+      LOBYTE(v720) = -1;
+      v741 = *(float*)(v5 + 8188);
+      if (v65 != 0) {
         goto LABEL_13;
       }
     }
-    LOBYTE(v72) = -1;
+    LOBYTE(v70) = -1;
   LABEL_16:
-    v810 = v47;
-    v768 = v69;
-    v752 = v67;
-    v735 = v72;
-    v750 = *(float*)(v5 + 0x2000);
-    if (v69 != 0) {
-      v73 = v69 + 16LL * *(_QWORD*)(v69 + 4096);
-      *(_BYTE*)(v73 + 4) = v68;
-      *(_BYTE*)(v73 + 5) = 0;
-      *(_QWORD*)(v73 + 8) = 1065353216;
-      v737 = *(_QWORD*)(v69 + 4096);
-      *(_QWORD*)(v69 + 4096) = v737 + 1;
+    v797 = v47;
+    v755 = v67;
+    v739 = v65;
+    v722 = v70;
+    v737 = *(float*)(v5 + 0x2000);
+    if (v67 != 0) {
+      v71 = v67 + 16LL * *(_QWORD*)(v67 + 4096);
+      *(_BYTE*)(v71 + 4) = v66;
+      *(_BYTE*)(v71 + 5) = 0;
+      *(_QWORD*)(v71 + 8) = 1065353216;
+      v724 = *(_QWORD*)(v67 + 4096);
+      *(_QWORD*)(v67 + 4096) = v724 + 1;
     }
     else {
-      LOBYTE(v737) = -1;
+      LOBYTE(v724) = -1;
     }
-    v916 = 0;
-    v915 = 0;
-    v74 = &v918[24 * v959 - 8];
-    v914 = 0;
-    v913 = 0;
-    v912 = 0;
-    v911 = 0;
-    v910 = 0;
-    v909 = 0;
-    v908 = 0;
-    v907 = 0;
-    v75 = *(_QWORD*)v74;
-    v76 = *((_QWORD*)v74 + 1);
-    v77 = *((unsigned int*)v74 + 4);
-    v78 = *((_QWORD*)v74 + 3);
-    v79 = *((_QWORD*)v74 + 4);
-    v80 = *((unsigned int*)v74 + 10);
-    v81 = *((_QWORD*)v74 + 6);
-    v82 = *((_QWORD*)v74 + 7);
-    v83 = *((unsigned int*)v74 + 16);
-    v906 = 0;
-    v905 = 0;
-    v886 = v83;
-    v880[0] = v75;
-    v880[1] = v76;
-    v881 = v77;
-    *(_QWORD*)&v882 = v78;
-    *((_QWORD*)&v882 + 1) = v79;
-    v883 = v80;
-    v884 = v81;
-    v885 = v82;
-    kalman_transition_70e160((void*)((float*)v1029), (float*)v880);
-    nerd_gyro_pointing_720480((void*)((float*)&v905), v1029,
+    v903 = 0;
+    v902 = 0;
+    v72 = &v905[24 * v946 - 8];
+    v901 = 0;
+    v900 = 0;
+    v899 = 0;
+    v898 = 0;
+    v897 = 0;
+    v896 = 0;
+    v895 = 0;
+    v894 = 0;
+    v73 = *(_QWORD*)v72;
+    v74 = *((_QWORD*)v72 + 1);
+    v75 = *((unsigned int*)v72 + 4);
+    v76 = *((_QWORD*)v72 + 3);
+    v77 = *((_QWORD*)v72 + 4);
+    v78 = *((unsigned int*)v72 + 10);
+    v79 = *((_QWORD*)v72 + 6);
+    v80 = *((_QWORD*)v72 + 7);
+    v81 = *((unsigned int*)v72 + 16);
+    v893 = 0;
+    v892 = 0;
+    v873 = v81;
+    v867[0] = v73;
+    v867[1] = v74;
+    v868 = v75;
+    *(_QWORD*)&v869 = v76;
+    *((_QWORD*)&v869 + 1) = v77;
+    v870 = v78;
+    v871 = v79;
+    v872 = v80;
+    kalman_transition_70e160((void*)((float*)v1016), (float*)v867);
+    nerd_gyro_pointing_720480((void*)((float*)&v892), v1016,
                               (float*)(v5 + 8224));
-    v84 = *(float*)(v5 + 8264);
-    v816 = v46;
-    v85 = (float*)&v918[24 * v960 - 8];
-    v86 = v85[4];
-    v87 = v85[10];
-    v88 = v85[16];
-    v89 = *(_QWORD*)v85;
-    v91 = *((__int64**)v85 + 3);
-    v90 = *((_QWORD*)v85 + 4);
-    v93 = *((__int64**)v85 + 6);
-    v92 = *((_QWORD*)v85 + 7);
-    if (*(_QWORD*)v85 != 0) {
-      v94 = v89 + 16LL * *(_QWORD*)(v89 + 4096);
-      *(_WORD*)(v94 + 4) = (unsigned __int8)*((_QWORD*)v85 + 1);
-      v95 = *(_QWORD*)(v89 + 4096);
-      *(_QWORD*)(v94 + 8) = 1065353216;
-      *(_QWORD*)(v89 + 4096) = v95 + 1;
-      v96 = *(float*)(v5 + 8268);
-      v814 = v49;
-      if (v91 != nullptr) {
+    v82 = *(float*)(v5 + 8264);
+    v803 = v46;
+    v83 = (float*)&v905[24 * v947 - 8];
+    v84 = v83[4];
+    v85 = v83[10];
+    v86 = v83[16];
+    v87 = *(_QWORD*)v83;
+    v89 = *((__int64**)v83 + 3);
+    v88 = *((_QWORD*)v83 + 4);
+    v91 = *((__int64**)v83 + 6);
+    v90 = *((_QWORD*)v83 + 7);
+    if (*(_QWORD*)v83 != 0) {
+      v92 = v87 + 16LL * *(_QWORD*)(v87 + 4096);
+      *(_WORD*)(v92 + 4) = (unsigned __int8)*((_QWORD*)v83 + 1);
+      v93 = *(_QWORD*)(v87 + 4096);
+      *(_QWORD*)(v92 + 8) = 1065353216;
+      *(_QWORD*)(v87 + 4096) = v93 + 1;
+      v94 = *(float*)(v5 + 8268);
+      v801 = v49;
+      if (v89 != nullptr) {
         goto LABEL_21;
       }
     }
     else {
-      LOBYTE(v95) = -1;
-      v96 = *(float*)(v5 + 8268);
-      v814 = v49;
-      if (v91 != nullptr) {
+      LOBYTE(v93) = -1;
+      v94 = *(float*)(v5 + 8268);
+      v801 = v49;
+      if (v89 != nullptr) {
       LABEL_21:
-        v97 = &v91[2 * v91[512]];
-        *((_BYTE*)v97 + 4) = v90;
-        *((_BYTE*)v97 + 5) = 0;
-        v98 = v91[512];
-        v97[1] = 1065353216;
-        v91[512] = v98 + 1;
-        v99 = *(float*)(v5 + 8272);
-        if (v93 != nullptr) {
+        v95 = &v89[2 * v89[512]];
+        *((_BYTE*)v95 + 4) = v88;
+        *((_BYTE*)v95 + 5) = 0;
+        v96 = v89[512];
+        v95[1] = 1065353216;
+        v89[512] = v96 + 1;
+        v97 = *(float*)(v5 + 8272);
+        if (v91 != nullptr) {
         LABEL_22:
-          v100 = &v93[2 * v93[512]];
-          *((_BYTE*)v100 + 4) = v92;
-          *((_BYTE*)v100 + 5) = 0;
-          v100[1] = 1065353216;
-          v738 = v93[512];
-          v93[512] = v738 + 1;
+          v98 = &v91[2 * v91[512]];
+          *((_BYTE*)v98 + 4) = v90;
+          *((_BYTE*)v98 + 5) = 0;
+          v98[1] = 1065353216;
+          v725 = v91[512];
+          v91[512] = v725 + 1;
           goto LABEL_26;
         }
       LABEL_25:
-        LOBYTE(v738) = -1;
+        LOBYTE(v725) = -1;
       LABEL_26:
-        v904 = 0;
-        v903 = 0;
-        v902 = 0;
-        v901 = 0;
-        v900 = 0;
-        v899 = 0;
-        v898 = 0;
-        v897 = 0;
-        v896 = 0;
-        v895 = 0;
-        v893 = 0;
-        v894 = 0;
         v891 = 0;
-        v892 = 0;
-        v889 = 0;
         v890 = 0;
-        v887 = 0;
+        v889 = 0;
         v888 = 0;
-        v885 = 0;
+        v887 = 0;
         v886 = 0;
-        v883 = 0;
+        v885 = 0;
         v884 = 0;
-        v882 = (__typeof__(v882)){0};
-        v880[1] = 0;
+        v883 = 0;
+        v882 = 0;
+        v880 = 0;
         v881 = 0;
-        v880[0] = 0;
-        nerd_gyro_pointing_70ace0((void*)(&v853), (__int64)&v917, &v961);
-        v1029[0] = v853;
-        v1029[1] = v854;
-        v1038 = v868;
-        v1039 = v869;
-        v1044 = v874;
-        v1045 = v875;
-        v1030[1] = v856;
-        v1030[2] = v857;
-        v1030[0] = (unsigned int)v855;
-        v1030[3] = (unsigned int)v858;
-        v1037 = v867;
-        v1040 = v870;
-        v1030[4] = v859;
-        v1030[5] = v860;
-        v1047 = v877;
-        v1048 = v878;
-        v1049 = v879;
-        v1031 = (unsigned int)v861;
-        v1034 = v864;
-        v1041 = v871;
-        v1042 = v872;
+        v878 = 0;
+        v879 = 0;
+        v876 = 0;
+        v877 = 0;
+        v874 = 0;
+        v875 = 0;
+        v872 = 0;
+        v873 = 0;
+        v870 = 0;
+        v871 = 0;
+        v869 = (__typeof__(v869)){0};
+        v867[1] = 0;
+        v868 = 0;
+        v867[0] = 0;
+        nerd_gyro_pointing_70ace0((void*)(&v840), (__int64)&v904, &v948);
+        v1016[0] = v840;
+        v1016[1] = v841;
+        v1025 = v855;
+        v1026 = v856;
+        v1031 = v861;
         v1032 = v862;
-        v1033 = v863;
-        v1043 = v873;
-        v1046 = v876;
+        v1017[1] = v843;
+        v1017[2] = v844;
+        v1017[0] = (unsigned int)v842;
+        v1017[3] = (unsigned int)v845;
+        v1024 = v854;
+        v1027 = v857;
+        v1017[4] = v846;
+        v1017[5] = v847;
+        v1034 = v864;
         v1035 = v865;
         v1036 = v866;
-        SdkRoutine_879f90((void*)(v880), v1029, v5 + 8304);
-        v101 = *(float*)&v942;
-        v102 = v940;
-        if (v940 != nullptr) {
-          v103 = &v940[2 * v940[512]];
-          *((_WORD*)v103 + 2) = (unsigned __int8)v941;
-          v104 = v102[512];
-          v103[1] = 1065353216;
-          v102[512] = v104 + 1;
-          v105 = *(float*)&v945;
-          v106 = v943;
-          if (v943 != nullptr) {
+        v1018 = (unsigned int)v848;
+        v1021 = v851;
+        v1028 = v858;
+        v1029 = v859;
+        v1019 = v849;
+        v1020 = v850;
+        v1030 = v860;
+        v1033 = v863;
+        v1022 = v852;
+        v1023 = v853;
+        SdkRoutine_879f90_alt1();
+        v99 = *(float*)&v929;
+        v100 = v927;
+        if (v927 != nullptr) {
+          v101 = &v927[2 * v927[512]];
+          *((_WORD*)v101 + 2) = (unsigned __int8)v928;
+          v102 = v100[512];
+          v101[1] = 1065353216;
+          v100[512] = v102 + 1;
+          v103 = *(float*)&v932;
+          v104 = v930;
+          if (v930 != nullptr) {
             goto LABEL_28;
           }
         }
         else {
-          LOBYTE(v104) = -1;
-          v105 = *(float*)&v945;
-          v106 = v943;
-          if (v943 != nullptr) {
+          LOBYTE(v102) = -1;
+          v103 = *(float*)&v932;
+          v104 = v930;
+          if (v930 != nullptr) {
           LABEL_28:
-            v107 = &v106[2 * v106[512]];
-            *((_WORD*)v107 + 2) = (unsigned __int8)v944;
-            v108 = v106[512];
-            v107[1] = 1065353216;
-            v106[512] = v108 + 1;
-            v109 = *(float*)&v948;
-            v110 = v946;
-            if (v946 != nullptr) {
+            v105 = &v104[2 * v104[512]];
+            *((_WORD*)v105 + 2) = (unsigned __int8)v931;
+            v106 = v104[512];
+            v105[1] = 1065353216;
+            v104[512] = v106 + 1;
+            v107 = *(float*)&v935;
+            v108 = v933;
+            if (v933 != nullptr) {
             LABEL_29:
-              v111 = &v110[2 * v110[512]];
-              *((_WORD*)v111 + 2) = (unsigned __int8)v947;
-              v111[1] = 1065353216;
-              v112 = v110[512];
-              v110[512] = v112 + 1;
+              v109 = &v108[2 * v108[512]];
+              *((_WORD*)v109 + 2) = (unsigned __int8)v934;
+              v109[1] = 1065353216;
+              v110 = v108[512];
+              v108[512] = v110 + 1;
               goto LABEL_33;
             }
           LABEL_32:
-            LOBYTE(v112) = -1;
+            LOBYTE(v110) = -1;
           LABEL_33:
-            v113 = v747 / v817;
-            v114 = v744 / v817;
-            v115 = v741 / v817;
-            if (v102 != nullptr) {
-              v116 = -0x1.0000000000000p+0f;
-              v117 = v89 == 0;
-              v89 = (__int64)v102;
-              if (v117) {
-                v118 = 0;
+            v111 = v734 / v804;
+            v112 = v731 / v804;
+            v113 = v728 / v804;
+            if (v100 != nullptr) {
+              v114 = -0x1.0000000000000p+0f;
+              v115 = v87 == 0;
+              v87 = (__int64)v100;
+              if (v115) {
+                v116 = 0;
               }
               else {
-                v118 = v95;
+                v116 = v93;
               }
-              LOBYTE(v95) = v104;
-              if (v117) {
-                v116 = 0x0.0p+0f;
+              LOBYTE(v93) = v102;
+              if (v115) {
+                v114 = 0x0.0p+0f;
               }
-              v119 = 0x1.0000000000000p+0f;
+              v117 = 0x1.0000000000000p+0f;
             }
             else {
-              if (v89 == 0) {
-                v121 = -1;
+              if (v87 == 0) {
+                v119 = -1;
+                v120 = v111 * 0x1.9000000000000p+6f;
+                v121 = v112 * 0x1.9000000000000p+6f;
                 v122 = v113 * 0x1.9000000000000p+6f;
-                v123 = v114 * 0x1.9000000000000p+6f;
-                v124 = v115 * 0x1.9000000000000p+6f;
-                if (v106 != nullptr) {
+                if (v104 != nullptr) {
                   goto LABEL_43;
                 }
                 goto LABEL_50;
               }
-              v118 = 0;
-              v116 = 0x0.0p+0f;
-              v119 = -0x1.0000000000000p+0f;
+              v116 = 0;
+              v114 = 0x0.0p+0f;
+              v117 = -0x1.0000000000000p+0f;
             }
-            v120 = v89 + 16LL * *(_QWORD*)(v89 + 4096);
-            *(_BYTE*)(v120 + 4) = v95;
-            *(_BYTE*)(v120 + 5) = v118;
-            *(float*)(v120 + 8) = v119;
-            *(float*)(v120 + 12) = v116;
-            v121 = *(_QWORD*)(v89 + 4096);
-            *(_QWORD*)(v89 + 4096) = v121 + 1;
+            v118 = v87 + 16LL * *(_QWORD*)(v87 + 4096);
+            *(_BYTE*)(v118 + 4) = v93;
+            *(_BYTE*)(v118 + 5) = v116;
+            *(float*)(v118 + 8) = v117;
+            *(float*)(v118 + 12) = v114;
+            v119 = *(_QWORD*)(v87 + 4096);
+            *(_QWORD*)(v87 + 4096) = v119 + 1;
+            v120 = v111 * 0x1.9000000000000p+6f;
+            v121 = v112 * 0x1.9000000000000p+6f;
             v122 = v113 * 0x1.9000000000000p+6f;
-            v123 = v114 * 0x1.9000000000000p+6f;
-            v124 = v115 * 0x1.9000000000000p+6f;
-            if (v106 != nullptr) {
+            if (v104 != nullptr) {
             LABEL_43:
-              v125 = -0x1.0000000000000p+0f;
-              if (v91 != nullptr) {
-                v126 = v98;
+              v123 = -0x1.0000000000000p+0f;
+              if (v89 != nullptr) {
+                v124 = v96;
               }
               else {
-                v126 = 0;
+                v124 = 0;
               }
-              if (v91 == nullptr) {
-                v125 = 0x0.0p+0f;
+              if (v89 == nullptr) {
+                v123 = 0x0.0p+0f;
               }
-              v127 = 0x1.0000000000000p+0f;
+              v125 = 0x1.0000000000000p+0f;
               goto LABEL_52;
             }
           LABEL_50:
-            if (v91 == nullptr) {
-              v106 = nullptr;
-              v129 = -1;
+            if (v89 == nullptr) {
+              v104 = nullptr;
+              v127 = -1;
             LABEL_53:
-              v130 = v87 + v96;
-              v131 = v123 + v105;
-              v132 = v122 + v101;
-              v133 = v124 + v109;
-              if (v110 != nullptr) {
-                v134 = v817;
-                v135 = -0x1.0000000000000p+0f;
-                if (v93 != nullptr) {
-                  v136 = v738;
+              v128 = v85 + v94;
+              v129 = v121 + v103;
+              v130 = v120 + v99;
+              v131 = v122 + v107;
+              if (v108 != nullptr) {
+                v132 = v804;
+                v133 = -0x1.0000000000000p+0f;
+                if (v91 != nullptr) {
+                  v134 = v725;
                 }
                 else {
-                  v136 = 0;
+                  v134 = 0;
                 }
-                if (v93 == nullptr) {
-                  v135 = 0x0.0p+0f;
+                if (v91 == nullptr) {
+                  v133 = 0x0.0p+0f;
                 }
-                v137 = 0x1.0000000000000p+0f;
+                v135 = 0x1.0000000000000p+0f;
               }
               else {
-                v134 = v817;
-                if (v93 == nullptr) {
-                  v110 = nullptr;
-                  v139 = -1;
+                v132 = v804;
+                if (v91 == nullptr) {
+                  v108 = nullptr;
+                  v137 = -1;
                 LABEL_63:
-                  v856 = v106;
-                  v857 = v129;
-                  v853 = v89;
-                  v854 = v121;
-                  HIDWORD(v855) = 0;
-                  HIDWORD(v858) = 0;
-                  v859 = v110;
-                  v860 = v139;
-                  HIDWORD(v861) = 0;
-                  v846_.v851 = 0;
-                  v846_.v852 = 0;
-                  v846_.v849 = 0;
-                  v846_.v850 = 0;
-                  v846_.v847 = 0;
-                  v846_.v848 = 0;
-                  v844_.v845 = 0;
-                  v846_.v846 = 0;
-                  v844_.v844 = 0;
-                  *(float*)&v855 = v132 - (float)(v86 + v84);
-                  *(float*)&v858 = v131 - v130;
-                  *(float*)&v861 = v133 - (float)(v88 + v99);
-                  SdkRoutine_879fa0((void*)(&v844_.v844), v880, &v853);
-                  v140 = 0x0.0p+0f;
-                  math_70b0c0((void*)((__int64)v1029), (float*)&v905, 0x0.0p+0f,
+                  v843 = v104;
+                  v844 = v127;
+                  v840 = v87;
+                  v841 = v119;
+                  DWORDn(v842, sizeof(v842) / 4 - 1) = 0;
+                  DWORDn(v845, sizeof(v845) / 4 - 1) = 0;
+                  v846 = v108;
+                  v847 = v137;
+                  DWORDn(v848, sizeof(v848) / 4 - 1) = 0;
+                  v833_.v838 = 0;
+                  v833_.v839 = 0;
+                  v833_.v836 = 0;
+                  v833_.v837 = 0;
+                  v833_.v834 = 0;
+                  v833_.v835 = 0;
+                  v831_.v832 = 0;
+                  v833_.v833 = 0;
+                  v831_.v831 = 0;
+                  *(float*)&v842 = v130 - (float)(v84 + v82);
+                  *(float*)&v845 = v129 - v128;
+                  *(float*)&v848 = v131 - (float)(v86 + v97);
+                  SdkRoutine_879fa0_alt1();
+                  math_70b0c0((void*)((__int64)v1016), (float*)&v892, 0x0.0p+0f,
                               0x0.0p+0f, 0x1.ea80000000000p+9f);
-                  v141 = *(float*)&v846_.v846;
-                  v142 = *(float*)v1030;
-                  v143 = v1029[0];
-                  if (v844_.v844 != 0) {
-                    v144 = v844_.v845;
-                    v145 = v768;
-                    v146 = 0x1.0000000000000p+0f;
-                    if (v1029[0] != 0) {
-                      v147 = v1029[1];
-                      v140 = -0x1.0000000000000p+0f;
+                  v138 = *(float*)v1017;
+                  v139 = v1016[0];
+                  if (v1016[0] != 0) {
+                    v140 = v1016[0] + 16LL * *(_QWORD*)(v1016[0] + 4096);
+                    *(_BYTE*)(v140 + 4) = v1016[1];
+                    *(_BYTE*)(v140 + 5) = 0;
+                    *(float*)(v140 + 8) = -0x1.0000000000000p+0f;
+                    *(_DWORD*)(v140 + 12) = 0;
+                    v141 = *(_QWORD*)(v139 + 4096);
+                    *(_QWORD*)(v139 + 4096) = v141 + 1;
+                    v142 = *(float*)&v833_.v836;
+                    v143 = *(float*)&v1017[3];
+                    v144 = v833_.v834;
+                    v145 = v1017[1];
+                    if (v833_.v834 != 0) {
+                      v146 = v833_.v835;
+                      v147 = 0x1.0000000000000p+0f;
+                      if (v1017[1] != 0) {
+                        v148 = v1017[2];
+                        v149 = -0x1.0000000000000p+0f;
+                      }
+                      else {
+                        v148 = 0;
+                        v149 = 0x0.0p+0f;
+                      }
+                      goto LABEL_73;
                     }
-                    else {
-                      v147 = 0;
-                    }
-                    v143 = v844_.v844;
                   }
                   else {
-                    v145 = v768;
-                    if (v1029[0] == 0) {
-                      LOBYTE(v149) = -1;
-                      v150 = *(float*)&v846_.v849;
-                      v151 = *(float*)&v1030[3];
-                      v152 = v846_.v847;
-                      v153 = v1030[1];
-                      if (v846_.v847 != 0) {
-                      LABEL_71:
-                        v154 = v846_.v848;
-                        v155 = 0x1.0000000000000p+0f;
-                        if (v153 != 0) {
-                          v156 = v1030[2];
-                          v157 = -0x1.0000000000000p+0f;
+                    LOBYTE(v141) = -1;
+                    v142 = *(float*)&v833_.v836;
+                    v143 = *(float*)&v1017[3];
+                    v145 = v1017[1];
+                  }
+                  if (v145 == 0) {
+                    v144 = 0;
+                    LOBYTE(v151) = -1;
+                    v152 = *(float*)&v833_.v839;
+                    v153 = *(float*)&v1018;
+                    v154 = v833_.v837;
+                    v155 = v1017[4];
+                    if (v833_.v837 != 0) {
+                    LABEL_74:
+                      v156 = v833_.v838;
+                      v157 = 0x1.0000000000000p+0f;
+                      if (v155 != 0) {
+                        v158 = v1017[5];
+                        v159 = -0x1.0000000000000p+0f;
+                      }
+                      else {
+                        v158 = 0;
+                        v159 = 0x0.0p+0f;
+                      }
+                      goto LABEL_80;
+                    }
+                  LABEL_78:
+                    if (v155 == 0) {
+                      v154 = 0;
+                      LOBYTE(v161) = -1;
+                      if (v139 != 0) {
+                      LABEL_81:
+                        v162 = v139 + 16LL * *(_QWORD*)(v139 + 4096);
+                        *(_BYTE*)(v162 + 4) = v141;
+                        *(_BYTE*)(v162 + 5) = 0;
+                        *(float*)(v162 + 8) = v132;
+                        *(_DWORD*)(v162 + 12) = 0;
+                        v163 = *(_QWORD*)(v139 + 4096);
+                        *(_QWORD*)(v139 + 4096) = v163 + 1;
+                        if (v144 != 0) {
+                          goto LABEL_82;
+                        }
+                        goto LABEL_92;
+                      }
+                    LABEL_91:
+                      LOBYTE(v163) = -1;
+                      if (v144 != 0) {
+                      LABEL_82:
+                        v164 = v144 + 16LL * *(_QWORD*)(v144 + 4096);
+                        *(_BYTE*)(v164 + 4) = v151;
+                        *(_BYTE*)(v164 + 5) = 0;
+                        *(float*)(v164 + 8) = v132;
+                        *(_DWORD*)(v164 + 12) = 0;
+                        v165 = *(_QWORD*)(v144 + 4096);
+                        *(_QWORD*)(v144 + 4096) = v165 + 1;
+                        if (v154 != 0) {
+                          goto LABEL_83;
+                        }
+                        goto LABEL_93;
+                      }
+                    LABEL_92:
+                      LOBYTE(v165) = -1;
+                      if (v154 != 0) {
+                      LABEL_83:
+                        v166 = v154 + 16LL * *(_QWORD*)(v154 + 4096);
+                        *(_BYTE*)(v166 + 4) = v161;
+                        *(_BYTE*)(v166 + 5) = 0;
+                        *(float*)(v166 + 8) = v132;
+                        *(_DWORD*)(v166 + 12) = 0;
+                        v167 = *(_QWORD*)(v154 + 4096);
+                        *(_QWORD*)(v154 + 4096) = v167 + 1;
+                        if (v63 != 0) {
+                          goto LABEL_84;
+                        }
+                        goto LABEL_94;
+                      }
+                    LABEL_93:
+                      LOBYTE(v167) = -1;
+                      if (v63 != 0) {
+                      LABEL_84:
+                        v168 = v139 == 0;
+                        v169 = 0x1.0000000000000p+0f;
+                        v139 = v63;
+                        if (v168) {
+                          v170 = 0;
                         }
                         else {
-                          v156 = 0;
-                          v157 = 0x0.0p+0f;
+                          v170 = v163;
                         }
-                        goto LABEL_79;
+                        LOBYTE(v163) = v720;
+                        if (v168) {
+                          v169 = 0x0.0p+0f;
+                        }
+                        goto LABEL_96;
                       }
-                    LABEL_77:
-                      if (v153 == 0) {
-                        v152 = 0;
-                        LOBYTE(v159) = -1;
-                        v160 = *(float*)&v846_.v852;
-                        v161 = *(float*)&v1031;
-                        v162 = v846_.v850;
-                        v163 = v1030[4];
-                        if (v846_.v850 != 0) {
-                        LABEL_80:
-                          v164 = v846_.v851;
-                          v165 = 0x1.0000000000000p+0f;
-                          if (v163 != 0) {
-                            v166 = v1030[5];
-                            v167 = -0x1.0000000000000p+0f;
+                    LABEL_94:
+                      if (v139 == 0) {
+                        LOBYTE(v172) = -1;
+                        v173 = v739;
+                        v174 = v142 - v143;
+                        v175 = 0x0.0p+0f - v138;
+                        v176 = v152 - v153;
+                        if (v739 != 0) {
+                        LABEL_97:
+                          v177 = v144 == 0;
+                          v144 = v173;
+                          v178 = v722;
+                          v179 = 0x1.0000000000000p+0f;
+                          if (v177) {
+                            v180 = 0;
                           }
                           else {
-                            v166 = 0;
-                            v167 = 0x0.0p+0f;
+                            v180 = v165;
                           }
-                          goto LABEL_86;
+                          if (v177) {
+                            v179 = 0x0.0p+0f;
+                          }
+                          goto LABEL_106;
                         }
-                      LABEL_84:
-                        if (v163 == 0) {
-                          v162 = 0;
-                          LOBYTE(v169) = -1;
-                          if (v143 != 0) {
-                          LABEL_87:
-                            v170 = v143 + 16LL * *(_QWORD*)(v143 + 4096);
-                            *(_BYTE*)(v170 + 4) = v149;
-                            *(_BYTE*)(v170 + 5) = 0;
-                            *(float*)(v170 + 8) = v134;
-                            *(_DWORD*)(v170 + 12) = 0;
-                            v171 = *(_QWORD*)(v143 + 4096);
-                            *(_QWORD*)(v143 + 4096) = v171 + 1;
-                            if (v152 != 0) {
-                              goto LABEL_88;
-                            }
-                            goto LABEL_98;
-                          }
-                        LABEL_97:
-                          LOBYTE(v171) = -1;
-                          if (v152 != 0) {
-                          LABEL_88:
-                            v172 = v152 + 16LL * *(_QWORD*)(v152 + 4096);
-                            *(_BYTE*)(v172 + 4) = v159;
-                            *(_BYTE*)(v172 + 5) = 0;
-                            *(float*)(v172 + 8) = v134;
-                            *(_DWORD*)(v172 + 12) = 0;
-                            v173 = *(_QWORD*)(v152 + 4096);
-                            *(_QWORD*)(v152 + 4096) = v173 + 1;
-                            if (v162 != 0) {
-                              goto LABEL_89;
-                            }
-                            goto LABEL_99;
-                          }
-                        LABEL_98:
-                          LOBYTE(v173) = -1;
-                          if (v162 != 0) {
-                          LABEL_89:
-                            v174 = v162 + 16LL * *(_QWORD*)(v162 + 4096);
-                            *(_BYTE*)(v174 + 4) = v169;
-                            *(_BYTE*)(v174 + 5) = 0;
-                            *(float*)(v174 + 8) = v134;
-                            *(_DWORD*)(v174 + 12) = 0;
-                            v175 = *(_QWORD*)(v162 + 4096);
-                            *(_QWORD*)(v162 + 4096) = v175 + 1;
-                            if (v65 != 0) {
-                              goto LABEL_90;
-                            }
-                            goto LABEL_100;
-                          }
-                        LABEL_99:
-                          LOBYTE(v175) = -1;
-                          if (v65 != 0) {
-                          LABEL_90:
-                            v176 = v143 == 0;
-                            v177 = 0x1.0000000000000p+0f;
-                            v143 = v65;
-                            if (v176) {
-                              v178 = 0;
+                      LABEL_104:
+                        if (v144 == 0) {
+                          LOBYTE(v182) = -1;
+                        LABEL_107:
+                          v183 = v132 * v175;
+                          v184 = v749 + v741;
+                          v185 = v752 + v743;
+                          v186 = v746 + v737;
+                          v187 = v132 * v174;
+                          v188 = v132 * v176;
+                          if (v755 != 0) {
+                            v189 = v154 == 0;
+                            v154 = v755;
+                            v190 = v724;
+                            v191 = 0x1.0000000000000p+0f;
+                            if (v189) {
+                              v192 = 0;
                             }
                             else {
-                              v178 = v171;
+                              v192 = v167;
                             }
-                            LOBYTE(v171) = v733;
-                            if (v176) {
-                              v177 = 0x0.0p+0f;
+                            if (v189) {
+                              v191 = 0x0.0p+0f;
                             }
-                            goto LABEL_102;
                           }
-                        LABEL_100:
-                          if (v143 == 0) {
-                            LOBYTE(v180) = -1;
-                            v181 = v752;
-                            v182 = v150 - v151;
-                            v183 = v141 - v142;
-                            v184 = v160 - v161;
-                            if (v752 != 0) {
-                            LABEL_103:
-                              v185 = v152 == 0;
-                              v152 = v181;
-                              v186 = v735;
-                              v187 = 0x1.0000000000000p+0f;
-                              if (v185) {
-                                v188 = 0;
-                              }
-                              else {
-                                v188 = v173;
-                              }
-                              if (v185) {
-                                v187 = 0x0.0p+0f;
-                              }
-                              goto LABEL_112;
-                            }
-                          LABEL_110:
-                            if (v152 == 0) {
-                              LOBYTE(v190) = -1;
-                            LABEL_113:
-                              v191 = v134 * v183;
-                              v192 = v762 + v754;
-                              v193 = v765 + v756;
-                              v194 = v759 + v750;
-                              v195 = v134 * v182;
-                              v196 = v134 * v184;
-                              if (v145 != 0) {
-                                v197 = v162 == 0;
-                                v162 = v145;
-                                v198 = v737;
-                                v199 = 0x1.0000000000000p+0f;
-                                if (v197) {
-                                  v200 = 0;
-                                }
-                                else {
-                                  v200 = v175;
-                                }
-                                if (v197) {
-                                  v199 = 0x0.0p+0f;
+                          else {
+                            if (v154 == 0) {
+                              LOBYTE(v194) = -1;
+                            LABEL_117:
+                              *(float*)(v5 + 8184) = v185 + v183;
+                              *(float*)(v5 + 8188) = v184 + v187;
+                              *(float*)(v5 + 0x2000) = v186 + v188;
+                              if (v139 != 0) {
+                                v195 = v139 + 16LL * *(_QWORD*)(v139 + 4096);
+                                *(_BYTE*)(v195 + 4) = v172;
+                                *(_BYTE*)(v195 + 5) = 0;
+                                v196 = *(_QWORD*)(v139 + 4096);
+                                *(_QWORD*)(v195 + 8) = 1065353216;
+                                *(_QWORD*)(v139 + 4096) = v196 + 1;
+                                v197 = *(float*)(v5 + 8188);
+                                v198 = (__int64*)(v5 + 8200);
+                                if (v144 != 0) {
+                                  goto LABEL_119;
                                 }
                               }
                               else {
-                                if (v162 == 0) {
-                                  LOBYTE(v202) = -1;
-                                LABEL_123:
-                                  *(float*)(v5 + 8184) = v193 + v191;
-                                  *(float*)(v5 + 8188) = v192 + v195;
-                                  *(float*)(v5 + 0x2000) = v194 + v196;
-                                  if (v143 != 0) {
-                                    v203 =
-                                        v143 + 16LL * *(_QWORD*)(v143 + 4096);
-                                    *(_BYTE*)(v203 + 4) = v180;
-                                    *(_BYTE*)(v203 + 5) = 0;
-                                    v204 = *(_QWORD*)(v143 + 4096);
-                                    *(_QWORD*)(v203 + 8) = 1065353216;
-                                    *(_QWORD*)(v143 + 4096) = v204 + 1;
-                                    v205 = *(float*)(v5 + 8188);
-                                    v206 = (__int64*)(v5 + 8200);
-                                    if (v152 != 0) {
-                                      goto LABEL_125;
-                                    }
-                                  }
-                                  else {
-                                    v204 = -1;
-                                    v205 = v192 + v195;
-                                    v206 = (__int64*)(v5 + 8200);
-                                    if (v152 != 0) {
-                                    LABEL_125:
-                                      v207 =
-                                          v152 + 16LL * *(_QWORD*)(v152 + 4096);
-                                      *(_BYTE*)(v207 + 4) = v190;
-                                      *(_BYTE*)(v207 + 5) = 0;
-                                      *(_QWORD*)(v207 + 8) = 1065353216;
-                                      v208 = *(_QWORD*)(v152 + 4096);
-                                      *(_QWORD*)(v152 + 4096) = v208 + 1;
-                                      v209 = *(float*)(v5 + 0x2000);
-                                      v210 = v34 * v34;
-                                      v211 = &v963;
-                                      if (v162 != 0) {
-                                      LABEL_126:
-                                        v212 = v162 +
-                                               16LL * *(_QWORD*)(v162 + 4096);
-                                        *(_BYTE*)(v212 + 4) = v202;
-                                        *(_BYTE*)(v212 + 5) = 0;
-                                        *(_QWORD*)(v212 + 8) = 1065353216;
-                                        v213 = *(_QWORD*)(v162 + 4096);
-                                        *(_QWORD*)(v162 + 4096) = v213 + 1;
-                                      LABEL_130:
-                                        v833_.v833 = v143;
-                                        v833_.v834 = v204;
-                                        v833_.v836 = v152;
-                                        v833_.v837 = v208;
-                                        v214 = v43 / v210;
-                                        v215 = *v206;
-                                        v216 = v206[1];
-                                        v833_.v840 = v162;
-                                        v833_.v841 = v213;
-                                        v217 = 0;
-                                        HIDWORD(v833_.v835) = 0;
-                                        v833_.v839 = 0;
-                                        v833_.v843 = 0;
-                                        v827_.v831 = 0x0.0p+0f;
-                                        v827_.v829 = 0;
-                                        v827_.v830 = 0;
-                                        v827_.v827 = 0;
-                                        v827_.v828 = 0;
-                                        v218 = v797 / v210;
-                                        v833_.v838 =
-                                            (float)(v192 + v195) - v205;
-                                        *(float*)&v833_.v835 =
-                                            (float)(v193 + v191) -
-                                            (float)(v193 + v191);
-                                        v832[0] = v215;
-                                        v219 = v206[2];
-                                        v833_.v842 =
-                                            (float)(v194 + v196) - v209;
-                                        v1048 = 0;
-                                        v1049 = 0;
-                                        v1046 = 0;
-                                        v1047 = 0;
-                                        v1044 = 0;
-                                        v1045 = 0;
-                                        v1042 = 0;
-                                        v1043 = 0;
-                                        v1040 = 0;
-                                        v1041 = 0;
-                                        v1038 = 0;
-                                        v1039 = 0;
-                                        v1036 = 0;
-                                        v1037 = 0;
-                                        v1034 = 0;
-                                        v1035 = 0;
-                                        v1032 = 0;
-                                        v1033 = 0;
-                                        v1031 = 0;
-                                        v1029[1] = 0;
-                                        memset(v1030, 0, sizeof(v1030));
-                                        v1029[0] = 0;
-                                        v832[1] = v216;
-                                        v832[2] = v219;
-                                        v220 = v795 / v210;
-                                        v221 = v791;
-                                        v792 = v776 / v210;
-                                        v222 = v221 / v210;
-                                        v223 = v788;
-                                        v789 = v774 / v210;
-                                        v796 = v772 / v210;
-                                        v224 = v223 / v210;
-                                        v225 = v786;
-                                        v787 = v777 / v210;
-                                        v226 = v225 / v210;
-                                        v227 = v799 / v210;
-                                        v228 = v784 / v210;
-                                        v229 = v802 / v210;
-                                        v798 = v770 / v210;
-                                        v230 = v782 / v210;
-                                        v231 = v806 / v210;
-                                        v232 = v781 / v210;
-                                        v233 = v779 / v210;
+                                v196 = -1;
+                                v197 = v184 + v187;
+                                v198 = (__int64*)(v5 + 8200);
+                                if (v144 != 0) {
+                                LABEL_119:
+                                  v199 = v144 + 16LL * *(_QWORD*)(v144 + 4096);
+                                  *(_BYTE*)(v199 + 4) = v182;
+                                  *(_BYTE*)(v199 + 5) = 0;
+                                  *(_QWORD*)(v199 + 8) = 1065353216;
+                                  v200 = *(_QWORD*)(v144 + 4096);
+                                  *(_QWORD*)(v144 + 4096) = v200 + 1;
+                                  v201 = *(float*)(v5 + 0x2000);
+                                  v202 = v34 * v34;
+                                  v203 = &v950;
+                                  if (v154 != 0) {
+                                  LABEL_120:
+                                    v204 =
+                                        v154 + 16LL * *(_QWORD*)(v154 + 4096);
+                                    *(_BYTE*)(v204 + 4) = v194;
+                                    *(_BYTE*)(v204 + 5) = 0;
+                                    *(_QWORD*)(v204 + 8) = 1065353216;
+                                    v205 = *(_QWORD*)(v154 + 4096);
+                                    *(_QWORD*)(v154 + 4096) = v205 + 1;
+                                  LABEL_124:
+                                    v820_.v820 = v139;
+                                    v820_.v821 = v196;
+                                    v820_.v823 = v144;
+                                    v820_.v824 = v200;
+                                    v206 = v43 / v202;
+                                    v207 = *v198;
+                                    v208 = v198[1];
+                                    v820_.v827 = v154;
+                                    v820_.v828 = v205;
+                                    v209 = 0;
+                                    DWORDn(v820_.v822,
+                                           sizeof(v820_.v822) / 4 - 1) = 0;
+                                    v820_.v826 = 0;
+                                    v820_.v830 = 0;
+                                    v814_.v818 = 0x0.0p+0f;
+                                    v814_.v816 = 0;
+                                    v814_.v817 = 0;
+                                    v814_.v814 = 0;
+                                    v814_.v815 = 0;
+                                    v210 = v784 / v202;
+                                    v820_.v825 = (float)(v184 + v187) - v197;
+                                    *(float*)&v820_.v822 =
+                                        (float)(v185 + v183) -
+                                        (float)(v185 + v183);
+                                    v819[0] = v207;
+                                    v211 = v198[2];
+                                    v820_.v829 = (float)(v186 + v188) - v201;
+                                    v1035 = 0;
+                                    v1036 = 0;
+                                    v1033 = 0;
+                                    v1034 = 0;
+                                    v1031 = 0;
+                                    v1032 = 0;
+                                    v1029 = 0;
+                                    v1030 = 0;
+                                    v1027 = 0;
+                                    v1028 = 0;
+                                    v1025 = 0;
+                                    v1026 = 0;
+                                    v1023 = 0;
+                                    v1024 = 0;
+                                    v1021 = 0;
+                                    v1022 = 0;
+                                    v1019 = 0;
+                                    v1020 = 0;
+                                    v1018 = 0;
+                                    v1016[1] = 0;
+                                    memset(v1017, 0, sizeof(v1017));
+                                    v1016[0] = 0;
+                                    v819[1] = v208;
+                                    v819[2] = v211;
+                                    v212 = v782 / v202;
+                                    v213 = v778;
+                                    v779 = v763 / v202;
+                                    v214 = v213 / v202;
+                                    v215 = v775;
+                                    v776 = v761 / v202;
+                                    v783 = v759 / v202;
+                                    v216 = v215 / v202;
+                                    v217 = v773;
+                                    v774 = v764 / v202;
+                                    v218 = v217 / v202;
+                                    v219 = v786 / v202;
+                                    v220 = v771 / v202;
+                                    v221 = v789 / v202;
+                                    v785 = v757 / v202;
+                                    v222 = v769 / v202;
+                                    v223 = v793 / v202;
+                                    v224 = v768 / v202;
+                                    v225 = v766 / v202;
+                                    do {
+                                      v252 = v1008;
+                                      if (v1008 != 0) {
+                                        v253 = 16 * v1008 - 16;
+                                        if ((~(_BYTE)v253 & 0x70) != 0) {
+                                          v255 = -(
+                                              __int64)(((unsigned __int8)((unsigned int)
+                                                                              v253 >>
+                                                                          4) +
+                                                        1) &
+                                                       7);
+                                          v254 = &v971;
+                                          do {
+                                            *(_DWORD*)v254 = 0;
+                                            v254 += 2;
+                                            v256 = __CFADD__(v255++, 1);
+                                          } while (!v256);
+                                        }
+                                        else {
+                                          v254 = &v971;
+                                        }
+                                        if (v253 >= 0x70) {
+                                          v257 = &v971 + 2 * v252;
+                                          do {
+                                            *(_DWORD*)v254 = 0;
+                                            *((_DWORD*)v254 + 4) = 0;
+                                            *((_DWORD*)v254 + 8) = 0;
+                                            *((_DWORD*)v254 + 12) = 0;
+                                            *((_DWORD*)v254 + 16) = 0;
+                                            *((_DWORD*)v254 + 20) = 0;
+                                            *((_DWORD*)v254 + 24) = 0;
+                                            *((_DWORD*)v254 + 28) = 0;
+                                            v254 += 16;
+                                          } while (v254 != v257);
+                                        }
+                                      }
+                                      v258 = &v820_.v820 + 3 * v209;
+                                      if (*v258 != 0) {
+                                        *(_DWORD*)(*v258 + 16 * v258[1]) =
+                                            1065353216;
+                                      }
+                                      if (v1008 != 0) {
+                                        v259 = (float*)(&v971 + 2 * v1008);
+                                        v260 = 16 * v1008 - 16;
+                                        if ((~(_BYTE)v260 & 0x70) != 0) {
+                                          v261 = -(
+                                              __int64)(((unsigned __int8)((unsigned int)
+                                                                              v260 >>
+                                                                          4) +
+                                                        1) &
+                                                       7);
+                                          do {
+                                            v262 = *(v259 - 4);
+                                            v259 -= 4;
+                                            v256 = __CFADD__(v261++, 1);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v259 +
+                                                    4)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v259 +
+                                                        4)) +
+                                                (float)(v259[2] * v262);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v259 +
+                                                    5)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v259 +
+                                                        5)) +
+                                                (float)(v259[3] * v262);
+                                          } while (!v256);
+                                        }
+                                        if (v260 >= 0x70) {
+                                          v263 = v259 - 32;
+                                          do {
+                                            v264 = v263[28];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    116)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        116)) +
+                                                (float)(v263[30] * v264);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    117)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        117)) +
+                                                (float)(v263[31] * v264);
+                                            v265 = v263[24];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    100)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        100)) +
+                                                (float)(v263[26] * v265);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    101)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        101)) +
+                                                (float)(v263[27] * v265);
+                                            v266 = v263[20];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    84)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        84)) +
+                                                (float)(v263[22] * v266);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    85)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        85)) +
+                                                (float)(v263[23] * v266);
+                                            v267 = v263[16];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    68)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        68)) +
+                                                (float)(v263[18] * v267);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    69)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        69)) +
+                                                (float)(v263[19] * v267);
+                                            v268 = v263[12];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    52)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        52)) +
+                                                (float)(v263[14] * v268);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    53)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        53)) +
+                                                (float)(v263[15] * v268);
+                                            v269 = v263[8];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    36)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        36)) +
+                                                (float)(v263[10] * v269);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    37)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        37)) +
+                                                (float)(v263[11] * v269);
+                                            v270 = v263[4];
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    20)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        20)) +
+                                                (float)(v263[6] * v270);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    21)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        21)) +
+                                                (float)(v263[7] * v270);
+                                            v271 = *v263;
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    4)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        4)) +
+                                                (float)(v263[2] * *v263);
+                                            *((float*)&v971 +
+                                              4 * *((unsigned __int8*)v263 +
+                                                    5)) =
+                                                *((float*)&v971 +
+                                                  4 * *((unsigned __int8*)v263 +
+                                                        5)) +
+                                                (float)(v263[3] * v271);
+                                            v115 = v263 == (float*)&v971;
+                                            v263 -= 32;
+                                          } while (!v115);
+                                        }
+                                      }
+                                      v226 = v930[2 * v931];
+                                      v227 = (_DWORD*)&v814_.v814 + 3 * v209;
+                                      v228 = v933[2 * v934];
+                                      v229 = *(_QWORD*)v905;
+                                      v230 = v904;
+                                      *(_DWORD*)v227 = v927[2 * v928];
+                                      v227[1] = v226;
+                                      v231 = *(_DWORD*)(v230 + 16 * v229);
+                                      v232 = *(_QWORD*)&v905[24];
+                                      v233 = *(_QWORD*)&v905[16];
+                                      v227[2] = v228;
+                                      v234 = *(_DWORD*)(v233 + 16 * v232);
+                                      v235 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[40] +
+                                                   16LL * *(_QWORD*)&v905[48]);
+                                      v236 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[64] +
+                                                   16LL * *(_QWORD*)&v905[72]);
+                                      v237 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[88] +
+                                                   16LL * *(_QWORD*)&v905[96]);
+                                      v238 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[112] +
+                                                   16LL * *(_QWORD*)&v905[120]);
+                                      v239 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[136] +
+                                                   16LL * *(_QWORD*)&v905[144]);
+                                      v240 = *(
+                                          _DWORD*)(*(_QWORD*)&v905[160] +
+                                                   16LL * *(_QWORD*)&v905[168]);
+                                      v241 = v906[2 * v907];
+                                      v242 = *(_DWORD*)(v909 + 16 * v910);
+                                      v243 = *(_DWORD*)(v911 + 16 * v912);
+                                      v244 = *(_DWORD*)(v913 + 16 * v914);
+                                      v245 = *(_DWORD*)(v915 + 16 * v916);
+                                      v246 = *(_DWORD*)(v917 + 16 * v918);
+                                      v247 = *(_DWORD*)(v919 + 16 * v920);
+                                      v248 = *(_DWORD*)(v921 + 16 * v922);
+                                      v249 = *(_DWORD*)(v923 + 16 * v924);
+                                      v250 = *(_DWORD*)(v925 + 16 * v926);
+                                      v251 = &v1016[9 * v209++];
+                                      *(_DWORD*)v251 = v231;
+                                      *((_DWORD*)v251 + 1) = v234;
+                                      *((_DWORD*)v251 + 2) = v235;
+                                      *((_DWORD*)v251 + 3) = v236;
+                                      *((_DWORD*)v251 + 4) = v237;
+                                      *((_DWORD*)v251 + 5) = v238;
+                                      *((_DWORD*)v251 + 6) = v239;
+                                      *((_DWORD*)v251 + 7) = v240;
+                                      *((_DWORD*)v251 + 8) = v241;
+                                      *((_DWORD*)v251 + 9) = v242;
+                                      *((_DWORD*)v251 + 10) = v243;
+                                      *((_DWORD*)v251 + 11) = v244;
+                                      *((_DWORD*)v251 + 12) = v245;
+                                      *((_DWORD*)v251 + 13) = v246;
+                                      *((_DWORD*)v251 + 14) = v247;
+                                      *((_DWORD*)v251 + 15) = v248;
+                                      *((_DWORD*)v251 + 16) = v249;
+                                      *((_DWORD*)v251 + 17) = v250;
+                                    } while (v209 != 3);
+                                    v272 = v214 * 0x1.3880000000000p+13f;
+                                    v273 = v218 * 0x1.3880000000000p+13f;
+                                    v274 = v222 * 0x1.3880000000000p+13f;
+                                    v275 = v220 * 0x1.3880000000000p+13f;
+                                    v276 = v224 * 0x1.3880000000000p+13f;
+                                    v277 = v225 * 0x1.3880000000000p+13f;
+                                    v278 =
+                                        (float)((float)((float)(*(float*)&v814_
+                                                                     .v814 *
+                                                                (float)(v210 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*((float*)&v814_.v814 +
+                                                          1) *
+                                                        (float)(v216 *
+                                                                0x1.3880000000000p+13f))) +
+                                        (float)(*(float*)&v814_.v815 * v274);
+                                    v279 =
+                                        (float)((float)((float)(*((float*)&v814_
+                                                                      .v815 +
+                                                                  1) *
+                                                                (float)(v210 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*(float*)&v814_.v816 *
+                                                        (float)(v216 *
+                                                                0x1.3880000000000p+13f))) +
+                                        (float)(*((float*)&v814_.v816 + 1) *
+                                                v274);
+                                    v280 =
+                                        (float)((float)((float)(*(float*)&v814_
+                                                                     .v817 *
+                                                                (float)(v210 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*((float*)&v814_.v817 +
+                                                          1) *
+                                                        (float)(v216 *
+                                                                0x1.3880000000000p+13f))) +
+                                        (float)(v814_.v818 * v274);
+                                    v281 =
+                                        (float)((float)(*(float*)&v814_.v814 *
+                                                        v272) +
+                                                0x0.0p+0f) +
+                                        (float)(*((float*)&v814_.v814 + 1) *
+                                                v275);
+                                    v282 =
+                                        (float)((float)(*((float*)&v814_.v815 +
+                                                          1) *
+                                                        v272) +
+                                                0x0.0p+0f) +
+                                        (float)(*(float*)&v814_.v816 * v275);
+                                    v283 =
+                                        (float)((float)(*(float*)&v814_.v817 *
+                                                        v272) +
+                                                0x0.0p+0f) +
+                                        (float)(*((float*)&v814_.v817 + 1) *
+                                                v275);
+                                    v284 =
+                                        (float)((float)((float)(*(float*)&v814_
+                                                                     .v814 *
+                                                                (float)(v212 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*((float*)&v814_.v814 +
+                                                          1) *
+                                                        v273)) +
+                                        (float)(*(float*)&v814_.v815 * v276);
+                                    v285 =
+                                        (float)((float)((float)(*((float*)&v814_
+                                                                      .v815 +
+                                                                  1) *
+                                                                (float)(v212 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*(float*)&v814_.v816 *
+                                                        v273)) +
+                                        (float)(*((float*)&v814_.v816 + 1) *
+                                                v276);
+                                    v286 =
+                                        (float)((float)((float)(*(float*)&v814_
+                                                                     .v817 *
+                                                                (float)(v212 *
+                                                                        0x1.3880000000000p+13f)) +
+                                                        0x0.0p+0f) +
+                                                (float)(*((float*)&v814_.v817 +
+                                                          1) *
+                                                        v273)) +
+                                        (float)(v814_.v818 * v276);
+                                    v287 = v281 +
+                                           (float)(*(float*)&v814_.v815 * v277);
+                                    v288 = v282 +
+                                           (float)(*((float*)&v814_.v816 + 1) *
+                                                   v277);
+                                    v289 = v283 + (float)(v814_.v818 * v277);
+                                    v813[0] =
+                                        (float)((float)((float)(v278 *
+                                                                *(float*)&v814_
+                                                                     .v814) +
+                                                        0x0.0p+0f) +
+                                                (float)(v284 *
+                                                        *((float*)&v814_.v814 +
+                                                          1))) +
+                                        (float)(v287 * *(float*)&v814_.v815);
+                                    v813[2] =
+                                        (float)((float)((float)(v278 *
+                                                                *(float*)&v814_
+                                                                     .v817) +
+                                                        0x0.0p+0f) +
+                                                (float)(v284 *
+                                                        *((float*)&v814_.v817 +
+                                                          1))) +
+                                        (float)(v287 * v814_.v818);
+                                    v813[1] =
+                                        (float)((float)((float)(v278 *
+                                                                *((float*)&v814_
+                                                                      .v815 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v284 *
+                                                        *(float*)&v814_.v816)) +
+                                        (float)(v287 *
+                                                *((float*)&v814_.v816 + 1));
+                                    v813[3] =
+                                        (float)((float)((float)(v279 *
+                                                                *(float*)&v814_
+                                                                     .v814) +
+                                                        0x0.0p+0f) +
+                                                (float)(v285 *
+                                                        *((float*)&v814_.v814 +
+                                                          1))) +
+                                        (float)(v288 * *(float*)&v814_.v815);
+                                    v813[6] =
+                                        (float)((float)((float)(v280 *
+                                                                *(float*)&v814_
+                                                                     .v814) +
+                                                        0x0.0p+0f) +
+                                                (float)(v286 *
+                                                        *((float*)&v814_.v814 +
+                                                          1))) +
+                                        (float)(v289 * *(float*)&v814_.v815);
+                                    v813[4] =
+                                        (float)((float)((float)(v279 *
+                                                                *((float*)&v814_
+                                                                      .v815 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v285 *
+                                                        *(float*)&v814_.v816)) +
+                                        (float)(v288 *
+                                                *((float*)&v814_.v816 + 1));
+                                    v813[5] =
+                                        (float)((float)((float)(v279 *
+                                                                *(float*)&v814_
+                                                                     .v817) +
+                                                        0x0.0p+0f) +
+                                                (float)(v285 *
+                                                        *((float*)&v814_.v817 +
+                                                          1))) +
+                                        (float)(v288 * v814_.v818);
+                                    v813[7] =
+                                        (float)((float)((float)(v280 *
+                                                                *((float*)&v814_
+                                                                      .v815 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v286 *
+                                                        *(float*)&v814_.v816)) +
+                                        (float)(v289 *
+                                                *((float*)&v814_.v816 + 1));
+                                    v813[8] =
+                                        (float)((float)((float)(v280 *
+                                                                *(float*)&v814_
+                                                                     .v817) +
+                                                        0x0.0p+0f) +
+                                                (float)(v286 *
+                                                        *((float*)&v814_.v817 +
+                                                          1))) +
+                                        (float)(v289 * v814_.v818);
+                                    SdkRoutine_879fb0_alt1(
+                                        v5 + 200, (__int64)v1016,
+                                        (__int64)&v949, (__int64)v819,
+                                        (__int64)v813);
+                                    LODWORD(v1016[1]) = 0;
+                                    v1016[0] = 0;
+                                    memset(v905, 0, 28);
+                                    v904 = 0;
+                                    v290 =
+                                        nerd_gyro_pointing_GyroPointingKalmanFilter_AddUnbiasedGyrVariable_plt_alt1(
+                                            v5 + 200, (__int64)v1016,
+                                            (__int64)&v904);
+                                    v291 = *(_QWORD*)(v5 + 8440);
+                                    v292 = v290;
+                                    v293 = *(float*)(v5 + 8416) + 0x0.0p+0f;
+                                    v867[0] = *(_QWORD*)(v5 + 8432);
+                                    v867[1] = v291;
+                                    v294 = *(float*)(v5 + 8420);
+                                    v295 = *(float*)(v5 + 8424);
+                                    v991 = 1;
+                                    v868 = *(_QWORD*)(v5 + 8448);
+                                    *(_QWORD*)&v869 = 0;
+                                    v1004 = 1802;
+                                    WORD2(v971) = 0;
+                                    v972 = 0;
+                                    WORD2(v973) = 0;
+                                    v974 = 0;
+                                    v976 = 0;
+                                    v994 = 2;
+                                    v996 = 3;
+                                    v977 = 0;
+                                    v979 = 0;
+                                    v980 = 0;
+                                    v982 = 0;
+                                    v983 = 0;
+                                    v985 = 0;
+                                    v986 = 0;
+                                    v988 = 0;
+                                    v989 = 1065353216;
+                                    v992 = 1065353216;
+                                    v995 = 1065353216;
+                                    v997 = 1065353216;
+                                    v999 = 1065353216;
+                                    v1001 = 1065353216;
+                                    v1006 = 2059;
+                                    v998 = 4;
+                                    v1000 = 5;
+                                    v1002 = 1545;
+                                    v1003 = 0xBF8000003F800000LL;
+                                    v1005 = 0xBF8000003F800000LL;
+                                    v1007 = 0xBF8000003F800000LL;
+                                    v1008 = 15;
+                                    *(float*)v290 =
+                                        (float)(v803 + 0x0.0p+0f) - v293;
+                                    *(float*)(v290 + 4) =
+                                        (float)(v797 + 0x0.0p+0f) -
+                                        (float)(v294 + 0x0.0p+0f);
+                                    *(float*)(v290 + 8) =
+                                        (float)(v801 + 0x0.0p+0f) -
+                                        (float)(v295 + 0x0.0p+0f);
+                                    v296 = &v971 + 2 * v1008;
+                                    *((_WORD*)v296 + 2) = 12;
+                                    v296[1] = 1065353216;
+                                    v297 = v1008++;
+                                    v298 = &v971 + 2 * v1008;
+                                    *((_WORD*)v298 + 2) = 13;
+                                    v298[1] = 1065353216;
+                                    v299 = v1008++;
+                                    v300 = &v971 + 2 * v1008;
+                                    *((_WORD*)v300 + 2) = 14;
+                                    v300[1] = 1065353216;
+                                    v301 = v1008++;
+                                    v302 = *(_QWORD*)(v290 + 24);
+                                    v840 = *(_QWORD*)(v290 + 16);
+                                    v841 = v302;
+                                    v303 = *(_QWORD*)(v290 + 32);
+                                    *(_DWORD*)&v905[24] = 0;
+                                    *(_QWORD*)&v905[16] = 0;
+                                    v842 = v303;
+                                    if (v301 != -1) {
+                                      if ((~(_BYTE)v301 & 7) != 0) {
+                                        v305 = ((_BYTE)v301 + 1) & 7;
+                                        v304 = &v971;
                                         do {
-                                          v260 = v1021;
-                                          if (v1021 != 0) {
-                                            v261 = 16 * v1021 - 16;
-                                            if ((~(_BYTE)v261 & 0x70) != 0) {
-                                              v263 = -(
-                                                  __int64)(((unsigned __int8)((unsigned int)
-                                                                                  v261 >>
-                                                                              4) +
-                                                            1) &
-                                                           7);
-                                              v262 = &v984;
-                                              do {
-                                                *(_DWORD*)v262 = 0;
-                                                v262 += 2;
-                                                v264 = __CFADD__(v263++, 1);
-                                              } while (!v264);
-                                            }
-                                            else {
-                                              v262 = &v984;
-                                            }
-                                            if (v261 >= 0x70) {
-                                              v265 = &v984 + 2 * v260;
-                                              do {
-                                                *(_DWORD*)v262 = 0;
-                                                *((_DWORD*)v262 + 4) = 0;
-                                                *((_DWORD*)v262 + 8) = 0;
-                                                *((_DWORD*)v262 + 12) = 0;
-                                                *((_DWORD*)v262 + 16) = 0;
-                                                *((_DWORD*)v262 + 20) = 0;
-                                                *((_DWORD*)v262 + 24) = 0;
-                                                *((_DWORD*)v262 + 28) = 0;
-                                                v262 += 16;
-                                              } while (v262 != v265);
-                                            }
-                                          }
-                                          v266 = &v833_.v833 + 3 * v217;
-                                          if (*v266 != 0) {
-                                            *(_DWORD*)(*v266 + 16 * v266[1]) =
-                                                1065353216;
-                                          }
-                                          if (v1021 != 0) {
-                                            v267 = (float*)(&v984 + 2 * v1021);
-                                            v268 = 16 * v1021 - 16;
-                                            if ((~(_BYTE)v268 & 0x70) != 0) {
-                                              v269 = -(
-                                                  __int64)(((unsigned __int8)((unsigned int)
-                                                                                  v268 >>
-                                                                              4) +
-                                                            1) &
-                                                           7);
-                                              do {
-                                                v270 = *(v267 - 4);
-                                                v267 -= 4;
-                                                v264 = __CFADD__(v269++, 1);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v267 +
-                                                        4)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v267 +
-                                                            4)) +
-                                                    (float)(v267[2] * v270);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v267 +
-                                                        5)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v267 +
-                                                            5)) +
-                                                    (float)(v267[3] * v270);
-                                              } while (!v264);
-                                            }
-                                            if (v268 >= 0x70) {
-                                              v271 = v267 - 32;
-                                              do {
-                                                v272 = v271[28];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        116)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            116)) +
-                                                    (float)(v271[30] * v272);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        117)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            117)) +
-                                                    (float)(v271[31] * v272);
-                                                v273 = v271[24];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        100)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            100)) +
-                                                    (float)(v271[26] * v273);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        101)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            101)) +
-                                                    (float)(v271[27] * v273);
-                                                v274 = v271[20];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        84)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            84)) +
-                                                    (float)(v271[22] * v274);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        85)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            85)) +
-                                                    (float)(v271[23] * v274);
-                                                v275 = v271[16];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        68)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            68)) +
-                                                    (float)(v271[18] * v275);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        69)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            69)) +
-                                                    (float)(v271[19] * v275);
-                                                v276 = v271[12];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        52)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            52)) +
-                                                    (float)(v271[14] * v276);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        53)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            53)) +
-                                                    (float)(v271[15] * v276);
-                                                v277 = v271[8];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        36)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            36)) +
-                                                    (float)(v271[10] * v277);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        37)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            37)) +
-                                                    (float)(v271[11] * v277);
-                                                v278 = v271[4];
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        20)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            20)) +
-                                                    (float)(v271[6] * v278);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        21)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            21)) +
-                                                    (float)(v271[7] * v278);
-                                                v279 = *v271;
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        4)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            4)) +
-                                                    (float)(v271[2] * *v271);
-                                                *((float*)&v984 +
-                                                  4 * *((unsigned __int8*)v271 +
-                                                        5)) =
-                                                    *((float*)&v984 +
-                                                      4 * *((unsigned __int8*)
-                                                                v271 +
-                                                            5)) +
-                                                    (float)(v271[3] * v279);
-                                                v117 = v271 == (float*)&v984;
-                                                v271 -= 32;
-                                              } while (!v117);
-                                            }
-                                          }
-                                          v234 = v943[2 * v944];
-                                          v235 =
-                                              (_DWORD*)&v827_.v827 + 3 * v217;
-                                          v236 = v946[2 * v947];
-                                          v237 = *(_QWORD*)v918;
-                                          v238 = v917;
-                                          *v235 = v940[2 * v941];
-                                          v235[1] = v234;
-                                          v239 = *(_DWORD*)(v238 + 16 * v237);
-                                          v240 = *(_QWORD*)&v918[24];
-                                          v241 = *(_QWORD*)&v918[16];
-                                          v235[2] = v236;
-                                          v242 = *(_DWORD*)(v241 + 16 * v240);
-                                          v243 = *(
-                                              _DWORD*)(*(_QWORD*)&v918[40] +
-                                                       16LL *
-                                                           *(_QWORD*)&v918[48]);
-                                          v244 = *(
-                                              _DWORD*)(*(_QWORD*)&v918[64] +
-                                                       16LL *
-                                                           *(_QWORD*)&v918[72]);
-                                          v245 = *(
-                                              _DWORD*)(*(_QWORD*)&v918[88] +
-                                                       16LL *
-                                                           *(_QWORD*)&v918[96]);
-                                          v246 =
-                                              *(_DWORD*)(*(_QWORD*)&v918[112] +
-                                                         16LL * *(_QWORD*)&v918
-                                                                    [120]);
-                                          v247 =
-                                              *(_DWORD*)(*(_QWORD*)&v918[136] +
-                                                         16LL * *(_QWORD*)&v918
-                                                                    [144]);
-                                          v248 =
-                                              *(_DWORD*)(*(_QWORD*)&v918[160] +
-                                                         16LL * *(_QWORD*)&v918
-                                                                    [168]);
-                                          v249 = v919[2 * v920];
-                                          v250 = *(_DWORD*)(v922 + 16 * v923);
-                                          v251 = *(_DWORD*)(v924 + 16 * v925);
-                                          v252 = *(_DWORD*)(v926 + 16 * v927);
-                                          v253 = *(_DWORD*)(v928 + 16 * v929);
-                                          v254 = *(_DWORD*)(v930 + 16 * v931);
-                                          v255 = *(_DWORD*)(v932 + 16 * v933);
-                                          v256 = *(_DWORD*)(v934 + 16 * v935);
-                                          v257 = *(_DWORD*)(v936 + 16 * v937);
-                                          v258 = *(_DWORD*)(v938 + 16 * v939);
-                                          v259 = &v1029[9 * v217++];
-                                          *(_DWORD*)v259 = v239;
-                                          *((_DWORD*)v259 + 1) = v242;
-                                          *((_DWORD*)v259 + 2) = v243;
-                                          *((_DWORD*)v259 + 3) = v244;
-                                          *((_DWORD*)v259 + 4) = v245;
-                                          *((_DWORD*)v259 + 5) = v246;
-                                          *((_DWORD*)v259 + 6) = v247;
-                                          *((_DWORD*)v259 + 7) = v248;
-                                          *((_DWORD*)v259 + 8) = v249;
-                                          *((_DWORD*)v259 + 9) = v250;
-                                          *((_DWORD*)v259 + 10) = v251;
-                                          *((_DWORD*)v259 + 11) = v252;
-                                          *((_DWORD*)v259 + 12) = v253;
-                                          *((_DWORD*)v259 + 13) = v254;
-                                          *((_DWORD*)v259 + 14) = v255;
-                                          *((_DWORD*)v259 + 15) = v256;
-                                          *((_DWORD*)v259 + 16) = v257;
-                                          *((_DWORD*)v259 + 17) = v258;
-                                        } while (v217 != 3);
-                                        v280 = v222 * 0x1.3880000000000p+13f;
-                                        v281 = v226 * 0x1.3880000000000p+13f;
-                                        v282 = v230 * 0x1.3880000000000p+13f;
-                                        v283 = v228 * 0x1.3880000000000p+13f;
-                                        v284 = v232 * 0x1.3880000000000p+13f;
-                                        v285 = v233 * 0x1.3880000000000p+13f;
-                                        v286 =
-                                            (float)((float)((float)(*(float*)&v827_
-                                                                         .v827 *
-                                                                    (float)(v218 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*((float*)&v827_
-                                                                  .v827 +
-                                                              1) *
-                                                            (float)(v224 *
-                                                                    0x1.3880000000000p+13f))) +
-                                            (float)(*(float*)&v827_.v828 *
-                                                    v282);
-                                        v287 =
-                                            (float)((float)((float)(*((float*)&v827_
-                                                                          .v828 +
-                                                                      1) *
-                                                                    (float)(v218 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*(float*)&v827_
-                                                                 .v829 *
-                                                            (float)(v224 *
-                                                                    0x1.3880000000000p+13f))) +
-                                            (float)(*((float*)&v827_.v829 + 1) *
-                                                    v282);
-                                        v288 =
-                                            (float)((float)((float)(*(float*)&v827_
-                                                                         .v830 *
-                                                                    (float)(v218 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*((float*)&v827_
-                                                                  .v830 +
-                                                              1) *
-                                                            (float)(v224 *
-                                                                    0x1.3880000000000p+13f))) +
-                                            (float)(v827_.v831 * v282);
-                                        v289 =
-                                            (float)((float)(*(float*)&v827_
-                                                                 .v827 *
-                                                            v280) +
-                                                    0x0.0p+0f) +
-                                            (float)(*((float*)&v827_.v827 + 1) *
-                                                    v283);
-                                        v290 = (float)((float)(*((float*)&v827_
-                                                                     .v828 +
-                                                                 1) *
-                                                               v280) +
-                                                       0x0.0p+0f) +
-                                               (float)(*(float*)&v827_.v829 *
-                                                       v283);
-                                        v291 =
-                                            (float)((float)(*(float*)&v827_
-                                                                 .v830 *
-                                                            v280) +
-                                                    0x0.0p+0f) +
-                                            (float)(*((float*)&v827_.v830 + 1) *
-                                                    v283);
-                                        v292 =
-                                            (float)((float)((float)(*(float*)&v827_
-                                                                         .v827 *
-                                                                    (float)(v220 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*((float*)&v827_
-                                                                  .v827 +
-                                                              1) *
-                                                            v281)) +
-                                            (float)(*(float*)&v827_.v828 *
-                                                    v284);
-                                        v293 =
-                                            (float)((float)((float)(*((float*)&v827_
-                                                                          .v828 +
-                                                                      1) *
-                                                                    (float)(v220 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*(float*)&v827_
-                                                                 .v829 *
-                                                            v281)) +
-                                            (float)(*((float*)&v827_.v829 + 1) *
-                                                    v284);
-                                        v294 =
-                                            (float)((float)((float)(*(float*)&v827_
-                                                                         .v830 *
-                                                                    (float)(v220 *
-                                                                            0x1.3880000000000p+13f)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(*((float*)&v827_
-                                                                  .v830 +
-                                                              1) *
-                                                            v281)) +
-                                            (float)(v827_.v831 * v284);
-                                        v295 = v289 +
-                                               (float)(*(float*)&v827_.v828 *
-                                                       v285);
-                                        v296 =
-                                            v290 +
-                                            (float)(*((float*)&v827_.v829 + 1) *
-                                                    v285);
-                                        v297 =
-                                            v291 + (float)(v827_.v831 * v285);
-                                        v826[0] =
-                                            (float)((float)((float)(v286 *
-                                                                    *(float*)&v827_
-                                                                         .v827) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v292 *
-                                                            *((float*)&v827_
-                                                                  .v827 +
-                                                              1))) +
-                                            (float)(v295 *
-                                                    *(float*)&v827_.v828);
-                                        v826[2] =
-                                            (float)((float)((float)(v286 *
-                                                                    *(float*)&v827_
-                                                                         .v830) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v292 *
-                                                            *((float*)&v827_
-                                                                  .v830 +
-                                                              1))) +
-                                            (float)(v295 * v827_.v831);
-                                        v826[1] =
-                                            (float)((float)((float)(v286 *
-                                                                    *((float*)&v827_
-                                                                          .v828 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v292 *
-                                                            *(float*)&v827_
-                                                                 .v829)) +
-                                            (float)(v295 *
-                                                    *((float*)&v827_.v829 + 1));
-                                        v826[3] =
-                                            (float)((float)((float)(v287 *
-                                                                    *(float*)&v827_
-                                                                         .v827) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v293 *
-                                                            *((float*)&v827_
-                                                                  .v827 +
-                                                              1))) +
-                                            (float)(v296 *
-                                                    *(float*)&v827_.v828);
-                                        v826[6] =
-                                            (float)((float)((float)(v288 *
-                                                                    *(float*)&v827_
-                                                                         .v827) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v294 *
-                                                            *((float*)&v827_
-                                                                  .v827 +
-                                                              1))) +
-                                            (float)(v297 *
-                                                    *(float*)&v827_.v828);
-                                        v826[4] =
-                                            (float)((float)((float)(v287 *
-                                                                    *((float*)&v827_
-                                                                          .v828 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v293 *
-                                                            *(float*)&v827_
-                                                                 .v829)) +
-                                            (float)(v296 *
-                                                    *((float*)&v827_.v829 + 1));
-                                        v826[5] =
-                                            (float)((float)((float)(v287 *
-                                                                    *(float*)&v827_
-                                                                         .v830) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v293 *
-                                                            *((float*)&v827_
-                                                                  .v830 +
-                                                              1))) +
-                                            (float)(v296 * v827_.v831);
-                                        v826[7] =
-                                            (float)((float)((float)(v288 *
-                                                                    *((float*)&v827_
-                                                                          .v828 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v294 *
-                                                            *(float*)&v827_
-                                                                 .v829)) +
-                                            (float)(v297 *
-                                                    *((float*)&v827_.v829 + 1));
-                                        v826[8] =
-                                            (float)((float)((float)(v288 *
-                                                                    *(float*)&v827_
-                                                                         .v830) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v294 *
-                                                            *((float*)&v827_
-                                                                  .v830 +
-                                                              1))) +
-                                            (float)(v297 * v827_.v831);
-                                        SdkRoutine_879fb0(v5 + 200, v1029,
-                                                          &v962, v832, v826);
-                                        LODWORD(v1029[1]) = 0;
-                                        v1029[0] = 0;
-                                        memset(v918, 0, 28);
-                                        v917 = 0;
-                                        v298 =
-                                            nerd_gyro_pointing_GyroPointingKalmanFilter_AddUnbiasedGyrVariable_plt(
-                                                v5 + 200, v1029, &v917);
-                                        v299 = *(_QWORD*)(v5 + 8440);
-                                        v300 = v298;
-                                        v301 = *(float*)(v5 + 8416) + 0x0.0p+0f;
-                                        v880[0] = *(_QWORD*)(v5 + 8432);
-                                        v880[1] = v299;
-                                        v302 = *(float*)(v5 + 8420);
-                                        v303 = *(float*)(v5 + 8424);
-                                        v1004 = 1;
-                                        v881 = *(_QWORD*)(v5 + 8448);
-                                        *(_QWORD*)&v882 = 0;
-                                        v1017 = 1802;
-                                        WORD2(v984) = 0;
-                                        v985 = 0;
-                                        WORD2(v986) = 0;
-                                        v987 = 0;
-                                        v989 = 0;
-                                        v1007 = 2;
-                                        v1009 = 3;
-                                        v990 = 0;
-                                        v992 = 0;
-                                        v993 = 0;
-                                        v995 = 0;
-                                        v996 = 0;
-                                        v998 = 0;
-                                        v999 = 0;
-                                        v1001 = 0;
-                                        v1002 = 1065353216;
-                                        v1005 = 1065353216;
-                                        v1008 = 1065353216;
-                                        v1010 = 1065353216;
-                                        v1012 = 1065353216;
-                                        v1014 = 1065353216;
-                                        v1019 = 2059;
-                                        v1011 = 4;
-                                        v1013 = 5;
-                                        v1015 = 1545;
-                                        v1016 = 0xBF8000003F800000LL;
-                                        v1018 = 0xBF8000003F800000LL;
-                                        v1020 = 0xBF8000003F800000LL;
-                                        v1021 = 15;
-                                        *(float*)v298 =
-                                            (float)(v816 + 0x0.0p+0f) - v301;
-                                        *(float*)(v298 + 4) =
-                                            (float)(v810 + 0x0.0p+0f) -
-                                            (float)(v302 + 0x0.0p+0f);
-                                        *(float*)(v298 + 8) =
-                                            (float)(v814 + 0x0.0p+0f) -
-                                            (float)(v303 + 0x0.0p+0f);
-                                        v304 = &v984 + 2 * v1021;
-                                        *((_WORD*)v304 + 2) = 12;
-                                        v304[1] = 1065353216;
-                                        v305 = v1021++;
-                                        v306 = &v984 + 2 * v1021;
-                                        *((_WORD*)v306 + 2) = 13;
-                                        v306[1] = 1065353216;
-                                        v307 = v1021++;
-                                        v308 = &v984 + 2 * v1021;
-                                        *((_WORD*)v308 + 2) = 14;
-                                        v308[1] = 1065353216;
-                                        v309 = v1021++;
-                                        v310 = *(_QWORD*)(v298 + 24);
-                                        v853 = *(_QWORD*)(v298 + 16);
-                                        v854 = v310;
-                                        v311 = *(_QWORD*)(v298 + 32);
-                                        *(_DWORD*)&v918[24] = 0;
-                                        *(_QWORD*)&v918[16] = 0;
-                                        v855 = v311;
-                                        if (v309 != -1) {
-                                          if ((~(_BYTE)v309 & 7) != 0) {
-                                            v313 = ((_BYTE)v309 + 1) & 7;
-                                            v312 = &v984;
-                                            do {
-                                              *(_DWORD*)v312 = 0;
-                                              v312 += 2;
-                                              --v313;
-                                            } while (v313 != 0);
-                                          }
-                                          else {
-                                            v312 = &v984;
-                                          }
-                                          if ((v309 & 0xFFFFFFFFFFFFFFFuLL) >=
-                                              7) {
-                                            do {
-                                              *(_DWORD*)v312 = 0;
-                                              *((_DWORD*)v312 + 4) = 0;
-                                              *((_DWORD*)v312 + 8) = 0;
-                                              *((_DWORD*)v312 + 12) = 0;
-                                              *((_DWORD*)v312 + 16) = 0;
-                                              *((_DWORD*)v312 + 20) = 0;
-                                              *((_DWORD*)v312 + 24) = 0;
-                                              *((_DWORD*)v312 + 28) = 0;
-                                              v312 += 16;
-                                            } while (v312 !=
-                                                     &v984 + 2 * v309 + 2);
-                                          }
+                                          *(_DWORD*)v304 = 0;
+                                          v304 += 2;
+                                          --v305;
+                                        } while (v305 != 0);
+                                      }
+                                      else {
+                                        v304 = &v971;
+                                      }
+                                      if ((v301 & 0xFFFFFFFFFFFFFFFuLL) >= 7) {
+                                        do {
+                                          *(_DWORD*)v304 = 0;
+                                          *((_DWORD*)v304 + 4) = 0;
+                                          *((_DWORD*)v304 + 8) = 0;
+                                          *((_DWORD*)v304 + 12) = 0;
+                                          *((_DWORD*)v304 + 16) = 0;
+                                          *((_DWORD*)v304 + 20) = 0;
+                                          *((_DWORD*)v304 + 24) = 0;
+                                          *((_DWORD*)v304 + 28) = 0;
+                                          v304 += 16;
+                                        } while (v304 != &v971 + 2 * v301 + 2);
+                                      }
+                                    }
+                                    *((_DWORD*)&v971 + 4 * v297) = 1065353216;
+                                    v306 = v1008;
+                                    if (v1008 != 0) {
+                                      v307 = 16 * v1008;
+                                      v308 = 16 * v1008 - 16;
+                                      v309 = (float*)(&v971 + 2 * v1008);
+                                      if ((~(_BYTE)v308 & 0x30) != 0) {
+                                        v310 = -(
+                                            __int64)(((unsigned __int8)((unsigned int)
+                                                                            v308 >>
+                                                                        4) +
+                                                      1) &
+                                                     3);
+                                        do {
+                                          v311 = *(v309 - 4);
+                                          v309 -= 4;
+                                          v256 = __CFADD__(v310++, 1);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v309 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v309 +
+                                                      4)) +
+                                              (float)(v309[2] * v311);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v309 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v309 +
+                                                      5)) +
+                                              (float)(v309[3] * v311);
+                                        } while (!v256);
+                                      }
+                                      if (v308 >= 0x30) {
+                                        v312 = v309 - 16;
+                                        do {
+                                          v313 = v312[12];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  52)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      52)) +
+                                              (float)(v312[14] * v313);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  53)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      53)) +
+                                              (float)(v312[15] * v313);
+                                          v314 = v312[8];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  36)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      36)) +
+                                              (float)(v312[10] * v314);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  37)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      37)) +
+                                              (float)(v312[11] * v314);
+                                          v315 = v312[4];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  20)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      20)) +
+                                              (float)(v312[6] * v315);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 +
+                                                  21)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      21)) +
+                                              (float)(v312[7] * v315);
+                                          v316 = *v312;
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      4)) +
+                                              (float)(v312[2] * *v312);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v312 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v312 +
+                                                      5)) +
+                                              (float)(v312[3] * v316);
+                                          v115 = v312 == (float*)&v971;
+                                          v312 -= 16;
+                                        } while (!v115);
+                                      }
+                                    }
+                                    else {
+                                      v307 = 0;
+                                    }
+                                    v317 = v981;
+                                    v318 = v984;
+                                    v319 = v978;
+                                    v904 = __PAIR64__(v973, v971);
+                                    *(float*)v905 = v975;
+                                    if (v306 != 0) {
+                                      v320 = v307 - 16;
+                                      if ((~((_BYTE)v307 - 16) & 0x70) != 0) {
+                                        v322 = ((unsigned __int8)((unsigned int)
+                                                                      v320 >>
+                                                                  4) +
+                                                1) &
+                                               7;
+                                        v321 = (char*)&v971;
+                                        do {
+                                          *(_DWORD*)v321 = 0;
+                                          v321 += 16;
+                                          --v322;
+                                        } while (v322 != 0);
+                                      }
+                                      else {
+                                        v321 = (char*)&v971;
+                                      }
+                                      if (v320 >= 0x70) {
+                                        v323 = (char*)&v971 + v307;
+                                        do {
+                                          *(_DWORD*)v321 = 0;
+                                          *((_DWORD*)v321 + 4) = 0;
+                                          *((_DWORD*)v321 + 8) = 0;
+                                          *((_DWORD*)v321 + 12) = 0;
+                                          *((_DWORD*)v321 + 16) = 0;
+                                          *((_DWORD*)v321 + 20) = 0;
+                                          *((_DWORD*)v321 + 24) = 0;
+                                          *((_DWORD*)v321 + 28) = 0;
+                                          v321 += 128;
+                                        } while (v321 != v323);
+                                      }
+                                    }
+                                    *((_DWORD*)&v971 + 4 * v299) = 1065353216;
+                                    v324 = v1008;
+                                    if (v1008 != 0) {
+                                      v325 = 16 * v1008;
+                                      v326 = 16 * v1008 - 16;
+                                      v327 = (float*)(&v971 + 2 * v1008);
+                                      if ((~(_BYTE)v326 & 0x30) != 0) {
+                                        v328 = -(
+                                            __int64)(((unsigned __int8)((unsigned int)
+                                                                            v326 >>
+                                                                        4) +
+                                                      1) &
+                                                     3);
+                                        do {
+                                          v329 = *(v327 - 4);
+                                          v327 -= 4;
+                                          v256 = __CFADD__(v328++, 1);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v327 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v327 +
+                                                      4)) +
+                                              (float)(v327[2] * v329);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v327 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v327 +
+                                                      5)) +
+                                              (float)(v327[3] * v329);
+                                        } while (!v256);
+                                      }
+                                      if (v326 >= 0x30) {
+                                        v330 = v327 - 16;
+                                        do {
+                                          v331 = v330[12];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  52)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      52)) +
+                                              (float)(v330[14] * v331);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  53)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      53)) +
+                                              (float)(v330[15] * v331);
+                                          v332 = v330[8];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  36)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      36)) +
+                                              (float)(v330[10] * v332);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  37)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      37)) +
+                                              (float)(v330[11] * v332);
+                                          v333 = v330[4];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  20)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      20)) +
+                                              (float)(v330[6] * v333);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 +
+                                                  21)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      21)) +
+                                              (float)(v330[7] * v333);
+                                          v334 = *v330;
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      4)) +
+                                              (float)(v330[2] * *v330);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v330 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v330 +
+                                                      5)) +
+                                              (float)(v330[3] * v334);
+                                          v115 = v330 == (float*)&v971;
+                                          v330 -= 16;
+                                        } while (!v115);
+                                      }
+                                    }
+                                    else {
+                                      v325 = 0;
+                                    }
+                                    v335 = v981;
+                                    v336 = v984;
+                                    v337 = v978;
+                                    *(_DWORD*)&v905[4] = v971;
+                                    *(_DWORD*)&v905[8] = v973;
+                                    *(float*)&v905[12] = v975;
+                                    if (v324 != 0) {
+                                      v338 = v325 - 16;
+                                      if ((~((_BYTE)v325 - 16) & 0x70) != 0) {
+                                        v340 = ((unsigned __int8)((unsigned int)
+                                                                      v338 >>
+                                                                  4) +
+                                                1) &
+                                               7;
+                                        v339 = (char*)&v971;
+                                        do {
+                                          *(_DWORD*)v339 = 0;
+                                          v339 += 16;
+                                          --v340;
+                                        } while (v340 != 0);
+                                      }
+                                      else {
+                                        v339 = (char*)&v971;
+                                      }
+                                      if (v338 >= 0x70) {
+                                        v341 = (char*)&v971 + v325;
+                                        do {
+                                          *(_DWORD*)v339 = 0;
+                                          *((_DWORD*)v339 + 4) = 0;
+                                          *((_DWORD*)v339 + 8) = 0;
+                                          *((_DWORD*)v339 + 12) = 0;
+                                          *((_DWORD*)v339 + 16) = 0;
+                                          *((_DWORD*)v339 + 20) = 0;
+                                          *((_DWORD*)v339 + 24) = 0;
+                                          *((_DWORD*)v339 + 28) = 0;
+                                          v339 += 128;
+                                        } while (v339 != v341);
+                                      }
+                                    }
+                                    *((_DWORD*)&v971 + 4 * v301) = 1065353216;
+                                    if (v1008 != 0) {
+                                      v342 = 16 * v1008 - 16;
+                                      v343 = (float*)(&v971 + 2 * v1008);
+                                      if ((~(_BYTE)v342 & 0x30) != 0) {
+                                        v344 = -(
+                                            __int64)(((unsigned __int8)((unsigned int)
+                                                                            v342 >>
+                                                                        4) +
+                                                      1) &
+                                                     3);
+                                        do {
+                                          v345 = *(v343 - 4);
+                                          v343 -= 4;
+                                          v256 = __CFADD__(v344++, 1);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v343 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v343 +
+                                                      4)) +
+                                              (float)(v343[2] * v345);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v343 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v343 +
+                                                      5)) +
+                                              (float)(v343[3] * v345);
+                                        } while (!v256);
+                                      }
+                                      if (v342 >= 0x30) {
+                                        v346 = v343 - 16;
+                                        do {
+                                          v347 = v346[12];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  52)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      52)) +
+                                              (float)(v346[14] * v347);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  53)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      53)) +
+                                              (float)(v346[15] * v347);
+                                          v348 = v346[8];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  36)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      36)) +
+                                              (float)(v346[10] * v348);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  37)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      37)) +
+                                              (float)(v346[11] * v348);
+                                          v349 = v346[4];
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  20)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      20)) +
+                                              (float)(v346[6] * v349);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 +
+                                                  21)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      21)) +
+                                              (float)(v346[7] * v349);
+                                          v350 = *v346;
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 + 4)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      4)) +
+                                              (float)(v346[2] * *v346);
+                                          *((float*)&v971 +
+                                            4 * *((unsigned __int8*)v346 + 5)) =
+                                              *((float*)&v971 +
+                                                4 * *((unsigned __int8*)v346 +
+                                                      5)) +
+                                              (float)(v346[3] * v350);
+                                          v115 = v346 == (float*)&v971;
+                                          v346 -= 16;
+                                        } while (!v115);
+                                      }
+                                    }
+                                    *(_DWORD*)&v905[16] = v971;
+                                    *(_DWORD*)&v905[20] = v973;
+                                    *(float*)&v905[24] = v975;
+                                    v351 =
+                                        (float)((float)((float)(v319 * v779) +
+                                                        0x0.0p+0f) +
+                                                (float)(v317 * v776)) +
+                                        (float)(v318 * v221);
+                                    v352 =
+                                        (float)((float)((float)(v319 * v783) +
+                                                        0x0.0p+0f) +
+                                                (float)(v317 * v774)) +
+                                        (float)(v318 * v223);
+                                    v353 =
+                                        (float)((float)((float)(v319 * v785) +
+                                                        0x0.0p+0f) +
+                                                (float)(v317 * v219)) +
+                                        (float)(v318 * v206);
+                                    v354 =
+                                        (float)((float)((float)(v337 * v779) +
+                                                        0x0.0p+0f) +
+                                                (float)(v335 * v776)) +
+                                        (float)(v336 * v221);
+                                    v355 =
+                                        (float)((float)((float)(v337 * v785) +
+                                                        0x0.0p+0f) +
+                                                (float)(v335 * v219)) +
+                                        (float)(v336 * v206);
+                                    v356 =
+                                        (float)((float)((float)(v337 * v783) +
+                                                        0x0.0p+0f) +
+                                                (float)(v335 * v774)) +
+                                        (float)(v336 * v223);
+                                    v357 =
+                                        (float)((float)((float)(v978 * v779) +
+                                                        0x0.0p+0f) +
+                                                (float)(v981 * v776)) +
+                                        (float)(v984 * v221);
+                                    v358 =
+                                        (float)((float)((float)(v978 * v783) +
+                                                        0x0.0p+0f) +
+                                                (float)(v981 * v774)) +
+                                        (float)(v984 * v223);
+                                    v359 =
+                                        (float)((float)((float)(v978 * v785) +
+                                                        0x0.0p+0f) +
+                                                (float)(v981 * v219)) +
+                                        (float)(v984 * v206);
+                                    *(float*)v1016 =
+                                        (float)((float)((float)(v351 * v319) +
+                                                        0x0.0p+0f) +
+                                                (float)(v352 * v317)) +
+                                        (float)(v353 * v318);
+                                    *((float*)v1016 + 1) =
+                                        (float)((float)((float)(v351 * v337) +
+                                                        0x0.0p+0f) +
+                                                (float)(v352 * v335)) +
+                                        (float)(v353 * v336);
+                                    *(float*)&v1016[1] =
+                                        (float)((float)((float)(v351 * v978) +
+                                                        0x0.0p+0f) +
+                                                (float)(v352 * v981)) +
+                                        (float)(v353 * v984);
+                                    *(float*)v1017 =
+                                        (float)((float)((float)(v354 * v337) +
+                                                        0x0.0p+0f) +
+                                                (float)(v356 * v335)) +
+                                        (float)(v355 * v336);
+                                    *((float*)&v1016[1] + 1) =
+                                        (float)((float)((float)(v354 * v319) +
+                                                        0x0.0p+0f) +
+                                                (float)(v356 * v317)) +
+                                        (float)(v355 * v318);
+                                    *((float*)v1017 + 1) =
+                                        (float)((float)((float)(v354 * v978) +
+                                                        0x0.0p+0f) +
+                                                (float)(v356 * v981)) +
+                                        (float)(v355 * v984);
+                                    *(float*)&v1017[1] =
+                                        (float)((float)((float)(v357 * v319) +
+                                                        0x0.0p+0f) +
+                                                (float)(v358 * v317)) +
+                                        (float)(v359 * v318);
+                                    *((float*)&v1017[1] + 1) =
+                                        (float)((float)((float)(v357 * v337) +
+                                                        0x0.0p+0f) +
+                                                (float)(v358 * v335)) +
+                                        (float)(v359 * v336);
+                                    *(float*)&v1017[2] =
+                                        (float)((float)((float)(v357 * v978) +
+                                                        0x0.0p+0f) +
+                                                (float)(v358 * v981)) +
+                                        (float)(v359 * v984);
+                                    SdkRoutine_879fd0_alt1(
+                                        v5 + 200, (__int64)&v904, (__int64)v867,
+                                        (__int64)&v840, (__int64)v1016);
+                                    if ((v1012 & 0x100000000LL) != 0) {
+                                    LABEL_237:
+                                      v1016[0] = 0;
+                                      v1016[1] = 0;
+                                      memset(v905, 0, 28);
+                                      v904 = 0;
+                                      v396 =
+                                          nerd_gyro_pointing_GyroPointingKalmanFilter_AddRelativeRotationVariable_plt_alt1(
+                                              v5 + 200, (__int64)v1016,
+                                              (__int64)&v904);
+                                      v397 = *(_QWORD*)(v292 + 16);
+                                      v398 = *(_QWORD*)(v292 + 24);
+                                      v399 = *(_QWORD*)(v292 + 32);
+                                      v400 = v396;
+                                      v401 = *(__int64**)(v5 + 8496);
+                                      v402 = *(_QWORD*)(v5 + 8504);
+                                      v403 = *(_QWORD*)(v5 + 8512);
+                                      v404 = *(__int64**)(v5 + 8520);
+                                      WORD2(v971) = 0;
+                                      v972 = 0;
+                                      WORD2(v973) = 0;
+                                      v974 = 0;
+                                      v976 = 0;
+                                      v977 = 0;
+                                      v979 = 0;
+                                      v980 = 0;
+                                      v982 = 0;
+                                      v983 = 0;
+                                      v985 = 0;
+                                      v849 = 0;
+                                      v850 = 3;
+                                      v986 = 0;
+                                      v988 = 0;
+                                      v989 = 0;
+                                      v991 = 0;
+                                      v992 = 0;
+                                      v994 = 0;
+                                      v995 = 0;
+                                      v957 = 0;
+                                      v956 = 0;
+                                      v955 = nullptr;
+                                      v954 = 0;
+                                      v953 = 0;
+                                      v952 = nullptr;
+                                      v951 = 0;
+                                      v950 = 0;
+                                      v949 = nullptr;
+                                      v840 = v397;
+                                      v841 = v398;
+                                      v405 = *(_QWORD*)(v5 + 8536);
+                                      v406 = *(_QWORD*)(v5 + 8528);
+                                      v842 = v399;
+                                      v843 = v401;
+                                      v844 = v402;
+                                      v845 = v403;
+                                      v848 = v405;
+                                      v846 = v404;
+                                      v847 = v406;
+                                      v1008 = 9;
+                                      v407 = *(float*)v292 + 0x0.0p+0f;
+                                      v996 = 0;
+                                      v997 = 1065353216;
+                                      v1008 = 10;
+                                      v408 = *(float*)(v292 + 4) + 0x0.0p+0f;
+                                      v998 = 1;
+                                      v999 = 1065353216;
+                                      v1008 = 11;
+                                      v409 = *(float*)(v292 + 8) + 0x0.0p+0f;
+                                      *(_QWORD*)v905 = 3;
+                                      *(_QWORD*)&v905[24] = 4;
+                                      *(_QWORD*)&v905[72] = 4;
+                                      *(_QWORD*)&v905[48] = 5;
+                                      *(_QWORD*)&v905[144] = 5;
+                                      *(_QWORD*)&v905[96] = 6;
+                                      *(_QWORD*)&v905[120] = 7;
+                                      *(_QWORD*)&v905[168] = 7;
+                                      v1001 = 1065353216;
+                                      v907 = 8;
+                                      v1008 = 12;
+                                      v1000 = 2;
+                                      v949 = &v971;
+                                      v950 = 9;
+                                      v952 = &v971;
+                                      v953 = 10;
+                                      *(float*)&v951 = v407;
+                                      *(float*)&v954 = v408;
+                                      v955 = &v971;
+                                      v956 = 11;
+                                      v1035 = 0;
+                                      v1036 = 0;
+                                      v1033 = 0;
+                                      v1034 = 0;
+                                      v1031 = 0;
+                                      v1032 = 0;
+                                      v1029 = 0;
+                                      v1030 = 0;
+                                      v1027 = 0;
+                                      v1028 = 0;
+                                      v1025 = 0;
+                                      v1026 = 0;
+                                      v1023 = 0;
+                                      v1024 = 0;
+                                      v1021 = 0;
+                                      v1022 = 0;
+                                      v1019 = 0;
+                                      v1020 = 0;
+                                      v1018 = 0;
+                                      v1016[1] = 0;
+                                      memset(v1017, 0, sizeof(v1017));
+                                      v1016[0] = 0;
+                                      v908 = 0;
+                                      *(_QWORD*)&v905[176] = 0;
+                                      *(_QWORD*)&v905[152] = 0;
+                                      *(_QWORD*)&v905[128] = 0;
+                                      *(_QWORD*)&v905[104] = 0;
+                                      *(_QWORD*)&v905[80] = 0;
+                                      *(_QWORD*)&v905[56] = 0;
+                                      *(_QWORD*)&v905[32] = 0;
+                                      *(_QWORD*)&v905[8] = 0;
+                                      v904 = (__int64)&v971;
+                                      *(_QWORD*)&v905[16] = &v971;
+                                      *(_QWORD*)&v905[64] = &v971;
+                                      *(_QWORD*)&v905[40] = &v971;
+                                      *(_QWORD*)&v905[136] = &v971;
+                                      *(_QWORD*)&v905[88] = &v971;
+                                      *(_QWORD*)&v905[112] = &v971;
+                                      *(_QWORD*)&v905[160] = &v971;
+                                      v906 = &v971;
+                                      *(float*)&v957 = v409;
+                                      SdkRoutine_879f90_alt1();
+                                      v900 = 0;
+                                      v899 = 0;
+                                      v898 = 0;
+                                      v897 = 0;
+                                      v896 = 0;
+                                      v895 = 0;
+                                      v894 = 0;
+                                      v893 = 0;
+                                      v892 = 0;
+                                      SdkRoutine_879fa0_alt1();
+                                      v410 = *(float*)&v894;
+                                      v411 = v892;
+                                      v875 = 0;
+                                      v876 = 0;
+                                      v873 = 0;
+                                      v874 = 0;
+                                      v871 = 0;
+                                      v872 = 0;
+                                      v870 = 0;
+                                      v868 = 0;
+                                      v869 = (__typeof__(v869)){0};
+                                      v867[0] = 0;
+                                      v867[1] = 0;
+                                      if (v892 != 0) {
+                                        v412 = v892 +
+                                               16LL * *(_QWORD*)(v892 + 4096);
+                                        *(_WORD*)(v412 + 4) =
+                                            (unsigned __int8)v893;
+                                        *(float*)(v412 + 8) = v804;
+                                        *(_DWORD*)(v412 + 12) = 0;
+                                        v413 = *(_QWORD*)(v411 + 4096);
+                                        *(_QWORD*)(v411 + 4096) = v413 + 1;
+                                        v414 = *(float*)&v897;
+                                        v415 = v895;
+                                        if (v895 != 0) {
+                                          goto LABEL_239;
                                         }
-                                        *((_DWORD*)&v984 + 4 * v305) =
-                                            1065353216;
-                                        v314 = v1021;
-                                        if (v1021 != 0) {
-                                          v315 = 16 * v1021;
-                                          v316 = 16 * v1021 - 16;
-                                          v317 = (float*)(&v984 + 2 * v1021);
-                                          if ((~(_BYTE)v316 & 0x30) != 0) {
-                                            v318 = -(
-                                                __int64)(((unsigned __int8)((unsigned int)
-                                                                                v316 >>
-                                                                            4) +
-                                                          1) &
-                                                         3);
-                                            do {
-                                              v319 = *(v317 - 4);
-                                              v317 -= 4;
-                                              v264 = __CFADD__(v318++, 1);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v317 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v317 +
-                                                          4)) +
-                                                  (float)(v317[2] * v319);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v317 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v317 +
-                                                          5)) +
-                                                  (float)(v317[3] * v319);
-                                            } while (!v264);
-                                          }
-                                          if (v316 >= 0x30) {
-                                            v320 = v317 - 16;
-                                            do {
-                                              v321 = v320[12];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      52)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          52)) +
-                                                  (float)(v320[14] * v321);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      53)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          53)) +
-                                                  (float)(v320[15] * v321);
-                                              v322 = v320[8];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      36)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          36)) +
-                                                  (float)(v320[10] * v322);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      37)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          37)) +
-                                                  (float)(v320[11] * v322);
-                                              v323 = v320[4];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      20)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          20)) +
-                                                  (float)(v320[6] * v323);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      21)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          21)) +
-                                                  (float)(v320[7] * v323);
-                                              v324 = *v320;
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          4)) +
-                                                  (float)(v320[2] * *v320);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v320 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v320 +
-                                                          5)) +
-                                                  (float)(v320[3] * v324);
-                                              v117 = v320 == (float*)&v984;
-                                              v320 -= 16;
-                                            } while (!v117);
-                                          }
-                                        }
-                                        else {
-                                          v315 = 0;
-                                        }
-                                        v325 = v994;
-                                        v326 = v997;
-                                        v327 = v991;
-                                        v917 = __PAIR64__(v986, v984);
-                                        *(float*)v918 = v988;
-                                        if (v314 != 0) {
-                                          v328 = v315 - 16;
-                                          if ((~((_BYTE)v315 - 16) & 0x70) !=
-                                              0) {
-                                            v330 =
-                                                ((unsigned __int8)((unsigned int)
-                                                                       v328 >>
-                                                                   4) +
-                                                 1) &
-                                                7;
-                                            v329 = (char*)&v984;
-                                            do {
-                                              *(_DWORD*)v329 = 0;
-                                              v329 += 16;
-                                              --v330;
-                                            } while (v330 != 0);
-                                          }
-                                          else {
-                                            v329 = (char*)&v984;
-                                          }
-                                          if (v328 >= 0x70) {
-                                            v331 = (char*)&v984 + v315;
-                                            do {
-                                              *(_DWORD*)v329 = 0;
-                                              *((_DWORD*)v329 + 4) = 0;
-                                              *((_DWORD*)v329 + 8) = 0;
-                                              *((_DWORD*)v329 + 12) = 0;
-                                              *((_DWORD*)v329 + 16) = 0;
-                                              *((_DWORD*)v329 + 20) = 0;
-                                              *((_DWORD*)v329 + 24) = 0;
-                                              *((_DWORD*)v329 + 28) = 0;
-                                              v329 += 128;
-                                            } while (v329 != v331);
-                                          }
-                                        }
-                                        *((_DWORD*)&v984 + 4 * v307) =
-                                            1065353216;
-                                        v332 = v1021;
-                                        if (v1021 != 0) {
-                                          v333 = 16 * v1021;
-                                          v334 = 16 * v1021 - 16;
-                                          v335 = (float*)(&v984 + 2 * v1021);
-                                          if ((~(_BYTE)v334 & 0x30) != 0) {
-                                            v336 = -(
-                                                __int64)(((unsigned __int8)((unsigned int)
-                                                                                v334 >>
-                                                                            4) +
-                                                          1) &
-                                                         3);
-                                            do {
-                                              v337 = *(v335 - 4);
-                                              v335 -= 4;
-                                              v264 = __CFADD__(v336++, 1);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v335 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v335 +
-                                                          4)) +
-                                                  (float)(v335[2] * v337);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v335 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v335 +
-                                                          5)) +
-                                                  (float)(v335[3] * v337);
-                                            } while (!v264);
-                                          }
-                                          if (v334 >= 0x30) {
-                                            v338 = v335 - 16;
-                                            do {
-                                              v339 = v338[12];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      52)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          52)) +
-                                                  (float)(v338[14] * v339);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      53)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          53)) +
-                                                  (float)(v338[15] * v339);
-                                              v340 = v338[8];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      36)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          36)) +
-                                                  (float)(v338[10] * v340);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      37)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          37)) +
-                                                  (float)(v338[11] * v340);
-                                              v341 = v338[4];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      20)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          20)) +
-                                                  (float)(v338[6] * v341);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      21)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          21)) +
-                                                  (float)(v338[7] * v341);
-                                              v342 = *v338;
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          4)) +
-                                                  (float)(v338[2] * *v338);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v338 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v338 +
-                                                          5)) +
-                                                  (float)(v338[3] * v342);
-                                              v117 = v338 == (float*)&v984;
-                                              v338 -= 16;
-                                            } while (!v117);
-                                          }
-                                        }
-                                        else {
-                                          v333 = 0;
-                                        }
-                                        v343 = v994;
-                                        v344 = v997;
-                                        v345 = v991;
-                                        *(_DWORD*)&v918[4] = v984;
-                                        *(_DWORD*)&v918[8] = v986;
-                                        *(float*)&v918[12] = v988;
-                                        if (v332 != 0) {
-                                          v346 = v333 - 16;
-                                          if ((~((_BYTE)v333 - 16) & 0x70) !=
-                                              0) {
-                                            v348 =
-                                                ((unsigned __int8)((unsigned int)
-                                                                       v346 >>
-                                                                   4) +
-                                                 1) &
-                                                7;
-                                            v347 = (char*)&v984;
-                                            do {
-                                              *(_DWORD*)v347 = 0;
-                                              v347 += 16;
-                                              --v348;
-                                            } while (v348 != 0);
-                                          }
-                                          else {
-                                            v347 = (char*)&v984;
-                                          }
-                                          if (v346 >= 0x70) {
-                                            v349 = (char*)&v984 + v333;
-                                            do {
-                                              *(_DWORD*)v347 = 0;
-                                              *((_DWORD*)v347 + 4) = 0;
-                                              *((_DWORD*)v347 + 8) = 0;
-                                              *((_DWORD*)v347 + 12) = 0;
-                                              *((_DWORD*)v347 + 16) = 0;
-                                              *((_DWORD*)v347 + 20) = 0;
-                                              *((_DWORD*)v347 + 24) = 0;
-                                              *((_DWORD*)v347 + 28) = 0;
-                                              v347 += 128;
-                                            } while (v347 != v349);
-                                          }
-                                        }
-                                        *((_DWORD*)&v984 + 4 * v309) =
-                                            1065353216;
-                                        if (v1021 != 0) {
-                                          v350 = 16 * v1021 - 16;
-                                          v351 = (float*)(&v984 + 2 * v1021);
-                                          if ((~(_BYTE)v350 & 0x30) != 0) {
-                                            v352 = -(
-                                                __int64)(((unsigned __int8)((unsigned int)
-                                                                                v350 >>
-                                                                            4) +
-                                                          1) &
-                                                         3);
-                                            do {
-                                              v353 = *(v351 - 4);
-                                              v351 -= 4;
-                                              v264 = __CFADD__(v352++, 1);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v351 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v351 +
-                                                          4)) +
-                                                  (float)(v351[2] * v353);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v351 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v351 +
-                                                          5)) +
-                                                  (float)(v351[3] * v353);
-                                            } while (!v264);
-                                          }
-                                          if (v350 >= 0x30) {
-                                            v354 = v351 - 16;
-                                            do {
-                                              v355 = v354[12];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      52)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          52)) +
-                                                  (float)(v354[14] * v355);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      53)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          53)) +
-                                                  (float)(v354[15] * v355);
-                                              v356 = v354[8];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      36)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          36)) +
-                                                  (float)(v354[10] * v356);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      37)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          37)) +
-                                                  (float)(v354[11] * v356);
-                                              v357 = v354[4];
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      20)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          20)) +
-                                                  (float)(v354[6] * v357);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      21)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          21)) +
-                                                  (float)(v354[7] * v357);
-                                              v358 = *v354;
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      4)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          4)) +
-                                                  (float)(v354[2] * *v354);
-                                              *((float*)&v984 +
-                                                4 * *((unsigned __int8*)v354 +
-                                                      5)) =
-                                                  *((float*)&v984 +
-                                                    4 * *((unsigned __int8*)
-                                                              v354 +
-                                                          5)) +
-                                                  (float)(v354[3] * v358);
-                                              v117 = v354 == (float*)&v984;
-                                              v354 -= 16;
-                                            } while (!v117);
-                                          }
-                                        }
-                                        *(_DWORD*)&v918[16] = v984;
-                                        *(_DWORD*)&v918[20] = v986;
-                                        *(float*)&v918[24] = v988;
-                                        v359 = (float)((float)((float)(v327 *
-                                                                       v792) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v325 * v789)) +
-                                               (float)(v326 * v229);
-                                        v360 = (float)((float)((float)(v327 *
-                                                                       v796) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v325 * v787)) +
-                                               (float)(v326 * v231);
-                                        v361 = (float)((float)((float)(v327 *
-                                                                       v798) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v325 * v227)) +
-                                               (float)(v326 * v214);
-                                        v362 = (float)((float)((float)(v345 *
-                                                                       v792) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v343 * v789)) +
-                                               (float)(v344 * v229);
-                                        v363 = (float)((float)((float)(v345 *
-                                                                       v798) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v343 * v227)) +
-                                               (float)(v344 * v214);
-                                        v364 = (float)((float)((float)(v345 *
-                                                                       v796) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v343 * v787)) +
-                                               (float)(v344 * v231);
-                                        v365 = (float)((float)((float)(v991 *
-                                                                       v792) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v994 * v789)) +
-                                               (float)(v997 * v229);
-                                        v366 = (float)((float)((float)(v991 *
-                                                                       v796) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v994 * v787)) +
-                                               (float)(v997 * v231);
-                                        v367 = (float)((float)((float)(v991 *
-                                                                       v798) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v994 * v227)) +
-                                               (float)(v997 * v214);
-                                        *(float*)v1029 =
-                                            (float)((float)((float)(v359 *
-                                                                    v327) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v360 * v325)) +
-                                            (float)(v361 * v326);
-                                        *((float*)v1029 + 1) =
-                                            (float)((float)((float)(v359 *
-                                                                    v345) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v360 * v343)) +
-                                            (float)(v361 * v344);
-                                        *(float*)&v1029[1] =
-                                            (float)((float)((float)(v359 *
-                                                                    v991) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v360 * v994)) +
-                                            (float)(v361 * v997);
-                                        *(float*)v1030 =
-                                            (float)((float)((float)(v362 *
-                                                                    v345) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v364 * v343)) +
-                                            (float)(v363 * v344);
-                                        *((float*)&v1029[1] + 1) =
-                                            (float)((float)((float)(v362 *
-                                                                    v327) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v364 * v325)) +
-                                            (float)(v363 * v326);
-                                        *((float*)v1030 + 1) =
-                                            (float)((float)((float)(v362 *
-                                                                    v991) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v364 * v994)) +
-                                            (float)(v363 * v997);
-                                        *(float*)&v1030[1] =
-                                            (float)((float)((float)(v365 *
-                                                                    v327) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v366 * v325)) +
-                                            (float)(v367 * v326);
-                                        *((float*)&v1030[1] + 1) =
-                                            (float)((float)((float)(v365 *
-                                                                    v345) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v366 * v343)) +
-                                            (float)(v367 * v344);
-                                        *(float*)&v1030[2] =
-                                            (float)((float)((float)(v365 *
-                                                                    v991) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v366 * v994)) +
-                                            (float)(v367 * v997);
-                                        SdkRoutine_879fd0(v5 + 200, &v917, v880,
-                                                          &v853, v1029);
-                                        if ((v1025 & 0x100000000LL) != 0) {
-                                        LABEL_243:
-                                          v1029[0] = 0;
-                                          v1029[1] = 0;
-                                          memset(v918, 0, 28);
-                                          v917 = 0;
-                                          v406 =
-                                              nerd_gyro_pointing_GyroPointingKalmanFilter_AddRelativeRotationVariable_plt(
-                                                  v5 + 200, v1029, &v917);
-                                          v407 = *(_QWORD*)(v300 + 16);
-                                          v408 = *(_QWORD*)(v300 + 24);
-                                          v409 = *(_QWORD*)(v300 + 32);
-                                          v410 = v406;
-                                          v411 = *(__int64**)(v5 + 8496);
-                                          v412 = *(_QWORD*)(v5 + 8504);
-                                          v413 = *(_QWORD*)(v5 + 8512);
-                                          v414 = *(__int64**)(v5 + 8520);
-                                          WORD2(v984) = 0;
-                                          v985 = 0;
-                                          WORD2(v986) = 0;
-                                          v987 = 0;
-                                          v989 = 0;
-                                          v990 = 0;
-                                          v992 = 0;
-                                          v993 = 0;
-                                          v995 = 0;
-                                          v996 = 0;
-                                          v998 = 0;
-                                          v862 = 0;
-                                          v863 = 3;
-                                          v999 = 0;
-                                          v1001 = 0;
-                                          v1002 = 0;
-                                          v1004 = 0;
-                                          v1005 = 0;
-                                          v1007 = 0;
-                                          v1008 = 0;
-                                          v970 = 0;
-                                          v969 = 0;
-                                          v968 = nullptr;
-                                          v967 = 0;
-                                          v966 = 0;
-                                          v965 = nullptr;
-                                          v964 = 0;
-                                          v963 = 0;
-                                          v962 = nullptr;
-                                          v853 = v407;
-                                          v854 = v408;
-                                          v415 = *(_QWORD*)(v5 + 8536);
-                                          v416 = *(_QWORD*)(v5 + 8528);
-                                          v855 = v409;
-                                          v856 = v411;
-                                          v857 = v412;
-                                          v858 = v413;
-                                          v861 = v415;
-                                          v859 = v414;
-                                          v860 = v416;
-                                          v1021 = 9;
-                                          v417 = *(float*)v300 + 0x0.0p+0f;
-                                          v1009 = 0;
-                                          v1010 = 1065353216;
-                                          v1021 = 10;
-                                          v418 =
-                                              *(float*)(v300 + 4) + 0x0.0p+0f;
-                                          v1011 = 1;
-                                          v1012 = 1065353216;
-                                          v1021 = 11;
-                                          v419 =
-                                              *(float*)(v300 + 8) + 0x0.0p+0f;
-                                          *(_QWORD*)v918 = 3;
-                                          *(_QWORD*)&v918[24] = 4;
-                                          *(_QWORD*)&v918[72] = 4;
-                                          *(_QWORD*)&v918[48] = 5;
-                                          *(_QWORD*)&v918[144] = 5;
-                                          *(_QWORD*)&v918[96] = 6;
-                                          *(_QWORD*)&v918[120] = 7;
-                                          *(_QWORD*)&v918[168] = 7;
-                                          v1014 = 1065353216;
-                                          v920 = 8;
-                                          v1021 = 12;
-                                          v1013 = 2;
-                                          v962 = &v984;
-                                          v963 = 9;
-                                          v965 = &v984;
-                                          v966 = 10;
-                                          *(float*)&v964 = v417;
-                                          *(float*)&v967 = v418;
-                                          v968 = &v984;
-                                          v969 = 11;
-                                          v1048 = 0;
-                                          v1049 = 0;
-                                          v1046 = 0;
-                                          v1047 = 0;
-                                          v1044 = 0;
-                                          v1045 = 0;
-                                          v1042 = 0;
-                                          v1043 = 0;
-                                          v1040 = 0;
-                                          v1041 = 0;
-                                          v1038 = 0;
-                                          v1039 = 0;
-                                          v1036 = 0;
-                                          v1037 = 0;
-                                          v1034 = 0;
-                                          v1035 = 0;
-                                          v1032 = 0;
-                                          v1033 = 0;
-                                          v1031 = 0;
-                                          v1029[1] = 0;
-                                          memset(v1030, 0, sizeof(v1030));
-                                          v1029[0] = 0;
-                                          v921 = 0;
-                                          *(_QWORD*)&v918[176] = 0;
-                                          *(_QWORD*)&v918[152] = 0;
-                                          *(_QWORD*)&v918[128] = 0;
-                                          *(_QWORD*)&v918[104] = 0;
-                                          *(_QWORD*)&v918[80] = 0;
-                                          *(_QWORD*)&v918[56] = 0;
-                                          *(_QWORD*)&v918[32] = 0;
-                                          *(_QWORD*)&v918[8] = 0;
-                                          v917 = (__int64)&v984;
-                                          *(_QWORD*)&v918[16] = &v984;
-                                          *(_QWORD*)&v918[64] = &v984;
-                                          *(_QWORD*)&v918[40] = &v984;
-                                          *(_QWORD*)&v918[136] = &v984;
-                                          *(_QWORD*)&v918[88] = &v984;
-                                          *(_QWORD*)&v918[112] = &v984;
-                                          *(_QWORD*)&v918[160] = &v984;
-                                          v919 = &v984;
-                                          *(float*)&v970 = v419;
-                                          SdkRoutine_879f90((void*)(v1029),
-                                                            &v917, v5 + 8456);
-                                          v913 = 0;
-                                          v912 = 0;
-                                          v911 = 0;
-                                          v910 = 0;
-                                          v909 = 0;
-                                          v908 = 0;
-                                          v907 = 0;
-                                          v906 = 0;
-                                          v905 = 0;
-                                          SdkRoutine_879fa0((void*)(&v905),
-                                                            v1029, &v962);
-                                          v420 = *(float*)&v907;
-                                          v421 = v905;
-                                          v888 = 0;
-                                          v889 = 0;
-                                          v886 = 0;
-                                          v887 = 0;
-                                          v884 = 0;
-                                          v885 = 0;
-                                          v883 = 0;
-                                          v881 = 0;
-                                          v882 = (__typeof__(v882)){0};
-                                          v880[0] = 0;
-                                          v880[1] = 0;
-                                          if (v905 != 0) {
-                                            v422 =
-                                                v905 +
-                                                16LL * *(_QWORD*)(v905 + 4096);
-                                            *(_WORD*)(v422 + 4) =
-                                                (unsigned __int8)v906;
-                                            *(float*)(v422 + 8) = v817;
-                                            *(_DWORD*)(v422 + 12) = 0;
-                                            v423 = *(_QWORD*)(v421 + 4096);
-                                            *(_QWORD*)(v421 + 4096) = v423 + 1;
-                                            v424 = *(float*)&v910;
-                                            v425 = v908;
-                                            if (v908 != 0) {
-                                              goto LABEL_245;
-                                            }
-                                          }
-                                          else {
-                                            v423 = -1;
-                                            v424 = *(float*)&v910;
-                                            v425 = v908;
-                                            if (v908 != 0) {
-                                            LABEL_245:
-                                              v426 = v425 +
-                                                     16LL * *(_QWORD*)(v425 +
-                                                                       4096);
-                                              *(_WORD*)(v426 + 4) =
-                                                  (unsigned __int8)v909;
-                                              *(float*)(v426 + 8) = v817;
-                                              *(_DWORD*)(v426 + 12) = 0;
-                                              v427 = *(_QWORD*)(v425 + 4096);
-                                              *(_QWORD*)(v425 + 4096) =
-                                                  v427 + 1;
-                                              v428 = *(float*)&v913;
-                                              v429 = v911;
-                                              if (v911 != 0) {
-                                              LABEL_246:
-                                                v430 = v429 +
-                                                       16LL * *(_QWORD*)(v429 +
-                                                                         4096);
-                                                *(_WORD*)(v430 + 4) =
-                                                    (unsigned __int8)v912;
-                                                *(float*)(v430 + 8) = v817;
-                                                *(_DWORD*)(v430 + 12) = 0;
-                                                v431 = *(_QWORD*)(v429 + 4096);
-                                                *(_QWORD*)(v429 + 4096) =
-                                                    v431 + 1;
-                                              LABEL_250:
-                                                v917 = v421;
-                                                *(_QWORD*)v918 = v423;
-                                                *(_DWORD*)&v918[12] = 0;
-                                                *(_QWORD*)&v918[16] = v425;
-                                                *(_QWORD*)&v918[24] = v427;
-                                                *(_DWORD*)&v918[36] = 0;
-                                                *(_QWORD*)&v918[40] = v429;
-                                                *(_QWORD*)&v918[48] = v431;
-                                                *(_DWORD*)&v918[60] = 0;
-                                                *(float*)&v918[8] = v817 * v420;
-                                                *(float*)&v918[32] =
-                                                    v817 * v424;
-                                                *(float*)&v918[56] =
-                                                    v817 * v428;
-                                                kalman_transition_70e160(
-                                                    (void*)((float*)v880),
-                                                    (float*)&v917);
-                                                v432 = v883;
-                                                v433 = v886;
-                                                v434 = v889;
-                                                *(_DWORD*)v410 = v881;
-                                                *(_DWORD*)(v410 + 4) = v432;
-                                                *(_DWORD*)(v410 + 8) = v433;
-                                                *(_DWORD*)(v410 + 12) = v434;
-                                                v957 = 0;
-                                                v956 = 0;
-                                                v955 = 0;
-                                                v954 = 0;
-                                                v953 = 0;
-                                                v952 = 0;
-                                                v951 = 0;
-                                                v949 = 0;
-                                                v950 = 0;
-                                                v435 = *(float*)(v410 + 8);
-                                                *(float*)&v436 = -*(float*)v410;
-                                                *(float*)&v437 =
-                                                    -*(float*)(v410 + 4);
-                                                HIDWORD(v844_.v845) =
-                                                    *(_DWORD*)(v410 + 12);
-                                                v844_.v844 =
-                                                    __PAIR64__(v437, v436);
-                                                *(float*)&v844_.v845 = -v435;
-                                                nerd_gyro_pointing_720480(
-                                                    (void*)((float*)&v917),
-                                                    v880, (float*)&v844_.v844);
-                                                SdkRoutine_722d40(
-                                                    (void*)((__int64)&v949),
-                                                    (float*)&v917);
-                                                v438 = *(_QWORD*)(v410 + 24);
-                                                v833_.v833 =
-                                                    *(_QWORD*)(v410 + 16);
-                                                v833_.v834 = v438;
-                                                v439 = *(_QWORD*)(v410 + 32);
-                                                memset(&v918[28], 0, 72);
-                                                v833_.v835 = v439;
-                                                v440 = v1021;
-                                                if (v1021 != 0) {
-                                                  v441 = 16 * v1021 - 16;
-                                                  if ((~(_BYTE)v441 & 0x70) !=
-                                                      0) {
-                                                    v443 = -(
-                                                        __int64)(((unsigned __int8)((unsigned int)
-                                                                                        v441 >>
-                                                                                    4) +
-                                                                  1) &
-                                                                 7);
-                                                    v442 = &v984;
-                                                    do {
-                                                      *(_DWORD*)v442 = 0;
-                                                      v442 += 2;
-                                                      v264 =
-                                                          __CFADD__(v443++, 1);
-                                                    } while (!v264);
-                                                  }
-                                                  else {
-                                                    v442 = &v984;
-                                                  }
-                                                  if (v441 >= 0x70) {
-                                                    v444 = &v984 + 2 * v440;
-                                                    do {
-                                                      *(_DWORD*)v442 = 0;
-                                                      *((_DWORD*)v442 + 4) = 0;
-                                                      *((_DWORD*)v442 + 8) = 0;
-                                                      *((_DWORD*)v442 + 12) = 0;
-                                                      *((_DWORD*)v442 + 16) = 0;
-                                                      *((_DWORD*)v442 + 20) = 0;
-                                                      *((_DWORD*)v442 + 24) = 0;
-                                                      *((_DWORD*)v442 + 28) = 0;
-                                                      v442 += 16;
-                                                    } while (v442 != v444);
-                                                  }
-                                                }
-                                                if (v949 != 0) {
-                                                  *(_DWORD*)(v949 + 16 * v950) =
-                                                      1065353216;
-                                                }
-                                                v445 = v1021;
-                                                if (v1021 != 0) {
-                                                  v446 = 16 * v1021;
-                                                  v447 = 16 * v1021 - 16;
-                                                  v448 = (float*)(&v984 +
-                                                                  2 * v1021);
-                                                  if ((~(_BYTE)v447 & 0x30) !=
-                                                      0) {
-                                                    v449 = -(
-                                                        __int64)(((unsigned __int8)((unsigned int)
-                                                                                        v447 >>
-                                                                                    4) +
-                                                                  1) &
-                                                                 3);
-                                                    do {
-                                                      v450 = *(v448 - 4);
-                                                      v448 -= 4;
-                                                      v264 =
-                                                          __CFADD__(v449++, 1);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v448 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v448 +
-                                                                  4)) +
-                                                          (float)(v448[2] *
-                                                                  v450);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v448 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v448 +
-                                                                  5)) +
-                                                          (float)(v448[3] *
-                                                                  v450);
-                                                    } while (!v264);
-                                                  }
-                                                  if (v447 >= 0x30) {
-                                                    v451 = v448 - 16;
-                                                    do {
-                                                      v452 = v451[12];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              52)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  52)) +
-                                                          (float)(v451[14] *
-                                                                  v452);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              53)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  53)) +
-                                                          (float)(v451[15] *
-                                                                  v452);
-                                                      v453 = v451[8];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              36)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  36)) +
-                                                          (float)(v451[10] *
-                                                                  v453);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              37)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  37)) +
-                                                          (float)(v451[11] *
-                                                                  v453);
-                                                      v454 = v451[4];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              20)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  20)) +
-                                                          (float)(v451[6] *
-                                                                  v454);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              21)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  21)) +
-                                                          (float)(v451[7] *
-                                                                  v454);
-                                                      v455 = *v451;
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  4)) +
-                                                          (float)(v451[2] *
-                                                                  *v451);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v451 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v451 +
-                                                                  5)) +
-                                                          (float)(v451[3] *
-                                                                  v455);
-                                                      v117 =
-                                                          v451 == (float*)&v984;
-                                                      v451 -= 16;
-                                                    } while (!v117);
-                                                  }
-                                                }
-                                                else {
-                                                  v446 = 0;
-                                                }
-                                                v917 = __PAIR64__(v986, v984);
-                                                *(float*)v918 = v988;
-                                                *(float*)&v918[4] = v991;
-                                                *(float*)&v918[8] = v994;
-                                                *(float*)&v918[12] = v997;
-                                                *(_DWORD*)&v918[16] = v1000;
-                                                *(_DWORD*)&v918[20] = v1003;
-                                                *(_DWORD*)&v918[24] = v1006;
-                                                if (v445 != 0) {
-                                                  v456 = v446 - 16;
-                                                  if ((~((_BYTE)v446 - 16) &
-                                                       0x70) != 0) {
-                                                    v458 =
-                                                        ((unsigned __int8)((unsigned int)
-                                                                               v456 >>
-                                                                           4) +
-                                                         1) &
-                                                        7;
-                                                    v457 = (char*)&v984;
-                                                    do {
-                                                      *(_DWORD*)v457 = 0;
-                                                      v457 += 16;
-                                                      --v458;
-                                                    } while (v458 != 0);
-                                                  }
-                                                  else {
-                                                    v457 = (char*)&v984;
-                                                  }
-                                                  if (v456 >= 0x70) {
-                                                    v459 = (char*)&v984 + v446;
-                                                    do {
-                                                      *(_DWORD*)v457 = 0;
-                                                      *((_DWORD*)v457 + 4) = 0;
-                                                      *((_DWORD*)v457 + 8) = 0;
-                                                      *((_DWORD*)v457 + 12) = 0;
-                                                      *((_DWORD*)v457 + 16) = 0;
-                                                      *((_DWORD*)v457 + 20) = 0;
-                                                      *((_DWORD*)v457 + 24) = 0;
-                                                      *((_DWORD*)v457 + 28) = 0;
-                                                      v457 += 128;
-                                                    } while (v457 != v459);
-                                                  }
-                                                }
-                                                if (v952 != 0) {
-                                                  *(_DWORD*)(v952 + 16 * v953) =
-                                                      1065353216;
-                                                }
-                                                v460 = v1021;
-                                                if (v1021 != 0) {
-                                                  v461 = 16 * v1021;
-                                                  v462 = 16 * v1021 - 16;
-                                                  v463 = (float*)(&v984 +
-                                                                  2 * v1021);
-                                                  if ((~(_BYTE)v462 & 0x30) !=
-                                                      0) {
-                                                    v464 = -(
-                                                        __int64)(((unsigned __int8)((unsigned int)
-                                                                                        v462 >>
-                                                                                    4) +
-                                                                  1) &
-                                                                 3);
-                                                    do {
-                                                      v465 = *(v463 - 4);
-                                                      v463 -= 4;
-                                                      v264 =
-                                                          __CFADD__(v464++, 1);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v463 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v463 +
-                                                                  4)) +
-                                                          (float)(v463[2] *
-                                                                  v465);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v463 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v463 +
-                                                                  5)) +
-                                                          (float)(v463[3] *
-                                                                  v465);
-                                                    } while (!v264);
-                                                  }
-                                                  if (v462 >= 0x30) {
-                                                    v466 = v463 - 16;
-                                                    do {
-                                                      v467 = v466[12];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              52)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  52)) +
-                                                          (float)(v466[14] *
-                                                                  v467);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              53)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  53)) +
-                                                          (float)(v466[15] *
-                                                                  v467);
-                                                      v468 = v466[8];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              36)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  36)) +
-                                                          (float)(v466[10] *
-                                                                  v468);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              37)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  37)) +
-                                                          (float)(v466[11] *
-                                                                  v468);
-                                                      v469 = v466[4];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              20)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  20)) +
-                                                          (float)(v466[6] *
-                                                                  v469);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              21)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  21)) +
-                                                          (float)(v466[7] *
-                                                                  v469);
-                                                      v470 = *v466;
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  4)) +
-                                                          (float)(v466[2] *
-                                                                  *v466);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v466 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v466 +
-                                                                  5)) +
-                                                          (float)(v466[3] *
-                                                                  v470);
-                                                      v117 =
-                                                          v466 == (float*)&v984;
-                                                      v466 -= 16;
-                                                    } while (!v117);
-                                                  }
-                                                }
-                                                else {
-                                                  v461 = 0;
-                                                }
-                                                *(_DWORD*)&v918[28] = v984;
-                                                *(_DWORD*)&v918[32] = v986;
-                                                *(float*)&v918[36] = v988;
-                                                *(float*)&v918[40] = v991;
-                                                *(float*)&v918[44] = v994;
-                                                *(float*)&v918[48] = v997;
-                                                *(_DWORD*)&v918[52] = v1000;
-                                                *(_DWORD*)&v918[56] = v1003;
-                                                *(_DWORD*)&v918[60] = v1006;
-                                                if (v460 != 0) {
-                                                  v471 = v461 - 16;
-                                                  if ((~((_BYTE)v461 - 16) &
-                                                       0x70) != 0) {
-                                                    v473 =
-                                                        ((unsigned __int8)((unsigned int)
-                                                                               v471 >>
-                                                                           4) +
-                                                         1) &
-                                                        7;
-                                                    v472 = (char*)&v984;
-                                                    do {
-                                                      *(_DWORD*)v472 = 0;
-                                                      v472 += 16;
-                                                      --v473;
-                                                    } while (v473 != 0);
-                                                  }
-                                                  else {
-                                                    v472 = (char*)&v984;
-                                                  }
-                                                  if (v471 >= 0x70) {
-                                                    v474 = (char*)&v984 + v461;
-                                                    do {
-                                                      *(_DWORD*)v472 = 0;
-                                                      *((_DWORD*)v472 + 4) = 0;
-                                                      *((_DWORD*)v472 + 8) = 0;
-                                                      *((_DWORD*)v472 + 12) = 0;
-                                                      *((_DWORD*)v472 + 16) = 0;
-                                                      *((_DWORD*)v472 + 20) = 0;
-                                                      *((_DWORD*)v472 + 24) = 0;
-                                                      *((_DWORD*)v472 + 28) = 0;
-                                                      v472 += 128;
-                                                    } while (v472 != v474);
-                                                  }
-                                                }
-                                                if (v955 != 0) {
-                                                  *(_DWORD*)(v955 + 16 * v956) =
-                                                      1065353216;
-                                                }
-                                                if (v1021 != 0) {
-                                                  v475 = 16 * v1021 - 16;
-                                                  v476 = (float*)(&v984 +
-                                                                  2 * v1021);
-                                                  if ((~(_BYTE)v475 & 0x30) !=
-                                                      0) {
-                                                    v477 = -(
-                                                        __int64)(((unsigned __int8)((unsigned int)
-                                                                                        v475 >>
-                                                                                    4) +
-                                                                  1) &
-                                                                 3);
-                                                    do {
-                                                      v478 = *(v476 - 4);
-                                                      v476 -= 4;
-                                                      v264 =
-                                                          __CFADD__(v477++, 1);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v476 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v476 +
-                                                                  4)) +
-                                                          (float)(v476[2] *
-                                                                  v478);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v476 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v476 +
-                                                                  5)) +
-                                                          (float)(v476[3] *
-                                                                  v478);
-                                                    } while (!v264);
-                                                  }
-                                                  if (v475 >= 0x30) {
-                                                    v479 = v476 - 16;
-                                                    do {
-                                                      v480 = v479[12];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              52)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  52)) +
-                                                          (float)(v479[14] *
-                                                                  v480);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              53)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  53)) +
-                                                          (float)(v479[15] *
-                                                                  v480);
-                                                      v481 = v479[8];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              36)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  36)) +
-                                                          (float)(v479[10] *
-                                                                  v481);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              37)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  37)) +
-                                                          (float)(v479[11] *
-                                                                  v481);
-                                                      v482 = v479[4];
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              20)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  20)) +
-                                                          (float)(v479[6] *
-                                                                  v482);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              21)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  21)) +
-                                                          (float)(v479[7] *
-                                                                  v482);
-                                                      v483 = *v479;
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              4)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  4)) +
-                                                          (float)(v479[2] *
-                                                                  *v479);
-                                                      *((float*)&v984 +
-                                                        4 * *((unsigned __int8*)
-                                                                  v479 +
-                                                              5)) =
-                                                          *((float*)&v984 +
-                                                            4 * *((unsigned __int8*)
-                                                                      v479 +
-                                                                  5)) +
-                                                          (float)(v479[3] *
-                                                                  v483);
-                                                      v117 =
-                                                          v479 == (float*)&v984;
-                                                      v479 -= 16;
-                                                    } while (!v117);
-                                                  }
-                                                }
-                                                LODWORD(v846_.v848) = 0;
-                                                v846_.v846 = 0;
-                                                v846_.v847 = 0;
-                                                v844_.v844 = 0;
-                                                v844_.v845 = 0;
-                                                *(_DWORD*)&v918[64] = v984;
-                                                *(_DWORD*)&v918[68] = v986;
-                                                *(float*)&v918[80] = v994;
-                                                *(float*)&v918[84] = v997;
-                                                *(_DWORD*)&v918[88] = v1000;
-                                                *(_DWORD*)&v918[92] = v1003;
-                                                *(float*)&v918[72] = v988;
-                                                *(float*)&v918[76] = v991;
-                                                *(_DWORD*)&v918[96] = v1006;
-                                                SdkRoutine_87a000(
-                                                    v5 + 200, &v917, &v853,
-                                                    &v833_.v833, &v844_.v844);
-                                                nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveUnbiasedGyrVariable_plt(
-                                                    v5 + 200);
-                                                v484 = *(_QWORD*)(v5 + 8208);
-                                                v485 = *(_QWORD*)(v410 + 16);
-                                                v486 = *(_QWORD*)(v410 + 24);
-                                                v487 = *(_QWORD*)(v410 + 32);
-                                                v488 = *(float*)(v5 + 8184) +
-                                                       0x0.0p+0f;
-                                                v880[0] = *(_QWORD*)(v5 + 8200);
-                                                v880[1] = v484;
-                                                v489 = *(_QWORD*)(v5 + 8216);
-                                                v490 = *(_QWORD*)(v5 + 8240);
-                                                v491 = *(float*)(v5 + 8188);
-                                                v884 = v485;
-                                                v885 = v486;
-                                                v886 = v487;
-                                                v887 = 0;
-                                                v859 = nullptr;
-                                                v860 = 0;
-                                                v857 = 0;
-                                                v858 = 0;
-                                                v855 = 0;
-                                                v856 = nullptr;
-                                                v853 = 0;
-                                                v854 = 0;
-                                                v1029[0] = 0x3F80000000000000LL;
-                                                v1029[1] = 0;
-                                                v1030[0] = 0;
-                                                v492 = v491 + 0x0.0p+0f;
-                                                v881 = v489;
-                                                *(_QWORD*)&v882 = v490;
-                                                v493 = *(_QWORD*)(v5 + 8248);
-                                                v494 = *(_QWORD*)(v5 + 8256);
-                                                v495 = *(float*)(v5 + 0x2000);
-                                                *(_QWORD*)((char*)&v1030[1] +
-                                                           4) = 0;
-                                                *(_QWORD*)((char*)&v1030[2] +
-                                                           4) = 0;
-                                                LODWORD(v1030[1]) = 1065353216;
-                                                HIDWORD(v1030[3]) = 1065353216;
-                                                *((_QWORD*)&v882 + 1) = v493;
-                                                v883 = v494;
-                                                v888 = 3;
-                                                v889 = 6;
-                                                v496 = v495 + 0x0.0p+0f;
-                                                math_724480(
-                                                    (void*)((float*)&v917),
-                                                    (float*)v1029);
-                                                math_7241f0(
-                                                    (void*)((float*)&v853),
-                                                    (float*)&v917,
-                                                    (float*)(v5 + 8224));
-                                                v969 = 0;
-                                                v968 = nullptr;
-                                                v967 = 0;
-                                                v966 = 0;
-                                                v965 = nullptr;
-                                                v964 = 0;
-                                                v963 = 0;
-                                                v962 = nullptr;
-                                                v1029[0] = 0x3F80000000000000LL;
-                                                v1029[1] = 0;
-                                                v1030[0] = 0;
-                                                *(_QWORD*)((char*)&v1030[1] +
-                                                           4) = 0;
-                                                *(_QWORD*)((char*)&v1030[2] +
-                                                           4) = 0;
-                                                LODWORD(v1030[1]) = 1065353216;
-                                                HIDWORD(v1030[3]) = 1065353216;
-                                                v742 = *((float*)&v853 + 1);
-                                                v739 = *((float*)&v855 + 1);
-                                                v763 = *((float*)&v857 + 1);
-                                                v766 = *((float*)&v859 + 1);
-                                                v844_.v845 = __PAIR64__(
-                                                    (unsigned int)v859, v857);
-                                                v844_.v844 =
-                                                    __PAIR64__(v855, v853);
-                                                v729 = *(float*)&v854;
-                                                v730 = v856;
-                                                v731 = *((float*)&v854 + 1);
-                                                v745 = *((float*)&v858 + 1);
-                                                v748 = *(float*)&v858;
-                                                v757 = *((float*)&v860 + 1);
-                                                v760 = *(float*)&v860;
-                                                math_724480(
-                                                    (void*)((float*)&v917),
-                                                    (float*)v1029);
-                                                math_7241f0(
-                                                    (void*)((float*)&v962),
-                                                    (float*)&v917,
-                                                    (float*)v410);
-                                                v818[0] = v488;
-                                                v818[1] = 0x1.0000000000000p+0f;
-                                                v820 = v492;
-                                                v822 = 0;
-                                                v823 = v496;
-                                                v819 = 0;
-                                                v825 = 1065353216;
-                                                v821 = 0x3F80000000000000LL;
-                                                v824 = 0;
-                                                v780 = v963;
-                                                v800 = *((float*)&v966 + 1);
-                                                v811 = *((float*)&v968 + 1);
-                                                v833_.v834 = __PAIR64__(
-                                                    (unsigned int)v968, v966);
-                                                v775 = v965;
-                                                v807 = *(float*)&v967;
-                                                v769 = *((float*)&v964 + 1);
-                                                v803 = *((float*)&v967 + 1);
-                                                v497 = v969;
-                                                v771 = *((float*)&v962 + 1);
-                                                v833_.v833 = __PAIR64__(
-                                                    v964, (unsigned int)v962);
-                                                v498 =
-                                                    (float)((float)(PSEUDO_UNFUSED(
-                                                                *(float*)&v962 *
-                                                                *(float*)&v962)) +
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *(float*)&v964 *
-                                                                *(float*)&v964))) +
-                                                    (float)(PSEUDO_UNFUSED(
-                                                        *(float*)&v833_.v834 *
-                                                        *(float*)&v833_.v834));
-                                                v499 =
-                                                    (float)((float)((float)(*(float*)&v962 *
-                                                                            v488) +
-                                                                    0x0.0p+0f) +
-                                                            (float)(*(float*)&v964 *
-                                                                    v492)) +
-                                                    (float)(*(float*)&v966 *
-                                                            v496);
-                                                v500 =
-                                                    0x1.0000000000000p+1f /
-                                                    (float)((float)(PSEUDO_UNFUSED(
-                                                                *(float*)&v968 *
-                                                                *(float*)&v968)) +
-                                                            v498);
-                                                v720 =
-                                                    v492 +
-                                                    (float)(PSEUDO_UNFUSED(
-                                                        v500 *
-                                                        (float)((float)((float)(PSEUDO_UNFUSED(
-                                                                            *(float*)&v964 *
-                                                                            v499)) -
-                                                                        (float)(PSEUDO_UNFUSED(
-                                                                            v492 *
-                                                                            v498))) -
-                                                                (float)(PSEUDO_UNFUSED(
-                                                                    (float)((float)(*(float*)&v966 *
-                                                                                    v488) -
-                                                                            (float)(PSEUDO_UNFUSED(
-                                                                                v496 *
-                                                                                *(float*)&v962))) *
-                                                                    *(float*)&v968)))));
-                                                v722 =
-                                                    v488 +
-                                                    (float)(PSEUDO_UNFUSED(
-                                                        v500 *
-                                                        (float)((float)((float)(PSEUDO_UNFUSED(
-                                                                            *(float*)&v962 *
-                                                                            v499)) -
-                                                                        (float)(PSEUDO_UNFUSED(
-                                                                            v488 *
-                                                                            v498))) -
-                                                                (float)(PSEUDO_UNFUSED(
-                                                                    *(float*)&v968 *
-                                                                    (float)((float)(*(float*)&v964 *
-                                                                                    v496) -
-                                                                            (float)(PSEUDO_UNFUSED(
-                                                                                v492 *
-                                                                                *(float*)&v966))))))));
-                                                v718 =
-                                                    v496 +
-                                                    (float)(PSEUDO_UNFUSED(
-                                                        v500 *
-                                                        (float)((float)((float)(PSEUDO_UNFUSED(
-                                                                            *(float*)&v966 *
-                                                                            v499)) -
-                                                                        (float)(PSEUDO_UNFUSED(
-                                                                            v496 *
-                                                                            v498))) -
-                                                                (float)(PSEUDO_UNFUSED(
-                                                                    (float)((float)(*(float*)&v962 *
-                                                                                    v492) -
-                                                                            (float)(PSEUDO_UNFUSED(
-                                                                                v488 *
-                                                                                *(float*)&v964))) *
-                                                                    *(float*)&v968)))));
-                                                kalman_transition_70ed80(
-                                                    (void*)((float*)&v917),
-                                                    (float*)&v833_.v833, v818);
-                                                *(_DWORD*)&v918[8] = 0;
-                                                *(_QWORD*)&v918[44] =
-                                                    1065353216;
-                                                *(_QWORD*)&v918[56] = 0;
-                                                *(_QWORD*)&v918[64] =
-                                                    0x3F80000000000000LL;
-                                                v793 = *((float*)&v917 + 1);
-                                                v785 = *(_QWORD*)&v918[16];
-                                                *(_DWORD*)&v918[52] =
-                                                    HIDWORD(v833_.v834);
-                                                v501 = *(_QWORD*)v918;
-                                                v502 = *(float*)&v918[28];
-                                                *(_QWORD*)v918 = 0;
-                                                *(_QWORD*)&v918[16] =
-                                                    0x3F80000000000000LL;
-                                                *(_QWORD*)&v918[24] = 0;
-                                                v503 = *(float*)&v918[12];
-                                                v778 = v502;
-                                                *(_DWORD*)&v918[12] =
-                                                    HIDWORD(v833_.v833);
-                                                v790 = v503;
-                                                v783 = *(float*)&v918[32];
-                                                v917 =
-                                                    (unsigned int)v833_.v833 |
-                                                    0x3F80000000000000LL;
-                                                *(_DWORD*)&v918[32] =
-                                                    v833_.v834;
-                                                v504 = *(float*)&v918[36];
-                                                *(_QWORD*)&v918[36] = 0;
-                                                v773 = v504;
-                                                kalman_transition_70f080(
-                                                    (void*)((float*)v1029),
-                                                    (float*)&v917, v488, v492,
-                                                    v496);
-                                                v505 = *((float*)v1029 + 1);
-                                                v506 = v1029[1];
-                                                v507 = *(float*)v1030;
-                                                v1029[0] =
-                                                    (unsigned int)v844_.v844 |
-                                                    0x3F80000000000000LL;
-                                                v1029[1] = 0;
-                                                LODWORD(v1030[0]) = 0;
-                                                HIDWORD(v1030[0]) =
-                                                    HIDWORD(v844_.v844);
-                                                HIDWORD(v1030[5]) =
-                                                    HIDWORD(v844_.v845);
-                                                LODWORD(v1030[3]) = v844_.v845;
-                                                v1031 = 0;
-                                                v1032 = 0x3F80000000000000LL;
-                                                v755 = v507;
-                                                v508 = -(
-                                                    float)((float)((float)((float)((float)(*(float*)&v844_
-                                                                                                .v844 *
-                                                                                           *(float*)&v833_
-                                                                                                .v833) +
-                                                                                   0x0.0p+0f) +
-                                                                           (float)(*((float*)&v844_
-                                                                                         .v844 +
-                                                                                     1) *
-                                                                                   *((float*)&v833_
-                                                                                         .v833 +
-                                                                                     1))) +
-                                                                   (float)(*(float*)&v844_
-                                                                                .v845 *
-                                                                           *(float*)&v833_
-                                                                                .v834)) -
-                                                           (float)(*((float*)&v844_
-                                                                         .v845 +
-                                                                     1) *
-                                                                   *((float*)&v833_
-                                                                         .v834 +
-                                                                     1)));
-                                                v726 = *(float*)&v1030[1];
-                                                v727 = v505;
-                                                v509 = *((float*)&v1030[2] + 1);
-                                                v510 = *(float*)&v1030[2];
-                                                v728 = *((float*)&v1030[1] + 1);
-                                                v1030[1] = 0x3F80000000000000LL;
-                                                v1030[2] = 0;
-                                                v736 = v510;
-                                                v511 = *(
-                                                    _QWORD*)((char*)&v1030[3] +
-                                                             4);
-                                                *(_QWORD*)((char*)&v1030[3] +
-                                                           4) = 0;
-                                                v734 = *((float*)&v1030[4] + 1);
-                                                v512 = *(float*)&v1030[5];
-                                                *(_QWORD*)((char*)&v1030[4] +
-                                                           4) = 1065353216;
-                                                v751 = v512;
-                                                v753 = v509;
-                                                *(float*)&v513 =
-                                                    (float)((float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v833_
-                                                                      .v834 +
-                                                                  1) *
-                                                                *(float*)&v844_
-                                                                     .v844)) +
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v844_
-                                                                      .v845 +
-                                                                  1) *
-                                                                *(float*)&v833_
-                                                                     .v833))) +
-                                                    (float)((float)(*((float*)&v844_
-                                                                          .v844 +
-                                                                      1) *
-                                                                    *(float*)&v833_
-                                                                         .v834) -
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v833_
-                                                                      .v833 +
-                                                                  1) *
-                                                                *(float*)&v844_
-                                                                     .v845)));
-                                                v514 =
-                                                    (float)((float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v833_
-                                                                      .v834 +
-                                                                  1) *
-                                                                *((float*)&v844_
-                                                                      .v844 +
-                                                                  1))) +
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v844_
-                                                                      .v845 +
-                                                                  1) *
-                                                                *((float*)&v833_
-                                                                      .v833 +
-                                                                  1)))) +
-                                                    (float)((float)(*(float*)&v844_
-                                                                         .v845 *
-                                                                    *(float*)&v833_
-                                                                         .v833) -
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *(float*)&v833_
-                                                                     .v834 *
-                                                                *(float*)&v844_
-                                                                     .v844)));
-                                                v515 =
-                                                    (float)((float)(*(float*)&v844_
-                                                                         .v844 *
-                                                                    *((float*)&v833_
-                                                                          .v833 +
-                                                                      1)) -
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *(float*)&v833_
-                                                                     .v833 *
-                                                                *((float*)&v844_
-                                                                      .v844 +
-                                                                  1)))) +
-                                                    (float)((float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v833_
-                                                                      .v834 +
-                                                                  1) *
-                                                                *(float*)&v844_
-                                                                     .v845)) +
-                                                            (float)(PSEUDO_UNFUSED(
-                                                                *((float*)&v844_
-                                                                      .v845 +
-                                                                  1) *
-                                                                *(float*)&v833_
-                                                                     .v834)));
-                                                kalman_transition_70f680(
-                                                    (void*)((float*)&v917),
-                                                    (float*)v1029,
-                                                    (float*)&v833_.v833);
-                                                v516 = *((float*)&v917 + 1);
-                                                v517 = *(float*)&v918[16];
-                                                v518 = *(float*)&v918[56];
-                                                v1029[1] = 0;
-                                                LODWORD(v1030[0]) = 0;
-                                                v1030[1] = 0x3F80000000000000LL;
-                                                v1030[2] = 0;
-                                                *(_QWORD*)((char*)&v1030[3] +
-                                                           4) = 0;
-                                                *(_QWORD*)((char*)&v1030[4] +
-                                                           4) = 1065353216;
-                                                v1031 = 0;
-                                                v1032 = 0x3F80000000000000LL;
-                                                v703 = *(float*)v918;
-                                                v704 = *(float*)&v918[20];
-                                                v519 = *(_QWORD*)&v918[24];
-                                                v705 = *(_QWORD*)&v918[36];
-                                                v710 = *(float*)&v918[44];
-                                                v711 = *(float*)&v918[4];
-                                                HIDWORD(v1030[0]) =
-                                                    HIDWORD(v833_.v833);
-                                                v724 = *(float*)&v918[48];
-                                                v725 = *(float*)&v918[8];
-                                                HIDWORD(v1030[5]) =
-                                                    HIDWORD(v833_.v834);
-                                                v702 = *(float*)&v918[60];
-                                                v1029[0] =
-                                                    (unsigned int)v833_.v833 |
-                                                    0x3F80000000000000LL;
-                                                LODWORD(v1030[3]) = v833_.v834;
-                                                v520 = *(_QWORD*)&v918[64];
-                                                kalman_transition_70f9d0(
-                                                    (void*)((float*)&v917),
-                                                    (float*)&v844_.v844,
-                                                    (float*)v1029);
-                                                v521 = *((float*)&v917 + 1);
-                                                v522 = *(_DWORD*)v918;
-                                                v523 = *(float*)&v918[20];
-                                                v524 = *(float*)&v918[44];
-                                                *(float*)(v5 + 8228) = v514;
-                                                *(float*)(v5 + 8232) = v515;
-                                                *((float*)v1030 + 1) = v514;
-                                                *(float*)&v1030[3] = v515;
-                                                *(float*)(v5 + 8224) =
-                                                    *(float*)&v513;
-                                                *(float*)(v5 + 8236) = v508;
-                                                v1029[0] =
-                                                    v513 | 0x3F80000000000000LL;
-                                                v1029[1] = 0;
-                                                LODWORD(v1030[0]) = 0;
-                                                v1030[1] = 0x3F80000000000000LL;
-                                                v1030[2] = 0;
-                                                *(_QWORD*)((char*)&v1030[3] +
-                                                           4) = 0;
-                                                *(_QWORD*)((char*)&v1030[4] +
-                                                           4) = 1065353216;
-                                                *((float*)&v1030[5] + 1) = v508;
-                                                v1031 = 0;
-                                                v1032 = 0x3F80000000000000LL;
-                                                *((float*)&v950 + 1) = v508;
-                                                v712 = v521;
-                                                v715 = __PAIR64__(
-                                                    *(unsigned int*)&v918[4],
-                                                    v522);
-                                                v525 = *(float*)&v918[16];
-                                                v716 = *(float*)&v918[8];
-                                                *(float*)(v5 + 8188) = v720;
-                                                *(float*)(v5 + 8184) = v722;
-                                                v526 = *(float*)&v918[48];
-                                                *(float*)(v5 + 0x2000) = v718;
-                                                v713 = v526;
-                                                v714 = v524;
-                                                v706 = v525;
-                                                v707 = *(float*)&v918[24];
-                                                v717 = *(float*)&v918[60];
-                                                v719 = *(float*)&v918[56];
-                                                v708 = v523;
-                                                v709 = *(float*)&v918[28];
-                                                v527 = -v515;
-                                                v528 = *(float*)&v918[68];
-                                                *(float*)&v950 = v527;
-                                                v721 = *(float*)&v918[40];
-                                                v723 = *(float*)&v918[36];
-                                                v529 = -v514;
-                                                v530 = *(float*)&v918[64];
-                                                *(float*)&v949 =
-                                                    -*(float*)&v513;
-                                                *((float*)&v949 + 1) = v529;
-                                                kalman_transition_70f680(
-                                                    (void*)((float*)&v917),
-                                                    (float*)v1029,
-                                                    (float*)&v949);
-                                                math_724870(
-                                                    (void*)((float*)&v905),
-                                                    (float*)&v917);
-                                                v531 = *((float*)&v905 + 1);
-                                                v532 = *(float*)&v908;
-                                                v533 = *((float*)&v910 + 1);
-                                                v534 = *(float*)&v906;
-                                                v535 = *((float*)&v908 + 1);
-                                                v536 = *(float*)&v911;
-                                                v537 = *((float*)&v906 + 1);
-                                                v538 = *(float*)&v909;
-                                                v539 = *((float*)&v911 + 1);
-                                                v540 = (float)(*((float*)&v905 +
-                                                                 1) *
-                                                               v516) +
-                                                       0x0.0p+0f;
-                                                v541 = *(float*)&v907;
-                                                v542 = *((float*)&v909 + 1);
-                                                v543 = *(float*)&v912;
-                                                memset(&v918[164], 0, 20);
-                                                *(_QWORD*)&v918[156] = 0;
-                                                *(_QWORD*)&v918[148] = 0;
-                                                v544 =
-                                                    (float)((float)((float)(*((float*)&v905 +
-                                                                              1) *
-                                                                            v703) +
-                                                                    0x0.0p+0f) +
-                                                            (float)(*(float*)&v906 *
-                                                                    v704)) +
-                                                    (float)(*((float*)&v906 +
-                                                              1) *
-                                                            *((float*)&v705 +
-                                                              1));
-                                                memset(&v918[116], 0, 32);
-                                                v905 = *(_QWORD*)(v5 + 8200);
-                                                v906 = *(_QWORD*)(v5 + 8208);
-                                                v907 = *(_QWORD*)(v5 + 8216);
-                                                v545 =
-                                                    (float)((float)(v540 +
-                                                                    (float)(v534 *
-                                                                            v517)) +
-                                                            (float)(v537 *
-                                                                    *(float*)&v705)) +
-                                                    (float)(v541 * v518);
-                                                v546 =
-                                                    (float)((float)((float)((float)(*(float*)&v908 *
-                                                                                    v516) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(*((float*)&v908 +
-                                                                              1) *
-                                                                            v517)) +
-                                                            (float)(*(float*)&v909 *
-                                                                    *(float*)&v705)) +
-                                                    (float)(*((float*)&v909 +
-                                                              1) *
-                                                            v518);
-                                                v547 =
-                                                    (float)((float)((float)((float)(*((float*)&v910 +
-                                                                                      1) *
-                                                                                    v516) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(*(float*)&v911 *
-                                                                            v517)) +
-                                                            (float)(*((float*)&v911 +
-                                                                      1) *
-                                                                    *(float*)&v705)) +
-                                                    (float)(*(float*)&v912 *
-                                                            v518);
-                                                v548 =
-                                                    v544 + (float)(v541 * v702);
-                                                v549 =
-                                                    (float)((float)((float)((float)(*(float*)&v908 *
-                                                                                    v703) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(*((float*)&v908 +
-                                                                              1) *
-                                                                            v704)) +
-                                                            (float)(*(float*)&v909 *
-                                                                    *((float*)&v705 +
-                                                                      1))) +
-                                                    (float)(*((float*)&v909 +
-                                                              1) *
-                                                            v702);
-                                                v550 =
-                                                    (float)((float)((float)((float)(*((float*)&v910 +
-                                                                                      1) *
-                                                                                    v703) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(*(float*)&v911 *
-                                                                            v704)) +
-                                                            (float)(*((float*)&v911 +
-                                                                      1) *
-                                                                    *((float*)&v705 +
-                                                                      1))) +
-                                                    (float)(*(float*)&v912 *
-                                                            v702);
-                                                v908 = *(_QWORD*)(v5 + 8240);
-                                                v551 = *(_QWORD*)(v5 + 8248);
-                                                v911 = 0;
-                                                v912 = 3;
-                                                memset(&v918[4], 0, 112);
-                                                v1039 = 0;
-                                                v1040 = 0;
-                                                v1037 = 0;
-                                                v1038 = 0;
-                                                v1035 = 0;
-                                                v1036 = 0;
-                                                v1033 = 0;
-                                                v1034 = 0;
-                                                v1031 = 0;
-                                                v1032 = 0;
-                                                v552 = (float)((float)(v545 *
-                                                                       v742) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v548 * v739);
-                                                v553 = (float)((float)(v545 *
-                                                                       v729) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v548 *
-                                                               *(float*)&v730);
-                                                v554 = (float)((float)(v545 *
-                                                                       v731) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v548 *
-                                                               *((float*)&v730 +
-                                                                 1));
-                                                v555 = (float)((float)(v546 *
-                                                                       v729) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v549 *
-                                                               *(float*)&v730);
-                                                v909 = v551;
-                                                v556 = *(_QWORD*)(v5 + 8256);
-                                                memset(v1030, 0, sizeof(v1030));
-                                                v1029[0] = 0;
-                                                v1029[1] = 0;
-                                                v557 = (float)((float)(v546 *
-                                                                       v742) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v549 * v739);
-                                                v558 = (float)((float)(v546 *
-                                                                       v731) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v549 *
-                                                               *((float*)&v730 +
-                                                                 1));
-                                                v910 = v556;
-                                                v559 = (float)((float)(v547 *
-                                                                       v742) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v550 * v739);
-                                                v560 = (float)((float)(v547 *
-                                                                       v729) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v550 *
-                                                               *(float*)&v730);
-                                                v561 = (float)((float)(v547 *
-                                                                       v731) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v550 *
-                                                               *((float*)&v730 +
-                                                                 1));
-                                                v562 =
-                                                    (float)((float)((float)((float)(v531 *
-                                                                                    v711) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v534 *
-                                                                            *(float*)&v519)) +
-                                                            (float)(v537 *
-                                                                    v710)) +
-                                                    (float)(v541 *
-                                                            *(float*)&v520);
-                                                v563 =
-                                                    (float)((float)((float)((float)(v532 *
-                                                                                    v711) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v535 *
-                                                                            *(float*)&v519)) +
-                                                            (float)(v538 *
-                                                                    v710)) +
-                                                    (float)(v542 *
-                                                            *(float*)&v520);
-                                                v564 =
-                                                    (float)((float)((float)((float)(v533 *
-                                                                                    v711) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v536 *
-                                                                            *(float*)&v519)) +
-                                                            (float)(v539 *
-                                                                    v710)) +
-                                                    (float)(v543 *
-                                                            *(float*)&v520);
-                                                v565 =
-                                                    v553 + (float)(v562 * v748);
-                                                v566 =
-                                                    v554 + (float)(v562 * v745);
-                                                v567 =
-                                                    v555 + (float)(v563 * v748);
-                                                v568 =
-                                                    v558 + (float)(v563 * v745);
-                                                v569 =
-                                                    v560 + (float)(v564 * v748);
-                                                v570 =
-                                                    v552 + (float)(v562 * v763);
-                                                v571 =
-                                                    v557 + (float)(v563 * v763);
-                                                v572 =
-                                                    v559 + (float)(v564 * v763);
-                                                v573 =
-                                                    v561 + (float)(v564 * v745);
-                                                v574 =
-                                                    (float)((float)((float)((float)(v532 *
-                                                                                    v725) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v535 *
-                                                                            *((float*)&v519 +
-                                                                              1))) +
-                                                            (float)(v538 *
-                                                                    v724)) +
-                                                    (float)(v542 *
-                                                            *((float*)&v520 +
-                                                              1));
-                                                v575 =
-                                                    (float)((float)((float)((float)(v531 *
-                                                                                    v725) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v534 *
-                                                                            *((float*)&v519 +
-                                                                              1))) +
-                                                            (float)(v537 *
-                                                                    v724)) +
-                                                    (float)(v541 *
-                                                            *((float*)&v520 +
-                                                              1));
-                                                v576 =
-                                                    (float)((float)((float)((float)(v533 *
-                                                                                    v725) +
-                                                                            0x0.0p+0f) +
-                                                                    (float)(v536 *
-                                                                            *((float*)&v519 +
-                                                                              1))) +
-                                                            (float)(v539 *
-                                                                    v724)) +
-                                                    (float)(v543 *
-                                                            *((float*)&v520 +
-                                                              1));
-                                                v746 =
-                                                    v570 + (float)(v575 * v766);
-                                                v743 =
-                                                    v565 + (float)(v575 * v760);
-                                                v749 =
-                                                    v566 + (float)(v575 * v757);
-                                                v740 =
-                                                    v571 + (float)(v574 * v766);
-                                                *((float*)&v730 + 1) =
-                                                    v572 + (float)(v576 * v766);
-                                                v732 =
-                                                    v567 + (float)(v574 * v760);
-                                                *(float*)&v761 =
-                                                    v569 + (float)(v576 * v760);
-                                                v764 =
-                                                    v568 + (float)(v574 * v757);
-                                                *(float*)&v767 =
-                                                    v573 + (float)(v576 * v757);
-                                                v577 = (float)((float)(v531 *
-                                                                       v712) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v534 * v706);
-                                                v578 =
-                                                    (float)((float)(v531 *
-                                                                    *(float*)&v715) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v534 * v708);
-                                                v579 =
-                                                    (float)((float)(v531 *
-                                                                    *((float*)&v715 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v534 * v707);
-                                                v580 =
-                                                    (float)((float)(v532 *
-                                                                    *(float*)&v715) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v535 * v708);
-                                                v581 =
-                                                    (float)((float)(v532 *
-                                                                    *((float*)&v715 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v535 * v707);
-                                                v582 =
-                                                    (float)((float)(v533 *
-                                                                    *(float*)&v715) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v536 * v708);
-                                                v583 =
-                                                    (float)((float)(v533 *
-                                                                    *((float*)&v715 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v536 * v707);
-                                                v584 = (float)((float)(v531 *
-                                                                       v716) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v534 * v709);
-                                                v585 = (float)((float)(v532 *
-                                                                       v712) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v535 * v706);
-                                                v586 = (float)((float)(v532 *
-                                                                       v716) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v535 * v709);
-                                                v587 = (float)((float)(v533 *
-                                                                       v712) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v536 * v706);
-                                                v588 = (float)((float)(v533 *
-                                                                       v716) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v536 * v709);
-                                                v589 =
-                                                    v584 + (float)(v537 * v713);
-                                                v590 =
-                                                    v577 + (float)(v537 * v723);
-                                                v591 =
-                                                    v578 + (float)(v537 * v721);
-                                                v592 =
-                                                    v579 + (float)(v537 * v714);
-                                                v593 =
-                                                    v585 + (float)(v538 * v723);
-                                                v594 =
-                                                    v580 + (float)(v538 * v721);
-                                                v595 =
-                                                    v581 + (float)(v538 * v714);
-                                                v596 =
-                                                    v586 + (float)(v538 * v713);
-                                                v597 =
-                                                    v587 + (float)(v539 * v723);
-                                                v598 =
-                                                    v582 + (float)(v539 * v721);
-                                                v599 =
-                                                    v589 + (float)(v541 * v528);
-                                                v600 =
-                                                    v592 + (float)(v541 * v530);
-                                                v601 =
-                                                    v596 + (float)(v542 * v528);
-                                                v602 = (float)(v588 +
-                                                               (float)(v539 *
-                                                                       v713)) +
-                                                       (float)(v543 * v528);
-                                                v603 =
-                                                    v595 + (float)(v542 * v530);
-                                                v604 =
-                                                    v593 + (float)(v542 * v719);
-                                                v605 =
-                                                    v590 + (float)(v541 * v719);
-                                                v606 =
-                                                    v591 + (float)(v541 * v717);
-                                                v607 =
-                                                    v594 + (float)(v542 * v717);
-                                                v608 =
-                                                    v597 + (float)(v543 * v719);
-                                                v609 =
-                                                    v598 + (float)(v543 * v717);
-                                                v610 = (float)(v583 +
-                                                               (float)(v539 *
-                                                                       v714)) +
-                                                       (float)(v543 * v530);
-                                                v758 = v599;
-                                                v611 =
-                                                    (float)(v727 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                v612 =
-                                                    (float)((float)(v727 +
-                                                                    0x0.0p+0f) +
-                                                            (float)(v726 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(*(float*)&v511 *
-                                                            0x0.0p+0f);
-                                                v613 = (float)(v611 + v726) +
-                                                       (float)(*(float*)&v511 *
-                                                               0x0.0p+0f);
-                                                v614 =
-                                                    (float)(v611 +
-                                                            (float)(v726 *
-                                                                    0x0.0p+0f)) +
-                                                    *(float*)&v511;
-                                                v615 = (float)(*(float*)&v506 *
-                                                               0x0.0p+0f) +
-                                                       0x0.0p+0f;
-                                                v616 =
-                                                    (float)((float)(*(float*)&v506 +
-                                                                    0x0.0p+0f) +
-                                                            (float)(v728 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(*((float*)&v511 +
-                                                              1) *
-                                                            0x0.0p+0f);
-                                                v617 = (float)(v615 + v728) +
-                                                       (float)(*((float*)&v511 +
-                                                                 1) *
-                                                               0x0.0p+0f);
-                                                v618 =
-                                                    (float)(v615 +
-                                                            (float)(v728 *
-                                                                    0x0.0p+0f)) +
-                                                    *((float*)&v511 + 1);
-                                                v619 = (float)((float)(v612 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v616 * v769);
-                                                v620 =
-                                                    (float)((float)(v612 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v616 *
-                                                            *(float*)&v775);
-                                                v621 =
-                                                    (float)((float)(v605 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v606 *
-                                                            *(float*)&v775);
-                                                v622 =
-                                                    (float)((float)(v604 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v607 *
-                                                            *(float*)&v775);
-                                                v623 =
-                                                    (float)((float)(v608 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v609 *
-                                                            *(float*)&v775);
-                                                v624 =
-                                                    (float)((float)(v613 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v617 *
-                                                            *(float*)&v775);
-                                                v625 =
-                                                    (float)((float)(v614 *
-                                                                    *(float*)&v780) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v618 *
-                                                            *(float*)&v775);
-                                                v626 =
-                                                    (float)((float)(v612 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v616 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v627 = (float)((float)(v613 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v617 * v769);
-                                                v628 =
-                                                    (float)((float)(v613 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v617 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v629 = (float)((float)(v614 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v618 * v769);
-                                                v630 =
-                                                    (float)((float)(v614 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v618 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v631 = (float)((float)(v605 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v606 * v769);
-                                                v632 =
-                                                    (float)((float)(v605 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v606 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v633 = (float)((float)(v604 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v607 * v769);
-                                                v634 =
-                                                    (float)((float)(v604 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v607 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v635 = (float)((float)(v608 *
-                                                                       v771) +
-                                                               0x0.0p+0f) +
-                                                       (float)(v609 * v769);
-                                                v636 =
-                                                    (float)((float)(v608 *
-                                                                    *((float*)&v780 +
-                                                                      1)) +
-                                                            0x0.0p+0f) +
-                                                    (float)(v609 *
-                                                            *((float*)&v775 +
-                                                              1));
-                                                v637 = (float)(*((float*)&v506 +
-                                                                 1) *
-                                                               0x0.0p+0f) +
-                                                       0x0.0p+0f;
-                                                v638 =
-                                                    (float)((float)(*((float*)&v506 +
-                                                                      1) +
-                                                                    0x0.0p+0f) +
-                                                            (float)(v736 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v734 * 0x0.0p+0f);
-                                                v639 =
-                                                    (float)(v637 + v736) +
-                                                    (float)(v734 * 0x0.0p+0f);
-                                                v640 =
-                                                    (float)(v637 +
-                                                            (float)(v736 *
-                                                                    0x0.0p+0f)) +
-                                                    v734;
-                                                v641 =
-                                                    v630 + (float)(v640 * v803);
-                                                v642 =
-                                                    v619 + (float)(v638 * v800);
-                                                v643 =
-                                                    v620 + (float)(v638 * v807);
-                                                v644 =
-                                                    v626 + (float)(v638 * v803);
-                                                v645 =
-                                                    v627 + (float)(v639 * v800);
-                                                v646 =
-                                                    v624 + (float)(v639 * v807);
-                                                v647 =
-                                                    v625 + (float)(v640 * v807);
-                                                v648 =
-                                                    v631 + (float)(v600 * v800);
-                                                v649 =
-                                                    v621 + (float)(v600 * v807);
-                                                v650 =
-                                                    v632 + (float)(v600 * v803);
-                                                v651 =
-                                                    v622 + (float)(v603 * v807);
-                                                v652 =
-                                                    v623 + (float)(v610 * v807);
-                                                v653 =
-                                                    v633 + (float)(v603 * v800);
-                                                v654 =
-                                                    v634 + (float)(v603 * v803);
-                                                v655 =
-                                                    v635 + (float)(v610 * v800);
-                                                v656 =
-                                                    v636 + (float)(v610 * v803);
-                                                v657 =
-                                                    (float)(v755 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                v658 =
-                                                    (float)((float)(v755 +
-                                                                    0x0.0p+0f) +
-                                                            (float)(v753 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v751 * 0x0.0p+0f);
-                                                v659 =
-                                                    (float)(v657 + v753) +
-                                                    (float)(v751 * 0x0.0p+0f);
-                                                v660 =
-                                                    (float)(v657 +
-                                                            (float)(v753 *
-                                                                    0x0.0p+0f)) +
-                                                    v751;
-                                                *(float*)&v918[16] =
-                                                    v642 + (float)(v658 * v811);
-                                                *(float*)&v918[24] =
-                                                    v644 +
-                                                    (float)(v658 *
-                                                            *((float*)&v497 +
-                                                              1));
-                                                *(float*)&v918[52] =
-                                                    v645 + (float)(v659 * v811);
-                                                *(float*)&v918[96] =
-                                                    v641 +
-                                                    (float)(v660 *
-                                                            *((float*)&v497 +
-                                                              1));
-                                                *(float*)&v918[20] =
-                                                    v643 +
-                                                    (float)(v658 *
-                                                            *(float*)&v497);
-                                                *(float*)&v918[56] =
-                                                    v646 +
-                                                    (float)(v659 *
-                                                            *(float*)&v497);
-                                                *(float*)&v918[60] =
-                                                    (float)(v628 +
-                                                            (float)(v639 *
-                                                                    v803)) +
-                                                    (float)(v659 *
-                                                            *((float*)&v497 +
-                                                              1));
-                                                *(float*)&v918[88] =
-                                                    (float)(v629 +
-                                                            (float)(v640 *
-                                                                    v800)) +
-                                                    (float)(v660 * v811);
-                                                *(float*)&v918[92] =
-                                                    v647 +
-                                                    (float)(v660 *
-                                                            *(float*)&v497);
-                                                v804 = v654 +
-                                                       (float)(v601 *
-                                                               *((float*)&v497 +
-                                                                 1));
-                                                v808 = v651 +
-                                                       (float)(v601 *
-                                                               *(float*)&v497);
-                                                *(float*)&v918[124] =
-                                                    v648 + (float)(v758 * v811);
-                                                *(float*)&v918[128] =
-                                                    v649 +
-                                                    (float)(v758 *
-                                                            *(float*)&v497);
-                                                *(float*)&v918[132] =
-                                                    v650 +
-                                                    (float)(v758 *
-                                                            *((float*)&v497 +
-                                                              1));
-                                                *(float*)&v918[160] =
-                                                    v653 + (float)(v601 * v811);
-                                                v661 = (float)(*((float*)&v501 +
-                                                                 1) *
-                                                               0x0.0p+0f) +
-                                                       0x0.0p+0f;
-                                                *(float*)&v812 =
-                                                    v655 + (float)(v602 * v811);
-                                                v662 = (float)(*(float*)&v501 *
-                                                               0x0.0p+0f) +
-                                                       0x0.0p+0f;
-                                                *((float*)&v921 + 1) =
-                                                    v656 +
-                                                    (float)(v602 *
-                                                            *((float*)&v497 +
-                                                              1));
-                                                v663 =
-                                                    (float)((float)(*(float*)&v501 +
-                                                                    0x0.0p+0f) +
-                                                            (float)(*(float*)&v785 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v783 * 0x0.0p+0f);
-                                                v664 =
-                                                    (float)((float)(v793 +
-                                                                    0x0.0p+0f) +
-                                                            (float)(v790 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v778 * 0x0.0p+0f);
-                                                v665 =
-                                                    (float)((float)(*((float*)&v501 +
-                                                                      1) +
-                                                                    0x0.0p+0f) +
-                                                            (float)(*((float*)&v785 +
-                                                                      1) *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v773 * 0x0.0p+0f);
-                                                v666 =
-                                                    (float)(v661 +
-                                                            *((float*)&v785 +
-                                                              1)) +
-                                                    (float)(v773 * 0x0.0p+0f);
-                                                v667 =
-                                                    (float)(v661 +
-                                                            (float)(*((float*)&v785 +
-                                                                      1) *
-                                                                    0x0.0p+0f)) +
-                                                    v773;
-                                                v668 = v664 + 0x0.0p+0f;
-                                                v669 =
-                                                    (float)(v664 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                *(float*)&v917 =
-                                                    (float)(v668 +
-                                                            (float)(v663 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v665 * 0x0.0p+0f);
-                                                v670 =
-                                                    (float)(v793 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                v671 =
-                                                    (float)(v662 +
-                                                            *(float*)&v785) +
-                                                    (float)(v783 * 0x0.0p+0f);
-                                                *((float*)&v917 + 1) =
-                                                    (float)(v663 + v669) +
-                                                    (float)(v665 * 0x0.0p+0f);
-                                                *(float*)v918 =
-                                                    v665 +
-                                                    (float)(v669 +
-                                                            (float)(v663 *
-                                                                    0x0.0p+0f));
-                                                v672 =
-                                                    (float)(v662 +
-                                                            (float)(*(float*)&v785 *
-                                                                    0x0.0p+0f)) +
-                                                    v783;
-                                                v673 =
-                                                    (float)(v670 + v790) +
-                                                    (float)(v778 * 0x0.0p+0f);
-                                                v674 =
-                                                    (float)(v670 +
-                                                            (float)(v790 *
-                                                                    0x0.0p+0f)) +
-                                                    v778;
-                                                *(float*)&v918[116] = v743;
-                                                *(float*)&v918[112] = v746;
-                                                v675 = v673 + 0x0.0p+0f;
-                                                v676 =
-                                                    (float)(v673 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                *(float*)&v918[148] = v740;
-                                                *(float*)&v918[28] =
-                                                    (float)(v675 +
-                                                            (float)(v671 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v666 * 0x0.0p+0f);
-                                                v677 = v674 + 0x0.0p+0f;
-                                                v678 =
-                                                    (float)(v674 * 0x0.0p+0f) +
-                                                    0x0.0p+0f;
-                                                *(float*)&v918[36] =
-                                                    v666 +
-                                                    (float)(v676 +
-                                                            (float)(v671 *
-                                                                    0x0.0p+0f));
-                                                v919 = (__int64*)__PAIR64__(
-                                                    v761, HIDWORD(v730));
-                                                *(float*)&v918[152] = v732;
-                                                *(float*)&v918[32] =
-                                                    (float)(v671 + v676) +
-                                                    (float)(v666 * 0x0.0p+0f);
-                                                *(float*)&v918[64] =
-                                                    (float)(v677 +
-                                                            (float)(v672 *
-                                                                    0x0.0p+0f)) +
-                                                    (float)(v667 * 0x0.0p+0f);
-                                                *(float*)&v918[72] =
-                                                    v667 +
-                                                    (float)(v678 +
-                                                            (float)(v672 *
-                                                                    0x0.0p+0f));
-                                                *(float*)&v918[68] =
-                                                    (float)(v672 + v678) +
-                                                    (float)(v667 * 0x0.0p+0f);
-                                                *(float*)&v918[120] = v749;
-                                                *(float*)&v918[156] = v764;
-                                                *(float*)&v918[164] = v808;
-                                                *(float*)&v918[168] = v804;
-                                                v920 = __PAIR64__(v812, v767);
-                                                *(float*)&v921 =
-                                                    v652 +
-                                                    (float)(v602 *
-                                                            *(float*)&v497);
-                                                SdkRoutine_87a020(v5 + 200,
-                                                                  &v917, v880,
-                                                                  &v905, v1029);
-                                                nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveRelativeRotationVariable_plt(
-                                                    v5 + 200);
-                                                nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances_plt(
-                                                    v5 + 200, v817);
-                                                v679 = *(_QWORD*)(v5 + 8208);
-                                                v680 = *(float*)(v5 + 8188);
-                                                v681 = *(float*)(v5 + 8184) +
-                                                       0x0.0p+0f;
-                                                v880[0] = *(_QWORD*)(v5 + 8200);
-                                                v880[1] = v679;
-                                                v682 = *(float*)(v5 + 0x2000) +
-                                                       0x0.0p+0f;
-                                                v881 = *(_QWORD*)(v5 + 8216);
-                                                v917 = 1065353216;
-                                                *(_QWORD*)v918 = 0;
-                                                *(_DWORD*)&v918[8] = 1065353216;
-                                                *(_DWORD*)&v918[12] = 0;
-                                                *(_QWORD*)&v918[16] = 0;
-                                                *(_DWORD*)&v918[24] =
-                                                    1065353216;
-                                                *(__int64*)((char*)v1029 + 4) =
-                                                    0;
-                                                v683 = 0x1.99999a0000000p-4f;
-                                                HIDWORD(v1029[1]) = 0;
-                                                *(_QWORD*)((char*)v1030 + 4) =
-                                                    0;
-                                                HIDWORD(v1030[1]) = 0;
-                                                *(float*)&v853 = v681;
-                                                *((float*)&v853 + 1) =
-                                                    v680 + 0x0.0p+0f;
-                                                *(float*)&v854 = v682;
-                                                if (v817 <=
-                                                    0x1.99999a0000000p-4f) {
-                                                  v683 = v817;
-                                                }
-                                                *(float*)v1029 =
-                                                    *(float*)&v1026 /
-                                                    (float)(v683 /
-                                                            *(float*)&v1028);
-                                                *(float*)v1030 = *(float*)v1029;
-                                                *(float*)&v1030[2] =
-                                                    *(float*)v1029;
-                                                SdkRoutine_87a050(
-                                                    v5 + 200, &v853, &v917,
-                                                    v1029, v880, 0x0.0p+0);
-                                                math_711380(
-                                                    (__int64*)(v5 + 200));
-                                                if ((nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates_plt(
-                                                         v5 + 200) &
-                                                     1) != 0) {
-                                                  if ((signed __int64)v1024[0] <
-                                                      *(__int64*)(v5 + 15424)) {
-                                                    goto LABEL_316;
-                                                  }
-                                                }
-                                                else {
-                                                  nerd_gyro_pointing_GyroPointingCore_Recover_plt(
-                                                      v5, 0);
-                                                  if ((signed __int64)v1024[0] <
-                                                      *(__int64*)(v5 + 15424)) {
-                                                  LABEL_316:
-                                                    this_ =
-                                                        nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt(
-                                                            v5 + 200);
-                                                    if ((_DWORD)this_ == 2) {
-                                                      goto LABEL_317;
-                                                    }
-                                                    goto LABEL_321;
-                                                  }
-                                                }
-                                                nerd_gyro_pointing_GyroPointingKalmanFilter_PushParameterState_plt(
-                                                    v5 + 200);
-                                                v688 = *(_QWORD*)(v5 + 15432);
-                                                *(_QWORD*)(v5 + 15424) += v688;
-                                                *(_QWORD*)(v5 + 15432) =
-                                                    2 * v688;
-                                                this_ =
-                                                    nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt(
-                                                        v5 + 200);
-                                                if ((_DWORD)this_ == 2) {
-                                                LABEL_317:
-                                                  v687 = v817 +
-                                                         *(float*)(v5 + 15004);
-                                                  *(float*)(v5 + 15004) = v687;
-                                                  if (v687 >
-                                                      0x1.0000000000000p-1f) {
-                                                    return nerd_gyro_pointing_GyroPointingCore_Recover_plt(
-                                                        v5, 1);
-                                                  }
-                                                  return this_;
-                                                }
-                                              LABEL_321:
-                                                *(_DWORD*)(v5 + 15004) = 0;
-                                                return this_;
-                                              }
-                                            LABEL_249:
-                                              v431 = -1;
-                                              goto LABEL_250;
-                                            }
-                                          }
-                                          v427 = -1;
-                                          v428 = *(float*)&v913;
-                                          v429 = v911;
-                                          if (v911 != 0) {
-                                            goto LABEL_246;
-                                          }
-                                          goto LABEL_249;
-                                        }
-                                        v369 = BYTE5(v1025);
-                                        v965 = nullptr;
-                                        v964 = 0;
-                                        v963 = 0;
-                                        v962 = nullptr;
-                                        if ((v1025 & 0x10000000000LL) != 0) {
-                                          v370 = 1;
-                                          v965 = (_QWORD*)(((char*)0x0LL) + 1);
-                                          if ((v1025 & 0x20000000000LL) == 0) {
-                                            goto LABEL_213;
-                                          }
-                                        }
-                                        else {
-                                          v370 = 0;
-                                          v211 = (__int64*)&v962;
-                                          if ((v1025 & 0x20000000000LL) == 0) {
-                                          LABEL_213:
-                                            if ((v369 & 4) != 0) {
-                                              (&v962)[v370] =
-                                                  (_QWORD*)(((char*)0x0LL) + 2);
-                                              v370 = (unsigned __int64)v965 + 1;
-                                              v965 =
-                                                  (__int64*)((char*)v965 + 1);
-                                            }
-                                            v371 = 0x1.99999a0000000p-4f;
-                                            v372 = *(_QWORD*)(v300 + 24);
-                                            v373 = *(_QWORD*)(v300 + 32);
-                                            v905 = *(_QWORD*)(v300 + 16);
-                                            v906 = v372;
-                                            if (v817 <= 0x1.99999a0000000p-4f) {
-                                              v371 = v817;
-                                            }
-                                            v907 = v373;
-                                            v374 =
-                                                0x1.2dfd6a0000000p-19f / v371;
-                                            v375 = *(float*)v300;
-                                            v376 = *(float*)(v300 + 4);
-                                            *((float*)&v833_.v833 + 1) =
-                                                0x1.2dfd6a0000000p-17f / v371;
-                                            v377 = *(float*)(v300 + 8);
-                                            *(float*)&v833_.v833 = v374;
-                                            *(float*)&v833_.v834 = v374;
-                                            v853 = 1065353216;
-                                            v854 = 0;
-                                            v855 = 1065353216;
-                                            v856 = nullptr;
-                                            LODWORD(v857) = 1065353216;
-                                            *(_QWORD*)&v918[8] = v370;
-                                            *(float*)&v827_.v827 =
-                                                v375 + 0x0.0p+0f;
-                                            *((float*)&v827_.v827 + 1) =
-                                                v376 + 0x0.0p+0f;
-                                            *(float*)&v827_.v828 =
-                                                v377 + 0x0.0p+0f;
-                                            if (v370 != 0) {
-                                              *(_QWORD*)v918 = 0;
-                                              v917 = 0;
-                                              memset_plt((void*)&v917, nullptr,
-                                                         4 * v370);
-                                              if (*(_QWORD*)&v918[8] != 0) {
-                                                v379 = 0;
+                                      }
+                                      else {
+                                        v413 = -1;
+                                        v414 = *(float*)&v897;
+                                        v415 = v895;
+                                        if (v895 != 0) {
+                                        LABEL_239:
+                                          v416 = v415 +
+                                                 16LL * *(_QWORD*)(v415 + 4096);
+                                          *(_WORD*)(v416 + 4) =
+                                              (unsigned __int8)v896;
+                                          *(float*)(v416 + 8) = v804;
+                                          *(_DWORD*)(v416 + 12) = 0;
+                                          v417 = *(_QWORD*)(v415 + 4096);
+                                          *(_QWORD*)(v415 + 4096) = v417 + 1;
+                                          v418 = *(float*)&v900;
+                                          v419 = v898;
+                                          if (v898 != 0) {
+                                          LABEL_240:
+                                            v420 =
+                                                v419 +
+                                                16LL * *(_QWORD*)(v419 + 4096);
+                                            *(_WORD*)(v420 + 4) =
+                                                (unsigned __int8)v899;
+                                            *(float*)(v420 + 8) = v804;
+                                            *(_DWORD*)(v420 + 12) = 0;
+                                            v421 = *(_QWORD*)(v419 + 4096);
+                                            *(_QWORD*)(v419 + 4096) = v421 + 1;
+                                          LABEL_244:
+                                            v904 = v411;
+                                            *(_QWORD*)v905 = v413;
+                                            *(_DWORD*)&v905[12] = 0;
+                                            *(_QWORD*)&v905[16] = v415;
+                                            *(_QWORD*)&v905[24] = v417;
+                                            *(_DWORD*)&v905[36] = 0;
+                                            *(_QWORD*)&v905[40] = v419;
+                                            *(_QWORD*)&v905[48] = v421;
+                                            *(_DWORD*)&v905[60] = 0;
+                                            *(float*)&v905[8] = v804 * v410;
+                                            *(float*)&v905[32] = v804 * v414;
+                                            *(float*)&v905[56] = v804 * v418;
+                                            kalman_transition_70e160(
+                                                (void*)((float*)v867),
+                                                (float*)&v904);
+                                            v422 = v870;
+                                            v423 = v873;
+                                            v424 = v876;
+                                            *(_DWORD*)v400 = v868;
+                                            *(_DWORD*)(v400 + 4) = v422;
+                                            *(_DWORD*)(v400 + 8) = v423;
+                                            *(_DWORD*)(v400 + 12) = v424;
+                                            v944 = 0;
+                                            v943 = 0;
+                                            v942 = 0;
+                                            v941 = 0;
+                                            v940 = 0;
+                                            v939 = 0;
+                                            v938 = 0;
+                                            v936 = 0;
+                                            v937 = 0;
+                                            v425 = *(float*)(v400 + 8);
+                                            *(float*)&v426 = -*(float*)v400;
+                                            *(float*)&v427 =
+                                                -*(float*)(v400 + 4);
+                                            DWORDn(v831_.v832,
+                                                   sizeof(v831_.v832) / 4 - 1) =
+                                                *(_DWORD*)(v400 + 12);
+                                            v831_.v831 = __PAIR64__(v427, v426);
+                                            *(float*)&v831_.v832 = -v425;
+                                            nerd_gyro_pointing_720480(
+                                                (void*)((float*)&v904), v867,
+                                                (float*)&v831_.v831);
+                                            SdkRoutine_722d40(
+                                                (void*)((__int64)&v936),
+                                                (float*)&v904);
+                                            v428 = *(_QWORD*)(v400 + 24);
+                                            v820_.v820 = *(_QWORD*)(v400 + 16);
+                                            v820_.v821 = v428;
+                                            v429 = *(_QWORD*)(v400 + 32);
+                                            memset(&v905[28], 0, 72);
+                                            v820_.v822 = v429;
+                                            v430 = v1008;
+                                            if (v1008 != 0) {
+                                              v431 = 16 * v1008 - 16;
+                                              if ((~(_BYTE)v431 & 0x70) != 0) {
+                                                v433 = -(
+                                                    __int64)(((unsigned __int8)((unsigned int)
+                                                                                    v431 >>
+                                                                                4) +
+                                                              1) &
+                                                             7);
+                                                v432 = &v971;
                                                 do {
-                                                  *(_DWORD*)&v918[4 * v379 -
-                                                                  8] =
-                                                      *((_DWORD*)&v827_.v827 +
-                                                        (_QWORD)(&v962)[v379]);
-                                                  ++v379;
-                                                } while (v379 <
-                                                         *(_QWORD*)&v918[8]);
-                                                v951 = *(_QWORD*)&v918[8];
-                                                if (*(_QWORD*)&v918[8] != 0) {
-                                                  memcpy_plt(
-                                                      &v949, &v917,
-                                                      4LL * *(_QWORD*)&v918[8]);
-                                                }
+                                                  *(_DWORD*)v432 = 0;
+                                                  v432 += 2;
+                                                  v256 = __CFADD__(v433++, 1);
+                                                } while (!v256);
                                               }
                                               else {
-                                                v951 = 0;
+                                                v432 = &v971;
                                               }
-                                              v380 = v370 & 3;
-                                              v381 = 0;
-                                              v917 = v370;
-                                              memset(v918, 0, 40);
-                                              if (v370 >= 4) {
-                                                v382 = 0;
-                                                v383 = &v918[24];
-                                                v384 = &v964;
+                                              if (v431 >= 0x70) {
+                                                v434 = &v971 + 2 * v430;
                                                 do {
-                                                  v382 -= 4;
-                                                  v385 = (char*)&v853 +
-                                                         12 * *(v384 - 2);
-                                                  v386 = (char*)&v853 +
-                                                         12 * *(v384 - 1);
-                                                  v387 = *(_QWORD*)v385;
-                                                  LODWORD(v385) =
-                                                      *((_DWORD*)v385 + 2);
-                                                  *((_QWORD*)v383 - 3) = v387;
-                                                  v388 = *(_QWORD*)v386;
-                                                  *((_DWORD*)v383 - 4) =
-                                                      (_DWORD)v385;
-                                                  LODWORD(v386) =
-                                                      *((_DWORD*)v386 + 2);
-                                                  *(_QWORD*)(v383 - 12) = v388;
-                                                  v389 = *v384;
-                                                  v390 = v384[1];
-                                                  v384 += 4;
-                                                  *((_DWORD*)v383 - 1) =
-                                                      (_DWORD)v386;
-                                                  v391 =
-                                                      (char*)&v853 + 12 * v389;
-                                                  v392 = *(_QWORD*)v391;
-                                                  *((_DWORD*)v383 + 2) =
-                                                      *((_DWORD*)v391 + 2);
-                                                  v393 =
-                                                      (char*)&v853 + 12 * v390;
-                                                  *(_QWORD*)v383 = v392;
-                                                  v394 = *(_QWORD*)v393;
-                                                  *((_DWORD*)v383 + 5) =
-                                                      *((_DWORD*)v393 + 2);
-                                                  *(_QWORD*)(v383 + 12) = v394;
-                                                  v383 += 48;
-                                                } while (
-                                                    -(__int64)(v370 &
-                                                               0xFFFFFFFFFFFFFFFCLL) !=
-                                                    v382);
-                                                v381 = -v382;
+                                                  *(_DWORD*)v432 = 0;
+                                                  *((_DWORD*)v432 + 4) = 0;
+                                                  *((_DWORD*)v432 + 8) = 0;
+                                                  *((_DWORD*)v432 + 12) = 0;
+                                                  *((_DWORD*)v432 + 16) = 0;
+                                                  *((_DWORD*)v432 + 20) = 0;
+                                                  *((_DWORD*)v432 + 24) = 0;
+                                                  *((_DWORD*)v432 + 28) = 0;
+                                                  v432 += 16;
+                                                } while (v432 != v434);
                                               }
-                                              if ((v370 & 3) != 0) {
-                                                v395 = (__int64*)&(&v962)[v381];
-                                                v396 = &v918[12 * v381];
+                                            }
+                                            if (v936 != 0) {
+                                              *(_DWORD*)(v936 + 16 * v937) =
+                                                  1065353216;
+                                            }
+                                            v435 = v1008;
+                                            if (v1008 != 0) {
+                                              v436 = 16 * v1008;
+                                              v437 = 16 * v1008 - 16;
+                                              v438 =
+                                                  (float*)(&v971 + 2 * v1008);
+                                              if ((~(_BYTE)v437 & 0x30) != 0) {
+                                                v439 = -(
+                                                    __int64)(((unsigned __int8)((unsigned int)
+                                                                                    v437 >>
+                                                                                4) +
+                                                              1) &
+                                                             3);
                                                 do {
-                                                  v397 = *v395++;
-                                                  --v380;
-                                                  v398 =
-                                                      (char*)&v853 + 12 * v397;
-                                                  v399 = *(_QWORD*)v398;
-                                                  LODWORD(v398) =
-                                                      *((_DWORD*)v398 + 2);
-                                                  *(_QWORD*)v396 = v399;
-                                                  *((_DWORD*)v396 + 2) =
-                                                      (_DWORD)v398;
-                                                  v396 += 12;
-                                                } while (v380 != 0);
+                                                  v440 = *(v438 - 4);
+                                                  v438 -= 4;
+                                                  v256 = __CFADD__(v439++, 1);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v438 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v438 +
+                                                              4)) +
+                                                      (float)(v438[2] * v440);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v438 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v438 +
+                                                              5)) +
+                                                      (float)(v438[3] * v440);
+                                                } while (!v256);
                                               }
-                                              v400 = *(_QWORD*)&v918[8];
-                                              *(_QWORD*)&v918[8] = v370;
-                                              v881 = v400;
-                                              v882 = *(_OWORD*)&v918[16];
-                                              v883 = *(_QWORD*)&v918[32];
-                                              v401 = v917;
-                                              v402 = *(_QWORD*)v918;
-                                              v917 = 0;
-                                              *(_QWORD*)v918 = 0;
-                                              v880[0] = v401;
-                                              v880[1] = v402;
-                                              memset_plt((void*)&v917, nullptr,
-                                                         4 * v370);
-                                              if (*(_QWORD*)&v918[8] != 0) {
-                                                v403 = 0;
+                                              if (v437 >= 0x30) {
+                                                v441 = v438 - 16;
                                                 do {
-                                                  *(_DWORD*)&v918[4 * v403 -
-                                                                  8] =
-                                                      *((_DWORD*)&v833_.v833 +
-                                                        (_QWORD)(&v962)[v403]);
-                                                  ++v403;
-                                                } while (v403 <
-                                                         *(_QWORD*)&v918[8]);
-                                                v846_.v846 = *(_QWORD*)&v918[8];
-                                                if (*(_QWORD*)&v918[8] != 0) {
-                                                  memcpy_plt(
-                                                      &v844_.v844, &v917,
-                                                      4LL * *(_QWORD*)&v918[8]);
-                                                  memset(&v918[8], 0, 40);
-                                                  v917 = v846_.v846;
-                                                  *(_QWORD*)v918 = v846_.v846;
-                                                  if (v846_.v846 != 0) {
-                                                    v404 = v846_.v846 & 7;
-                                                    if (v846_.v846 >= 8) {
-                                                      v689 = 0;
-                                                      v690 = &v846_.v846;
-                                                      v691 = -(
-                                                          __int64)(v846_.v846 &
-                                                                   0xFFFFFFFFFFFFFFF8LL);
-                                                      v692 = &v918[56];
-                                                      do {
-                                                        v693 = *((_DWORD*)v690 -
-                                                                 3);
-                                                        v689 -= 8;
-                                                        *(v692 - 12) = *(
-                                                            (_DWORD*)v690 - 4);
-                                                        *(v692 - 8) = v693;
-                                                        v694 = *((_DWORD*)v690 -
-                                                                 1);
-                                                        *(v692 - 4) = *(
-                                                            (_DWORD*)v690 - 2);
-                                                        *v692 = v694;
-                                                        v695 = *((_DWORD*)v690 +
-                                                                 1);
-                                                        v692[4] =
-                                                            *(_DWORD*)v690;
-                                                        v692[8] = v695;
-                                                        v696 = *((_DWORD*)v690 +
-                                                                 2);
-                                                        v697 = *((_DWORD*)v690 +
-                                                                 3);
-                                                        v690 += 4;
-                                                        v692[12] = v696;
-                                                        v692[16] = v697;
-                                                        v692 += 32;
-                                                      } while (v691 != v689);
-                                                      v405 = -v689;
-                                                    }
-                                                    else {
-                                                      v405 = 0;
-                                                    }
-                                                    if (v404 != 0) {
-                                                      v698 =
-                                                          &v918[16 * v405 - 8];
-                                                      v699 = (int*)&v844_.v844 +
-                                                             v405;
-                                                      v700 = v698 + 16;
-                                                      do {
-                                                        v701 = *v699++;
-                                                        --v404;
-                                                        *v700 = v701;
-                                                        v700 += 4;
-                                                      } while (v404 != 0);
-                                                    }
-                                                  }
-                                                  goto LABEL_242;
-                                                }
+                                                  v442 = v441[12];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          52)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              52)) +
+                                                      (float)(v441[14] * v442);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          53)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              53)) +
+                                                      (float)(v441[15] * v442);
+                                                  v443 = v441[8];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          36)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              36)) +
+                                                      (float)(v441[10] * v443);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          37)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              37)) +
+                                                      (float)(v441[11] * v443);
+                                                  v444 = v441[4];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          20)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              20)) +
+                                                      (float)(v441[6] * v444);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          21)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              21)) +
+                                                      (float)(v441[7] * v444);
+                                                  v445 = *v441;
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              4)) +
+                                                      (float)(v441[2] * *v441);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v441 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v441 +
+                                                              5)) +
+                                                      (float)(v441[3] * v445);
+                                                  v115 = v441 == (float*)&v971;
+                                                  v441 -= 16;
+                                                } while (!v115);
                                               }
                                             }
                                             else {
-                                              v951 = 0;
-                                              v880[0] = 0;
-                                              v880[1] = 0;
-                                              v881 = 0;
-                                              v882 = (__typeof__(v882)){0};
-                                              v883 = 0;
+                                              v436 = 0;
                                             }
-                                            memset(v918, 0, 48);
-                                            v917 = 0;
-                                          LABEL_242:
-                                            qmemcpy(v1030, &v918[8], 40);
-                                            v1029[0] = v917;
-                                            v1029[1] = *(_QWORD*)v918;
-                                            SdkRoutine_879fe0(
-                                                v5 + 200, &v949, v880, v1029,
-                                                &v905, 0x1.99999a0000000p-4f);
-                                            goto LABEL_243;
+                                            v904 = __PAIR64__(v973, v971);
+                                            *(float*)v905 = v975;
+                                            *(float*)&v905[4] = v978;
+                                            *(float*)&v905[8] = v981;
+                                            *(float*)&v905[12] = v984;
+                                            *(_DWORD*)&v905[16] = v987;
+                                            *(_DWORD*)&v905[20] = v990;
+                                            *(_DWORD*)&v905[24] = v993;
+                                            if (v435 != 0) {
+                                              v446 = v436 - 16;
+                                              if ((~((_BYTE)v436 - 16) &
+                                                   0x70) != 0) {
+                                                v448 =
+                                                    ((unsigned __int8)((unsigned int)
+                                                                           v446 >>
+                                                                       4) +
+                                                     1) &
+                                                    7;
+                                                v447 = (char*)&v971;
+                                                do {
+                                                  *(_DWORD*)v447 = 0;
+                                                  v447 += 16;
+                                                  --v448;
+                                                } while (v448 != 0);
+                                              }
+                                              else {
+                                                v447 = (char*)&v971;
+                                              }
+                                              if (v446 >= 0x70) {
+                                                v449 = (char*)&v971 + v436;
+                                                do {
+                                                  *(_DWORD*)v447 = 0;
+                                                  *((_DWORD*)v447 + 4) = 0;
+                                                  *((_DWORD*)v447 + 8) = 0;
+                                                  *((_DWORD*)v447 + 12) = 0;
+                                                  *((_DWORD*)v447 + 16) = 0;
+                                                  *((_DWORD*)v447 + 20) = 0;
+                                                  *((_DWORD*)v447 + 24) = 0;
+                                                  *((_DWORD*)v447 + 28) = 0;
+                                                  v447 += 128;
+                                                } while (v447 != v449);
+                                              }
+                                            }
+                                            if (v939 != 0) {
+                                              *(_DWORD*)(v939 + 16 * v940) =
+                                                  1065353216;
+                                            }
+                                            v450 = v1008;
+                                            if (v1008 != 0) {
+                                              v451 = 16 * v1008;
+                                              v452 = 16 * v1008 - 16;
+                                              v453 =
+                                                  (float*)(&v971 + 2 * v1008);
+                                              if ((~(_BYTE)v452 & 0x30) != 0) {
+                                                v454 = -(
+                                                    __int64)(((unsigned __int8)((unsigned int)
+                                                                                    v452 >>
+                                                                                4) +
+                                                              1) &
+                                                             3);
+                                                do {
+                                                  v455 = *(v453 - 4);
+                                                  v453 -= 4;
+                                                  v256 = __CFADD__(v454++, 1);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v453 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v453 +
+                                                              4)) +
+                                                      (float)(v453[2] * v455);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v453 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v453 +
+                                                              5)) +
+                                                      (float)(v453[3] * v455);
+                                                } while (!v256);
+                                              }
+                                              if (v452 >= 0x30) {
+                                                v456 = v453 - 16;
+                                                do {
+                                                  v457 = v456[12];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          52)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              52)) +
+                                                      (float)(v456[14] * v457);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          53)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              53)) +
+                                                      (float)(v456[15] * v457);
+                                                  v458 = v456[8];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          36)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              36)) +
+                                                      (float)(v456[10] * v458);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          37)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              37)) +
+                                                      (float)(v456[11] * v458);
+                                                  v459 = v456[4];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          20)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              20)) +
+                                                      (float)(v456[6] * v459);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          21)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              21)) +
+                                                      (float)(v456[7] * v459);
+                                                  v460 = *v456;
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              4)) +
+                                                      (float)(v456[2] * *v456);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v456 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v456 +
+                                                              5)) +
+                                                      (float)(v456[3] * v460);
+                                                  v115 = v456 == (float*)&v971;
+                                                  v456 -= 16;
+                                                } while (!v115);
+                                              }
+                                            }
+                                            else {
+                                              v451 = 0;
+                                            }
+                                            *(_DWORD*)&v905[28] = v971;
+                                            *(_DWORD*)&v905[32] = v973;
+                                            *(float*)&v905[36] = v975;
+                                            *(float*)&v905[40] = v978;
+                                            *(float*)&v905[44] = v981;
+                                            *(float*)&v905[48] = v984;
+                                            *(_DWORD*)&v905[52] = v987;
+                                            *(_DWORD*)&v905[56] = v990;
+                                            *(_DWORD*)&v905[60] = v993;
+                                            if (v450 != 0) {
+                                              v461 = v451 - 16;
+                                              if ((~((_BYTE)v451 - 16) &
+                                                   0x70) != 0) {
+                                                v463 =
+                                                    ((unsigned __int8)((unsigned int)
+                                                                           v461 >>
+                                                                       4) +
+                                                     1) &
+                                                    7;
+                                                v462 = (char*)&v971;
+                                                do {
+                                                  *(_DWORD*)v462 = 0;
+                                                  v462 += 16;
+                                                  --v463;
+                                                } while (v463 != 0);
+                                              }
+                                              else {
+                                                v462 = (char*)&v971;
+                                              }
+                                              if (v461 >= 0x70) {
+                                                v464 = (char*)&v971 + v451;
+                                                do {
+                                                  *(_DWORD*)v462 = 0;
+                                                  *((_DWORD*)v462 + 4) = 0;
+                                                  *((_DWORD*)v462 + 8) = 0;
+                                                  *((_DWORD*)v462 + 12) = 0;
+                                                  *((_DWORD*)v462 + 16) = 0;
+                                                  *((_DWORD*)v462 + 20) = 0;
+                                                  *((_DWORD*)v462 + 24) = 0;
+                                                  *((_DWORD*)v462 + 28) = 0;
+                                                  v462 += 128;
+                                                } while (v462 != v464);
+                                              }
+                                            }
+                                            if (v942 != 0) {
+                                              *(_DWORD*)(v942 + 16 * v943) =
+                                                  1065353216;
+                                            }
+                                            if (v1008 != 0) {
+                                              v465 = 16 * v1008 - 16;
+                                              v466 =
+                                                  (float*)(&v971 + 2 * v1008);
+                                              if ((~(_BYTE)v465 & 0x30) != 0) {
+                                                v467 = -(
+                                                    __int64)(((unsigned __int8)((unsigned int)
+                                                                                    v465 >>
+                                                                                4) +
+                                                              1) &
+                                                             3);
+                                                do {
+                                                  v468 = *(v466 - 4);
+                                                  v466 -= 4;
+                                                  v256 = __CFADD__(v467++, 1);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v466 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v466 +
+                                                              4)) +
+                                                      (float)(v466[2] * v468);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v466 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v466 +
+                                                              5)) +
+                                                      (float)(v466[3] * v468);
+                                                } while (!v256);
+                                              }
+                                              if (v465 >= 0x30) {
+                                                v469 = v466 - 16;
+                                                do {
+                                                  v470 = v469[12];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          52)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              52)) +
+                                                      (float)(v469[14] * v470);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          53)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              53)) +
+                                                      (float)(v469[15] * v470);
+                                                  v471 = v469[8];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          36)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              36)) +
+                                                      (float)(v469[10] * v471);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          37)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              37)) +
+                                                      (float)(v469[11] * v471);
+                                                  v472 = v469[4];
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          20)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              20)) +
+                                                      (float)(v469[6] * v472);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          21)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              21)) +
+                                                      (float)(v469[7] * v472);
+                                                  v473 = *v469;
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          4)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              4)) +
+                                                      (float)(v469[2] * *v469);
+                                                  *((float*)&v971 +
+                                                    4 * *((unsigned __int8*)
+                                                              v469 +
+                                                          5)) =
+                                                      *((float*)&v971 +
+                                                        4 * *((unsigned __int8*)
+                                                                  v469 +
+                                                              5)) +
+                                                      (float)(v469[3] * v473);
+                                                  v115 = v469 == (float*)&v971;
+                                                  v469 -= 16;
+                                                } while (!v115);
+                                              }
+                                            }
+                                            LODWORD(v833_.v835) = 0;
+                                            v833_.v833 = 0;
+                                            v833_.v834 = 0;
+                                            v831_.v831 = 0;
+                                            v831_.v832 = 0;
+                                            *(_DWORD*)&v905[64] = v971;
+                                            *(_DWORD*)&v905[68] = v973;
+                                            *(float*)&v905[80] = v981;
+                                            *(float*)&v905[84] = v984;
+                                            *(_DWORD*)&v905[88] = v987;
+                                            *(_DWORD*)&v905[92] = v990;
+                                            *(float*)&v905[72] = v975;
+                                            *(float*)&v905[76] = v978;
+                                            *(_DWORD*)&v905[96] = v993;
+                                            SdkRoutine_87a000_alt1(
+                                                v5 + 200, (__int64)&v904,
+                                                (__int64)&v840,
+                                                (__int64)&v820_.v820,
+                                                (__int64)&v831_.v831);
+                                            nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveUnbiasedGyrVariable_plt_alt1(
+                                                v5 + 200);
+                                            v474 = *(_QWORD*)(v5 + 8208);
+                                            v475 = *(_QWORD*)(v400 + 16);
+                                            v476 = *(_QWORD*)(v400 + 24);
+                                            v477 = *(_QWORD*)(v400 + 32);
+                                            v478 = *(float*)(v5 + 8184) +
+                                                   0x0.0p+0f;
+                                            v867[0] = *(_QWORD*)(v5 + 8200);
+                                            v867[1] = v474;
+                                            v479 = *(_QWORD*)(v5 + 8216);
+                                            v480 = *(_QWORD*)(v5 + 8240);
+                                            v481 = *(float*)(v5 + 8188);
+                                            v871 = v475;
+                                            v872 = v476;
+                                            v873 = v477;
+                                            v874 = 0;
+                                            v846 = nullptr;
+                                            v847 = 0;
+                                            v844 = 0;
+                                            v845 = 0;
+                                            v842 = 0;
+                                            v843 = nullptr;
+                                            v840 = 0;
+                                            v841 = 0;
+                                            v1016[0] = 0x3F80000000000000LL;
+                                            v1016[1] = 0;
+                                            v1017[0] = 0;
+                                            v482 = v481 + 0x0.0p+0f;
+                                            v868 = v479;
+                                            *(_QWORD*)&v869 = v480;
+                                            v483 = *(_QWORD*)(v5 + 8248);
+                                            v484 = *(_QWORD*)(v5 + 8256);
+                                            v485 = *(float*)(v5 + 0x2000);
+                                            *(_QWORD*)((char*)&v1017[1] + 4) =
+                                                0;
+                                            *(_QWORD*)((char*)&v1017[2] + 4) =
+                                                0;
+                                            LODWORD(v1017[1]) = 1065353216;
+                                            DWORDn(v1017[3],
+                                                   sizeof(v1017[3]) / 4 - 1) =
+                                                1065353216;
+                                            *((_QWORD*)&v869 + 1) = v483;
+                                            v870 = v484;
+                                            v875 = 3;
+                                            v876 = 6;
+                                            v486 = v485 + 0x0.0p+0f;
+                                            math_724480((void*)((float*)&v904),
+                                                        (float*)v1016);
+                                            math_7241f0((void*)((float*)&v840),
+                                                        (float*)&v904,
+                                                        (float*)(v5 + 8224));
+                                            v956 = 0;
+                                            v955 = nullptr;
+                                            v954 = 0;
+                                            v953 = 0;
+                                            v952 = nullptr;
+                                            v951 = 0;
+                                            v950 = 0;
+                                            v949 = nullptr;
+                                            v1016[0] = 0x3F80000000000000LL;
+                                            v1016[1] = 0;
+                                            v1017[0] = 0;
+                                            *(_QWORD*)((char*)&v1017[1] + 4) =
+                                                0;
+                                            *(_QWORD*)((char*)&v1017[2] + 4) =
+                                                0;
+                                            LODWORD(v1017[1]) = 1065353216;
+                                            DWORDn(v1017[3],
+                                                   sizeof(v1017[3]) / 4 - 1) =
+                                                1065353216;
+                                            v729 = *((float*)&v840 + 1);
+                                            v726 = *((float*)&v842 + 1);
+                                            v750 = *((float*)&v844 + 1);
+                                            v753 = *((float*)&v846 + 1);
+                                            v831_.v832 = __PAIR64__(
+                                                (unsigned int)v846, v844);
+                                            v831_.v831 = __PAIR64__(v842, v840);
+                                            v716 = *(float*)&v841;
+                                            v717 = v843;
+                                            v718 = *((float*)&v841 + 1);
+                                            v732 = *((float*)&v845 + 1);
+                                            v735 = *(float*)&v845;
+                                            v744 = *((float*)&v847 + 1);
+                                            v747 = *(float*)&v847;
+                                            math_724480((void*)((float*)&v904),
+                                                        (float*)v1016);
+                                            math_7241f0((void*)((float*)&v949),
+                                                        (float*)&v904,
+                                                        (float*)v400);
+                                            v805[0] = v478;
+                                            v805[1] = 0x1.0000000000000p+0f;
+                                            v807 = v482;
+                                            v809 = 0;
+                                            v810 = v486;
+                                            v806 = 0;
+                                            v812 = 1065353216;
+                                            v808 = 0x3F80000000000000LL;
+                                            v811 = 0;
+                                            v767 = v950;
+                                            v787 = *((float*)&v953 + 1);
+                                            v798 = *((float*)&v955 + 1);
+                                            v820_.v821 = __PAIR64__(
+                                                (unsigned int)v955, v953);
+                                            v762 = v952;
+                                            v794 = *(float*)&v954;
+                                            v756 = *((float*)&v951 + 1);
+                                            v790 = *((float*)&v954 + 1);
+                                            v487 = v956;
+                                            v758 = *((float*)&v949 + 1);
+                                            v820_.v820 = __PAIR64__(
+                                                v951, (unsigned int)v949);
+                                            v488 =
+                                                (float)((float)(PSEUDO_UNFUSED(
+                                                            *(float*)&v949 *
+                                                            *(float*)&v949)) +
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *(float*)&v951 *
+                                                            *(float*)&v951))) +
+                                                (float)(PSEUDO_UNFUSED(
+                                                    *(float*)&v820_.v821 *
+                                                    *(float*)&v820_.v821));
+                                            v489 =
+                                                (float)((float)((float)(*(float*)&v949 *
+                                                                        v478) +
+                                                                0x0.0p+0f) +
+                                                        (float)(*(float*)&v951 *
+                                                                v482)) +
+                                                (float)(*(float*)&v953 * v486);
+                                            v490 =
+                                                0x1.0000000000000p+1f /
+                                                (float)((float)(PSEUDO_UNFUSED(
+                                                            *(float*)&v955 *
+                                                            *(float*)&v955)) +
+                                                        v488);
+                                            v707 =
+                                                v482 +
+                                                (float)(PSEUDO_UNFUSED(
+                                                    v490 *
+                                                    (float)((float)((float)(PSEUDO_UNFUSED(
+                                                                        *(float*)&v951 *
+                                                                        v489)) -
+                                                                    (float)(PSEUDO_UNFUSED(
+                                                                        v482 *
+                                                                        v488))) -
+                                                            (float)(PSEUDO_UNFUSED(
+                                                                (float)((float)(*(float*)&v953 *
+                                                                                v478) -
+                                                                        (float)(PSEUDO_UNFUSED(
+                                                                            v486 *
+                                                                            *(float*)&v949))) *
+                                                                *(float*)&v955)))));
+                                            v709 =
+                                                v478 +
+                                                (float)(PSEUDO_UNFUSED(
+                                                    v490 *
+                                                    (float)((float)((float)(PSEUDO_UNFUSED(
+                                                                        *(float*)&v949 *
+                                                                        v489)) -
+                                                                    (float)(PSEUDO_UNFUSED(
+                                                                        v478 *
+                                                                        v488))) -
+                                                            (float)(PSEUDO_UNFUSED(
+                                                                *(float*)&v955 *
+                                                                (float)((float)(*(float*)&v951 *
+                                                                                v486) -
+                                                                        (float)(PSEUDO_UNFUSED(
+                                                                            v482 *
+                                                                            *(float*)&v953))))))));
+                                            v705 =
+                                                v486 +
+                                                (float)(PSEUDO_UNFUSED(
+                                                    v490 *
+                                                    (float)((float)((float)(PSEUDO_UNFUSED(
+                                                                        *(float*)&v953 *
+                                                                        v489)) -
+                                                                    (float)(PSEUDO_UNFUSED(
+                                                                        v486 *
+                                                                        v488))) -
+                                                            (float)(PSEUDO_UNFUSED(
+                                                                (float)((float)(*(float*)&v949 *
+                                                                                v482) -
+                                                                        (float)(PSEUDO_UNFUSED(
+                                                                            v478 *
+                                                                            *(float*)&v951))) *
+                                                                *(float*)&v955)))));
+                                            kalman_transition_70ed80(
+                                                (void*)((float*)&v904),
+                                                (float*)&v820_.v820, v805);
+                                            *(_DWORD*)&v905[8] = 0;
+                                            *(_QWORD*)&v905[44] = 1065353216;
+                                            *(_QWORD*)&v905[56] = 0;
+                                            *(_QWORD*)&v905[64] =
+                                                0x3F80000000000000LL;
+                                            v780 = *((float*)&v904 + 1);
+                                            v772 = *(_QWORD*)&v905[16];
+                                            *(_DWORD*)&v905[52] = DWORDn(
+                                                v820_.v821,
+                                                sizeof(v820_.v821) / 4 - 1);
+                                            v491 = *(_QWORD*)v905;
+                                            v492 = *(float*)&v905[28];
+                                            *(_QWORD*)v905 = 0;
+                                            *(_QWORD*)&v905[16] =
+                                                0x3F80000000000000LL;
+                                            *(_QWORD*)&v905[24] = 0;
+                                            v493 = *(float*)&v905[12];
+                                            v765 = v492;
+                                            *(_DWORD*)&v905[12] = DWORDn(
+                                                v820_.v820,
+                                                sizeof(v820_.v820) / 4 - 1);
+                                            v777 = v493;
+                                            v770 = *(float*)&v905[32];
+                                            v904 = (unsigned int)v820_.v820 |
+                                                   0x3F80000000000000LL;
+                                            *(_DWORD*)&v905[32] = v820_.v821;
+                                            v494 = *(float*)&v905[36];
+                                            *(_QWORD*)&v905[36] = 0;
+                                            v760 = v494;
+                                            kalman_transition_70f080(
+                                                (void*)((float*)v1016),
+                                                (float*)&v904, v478, v482,
+                                                v486);
+                                            v495 = *((float*)v1016 + 1);
+                                            v496 = v1016[1];
+                                            v497 = *(float*)v1017;
+                                            v1016[0] =
+                                                (unsigned int)v831_.v831 |
+                                                0x3F80000000000000LL;
+                                            v1016[1] = 0;
+                                            LODWORD(v1017[0]) = 0;
+                                            DWORDn(v1017[0],
+                                                   sizeof(v1017[0]) / 4 - 1) =
+                                                DWORDn(v831_.v831,
+                                                       sizeof(v831_.v831) / 4 -
+                                                           1);
+                                            DWORDn(v1017[5],
+                                                   sizeof(v1017[5]) / 4 - 1) =
+                                                DWORDn(v831_.v832,
+                                                       sizeof(v831_.v832) / 4 -
+                                                           1);
+                                            LODWORD(v1017[3]) = v831_.v832;
+                                            v1018 = 0;
+                                            v1019 = 0x3F80000000000000LL;
+                                            v742 = v497;
+                                            v498 = -(
+                                                float)((float)((float)((float)((float)(*(float*)&v831_
+                                                                                            .v831 *
+                                                                                       *(float*)&v820_
+                                                                                            .v820) +
+                                                                               0x0.0p+0f) +
+                                                                       (float)(*((float*)&v831_
+                                                                                     .v831 +
+                                                                                 1) *
+                                                                               *((float*)&v820_
+                                                                                     .v820 +
+                                                                                 1))) +
+                                                               (float)(*(float*)&v831_
+                                                                            .v832 *
+                                                                       *(float*)&v820_
+                                                                            .v821)) -
+                                                       (float)(*((float*)&v831_
+                                                                     .v832 +
+                                                                 1) *
+                                                               *((float*)&v820_
+                                                                     .v821 +
+                                                                 1)));
+                                            v713 = *(float*)&v1017[1];
+                                            v714 = v495;
+                                            v499 = *((float*)&v1017[2] + 1);
+                                            v500 = *(float*)&v1017[2];
+                                            v715 = *((float*)&v1017[1] + 1);
+                                            v1017[1] = 0x3F80000000000000LL;
+                                            v1017[2] = 0;
+                                            v723 = v500;
+                                            v501 = *(_QWORD*)((char*)&v1017[3] +
+                                                              4);
+                                            *(_QWORD*)((char*)&v1017[3] + 4) =
+                                                0;
+                                            v721 = *((float*)&v1017[4] + 1);
+                                            v502 = *(float*)&v1017[5];
+                                            *(_QWORD*)((char*)&v1017[4] + 4) =
+                                                1065353216;
+                                            v738 = v502;
+                                            v740 = v499;
+                                            *(float*)&v503 =
+                                                (float)((float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v820_
+                                                                  .v821 +
+                                                              1) *
+                                                            *(float*)&v831_
+                                                                 .v831)) +
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v831_
+                                                                  .v832 +
+                                                              1) *
+                                                            *(float*)&v820_
+                                                                 .v820))) +
+                                                (float)((float)(*((float*)&v831_
+                                                                      .v831 +
+                                                                  1) *
+                                                                *(float*)&v820_
+                                                                     .v821) -
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v820_
+                                                                  .v820 +
+                                                              1) *
+                                                            *(float*)&v831_
+                                                                 .v832)));
+                                            v504 =
+                                                (float)((float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v820_
+                                                                  .v821 +
+                                                              1) *
+                                                            *((float*)&v831_
+                                                                  .v831 +
+                                                              1))) +
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v831_
+                                                                  .v832 +
+                                                              1) *
+                                                            *((float*)&v820_
+                                                                  .v820 +
+                                                              1)))) +
+                                                (float)((float)(*(float*)&v831_
+                                                                     .v832 *
+                                                                *(float*)&v820_
+                                                                     .v820) -
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *(float*)&v820_
+                                                                 .v821 *
+                                                            *(float*)&v831_
+                                                                 .v831)));
+                                            v505 =
+                                                (float)((float)(*(float*)&v831_
+                                                                     .v831 *
+                                                                *((float*)&v820_
+                                                                      .v820 +
+                                                                  1)) -
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *(float*)&v820_
+                                                                 .v820 *
+                                                            *((float*)&v831_
+                                                                  .v831 +
+                                                              1)))) +
+                                                (float)((float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v820_
+                                                                  .v821 +
+                                                              1) *
+                                                            *(float*)&v831_
+                                                                 .v832)) +
+                                                        (float)(PSEUDO_UNFUSED(
+                                                            *((float*)&v831_
+                                                                  .v832 +
+                                                              1) *
+                                                            *(float*)&v820_
+                                                                 .v821)));
+                                            kalman_transition_70f680(
+                                                (void*)((float*)&v904),
+                                                (float*)v1016,
+                                                (float*)&v820_.v820);
+                                            v506 = *((float*)&v904 + 1);
+                                            v507 = *(float*)&v905[16];
+                                            v508 = *(float*)&v905[56];
+                                            v1016[1] = 0;
+                                            LODWORD(v1017[0]) = 0;
+                                            v1017[1] = 0x3F80000000000000LL;
+                                            v1017[2] = 0;
+                                            *(_QWORD*)((char*)&v1017[3] + 4) =
+                                                0;
+                                            *(_QWORD*)((char*)&v1017[4] + 4) =
+                                                1065353216;
+                                            v1018 = 0;
+                                            v1019 = 0x3F80000000000000LL;
+                                            v690 = *(float*)v905;
+                                            v691 = *(float*)&v905[20];
+                                            v509 = *(_QWORD*)&v905[24];
+                                            v692 = *(_QWORD*)&v905[36];
+                                            v697 = *(float*)&v905[44];
+                                            v698 = *(float*)&v905[4];
+                                            DWORDn(v1017[0],
+                                                   sizeof(v1017[0]) / 4 - 1) =
+                                                DWORDn(v820_.v820,
+                                                       sizeof(v820_.v820) / 4 -
+                                                           1);
+                                            v711 = *(float*)&v905[48];
+                                            v712 = *(float*)&v905[8];
+                                            DWORDn(v1017[5],
+                                                   sizeof(v1017[5]) / 4 - 1) =
+                                                DWORDn(v820_.v821,
+                                                       sizeof(v820_.v821) / 4 -
+                                                           1);
+                                            v689 = *(float*)&v905[60];
+                                            v1016[0] =
+                                                (unsigned int)v820_.v820 |
+                                                0x3F80000000000000LL;
+                                            LODWORD(v1017[3]) = v820_.v821;
+                                            v510 = *(_QWORD*)&v905[64];
+                                            kalman_transition_70f9d0(
+                                                (void*)((float*)&v904),
+                                                (float*)&v831_.v831,
+                                                (float*)v1016);
+                                            v511 = *((float*)&v904 + 1);
+                                            v512 = *(_DWORD*)v905;
+                                            v513 = *(float*)&v905[20];
+                                            v514 = *(float*)&v905[44];
+                                            *(float*)(v5 + 8228) = v504;
+                                            *(float*)(v5 + 8232) = v505;
+                                            *((float*)v1017 + 1) = v504;
+                                            *(float*)&v1017[3] = v505;
+                                            *(float*)(v5 + 8224) =
+                                                *(float*)&v503;
+                                            *(float*)(v5 + 8236) = v498;
+                                            v1016[0] =
+                                                v503 | 0x3F80000000000000LL;
+                                            v1016[1] = 0;
+                                            LODWORD(v1017[0]) = 0;
+                                            v1017[1] = 0x3F80000000000000LL;
+                                            v1017[2] = 0;
+                                            *(_QWORD*)((char*)&v1017[3] + 4) =
+                                                0;
+                                            *(_QWORD*)((char*)&v1017[4] + 4) =
+                                                1065353216;
+                                            *((float*)&v1017[5] + 1) = v498;
+                                            v1018 = 0;
+                                            v1019 = 0x3F80000000000000LL;
+                                            *((float*)&v937 + 1) = v498;
+                                            v699 = v511;
+                                            v702 = __PAIR64__(
+                                                *(unsigned int*)&v905[4], v512);
+                                            v515 = *(float*)&v905[16];
+                                            v703 = *(float*)&v905[8];
+                                            *(float*)(v5 + 8188) = v707;
+                                            *(float*)(v5 + 8184) = v709;
+                                            v516 = *(float*)&v905[48];
+                                            *(float*)(v5 + 0x2000) = v705;
+                                            v700 = v516;
+                                            v701 = v514;
+                                            v693 = v515;
+                                            v694 = *(float*)&v905[24];
+                                            v704 = *(float*)&v905[60];
+                                            v706 = *(float*)&v905[56];
+                                            v695 = v513;
+                                            v696 = *(float*)&v905[28];
+                                            v517 = -v505;
+                                            v518 = *(float*)&v905[68];
+                                            *(float*)&v937 = v517;
+                                            v708 = *(float*)&v905[40];
+                                            v710 = *(float*)&v905[36];
+                                            v519 = -v504;
+                                            v520 = *(float*)&v905[64];
+                                            *(float*)&v936 = -*(float*)&v503;
+                                            *((float*)&v936 + 1) = v519;
+                                            kalman_transition_70f680(
+                                                (void*)((float*)&v904),
+                                                (float*)v1016, (float*)&v936);
+                                            math_724870((void*)((float*)&v892),
+                                                        (float*)&v904);
+                                            v521 = *((float*)&v892 + 1);
+                                            v522 = *(float*)&v895;
+                                            v523 = *((float*)&v897 + 1);
+                                            v524 = *(float*)&v893;
+                                            v525 = *((float*)&v895 + 1);
+                                            v526 = *(float*)&v898;
+                                            v527 = *((float*)&v893 + 1);
+                                            v528 = *(float*)&v896;
+                                            v529 = *((float*)&v898 + 1);
+                                            v530 =
+                                                (float)(*((float*)&v892 + 1) *
+                                                        v506) +
+                                                0x0.0p+0f;
+                                            v531 = *(float*)&v894;
+                                            v532 = *((float*)&v896 + 1);
+                                            v533 = *(float*)&v899;
+                                            memset(&v905[164], 0, 20);
+                                            *(_QWORD*)&v905[156] = 0;
+                                            *(_QWORD*)&v905[148] = 0;
+                                            v534 =
+                                                (float)((float)((float)(*((float*)&v892 +
+                                                                          1) *
+                                                                        v690) +
+                                                                0x0.0p+0f) +
+                                                        (float)(*(float*)&v893 *
+                                                                v691)) +
+                                                (float)(*((float*)&v893 + 1) *
+                                                        *((float*)&v692 + 1));
+                                            memset(&v905[116], 0, 32);
+                                            v892 = *(_QWORD*)(v5 + 8200);
+                                            v893 = *(_QWORD*)(v5 + 8208);
+                                            v894 = *(_QWORD*)(v5 + 8216);
+                                            v535 =
+                                                (float)((float)(v530 +
+                                                                (float)(v524 *
+                                                                        v507)) +
+                                                        (float)(v527 *
+                                                                *(float*)&v692)) +
+                                                (float)(v531 * v508);
+                                            v536 =
+                                                (float)((float)((float)((float)(*(float*)&v895 *
+                                                                                v506) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(*((float*)&v895 +
+                                                                          1) *
+                                                                        v507)) +
+                                                        (float)(*(float*)&v896 *
+                                                                *(float*)&v692)) +
+                                                (float)(*((float*)&v896 + 1) *
+                                                        v508);
+                                            v537 =
+                                                (float)((float)((float)((float)(*((float*)&v897 +
+                                                                                  1) *
+                                                                                v506) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(*(float*)&v898 *
+                                                                        v507)) +
+                                                        (float)(*((float*)&v898 +
+                                                                  1) *
+                                                                *(float*)&v692)) +
+                                                (float)(*(float*)&v899 * v508);
+                                            v538 = v534 + (float)(v531 * v689);
+                                            v539 =
+                                                (float)((float)((float)((float)(*(float*)&v895 *
+                                                                                v690) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(*((float*)&v895 +
+                                                                          1) *
+                                                                        v691)) +
+                                                        (float)(*(float*)&v896 *
+                                                                *((float*)&v692 +
+                                                                  1))) +
+                                                (float)(*((float*)&v896 + 1) *
+                                                        v689);
+                                            v540 =
+                                                (float)((float)((float)((float)(*((float*)&v897 +
+                                                                                  1) *
+                                                                                v690) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(*(float*)&v898 *
+                                                                        v691)) +
+                                                        (float)(*((float*)&v898 +
+                                                                  1) *
+                                                                *((float*)&v692 +
+                                                                  1))) +
+                                                (float)(*(float*)&v899 * v689);
+                                            v895 = *(_QWORD*)(v5 + 8240);
+                                            v541 = *(_QWORD*)(v5 + 8248);
+                                            v898 = 0;
+                                            v899 = 3;
+                                            memset(&v905[4], 0, 112);
+                                            v1026 = 0;
+                                            v1027 = 0;
+                                            v1024 = 0;
+                                            v1025 = 0;
+                                            v1022 = 0;
+                                            v1023 = 0;
+                                            v1020 = 0;
+                                            v1021 = 0;
+                                            v1018 = 0;
+                                            v1019 = 0;
+                                            v542 =
+                                                (float)((float)(v535 * v729) +
+                                                        0x0.0p+0f) +
+                                                (float)(v538 * v726);
+                                            v543 =
+                                                (float)((float)(v535 * v716) +
+                                                        0x0.0p+0f) +
+                                                (float)(v538 * *(float*)&v717);
+                                            v544 =
+                                                (float)((float)(v535 * v718) +
+                                                        0x0.0p+0f) +
+                                                (float)(v538 *
+                                                        *((float*)&v717 + 1));
+                                            v545 =
+                                                (float)((float)(v536 * v716) +
+                                                        0x0.0p+0f) +
+                                                (float)(v539 * *(float*)&v717);
+                                            v896 = v541;
+                                            v546 = *(_QWORD*)(v5 + 8256);
+                                            memset(v1017, 0, sizeof(v1017));
+                                            v1016[0] = 0;
+                                            v1016[1] = 0;
+                                            v547 =
+                                                (float)((float)(v536 * v729) +
+                                                        0x0.0p+0f) +
+                                                (float)(v539 * v726);
+                                            v548 =
+                                                (float)((float)(v536 * v718) +
+                                                        0x0.0p+0f) +
+                                                (float)(v539 *
+                                                        *((float*)&v717 + 1));
+                                            v897 = v546;
+                                            v549 =
+                                                (float)((float)(v537 * v729) +
+                                                        0x0.0p+0f) +
+                                                (float)(v540 * v726);
+                                            v550 =
+                                                (float)((float)(v537 * v716) +
+                                                        0x0.0p+0f) +
+                                                (float)(v540 * *(float*)&v717);
+                                            v551 =
+                                                (float)((float)(v537 * v718) +
+                                                        0x0.0p+0f) +
+                                                (float)(v540 *
+                                                        *((float*)&v717 + 1));
+                                            v552 =
+                                                (float)((float)((float)((float)(v521 *
+                                                                                v698) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v524 *
+                                                                        *(float*)&v509)) +
+                                                        (float)(v527 * v697)) +
+                                                (float)(v531 * *(float*)&v510);
+                                            v553 =
+                                                (float)((float)((float)((float)(v522 *
+                                                                                v698) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v525 *
+                                                                        *(float*)&v509)) +
+                                                        (float)(v528 * v697)) +
+                                                (float)(v532 * *(float*)&v510);
+                                            v554 =
+                                                (float)((float)((float)((float)(v523 *
+                                                                                v698) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v526 *
+                                                                        *(float*)&v509)) +
+                                                        (float)(v529 * v697)) +
+                                                (float)(v533 * *(float*)&v510);
+                                            v555 = v543 + (float)(v552 * v735);
+                                            v556 = v544 + (float)(v552 * v732);
+                                            v557 = v545 + (float)(v553 * v735);
+                                            v558 = v548 + (float)(v553 * v732);
+                                            v559 = v550 + (float)(v554 * v735);
+                                            v560 = v542 + (float)(v552 * v750);
+                                            v561 = v547 + (float)(v553 * v750);
+                                            v562 = v549 + (float)(v554 * v750);
+                                            v563 = v551 + (float)(v554 * v732);
+                                            v564 =
+                                                (float)((float)((float)((float)(v522 *
+                                                                                v712) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v525 *
+                                                                        *((float*)&v509 +
+                                                                          1))) +
+                                                        (float)(v528 * v711)) +
+                                                (float)(v532 *
+                                                        *((float*)&v510 + 1));
+                                            v565 =
+                                                (float)((float)((float)((float)(v521 *
+                                                                                v712) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v524 *
+                                                                        *((float*)&v509 +
+                                                                          1))) +
+                                                        (float)(v527 * v711)) +
+                                                (float)(v531 *
+                                                        *((float*)&v510 + 1));
+                                            v566 =
+                                                (float)((float)((float)((float)(v523 *
+                                                                                v712) +
+                                                                        0x0.0p+0f) +
+                                                                (float)(v526 *
+                                                                        *((float*)&v509 +
+                                                                          1))) +
+                                                        (float)(v529 * v711)) +
+                                                (float)(v533 *
+                                                        *((float*)&v510 + 1));
+                                            v733 = v560 + (float)(v565 * v753);
+                                            v730 = v555 + (float)(v565 * v747);
+                                            v736 = v556 + (float)(v565 * v744);
+                                            v727 = v561 + (float)(v564 * v753);
+                                            *((float*)&v717 + 1) =
+                                                v562 + (float)(v566 * v753);
+                                            v719 = v557 + (float)(v564 * v747);
+                                            *(float*)&v748 =
+                                                v559 + (float)(v566 * v747);
+                                            v751 = v558 + (float)(v564 * v744);
+                                            *(float*)&v754 =
+                                                v563 + (float)(v566 * v744);
+                                            v567 =
+                                                (float)((float)(v521 * v699) +
+                                                        0x0.0p+0f) +
+                                                (float)(v524 * v693);
+                                            v568 =
+                                                (float)((float)(v521 *
+                                                                *(float*)&v702) +
+                                                        0x0.0p+0f) +
+                                                (float)(v524 * v695);
+                                            v569 =
+                                                (float)((float)(v521 *
+                                                                *((float*)&v702 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v524 * v694);
+                                            v570 =
+                                                (float)((float)(v522 *
+                                                                *(float*)&v702) +
+                                                        0x0.0p+0f) +
+                                                (float)(v525 * v695);
+                                            v571 =
+                                                (float)((float)(v522 *
+                                                                *((float*)&v702 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v525 * v694);
+                                            v572 =
+                                                (float)((float)(v523 *
+                                                                *(float*)&v702) +
+                                                        0x0.0p+0f) +
+                                                (float)(v526 * v695);
+                                            v573 =
+                                                (float)((float)(v523 *
+                                                                *((float*)&v702 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v526 * v694);
+                                            v574 =
+                                                (float)((float)(v521 * v703) +
+                                                        0x0.0p+0f) +
+                                                (float)(v524 * v696);
+                                            v575 =
+                                                (float)((float)(v522 * v699) +
+                                                        0x0.0p+0f) +
+                                                (float)(v525 * v693);
+                                            v576 =
+                                                (float)((float)(v522 * v703) +
+                                                        0x0.0p+0f) +
+                                                (float)(v525 * v696);
+                                            v577 =
+                                                (float)((float)(v523 * v699) +
+                                                        0x0.0p+0f) +
+                                                (float)(v526 * v693);
+                                            v578 =
+                                                (float)((float)(v523 * v703) +
+                                                        0x0.0p+0f) +
+                                                (float)(v526 * v696);
+                                            v579 = v574 + (float)(v527 * v700);
+                                            v580 = v567 + (float)(v527 * v710);
+                                            v581 = v568 + (float)(v527 * v708);
+                                            v582 = v569 + (float)(v527 * v701);
+                                            v583 = v575 + (float)(v528 * v710);
+                                            v584 = v570 + (float)(v528 * v708);
+                                            v585 = v571 + (float)(v528 * v701);
+                                            v586 = v576 + (float)(v528 * v700);
+                                            v587 = v577 + (float)(v529 * v710);
+                                            v588 = v572 + (float)(v529 * v708);
+                                            v589 = v579 + (float)(v531 * v518);
+                                            v590 = v582 + (float)(v531 * v520);
+                                            v591 = v586 + (float)(v532 * v518);
+                                            v592 =
+                                                (float)(v578 +
+                                                        (float)(v529 * v700)) +
+                                                (float)(v533 * v518);
+                                            v593 = v585 + (float)(v532 * v520);
+                                            v594 = v583 + (float)(v532 * v706);
+                                            v595 = v580 + (float)(v531 * v706);
+                                            v596 = v581 + (float)(v531 * v704);
+                                            v597 = v584 + (float)(v532 * v704);
+                                            v598 = v587 + (float)(v533 * v706);
+                                            v599 = v588 + (float)(v533 * v704);
+                                            v600 =
+                                                (float)(v573 +
+                                                        (float)(v529 * v701)) +
+                                                (float)(v533 * v520);
+                                            v745 = v589;
+                                            v601 = (float)(v714 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            v602 = (float)((float)(v714 +
+                                                                   0x0.0p+0f) +
+                                                           (float)(v713 *
+                                                                   0x0.0p+0f)) +
+                                                   (float)(*(float*)&v501 *
+                                                           0x0.0p+0f);
+                                            v603 = (float)(v601 + v713) +
+                                                   (float)(*(float*)&v501 *
+                                                           0x0.0p+0f);
+                                            v604 = (float)(v601 +
+                                                           (float)(v713 *
+                                                                   0x0.0p+0f)) +
+                                                   *(float*)&v501;
+                                            v605 = (float)(*(float*)&v496 *
+                                                           0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            v606 =
+                                                (float)((float)(*(float*)&v496 +
+                                                                0x0.0p+0f) +
+                                                        (float)(v715 *
+                                                                0x0.0p+0f)) +
+                                                (float)(*((float*)&v501 + 1) *
+                                                        0x0.0p+0f);
+                                            v607 =
+                                                (float)(v605 + v715) +
+                                                (float)(*((float*)&v501 + 1) *
+                                                        0x0.0p+0f);
+                                            v608 = (float)(v605 +
+                                                           (float)(v715 *
+                                                                   0x0.0p+0f)) +
+                                                   *((float*)&v501 + 1);
+                                            v609 =
+                                                (float)((float)(v602 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v606 * v756);
+                                            v610 =
+                                                (float)((float)(v602 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v606 * *(float*)&v762);
+                                            v611 =
+                                                (float)((float)(v595 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v596 * *(float*)&v762);
+                                            v612 =
+                                                (float)((float)(v594 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v597 * *(float*)&v762);
+                                            v613 =
+                                                (float)((float)(v598 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v599 * *(float*)&v762);
+                                            v614 =
+                                                (float)((float)(v603 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v607 * *(float*)&v762);
+                                            v615 =
+                                                (float)((float)(v604 *
+                                                                *(float*)&v767) +
+                                                        0x0.0p+0f) +
+                                                (float)(v608 * *(float*)&v762);
+                                            v616 =
+                                                (float)((float)(v602 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v606 *
+                                                        *((float*)&v762 + 1));
+                                            v617 =
+                                                (float)((float)(v603 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v607 * v756);
+                                            v618 =
+                                                (float)((float)(v603 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v607 *
+                                                        *((float*)&v762 + 1));
+                                            v619 =
+                                                (float)((float)(v604 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v608 * v756);
+                                            v620 =
+                                                (float)((float)(v604 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v608 *
+                                                        *((float*)&v762 + 1));
+                                            v621 =
+                                                (float)((float)(v595 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v596 * v756);
+                                            v622 =
+                                                (float)((float)(v595 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v596 *
+                                                        *((float*)&v762 + 1));
+                                            v623 =
+                                                (float)((float)(v594 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v597 * v756);
+                                            v624 =
+                                                (float)((float)(v594 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v597 *
+                                                        *((float*)&v762 + 1));
+                                            v625 =
+                                                (float)((float)(v598 * v758) +
+                                                        0x0.0p+0f) +
+                                                (float)(v599 * v756);
+                                            v626 =
+                                                (float)((float)(v598 *
+                                                                *((float*)&v767 +
+                                                                  1)) +
+                                                        0x0.0p+0f) +
+                                                (float)(v599 *
+                                                        *((float*)&v762 + 1));
+                                            v627 =
+                                                (float)(*((float*)&v496 + 1) *
+                                                        0x0.0p+0f) +
+                                                0x0.0p+0f;
+                                            v628 =
+                                                (float)((float)(*((float*)&v496 +
+                                                                  1) +
+                                                                0x0.0p+0f) +
+                                                        (float)(v723 *
+                                                                0x0.0p+0f)) +
+                                                (float)(v721 * 0x0.0p+0f);
+                                            v629 = (float)(v627 + v723) +
+                                                   (float)(v721 * 0x0.0p+0f);
+                                            v630 = (float)(v627 +
+                                                           (float)(v723 *
+                                                                   0x0.0p+0f)) +
+                                                   v721;
+                                            v631 = v620 + (float)(v630 * v790);
+                                            v632 = v609 + (float)(v628 * v787);
+                                            v633 = v610 + (float)(v628 * v794);
+                                            v634 = v616 + (float)(v628 * v790);
+                                            v635 = v617 + (float)(v629 * v787);
+                                            v636 = v614 + (float)(v629 * v794);
+                                            v637 = v615 + (float)(v630 * v794);
+                                            v638 = v621 + (float)(v590 * v787);
+                                            v639 = v611 + (float)(v590 * v794);
+                                            v640 = v622 + (float)(v590 * v790);
+                                            v641 = v612 + (float)(v593 * v794);
+                                            v642 = v613 + (float)(v600 * v794);
+                                            v643 = v623 + (float)(v593 * v787);
+                                            v644 = v624 + (float)(v593 * v790);
+                                            v645 = v625 + (float)(v600 * v787);
+                                            v646 = v626 + (float)(v600 * v790);
+                                            v647 = (float)(v742 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            v648 = (float)((float)(v742 +
+                                                                   0x0.0p+0f) +
+                                                           (float)(v740 *
+                                                                   0x0.0p+0f)) +
+                                                   (float)(v738 * 0x0.0p+0f);
+                                            v649 = (float)(v647 + v740) +
+                                                   (float)(v738 * 0x0.0p+0f);
+                                            v650 = (float)(v647 +
+                                                           (float)(v740 *
+                                                                   0x0.0p+0f)) +
+                                                   v738;
+                                            *(float*)&v905[16] =
+                                                v632 + (float)(v648 * v798);
+                                            *(float*)&v905[24] =
+                                                v634 +
+                                                (float)(v648 *
+                                                        *((float*)&v487 + 1));
+                                            *(float*)&v905[52] =
+                                                v635 + (float)(v649 * v798);
+                                            *(float*)&v905[96] =
+                                                v631 +
+                                                (float)(v650 *
+                                                        *((float*)&v487 + 1));
+                                            *(float*)&v905[20] =
+                                                v633 +
+                                                (float)(v648 * *(float*)&v487);
+                                            *(float*)&v905[56] =
+                                                v636 +
+                                                (float)(v649 * *(float*)&v487);
+                                            *(float*)&v905[60] =
+                                                (float)(v618 +
+                                                        (float)(v629 * v790)) +
+                                                (float)(v649 *
+                                                        *((float*)&v487 + 1));
+                                            *(float*)&v905[88] =
+                                                (float)(v619 +
+                                                        (float)(v630 * v787)) +
+                                                (float)(v650 * v798);
+                                            *(float*)&v905[92] =
+                                                v637 +
+                                                (float)(v650 * *(float*)&v487);
+                                            v791 =
+                                                v644 +
+                                                (float)(v591 *
+                                                        *((float*)&v487 + 1));
+                                            v795 =
+                                                v641 +
+                                                (float)(v591 * *(float*)&v487);
+                                            *(float*)&v905[124] =
+                                                v638 + (float)(v745 * v798);
+                                            *(float*)&v905[128] =
+                                                v639 +
+                                                (float)(v745 * *(float*)&v487);
+                                            *(float*)&v905[132] =
+                                                v640 +
+                                                (float)(v745 *
+                                                        *((float*)&v487 + 1));
+                                            *(float*)&v905[160] =
+                                                v643 + (float)(v591 * v798);
+                                            v651 =
+                                                (float)(*((float*)&v491 + 1) *
+                                                        0x0.0p+0f) +
+                                                0x0.0p+0f;
+                                            *(float*)&v799 =
+                                                v645 + (float)(v592 * v798);
+                                            v652 = (float)(*(float*)&v491 *
+                                                           0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            *((float*)&v908 + 1) =
+                                                v646 +
+                                                (float)(v592 *
+                                                        *((float*)&v487 + 1));
+                                            v653 =
+                                                (float)((float)(*(float*)&v491 +
+                                                                0x0.0p+0f) +
+                                                        (float)(*(float*)&v772 *
+                                                                0x0.0p+0f)) +
+                                                (float)(v770 * 0x0.0p+0f);
+                                            v654 = (float)((float)(v780 +
+                                                                   0x0.0p+0f) +
+                                                           (float)(v777 *
+                                                                   0x0.0p+0f)) +
+                                                   (float)(v765 * 0x0.0p+0f);
+                                            v655 =
+                                                (float)((float)(*((float*)&v491 +
+                                                                  1) +
+                                                                0x0.0p+0f) +
+                                                        (float)(*((float*)&v772 +
+                                                                  1) *
+                                                                0x0.0p+0f)) +
+                                                (float)(v760 * 0x0.0p+0f);
+                                            v656 =
+                                                (float)(v651 +
+                                                        *((float*)&v772 + 1)) +
+                                                (float)(v760 * 0x0.0p+0f);
+                                            v657 =
+                                                (float)(v651 +
+                                                        (float)(*((float*)&v772 +
+                                                                  1) *
+                                                                0x0.0p+0f)) +
+                                                v760;
+                                            v658 = v654 + 0x0.0p+0f;
+                                            v659 = (float)(v654 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            *(float*)&v904 =
+                                                (float)(v658 +
+                                                        (float)(v653 *
+                                                                0x0.0p+0f)) +
+                                                (float)(v655 * 0x0.0p+0f);
+                                            v660 = (float)(v780 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            v661 =
+                                                (float)(v652 + *(float*)&v772) +
+                                                (float)(v770 * 0x0.0p+0f);
+                                            *((float*)&v904 + 1) =
+                                                (float)(v653 + v659) +
+                                                (float)(v655 * 0x0.0p+0f);
+                                            *(float*)v905 =
+                                                v655 +
+                                                (float)(v659 +
+                                                        (float)(v653 *
+                                                                0x0.0p+0f));
+                                            v662 =
+                                                (float)(v652 +
+                                                        (float)(*(float*)&v772 *
+                                                                0x0.0p+0f)) +
+                                                v770;
+                                            v663 = (float)(v660 + v777) +
+                                                   (float)(v765 * 0x0.0p+0f);
+                                            v664 = (float)(v660 +
+                                                           (float)(v777 *
+                                                                   0x0.0p+0f)) +
+                                                   v765;
+                                            *(float*)&v905[116] = v730;
+                                            *(float*)&v905[112] = v733;
+                                            v665 = v663 + 0x0.0p+0f;
+                                            v666 = (float)(v663 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            *(float*)&v905[148] = v727;
+                                            *(float*)&v905[28] =
+                                                (float)(v665 +
+                                                        (float)(v661 *
+                                                                0x0.0p+0f)) +
+                                                (float)(v656 * 0x0.0p+0f);
+                                            v667 = v664 + 0x0.0p+0f;
+                                            v668 = (float)(v664 * 0x0.0p+0f) +
+                                                   0x0.0p+0f;
+                                            *(float*)&v905[36] =
+                                                v656 +
+                                                (float)(v666 +
+                                                        (float)(v661 *
+                                                                0x0.0p+0f));
+                                            v906 = (__int64*)__PAIR64__(
+                                                v748,
+                                                DWORDn(v717,
+                                                       sizeof(v717) / 4 - 1));
+                                            *(float*)&v905[152] = v719;
+                                            *(float*)&v905[32] =
+                                                (float)(v661 + v666) +
+                                                (float)(v656 * 0x0.0p+0f);
+                                            *(float*)&v905[64] =
+                                                (float)(v667 +
+                                                        (float)(v662 *
+                                                                0x0.0p+0f)) +
+                                                (float)(v657 * 0x0.0p+0f);
+                                            *(float*)&v905[72] =
+                                                v657 +
+                                                (float)(v668 +
+                                                        (float)(v662 *
+                                                                0x0.0p+0f));
+                                            *(float*)&v905[68] =
+                                                (float)(v662 + v668) +
+                                                (float)(v657 * 0x0.0p+0f);
+                                            *(float*)&v905[120] = v736;
+                                            *(float*)&v905[156] = v751;
+                                            *(float*)&v905[164] = v795;
+                                            *(float*)&v905[168] = v791;
+                                            v907 = __PAIR64__(v799, v754);
+                                            *(float*)&v908 =
+                                                v642 +
+                                                (float)(v592 * *(float*)&v487);
+                                            SdkRoutine_87a020_alt1(
+                                                v5 + 200, (__int64)&v904,
+                                                (__int64)v867, (__int64)&v892,
+                                                (__int64)v1016);
+                                            nerd_gyro_pointing_GyroPointingKalmanFilter_RemoveRelativeRotationVariable_plt_alt1(
+                                                v5 + 200);
+                                            nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances_plt_alt1(
+                                                v5 + 200, v804);
+                                            v669 = *(_QWORD*)(v5 + 8208);
+                                            v670 = *(float*)(v5 + 8188);
+                                            v671 = *(float*)(v5 + 8184) +
+                                                   0x0.0p+0f;
+                                            v867[0] = *(_QWORD*)(v5 + 8200);
+                                            v867[1] = v669;
+                                            v672 = *(float*)(v5 + 0x2000) +
+                                                   0x0.0p+0f;
+                                            v868 = *(_QWORD*)(v5 + 8216);
+                                            v904 = 1065353216;
+                                            *(_QWORD*)v905 = 0;
+                                            *(_DWORD*)&v905[8] = 1065353216;
+                                            *(_DWORD*)&v905[12] = 0;
+                                            *(_QWORD*)&v905[16] = 0;
+                                            *(_DWORD*)&v905[24] = 1065353216;
+                                            *(__int64*)((char*)v1016 + 4) = 0;
+                                            v673 = 0x1.99999a0000000p-4f;
+                                            DWORDn(v1016[1],
+                                                   sizeof(v1016[1]) / 4 - 1) =
+                                                0;
+                                            *(_QWORD*)((char*)v1017 + 4) = 0;
+                                            DWORDn(v1017[1],
+                                                   sizeof(v1017[1]) / 4 - 1) =
+                                                0;
+                                            *(float*)&v840 = v671;
+                                            *((float*)&v840 + 1) =
+                                                v670 + 0x0.0p+0f;
+                                            *(float*)&v841 = v672;
+                                            if (v804 <= 0x1.99999a0000000p-4f) {
+                                              v673 = v804;
+                                            }
+                                            *(float*)v1016 =
+                                                *(float*)&v1013 /
+                                                (float)(v673 / *(float*)&v1015);
+                                            *(float*)v1017 = *(float*)v1016;
+                                            *(float*)&v1017[2] = *(float*)v1016;
+                                            SdkRoutine_87a050_alt1(
+                                                v5 + 200, (__int64)&v840,
+                                                (__int64)&v904, (__int64)v1016,
+                                                (__int64)v867, 0x0.0p+0f);
+                                            math_711380_alt1(
+                                                (__int64*)(v5 + 200));
+                                            if ((nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates_plt_alt1(
+                                                     v5 + 200) &
+                                                 1) != 0) {
+                                              if ((signed __int64)v1011[0] <
+                                                  *(__int64*)(v5 + 15424)) {
+                                                goto LABEL_310;
+                                              }
+                                            }
+                                            else {
+                                              nerd_gyro_pointing_GyroPointingCore_Recover_plt_alt1(
+                                                  v5, false);
+                                              if ((signed __int64)v1011[0] <
+                                                  *(__int64*)(v5 + 15424)) {
+                                              LABEL_310:
+                                                this_ =
+                                                    nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt_alt1(
+                                                        v5 + 200);
+                                                if ((_DWORD)this_ == 2) {
+                                                  goto LABEL_311;
+                                                }
+                                                goto LABEL_315;
+                                              }
+                                            }
+                                            nerd_gyro_pointing_GyroPointingKalmanFilter_PushParameterState_plt_alt1(
+                                                v5 + 200);
+                                            v675 = *(_QWORD*)(v5 + 15432);
+                                            *(_QWORD*)(v5 + 15424) += v675;
+                                            *(_QWORD*)(v5 + 15432) = 2 * v675;
+                                            this_ =
+                                                nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt_alt1(
+                                                    v5 + 200);
+                                            if ((_DWORD)this_ == 2) {
+                                            LABEL_311:
+                                              v674 =
+                                                  v804 + *(float*)(v5 + 15004);
+                                              *(float*)(v5 + 15004) = v674;
+                                              if (v674 >
+                                                  0x1.0000000000000p-1f) {
+                                                return nerd_gyro_pointing_GyroPointingCore_Recover_plt_alt1(
+                                                    v5, true);
+                                              }
+                                              return this_;
+                                            }
+                                          LABEL_315:
+                                            *(_DWORD*)(v5 + 15004) = 0;
+                                            return this_;
+                                          }
+                                        LABEL_243:
+                                          v421 = -1;
+                                          goto LABEL_244;
+                                        }
+                                      }
+                                      v417 = -1;
+                                      v418 = *(float*)&v900;
+                                      v419 = v898;
+                                      if (v898 != 0) {
+                                        goto LABEL_240;
+                                      }
+                                      goto LABEL_243;
+                                    }
+                                    v360 = BYTE5(v1012);
+                                    v952 = nullptr;
+                                    v951 = 0;
+                                    v950 = 0;
+                                    v949 = nullptr;
+                                    if ((v1012 & 0x10000000000LL) != 0) {
+                                      v361 = 1;
+                                      v952 = (_QWORD*)(((char*)0x0LL) + 1);
+                                      if ((v1012 & 0x20000000000LL) == 0) {
+                                        goto LABEL_207;
+                                      }
+                                    }
+                                    else {
+                                      v361 = 0;
+                                      v203 = (__int64*)&v949;
+                                      if ((v1012 & 0x20000000000LL) == 0) {
+                                      LABEL_207:
+                                        if ((v360 & 4) != 0) {
+                                          (&v949)[v361] =
+                                              (_QWORD*)(((char*)0x0LL) + 2);
+                                          v361 = (unsigned __int64)v952 + 1;
+                                          v952 = (__int64*)((char*)v952 + 1);
+                                        }
+                                        v362 = 0x1.99999a0000000p-4f;
+                                        v363 = *(_QWORD*)(v292 + 24);
+                                        v364 = *(_QWORD*)(v292 + 32);
+                                        v892 = *(_QWORD*)(v292 + 16);
+                                        v893 = v363;
+                                        if (v804 <= 0x1.99999a0000000p-4f) {
+                                          v362 = v804;
+                                        }
+                                        v894 = v364;
+                                        v365 = 0x1.2dfd6a0000000p-19f / v362;
+                                        v366 = *(float*)v292;
+                                        v367 = *(float*)(v292 + 4);
+                                        *((float*)&v820_.v820 + 1) =
+                                            0x1.2dfd6a0000000p-17f / v362;
+                                        v368 = *(float*)(v292 + 8);
+                                        *(float*)&v820_.v820 = v365;
+                                        *(float*)&v820_.v821 = v365;
+                                        v840 = 1065353216;
+                                        v841 = 0;
+                                        v842 = 1065353216;
+                                        v843 = nullptr;
+                                        LODWORD(v844) = 1065353216;
+                                        *(_QWORD*)&v905[8] = v361;
+                                        *(float*)&v814_.v814 = v366 + 0x0.0p+0f;
+                                        *((float*)&v814_.v814 + 1) =
+                                            v367 + 0x0.0p+0f;
+                                        *(float*)&v814_.v815 = v368 + 0x0.0p+0f;
+                                        if (v361 != 0) {
+                                          *(_QWORD*)v905 = 0;
+                                          v904 = 0;
+                                          memset_plt_alt2((__int64)&v904, 0,
+                                                          4 * v361);
+                                          if (*(_QWORD*)&v905[8] != 0) {
+                                            v369 = 0;
+                                            do {
+                                              *(_DWORD*)&v905[4 * v369 - 8] =
+                                                  *((_DWORD*)&v814_.v814 +
+                                                    (_QWORD)(&v949)[v369]);
+                                              ++v369;
+                                            } while (v369 < *(_QWORD*)&v905[8]);
+                                            v938 = *(_QWORD*)&v905[8];
+                                            if (*(_QWORD*)&v905[8] != 0) {
+                                              memcpy_plt_alt1(
+                                                  (__int64)&v936,
+                                                  (__int64)&v904,
+                                                  4LL * *(_QWORD*)&v905[8]);
+                                            }
+                                          }
+                                          else {
+                                            v938 = 0;
+                                          }
+                                          v370 = v361 & 3;
+                                          v371 = 0;
+                                          v904 = v361;
+                                          memset(v905, 0, 40);
+                                          if (v361 >= 4) {
+                                            v372 = 0;
+                                            v373 = &v905[24];
+                                            v374 = &v951;
+                                            do {
+                                              v372 -= 4;
+                                              v375 = (char*)&v840 +
+                                                     12 * *(v374 - 2);
+                                              v376 = (char*)&v840 +
+                                                     12 * *(v374 - 1);
+                                              v377 = *(_QWORD*)v375;
+                                              LODWORD(v375) =
+                                                  *((_DWORD*)v375 + 2);
+                                              *((_QWORD*)v373 - 3) = v377;
+                                              v378 = *(_QWORD*)v376;
+                                              *((_DWORD*)v373 - 4) =
+                                                  (_DWORD)v375;
+                                              LODWORD(v376) =
+                                                  *((_DWORD*)v376 + 2);
+                                              *(_QWORD*)(v373 - 12) = v378;
+                                              v379 = *v374;
+                                              v380 = v374[1];
+                                              v374 += 4;
+                                              *((_DWORD*)v373 - 1) =
+                                                  (_DWORD)v376;
+                                              v381 = (char*)&v840 + 12 * v379;
+                                              v382 = *(_QWORD*)v381;
+                                              *((_DWORD*)v373 + 2) =
+                                                  *((_DWORD*)v381 + 2);
+                                              v383 = (char*)&v840 + 12 * v380;
+                                              *(_QWORD*)v373 = v382;
+                                              v384 = *(_QWORD*)v383;
+                                              *((_DWORD*)v373 + 5) =
+                                                  *((_DWORD*)v383 + 2);
+                                              *(_QWORD*)(v373 + 12) = v384;
+                                              v373 += 48;
+                                            } while (
+                                                -(__int64)(v361 &
+                                                           0xFFFFFFFFFFFFFFFCLL) !=
+                                                v372);
+                                            v371 = -v372;
+                                          }
+                                          if ((v361 & 3) != 0) {
+                                            v385 = (__int64*)&(&v949)[v371];
+                                            v386 = &v905[12 * v371];
+                                            do {
+                                              v387 = *v385++;
+                                              --v370;
+                                              v388 = (char*)&v840 + 12 * v387;
+                                              v389 = *(_QWORD*)v388;
+                                              LODWORD(v388) =
+                                                  *((_DWORD*)v388 + 2);
+                                              *(_QWORD*)v386 = v389;
+                                              *((_DWORD*)v386 + 2) =
+                                                  (_DWORD)v388;
+                                              v386 += 12;
+                                            } while (v370 != 0);
+                                          }
+                                          v390 = *(_QWORD*)&v905[8];
+                                          *(_QWORD*)&v905[8] = v361;
+                                          v868 = v390;
+                                          v869 = *(_OWORD*)&v905[16];
+                                          v870 = *(_QWORD*)&v905[32];
+                                          v391 = v904;
+                                          v392 = *(_QWORD*)v905;
+                                          v904 = 0;
+                                          *(_QWORD*)v905 = 0;
+                                          v867[0] = v391;
+                                          v867[1] = v392;
+                                          memset_plt_alt2((__int64)&v904, 0,
+                                                          4 * v361);
+                                          if (*(_QWORD*)&v905[8] != 0) {
+                                            v393 = 0;
+                                            do {
+                                              *(_DWORD*)&v905[4 * v393 - 8] =
+                                                  *((_DWORD*)&v820_.v820 +
+                                                    (_QWORD)(&v949)[v393]);
+                                              ++v393;
+                                            } while (v393 < *(_QWORD*)&v905[8]);
+                                            v833_.v833 = *(_QWORD*)&v905[8];
+                                            if (*(_QWORD*)&v905[8] != 0) {
+                                              memcpy_plt_alt1(
+                                                  (__int64)&v831_.v831,
+                                                  (__int64)&v904,
+                                                  4LL * *(_QWORD*)&v905[8]);
+                                              memset(&v905[8], 0, 40);
+                                              v904 = v833_.v833;
+                                              *(_QWORD*)v905 = v833_.v833;
+                                              if (v833_.v833 != 0) {
+                                                v394 = v833_.v833 & 7;
+                                                if (v833_.v833 >= 8) {
+                                                  v676 = 0;
+                                                  v677 = &v833_.v833;
+                                                  v678 = -(
+                                                      __int64)(v833_.v833 &
+                                                               0xFFFFFFFFFFFFFFF8LL);
+                                                  v679 = &v905[56];
+                                                  do {
+                                                    v680 = *((_DWORD*)v677 - 3);
+                                                    v676 -= 8;
+                                                    *(v679 - 12) =
+                                                        *((_DWORD*)v677 - 4);
+                                                    *(v679 - 8) = v680;
+                                                    v681 = *((_DWORD*)v677 - 1);
+                                                    *(v679 - 4) =
+                                                        *((_DWORD*)v677 - 2);
+                                                    *(_DWORD*)v679 = v681;
+                                                    v682 = *((_DWORD*)v677 + 1);
+                                                    v679[4] = *(_DWORD*)v677;
+                                                    v679[8] = v682;
+                                                    v683 = *((_DWORD*)v677 + 2);
+                                                    v684 = *((_DWORD*)v677 + 3);
+                                                    v677 += 4;
+                                                    v679[12] = v683;
+                                                    v679[16] = v684;
+                                                    v679 += 32;
+                                                  } while (v678 != v676);
+                                                  v395 = -v676;
+                                                }
+                                                else {
+                                                  v395 = 0;
+                                                }
+                                                if (v394 != 0) {
+                                                  v685 = &v905[16 * v395 - 8];
+                                                  v686 =
+                                                      (int*)&v831_.v831 + v395;
+                                                  v687 = v685 + 16;
+                                                  do {
+                                                    v688 = *v686++;
+                                                    --v394;
+                                                    *(_DWORD*)v687 = v688;
+                                                    v687 += 4;
+                                                  } while (v394 != 0);
+                                                }
+                                              }
+                                              goto LABEL_236;
+                                            }
                                           }
                                         }
-                                        ++v370;
-                                        *v211 = 1;
-                                        v965 = (__int64*)v370;
-                                        goto LABEL_213;
+                                        else {
+                                          v938 = 0;
+                                          v867[0] = 0;
+                                          v867[1] = 0;
+                                          v868 = 0;
+                                          v869 = (__typeof__(v869)){0};
+                                          v870 = 0;
+                                        }
+                                        memset(v905, 0, 48);
+                                        v904 = 0;
+                                      LABEL_236:
+                                        qmemcpy(v1017, &v905[8], 40);
+                                        v1016[0] = v904;
+                                        v1016[1] = *(_QWORD*)v905;
+                                        SdkRoutine_879fe0_alt1(
+                                            v5 + 200, (__int64)&v936,
+                                            (__int64)v867, (__int64)v1016,
+                                            (__int64)&v892,
+                                            0x1.99999a0000000p-4f);
+                                        goto LABEL_237;
                                       }
-                                    LABEL_129:
-                                      v213 = -1;
-                                      goto LABEL_130;
                                     }
+                                    ++v361;
+                                    *v203 = 1;
+                                    v952 = (__int64*)v361;
+                                    goto LABEL_207;
                                   }
-                                  v208 = -1;
-                                  v209 = *(float*)(v5 + 0x2000);
-                                  v210 = v34 * v34;
-                                  v211 = &v963;
-                                  if (v162 != 0) {
-                                    goto LABEL_126;
-                                  }
-                                  goto LABEL_129;
+                                LABEL_123:
+                                  v205 = -1;
+                                  goto LABEL_124;
                                 }
-                                v199 = 0x0.0p+0f;
-                                v200 = 0;
-                                v198 = v175;
                               }
-                              v201 = v162 + 16LL * *(_QWORD*)(v162 + 4096);
-                              *(_BYTE*)(v201 + 4) = v198;
-                              *(_BYTE*)(v201 + 5) = v200;
-                              *(float*)(v201 + 12) = v199;
-                              v202 = *(_QWORD*)(v162 + 4096);
-                              *(_DWORD*)(v201 + 8) = 1065353216;
-                              *(_QWORD*)(v162 + 4096) = v202 + 1;
+                              v200 = -1;
+                              v201 = *(float*)(v5 + 0x2000);
+                              v202 = v34 * v34;
+                              v203 = &v950;
+                              if (v154 != 0) {
+                                goto LABEL_120;
+                              }
                               goto LABEL_123;
                             }
-                            v187 = 0x0.0p+0f;
-                            v188 = 0;
-                            v186 = v173;
-                          LABEL_112:
-                            v189 = v152 + 16LL * *(_QWORD*)(v152 + 4096);
-                            *(_BYTE*)(v189 + 4) = v186;
-                            *(_BYTE*)(v189 + 5) = v188;
-                            *(float*)(v189 + 12) = v187;
-                            *(_DWORD*)(v189 + 8) = 1065353216;
-                            v190 = *(_QWORD*)(v152 + 4096);
-                            *(_QWORD*)(v152 + 4096) = v190 + 1;
-                            goto LABEL_113;
+                            v191 = 0x0.0p+0f;
+                            v192 = 0;
+                            v190 = v167;
                           }
-                          v178 = 0;
-                          v177 = 0x0.0p+0f;
-                        LABEL_102:
-                          v179 = v143 + 16LL * *(_QWORD*)(v143 + 4096);
-                          *(_BYTE*)(v179 + 4) = v171;
-                          *(_BYTE*)(v179 + 5) = v178;
-                          *(float*)(v179 + 12) = v177;
-                          *(_DWORD*)(v179 + 8) = 1065353216;
-                          v180 = *(_QWORD*)(v143 + 4096);
-                          *(_QWORD*)(v143 + 4096) = v180 + 1;
-                          v181 = v752;
-                          v182 = v150 - v151;
-                          v183 = v141 - v142;
-                          v184 = v160 - v161;
-                          if (v752 != 0) {
-                            goto LABEL_103;
-                          }
-                          goto LABEL_110;
+                          v193 = v154 + 16LL * *(_QWORD*)(v154 + 4096);
+                          *(_BYTE*)(v193 + 4) = v190;
+                          *(_BYTE*)(v193 + 5) = v192;
+                          *(float*)(v193 + 12) = v191;
+                          v194 = *(_QWORD*)(v154 + 4096);
+                          *(_DWORD*)(v193 + 8) = 1065353216;
+                          *(_QWORD*)(v154 + 4096) = v194 + 1;
+                          goto LABEL_117;
                         }
-                        v164 = v1030[5];
-                        v167 = 0x0.0p+0f;
-                        v165 = -0x1.0000000000000p+0f;
-                        v166 = 0;
-                        v162 = v163;
-                      LABEL_86:
-                        v168 = v162 + 16LL * *(_QWORD*)(v162 + 4096);
-                        *(_BYTE*)(v168 + 4) = v164;
-                        *(_BYTE*)(v168 + 5) = v166;
-                        *(float*)(v168 + 8) = v165;
-                        *(float*)(v168 + 12) = v167;
-                        v169 = *(_QWORD*)(v162 + 4096);
-                        *(_QWORD*)(v162 + 4096) = v169 + 1;
-                        if (v143 != 0) {
-                          goto LABEL_87;
-                        }
+                        v179 = 0x0.0p+0f;
+                        v180 = 0;
+                        v178 = v165;
+                      LABEL_106:
+                        v181 = v144 + 16LL * *(_QWORD*)(v144 + 4096);
+                        *(_BYTE*)(v181 + 4) = v178;
+                        *(_BYTE*)(v181 + 5) = v180;
+                        *(float*)(v181 + 12) = v179;
+                        *(_DWORD*)(v181 + 8) = 1065353216;
+                        v182 = *(_QWORD*)(v144 + 4096);
+                        *(_QWORD*)(v144 + 4096) = v182 + 1;
+                        goto LABEL_107;
+                      }
+                      v170 = 0;
+                      v169 = 0x0.0p+0f;
+                    LABEL_96:
+                      v171 = v139 + 16LL * *(_QWORD*)(v139 + 4096);
+                      *(_BYTE*)(v171 + 4) = v163;
+                      *(_BYTE*)(v171 + 5) = v170;
+                      *(float*)(v171 + 12) = v169;
+                      *(_DWORD*)(v171 + 8) = 1065353216;
+                      v172 = *(_QWORD*)(v139 + 4096);
+                      *(_QWORD*)(v139 + 4096) = v172 + 1;
+                      v173 = v739;
+                      v174 = v142 - v143;
+                      v175 = 0x0.0p+0f - v138;
+                      v176 = v152 - v153;
+                      if (v739 != 0) {
                         goto LABEL_97;
                       }
-                      v154 = v1030[2];
-                      v157 = 0x0.0p+0f;
-                      v155 = -0x1.0000000000000p+0f;
-                      v156 = 0;
-                      v152 = v153;
-                    LABEL_79:
-                      v158 = v152 + 16LL * *(_QWORD*)(v152 + 4096);
-                      *(_BYTE*)(v158 + 4) = v154;
-                      *(_BYTE*)(v158 + 5) = v156;
-                      *(float*)(v158 + 8) = v155;
-                      *(float*)(v158 + 12) = v157;
-                      v159 = *(_QWORD*)(v152 + 4096);
-                      *(_QWORD*)(v152 + 4096) = v159 + 1;
-                      v160 = *(float*)&v846_.v852;
-                      v161 = *(float*)&v1031;
-                      v162 = v846_.v850;
-                      v163 = v1030[4];
-                      if (v846_.v850 != 0) {
-                        goto LABEL_80;
-                      }
-                      goto LABEL_84;
+                      goto LABEL_104;
                     }
-                    v144 = v1029[1];
-                    v147 = 0;
-                    v146 = -0x1.0000000000000p+0f;
+                    v156 = v1017[5];
+                    v159 = 0x0.0p+0f;
+                    v157 = -0x1.0000000000000p+0f;
+                    v158 = 0;
+                    v154 = v155;
+                  LABEL_80:
+                    v160 = v154 + 16LL * *(_QWORD*)(v154 + 4096);
+                    *(_BYTE*)(v160 + 4) = v156;
+                    *(_BYTE*)(v160 + 5) = v158;
+                    *(float*)(v160 + 8) = v157;
+                    *(float*)(v160 + 12) = v159;
+                    v161 = *(_QWORD*)(v154 + 4096);
+                    *(_QWORD*)(v154 + 4096) = v161 + 1;
+                    if (v139 != 0) {
+                      goto LABEL_81;
+                    }
+                    goto LABEL_91;
                   }
-                  v148 = v143 + 16LL * *(_QWORD*)(v143 + 4096);
-                  *(_BYTE*)(v148 + 4) = v144;
-                  *(_BYTE*)(v148 + 5) = v147;
-                  *(float*)(v148 + 8) = v146;
-                  *(float*)(v148 + 12) = v140;
-                  v149 = *(_QWORD*)(v143 + 4096);
-                  *(_QWORD*)(v143 + 4096) = v149 + 1;
-                  v150 = *(float*)&v846_.v849;
-                  v151 = *(float*)&v1030[3];
-                  v152 = v846_.v847;
-                  v153 = v1030[1];
-                  if (v846_.v847 != 0) {
-                    goto LABEL_71;
+                  v146 = v1017[2];
+                  v149 = 0x0.0p+0f;
+                  v147 = -0x1.0000000000000p+0f;
+                  v148 = 0;
+                  v144 = v145;
+                LABEL_73:
+                  v150 = v144 + 16LL * *(_QWORD*)(v144 + 4096);
+                  *(_BYTE*)(v150 + 4) = v146;
+                  *(_BYTE*)(v150 + 5) = v148;
+                  *(float*)(v150 + 8) = v147;
+                  *(float*)(v150 + 12) = v149;
+                  v151 = *(_QWORD*)(v144 + 4096);
+                  *(_QWORD*)(v144 + 4096) = v151 + 1;
+                  v152 = *(float*)&v833_.v839;
+                  v153 = *(float*)&v1018;
+                  v154 = v833_.v837;
+                  v155 = v1017[4];
+                  if (v833_.v837 != 0) {
+                    goto LABEL_74;
                   }
-                  goto LABEL_77;
+                  goto LABEL_78;
                 }
-                LOBYTE(v112) = v738;
-                v135 = 0x0.0p+0f;
-                v137 = -0x1.0000000000000p+0f;
-                v136 = 0;
-                v110 = v93;
+                LOBYTE(v110) = v725;
+                v133 = 0x0.0p+0f;
+                v135 = -0x1.0000000000000p+0f;
+                v134 = 0;
+                v108 = v91;
               }
-              v138 = &v110[2 * v110[512]];
-              *((_BYTE*)v138 + 4) = v112;
-              *((_BYTE*)v138 + 5) = v136;
-              *((float*)v138 + 2) = v137;
-              *((float*)v138 + 3) = v135;
-              v139 = v110[512];
-              v110[512] = v139 + 1;
+              v136 = &v108[2 * v108[512]];
+              *((_BYTE*)v136 + 4) = v110;
+              *((_BYTE*)v136 + 5) = v134;
+              *((float*)v136 + 2) = v135;
+              *((float*)v136 + 3) = v133;
+              v137 = v108[512];
+              v108[512] = v137 + 1;
               goto LABEL_63;
             }
-            v125 = 0x0.0p+0f;
-            v127 = -0x1.0000000000000p+0f;
-            v126 = 0;
-            v106 = v91;
-            LOBYTE(v108) = v98;
+            v123 = 0x0.0p+0f;
+            v125 = -0x1.0000000000000p+0f;
+            v124 = 0;
+            v104 = v89;
+            LOBYTE(v106) = v96;
           LABEL_52:
-            v128 = &v106[2 * v106[512]];
-            *((_BYTE*)v128 + 4) = v108;
-            *((_BYTE*)v128 + 5) = v126;
-            *((float*)v128 + 2) = v127;
-            *((float*)v128 + 3) = v125;
-            v129 = v106[512];
-            v106[512] = v129 + 1;
+            v126 = &v104[2 * v104[512]];
+            *((_BYTE*)v126 + 4) = v106;
+            *((_BYTE*)v126 + 5) = v124;
+            *((float*)v126 + 2) = v125;
+            *((float*)v126 + 3) = v123;
+            v127 = v104[512];
+            v104[512] = v127 + 1;
             goto LABEL_53;
           }
         }
-        LOBYTE(v108) = -1;
-        v109 = *(float*)&v948;
-        v110 = v946;
-        if (v946 != nullptr) {
+        LOBYTE(v106) = -1;
+        v107 = *(float*)&v935;
+        v108 = v933;
+        if (v933 != nullptr) {
           goto LABEL_29;
         }
         goto LABEL_32;
       }
     }
-    LOBYTE(v98) = -1;
-    v99 = *(float*)(v5 + 8272);
-    if (v93 != nullptr) {
+    LOBYTE(v96) = -1;
+    v97 = *(float*)(v5 + 8272);
+    if (v91 != nullptr) {
       goto LABEL_22;
     }
     goto LABEL_25;

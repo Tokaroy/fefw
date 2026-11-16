@@ -766,6 +766,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 4c9e0,348,verified,src/opus/silk/PLC.c,silk_PLC_glue_frames
 4cbc0,796,verified,src/opus/silk/unplaced_2.c,opus_silk_4cbc0
 4cf00,112,verified,src/opus/silk/unplaced_2.c,opus_silk_4cf00
+4cf80,3520,verified,src/opus/silk/unplaced_9.c,opus_silk_4cf80
 4ddc0,544,verified,src/opus/silk/VQ_WMat_EC.c,silk_VQ_WMat_EC_c
 4e000,192,verified,src/opus/silk/ana_filt_bank_1.c,silk_ana_filt_bank_1
 4e0c0,232,verified,src/opus/silk/biquad_alt.c,silk_biquad_alt_stride1

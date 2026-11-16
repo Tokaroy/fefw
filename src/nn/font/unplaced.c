@@ -35,6 +35,7 @@ __int64 nn_font_569bc0(__int64 a1, int a2, float* a3, __int64 a4);
 float GameRoutine_55c300_alt1(__int64, __int64,
                               float) __asm__("GameRoutine_55c300");
 float game_55c300(__int64, __int64, float);
+__int64 GameRoutine_5662e0_alt1(_QWORD);
 
 __attribute__((noinline)) __int64 nn_font_569bc0(__int64 a1, int a2, float* a3,
                                                  __int64 a4)
@@ -474,43 +475,43 @@ __int64 nn_font_5665e0(__int64 a1, float* a2, unsigned __int64* a3, int a4)
   float v14;
   __int64 v15;
   float v16;
-  __int64 (*v17)(_QWORD*);
-  _QWORD* v18;
-  char v19;
-  unsigned int v20;
-  unsigned __int64 v21;
-  char v22;
-  float v23;
-  unsigned __int64 v24;
-  int v25;
-  float v26;
-  unsigned __int64* v27;
+  float v17;
+  float v18;
+  __int64 (*v19)(__int64);
+  _QWORD* v20;
+  char v21;
+  unsigned int v22;
+  unsigned __int64 v23;
+  char v24;
+  float v25;
+  unsigned __int64 v26;
+  int v27;
   float v28;
-  unsigned int v30;
-  char v31;
+  unsigned __int64* v29;
+  float v30;
   unsigned int v32;
-  bool v33;
-  char v34;
-  float v35;
-  float v36;
+  char v33;
+  unsigned int v34;
+  bool v35;
+  char v36;
   float v37;
   float v38;
   float v39;
   float v40;
-  float v41;
+  int v41;
   float v42;
-  __int64 v43;
-  __int64 v44;
-  __int64 v45;
-  __int64 v46;
+  float v43;
+  float v44;
+  float v45;
+  int v46;
   __int64 v47;
   __int64 v48;
   __int64 v49;
-  long double v50;
-  int v51;
-  float v52;
-  float v53;
-  float v54;
+  __int64 v50;
+  __int64 v51;
+  __int64 v52;
+  __int64 v53;
+  int v54;
   float v55;
   float v56;
   float v57;
@@ -520,17 +521,18 @@ __int64 nn_font_5665e0(__int64 a1, float* a2, unsigned __int64* a3, int a4)
   float v61;
   float v62;
   float v63;
-  __int64 (*v64)(void);
-  __int64 v65;
+  float v64;
+  float v65;
+  float v66;
+  float v67;
+  _QWORD* v68;
+  __int64 v69;
   struct {
-    char gap0_[8];
-    __int64 v66;
-    __int64 v67;
-    _QWORD v68[2];
-    __int64 v69;
     __int64 v70;
     __int64 v71;
-    __int64 v72;
+  } v70_;
+  struct {
+    _QWORD v72[2];
     __int64 v73;
     __int64 v74;
     __int64 v75;
@@ -538,19 +540,25 @@ __int64 nn_font_5665e0(__int64 a1, float* a2, unsigned __int64* a3, int a4)
     __int64 v77;
     __int64 v78;
     __int64 v79;
-    char gap128_[64];
-    unsigned __int64 v84;
-    __int64 (*v85)(_QWORD);
-    __int64 v86;
-    _QWORD v87[7];
+    __int64 v80;
+    __int64 v81;
+    __int64 v82;
+    __int64 v83;
+  } v72_;
+  _QWORD v84[6];
+  float v85;
+  __int64 v86;
+  float v87;
+  struct {
+    unsigned __int64 v88;
+    __int64 (*v89)(__int64);
+    __int64 v90;
+    _QWORD v91[7];
     char gap272_[8];
-    unsigned __int64* v88;
-  } f_;
-  _QWORD v80[6];
-  float v81;
-  __int64 v82;
-  float v83;
+    unsigned __int64* v92;
+  } v88_;
 
+  v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
   v4 = *a3;
   v5 = *(_DWORD*)(a1 + 12);
   v6 = *(_DWORD*)(a1 + 16);
@@ -559,357 +567,387 @@ __int64 nn_font_5665e0(__int64 a1, float* a2, unsigned __int64* a3, int a4)
   v12 = *a3 + a4;
   v13 = *(_BYTE*)(a1 + 99);
   v14 = *(float*)(a1 + 60);
-  f_.v87[0] = a1;
-  f_.v87[1] = v4;
+  v88_.v91[0] = a1;
+  v88_.v91[1] = v4;
   v15 = *(_QWORD*)(a1 + 40);
-  f_.v87[5] = 0;
-  f_.v85 = nullptr;
-  f_.v86 = 0;
-  f_.v84 = 0;
-  f_.v87[2] = v12;
-  f_.v87[3] = 0;
-  f_.v87[4] = __PAIR64__(v6, v5);
-  Font_55d700((void*)(&f_.v84), v15);
-  v16 = TextTagProcessor_55c240(a1);
+  v88_.v91[5] = 0;
+  v88_.v89 = nullptr;
+  v88_.v90 = 0;
+  v88_.v88 = 0;
+  v88_.v91[2] = v12;
+  v88_.v91[3] = 0;
+  v88_.v91[4] = __PAIR64__(v6, v5);
+  Font_55d700((void*)(&v88_.v88), v15),
+      v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+  v16 = TextTagProcessor_55c240(a1),
+  v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
   *a2 = 0x0.0p+0f;
   a2[2] = 0x0.0p+0f;
-  f_.v84 = v4;
-  a2[1] = fminf(v16, 0x0.0p+0f);
-  a2[3] = fmaxf(v16, 0x0.0p+0f);
-  (*(void (**)(_QWORD, _QWORD*))(**(_QWORD**)(a1 + 88) + 64LL))(
-      *(_QWORD*)(a1 + 88), f_.v87);
-  v17 = (__int64 (*)(_QWORD*))f_.v85;
-  f_.v88 = a3;
-  v18 = (unsigned __int64*)((char*)&f_.v84 + (f_.v86 >> 1));
-  if ((f_.v86 & 1) != 0) {
-    v17 = *(__int64 (**)(_QWORD*))((char*)f_.v85 + *v18);
+  v17 = fminf(v16, 0x0.0p+0f);
+  v18 = fmaxf(v16, 0x0.0p+0f);
+  v88_.v88 = v4;
+  a2[1] = v17;
+  a2[3] = v18;
+  (*(void (**)(__int64, __int64, float, double, float))(
+      **(_QWORD**)(a1 + 88) + 64LL))(*(_QWORD*)(a1 + 88), (__int64)v88_.v91,
+                                     v18, 0x0.0p+0, v17),
+      v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+  v19 = v88_.v89;
+  v88_.v92 = a3;
+  v20 = (unsigned __int64*)((char*)&v88_.v88 + (v88_.v90 >> 1));
+  if ((v88_.v90 & 1) != 0) {
+    v19 = *(__int64 (**)(__int64))((char*)v88_.v89 + *v20),
+    v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
   }
-  v19 = v8 & v13;
-  v20 = v17(v18);
-  v21 = f_.v84;
-  if (f_.v84 <= v12) {
-    v23 = 0x0.0p+0f;
-    v30 = v20;
-    v65 = v9;
-    v31 = 0;
+  v21 = v8 & v13;
+  v22 = v19((__int64)v20),
+  v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+  v23 = v88_.v88;
+  if (v88_.v88 <= v12) {
+    v25 = 0x0.0p+0f;
+    v32 = v22;
+    v69 = v9;
+    v33 = 0;
+    v26 = 0;
     v24 = 0;
-    v22 = 0;
     while (1) {
-      v33 = v24 != 0 && v14 < 0x1.fffffe0000000p+127f;
-      v34 = v33;
+      v35 = v26 != 0 & v14 < 0x1.fffffe0000000p+127f;
+      v36 = v35;
       while (1) {
-        if ((v19 & 1) != 0) {
-          if ((v34 & 1) == 0) {
-            if (v30 >= 0x20) {
-              if ((v30 & 0xFFFFFF00) == 0x2000 &&
-                  (v30 == 8203 || (v30 & 0x20FE) == 0x200E || v30 - 8234 < 5 ||
-                   v30 == 8288 || v30 - 8294 < 4)) {
-                goto LABEL_114;
+        if ((v21 & 1) != 0) {
+          if ((v36 & 1) == 0) {
+            if (v32 >= 0x20) {
+              if ((v32 & 0xFFFFFF00) == 0x2000 &&
+                  (v32 == 8203 || (v32 & 0x20FE) == 0x200E || v32 - 8234 < 5 ||
+                   v32 == 8288 || v32 - 8294 < 4)) {
+                goto LABEL_115;
               }
-              if ((v31 & 1) != 0) {
-                v23 = v23 + *(float*)(a1 + 64);
+              if ((v33 & 1) != 0) {
+                v25 = v25 + *(float*)(a1 + 64);
               }
               if ((*(_BYTE*)(a1 + 56) & 1) != 0) {
-                v58 = v23 + *(float*)(a1 + 32);
+                v61 = v25 + *(float*)(a1 + 32);
               }
               else {
-                v58 = v23 + (float)((float)(*(int (**)(_QWORD, _QWORD))(
+                v61 = v25 + (float)((float)(*(int (**)(__int64, __int64))(
                                         **(_QWORD**)(a1 + 40) + 128LL))(
-                                        *(_QWORD*)(a1 + 40), v30) *
-                                    *(float*)(a1 + 12));
+                                        *(_QWORD*)(a1 + 40), v32) *
+                                    *(float*)(a1 + 12)),
+                v66 = COERCE_AS(__typeof__(v66),
+                                PSEUDO_REGISTER(float, "s0", "=w"));
               }
-              v40 = 0x0.0p+0f;
-              v41 = v58 + 0x0.0p+0f;
-            LABEL_103:
-              v59 = *a2;
-              if (v41 < *a2) {
-                v59 = v41;
+              v44 = 0x0.0p+0f;
+              v45 = v61 + 0x0.0p+0f;
+            LABEL_104:
+              v62 = *a2;
+              if (v45 < *a2) {
+                v62 = v45;
               }
-              *a2 = v59;
-              v60 = a2[2];
-              if (v60 < v41) {
-                v60 = v41;
+              *a2 = v62;
+              v63 = a2[2];
+              if (v63 < v45) {
+                v63 = v45;
               }
-              a2[2] = v60;
+              a2[2] = v63;
               if (*(_BYTE*)(a1 + 98) == 1) {
-                v61 = *(float*)(a1 + 24);
-                v62 = a2[1];
-                if (v61 < v62) {
-                  v62 = *(float*)(a1 + 24);
+                v64 = *(float*)(a1 + 24);
+                v65 = a2[1];
+                if (v64 < v65) {
+                  v65 = *(float*)(a1 + 24);
                 }
-                a2[1] = v62;
-                v63 = v61 + (*(float (**)(_QWORD, __int64))(
-                                **(_QWORD**)(a1 + 88) + 40LL))(
-                                *(_QWORD*)(a1 + 88), a1);
-                if (a2[3] >= v63) {
-                  v63 = a2[3];
+                a2[1] = v65;
+                (*(void (**)(__int64, __int64, float))(
+                    **(_QWORD**)(a1 + 88) + 40LL))(*(_QWORD*)(a1 + 88), a1,
+                                                   v65),
+                    v66 = COERCE_AS(__typeof__(v66),
+                                    PSEUDO_REGISTER(float, "s0", "=w"));
+                v67 = v64 + v66;
+                if (a2[3] >= v67) {
+                  v67 = a2[3];
                 }
-                a2[3] = v63;
+                a2[3] = v67;
               }
-              v21 = f_.v84;
-              v23 = v41 - v40;
-              v31 = 1;
-              HIDWORD(f_.v87[5]) = v30;
-              goto LABEL_114;
+              v23 = v88_.v88;
+              v25 = v45 - v44;
+              v33 = 1;
+              DWORDn(v88_.v91[5], sizeof(v88_.v91[5]) / 4 - 1) = v32;
+              goto LABEL_115;
             }
-          LABEL_48:
-            if (v30 != 10) {
-              goto LABEL_63;
+          LABEL_49:
+            if (v32 != 10) {
+              goto LABEL_64;
             }
-            goto LABEL_59;
+            goto LABEL_60;
           }
-          if (v30 < 0x20) {
-            goto LABEL_48;
+          if (v32 < 0x20) {
+            goto LABEL_49;
           }
-          if ((v30 & 0xFFFFFF00) == 0x2000 &&
-              (v30 == 8203 || (v30 & 0x20FE) == 0x200E ||
-               v30 - 8234 <= 0x36 && ((1LL << ((unsigned __int8)v30 - 42)) &
+          if ((v32 & 0xFFFFFF00) == 0x2000 &&
+              (v32 == 8203 || (v32 & 0x20FE) == 0x200E ||
+               v32 - 8234 <= 0x36 && ((1LL << ((unsigned __int8)v32 - 42)) &
                                       0x4000000000001FLL) != 0 ||
-               v30 - 8294 < 4)) {
-            goto LABEL_114;
+               v32 - 8294 < 4)) {
+            goto LABEL_115;
           }
-          if ((v31 & 1) != 0) {
-            v35 = v23 + *(float*)(a1 + 64);
-          }
-          else {
-            v35 = v23;
-          }
-          if ((*(_BYTE*)(a1 + 56) & 1) != 0) {
-            v36 = v35 + *(float*)(a1 + 32);
+          if ((v33 & 1) != 0) {
+            v37 = v25 + *(float*)(a1 + 64);
           }
           else {
-            v36 = v35 + (float)((float)(*(int (**)(_QWORD, _QWORD))(
-                                    **(_QWORD**)(a1 + 40) + 128LL))(
-                                    *(_QWORD*)(a1 + 40), v30) *
-                                *(float*)(a1 + 12));
-          }
-          v40 = 0x0.0p+0f;
-          v41 = v36 + 0x0.0p+0f;
-          if ((float)((float)(v36 + 0x0.0p+0f) + *(float*)(a1 + 72)) <=
-              *(float*)(a1 + 60)) {
-            goto LABEL_103;
-          }
-          v22 = 1;
-          f_.v84 = v24;
-          if (v24 > v12) {
-            goto LABEL_7;
-          }
-        }
-        else {
-          if (v30 < 0x20) {
-            goto LABEL_48;
-          }
-          if ((v30 & 0xFFFFFF00) == 0x2000 &&
-              (v30 == 8203 || (v30 & 0x20FE) == 0x200E ||
-               v30 - 8234 <= 0x36 && ((1LL << ((unsigned __int8)v30 - 42)) &
-                                      0x4000000000001FLL) != 0 ||
-               v30 - 8294 < 4)) {
-            goto LABEL_114;
-          }
-          if ((v31 & 1) != 0) {
-            v37 = v23 + *(float*)(a1 + 64);
-          }
-          else {
-            v37 = v23;
+            v37 = v25;
           }
           if ((*(_BYTE*)(a1 + 56) & 1) != 0) {
             v38 = v37 + *(float*)(a1 + 32);
           }
           else {
-            v38 = v37 + (float)((float)(*(int (**)(_QWORD, _QWORD))(
+            v38 = v37 + (float)((float)(*(int (**)(__int64, __int64))(
                                     **(_QWORD**)(a1 + 40) + 128LL))(
-                                    *(_QWORD*)(a1 + 40), v30) *
-                                *(float*)(a1 + 12));
+                                    *(_QWORD*)(a1 + 40), v32) *
+                                *(float*)(a1 + 12)),
+            v66 =
+                COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
           }
-          v39 =
-              v38 + (float)((float)(*(int (**)(_QWORD, _QWORD, _QWORD))(
-                                **(_QWORD**)(a1 + 40) + 184LL))(
-                                *(_QWORD*)(a1 + 40), HIDWORD(f_.v87[5]), v30) *
-                            *(float*)(a1 + 12));
-          v40 =
-              *(float*)(a1 + 12) *
-              (float)(*(int (**)(_QWORD, _QWORD, _QWORD))(
-                  **(_QWORD**)(a1 + 40) + 184LL))(*(_QWORD*)(a1 + 40), v30, 0);
-          v41 = v39 + v40;
-          if ((v34 & 1) == 0 ||
-              (float)(v41 + *(float*)(a1 + 72)) <= *(float*)(a1 + 60)) {
-            goto LABEL_103;
+          v44 = 0x0.0p+0f;
+          v45 = v38 + 0x0.0p+0f;
+          if ((float)((float)(v38 + 0x0.0p+0f) + *(float*)(a1 + 72)) <=
+              *(float*)(a1 + 60)) {
+            goto LABEL_104;
           }
-          v22 = 1;
-          f_.v84 = v24;
-          if (v24 > v12) {
+          v24 = 1;
+          v88_.v88 = v26;
+          if (v26 > v12) {
+            goto LABEL_7;
+          }
+        }
+        else {
+          if (v32 < 0x20) {
+            goto LABEL_49;
+          }
+          if ((v32 & 0xFFFFFF00) == 0x2000 &&
+              (v32 == 8203 || (v32 & 0x20FE) == 0x200E ||
+               v32 - 8234 <= 0x36 && ((1LL << ((unsigned __int8)v32 - 42)) &
+                                      0x4000000000001FLL) != 0 ||
+               v32 - 8294 < 4)) {
+            goto LABEL_115;
+          }
+          if ((v33 & 1) != 0) {
+            v39 = v25 + *(float*)(a1 + 64);
+          }
+          else {
+            v39 = v25;
+          }
+          if ((*(_BYTE*)(a1 + 56) & 1) != 0) {
+            v40 = v39 + *(float*)(a1 + 32);
+          }
+          else {
+            v40 = v39 + (float)((float)(*(int (**)(__int64, __int64))(
+                                    **(_QWORD**)(a1 + 40) + 128LL))(
+                                    *(_QWORD*)(a1 + 40), v32) *
+                                *(float*)(a1 + 12)),
+            v66 =
+                COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+          }
+          v41 = (*(__int64 (**)(__int64, __int64, __int64))(
+              **(_QWORD**)(a1 + 40) + 184LL))(
+              *(_QWORD*)(a1 + 40),
+              DWORDn(v88_.v91[5], sizeof(v88_.v91[5]) / 4 - 1), v32),
+          v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+          v42 = *(float*)(a1 + 12);
+          v43 = v40 + (float)((float)v41 * v42);
+          v44 = v42 *
+                (float)(*(int (**)(__int64, __int64, __int64, float, float))(
+                    **(_QWORD**)(a1 + 40) + 184LL))(*(_QWORD*)(a1 + 40), v32, 0,
+                                                    (float)v41, v42),
+          v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+          v45 = v43 + v44;
+          if ((v36 & 1) == 0 ||
+              (float)(v45 + *(float*)(a1 + 72)) <= *(float*)(a1 + 60)) {
+            goto LABEL_104;
+          }
+          v24 = 1;
+          v88_.v88 = v26;
+          if (v26 > v12) {
             goto LABEL_6;
           }
         }
-        v30 = 10;
-        v21 = v24;
-      LABEL_59:
+        v32 = 10;
+        v23 = v26;
+      LABEL_60:
         if ((*(_BYTE*)(a1 + 97) & 1) == 0) {
-          if ((v19 & 1) == 0) {
-            v42 = (float)(*(int (**)(_QWORD, _QWORD, _QWORD))(
-                **(_QWORD**)(a1 + 40) + 184LL))(*(_QWORD*)(a1 + 40),
-                                                HIDWORD(f_.v87[5]), 0);
-            v21 = f_.v84;
-            v23 = v23 + (float)(v42 * *(float*)(a1 + 12));
+          if ((v21 & 1) == 0) {
+            v46 = (*(__int64 (**)(__int64, __int64, __int64))(
+                **(_QWORD**)(a1 + 40) + 184LL))(
+                *(_QWORD*)(a1 + 40),
+                DWORDn(v88_.v91[5], sizeof(v88_.v91[5]) / 4 - 1), 0),
+            v66 =
+                COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+            v23 = v88_.v88;
+            v25 = v25 + (float)((float)v46 * *(float*)(a1 + 12));
           }
-          HIDWORD(f_.v87[5]) = 0;
+          DWORDn(v88_.v91[5], sizeof(v88_.v91[5]) / 4 - 1) = 0;
         }
-      LABEL_63:
-        v81 = v23;
-        v82 = 0;
-        v83 = 0x0.0p+0f;
-        f_.v87[1] = v21;
-        LODWORD(f_.v87[5]) = (v31 & 1) == 0;
-        *(float*)(a1 + 20) = v23;
-        if (v14 >= 0x1.fffffe0000000p+127f || v30 == 10 || v24 == 0) {
-          goto LABEL_71;
+      LABEL_64:
+        v85 = v25;
+        v86 = 0;
+        v87 = 0x0.0p+0f;
+        v88_.v91[1] = v23;
+        LODWORD(v88_.v91[5]) = (v33 & 1) == 0;
+        *(float*)(a1 + 20) = v25;
+        if (v14 >= 0x1.fffffe0000000p+127f || v32 == 10 || v26 == 0) {
+          goto LABEL_72;
         }
-        f_.v66 = 0;
-        f_.v67 = 0;
-        qmemcpy(v80, f_.v87, sizeof(v80));
-        v43 = *(_QWORD*)(a1 + 88);
-        f_.v77 = *(_QWORD*)(a1 + 80);
-        f_.v78 = v43;
-        v44 = *(_QWORD*)(a1 + 88);
-        f_.v79 = *(_QWORD*)(a1 + 96);
-        v80[0] = f_.v68;
-        v45 = *(_QWORD*)(a1 + 56);
-        f_.v73 = *(_QWORD*)(a1 + 48);
-        f_.v74 = v45;
-        v46 = *(_QWORD*)(a1 + 72);
-        f_.v75 = *(_QWORD*)(a1 + 64);
-        f_.v76 = v46;
-        v47 = *(_QWORD*)(a1 + 24);
-        f_.v69 = *(_QWORD*)(a1 + 16);
-        f_.v70 = v47;
-        v48 = *(_QWORD*)(a1 + 40);
-        f_.v71 = *(_QWORD*)(a1 + 32);
-        f_.v72 = v48;
-        v49 = *(_QWORD*)(a1 + 8);
-        f_.v68[0] = *(_QWORD*)a1;
-        f_.v68[1] = v49;
-        (*(void (**)(__int64, __int64*, _QWORD*, _QWORD))(
-            *(_QWORD*)v44 + 32LL))(v44, &f_.v66, v80, v30);
-        LODWORD(v50) = f_.v67;
-        if (*(float*)&f_.v67 <= *(float*)&f_.v66) {
+        v70_.v70 = 0;
+        v70_.v71 = 0;
+        qmemcpy(v84, v88_.v91, sizeof(v84));
+        v47 = *(_QWORD*)(a1 + 88);
+        v72_.v81 = *(_QWORD*)(a1 + 80);
+        v72_.v82 = v47;
+        v48 = *(_QWORD*)(a1 + 88);
+        v72_.v83 = *(_QWORD*)(a1 + 96);
+        v84[0] = v72_.v72;
+        v49 = *(_QWORD*)(a1 + 56);
+        v72_.v77 = *(_QWORD*)(a1 + 48);
+        v72_.v78 = v49;
+        v50 = *(_QWORD*)(a1 + 72);
+        v72_.v79 = *(_QWORD*)(a1 + 64);
+        v72_.v80 = v50;
+        v51 = *(_QWORD*)(a1 + 24);
+        v72_.v73 = *(_QWORD*)(a1 + 16);
+        v72_.v74 = v51;
+        v52 = *(_QWORD*)(a1 + 40);
+        v72_.v75 = *(_QWORD*)(a1 + 32);
+        v72_.v76 = v52;
+        v53 = *(_QWORD*)(a1 + 8);
+        v72_.v72[0] = *(_QWORD*)a1;
+        v72_.v72[1] = v53;
+        (*(void (**)(__int64, __int64, __int64, __int64))(
+            *(_QWORD*)v48 + 32LL))(v48, (__int64)&v70_.v70, (__int64)v84, v32),
+            v66 =
+                COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+        if (*(float*)&v70_.v71 <= *(float*)&v70_.v70 ||
+            (float)(*((float*)&v72_.v73 + 1) - *(float*)&v88_.v91[3]) <=
+                *(float*)(a1 + 60)) {
           break;
         }
-        *(float*)&v50 = *((float*)&f_.v69 + 1) - *(float*)&f_.v87[3];
-        if ((float)(*((float*)&f_.v69 + 1) - *(float*)&f_.v87[3]) <=
-            *(float*)(a1 + 60)) {
-          break;
-        }
-        f_.v84 = v24;
-        GameRoutine_5662e0(f_.v68, v50);
-        v21 = f_.v84;
-        v30 = 10;
-        v22 = 1;
-        if (f_.v84 > v12) {
+        v88_.v88 = v26;
+        GameRoutine_5662e0_alt1(v72_.v72),
+            v66 =
+                COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+        v23 = v88_.v88;
+        v32 = 10;
+        v24 = 1;
+        if (v88_.v88 > v12) {
           goto LABEL_5;
         }
       }
-      GameRoutine_5662e0(f_.v68, v50);
-    LABEL_71:
-      v51 = (*(__int64 (**)(_QWORD, float*, _QWORD*, _QWORD))(
-          **(_QWORD**)(a1 + 88) + 32LL))(*(_QWORD*)(a1 + 88), &v81, f_.v87,
-                                         v30);
-      v52 = a2[3];
-      if (v30 == 10 && (*(_BYTE*)(a1 + 98) & 1) != 0 &&
-          *(float*)(a1 + 24) < v52) {
-        *(float*)(a1 + 24) = v52;
-        v52 = a2[3];
+      GameRoutine_5662e0_alt1(v72_.v72),
+          v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+    LABEL_72:
+      v54 = (*(__int64 (**)(__int64, __int64, __int64, __int64))(
+          **(_QWORD**)(a1 + 88) + 32LL))(*(_QWORD*)(a1 + 88), (__int64)&v85,
+                                         (__int64)v88_.v91, v32),
+      v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+      v55 = a2[3];
+      if (v32 == 10 && (*(_BYTE*)(a1 + 98) & 1) != 0 &&
+          *(float*)(a1 + 24) < v55) {
+        *(float*)(a1 + 24) = v55;
+        v55 = a2[3];
       }
-      v53 = v81;
-      v54 = *(float*)&v82;
-      v55 = *a2;
-      v56 = a2[1];
-      v21 = f_.v87[1];
-      v33 = v81 < *a2;
-      f_.v84 = f_.v87[1];
-      if (!v33) {
-        v53 = v55;
+      v56 = v85;
+      v57 = *(float*)&v86;
+      v58 = *a2;
+      v59 = a2[1];
+      v23 = v88_.v91[1];
+      v35 = v85 < *a2;
+      v88_.v88 = v88_.v91[1];
+      if (!v35) {
+        v56 = v58;
       }
-      if (*(float*)&v82 >= v56) {
-        v54 = v56;
+      if (*(float*)&v86 >= v59) {
+        v57 = v59;
       }
-      *a2 = v53;
-      a2[1] = v54;
-      v57 = a2[2];
-      if (v57 < *((float*)&v82 + 1)) {
-        v57 = *((float*)&v82 + 1);
+      *a2 = v56;
+      a2[1] = v57;
+      v60 = a2[2];
+      if (v60 < *((float*)&v86 + 1)) {
+        v60 = *((float*)&v86 + 1);
       }
-      if (v52 < v83) {
-        v52 = v83;
+      if (v55 < v87) {
+        v55 = v87;
       }
-      a2[2] = v57;
-      a2[3] = v52;
-      v23 = *(float*)(a1 + 20);
-      if (v51 <= 1) {
-        if (v51 == 1) {
-          v31 = 0;
+      a2[2] = v60;
+      a2[3] = v55;
+      v25 = *(float*)(a1 + 20);
+      if (v54 <= 1) {
+        if (v54 == 1) {
+          v33 = 0;
         }
       }
       else {
-        switch (v51) {
+        switch (v54) {
         case 2:
-          v31 = 1;
+          v33 = 1;
           break;
         case 4:
-          v22 = 0;
-          *f_.v88 += v65;
-          return v22 & 1;
+          v24 = 0;
+          *v88_.v92 += v69;
+          return v24 & 1;
         case 3:
           goto LABEL_5;
         default:
           break;
         }
       }
-    LABEL_114:
+    LABEL_115:
       if (v14 < 0x1.fffffe0000000p+127f) {
-        v24 = v21;
+        v26 = v23;
       }
-      v64 = (__int64 (*)(void))f_.v85;
-      if ((f_.v86 & 1) != 0) {
-        v64 = *(__int64 (**)(void))(
-            (char*)f_.v85 +
-            *(unsigned __int64*)((char*)&f_.v84 + (f_.v86 >> 1)));
+      v68 = (unsigned __int64*)((char*)&v88_.v88 + (v88_.v90 >> 1));
+      if ((v88_.v90 & 1) != 0) {
+        v34 = (*(__int64 (**)(__int64))((char*)v88_.v89 + *v68))((__int64)v68),
+        v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
       }
-      v32 = v64();
-      v21 = f_.v84;
-      v30 = v32;
-      if (f_.v84 > v12) {
+      else {
+        v34 = v88_.v89((__int64)v68),
+        v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+      }
+      v23 = v88_.v88;
+      v32 = v34;
+      if (v88_.v88 > v12) {
         goto LABEL_5;
       }
     }
   }
-  v22 = 0;
-  v23 = 0x0.0p+0f;
+  v24 = 0;
+  v25 = 0x0.0p+0f;
 LABEL_5:
-  v24 = v21;
-  if ((v19 & 1) == 0) {
+  v26 = v23;
+  if ((v21 & 1) == 0) {
   LABEL_6:
-    v25 = (*(__int64 (**)(_QWORD, _QWORD, _QWORD))(
-        **(_QWORD**)(a1 + 40) + 184LL))(*(_QWORD*)(a1 + 40), HIDWORD(f_.v87[5]),
-                                        0);
-    v24 = f_.v84;
-    v23 = v23 + (float)((float)v25 * *(float*)(a1 + 12));
+    v27 = (*(__int64 (**)(__int64, __int64, __int64))(**(_QWORD**)(a1 + 40) +
+                                                      184LL))(
+        *(_QWORD*)(a1 + 40), DWORDn(v88_.v91[5], sizeof(v88_.v91[5]) / 4 - 1),
+        0),
+    v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+    v26 = v88_.v88;
+    v25 = v25 + (float)((float)v27 * *(float*)(a1 + 12));
   }
 LABEL_7:
-  v26 = *a2;
-  v27 = f_.v88;
-  if (v23 < *a2) {
-    v26 = v23;
+  v28 = *a2;
+  v29 = v88_.v92;
+  if (v25 < *a2) {
+    v28 = v25;
   }
-  *a2 = v26;
-  v28 = a2[2];
-  if (v28 < v23) {
-    v28 = v23;
+  *a2 = v28;
+  v30 = a2[2];
+  if (v30 < v25) {
+    v30 = v25;
   }
-  a2[2] = v28;
-  *v27 = v24;
-  (*(void (**)(_QWORD, _QWORD*))(**(_QWORD**)(a1 + 88) + 72LL))(
-      *(_QWORD*)(a1 + 88), f_.v87);
-  return v22 & 1;
+  a2[2] = v30;
+  *v29 = v26;
+  (*(void (**)(__int64, __int64, float))(**(_QWORD**)(a1 + 88) + 72LL))(
+      *(_QWORD*)(a1 + 88), (__int64)v88_.v91, v30),
+      v66 = COERCE_AS(__typeof__(v66), PSEUDO_REGISTER(float, "s0", "=w"));
+  return v24 & 1;
 }
 
 float nn_font_566e80(__int64 a1, unsigned __int64 a2, int a3, int a4,
