@@ -14053,6 +14053,7 @@ void game_18eeb40(__int64 a1)
   int* v470;
   __int64 v471;
   double v472;
+  __int64 v473;
   __int64 v478;
   __int64 v479;
   unsigned __int64 v480;
@@ -16651,7 +16652,9 @@ LABEL_741:
     goto LABEL_750;
   }
   v471 = (__int64)v468;
-  if ((LayoutAccessor_155ea30(v468) & 1) == 0) {
+  v473 = LayoutAccessor_155ea30(v468),
+  v472 = COERCE_AS(__typeof__(v472), PSEUDO_REGISTER(double, "d0", "=w"));
+  if ((v473 & 1) == 0) {
     LayoutAccessor_155e830(v471, 1),
         v472 = COERCE_AS(__typeof__(v472), PSEUDO_REGISTER(double, "d0", "=w"));
   }
