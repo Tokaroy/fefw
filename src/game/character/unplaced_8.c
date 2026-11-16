@@ -4456,17 +4456,17 @@ void game_character_10fbc10(float32x4_t* a1)
     *(float*)&v23 = GameRoutine_10a00a0(*(float*)(*(_QWORD*)v3 + 292LL), v20,
                                         *(float*)(*(_QWORD*)v3 + 296LL));
     *(float*)&v23 = *(float*)&v23 * *(float*)&v23;
-    if (*(float*)&v23 > 0.0) {
+    if (!(*(float*)&v23 <= 0.0)) {
       v12 = 1.0;
-      if (*(float*)&v23 < 1.0) {
+      if (!(*(float*)&v23 >= 1.0)) {
         v12 = 0.0;
-        if (v8 > 0.0) {
+        if (!(v8 <= 0.0)) {
           *(float*)&v23 = 1.0 - *(float*)&v23;
           v12 = 1.0 - GameRoutine_1a0a550(v23, v8 * 0x1.df851e0000000p+4);
         }
       }
     }
-    if ((float)((float)(v22 * v12) + 0.0) <= 1.0) {
+    if (!((float)((float)(v22 * v12) + 0.0) > 1.0)) {
       v10 = (float)(v22 * v12) + 0.0;
     }
     else {
