@@ -334,6 +334,8 @@ __int64 nvidia_118090(__int64);
 bool CudaDriverRoutine_5a420_alt1(
     __int64, unsigned __int64, unsigned int) __asm__("CudaDriverRoutine_5a420");
 unsigned __int8 CudaDriverRoutine_5adc0_alt1(__int64) __asm__("CudaDriverRoutine_5adc0");
+unsigned __int64
+CudaDriverRoutine_5adc0_alt1_w(__int64) __asm__("CudaDriverRoutine_5adc0");
 bool cuda_driver_12ea30_alt1(int*) __asm__("cuda_driver_12ea30");
 __int64 CudaDriverStub_107f90_alt3(__int64);
 __int64 CudaDriverStub_108070_alt3(__int64);
@@ -1834,7 +1836,7 @@ __int64 cuda_driver_204130(__int64 result, unsigned int a2)
     if (v6 <= 3 && v6 != 1) {
       result = *(_QWORD*)(*(_QWORD*)(result + 56) + 24LL);
       if (result != 0) {
-        result = CudaDriverRoutine_5adc0_alt1(result);
+        result = CudaDriverRoutine_5adc0_alt1_w(result);
         if ((_BYTE)result == 0) {
           v8 = **(_DWORD***)(v3 + 56);
           __builtin_arm_dmb(0xFu);

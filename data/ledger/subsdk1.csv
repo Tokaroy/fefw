@@ -7494,7 +7494,7 @@ ff600,3424,verified,src/nvidia/unplaced_21.c,nvidia_ff600
 2036a0,2100,verified,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_2036a0
 203f30,148,verified,src/nvidia/unnamed/c004_1.c,CudaDriverHr_203f30
 203fd0,344,verified,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_203fd0
-204130,512,disputed,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_204130
+204130,512,verified,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_204130
 204330,160,verified,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_204330
 2043d0,268,verified,src/nvidia/cuda_driver_unplaced_11.c,cuda_driver_2043d0
 2044e0,256,verified,src/nvidia/unnamed/c004_1.c,CudaDriverHr_2044e0
