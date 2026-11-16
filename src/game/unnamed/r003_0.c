@@ -2241,20 +2241,20 @@ __int64 GameHr_bb5480(__int64 a1, __int64* a2, _QWORD* a3)
   __int64 v20;
   __int64 v21;
   __int64 v22;
-  _QWORD v24[5];
   struct {
+    _QWORD v24[5];
     _QWORD v25[2];
     int v26;
     char v27;
-  } v25_;
+  } f_;
 
   v3 = *(_QWORD*)(a1 + 8);
   v4 = a2[3];
-  v25_.v25[0] = 0;
-  v25_.v25[1] = 0;
-  memset(&v24[2], 0, 24);
+  f_.v25[0] = 0;
+  f_.v25[1] = 0;
+  memset(&f_.v24[2], 0, 24);
   v6 = *(_DWORD*)(v4 + 104);
-  v24[0] = *(_QWORD*)v3;
+  f_.v24[0] = *(_QWORD*)v3;
   if (v6 >= 1) {
     v7 = *(_QWORD*)(v3 + 56);
     v8 = v6 & 7;
@@ -2268,7 +2268,7 @@ __int64 GameHr_bb5480(__int64 a1, __int64* a2, _QWORD* a3)
     v10 = (_QWORD*)(v7 + 64);
     v11 = 0;
     v12 = -(__int64)(v6 & 0x7FFFFFF8);
-    v13 = v25_.v25;
+    v13 = f_.v25;
     do {
       v11 -= 8;
       *(v13 - 3) = *(v10 - 8);
@@ -2287,7 +2287,7 @@ __int64 GameHr_bb5480(__int64 a1, __int64* a2, _QWORD* a3)
     if (v8 != 0) {
     LABEL_8:
       v15 = (__int64*)(v7 + 16 * v9);
-      v16 = &v24[v9 + 2];
+      v16 = &f_.v24[v9 + 2];
       do {
         v17 = *v15;
         v15 += 2;
@@ -2300,13 +2300,13 @@ LABEL_10:
   v18 = *(_QWORD*)(v4 + 96);
   v19 = *(_BYTE*)(v4 + 124);
   v20 = *(_QWORD*)(v3 + 152);
-  v24[1] = v18;
+  f_.v24[1] = v18;
   LODWORD(v18) = *(_DWORD*)(v3 + 140);
   v22 = *a2;
   v21 = a2[1];
-  v25_.v27 = v19;
-  v25_.v26 = v18;
-  return ResourceBuilder_b538b0(v20, v22, v21, a3, (__int64)v24);
+  f_.v27 = v19;
+  f_.v26 = v18;
+  return ResourceBuilder_b538b0(v20, v22, v21, a3, (__int64)f_.v24);
 }
 
 __int64 GameHr_bd8160(__int64 result, __int64 a2, unsigned __int64 a3,

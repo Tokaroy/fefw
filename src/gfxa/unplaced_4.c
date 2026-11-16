@@ -37,7 +37,7 @@ void __attribute__((noreturn)) GameRoutine_60a210();
 void __attribute__((noreturn)) GameRoutine_a9fd80();
 void __attribute__((noreturn)) GameRoutine_aa0e00();
 void nn_mem_StandardAllocator_Free(__int64, __int64);
-__int64 gfxa_a9d8c0(_DWORD* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
+void gfxa_a9d8c0(_DWORD* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                     __int64 a6, __int64 a7, char a8, float a9);
 void gfxa_b44060(__int64 a1, int a2, __int64* a3);
 void gfxa_b52720(__int64 a1, __int64* a2, __int64 a3);
@@ -47,7 +47,7 @@ float GameRoutine_1a0a8c0(float);
 float GameRoutine_1a0a8d0(float);
 float scene_652ba0(float32x4_t*, float, float);
 
-__int64 gfxa_a9d8c0(_DWORD* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
+void gfxa_a9d8c0(_DWORD* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                     __int64 a6, __int64 a7, char a8, float a9)
 {
   int v9;
@@ -3469,7 +3469,8 @@ LABEL_260:
       v39 = COERCE_AS(__typeof__(v39), PSEUDO_REGISTER(__n128, "v1", "=w")),
       v40 = COERCE_AS(__typeof__(v40), PSEUDO_REGISTER(__n128, "v2", "=w")),
       v41 = COERCE_AS(__typeof__(v41), PSEUDO_REGISTER(__n128, "v3", "=w"));
-  return (*(__int64 (**)(__int64))(*(_QWORD*)v457 + 64LL))(v457);
+  (void)((*(__int64 (**)(__int64))(*(_QWORD*)v457 + 64LL))(v457));
+  return;
 }
 
 void gfxa_b44060(__int64 a1, int a2, __int64* a3)

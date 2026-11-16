@@ -211,11 +211,12 @@ physx_Dy_FeatherstoneArticulation_pxcFsGetVelocity(PSEUDO_X8 x8_, __int64 a1,
   __int128 v175;
   __int128 v176;
   struct {
+    char gap0_[24];
     __int64 v179;
     int v180;
-  } v179_;
-  _BYTE v181[4];
-  __int64 v182;
+    _BYTE v181[4];
+    __int64 v182;
+  } f_;
   _QWORD v183[2];
 
   v4 = 0x0.0p+0f;
@@ -321,7 +322,7 @@ physx_Dy_FeatherstoneArticulation_pxcFsGetVelocity(PSEUDO_X8 x8_, __int64 a1,
       v47 = (float*)(v32 + 64 + 32 * v44);
       v48 = (float*)(v33 + 8 + 4 * v44);
       v49 = 0;
-      v50 = (float*)&v182 + 1;
+      v50 = (float*)&f_.v182 + 1;
       do {
         v49 -= 4;
         v51 = (float)(PSEUDO_UNFUSED(v5 * v47[5])) + (float)(v47[4] * v4);
@@ -424,7 +425,7 @@ physx_Dy_FeatherstoneArticulation_pxcFsGetVelocity(PSEUDO_X8 x8_, __int64 a1,
           goto LABEL_20;
         }
       LABEL_27:
-        v84 = (float*)&v181[4 * v74];
+        v84 = (float*)&f_.v181[4 * v74];
         v85 = (float*)(v69 + 12 * v74);
         v86 = v41 & 7;
         do {
@@ -448,7 +449,7 @@ physx_Dy_FeatherstoneArticulation_pxcFsGetVelocity(PSEUDO_X8 x8_, __int64 a1,
       goto LABEL_18;
     }
   LABEL_16:
-    v62 = (float*)&v181[4 * v45];
+    v62 = (float*)&f_.v181[4 * v45];
     v63 = (float*)(v33 + 4 * v45 + 4 * v44);
     v64 = (float*)(v32 + 16 + 32 * v45 + 32 * v44);
     do {
@@ -464,8 +465,8 @@ physx_Dy_FeatherstoneArticulation_pxcFsGetVelocity(PSEUDO_X8 x8_, __int64 a1,
     goto LABEL_18;
   }
 LABEL_30:
-  v179_.v180 = 0;
-  v179_.v179 = 0;
+  f_.v180 = 0;
+  f_.v179 = 0;
   if ((unsigned int)v29 < v28) {
     v90 = *(_QWORD*)(a1 + 704);
     v91 = *(_QWORD*)(a1 + 720);
@@ -498,7 +499,7 @@ LABEL_30:
       v107 = (float*)(v96 + 32 * v104);
       v108 = (float*)(v92 + 8 + 4 * v104);
       v109 = 0;
-      v110 = (float*)&v182 + 1;
+      v110 = (float*)&f_.v182 + 1;
       do {
         v109 -= 4;
         v111 = (float)(PSEUDO_UNFUSED(v5 * v107[5])) + (float)(v107[4] * v4);
@@ -562,8 +563,8 @@ LABEL_30:
           }
         LABEL_53:
           if (a3 != 0) {
-            *((float*)&v179_.v179 + v130) =
-                v135 + *((float*)&v179_.v179 + v130);
+            *((float*)&f_.v179 + v130) =
+                v135 + *((float*)&f_.v179 + v130);
           }
           v133 = (float*)(v131 + 24 * v130++);
           v132 += 4;
@@ -606,7 +607,7 @@ LABEL_30:
           goto LABEL_53;
         }
       LABEL_51:
-        v144 = (float*)&v181[4 * v134];
+        v144 = (float*)&f_.v181[4 * v134];
         v145 = (float*)(v129 + 12 * v134);
         v146 = v101 & 7;
         do {
@@ -630,7 +631,7 @@ LABEL_30:
       goto LABEL_42;
     }
   LABEL_40:
-    v122 = (float*)&v181[4 * v105];
+    v122 = (float*)&f_.v181[4 * v105];
     v123 = (float*)(v92 + 4 * v105 + 4 * v104);
     v124 = (float*)(v97 + 32 * v105 + 32 * v104);
     do {
@@ -659,7 +660,7 @@ LABEL_55:
         v156 = (unsigned __int8)v151 & 0xF8;
         v157 = (float*)(a3 + 16);
         v155 = 0;
-        v158 = (float*)&v182;
+        v158 = (float*)&f_.v182;
         do {
           v159 = v152 + v155;
           v160 = *(v158 - 3);
@@ -689,7 +690,7 @@ LABEL_55:
       if (v154 != 0) {
         v168 = (float*)(a3 + 4 * v155);
         v169 = v152 + v155;
-        v170 = (float*)&v179_.v179 + v155;
+        v170 = (float*)&f_.v179 + v155;
         do {
           v171 = *(float*)(v153 + 4LL * v169);
           v172 = *v170++;

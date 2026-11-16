@@ -617,20 +617,21 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
   float v87;
   float v88;
   float v89;
-  float32x4_t v90;
-  int v91;
-  atomic_uint* v92;
   struct {
+    float32x4_t v90;
+    char gap16_[4];
+    int v91;
+    atomic_uint* v92;
     float32x4_t v93;
     int v94;
-  } v93_;
+  } f_;
 
   v13 = *(_DWORD*)(a1 + 16);
   if (!(v13 < 1)) {
     v14 = 0x1.8000000000000p-1f;
     v16 = game_script_hub_g_frame_counter_ptr[0];
-    v92 = a3;
-    v91 = v13;
+    f_.v92 = a3;
+    f_.v91 = v13;
     if (!(v13 / (int)((((*(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2088LL) -
                          *(_QWORD*)(*(_QWORD*)GameData_21323e8[0] + 2080LL)) >>
                         2) &
@@ -783,7 +784,7 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                         .n64_f32[0] <=
                     (float)((float)(v28 * v14) * (float)(v28 * v14)))) {
                 v81 = LANES128(v79).n128_f32[2];
-                v90 = v79;
+                f_.v90 = v79;
                 v82 = vaddq_f32(v69, COERCE_AS(float32x4_t, GameData_1a83610));
                 LANES128(v21[2]).n128_u64[0] = LANES128(v82).n128_u64[0];
                 v83 = v21[2];
@@ -794,10 +795,10 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                                    LANES128(v79).n128_f32[2]) *
                             0x1.ca5dc20000000p+5f) +
                     0x1.6800000000000p+7f;
-                LODWORD(v84) = LANES128(v90).n128_u32[1];
-                v85 = atan2f(v84, sqrtf(vmuls_lane_f32(v81, v90, 2) +
-                                        (float)(LANES128(v90).n128_f32[0] *
-                                                LANES128(v90).n128_f32[0]))) *
+                LODWORD(v84) = LANES128(f_.v90).n128_u32[1];
+                v85 = atan2f(v84, sqrtf(vmuls_lane_f32(v81, f_.v90, 2) +
+                                        (float)(LANES128(f_.v90).n128_f32[0] *
+                                                LANES128(f_.v90).n128_f32[0]))) *
                       0x1.ca5dc20000000p+5f;
                 v14 = 0x1.8000000000000p-1f;
                 v30 = 0x1.0000000000000p+0f;
@@ -908,10 +909,10 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
                           COERCE_AS(float32x2_t, LANES128(v53).n128_u64[0])))
                 .n64_f32[0];
         v54 = LANES128(v21[2]).n128_u64[1];
-        LANES128(v93_.v93).n128_u64[0] = LANES128(v21[2]).n128_u64[0];
-        LANES128(v93_.v93).n128_u64[1] = v54;
-        v93_.v94 = 1065353216;
-        if (nn_g3d_5eb5c0((__int64)&v51[7], &v93_.v93)) {
+        LANES128(f_.v93).n128_u64[0] = LANES128(v21[2]).n128_u64[0];
+        LANES128(f_.v93).n128_u64[1] = v54;
+        f_.v94 = 1065353216;
+        if (nn_g3d_5eb5c0((__int64)&v51[7], &f_.v93)) {
           LANES128(v21[4]).n128_u8[8] = 1;
           goto LABEL_15;
         }
@@ -937,8 +938,8 @@ void game_hub_DungeonRouteReport_Update_lambda1_Invoke(__int64 a1, __int64 a2,
       }
     LABEL_15:
       if (!(++v18 < v20)) {
-        a3 = v92;
-        v13 = v91;
+        a3 = f_.v92;
+        v13 = f_.v91;
         goto LABEL_6;
       }
     }

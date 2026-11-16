@@ -38,7 +38,7 @@ int __cxa_guard_acquire(__int64);
 unsigned __int64 strlen(const char*);
 void __cxa_guard_release(__int64);
 float32x4_t nn_ui2d_56d270(float32x4_t* a1);
-__int64 nn_ui2d_572660(_QWORD* a1, __int64 a2);
+void nn_ui2d_572660(_QWORD* a1, __int64 a2);
 __int64 nn_ui2d_575670(__int64 a1, unsigned int* a2, signed int a3);
 _QWORD* nn_ui2d_577870(_QWORD* result, _QWORD* a2);
 
@@ -114,7 +114,7 @@ float32x4_t nn_ui2d_56d270(float32x4_t* a1)
   }
 }
 
-__int64 nn_ui2d_572660(_QWORD* a1, __int64 a2)
+void nn_ui2d_572660(_QWORD* a1, __int64 a2)
 {
   __int64 result;
   const char** v5;
@@ -367,7 +367,7 @@ __int64 nn_ui2d_572660(_QWORD* a1, __int64 a2)
       result = nn_ui2d_575980((__int64)(a1 + 1), &v56, (__int64)v55, 1);
     } while ((_DWORD)result != 0);
   }
-  return result;
+  return;
 }
 
 __int64 nn_ui2d_575670(__int64 a1, unsigned int* a2, signed int a3)

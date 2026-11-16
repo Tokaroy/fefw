@@ -636,65 +636,49 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
   _QWORD* v149;
   __int64 v150;
   __int64 v151;
-  __int64 v152;
-  _QWORD* v153;
-  __int64 v154[2];
   struct {
+    __int64 v152;
+    _QWORD* v153;
+    __int64 v154[2];
     _QWORD v155[4];
     _QWORD* v156;
-  } v155_;
-  __int64 v157[2];
-  struct {
+    char gap72_[8];
+    __int64 v157[2];
     unsigned __int64* v158;
     __int64 v159;
-  } v158_;
-  struct {
     __int64 v160;
     __int64 v161;
-  } v160_;
-  struct {
     char v162[32];
     _QWORD* v163;
-  } v162_;
-  struct {
+    char gap168_[16];
     __int64 v164;
     __int64 v165;
-  } v164_;
-  char v166;
-  struct {
+    char gap200_[4];
+    char v166;
+    char gap205_[3];
     _QWORD v167[4];
     _QWORD* v168;
-  } v167_;
-  struct {
+    char gap248_[8];
     _QWORD* v169;
     __int64 v170;
-  } v169_;
-  struct {
     __int64 v171;
     __int64 v172;
-  } v171_;
-  struct {
     _QWORD v173[4];
     _QWORD* v174;
-  } v173_;
-  struct {
+    char gap328_[16];
     _QWORD* v175;
     _QWORD* v176;
-  } v175_;
-  struct {
+    char gap360_[8];
     _QWORD v177[4];
     _QWORD* v178;
-  } v177_;
-  struct {
+    char gap408_[16];
     __int64 (***v179)(_QWORD);
     _QWORD* v180;
     unsigned __int64 v181;
-  } v179_;
-  struct {
     __int64 (***v182)(_QWORD);
     __int64 v183;
-  } v182_;
-  unsigned int v184;
+    unsigned int v184;
+  } f_;
   unsigned int v185;
 
   v103 = COERCE_AS(__typeof__(v103),
@@ -712,7 +696,7 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
   v7 = *(__int64**)(result + 192);
   v8 = *(__int64**)(result + 200);
   v11 = result;
-  v153 = a5;
+  f_.v153 = a5;
   if (v7 != v8) {
     do {
       v12 = *a2;
@@ -746,16 +730,16 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
     } while (v7 != v8);
     v7 = v8;
   LABEL_15:
-    a5 = v153;
+    a5 = f_.v153;
     v8 = *(__int64**)(v11 + 200);
   }
   if (v7 != v8) {
     v18 = v7[6];
     if (v18 != 0) {
-      LODWORD(v179_.v179) = v185;
+      LODWORD(f_.v179) = v185;
       result =
           (*(__int64 (**)(__int64, unsigned __int64**, __int64 (****)(_QWORD)))(
-              *(_QWORD*)v18 + 48LL))(v18, a2, &v179_.v179),
+              *(_QWORD*)v18 + 48LL))(v18, a2, &f_.v179),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       if (*a5 != 0) {
@@ -782,36 +766,36 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
   if (v21 == 0 || *(_QWORD*)(v21 + 8) == -1) {
     goto LABEL_49;
   }
-  v175_.v175 = nullptr;
+  f_.v175 = nullptr;
   v22 = std___1___shared_weak_count_lock(v21),
   v103 = COERCE_AS(__typeof__(v103),
                    PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  v175_.v176 = (_QWORD*)v22;
+  f_.v176 = (_QWORD*)v22;
   if (v22 != 0 && (v23 = (_QWORD*)v22, v24 = *(_QWORD*)(v11 + 232),
-                   v175_.v175 = (_QWORD*)v24, v24 != 0)) {
+                   f_.v175 = (_QWORD*)v24, v24 != 0)) {
     v25 = v23;
     v26 = (__int64 (***)(_QWORD))__dynamic_cast(v24, GameData_21319a0,
                                                 GameData_2132090[0], -2),
     v103 = COERCE_AS(__typeof__(v103),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (v26 != nullptr) {
-      v27 = (__int64*)&v175_.v175;
-      v179_.v179 = v26;
-      v179_.v180 = v25;
+      v27 = (__int64*)&f_.v175;
+      f_.v179 = v26;
+      f_.v180 = v25;
     }
     else {
-      v27 = (__int64*)&v179_.v179;
+      v27 = (__int64*)&f_.v179;
     }
-    a5 = v153;
+    a5 = f_.v153;
   }
   else {
-    v27 = (__int64*)&v179_.v179;
+    v27 = (__int64*)&f_.v179;
   }
   *v27 = 0;
   v27[1] = 0;
-  v28 = (__int64)v175_.v176;
-  if (v175_.v176 != nullptr &&
-      atomic_fetch_add((atomic_ullong* volatile)(v175_.v176 + 1),
+  v28 = (__int64)f_.v176;
+  if (f_.v176 != nullptr &&
+      atomic_fetch_add((atomic_ullong* volatile)(f_.v176 + 1),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v28 + 16LL))(v28),
         v103 = COERCE_AS(__typeof__(v103),
@@ -820,24 +804,24 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
-  result = (__int64)v179_.v179;
-  if (v179_.v179 == nullptr) {
+  result = (__int64)f_.v179;
+  if (f_.v179 == nullptr) {
     v29 = 1;
-    v30 = v179_.v180;
-    if (v179_.v180 == nullptr) {
+    v30 = f_.v180;
+    if (f_.v180 == nullptr) {
       goto LABEL_47;
     }
     goto LABEL_45;
   }
-  result = (**v179_.v179)(v179_.v179);
+  result = (**f_.v179)(f_.v179);
   if ((result & 1) != 0) {
     result = *(_QWORD*)(v11 + 240);
     *a5 = 0;
     a5[1] = 0;
     if (result == 0) {
       v29 = 0;
-      v30 = v179_.v180;
-      if (v179_.v180 == nullptr) {
+      v30 = f_.v180;
+      if (f_.v180 == nullptr) {
         goto LABEL_47;
       }
       goto LABEL_45;
@@ -849,8 +833,8 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
     v29 = 0;
     if (result != 0) {
       *a5 = *(_QWORD*)(v11 + 232);
-      v30 = v179_.v180;
-      if (v179_.v180 == nullptr) {
+      v30 = f_.v180;
+      if (f_.v180 == nullptr) {
         goto LABEL_47;
       }
     LABEL_45:
@@ -869,8 +853,8 @@ game_gameui_18acd40(PSEUDO_X8 x8_, __int64 result, unsigned __int64** a2,
   else {
     v29 = 1;
   }
-  v30 = v179_.v180;
-  if (v179_.v180 != nullptr) {
+  v30 = f_.v180;
+  if (f_.v180 != nullptr) {
     goto LABEL_45;
   }
 LABEL_47:
@@ -881,17 +865,17 @@ LABEL_47:
   v20 = v185;
 LABEL_49:
   v31 = a4[1];
-  v184 = v20;
-  v182_.v182 = nullptr;
-  v182_.v183 = 0;
+  f_.v184 = v20;
+  f_.v182 = nullptr;
+  f_.v183 = 0;
   if (v31 != 0 && *(_QWORD*)(v31 + 8) != -1) {
     v32 = *a4;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v31 + 16), 1u,
                               memory_order_relaxed);
-    v182_.v182 = (__int64 (***)(_QWORD))v32,
+    f_.v182 = (__int64 (***)(_QWORD))v32,
     v103 = COERCE_AS(__typeof__(v103),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    v182_.v183 = v31;
+    f_.v183 = v31;
     goto LABEL_67;
   }
   v33 = (*a2)[10];
@@ -906,25 +890,25 @@ LABEL_49:
     v36 = (__int64)v37;
     v38 = v40;
   }
-  v175_.v175 = (_QWORD*)v36;
-  v175_.v176 = (_QWORD*)v38;
-  GameRoutine_15b71b0((void*)((__int64*)&v179_.v179), v33,
-                      (__int64)&v175_.v175),
+  f_.v175 = (_QWORD*)v36;
+  f_.v176 = (_QWORD*)v38;
+  GameRoutine_15b71b0((void*)((__int64*)&f_.v179), v33,
+                      (__int64)&f_.v175),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (v179_.v180 == nullptr) {
+  if (f_.v180 == nullptr) {
     v41 = 0;
   LABEL_60:
     v42 = nullptr;
     v43 = 1;
     goto LABEL_61;
   }
-  v41 = std___1___shared_weak_count_lock((__int64)v179_.v180),
+  v41 = std___1___shared_weak_count_lock((__int64)f_.v180),
   v103 = COERCE_AS(__typeof__(v103),
                    PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  v42 = v179_.v179;
-  if (v179_.v180 != nullptr) {
-    std___1___shared_weak_count___release_weak((__int64)v179_.v180),
+  v42 = f_.v179;
+  if (f_.v180 != nullptr) {
+    std___1___shared_weak_count___release_weak((__int64)f_.v180),
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
@@ -935,9 +919,9 @@ LABEL_49:
   atomic_fetch_add_explicit((atomic_ullong* volatile)(v41 + 16), 1u,
                             memory_order_relaxed);
 LABEL_61:
-  v44 = v182_.v183;
-  v182_.v182 = v42;
-  v182_.v183 = v41;
+  v44 = f_.v183;
+  f_.v182 = v42;
+  f_.v183 = v41;
   if (v44 != 0) {
     std___1___shared_weak_count___release_weak(v44),
         v103 = COERCE_AS(__typeof__(v103),
@@ -952,32 +936,32 @@ LABEL_61:
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
-  v20 = v184;
+  v20 = f_.v184;
 LABEL_67:
   v45 = *a2;
-  v177_.v177[0] = GameData_21046e0;
-  v177_.v177[1] = FloatingHelp_18ade60;
-  v177_.v178 = v177_.v177;
-  ui_control_1886f20((void*)((__int64*)&v179_.v179), v45, v20,
-                     (__int64)v177_.v177),
+  f_.v177[0] = GameData_21046e0;
+  f_.v177[1] = FloatingHelp_18ade60;
+  f_.v178 = f_.v177;
+  ui_control_1886f20((void*)((__int64*)&f_.v179), v45, v20,
+                     (__int64)f_.v177),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (v177_.v178 == v177_.v177) {
-    v46 = v153;
+  if (f_.v178 == f_.v177) {
+    v46 = f_.v153;
     v47 = 32;
   }
   else {
-    v46 = v153;
-    if (v177_.v178 == nullptr) {
+    v46 = f_.v153;
+    if (f_.v178 == nullptr) {
       goto LABEL_72;
     }
     v47 = 40;
   }
-  (*(void (**)(__int64))(*v177_.v178 + v47))((__int64)v177_.v178),
+  (*(void (**)(__int64))(*f_.v178 + v47))((__int64)f_.v178),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_72:
-  if (v179_.v179 == v179_.v180) {
+  if (f_.v179 == f_.v180) {
     v90 = (*a2)[40];
     if (v90 != 0) {
       v91 = (_QWORD*)(*a2)[39];
@@ -991,29 +975,29 @@ LABEL_72:
           v103 = COERCE_AS(__typeof__(v103),
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       if (v93 != 0 && v91 != nullptr) {
-        v173_.v173[0] = GameData_21046e0;
-        v173_.v173[1] = FloatingHelp_18ade60;
-        v173_.v174 = v173_.v173;
-        ui_control_1886f20((void*)((__int64*)&v175_.v175), v91, v184,
-                           (__int64)v173_.v173),
+        f_.v173[0] = GameData_21046e0;
+        f_.v173[1] = FloatingHelp_18ade60;
+        f_.v174 = f_.v173;
+        ui_control_1886f20((void*)((__int64*)&f_.v175), v91, f_.v184,
+                           (__int64)f_.v173),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-        if (v173_.v174 == v173_.v173) {
-          v46 = v153;
+        if (f_.v174 == f_.v173) {
+          v46 = f_.v153;
           v94 = 32;
         }
         else {
-          v46 = v153;
-          if (v173_.v174 == nullptr) {
+          v46 = f_.v153;
+          if (f_.v174 == nullptr) {
           LABEL_257:
-            v129 = v175_.v175;
-            v128 = v175_.v176;
-            if (v175_.v175 != v175_.v176) {
-              v130 = (char*)v175_.v176 - (char*)v175_.v175;
-              v131 = ((char*)v175_.v176 - (char*)v175_.v175) >> 4;
+            v129 = f_.v175;
+            v128 = f_.v176;
+            if (f_.v175 != f_.v176) {
+              v130 = (char*)f_.v176 - (char*)f_.v175;
+              v131 = ((char*)f_.v176 - (char*)f_.v175) >> 4;
               if (v131 >= 1) {
-                v132 = v179_.v180;
-                if (v130 <= (__int64)(v179_.v181 - (_QWORD)v179_.v180)) {
+                v132 = f_.v180;
+                if (v130 <= (__int64)(f_.v181 - (_QWORD)f_.v180)) {
                   do {
                     *v132 = *v129;
                     v137 = v129[1];
@@ -1026,11 +1010,11 @@ LABEL_72:
                     v129 += 2;
                     v132 += 2;
                   } while (v129 != v128);
-                  v179_.v180 = v132;
+                  f_.v180 = v132;
                 }
                 else {
-                  v133 = (char*)v179_.v180 - (char*)v179_.v179;
-                  v134 = v131 + (((char*)v179_.v180 - (char*)v179_.v179) >> 4);
+                  v133 = (char*)f_.v180 - (char*)f_.v179;
+                  v134 = v131 + (((char*)f_.v180 - (char*)f_.v179) >> 4);
                   if (v134 >> 60 != 0) {
                   LABEL_300:
                     GameRoutine_18883b0(),
@@ -1038,10 +1022,10 @@ LABEL_72:
                             __typeof__(v103),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
                   }
-                  if ((__int64)(v179_.v181 - (_QWORD)v179_.v179) >> 3 > v134) {
-                    v134 = (__int64)(v179_.v181 - (_QWORD)v179_.v179) >> 3;
+                  if ((__int64)(f_.v181 - (_QWORD)f_.v179) >> 3 > v134) {
+                    v134 = (__int64)(f_.v181 - (_QWORD)f_.v179) >> 3;
                   }
-                  if (v179_.v181 - (unsigned __int64)v179_.v179 >=
+                  if (f_.v181 - (unsigned __int64)f_.v179 >=
                       0x7FFFFFFFFFFFFFF0LL) {
                     v135 = 0xFFFFFFFFFFFFFFFLL;
                   }
@@ -1082,28 +1066,28 @@ LABEL_72:
                     v129 += 2;
                   } while (v140 != (_QWORD*)v139);
                   v142 = v136 + 16 * v135;
-                  v143 = (char*)v179_.v180 - (char*)v132;
-                  memcpy(v139, (__int64)v132, (char*)v179_.v180 - (char*)v132),
+                  v143 = (char*)f_.v180 - (char*)v132;
+                  memcpy(v139, (__int64)v132, (char*)f_.v180 - (char*)v132),
                       v103 = COERCE_AS(
                           __typeof__(v103),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
                   v144 = (_QWORD*)(v139 + v143);
-                  v145 = v179_.v179;
-                  v179_.v180 = v132;
-                  v146 = (char*)v132 - (char*)v179_.v179;
+                  v145 = f_.v179;
+                  f_.v180 = v132;
+                  v146 = (char*)v132 - (char*)f_.v179;
                   v147 = (__int64 (***)(_QWORD))(
-                      (char*)v138 - ((char*)v132 - (char*)v179_.v179)),
+                      (char*)v138 - ((char*)v132 - (char*)f_.v179)),
                   v103 = COERCE_AS(
                       __typeof__(v103),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-                  memcpy((__int64)v147, (__int64)v179_.v179, v146),
+                  memcpy((__int64)v147, (__int64)f_.v179, v146),
                       v103 = COERCE_AS(
                           __typeof__(v103),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-                  v179_.v181 = v142;
-                  v46 = v153;
-                  v179_.v179 = v147;
-                  v179_.v180 = v144;
+                  f_.v181 = v142;
+                  v46 = f_.v153;
+                  f_.v179 = v147;
+                  f_.v180 = v144;
                   if (v145 != nullptr) {
                     v148 = 128;
                     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr +
@@ -1119,11 +1103,11 @@ LABEL_72:
                   }
                 }
               }
-              v129 = v175_.v175;
+              v129 = f_.v175;
             }
             if (v129 != nullptr) {
-              v149 = v175_.v176;
-              if (v129 == v175_.v176) {
+              v149 = f_.v176;
+              if (v129 == f_.v176) {
                 goto LABEL_294;
               }
               do {
@@ -1142,9 +1126,9 @@ LABEL_72:
                 }
                 v149 -= 2;
               } while (v149 != v129);
-              v175_.v176 = v129;
-              v129 = v175_.v175;
-              if (v175_.v175 != nullptr) {
+              f_.v176 = v129;
+              v129 = f_.v175;
+              if (f_.v175 != nullptr) {
               LABEL_294:
                 v151 = 128;
                 if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr +
@@ -1163,7 +1147,7 @@ LABEL_72:
           }
           v94 = 40;
         }
-        (*(void (**)(__int64))(*v173_.v174 + v94))((__int64)v173_.v174),
+        (*(void (**)(__int64))(*f_.v174 + v94))((__int64)f_.v174),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         goto LABEL_257;
@@ -1173,10 +1157,10 @@ LABEL_72:
       v93 = 0;
     }
     if (*(_QWORD*)(v11 + 176) - *(_QWORD*)(v11 + 168) < 0x11u ||
-        (v100 = ui_control_1886bc0(*a2, v184),
+        (v100 = ui_control_1886bc0(*a2, f_.v184),
          v102 = *(unsigned __int64**)(v11 + 168),
-         v101 = *(unsigned __int64**)(v11 + 176), v175_.v175 = v100,
-         v175_.v176 = v103, v102 == v101)) {
+         v101 = *(unsigned __int64**)(v11 + 176), f_.v175 = v100,
+         f_.v176 = v103, v102 == v101)) {
     LABEL_297:
       if (v93 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v93 + 8),
                                        0xFFFFFFFFFFFFFFFFLL) == 0) {
@@ -1211,24 +1195,24 @@ LABEL_72:
         LODWORD(v109) = 3;
         goto LABEL_249;
       }
-      GameRoutine_15b71b0((void*)((__int64*)&v169_.v169), v107,
-                          (__int64)&v175_.v175),
+      GameRoutine_15b71b0((void*)((__int64*)&f_.v169), v107,
+                          (__int64)&f_.v175),
           v103 = COERCE_AS(__typeof__(v103),
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      v171_.v171 = 0;
-      if (v169_.v170 == 0) {
+      f_.v171 = 0;
+      if (f_.v170 == 0) {
         goto LABEL_217;
       }
-      v108 = std___1___shared_weak_count_lock(v169_.v170),
+      v108 = std___1___shared_weak_count_lock(f_.v170),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      v171_.v172 = v108;
+      f_.v172 = v108;
       if (v108 != 0) {
         break;
       }
       v109 = nullptr;
-      v110 = v169_.v170;
-      if (v169_.v170 != 0) {
+      v110 = f_.v170;
+      if (f_.v170 != 0) {
         goto LABEL_210;
       }
     LABEL_211:
@@ -1244,8 +1228,8 @@ LABEL_72:
               goto LABEL_223;
             }
           }
-          if ((FloatingHelp_18ade60(&v171_.v171) & 1) != 0) {
-            FloatingHelp_18ae010((__int64*)&v179_.v179, &v171_.v171),
+          if ((FloatingHelp_18ade60(&f_.v171) & 1) != 0) {
+            FloatingHelp_18ae010((__int64*)&f_.v179, &f_.v171),
                 v103 =
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1255,25 +1239,25 @@ LABEL_72:
           }
         }
       LABEL_223:
-        v167_.v167[0] = GameData_21046e0;
-        v167_.v167[1] = FloatingHelp_18ade60;
-        v167_.v168 = v167_.v167;
-        ui_control_1888120((void*)(&v169_.v169), v109, v184,
-                           (__int64)v167_.v167),
+        f_.v167[0] = GameData_21046e0;
+        f_.v167[1] = FloatingHelp_18ade60;
+        f_.v168 = f_.v167;
+        ui_control_1888120((void*)(&f_.v169), v109, f_.v184,
+                           (__int64)f_.v167),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-        v112 = v179_.v180;
-        if ((unsigned __int64)v179_.v180 >= v179_.v181) {
-          v114 = v179_.v179;
-          v152 = v93;
-          v115 = (char*)v179_.v180 - (char*)v179_.v179;
-          v116 = ((char*)v179_.v180 - (char*)v179_.v179) >> 4;
+        v112 = f_.v180;
+        if ((unsigned __int64)f_.v180 >= f_.v181) {
+          v114 = f_.v179;
+          f_.v152 = v93;
+          v115 = (char*)f_.v180 - (char*)f_.v179;
+          v116 = ((char*)f_.v180 - (char*)f_.v179) >> 4;
           v117 = v116 + 1;
           if ((unsigned __int64)(v116 + 1) >> 60 != 0) {
             goto LABEL_300;
           }
-          v118 = v179_.v181 - (_QWORD)v179_.v179;
-          if ((__int64)(v179_.v181 - (_QWORD)v179_.v179) >> 3 > v117) {
+          v118 = f_.v181 - (_QWORD)f_.v179;
+          if ((__int64)(f_.v181 - (_QWORD)f_.v179) >> 3 > v117) {
             v117 = v118 >> 3;
           }
           if ((unsigned __int64)v118 >= 0x7FFFFFFFFFFFFFF0LL) {
@@ -1294,7 +1278,7 @@ LABEL_72:
           else {
             v120 = 0;
           }
-          v121 = v169_.v170;
+          v121 = f_.v170;
           v122 = (_QWORD*)(v120 + v115);
           v123 = v115;
           v124 = v120 + 16 * v119;
@@ -1302,14 +1286,14 @@ LABEL_72:
           v103 = COERCE_AS(__typeof__(v103),
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           v113 = v122 + 2;
-          *v122 = v169_.v169;
+          *v122 = f_.v169;
           v122[1] = v121;
           memcpy((__int64)v125, (__int64)v114, v123),
               v103 = COERCE_AS(__typeof__(v103),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          v179_.v179 = v125;
-          v179_.v180 = v113;
-          v179_.v181 = v124;
+          f_.v179 = v125;
+          f_.v180 = v113;
+          f_.v181 = v124;
           if (v114 != nullptr) {
             v126 = 128;
             if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) ==
@@ -1322,25 +1306,25 @@ LABEL_72:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          v93 = v152;
-          v46 = v153;
+          v93 = f_.v152;
+          v46 = f_.v153;
         }
         else {
-          v113 = v179_.v180 + 2;
-          *v179_.v180 = v169_.v169;
-          v112[1] = v169_.v170;
+          v113 = f_.v180 + 2;
+          *f_.v180 = f_.v169;
+          v112[1] = f_.v170;
         }
-        v179_.v180 = v113;
-        if (v167_.v168 == v167_.v167) {
+        f_.v180 = v113;
+        if (f_.v168 == f_.v167) {
           v127 = 32;
         }
         else {
-          if (v167_.v168 == nullptr) {
+          if (f_.v168 == nullptr) {
             goto LABEL_245;
           }
           v127 = 40;
         }
-        (*(void (**)(__int64))(*v167_.v168 + v127))((__int64)v167_.v168),
+        (*(void (**)(__int64))(*f_.v168 + v127))((__int64)f_.v168),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         goto LABEL_245;
@@ -1382,10 +1366,10 @@ LABEL_72:
         goto LABEL_297;
       }
     }
-    v109 = v169_.v169;
-    v171_.v171 = (__int64)v169_.v169;
-    v110 = v169_.v170;
-    if (v169_.v170 == 0) {
+    v109 = f_.v169;
+    f_.v171 = (__int64)f_.v169;
+    v110 = f_.v170;
+    if (f_.v170 == 0) {
       goto LABEL_211;
     }
   LABEL_210:
@@ -1395,17 +1379,17 @@ LABEL_72:
     goto LABEL_211;
   }
 LABEL_73:
-  v48 = (__int64*)v179_.v179;
-  v49 = v179_.v180;
-  v175_.v175 = nullptr;
-  v175_.v176 = nullptr;
-  v166 = 0;
-  if (v179_.v179 != v179_.v180) {
+  v48 = (__int64*)f_.v179;
+  v49 = f_.v180;
+  f_.v175 = nullptr;
+  f_.v176 = nullptr;
+  f_.v166 = 0;
+  if (f_.v179 != f_.v180) {
     while (1) {
       v51 = *v48;
       v50 = v48[1];
-      v171_.v171 = *v48;
-      v171_.v172 = v50;
+      f_.v171 = *v48;
+      f_.v172 = v50;
       if (v50 != 0) {
         atomic_fetch_add_explicit((atomic_ullong* volatile)(v50 + 8), 1u,
                                   memory_order_relaxed);
@@ -1442,45 +1426,45 @@ LABEL_73:
         }
       LABEL_122:
         v74 = *(_QWORD*)(v11 + 224);
-        v169_.v169 = nullptr;
-        v169_.v170 = 0;
+        f_.v169 = nullptr;
+        f_.v170 = 0;
         if (v74 != 0 &&
-            (v169_.v170 = std___1___shared_weak_count_lock(v74)) != 0 &&
-            (v169_.v169 = *(_QWORD**)(v11 + 216)) != nullptr) {
-          v76 = v184;
-          v77 = v182_.v183;
-          v154[0] = (__int64)v182_.v182;
-          v154[1] = v182_.v183;
-          if (v182_.v183 != 0) {
+            (f_.v170 = std___1___shared_weak_count_lock(v74)) != 0 &&
+            (f_.v169 = *(_QWORD**)(v11 + 216)) != nullptr) {
+          v76 = f_.v184;
+          v77 = f_.v183;
+          f_.v154[0] = (__int64)f_.v182;
+          f_.v154[1] = f_.v183;
+          if (f_.v183 != 0) {
             atomic_fetch_add_explicit(
-                (atomic_ullong* volatile)(v182_.v183 + 16), 1u,
+                (atomic_ullong* volatile)(f_.v183 + 16), 1u,
                 memory_order_relaxed);
-            FloatingHelp_18ae160(v76, (__int64)&v169_.v169, &v175_.v175,
-                                 &v171_.v171, v154),
+            FloatingHelp_18ae160(v76, (__int64)&f_.v169, &f_.v175,
+                                 &f_.v171, f_.v154),
                 v103 =
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
             goto LABEL_132;
           }
-          FloatingHelp_18ae160(v184, (__int64)&v169_.v169, &v175_.v175,
-                               &v171_.v171, v154),
+          FloatingHelp_18ae160(f_.v184, (__int64)&f_.v169, &f_.v175,
+                               &f_.v171, f_.v154),
               v103 = COERCE_AS(__typeof__(v103),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          v80 = v169_.v170;
-          if (v169_.v170 == 0) {
+          v80 = f_.v170;
+          if (f_.v170 == 0) {
             goto LABEL_136;
           }
         }
         else {
-          v79 = v171_.v171;
-          v78 = (_QWORD*)v171_.v172;
-          if (v171_.v172 != 0) {
-            atomic_fetch_add_explicit((atomic_ullong* volatile)(v171_.v172 + 8),
+          v79 = f_.v171;
+          v78 = (_QWORD*)f_.v172;
+          if (f_.v172 != 0) {
+            atomic_fetch_add_explicit((atomic_ullong* volatile)(f_.v172 + 8),
                                       1u, memory_order_relaxed);
           }
-          v77 = (__int64)v175_.v176;
-          v175_.v175 = (_QWORD*)v79;
-          v175_.v176 = v78;
+          v77 = (__int64)f_.v176;
+          f_.v175 = (_QWORD*)v79;
+          f_.v176 = v78;
           if (v77 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v77 + 8),
                                            0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v77 + 16LL))(v77),
@@ -1493,8 +1477,8 @@ LABEL_73:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          v80 = v169_.v170;
-          if (v169_.v170 == 0) {
+          v80 = f_.v170;
+          if (f_.v170 == 0) {
           LABEL_136:
             v58 = 0;
             goto LABEL_165;
@@ -1513,8 +1497,8 @@ LABEL_73:
       }
       *v46 = v51;
       v46[1] = v50;
-      v171_.v171 = 0;
-      v171_.v172 = 0;
+      f_.v171 = 0;
+      f_.v172 = 0;
       if (atomic_fetch_add((atomic_ullong* volatile)(v71 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         v86 = v71;
@@ -1527,9 +1511,9 @@ LABEL_73:
       }
       v58 = 1;
     LABEL_165:
-      v87 = v171_.v172;
-      if (v171_.v172 != 0 &&
-          atomic_fetch_add((atomic_ullong* volatile)(v171_.v172 + 8),
+      v87 = f_.v172;
+      if (f_.v172 != 0 &&
+          atomic_fetch_add((atomic_ullong* volatile)(f_.v172 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         (*(void (**)(__int64))(*(_QWORD*)v87 + 16LL))(v87),
             v103 = COERCE_AS(__typeof__(v103),
@@ -1545,9 +1529,9 @@ LABEL_73:
         goto LABEL_75;
       }
       if (v58 != 0) {
-        v99 = (__int64)v175_.v176;
-        if (v175_.v176 != nullptr &&
-            atomic_fetch_add((atomic_ullong* volatile)(v175_.v176 + 1),
+        v99 = (__int64)f_.v176;
+        if (f_.v176 != nullptr &&
+            atomic_fetch_add((atomic_ullong* volatile)(f_.v176 + 1),
                              0xFFFFFFFFFFFFFFFFLL) == 0) {
           (*(void (**)(__int64))(*(_QWORD*)v99 + 16LL))(v99),
               v103 = COERCE_AS(__typeof__(v103),
@@ -1561,8 +1545,8 @@ LABEL_73:
     LABEL_75:
       v48 += 2;
       if (v48 == v49) {
-        v89 = (__int64)v175_.v175;
-        v88 = v175_.v176;
+        v89 = (__int64)f_.v175;
+        v88 = f_.v176;
         goto LABEL_180;
       }
     }
@@ -1573,19 +1557,19 @@ LABEL_73:
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v50 + 8), 1u,
                                 memory_order_relaxed);
     }
-    if (v182_.v183 == 0) {
+    if (f_.v183 == 0) {
       goto LABEL_88;
     }
-    if (*(_QWORD*)(v182_.v183 + 8) == -1) {
+    if (*(_QWORD*)(f_.v183 + 8) == -1) {
       goto LABEL_88;
     }
-    v54 = std___1___shared_weak_count_lock(v182_.v183),
+    v54 = std___1___shared_weak_count_lock(f_.v183),
     v103 = COERCE_AS(__typeof__(v103),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (v54 == 0) {
       goto LABEL_88;
     }
-    v55 = (__int64)v182_.v182;
+    v55 = (__int64)f_.v182;
     if (atomic_fetch_add((atomic_ullong* volatile)(v54 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       v56 = v54;
@@ -1597,7 +1581,7 @@ LABEL_73:
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
     v39 = v51 == v55;
-    v46 = v153;
+    v46 = f_.v153;
     if (v39) {
       v57 = 0;
       v58 = 5;
@@ -1627,63 +1611,63 @@ LABEL_73:
       goto LABEL_149;
     }
     v59 = *(_QWORD*)(v11 + 224);
-    v169_.v169 = nullptr;
-    v169_.v170 = 0;
-    v164_.v164 = 0;
-    v164_.v165 = 0;
+    f_.v169 = nullptr;
+    f_.v170 = 0;
+    f_.v164 = 0;
+    f_.v165 = 0;
     if (v59 != 0) {
-      v164_.v165 = std___1___shared_weak_count_lock(v59),
+      f_.v165 = std___1___shared_weak_count_lock(v59),
       v103 = COERCE_AS(__typeof__(v103),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      if (v164_.v165 != 0) {
-        v164_.v164 = *(_QWORD*)(v11 + 216);
-        if (v164_.v164 != 0) {
+      if (f_.v165 != 0) {
+        f_.v164 = *(_QWORD*)(v11 + 216);
+        if (f_.v164 != 0) {
           goto LABEL_95;
         }
       }
-      else if (v164_.v164 != 0) {
+      else if (f_.v164 != 0) {
       LABEL_95:
         v60 = (_QWORD*)fw_memory_HeapManager_Allocate(
             *(_QWORD*)fw_memory_g_heap_manager_ptr, 72, 16, 0),
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-        v162_.v163 = v60;
+        f_.v163 = v60;
         *v60 = GameData_2104790;
         v60[1] = v11;
         v60[2] = &v185;
-        v60[3] = &v175_.v175;
-        v60[4] = &v166;
-        v60[5] = &v184;
-        v60[6] = &v164_.v164;
-        v60[7] = &v169_.v169;
-        v60[8] = &v182_.v182;
-        Element_1885f00((__int64)v53, (__int64)v162_.v162),
+        v60[3] = &f_.v175;
+        v60[4] = &f_.v166;
+        v60[5] = &f_.v184;
+        v60[6] = &f_.v164;
+        v60[7] = &f_.v169;
+        v60[8] = &f_.v182;
+        Element_1885f00((__int64)v53, (__int64)f_.v162),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
         (*(void (**)(_QWORD*))(*v60 + 40LL))(v60),
             v103 = COERCE_AS(__typeof__(v103),
                              PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-        if ((v166 & 1) == 0) {
-          if (v169_.v169 != nullptr) {
+        if ((f_.v166 & 1) == 0) {
+          if (f_.v169 != nullptr) {
             goto LABEL_109;
           }
-          v158_.v158 = v53;
-          v158_.v159 = v50;
+          f_.v158 = v53;
+          f_.v159 = v50;
           if (v50 != 0) {
             atomic_fetch_add_explicit((atomic_ullong* volatile)(v50 + 8), 1u,
                                       memory_order_relaxed);
           }
-          game_gameui_18acd40(v11, &v158_.v158, v185, (__int64*)&v182_.v182,
-                              &v160_.v160),
+          game_gameui_18acd40(v11, &f_.v158, v185, (__int64*)&f_.v182,
+                              &f_.v160),
               v103 = COERCE_AS(__typeof__(v103),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          v62 = v160_.v160;
-          v63 = v160_.v161;
-          v64 = v169_.v170;
-          v160_.v160 = 0;
-          v160_.v161 = 0;
-          v169_.v169 = (_QWORD*)v62;
-          v169_.v170 = v63;
+          v62 = f_.v160;
+          v63 = f_.v161;
+          v64 = f_.v170;
+          f_.v160 = 0;
+          f_.v161 = 0;
+          f_.v169 = (_QWORD*)v62;
+          f_.v170 = v63;
           if (v64 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v64 + 8),
                                            0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v64 + 16LL))(v64),
@@ -1695,9 +1679,9 @@ LABEL_73:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          v65 = v160_.v161;
-          if (v160_.v161 != 0 &&
-              atomic_fetch_add((atomic_ullong* volatile)(v160_.v161 + 8),
+          v65 = f_.v161;
+          if (f_.v161 != 0 &&
+              atomic_fetch_add((atomic_ullong* volatile)(f_.v161 + 8),
                                0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v65 + 16LL))(v65),
                 v103 =
@@ -1708,9 +1692,9 @@ LABEL_73:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          v66 = v158_.v159;
-          if (v158_.v159 != 0 &&
-              atomic_fetch_add((atomic_ullong* volatile)(v158_.v159 + 8),
+          v66 = f_.v159;
+          if (f_.v159 != 0 &&
+              atomic_fetch_add((atomic_ullong* volatile)(f_.v159 + 8),
                                0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v66 + 16LL))(v66),
                 v103 =
@@ -1721,20 +1705,20 @@ LABEL_73:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          if (v169_.v169 != nullptr) {
+          if (f_.v169 != nullptr) {
           LABEL_109:
-            v67 = v184;
-            v68 = v182_.v183;
-            v157[0] = (__int64)v182_.v182;
-            v157[1] = v182_.v183;
-            if (v182_.v183 == 0) {
-              FloatingHelp_18ae160(v184, (__int64)&v164_.v164, &v175_.v175,
-                                   &v169_.v169, v157),
+            v67 = f_.v184;
+            v68 = f_.v183;
+            f_.v157[0] = (__int64)f_.v182;
+            f_.v157[1] = f_.v183;
+            if (f_.v183 == 0) {
+              FloatingHelp_18ae160(f_.v184, (__int64)&f_.v164, &f_.v175,
+                                   &f_.v169, f_.v157),
                   v103 = COERCE_AS(
                       __typeof__(v103),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-              v69 = v164_.v165;
-              if (v164_.v165 == 0) {
+              v69 = f_.v165;
+              if (f_.v165 == 0) {
                 goto LABEL_159;
               }
             LABEL_158:
@@ -1748,8 +1732,8 @@ LABEL_73:
                     v103 = COERCE_AS(
                         __typeof__(v103),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-                v85 = v169_.v170;
-                if (v169_.v170 != 0) {
+                v85 = f_.v170;
+                if (f_.v170 != 0) {
                 LABEL_160:
                   v58 = 0;
                   if (atomic_fetch_add((atomic_ullong* volatile)(v85 + 8),
@@ -1794,17 +1778,17 @@ LABEL_73:
                 goto LABEL_150;
               }
             LABEL_159:
-              v85 = v169_.v170;
-              if (v169_.v170 != 0) {
+              v85 = f_.v170;
+              if (f_.v170 != 0) {
                 goto LABEL_160;
               }
               goto LABEL_164;
             }
             atomic_fetch_add_explicit(
-                (atomic_ullong* volatile)(v182_.v183 + 16), 1u,
+                (atomic_ullong* volatile)(f_.v183 + 16), 1u,
                 memory_order_relaxed);
-            FloatingHelp_18ae160(v67, (__int64)&v164_.v164, &v175_.v175,
-                                 &v169_.v169, v157),
+            FloatingHelp_18ae160(v67, (__int64)&f_.v164, &f_.v175,
+                                 &f_.v169, f_.v157),
                 v103 =
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1813,18 +1797,18 @@ LABEL_73:
                     COERCE_AS(__typeof__(v103),
                               PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
           }
-          v69 = v164_.v165;
-          if (v164_.v165 == 0) {
+          v69 = f_.v165;
+          if (f_.v165 == 0) {
             goto LABEL_159;
           }
           goto LABEL_158;
         }
       LABEL_145:
-        v82 = (__int64)v175_.v175;
-        v83 = v175_.v176;
-        v84 = v164_.v165;
-        v175_.v175 = nullptr;
-        v175_.v176 = nullptr;
+        v82 = (__int64)f_.v175;
+        v83 = f_.v176;
+        v84 = f_.v165;
+        f_.v175 = nullptr;
+        f_.v176 = nullptr;
         *v46 = v82;
         v46[1] = (__int64)v83;
         if (v84 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v84 + 8),
@@ -1835,8 +1819,8 @@ LABEL_73:
           std___1___shared_weak_count___release_weak(v84),
               v103 = COERCE_AS(__typeof__(v103),
                                PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-          v85 = v169_.v170;
-          if (v169_.v170 != 0) {
+          v85 = f_.v170;
+          if (f_.v170 != 0) {
           LABEL_148:
             v58 = 1;
             if (atomic_fetch_add((atomic_ullong* volatile)(v85 + 8),
@@ -1847,8 +1831,8 @@ LABEL_73:
           }
         }
         else {
-          v85 = v169_.v170;
-          if (v169_.v170 != 0) {
+          v85 = f_.v170;
+          if (f_.v170 != 0) {
             goto LABEL_148;
           }
         }
@@ -1859,22 +1843,22 @@ LABEL_73:
         goto LABEL_150;
       }
     }
-    v155_.v155[0] = GameData_2104810;
-    v155_.v155[1] = &v175_.v175;
-    v155_.v156 = v155_.v155;
-    Element_1885f00((__int64)v53, (__int64)v155_.v155),
+    f_.v155[0] = GameData_2104810;
+    f_.v155[1] = &f_.v175;
+    f_.v156 = f_.v155;
+    Element_1885f00((__int64)v53, (__int64)f_.v155),
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-    if (v155_.v156 == v155_.v155) {
+    if (f_.v156 == f_.v155) {
       v81 = 32;
     }
     else {
-      if (v155_.v156 == nullptr) {
+      if (f_.v156 == nullptr) {
         goto LABEL_145;
       }
       v81 = 40;
     }
-    (*(void (**)(__int64))(*v155_.v156 + v81))((__int64)v155_.v156),
+    (*(void (**)(__int64))(*f_.v156 + v81))((__int64)f_.v156),
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     goto LABEL_145;
@@ -1885,10 +1869,10 @@ LABEL_180:
   *v46 = v89;
   v46[1] = (__int64)v88;
 LABEL_181:
-  v95 = v179_.v179;
-  if (v179_.v179 != nullptr) {
-    v96 = v179_.v180;
-    if (v179_.v179 == v179_.v180) {
+  v95 = f_.v179;
+  if (f_.v179 != nullptr) {
+    v96 = f_.v180;
+    if (f_.v179 == f_.v180) {
       goto LABEL_189;
     }
     do {
@@ -1904,9 +1888,9 @@ LABEL_181:
       }
       v96 -= 2;
     } while (v96 != v95);
-    v179_.v180 = v95;
-    v95 = v179_.v179;
-    if (v179_.v179 != nullptr) {
+    f_.v180 = v95;
+    v95 = f_.v179;
+    if (f_.v179 != nullptr) {
     LABEL_189:
       v98 = 128;
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
@@ -1918,9 +1902,9 @@ LABEL_181:
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
   }
-  result = v182_.v183;
-  if (v182_.v183 != 0) {
-    std___1___shared_weak_count___release_weak(v182_.v183),
+  result = f_.v183;
+  if (f_.v183 != 0) {
+    std___1___shared_weak_count___release_weak(f_.v183),
         v103 = COERCE_AS(__typeof__(v103),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     return;

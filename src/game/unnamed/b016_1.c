@@ -6233,28 +6233,29 @@ __int64 GameHr_11945e0(__int64 a1, const char* a2, __int64* a3)
   __int64 v28;
   __int64 v29;
   __int64 v30;
-  const char* v32;
   struct {
+    char gap0_[8];
+    const char* v32;
     __int64 v33;
     __int64 v34;
     __int64 v35;
-  } v33_;
+  } f_;
   __int64 v36;
 
   v3 = *a3;
   v4 = a3[1];
   v7 = v4 - *a3;
   if (v4 == *a3) {
-    v33_.v34 = 0;
-    v33_.v35 = 0;
-    v33_.v33 = 0;
-    v25 = GameHr_1194a00(a1, a2, &v33_.v33);
+    f_.v34 = 0;
+    f_.v35 = 0;
+    f_.v33 = 0;
+    v25 = GameHr_1194a00(a1, a2, &f_.v33);
   }
   else {
     if (v7 < 0) {
       goto LABEL_29;
     }
-    v32 = a2;
+    f_.v32 = a2;
     v8 = (__int64*)fw_memory_g_heap_manager_ptr;
     v9 = 32;
     v10 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
@@ -6267,8 +6268,8 @@ __int64 GameHr_11945e0(__int64 a1, const char* a2, __int64* a3)
       *(_DWORD*)(v13 - 8) = -1;
       v14 = *(_DWORD*)(v12 - 8);
       if (v14 != -1) {
-        v33_.v33 = v13 - 32;
-        ((void (*)(__int64*, __int64))GameData_2014fb0[v14])(&v33_.v33,
+        f_.v33 = v13 - 32;
+        ((void (*)(__int64*, __int64))GameData_2014fb0[v14])(&f_.v33,
                                                              v12 - 32);
         *(_DWORD*)(v13 - 8) = v14;
       }
@@ -6281,8 +6282,8 @@ __int64 GameHr_11945e0(__int64 a1, const char* a2, __int64* a3)
     }
     v16 = fw_memory_HeapManager_Allocate(*v8, v11, 16, 0);
     v17 = 0;
-    v33_.v33 = v16;
-    v33_.v35 = v16 + v11;
+    f_.v33 = v16;
+    f_.v35 = v16 + v11;
     do {
       v18 = v16 + v17;
       v19 = *(_DWORD*)(v10 + v17 + 24);
@@ -6297,8 +6298,8 @@ __int64 GameHr_11945e0(__int64 a1, const char* a2, __int64* a3)
       v17 += 32;
     } while (v11 != v17);
     v21 = v16 + v17;
-    v33_.v34 = v21;
-    v22 = GameHr_1194a00(a1, v32, &v33_.v33);
+    f_.v34 = v21;
+    v22 = GameHr_1194a00(a1, f_.v32, &f_.v33);
     v23 = -v17;
     v24 = v21 - 32;
     v25 = v22;
@@ -6311,19 +6312,19 @@ __int64 GameHr_11945e0(__int64 a1, const char* a2, __int64* a3)
       v24 -= 32;
       v23 += 32;
     } while (v23 != 0);
-    if (v33_.v33 != 0) {
+    if (f_.v33 != 0) {
       v27 = 128;
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v27 = 56;
       }
       nn_mem_StandardAllocator_Free(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v27, v33_.v33);
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v27, f_.v33);
     }
     do {
       v28 = v10 + v15;
       v29 = *(unsigned int*)(v10 + v15 - 8);
       if ((_DWORD)v29 != -1) {
-        ((void (*)(__int64*, __int64))decltype_c81af0_ptr[v29])(&v33_.v33,
+        ((void (*)(__int64*, __int64))decltype_c81af0_ptr[v29])(&f_.v33,
                                                                 v28 - 32);
       }
       v15 -= 32;

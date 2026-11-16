@@ -61,7 +61,7 @@ void Element_1886580(__int64, char);
 void GameHr_157e0f0(__int64*, __int64, _BYTE*);
 void GameHr_18af120(_QWORD*, __int64*);
 void LayoutAccessor_1572ac0(__int64*, __int64, unsigned int, unsigned int);
-unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
+void game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
                                                          __int64 (*a2)());
 __int64 LegionPoolMenu_Unknown94(__int64 a1);
 bool game_menu_LegionPoolMenu_SortAndFilter_lambda1_Invoke(__int64 a1,
@@ -607,7 +607,7 @@ __int64 LegionPoolMenu_Unknown85(__int64 a1)
   return result;
 }
 
-unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
+void game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
                                                          __int64 (*a2)())
 {
   bool v4;
@@ -699,7 +699,7 @@ LABEL_23:
   GameRoutine_1612340((void*)(&f_.v22), (__int64*)(a1 + 848), v17);
   result = f_.v23;
   if (f_.v23 == 0) {
-    return result;
+    return;
   }
   v12 = std___1___shared_weak_count_lock_alt1(f_.v23);
   v13 = (__int64)f_.v22;
@@ -720,7 +720,7 @@ LABEL_23:
     Element_1886580(v13, 1);
     result = (*(__int64 (**)(__int64))(*(_QWORD*)v13 + 384LL))(v13);
     if (v12 == 0) {
-      return result;
+      return;
     }
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 16), 1u,
                               memory_order_relaxed);
@@ -742,14 +742,15 @@ LABEL_23:
     result = std___1___shared_weak_count___release_weak_alt1(v12);
   }
   else if (v12 == 0) {
-    return result;
+    return;
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
-    return std___1___shared_weak_count___release_weak_alt1(v12);
+    (void)(std___1___shared_weak_count___release_weak_alt1(v12));
+    return;
   }
-  return result;
+  return;
 }
 
 __int64 LegionPoolMenu_Unknown94(__int64 a1)

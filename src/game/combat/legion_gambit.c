@@ -78,7 +78,7 @@ __attribute__((swiftcall)) void LegionGambit_e4c790(PSEUDO_X8 x8_, _DWORD* a1,
                                                     __int64 a2, char a3);
 float32x4_t LegionGambit_e4c8c0(__int64 a1, _QWORD* a2, _QWORD* a3, char a4);
 void LegionGambit_e4d550(unsigned __int64 a1, long double a2);
-__n128 LegionGambit_e4d990(__int64 a1, int a2);
+void LegionGambit_e4d990(__int64 a1, int a2);
 __attribute__((swiftcall)) void
 game_combat_LegionGambit_MakeTimeline_Chariot_lambda1_Invoke(
     PSEUDO_X8 x8_, __int64 a1, __int64 unused_int1, int* a2);
@@ -780,7 +780,7 @@ void LegionGambit_e4d550(unsigned __int64 a1, long double a2)
   }
 }
 
-__n128 LegionGambit_e4d990(__int64 a1, int a2)
+void LegionGambit_e4d990(__int64 a1, int a2)
 {
 
 #pragma clang fp contract(off)
@@ -1273,9 +1273,10 @@ LABEL_47:
         v10 = COERCE_AS(__typeof__(v10), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v0", "=w"));
-    return std___1___shared_weak_count___release_weak_alt1(v29);
+    (void)(std___1___shared_weak_count___release_weak_alt1(v29));
+    return;
   }
-  return result;
+  return;
 }
 
 __int64 game_combat_LegionGambit_MakeTimeline_TemplateBase_lambda0_Invoke(

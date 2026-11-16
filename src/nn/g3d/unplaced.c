@@ -1464,14 +1464,18 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
   float v31;
   float v32;
   float32x4_t v33;
-  float v34;
-  float v35;
-  float v36;
   struct {
+    char gap0_[16];
+    float v34;
+    char gap20_[12];
+    float v35;
+    char gap36_[12];
+    float v36;
+    char gap52_[12];
     __int64 v37;
     int v38;
     float v39;
-  } v37_;
+  } f_;
 
   if (*(_WORD*)(a2 + 100) != 0) {
     v4 = *(_QWORD*)(a2 + 72);
@@ -1489,16 +1493,16 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
         goto LABEL_5;
       }
       v18 = a1[3];
-      v37_.v37 = a2;
-      v37_.v38 = v16 & 0x7FFF;
-      v37_.v39 = a3;
-      (*(void (**)(__int64, __int64*))(*(_QWORD*)v18 + 16LL))(v18, &v37_.v37);
-      *(float*)&v24 = v37_.v39;
+      f_.v37 = a2;
+      f_.v38 = v16 & 0x7FFF;
+      f_.v39 = a3;
+      (*(void (**)(__int64, __int64*))(*(_QWORD*)v18 + 16LL))(v18, &f_.v37);
+      *(float*)&v24 = f_.v39;
       v25 = (float32x4_t*)(v4 + v9);
       v26 = (float32x4_t*)(v5 + 80LL * v17);
-      v36 = v37_.v39;
+      f_.v36 = f_.v39;
       if ((*(_BYTE*)(v4 + v9 + 2) & 0x30) != 0) {
-        GameRoutine_5f80f0_alt2(v26, v25, v37_.v39, v24);
+        GameRoutine_5f80f0_alt2(v26, v25, f_.v39, v24);
         v27 = v4 + v9;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
           goto LABEL_12;
@@ -1507,26 +1511,26 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
       else {
         PSEUDO_LOW_LANE128(v19, n128_u64, LANES128(v25[2]).n128_u64[0]);
         SkeletalAnimObj_5f7910(v26, LANES128(v25[2]).n128_u32[2], v19,
-                               v37_.v39);
+                               f_.v39);
         v27 = v4 + v9;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
         LABEL_12:
-          v35 = powf_alt1(*(float*)(v27 + 4), v36);
-          v34 = powf_alt1(*(float*)(v27 + 8), v36);
-          v31 = powf_alt1(*(float*)(v27 + 12), v36);
+          f_.v35 = powf_alt1(*(float*)(v27 + 4), f_.v36);
+          f_.v34 = powf_alt1(*(float*)(v27 + 8), f_.v36);
+          v31 = powf_alt1(*(float*)(v27 + 12), f_.v36);
           v32 = LANES128(v26[4]).n128_f32[1];
           v33 = COERCE_AS(float32x4_t, GameData_1a837f0);
           if (!(fabsf(v32) < 0x1.0624de0000000p-10f)) {
             v33 = *v26;
           }
-          LANES128(v11).n128_u64[0] = __PAIR64__(LODWORD(v34), LODWORD(v35));
+          LANES128(v11).n128_u64[0] = __PAIR64__(LODWORD(f_.v34), LODWORD(f_.v35));
           LANES128(v11).n128_u64[1] = LODWORD(v31);
           *v26 = vmulq_f32(v11, v33);
           LANES128(v12).n128_u64[0] = *(_QWORD*)(v4 + v9 + 16);
           v13 = LANES128(v26[4]).n128_u32[0];
           LANES128(v12).n128_u64[1] = *(unsigned int*)(v4 + v9 + 24);
-          v26[1] = vaddq_f32(v26[1], vmulq_n_f32(v12, v36));
-          v14 = v36 + v32;
+          v26[1] = vaddq_f32(v26[1], vmulq_n_f32(v12, f_.v36));
+          v14 = f_.v36 + v32;
           v15 = v13 | ~*(_DWORD*)(v4 + v9);
           goto LABEL_4;
         }
@@ -1535,12 +1539,12 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
       v29 = LANES128(v26[4]).n128_u32[0];
       LANES128(v28).n128_u64[1] = *(unsigned int*)(v27 + 12);
       v30 = v26[1];
-      *v26 = vaddq_f32(*v26, vmulq_n_f32(v28, v36));
+      *v26 = vaddq_f32(*v26, vmulq_n_f32(v28, f_.v36));
       LANES128(v28).n128_u64[0] = *(_QWORD*)(v27 + 16);
       LANES128(v28).n128_u64[1] = *(unsigned int*)(v27 + 24);
-      v26[1] = vaddq_f32(v30, vmulq_n_f32(v28, v36));
+      v26[1] = vaddq_f32(v30, vmulq_n_f32(v28, f_.v36));
       v15 = v29 | ~*(_DWORD*)v27;
-      v14 = v36 + LANES128(v26[4]).n128_f32[1];
+      v14 = f_.v36 + LANES128(v26[4]).n128_f32[1];
     LABEL_4:
       LANES128(v26[4]).n128_u32[0] = v15;
       LANES128(v26[4]).n128_f32[1] = v14;

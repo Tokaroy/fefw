@@ -3916,17 +3916,19 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
   int8x16_t v58;
   __int64 v59;
   unsigned __int32 v60;
-  __int64 v61;
-  __int64 v62;
-  _QWORD* v63;
-  __int64 v64;
-  __int64 v65;
-  __int64 v66;
-  unsigned __int64 v67;
-  unsigned __int32 v68;
-  int v69;
-  int v70;
   struct {
+    char gap0_[8];
+    __int64 v61;
+    __int64 v62;
+    _QWORD* v63;
+    __int64 v64;
+    __int64 v65;
+    __int64 v66;
+    char gap56_[4];
+    unsigned __int64 v67;
+    unsigned __int32 v68;
+    int v69;
+    int v70;
     _QWORD v71[2];
     int v72;
     int v73;
@@ -3935,7 +3937,7 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
     _QWORD* v76;
     char gap120_[20];
     int v77;
-  } v71_;
+  } f_;
 
   v4 = (__int64*)a4[1];
   v7 = (float32x4_t*)result;
@@ -3959,9 +3961,9 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
         v14 = 0xFFFFFFFFLL;
         v15 = 0;
         v16 = 0;
-        v62 = *(unsigned __int16*)(result + 164);
-        v63 = a4;
-        v61 = *(_QWORD*)a3 & 0x3FLL;
+        f_.v62 = *(unsigned __int16*)(result + 164);
+        f_.v63 = a4;
+        f_.v61 = *(_QWORD*)a3 & 0x3FLL;
         v17 = *(_DWORD*)(result + 252) - 1;
         while (1) {
           if (v11 == 8) {
@@ -4017,7 +4019,7 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
           else {
             v29 = v26;
           }
-          v71_.v77 = v29;
+          f_.v77 = v29;
           v30 = v28[1];
           if (v30 != v28[2]) {
             v28 = (int**)&v30[2 * (int)v15];
@@ -4033,12 +4035,12 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
         LABEL_37:
           v33 = *(__int64**)(v16 + 288);
           v34 = *(__int64**)(v16 + 296);
-          v64 = v14;
-          v65 = v16;
+          f_.v64 = v14;
+          f_.v65 = v16;
           if (v33 != v34) {
             v35 = 0x0.0p+0f;
             v36 = 1;
-            v66 = v19;
+            f_.v66 = v19;
             do {
               v38 = *v33;
               v39 = *v33 >> 32;
@@ -4172,45 +4174,45 @@ __int64 g3d_Model_CollectElements(__int64 result, __int64 a2, __int64 a3,
                   v35 = 0x0.0p+0f;
                 }
               }
-              v71_.v72 = v15;
-              v71_.v73 = v38;
-              v71_.v74 = v46;
-              v71_.v75 = v49;
+              f_.v72 = v15;
+              f_.v73 = v38;
+              f_.v74 = v46;
+              f_.v75 = v49;
               v59 = a2;
-              v71_.v71[0] = GameData_1fc0360;
-              v71_.v71[1] = v7;
+              f_.v71[0] = GameData_1fc0360;
+              f_.v71[1] = v7;
               v60 = LANES128(v7[2]).n128_u32[1];
-              v71_.v76 = v71_.v71;
-              v67 = __PAIR64__(LODWORD(v35), v60);
-              v68 = LANES128(v7[31]).n128_u32[3];
-              v69 = v38;
-              v70 = v71_.v77;
-              ElementRenderer_a74470(a2, (__int64)v71_.v71, (__int64*)&v67);
-              result = (__int64)v71_.v76;
-              if (v71_.v76 == v71_.v71) {
+              f_.v76 = f_.v71;
+              f_.v67 = __PAIR64__(LODWORD(v35), v60);
+              f_.v68 = LANES128(v7[31]).n128_u32[3];
+              f_.v69 = v38;
+              f_.v70 = f_.v77;
+              ElementRenderer_a74470(a2, (__int64)f_.v71, (__int64*)&f_.v67);
+              result = (__int64)f_.v76;
+              if (f_.v76 == f_.v71) {
                 v37 = 32;
               }
               else {
-                if (v71_.v76 == nullptr) {
+                if (f_.v76 == nullptr) {
                   goto LABEL_41;
                 }
                 v37 = 40;
               }
-              result = (*(__int64 (**)(__int64))(*v71_.v76 + v37))(
-                  (__int64)v71_.v76);
+              result = (*(__int64 (**)(__int64))(*f_.v76 + v37))(
+                  (__int64)f_.v76);
             LABEL_41:
-              v19 = v66;
+              v19 = f_.v66;
               v36 = 0;
               a2 = v59;
             LABEL_42:
               ++v33;
             } while (v33 != v34);
           }
-          v13 = v62;
-          a4 = v63;
-          v14 = v64;
-          v16 = v65;
-          v11 = v61;
+          v13 = f_.v62;
+          a4 = f_.v63;
+          v14 = f_.v64;
+          v16 = f_.v65;
+          v11 = f_.v61;
         LABEL_12:
           if (++v15 == v13) {
             return result;

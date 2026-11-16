@@ -131,7 +131,7 @@ void __attribute__((noreturn)) GameRoutine_6c1f60();
 void __attribute__((noreturn)) String_60a1d0();
 void __cxa_guard_release(__int64);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
-__int64 game_facility_94b3c0(__int64 a1);
+void game_facility_94b3c0(__int64 a1);
 __int64* game_facility_9c3860(__int64* result, __int64* a2, __int64* a3,
                               __int64* a4, __int64* a5);
 bool game_facility_9c39e0(__int64* a1, __int64* a2);
@@ -163,7 +163,7 @@ void game_facility_19551d0(__int64 a1, unsigned __int8* a2);
 __int64 game_facility_19595c0();
 void game_facility_197fb20(__int64 a1);
 
-__int64 game_facility_94b3c0(__int64 a1)
+void game_facility_94b3c0(__int64 a1)
 {
   int v2;
   __int64 v3;
@@ -238,7 +238,8 @@ __int64 game_facility_94b3c0(__int64 a1)
   }
   v15_.v16 = &GameData_1aaffc1;
   v15_.v15 = game_HashString((__int64)&GameData_1aaffc1);
-  return GameRoutine_9b11a0(&GameData_21f61c0, (unsigned __int64*)&v15_.v15, 1);
+  (void)(GameRoutine_9b11a0(&GameData_21f61c0, (unsigned __int64*)&v15_.v15, 1));
+  return;
 }
 
 __int64* game_facility_9c3860(__int64* result, __int64* a2, __int64* a3,

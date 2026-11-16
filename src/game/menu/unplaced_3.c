@@ -2225,13 +2225,13 @@ __int64 game_menu_16ed430(_QWORD* a1, char a2, char a3)
   __int64 v39;
   __int64 v40;
   int v41;
-  const char* v42[2];
   struct {
+    const char* v42[2];
     __int64* v43;
     __int64 v44;
     char gap32_[24];
     __int64 v45;
-  } v43_;
+  } f_;
 
   v4 = a1[7];
   if (v4 == 0) {
@@ -2259,16 +2259,16 @@ __int64 game_menu_16ed430(_QWORD* a1, char a2, char a3)
     v10 = ui_LayoutAccessor_empty__ptr[0];
   }
 LABEL_6:
-  v42[0] = "L_Special";
-  v42[1] = (_BYTE*)(((_UNKNOWN**)0x8LL) + 1);
-  GameRoutine_1114920((void*)(&v43_.v43), v10, v42);
-  if (v43_.v44 == 0) {
+  f_.v42[0] = "L_Special";
+  f_.v42[1] = (_BYTE*)(((_UNKNOWN**)0x8LL) + 1);
+  GameRoutine_1114920((void*)(&f_.v43), v10, f_.v42);
+  if (f_.v44 == 0) {
     goto LABEL_17;
   }
-  v11 = std___1___shared_weak_count_lock(v43_.v44);
-  v12 = (__int64)v43_.v43;
-  if (v43_.v44 != 0) {
-    std___1___shared_weak_count___release_weak(v43_.v44);
+  v11 = std___1___shared_weak_count_lock(f_.v44);
+  v12 = (__int64)f_.v43;
+  if (f_.v44 != 0) {
+    std___1___shared_weak_count___release_weak(f_.v44);
   }
   if (v11 != 0 && v12 != 0) {
     if ((a3 & 1) != 0) {
@@ -2322,14 +2322,14 @@ LABEL_18:
 LABEL_27:
   v18 = ui_LayoutAccessor_empty__ptr[0];
 LABEL_28:
-  LayoutAccessor_1560070((void*)(&v43_.v43), v18, "L_Special");
-  result = v43_.v44;
-  if (v43_.v44 != 0) {
-    v22 = std___1___shared_weak_count_lock(v43_.v44);
-    v23 = v43_.v43;
-    result = v43_.v44;
-    if (v43_.v44 != 0) {
-      result = std___1___shared_weak_count___release_weak(v43_.v44);
+  LayoutAccessor_1560070((void*)(&f_.v43), v18, "L_Special");
+  result = f_.v44;
+  if (f_.v44 != 0) {
+    v22 = std___1___shared_weak_count_lock(f_.v44);
+    v23 = f_.v43;
+    result = f_.v44;
+    if (f_.v44 != 0) {
+      result = std___1___shared_weak_count___release_weak(f_.v44);
     }
     if (v22 != 0 && v23 != nullptr) {
       v24 = (*(__int64 (**)(_QWORD*))(*a1 + 464LL))(a1);
@@ -2345,13 +2345,13 @@ LABEL_28:
               v28 = &GameData_22594e8;
             }
             else {
-              v43_.v45 = v27;
+              f_.v45 = v27;
               v28 = &GameData_22594e8;
               if (__cxa_guard_acquire((__int64)&GameData_22594f0) != 0) {
                 GameData_22594e8 = -1;
                 __cxa_guard_release((__int64)&GameData_22594f0);
               }
-              v27 = v43_.v45;
+              v27 = f_.v45;
             }
           }
           else {
@@ -2359,15 +2359,15 @@ LABEL_28:
           }
           v29 = *v28;
           v30 = v27;
-          LODWORD(v43_.v43) = v29;
+          LODWORD(f_.v43) = v29;
           (*(void (**)(__int64, _QWORD, __int64**))(*(_QWORD*)v27 + 40LL))(
-              v27, 0, &v43_.v43);
+              v27, 0, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v30 + 40LL))(
-              v30, 1, &v43_.v43);
+              v30, 1, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v30 + 40LL))(
-              v30, 2, &v43_.v43);
+              v30, 2, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v30 + 40LL))(
-              v30, 3, &v43_.v43);
+              v30, 3, &f_.v43);
         }
       }
       v31 = ui_LayoutAccessor_FindPane(v23, "Wdw_R");
@@ -2381,13 +2381,13 @@ LABEL_28:
               v33 = &GameData_22594e8;
             }
             else {
-              v43_.v45 = v32;
+              f_.v45 = v32;
               v33 = &GameData_22594e8;
               if (__cxa_guard_acquire((__int64)&GameData_22594f0) != 0) {
                 GameData_22594e8 = -1;
                 __cxa_guard_release((__int64)&GameData_22594f0);
               }
-              v32 = v43_.v45;
+              v32 = f_.v45;
             }
           }
           else {
@@ -2395,15 +2395,15 @@ LABEL_28:
           }
           v34 = *v33;
           v35 = v32;
-          LODWORD(v43_.v43) = v34;
+          LODWORD(f_.v43) = v34;
           (*(void (**)(__int64, _QWORD, __int64**))(*(_QWORD*)v32 + 40LL))(
-              v32, 0, &v43_.v43);
+              v32, 0, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v35 + 40LL))(
-              v35, 1, &v43_.v43);
+              v35, 1, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v35 + 40LL))(
-              v35, 2, &v43_.v43);
+              v35, 2, &f_.v43);
           (*(void (**)(__int64, __int64, __int64**))(*(_QWORD*)v35 + 40LL))(
-              v35, 3, &v43_.v43);
+              v35, 3, &f_.v43);
         }
       }
       v36 = 72;

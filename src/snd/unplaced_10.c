@@ -275,14 +275,16 @@ __int64 snd_e4f40(__int64 result, _DWORD* a2, char* a3, char* a4)
   _QWORD* v52;
   _QWORD* v53;
   __int64 v54;
-  _DWORD* v55;
-  __int64 v58;
-  unsigned int v59;
   struct {
+    _DWORD* v55;
+    char gap8_[16];
+    __int64 v58;
+    char gap32_[4];
+    unsigned int v59;
     __int64 v60;
     unsigned __int64 v61;
     char* v62;
-  } v60_;
+  } f_;
 
   v4 = *(_DWORD**)(result + 272);
   v5 = a2;
@@ -293,60 +295,60 @@ __int64 snd_e4f40(__int64 result, _DWORD* a2, char* a3, char* a4)
   *(_QWORD*)(result + 304) = a2;
   *(_QWORD*)(result + 272) = a2;
   v7 = *(_DWORD*)a2;
-  ConstructString_1901f0(&v60_.v60);
-  result = TargetFile_a392e0((__int64)&v60_.v60, (__int64)"[ %08x ]", v7);
+  ConstructString_1901f0(&f_.v60);
+  result = TargetFile_a392e0((__int64)&f_.v60, (__int64)"[ %08x ]", v7);
   v8 = (_QWORD*)(v6 + 280);
-  if ((__int64*)(v6 + 280) == &v60_.v60) {
+  if ((__int64*)(v6 + 280) == &f_.v60) {
     if ((*(_BYTE*)(v6 + 280) & 1) != 0) {
       result = (*(__int64 (**)(_QWORD, _QWORD))(
           **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0],
                                                    *(_QWORD*)(v6 + 296));
     }
-    v10 = v60_.v60;
-    v11 = v60_.v61;
-    LOWORD(v60_.v60) = 0;
+    v10 = f_.v60;
+    v11 = f_.v61;
+    LOWORD(f_.v60) = 0;
     *v8 = v10;
     *(_QWORD*)(v6 + 288) = v11;
-    *(_QWORD*)(v6 + 296) = v60_.v62;
+    *(_QWORD*)(v6 + 296) = f_.v62;
     goto LABEL_19;
   }
   if ((*(_BYTE*)(v6 + 280) & 1) != 0) {
-    if ((v60_.v60 & 1) != 0) {
-      v12 = v60_.v62;
+    if ((f_.v60 & 1) != 0) {
+      v12 = f_.v62;
     }
     else {
-      v12 = (char*)&v60_.v60 + 1;
+      v12 = (char*)&f_.v60 + 1;
     }
-    if ((v60_.v60 & 1) != 0) {
-      v13 = v60_.v61;
+    if ((f_.v60 & 1) != 0) {
+      v13 = f_.v61;
     }
     else {
-      v13 = (unsigned __int64)(unsigned __int8)v60_.v60 >> 1;
+      v13 = (unsigned __int64)(unsigned __int8)f_.v60 >> 1;
     }
     result =
         (__int64)GameRoutine_a3a260((__int64*)(v6 + 280), (__int64)v12, v13);
-    if ((v60_.v60 & 1) != 0) {
+    if ((f_.v60 & 1) != 0) {
       goto LABEL_18;
     }
   }
   else {
-    if ((v60_.v60 & 1) == 0) {
-      v9 = v60_.v61;
-      *v8 = v60_.v60;
+    if ((f_.v60 & 1) == 0) {
+      v9 = f_.v61;
+      *v8 = f_.v60;
       *(_QWORD*)(v6 + 288) = v9;
-      *(_QWORD*)(v6 + 296) = v60_.v62;
-      if ((v60_.v60 & 1) == 0) {
+      *(_QWORD*)(v6 + 296) = f_.v62;
+      if ((f_.v60 & 1) == 0) {
         goto LABEL_19;
       }
     LABEL_18:
       result = (*(__int64 (**)(_QWORD, char*))(**(_QWORD**)snd_g_memory_ptr[0] +
                                                24LL))(*snd_g_memory_ptr[0],
-                                                      v60_.v62);
+                                                      f_.v62);
       goto LABEL_19;
     }
-    result = (__int64)GameRoutine_a3a3a0((_QWORD*)(v6 + 280), (__int64)v60_.v62,
-                                         v60_.v61);
-    if ((v60_.v60 & 1) != 0) {
+    result = (__int64)GameRoutine_a3a3a0((_QWORD*)(v6 + 280), (__int64)f_.v62,
+                                         f_.v61);
+    if ((f_.v60 & 1) != 0) {
       goto LABEL_18;
     }
   }
@@ -354,7 +356,7 @@ LABEL_19:
   v14 = v5[4];
   if (v14 >= 1) {
     v15 = 0;
-    v55 = v5;
+    f_.v55 = v5;
     v16 = GameData_212e2d8 + 16;
     do {
       v19 = *((_QWORD*)v5 + 1) + 1856 * v15;
@@ -365,7 +367,7 @@ LABEL_19:
         *(float*)(v20 + 164) = v21;
         v22 = *(float*)(v19 + 28);
         *(float*)(v20 + 168) = v22;
-        v58 = v19;
+        f_.v58 = v19;
         v23 = v19 + 60;
         v24 = 0;
         *(float*)(v20 + 160) =
@@ -459,13 +461,13 @@ LABEL_19:
           }
           ++v24;
         } while (v24 != 64);
-        v17 = *(char**)v58;
+        v17 = *(char**)f_.v58;
         v18 = Crc32List_1163b0();
-        v59 = (unsigned int)snd_fnd_calcCrc32(*(unsigned __int8**)(v58 + 8), 0);
-        Manager_11ec80((void*)((__int64)&v60_.v60), v18, (int*)&v59);
-        result = Wind_e5340(v6, v17, a3, a4, v20, (__int64)&v60_.v60);
-        v5 = v55;
-        v14 = v55[4];
+        f_.v59 = (unsigned int)snd_fnd_calcCrc32(*(unsigned __int8**)(f_.v58 + 8), 0);
+        Manager_11ec80((void*)((__int64)&f_.v60), v18, (int*)&f_.v59);
+        result = Wind_e5340(v6, v17, a3, a4, v20, (__int64)&f_.v60);
+        v5 = f_.v55;
+        v14 = f_.v55[4];
       }
       ++v15;
     } while (v15 < v14);

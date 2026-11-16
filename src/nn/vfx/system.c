@@ -159,15 +159,17 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   __int64 v93;
   __int64 v94;
   int v95;
-  __int64 v97;
-  int v98;
-  unsigned __int64 v99;
-  __int64 v100[6];
   struct {
+    char gap0_[8];
+    __int64 v97;
+    int v98;
+    char gap20_[4];
+    unsigned __int64 v99;
+    __int64 v100[6];
     _QWORD v101[2];
     __int64 v102;
     __int64 v103;
-  } v101_;
+  } f_;
 
   *(_QWORD*)(a1 + 56) = *(_QWORD*)(a4 + 8);
   v7 = *(_DWORD*)(a4 + 48);
@@ -183,36 +185,36 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   *(_BYTE*)(a1 + 54) = *(_BYTE*)(a4 + 76);
   GameRoutine_5c01b0_alt1(a1 + 64);
   GameRoutine_5c0260_alt1((__int64)a3);
-  v100[0] = *(_QWORD*)(a1 + 56);
-  v100[1] = 0x4C00000012LL;
+  f_.v100[0] = *(_QWORD*)(a1 + 56);
+  f_.v100[1] = 0x4C00000012LL;
   v9 = *a3;
-  v100[3] = 112LL * *(int*)(a4 + 32) + 32;
+  f_.v100[3] = 112LL * *(int*)(a4 + 32) + 32;
   v10 = (*(__int64 (**)(__int64*))(v9 + 16))(a3);
   v11 = *(_QWORD*)(a1 + 56);
   *(_QWORD*)(a1 + 5808) = v10;
-  v100[2] = v10;
-  v101_.v102 = 0;
-  v101_.v103 = 0;
-  v101_.v101[0] = 0;
-  v101_.v101[1] = 0;
-  GameRoutine_5fc190((__int64)v101_.v101);
-  LODWORD(v101_.v101[0]) = 18;
-  GameRoutine_5fe2d0(v11, v101_.v101);
+  f_.v100[2] = v10;
+  f_.v102 = 0;
+  f_.v103 = 0;
+  f_.v101[0] = 0;
+  f_.v101[1] = 0;
+  GameRoutine_5fc190((__int64)f_.v101);
+  LODWORD(f_.v101[0]) = 18;
+  GameRoutine_5fe2d0(v11, f_.v101);
   v12 = *(_QWORD*)(a1 + 56);
   v13 = *(_QWORD*)(a4 + 80);
-  v101_.v102 = 0;
-  v101_.v103 = 0;
-  v101_.v101[0] = 0;
-  v101_.v101[1] = 0;
-  GameRoutine_5fc190((__int64)v101_.v101);
-  LODWORD(v101_.v101[0]) = 18;
-  v14 = GameRoutine_5fe2e0(v12, v101_.v101);
+  f_.v102 = 0;
+  f_.v103 = 0;
+  f_.v101[0] = 0;
+  f_.v101[1] = 0;
+  GameRoutine_5fc190((__int64)f_.v101);
+  LODWORD(f_.v101[0]) = 18;
+  v14 = GameRoutine_5fe2e0(v12, f_.v101);
   v15 = *a3;
-  v100[5] = (v13 + v14 - 1) & -v14;
+  f_.v100[5] = (v13 + v14 - 1) & -v14;
   v16 = (*(__int64 (**)(__int64*))(v15 + 16))(a3);
   *(_QWORD*)(a1 + 5816) = v16;
-  v100[4] = v16;
-  GameHr_5b47e0(a1 + 5320, v100);
+  f_.v100[4] = v16;
+  GameHr_5b47e0(a1 + 5320, f_.v100);
   v17 = *(_QWORD*)(a1 + 56);
   if (*(_BYTE*)(a1 + 54) != 0) {
     v18 = 3;
@@ -334,11 +336,11 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   memset(v49, 0, v50);
   v51 = *(_QWORD*)(a1 + 168);
   v52 = *(__int64**)(a1 + 56);
-  v101_.v101[0] = 0;
-  v101_.v101[1] = 0;
-  GameRoutine_5fc180(v101_.v101);
-  HIDWORD(v101_.v101[0]) = 16;
-  v53 = GameHr_5fc7e0(v52, (__int64)v101_.v101);
+  f_.v101[0] = 0;
+  f_.v101[1] = 0;
+  GameRoutine_5fc180(f_.v101);
+  HIDWORD(f_.v101[0]) = 16;
+  v53 = GameHr_5fc7e0(v52, (__int64)f_.v101);
   v54 = ((v53 + 191) & -v53) * *(_DWORD*)(a1 + 112) * v48;
   if ((GameHr_5ded80(a1 + 4888, *(__int64**)(a1 + 56), a1 + 64, 16, v54) & 1) !=
       0) {
@@ -455,13 +457,13 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   *(_QWORD*)(a1 + 3408) = v75;
   *(_QWORD*)(a1 + 3496) = v75;
   *(_QWORD*)(a1 + 3584) = v75;
-  v98 = v76;
+  f_.v98 = v76;
   *(_QWORD*)(a1 + 3672) = v75;
   *(_QWORD*)(a1 + 3760) = v75;
   GameRoutine_5ca630(a1 + 64, a1, v77, v78);
   GameRoutine_5dba10(a1 + 64, a1, *(_DWORD*)(a1 + 96));
   GameRoutine_5cdd50(a1 + 64, a1, *(_DWORD*)(a1 + 96), *(_DWORD*)(a1 + 144));
-  v97 = *(_QWORD*)(a1 + 80);
+  f_.v97 = *(_QWORD*)(a1 + 80);
   GameRoutine_5ddca0((_QWORD*)a1);
   v79 = nn_lmem_AllocateFromFrameHeap(FrameHeapEPvmi, *(_QWORD*)(a1 + 24), 16);
   v80 = *(_QWORD*)(a1 + 40);
@@ -472,7 +474,7 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
     v82 = 0;
     v83 = 0;
     v84 = 0;
-    v99 = 16LL * *(int*)(a1 + 108);
+    f_.v99 = 16LL * *(int*)(a1 + 108);
     v85 = 8LL * *(int*)(a1 + 4792);
     do {
       v86 = FrameHeapEPvmi;
@@ -613,7 +615,7 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
       *(_DWORD*)(*(_QWORD*)(a1 + 16) + v82 + 2496) = 6;
       *(_DWORD*)(*(_QWORD*)(a1 + 16) + v82 + 2512) = 0;
       *(_QWORD*)(*(_QWORD*)(a1 + 16) + v82 + 2504) =
-          nn_lmem_AllocateFromFrameHeap(v86, v99, 16);
+          nn_lmem_AllocateFromFrameHeap(v86, f_.v99, 16);
       *(_QWORD*)(*(_QWORD*)(a1 + 16) + v82 + 2520) =
           nn_lmem_AllocateFromFrameHeap(v86, v85, 16);
       *(_DWORD*)(*(_QWORD*)(a1 + 32) + v83) = v84++;
@@ -671,7 +673,7 @@ __int64 System_Unknown2(__int64 a1, __int64 a2, __int64* a3, __int64 a4)
   GameRoutine_5c04f0("  NoiseTexture    WorkSize : %d \n", v95);
   GameRoutine_5c04f0("  TempBuffer      WorkSize : %d \n", v81);
   GameRoutine_5c04f0("-------------------------------\n");
-  GameRoutine_5c04f0("Stripe            WorkSize : %d \n", v97 - v98);
+  GameRoutine_5c04f0("Stripe            WorkSize : %d \n", f_.v97 - f_.v98);
   return GameRoutine_5c04f0("-------------------------------\n");
 }
 

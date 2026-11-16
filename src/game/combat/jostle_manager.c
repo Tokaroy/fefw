@@ -97,7 +97,7 @@ extern __int64 (*GameData_1fed378[])();
 extern __int64 GameData_21c9680;
 extern __int64 GameData_21c9710;
 extern int* GameData_212f2e8[7];
-__int64 game_combat_JostleManager_JostleManager(__int64 a1);
+void game_combat_JostleManager_JostleManager(__int64 a1);
 
 __int64 JostleManager_ea0220(__int64** a1, __int64 a2, float* a3, _BYTE* a4,
                              float a5)
@@ -627,7 +627,7 @@ __int64 JostleManager_ea0220(__int64** a1, __int64 a2, float* a3, _BYTE* a4,
   return v5 & 1;
 }
 
-__int64 game_combat_JostleManager_JostleManager(__int64 a1)
+void game_combat_JostleManager_JostleManager(__int64 a1)
 {
   __int64* v2;
   __int64 v3;
@@ -800,9 +800,10 @@ LABEL_27:
   GameRoutine_66b000(&GameData_21c9680, &f_.v21);
   result = f_.v22;
   if (f_.v22 != 0) {
-    return std___1___shared_weak_count___release_weak_alt2(f_.v22);
+    (void)(std___1___shared_weak_count___release_weak_alt2(f_.v22));
+    return;
   }
-  return result;
+  return;
 }
 
 _QWORD* JostleManager_Destructor(_QWORD* result)

@@ -1018,44 +1018,48 @@ game_map_MapUnitCommandSkillMenu_CreateBindSpecial_lambda0_Invoke(__int64 a1,
   unsigned int v9;
   __int64 v10;
   __int64 v11;
-  __int64* v13;
-  char v14;
-  unsigned __int64 v15;
-  int v16;
-  char v17;
-  int v18;
-  __int64 v19;
-  int v20;
-  int v21;
-  char v22;
   struct {
+    char gap0_[8];
+    __int64* v13;
+    char v14;
+    char gap17_[3];
+    unsigned __int64 v15;
+    int v16;
+    char v17;
+    char gap33_[3];
+    int v18;
+    __int64 v19;
+    int v20;
+    int v21;
+    char v22;
+    char gap57_[7];
     _QWORD v23[4];
     _QWORD* v24;
     char gap104_[36];
     unsigned __int8 v25;
-  } v23_;
+  } f_;
 
   {
     v2 = *a2;
     __asm__ volatile("" ::"r"(v2));
   }
-  v20 = 0;
+  f_.v20 = 0;
   {
-    v13 = GameData_212d1f8[0] + 2;
-    __asm__ volatile("" ::"r"(v13));
+    f_.v13 = GameData_212d1f8[0] + 2;
+    __asm__ volatile("" ::"r"(f_.v13));
   }
   v3 = MapUnitCommandSkillMenu_15bdea0_alt1();
-  v14 = 0;
-  v15 = 0;
+  f_.v14 = 0;
+  f_.v15 = 0;
   {
     v6 = *(_BYTE*)(*GameData_212cfd0[0] + 20);
     __asm__ volatile("" ::"r"(v6));
   }
-  v19 = 0;
-  v21 = -1;
-  v22 = 0;
-  v18 = -1;
-  v16 = 0;
+  f_.v19 = 0;
+  f_.v21 = -1;
+  f_.v22 = 0;
+  f_.v18 = -1;
+  f_.v16 = 0;
   if (v3 != nullptr) {
     {
       v7 = *((_DWORD*)v3 + 148);
@@ -1066,17 +1070,17 @@ game_map_MapUnitCommandSkillMenu_CreateBindSpecial_lambda0_Invoke(__int64 a1,
       __asm__ volatile("" ::"r"(v8));
     }
     {
-      v14 = *((_BYTE*)v3 + 2088);
-      __asm__ volatile("" ::"r"(v14));
+      f_.v14 = *((_BYTE*)v3 + 2088);
+      __asm__ volatile("" ::"r"(f_.v14));
     }
     {
       v9 = *((char*)v3 + 584);
       __asm__ volatile("" ::"r"(v9));
     }
-    v16 = v7;
-    v15 = __PAIR64__(v8, v9);
+    f_.v16 = v7;
+    f_.v15 = __PAIR64__(v8, v9);
   }
-  v17 = v6;
+  f_.v17 = v6;
   {
     v10 =
         *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) + 8LL * (v2 & 0xFFF));
@@ -1085,22 +1089,22 @@ game_map_MapUnitCommandSkillMenu_CreateBindSpecial_lambda0_Invoke(__int64 a1,
   if (v10 != 0) {
     LODWORD(v10) = *(_WORD*)(v10 + 16) & 0xFFF;
   }
-  v20 = v10;
-  v23_.v25 = 0;
-  v23_.v23[0] = GameData_1f97c90;
-  v23_.v23[1] = &v23_.v25;
-  v23_.v24 = v23_.v23;
-  game_map_ITarget_EachSelectable((__int64)&v13, (__int64)v23_.v23);
-  if (v23_.v24 == v23_.v23) {
+  f_.v20 = v10;
+  f_.v25 = 0;
+  f_.v23[0] = GameData_1f97c90;
+  f_.v23[1] = &f_.v25;
+  f_.v24 = f_.v23;
+  game_map_ITarget_EachSelectable((__int64)&f_.v13, (__int64)f_.v23);
+  if (f_.v24 == f_.v23) {
     v11 = 32;
     goto LABEL_9;
   }
-  if (v23_.v24 != nullptr) {
+  if (f_.v24 != nullptr) {
     v11 = 40;
   LABEL_9:
-    (*(void (**)(__int64))(*v23_.v24 + v11))((__int64)v23_.v24);
+    (*(void (**)(__int64))(*f_.v24 + v11))((__int64)f_.v24);
   }
-  return v23_.v25;
+  return f_.v25;
 }
 
 #pragma GCC visibility pop

@@ -451,12 +451,12 @@ __int64 game_cutscene_1811840(__int64 result)
   __int64* v50;
   __int64 v51;
   __int64 v52;
-  unsigned __int64 v53;
-  unsigned __int64 v54;
   struct {
+    unsigned __int64 v53;
+    unsigned __int64 v54;
     _QWORD v55[4];
     _QWORD* v56;
-  } v55_;
+  } f_;
 
   v31 = COERCE_AS(__typeof__(v31),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -714,7 +714,7 @@ __int64 game_cutscene_1811840(__int64 result)
             v43 = COERCE_AS(__typeof__(v43),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
             v44 = v42 == 0 || v43 == 0xFFFFFFFFLL;
-            v54 = v54 & 0xFFFFFFFF00000000LL | v43;
+            f_.v54 = f_.v54 & 0xFFFFFFFF00000000LL | v43;
             if (!v44) {
               v45 = v42;
               v46 = (_QWORD*)fw_memory_HeapManager_Allocate(
@@ -728,7 +728,7 @@ __int64 game_cutscene_1811840(__int64 result)
               *v46 = GameData_20df330;
               v46[3] = &game_cutscene_anonymous_DefaultCamera_vtable_ptr;
               v46[4] = v45;
-              v46[5] = v54;
+              v46[5] = f_.v54;
               v47 = v16[3];
               v16[2] = (__int64)(v46 + 3);
               v16[3] = (__int64)v46;
@@ -787,7 +787,7 @@ __int64 game_cutscene_1811840(__int64 result)
             v43 = COERCE_AS(__typeof__(v43),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
             v32 = v30 == 0 || v31 == 0xFFFFFFFFLL;
-            v53 = v53 & 0xFFFFFFFF00000000LL | v31;
+            f_.v53 = f_.v53 & 0xFFFFFFFF00000000LL | v31;
             if (!v32) {
               v33 = v30;
               v34 = (_QWORD*)fw_memory_HeapManager_Allocate(
@@ -801,7 +801,7 @@ __int64 game_cutscene_1811840(__int64 result)
               *v34 = GameData_20df330;
               v34[3] = &game_cutscene_anonymous_DefaultCamera_vtable_ptr;
               v34[4] = v33;
-              v34[5] = v53;
+              v34[5] = f_.v53;
               v35 = v16[3];
               v16[2] = (__int64)(v34 + 3);
               v16[3] = (__int64)v34;
@@ -857,12 +857,12 @@ __int64 game_cutscene_1811840(__int64 result)
   LABEL_88:
     v49 = *(__int64**)(v1 + 176);
     v50 = *(__int64**)(v1 + 184);
-    v55_.v55[2] = 0;
-    v55_.v55[3] = v1;
-    v55_.v55[0] = GameData_20df380;
-    v55_.v55[1] = &GameRoutine_1811e40;
-    result = (__int64)v55_.v55;
-    v55_.v56 = v55_.v55;
+    f_.v55[2] = 0;
+    f_.v55[3] = v1;
+    f_.v55[0] = GameData_20df380;
+    f_.v55[1] = &GameRoutine_1811e40;
+    result = (__int64)f_.v55;
+    f_.v56 = f_.v55;
     if (v49 == v50) {
       goto LABEL_96;
     }
@@ -872,7 +872,7 @@ __int64 game_cutscene_1811840(__int64 result)
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
       v43 = COERCE_AS(__typeof__(v43),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      (*(void (**)(__int64, _QWORD*))(*(_QWORD*)*v49 + 64LL))(*v49, v55_.v55),
+      (*(void (**)(__int64, _QWORD*))(*(_QWORD*)*v49 + 64LL))(*v49, f_.v55),
           v31 = COERCE_AS(__typeof__(v31),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
           v43 = COERCE_AS(__typeof__(v43),
@@ -892,13 +892,13 @@ __int64 game_cutscene_1811840(__int64 result)
       }
       v49 += 2;
     } while (v49 != v50);
-    result = (__int64)v55_.v56;
-    if (v55_.v56 == v55_.v55) {
+    result = (__int64)f_.v56;
+    if (f_.v56 == f_.v55) {
     LABEL_96:
       v52 = 32;
     }
     else {
-      if (v55_.v56 == nullptr) {
+      if (f_.v56 == nullptr) {
       LABEL_98:
         *(_BYTE*)(v1 + 201) = 1;
         return result;

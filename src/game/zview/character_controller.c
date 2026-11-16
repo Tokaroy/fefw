@@ -2599,19 +2599,20 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
   __int64* v89;
   __int64 hit;
   __int64 v90;
-  _QWORD v91[5];
-  _QWORD v92[5];
   struct {
+    char gap0_[8];
+    _QWORD v91[5];
+    _QWORD v92[5];
     __int64 v93;
     __int64 v94;
     __int64 v95;
     __int64 v96;
     __int64 v97;
-  } v93_;
+  } f_;
 
-  LODWORD(v93_.v93) = 1038;
+  LODWORD(f_.v93) = 1038;
   GameRoutine_daa180(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL) + 32LL),
-                     (int*)&v93_.v93);
+                     (int*)&f_.v93);
   v2 = *(_QWORD*)(a1 + 8);
   v3 = *(_QWORD*)(*(_QWORD*)(v2 + 8) + 32LL);
   v4 = *(_QWORD*)(v3 + 16);
@@ -2694,7 +2695,7 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
         v8 = *(_QWORD*)(a1 + 8);
       }
       v84 = *(_QWORD*)(v8 + 488);
-      *(float*)&v93_.v93 = v28;
+      *(float*)&f_.v93 = v28;
       v85 = fmodf(*(float*)(v84 + 36) - v28, 0x1.921fb60000000p+2f);
       v86 = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL);
       v87 = *(_QWORD*)(v86 + 24);
@@ -2716,7 +2717,7 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
       }
       else {
         GameRoutine_d33890(
-            v87, (int*)&v93_.v93, 0,
+            v87, (int*)&f_.v93, 0,
             (float)((float)(**(float**)(v86 + 144) * 0x1.0000000000000p-1f) +
                     0x1.0000000000000p+0f) *
                 0x1.921fa00000000p+2f);
@@ -2753,27 +2754,27 @@ void CharacterController_StateActionRoot_Unknown4(__int64 a1)
   v13 = *(_QWORD*)(a1 + 8);
   if (v12 > 0x1.f5c28e0000000p-2f && (*(_BYTE*)(v13 + 36) & 1) == 0) {
     v14 = *(_QWORD*)(*(_QWORD*)(v13 + 40) + 24LL);
-    v93_.v96 = 0;
-    v93_.v97 = 0;
-    v93_.v95 = 0x40A0000040A00000LL;
-    v92[3] = 0;
-    v92[4] = 0;
-    v92[2] = 0x40A0000040A00000LL;
-    v91[3] = 0;
-    v91[4] = 0;
-    v91[2] = 0x40A0000040A00000LL;
-    v93_.v93 = 0x4020000040200000LL;
-    v93_.v94 = 0;
-    v92[0] = 0x4020000040200000LL;
-    v92[1] = 0;
-    v91[0] = 0x4020000040200000LL;
-    v91[1] = 0;
-    hit = CharacterController_d40860(v14, (__int64)&v93_.v93, (__int64)v92,
-                                     (__int64)v91);
+    f_.v96 = 0;
+    f_.v97 = 0;
+    f_.v95 = 0x40A0000040A00000LL;
+    f_.v92[3] = 0;
+    f_.v92[4] = 0;
+    f_.v92[2] = 0x40A0000040A00000LL;
+    f_.v91[3] = 0;
+    f_.v91[4] = 0;
+    f_.v91[2] = 0x40A0000040A00000LL;
+    f_.v93 = 0x4020000040200000LL;
+    f_.v94 = 0;
+    f_.v92[0] = 0x4020000040200000LL;
+    f_.v92[1] = 0;
+    f_.v91[0] = 0x4020000040200000LL;
+    f_.v91[1] = 0;
+    hit = CharacterController_d40860(v14, (__int64)&f_.v93, (__int64)f_.v92,
+                                     (__int64)f_.v91);
     // The body is in this unit, hide what clang knows of it.
     __asm__("" : "+r"(hit));
     if ((hit & 1) != 0) {
-      GameRoutine_d40750(v14, (__int64)&v93_.v93, (__int64)v92, (__int64)v91);
+      GameRoutine_d40750(v14, (__int64)&f_.v93, (__int64)f_.v92, (__int64)f_.v91);
       v15 = *(_QWORD*)(a1 + 8);
       if ((*(_BYTE*)(v15 + 848) & 1) == 0) {
         if (*(_BYTE*)(v15 + 28) != 1 || *(_DWORD*)(v15 + 24) != 3) {
@@ -2871,15 +2872,15 @@ LABEL_44:
         *(_DWORD*)(v36 + 40) = 0;
         *(_QWORD*)v36 = v39 + 2;
         *(_QWORD*)(v36 + 24) = 0x3E4CCCCD3F99999ALL;
-        v93_.v93 = v36 + 24;
-        v93_.v94 = v36;
+        f_.v93 = v36 + 24;
+        f_.v94 = v36;
         *(_QWORD*)(v36 + 32) = 0x3ECCCCCD3ECCCCCDLL;
         v40 = *(__int64**)(*(_QWORD*)(a1 + 8) + 464LL);
         atomic_fetch_add_explicit(v37, 1u, memory_order_relaxed);
-        GameRoutine_d78b40(v40, &v93_.v93);
-        v41 = v93_.v94;
-        if (v93_.v94 != 0 &&
-            atomic_fetch_add((atomic_ullong* volatile)(v93_.v94 + 8),
+        GameRoutine_d78b40(v40, &f_.v93);
+        v41 = f_.v94;
+        if (f_.v94 != 0 &&
+            atomic_fetch_add((atomic_ullong* volatile)(f_.v94 + 8),
                              0xFFFFFFFFFFFFFFFFLL) == 0) {
           (*(void (**)(__int64))(*(_QWORD*)v41 + 16LL))(v41);
           std___1___shared_weak_count___release_weak_alt3(v41);
@@ -3186,10 +3187,10 @@ LABEL_156:
       if ((snd_fnd_WeakHandle_isValid((__int64*)(a1 + 56)) & 1) == 0 &&
           !(*(float*)(a1 + 52) < 0x1.99999a0000000p-3f)) {
         game_zview_d56a60(
-            (void*)((__int64)&v93_.v93),
+            (void*)((__int64)&f_.v93),
             *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL) + 40LL),
             (__int64)"SE_FS_Add_Orhel_Sprint_Jet_lp", 0x1.0000000000000p+0f);
-        GameRoutine_112180(a1 + 56, (__int64)&v93_.v93);
+        GameRoutine_112180(a1 + 56, (__int64)&f_.v93);
       }
     }
   }

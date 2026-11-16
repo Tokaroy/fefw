@@ -288,7 +288,7 @@ __int64 game_menu_16a0c30(_QWORD* a1);
 void game_menu_16a0cf0(_QWORD* a1);
 __int64 game_menu_16a1bc0(__int64 a1);
 __int64 game_menu_16dcd30(__int64 a1, __int64 a2, _QWORD* a3, __int64 a4);
-float game_menu_16df380(__int64 a1);
+void game_menu_16df380(__int64 a1);
 __int64 game_menu_16ec3d0(__int64 a1, __int64 a2);
 void game_menu_16ec940(_QWORD* a1);
 __int64 game_menu_16f75a0(__int64 a1, char** a2);
@@ -2400,7 +2400,7 @@ __int64 game_menu_16dcd30(__int64 a1, __int64 a2, _QWORD* a3, __int64 a4)
   return result;
 }
 
-float game_menu_16df380(__int64 a1)
+void game_menu_16df380(__int64 a1)
 {
 
 #pragma clang fp contract(off)
@@ -2493,7 +2493,8 @@ float game_menu_16df380(__int64 a1)
           }
         }
         if ((v1 & 1) == 0) {
-          return GameRoutine_16e79a0(a1 + 408, v4);
+          (void)(GameRoutine_16e79a0(a1 + 408, v4));
+          return;
         }
       LABEL_21:
         v17 = *(float*)(a1 + 568);
@@ -2553,17 +2554,20 @@ float game_menu_16df380(__int64 a1)
                                     0x1.0000000000000p-1f)) +
               0x0.0p+0f;
         }
-        return GameRoutine_16e79a0(a1 + 408, v4);
+        (void)(GameRoutine_16e79a0(a1 + 408, v4));
+        return;
       }
     LABEL_16:
       v15 = *(_QWORD*)(a1 + 960);
       if (v15 == 0 || *(_QWORD*)(v15 + 8) == -1) {
-        return GameRoutine_16e79a0(a1 + 408, v4);
+        (void)(GameRoutine_16e79a0(a1 + 408, v4));
+        return;
       }
       goto LABEL_21;
     }
   }
-  return GameRoutine_16e79a0(a1 + 408, v4);
+  (void)(GameRoutine_16e79a0(a1 + 408, v4));
+  return;
 }
 
 __int64 game_menu_16ec3d0(__int64 a1, __int64 a2)

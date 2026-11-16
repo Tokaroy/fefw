@@ -197,14 +197,14 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
   int v38;
   float v39;
   __int64 result;
-  __int64* v41;
   struct {
+    __int64* v41;
     _BYTE v42[8];
     unsigned __int64 v43;
     __int64 v44;
     char gap32_[8];
     __int64 v45;
-  } v42_;
+  } f_;
 
   GameRoutine_1139a00_alt1((_QWORD*)(a1 + 1056));
   if (game_ProcFadeView_instance_ != 0) {
@@ -234,7 +234,7 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
   else {
     v4 = 51;
   }
-  v41 = (__int64*)(a1 + 848);
+  f_.v41 = (__int64*)(a1 + 848);
   ui_LayoutAccessor_SetPriority_alt1(a1 + 848, v4);
   v5 = GameData_21f1de8;
   *(_DWORD*)(a1 + 1696) = *(_QWORD*)(GameData_21f1de8 + 32);
@@ -242,7 +242,7 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
   if ((int)v6 >= 1) {
     v7 = *(_QWORD*)(v5 + 32) & 0x7FFFFFFFLL;
     v8 = 0;
-    v42_.v45 = v7 - 2;
+    f_.v45 = v7 - 2;
     v9 = v6 + 7;
     v10 = (__int64*)fw_memory_g_heap_manager_ptr;
     do {
@@ -284,7 +284,7 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
         else {
           v22 = v7;
         }
-        if ((unsigned __int64)(v42_.v45 - v8) >= 7) {
+        if ((unsigned __int64)(f_.v45 - v8) >= 7) {
           v23 = v22 - 1;
           do {
             v23 -= 8LL;
@@ -308,19 +308,19 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
       else {
         v25 = (const char*)(v24 + 1);
       }
-      GameRoutine_113b050_alt1((void*)((__int64)v42_.v42), v25);
-      if ((v42_.v42[0] & 1) != 0) {
-        v26 = v42_.v43;
-        if (v42_.v44 != 0) {
+      GameRoutine_113b050_alt1((void*)((__int64)f_.v42), v25);
+      if ((f_.v42[0] & 1) != 0) {
+        v26 = f_.v43;
+        if (f_.v44 != 0) {
           v27 = 128;
           if (*(_QWORD*)(*v10 + 200) == 0) {
             v27 = 56;
           }
-          nn_mem_StandardAllocator_Free_alt2(*v10 + v27, v42_.v44);
+          nn_mem_StandardAllocator_Free_alt2(*v10 + v27, f_.v44);
         }
       }
       else {
-        v26 = (unsigned __int64)v42_.v42[0] >> 1;
+        v26 = (unsigned __int64)f_.v42[0] >> 1;
       }
       v28 = *(unsigned int*)(v18 + 84);
       *(_BYTE*)(v18 + 95) = v26 != 0;
@@ -370,14 +370,14 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
   else {
     v33 = "Default";
   }
-  LayoutAccessor_1562cf0_alt1((__int64)v41, v33);
+  LayoutAccessor_1562cf0_alt1((__int64)f_.v41, v33);
   v34 = *(_QWORD*)(a1 + 856);
   if (v34 != 0) {
     v35 = std___1___shared_weak_count_lock_alt1(v34);
     if (v35 != 0) {
       v36 = v35;
-      if (*v41 != 0) {
-        ControlCreator_13633c0_alt1(*v41);
+      if (*f_.v41 != 0) {
+        ControlCreator_13633c0_alt1(*f_.v41);
       }
       if (atomic_fetch_add((atomic_ullong* volatile)(v36 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {

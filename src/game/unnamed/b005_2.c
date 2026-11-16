@@ -2208,14 +2208,17 @@ __int64 GameHr_755f40(__int64 a1, __int64 a2, char a3, char a4, char* a5)
   __int64 v20;
   __int64 v21;
   struct {
+    char gap0_[8];
     int v23;
     char gap12_[4];
     char* v24;
     __int64 v25;
     __int64 v26;
-  } v23_;
-  char v27;
-  int v30;
+    char gap40_[4];
+    char v27;
+    char gap45_[27];
+    int v30;
+  } f_;
   int v31;
 
   v7 = 0;
@@ -2224,12 +2227,12 @@ __int64 GameHr_755f40(__int64 a1, __int64 a2, char a3, char a4, char* a5)
   }
   v8 = *(unsigned __int8*)(a2 + 417);
   if (v8 >= 2) {
-    v23_.v23 = 0;
-    v23_.v24 = nullptr;
-    v23_.v25 = 0;
-    v23_.v26 = 0;
-    v27 = 1;
-    GameRoutine_74d660_alt1((__int64)&v23_.v23, v8, a3, a4);
+    f_.v23 = 0;
+    f_.v24 = nullptr;
+    f_.v25 = 0;
+    f_.v26 = 0;
+    f_.v27 = 1;
+    GameRoutine_74d660_alt1((__int64)&f_.v23, v8, a3, a4);
     v12 = *a5;
     v13 = (__int64*)fw_memory_g_heap_manager_ptr;
     v14 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
@@ -2240,30 +2243,30 @@ __int64 GameHr_755f40(__int64 a1, __int64 a2, char a3, char a4, char* a5)
     *(_BYTE*)(v14 + 24) = v12;
     *(_QWORD*)v14 = GameData_1f958d8;
     *(_QWORD*)(v14 + 8) = a1;
-    v17 = v23_.v24;
-    v18 = (char*)v23_.v25;
-    *(_QWORD*)(v14 + 32) = &v27;
+    v17 = f_.v24;
+    v18 = (char*)f_.v25;
+    *(_QWORD*)(v14 + 32) = &f_.v27;
     if (v17 != v18) {
       do {
         v19 = *v17;
-        v30 = v17[1];
+        f_.v30 = v17[1];
         v31 = v19;
-        ((void (*)(__int64 (***)(void), int*, int*))(*v16)[6])(v16, &v31, &v30);
+        ((void (*)(__int64 (***)(void), int*, int*))(*v16)[6])(v16, &v31, &f_.v30);
         v17 += 4;
       } while (v17 != v18);
       v15 = *v16;
     }
     ((void (*)(__int64 (***)(void)))v15[5])(v16);
-    if (v23_.v24 != nullptr) {
+    if (f_.v24 != nullptr) {
       v20 = *v13;
-      v23_.v25 = (__int64)v23_.v24;
+      f_.v25 = (__int64)f_.v24;
       v21 = 128;
       if (*(_QWORD*)(v20 + 200) == 0) {
         v21 = 56;
       }
-      nn_mem_StandardAllocator_Free(v20 + v21, (__int64)v23_.v24);
+      nn_mem_StandardAllocator_Free(v20 + v21, (__int64)f_.v24);
     }
-    v7 = v27;
+    v7 = f_.v27;
     return v7 & 1;
   }
   return MapUtil_756080(a1, a2, a3, a4, a5);

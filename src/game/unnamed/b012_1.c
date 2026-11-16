@@ -2665,12 +2665,12 @@ __int64 GameHr_e1ed00(__int64 result)
   __int64 v24;
   __int64 v25;
   __int64 v26;
-  __int64* v27;
-  __int64 v28;
   struct {
+    __int64* v27;
+    __int64 v28;
     __int64 v29;
     __int64 v30;
-  } v29_;
+  } f_;
 
   v1 = *(__int64**)result;
   v2 = *(__int64**)(result + 8);
@@ -2678,8 +2678,8 @@ __int64 GameHr_e1ed00(__int64 result)
     v3 = GameData_212eec0[0];
     v4 = *(_QWORD*)GameData_212dbb8[0];
     v5 = *(_QWORD*)GameData_212dbb8[0] + 65LL;
-    v28 = GameData_212f200[0] + 16;
-    v27 = GameData_212eb98[0] + 2;
+    f_.v28 = GameData_212f200[0] + 16;
+    f_.v27 = GameData_212eb98[0] + 2;
     v6 = GameData_212f1e0[0] + 16;
     do {
       v7 = *(unsigned __int8*)(v4 + 64);
@@ -2748,8 +2748,8 @@ __int64 GameHr_e1ed00(__int64 result)
                   *(_QWORD*)fw_memory_g_heap_manager_ptr, 1088, 16, 0);
               *(_QWORD*)(v25 + 8) = 0;
               *(_QWORD*)(v25 + 16) = 0;
-              *(_QWORD*)(v25 + 32) = v27;
-              *(_QWORD*)v25 = v28;
+              *(_QWORD*)(v25 + 32) = f_.v27;
+              *(_QWORD*)v25 = f_.v28;
               *(_QWORD*)(v25 + 40) = 0x400000000000LL;
               GameRoutine_6252a0_alt1(v25 + 32);
               *(_QWORD*)(v25 + 48) = 0;
@@ -2857,13 +2857,13 @@ __int64 GameHr_e1ed00(__int64 result)
               *(_BYTE*)(v25 + 1056) = 0;
               *(_BYTE*)(v25 + 1072) = 0;
               GameRoutine_df81b0(v25 + 48, v24);
-              v29_.v29 = v25 + 32;
-              v29_.v30 = v25;
-              GameRoutine_e018e0_alt1((__int64*)(v23 + 40), &v29_.v29);
-              result = GameHr_df9600(v29_.v29);
-              v26 = v29_.v30;
-              if (v29_.v30 != 0 &&
-                  atomic_fetch_add((atomic_ullong* volatile)(v29_.v30 + 8),
+              f_.v29 = v25 + 32;
+              f_.v30 = v25;
+              GameRoutine_e018e0_alt1((__int64*)(v23 + 40), &f_.v29);
+              result = GameHr_df9600(f_.v29);
+              v26 = f_.v30;
+              if (f_.v30 != 0 &&
+                  atomic_fetch_add((atomic_ullong* volatile)(f_.v30 + 8),
                                    0xFFFFFFFFFFFFFFFFLL) == 0) {
                 (*(void (**)(__int64))(*(_QWORD*)v26 + 16LL))(v26);
                 result = std___1___shared_weak_count___release_weak(v26);

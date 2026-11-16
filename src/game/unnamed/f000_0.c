@@ -926,7 +926,7 @@ float GameHr_310130(__int64 a1)
   return result;
 }
 
-float GameHr_335480(float result, __int64 a2, __int64 a3, _QWORD* a4)
+void GameHr_335480(float result, __int64 a2, __int64 a3, _QWORD* a4)
 {
   _QWORD* v4;
   __int64 v5;
@@ -1142,7 +1142,7 @@ float GameHr_335480(float result, __int64 a2, __int64 a3, _QWORD* a4)
       *((float*)v35 + 6) = result;
     } while (v11 != v7);
   }
-  return result;
+  return;
 }
 
 __int64 GameHr_3697a0(__int64 result, __int64 a2, __int64 a3, unsigned int a4,

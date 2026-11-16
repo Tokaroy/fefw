@@ -164,11 +164,11 @@ __int64 as_607560(__int64 a1)
   unsigned __int64 v76;
   __int64 v77;
   __int64 v78;
-  _QWORD v79[36];
   struct {
+    _QWORD v79[36];
     __int64 v80;
     unsigned int v81;
-  } v80_;
+  } f_;
 
   v67 = COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
   if ((as_607d20(a1) & 1) != 0) {
@@ -186,16 +186,16 @@ __int64 as_607560(__int64 a1)
           v7 = (char*)as_g_context_slots_ptr;
           v8 = (_QWORD*)(a1 + 9184);
           do {
-            sprintf(v79, "contents:/%s", v5),
+            sprintf(f_.v79, "contents:/%s", v5),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
-            as_628be0((void*)((__int64)&v80_.v80), *(_QWORD*)(a1 + 16),
-                      (__int64)v79, *(_BYTE*)(a1 + 323), *(_BYTE*)(a1 + 324)),
+            as_628be0((void*)((__int64)&f_.v80), *(_QWORD*)(a1 + 16),
+                      (__int64)f_.v79, *(_BYTE*)(a1 + 323), *(_BYTE*)(a1 + 324)),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
-            v9 = v80_.v80;
-            v10 = v80_.v81;
-            *(v8 - 2) = v80_.v80;
+            v9 = f_.v80;
+            v10 = f_.v81;
+            *(v8 - 2) = f_.v80;
             *((_DWORD*)v8 - 2) = v10;
             if ((_DWORD)v10 == 0x2000) {
               *v8 = 0;
@@ -262,16 +262,16 @@ __int64 as_607560(__int64 a1)
       v26 = *(_QWORD*)(a1 + 40);
       if ((*(_BYTE*)(a1 + 316) & 1) != 0) {
         if (v26 == 0) {
-          CScriptBuilder_CScriptBuilder(v79),
+          CScriptBuilder_CScriptBuilder(f_.v79),
               v67 = COERCE_AS(__typeof__(v67),
                               PSEUDO_REGISTER(__n128, "v0", "=w"));
           GameData_21a5450 = a1;
           v27 = *(__int64**)as_g_engine_ptr[0];
-          if ((CScriptBuilder_StartNewModule(v79, *(_QWORD*)as_g_engine_ptr[0],
+          if ((CScriptBuilder_StartNewModule(f_.v79, *(_QWORD*)as_g_engine_ptr[0],
                                              a1 + 56) &
                0x80000000) != 0) {
           LABEL_67:
-            GameRoutine_607dc0((__int64)v79),
+            GameRoutine_607dc0((__int64)f_.v79),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
             v70 = 0;
@@ -292,7 +292,7 @@ __int64 as_607560(__int64 a1)
             return v70;
           }
           GameData_21a5450 = a1;
-          v28 = CScriptBuilder_GetModule(v79),
+          v28 = CScriptBuilder_GetModule(f_.v79),
           v67 = COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
           if (((*(__int64 (**)(__int64, _QWORD, _QWORD))(
                    *(_QWORD*)v28 + 336LL))(v28, *(_QWORD*)(a1 + 32), 0) &
@@ -326,20 +326,20 @@ __int64 as_607560(__int64 a1)
         }
       }
       else if (v26 == 0) {
-        CScriptBuilder_CScriptBuilder(v79),
+        CScriptBuilder_CScriptBuilder(f_.v79),
             v67 =
                 COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
         GameData_21a5450 = a1;
         v27 = *(__int64**)as_g_engine_ptr[0];
-        if ((CScriptBuilder_StartNewModule(v79, *(_QWORD*)as_g_engine_ptr[0],
+        if ((CScriptBuilder_StartNewModule(f_.v79, *(_QWORD*)as_g_engine_ptr[0],
                                            a1 + 56) &
              0x80000000) != 0) {
           goto LABEL_67;
         }
-        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(v79, "AS_SCRIPT"),
+        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79, "AS_SCRIPT"),
             v67 =
                 COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
-        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(v79, "_MSC_VER"),
+        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79, "_MSC_VER"),
             v67 =
                 COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v31 = (unsigned __int8*)(*(__int64 (**)(_QWORD))(
@@ -352,15 +352,15 @@ __int64 as_607560(__int64 a1)
           v31 += 3;
           v32 -= 3;
         }
-        if ((CScriptBuilder_AddSectionFromMemory(v79, a1 + 56, (__int64)v31,
+        if ((CScriptBuilder_AddSectionFromMemory(f_.v79, a1 + 56, (__int64)v31,
                                                  v32, 0) &
              0x80000000) != 0) {
           goto LABEL_67;
         }
         GameData_21a5450 = a1;
-        if ((CScriptBuilder_Build((__int64)v79) & 0x80000000) == 0) {
+        if ((CScriptBuilder_Build((__int64)f_.v79) & 0x80000000) == 0) {
         LABEL_44:
-          GameRoutine_607dc0((__int64)v79),
+          GameRoutine_607dc0((__int64)f_.v79),
               v67 = COERCE_AS(__typeof__(v67),
                               PSEUDO_REGISTER(__n128, "v0", "=w"));
           goto LABEL_45;

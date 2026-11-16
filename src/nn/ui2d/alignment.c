@@ -397,14 +397,17 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
   int32x4_t v90;
   int32x4_t v91;
   int32x4_t v92;
-  float v93;
-  float v94;
   struct {
+    float v93;
+    char gap4_[12];
+    float v94;
+    char gap20_[12];
     float32x4_t v95;
     __int128 v96;
     __int128 v97;
-  } v95_;
-  float v98;
+    char gap80_[8];
+    float v98;
+  } f_;
   float v99;
 
   v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
@@ -497,7 +500,7 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
         v24 = (float32x4_t*)LANES128(a1[2]).n128_u64[1];
         if (v24 != &a1[2]) {
           v14 = LANES128(a1[5]).n128_u8[8];
-          v98 = -0x1.fffffe0000000p+127f;
+          f_.v98 = -0x1.fffffe0000000p+127f;
           v99 = 0x1.fffffe0000000p+127f;
           v25 = nn_ui2d_56d270(a1),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
@@ -507,12 +510,12 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
           v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
           v19 = LANES128(v25).n128_f32[3];
-          v95_.v95 = v25;
-          v95_.v96 = v26;
-          v95_.v97 = v27;
+          f_.v95 = v25;
+          f_.v96 = v26;
+          f_.v97 = v27;
           do {
-            Alignment_56d3e0((float32x4_t*)((char*)v24 - 8), &v99, &v98,
-                             &v95_.v95),
+            Alignment_56d3e0((float32x4_t*)((char*)v24 - 8), &v99, &f_.v98,
+                             &f_.v95),
                 v17 = COERCE_AS(__typeof__(v17),
                                 PSEUDO_REGISTER(__n128, "v1", "=w")),
                 v18 = COERCE_AS(__typeof__(v18),
@@ -528,11 +531,11 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
             v24 = (float32x4_t*)LANES128(*(v24)).n128_u64[1];
           } while (v24 != &a1[2]);
         LABEL_24:
-          if (v99 > v98) {
+          if (v99 > f_.v98) {
             goto LABEL_25;
           }
-          v21 = (float)(v98 - v19) - (float)(v99 - v19);
-          v22 = (float)((float)(v99 - v19) + (float)(v98 - v19)) *
+          v21 = (float)(f_.v98 - v19) - (float)(v99 - v19);
+          v22 = (float)((float)(v99 - v19) + (float)(f_.v98 - v19)) *
                 0x1.0000000000000p-1f;
           *(float*)a2 = v21;
           v23 = v21 == 0x0.0p+0f || (v14 & 1) == 0;
@@ -752,8 +755,8 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
                   v86 = v85 * 0x1.0000000000000p-1f;
                 }
               }
-              v93 = v58 + (float)(v84 * 0x1.0000000000000p-1f);
-              v94 = v86 - (float)(v85 * 0x1.0000000000000p-1f);
+              f_.v93 = v58 + (float)(v84 * 0x1.0000000000000p-1f);
+              f_.v94 = v86 - (float)(v85 * 0x1.0000000000000p-1f);
               v88 = nn_ui2d_56d270(a1),
               v17 = COERCE_AS(__typeof__(v17),
                               PSEUDO_REGISTER(__n128, "v1", "=w")),
@@ -774,8 +777,8 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
                   (float)(LANES128_OF(
                               vmlaq_f32(
                                   vmlaq_n_f32(
-                                      vmulq_n_f32(vzip1q_s32(v90, v92), v93),
-                                      vzip2q_s32(v90, v92), v94),
+                                      vmulq_n_f32(vzip1q_s32(v90, v92), f_.v93),
+                                      vzip2q_s32(v90, v92), f_.v94),
                                   COERCE_AS(float32x4_t, 0),
                                   vzip1q_s32(
                                       vzip2q_s32(v88, v89),
@@ -807,16 +810,16 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
         }
       }
       v32 = LANES128(*(a1)).n128_u64[0];
-      v95_.v95 = (__typeof__(v95_.v95)){0};
+      f_.v95 = (__typeof__(f_.v95)){0};
       (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, float32x4_t*))(
-          v32 + 360))((void*)(&v95_.v95), a1),
+          v32 + 360))((void*)(&f_.v95), a1),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v27 = COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
-      v33 = LANES128(v95_.v95).n128_f32[2] - LANES128(v95_.v95).n128_f32[0];
+      v33 = LANES128(f_.v95).n128_f32[2] - LANES128(f_.v95).n128_f32[0];
       v34 = *(void (**)(float32x4_t* __return_ptr, float32x4_t*))(
           LANES128(*(a1)).n128_u64[0] + 360),
       v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
@@ -825,19 +828,19 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
       v27 = COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(__n128, "v2", "=w")),
       v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
       v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
-      v95_.v95 = (__typeof__(v95_.v95)){0};
-      v34(&v95_.v95, a1),
+      f_.v95 = (__typeof__(f_.v95)){0};
+      v34(&f_.v95, a1),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v27 = COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
-      v35 = LANES128(v95_.v95).n128_f32[1];
-      v36 = LANES128(v95_.v95).n128_f32[3];
+      v35 = LANES128(f_.v95).n128_f32[1];
+      v36 = LANES128(f_.v95).n128_f32[3];
       v37 = LANES128(a1[5]).n128_u8[11];
       v20 = 0x0.0p+0f;
-      v95_.v95 = (__typeof__(v95_.v95)){0};
+      f_.v95 = (__typeof__(f_.v95)){0};
       v38 = v37 & 3;
       v39 = (v37 >> 2) & 3;
       v40 = v35 - v36;
@@ -857,17 +860,17 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
       if (v39 == 1) {
         v44 = 0x0.0p+0f;
       }
-      Alignment_56ce20((__int64)&v95_.v95, a1, v41, v42, v43, v44, v33, v40),
+      Alignment_56ce20((__int64)&f_.v95, a1, v41, v42, v43, v44, v33, v40),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v27 = COERCE_AS(__typeof__(v27), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
-      v45 = LANES128(v95_.v95).n128_f32[0];
-      v46 = LANES128(v95_.v95).n128_f32[2] - LANES128(v95_.v95).n128_f32[0];
+      v45 = LANES128(f_.v95).n128_f32[0];
+      v46 = LANES128(f_.v95).n128_f32[2] - LANES128(f_.v95).n128_f32[0];
       *(float*)a2 =
-          LANES128(v95_.v95).n128_f32[2] - LANES128(v95_.v95).n128_f32[0];
+          LANES128(f_.v95).n128_f32[2] - LANES128(f_.v95).n128_f32[0];
       *(float*)(a2 + 8) = (float)(PSEUDO_UNFUSED(v46 * 0x1.0000000000000p-1f)) +
                           (float)(v45 - LANES128(a1[3]).n128_f32[0]);
       if ((v9 & 1) != 0) {
@@ -879,7 +882,7 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
     }
   }
   v14 = LANES128(a1[5]).n128_u8[8];
-  v98 = -0x1.fffffe0000000p+127f;
+  f_.v98 = -0x1.fffffe0000000p+127f;
   v99 = 0x1.fffffe0000000p+127f;
   v15 = nn_ui2d_56d270(a1),
   v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
@@ -889,13 +892,13 @@ __int64 Alignment_56ba40(float32x4_t* a1, __int64 a2)
   v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(__n128, "v2", "=w")),
   v91 = COERCE_AS(__typeof__(v91), PSEUDO_REGISTER(__n128, "v1", "=w"));
   v16 = (float32x4_t*)LANES128(a1[2]).n128_u64[1];
-  v95_.v95 = v15;
-  v95_.v96 = v17;
-  v95_.v97 = v18;
+  f_.v95 = v15;
+  f_.v96 = v17;
+  f_.v97 = v18;
   if (v16 != &a1[2]) {
     v19 = LANES128(v15).n128_f32[3];
     do {
-      Alignment_56d3e0((float32x4_t*)((char*)v16 - 8), &v99, &v98, &v95_.v95),
+      Alignment_56d3e0((float32x4_t*)((char*)v16 - 8), &v99, &f_.v98, &f_.v95),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v26 = COERCE_AS(__typeof__(v26), PSEUDO_REGISTER(__n128, "v1", "=w")),

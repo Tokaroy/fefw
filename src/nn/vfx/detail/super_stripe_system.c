@@ -321,11 +321,12 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
   int8x16_t v108;
   float v109;
   int v110;
-  __int64 v111;
-  float32x4_t v112;
-  float32x4_t v113;
-  float32x4_t v114;
   struct {
+    char gap0_[8];
+    __int64 v111;
+    float32x4_t v112;
+    float32x4_t v113;
+    float32x4_t v114;
     __int64 v115;
     float v116;
     float v117;
@@ -334,11 +335,11 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
     char gap88_[16];
     int v120;
     int v121;
-  } v115_;
+  } f_;
 
   v6 = *(_DWORD*)(a4 + 112);
   v7 = v6 - 2;
-  v115_.v121 = v6;
+  f_.v121 = v6;
   if (v6 <= 2) {
     *(_DWORD*)(a4 + 120) = 0;
     return;
@@ -346,10 +347,10 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
   v8 = 0x0.0p+0f;
   v11 = *(_QWORD*)(*(_QWORD*)(a4 + 88) + 88LL);
   if (*(_DWORD*)(a6 + 88) == 1) {
-    v12 = (v115_.v121 - 1) & 3;
+    v12 = (f_.v121 - 1) & 3;
     if (v7 >= 3) {
       v13 = 0x0.0p+0f;
-      v15 = (v115_.v121 - 1) & 0xFFFFFFFC;
+      v15 = (f_.v121 - 1) & 0xFFFFFFFC;
       v14 = *(_QWORD*)(*(_QWORD*)(a4 + 88) + 88LL);
       do {
         v16 = *(float32x4_t**)(v14 + 88);
@@ -456,7 +457,7 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
   if (v40 == 0) {
     v37 = 0x1.0000000000000p+0f;
   }
-  v42 = (unsigned int)(v115_.v121 + v38 * (v115_.v121 - 1));
+  v42 = (unsigned int)(f_.v121 + v38 * (f_.v121 - 1));
   if (v41 != 0) {
     v43 = v37 * *(float*)(a5 + 112);
   }
@@ -476,10 +477,10 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
       v48 = v47;
     }
     v50 = a1 + v46;
-    v114 = (__typeof__(v114)){0};
-    v113 = (__typeof__(v113)){0};
+    f_.v114 = (__typeof__(f_.v114)){0};
+    f_.v113 = (__typeof__(f_.v113)){0};
     v51 = (float)(unsigned int)(v42 - 1);
-    SuperStripeSystem_5d0cd0_alt1(&v114, &v113, v11, v47, v115_.v121,
+    SuperStripeSystem_5d0cd0_alt1(&f_.v114, &f_.v113, v11, v47, f_.v121,
                                   (float)(PSEUDO_UNFUSED(v44 * 0x0.0p+0f)) -
                                       (float)v47);
     v52 = *(_DWORD*)(a6 + 88);
@@ -494,14 +495,14 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
       v56 = *(float*)(v45 + 140);
       v57 = *(_DWORD*)(a6 + 12);
       v58 = *(_DWORD*)(a6 + 16);
-      v115_.v115 = 0;
-      v115_.v116 = 0x0.0p+0f;
-      v53 = v114;
+      f_.v115 = 0;
+      f_.v116 = 0x0.0p+0f;
+      v53 = f_.v114;
       v59 = 12LL * v57;
-      v60 = (char*)&v115_.v115 + 12 * v58 + 4;
-      v115_.v117 = v56 * 0x1.99999a0000000p-4f;
-      v115_.v118 = v56 * 0x1.99999a0000000p-4f;
-      v115_.v119 = v56 * 0x1.99999a0000000p-4f;
+      v60 = (char*)&f_.v115 + 12 * v58 + 4;
+      f_.v117 = v56 * 0x1.99999a0000000p-4f;
+      f_.v118 = v56 * 0x1.99999a0000000p-4f;
+      f_.v119 = v56 * 0x1.99999a0000000p-4f;
     }
     else {
       a4 = v45;
@@ -509,25 +510,25 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
       v61 = (float)(v50 + 0x0.0p+0f) /
             (float)((int)*(float*)(a6 + 24) - 1 +
                     ((int)*(float*)(a6 + 24) - 1) * v38);
-      v60 = (char*)&v115_.v115 + 12 * *(int*)(a6 + 16) + 4;
-      *(float*)&v115_.v115 = 0x0.0p+0f / v51;
-      *((float*)&v115_.v115 + 1) = 0x0.0p+0f / v51;
+      v60 = (char*)&f_.v115 + 12 * *(int*)(a6 + 16) + 4;
+      *(float*)&f_.v115 = 0x0.0p+0f / v51;
+      *((float*)&f_.v115 + 1) = 0x0.0p+0f / v51;
       if (v61 > 0x1.0000000000000p+0f) {
         v61 = 0x1.0000000000000p+0f;
       }
-      v115_.v116 = 0x0.0p+0f / v51;
-      v115_.v117 = v61;
-      v115_.v118 = v61;
-      v115_.v119 = v61;
+      f_.v116 = 0x0.0p+0f / v51;
+      f_.v117 = v61;
+      f_.v118 = v61;
+      f_.v119 = v61;
     }
-    LODWORD(v54) = *(_DWORD*)((char*)&v115_.v115 + v59);
+    LODWORD(v54) = *(_DWORD*)((char*)&f_.v115 + v59);
     HIDWORD(v54) = *(_DWORD*)v60;
-    v55 = *((_DWORD*)&v115_.v115 + 3 * *(int*)(a6 + 20) + 2);
+    v55 = *((_DWORD*)&f_.v115 + 3 * *(int*)(a6 + 20) + 2);
   LABEL_28:
-    v63 = v113;
-    v62 = v114;
+    v63 = f_.v113;
+    v62 = f_.v114;
     v64 = *(float*)(v11 + 80);
-    *(_QWORD*)a3 = LANES128(v114).n128_u64[0];
+    *(_QWORD*)a3 = LANES128(f_.v114).n128_u64[0];
     *(_DWORD*)(a3 + 8) = LANES128(v62).n128_u32[2];
     *(_QWORD*)(a3 + 80) = LANES128(v62).n128_u64[0];
     *(_QWORD*)(a3 + 16) = LANES128(v63).n128_u64[0];
@@ -554,9 +555,9 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
       v67 = v38 + 1;
       v68 = (_DWORD*)(a3 + 296);
       v69 = 1;
-      v112 = v53;
-      v111 = a4;
-      v115_.v120 = v67;
+      f_.v112 = v53;
+      f_.v111 = a4;
+      f_.v120 = v67;
       v70 = 2;
       do {
         v88 = (float)(unsigned int)v69;
@@ -566,9 +567,9 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
           v11 = *(_QWORD*)(v11 + 88);
           v48 = v90;
         }
-        v114 = (__typeof__(v114)){0};
-        v113 = (__typeof__(v113)){0};
-        SuperStripeSystem_5d0cd0_alt1(&v114, &v113, v11, v90, v115_.v121,
+        f_.v114 = (__typeof__(f_.v114)){0};
+        f_.v113 = (__typeof__(f_.v113)){0};
+        SuperStripeSystem_5d0cd0_alt1(&f_.v114, &f_.v113, v11, v90, f_.v121,
                                       v89 - (float)v90);
         v91 = *(_DWORD*)(a6 + 88);
         if (v91 == 1) {
@@ -579,8 +580,8 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
             v71 = v70;
           }
           v72 = a3 + 80LL * v71;
-          v73 = vsubq_f32(v114, v112);
-          v112 = v114;
+          v73 = vsubq_f32(f_.v114, f_.v112);
+          f_.v112 = f_.v114;
           v74 = vmulq_f32(v73, v73);
           LANES128(v74).n128_u64[0] =
               LANES64_OF(
@@ -597,53 +598,53 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
                       COERCE_AS(float32x2_t, LANES128(v74).n128_u64[0]),
                       COERCE_AS(float32x2_t, LANES128(v74).n128_u64[0]))))
                   .n64_f32[0];
-          *(float*)&v115_.v115 = v75 + (float)(LANES128(v74).n128_f32[0] * v8);
-          *((float*)&v115_.v115 + 1) =
+          *(float*)&f_.v115 = v75 + (float)(LANES128(v74).n128_f32[0] * v8);
+          *((float*)&f_.v115 + 1) =
               v76 + (float)(LANES128(v74).n128_f32[0] * v8);
           v77 = *(float*)(v72 - 104);
           v78 = 12LL * *(int*)(a6 + 12);
-          v79 = (char*)&v115_.v115 + 12 * *(int*)(a6 + 16);
-          v115_.v116 = v77 + (float)(LANES128(v74).n128_f32[0] * v8);
-          v115_.v117 =
+          v79 = (char*)&f_.v115 + 12 * *(int*)(a6 + 16);
+          f_.v116 = v77 + (float)(LANES128(v74).n128_f32[0] * v8);
+          f_.v117 =
               v75 - (float)(0x1.99999a0000000p-4f * LANES128(v74).n128_f32[0]);
-          v115_.v118 =
+          f_.v118 =
               v76 - (float)(0x1.99999a0000000p-4f * LANES128(v74).n128_f32[0]);
-          v115_.v119 =
+          f_.v119 =
               v77 - (float)(0x1.99999a0000000p-4f * LANES128(v74).n128_f32[0]);
-          LODWORD(v80) = *(_DWORD*)((char*)&v115_.v115 + v78);
+          LODWORD(v80) = *(_DWORD*)((char*)&f_.v115 + v78);
           HIDWORD(v80) = *((_DWORD*)v79 + 1);
-          v81 = *((_DWORD*)&v115_.v115 + 3 * *(int*)(a6 + 20) + 2);
+          v81 = *((_DWORD*)&f_.v115 + 3 * *(int*)(a6 + 20) + 2);
         }
         else if (v91 != 0) {
           v81 = 0;
           v80 = 0;
         }
         else {
-          v92 = (float)(((int)*(float*)(a6 + 24) - 1) * v115_.v120);
+          v92 = (float)(((int)*(float*)(a6 + 24) - 1) * f_.v120);
           v93 = *(_DWORD*)(a6 + 12);
           v94 = *(_DWORD*)(a6 + 16);
-          *(float*)&v115_.v115 = v88 / v51;
-          *((float*)&v115_.v115 + 1) = v88 / v51;
+          *(float*)&f_.v115 = v88 / v51;
+          *((float*)&f_.v115 + 1) = v88 / v51;
           v95 = (float)(v50 + v88) / v92;
           v96 = 12LL * v93;
-          v97 = (_DWORD*)&v115_.v115 + 3 * v94 + 1;
+          v97 = (_DWORD*)&f_.v115 + 3 * v94 + 1;
           if (v95 > 0x1.0000000000000p+0f) {
             v95 = 0x1.0000000000000p+0f;
           }
-          v115_.v116 = v88 / v51;
-          v115_.v117 = v95;
-          v115_.v118 = v95;
-          v115_.v119 = v95;
-          LODWORD(v80) = *(_DWORD*)((char*)&v115_.v115 + v96);
+          f_.v116 = v88 / v51;
+          f_.v117 = v95;
+          f_.v118 = v95;
+          f_.v119 = v95;
+          LODWORD(v80) = *(_DWORD*)((char*)&f_.v115 + v96);
           HIDWORD(v80) = *v97;
-          v81 = *((_DWORD*)&v115_.v115 + 3 * *(int*)(a6 + 20) + 2);
+          v81 = *((_DWORD*)&f_.v115 + 3 * *(int*)(a6 + 20) + 2);
         }
-        v83 = v113;
-        v82 = v114;
+        v83 = f_.v113;
+        v82 = f_.v114;
         v84 = *(float*)(v11 + 80);
         ++v69;
         v70 += 2;
-        *((_QWORD*)v68 - 17) = LANES128(v114).n128_u64[0];
+        *((_QWORD*)v68 - 17) = LANES128(f_.v114).n128_u64[0];
         *(v68 - 32) = LANES128(v82).n128_u32[2];
         *((_QWORD*)v68 - 7) = LANES128(v82).n128_u64[0];
         *((_QWORD*)v68 - 15) = LANES128(v83).n128_u64[0];
@@ -668,7 +669,7 @@ void SuperStripeSystem_5d0320(float a1, __int64 a2, __int64 a3, __int64 a4,
         v68 += 40;
         *v87 = v81;
       } while (v42 != v69);
-      a4 = v111;
+      a4 = f_.v111;
       v49 = 2 * v42;
     }
     goto LABEL_44;
