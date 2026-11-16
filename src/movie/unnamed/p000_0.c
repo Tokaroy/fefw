@@ -316,7 +316,7 @@ __int64 MovieHr_2990(__int64 a1)
   return result;
 }
 
-__int64 MovieHr_23ce0(__int64 a1, int a2, int a3, int a4)
+unsigned __int8 MovieHr_23ce0(__int64 a1, int a2, int a3, int a4)
 {
   __int64 v8;
   __int64 v9;

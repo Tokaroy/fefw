@@ -86,7 +86,7 @@ extern __int64 fw_memory_g_heap_manager;
 __int64 game_menu_RelianceSelectMenu_AddItemList_lambda1_Invoke(__int64 a1,
                                                                 __int64 a2);
 __int64 RelianceSelectMenu_1852650(__int64 result);
-__int64 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1);
+unsigned __int8 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1);
 __int64 RelianceSelectMenu_1852da0_alt2(__int64 result) __asm__(
     "RelianceSelectMenu_1852da0");
 __int64 game_menu_RelianceSelectMenu_AddItemList_lambda0_Invoke(__int64 result,
@@ -2245,7 +2245,7 @@ __int64 RelianceSelectMenu_1852650(__int64 result)
   return result;
 }
 
-__int64 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1)
+unsigned __int8 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1)
 {
   __int64 v1;
   __int64 v2;

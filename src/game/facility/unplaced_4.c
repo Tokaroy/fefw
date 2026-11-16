@@ -141,8 +141,8 @@ __int64* game_facility_1705ea0(__int64* result, __int64* a2, __int64* a3,
                                __int64* a4, __int64* a5);
 __int64 game_facility_1867180(__int64 a1);
 __int64 game_facility_1867320(__int64 result);
-unsigned __int64 game_facility_186b9a0(unsigned __int64 result, __int64* a2,
-                                       __int64 a3, char a4);
+unsigned __int8 game_facility_186b9a0(unsigned __int64 result, __int64* a2,
+                                      __int64 a3, char a4);
 __int64* game_facility_186c3e0(__int64* result, __int64* a2, __int64* a3,
                                __int64* a4, __int64* a5);
 bool game_facility_186c560(__int64* a1, __int64* a2);
@@ -1213,8 +1213,8 @@ __int64 game_facility_1867320(__int64 result)
   return result;
 }
 
-unsigned __int64 game_facility_186b9a0(unsigned __int64 result, __int64* a2,
-                                       __int64 a3, char a4)
+unsigned __int8 game_facility_186b9a0(unsigned __int64 result, __int64* a2,
+                                      __int64 a3, char a4)
 {
   __int64* v7;
   __int64* v8;

@@ -89,10 +89,11 @@ int __cxa_guard_acquire_alt1(__int64) __asm__("__cxa_guard_acquire");
 void __attribute__((noreturn)) GameRoutine_60a310();
 void __cxa_guard_release_alt1(__int64) __asm__("__cxa_guard_release");
 void snd_Fade_Fade_10c830_alt1(__int64, float) __asm__("snd_Fade_Fade_10c830");
-bool game_map_Cursor_Impl_Tick(unsigned __int64 a1, __int64 a2, double a3,
-                               double a4, double a5, long double a6,
-                               long double a7, long double a8, long double a9,
-                               long double a10);
+unsigned __int8 game_map_Cursor_Impl_Tick(unsigned __int64 a1, __int64 a2,
+                                          double a3, double a4, double a5,
+                                          long double a6, long double a7,
+                                          long double a8, long double a9,
+                                          long double a10);
 
 void Cursor_730b20(__int64 a1, int a2, int a3)
 {
@@ -1007,10 +1008,11 @@ __attribute__((swiftcall)) void Cursor_7319a0(PSEUDO_X8 x8_, __int64 a1)
   }
 }
 
-bool game_map_Cursor_Impl_Tick(unsigned __int64 a1, __int64 a2, double a3,
-                               double a4, double a5, long double a6,
-                               long double a7, long double a8, long double a9,
-                               long double a10)
+unsigned __int8 game_map_Cursor_Impl_Tick(unsigned __int64 a1, __int64 a2,
+                                          double a3, double a4, double a5,
+                                          long double a6, long double a7,
+                                          long double a8, long double a9,
+                                          long double a10)
 {
   _QWORD handle[2];
   int v10;

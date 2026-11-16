@@ -24,8 +24,9 @@ __int64 strcmp(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 bool GameRoutine_109c60(__int64*, __int64*, __int64, __int64, __int64, __int64,
                         __int64, __int64);
 unsigned __int64 GameRoutine_1098c0(__int64*, __int64*, __int64);
-__int64 Archive_109080(__int64 result, __int64* a2, __int64 a3, __int64 a4,
-                       __int64 a5, __int64 a6, __int64 a7, __int64 a8);
+unsigned __int8 Archive_109080(__int64 result, __int64* a2, __int64 a3,
+                               __int64 a4, __int64 a5, __int64 a6, __int64 a7,
+                               __int64 a8);
 __int64 Archive_1059c0(__int64, __int64);
 __int64 Archive_105ba0(__int64);
 __int64 Crc32List_118d80(__int64, __int64, __int64);
@@ -312,8 +313,9 @@ __int64 Archive_105780(__int64 a1, const char* a2, const char* a3, char a4)
   return nn_os_UnlockMutex(GameData_21344c0[0]);
 }
 
-__int64 Archive_109080(__int64 result, __int64* a2, __int64 a3, __int64 a4,
-                       __int64 a5, __int64 a6, __int64 a7, __int64 a8)
+unsigned __int8 Archive_109080(__int64 result, __int64* a2, __int64 a3,
+                               __int64 a4, __int64 a5, __int64 a6, __int64 a7,
+                               __int64 a8)
 {
   char v8;
   __int64* v11;

@@ -61,7 +61,8 @@ void Element_1886580(__int64, char);
 void GameHr_157e0f0(__int64*, __int64, _BYTE*);
 void GameHr_18af120(_QWORD*, __int64*);
 void LayoutAccessor_1572ac0(__int64*, __int64, unsigned int, unsigned int);
-__int64 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1, __int64 (*a2)());
+unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
+                                                         __int64 (*a2)());
 __int64 LegionPoolMenu_Unknown94(__int64 a1);
 bool game_menu_LegionPoolMenu_SortAndFilter_lambda1_Invoke(__int64 a1,
                                                            __int64* a2,
@@ -606,7 +607,8 @@ __int64 LegionPoolMenu_Unknown85(__int64 a1)
   return result;
 }
 
-__int64 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1, __int64 (*a2)())
+unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
+                                                         __int64 (*a2)())
 {
   bool v4;
   __int64 v5;

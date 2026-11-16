@@ -147,7 +147,7 @@ void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 void __attribute__((noreturn))
 GameRoutine_60a310_alt2(_QWORD) __asm__("GameRoutine_60a310");
-unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result);
+unsigned __int8 game_map_BattleSide_GetHealPower(unsigned __int64 result);
 __int64 BattleSide_7a2480(__int64 a1, __int64 a2, __int64 a3);
 __int64 game_map_BattleSide_EachMaskSkill_alt1(
     __int64 result, _DWORD* a2, char a3,
@@ -410,7 +410,7 @@ LABEL_58:
   }
 }
 
-unsigned __int64 game_map_BattleSide_GetHealPower(unsigned __int64 result)
+unsigned __int8 game_map_BattleSide_GetHealPower(unsigned __int64 result)
 {
   __int64 v1;
   __int64 v2;

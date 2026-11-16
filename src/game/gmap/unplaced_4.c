@@ -61,7 +61,7 @@ __int64* game_gmap_1351d00(__int64* result, __int64* a2, __int64* a3,
 bool game_gmap_1351e80(__int64* a1, __int64* a2);
 void game_gmap_151d550(float* a1, __int64 a2, char a3);
 void game_gmap_151d8a0(__int64 a1, __int64 a2, int a3);
-__int64 game_gmap_151dae0(__int64 a1, __int64 a2, int a3);
+unsigned __int8 game_gmap_151dae0(__int64 a1, __int64 a2, int a3);
 void game_gmap_151de20(__int64 a1, __int64 a2, int a3);
 char* game_gmap_165aa40(char* result, int a2);
 __int64 game_gmap_165b180(__int64 a1, __int64 a2, char a3, unsigned int a4);
@@ -662,7 +662,7 @@ void game_gmap_151d8a0(__int64 a1, __int64 a2, int a3)
   } while (v7 != 30);
 }
 
-__int64 game_gmap_151dae0(__int64 a1, __int64 a2, int a3)
+unsigned __int8 game_gmap_151dae0(__int64 a1, __int64 a2, int a3)
 {
 
 #pragma clang fp contract(off)

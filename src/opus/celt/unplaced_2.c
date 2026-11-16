@@ -6,16 +6,16 @@ __int64 ec_dec_uint(_QWORD, _QWORD);
 __int64 ec_enc_uint(_QWORD, _QWORD, _QWORD);
 __int64 memset_plt(_QWORD, _QWORD, _QWORD);
 extern _UNKNOWN* MovieData_c0358;
-__int64 opus_celt_29540(__int64 result, __int16* a2, unsigned int a3,
-                        unsigned int a4, int a5, __int16* a6, _DWORD* a7,
-                        int a8);
+unsigned __int8 opus_celt_29540(__int64 result, __int16* a2, unsigned int a3,
+                                unsigned int a4, int a5, __int16* a6,
+                                _DWORD* a7, int a8);
 __int64 opus_celt_37120(__int64 a1, int a2, int a3, __int64 a4);
 __int64 opus_celt_372e0(_DWORD* a1, int a2, int a3, __int64 a4);
 __int64* opus_celt_39680(__int64* result, int* a2, int a3, int a4);
 
-__int64 opus_celt_29540(__int64 result, __int16* a2, unsigned int a3,
-                        unsigned int a4, int a5, __int16* a6, _DWORD* a7,
-                        int a8)
+unsigned __int8 opus_celt_29540(__int64 result, __int16* a2, unsigned int a3,
+                                unsigned int a4, int a5, __int16* a6,
+                                _DWORD* a7, int a8)
 {
   unsigned __int64 v11;
   __int16* v14;

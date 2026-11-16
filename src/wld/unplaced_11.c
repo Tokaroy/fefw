@@ -13,10 +13,10 @@ extern __int128 GameData_1a837f0;
 extern __int64 (*GameData_1fc0868[])();
 int memcmp(__int64, __int64, unsigned __int64);
 unsigned __int64 strlen(const char*);
-__int64 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4);
+unsigned __int8 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4);
 __int64 wld_a8b5a0(__int64 result);
 
-__int64 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4)
+unsigned __int8 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4)
 {
   __int64 v5;
   __int64 v6;

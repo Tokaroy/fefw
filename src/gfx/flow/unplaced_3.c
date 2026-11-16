@@ -25,10 +25,10 @@ float exp2f(float);
 float log2f(float);
 float task_649cd0(__int64, float32x4_t*);
 float task_649d50(__int64, float32x4_t*);
-__int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3);
+unsigned __int8 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3);
 __int64 gfx_flow_b68c90(__int64 a1, __int64 a2);
 
-__int64 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3)
+unsigned __int8 gfx_flow_b5d610(_DWORD* a1, __int64 a2, __int64 a3)
 {
   int v3;
   _DWORD* v4;

@@ -6330,7 +6330,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 19ab90,116,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL27ScriptArraySortAsc2_GenericP16asIScriptGeneric
 19ac10,52,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL27ScriptArraySortDesc_GenericP16asIScriptGeneric
 19ac50,116,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL28ScriptArraySortDesc2_GenericP16asIScriptGeneric
-19ace0,280,disputed,src/game/unnamed/r000_0.c,GameHr_19ace0
+19ace0,408,verified,src/game/unnamed/r000_0.c,GameHr_19ace0
 19ae80,100,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL23ScriptArrayFind_GenericP16asIScriptGeneric
 19aef0,132,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL24ScriptArrayFind2_GenericP16asIScriptGeneric
 19af80,100,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZL28ScriptArrayFindByRef_GenericP16asIScriptGeneric
@@ -16152,8 +16152,8 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 5a80e0,128,verified,src/nn/ui2d/detail/vector_graphics_layer.c,VectorGraphicsLayer_5a80e0
 5a8160,104,verified,src/nn/ui2d/detail/vector_graphics_layer.c,VectorGraphicsLayer_5a8160
 5a81e0,396,verified,src/nn/ui2d/detail/vector_graphics_layer.c,VectorGraphicsLayer_Unknown6
-5a8380,796,verified,src/nn/ui2d/detail/unplaced.c,nn_ui2d_detail_5a8380
-5a86e0,416,verified,src/nn/ui2d/detail/unplaced.c,nn_ui2d_detail_5a86e0
+5a8380,796,disputed,src/nn/ui2d/detail/unplaced.c,nn_ui2d_detail_5a8380
+5a86e0,432,verified,src/nn/ui2d/detail/unplaced.c,nn_ui2d_detail_5a86e0
 5a88a0,1812,verified,src/game/unnamed/b003_1.c,GameHr_5a88a0
 5a9050,244,verified,src/game/unnamed/b003_1.c,GameHr_5a9050
 5a9150,48,verified,src/memory/new_delete.cpp,deleting destructor at 0x5a9150
@@ -19829,7 +19829,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 731180,704,verified,src/game/map/cursor.c,Cursor_731180
 7317c0,472,verified,src/game/map/cursor.c,Cursor_7317c0
 7319a0,456,verified,src/game/map/cursor.c,Cursor_7319a0
-731b80,6344,disputed,src/game/map/cursor.c,game_map_Cursor_Impl_Tick
+731b80,6344,verified,src/game/map/cursor.c,game_map_Cursor_Impl_Tick
 7339d0,124,verified,src/game/map/cursor.c,Cursor_7339d0
 733a50,4,verified,src/game/map/cursor.cpp,_ZN4game3map6Cursor6OnBindEv
 733a60,4,verified,src/game/map/cursor.cpp,_ZThn32_N4game3map6Cursor6OnBindEv
@@ -31106,7 +31106,7 @@ a782c0,364,verified,src/wld/anim_ctrl_module.c,AnimCtrlModule_a782c0
 a78450,280,verified,src/wld/anim_ctrl_module.c,AnimCtrlModule_a78450
 a78580,356,verified,src/wld/anim_ctrl_module.c,AnimCtrlModule_a78580
 a78700,292,verified,src/wld/anim_ctrl_module.c,AnimCtrlModule_a78700
-a78840,412,disputed,src/wld/unplaced_11.c,wld_a78840
+a78840,412,verified,src/wld/unplaced_11.c,wld_a78840
 a789f0,8,verified,src/wld/modules.cpp,_ZNK3wld14AnimCtrlModule11GetPriorityEv
 a78a00,12,verified,src/wld/modules.cpp,_ZNK3wld14AnimCtrlModule7GetNameEv
 a78a10,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -33167,7 +33167,7 @@ b5c580,652,verified,src/gfxa/task_effect.c,TaskEffect_b5c580
 b5c820,1424,verified,src/gfxa/task_effect.c,gfxa_TaskEffect_Impl_Impl
 b5ce20,1632,verified,src/gfxa/task_effect.c,TaskEffect_b5ce20
 b5d4d0,320,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b5d4d0
-b5d610,3444,disputed,src/gfx/flow/unplaced_3.c,gfx_flow_b5d610
+b5d610,3444,verified,src/gfx/flow/unplaced_3.c,gfx_flow_b5d610
 b5e3a0,2480,verified,src/gfxa/task_effect.c,TaskEffect_b5e3a0
 b5ed80,808,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b5ed80
 b5f0c0,40,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b5f0c0
@@ -38154,7 +38154,7 @@ cc8b10,216,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub23SetEnab
 cc8bf0,508,verified,src/game/unnamed/e003_2.c,GameHr_cc8bf0
 cc8df0,480,verified,src/game/unnamed/b010_2.c,GameHr_cc8df0
 cc8fe0,588,verified,src/game/script/hub_natives_impl.c,hub_PlayEffect
-cc9240,1348,disputed,src/game/script/hub_natives_impl.c,hub_PlayEffectBindPlayer
+cc9240,1348,verified,src/game/script/hub_natives_impl.c,hub_PlayEffectBindPlayer
 cc9800,824,verified,src/game/script/hub_natives_impl.c,hub_PlayEffectLoop
 cc9b40,424,verified,src/game/unnamed/e003_2.c,GameHr_cc9b40
 cc9cf0,32,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub14IsCompletedMapEv
@@ -58434,7 +58434,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 13156f0,52,verified,src/game/gmap/camera.c,Camera_13156f0
 1315730,548,verified,src/game/gmap/camera.c,Camera_1315730
 1315960,428,verified,src/game/gmap/camera.c,Camera_1315960
-1315b10,3788,disputed,src/game/gmap/camera.c,Camera_1315b10
+1315b10,3788,verified,src/game/gmap/camera.c,Camera_1315b10
 1316b00,8,verified,src/game/gmap/camera.cpp,_ZNK4game4gmap6Camera10GetVersionEv
 1316b10,8,verified,src/game/gmap/enter_menu_item.cpp,_ZN4game4menu13BasicMenuItem9Unknown14Ev
 1316b20,648,verified,src/game/gmap/camera.c,Camera_Unknown6
@@ -65631,7 +65631,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 151d4a0,176,verified,src/game/gmap/gmap_singletons.cpp,_ZN4game4gmap18GmapDrawerSettingsD0Ev
 151d550,688,verified,src/game/gmap/unplaced_4.c,game_gmap_151d550
 151d8a0,524,verified,src/game/gmap/unplaced_4.c,game_gmap_151d8a0
-151dae0,624,disputed,src/game/gmap/unplaced_4.c,game_gmap_151dae0
+151dae0,784,verified,src/game/gmap/unplaced_4.c,game_gmap_151dae0
 151de20,524,verified,src/game/gmap/unplaced_4.c,game_gmap_151de20
 151e060,560,verified,src/game/gmap/unplaced_5.c,game_gmap_151e060
 151e2a0,712,verified,src/game/gmap/unplaced.c,game_gmap_151e2a0
@@ -66481,7 +66481,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 156e0c0,56,verified,src/game/templates/vector.cpp,_ZNSt3__16vectorIPN4game11UnrecoveredILj32EEENS_9allocatorIS4_EEED2B8nn210108Ev
 156e100,272,verified,src/game/templates/unplaced_3.c,game_templates_156e100
 156e270,176,verified,src/game/templates/unplaced_5.c,game_templates_156e270
-156e320,2836,disputed,src/game/unnamed/b028_0.c,GameHr_156e320
+156e320,4300,verified,src/game/unnamed/b028_0.c,GameHr_156e320
 156f940,560,verified,src/game/unnamed/b020_1.c,GameHr_156f940
 156fb70,780,verified,src/game/unnamed/b020_1.c,GameHr_156fb70
 156fe80,780,verified,src/game/unnamed/b020_1.c,GameHr_156fe80
@@ -70696,7 +70696,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1669f50,8,verified,src/game/menu/ex_dialog.cpp,_ZN4game4menu8ExDialog9Unknown68Ev
 1669f60,8,verified,src/game/menu/ex_dialog.cpp,_ZN4game4menu8ExDialog10Unknown101Ev
 1669f70,128,verified,src/game/menu/unplaced_4.c,game_menu_1669f70
-166a500,1348,disputed,src/game/menu/unplaced_11.c,game_menu_166a500
+166a500,1348,verified,src/game/menu/unplaced_11.c,game_menu_166a500
 166aaa0,336,verified,src/game/menu/item_dialog.cpp,_ZN4game4menu10ItemDialogD0Ev
 166abf0,12,verified,src/game/menu/item_dialog.cpp,_ZN4game4menu10ItemDialog9Unknown32Ev
 166ac00,12,verified,src/game/menu/item_dialog.cpp,_ZN4game4menu10ItemDialog9Unknown33Ev
@@ -70933,7 +70933,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1674340,576,verified,src/game/menu/anonymous/unplaced_3.c,game_menu_anonymous_1674340
 1674590,516,verified,src/game/menu/anonymous/gauge_menu_item.c,GaugeMenuItem_1674590
 16747a0,188,verified,src/game/menu/info_menu_item.cpp,_ZN4game4menu12_GLOBAL__N_115SupInfoMenuItemD0Ev
-1674ba0,300,disputed,src/game/unnamed/b021_3.c,GameHr_1674ba0
+1674ba0,300,verified,src/game/unnamed/b021_3.c,GameHr_1674ba0
 1674ce0,352,verified,src/game/menu/anonymous/bgm_encount_menu_item.c,BgmEncountMenuItem_Destructor
 1674e50,80,verified,src/memory/new_delete.cpp,deleting destructor at 0x1674e50
 1674ea0,120,verified,src/game/menu/anonymous/bgm_encount_menu_item.c,BgmEncountMenuItem_Unknown19
@@ -76875,7 +76875,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 179a880,912,verified,src/game/menu/unit_make_select_body.c,UnitMakeSelectBody_179a880
 179ac50,780,verified,src/game/menu/unplaced_3.c,game_menu_179ac50
 179af60,304,verified,src/game/unnamed/r009_1.c,GameHr_179af60
-179b0a0,1208,disputed,src/game/menu/unplaced_11.c,game_menu_179b0a0
+179b0a0,1208,verified,src/game/menu/unplaced_11.c,game_menu_179b0a0
 179b570,1264,verified,src/game/menu/unit_make_camera.c,UnitMakeCamera_179b570
 179ba60,244,verified,src/game/menu/unit_make_camera.c,UnitMakeCamera_179ba60
 179bb70,244,verified,src/game/menu/unit_make_camera.c,UnitMakeCamera_179bb70
@@ -81112,7 +81112,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 185d460,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::menu::DeployPoolMenu::SetSelectEquipItem()::$_0, bool (game::menu::EquipMenuItemBase*)>::target_type()"
 185d480,504,verified,src/game/unnamed/b025_0.c,GameHr_185d480
 185d6b0,232,verified,src/game/menu/legion_pool_menu.c,LegionPoolMenu_Unknown139
-185d7b0,1256,verified,src/game/menu/legion_pool_menu.c,game_menu_LegionPoolMenu_OnInit
+185d7b0,1304,verified,src/game/menu/legion_pool_menu.c,game_menu_LegionPoolMenu_OnInit
 185dd40,168,verified,src/game/menu/legion_pool_menu.c,LegionPoolMenu_Unknown93
 185ddf0,412,verified,src/game/menu/legion_pool_menu.c,LegionPoolMenu_Unknown85
 185df90,436,disputed,src/game/menu/legion_pool_menu.c,game_menu_LegionPoolMenu_UpdateEquipList
@@ -81364,7 +81364,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 186b8e0,152,verified,src/game/facility/shop_menu_item.cpp,_ZN4game8facility16ShopMenuItem_BuyD0Ev
 186b980,8,verified,src/game/facility/item_shop_menu_item.cpp,_ZN4game8facility16ItemShopMenuItem9Unknown76Ev
 186b990,4,verified,src/game/facility/item_shop_menu_item.cpp,_ZN4game8facility16ItemShopMenuItemD0Ev
-186b9a0,2416,disputed,src/game/facility/unplaced_4.c,game_facility_186b9a0
+186b9a0,2416,verified,src/game/facility/unplaced_4.c,game_facility_186b9a0
 186c3e0,376,verified,src/game/facility/unplaced_4.c,game_facility_186c3e0
 186c560,708,verified,src/game/facility/unplaced_4.c,game_facility_186c560
 186c830,20,verified,src/game/facility/anonymous/proc_item_shop_menu.c,ProcItemShopMenu_Unknown151
@@ -87033,7 +87033,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 19e9dc0,8,verified,src/game/facility/reliance_memory_child_menu.cpp,_ZN4game8facility12_GLOBAL__N_123RelianceMemoryChildMenu9Unknown64Ev
 19e9dd0,100,verified,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown76
 19e9e40,100,verified,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown77
-19e9eb0,584,verified,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown84
+19e9eb0,608,verified,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown84
 19ea120,28,verified,src/game/facility/reliance_memory_child_menu.cpp,_ZN4game8facility12_GLOBAL__N_123RelianceMemoryChildMenu9Unknown85Ev
 19ea140,332,verified,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown88
 19ea2a0,296,disputed,src/game/facility/anonymous/reliance_memory_child_menu.c,RelianceMemoryChildMenu_Unknown100

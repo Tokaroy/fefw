@@ -926,8 +926,8 @@ void __attribute__((noreturn)) fs_60a230();
 __attribute__((swiftcall)) void game_hub_f7be00(PSEUDO_X8 x8_, __int64* a1,
                                                 __int64* a2);
 __int64 game_hub_f960c0(__int64 a1, __int64* a2);
-__int64 game_hub_f96ec0(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
-                        bool* a5);
+unsigned __int8 game_hub_f96ec0(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
+                                bool* a5);
 void game_hub_fa1b40(__int64 a1, float a2);
 void game_hub_fb6f80(__int64 a1, unsigned __int8* a2);
 void game_hub_1001800(__int64 a1);
@@ -8884,8 +8884,8 @@ LABEL_50:
   }
 }
 
-__int64 game_hub_f96ec0(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
-                        bool* a5)
+unsigned __int8 game_hub_f96ec0(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
+                                bool* a5)
 {
   unsigned __int64 v5;
   bool v11;

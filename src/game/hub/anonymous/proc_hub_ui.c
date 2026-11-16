@@ -42,7 +42,7 @@ __int64 ui_LayoutAccessor_SetScale(_QWORD, _QWORD);
 extern _UNKNOWN* GameData_212da30;
 extern __int64* GameData_212e348;
 extern __int64* msg_MessageManager_instance__ptr[2];
-__int64 ProcHubUI_16340d0(__int64 result);
+unsigned __int8 ProcHubUI_16340d0(__int64 result);
 __attribute__((swiftcall)) void game_1366bd0(PSEUDO_X8, __int64, __int64,
                                              __int64);
 __int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
@@ -56,7 +56,7 @@ __int64 game_1636200(_QWORD, _QWORD, _QWORD);
 __int64 game_1636f50(_QWORD, _QWORD);
 __int64 game_1637670(_QWORD, _QWORD);
 
-__int64 ProcHubUI_16340d0(__int64 result)
+unsigned __int8 ProcHubUI_16340d0(__int64 result)
 {
   int v1;
   __int64 v2;

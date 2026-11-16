@@ -85,7 +85,7 @@ void GameRoutine_17b1f70_alt1(__int64, __int64) __asm__("GameRoutine_17b1f70");
 void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 _QWORD* InventoryUnitTroopListMenu_17b5ac0(_QWORD* a1);
-__int64 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1);
+unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1);
 __int64 GameRoutine_17b1d00(__int64, __int64, __int64*, __int64, __int64, char,
                             char, char);
 __int64 memmove(__int64, __int64, unsigned __int64);
@@ -470,7 +470,7 @@ __int64 InventoryUnitTroopListMenu_17b5cb0(_QWORD* a1)
   }
 }
 
-__int64 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
+unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
 {
   _QWORD* v3;
   _QWORD* v4;

@@ -82,7 +82,7 @@ void nn_mem_StandardAllocator_Free(__int64, __int64);
 void snd_Fade_Fade_10c830_alt1(__int64, float) __asm__("snd_Fade_Fade_10c830");
 __int64 game_menu_15bc070(__int64 a1);
 __int64 game_menu_16325f0(__int64 result, char a2, char a3);
-__int64 game_menu_179b0a0(__int64 result);
+unsigned __int8 game_menu_179b0a0(__int64 result);
 __int64 game_menu_17e5d20(__int64 a1, int a2);
 __int64 game_menu_187eb30(__int64 a1);
 _QWORD* GameRoutine_654050(_QWORD* result, _QWORD*);
@@ -3528,7 +3528,7 @@ LABEL_35:
   nn_mem_StandardAllocator_Free(*(_QWORD*)v3 + v16, (__int64)a1);
 }
 
-__int64 game_menu_179b0a0(__int64 result)
+unsigned __int8 game_menu_179b0a0(__int64 result)
 {
   unsigned int v1;
   __int64 v3;

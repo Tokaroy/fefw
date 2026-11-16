@@ -1267,7 +1267,7 @@ __int64 game_1693b00();
 __int64 game_16db500(_QWORD* a1);
 __int64 game_16dc3e0(__int64 a1);
 void game_16f03e0(__int64* a1);
-__int64 game_170cac0(__int64 result);
+unsigned __int8 game_170cac0(__int64 result);
 void game_170d120(__int64 a1);
 __int64 game_17356e0(__int64* a1, const char* a2);
 __int64 game_1735b60(__int64 result);
@@ -5111,7 +5111,7 @@ LABEL_84:
       v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(float, "s1", "=w"));
 }
 
-__int64 game_170cac0(__int64 result)
+unsigned __int8 game_170cac0(__int64 result)
 {
   __int64 v1;
   char v2;

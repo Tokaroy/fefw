@@ -171,8 +171,8 @@ void LocatorDispos_db5260(__int64, __int64, __int64, const char*, __int64,
                           __int64, __int64);
 void __attribute__((noreturn)) String_60a1d0();
 void game_1023ae0(__int64);
-__int64 GameHr_c70850(__int64 a1, __int64 a2, unsigned __int64 a3, __int64 a4,
-                      signed int a5);
+unsigned __int8 GameHr_c70850(__int64 a1, __int64 a2, unsigned __int64 a3,
+                              __int64 a4, signed int a5);
 void GameHr_cacc00(__int64 a1);
 void GameHr_cb12a0(_QWORD* a1, unsigned __int8* a2, __int64* a3);
 void GameHr_cb4500(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
@@ -1623,8 +1623,8 @@ LABEL_63:
   return (unsigned int)a4;
 }
 
-__int64 GameHr_c70850(__int64 a1, __int64 a2, unsigned __int64 a3, __int64 a4,
-                      signed int a5)
+unsigned __int8 GameHr_c70850(__int64 a1, __int64 a2, unsigned __int64 a3,
+                              __int64 a4, signed int a5)
 {
   char* v9;
   __int64 v10;

@@ -115,7 +115,7 @@ float Camera_1315570_alt1(__int64, double, double,
                           long double) __asm__("Camera_1315570");
 float Cursor_734120_alt1(_QWORD, _QWORD, float, float, long double,
                          float) __asm__("Cursor_734120");
-__int64 Camera_1315b10(__int64 a1, long double a2);
+unsigned __int8 Camera_1315b10(__int64 a1, long double a2);
 
 float Camera_Unknown2_1314240(__int64 a1)
 {
@@ -1511,7 +1511,7 @@ LABEL_10:
   return result;
 }
 
-__int64 Camera_1315b10(__int64 a1, long double a2)
+unsigned __int8 Camera_1315b10(__int64 a1, long double a2)
 {
   __int64 v3;
   __int64 v4;

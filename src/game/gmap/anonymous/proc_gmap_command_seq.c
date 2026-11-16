@@ -254,7 +254,7 @@ void SpotMgr_1334560_alt2(__int64) __asm__("SpotMgr_1334560");
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_gmap_anonymous_ProcGmapCommandSeq_ExecuteStay();
-__int64 ProcGmapCommandSeq_14b11a0(__int64 result);
+unsigned __int8 ProcGmapCommandSeq_14b11a0(__int64 result);
 void ProcGmapCommandSeq_14b3420();
 void ProcGmapCommandSeq_14b37a0();
 __int64 Troop_133e6e0(__int64);
@@ -1116,7 +1116,7 @@ LABEL_12:
   return result;
 }
 
-__int64 ProcGmapCommandSeq_14b11a0(__int64 result)
+unsigned __int8 ProcGmapCommandSeq_14b11a0(__int64 result)
 {
   __int64 v1;
   __int64* v2;

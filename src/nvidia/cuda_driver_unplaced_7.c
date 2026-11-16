@@ -345,8 +345,8 @@ __int64 cuda_driver_108c40(__int64 result, unsigned __int64* a2);
 __int64 cuda_driver_109c80(__int64 a1, __int64 a2);
 __int64 cuda_driver_10a130(_DWORD* a1, _OWORD* a2, __int64 a3, __int64 a4,
                            _BYTE* a5);
-__int64 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3, _DWORD* a4,
-                           int a5, unsigned __int64 a6);
+unsigned __int8 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3,
+                                   _DWORD* a4, int a5, unsigned __int64 a6);
 __int64 cuda_driver_10c1d0(int a1, unsigned int a2);
 long double cuda_driver_10c800(int a1);
 __int64 cuda_driver_10d580(__int64* a1, __int64 a2, unsigned int a3);
@@ -3744,8 +3744,8 @@ __int64 cuda_driver_10a130(_DWORD* a1, _OWORD* a2, __int64 a3, __int64 a4,
   return result;
 }
 
-__int64 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3, _DWORD* a4,
-                           int a5, unsigned __int64 a6)
+unsigned __int8 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3,
+                                   _DWORD* a4, int a5, unsigned __int64 a6)
 {
   __int64 v6;
   __int64 v7;

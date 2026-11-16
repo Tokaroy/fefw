@@ -4,7 +4,7 @@
 
 __int64 memset_plt(__int64, int, unsigned __int64);
 __int64 opus_silk_fixed_64800(__int64 a1, int* a2, int a3);
-__int64 opus_silk_fixed_64c40(__int64 a1, unsigned int* a2, int a3);
+unsigned __int8 opus_silk_fixed_64c40(__int64 a1, unsigned int* a2, int a3);
 
 __int64 opus_silk_fixed_64800(__int64 a1, int* a2, int a3)
 {
@@ -265,7 +265,7 @@ __int64 opus_silk_fixed_64800(__int64 a1, int* a2, int a3)
   }
 }
 
-__int64 opus_silk_fixed_64c40(__int64 a1, unsigned int* a2, int a3)
+unsigned __int8 opus_silk_fixed_64c40(__int64 a1, unsigned int* a2, int a3)
 {
   unsigned int v3;
   int v4;

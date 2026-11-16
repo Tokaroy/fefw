@@ -4288,8 +4288,8 @@ __int64 GameHr_ea6580(__int64 result, int* a2, __int64 a3, char a4);
 __int64 GameHr_facea0(__int64 result, __int64* a2, __int64 a3, char a4);
 void GameHr_1018480(_OWORD* a1, _OWORD* a2, __int64 a3, char a4);
 _QWORD* GameHr_1092860(_QWORD* result);
-__int64 GameHr_156e320(__int64 result, _QWORD* a2, __int64 a3, __int64 a4,
-                       char a5);
+unsigned __int8 GameHr_156e320(__int64 result, _QWORD* a2, __int64 a3,
+                               __int64 a4, char a5);
 __int64 GameHr_18e1120(__int64 result, unsigned __int64 a2, __int64 a3,
                        char a4);
 _QWORD* ConstructString_1901f0(_QWORD* result);
@@ -46513,8 +46513,8 @@ __int64 GameHr_1352160(__int64 result, __int64* a2, __int64 a3, char a4)
   }
 }
 
-__int64 GameHr_156e320(__int64 result, _QWORD* a2, __int64 a3, __int64 a4,
-                       char a5)
+unsigned __int8 GameHr_156e320(__int64 result, _QWORD* a2, __int64 a3,
+                               __int64 a4, char a5)
 {
 
 #pragma clang fp contract(on)

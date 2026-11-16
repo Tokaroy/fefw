@@ -56,7 +56,7 @@ float GameRoutine_10773c0(int);
 float game_combat_1068a00(__int64);
 void CharacterAnimator_1079fe0(__int64);
 void game_combat_1068b40(__int64, char);
-__int64
+unsigned __int8
 game_combat_CombatCharacterObserver_CombatCharacterObserver_lambda0_Invoke(
     __int64 result, __int64* a2);
 _QWORD*
@@ -821,8 +821,7 @@ __int64 CombatCharacterObserver_DeletingDestructor(_QWORD* a1)
       *(_QWORD*)fw_memory_g_heap_manager_ptr + v3, a1);
 }
 
-__int64
-
+unsigned __int8
 game_combat_CombatCharacterObserver_CombatCharacterObserver_lambda0_Invoke(
     __int64 result, __int64* a2)
 {

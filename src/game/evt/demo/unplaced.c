@@ -237,7 +237,7 @@ extern __int64 game_GameModeData_instance_;
 extern int* GameData_212deb0;
 void Seq_1134ae0(__int64, __int64);
 void game_evt_demo_114e840(__int64 a1);
-__int64 game_evt_demo_11547e0(__int64 a1);
+unsigned __int8 game_evt_demo_11547e0(__int64 a1);
 __int64
 game_evt_demo_11575a0_alt1(__int64 a1, double a2,
                            long double a3) __asm__("game_evt_demo_11575a0");
@@ -1527,7 +1527,7 @@ LABEL_16:
   return result;
 }
 
-__int64 game_evt_demo_11547e0(__int64 a1)
+unsigned __int8 game_evt_demo_11547e0(__int64 a1)
 {
   __int64 v1;
   __int64 v2;

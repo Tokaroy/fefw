@@ -346,7 +346,7 @@ __int64 nvidia_6dc60();
 
 __int64 nvidia_6e2b0(_DWORD* a1);
 
-__int64 nvidia_6e8f0(__int64 a1, long double a2);
+unsigned __int8 nvidia_6e8f0(__int64 a1, long double a2);
 
 __int64 nvidia_6f720(_DWORD* a1);
 
@@ -2651,7 +2651,7 @@ __int64 nvidia_6e2b0(_DWORD* a1)
   return 22;
 }
 
-__int64 nvidia_6e8f0(__int64 a1, long double a2)
+unsigned __int8 nvidia_6e8f0(__int64 a1, long double a2)
 {
 
 #pragma clang fp contract(off)

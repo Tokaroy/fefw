@@ -352,7 +352,7 @@ __int64 nvidia_1da010(__int64 a1);
 __int64 nvidia_1e27d0(__int64* a1);
 __int64 nvidia_1f76a0(__int64* a1, __int64 a2, __int64 a3, __int64 a4,
                       __int64 a5);
-__int64 nvidia_1fd7a0(__int64 a1, __int64* a2, int a3);
+unsigned __int8 nvidia_1fd7a0(__int64 a1, __int64* a2, int a3);
 __int64 nvidia_215db0(__int64 a1, __int64 a2);
 __int64 nvidia_21fad0(__int64 a1);
 __int64 nvidia_21faf0(__int64 a1);
@@ -5169,7 +5169,7 @@ __int64 nvidia_1f76a0(__int64* a1, __int64 a2, __int64 a3, __int64 a4,
   return result;
 }
 
-__int64 nvidia_1fd7a0(__int64 a1, __int64* a2, int a3)
+unsigned __int8 nvidia_1fd7a0(__int64 a1, __int64* a2, int a3)
 {
 
 #pragma clang fp contract(off)

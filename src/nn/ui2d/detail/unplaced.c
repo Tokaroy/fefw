@@ -10,8 +10,9 @@ extern __int128 GameData_1a83090;
 float nn_ui2d_5a3700(unsigned __int16*, float);
 unsigned __int64* GameRoutine_5a3a90(unsigned __int64* result, __int64, int,
                                      int, int, int, int);
-__int64 nn_ui2d_detail_5a7540(__int64 result, __int64 a2, float32x4_t* a3,
-                              float32x4_t* a4, float a5);
+unsigned __int8 nn_ui2d_detail_5a7540(__int64 result, __int64 a2,
+                                      float32x4_t* a3, float32x4_t* a4,
+                                      float a5);
 float32x4_t nn_ui2d_detail_5a8380(float a1, __int64 a2, float32x4_t* a3,
                                   unsigned __int16* a4);
 __int64 nn_ui2d_detail_5ad040(__int64 a1, __int64 a2);
@@ -23,8 +24,9 @@ __int64 GameRoutine_5fdcb0(__int64 result, int);
 __int64 GameRoutine_5fdce0(__int64 result, unsigned int);
 __int64 nn_ui2d_detail_5a86e0(__int64 a1, _QWORD* a2, __int64 a3, __int64 a4);
 
-__int64 nn_ui2d_detail_5a7540(__int64 result, __int64 a2, float32x4_t* a3,
-                              float32x4_t* a4, float a5)
+unsigned __int8 nn_ui2d_detail_5a7540(__int64 result, __int64 a2,
+                                      float32x4_t* a3, float32x4_t* a4,
+                                      float a5)
 {
   __int64 v5;
   __int64 v6;

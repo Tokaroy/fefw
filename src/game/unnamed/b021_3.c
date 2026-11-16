@@ -257,7 +257,7 @@ unsigned __int64 strlen(const char*);
 
 void __attribute__((noreturn)) fs_60a230();
 
-unsigned __int64 GameHr_1674ba0(__int64 a1);
+unsigned __int8 GameHr_1674ba0(__int64 a1);
 
 __int64 GameHr_1627bf0(__int64 a1)
 {
@@ -2132,7 +2132,7 @@ __int64 GameHr_16716e0(__int64 result)
   return result;
 }
 
-unsigned __int64 GameHr_1674ba0(__int64 a1)
+unsigned __int8 GameHr_1674ba0(__int64 a1)
 {
   unsigned __int64 result;
   unsigned int v3;

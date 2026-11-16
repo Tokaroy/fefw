@@ -59,7 +59,7 @@ struct PseudoSret GameRoutine_1560070(_QWORD, _QWORD);
 void __attribute__((noreturn)) GameRoutine_60a310(_QWORD, _QWORD, _QWORD);
 __int64 RelianceMemoryChildMenu_Unknown84(__int64 a1);
 __int64 RelianceMemoryChildMenu_Unknown88(__int64 a1);
-__int64 RelianceMemoryChildMenu_Unknown100(__int64 a1);
+unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1);
 __int64 RelianceMemoryChildMenu_Unknown108(__int64 a1, char a2);
 __int64 RelianceMemoryChildMenu_Unknown110(__int64 a1, char a2);
 _QWORD* RelianceMemoryChildMenu_Unknown128(_QWORD* a1, __int64 a2, __int64 a3);
@@ -499,7 +499,7 @@ __int64 RelianceMemoryChildMenu_Unknown88(__int64 a1)
   return GameRoutine_15e04f0(v13);
 }
 
-__int64 RelianceMemoryChildMenu_Unknown100(__int64 a1)
+unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
 {
   __int64 result;
   __int64 v3;

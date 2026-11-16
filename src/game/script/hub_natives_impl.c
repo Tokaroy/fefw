@@ -199,7 +199,7 @@ _QWORD* hub_PlaySE_cc8950_alt1(__int64 a1,
                                float a2) __asm__("hub_PlaySE_cc8950");
 __int64 hub_PlayEffect_alt1(__int64 a1, __int64* a2,
                             int32x2_t a3) __asm__("hub_PlayEffect");
-__int64 hub_PlayEffectBindPlayer(__int64 a1, int32x2_t a2);
+unsigned __int8 hub_PlayEffectBindPlayer(__int64 a1, int32x2_t a2);
 __int64 hub_PlayEffectLoop_alt1(__int64 a1, __int64 a2, __int64* a3,
                                 int32x2_t a4) __asm__("hub_PlayEffectLoop");
 _QWORD* hub_TryPopWorldPost();
@@ -4470,7 +4470,7 @@ LABEL_18:
   }
 }
 
-__int64 hub_PlayEffectBindPlayer(__int64 a1, int32x2_t a2)
+unsigned __int8 hub_PlayEffectBindPlayer(__int64 a1, int32x2_t a2)
 {
   __int64 v3;
   __int64 v4;
