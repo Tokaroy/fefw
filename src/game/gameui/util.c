@@ -882,6 +882,11 @@ __int64 GameRoutine_60a020_alt2(__int64, const char*);
 __int64 ui_LayoutAccessor_FindPane_alt3(__int64*, __int64);
 char* game_util_Format_alt4(const char*, ...);
 void nn_mem_StandardAllocator_Free_alt4(__int64, __int64);
+__attribute__((swiftcall)) void game_gameui_15ad0c0_alt1(PSEUDO_X8, _QWORD*,
+                                                         _QWORD*);
+__int64 std___1___shared_weak_count___release_weak_alt3(__int64);
+__int64 std___1___shared_weak_count_lock_alt2(__int64);
+unsigned __int64 GameRoutine_1a09c70(const char*);
 
 __int64 game_gameui_Util_CountAvailableArtsNum(__int64 a1, __int64 a2,
                                                __int64 a3)
@@ -18976,27 +18981,32 @@ __int64 game_gameui_Util_SetSkillInfo_lambda0_Invoke(__int64 result, __int64 a2)
 __int64 game_gameui_Util_SetMasteryInfo_lambda0_Invoke(__int64 a1, __int64 a2,
                                                        unsigned int* a3)
 {
-  __int64* v3;
+
+#pragma clang fp contract(on)
+
+  _QWORD* v3;
   __int64 result;
   __int64 v5;
   __int64 v6;
   _BYTE* v7;
   __int64 v8;
-  _QWORD v9[2];
-  _BYTE* v10;
-  __int64 v11;
+  struct {
+    const char* v9[2];
+    _BYTE* v10;
+    __int64 v11;
+  } f_;
 
-  v3 = *(__int64**)(a1 + 8);
-  v9[0] = game_util_Format(*(const char**)(a1 + 16), *a3);
-  v9[1] = strlen(v9[0]);
-  result =
-      X8CALL_X0(__int64, game_gameui_15ad0c0((void*)((__int64*)&v10), v3, v9));
-  v5 = v11;
-  if (v11 != 0) {
-    v6 = std___1___shared_weak_count_lock(v11);
-    v7 = v10;
+  v3 = *(_QWORD**)(a1 + 8);
+  f_.v9[0] = game_util_Format_alt4(*(const char**)(a1 + 16), *a3);
+  f_.v9[1] = (const char*)GameRoutine_1a09c70(f_.v9[0]);
+  result = X8CALL_X0(
+      __int64, game_gameui_15ad0c0_alt1((void*)((__int64*)&f_.v10), v3, f_.v9));
+  v5 = f_.v11;
+  if (f_.v11 != 0) {
+    v6 = std___1___shared_weak_count_lock_alt2(f_.v11);
+    v7 = f_.v10;
     v8 = v6;
-    result = std___1___shared_weak_count___release_weak(v5);
+    result = std___1___shared_weak_count___release_weak_alt3(v5);
     if (v8 != 0 && v7 != nullptr) {
       v7[1073] = 15;
       result = (*(__int64 (**)(_BYTE*, _QWORD))(*(_QWORD*)v7 + 40LL))(v7, 0);
@@ -19007,7 +19017,7 @@ __int64 game_gameui_Util_SetMasteryInfo_lambda0_Invoke(__int64 a1, __int64 a2,
     if (atomic_fetch_add((atomic_ullong* volatile)(v8 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
-      return std___1___shared_weak_count___release_weak(v8);
+      return std___1___shared_weak_count___release_weak_alt3(v8);
     }
   }
   return result;

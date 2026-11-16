@@ -70,6 +70,8 @@ _OWORD
 nerd_gyro_pointing_GyroPointingKalmanFilter_GetCalibrationState(void* this_);
 __int64
 nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState(void* this_);
+unsigned __int64 unplaced_4_730ec0(unsigned __int64*, unsigned __int64,
+                                   unsigned __int64, unsigned __int64);
 
 float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
                                          unsigned __int64* a2, __int64 a3,
@@ -126,16 +128,17 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
   char* v68;
   char* v69;
   float result;
-  __int64 v71;
-  unsigned __int64 v72;
-  unsigned __int64 v73;
-  unsigned __int64 v74;
-  unsigned __int64 v75;
   struct {
+    char gap0_[8];
+    __int64 v71;
+    unsigned __int64 v72;
+    unsigned __int64 v73;
+    unsigned __int64 v74;
+    unsigned __int64 v75;
     unsigned __int64 v76;
     unsigned __int64 v77;
     _BYTE v78[4368];
-  } v76_;
+  } f_;
 
   v12 = COERCE_AS(__typeof__(v12),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
@@ -146,7 +149,7 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
   v9 = a1 + 937;
   *a2 = v5;
   a1[a1[970]++ + 937] = v5;
-  math_730ec0(a1 + 548, v5, v6, a4),
+  unplaced_4_730ec0(a1 + 548, v5, v6, a4),
       v12 = COERCE_AS(__typeof__(v12),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
       v16 = COERCE_AS(__typeof__(v16),
@@ -156,7 +159,7 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
   a2[1] = v10;
   v11 = a1[547];
   v9[a1[970]++] = v11;
-  math_730ec0(a1 + 548, v11, v6 + 1, v12),
+  unplaced_4_730ec0(a1 + 548, v11, v6 + 1, v12),
       v12 = COERCE_AS(__typeof__(v12),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
       v16 = COERCE_AS(__typeof__(v16),
@@ -167,7 +170,7 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
   a2[2] = v14;
   v15 = a1[547];
   v9[a1[970]++] = v15;
-  math_730ec0(a1 + 548, v15, v6 + 2, v16),
+  unplaced_4_730ec0(a1 + 548, v15, v6 + 2, v16),
       v12 = COERCE_AS(__typeof__(v12),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
       v16 = COERCE_AS(__typeof__(v16),
@@ -180,10 +183,10 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
     goto LABEL_39;
   }
   if (v20 >= 0x22) {
-    *(_QWORD*)&v76_.v78[4352] = 0;
-    v76_.v76 = v6 + 3;
-    v76_.v77 = v6 + 3;
-    memset_plt((void*)v76_.v78, nullptr, 4356),
+    *(_QWORD*)&f_.v78[4352] = 0;
+    f_.v76 = v6 + 3;
+    f_.v77 = v6 + 3;
+    memset_plt((void*)f_.v78, nullptr, 4356),
         v12 = COERCE_AS(__typeof__(v12),
                         PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
         v16 = COERCE_AS(__typeof__(v16),
@@ -210,42 +213,42 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
       v32 = 0;
       v33 = -(__int64)(v21 & 0xFFFFFFFFFFFFFFF8LL);
       do {
-        memcpy_plt(&v76_.v78[v32 * 8], &a1[v32 + 2], v24),
+        memcpy_plt(&f_.v78[v32 * 8], &a1[v32 + 2], v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 132], (char*)&a1[v32 + 18] + 4, v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 132], (char*)&a1[v32 + 18] + 4, v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 264], &a1[v32 + 35], v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 264], &a1[v32 + 35], v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 396], (char*)&a1[v32 + 51] + 4, v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 396], (char*)&a1[v32 + 51] + 4, v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 528], &a1[v32 + 68], v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 528], &a1[v32 + 68], v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 660], (char*)&a1[v32 + 84] + 4, v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 660], (char*)&a1[v32 + 84] + 4, v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 792], &a1[v32 + 101], v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 792], &a1[v32 + 101], v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v76_.v78[v32 * 8 + 924], (char*)&a1[v32 + 117] + 4, v24),
+        memcpy_plt(&f_.v78[v32 * 8 + 924], (char*)&a1[v32 + 117] + 4, v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
@@ -262,10 +265,10 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
       v25 = 0;
       if (v23 == 0) {
       LABEL_24:
-        v37 = v76_.v77;
-        *a1 = v76_.v76;
+        v37 = f_.v77;
+        *a1 = f_.v76;
         a1[1] = v37;
-        memcpy_plt(a1 + 2, v76_.v78, 4356),
+        memcpy_plt(a1 + 2, f_.v78, 4356),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v16 = COERCE_AS(__typeof__(v16),
@@ -275,7 +278,7 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
     }
     v34 = 132 * v25 + 16;
     v35 = (char*)a1 + v34;
-    v36 = (char*)&v76_.v76 + v34;
+    v36 = (char*)&f_.v76 + v34;
     do {
       memcpy_plt(v36, v35, v24),
           v12 = COERCE_AS(__typeof__(v12),
@@ -295,8 +298,8 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
     v28 = 4 * v19;
     v29 = v26 & 7;
     if (v6 - v18 + 2 >= 7) {
-      v71 = 33 * v18;
-      v72 = v19;
+      f_.v71 = 33 * v18;
+      f_.v72 = v19;
       v38 = 0;
       v39 = -(__int64)(v26 & 0x38);
       v40 = (void*)((char*)a1 + 4 * v27 + 940);
@@ -344,8 +347,8 @@ float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
         v40 = (void*)((char*)v40 + 1056);
         v38 -= 8;
       } while (v39 != v38);
-      v27 = v71;
-      v19 = v72;
+      v27 = f_.v71;
+      v19 = f_.v72;
       v30 = -v38;
       if (v29 == 0) {
         goto LABEL_30;
@@ -444,29 +447,29 @@ LABEL_30:
   }
 LABEL_39:
   v62 = a2[1];
-  v73 = *a2;
-  v74 = v62;
-  v75 = a2[2];
-  v73 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v73),
+  f_.v73 = *a2;
+  f_.v74 = v62;
+  f_.v75 = a2[2];
+  f_.v73 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&f_.v73),
   v12 = COERCE_AS(__typeof__(v12),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
   v16 = COERCE_AS(__typeof__(v16),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v74 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v74),
+  f_.v74 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&f_.v74),
   v12 = COERCE_AS(__typeof__(v12),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
   v16 = COERCE_AS(__typeof__(v16),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v63 = fw_math_LookupStateIndex(a1 + 548, (__int64*)&v75),
+  v63 = fw_math_LookupStateIndex(a1 + 548, (__int64*)&f_.v75),
   v12 = COERCE_AS(__typeof__(v12),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
   v16 = COERCE_AS(__typeof__(v16),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v64 = v73;
-  v65 = v74;
-  v66 = (char*)a1 + 132 * v73 + 16;
+  v64 = f_.v73;
+  v65 = f_.v74;
+  v66 = (char*)a1 + 132 * f_.v73 + 16;
   v67 = *v63;
-  *(_DWORD*)&v66[4 * v73] = *(_DWORD*)a3;
+  *(_DWORD*)&v66[4 * f_.v73] = *(_DWORD*)a3;
   *(_DWORD*)&v66[4 * v65] = *(_DWORD*)(a3 + 4);
   *(_DWORD*)&v66[4 * v67] = *(_DWORD*)(a3 + 8);
   v68 = (char*)a1 + 132 * v65 + 16;

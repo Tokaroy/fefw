@@ -59,6 +59,9 @@ extern __int64 (*nn_g3d_5f3f20_ptr[4])();
 float powf_alt1(float, float) __asm__("powf");
 int8x16_t* SkeletalAnimObj_5f7910(int8x16_t* result, unsigned int, float32x4_t,
                                   float);
+float GameRoutine_1a0a550(_QWORD, float, float);
+float32x4_t* nn_g3d_5f80f0(float32x4_t* result, float32x4_t*, float, double);
+int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int, float32x4_t, float);
 
 __int64 nn_g3d_5e2c00(__int64 result)
 {
@@ -1457,26 +1460,33 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
   double v24;
   float32x4_t* v25;
   float32x4_t* v26;
-  __int64 v27;
-  float32x4_t v28;
-  unsigned __int32 v29;
-  float32x4_t v30;
-  float v31;
-  float v32;
-  float32x4_t v33;
+  float32x4_t* v27;
+  __int64 v28;
+  float32x4_t v29;
+  unsigned __int32 v30;
+  float32x4_t v31;
+  __int64 v32;
+  __int64 v33;
+  float v34;
+  float v35;
+  float32x4_t v36;
   struct {
     char gap0_[16];
-    float v34;
+    float v37;
     char gap20_[12];
-    float v35;
+    float v38;
     char gap36_[12];
-    float v36;
-    char gap52_[12];
-    __int64 v37;
-    int v38;
     float v39;
+    char gap52_[12];
+    __int64 v40;
+    int v41;
+    float v42;
   } f_;
 
+  v32 = COERCE_AS(__typeof__(v32),
+                  PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v33 = COERCE_AS(__typeof__(v33),
+                  PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   if (*(_WORD*)(a2 + 100) != 0) {
     v4 = *(_QWORD*)(a2 + 72);
     v5 = *a1;
@@ -1493,58 +1503,82 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
         goto LABEL_5;
       }
       v18 = a1[3];
-      f_.v37 = a2;
-      f_.v38 = v16 & 0x7FFF;
-      f_.v39 = a3;
-      (*(void (**)(__int64, __int64*))(*(_QWORD*)v18 + 16LL))(v18, &f_.v37);
-      *(float*)&v24 = f_.v39;
+      f_.v40 = a2;
+      f_.v41 = v16 & 0x7FFF;
+      f_.v42 = a3;
+      (*(void (**)(__int64, __int64*))(*(_QWORD*)v18 + 16LL))(v18, &f_.v40),
+          v32 = COERCE_AS(__typeof__(v32),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v33 = COERCE_AS(__typeof__(v33),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+      *(float*)&v24 = f_.v42;
       v25 = (float32x4_t*)(v4 + v9);
       v26 = (float32x4_t*)(v5 + 80LL * v17);
-      f_.v36 = f_.v39;
+      f_.v39 = f_.v42;
       if ((*(_BYTE*)(v4 + v9 + 2) & 0x30) != 0) {
-        GameRoutine_5f80f0_alt2(v26, v25, f_.v39, v24);
-        v27 = v4 + v9;
+        v27 = nn_g3d_5f80f0(v26, v25, f_.v42, v24),
+        v32 = COERCE_AS(__typeof__(v32),
+                        PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+        v33 = COERCE_AS(__typeof__(v33),
+                        PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+        v28 = v4 + v9;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
           goto LABEL_12;
         }
       }
       else {
         PSEUDO_LOW_LANE128(v19, n128_u64, LANES128(v25[2]).n128_u64[0]);
-        SkeletalAnimObj_5f7910(v26, LANES128(v25[2]).n128_u32[2], v19,
-                               f_.v39);
-        v27 = v4 + v9;
+        v27 = nn_g3d_5f7910(v26, LANES128(v25[2]).n128_u32[2], v19, f_.v42),
+        v32 = COERCE_AS(__typeof__(v32),
+                        PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+        v33 = COERCE_AS(__typeof__(v33),
+                        PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+        v28 = v4 + v9;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
         LABEL_12:
-          f_.v35 = powf_alt1(*(float*)(v27 + 4), f_.v36);
-          f_.v34 = powf_alt1(*(float*)(v27 + 8), f_.v36);
-          v31 = powf_alt1(*(float*)(v27 + 12), f_.v36);
-          v32 = LANES128(v26[4]).n128_f32[1];
-          v33 = COERCE_AS(float32x4_t, GameData_1a837f0);
-          if (!(fabsf(v32) < 0x1.0624de0000000p-10f)) {
-            v33 = *v26;
+          f_.v38 = GameRoutine_1a0a550(v27, *(float*)(v28 + 4), f_.v39),
+          v32 = COERCE_AS(__typeof__(v32),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v33 = COERCE_AS(__typeof__(v33),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+          f_.v37 = GameRoutine_1a0a550(v32, *(float*)(v28 + 8), f_.v39),
+          v32 = COERCE_AS(__typeof__(v32),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v33 = COERCE_AS(__typeof__(v33),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+          v34 = GameRoutine_1a0a550(v33, *(float*)(v28 + 12), f_.v39),
+          v32 = COERCE_AS(__typeof__(v32),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v33 = COERCE_AS(__typeof__(v33),
+                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+          v35 = LANES128(v26[4]).n128_f32[1];
+          v36 = COERCE_AS(float32x4_t, GameData_1a837f0);
+          if (fabsf(v35) >= 0x1.0624de0000000p-10f) {
+            v36 = *v26;
           }
-          LANES128(v11).n128_u64[0] = __PAIR64__(LODWORD(f_.v34), LODWORD(f_.v35));
-          LANES128(v11).n128_u64[1] = LODWORD(v31);
-          *v26 = vmulq_f32(v11, v33);
+          LANES128(v11).n128_u64[0] =
+              __PAIR64__(LODWORD(f_.v37), LODWORD(f_.v38));
+          LANES128(v11).n128_u64[1] = LODWORD(v34);
+          *v26 = vmulq_f32(v11, v36);
           LANES128(v12).n128_u64[0] = *(_QWORD*)(v4 + v9 + 16);
           v13 = LANES128(v26[4]).n128_u32[0];
           LANES128(v12).n128_u64[1] = *(unsigned int*)(v4 + v9 + 24);
-          v26[1] = vaddq_f32(v26[1], vmulq_n_f32(v12, f_.v36));
-          v14 = f_.v36 + v32;
+          v26[1] = vaddq_f32(v26[1], vmulq_n_f32(v12, f_.v39));
+          v14 = f_.v39 + v35;
           v15 = v13 | ~*(_DWORD*)(v4 + v9);
           goto LABEL_4;
         }
       }
-      LANES128(v28).n128_u64[0] = *(_QWORD*)(v27 + 4);
-      v29 = LANES128(v26[4]).n128_u32[0];
-      LANES128(v28).n128_u64[1] = *(unsigned int*)(v27 + 12);
-      v30 = v26[1];
-      *v26 = vaddq_f32(*v26, vmulq_n_f32(v28, f_.v36));
-      LANES128(v28).n128_u64[0] = *(_QWORD*)(v27 + 16);
-      LANES128(v28).n128_u64[1] = *(unsigned int*)(v27 + 24);
-      v26[1] = vaddq_f32(v30, vmulq_n_f32(v28, f_.v36));
-      v15 = v29 | ~*(_DWORD*)v27;
-      v14 = f_.v36 + LANES128(v26[4]).n128_f32[1];
+      LANES128(v29).n128_u64[0] = *(_QWORD*)(v28 + 4);
+      v30 = LANES128(v26[4]).n128_u32[0];
+      LANES128(v29).n128_u64[1] = *(unsigned int*)(v28 + 12);
+      v31 = v26[1];
+      *v26 = vaddq_f32(*v26, vmulq_n_f32(v29, f_.v39));
+      LANES128(v29).n128_u64[0] = *(_QWORD*)(v28 + 16);
+      LANES128(v29).n128_u64[1] = *(unsigned int*)(v28 + 24);
+      v26[1] = vaddq_f32(v31, vmulq_n_f32(v29, f_.v39));
+      v15 = v30 | ~*(_DWORD*)v28;
+      v14 = f_.v39 + LANES128(v26[4]).n128_f32[1];
     LABEL_4:
       LANES128(v26[4]).n128_u32[0] = v15;
       LANES128(v26[4]).n128_f32[1] = v14;

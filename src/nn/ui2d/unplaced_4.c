@@ -15,6 +15,8 @@ void nn_detail_UnexpectedDefaultImpl();
 void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4);
 unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3);
 float nn_ui2d_59f2e0(_WORD* a1, float a2, float a3);
+__int64 nn_util_ConvertCharacterUtf8ToUtf32_alt1(__int64, const char*);
+__int64 nn_util_PickOutCharacterFromUtf8String_alt1(__int64, __int64);
 
 void nn_ui2d_58b740(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4)
 {
@@ -271,9 +273,12 @@ unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3)
   unsigned __int64 v14;
   int i;
   unsigned __int64 v17;
-  _BYTE v18[4];
-  unsigned __int64 v19;
-  unsigned int v20;
+  struct {
+    char gap0_[12];
+    _BYTE v18[4];
+    unsigned __int64 v19;
+    unsigned int v20;
+  } f_;
   int v21;
 
   v5 = result;
@@ -284,11 +289,11 @@ unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3)
     if ((~v7 & 0x3000) != 0 && (v7 & 0x200) != 0 && v6 != 0) {
       v14 = *(_QWORD*)(result + 216);
       for (i = 0; i != v6; ++i) {
-        v18[0] = 0;
+        f_.v18[0] = 0;
         while (1) {
           result = (*(__int64 (**)(__int64, _BYTE*, unsigned __int64))(
-              *(_QWORD*)a3 + 112LL))(a3, v18, v14);
-          if ((v18[0] & 1) != 0) {
+              *(_QWORD*)a3 + 112LL))(a3, f_.v18, v14);
+          if ((f_.v18[0] & 1) != 0) {
             break;
           }
           v12 = result > v14;
@@ -300,18 +305,20 @@ unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3)
           }
         }
         v17 = result;
-        v19 = v14;
+        f_.v19 = v14;
         v21 = 0;
-        nn_util_PickOutCharacterFromUtf8String(&v21, &v19);
-        v20 = 0;
-        result = nn_util_ConvertCharacterUtf8ToUtf32(&v20, &v21);
+        nn_util_PickOutCharacterFromUtf8String_alt1((__int64)&v21,
+                                                    (__int64)&f_.v19);
+        f_.v20 = 0;
+        result = nn_util_ConvertCharacterUtf8ToUtf32_alt1((__int64)&f_.v20,
+                                                          (const char*)&v21);
         if (v17 == 0) {
           break;
         }
         v14 = v17;
         if ((*(_WORD*)(v5 + 276) & 0x1000 | i) != 0) {
           result = (*(__int64 (**)(_QWORD, _QWORD))(
-              **(_QWORD**)(v5 + 240) + 128LL))(*(_QWORD*)(v5 + 240), v20);
+              **(_QWORD**)(v5 + 240) + 128LL))(*(_QWORD*)(v5 + 240), f_.v20);
           v14 = v17;
           *a2 = *a2 + (float)(*(float*)(v5 + 260) + (float)(int)result);
         }
@@ -327,11 +334,11 @@ unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3)
       v10 = 0;
       v11 = v8 / (float)(int)result;
       do {
-        v18[0] = 0;
+        f_.v18[0] = 0;
         while (1) {
           result = (*(__int64 (**)(__int64, _BYTE*, unsigned __int64))(
-              *(_QWORD*)a3 + 112LL))(a3, v18, v9);
-          if ((v18[0] & 1) != 0) {
+              *(_QWORD*)a3 + 112LL))(a3, f_.v18, v9);
+          if ((f_.v18[0] & 1) != 0) {
             break;
           }
           v12 = result > v9;
@@ -344,17 +351,19 @@ unsigned __int64 nn_ui2d_59dbe0(unsigned __int64 result, float* a2, __int64 a3)
           }
         }
         v13 = result;
-        v19 = v9;
+        f_.v19 = v9;
         v21 = 0;
-        nn_util_PickOutCharacterFromUtf8String(&v21, &v19);
-        v20 = 0;
-        result = nn_util_ConvertCharacterUtf8ToUtf32(&v20, &v21);
+        nn_util_PickOutCharacterFromUtf8String_alt1((__int64)&v21,
+                                                    (__int64)&f_.v19);
+        f_.v20 = 0;
+        result = nn_util_ConvertCharacterUtf8ToUtf32_alt1((__int64)&f_.v20,
+                                                          (const char*)&v21);
         if (v13 == 0) {
           break;
         }
         v9 = v13;
         result = (*(__int64 (**)(_QWORD, _QWORD))(
-            **(_QWORD**)(v5 + 240) + 128LL))(*(_QWORD*)(v5 + 240), v20);
+            **(_QWORD**)(v5 + 240) + 128LL))(*(_QWORD*)(v5 + 240), f_.v20);
         ++v10;
         *a2 = *a2 +
               (float)((float)(*(float*)(v5 + 260) + (float)(int)result) * v11);

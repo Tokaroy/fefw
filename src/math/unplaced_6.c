@@ -3,33 +3,21 @@
 #pragma GCC visibility push(hidden)
 
 __attribute__((swiftcall)) void SdkRoutine_87a0a0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void SdkRoutine_87a0b0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void SdkRoutine_87a2e0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void SdkRoutine_87a2f0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void math_716760(PSEUDO_X8, float*);
-
 __attribute__((swiftcall)) void math_71ec60(PSEUDO_X8, __int64, _QWORD*,
                                             __int64, unsigned __int64);
-
 __int64 SdkRoutine_87a2d0(_QWORD);
-
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 memset_plt(void* this_, void*, int, unsigned __int64);
-
 unsigned __int64* fw_math_LookupStateIndex(unsigned __int64*, __int64*);
-
 __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
                                             __int64* a2, __int64* a3,
                                             unsigned __int64 a4);
-
 __attribute__((swiftcall)) void math_70b0c0(PSEUDO_X8 x8_, float* a1, float a3,
                                             float a4, float a5);
-
 __attribute__((swiftcall)) void math_71d560(PSEUDO_X8 x8_, _QWORD* a1,
                                             unsigned __int64* a2);
 
@@ -93,20 +81,21 @@ __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
   int v60;
   int v61;
   _DWORD* v62;
-  __int64 v65;
   struct {
+    char gap0_[8];
+    __int64 v65;
     char gap16_[4];
     _BYTE v66[2924];
     char gap2944_[8];
     __int64 v67;
-  } v66_;
+  } f_;
 
-  memset_plt((void*)v66_.v66, nullptr, 2916, a4);
+  memset_plt((void*)f_.v66, nullptr, 2916, a4);
   v8 = a3[1];
   v9 = a3[2];
   v10 = a3[3];
   v11 = 0;
-  v66_.v67 = *a3;
+  f_.v67 = *a3;
   v12 = a3[4];
   v13 = a3[5];
   v14 = a3[6];
@@ -117,7 +106,7 @@ __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
   v19 = a3[11];
   v20 = a3[12];
   v21 = a3[13];
-  v65 = v8;
+  f_.v65 = v8;
   v22 = a3[14];
   v23 = a3[15];
   v24 = a3[16];
@@ -133,7 +122,7 @@ __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
   v34 = a3[26];
   do {
     v35 = *a2++;
-    v36 = *(_DWORD*)(a1 + 4 * (27 * v35 + v65));
+    v36 = *(_DWORD*)(a1 + 4 * (27 * v35 + f_.v65));
     v37 = *(_DWORD*)(a1 + 4 * (27 * v35 + v9));
     v38 = *(_DWORD*)(a1 + 4 * (27 * v35 + v10));
     v39 = *(_DWORD*)(a1 + 4 * (27 * v35 + v12));
@@ -159,9 +148,9 @@ __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
     v59 = *(_DWORD*)(a1 + 4 * (27 * v35 + v32));
     v60 = *(_DWORD*)(a1 + 4 * (27 * v35 + v33));
     v61 = *(_DWORD*)(a1 + 4 * (27 * v35 + v34));
-    v62 = &v66_.v66[v11];
+    v62 = &f_.v66[v11];
     v11 += 108;
-    *v62 = *(_DWORD*)(a1 + 4 * (27 * v35 + v66_.v67));
+    *v62 = *(_DWORD*)(a1 + 4 * (27 * v35 + f_.v67));
     v62[1] = v36;
     v62[2] = v37;
     v62[3] = v38;
@@ -190,7 +179,7 @@ __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
     v62[26] = v61;
   } while (v11 != 2916);
   {
-    memcpy_plt(a5, v66_.v66, 2916);
+    memcpy_plt(a5, f_.v66, 2916);
     return;
   }
 }

@@ -76,6 +76,8 @@ __int64 gfxa_MainPassEffect_SetupCursorUIPass(__int64 a1, __int64 a2,
                                               __int64 a3);
 __int64 gfxa_MainPassEffect_SetupOffscreenPass(__int64 a1, __int64 a2,
                                                __int64 a3);
+__int64 gfx_flow_b5d610(_DWORD*, __int64, __int64);
+float GameRoutine_1a0a8d0(float);
 
 __int64 gfxa_MainPassEffect_SetupLightingPass(__int64 a1, __int64 a2,
                                               __int64 a3)
@@ -1429,106 +1431,118 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
   float v104;
   int v105;
   float v106;
-  int v108;
-  int v109;
-  float v110;
-  float32x4_t v111;
-  __int64* v112;
-  _QWORD v113[2];
-  __int64 v114;
-  __int64 v115;
-  __int64 v116;
-  __int64 v117;
-  __int64 v118;
-  bool v119;
-  __int64 v120;
-  int v121;
-  __int64 v122;
-  int v123;
-  __int64 v124;
-  int v125;
-  float32x4_t v126;
-  int v127;
-  int v128;
-  int v129;
-  int v130;
-  int v131;
-  float v132;
-  float v133;
-  float v134;
-  int v135;
-  int v136;
-  int v137;
-  int v138;
-  float v139;
-  int v140;
-  int v141;
-  char v142;
-  char v143;
-  __int64 v144;
-  int v145;
-  __int64 v146;
-  int v147;
-  char v148;
-  __int64 v149;
-  __int64 v150;
-  __int64 v151;
-  __int64 v152;
-  int v153;
-  __int64 v154;
-  __int64 v155;
-  __int64 v156;
-  __int64 v157;
-  __int64 v158;
-  __int64 v159;
-  __int64 v160;
-  __int64 v161;
-  float v162;
-  float v163;
+  struct {
+    char gap0_[4];
+    int v108;
+    int v109;
+    float v110;
+    float32x4_t v111;
+    char gap32_[8];
+    __int64* v112;
+    _QWORD v113[2];
+    __int64 v114;
+    __int64 v115;
+    __int64 v116;
+    __int64 v117;
+    __int64 v118;
+    bool v119;
+    char gap105_[3];
+    __int64 v120;
+    int v121;
+    __int64 v122;
+    int v123;
+    char gap132_[4];
+    __int64 v124;
+    int v125;
+    char gap148_[12];
+    float32x4_t v126;
+    int v127;
+    int v128;
+    int v129;
+    int v130;
+    int v131;
+    float v132;
+    float v133;
+    float v134;
+    int v135;
+    int v136;
+    int v137;
+    int v138;
+    float v139;
+    int v140;
+    int v141;
+    char v142;
+    char v143;
+    char gap238_[2];
+    __int64 v144;
+    int v145;
+    char gap252_[4];
+    __int64 v146;
+    int v147;
+    char gap268_[4];
+    char v148;
+    char gap273_[15];
+    __int64 v149;
+    __int64 v150;
+    __int64 v151;
+    __int64 v152;
+    int v153;
+    char gap324_[12];
+    __int64 v154;
+    __int64 v155;
+    __int64 v156;
+    __int64 v157;
+    __int64 v158;
+    __int64 v159;
+    __int64 v160;
+    __int64 v161;
+    float v162;
+    float v163;
+  } f_;
   int v164;
 
   v49 = COERCE_AS(__typeof__(v49),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v2 = *(_QWORD**)(a1 + 8);
-  v119 = false;
-  v114 = 0;
-  v115 = 0;
+  f_.v119 = false;
+  f_.v114 = 0;
+  f_.v115 = 0;
   v3 = a2[3];
-  v116 = 0;
-  v117 = 0;
-  v122 = 0;
-  v124 = 0;
-  LANES128(v126).n128_u8[0] = 0;
-  v148 = 0;
-  v151 = 0x3F8000003F800000LL;
-  v152 = 0;
-  v153 = 0;
+  f_.v116 = 0;
+  f_.v117 = 0;
+  f_.v122 = 0;
+  f_.v124 = 0;
+  LANES128(f_.v126).n128_u8[0] = 0;
+  f_.v148 = 0;
+  f_.v151 = 0x3F8000003F800000LL;
+  f_.v152 = 0;
+  f_.v153 = 0;
   v164 = 0;
-  v120 = 0x3F80000042480000LL;
-  v121 = 1065353216;
-  v123 = -1;
-  v125 = -1;
-  v149 = 0x3F80000000000000LL;
-  v150 = 0x3F8000003F800000LL;
+  f_.v120 = 0x3F80000042480000LL;
+  f_.v121 = 1065353216;
+  f_.v123 = -1;
+  f_.v125 = -1;
+  f_.v149 = 0x3F80000000000000LL;
+  f_.v150 = 0x3F8000003F800000LL;
   v5 = (__int64*)(*v2 + 13304LL);
   v6 = *(_QWORD*)(v3 + 128);
   if (*(_BYTE*)(*v2 + 16700LL) != 0) {
     v5 = (__int64*)(*(_QWORD*)(*v2 + 16672LL) + 24LL);
   }
-  v118 = *v5;
-  v113[0] = v2[3];
-  v113[1] = v6;
+  f_.v118 = *v5;
+  f_.v113[0] = v2[3];
+  f_.v113[1] = v6;
   v7 = *(_BYTE**)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 128LL);
   v8 = 128;
   if (v7[96] != 0) {
     v8 = 92;
   }
-  v119 = *(_DWORD*)&v7[v8] != 0;
+  f_.v119 = *(_DWORD*)&v7[v8] != 0;
   v9 = (*(float (**)(_QWORD))(*(_QWORD*)v2[3] + 120LL))(v2[3]),
   v49 = COERCE_AS(__typeof__(v49),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v10 = (unsigned __int8)v7[176];
-  *(float*)&v120 = v9;
+  *(float*)&f_.v120 = v9;
   v11 = v10 == 0;
   v12 = 208;
   if (!v11) {
@@ -1537,21 +1551,21 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
   v13 = *(_DWORD*)&v7[v12];
   v11 = v7[256] == 0;
   v14 = 288;
-  HIDWORD(v120) = v13;
+  HIDWORD(f_.v120) = v13;
   if (!v11) {
     v14 = 252;
   }
-  v121 = *(_DWORD*)&v7[v14];
+  f_.v121 = *(_DWORD*)&v7[v14];
   v15 = *(_DWORD*)(v3 + 56);
   v16 = *(_QWORD*)(v3 + 8);
-  v122 = *(_QWORD*)(v3 + 48);
-  v123 = v15;
-  v114 = v16;
+  f_.v122 = *(_QWORD*)(v3 + 48);
+  f_.v123 = v15;
+  f_.v114 = v16;
   LODWORD(v16) = *(_DWORD*)(v3 + 72);
-  v124 = *(_QWORD*)(v3 + 64);
-  v125 = v16;
+  f_.v124 = *(_QWORD*)(v3 + 64);
+  f_.v125 = v16;
   v17 = *(_QWORD*)(v2[7] + 8LL * *(int*)(v2[7] + 224LL) + 208);
-  v115 = (*(__int64 (**)(__int64))(*(_QWORD*)v17 + 56LL))(v17),
+  f_.v115 = (*(__int64 (**)(__int64))(*(_QWORD*)v17 + 56LL))(v17),
   v49 = COERCE_AS(__typeof__(v49),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   (*(void (**)(__int64))(*(_QWORD*)v17 + 64LL))(v17),
@@ -1562,7 +1576,7 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
   if (*(_BYTE*)(v18 + 90) != 0) {
     v19 = 89;
   }
-  v112 = a2;
+  f_.v112 = a2;
   if ((*(_BYTE*)(v18 + v19) & 1) == 0) {
     goto LABEL_16;
   }
@@ -1578,7 +1592,7 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
   LABEL_16:
     v22 = 2;
   }
-  LODWORD(v149) = v22;
+  LODWORD(f_.v149) = v22;
   v23 = *(_QWORD*)(*(_QWORD*)v3 + 8LL);
   v24 = *(_QWORD*)(v2[1] + 288LL);
   v25 = *(_QWORD*)(v23 + 112);
@@ -1602,7 +1616,7 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
     }
     v26 = *(_QWORD*)(v26 + v31);
   } while (v26 != 0);
-  if (v27 != v24 + 792 && v28 >= (signed __int32)*(_DWORD*)(v27 + 32)) {
+  if (v27 != v24 + 792 && v28 >= *(_DWORD*)(v27 + 32)) {
     v32 = *(_QWORD*)(v27 + 40);
   }
   else {
@@ -1665,7 +1679,7 @@ __int64 gfxa_MainPassEffect_SetupLightingPass_lambda1_Invoke(__int64 a1,
   if (*(_BYTE*)(v25 + 90) != 0) {
     v41 = 89;
   }
-  v111 = v34;
+  f_.v111 = v34;
   if ((*(_BYTE*)(v25 + v41) & 1) != 0) {
     v42 = 1040;
     if (*(_BYTE*)(v25 + 1008) != 0) {
@@ -1690,19 +1704,19 @@ LABEL_47:
   v48 = v45;
   v50 = v49;
   v51 = 280;
-  v110 = v38 + 0x1.0000000000000p+0f;
+  f_.v110 = v38 + 0x1.0000000000000p+0f;
   if (*(_BYTE*)(v25 + 248) != 0) {
     v51 = 244;
   }
   v52 = *(_DWORD*)(v25 + v51);
   v53 = 360;
-  v109 = v52;
+  f_.v109 = v52;
   if (*(_BYTE*)(v25 + 328) != 0) {
     v53 = 324;
   }
   v54 = *(_DWORD*)(v25 + v53);
   v55 = 440;
-  v108 = v54;
+  f_.v108 = v54;
   if (*(_BYTE*)(v25 + 408) != 0) {
     v55 = 404;
   }
@@ -1753,7 +1767,7 @@ LABEL_47:
     v74 = 1388;
   }
   v75 = v73 + 0x1.0000000000000p+0f;
-  v76 = exp2f(*(float*)(v25 + v74)),
+  v76 = GameRoutine_1a0a8d0(*(float*)(v25 + v74)),
   v49 = COERCE_AS(__typeof__(v49),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v77 = 1504;
@@ -1766,69 +1780,69 @@ LABEL_47:
     v79 = 1548;
   }
   v80 = *(_DWORD*)(v25 + v79);
-  v126 = v111;
-  v129 = v56;
-  v130 = v60;
-  v133 = v75;
-  v134 = v76;
-  v137 = v62;
-  v138 = v69;
-  v139 = v68;
-  v140 = v64;
-  v141 = v43;
-  v142 = v66;
-  v143 = v71;
-  v144 = v48;
-  v145 = v50;
-  v146 = v46;
-  v147 = v47;
-  v127 = v109;
-  v128 = v108;
-  v135 = v78;
-  v136 = v80;
-  v131 = v58;
-  v132 = v110;
-  v148 = 1;
+  f_.v126 = f_.v111;
+  f_.v129 = v56;
+  f_.v130 = v60;
+  f_.v133 = v75;
+  f_.v134 = v76;
+  f_.v137 = v62;
+  f_.v138 = v69;
+  f_.v139 = v68;
+  f_.v140 = v64;
+  f_.v141 = v43;
+  f_.v142 = v66;
+  f_.v143 = v71;
+  f_.v144 = v48;
+  f_.v145 = v50;
+  f_.v146 = v46;
+  f_.v147 = v47;
+  f_.v127 = f_.v109;
+  f_.v128 = f_.v108;
+  f_.v135 = v78;
+  f_.v136 = v80;
+  f_.v131 = v58;
+  f_.v132 = f_.v110;
+  f_.v148 = 1;
   v81 = *(_BYTE**)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 264LL);
   v82 = 256;
   if (v81[208] != 0) {
     v82 = 192;
   }
   v83 = *(_OWORD*)&v81[v82];
-  LODWORD(v151) = *(_QWORD*)&v81[v82 + 8];
+  LODWORD(f_.v151) = *(_QWORD*)&v81[v82 + 8];
   v84 = (unsigned __int8)v81[312];
-  v150 = v83;
+  f_.v150 = v83;
   v11 = v84 == 0;
   v85 = 344;
   if (!v11) {
     v85 = 308;
   }
-  HIDWORD(v151) = *(_DWORD*)&v81[v85];
+  HIDWORD(f_.v151) = *(_DWORD*)&v81[v85];
   v86 = 128;
   if (v81[96] != 0) {
     v86 = 92;
   }
-  HIDWORD(v149) = *(_DWORD*)&v81[v86];
+  HIDWORD(f_.v149) = *(_DWORD*)&v81[v86];
   v87 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 344LL);
   v88 = 208;
   if (*(_BYTE*)(v87 + 176) != 0) {
     v88 = 172;
   }
-  HIDWORD(v152) = *(_DWORD*)(v87 + v88);
+  HIDWORD(f_.v152) = *(_DWORD*)(v87 + v88);
   v89 = 288;
   if (*(_BYTE*)(v87 + 256) != 0) {
     v89 = 252;
   }
-  v153 = *(_DWORD*)(v87 + v89);
-  v117 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 16LL);
-  v116 = *(_QWORD*)(v3 + 40);
+  f_.v153 = *(_DWORD*)(v87 + v89);
+  f_.v117 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 16LL);
+  f_.v116 = *(_QWORD*)(v3 + 40);
   v90 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 232LL);
   v91 = 2216;
   if (*(_BYTE*)(v90 + 2184) != 0) {
     v91 = 2180;
   }
-  LODWORD(v152) = *(_DWORD*)(v90 + v91);
-  if (*(float*)&v152 > 0x0.0p+0f) {
+  LODWORD(f_.v152) = *(_DWORD*)(v90 + v91);
+  if (*(float*)&f_.v152 > 0x0.0p+0f) {
     v92 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v3 + 8LL) + 232LL);
     v93 = 2376;
     if (*(_BYTE*)(v92 + 2344) != 0) {
@@ -1848,19 +1862,19 @@ LABEL_47:
   }
 LABEL_98:
   v96 = (_QWORD*)v2[7];
-  v97 = *v112;
+  v97 = *f_.v112;
   v98 = v96[137];
-  v154 = v96[136];
-  v155 = v98;
+  f_.v154 = v96[136];
+  f_.v155 = v98;
   v99 = v96[139];
-  v156 = v96[138];
-  v157 = v99;
+  f_.v156 = v96[138];
+  f_.v157 = v99;
   v100 = v96[143];
-  v160 = v96[142];
-  v161 = v100;
+  f_.v160 = v96[142];
+  f_.v161 = v100;
   v101 = v96[141];
-  v158 = v96[140];
-  v159 = v101;
+  f_.v158 = v96[140];
+  f_.v159 = v101;
   v102 = (int*)(*v2 + 13304LL);
   v103 = (float*)v2[7];
   if (*(_BYTE*)(*v2 + 16700LL) != 0) {
@@ -1869,9 +1883,9 @@ LABEL_98:
   v104 = v103[306];
   v105 = v102[1];
   v106 = v103[308];
-  v162 = (float)(v103[307] - v103[305]) / (float)*v102;
-  v163 = (float)(v106 - v104) / (float)v105;
-  return GameRoutine_b5d610((_DWORD*)v2[12], v97, (__int64)v113);
+  f_.v162 = (float)(v103[307] - v103[305]) / (float)*v102;
+  f_.v163 = (float)(v106 - v104) / (float)v105;
+  return gfx_flow_b5d610((_DWORD*)v2[12], v97, (__int64)f_.v113);
 }
 
 __int64 gfxa_MainPassEffect_SetupLightingPass_lambda2_Invoke(__int64 a1,

@@ -10697,6 +10697,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 279c20,464,verified,src/nn/audio/capture/unplaced.c,nn_audio_capture_279c20
 279df0,124,verified,src/nn/audio/capture/audio_capture_applet_state_impl.c,nn_audio_capture_detail_SystemAudioCaptureServerImplBase_SendOscPacket
 27a2c0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_27a2c0v
+27a2e0,380,verified,src/nn/unplaced_15.c,nn_27a2e0
 27a550,356,verified,src/nn/audio/capture/audio_capture_applet_state_impl.c,nn_audio_capture_detail_SystemAudioCaptureServerImplBase_SendWaveformResponse
 27a6c0,692,verified,src/nn/audio/capture/audio_capture_applet_state_impl.c,nn_util_CreateOscMessageByteArray_nn_util_OscBlob_long_float_float_float_float_int_bool_int_float_float_float_float_float
 27a980,12,verified,src/nn/audio/capture/audio_capture_applet_state.cpp,_ZNK2nn5audio7capture6detail32SystemAudioCaptureServerImplBase18AppletStateSummary15GetDeviceVolumeENS4_11AudioDeviceE
@@ -13768,6 +13769,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 401900,40,verified,src/nn/ec/ec_shop_page.cpp,_ZN2nn2ec6detail22GetNsUidLengthAsStringENS0_5NsUidE
 401940,88,verified,src/nn/ec/ec_shop_page.cpp,_ZN2nn2ec6detail13AppIdToStringEPcmNS_13ApplicationIdE
 4019a0,84,verified,src/nn/ec/ec_shop_page.cpp,_ZN2nn2ec6detail16CouponIdToStringEPcmNS0_8CouponIdE
+401a00,1304,verified,src/nn/ec/unplaced_5.c,nn_ec_401a00
 401fe0,372,verified,src/nn/ec/unplaced.c,nn_ec_401fe0
 402180,52,verified,src/nn/ec/ec_string_util.cpp,_ZN2nn2ec6detail18IsStringTerminatedEPKcm
 4021c0,248,verified,src/nn/ec/ec_string_util.cpp,_ZN2nn2ec6detail16EncodeUriRfc3986EPcmPKc
@@ -15230,6 +15232,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 477200,60,verified,src/nn/gs/gs_sdk_misc.cpp,_ZN2nn2gs3sdk21MakeBgra32ImageFormatEiim
 477240,124,verified,src/nn/gs/gs_sdk_misc.cpp,_ZN2nn2gs6system29CalculateNativeImageArraySizeEPmS2_RKNS0_3sdk27NativeImageFormatDescriptorEj
 4772c0,8,verified,src/nn/gs/gs_sdk_misc.cpp,_ZN2nn2gs6system26CalculateNativeImageLayoutEPNS0_3sdk21NativeImageLayoutInfoERKNS2_27NativeImageFormatDescriptorEjj
+4772e0,468,verified,src/nn/gs/unplaced_8.c,nn_gs_4772e0
 4774e0,848,verified,src/nn/gs/gs_user_image.cpp,_ZN2nn2gs3sdk17ReadUserImageRgbaEPvmmRKNS_3gsv7imgdesc4impl4user5ounce22CpuUserImageDescriptorEPKvtttt
 4778e0,576,verified,src/nn/gs/gs_user_image.cpp,_ZN2nn2gs3sdk17ReadUserImageBgraEPvmmRKNS_3gsv7imgdesc4impl4user5ounce22CpuUserImageDescriptorEPKvtttt
 477b40,584,verified,src/nn/gs/gs_user_image.cpp,_ZN2nn2gs3sdk22ReadUserImageRgbaFloatEPvmmRKNS_3gsv7imgdesc4impl4user5ounce22CpuUserImageDescriptorEPKvtttt
@@ -15254,11 +15257,13 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 47bc80,236,verified,src/nn/gs/unplaced.c,nn_gs_47bc80
 47bda0,904,verified,src/nn/gs/unplaced.c,nn_gs_47bda0
 47f180,256,verified,src/nn/gs/unplaced_3.c,nn_gs_47f180
+47f460,800,verified,src/nn/gs/unplaced_8.c,nn_gs_47f460
 47f8a0,3632,verified,src/nn/gs/unplaced.c,nn_gs_47f8a0
 4806d0,584,verified,src/nn/gs/unplaced.c,nn_gs_4806d0
 480920,1128,verified,src/nn/gs/unplaced.c,nn_gs_480920
 481640,452,verified,src/nn/gs/unplaced.c,nn_gs_481640
 481a60,576,verified,src/nn/gs/unplaced.c,nn_gs_481a60
+484fc0,720,verified,src/nn/gs/unplaced_9.c,nn_gs_484fc0
 487f90,288,verified,src/nn/unnamed/s001_1.c,SdkHr_487f90
 4880b0,288,verified,src/nn/gs/unplaced_2.c,nn_gs_4880b0
 4881d0,264,verified,src/nn/gs/unplaced.c,nn_gs_4881d0
@@ -18343,7 +18348,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 52a520,8,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZNK8nandroid9M3UParser16getSelectedIndexEv
 52a540,248,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZNK8nandroid9M3UParser16getSelectedTrackENS_16media_track_typeE
 52a640,836,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZNK8nandroid9M3UParser10getTypeURIEmPKcPNS_7AStringE
-52a990,1868,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZN8nandroid9M3UParser11codecIsTypeERKNS_7AStringEPKc
+52a990,1972,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZN8nandroid9M3UParser11codecIsTypeERKNS_7AStringEPKc
 52b1e0,8,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZNK8nandroid9M3UParser7hasTypeEmPKc
 52b200,316,verified,src/nandroid/libstagefright/httplive/M3UParser_impl.c,nandroid_M3UParser_hasTypeBasedOnCodecsOnly
 52b350,336,verified,src/nandroid/libstagefright/httplive/M3UParser.cpp,_ZN8nandroid9M3UParser13parseMetaDataERKNS_7AStringEPNS_2spINS_8AMessageEEEPKc
@@ -23457,6 +23462,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5f0ac0,528,verified,src/nvidia/unplaced_11.c,NvUStrlConvertCodePage
 5f0d40,160,verified,src/nvidia/unplaced.c,nvidia_5f0d40
 5f0ea0,84,verified,src/nvidia/unplaced.c,nvidia_5f0ea0
+5f0f00,276,verified,src/nvidia/unplaced_31.c,nvidia_5f0f00
 5f10c0,144,verified,src/nvidia/unplaced.c,nvidia_5f10c0
 5f1150,108,verified,src/nvidia/unplaced.c,nvidia_5f1150
 5f11c0,32,verified,src/nvidia/unplaced.c,nvidia_5f11c0
@@ -25068,6 +25074,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 64b420,180,verified,src/nvidia/unplaced_9.c,nvidia_64b420
 64b4e0,572,verified,src/nvidia/unplaced_23.c,nvidia_64b4e0
 64b750,488,verified,src/nvidia/unplaced_23.c,nvidia_64b750
+64be80,1976,disputed,src/nvidia/unplaced_29.c,nvidia_64be80
 64ca20,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca20
 64ca80,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca80
 64cae0,152,verified,src/nvidia/unplaced_9.c,nvidia_64cae0
@@ -26783,6 +26790,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 673240,468,verified,src/nn/unnamed/s004_0.c,SdkHr_673240
 673440,116,verified,src/nn/unnamed/s004_0.c,SdkHr_673440
 6734c0,116,verified,src/nn/unnamed/s004_0.c,SdkHr_6734c0
+673540,232,verified,src/nn/unplaced_15.c,nn_673540
 673630,20,verified,src/nn/unnamed/u000_2.c,SdkHr_673630
 673660,316,verified,src/nn/unnamed/s004_0.c,SdkHr_673660
 673810,116,verified,src/nn/unnamed/s004_0.c,SdkHr_673810
@@ -29535,7 +29543,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6f7130,300,verified,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail5InRawImEENSA_14InRawReferenceINSA_7RawDataILm64ELm8EEEEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
 6f7260,316,verified,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail14InRawReferenceINSA_7RawDataILm88ELm8EEEEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
 6f73a0,308,verified,src/nn/sf/cmif/client/cmif_client_struct_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail14InRawReferenceINSA_7RawDataILm40ELm4EEEEENSA_5InRawImEENSF_IjEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
-6f74e0,260,disputed,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail6OutRawINSA_7RawDataILm40ELm8EEEEENSB_IhEENSA_5InRawImEENSG_IjEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
+6f74e0,320,disputed,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail6OutRawINSA_7RawDataILm40ELm8EEEEENSB_IhEENSA_5InRawImEENSG_IjEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
 6f7620,316,verified,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4hipc6client18Hipc2ProxyKindBaseILNS1_6detail11MessageTypeE6EE7ProcessILb0EJNS0_4cmif6client6detail6OutRawINSA_7RawDataILm32ELm8EEEEENSA_14InRawReferenceISD_EENSA_5InRawImEEEEENS_6ResultEPKNS6_14ProxyKindStateEDpNT0_9ParameterEi
 6f7760,244,verified,src/nn/sf/cmif/client/cmif_client_message_impl.c,cmif_client_message_6f7760
 6f7870,236,verified,src/nn/sf/cmif/client/cmif_client_message_impl.c,cmif_client_message_6f7870
@@ -30007,6 +30015,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 701a30,108,verified,src/nerd/gyro_pointing/gyro_pointing.cpp,_ZN4nerd13gyro_pointing12GyroPointing8ResetAllEv
 701aa0,1008,verified,src/nerd/gyro_pointing/unplaced.c,nerd_gyro_pointing_CompareBitwise
 701e90,476,verified,src/math/unplaced_4.c,linear_algebra_701e90
+702080,512,verified,src/math/unplaced_6.c,math_702080
 702b40,1592,verified,src/math/matrix.cpp,_ZN4nerd14linear_algebra17NormalizeDiagonalIfLl27EEENS0_7LMatrixIT_XT0_EXT0_ENS0_11LMatrixType5DenseILb1EEEEES7_
 704160,2160,verified,src/math/inversion.cpp,_ZN4nerd23GaussJordanInversionROKIfEEbPT_mS2_mm
 704a60,1392,verified,src/math/symmetric_inverse.cpp,fw::math::InverseSymmetricFixed27
@@ -30114,7 +30123,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7283c0,868,verified,src/nn/unnamed/s004_2.c,SdkHr_7283c0
 728730,800,verified,src/math/unplaced_10.c,math_728730
 728a60,1396,verified,src/math/unplaced_11.c,math_728a60
-728fe0,908,disputed,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_728fe0
+728fe0,1192,disputed,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_728fe0
 729580,1640,disputed,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_729580
 729c20,1836,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,gyro_pointing_kalman_filter_729c20
 72a580,936,verified,src/nerd/gyro_pointing/gyro_pointing_kalman_filter_impl.c,nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates

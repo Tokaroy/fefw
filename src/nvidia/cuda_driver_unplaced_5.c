@@ -472,6 +472,7 @@ __int64 CudaDriverStub_108070_alt4(__int64);
 extern __int64 (*CudaDriverData_14324a0_alt3)(__int64*);
 __int64 CudaDriverStub_107f90_alt5(void*);
 __int64 CudaDriverStub_108070_alt5(void*);
+extern __int64 (*CudaDriverData_14324a0_alt4)(_QWORD*);
 
 __int64 cuda_driver_ae7f0(_QWORD* a1, unsigned __int64 a2, __int64 a3)
 {
@@ -3013,73 +3014,75 @@ __int64 cuda_driver_bf0d0(__int64* a1, __int64 a2)
   __int128 v8;
   __int64 v9;
   unsigned int v10;
-  __int64 v11;
-  __int64 v12;
-  __int64 v13;
-  int v14;
-  int v15;
-  __int128 v16;
-  __int128 v17;
-  __int64 v18;
   struct {
+    __int64 v11;
+    __int64 v12;
+    __int64 v13;
+    int v14;
+    char gap28_[4];
+    int v15;
+    char gap36_[676];
+    __int128 v16;
+    __int128 v17;
+    __int64 v18;
     _QWORD v19[2];
     int v20;
     char gap772_[4];
     __int64* v21;
-  } v19_;
+  } f_;
 
-  memset_plt(&v12, 0, 744);
-  v11 = *(__int64*)((char*)a1 + 12);
-  v19_.v20 = 2;
-  v19_.v19[0] = 0x800000011LL;
+  memset_plt(&f_.v12, 0, 744);
+  f_.v11 = *(__int64*)((char*)a1 + 12);
+  f_.v20 = 2;
+  f_.v19[0] = 0x800000011LL;
   if (a2 != 0) {
     v4 = **(_QWORD**)(a2 + 64);
   }
   else {
     v4 = 0;
   }
-  v19_.v19[1] = v4;
-  v19_.v21 = &v11;
-  CudaDriverData_14324a0_alt2(v19_.v19);
-  result = HIDWORD(v19_.v19[0]);
-  if (SHIDWORD(v19_.v19[0]) > 2) {
-    if (SHIDWORD(v19_.v19[0]) <= 4) {
-      if (HIDWORD(v19_.v19[0]) == 3) {
+  f_.v19[1] = v4;
+  f_.v21 = &f_.v11;
+  CudaDriverData_14324a0_alt4(f_.v19);
+  result = HIDWORD(f_.v19[0]);
+  if (SHIDWORD(f_.v19[0]) > 2) {
+    if (SHIDWORD(f_.v19[0]) <= 4) {
+      if (HIDWORD(f_.v19[0]) == 3) {
         return 219;
       }
       else {
         return 208;
       }
     }
-    if (HIDWORD(v19_.v19[0]) == 5) {
+    if (HIDWORD(f_.v19[0]) == 5) {
       return 211;
     }
-    if (HIDWORD(v19_.v19[0]) == 6) {
+    if (HIDWORD(f_.v19[0]) == 6) {
       return 2;
     }
     return 999;
   }
-  if (HIDWORD(v19_.v19[0]) != 0) {
-    if (HIDWORD(v19_.v19[0]) == 1) {
+  if (HIDWORD(f_.v19[0]) != 0) {
+    if (HIDWORD(f_.v19[0]) == 1) {
       return result;
     }
-    if (HIDWORD(v19_.v19[0]) == 2) {
+    if (HIDWORD(f_.v19[0]) == 2) {
       return 400;
     }
     return 999;
   }
-  if (v13 == 0) {
+  if (f_.v13 == 0) {
     return 205;
   }
-  a1[5] = v13;
-  v6 = v15;
-  v7 = v18;
-  *((_DWORD*)a1 + 7) = v14;
+  a1[5] = f_.v13;
+  v6 = f_.v15;
+  v7 = f_.v18;
+  *((_DWORD*)a1 + 7) = f_.v14;
   a1[10] = v7;
   a1[13] = v6;
-  v8 = v17;
+  v8 = f_.v17;
   v9 = *a1;
-  *((_OWORD*)a1 + 3) = v16;
+  *((_OWORD*)a1 + 3) = f_.v16;
   *((_OWORD*)a1 + 4) = v8;
   result = (*(__int64 (**)(__int64*, __int64))(v9 + 80))(a1, a2);
   if ((_DWORD)result != 0) {

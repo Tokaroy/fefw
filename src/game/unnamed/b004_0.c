@@ -3052,17 +3052,19 @@ __int64 GameHr_5fd480(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   __int64 v28;
   __int64 v29;
   __int64 v30;
-  _QWORD v32[2];
-  _QWORD v33[6];
-  _QWORD v34[2];
+  struct {
+    _QWORD v32[2];
+    _QWORD v33[6];
+    _QWORD v34[2];
+  } f_;
   _QWORD v35[6];
 
   __builtin_memset(v35, 0, sizeof(v35));
-  v34[0] = 0;
-  v34[1] = 0;
-  __builtin_memset(v33, 0, sizeof(v33));
-  v32[0] = 0;
-  v32[1] = 0;
+  f_.v34[0] = 0;
+  f_.v34[1] = 0;
+  __builtin_memset(f_.v33, 0, sizeof(f_.v33));
+  f_.v32[0] = 0;
+  f_.v32[1] = 0;
   if ((int)a2 < 1) {
     goto LABEL_20;
   }
@@ -3076,7 +3078,7 @@ __int64 GameHr_5fd480(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   }
   v6 = (__int64*)(a3 + 16);
   v7 = 0;
-  v8 = v33;
+  v8 = f_.v33;
   v9 = v35;
   do {
     v10 = *(v6 - 2);
@@ -3115,8 +3117,8 @@ __int64 GameHr_5fd480(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   v5 = -v7;
   if ((a2 & 3) != 0) {
   LABEL_16:
-    v22 = &v32[v5];
-    v23 = &v34[v5];
+    v22 = &f_.v32[v5];
+    v23 = &f_.v34[v5];
     v24 = (__int64*)(a3 + 8 * v5);
     do {
       v26 = *v24++;
@@ -3142,8 +3144,8 @@ LABEL_20:
     v30 = 0;
   }
   return (*(__int64 (**)(_QWORD, __int64, _QWORD*, _QWORD*, __int64,
-                         __int64))GameData_2132138[0])(*(_QWORD*)(a1 + 208), a2,
-                                                       v34, v32, v29, v30);
+                         __int64))GameData_2132138[0])(
+      *(_QWORD*)(a1 + 208), a2, f_.v34, f_.v32, v29, v30);
 }
 
 __int64 GameHr_5fd650(__int64 a1, __int64 a2)

@@ -51,6 +51,14 @@ __int64 ui_control_1888c80(__int64, __int64, __int64);
 unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
+__attribute__((swiftcall)) void LayoutAccessor_1560070_alt1(PSEUDO_X8, __int64*,
+                                                            const char*);
+__int64 LayoutAccessor_1562680_alt1(__int64 result, const char*, float);
+__int64 Pane_58f8a0_alt1(__int64);
+__int64 game_156c910(__int64 result, const char*, int, ...);
+__int64 std___1___shared_weak_count___release_weak_alt1(__int64);
+__int64 std___1___shared_weak_count_lock_alt1(__int64);
+__int64 ui_LayoutAccessor_FindPane_alt1(__int64*, __int64);
 
 __attribute__((swiftcall)) void StatusTotal_19ac7b0(PSEUDO_X8 x8_, __int64 a1,
                                                     __int64 a2, __int64 a3)
@@ -108,9 +116,12 @@ __attribute__((swiftcall)) void StatusTotal_19ac7b0(PSEUDO_X8 x8_, __int64 a1,
 __int64 StatusTotal_19ac9e0(__int64 a1, int a2, int a3, int a4,
                             unsigned __int8 a5, int a6)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   __int64 v13;
-  __int64 v14;
+  __int64* v14;
   int v16;
   __int64 v17;
   __int64 v18;
@@ -126,36 +137,40 @@ __int64 StatusTotal_19ac9e0(__int64 a1, int a2, int a3, int a4,
   char v28;
   int v29;
   char v31;
-  int v32;
-  __int64 v33;
-  __int64 v34;
+  struct {
+    char gap0_[8];
+    int v32;
+    char gap12_[4];
+    __int64* v33;
+    __int64 v34;
+  } f_;
 
-  LayoutAccessor_1560070((void*)(&v33), a1 + 88, "L_Num");
-  result = v34;
-  if (v34 == 0) {
+  LayoutAccessor_1560070_alt1((void*)(&f_.v33), (__int64*)(a1 + 88), "L_Num");
+  result = f_.v34;
+  if (f_.v34 == 0) {
     goto LABEL_46;
   }
-  v13 = std___1___shared_weak_count_lock(v34);
-  v14 = v33;
-  result = v34;
-  if (v34 != 0) {
-    result = std___1___shared_weak_count___release_weak(v34);
+  v13 = std___1___shared_weak_count_lock_alt1(f_.v34);
+  v14 = f_.v33;
+  result = f_.v34;
+  if (f_.v34 != 0) {
+    result = std___1___shared_weak_count___release_weak_alt1(f_.v34);
   }
-  if (v13 == 0 || v14 == 0) {
+  if (v13 == 0 || v14 == nullptr) {
     if (v13 == 0) {
       goto LABEL_46;
     }
     goto LABEL_44;
   }
   v16 = (a2 > a3) & a5;
-  v17 = ui_LayoutAccessor_FindPane(v14, "T_Num");
+  v17 = ui_LayoutAccessor_FindPane_alt1(v14, (__int64)"T_Num");
   if (v17 != 0) {
     v18 = __dynamic_cast(v17, GameData_212d670[0], GameData_212d690, 0);
     if (v18 != 0) {
       v19 = v18;
       if (a2 == a3 || (a5 & 1) == 0) {
         v20 = *(int*)((char*)((int*)0x24LL) + (_QWORD)GameData_212da30);
-        v21 = Pane_58f8a0(v18);
+        v21 = Pane_58f8a0_alt1(v18);
         if (v21 != 0) {
         LABEL_20:
           *(_DWORD*)(v21 + 12) = v20;
@@ -164,21 +179,21 @@ __int64 StatusTotal_19ac9e0(__int64 a1, int a2, int a3, int a4,
       else {
         v20 = *(_DWORD*)((char*)&(*(__int64 (*)[2])0x28LL)[2] +
                          (_QWORD)GameData_212da30);
-        v32 = *(_DWORD*)((char*)&(*(__int64 (*)[2])0x28LL)[1] +
-                         (_QWORD)GameData_212da30 + 4);
-        v21 = Pane_58f8a0(v18);
+        f_.v32 = *(_DWORD*)((char*)&(*(__int64 (*)[2])0x28LL)[1] +
+                            (_QWORD)GameData_212da30 + 4);
+        v21 = Pane_58f8a0_alt1(v18);
         if (v21 != 0) {
           if (((a2 > a3) & a5) != 0) {
-            v20 = v32;
+            v20 = f_.v32;
           }
           goto LABEL_20;
         }
       }
-      GameRoutine_156c910(v19, "%d", 1);
+      game_156c910(v19, "%d", 1, (unsigned int)a2);
       v16 = (a2 > a3) & a5;
     }
   }
-  v22 = ui_LayoutAccessor_FindPane(v14, "IconUpDown");
+  v22 = ui_LayoutAccessor_FindPane_alt1(v14, (__int64)"IconUpDown");
   if (v22 != 0) {
     v23 = __dynamic_cast(v22, GameData_212d670[0], GameData_212d678[0], 0);
     if (v23 != 0) {
@@ -195,7 +210,7 @@ __int64 StatusTotal_19ac9e0(__int64 a1, int a2, int a3, int a4,
         else {
           v26 = "Down";
         }
-        LayoutAccessor_1562680(v14, v26, 1.0f);
+        LayoutAccessor_1562680_alt1((__int64)v14, v26, 0x1.0000000000000p+0f);
         v27 = *(_BYTE*)(v25 + 88);
         v23 = v25;
         *(_DWORD*)(v25 + 68) = 0;
@@ -204,7 +219,7 @@ __int64 StatusTotal_19ac9e0(__int64 a1, int a2, int a3, int a4,
       *(_BYTE*)(v23 + 88) = v28;
     }
   }
-  result = ui_LayoutAccessor_FindPane(v14, "IconMax");
+  result = ui_LayoutAccessor_FindPane_alt1(v14, (__int64)"IconMax");
   if (result != 0) {
     result =
         __dynamic_cast(result, GameData_212d670[0], GameData_212d678[0], 0);
@@ -228,7 +243,7 @@ LABEL_44:
   if (atomic_fetch_add((atomic_ullong* volatile)(v13 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v13 + 16LL))(v13);
-    result = std___1___shared_weak_count___release_weak(v13);
+    result = std___1___shared_weak_count___release_weak_alt1(v13);
   }
 LABEL_46:
   *(_DWORD*)(a1 + 1076) = a2;

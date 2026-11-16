@@ -54,6 +54,10 @@ game_character_CharacterAim_Start_lambda1_Invoke(float32x4_t* result,
 float32x4_t*
 game_character_CharacterAim_Start_lambda2_Invoke(float32x4_t* result,
                                                  __int64 a2, float32x4_t** a3);
+double GameRoutine_1a09f70(double);
+double GameRoutine_1a09f80(double);
+float task_618640(int, float result, float, float, float);
+unsigned int* GameRoutine_109d5e0_alt1(unsigned int* result);
 
 __n128 CharacterAim_Destructor(__int64 a1)
 {
@@ -252,6 +256,9 @@ float32x4_t*
 game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
                                                  __int64 a2, float32x4_t** a3)
 {
+
+#pragma clang fp contract(on)
+
   float32x4_t* v3;
   float v4;
   float v5;
@@ -331,9 +338,11 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
   float32x4_t v81;
   __int64 v82;
   __int64 v83;
-  int8x16_t v84;
-  float32x4_t v85;
-  float32x4_t v86;
+  struct {
+    int8x16_t v84;
+    float32x4_t v85;
+    float32x4_t v86;
+  } f_;
   int8x16x2_t v87;
   int8x16x2_t v88;
   int8x16x2_t v89;
@@ -348,7 +357,8 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
            ? (v7 = *GameData_212d168 == 3)
            : (v7 = false),
        !v7)) {
-    result = (float32x4_t*)GameHr_109d5e0(&LANES128(v3[3]).n128_u32[2]);
+    result =
+        (float32x4_t*)GameRoutine_109d5e0_alt1(&LANES128(v3[3]).n128_u32[2]);
     LANES128(v3[10]).n128_u32[0] = -1082130432;
     return result;
   }
@@ -460,7 +470,7 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
       LANES128(v36).n128_u64[1] = LANES128(v36).n128_u64[0];
       v37 = vrsqrteq_f32(v36);
       v38 = vmulq_f32(v37, vrsqrtsq_f32(v37, vmulq_f32(v36, v37)));
-      v84 = vbicq_s8(
+      f_.v84 = vbicq_s8(
           vmulq_f32(v35,
                     vmulq_f32(v38, vrsqrtsq_f32(v38, vmulq_f32(v36, v38)))),
           vceqzq_f32(v36));
@@ -474,8 +484,8 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
         __cxa_guard_release((__int64)&GameData_21a61b0);
       }
       v39 = *(float*)(LANES128(*(v3)).n128_u64[1] + 324) * 0x1.0000000000000p-1;
-      v40 = cos(v39);
-      v41 = sin(v39);
+      v40 = GameRoutine_1a09f80(v39);
+      v41 = GameRoutine_1a09f70(v39);
       *(float*)&v42 = v40 + PSEUDO_UNFUSED(v41 * 0x0.0p+0);
       LANES128(v43).n128_u64[0] = GameData_21a61a0;
       *(float*)&v44 = PSEUDO_UNFUSED(v41 * -0x0.0p+0) + v40 * 0x0.0p+0;
@@ -558,13 +568,14 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
       v58 = vmlsq_f32(v57, v46, v54);
       LANES128(v58).n128_u32[3] = 0;
       LANES128(v55).n128_u64[0] =
-          LANES64_OF(vqtbl1_s8(v84, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
+          LANES64_OF(
+              vqtbl1_s8(f_.v84, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
               .n64_u64[0];
       LANES128(v46).n128_u64[0] =
           LANES64_OF(vqtbl1_s8(v58, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
               .n64_u64[0];
       *(int8x8_t*)&LANES128(v55).n128_i8[8] =
-          vqtbl1_s8(v84, COERCE_AS(int8x8_t, 0xF0E0D0C07060504LL));
+          vqtbl1_s8(f_.v84, COERCE_AS(int8x8_t, 0xF0E0D0C07060504LL));
       *(int8x8_t*)&LANES128(v46).n128_i8[8] =
           vqtbl1_s8(v58, COERCE_AS(int8x8_t, 0xF0E0D0C03020100LL));
       LANES128(v59).n128_u64[0] =
@@ -574,12 +585,13 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
       *(int8x8_t*)&LANES128(v59).n128_i8[8] =
           vqtbl1_s8(v58, COERCE_AS(int8x8_t, 0xF0E0D0C07060504LL));
       LANES128(v55).n128_u64[0] =
-          LANES64_OF(vqtbl1_s8(v84, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
+          LANES64_OF(
+              vqtbl1_s8(f_.v84, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
               .n64_u64[0];
       *(int8x8_t*)&LANES128(v55).n128_i8[8] =
-          vqtbl1_s8(v84, COERCE_AS(int8x8_t, 0xF0E0D0C03020100LL));
+          vqtbl1_s8(f_.v84, COERCE_AS(int8x8_t, 0xF0E0D0C03020100LL));
       v61 = vmlsq_f32(v60, v55, v59);
-      v62 = vmulq_f32(v84, v58);
+      v62 = vmulq_f32(f_.v84, v58);
       LANES128(v58).n128_u64[0] = 0x3F0000003F000000LL;
       LANES128(v58).n128_u64[1] = 0x3F0000003F000000LL;
       LANES128(v62).n128_u64[0] =
@@ -603,8 +615,8 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
       LANES128(v65).n128_u32[3] = LANES128_OF(vmulq_f32(v64, v58)).n128_u32[3];
       LANES128(v64).n128_u64[0] = 0x3400000034000000LL;
       LANES128(v64).n128_u64[1] = 0x3400000034000000LL;
-      v86 = vbslq_s8(vcgeq_f32(v64, v63),
-                     COERCE_AS(int8x16_t, GameData_1a82dd0), v65);
+      f_.v86 = vbslq_s8(vcgeq_f32(v64, v63),
+                        COERCE_AS(int8x16_t, GameData_1a82dd0), v65);
       if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_21a5680,
                                 memory_order_acquire) &
            1) == 0 &&
@@ -619,13 +631,13 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
         v67 = LANES128(v3[8]).n128_f32[0];
       LABEL_53:
         result = X8CALL_X0(float32x4_t*,
-                           math_Quat_Slerp((void*)(&v85),
+                           math_Quat_Slerp((void*)(&f_.v85),
                                            (float32x4_t*)&GameData_21a5670,
-                                           &v86, v67));
-        LANES128(v86).n128_u64[0] = LANES128(v85).n128_u64[0];
-        LANES128(v86).n128_u64[1] =
-            LANES128_OF(vextq_s8(v85, v85, 8u)).n128_u64[0];
-        v88.val[1] = v86;
+                                           &f_.v86, v67));
+        LANES128(f_.v86).n128_u64[0] = LANES128(f_.v85).n128_u64[0];
+        LANES128(f_.v86).n128_u64[1] =
+            LANES128_OF(vextq_s8(f_.v85, f_.v85, 8u)).n128_u64[0];
+        v88.val[1] = f_.v86;
         LANES128(v88.val[1]).n128_u32[3] = 0;
         LANES128(v73).n128_u64[0] =
             LANES64_OF(
@@ -633,7 +645,7 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
                 .n64_u64[0];
         LANES128(v74).n128_u64[0] =
             LANES64_OF(
-                vrev64_s32(COERCE_AS(int32x2_t, LANES128(v85).n128_u64[0])))
+                vrev64_s32(COERCE_AS(int32x2_t, LANES128(f_.v85).n128_u64[0])))
                 .n64_u64[0];
         LANES128(v75).n128_u64[0] =
             LANES64_OF(
@@ -655,7 +667,7 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
         v87.val[1] = vmulq_f32(v75, v75);
         v79 = vaddq_f32(v77, v77);
         LANES128(v88.val[1]).n128_u64[1] = v76;
-        v80 = vmulq_laneq_f32(v88.val[1], v86, 3);
+        v80 = vmulq_laneq_f32(v88.val[1], f_.v86, 3);
         v81 = vaddq_f32(v80, v80);
         v87.val[0] = vsubq_f32(
             COERCE_AS(float32x4_t, GameData_1a837f0),
@@ -733,7 +745,7 @@ game_character_CharacterAim_Start_lambda0_Invoke(float32x4_t* result,
         v68 = LANES128(v3[9]).n128_f32[2];
         v72 = LANES128(v3[8]).n128_i32[3];
       }
-      v67 = GameRoutine_618640(v72, v70, v71, v66, v68);
+      v67 = task_618640(v72, v70, v71, v66, v68);
       goto LABEL_53;
     }
   }

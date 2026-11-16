@@ -461,9 +461,10 @@ __int64 cuda_driver_unplaced_8_197020(__int64* a1);
 unsigned __int64 cuda_driver_unplaced_8_1a7380(__int64 a1);
 __int64 nvidia_11a720(__int64);
 __int64 nvidia_205ee0(int, __int64, __int64, _QWORD*, int);
-unsigned __int8 CudaDriverStub_985a0_alt1(__int64) __asm__("CudaDriverStub_985a0");
-unsigned __int64 CudaDriverStub_985a0_alt2(__int64) __asm__(
-    "CudaDriverStub_985a0");
+unsigned __int8
+CudaDriverStub_985a0_alt1(__int64) __asm__("CudaDriverStub_985a0");
+unsigned __int64
+CudaDriverStub_985a0_alt2(__int64) __asm__("CudaDriverStub_985a0");
 __int64 CudaDriverStub_107f90_alt4(_QWORD);
 __int64 CudaDriverStub_108070_alt4(_QWORD);
 
@@ -4669,35 +4670,36 @@ long double cuda_driver_1a51a0(__int64 a1, __int64 a2, int* a3, __int64 a4)
   int v55;
   __int64 v56;
   long double result;
-  int8x16_t v58;
-  int8x16_t v59;
-  __int128 v60;
-  __int64 v61;
-  _DWORD v62[8];
   struct {
+    int8x16_t v58;
+    int8x16_t v59;
+    __int128 v60;
+    char gap48_[8];
+    __int64 v61;
+    _DWORD v62[8];
     _QWORD v63[2];
     int8x16_t v64;
     int8x16_t v65;
     __int128 v66;
-  } v63_;
+  } f_;
 
   v4 = a3[18];
-  v61 = 0;
-  *(_OWORD*)v63_.v63 = (__typeof__(*(_OWORD*)v63_.v63)){0};
-  v63_.v64 = (__typeof__(v63_.v64)){0};
-  v63_.v65 = (__typeof__(v63_.v65)){0};
-  v63_.v66 = (__typeof__(v63_.v66)){0};
+  f_.v61 = 0;
+  *(_OWORD*)f_.v63 = (__typeof__(*(_OWORD*)f_.v63)){0};
+  f_.v64 = (__typeof__(f_.v64)){0};
+  f_.v65 = (__typeof__(f_.v65)){0};
+  f_.v66 = (__typeof__(f_.v66)){0};
   a3[18] = v4 & 0x3FFFFFF;
   v9 = a3[35] & 0xFFFCFFFF;
-  memset(v62, 0, sizeof(v62));
+  memset(f_.v62, 0, sizeof(f_.v62));
   PSEUDO_LOW_LANE64(v10, n64_u64, *(_QWORD*)(a3 + 10));
   a3[35] = v9;
   *((int8x8_t*)a3 + 5) =
       vand_s8(v10, COERCE_AS(int8x8_t, 0xFFFFFFF7FFF7FFF7LL));
-  CudaDriverRoutine_bbd70(a2, &v61);
-  v11 = HIDWORD(v61) & 0x1FFFFFF | ((unsigned int)a3[39] >> 25 << 25);
+  CudaDriverRoutine_bbd70(a2, &f_.v61);
+  v11 = HIDWORD(f_.v61) & 0x1FFFFFF | ((unsigned int)a3[39] >> 25 << 25);
   v12 = a3[17];
-  a3[38] = v61;
+  a3[38] = f_.v61;
   a3[39] = v11;
   a3[17] = v12 | 0x3000000;
   v13 = a3[37] & 0x7FFFFFF | 0x8000000;
@@ -4739,16 +4741,16 @@ long double cuda_driver_1a51a0(__int64 a1, __int64 a2, int* a3, __int64 a4)
   a3[19] =
       v20 & 0xFFFC0FFF | ((CudaDriverRoutine_1a8440(0x4000u) & 0x3F) << 12);
   v21 = CudaDriverStub_112e30(*(_QWORD*)(a1 + 96));
-  CudaDriverRoutine_96f20(a1, a2, v21, 0, (__int64)v63_.v63, (__int64)v62);
+  CudaDriverRoutine_96f20(a1, a2, v21, 0, (__int64)f_.v63, (__int64)f_.v62);
   v22 = *(unsigned int**)(a1 + 64);
   if (v22[944] != 0) {
     v23 = 1587;
     v24 = 0;
     v25 = 0;
     do {
-      v28 = v63_.v63[v25];
+      v28 = f_.v63[v25];
       if (v28 != 0) {
-        v29 = ((v62[v25] + v22[946] - 1) / v22[946] * v22[946]) << 15;
+        v29 = ((f_.v62[v25] + v22[946] - 1) / v22[946] * v22[946]) << 15;
         a3[(unsigned int)(v24 + 416) >> 5] |= 1 << (v24 & 0x1C);
         v30 = v28 >> 38;
         v27 = v28 >> 6;
@@ -4811,18 +4813,18 @@ long double cuda_driver_1a51a0(__int64 a1, __int64 a2, int* a3, __int64 a4)
   *(int8x8_t*)(a3 + 33) =
       vand_s8(v45, COERCE_AS(int8x8_t, 0xFFFF0000FFFF0000LL));
   v46 = CudaDriverRoutine_98340(a1);
-  v47 = v61;
+  v47 = f_.v61;
   v48 = v46;
   v49 = CudaDriverRoutine_1a81a0(v46);
   v50 = CudaDriverRoutine_1a5d90(v48);
   v51 = v50;
   v52 = HIDWORD(v50);
   v53 = CudaDriverRoutine_15fd0(a2);
-  PSEUDO_LOW_LANE128(v54, n128_u64, v63_.v66);
+  PSEUDO_LOW_LANE128(v54, n128_u64, f_.v66);
   v55 = v53;
-  v59 = vextq_s8(v63_.v64, v63_.v65, 8u);
-  v60 = *(_OWORD*)v63_.v63;
-  v58 = vextq_s8(v63_.v65, v54, 8u);
+  f_.v59 = vextq_s8(f_.v64, f_.v65, 8u);
+  f_.v60 = *(_OWORD*)f_.v63;
+  f_.v58 = vextq_s8(f_.v65, v54, 8u);
   v56 = CudaDriverStub_1db800(*(_QWORD*)(v48 + 2232));
   *((_QWORD*)a3 + 259) = v49;
   a3[520] = v51;
@@ -4836,11 +4838,11 @@ long double cuda_driver_1a51a0(__int64 a1, __int64 a2, int* a3, __int64 a4)
   *((_QWORD*)a3 + 309) = v56;
   *((_QWORD*)a3 + 136) = a4 + 2048;
   *((_QWORD*)a3 + 258) = 0x100000001LL;
-  *((int8x16_t*)a3 + 141) = v59;
+  *((int8x16_t*)a3 + 141) = f_.v59;
   *((_QWORD*)a3 + 262) = -4;
-  *((int8x16_t*)a3 + 142) = v58;
+  *((int8x16_t*)a3 + 142) = f_.v58;
   *((_OWORD*)a3 + 128) = CudaDriverData_1115550;
-  *((_OWORD*)a3 + 140) = v60;
+  *((_OWORD*)a3 + 140) = f_.v60;
   *((_OWORD*)a3 + 132) = (__typeof__(*((_OWORD*)a3 + 132))){0};
   *((_OWORD*)a3 + 133) = (__typeof__(*((_OWORD*)a3 + 133))){0};
   *((_OWORD*)a3 + 134) = (__typeof__(*((_OWORD*)a3 + 134))){0};

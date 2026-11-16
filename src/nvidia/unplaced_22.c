@@ -43,8 +43,8 @@ __int64 nvidia_213260(unsigned int* a1)
   struct {
     __int128 v7;
     __int128 v8;
-  } v7_;
-  __int128 v9;
+    __int128 v9;
+  } f_;
   __int64 v10;
 
   if (a1 != nullptr) {
@@ -52,30 +52,32 @@ __int64 nvidia_213260(unsigned int* a1)
       v1 = *a1;
       __asm__ volatile("" ::"r"(v1));
     }
-    v7_.v8 = (__typeof__(v7_.v8)){0};
-    v9 = (__typeof__(v9)){0};
-    v7_.v7 = (__typeof__(v7_.v7)){0};
+    f_.v8 = (__typeof__(f_.v8)){0};
+    f_.v9 = (__typeof__(f_.v9)){0};
+    f_.v7 = (__typeof__(f_.v7)){0};
     if (v1 >= 0x30) {
       v3 = 48;
     }
     else {
       v3 = v1;
     }
-    memcpy_plt((__int64)&v7_.v7, (__int64)a1, v3);
-    LODWORD(v7_.v7) = v3;
+    memcpy_plt((__int64)&f_.v7, (__int64)a1, v3);
+    LODWORD(f_.v7) = v3;
     v10 = 0;
-    if (DWORD2(v7_.v7) != 0 && HIDWORD(v7_.v7) != 0 && (_QWORD)v7_.v8 != 0) {
-      if (*(_DWORD*)v7_.v8 == 1) {
+    if (DWORD2(f_.v7) != 0 && DWORDn(f_.v7, sizeof(f_.v7) / 4 - 1) != 0 &&
+        (_QWORD)f_.v8 != 0) {
+      if (*(_DWORD*)f_.v8 == 1) {
         v4 = (*(__int64 (**)(_QWORD, unsigned __int64, __int64*, __int128*))(
             *(char**)((char*)((_UNKNOWN**)0x8LL) +
                       (_QWORD)CudaDriverData_1423090) +
             (unsigned __int64)((char*)0x20LL)))(
-            *(_QWORD*)(v7_.v8 + 8),
-            DWORD2(v7_.v7) | ((unsigned __int64)HIDWORD(v7_.v7) << 32), &v10,
-            &v9);
+            *(_QWORD*)(f_.v8 + 8),
+            DWORD2(f_.v7) |
+                ((unsigned __int64)DWORDn(f_.v7, sizeof(f_.v7) / 4 - 1) << 32),
+            &v10, &f_.v9);
         v5 = CudaDriverRoutine_20f580(v4);
         if (v5 == 0) {
-          *((_QWORD*)&v7_.v8 + 1) = v10;
+          *((_QWORD*)&f_.v8 + 1) = v10;
         }
       }
       else {
@@ -85,7 +87,7 @@ __int64 nvidia_213260(unsigned int* a1)
     else {
       v5 = 4;
     }
-    memcpy_plt((__int64)a1, (__int64)&v7_.v7, (unsigned int)v7_.v7);
+    memcpy_plt((__int64)a1, (__int64)&f_.v7, (unsigned int)f_.v7);
   }
   else {
     return 4;

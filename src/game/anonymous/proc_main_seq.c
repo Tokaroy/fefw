@@ -201,6 +201,9 @@ void ProcMainSeq_665fe0(__int64 a1);
 unsigned __int64 ProcMainSeq_666000(__int64 a1);
 void ProcMainSeq_6664c0(__int64 a1);
 void ProcMainSeq_666e80(__int64 a1);
+__int64 GameRoutine_8b6940_alt2(__int64, __int16*, __int64);
+bool GameRoutine_7160c0_alt3(_QWORD*);
+void GameRoutine_658d60_alt2(__int64*);
 
 __int64 game_anonymous_ProcMainSeq_TimelineRun(__int64 a1)
 {
@@ -607,6 +610,9 @@ __int64 ProcMainSeq_665c10(__int64 result)
 
 __int64 ProcMainSeq_665d20(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   __int64 v3;
   __int16 v4;
@@ -614,10 +620,13 @@ __int64 ProcMainSeq_665d20(__int64 a1)
   __int64 v6;
   int v7;
   __int64 v8;
-  __int16 v9;
-  int v10;
-  __int16 v11;
-  __int16 v12;
+  struct {
+    char gap0_[4];
+    __int16 v9;
+    int v10;
+    __int16 v11;
+    __int16 v12;
+  } f_;
   __int16 v13;
 
   result = game_GameModeData_instance_;
@@ -627,15 +636,16 @@ __int64 ProcMainSeq_665d20(__int64 a1)
   else {
     v3 = game_gmap_GmapClock_kDefaultTime_ptr;
   }
-  v9 = *(_WORD*)v3;
-  v10 = *(_DWORD*)(v3 + 2);
-  v11 = *(_WORD*)(v3 + 6);
+  f_.v9 = *(_WORD*)v3;
+  f_.v10 = *(_DWORD*)(v3 + 2);
+  f_.v11 = *(_WORD*)(v3 + 6);
   v4 = *(_WORD*)(v3 + 8);
   v5 = *(_WORD*)(v3 + 10);
-  v12 = v4;
+  f_.v12 = v4;
   v13 = v5;
   if (game_GameModeData_instance_ != 0) {
-    result = GameRoutine_7160c0_alt2((_QWORD*)game_GameModeData_instance_);
+    result = ((__int64 (*)(_QWORD*))GameRoutine_7160c0_alt3)(
+        (_QWORD*)game_GameModeData_instance_);
     if ((result & 1) != 0) {
       v6 = game_GameModeData_instance_;
       if (game_GameModeData_instance_ != 0) {
@@ -647,7 +657,7 @@ __int64 ProcMainSeq_665d20(__int64 a1)
       else {
         v8 = 0;
       }
-      result = GameRoutine_8b6940_alt1(a1, &v9, v8);
+      result = GameRoutine_8b6940_alt2(a1, &f_.v9, v8);
       *(_DWORD*)(a1 + 152) = 16;
     }
   }
@@ -1976,6 +1986,9 @@ __int64 ProcMainSeq_667300(__int64 a1)
 
 __int64 ProcMainSeq_667400(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   int v3;
   int v4;
@@ -1997,10 +2010,13 @@ __int64 ProcMainSeq_667400(__int64 a1)
   unsigned __int64 v20;
   __int64 v21;
   __int64 v22;
-  __int16 v23;
-  int v24;
-  __int16 v25;
-  __int16 v26;
+  struct {
+    char gap0_[4];
+    __int16 v23;
+    int v24;
+    __int16 v25;
+    __int16 v26;
+  } f_;
   __int16 v27;
 
   if (GameData_21eea58 != 0) {
@@ -2043,14 +2059,15 @@ __int64 ProcMainSeq_667400(__int64 a1)
         else {
           v10 = game_gmap_GmapClock_kDefaultTime_ptr;
         }
-        v23 = *(_WORD*)v10;
-        v24 = *(_DWORD*)(v10 + 2);
-        v25 = *(_WORD*)(v10 + 6);
+        f_.v23 = *(_WORD*)v10;
+        f_.v24 = *(_DWORD*)(v10 + 2);
+        f_.v25 = *(_WORD*)(v10 + 6);
         v11 = *(_WORD*)(v10 + 8);
         v12 = *(_WORD*)(v10 + 10);
-        v26 = v11;
+        f_.v26 = v11;
         v27 = v12;
-        result = GameRoutine_7160c0_alt2((_QWORD*)result);
+        result =
+            ((__int64 (*)(_QWORD*))GameRoutine_7160c0_alt3)((_QWORD*)result);
         if ((result & 1) == 0) {
           return result;
         }
@@ -2064,7 +2081,7 @@ __int64 ProcMainSeq_667400(__int64 a1)
         else {
           v15 = 0;
         }
-        result = GameRoutine_8b6940_alt1(a1, &v23, v15);
+        result = GameRoutine_8b6940_alt2(a1, &f_.v23, v15);
         v9 = 16;
       }
     }
@@ -2112,7 +2129,7 @@ LABEL_8:
       }
       v20 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
       if (v19 == v20) {
-        GameRoutine_658d60_alt1((__int64*)(a1 + 88));
+        GameRoutine_658d60_alt2((__int64*)(a1 + 88));
         v17 = *(_QWORD*)(a1 + 96);
         v20 = *(_QWORD*)(a1 + 128) + *(_QWORD*)(a1 + 120);
       }

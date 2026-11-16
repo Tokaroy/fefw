@@ -72,6 +72,11 @@ __int64 movie_detail_TaskQueue_EventHandler_EventHandler(
     __int64 a1, void (***a2)(_QWORD), int a3, __int64* a4, __int64* a5,
     __int64* a6, _QWORD* a7, __int64 a8, void (***a9)(_QWORD));
 __int64 movie_task_queue_1b670(_QWORD* a1);
+_QWORD* MovieRoutine_1b520_alt1(_QWORD* result, _QWORD*);
+__int64 nn_os_DestroyThread_plt_alt1(__int64);
+__int64 nn_os_LockMutex_plt_alt1(__int64);
+__int64 nn_os_UnlockMutex_plt_alt1(__int64);
+__int64 nn_os_WaitThread_plt_alt1(__int64);
 
 __int64 movie_detail_TaskQueue_WorkerThread_DestroyThread(__int64 this_)
 {
@@ -98,6 +103,9 @@ __int64 movie_detail_TaskQueue_WorkerThread_DestroyThread(__int64 this_)
 __int64 movie_detail_TaskQueue_ShutdownSocketEventHandler(__int64 a1,
                                                           __int64 a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v4;
   __int64 v5;
@@ -121,32 +129,43 @@ __int64 movie_detail_TaskQueue_ShutdownSocketEventHandler(__int64 a1,
   __int64 v23;
   __int64 result;
   __int64 v25;
-  _QWORD v26[2];
-  _QWORD v27[4];
-  _QWORD* v28;
-  __int64 v29;
-  __int64 v30;
-  __int64 v31;
+  struct {
+    _QWORD v26[2];
+    _QWORD v27[4];
+    _QWORD* v28;
+    __int64 v29;
+    __int64 v30;
+    __int64 v31;
+  } f_;
   __int64 v32;
 
-  v30 = 0;
-  v31 = 0;
-  v28 = nullptr;
-  v29 = 0;
-  memset(v27, 0, sizeof(v27));
-  v26[0] = 0;
-  v26[1] = 0;
-  nn_os_LockMutex_plt(a2 + 24);
-  v3 = *(unsigned int*)(a2 + 592);
+  f_.v30 = 0;
+  f_.v31 = 0;
+  f_.v28 = nullptr;
+  f_.v29 = 0;
+  memset(f_.v27, 0, sizeof(f_.v27));
+  f_.v26[0] = 0;
+  f_.v26[1] = 0;
+  nn_os_LockMutex_plt_alt1(a2 + 24);
+  {
+    v3 = *(unsigned int*)(a2 + 592);
+    __asm__ volatile("" ::"r"(v3));
+  }
   *(_BYTE*)(a2 + 160) = 1;
   if ((_DWORD)v3 != -1) {
     nn_socket_EventFdWrite_plt(v3, 1);
   }
-  v4 = *(_QWORD*)(a2 + 600);
+  {
+    v4 = *(_QWORD*)(a2 + 600);
+    __asm__ volatile("" ::"r"(v4));
+  }
   if (v4 != 0) {
     if (atomic_fetch_add((atomic_uint* volatile)(v4 + 16), 0xFFFFFFFF) == 1) {
       atomic_store(0xDEAD00u, (unsigned int*)(v4 + 16));
-      v5 = *(_QWORD*)(v4 + 8);
+      {
+        v5 = *(_QWORD*)(v4 + 8);
+        __asm__ volatile("" ::"r"(v5));
+      }
       if (v5 != 0) {
         (**(void (***)(_QWORD))v5)(*(_QWORD*)(v4 + 8));
       }
@@ -156,89 +175,116 @@ __int64 movie_detail_TaskQueue_ShutdownSocketEventHandler(__int64 a1,
     }
     *(_QWORD*)(a2 + 600) = 0;
   }
-  if (v26 != (_QWORD*)(a2 + 608)) {
-    v6 = v26[0];
-    v7 = v28;
-    if (v26[0] != 0) {
-      if (v28 != nullptr) {
-        v32 = v26[0];
-        (*(void (**)(void*))(*v28 + 48LL))((void*)v28);
-        v6 = v26[0];
+  if (f_.v26 != (_QWORD*)(a2 + 608)) {
+    {
+      v6 = f_.v26[0];
+      __asm__ volatile("" ::"r"(v6));
+    }
+    v7 = f_.v28;
+    if (f_.v26[0] != 0) {
+      if (f_.v28 != nullptr) {
+        {
+          v32 = f_.v26[0];
+          __asm__ volatile("" ::"r"(v32));
+        }
+        (*(void (**)(__int64))(*f_.v28 + 48LL))((__int64)f_.v28);
+        {
+          v6 = f_.v26[0];
+          __asm__ volatile("" ::"r"(v6));
+        }
       }
       if (*(_QWORD*)(v6 + 456) != 0) {
         (*(void (**)(_QWORD))(**(_QWORD**)(v6 + 472) + 56LL))(
             *(_QWORD*)(v6 + 472));
         *(_QWORD*)(v6 + 456) = 0;
       }
-      v8 = *(_QWORD*)(v6 + 472);
+      {
+        v8 = *(_QWORD*)(v6 + 472);
+        __asm__ volatile("" ::"r"(v8));
+      }
       *(_DWORD*)(v6 + 464) = 0;
       if (v8 != 0) {
         (*(void (**)(__int64))(*(_QWORD*)v8 + 8LL))(v8);
         *(_QWORD*)(v6 + 472) = 0;
       }
-      v9 = v30;
+      v9 = f_.v30;
       *(_BYTE*)(v6 + 468) = 0;
-      (*(void (**)(__int64, _QWORD))(*(_QWORD*)v9 + 56LL))(v9, v26[0]);
-      v7 = v28;
-      v26[0] = 0;
+      (*(void (**)(__int64, _QWORD))(*(_QWORD*)v9 + 56LL))(v9, f_.v26[0]);
+      v7 = f_.v28;
+      f_.v26[0] = 0;
     }
-    v28 = nullptr;
-    if (v7 == v27) {
+    f_.v28 = nullptr;
+    if (v7 == f_.v27) {
       v10 = 32;
     }
     else {
       if (v7 == nullptr) {
       LABEL_23:
-        if (v30 != 0) {
-          (*(void (**)(__int64))(*(_QWORD*)v30 + 8LL))(v30);
-          v30 = 0;
+        if (f_.v30 != 0) {
+          (*(void (**)(__int64))(*(_QWORD*)f_.v30 + 8LL))(f_.v30);
+          f_.v30 = 0;
         }
-        v11 = v26[0];
-        v26[0] = *(_QWORD*)(a2 + 608);
+        {
+          v11 = f_.v26[0];
+          __asm__ volatile("" ::"r"(v11));
+        }
+        f_.v26[0] = *(_QWORD*)(a2 + 608);
         *(_QWORD*)(a2 + 608) = v11;
-        MovieRoutine_1b520(v27, a2 + 624);
-        if (v30 != 0) {
-          (*(void (**)(__int64))(*(_QWORD*)v30 + 8LL))(v30);
+        MovieRoutine_1b520_alt1(f_.v27, (_QWORD*)(a2 + 624));
+        if (f_.v30 != 0) {
+          (*(void (**)(__int64))(*(_QWORD*)f_.v30 + 8LL))(f_.v30);
         }
-        v12 = *(_QWORD*)(a2 + 672);
+        {
+          v12 = *(_QWORD*)(a2 + 672);
+          __asm__ volatile("" ::"r"(v12));
+        }
         *(_QWORD*)(a2 + 672) = 0;
-        v30 = v12;
+        f_.v30 = v12;
         goto LABEL_28;
       }
       v10 = 40;
     }
-    (*(void (**)(void*))(*v7 + v10))(v7);
+    (*(void (**)(__int64))(*v7 + v10))((__int64)v7);
     goto LABEL_23;
   }
 LABEL_28:
-  nn_os_UnlockMutex_plt(a2 + 24);
-  v13 = v26[0];
-  if (v26[0] == 0) {
+  nn_os_UnlockMutex_plt_alt1(a2 + 24);
+  {
+    v13 = f_.v26[0];
+    __asm__ volatile("" ::"r"(v13));
+  }
+  if (f_.v26[0] == 0) {
     goto LABEL_56;
   }
-  if (*(_BYTE*)(v26[0] + 481LL) == 1) {
-    nn_os_WaitThread_plt(v26[0] + 8LL);
+  if (*(_BYTE*)(f_.v26[0] + 481LL) == 1) {
+    nn_os_WaitThread_plt_alt1(f_.v26[0] + 8LL);
     *(_BYTE*)(v13 + 481) = 0;
     if (*(_BYTE*)(v13 + 480) != 1) {
     LABEL_31:
-      v14 = v26[0];
-      if (v26[0] == 0) {
+      {
+        v14 = f_.v26[0];
+        __asm__ volatile("" ::"r"(v14));
+      }
+      if (f_.v26[0] == 0) {
         goto LABEL_32;
       }
       goto LABEL_37;
     }
   }
-  else if (*(_BYTE*)(v26[0] + 480LL) != 1) {
+  else if (*(_BYTE*)(f_.v26[0] + 480LL) != 1) {
     goto LABEL_31;
   }
-  nn_os_DestroyThread_plt(v13 + 8);
+  nn_os_DestroyThread_plt_alt1(v13 + 8);
   *(_BYTE*)(v13 + 480) = 0;
-  v14 = v26[0];
-  if (v26[0] == 0) {
+  {
+    v14 = f_.v26[0];
+    __asm__ volatile("" ::"r"(v14));
+  }
+  if (f_.v26[0] == 0) {
   LABEL_32:
-    v15 = v28;
-    v28 = nullptr;
-    if (v15 != v27) {
+    v15 = f_.v28;
+    f_.v28 = nullptr;
+    if (v15 != f_.v27) {
       goto LABEL_33;
     }
   LABEL_44:
@@ -246,68 +292,86 @@ LABEL_28:
     goto LABEL_45;
   }
 LABEL_37:
-  if (v28 != nullptr) {
+  if (f_.v28 != nullptr) {
     v32 = v14;
-    (*(void (**)(_QWORD*, __int64*))(*v28 + 48LL))(v28, &v32);
-    v14 = v26[0];
+    (*(void (**)(_QWORD*, __int64*))(*f_.v28 + 48LL))(f_.v28, &v32);
+    {
+      v14 = f_.v26[0];
+      __asm__ volatile("" ::"r"(v14));
+    }
   }
   if (*(_QWORD*)(v14 + 456) != 0) {
     (*(void (**)(_QWORD))(**(_QWORD**)(v14 + 472) + 56LL))(
         *(_QWORD*)(v14 + 472));
     *(_QWORD*)(v14 + 456) = 0;
   }
-  v17 = *(_QWORD*)(v14 + 472);
+  {
+    v17 = *(_QWORD*)(v14 + 472);
+    __asm__ volatile("" ::"r"(v17));
+  }
   *(_DWORD*)(v14 + 464) = 0;
   if (v17 != 0) {
     (*(void (**)(__int64))(*(_QWORD*)v17 + 8LL))(v17);
     *(_QWORD*)(v14 + 472) = 0;
   }
-  v18 = v30;
+  v18 = f_.v30;
   *(_BYTE*)(v14 + 468) = 0;
-  (*(void (**)(__int64, _QWORD))(*(_QWORD*)v18 + 56LL))(v18, v26[0]);
-  v26[0] = 0;
-  v15 = v28;
-  v28 = nullptr;
-  if (v15 == v27) {
+  (*(void (**)(__int64, _QWORD))(*(_QWORD*)v18 + 56LL))(v18, f_.v26[0]);
+  f_.v26[0] = 0;
+  v15 = f_.v28;
+  f_.v28 = nullptr;
+  if (v15 == f_.v27) {
     goto LABEL_44;
   }
 LABEL_33:
   if (v15 != nullptr) {
     v16 = 40;
   LABEL_45:
-    (*(void (**)(void*))(*v15 + v16))(v15);
+    (*(void (**)(__int64))(*v15 + v16))((__int64)v15);
   }
-  if (v30 != 0) {
-    (*(void (**)(__int64))(*(_QWORD*)v30 + 8LL))(v30);
-    v30 = 0;
+  if (f_.v30 != 0) {
+    (*(void (**)(__int64))(*(_QWORD*)f_.v30 + 8LL))(f_.v30);
+    f_.v30 = 0;
   }
-  v19 = v26[0];
-  if (v26[0] != 0) {
-    if (v28 != nullptr) {
-      v32 = v26[0];
-      (*(void (**)(_QWORD*, __int64*))(*v28 + 48LL))(v28, &v32);
-      v19 = v26[0];
+  {
+    v19 = f_.v26[0];
+    __asm__ volatile("" ::"r"(v19));
+  }
+  if (f_.v26[0] != 0) {
+    if (f_.v28 != nullptr) {
+      {
+        v32 = f_.v26[0];
+        __asm__ volatile("" ::"r"(v32));
+      }
+      (*(void (**)(_QWORD*, __int64*))(*f_.v28 + 48LL))(f_.v28, &v32);
+      {
+        v19 = f_.v26[0];
+        __asm__ volatile("" ::"r"(v19));
+      }
     }
     if (*(_QWORD*)(v19 + 456) != 0) {
       (*(void (**)(_QWORD))(**(_QWORD**)(v19 + 472) + 56LL))(
           *(_QWORD*)(v19 + 472));
       *(_QWORD*)(v19 + 456) = 0;
     }
-    v20 = *(_QWORD*)(v19 + 472);
+    {
+      v20 = *(_QWORD*)(v19 + 472);
+      __asm__ volatile("" ::"r"(v20));
+    }
     *(_DWORD*)(v19 + 464) = 0;
     if (v20 != 0) {
       (*(void (**)(__int64))(*(_QWORD*)v20 + 8LL))(v20);
       *(_QWORD*)(v19 + 472) = 0;
     }
-    v21 = v30;
+    v21 = f_.v30;
     *(_BYTE*)(v19 + 468) = 0;
-    (*(void (**)(__int64, _QWORD))(*(_QWORD*)v21 + 56LL))(v21, v26[0]);
-    v26[0] = 0;
+    (*(void (**)(__int64, _QWORD))(*(_QWORD*)v21 + 56LL))(v21, f_.v26[0]);
+    f_.v26[0] = 0;
   }
 LABEL_56:
-  v22 = v28;
-  v28 = nullptr;
-  if (v22 == v27) {
+  v22 = f_.v28;
+  f_.v28 = nullptr;
+  if (v22 == f_.v27) {
     v23 = 32;
   }
   else {
@@ -316,23 +380,23 @@ LABEL_56:
     }
     v23 = 40;
   }
-  (*(void (**)(void*))(*v22 + v23))(v22);
+  (*(void (**)(__int64))(*v22 + v23))((__int64)v22);
 LABEL_61:
-  if (v30 != 0) {
-    (*(void (**)(__int64))(*(_QWORD*)v30 + 8LL))(v30);
-    v30 = 0;
+  if (f_.v30 != 0) {
+    (*(void (**)(__int64))(*(_QWORD*)f_.v30 + 8LL))(f_.v30);
+    f_.v30 = 0;
   }
-  result = (__int64)v28;
-  if (v28 == v27) {
+  result = (__int64)f_.v28;
+  if (f_.v28 == f_.v27) {
     v25 = 32;
   }
   else {
-    if (v28 == nullptr) {
+    if (f_.v28 == nullptr) {
       return result;
     }
     v25 = 40;
   }
-  return (*(__int64 (**)(void*))(*v28 + v25))(v28);
+  return (*(__int64 (**)(__int64))(*f_.v28 + v25))((__int64)f_.v28);
 }
 
 __int64 movie_detail_TaskQueue_UpdateSocketEventHandler(__int64 a1, __int64 a2,

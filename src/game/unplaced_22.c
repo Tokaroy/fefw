@@ -8312,8 +8312,8 @@ __attribute__((swiftcall)) void game_111d920(PSEUDO_X8 x8_, __int64 a1,
   LABEL_20:
     f_.v99 = v20;
   }
-  if (!(*(int*)(a1 + 48) > 1) && !(*(int*)(a1 + 52) > 1) &&
-      !(v19 > 0x1.0000000000000p+1f) && !(v21 > 0x1.0000000000000p+1f)) {
+  if (*(int*)(a1 + 48) <= 1 && *(int*)(a1 + 52) <= 1 &&
+      v19 <= 0x1.0000000000000p+1f && v21 <= 0x1.0000000000000p+1f) {
     v23 = vabds_f32(v17, v14);
     v24 = vabds_f32(v16, v15);
     v25 = v17 - v14;
@@ -8321,17 +8321,17 @@ __attribute__((swiftcall)) void game_111d920(PSEUDO_X8 x8_, __int64 a1,
     if (v23 < v24) {
       v27 = f_.v89 - v10;
     LABEL_27:
-      if (!(v27 < 0x1.e000000000000p+3f) &&
+      if (v27 >= 0x1.e000000000000p+3f &&
           ((float)(v8 - v7) <= 0x1.e000000000000p+3f ||
            v27 > 0x1.e000000000000p+3f)) {
         goto LABEL_43;
       }
       goto LABEL_34;
     }
-    if (!((float)(v8 - v7) < 0x1.e000000000000p+3f)) {
+    if ((float)(v8 - v7) >= 0x1.e000000000000p+3f) {
       v27 = f_.v89 - v10;
       if ((float)(v8 - v7) > 0x1.e000000000000p+3f ||
-          !(v27 > 0x1.e000000000000p+3f)) {
+          v27 <= 0x1.e000000000000p+3f) {
         if (v23 != v24) {
           goto LABEL_43;
         }
@@ -8343,13 +8343,13 @@ LABEL_34:
   v28 = (float)(v15 + v16) * 0x1.0000000000000p-1f;
   v29 = vabds_f32(v14, v17) + vabds_f32(v15, v16);
   v30 = 0x0.0p+0f;
-  if (!((float)(v8 - v7) > (float)(f_.v89 - v10))) {
+  if ((float)(v8 - v7) <= (float)(f_.v89 - v10)) {
     v31 = 0x0.0p+0f;
   }
   else {
     v31 = 0x1.0000000000000p+0f;
   }
-  if (!((float)(v8 - v7) > (float)(f_.v89 - v10))) {
+  if ((float)(v8 - v7) <= (float)(f_.v89 - v10)) {
     v30 = 0x1.0000000000000p+0f;
   }
   v32 = (float)(v14 + v17) * 0x1.0000000000000p-1f;
@@ -8361,19 +8361,19 @@ LABEL_34:
   v38 = v28 + v34;
   f_.v93 = __PAIR64__(COERCE_UNSIGNED_INT((float)(v28 - v34)), LODWORD(v36));
   f_.v95 = __PAIR64__(COERCE_UNSIGNED_INT((float)(v28 + v34)), LODWORD(v37));
-  if (!((float)((float)((float)(PSEUDO_UNFUSED(
-                            (float)((float)(v28 - v34) - v15) *
-                            (float)((float)(v28 - v34) - v15))) +
-                        (float)((float)(v36 - v14) * (float)(v36 - v14))) +
-                (float)((float)(PSEUDO_UNFUSED((float)(v38 - v16) *
-                                               (float)(v38 - v16))) +
-                        (float)((float)(v37 - v17) * (float)(v37 - v17)))) >
-        (float)((float)((float)(PSEUDO_UNFUSED((float)(v38 - v15) *
-                                               (float)(v38 - v15))) +
-                        (float)((float)(v37 - v14) * (float)(v37 - v14))) +
-                (float)((float)(PSEUDO_UNFUSED((float)(v35 - v16) *
-                                               (float)(v35 - v16))) +
-                        (float)((float)(v36 - v17) * (float)(v36 - v17)))))) {
+  if ((float)((float)((float)(PSEUDO_UNFUSED(
+                          (float)((float)(v28 - v34) - v15) *
+                          (float)((float)(v28 - v34) - v15))) +
+                      (float)((float)(v36 - v14) * (float)(v36 - v14))) +
+              (float)((float)(PSEUDO_UNFUSED((float)(v38 - v16) *
+                                             (float)(v38 - v16))) +
+                      (float)((float)(v37 - v17) * (float)(v37 - v17)))) <=
+      (float)((float)((float)(PSEUDO_UNFUSED((float)(v38 - v15) *
+                                             (float)(v38 - v15))) +
+                      (float)((float)(v37 - v14) * (float)(v37 - v14))) +
+              (float)((float)(PSEUDO_UNFUSED((float)(v35 - v16) *
+                                             (float)(v35 - v16))) +
+                      (float)((float)(v36 - v17) * (float)(v36 - v17))))) {
     v39 = v28 - v34;
     v35 = v38;
     v40 = v36;
@@ -8390,7 +8390,7 @@ LABEL_34:
   v26 = v35 - v39;
 LABEL_43:
   v41 = (float)(PSEUDO_UNFUSED(v26 * v26)) + (float)(v25 * v25);
-  if (!(v41 < 0x1.0000000000000p-23f)) {
+  if (v41 >= 0x1.0000000000000p-23f) {
     v44 = 0x1.0000000000000p+0f / sqrtf(v41);
     v43 = v25 * v44;
     v42 = v26 * v44;
@@ -8410,19 +8410,18 @@ LABEL_43:
   v47 = fminf(*(float*)&f_.v93 - *(float*)&f_.v97, 0x1.f400000000000p+8f);
   v48 = fmaxf(*(float*)&f_.v93 - *(float*)&f_.v97, -0x1.f400000000000p+8f);
   v49 = *(float*)&f_.v97 + *(float*)&f_.v93;
-  v50 = fminf(*((float*)&f_.v93 + 1) - *(float*)&f_.v97,
-              0x1.f400000000000p+8f);
+  v50 = fminf(*((float*)&f_.v93 + 1) - *(float*)&f_.v97, 0x1.f400000000000p+8f);
   v51 = *(float*)&f_.v97 + *((float*)&f_.v93 + 1);
-  if (!(v47 > (float)(*(float*)&f_.v97 + *(float*)&f_.v93))) {
+  if (v47 <= (float)(*(float*)&f_.v97 + *(float*)&f_.v93)) {
     v52 = v47;
   }
   else {
     v52 = *(float*)&f_.v97 + *(float*)&f_.v93;
   }
-  if (!(v48 < v49)) {
+  if (v48 >= v49) {
     v49 = v48;
   }
-  if (!(v50 > v51)) {
+  if (v50 <= v51) {
     v53 = v50;
   }
   else {
@@ -8438,15 +8437,15 @@ LABEL_43:
     v68 = 0x0.0p+0f;
     v69 = 0x1.0000000000000p+0f;
     v70 = (float)(*((float*)&f_.v93 + 1) + v57) * 0x1.0000000000000p-1f;
-    if (!((float)(*(float*)&f_.v92 - *(float*)&f_.v91) >
-          (float)(v56 - *((float*)&f_.v91 + 1)))) {
+    if ((float)(*(float*)&f_.v92 - *(float*)&f_.v91) <=
+        (float)(v56 - *((float*)&f_.v91 + 1))) {
       v71 = 0x0.0p+0f;
     }
     else {
       v71 = 0x1.0000000000000p+0f;
     }
-    if (!((float)(*(float*)&f_.v92 - *(float*)&f_.v91) >
-          (float)(v56 - *((float*)&f_.v91 + 1)))) {
+    if ((float)(*(float*)&f_.v92 - *(float*)&f_.v91) <=
+        (float)(v56 - *((float*)&f_.v91 + 1))) {
       v72 = 0x1.0000000000000p+0f;
     }
     else {
@@ -8454,32 +8453,30 @@ LABEL_43:
     }
     v73 = v67 + vabds_f32(*(float*)&f_.v93, *(float*)&f_.v95);
     v74 = v72 * v73;
-    v75 = (float)(*(float*)&f_.v93 + *(float*)&f_.v95) *
-          0x1.0000000000000p-1f;
+    v75 = (float)(*(float*)&f_.v93 + *(float*)&f_.v95) * 0x1.0000000000000p-1f;
     v76 = (float)(v71 * v73) * 0x1.0000000000000p-1f;
     v77 = v74 * 0x1.0000000000000p-1f;
     v78 = v75 - v76;
     v79 = v70 - v77;
     v80 = v75 + v76;
-    f_.v93 =
-        __PAIR64__(COERCE_UNSIGNED_INT((float)(v70 - v77)), LODWORD(v78));
+    f_.v93 = __PAIR64__(COERCE_UNSIGNED_INT((float)(v70 - v77)), LODWORD(v78));
     *(float*)&f_.v95 = v80;
     *((float*)&f_.v95 + 1) = v70 + v77;
-    if (!((float)((float)((float)(PSEUDO_UNFUSED(
-                              (float)((float)(v70 - v77) - v46) *
-                              (float)((float)(v70 - v77) - v46))) +
-                          (float)((float)(v78 - v45) * (float)(v78 - v45))) +
-                  (float)((float)(PSEUDO_UNFUSED(
-                              (float)(*((float*)&f_.v95 + 1) - v57) *
-                              (float)(*((float*)&f_.v95 + 1) - v57))) +
-                          (float)((float)(v80 - v66) * (float)(v80 - v66)))) >
-          (float)((float)((float)(PSEUDO_UNFUSED(
-                              (float)(*((float*)&f_.v95 + 1) - v46) *
-                              (float)(*((float*)&f_.v95 + 1) - v46))) +
-                          (float)((float)(v80 - v45) * (float)(v80 - v45))) +
-                  (float)((float)(PSEUDO_UNFUSED((float)(v79 - v57) *
-                                                 (float)(v79 - v57))) +
-                          (float)((float)(v78 - v66) * (float)(v78 - v66)))))) {
+    if ((float)((float)((float)(PSEUDO_UNFUSED(
+                            (float)((float)(v70 - v77) - v46) *
+                            (float)((float)(v70 - v77) - v46))) +
+                        (float)((float)(v78 - v45) * (float)(v78 - v45))) +
+                (float)((float)(PSEUDO_UNFUSED(
+                            (float)(*((float*)&f_.v95 + 1) - v57) *
+                            (float)(*((float*)&f_.v95 + 1) - v57))) +
+                        (float)((float)(v80 - v66) * (float)(v80 - v66)))) <=
+        (float)((float)((float)(PSEUDO_UNFUSED(
+                            (float)(*((float*)&f_.v95 + 1) - v46) *
+                            (float)(*((float*)&f_.v95 + 1) - v46))) +
+                        (float)((float)(v80 - v45) * (float)(v80 - v45))) +
+                (float)((float)(PSEUDO_UNFUSED((float)(v79 - v57) *
+                                               (float)(v79 - v57))) +
+                        (float)((float)(v78 - v66) * (float)(v78 - v66))))) {
       v81 = v70 - v77;
       v79 = v70 + v77;
       v82 = v78;
@@ -8496,7 +8493,7 @@ LABEL_43:
     v83 = v79 - v81;
     v84 = v78 - v82;
     v85 = (float)(PSEUDO_UNFUSED(v83 * v83)) + (float)(v84 * v84);
-    if (!(v85 < 0x1.0000000000000p-23f)) {
+    if (v85 >= 0x1.0000000000000p-23f) {
       v86 = 0x1.0000000000000p+0f / sqrtf(v85);
       v68 = v84 * v86;
       v69 = v83 * v86;
@@ -8509,8 +8506,7 @@ LABEL_43:
         v21 = COERCE_AS(__typeof__(v21), PSEUDO_REGISTER(float, "s0", "=w"));
     v45 = *(float*)&f_.v97 + *(float*)&f_.v91;
     v87 = *(float*)&f_.v91 + *((float*)&f_.v97 + 1);
-    if (!(*(float*)&f_.v93 <
-          (float)(*(float*)&f_.v97 + *(float*)&f_.v91))) {
+    if (*(float*)&f_.v93 >= (float)(*(float*)&f_.v97 + *(float*)&f_.v91)) {
       v45 = *(float*)&f_.v93;
     }
     if (v45 > (float)(*(float*)&f_.v92 - *(float*)&f_.v97)) {
@@ -8518,24 +8514,24 @@ LABEL_43:
     }
     v88 = *(float*)&f_.v97 + *((float*)&f_.v91 + 1);
     v46 = *((float*)&f_.v92 + 1) - *(float*)&f_.v97;
-    if (!(*((float*)&f_.v93 + 1) <
-          (float)(*(float*)&f_.v97 + *((float*)&f_.v91 + 1)))) {
+    if (*((float*)&f_.v93 + 1) >=
+        (float)(*(float*)&f_.v97 + *((float*)&f_.v91 + 1))) {
       v88 = *((float*)&f_.v93 + 1);
     }
-    if (!(v88 > v46)) {
+    if (v88 <= v46) {
       v46 = v88;
     }
-    if (!(*(float*)&f_.v95 < v87)) {
+    if (*(float*)&f_.v95 >= v87) {
       v87 = *(float*)&f_.v95;
     }
-    if (!(v87 > (float)(*(float*)&f_.v92 - *((float*)&f_.v97 + 1)))) {
+    if (v87 <= (float)(*(float*)&f_.v92 - *((float*)&f_.v97 + 1))) {
       v58 = v87;
     }
     else {
       v58 = *(float*)&f_.v92 - *((float*)&f_.v97 + 1);
     }
-    if (!(*((float*)&f_.v95 + 1) <
-          (float)(*((float*)&f_.v91 + 1) + *((float*)&f_.v97 + 1)))) {
+    if (*((float*)&f_.v95 + 1) >=
+        (float)(*((float*)&f_.v91 + 1) + *((float*)&f_.v97 + 1))) {
       v57 = *((float*)&f_.v95 + 1);
     }
     else {
@@ -8546,9 +8542,9 @@ LABEL_43:
     }
     goto LABEL_105;
   }
-  v54 = fmaxf(*((float*)&f_.v93 + 1) - *(float*)&f_.v97,
-              -0x1.f400000000000p+8f);
-  if (!(v54 < v51)) {
+  v54 =
+      fmaxf(*((float*)&f_.v93 + 1) - *(float*)&f_.v97, -0x1.f400000000000p+8f);
+  if (v54 >= v51) {
     v55 = v54;
   }
   else {
@@ -8560,10 +8556,9 @@ LABEL_43:
     goto LABEL_76;
   }
   v58 = *(float*)&f_.v95;
-  v59 = fminf(*(float*)&f_.v95 - *((float*)&f_.v97 + 1),
-              0x1.f400000000000p+8f);
-  v60 = fmaxf(*(float*)&f_.v95 - *((float*)&f_.v97 + 1),
-              -0x1.f400000000000p+8f);
+  v59 = fminf(*(float*)&f_.v95 - *((float*)&f_.v97 + 1), 0x1.f400000000000p+8f);
+  v60 =
+      fmaxf(*(float*)&f_.v95 - *((float*)&f_.v97 + 1), -0x1.f400000000000p+8f);
   v61 = fminf(*((float*)&f_.v95 + 1) - *((float*)&f_.v97 + 1),
               0x1.f400000000000p+8f);
   v62 = *((float*)&f_.v97 + 1) + *(float*)&f_.v95;
@@ -8571,7 +8566,7 @@ LABEL_43:
   if (v59 > (float)(*((float*)&f_.v97 + 1) + *(float*)&f_.v95)) {
     v59 = *((float*)&f_.v97 + 1) + *(float*)&f_.v95;
   }
-  if (!(v60 < v62)) {
+  if (v60 >= v62) {
     v62 = v60;
   }
   v64 = v61 <= v63 ? v61 : *((float*)&f_.v95 + 1) + *((float*)&f_.v97 + 1);

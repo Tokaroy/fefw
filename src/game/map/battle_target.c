@@ -55,6 +55,10 @@ __int64 game_map_BattleUtil_GetRevengeSkill_alt1(__int64 result) __asm__(
 bool game_HasSkill_alt1(_QWORD*, _DWORD*) __asm__("game_HasSkill");
 __int64 BattleTarget_8fe740(__int64 a1);
 __attribute__((swiftcall)) void BattleTarget_8fef10(PSEUDO_X8 x8_, __int64 a1);
+__int64* BattleTarget_8fe340_alt2(__int64);
+__int64* game_UnitPool_Get_alt2(_BYTE*);
+__int64 game_map_BattleUtil_GetRevengeSkill_alt2(__int64 result);
+bool game_HasSkill_alt2(_QWORD*, _DWORD*);
 
 bool game_map_BattleTarget_Commit_8fdae0(__int64 a1, __int64 a2)
 {
@@ -762,6 +766,9 @@ bool BattleTarget_8fe640(__int64 a1, _DWORD* a2)
 
 __int64 BattleTarget_8fe740(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   __int64 v4;
@@ -773,35 +780,38 @@ __int64 BattleTarget_8fe740(__int64 a1)
   __int64 v13;
   int v14;
   __int64 v16;
-  int v17;
-  int v18;
+  struct {
+    char gap0_[4];
+    int v17;
+    int v18;
+  } f_;
   int v19;
 
-  v2 = (__int64)BattleTarget_8fe340_alt1(a1);
+  v2 = (__int64)BattleTarget_8fe340_alt2(a1);
   if (v2 != 0) {
     v3 = v2;
     v4 = game_g_shared_system_skills_ptr;
-    v18 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x44LL) +
-                     game_g_shared_system_skills_ptr) &
-          0xFFF;
-    if (game_HasSkill_alt1((_QWORD*)(v2 + 1744), &v18)) {
+    f_.v18 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x44LL) +
+                        game_g_shared_system_skills_ptr) &
+             0xFFF;
+    if (game_HasSkill_alt2((_QWORD*)(v2 + 1744), &f_.v18)) {
       goto LABEL_31;
     }
     if (*(_WORD*)(v3 + 492) == 0 && *(_BYTE*)(v3 + 496) == 0) {
       v19 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x144LL) + v4) & 0xFFF;
-      if (game_HasSkill_alt1((_QWORD*)(v3 + 1744), &v19)) {
+      if (game_HasSkill_alt2((_QWORD*)(v3 + 1744), &v19)) {
         goto LABEL_31;
       }
     }
-    v17 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x4CLL) + v4) & 0xFFF;
-    if (game_HasSkill_alt1((_QWORD*)(v3 + 1744), &v17) ||
+    f_.v17 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x4CLL) + v4) & 0xFFF;
+    if (game_HasSkill_alt2((_QWORD*)(v3 + 1744), &f_.v17) ||
         *(_BYTE*)(a1 + 8) == 0) {
       goto LABEL_31;
     }
-    v2 = (__int64)game_UnitPool_Get_alt1((_BYTE*)(a1 + 8));
+    v2 = (__int64)game_UnitPool_Get_alt2((_BYTE*)(a1 + 8));
     if (v2 != 0) {
       if ((*(_BYTE*)(v2 + 416) & 8) == 0) {
-        v6 = BattleTarget_8fe340_alt1(a1);
+        v6 = BattleTarget_8fe340_alt2(a1);
         LOBYTE(v2) = 0;
         if (v6 == nullptr) {
           return v2 & 1;
@@ -809,7 +819,7 @@ __int64 BattleTarget_8fe740(__int64 a1)
         if (*(_BYTE*)(a1 + 8) == 0) {
           return v2 & 1;
         }
-        v2 = (__int64)game_UnitPool_Get_alt1((_BYTE*)(a1 + 8));
+        v2 = (__int64)game_UnitPool_Get_alt2((_BYTE*)(a1 + 8));
         if (v2 == 0) {
           return v2 & 1;
         }
@@ -818,7 +828,7 @@ __int64 BattleTarget_8fe740(__int64 a1)
         }
         if (*(_BYTE*)(a1 + 8) != 0) {
           v9 = v2;
-          v10 = game_UnitPool_Get_alt1((_BYTE*)(a1 + 8));
+          v10 = game_UnitPool_Get_alt2((_BYTE*)(a1 + 8));
           if (v10 != nullptr && (v11 = v10[55]) != 0) {
             v12 = *(unsigned __int8*)(v11 + 16);
           }
@@ -844,7 +854,7 @@ __int64 BattleTarget_8fe740(__int64 a1)
         if (v14 != 3) {
         LABEL_34:
           v16 = v2;
-          v2 = game_map_BattleUtil_GetRevengeSkill_alt1((__int64)v6);
+          v2 = game_map_BattleUtil_GetRevengeSkill_alt2((__int64)v6);
           if (v2 != 0) {
             LOBYTE(v2) = game_map_BattleTarget_Commit_8fdda0(a1, 7, (__int64)v6,
                                                              v16, v2);
