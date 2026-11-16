@@ -2055,9 +2055,10 @@ void game_zview_d0e6d0(__int64 a1)
                                LANES128_OF(vextq_s8(v9, v9, 8u)).n128_u64[0]),
                      COERCE_AS(float32x2_t, LANES128(v9).n128_u64[0])))
             .n64_u64[0];
-    if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v9).n128_u64[0]),
-                             COERCE_AS(float32x2_t, LANES128(v9).n128_u64[0])))
-            .n64_f32[0] >= 0x1.0c6f7c0000000p-20f) {
+    if (!(LANES64_OF(
+              vpadd_f32(COERCE_AS(float32x2_t, LANES128(v9).n128_u64[0]),
+                        COERCE_AS(float32x2_t, LANES128(v9).n128_u64[0])))
+              .n64_f32[0] < 0x1.0c6f7c0000000p-20f)) {
       v11 = *((float*)&v7 + 1);
     }
     else {
@@ -2363,23 +2364,23 @@ __int64 game_zview_d11e20(__int64 a1)
       v8 = v8 / v9;
     }
     v10 = fabsf(v6 * fabsf(v7));
-    if (v3 <= *(float*)&GameData_22110ac) {
+    if (!(v3 > *(float*)&GameData_22110ac)) {
       if (v3 >= *(float*)&GameData_22110ac ||
           (v3 = v3 + v10) <= *(float*)&GameData_22110ac) {
       LABEL_12:
         v11 = fabsf(v6 * fabsf(v8));
-        if (v1 <= *((float*)&GameData_22110ac + 1)) {
-          if (v1 >= *((float*)&GameData_22110ac + 1)) {
+        if (!(v1 > *((float*)&GameData_22110ac + 1))) {
+          if (!(v1 < *((float*)&GameData_22110ac + 1))) {
             goto LABEL_18;
           }
           v1 = v1 + v11;
-          if (v1 <= *((float*)&GameData_22110ac + 1)) {
+          if (!(v1 > *((float*)&GameData_22110ac + 1))) {
             goto LABEL_18;
           }
         }
         else {
           v1 = v1 - v11;
-          if (v1 >= *((float*)&GameData_22110ac + 1)) {
+          if (!(v1 < *((float*)&GameData_22110ac + 1))) {
             goto LABEL_18;
           }
         }
@@ -2392,7 +2393,7 @@ __int64 game_zview_d11e20(__int64 a1)
     }
     else {
       v3 = v3 - v10;
-      if (v3 >= *(float*)&GameData_22110ac) {
+      if (!(v3 < *(float*)&GameData_22110ac)) {
         goto LABEL_12;
       }
     }
@@ -2402,7 +2403,7 @@ __int64 game_zview_d11e20(__int64 a1)
 LABEL_19:
   v12 = *(_QWORD*)(a1 + 696);
   v13 = *(__int64**)(a1 + 688);
-  if (0xAAAAAAAAAAAAAAABLL * ((__int64)(v12 - (_QWORD)v13) >> 2) >= 0x3D) {
+  if (!(0xAAAAAAAAAAAAAAABLL * ((__int64)(v12 - (_QWORD)v13) >> 2) < 0x3D)) {
     do {
       v14 = v12;
       v12 -= 12LL;
@@ -2414,7 +2415,7 @@ LABEL_19:
   }
   v15 = *(_DWORD*)(a1 + 524);
   v16 = *(_QWORD*)(a1 + 704);
-  if (v12 >= v16) {
+  if (!(v12 < v16)) {
     v23 = 1 - 0x5555555555555555LL * ((__int64)(v12 - (_QWORD)v13) >> 2);
     if (v23 > 0x1555555555555555LL) {
       GameRoutine_d13d00_alt1();
@@ -2423,7 +2424,7 @@ LABEL_19:
     if (2 * v24 > v23) {
       v23 = 2 * v24;
     }
-    if (v24 >= 0xAAAAAAAAAAAAAAALL) {
+    if (!(v24 < 0xAAAAAAAAAAAAAAALL)) {
       v23 = 0x1555555555555555LL;
     }
     if (v23 != 0) {
@@ -2489,7 +2490,7 @@ LABEL_19:
   }
   else {
     v17 = v12;
-    if (v12 >= 0xC) {
+    if (!(v12 < 0xC)) {
       v18 = *(_QWORD*)(v12 - 12);
       v17 = v12 + 12;
       *(_DWORD*)(v12 + 8) = *(_DWORD*)(v12 - 4);
@@ -2518,7 +2519,7 @@ LABEL_19:
   if (v40 != nullptr) {
     v41 = fmodf_alt1(*(float*)(*(_QWORD*)(a1 + 488) + 36LL) - *v40,
                      0x1.921fb60000000p+2f);
-    if (v41 >= 0x0.0p+0f) {
+    if (!(v41 < 0x0.0p+0f)) {
       v42 = v41 + 0x0.0p+0f;
     }
     else {
@@ -2559,7 +2560,7 @@ LABEL_19:
         *(_QWORD*)(v50 + 32) = v51;
         v52 = v51;
       }
-      if ((unsigned __int64)(v52 - v51) >= 0x51) {
+      if (!((unsigned __int64)(v52 - v51) < 0x51)) {
         do {
           if (v51 + 16 == v52) {
             v59 = v51;
@@ -2649,7 +2650,7 @@ LABEL_94:
             0x1.f400000000000p+9f);
   if (v54 > 0x0.0p+0f) {
     v54 = v54 - v71;
-    if (v54 >= 0x0.0p+0f) {
+    if (!(v54 < 0x0.0p+0f)) {
       goto LABEL_100;
     }
   }
@@ -3254,9 +3255,9 @@ __int64 game_zview_d13480(__int64 a1, float a2)
   v2 = *(float**)(a1 + 8);
   v4 =
       a2 + (float)(roundf(a2 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v4 <= 0x1.921fb60000000p+0f) {
+  if (!(v4 > 0x1.921fb60000000p+0f)) {
     v6 = 1.0f;
-    if (v4 >= -0x1.921fb60000000p+0f) {
+    if (!(v4 < -0x1.921fb60000000p+0f)) {
       goto LABEL_6;
     }
     v5 = -0x1.921fb60000000p+1f;
@@ -3337,7 +3338,7 @@ LABEL_6:
   v19 = *v15;
   v20 = **(int**)(a1 + 48);
   v21 = (v19[1] - *v19) >> 3;
-  if ((int)v21 <= (int)v20) {
+  if (!((int)v21 > (int)v20)) {
   LABEL_13:
     if ((game_zview_d17160_alt2(*GameData_212ebd0[0], *(_QWORD*)(a1 + 56), v14,
                                 &v25, v13) &
@@ -4945,9 +4946,9 @@ void game_zview_d1dfd0(float32x4_t* a1)
          (float)(roundf((float)(v6 * 0x1.921fb60000000p+1f) *
                         0x1.45f3060000000p-3f) *
                  -0x1.921fb60000000p+2f);
-    if (v9 <= 0x1.921fb60000000p+0f) {
+    if (!(v9 > 0x1.921fb60000000p+0f)) {
       v11 = 0x1.0000000000000p+0f;
-      if (v9 >= -0x1.921fb60000000p+0f) {
+      if (!(v9 < -0x1.921fb60000000p+0f)) {
       LABEL_15:
         v12 = v9 * v9;
         v13 =
@@ -5000,14 +5001,14 @@ void game_zview_d1dfd0(float32x4_t* a1)
                         (float)(v21 - LANES128(a1[70]).n128_f32[0]));
         }
         v22 = (float)(v21 + -0x1.0000000000000p-1f) * 0x1.0000000000000p-2f;
-        if (v22 <= 0x1.0000000000000p+0f) {
+        if (!(v22 > 0x1.0000000000000p+0f)) {
           v23 = (float)(v21 + -0x1.0000000000000p-1f) * 0x1.0000000000000p-2f;
         }
         else {
           v23 = 0x1.0000000000000p+0f;
         }
         v24 = fminf(fmaxf(v23, 0x0.0p+0f), 0x1.0000000000000p+0f);
-        if (v22 >= 0x0.0p+0f) {
+        if (!(v22 < 0x0.0p+0f)) {
           v25 = v24;
         }
         else {
@@ -5042,7 +5043,7 @@ LABEL_30:
       0x1.3333340000000p-2f);
   if (v26 > 0x1.0000000000000p+0f) {
     v26 = v26 - v28;
-    if (v26 >= 0x1.0000000000000p+0f) {
+    if (!(v26 < 0x1.0000000000000p+0f)) {
       goto LABEL_36;
     }
     goto LABEL_35;
@@ -5104,7 +5105,7 @@ LABEL_36:
             0x1.f400000000000p+9f);
   if (v38 > v37) {
     v38 = v38 - v39;
-    if (v38 >= v37) {
+    if (!(v38 < v37)) {
       goto LABEL_50;
     }
   LABEL_49:
@@ -7288,7 +7289,7 @@ void game_zview_d23060(__int64 a1)
   v4 = COERCE_AS(float32x4_t, GameData_1a829d0);
   v5 = COERCE_AS(float32x4_t, GameData_1a83800);
   PSEUDO_LOW_LANE64(v6, n64_u64, 0xB0A090803020100LL);
-  if (fabsf(*(float*)(a1 + 968)) >= 0x1.0624de0000000p-10f) {
+  if (!(fabsf(*(float*)(a1 + 968)) < 0x1.0624de0000000p-10f)) {
     v8 = vmulq_f32(v58_.v58, COERCE_AS(float32x4_t, GameData_1a829d0));
     LANES128(v9).n128_u64[0] =
         LANES64_OF(vqtbl1_s8(COERCE_AS(int8x16_t, GameData_21a6180),
@@ -8272,23 +8273,23 @@ __int64 game_zview_d30720(__int64 a1, __int64 a2)
                   Camera_b3bb60(v9));
   v13 = *(float*)(*(_QWORD*)v5 + 1148LL);
   v14 = 0x0.0p+0f;
-  if (v13 <= 0x1.eb85200000000p-3f) {
+  if (!(v13 > 0x1.eb85200000000p-3f)) {
     v14 = 0x1.99999a0000000p-3f;
     if ((*(_DWORD*)(a2 + 592) & 0xFFFFFFFE) != 2) {
       v14 = 0x0.0p+0f;
     }
   }
-  if (fabsf(LANES128(v12).n128_f32[1]) >=
-      (float)(v14 +
-              (float)((float)(*(float*)(a2 + 548) * 0x1.3333340000000p+0f) +
-                      0x1.0000000000000p-1f))) {
+  if (!(fabsf(LANES128(v12).n128_f32[1]) <
+        (float)(v14 +
+                (float)((float)(*(float*)(a2 + 548) * 0x1.3333340000000p+0f) +
+                        0x1.0000000000000p-1f)))) {
     goto LABEL_29;
   }
   v15 = LANES128_OF(vmulq_f32(v12, v12)).n128_f32[2] +
         (float)(LANES128(v12).n128_f32[0] * LANES128(v12).n128_f32[0]);
   if ((v4 & 0x40000000) != 0) {
-    if (v15 >= (float)((float)(v7 * 0x1.3333340000000p-1f) *
-                       (float)(v7 * 0x1.3333340000000p-1f))) {
+    if (!(v15 < (float)((float)(v7 * 0x1.3333340000000p-1f) *
+                       (float)(v7 * 0x1.3333340000000p-1f)))) {
       v21 = v7 + (float)(v14 + 0x1.3333340000000p-2f);
       if ((*(_BYTE*)(a2 + 389) & 1) == 0) {
         v21 = v7;
@@ -8323,7 +8324,7 @@ __int64 game_zview_d30720(__int64 a1, __int64 a2)
     }
     if (v18 < 0x18) {
     LABEL_23:
-      if (v13 <= 0x1.eb85200000000p-3f) {
+      if (!(v13 > 0x1.eb85200000000p-3f)) {
         v21 = (float)((float)(v7 * 0x1.6666660000000p+0f) +
                       0x1.0000000000000p-1f) +
               v14;
@@ -14028,7 +14029,7 @@ __n128 game_zview_103ee50(__int64 a1)
     if (vabds_f32(v2, *(float*)(a1 + 76)) < 0x1.0000000000000p-23f) {
       if (v7 > 0x0.0p+0f) {
         v7 = v7 - v8;
-        if (v7 >= 0x0.0p+0f) {
+        if (!(v7 < 0x0.0p+0f)) {
           goto LABEL_19;
         }
       }
@@ -14047,13 +14048,13 @@ __n128 game_zview_103ee50(__int64 a1)
                                   0x1.0000000000000p+0f) *
                             0x1.fae1480000000p-1f) +
                     0x1.47ae140000000p-7f));
-        if (v10 <= v2) {
+        if (!(v10 > v2)) {
           if (v10 >= v2 || (v10 = v10 + v12) <= v2) {
           LABEL_27:
             v2 = v10;
             *(float*)(a1 + 76) = v10;
             v3 = v10 < 0x0.0p+0f;
-            if (v10 <= 0x0.0p+0f) {
+            if (!(v10 > 0x0.0p+0f)) {
               goto LABEL_3;
             }
           LABEL_28:
@@ -14064,7 +14065,7 @@ __n128 game_zview_103ee50(__int64 a1)
         }
         else {
           v10 = v10 - v12;
-          if (v10 >= v2) {
+          if (!(v10 < v2)) {
             goto LABEL_27;
           }
         }
@@ -14074,18 +14075,18 @@ __n128 game_zview_103ee50(__int64 a1)
       v7 = 0x0.0p+0f;
       goto LABEL_19;
     }
-    if (v7 <= 0x1.0000000000000p+0f) {
-      if (v7 >= 0x1.0000000000000p+0f) {
+    if (!(v7 > 0x1.0000000000000p+0f)) {
+      if (!(v7 < 0x1.0000000000000p+0f)) {
         goto LABEL_19;
       }
       v7 = v7 + v8;
-      if (v7 <= 0x1.0000000000000p+0f) {
+      if (!(v7 > 0x1.0000000000000p+0f)) {
         goto LABEL_19;
       }
     }
     else {
       v7 = v7 - v8;
-      if (v7 >= 0x1.0000000000000p+0f) {
+      if (!(v7 < 0x1.0000000000000p+0f)) {
         goto LABEL_19;
       }
     }
@@ -14305,9 +14306,9 @@ float32x4_t game_zview_103fb80(__int64 a1)
                   0x1.0000000000000p-1f);
       v16 = v15 + (float)(roundf(v15 * 0x1.45f3060000000p-3f) *
                           -0x1.921fb60000000p+2f);
-      if (v16 <= 0x1.921fb60000000p+0f) {
+      if (!(v16 > 0x1.921fb60000000p+0f)) {
         v17 = 0x1.0000000000000p+0f;
-        if (v16 >= -0x1.921fb60000000p+0f) {
+        if (!(v16 < -0x1.921fb60000000p+0f)) {
           goto LABEL_14;
         }
         v16 = -0x1.921fb60000000p+1f - v16;
@@ -14361,7 +14362,7 @@ float32x4_t game_zview_103fb80(__int64 a1)
                                             &v102, 0x100000000LL, 0, v86));
       if (v103_.v104 == 1) {
         v6 = 0x1.0000000000000p+0f;
-        if (v85 <= 0x1.0000000000000p+0f) {
+        if (!(v85 > 0x1.0000000000000p+0f)) {
           v6 = v85;
         }
         goto LABEL_23;
@@ -14385,7 +14386,7 @@ LABEL_23:
   }
   v26 = (float)(v3 * 0x1.0aef000000000p+4f) / 0x1.f400000000000p+9f;
   v27 = *(float*)(a1 + 68);
-  if (v27 >= LANES128(v5).n128_f32[0]) {
+  if (!(v27 < LANES128(v5).n128_f32[0])) {
     if (*(float*)(a1 + 72) > 0x0.0p+0f) {
       *(_DWORD*)(a1 + 72) = 1065353216;
     }
@@ -14438,18 +14439,18 @@ LABEL_23:
                                             0x1.0000000000000p+0f) *
                                       0x1.7333340000000p+1f) +
                               0x1.99999a0000000p-4f));
-    if (v36 <= 0x0.0p+0f) {
-      if (v36 >= 0x0.0p+0f) {
+    if (!(v36 > 0x0.0p+0f)) {
+      if (!(v36 < 0x0.0p+0f)) {
         goto LABEL_45;
       }
       v36 = v36 + v37;
-      if (v36 <= 0x0.0p+0f) {
+      if (!(v36 > 0x0.0p+0f)) {
         goto LABEL_45;
       }
     }
     else {
       v36 = v36 - v37;
-      if (v36 >= 0x0.0p+0f) {
+      if (!(v36 < 0x0.0p+0f)) {
         goto LABEL_45;
       }
     }
@@ -14457,7 +14458,7 @@ LABEL_23:
   LABEL_45:
     *(float*)(a1 + 72) = v36;
     v34 = 0x0.0p+0f;
-    if (v36 <= 0x0.0p+0f) {
+    if (!(v36 > 0x0.0p+0f)) {
       v34 = 0x1.47ae160000000p-1f;
     }
   }
@@ -14527,13 +14528,13 @@ LABEL_56:
                  PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v51 = *(float*)(a1 + 68);
   v52 = fabsf(v26 * v50);
-  if (v51 <= v99) {
+  if (!(v51 > v99)) {
     v53 = *(float*)(a1 + 68);
-    if (v51 >= v99) {
+    if (!(v51 < v99)) {
       goto LABEL_68;
     }
     v53 = v51 + v52;
-    if ((float)(v51 + v52) <= v99) {
+    if (!((float)(v51 + v52) > v99)) {
       goto LABEL_68;
     }
     goto LABEL_67;
@@ -14545,7 +14546,7 @@ LABEL_56:
   }
 LABEL_68:
   *(float*)(a1 + 68) = v53;
-  if (*(float*)(v2 + 724) >= v53) {
+  if (!(*(float*)(v2 + 724) < v53)) {
     PSEUDO_LOW_LANE128(v5, n128_f32, v53);
   }
   else {

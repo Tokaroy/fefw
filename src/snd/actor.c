@@ -199,9 +199,9 @@ __int64 Actor_101c40(__int64 result, float a2)
           v15 = *(float*)(v3 + 5676);
           v16 = *(float*)(v3 + 5680) - v9;
           v17 = snd_fnd_calcDistance_fec10(0.0, 0.0, v11 - v7, v16);
-          if (*(float*)&v17 >= 0.1) {
-            if (*(float*)&v17 <= 20.0) {
-              if (*(float*)&v17 <= 10.0) {
+          if (!(*(float*)&v17 < 0.1)) {
+            if (!(*(float*)&v17 > 20.0)) {
+              if (!(*(float*)&v17 > 10.0)) {
                 v18 = 0.25;
               }
               else {
@@ -826,7 +826,7 @@ void Actor_Unknown22(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 1664);
   v3 = -2.0;
-  if (v2 >= -2.0) {
+  if (!(v2 < -2.0)) {
     v3 = v2;
     if (v2 > 2.0) {
       v3 = 2.0;
@@ -842,7 +842,7 @@ void Actor_Unknown95(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 1624);
   v3 = -2.0;
-  if (v2 >= -2.0) {
+  if (!(v2 < -2.0)) {
     v3 = v2;
     if (v2 > 2.0) {
       v3 = 2.0;
@@ -860,7 +860,7 @@ void Actor_Unknown23(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 1864);
   v3 = v2 + snd_FadeRandom_getValue(a1 + 3376);
   v4 = -2.0;
-  if (v3 >= -2.0) {
+  if (!(v3 < -2.0)) {
     v4 = v3;
     if (v3 > 2.0) {
       v4 = 2.0;
@@ -878,7 +878,7 @@ void Actor_Unknown96(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 1824);
   v3 = v2 + snd_FadeRandom_getValue(a1 + 3336);
   v4 = -2.0;
-  if (v3 >= -2.0) {
+  if (!(v3 < -2.0)) {
     v4 = v3;
     if (v3 > 2.0) {
       v4 = 2.0;
@@ -904,13 +904,13 @@ void Actor_Unknown24(__int64 a1)
   v3 = *(float*)&v2;
   v4 = snd_FadeRandom_getValue_alt1(a1 + 3160);
   v5 = v3 + *(float*)&v4;
-  if ((int)(float)(v5 * 0x1.8000000000000p+3f) <= -84) {
+  if (!((int)(float)(v5 * 0x1.8000000000000p+3f) > -84)) {
     v6 = -84;
   }
   else {
     v6 = (int)(float)(v5 * 0x1.8000000000000p+3f);
   }
-  if (v6 >= 84) {
+  if (!(v6 < 84)) {
     v7 = 84;
   }
   else {
@@ -920,8 +920,8 @@ void Actor_Unknown24(__int64 a1)
       -(float)((float)(int)(float)(PSEUDO_UNFUSED(v5 * 0x1.8000000000000p+3f)) -
                (float)(v5 * 0x1.8000000000000p+3f));
   v9 = snd_g_semitoneRatios[v7 + 84];
-  if (v8 <= 0x0.0p+0f) {
-    if (v7 <= -83) {
+  if (!(v8 > 0x0.0p+0f)) {
+    if (!(v7 > -83)) {
       v11 = -83;
     }
     else {
@@ -930,7 +930,7 @@ void Actor_Unknown24(__int64 a1)
     v10 = v9 - snd_g_semitoneRatios[v11 + 83];
   }
   else {
-    if (v6 >= 83) {
+    if (!(v6 < 83)) {
       v6 = 83;
     }
     v10 = snd_g_semitoneRatios[v6 + 85] - v9;
@@ -951,13 +951,13 @@ void Actor_Unknown97(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 2024);
   v3 = v2 + snd_FadeRandom_getValue(a1 + 3120);
-  if ((int)(float)(v3 * 12.0) <= -84) {
+  if (!((int)(float)(v3 * 12.0) > -84)) {
     v4 = -84;
   }
   else {
     v4 = (int)(float)(v3 * 12.0);
   }
-  if (v4 >= 84) {
+  if (!(v4 < 84)) {
     v5 = 84;
   }
   else {
@@ -965,8 +965,8 @@ void Actor_Unknown97(__int64 a1)
   }
   v6 = -(float)((float)(int)(float)(v3 * 12.0) - (float)(v3 * 12.0));
   v7 = snd_g_semitoneRatios[v5 + 84];
-  if (v6 <= 0.0) {
-    if (v5 <= -83) {
+  if (!(v6 > 0.0)) {
+    if (!(v5 > -83)) {
       v9 = -83;
     }
     else {
@@ -975,7 +975,7 @@ void Actor_Unknown97(__int64 a1)
     v8 = v7 - snd_g_semitoneRatios[v9 + 83];
   }
   else {
-    if (v4 >= 83) {
+    if (!(v4 < 83)) {
       v4 = 83;
     }
     v8 = snd_g_semitoneRatios[v4 + 85] - v7;
@@ -992,7 +992,7 @@ void Actor_Unknown25(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 3928);
   v3 = (float)(v2 + snd_Fade_getValue(a1 + 4128)) + *(float*)(a1 + 3724);
   v4 = 0.0;
-  if (v3 >= 0.0) {
+  if (!(v3 < 0.0)) {
     v4 = v3;
     if (v3 > 1.0) {
       v4 = 1.0;
@@ -1010,7 +1010,7 @@ void Actor_Unknown98(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 3888);
   v3 = (float)(v2 + snd_Fade_getValue(a1 + 4088)) + *(float*)(a1 + 3684);
   v4 = 0.0;
-  if (v3 >= 0.0) {
+  if (!(v3 < 0.0)) {
     v4 = v3;
     if (v3 > 1.0) {
       v4 = 1.0;
@@ -1026,7 +1026,7 @@ void Actor_Unknown26(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 3728);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;
@@ -1042,7 +1042,7 @@ void Actor_Unknown99(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 3688);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;
@@ -1058,7 +1058,7 @@ void Actor_Unknown27(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 4528);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;
@@ -1074,7 +1074,7 @@ void Actor_Unknown100(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 4488);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;
@@ -1092,7 +1092,7 @@ void Actor_Unknown28(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 4728);
   v3 = v2 + snd_Fade_getValue(a1 + 4928);
   v4 = 0.0;
-  if (v3 >= 0.0) {
+  if (!(v3 < 0.0)) {
     v4 = v3;
     if (v3 > 1.0) {
       v4 = 1.0;
@@ -1110,7 +1110,7 @@ void Actor_Unknown101(__int64 a1)
   v2 = snd_Fade_getValue(a1 + 4688);
   v3 = v2 + snd_Fade_getValue(a1 + 4888);
   v4 = 0.0;
-  if (v3 >= 0.0) {
+  if (!(v3 < 0.0)) {
     v4 = v3;
     if (v3 > 1.0) {
       v4 = 1.0;
@@ -1126,7 +1126,7 @@ void Actor_Unknown29(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 5128);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;
@@ -1142,7 +1142,7 @@ void Actor_Unknown102(__int64 a1)
 
   v2 = snd_Fade_getValue(a1 + 5088);
   v3 = 0.0;
-  if (v2 >= 0.0) {
+  if (!(v2 < 0.0)) {
     v3 = v2;
     if (v2 > 1.0) {
       v3 = 1.0;

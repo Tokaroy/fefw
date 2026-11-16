@@ -1465,7 +1465,7 @@ __int64 GameHr_50d1a0(__int64 result, __int64 a2, __int64 a3, unsigned int a4,
   v5 = a3 + 4LL * a4;
   v6 = result;
   v7 = result & 3;
-  if ((unsigned int)result >= 4) {
+  if (!((unsigned int)result < 4)) {
     v9 = (unsigned int*)(a2 + 8);
     v10 = 0;
     result = 0;
@@ -1477,10 +1477,10 @@ __int64 GameHr_50d1a0(__int64 result, __int64 a2, __int64 a3, unsigned int a4,
         *(_DWORD*)(a2 + 4LL * (unsigned int)result) = v12;
         result = (unsigned int)(result + 1);
         v13 = *(v9 - 1);
-        if (*(float*)(v5 + 12LL * v13) <= a5) {
+        if (!(*(float*)(v5 + 12LL * v13) > a5)) {
         LABEL_9:
           v14 = *v9;
-          if (*(float*)(v5 + 12LL * *v9) <= a5) {
+          if (!(*(float*)(v5 + 12LL * *v9) > a5)) {
             goto LABEL_10;
           }
           goto LABEL_14;
@@ -1488,7 +1488,7 @@ __int64 GameHr_50d1a0(__int64 result, __int64 a2, __int64 a3, unsigned int a4,
       }
       else {
         v13 = *(v9 - 1);
-        if (*(float*)(v5 + 12LL * v13) <= a5) {
+        if (!(*(float*)(v5 + 12LL * v13) > a5)) {
           goto LABEL_9;
         }
       }
@@ -1496,7 +1496,7 @@ __int64 GameHr_50d1a0(__int64 result, __int64 a2, __int64 a3, unsigned int a4,
       *(_DWORD*)(a2 + 4LL * (unsigned int)result) = v13;
       result = (unsigned int)(result + 1);
       v14 = *v9;
-      if (*(float*)(v5 + 12LL * *v9) <= a5) {
+      if (!(*(float*)(v5 + 12LL * *v9) > a5)) {
       LABEL_10:
         v15 = v9[1];
         if (*(float*)(v5 + 12LL * v15) > a5) {
@@ -2124,43 +2124,43 @@ __int64 GameHr_53b660(__int64 a1, __int64 a2, float* a3, unsigned int a4,
       v26 = v18[2];
       v27 = (float*)((char*)v18 + a4);
       v18 = (float*)((char*)v27 + a4);
-      if (v20 >= v24) {
+      if (!(v20 < v24)) {
         v20 = v24;
       }
-      if (v19 >= v25) {
+      if (!(v19 < v25)) {
         v19 = v25;
       }
-      if (v16 >= v26) {
+      if (!(v16 < v26)) {
         v16 = v26;
       }
-      if (v22 <= v24) {
+      if (!(v22 > v24)) {
         v22 = v24;
       }
-      if (v21 <= v25) {
+      if (!(v21 > v25)) {
         v21 = v25;
       }
       v28 = *v27;
       v29 = v27[1];
-      if (v17 <= v26) {
+      if (!(v17 > v26)) {
         v17 = v26;
       }
       v30 = v27[2];
-      if (v20 >= v28) {
+      if (!(v20 < v28)) {
         v20 = *v27;
       }
-      if (v19 >= v29) {
+      if (!(v19 < v29)) {
         v19 = v27[1];
       }
-      if (v16 >= v30) {
+      if (!(v16 < v30)) {
         v16 = v27[2];
       }
-      if (v22 <= v28) {
+      if (!(v22 > v28)) {
         v22 = *v27;
       }
-      if (v21 <= v29) {
+      if (!(v21 > v29)) {
         v21 = v27[1];
       }
-      if (v17 <= v30) {
+      if (!(v17 > v30)) {
         v17 = v27[2];
       }
       v23 -= 2;
@@ -2171,22 +2171,22 @@ __int64 GameHr_53b660(__int64 a1, __int64 a2, float* a3, unsigned int a4,
   if ((v11 & 1) != 0) {
     v31 = v18[1];
     v32 = v18[2];
-    if (v20 >= *v18) {
+    if (!(v20 < *v18)) {
       v20 = *v18;
     }
-    if (v19 >= v31) {
+    if (!(v19 < v31)) {
       v19 = v18[1];
     }
-    if (v16 >= v32) {
+    if (!(v16 < v32)) {
       v16 = v18[2];
     }
-    if (v22 <= *v18) {
+    if (!(v22 > *v18)) {
       v22 = *v18;
     }
-    if (v21 <= v31) {
+    if (!(v21 > v31)) {
       v21 = v18[1];
     }
-    if (v17 <= v32) {
+    if (!(v17 > v32)) {
       v17 = v18[2];
     }
   }
@@ -7496,10 +7496,10 @@ _QWORD* GameHr_5664a0(_QWORD* result, int* a2, unsigned __int64 a3, int a4)
       v22 = HIDWORD(v38_.v38);
       v21 = v38_.v38;
       v20 = v7 - v40;
-      if (*(float*)&v38_.v38 >= *(float*)a2) {
+      if (!(*(float*)&v38_.v38 < *(float*)a2)) {
         v21 = *a2;
       }
-      if (*((float*)&v38_.v38 + 1) >= *((float*)a2 + 1)) {
+      if (!(*((float*)&v38_.v38 + 1) < *((float*)a2 + 1))) {
         v22 = a2[1];
       }
       v23 = v38_.v39;
@@ -7885,10 +7885,10 @@ _QWORD* GameHr_567ea0(_QWORD* result, int* a2, unsigned __int64 a3, int a4)
       v21 = HIDWORD(v36_.v36);
       v20 = v36_.v36;
       v8 = (v7 - v38) >> 1;
-      if (*(float*)&v36_.v36 >= *(float*)a2) {
+      if (!(*(float*)&v36_.v36 < *(float*)a2)) {
         v20 = *a2;
       }
-      if (*((float*)&v36_.v36 + 1) >= *((float*)a2 + 1)) {
+      if (!(*((float*)&v36_.v36 + 1) < *((float*)a2 + 1))) {
         v21 = a2[1];
       }
       *a2 = v20;

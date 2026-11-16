@@ -5177,9 +5177,9 @@ __int64 game_character_CharacterObservable_CharacterObservable_lambda15_Invoke(
   }
   v8 = *(float*)(v3 + 32);
   v9 = 0.0;
-  if (v8 >= 0.0) {
+  if (!(v8 < 0.0)) {
     v9 = 1.0;
-    if (v8 <= 1.0) {
+    if (!(v8 > 1.0)) {
       v9 = *(float*)(v3 + 32);
     }
   }

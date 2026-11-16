@@ -5943,7 +5943,7 @@ __int64 game_a8f100(__int64 result)
                   } while (v86 > v89);
                 }
               }
-              else if (v83 >= 0x1.0000000000000p-23f) {
+              else if (!(v83 < 0x1.0000000000000p-23f)) {
                 v144 = *v85;
                 if (*v85 != 0) {
                   v145 = 1;
@@ -8567,7 +8567,7 @@ void game_d25cc0(__int64 a1)
   v4 = fabsf(v2);
   if (v3 > 0x0.0p+0f) {
     v3 = v3 - v4;
-    if (v3 >= 0x0.0p+0f) {
+    if (!(v3 < 0x0.0p+0f)) {
       goto LABEL_7;
     }
     goto LABEL_6;
@@ -8795,7 +8795,7 @@ LABEL_93:
 LABEL_103:
   HIDWORD(v21) = v22;
 LABEL_104:
-  if (fabsf(*(float*)&v21) <= 0x1.e000000000000p+4f) {
+  if (!(fabsf(*(float*)&v21) > 0x1.e000000000000p+4f)) {
     if (*((float*)&v21 + 1) < -0x1.e000000000000p+4f && v17 == 0) {
       v25 = 0x200000001LL;
     LABEL_111:
@@ -9363,12 +9363,12 @@ __int64 game_dad600(__int64 a1)
   v2 = *(float*)(a1 + 80);
   v4 = *(float*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 8LL) + 228LL);
   v5 = fabsf(v4);
-  if (v2 <= 0.0f) {
-    if (v2 >= 0.0f) {
+  if (!(v2 > 0.0f)) {
+    if (!(v2 < 0.0f)) {
       goto LABEL_7;
     }
     v2 = v2 + v5;
-    if (v2 <= 0.0f) {
+    if (!(v2 > 0.0f)) {
       goto LABEL_7;
     }
     goto LABEL_6;
@@ -9384,7 +9384,7 @@ LABEL_7:
   v7 = CharacterRotate_d52080(v6);
   v9 = fmodf_alt1(*(float*)(v6 + 36) - v7, 0x1.921fb60000000p+2f);
   result = PSEUDO_REGISTER(unsigned long long, "x0", "=r");
-  if (v9 >= 0.0f) {
+  if (!(v9 < 0.0f)) {
     v10 = v9 + 0.0f;
   }
   else {
@@ -9400,7 +9400,7 @@ LABEL_7:
   v12 = *(float*)(a1 + 20);
   if (v12 > 0.0f) {
     v12 = v12 - v5;
-    if (v12 >= 0.0f) {
+    if (!(v12 < 0.0f)) {
       goto LABEL_23;
     }
   LABEL_22:
@@ -9415,14 +9415,14 @@ LABEL_7:
   }
 LABEL_23:
   *(float*)(a1 + 20) = v12;
-  if (v4 <= 0.0f) {
+  if (!(v4 > 0.0f)) {
     goto LABEL_54;
   }
   v13 = *(float*)(a1 + 16);
   *(_BYTE*)(a1 + 109) = 0;
   if (v13 > 0.0f) {
     v14 = v13 - v5;
-    if ((float)(v13 - v5) >= 0.0f) {
+    if (!((float)(v13 - v5) < 0.0f)) {
       goto LABEL_30;
     }
   LABEL_29:
@@ -9440,12 +9440,14 @@ LABEL_30:
   v15 = *(_QWORD*)(a1 + 8);
   *(float*)(a1 + 16) = v14;
   if ((*(_BYTE*)(*(_QWORD*)(v15 + 8) + 387LL) & 0x40) != 0) {
-    if ((float)((float)(*(float*)(v15 + 588) * *(float*)(v15 + 588)) +
-                (float)(*(float*)(v15 + 584) * *(float*)(v15 + 584))) <= 0.0f) {
+    if (!((float)((float)(*(float*)(v15 + 588) * *(float*)(v15 + 588)) +
+                  (float)(*(float*)(v15 + 584) * *(float*)(v15 + 584))) >
+          0.0f)) {
       goto LABEL_47;
     }
-    if ((float)((float)(*(float*)(v15 + 672) * *(float*)(v15 + 672)) +
-                (float)(*(float*)(v15 + 668) * *(float*)(v15 + 668))) <= 0.0f) {
+    if (!((float)((float)(*(float*)(v15 + 672) * *(float*)(v15 + 672)) +
+                  (float)(*(float*)(v15 + 668) * *(float*)(v15 + 668))) >
+          0.0f)) {
       if ((*(_BYTE*)(a1 + 72) & 1) != 0) {
         goto LABEL_47;
       }
@@ -9507,7 +9509,7 @@ LABEL_54:
   }
   if (*(_BYTE*)(a1 + 116) == 1) {
     v21 = *(float*)(a1 + 112);
-    if (v21 <= 0.0f) {
+    if (!(v21 > 0.0f)) {
       if (v21 >= 0.0f || (v21 = v5 + v21) <= 0.0f) {
       LABEL_63:
         *(float*)(a1 + 112) = v21;
@@ -9520,7 +9522,7 @@ LABEL_54:
     }
     else {
       v21 = v21 - v5;
-      if (v21 >= 0.0f) {
+      if (!(v21 < 0.0f)) {
         goto LABEL_63;
       }
     }
@@ -9749,10 +9751,10 @@ __int64 game_daddf0(__int64 a1)
                     v6) /
             v8;
       v11 = 0x1.0000000000000p+0f;
-      if (v10 <= 0x1.0000000000000p+0f) {
+      if (!(v10 > 0x1.0000000000000p+0f)) {
         v11 = v10;
       }
-      if (v10 >= 0x0.0p+0f) {
+      if (!(v10 < 0x0.0p+0f)) {
         v7 = v11;
       }
       else {
@@ -9867,7 +9869,7 @@ __int64 game_dae060(__int64 a1)
     __int64 v23;
   } v22_;
 
-  if (*(float*)(a1 + 20) <= 0x0.0p+0f) {
+  if (!(*(float*)(a1 + 20) > 0x0.0p+0f)) {
     return 0;
   }
   if ((*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL) + 8LL) +
@@ -9955,7 +9957,7 @@ __int64 game_dae200(__int64 a1)
     __int64 v17;
   } v8_;
 
-  if (*(float*)(a1 + 20) <= 0x0.0p+0f) {
+  if (!(*(float*)(a1 + 20) > 0x0.0p+0f)) {
     return 0;
   }
   v3 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL) + 8LL);
@@ -10367,7 +10369,7 @@ __int64 game_dae870(__int64 a1)
     __int64 v23;
   } v22_;
 
-  if (*(float*)(a1 + 20) <= 0x0.0p+0f) {
+  if (!(*(float*)(a1 + 20) > 0x0.0p+0f)) {
     return 0;
   }
   if ((*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 8LL) + 8LL) +
@@ -10377,7 +10379,7 @@ __int64 game_dae870(__int64 a1)
   }
   game_daf210(a1);
   v4 = *(_DWORD*)(a1 + 84);
-  if (v4 <= 1) {
+  if (!(v4 > 1)) {
     if (v4 == 0) {
       return 0;
     }
@@ -10688,7 +10690,7 @@ void game_daf210(__int64 a1)
   v2 = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 488LL);
   v3 = fmodf_alt1(*(float*)(v2 + 32) - *(float*)(v2 + 36),
                   0x1.921fb60000000p+2f);
-  if (v3 >= 0x0.0p+0f) {
+  if (!(v3 < 0x0.0p+0f)) {
     v4 = v3 + 0x0.0p+0f;
   }
   else {
@@ -10697,11 +10699,11 @@ void game_daf210(__int64 a1)
   if (v4 > 0x1.921fb60000000p+1f) {
     v4 = v4 + -0x1.921fb60000000p+2f;
   }
-  if (fabsf(v4) >= 0x1.41b2f80000000p-3f) {
+  if (!(fabsf(v4) < 0x1.41b2f80000000p-3f)) {
     if (!(v4 < -0x1.921fb60000000p+0f)) {
-      if (v4 >= 0x0.0p+0f) {
+      if (!(v4 < 0x0.0p+0f)) {
         v5 = 1;
-        if (v4 >= 0x1.921fb60000000p+0f) {
+        if (!(v4 < 0x1.921fb60000000p+0f)) {
           v6 = 180;
         }
         else {
@@ -10719,14 +10721,14 @@ void game_daf210(__int64 a1)
     }
     v7 = *(_DWORD*)(a1 + 104);
     v8 = (v7 >> 31) | 1;
-    if (v7 >= 0) {
+    if (!(v7 < 0)) {
       v9 = *(_DWORD*)(a1 + 104);
     }
     else {
       v9 = -v7;
     }
     v10 = v8 != v5 && v7 != 0;
-    if (v6 >= 0) {
+    if (!(v6 < 0)) {
       v11 = v6;
     }
     else {

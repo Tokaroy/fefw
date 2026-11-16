@@ -468,13 +468,13 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
           }
           v14 = *(float*)(a1 + 40);
           v15 = *(float*)(a1 + 44) + v13;
-          if (v14 >= v15) {
+          if (!(v14 < v15)) {
             v16 = v15;
           }
           else {
             v16 = *(float*)(a1 + 40);
           }
-          if (v15 >= 0x0.0p+0f) {
+          if (!(v15 < 0x0.0p+0f)) {
             v17 = v16;
           }
           else {
@@ -485,7 +485,7 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
           *(float*)(a1 + 44) = v17;
           v12 = GameRoutine_618640_alt1(4, 0x0.0p+0f, (float)v18, v17, v14) -
                 (float)((float)v18 - *(float*)(a1 + 16));
-          if (v12 >= v19) {
+          if (!(v12 < v19)) {
             v20 = v12;
           }
           else {
@@ -509,13 +509,13 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
       *(float*)(a1 + 16) = v24;
       if (v23 == 1) {
         LODWORD(v76[0]) = 0;
-        if (v24 >= 0x0.0p+0f) {
+        if (!(v24 < 0x0.0p+0f)) {
           v21 = (float*)v76;
         }
       }
       else {
         LODWORD(v76[0]) = 0;
-        if (v24 <= 0x0.0p+0f) {
+        if (!(v24 > 0x0.0p+0f)) {
           v21 = (float*)v76;
         }
       }
@@ -529,13 +529,13 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
         v28 = v25;
       }
       *(_DWORD*)(a1 + 8) = v28;
-      if (v28 >= v25) {
+      if (!(v28 < v25)) {
         v29 = 8;
       }
       else {
         v29 = 36;
       }
-      if (v25 >= v28) {
+      if (!(v25 < v28)) {
         v30 = 8;
       }
       else {
@@ -666,10 +666,10 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
             v56 = *(_DWORD*)(a1 + 8);
             v57 = 0;
             v58 = *(_DWORD*)(GameData_21d99c8 + 4LL * (unsigned int)(v55 - 1));
-            if (v58 >= v56) {
+            if (!(v58 < v56)) {
               v58 = *(_DWORD*)(a1 + 8);
             }
-            if (v56 >= (signed __int32)*(_DWORD*)GameData_21d99c8) {
+            if (!(v56 < (signed __int32)*(_DWORD*)GameData_21d99c8)) {
               v59 = v58;
             }
             else {
@@ -688,7 +688,7 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
               else {
                 v57 = v61 + 1;
               }
-              if (v57 >= v60) {
+              if (!(v57 < v60)) {
                 goto LABEL_99;
               }
             }
@@ -696,7 +696,7 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
           }
         LABEL_99:
           v63 = *(_DWORD*)(a1 + 24);
-          if (v63 >= (int)v55) {
+          if (!(v63 < (int)v55)) {
             v64 = (unsigned __int64)(GameData_21d99d0 - GameData_21d99c8) >> 2;
           }
           else {
@@ -708,7 +708,7 @@ __int64 GaugeUtil_174e4e0(__int64 a1, int a2)
           v65 = v64 - 1;
           v66 = v63 < 0;
           v67 = v55 - 1;
-          if (v63 <= 0) {
+          if (!(v63 > 0)) {
             v68 = 0;
           }
           else {
@@ -1492,13 +1492,13 @@ __int64 GaugeUtil_174f600(__int64 a1, int a2)
           }
           v14 = *(float*)(a1 + 40);
           v15 = *(float*)(a1 + 44) + v13;
-          if (v14 >= v15) {
+          if (!(v14 < v15)) {
             v16 = v15;
           }
           else {
             v16 = *(float*)(a1 + 40);
           }
-          if (v15 >= 0x0.0p+0f) {
+          if (!(v15 < 0x0.0p+0f)) {
             v17 = v16;
           }
           else {
@@ -1509,7 +1509,7 @@ __int64 GaugeUtil_174f600(__int64 a1, int a2)
           *(float*)(a1 + 44) = v17;
           v12 = GameRoutine_618640_alt1(4, 0x0.0p+0f, (float)v18, v17, v14) -
                 (float)((float)v18 - *(float*)(a1 + 16));
-          if (v12 >= v19) {
+          if (!(v12 < v19)) {
             v20 = v12;
           }
           else {
@@ -1532,13 +1532,13 @@ __int64 GaugeUtil_174f600(__int64 a1, int a2)
       *(float*)(a1 + 16) = v23;
       if (v22 == 1) {
         LODWORD(v45_.v45) = 0;
-        if (v23 >= 0x0.0p+0f) {
+        if (!(v23 < 0x0.0p+0f)) {
           v21 = (float*)&v45_.v45;
         }
       }
       else {
         LODWORD(v45_.v45) = 0;
-        if (v23 <= 0x0.0p+0f) {
+        if (!(v23 > 0x0.0p+0f)) {
           v21 = (float*)&v45_.v45;
         }
       }
@@ -1552,13 +1552,13 @@ __int64 GaugeUtil_174f600(__int64 a1, int a2)
         v27 = v24;
       }
       *(_DWORD*)(a1 + 8) = v27;
-      if (v27 >= v24) {
+      if (!(v27 < v24)) {
         v28 = 8;
       }
       else {
         v28 = 36;
       }
-      if (v24 >= v27) {
+      if (!(v24 < v27)) {
         v29 = 8;
       }
       else {
@@ -1908,13 +1908,13 @@ __int64 GaugeUtil_1750310(__int64 a1, int a2)
           }
           v14 = *(float*)(a1 + 40);
           v15 = *(float*)(a1 + 44) + v13;
-          if (v14 >= v15) {
+          if (!(v14 < v15)) {
             v16 = v15;
           }
           else {
             v16 = *(float*)(a1 + 40);
           }
-          if (v15 >= 0.0f) {
+          if (!(v15 < 0.0f)) {
             v17 = v16;
           }
           else {
@@ -1925,7 +1925,7 @@ __int64 GaugeUtil_1750310(__int64 a1, int a2)
           *(float*)(a1 + 44) = v17;
           v12 = GameRoutine_618640(4, 0.0f, (float)v18, v17, v14) -
                 (float)((float)v18 - *(float*)(a1 + 16));
-          if (v12 >= v19) {
+          if (!(v12 < v19)) {
             v20 = v12;
           }
           else {
@@ -1948,13 +1948,13 @@ __int64 GaugeUtil_1750310(__int64 a1, int a2)
       *(float*)(a1 + 16) = v23;
       if (v22 == 1) {
         v39[0] = 0;
-        if (v23 >= 0.0f) {
+        if (!(v23 < 0.0f)) {
           v21 = (float*)v39;
         }
       }
       else {
         v39[0] = 0;
-        if (v23 <= 0.0f) {
+        if (!(v23 > 0.0f)) {
           v21 = (float*)v39;
         }
       }
@@ -1968,13 +1968,13 @@ __int64 GaugeUtil_1750310(__int64 a1, int a2)
         v27 = v24;
       }
       *(_DWORD*)(a1 + 8) = v27;
-      if (v27 >= v24) {
+      if (!(v27 < v24)) {
         v28 = 8;
       }
       else {
         v28 = 36;
       }
-      if (v24 >= v27) {
+      if (!(v24 < v27)) {
         v29 = 8;
       }
       else {
@@ -2900,13 +2900,13 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
           v16 = v16 * 0x1.0000000000000p+3f;
         }
         v17 = v15 + v16;
-        if (v14 >= v17) {
+        if (!(v14 < v17)) {
           v18 = v17;
         }
         else {
           v18 = *(float*)(a1 + 40);
         }
-        if (v17 >= 0x0.0p+0f) {
+        if (!(v17 < 0x0.0p+0f)) {
           v19 = v18;
         }
         else {
@@ -2921,7 +2921,7 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
         v25 = *(unsigned __int8*)(a1 + 48);
         *(float*)(a1 + 44) = v15;
         v13 = v23 - (float)(v22 - v24);
-        if (v13 >= v21) {
+        if (!(v13 < v21)) {
           v26 = v13;
         }
         else {
@@ -2966,13 +2966,13 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
       v36 = *(_DWORD*)(a1 + 36);
     }
     *(_DWORD*)(a1 + 8) = v36;
-    if (v36 >= v34) {
+    if (!(v36 < v34)) {
       v37 = 8;
     }
     else {
       v37 = 36;
     }
-    if (v34 >= v36) {
+    if (!(v34 < v36)) {
       v38 = 8;
     }
     else {
@@ -3002,13 +3002,13 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
           }
           v44 = *(float*)(a1 + 40);
           v45 = *(float*)(a1 + 44) + v43;
-          if (v44 >= v45) {
+          if (!(v44 < v45)) {
             v46 = v45;
           }
           else {
             v46 = *(float*)(a1 + 40);
           }
-          if (v45 >= 0x0.0p+0f) {
+          if (!(v45 < 0x0.0p+0f)) {
             v47 = v46;
           }
           else {
@@ -3019,7 +3019,7 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
           *(float*)(a1 + 44) = v47;
           v42 = GameRoutine_618640_alt1(4, 0x0.0p+0f, (float)v48, v47, v44) -
                 (float)((float)v48 - *(float*)(a1 + 16));
-          if (v42 >= v49) {
+          if (!(v42 < v49)) {
             v50 = v42;
           }
           else {
@@ -3063,13 +3063,13 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
         v57 = v54;
       }
       *(_DWORD*)(a1 + 8) = v57;
-      if (v57 >= v54) {
+      if (!(v57 < v54)) {
         v58 = 8;
       }
       else {
         v58 = 36;
       }
-      if (v54 >= v57) {
+      if (!(v54 < v57)) {
         v59 = 8;
       }
       else {
@@ -3204,7 +3204,7 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
     v87 = v86[105];
     v88 = v86[103];
     if (v87 > 2 && v88 <= v85) {
-      if ((unsigned int)v87 <= 3) {
+      if (!((unsigned int)v87 > 3)) {
         goto LABEL_148;
       }
       v93 = 4;
@@ -3312,7 +3312,7 @@ __int64 GaugeUtil_17512a0(__int64 a1, int a2)
         goto LABEL_171;
       }
       v88 = v86[102];
-      if ((unsigned int)v87 <= 2) {
+      if (!((unsigned int)v87 > 2)) {
         goto LABEL_148;
       }
       v93 = 3;
@@ -3717,13 +3717,13 @@ __int64 GaugeUtil_1752580(__int64 a1, int a2)
           }
           v14 = *(float*)(a1 + 40);
           v15 = *(float*)(a1 + 44) + v13;
-          if (v14 >= v15) {
+          if (!(v14 < v15)) {
             v16 = v15;
           }
           else {
             v16 = *(float*)(a1 + 40);
           }
-          if (v15 >= 0x0.0p+0f) {
+          if (!(v15 < 0x0.0p+0f)) {
             v17 = v16;
           }
           else {
@@ -3734,7 +3734,7 @@ __int64 GaugeUtil_1752580(__int64 a1, int a2)
           *(float*)(a1 + 44) = v17;
           v12 = GameRoutine_618640_alt1(4, 0x0.0p+0f, (float)v18, v17, v14) -
                 (float)((float)v18 - *(float*)(a1 + 16));
-          if (v12 >= v19) {
+          if (!(v12 < v19)) {
             v20 = v12;
           }
           else {
@@ -3757,13 +3757,13 @@ __int64 GaugeUtil_1752580(__int64 a1, int a2)
       *(float*)(a1 + 16) = v23;
       if (v22 == 1) {
         LODWORD(v35[0]) = 0;
-        if (v23 >= 0x0.0p+0f) {
+        if (!(v23 < 0x0.0p+0f)) {
           v21 = (float*)v35;
         }
       }
       else {
         LODWORD(v35[0]) = 0;
-        if (v23 <= 0x0.0p+0f) {
+        if (!(v23 > 0x0.0p+0f)) {
           v21 = (float*)v35;
         }
       }
@@ -3777,13 +3777,13 @@ __int64 GaugeUtil_1752580(__int64 a1, int a2)
         v27 = v24;
       }
       *(_DWORD*)(a1 + 8) = v27;
-      if (v27 >= v24) {
+      if (!(v27 < v24)) {
         v28 = 8;
       }
       else {
         v28 = 36;
       }
-      if (v24 >= v27) {
+      if (!(v24 < v27)) {
         v29 = 8;
       }
       else {

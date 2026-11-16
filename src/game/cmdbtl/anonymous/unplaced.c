@@ -3415,7 +3415,7 @@ void game_cmdbtl_anonymous_1629760(__int64** a1, __int64** a2,
   __int64* v36;
   __int64* v37;
 
-  if (a3 >= 2) {
+  if (!(a3 < 2)) {
     v6 = a1;
     if (a3 == 2) {
       v7 = *a1;
@@ -3432,7 +3432,7 @@ void game_cmdbtl_anonymous_1629760(__int64** a1, __int64** a2,
       v21 = a3 >> 1;
       v22 = a4;
       v23 = a3 - (a3 >> 1);
-      if ((__int64)a3 <= a5) {
+      if (!((__int64)a3 > a5)) {
         game_cmdbtl_anonymous_1629a00(a1, &a1[v21], a3 >> 1, a4);
         v26 = &v22[v21];
         game_cmdbtl_anonymous_1629a00(&v6[v21], a2, v23, v26);
@@ -3444,13 +3444,13 @@ void game_cmdbtl_anonymous_1629760(__int64** a1, __int64** a2,
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*v28))));
           v31 = fabsf(COERCE_FLOAT(
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v29))));
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v32 = v22;
           }
           else {
             v32 = v28;
           }
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v33 = 8;
           }
           else {
@@ -3458,7 +3458,7 @@ void game_cmdbtl_anonymous_1629760(__int64** a1, __int64** a2,
           }
           v34 = *v32;
           v22 = (__int64**)((char*)v22 + v33);
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v35 = 0;
           }
           else {
@@ -3565,8 +3565,8 @@ void game_cmdbtl_anonymous_1629a00(__int64** a1, __int64** a2,
       v7 = *a1;
       v8 = fabsf(COERCE_FLOAT(
           COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*(a2 - 1)))));
-      if (v8 >= fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
-                    ui_LayoutAccessor_GetTranslate(v7))))) {
+      if (!(v8 < fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
+                     ui_LayoutAccessor_GetTranslate(v7)))))) {
         *v4 = *v6;
         v9 = *(a2 - 1);
       }
@@ -3593,13 +3593,13 @@ void game_cmdbtl_anonymous_1629a00(__int64** a1, __int64** a2,
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*v24))));
           v27 = fabsf(COERCE_FLOAT(
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v25))));
-          if (v26 >= v27) {
+          if (!(v26 < v27)) {
             v28 = v6;
           }
           else {
             v28 = v24;
           }
-          if (v26 >= v27) {
+          if (!(v26 < v27)) {
             v29 = 0;
           }
           else {
@@ -3607,7 +3607,7 @@ void game_cmdbtl_anonymous_1629a00(__int64** a1, __int64** a2,
           }
           v30 = *v28;
           v24 = (__int64**)((char*)v24 + v29);
-          if (v26 >= v27) {
+          if (!(v26 < v27)) {
             v31 = 8;
           }
           else {
@@ -3644,8 +3644,8 @@ void game_cmdbtl_anonymous_1629a00(__int64** a1, __int64** a2,
           v14 = *v13++;
           v15 = fabsf(COERCE_FLOAT(
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*v10))));
-          if (v15 >= fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
-                         ui_LayoutAccessor_GetTranslate(v14))))) {
+          if (!(v15 < fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
+                          ui_LayoutAccessor_GetTranslate(v14)))))) {
             *v13 = *v10;
           }
           else {
@@ -3658,8 +3658,8 @@ void game_cmdbtl_anonymous_1629a00(__int64** a1, __int64** a2,
                 v18 = *(__int64**)((char*)v4 + v17 - 8);
                 v19 = fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
                     ui_LayoutAccessor_GetTranslate(*v10))));
-                if (v19 >= fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
-                               ui_LayoutAccessor_GetTranslate(v18))))) {
+                if (!(v19 < fabsf(COERCE_FLOAT(COERCE_UNSIGNED_INT64(
+                                ui_LayoutAccessor_GetTranslate(v18)))))) {
                   break;
                 }
                 v17 -= 8;
@@ -3758,7 +3758,7 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
           return;
         }
       }
-      if (a4 >= v9) {
+      if (!(a4 < v9)) {
         if (a4 == 1) {
           v57 = *a1;
           *a1 = *a2;
@@ -3784,7 +3784,7 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
                 COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v29))));
             v31 = fabsf(COERCE_FLOAT(
                 COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v26))));
-            if (v30 >= v31) {
+            if (!(v30 < v31)) {
               v25 >>= 1;
             }
             else {
@@ -3840,7 +3840,7 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
       v35 = v33;
       v36 = v33 + v16;
       v37 = (__int64**)v34;
-      if (v36 >= a4 + v9) {
+      if (!(v36 < a4 + v9)) {
         v38 = a3;
         v39 = v35;
         game_cmdbtl_anonymous_1629c80((__int64**)v34, v17, v38, a4, v9, a6, a7);
@@ -3862,7 +3862,7 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
         }
       }
     }
-    if (a4 <= v9) {
+    if (!(a4 > v9)) {
       if (a1 != a2) {
         v46 = -(__int64)a6;
         v47 = a6;
@@ -3878,13 +3878,13 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*a2))));
           v52 = fabsf(COERCE_FLOAT(
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v50))));
-          if (v51 >= v52) {
+          if (!(v51 < v52)) {
             v53 = a6;
           }
           else {
             v53 = a2;
           }
-          if (v51 >= v52) {
+          if (!(v51 < v52)) {
             v54 = 0;
           }
           else {
@@ -3892,7 +3892,7 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
           }
           v55 = *v53;
           a2 = (__int64**)((char*)a2 + v54);
-          if (v51 >= v52) {
+          if (!(v51 < v52)) {
             v56 = 8;
           }
           else {
@@ -3920,13 +3920,13 @@ void game_cmdbtl_anonymous_1629c80(__int64** a1, __int64** a2, __int64** a3,
             COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*(v41 - 1)))));
         v44 = fabsf(COERCE_FLOAT(
             COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v42))));
-        if (v43 >= v44) {
+        if (!(v43 < v44)) {
           v45 = v41;
         }
         else {
           v45 = a2;
         }
-        if (v43 >= v44) {
+        if (!(v43 < v44)) {
           --v41;
         }
         else {
@@ -3985,7 +3985,7 @@ void game_cmdbtl_anonymous_162a200(__int64** a1, __int64** a2,
   __int64* v36;
   __int64* v37;
 
-  if (a3 >= 2) {
+  if (!(a3 < 2)) {
     v6 = a1;
     if (a3 == 2) {
       v7 = *a1;
@@ -4002,7 +4002,7 @@ void game_cmdbtl_anonymous_162a200(__int64** a1, __int64** a2,
       v21 = a3 >> 1;
       v22 = a4;
       v23 = a3 - (a3 >> 1);
-      if ((__int64)a3 <= a5) {
+      if (!((__int64)a3 > a5)) {
         game_cmdbtl_anonymous_162a4a0(a1, &a1[v21], a3 >> 1, a4);
         v26 = &v22[v21];
         game_cmdbtl_anonymous_162a4a0(&v6[v21], a2, v23, v26);
@@ -4014,13 +4014,13 @@ void game_cmdbtl_anonymous_162a200(__int64** a1, __int64** a2,
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(*v28))));
           v31 = fabsf(COERCE_FLOAT(
               COERCE_UNSIGNED_INT64(ui_LayoutAccessor_GetTranslate(v29))));
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v32 = v22;
           }
           else {
             v32 = v28;
           }
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v33 = 8;
           }
           else {
@@ -4028,7 +4028,7 @@ void game_cmdbtl_anonymous_162a200(__int64** a1, __int64** a2,
           }
           v34 = *v32;
           v22 = (__int64**)((char*)v22 + v33);
-          if (v30 >= v31) {
+          if (!(v30 < v31)) {
             v35 = 0;
           }
           else {

@@ -425,10 +425,10 @@ __int64 EffectI3dl2Reverb_2b1100(__int64 result, float a2)
 
   v2 = 0.1;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= 0.1) {
+  if (!(a2 < 0.1)) {
     v2 = a2;
   }
-  if (a2 <= 2.0) {
+  if (!(a2 > 2.0)) {
     v4 = v2;
   }
   else {
@@ -459,10 +459,10 @@ __int64 EffectI3dl2Reverb_2b1180(__int64 result, float a2)
 
   v2 = -10000.0;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= -10000.0) {
+  if (!(a2 < -10000.0)) {
     v2 = a2;
   }
-  if (a2 <= 1000.0) {
+  if (!(a2 > 1000.0)) {
     v4 = v2;
   }
   else {
@@ -492,10 +492,10 @@ __int64 EffectI3dl2Reverb_2b1270(__int64 result, float a2)
 
   v2 = -10000.0;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= -10000.0) {
+  if (!(a2 < -10000.0)) {
     v2 = a2;
   }
-  if (a2 <= 2000.0) {
+  if (!(a2 > 2000.0)) {
     v4 = v2;
   }
   else {
@@ -525,10 +525,10 @@ __int64 EffectI3dl2Reverb_2b1360(__int64 result, float a2)
 
   v2 = 0.0;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= 0.0) {
+  if (!(a2 < 0.0)) {
     v2 = a2;
   }
-  if (a2 <= 100.0) {
+  if (!(a2 > 100.0)) {
     v4 = v2;
   }
   else {
@@ -559,10 +559,10 @@ __int64 EffectI3dl2Reverb_2b13e0(__int64 result, float a2)
 
   v2 = 0.0;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= 0.0) {
+  if (!(a2 < 0.0)) {
     v2 = a2;
   }
-  if (a2 <= 100.0) {
+  if (!(a2 > 100.0)) {
     v4 = v2;
   }
   else {
@@ -593,10 +593,10 @@ __int64 EffectI3dl2Reverb_2b1460(__int64 result, float a2)
 
   v2 = 20.0;
   v3 = *(unsigned __int8*)(result + 24);
-  if (a2 >= 20.0) {
+  if (!(a2 < 20.0)) {
     v2 = a2;
   }
-  if (a2 <= 20000.0) {
+  if (!(a2 > 20000.0)) {
     v4 = v2;
   }
   else {

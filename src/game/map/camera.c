@@ -1301,7 +1301,7 @@ __int64 Camera_7bf8f0(__int64 a1)
       v47 = *(float*)(a1 + 28);
       v9 = *(float*)(a1 + 24);
       *(_BYTE*)(a1 + 41) = 0;
-      if (v47 >= v9) {
+      if (!(v47 < v9)) {
         goto LABEL_15;
       }
       goto LABEL_14;
@@ -1329,7 +1329,7 @@ __int64 Camera_7bf8f0(__int64 a1)
     v9 = *(float*)(a1 + 24);
     *(_BYTE*)(a1 + 41) = 0;
     if (v6 == 0x1.0000000000000p+0f) {
-      if (v8 >= v9) {
+      if (!(v8 < v9)) {
       LABEL_15:
         v10 = *(float*)(a1 + 64);
         v11 = *(float*)(a1 + 68);
@@ -1540,7 +1540,7 @@ __int64 Camera_7bfee0(__int64 a1, float a2, float a3, float a4)
     *(_DWORD*)(a1 + 64) = 0;
   }
   else {
-    if (*(float*)(a1 + 64) <= 0.75) {
+    if (!(*(float*)(a1 + 64) > 0.75)) {
       result = (*(__int64 (**)(__int64, float*, __int64))(
           *(_QWORD*)(a1 + 56) + 8LL))(a1 + 56, &v13, a1 + 88);
       if ((result & 1) == 0) {
@@ -2020,10 +2020,10 @@ void Camera_7c0e80(__int64 a1, __int64 a2, char a3)
         (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64))(
             *(_QWORD*)(v7 + 240) + 16LL))((void*)(&v15), v7 + 240);
         v12 = vsubq_f32(v16, v15);
-        if ((float)(LANES128_OF(vmulq_f32(v12, v12)).n128_f32[2] +
-                    (float)(LANES128(v12).n128_f32[0] *
-                            LANES128(v12).n128_f32[0])) >=
-            0x1.9000000000000p+4f) {
+        if (!((float)(LANES128_OF(vmulq_f32(v12, v12)).n128_f32[2] +
+                      (float)(LANES128(v12).n128_f32[0] *
+                              LANES128(v12).n128_f32[0])) <
+              0x1.9000000000000p+4f)) {
         LABEL_16:
           v13 = fw_memory_HeapManager_Allocate(
               *(_QWORD*)fw_memory_g_heap_manager_ptr, 160, 16, 0);
@@ -2359,9 +2359,9 @@ __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
   if (v7 < 0x0.0p+0f) {
     v9 = v9 + 0x1.6800000000000p+8f;
   }
-  if (v9 >= 0x1.6800000000000p+5f) {
-    if (v9 >= 0x1.0e00000000000p+7f) {
-      if (v9 >= 0x1.c200000000000p+7f) {
+  if (!(v9 < 0x1.6800000000000p+5f)) {
+    if (!(v9 < 0x1.0e00000000000p+7f)) {
+      if (!(v9 < 0x1.c200000000000p+7f)) {
         v11 = v9 < 0x1.3b00000000000p+8f;
         v10 = 0x1.921fb60000000p+0f;
         if (v11) {
@@ -2388,7 +2388,7 @@ __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
     v13 = 0x1.0000000000000p+0f;
   }
   v14 = -0x1.921fb60000000p+1f - v12;
-  if (v12 >= -0x1.921fb60000000p+0f) {
+  if (!(v12 < -0x1.921fb60000000p+0f)) {
     v14 = v12;
   }
   if (v12 > 0x1.921fb60000000p+0f) {
@@ -2594,11 +2594,11 @@ __int64 Camera_7c16d0(__int64 a1, unsigned int a2)
     v9 = 0;
     goto LABEL_7;
   }
-  if (v7 >= 0x1.0e00000000000p+7f) {
+  if (!(v7 < 0x1.0e00000000000p+7f)) {
     if (v7 < 0x1.c200000000000p+7f) {
       return a2;
     }
-    if (v7 >= 0x1.3b00000000000p+8f) {
+    if (!(v7 < 0x1.3b00000000000p+8f)) {
       goto LABEL_4;
     }
     v8 = 0;
@@ -2843,7 +2843,7 @@ __int64 Camera_Unknown9(__int64 a1, __int64 a2, long double a3, long double a4)
     v15 = v6 + 16;
     LODWORD(a4) = v27;
   }
-  else if (*(float*)(v6 + 24) <= 0x0.0p+0f) {
+  else if (!(*(float*)(v6 + 24) > 0x0.0p+0f)) {
     if (((*(__int64 (**)(__int64, int*, __int64, float))(
              *(_QWORD*)(v6 + 16) + 8LL))(v6 + 16, &v27, v6 + 48,
                                          *(float*)&v27) &

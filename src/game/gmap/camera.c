@@ -978,7 +978,7 @@ __int64 Camera_1314db0(__int64 a1)
     v5 = *(_QWORD*)(a1 + 656);
     v6 = a1 + 656;
   }
-  else if (*(float*)(a1 + 664) <= 0.0) {
+  else if (!(*(float*)(a1 + 664) > 0.0)) {
     result = (*(__int64 (**)(__int64, float*, __int64))(
         *(_QWORD*)(a1 + 656) + 8LL))(a1 + 656, &v8, a1 + 688);
     if ((result & 1) == 0) {
@@ -1100,11 +1100,11 @@ float32x4_t* Camera_1314fe0(float32x4_t* result, float32x4_t* a2, __int64 a3,
              .n64_f32[0] /
          0x1.9000000000000p+9f;
     v10 = 1.0f;
-    if (v9 <= 1.0f) {
+    if (!(v9 > 1.0f)) {
       v10 = v9;
     }
     v11 = (float)(v10 * 0x1.e000000000000p+6f) + 0x1.e000000000000p+5f;
-    if (v9 >= 0.0f) {
+    if (!(v9 < 0.0f)) {
       v12 = v11;
     }
     else {
@@ -1154,7 +1154,7 @@ __int64 Camera_1315450(__int64 result)
       v9 = v4 + 696;
       LODWORD(v5) = LODWORD(v6);
     }
-    else if (*(float*)(v4 + 704) <= 0x0.0p+0f) {
+    else if (!(*(float*)(v4 + 704) > 0x0.0p+0f)) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(v4 + 696) + 8LL))(v4 + 696, &v11, v4 + 728);
       if ((result & 1) == 0) {
@@ -1324,7 +1324,7 @@ __int64 Camera_1315730(__int64 a1)
   v1 = *(float*)(a1 + 796);
   v2 = *(float*)(a1 + 792);
   v3 = *(_OWORD*)(a1 + 832);
-  if (v1 >= v2) {
+  if (!(v1 < v2)) {
     LODWORD(v6) = HIDWORD(*(_QWORD*)(a1 + 832));
   }
   else {
@@ -1365,7 +1365,7 @@ __int64 Camera_1315730(__int64 a1)
   }
   else {
     v13 = *(_QWORD*)(a1 + 784);
-    if (*(float*)(a1 + 792) <= 0x0.0p+0f) {
+    if (!(*(float*)(a1 + 792) > 0x0.0p+0f)) {
       if (((*(__int64 (**)(__int64, __int128*, __int64))(v13 + 8))(
                a1 + 784, &v27, a1 + 832) &
            1) == 0) {
@@ -1496,7 +1496,7 @@ __int64 Camera_1315960(__int64 a1, long double a2, long double a3)
     goto LABEL_10;
   }
   v9 = (_DWORD*)(a1 + 744);
-  if (*(float*)(a1 + 744) <= 0.5) {
+  if (!(*(float*)(a1 + 744) > 0.5)) {
     goto LABEL_8;
   }
 
@@ -2727,7 +2727,7 @@ __int64 Camera_Unknown7(long double a1, long double a2, __int64 a3, __int64 a4)
     v30 = v23 + 656;
     LODWORD(a2) = v33;
   }
-  else if (*(float*)(v23 + 664) <= 0.0) {
+  else if (!(*(float*)(v23 + 664) > 0.0)) {
     result = (*(__int64 (**)(__int64, __int128*, __int64, float))(
         *(_QWORD*)(v23 + 656) + 8LL))(v23 + 656, &v33, v23 + 688,
                                       *(float*)&v33);

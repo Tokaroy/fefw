@@ -34,7 +34,7 @@ __attribute__((swiftcall)) void math_620ce0(PSEUDO_X8 x8_, float32x4_t* result,
   LANES128(v4).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v4).n128_u64[1] = 0x3F0000003F000000LL;
   v5 = vaddq_f32(vmulq_f32(*result, v4), vmulq_f32(*a2, v4));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v9 = (float)((float)(a4 + -0x1.0000000000000p-1f) +
                  (float)(a4 + -0x1.0000000000000p-1f));
     v10 = sqrt(0x1.0000000000000p+0 - v9 * v9);
@@ -103,7 +103,7 @@ __attribute__((swiftcall)) void math_620f80(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v5).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v5).n128_u64[1] = 0x3F0000003F000000LL;
   v6 = vaddq_f32(vmulq_f32(*a1, v5), vmulq_f32(*a2, v5));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v9 = vsubq_f32(*a2, v6);
     v10 = (float)(a4 + -0x1.0000000000000p-1f) +
           (float)(a4 + -0x1.0000000000000p-1f);
@@ -165,10 +165,10 @@ __attribute__((swiftcall)) void math_6216d0(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v4).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v4).n128_u64[1] = 0x3F0000003F000000LL;
   v5 = vaddq_f32(vmulq_f32(*a1, v4), vmulq_f32(*a2, v4));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v8 = (float)(a4 + -0x1.0000000000000p-1f) +
          (float)(a4 + -0x1.0000000000000p-1f);
-    if (v8 >= 0x1.745d180000000p-2f) {
+    if (!(v8 < 0x1.745d180000000p-2f)) {
       v12 = (float)((float)((float)(v8 + -0x1.e8ba2e0000000p-1f) *
                             0x1.e400000000000p+2f) *
                     (float)(v8 + -0x1.e8ba2e0000000p-1f)) +
@@ -197,7 +197,7 @@ __attribute__((swiftcall)) void math_6216d0(PSEUDO_X8 x8_, float32x4_t* a1,
   }
   else {
     v6 = 0x1.0000000000000p+0f - (float)(a4 + a4);
-    if (v6 >= 0x1.745d180000000p-2f) {
+    if (!(v6 < 0x1.745d180000000p-2f)) {
       v10 = (float)((float)((float)(v6 + -0x1.e8ba2e0000000p-1f) *
                             0x1.e400000000000p+2f) *
                     (float)(v6 + -0x1.e8ba2e0000000p-1f)) +

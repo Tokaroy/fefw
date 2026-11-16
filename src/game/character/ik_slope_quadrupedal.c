@@ -392,7 +392,7 @@ float32x4_t game_character_IKSlopeQuadrupedal_IKSlopeQuadrupedal_lambda0_Invoke(
   if (*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(v5 + 24) + 104LL) + 16LL) == 1 &&
       **(_DWORD**)(v5 + 8) == 0) {
     PSEUDO_LOW_LANE128(result, n128_f32, fabsf(*(float*)(v5 + 48)));
-    if (LANES128(result).n128_f32[0] >= 0x1.0624de0000000p-10f) {
+    if (!(LANES128(result).n128_f32[0] < 0x1.0624de0000000p-10f)) {
       **(_DWORD**)(a3 + 16) &= 0x33FFFFFFu;
       v7 = *(float32x4_t**)a3;
       LANES128(v8).n128_u64[0] = 0;
@@ -461,7 +461,7 @@ float32x4_t game_character_IKSlopeQuadrupedal_IKSlopeQuadrupedal_lambda1_Invoke(
   if (*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(v5 + 24) + 104LL) + 16LL) == 1 &&
       **(_DWORD**)(v5 + 8) == 0) {
     PSEUDO_LOW_LANE128(result, n128_f32, fabsf(*(float*)(v5 + 48)));
-    if (LANES128(result).n128_f32[0] >= 0x1.0624de0000000p-10f) {
+    if (!(LANES128(result).n128_f32[0] < 0x1.0624de0000000p-10f)) {
       **(_DWORD**)(a3 + 16) &= 0x33FFFFFFu;
       v7 = *(float32x4_t**)a3;
       LANES128(v8).n128_u64[0] = 0;
@@ -530,7 +530,7 @@ float32x4_t game_character_IKSlopeQuadrupedal_IKSlopeQuadrupedal_lambda2_Invoke(
   if (*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(v5 + 24) + 104LL) + 16LL) == 1 &&
       **(_DWORD**)(v5 + 8) == 0) {
     PSEUDO_LOW_LANE128(result, n128_f32, fabsf(*(float*)(v5 + 48)));
-    if (LANES128(result).n128_f32[0] >= 0x1.0624de0000000p-10f) {
+    if (!(LANES128(result).n128_f32[0] < 0x1.0624de0000000p-10f)) {
       **(_DWORD**)(a3 + 16) &= 0x33FFFFFFu;
       v7 = *(float32x4_t**)a3;
       LANES128(v8).n128_u64[0] = 0;
@@ -599,7 +599,7 @@ float32x4_t game_character_IKSlopeQuadrupedal_IKSlopeQuadrupedal_lambda3_Invoke(
   if (*(_BYTE*)(*(_QWORD*)(*(_QWORD*)(v5 + 24) + 104LL) + 16LL) == 1 &&
       **(_DWORD**)(v5 + 8) == 0) {
     PSEUDO_LOW_LANE128(result, n128_f32, fabsf(*(float*)(v5 + 48)));
-    if (LANES128(result).n128_f32[0] >= 0x1.0624de0000000p-10f) {
+    if (!(LANES128(result).n128_f32[0] < 0x1.0624de0000000p-10f)) {
       **(_DWORD**)(a3 + 16) &= 0x33FFFFFFu;
       v7 = *(float32x4_t**)a3;
       LANES128(v8).n128_u64[0] = 0;

@@ -4548,7 +4548,7 @@ __int64 game_fba950(__int64 a1, char* a2, int a3, __int64 a4)
   if (!v9) {
     v10 = 0x0.0p+0f;
   }
-  if (v5 <= v8) {
+  if (!(v5 > v8)) {
     v11 = v10;
   }
   else {
@@ -4632,7 +4632,7 @@ LABEL_13:
   LANES128(v33).n128_u32[1] = 0;
   LANES128(v33).n128_u32[3] = 0;
   v34 = (float)(unsigned int)(a3 - 1) * 0x1.4000000000000p+1f;
-  if (a3 <= 0) {
+  if (!(a3 > 0)) {
     v34 = 0x0.0p+0f;
   }
   LANES128(v35).n128_u64[0] = 0x4020000040200000LL;
@@ -7098,8 +7098,8 @@ void game_10c29f0(__int64 a1, long double a2, long double a3, long double a4,
                        -0x1.0aef000000000p+4f) /
                0x1.f400000000000p+9f);
   *(float*)(a1 + 128) = v8;
-  if (v8 >= 0x0.0p+0f) {
-    if (v8 <= 0x1.4000000000000p+3f) {
+  if (!(v8 < 0x0.0p+0f)) {
+    if (!(v8 > 0x1.4000000000000p+3f)) {
       goto LABEL_15;
     }
     v10 = *(_QWORD*)(a1 + 56);

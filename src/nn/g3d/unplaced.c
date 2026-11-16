@@ -1063,7 +1063,7 @@ void nn_g3d_5f2710(__int64* a1, __int64 a2, double a3, double a4,
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
           LODWORD(a4) = *(_DWORD*)(v22 + 68);
           v32 = COERCE_AS(float32x4_t, GameData_1a837f0);
-          if (fabsf(*(float*)&a4) >= 0x1.0624de0000000p-10f) {
+          if (!(fabsf(*(float*)&a4) < 0x1.0624de0000000p-10f)) {
             v32 = *(float32x4_t*)v22;
           }
           a7 = v33;
@@ -1208,7 +1208,7 @@ void nn_g3d_5f2920(__int64* a1, __int64 a2, float a3)
             v39 = powf_alt1(*(v9 - 3), v44);
             v40 = LANES128(v22[4]).n128_f32[1];
             v41 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (fabsf(v40) >= 0x1.0624de0000000p-10f) {
+            if (!(fabsf(v40) < 0x1.0624de0000000p-10f)) {
               v41 = *v22;
             }
             v10 = LANES128(v22[4]).n128_u32[0];
@@ -1300,7 +1300,7 @@ void nn_g3d_5f2d90(__int64* a1, __int64 a2, float a3)
             v27 = powf_alt1(LANES128(*(v5)).n128_f32[3], v32);
             v28 = LANES128(v18[4]).n128_f32[1];
             v29 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (fabsf(v28) >= 0x1.0624de0000000p-10f) {
+            if (!(fabsf(v28) < 0x1.0624de0000000p-10f)) {
               v29 = *v18;
             }
             v10 = LANES128(v18[4]).n128_u32[0];
@@ -1401,7 +1401,7 @@ void nn_g3d_5f2f90(__int64* a1, __int64 a2, float a3)
             v25 = powf_alt1(*(float*)(v20 + 12), v30);
             v26 = LANES128(v21[4]).n128_f32[1];
             v27 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (fabsf(v26) >= 0x1.0624de0000000p-10f) {
+            if (!(fabsf(v26) < 0x1.0624de0000000p-10f)) {
               v27 = *v21;
             }
             LANES128(v11).n128_u64[0] = __PAIR64__(LODWORD(v28), LODWORD(v29));
@@ -1635,7 +1635,7 @@ void nn_g3d_5f33e0(__int64 a1, __int64 a2, __int64 a3, int a4, float a5)
     v42 = powf_alt1(*(float*)(a3 + 8), v44);
     v36 = powf_alt1(*(float*)(a3 + 12), v44);
     v37 = LANES128(v7[4]).n128_f32[1];
-    if (fabsf(v37) >= 0x1.0624de0000000p-10f) {
+    if (!(fabsf(v37) < 0x1.0624de0000000p-10f)) {
       v38 = *v7;
     }
     else {
@@ -1728,7 +1728,7 @@ void nn_g3d_5f3620(__int64 a1, __int64 a2, __int64 a3, int a4, float a5)
     v31 = powf_alt1(*(float*)(a3 + 8), v33);
     v25 = powf_alt1(*(float*)(a3 + 12), v33);
     v26 = LANES128(v11[4]).n128_f32[1];
-    if (fabsf(v26) >= 0x1.0624de0000000p-10f) {
+    if (!(fabsf(v26) < 0x1.0624de0000000p-10f)) {
       v27 = *v11;
     }
     else {
@@ -1887,7 +1887,7 @@ void nn_g3d_5f3800(__int64 a1, __int64 a2, __int64 a3, int a4, float a5)
     v59 = powf_alt1(*(float*)(a3 + 8), v61);
     v53 = powf_alt1(*(float*)(a3 + 12), v61);
     v54 = LANES128(v7[4]).n128_f32[1];
-    if (fabsf(v54) >= 0x1.0624de0000000p-10f) {
+    if (!(fabsf(v54) < 0x1.0624de0000000p-10f)) {
       v55 = *v7;
     }
     else {
@@ -1949,8 +1949,8 @@ __int64 nn_g3d_5f48c0(__int64 result, float32x4_t* a2)
     v4 = *(float32x4_t**)result;
     do {
       v14 = LANES128(v4[4]).n128_f32[1];
-      if (fabsf(v14) >= 0x1.0624de0000000p-10f) {
-        if (fabsf(v14 + -0x1.0000000000000p+0f) >= 0x1.0624de0000000p-10f) {
+      if (!(fabsf(v14) < 0x1.0624de0000000p-10f)) {
+        if (!(fabsf(v14 + -0x1.0000000000000p+0f) < 0x1.0624de0000000p-10f)) {
           v15 = 0x1.0000000000000p+0f / v14;
           v16 = vmulq_n_f32(*v4, v15);
           v17 = vmulq_n_f32(v4[1], v15);
@@ -2065,7 +2065,7 @@ __int64 nn_g3d_5f5020(__int64 result)
     v2 = 0;
     v3 = *(_QWORD*)result + 48LL;
     do {
-      if (fabsf(*(float*)(v3 + 20)) >= 0x1.0624de0000000p-10f) {
+      if (!(fabsf(*(float*)(v3 + 20)) < 0x1.0624de0000000p-10f)) {
         v4 = *(float32x4_t*)(v3 - 16);
         v5 =
             vmuls_lane_f32(LANES128(v4).n128_f32[0] + LANES128(v4).n128_f32[0],
@@ -2283,7 +2283,7 @@ __int64 nn_g3d_5f6180(__int64 result, unsigned __int16* a2, __int64 a3,
   __int64 v71;
   __int64 v72;
 
-  if (fabsf(a4) >= 0x1.0624de0000000p-10f) {
+  if (!(fabsf(a4) < 0x1.0624de0000000p-10f)) {
     v9 = result;
     *(_DWORD*)(result + 12) &= ~4u;
     (*(void (**)(unsigned __int16*))(*(_QWORD*)a2 + 24LL))(a2);
@@ -2383,7 +2383,7 @@ __int64 nn_g3d_5f6180(__int64 result, unsigned __int16* a2, __int64 a3,
                 v13 = v51;
                 v46 = LANES128(v31[4]).n128_f32[1];
                 LANES128(v31[4]).n128_u32[1] = LODWORD(v51);
-                if (v26 >= 0x1.0624de0000000p-10f) {
+                if (!(v26 < 0x1.0624de0000000p-10f)) {
                   v47 = *((_DWORD*)v23 + 3);
                   v48 = v61[0];
                   v49 = v23[3];
@@ -2406,7 +2406,7 @@ __int64 nn_g3d_5f6180(__int64 result, unsigned __int16* a2, __int64 a3,
                 v42 = vmulq_n_f32(v31[3], *(float*)&v51);
                 *(long double*)&v31[2] = v13;
                 v31[3] = v42;
-                if (v26 >= 0x1.0624de0000000p-10f) {
+                if (!(v26 < 0x1.0624de0000000p-10f)) {
                   v43 = *((_DWORD*)v23 + 3);
                   v44 = v61[0];
                   v45 = v23[3];
@@ -2454,7 +2454,7 @@ __int64 nn_g3d_5f66c0(__int64 result)
     v3 = 0;
     do {
       v4 = LANES128(v2[4]).n128_f32[1];
-      if (fabsf(v4) >= 0x1.0624de0000000p-10f) {
+      if (!(fabsf(v4) < 0x1.0624de0000000p-10f)) {
         if ((*(_BYTE*)(result + 12) & 1) == 0 &&
             fabsf(v4 + -0x1.0000000000000p+0f) >= 0x1.0624de0000000p-10f) {
           v5 = 0x1.0000000000000p+0f / v4;

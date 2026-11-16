@@ -6936,7 +6936,7 @@ float32x4_t game_5bf9f0(int8x16_t* a1, float32x4_t* a2, __int64 a3, double a4,
   v22 = vcvts_n_f32_u32(v17, 0x20u);
   v23 = vcvts_n_f32_u32(v20, 0x20u);
   *(_DWORD*)(a3 + 172) = 1103515245 * v20 + 12345;
-  if (v21 >= (float)(0x1.0000000000000p+0f - v13)) {
+  if (!(v21 < (float)(0x1.0000000000000p+0f - v13))) {
     v24 = v13 * v22;
     v25 = v21 < (float)(v18 + (float)(PSEUDO_UNFUSED(v13 * v18)));
     v26 = v13 * v19;
@@ -8688,10 +8688,10 @@ void game_5c19f0(__int64 a1, float32x4_t* a2, __int64 a3, _QWORD* a4, int a5,
               .n64_u32[0];
       if (v26 > 0x0.0p+0f) {
         v30 = vmulq_n_f32(v24, 0x1.0000000000000p+0f / v26);
-        if (v28 <= 0x0.0p+0f) {
+        if (!(v28 > 0x0.0p+0f)) {
         LABEL_6:
           v32 = (__typeof__(v32)){0};
-          if (v31 <= 0x0.0p+0f) {
+          if (!(v31 > 0x0.0p+0f)) {
           LABEL_8:
             v33 = vzip1q_s32(v30, v32);
             v34 = vzip2q_s32(v30, v32);
@@ -8716,12 +8716,12 @@ void game_5c19f0(__int64 a1, float32x4_t* a2, __int64 a3, _QWORD* a4, int a5,
           goto LABEL_8;
         }
       }
-      else if (v28 <= 0x0.0p+0f) {
+      else if (!(v28 > 0x0.0p+0f)) {
         goto LABEL_6;
       }
       v20 = vmulq_n_f32(a12, 0x1.0000000000000p+0f / v28);
       v32 = (__typeof__(v32)){0};
-      if (v31 <= 0x0.0p+0f) {
+      if (!(v31 > 0x0.0p+0f)) {
         goto LABEL_8;
       }
       goto LABEL_7;

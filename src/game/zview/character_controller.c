@@ -2362,7 +2362,7 @@ void CharacterController_d14ce0(float* a1)
   v4 = *(float*)(v3 + 672);
   v5 = *(float*)(v3 + 668);
   v6 = (float)(PSEUDO_UNFUSED(v4 * v4)) + (float)(v5 * v5);
-  if (v6 <= 0x0.0p+0f) {
+  if (!(v6 > 0x0.0p+0f)) {
     v6 = (float)(PSEUDO_UNFUSED(a1[27] * a1[27])) + (float)(a1[26] * a1[26]);
   }
   else {
@@ -2389,7 +2389,7 @@ void CharacterController_d14ce0(float* a1)
             0x1.921fb60000000p+2f);
   explicit = atomic_load_explicit((atomic_uchar* volatile)&GameData_22110c8,
                                   memory_order_acquire);
-  if (v11 >= 0x0.0p+0f) {
+  if (!(v11 < 0x0.0p+0f)) {
     v13 = v11 + 0x0.0p+0f;
   }
   else {
@@ -2403,9 +2403,9 @@ void CharacterController_d14ce0(float* a1)
   v14 = v7 * v10;
   v15 = v13 +
         (float)(roundf(v13 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v15 <= 0x1.921fb60000000p+0f) {
+  if (!(v15 > 0x1.921fb60000000p+0f)) {
     v17 = 0x1.0000000000000p+0f;
-    if (v15 >= -0x1.921fb60000000p+0f) {
+    if (!(v15 < -0x1.921fb60000000p+0f)) {
       goto LABEL_13;
     }
     v16 = -0x1.921fb60000000p+1f;
@@ -3339,7 +3339,7 @@ _QWORD* CharacterController_StateJump_Unknown3(__int64 a1, long double a2)
                     *(float*)(*(_QWORD*)(v14 + 8) + 528LL));
   if (v47_.v49 == 1) {
     v23 = v47_.v48 + 0x1.0000000000000p+1f;
-    if (*(float*)(a1 + 172) >= (float)(v47_.v48 + 0x1.0000000000000p+1f)) {
+    if (!(*(float*)(a1 + 172) < (float)(v47_.v48 + 0x1.0000000000000p+1f))) {
       v23 = *(float*)(a1 + 172);
     }
     *(float*)(a1 + 172) = v23;
@@ -3363,7 +3363,7 @@ _QWORD* CharacterController_StateJump_Unknown3(__int64 a1, long double a2)
                     *(float*)(*(_QWORD*)(v27 + 8) + 528LL));
   if (v47_.v49 == 1) {
     v28 = v47_.v48 + 0x1.0000000000000p+1f;
-    if (*(float*)(a1 + 172) >= (float)(v47_.v48 + 0x1.0000000000000p+1f)) {
+    if (!(*(float*)(a1 + 172) < (float)(v47_.v48 + 0x1.0000000000000p+1f))) {
       v28 = *(float*)(a1 + 172);
     }
     *(float*)(a1 + 172) = v28;
@@ -3386,7 +3386,7 @@ _QWORD* CharacterController_StateJump_Unknown3(__int64 a1, long double a2)
                     *(float*)(*(_QWORD*)(v32 + 8) + 528LL));
   if (v47_.v49 == 1) {
     v33 = v47_.v48 + 0x1.0000000000000p+1f;
-    if (*(float*)(a1 + 172) >= (float)(v47_.v48 + 0x1.0000000000000p+1f)) {
+    if (!(*(float*)(a1 + 172) < (float)(v47_.v48 + 0x1.0000000000000p+1f))) {
       v33 = *(float*)(a1 + 172);
     }
     *(float*)(a1 + 172) = v33;
@@ -3410,7 +3410,7 @@ _QWORD* CharacterController_StateJump_Unknown3(__int64 a1, long double a2)
                     *(float*)(*(_QWORD*)(v37 + 8) + 528LL));
   if (v47_.v49 == 1) {
     v38 = v47_.v48 + 0x1.0000000000000p+1f;
-    if (*(float*)(a1 + 172) >= (float)(v47_.v48 + 0x1.0000000000000p+1f)) {
+    if (!(*(float*)(a1 + 172) < (float)(v47_.v48 + 0x1.0000000000000p+1f))) {
       v38 = *(float*)(a1 + 172);
     }
     *(float*)(a1 + 172) = v38;
@@ -3432,7 +3432,7 @@ _QWORD* CharacterController_StateJump_Unknown3(__int64 a1, long double a2)
                                *(float*)(*(_QWORD*)(v42 + 8) + 528LL)));
   if (v47_.v49 == 1) {
     v44 = v47_.v48 + 0x1.0000000000000p+1f;
-    if (*(float*)(a1 + 172) >= (float)(v47_.v48 + 0x1.0000000000000p+1f)) {
+    if (!(*(float*)(a1 + 172) < (float)(v47_.v48 + 0x1.0000000000000p+1f))) {
       v44 = *(float*)(a1 + 172);
     }
     *(float*)(a1 + 172) = v44;
@@ -5086,7 +5086,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
             v37 = (v35 >> 4) - 1;
             if (v37 != 0) {
               v38 = *v121_.v121;
-              if ((unsigned __int64)(v36 - 2) >= 7) {
+              if (!((unsigned __int64)(v36 - 2) < 7)) {
                 v40 = 0x0.0p+0f;
                 v42 = v121_.v121 + 4;
                 v43 = 0;
@@ -5255,7 +5255,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
                 v41 = v37 & 7;
                 if (v41 == 0) {
                 LABEL_48:
-                  if (v40 >= v18) {
+                  if (!(v40 < v18)) {
                     v20 = true;
                   }
                   else {
@@ -5292,7 +5292,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
               goto LABEL_48;
             }
           }
-          if (v18 <= 0x0.0p+0f) {
+          if (!(v18 > 0x0.0p+0f)) {
             goto LABEL_33;
           }
           v18 = 0x0.0p+0f;
@@ -5319,7 +5319,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
       } while (v17 < (signed __int64)(*(_QWORD*)(a1 + 128) - v16) >> 4);
       v15 = *(_DWORD**)(a1 + 128);
       v75 = v124_.v127;
-      if (v124_.v127 >= 1) {
+      if (!(v124_.v127 < 1)) {
         if (v124_.v127 != 1) {
           v82 = v124_.v127 & 0x7FFFFFFE;
           v83 = 0;
@@ -5431,7 +5431,7 @@ bool CharacterController_d41fa0(__int64 a1, _BYTE* a2)
         if (v108 >> 4 > v107) {
           v107 = v108 >> 4;
         }
-        if ((unsigned __int64)v108 >= 0x7FFFFFFFFFFFFFE0LL) {
+        if (!((unsigned __int64)v108 < 0x7FFFFFFFFFFFFFE0LL)) {
           v109 = 0x7FFFFFFFFFFFFFFLL;
         }
         else {
@@ -7682,7 +7682,7 @@ void CharacterController_StateDamage_Unknown3(__int64 a1)
                  344LL),
       *(_DWORD*)(a1 + 36));
   if (v3 != 0 && *(_DWORD*)(v3 + 8) != 0) {
-    if (*(float*)(v3 + 12) >= *(float*)(v3 + 32)) {
+    if (!(*(float*)(v3 + 12) < *(float*)(v3 + 32))) {
       v5 = *(float*)(v3 + 32);
     }
     else {
@@ -7713,7 +7713,7 @@ void CharacterController_StateDamage_Unknown3(__int64 a1)
   v11 = GameHr_d1cf60(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v9 + 8) + 8LL) + 344LL),
                       v10);
   if (v11 != 0 && *(_DWORD*)(v11 + 8) != 0) {
-    if (*(float*)(v11 + 12) >= *(float*)(v11 + 32)) {
+    if (!(*(float*)(v11 + 12) < *(float*)(v11 + 32))) {
       v13 = *(float*)(v11 + 32);
     }
     else {
@@ -7849,7 +7849,7 @@ void CharacterController_StateDamage_Unknown3(__int64 a1)
 LABEL_42:
   v47 = *(_QWORD*)(a1 + 8);
   v48 = *(float*)(*(_QWORD*)(a1 + 96) + 140LL);
-  if (*(float*)(v47 + 820) >= v48) {
+  if (!(*(float*)(v47 + 820) < v48)) {
     v48 = *(float*)(v47 + 820);
   }
   *(float*)(v47 + 820) = v48;
@@ -8296,7 +8296,7 @@ void CharacterController_StateGuard_Unknown4(__int64 a1)
           v17 = *(float*)(*(_QWORD*)(*(_QWORD*)(v7 + 8) + 8LL) + 228LL) *
                 0x1.921fb60000000p+1f;
           v18 = fmodf(v13 - v16, 0x1.921fb60000000p+2f);
-          if (v18 >= 0x0.0p+0f) {
+          if (!(v18 < 0x0.0p+0f)) {
             v19 = v18 + 0x0.0p+0f;
           }
           else {
@@ -8307,18 +8307,18 @@ void CharacterController_StateGuard_Unknown4(__int64 a1)
           }
           v20 = fabsf(v17);
           v21 = v16 + v19;
-          if (v16 <= v21) {
-            if (v16 >= v21) {
+          if (!(v16 > v21)) {
+            if (!(v16 < v21)) {
               goto LABEL_26;
             }
             v16 = v16 + v20;
-            if (v16 <= v21) {
+            if (!(v16 > v21)) {
               goto LABEL_26;
             }
           }
           else {
             v16 = v16 - v20;
-            if (v16 >= v21) {
+            if (!(v16 < v21)) {
               goto LABEL_26;
             }
           }

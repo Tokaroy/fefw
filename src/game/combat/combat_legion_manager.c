@@ -1214,7 +1214,7 @@ __int64 CombatLegionManager_e2c300(__int64 result)
                           160LL) *
                 0x1.0aefp+4f) /
         1000.0f);
-    if (v1 <= 0.0f) {
+    if (!(v1 > 0.0f)) {
       if (v1 >= 0.0f || (v1 = v1 + v2) <= 0.0f) {
       LABEL_8:
         *(float*)(result + 100) = v1;
@@ -1226,7 +1226,7 @@ __int64 CombatLegionManager_e2c300(__int64 result)
     }
     else {
       v1 = v1 - v2;
-      if (v1 >= 0.0f) {
+      if (!(v1 < 0.0f)) {
         goto LABEL_8;
       }
     }
@@ -1384,7 +1384,7 @@ float CombatLegionManager_e2c540(__int64 a1)
                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v4 = v54[0];
   v5 = 0x0.0p+0f;
-  if (v54[1] - v54[0] >= 9uLL) {
+  if (!(v54[1] - v54[0] < 9uLL)) {
     v6 = *(_QWORD*)(v54[0] + 8);
     v5 = sqrtf((float)(PSEUDO_UNFUSED(
                    (float)(*(float*)(v6 + 44) -
@@ -1417,7 +1417,7 @@ float CombatLegionManager_e2c540(__int64 a1)
     if ((*(_BYTE*)(v11 + 92) & (*(float*)(v11 + 88) < v13)) != 0) {
       v13 = *(float*)(v10 + 88);
     }
-    if (v13 >= v9) {
+    if (!(v13 < v9)) {
       v9 = v13;
     }
   } while (v7 != v8);
@@ -1704,15 +1704,15 @@ void CombatLegionManager_e2ca80(__int64 a1)
     if (v35_.v36 != v35_.v35) {
       v7 = v32_.v33;
       if (v32_.v33 != v32_.v32) {
-        if ((char*)v35_.v36 - (char*)v35_.v35 <=
-            (unsigned __int64)((char*)v32_.v33 - (char*)v32_.v32)) {
+        if (!((char*)v35_.v36 - (char*)v35_.v35 >
+              (unsigned __int64)((char*)v32_.v33 - (char*)v32_.v32))) {
           v19 = (__int64)v35_.v35;
           do {
             v20 = *(float*)(v19 + 32);
             v21 = 0;
             v22 = 0x1.fffffe0000000p+127f;
             v23 = (float*)v6;
-            if (v20 >= 0x0.0p+0f) {
+            if (!(v20 < 0x0.0p+0f)) {
               v24 = 0x1.0000000000000p+0f;
             }
             else {
@@ -1746,7 +1746,7 @@ void CombatLegionManager_e2ca80(__int64 a1)
             v10 = 0;
             v11 = 0x1.fffffe0000000p+127f;
             v12 = (float*)v5;
-            if (v9 >= 0x0.0p+0f) {
+            if (!(v9 < 0x0.0p+0f)) {
               v13 = 0x1.0000000000000p+0f;
             }
             else {
@@ -3190,7 +3190,7 @@ void CombatLegionManager_e2e6a0(__int64 a1)
   bool v11;
   __int64 v13[3];
 
-  if ((unsigned int)(*(_DWORD*)(a1 + 80) - 3) >= 2) {
+  if (!((unsigned int)(*(_DWORD*)(a1 + 80) - 3) < 2)) {
     v2 = 0x0.0p+0f;
   }
   else {
@@ -3481,7 +3481,7 @@ LABEL_2:
         return result;
       }
     }
-    if (v9 <= 1151) {
+    if (!(v9 > 1151)) {
       break;
     }
     if (a3 == 0) {
@@ -3491,7 +3491,7 @@ LABEL_2:
       v98 = (unsigned __int64)(v10 - 2) >> 1;
       v99 = v98;
       do {
-        if (v98 >= v99) {
+        if (!(v98 < v99)) {
           v102 = (2 * (v99 & 0x3FFFFFFFFFFFFFFFLL)) | 1;
           v103 = v8 + 48 * v102;
           if ((__int64)(2 * v99 + 2) < v10 &&
@@ -3560,7 +3560,7 @@ LABEL_2:
           *((_QWORD*)&v118 + 1) = *(unsigned int*)(v117 + 24);
           *(_OWORD*)(v120 + 16) = v118;
           *(_DWORD*)(v120 + 32) = *(_DWORD*)(v117 + 32);
-        } while (v116 <= (__int64)((unsigned __int64)(v111 - 2) >> 1));
+        } while (!(v116 > (__int64)((unsigned __int64)(v111 - 2) >> 1)));
         if ((float*)v117 == a2 - 12) {
           *(_QWORD*)v117 = v115;
         }
@@ -3766,7 +3766,7 @@ LABEL_2:
         v42 = v7 + 48;
         do {
           v8 = v42;
-          if (v42 >= (unsigned __int64)a2) {
+          if (!(v42 < (unsigned __int64)a2)) {
             break;
           }
           v43 = *(float*)(v42 + 32);
@@ -3946,7 +3946,7 @@ float* CombatLegionManager_e2f380(float* result, float* a2, float* a3)
   v3 = a2[8];
   v4 = result[8];
   v5 = a3[8];
-  if (v3 >= v4) {
+  if (!(v3 < v4)) {
     if (v5 < v3) {
       v10 = *(_QWORD*)a2;
       v11 = *((_OWORD*)a2 + 1);
@@ -3987,7 +3987,7 @@ float* CombatLegionManager_e2f380(float* result, float* a2, float* a3)
     v6 = *((_OWORD*)result + 1);
     v7 = *(_QWORD*)result;
     v8 = HIDWORD(*((_QWORD*)result + 2));
-    if (v5 >= v3) {
+    if (!(v5 < v3)) {
       *(_QWORD*)result = *(_QWORD*)a2;
       result[4] = a2[4];
       result[5] = a2[5];
@@ -4003,7 +4003,7 @@ float* CombatLegionManager_e2f380(float* result, float* a2, float* a3)
       *(_QWORD*)&v21 = *((_QWORD*)a2 + 2);
       *((_QWORD*)&v21 + 1) = DWORD2(v6);
       *((_OWORD*)a2 + 1) = v21;
-      if (a3[8] >= v4) {
+      if (!(a3[8] < v4)) {
         return result;
       }
       *(_QWORD*)a2 = *(_QWORD*)a3;

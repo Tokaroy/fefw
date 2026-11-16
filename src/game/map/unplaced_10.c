@@ -2398,7 +2398,7 @@ __int64 game_map_7a9bf0(__int64 a1, char a2, char a3)
   }
   v4 = *(_DWORD*)(a1 + 592);
   v7 = (float)(unsigned int)(v4 - 1) * 0x1.4000000000000p+1f;
-  if (v4 <= 0) {
+  if (!(v4 > 0)) {
     v7 = 0x0.0p+0f;
   }
   v72 =
@@ -2606,27 +2606,27 @@ __int64 game_map_7a9bf0(__int64 a1, char a2, char a3)
   v66 = v67 - v66;
 LABEL_47:
   v3 = v73 > 0x0.0p+0f;
-  if ((float)(fabsf(
-                  (float)(v62 * v75) -
-                  (float)(PSEUDO_UNFUSED(
-                      v71 *
-                      (float)(v66 *
-                              (float)((float)((float)(v76 +
-                                                      (float)((float)(v78 +
-                                                                      (float)((float)(v77 +
-                                                                                      (float)((float)(v79_.v81 +
-                                                                                                      (float)(v79_.v80 *
-                                                                                                              (float)(v66 *
-                                                                                                                      v66))) *
-                                                                                              (float)(v66 *
-                                                                                                      v66))) *
-                                                                              (float)(v66 *
-                                                                                      v66))) *
-                                                              (float)(v66 *
-                                                                      v66))) *
-                                              (float)(v66 * v66)) +
-                                      0x1.0000000000000p+0f))))) +
-              0x1.99999a0000000p-4f) >= fabsf(v73)) {
+  if (!((float)(fabsf(
+                    (float)(v62 * v75) -
+                    (float)(PSEUDO_UNFUSED(
+                        v71 *
+                        (float)(v66 *
+                                (float)((float)((float)(v76 +
+                                                        (float)((float)(v78 +
+                                                                        (float)((float)(v77 +
+                                                                                        (float)((float)(v79_.v81 +
+                                                                                                        (float)(v79_.v80 *
+                                                                                                                (float)(v66 *
+                                                                                                                        v66))) *
+                                                                                                (float)(v66 *
+                                                                                                        v66))) *
+                                                                                (float)(v66 *
+                                                                                        v66))) *
+                                                                (float)(v66 *
+                                                                        v66))) *
+                                                (float)(v66 * v66)) +
+                                        0x1.0000000000000p+0f))))) +
+                0x1.99999a0000000p-4f) < fabsf(v73))) {
     return 2;
   }
   return v3;
@@ -2665,7 +2665,7 @@ _QWORD* game_map_7bfd40(__int64 a1, char a2, float a3)
   v8 = fmodf(v7, 0x1.6800000000000p+8f),
   v14 = COERCE_AS(__typeof__(v14),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (v6 >= 0x0.0p+0f) {
+  if (!(v6 < 0x0.0p+0f)) {
     v9 = v8;
   }
   else {
@@ -2675,7 +2675,7 @@ _QWORD* game_map_7bfd40(__int64 a1, char a2, float a3)
   v14 = COERCE_AS(__typeof__(v14),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v11 = v10 + 0x1.6800000000000p+8f;
-  if (a3 >= 0x0.0p+0f) {
+  if (!(a3 < 0x0.0p+0f)) {
     v11 = v10;
   }
   if ((float)(v9 + 0x1.6800000000000p+7f) < v11) {
@@ -3464,16 +3464,16 @@ LABEL_21:
   }
   v36 = *(_DWORD*)(a1 + 288);
   v37 = 0x0.0p+0f;
-  if (v36 >= 2) {
+  if (!(v36 < 2)) {
     v38 = (float)(unsigned int)v36;
     v39 = v36 - 1;
     v40 = (float)*(int*)(a1 + 284) / v38;
     v41 = 0x1.0000000000000p+0f;
-    if (v40 <= 0x1.0000000000000p+0f) {
+    if (!(v40 > 0x1.0000000000000p+0f)) {
       v41 = v40;
     }
     v42 = v41 + -0x1.0000000000000p-1f;
-    if (v40 >= 0x0.0p+0f) {
+    if (!(v40 < 0x0.0p+0f)) {
       v43 = v42;
     }
     else {
@@ -6478,7 +6478,7 @@ bool game_map_1829460(__int64 a1, __int64 a2)
     v17 = *(unsigned __int8*)(a2 + 498);
     v18 = GameData_21d9968;
     v19 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
-    if (v17 >= (int)v19) {
+    if (!(v17 < (int)v19)) {
       v20 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
     }
     else {
@@ -6493,7 +6493,7 @@ bool game_map_1829460(__int64 a1, __int64 a2)
       *(_DWORD*)(a1 + 208) = v22;
       v6 = true;
       v17 = *(unsigned __int8*)(a2 + 498);
-      if (v17 >= (int)v19) {
+      if (!(v17 < (int)v19)) {
         v20 = v19;
       }
       else {
@@ -6651,14 +6651,14 @@ bool game_map_1829460(__int64 a1, __int64 a2)
                              118LL);
         }
         v53 = *(float*)(a2 + 688);
-        if (v53 <= 0x1.0000000000000p+0f) {
+        if (!(v53 > 0x1.0000000000000p+0f)) {
           v54 = v53 * (float)(v52 + *(__int16*)(a2 + 684));
         }
         else {
           v54 = (float)*(__int16*)(a2 + 684) + (float)((float)v52 * v53);
         }
         v55 = (int)v54;
-        if ((int)v54 >= 999) {
+        if (!((int)v54 < 999)) {
           v55 = 999;
         }
         v56 = (v55 + *(__int16*)(a2 + 686)) &
@@ -9203,12 +9203,12 @@ LABEL_106:
     while (1) {
       v183 = (((unsigned __int64)v179 - v178 + 0x7FFFFFFF8LL) >> 3) + 1;
       v158 = v181 < v183;
-      if (v181 >= v183) {
+      if (!(v181 < v183)) {
         goto LABEL_171;
       }
       v184 = (unsigned __int64)v179 - v178 - 8;
       v185 = (v184 >> 3) + 1;
-      if (v184 >= 0x18) {
+      if (!(v184 < 0x18)) {
         break;
       }
       v186 = 0;
@@ -9313,7 +9313,7 @@ LABEL_171:
   v219_.v220 = v219_.v219;
   v219_.v219[0] = GameData_212af88;
   v199 = ((__int64)v179 - v178) >> 3;
-  if (v199 <= 1) {
+  if (!(v199 > 1)) {
     v202 = v219_.v219;
     v203 = 32;
     goto LABEL_184;

@@ -487,7 +487,7 @@ unsigned __int64 GameHr_5cd420(__int64* a1)
   v6 = *(_QWORD*)(*(_QWORD*)(*a1 + 568) + 696LL);
   if (v6 != 0) {
     v7 = *(_DWORD*)(v6 + 4);
-    if (v7 >= 1) {
+    if (!(v7 < 1)) {
       v8 = v7 & 7;
       if ((unsigned int)v7 < 8) {
         v9 = 0;
@@ -511,7 +511,7 @@ unsigned __int64 GameHr_5cd420(__int64* a1)
       v12 = -(__int64)(v7 & 0x7FFFFFF8);
       while (1) {
         v13 = *(v10 - 16);
-        if (v5 >= v13) {
+        if (!(v5 < v13)) {
           v13 = v5;
           v14 = *(v10 - 12);
           if (v13 < v14) {
@@ -578,7 +578,7 @@ unsigned __int64 GameHr_5cd420(__int64* a1)
         if (v18 < v19) {
         LABEL_18:
           v5 = v10[12];
-          if (v19 >= v5) {
+          if (!(v19 < v5)) {
             goto LABEL_27;
           }
           goto LABEL_10;
@@ -586,7 +586,7 @@ unsigned __int64 GameHr_5cd420(__int64* a1)
       LABEL_26:
         v19 = v18;
         v5 = v10[12];
-        if (v19 >= v5) {
+        if (!(v19 < v5)) {
         LABEL_27:
           v5 = v19;
         }
@@ -612,13 +612,13 @@ LABEL_34:
     goto LABEL_63;
   }
   v26 = v25 & 7;
-  if ((unsigned int)v25 >= 8) {
+  if (!((unsigned int)v25 < 8)) {
     v28 = (float*)(v23 + 76);
     v29 = 0;
     v30 = -(__int64)(v25 & 0x7FFFFFF8);
     while (1) {
       v31 = *(v28 - 16);
-      if (v24 >= v31) {
+      if (!(v24 < v31)) {
         v31 = v24;
         v32 = *(v28 - 12);
         if (v31 < v32) {
@@ -685,7 +685,7 @@ LABEL_34:
       if (v36 < v37) {
       LABEL_47:
         v24 = v28[12];
-        if (v37 >= v24) {
+        if (!(v37 < v24)) {
           goto LABEL_56;
         }
         goto LABEL_39;
@@ -693,7 +693,7 @@ LABEL_34:
     LABEL_55:
       v37 = v36;
       v24 = v28[12];
-      if (v37 >= v24) {
+      if (!(v37 < v24)) {
       LABEL_56:
         v24 = v37;
       }
@@ -8472,7 +8472,7 @@ __int64 GameHr_769d60(__int64 a1, __int64 a2, _DWORD* a3, long double a4,
     LODWORD(a4) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
   }
   else {
-    if (*(float*)(a2 + 160) <= 0x0.0p+0f) {
+    if (!(*(float*)(a2 + 160) > 0x0.0p+0f)) {
       if (((*(__int64 (**)(__int64, int*, __int64))(
                *(_QWORD*)(a2 + 152) + 8LL))(a2 + 152, &v17, a2 + 184) &
            1) == 0) {
@@ -8573,7 +8573,7 @@ _QWORD* GameHr_788c60(__int64 a1)
     *(_DWORD*)(v10 + 104) = 0;
   }
   else {
-    if (*(float*)(v10 + 104) <= 0x1.8000000000000p-1f) {
+    if (!(*(float*)(v10 + 104) > 0x1.8000000000000p-1f)) {
       if (((*(__int64 (**)(__int64, int*, __int64))(
                *(_QWORD*)(v10 + 96) + 8LL))(v10 + 96, &v36, v10 + 128) &
            1) == 0) {
@@ -8643,7 +8643,7 @@ LABEL_13:
       goto LABEL_44;
     }
   }
-  if ((unsigned int)(v25 - 2) <= 2) {
+  if (!((unsigned int)(v25 - 2) > 2)) {
     v26 = (unsigned __int8)(v25 - 1);
     goto LABEL_45;
   }
@@ -8884,8 +8884,8 @@ __int64 GameHr_789670(__int64 result)
     v22 = 1;
     goto LABEL_51;
   }
-  if (v21 >= 0x1.0e00000000000p+7f) {
-    if (v21 >= 0x1.c200000000000p+7f) {
+  if (!(v21 < 0x1.0e00000000000p+7f)) {
+    if (!(v21 < 0x1.c200000000000p+7f)) {
       if (v21 < 0x1.3b00000000000p+8f) {
         v26 = 4;
         goto LABEL_61;
@@ -9073,7 +9073,7 @@ _BYTE* GameHr_78cb60(__int64 a1)
     *(_DWORD*)(v3 + 144) = 0;
   }
   else {
-    if (*(float*)(v3 + 144) <= 0x1.8000000000000p-1f) {
+    if (!(*(float*)(v3 + 144) > 0x1.8000000000000p-1f)) {
       if (((*(__int64 (**)(__int64, _QWORD*, __int64))(
                *(_QWORD*)(v3 + 136) + 8LL))(v3 + 136, v44, v3 + 168) &
            1) == 0) {
@@ -9096,7 +9096,7 @@ _BYTE* GameHr_78cb60(__int64 a1)
 LABEL_9:
   v6 = *(_QWORD*)GameData_212d020[0];
   v7 = *(_DWORD*)(*(_QWORD*)GameData_212d020[0] + 4372LL);
-  if (v7 <= 1) {
+  if (!(v7 > 1)) {
     v7 = 1;
   }
   *(_DWORD*)(v6 + 4372) = v7;
@@ -9153,7 +9153,7 @@ LABEL_9:
         v42 = *(_QWORD*)(a1 + 240);
         v12 = 15;
         if (v42 != 0) {
-          if ((unsigned int)*(unsigned __int8*)(v42 + 250) - 33 >= 2) {
+          if (!((unsigned int)*(unsigned __int8*)(v42 + 250) - 33 < 2)) {
             v12 = 15;
           }
           else {

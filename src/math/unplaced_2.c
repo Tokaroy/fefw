@@ -436,7 +436,7 @@ __attribute__((swiftcall)) void math_619d50(PSEUDO_X8 x8_, __int64 a1, float a3,
   float32x2_t v233;
   __n64 v234;
 
-  if (a4 <= 0x0.0p+0f) {
+  if (!(a4 > 0x0.0p+0f)) {
     if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_21a60e8,
                               memory_order_acquire) &
          1) == 0 &&
@@ -466,7 +466,7 @@ __attribute__((swiftcall)) void math_619d50(PSEUDO_X8 x8_, __int64 a1, float a3,
     else {
       v8 = a3;
     }
-    if (a3 >= 0x0.0p+0f) {
+    if (!(a3 < 0x0.0p+0f)) {
       v9 = v8;
     }
     else {
@@ -2099,7 +2099,7 @@ float math_61c010(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     return v3 +
            (float)((float)(PSEUDO_UNFUSED(
                        (float)((float)((float)(a1 + -0x1.0000000000000p-1f) +
@@ -2143,7 +2143,7 @@ float math_61c090(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     v6 = (float)(a1 + -0x1.0000000000000p-1f) +
          (float)(a1 + -0x1.0000000000000p-1f);
     return v3 +
@@ -2192,7 +2192,7 @@ float math_61c1a0(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     v6 = a3 - v3;
     v7 = (float)(a1 + -0x1.0000000000000p-1f) +
          (float)(a1 + -0x1.0000000000000p-1f);
@@ -2295,7 +2295,7 @@ float math_61c360(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     v9 = a3 - v3;
     v10 = (float)(a1 + -0x1.0000000000000p-1f) +
           (float)(a1 + -0x1.0000000000000p-1f);
@@ -2497,7 +2497,7 @@ float math_61cab0(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     v7 = (float)((float)(a1 + -0x1.0000000000000p-1f) +
                  (float)(a1 + -0x1.0000000000000p-1f));
     v8 = sqrt(0x1.0000000000000p+0 - v7 * v7);
@@ -2695,8 +2695,8 @@ float math_61d120(float a1, float a2, float a3)
   float v6;
 
   v3 = 0x1.0000000000000p+0f - a1;
-  if (v3 >= 0x1.745d180000000p-2f) {
-    if (v3 >= 0x1.745d180000000p-1f) {
+  if (!(v3 < 0x1.745d180000000p-2f)) {
+    if (!(v3 < 0x1.745d180000000p-1f)) {
       v5 = v3 < 0x1.d1745e0000000p-1f;
       v6 = (float)((float)((float)(v3 + -0x1.e8ba2e0000000p-1f) *
                            0x1.e400000000000p+2f) *
@@ -2729,8 +2729,8 @@ float math_61d200(float a1, float a2, float a3)
   bool v4;
   float v5;
 
-  if (a1 >= 0x1.745d180000000p-2f) {
-    if (a1 >= 0x1.745d180000000p-1f) {
+  if (!(a1 < 0x1.745d180000000p-2f)) {
+    if (!(a1 < 0x1.745d180000000p-1f)) {
       v4 = a1 < 0x1.d1745e0000000p-1f;
       v5 = (float)((float)((float)(a1 + -0x1.e8ba2e0000000p-1f) *
                            0x1.e400000000000p+2f) *
@@ -2770,11 +2770,11 @@ float math_61d2d0(float a1, float a2, float a3)
 
   v3 = (float)(PSEUDO_UNFUSED(a3 * 0x1.0000000000000p-1f)) +
        (float)(a2 * 0x1.0000000000000p-1f);
-  if (a1 >= 0x1.0000000000000p-1f) {
+  if (!(a1 < 0x1.0000000000000p-1f)) {
     v6 = (float)(a1 + -0x1.0000000000000p-1f) +
          (float)(a1 + -0x1.0000000000000p-1f);
-    if (v6 >= 0x1.745d180000000p-2f) {
-      if (v6 >= 0x1.745d180000000p-1f) {
+    if (!(v6 < 0x1.745d180000000p-2f)) {
+      if (!(v6 < 0x1.745d180000000p-1f)) {
         v8 = v6 < 0x1.d1745e0000000p-1f;
         v11 = (float)((float)((float)(v6 + -0x1.e8ba2e0000000p-1f) *
                               0x1.e400000000000p+2f) *
@@ -2802,8 +2802,8 @@ float math_61d2d0(float a1, float a2, float a3)
   }
   else {
     v4 = 0x1.0000000000000p+0f - (float)(a1 + a1);
-    if (v4 >= 0x1.745d180000000p-2f) {
-      if (v4 >= 0x1.745d180000000p-1f) {
+    if (!(v4 < 0x1.745d180000000p-2f)) {
+      if (!(v4 < 0x1.745d180000000p-1f)) {
         v8 = v4 < 0x1.d1745e0000000p-1f;
         v9 = (float)((float)((float)(v4 + -0x1.e8ba2e0000000p-1f) *
                              0x1.e400000000000p+2f) *
@@ -2840,7 +2840,7 @@ float math_61d4b0(float a1, float a2, float a3, float a4)
   bool v8;
   float v9;
 
-  if (a1 >= 0x1.745d180000000p-2f) {
+  if (!(a1 < 0x1.745d180000000p-2f)) {
     v5 = (float)((float)((float)(a1 + -0x1.e8ba2e0000000p-1f) *
                          0x1.e400000000000p+2f) *
                  (float)(a1 + -0x1.e8ba2e0000000p-1f)) +
@@ -2865,8 +2865,8 @@ float math_61d4b0(float a1, float a2, float a3, float a4)
     v4 = a1 * (float)(a1 * 0x1.e400000000000p+2f);
   }
   v6 = 0x1.0000000000000p+0f - a1;
-  if (v6 >= 0x1.745d180000000p-2f) {
-    if (v6 >= 0x1.745d180000000p-1f) {
+  if (!(v6 < 0x1.745d180000000p-2f)) {
+    if (!(v6 < 0x1.745d180000000p-1f)) {
       v8 = v6 < 0x1.d1745e0000000p-1f;
       v9 = (float)((float)((float)(v6 + -0x1.e8ba2e0000000p-1f) *
                            0x1.e400000000000p+2f) *
@@ -4961,8 +4961,8 @@ __attribute__((swiftcall)) void math_61f610(PSEUDO_X8 x8_, float32x2_t* a1,
   float result;
 
   v4 = 1.0f - a4;
-  if (v4 >= 0x1.745d180000000p-2f) {
-    if (v4 >= 0x1.745d180000000p-1f) {
+  if (!(v4 < 0x1.745d180000000p-2f)) {
+    if (!(v4 < 0x1.745d180000000p-1f)) {
       v6 = v4 < 0x1.d1745e0000000p-1f;
       v7 = (float)((float)((float)(v4 + -0x1.e8ba2e0000000p-1f) *
                            0x1.e400000000000p+2f) *
@@ -5011,7 +5011,7 @@ __attribute__((swiftcall)) void math_61f710(PSEUDO_X8 x8_, float32x2_t* a1,
   __int64 v7;
   float result;
 
-  if (a4 >= 0x1.745d180000000p-2f) {
+  if (!(a4 < 0x1.745d180000000p-2f)) {
     v5 = (float)((float)((float)(a4 + -0x1.e8ba2e0000000p-1f) *
                          0x1.e400000000000p+2f) *
                  (float)(a4 + -0x1.e8ba2e0000000p-1f)) +
@@ -5079,11 +5079,11 @@ __attribute__((swiftcall)) void math_61f7f0(PSEUDO_X8 x8_, float32x2_t* a1,
                       COERCE_AS(float32x2_t, LANES64(*(a1)).n64_u64[0]), 1) +
        vmuls_lane_f32(0x1.0000000000000p-1f,
                       COERCE_AS(float32x2_t, LANES64(*(a2)).n64_u64[0]), 1);
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v10 = (float)(a4 + -0x1.0000000000000p-1f) +
           (float)(a4 + -0x1.0000000000000p-1f);
-    if (v10 >= 0x1.745d180000000p-2f) {
-      if (v10 >= 0x1.745d180000000p-1f) {
+    if (!(v10 < 0x1.745d180000000p-2f)) {
+      if (!(v10 < 0x1.745d180000000p-1f)) {
         v12 = v10 < 0x1.d1745e0000000p-1f;
         v17 = (float)((float)((float)(v10 + -0x1.e8ba2e0000000p-1f) *
                               0x1.e400000000000p+2f) *
@@ -5114,8 +5114,8 @@ __attribute__((swiftcall)) void math_61f7f0(PSEUDO_X8 x8_, float32x2_t* a1,
   }
   else {
     v8 = 0x1.0000000000000p+0f - (float)(a4 + a4);
-    if (v8 >= 0x1.745d180000000p-2f) {
-      if (v8 >= 0x1.745d180000000p-1f) {
+    if (!(v8 < 0x1.745d180000000p-2f)) {
+      if (!(v8 < 0x1.745d180000000p-1f)) {
         v12 = v8 < 0x1.d1745e0000000p-1f;
         v13 = (float)((float)((float)(v8 + -0x1.e8ba2e0000000p-1f) *
                               0x1.e400000000000p+2f) *
@@ -5172,8 +5172,8 @@ __attribute__((swiftcall)) void math_61fa10(PSEUDO_X8 x8_, unsigned __int64* a1,
   float v17;
   float result;
 
-  if (a5 >= 0x1.745d180000000p-2f) {
-    if (a5 >= 0x1.745d180000000p-1f) {
+  if (!(a5 < 0x1.745d180000000p-2f)) {
+    if (!(a5 < 0x1.745d180000000p-1f)) {
       v5 = (float)((float)((float)(a5 + -0x1.e8ba2e0000000p-1f) *
                            0x1.e400000000000p+2f) *
                    (float)(a5 + -0x1.e8ba2e0000000p-1f)) +
@@ -5197,8 +5197,8 @@ __attribute__((swiftcall)) void math_61fa10(PSEUDO_X8 x8_, unsigned __int64* a1,
   }
   PSEUDO_LOW_LANE64(v6, n64_u64, *a1);
   v7 = 0x1.0000000000000p+0f - a5;
-  if (v7 >= 0x1.745d180000000p-2f) {
-    if (v7 >= 0x1.745d180000000p-1f) {
+  if (!(v7 < 0x1.745d180000000p-2f)) {
+    if (!(v7 < 0x1.745d180000000p-1f)) {
       v9 = v7 < 0x1.d1745e0000000p-1f;
       v10 = (float)((float)((float)(v7 + -0x1.e8ba2e0000000p-1f) *
                             0x1.e400000000000p+2f) *
@@ -5260,7 +5260,7 @@ __attribute__((swiftcall)) void math_61fbf0(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v4).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v4).n128_u64[1] = 0x3F0000003F000000LL;
   v5 = vaddq_f32(vmulq_f32(*a1, v4), vmulq_f32(*a2, v4));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v7 = vsubq_f32(*a2, v5);
     result = vaddq_f32(
         v5,
@@ -5320,7 +5320,7 @@ __attribute__((swiftcall)) void math_61fc90(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v5).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v5).n128_u64[1] = 0x3F0000003F000000LL;
   v6 = vaddq_f32(vmulq_f32(*a1, v5), vmulq_f32(*a2, v5));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v11 = vsubq_f32(*a2, v6);
     v12 = (float)(a4 + -0x1.0000000000000p-1f) +
           (float)(a4 + -0x1.0000000000000p-1f);
@@ -5442,7 +5442,7 @@ __attribute__((swiftcall)) void math_61fe40(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v5).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v5).n128_u64[1] = 0x3F0000003F000000LL;
   v6 = vaddq_f32(vmulq_f32(*a1, v5), vmulq_f32(*a2, v5));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v11 = vsubq_f32(*a2, v6);
     v12 = (float)(a4 + -0x1.0000000000000p-1f) +
           (float)(a4 + -0x1.0000000000000p-1f);
@@ -5645,7 +5645,7 @@ __attribute__((swiftcall)) void math_620100(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v5).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v5).n128_u64[1] = 0x3F0000003F000000LL;
   v6 = vaddq_f32(vmulq_f32(*a1, v5), vmulq_f32(*a2, v5));
-  if (a4 >= 0x1.0000000000000p-1f) {
+  if (!(a4 < 0x1.0000000000000p-1f)) {
     v12 = vsubq_f32(*a2, v6);
     v13 = (float)(a4 + -0x1.0000000000000p-1f) +
           (float)(a4 + -0x1.0000000000000p-1f);
@@ -5879,7 +5879,7 @@ __attribute__((swiftcall)) void math_620470(PSEUDO_X8 x8_, float32x4_t* a1,
   LANES128(v6).n128_u64[0] = 0x3F0000003F000000LL;
   LANES128(v6).n128_u64[1] = 0x3F0000003F000000LL;
   v7 = vaddq_f32(vmulq_f32(*a1, v6), vmulq_f32(*a2, v6));
-  if (a4 >= 0x1.0000000000000p-1) {
+  if (!(a4 < 0x1.0000000000000p-1)) {
     v15 = 0.0;
     v16 = (float)(a4 + -0x1.0000000000000p-1) +
           (float)(a4 + -0x1.0000000000000p-1);

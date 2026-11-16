@@ -1489,7 +1489,7 @@ __int64 UnitActor_81ab40(__int64 a1, float a2, float a3)
     }
     v9 = v8 & v7;
     v10 = 0x1.3333340000000p-2f;
-    if (a3 >= 0.0f) {
+    if (!(a3 < 0.0f)) {
       v10 = a3;
     }
     if (v9 != 0) {
@@ -1531,7 +1531,7 @@ __int64 UnitActor_81ab40(__int64 a1, float a2, float a3)
                                                                      a2, a2);
   *(_QWORD*)(a1 + 120) = 0;
   *(_WORD*)(a1 + 136) = 256;
-  if (a3 <= 0.0f) {
+  if (!(a3 > 0.0f)) {
     return 1;
   }
   v12 = (*(float (**)(__int64))(*(_QWORD*)(a1 + 112) + 16LL))(a1 + 112);
@@ -1542,7 +1542,7 @@ LABEL_18:
   (*(void (**)(__int64))(*(_QWORD*)(a1 + 112) + 16LL))(a1 + 112);
 LABEL_24:
   v14 = v13 - v12;
-  if ((float)(v14 * v14) <= 0x1.c200000000000p+9f) {
+  if (!((float)(v14 * v14) > 0x1.c200000000000p+9f)) {
     return 1;
   }
   v15 = *(_QWORD*)(a1 + 264);
@@ -1551,7 +1551,7 @@ LABEL_24:
   }
   result = 1;
   v17 = *(_DWORD*)(*(_QWORD*)(v15 + 72) + 120LL);
-  if (v17 <= -93581018) {
+  if (!(v17 > -93581018)) {
     v18 = v17 == -972548316 || v17 == -860551158;
     v19 = -589947500;
   }
@@ -1564,8 +1564,8 @@ LABEL_24:
     v19 = 105782307;
   }
   if (v18 || v17 == v19) {
-    if (v14 >= 0.0f) {
-      if (v14 <= 0.0f) {
+    if (!(v14 < 0.0f)) {
+      if (!(v14 > 0.0f)) {
         return result;
       }
       v21 = a1;
@@ -1670,7 +1670,7 @@ __int64 UnitActor_81aee0(__int64 a1, float a2)
     *(_DWORD*)(a1 + 160) = 0;
   }
   else {
-    if (v7 >= *(float*)(a1 + 160)) {
+    if (!(v7 < *(float*)(a1 + 160))) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(a1 + 152) + 8LL))(a1 + 152, &v11, a1 + 184);
       if ((result & 1) == 0) {
@@ -1749,7 +1749,7 @@ __int64 UnitActor_81b040(__int64 a1, float a2)
     *(_DWORD*)(a1 + 160) = 0;
   }
   else {
-    if (v7 >= *(float*)(a1 + 160)) {
+    if (!(v7 < *(float*)(a1 + 160))) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(a1 + 152) + 8LL))(a1 + 152, &v12, a1 + 184);
       if ((result & 1) == 0) {
@@ -1826,7 +1826,7 @@ __int64 UnitActor_81b190(__int64 a1, float a2)
     *(_DWORD*)(a1 + 200) = 0;
   }
   else {
-    if (v7 >= *(float*)(a1 + 200)) {
+    if (!(v7 < *(float*)(a1 + 200))) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(a1 + 192) + 8LL))(a1 + 192, &v11, a1 + 224);
       if ((result & 1) == 0) {
@@ -2538,7 +2538,7 @@ __int64 game_UnitActor_UpdateAlpha(__int64 result)
           v5 = *(float*)(v2 + 160);
           v4 = *(float*)(v2 + 164);
           v6 = *(float*)(v2 + 184);
-          if (v4 >= v5) {
+          if (!(v4 < v5)) {
             v14_.v15 = *(float*)(v2 + 184);
             v14_.v14 = GameData_1f9e5a0;
             v14_.v16 = &v14_.v14;
@@ -2671,7 +2671,7 @@ __int64 UnitActor_81bdc0(__int64 result)
   v4 = *(float*)(v2 + 224);
   v6 = *(float*)(v2 + 200);
   v5 = *(float*)(v2 + 204);
-  if (v5 >= v6) {
+  if (!(v5 < v6)) {
     v19_.v20 = *(float*)(v2 + 224);
     v19_.v19 = GameData_1f9e620;
     v19_.v21 = &v19_.v19;
@@ -3811,7 +3811,7 @@ __attribute__((swiftcall)) void UnitActor_81d0c0(PSEUDO_X8 x8_, __int64 a1,
   v21 = *(float*)(a1 + 60);
   v23 = *(_OWORD*)(a1 + 96);
   v33 = v3;
-  if (v21 >= v22) {
+  if (!(v21 < v22)) {
     LODWORD(v25) = HIDWORD(*(_QWORD*)(a1 + 96));
   }
   else {
@@ -3908,7 +3908,7 @@ LABEL_11:
   v9 = *(float*)(a1 + 56);
   v8 = *(float*)(a1 + 60);
   v10 = *(_OWORD*)(a1 + 96);
-  if (v8 >= v9) {
+  if (!(v8 < v9)) {
     LODWORD(v12) = HIDWORD(*(_QWORD*)(a1 + 96));
   }
   else {
@@ -3980,7 +3980,7 @@ __attribute__((swiftcall)) void UnitActor_81d430(PSEUDO_X8 x8_, __int64 a1)
     v8 = *(float*)(a1 + 56);
     v7 = *(float*)(a1 + 60);
     v9 = *(_OWORD*)(a1 + 96);
-    if (v7 >= v8) {
+    if (!(v7 < v8)) {
       LODWORD(v11) = HIDWORD(*(_QWORD*)(a1 + 96));
     }
     else {

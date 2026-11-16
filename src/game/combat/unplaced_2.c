@@ -483,7 +483,7 @@ __attribute__((swiftcall)) void game_combat_1068f80(PSEUDO_X8 x8_, __int64 a1)
   v10 = *(float*)(v6 + 44) - *(float*)(a1 + 44);
   v11 = *(float*)(v6 + 40) - *(float*)(a1 + 40);
   v12 = (float)(v10 * v10) + (float)(v11 * v11);
-  if (v12 >= 0x1.0000000000000p-23f) {
+  if (!(v12 < 0x1.0000000000000p-23f)) {
     v15 = 1.0f / sqrtf(v12);
     v14 = v11 * v15;
     v13 = v10 * v15;
@@ -832,7 +832,7 @@ void game_combat_1069600(__int64 a1, float a2)
   __int128 v82;
   __int128 v83;
 
-  if (a2 >= 0x1.6571840000000p-4f) {
+  if (!(a2 < 0x1.6571840000000p-4f)) {
     v3 = *(_QWORD*)(a1 + 80);
     if (v3 != 0) {
       v5 = *(_QWORD*)(a1 + 88);
@@ -1349,7 +1349,7 @@ __int64 game_combat_1099520(__int64 a1, __int64 a2)
     v11 = GameData_22356f8 - 1;
     if ((GameData_22356f8 & (GameData_22356f8 - 1)) != 0) {
       v12 = v10;
-      if (GameData_22356f8 <= (unsigned __int64)v10) {
+      if (!(GameData_22356f8 > (unsigned __int64)v10)) {
         v12 = v10 % (unsigned __int64)GameData_22356f8;
       }
     }
@@ -1385,7 +1385,7 @@ __int64 game_combat_1099520(__int64 a1, __int64 a2)
             }
           }
           else {
-            if (v15 >= GameData_22356f8) {
+            if (!(v15 < GameData_22356f8)) {
               v15 %= (unsigned __int64)GameData_22356f8;
             }
             if (v15 != v12) {
@@ -1471,7 +1471,7 @@ LABEL_30:
         goto LABEL_142;
       }
       v25 = a2 + 12LL * *(int*)(a2 + 12);
-      if ((signed __int32)*(_DWORD*)(v25 + 104) >= *(int*)(v25 + 96) >> 1) {
+      if (!((signed __int32)*(_DWORD*)(v25 + 104) < *(int*)(v25 + 96) >> 1)) {
         v10 = -1193575788;
       }
       else {
@@ -1483,14 +1483,14 @@ LABEL_30:
                   (v28 = v29, GameRoutine_10681e0(v29) != 0)) {
             v31 = *(unsigned int*)(v28 + 96);
             v30 = 0x0.0p+0f;
-            if ((unsigned int)v31 <= 3) {
+            if (!((unsigned int)v31 > 3)) {
               v30 = *((float*)&GameData_1a83520 + v31);
             }
           }
           if (*(_DWORD*)(a2 + 64) != 0) {
             v32 = *((unsigned __int8*)GameRoutine_108fa60(a2) + 80);
             if (v32 == 2) {
-              if (v30 >= 0x0.0p+0f) {
+              if (!(v30 < 0x0.0p+0f)) {
                 v10 = -1193575773;
               }
               else {
@@ -1503,7 +1503,7 @@ LABEL_30:
               goto LABEL_142;
             }
             if (v32 == 3) {
-              if (v30 <= 0x0.0p+0f) {
+              if (!(v30 > 0x0.0p+0f)) {
                 v10 = -1193575779;
               }
               else {
@@ -1529,7 +1529,7 @@ LABEL_30:
     }
     if (*v8 != 0) {
       v33 = *(_DWORD*)(a2 + 12);
-      if (v33 <= 3) {
+      if (!(v33 > 3)) {
         v34 = *v8 + 24LL * v33;
         v35 = *(_QWORD*)(v34 + 32);
         if (v35 != 0) {
@@ -1547,7 +1547,7 @@ LABEL_30:
             std___1___shared_weak_count___release_weak_alt1(v35);
             if (GameRoutine_10681e0(v36) != 0) {
               v40 = *(_DWORD*)(v36 + 96);
-              if (v40 <= 3) {
+              if (!(v40 > 3)) {
                 v41 = 9u >> v40;
                 v42 = 6u >> v40;
                 goto LABEL_102;
@@ -1688,7 +1688,7 @@ LABEL_142:
   if (v62 != 0 && (*(_BYTE*)(v62 + 113) & 0x80) != 0) {
     v63 = -1193575789;
     if (v10 > -270062628) {
-      if (v10 <= -77626399) {
+      if (!(v10 > -77626399)) {
         if (v10 == -270062627) {
           goto LABEL_272;
         }
@@ -1714,7 +1714,7 @@ LABEL_142:
     goto LABEL_272;
   }
 LABEL_144:
-  if (v10 <= 232551548) {
+  if (!(v10 > 232551548)) {
     if (v10 == -1193575779) {
       v85 = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 88LL);
       v86 = *(_QWORD*)(v85 + 392);

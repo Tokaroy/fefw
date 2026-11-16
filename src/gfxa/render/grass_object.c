@@ -387,7 +387,7 @@ __int64 GrassObject_Unknown2(__int64 result)
           v11 = *(_DWORD*)(v1 + 56);
           v13 = *(_QWORD*)(v2 + 184);
           v12 = *(_QWORD*)(v2 + 192);
-          if (v13 >= v12) {
+          if (!(v13 < v12)) {
             v15 = *(_QWORD*)(v2 + 176);
             v16 = v13 - v15;
             v17 = (__int64)(v13 - v15) >> 4;
@@ -457,7 +457,7 @@ __int64 GrassObject_Unknown2(__int64 result)
               if (v32 >> 3 > v31) {
                 v31 = v32 >> 3;
               }
-              if ((unsigned __int64)v32 >= 0x7FFFFFFFFFFFFFF0LL) {
+              if (!((unsigned __int64)v32 < 0x7FFFFFFFFFFFFFF0LL)) {
                 v33 = 0xFFFFFFFFFFFFFFFLL;
               }
               else {
@@ -530,7 +530,7 @@ __int64 GrassObject_Unknown2(__int64 result)
       }
       nn_mem_StandardAllocator_Free(*v5 + v46, (_QWORD)(v43));
     }
-    if (*(int*)(v2 + 112) >= 1) {
+    if (!(*(int*)(v2 + 112) < 1)) {
       v47 = 0;
       v48 = 0;
       v49 = 0;
@@ -557,7 +557,7 @@ __int64 GrassObject_Unknown2(__int64 result)
           v60 = -v60;
         }
         *(_DWORD*)(v58 + 16) = v60;
-        if (v50 >= v49) {
+        if (!(v50 < v49)) {
           v61 = v49;
         }
         else {
@@ -565,7 +565,7 @@ __int64 GrassObject_Unknown2(__int64 result)
         }
         v62 = *(_QWORD*)(v2 + 176);
         v63 = (*(_QWORD*)(v2 + 184) - v62) >> 4;
-        if (v63 <= v61) {
+        if (!(v63 > v61)) {
           goto LABEL_64;
         }
         while (1) {
@@ -599,7 +599,7 @@ __int64 GrassObject_Unknown2(__int64 result)
             break;
           }
           v61 = (unsigned int)(v61 + 1);
-          if (v63 <= v61) {
+          if (!(v63 > v61)) {
             goto LABEL_64;
           }
         }
@@ -623,7 +623,7 @@ __int64 GrassObject_Unknown2(__int64 result)
         else {
           v76 = v49;
         }
-        if (v76 >= (*(_QWORD*)(v2 + 184) - v75) >> 4) {
+        if (!(v76 < (*(_QWORD*)(v2 + 184) - v75) >> 4)) {
           goto LABEL_159;
         }
         while (2) {
@@ -655,7 +655,7 @@ __int64 GrassObject_Unknown2(__int64 result)
             else {
               v76 = v49;
             }
-            if (v76 >= (*(_QWORD*)(v2 + 184) - v75) >> 4) {
+            if (!(v76 < (*(_QWORD*)(v2 + 184) - v75) >> 4)) {
               goto LABEL_159;
             }
             continue;
@@ -676,7 +676,7 @@ __int64 GrassObject_Unknown2(__int64 result)
         v85 = *(unsigned __int8*)(v54 + 8);
         if (!v84) {
           v86 = *(_DWORD*)(v80 + 60);
-          if (v86 >= *(_DWORD*)(v80 + 56)) {
+          if (!(v86 < *(_DWORD*)(v80 + 56))) {
             v86 = *(_DWORD*)(v80 + 56);
           }
           v85 = v79 == v86;
@@ -693,7 +693,7 @@ __int64 GrassObject_Unknown2(__int64 result)
           v89 = *(_QWORD*)(v80 + v87);
         }
         if (*(_BYTE*)(v54 + 8) != 0) {
-          if (v81 <= 0.0) {
+          if (!(v81 > 0.0)) {
             if (*(_BYTE*)(v80 + 72) != 0) {
               v90 = 0;
             }
@@ -719,7 +719,7 @@ __int64 GrassObject_Unknown2(__int64 result)
         else {
           v92 = v51;
         }
-        if (v88 <= v92) {
+        if (!(v88 > v92)) {
         LABEL_155:
           if (v91 == 1024) {
             goto LABEL_159;
@@ -736,7 +736,7 @@ __int64 GrassObject_Unknown2(__int64 result)
         }
         v93 = v92 + 1;
         while (v91 != 1024) {
-          if (v90 <= v92) {
+          if (!(v90 > v92)) {
             v97 = (_DWORD*)(v71 + 48LL * v91);
             v98 = (_DWORD*)(*(_QWORD*)(v80 + 112) + 60 * v92);
             v99 = v98[1];
@@ -762,11 +762,11 @@ __int64 GrassObject_Unknown2(__int64 result)
             v97[9] = v105;
             v97[10] = v107;
             v97[11] = v109;
-            if (v89 <= v92) {
+            if (!(v89 > v92)) {
               v94 = *(float*)(v80 + 76);
               v95 = 0.0;
             }
-            else if (v81 <= 0.0) {
+            else if (!(v81 > 0.0)) {
               v95 = 0.0;
               v94 = 1.0;
             }
@@ -795,23 +795,23 @@ __int64 GrassObject_Unknown2(__int64 result)
             v51 = v93;
           }
           ++v93;
-          if (v88 <= v92) {
+          if (!(v88 > v92)) {
             goto LABEL_155;
           }
         }
       LABEL_159:
         (*(void (**)(__int64))(*(_QWORD*)v72 + 64LL))(v72);
         (*(void (**)(__int64))(*(_QWORD*)v115 + 64LL))(v115);
-        if (*(int*)(v54 + 4) >= 1) {
+        if (!(*(int*)(v54 + 4) < 1)) {
           *(_DWORD*)(v2 + 272) = v47 + 1;
           v110 = *(_DWORD*)(v2 + 276);
-          if (v110 >= *(_DWORD*)v54) {
+          if (!(v110 < *(_DWORD*)v54)) {
             v110 = *(_DWORD*)v54;
           }
           v111 = *(_DWORD*)(v2 + 280);
           *(_DWORD*)(v2 + 276) = v110;
           v112 = *(_DWORD*)v54;
-          if (*(_DWORD*)v54 <= v111) {
+          if (!(*(_DWORD*)v54 > v111)) {
             v112 = v111;
           }
           v113 = *(_BYTE*)(v2 + 284);
@@ -819,7 +819,7 @@ __int64 GrassObject_Unknown2(__int64 result)
           *(_BYTE*)(v2 + 284) = v113 | *(_BYTE*)(v54 + 8);
         }
       LABEL_64:
-        if (++v47 >= *(int*)(v2 + 112)) {
+        if (!(++v47 < *(int*)(v2 + 112))) {
           goto LABEL_166;
         }
       }
@@ -1277,12 +1277,12 @@ __int64* GrassObject_c761a0(__int64* result, char* a2, _QWORD** a3,
     v9 = *result;
     v10 = *((_DWORD*)result + 2);
     if (v8 == v10) {
-      if (*(float*)(**a3 + (v7 << 7) + 52) >=
-          *(float*)(**a3 + (v9 << 7) + 52)) {
+      if (!(*(float*)(**a3 + (v7 << 7) + 52) <
+            *(float*)(**a3 + (v9 << 7) + 52))) {
         return result;
       }
     }
-    else if (v8 >= v10) {
+    else if (!(v8 < v10)) {
       return result;
     }
     *result = v7;
@@ -1292,7 +1292,7 @@ __int64* GrassObject_c761a0(__int64* result, char* a2, _QWORD** a3,
     *((_DWORD*)a2 - 2) = v17;
     return result;
   }
-  if ((__int64)a4 <= 0) {
+  if (!((__int64)a4 > 0)) {
     if (result == (__int64*)a2) {
       return result;
     }
@@ -1310,13 +1310,12 @@ __int64* GrassObject_c761a0(__int64* result, char* a2, _QWORD** a3,
       v25 = *((_DWORD*)v22 + 2);
       if (v24 == v25) {
         v26 = *v22;
-        if (*(float*)(**a3 + (v23 << 7) + 52) >=
-            *(float*)(**a3 + (*v22 << 7) + 52)) {
+        if (!(*(float*)(**a3 + (v23 << 7) + 52) < *(float*)(**a3 + (*v22 << 7) + 52))) {
           goto LABEL_17;
         }
       }
       else {
-        if (v24 >= v25) {
+        if (!(v24 < v25)) {
           goto LABEL_17;
         }
         v26 = *v22;
@@ -1334,7 +1333,7 @@ __int64* GrassObject_c761a0(__int64* result, char* a2, _QWORD** a3,
         if (v24 == v31) {
           break;
         }
-        if (v24 >= v31) {
+        if (!(v24 < v31)) {
           v21 = (__int64*)((char*)result + v27);
           goto LABEL_16;
         }
@@ -1389,12 +1388,11 @@ __int64* GrassObject_c761a0(__int64* result, char* a2, _QWORD** a3,
     v41 = *v34;
     v42 = *((_DWORD*)v34 + 2);
     if (v40 == v42) {
-      if (*(float*)(**a3 + (v39 << 7) + 52) >=
-          *(float*)(**a3 + (v41 << 7) + 52)) {
+      if (!(*(float*)(**a3 + (v39 << 7) + 52) < *(float*)(**a3 + (v41 << 7) + 52))) {
         goto LABEL_40;
       }
     }
-    else if (v40 >= v42) {
+    else if (!(v40 < v42)) {
     LABEL_40:
       *v32 = v41;
       v38 = *((_DWORD*)v34 + 2);
@@ -1488,8 +1486,7 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
     v7 = *(_DWORD*)(result + 8);
     v8 = (__int64*)(a2 - 16);
     if (v6 == v7) {
-      if (*(float*)(**a3 + (*v8 << 7) + 52) >=
-          *(float*)(**a3 + (*(_QWORD*)result << 7) + 52LL)) {
+      if (!(*(float*)(**a3 + (*v8 << 7) + 52) < *(float*)(**a3 + (*(_QWORD*)result << 7) + 52LL))) {
       LABEL_7:
         v9 = *(_QWORD*)(result + 8);
         *a5 = *(_QWORD*)result;
@@ -1501,7 +1498,7 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
         return result;
       }
     }
-    else if (v6 >= v7) {
+    else if (!(v6 < v7)) {
       goto LABEL_7;
     }
     v29 = *v8;
@@ -1520,7 +1517,7 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
   default:
     break;
   }
-  if ((__int64)a4 <= 8) {
+  if (!((__int64)a4 > 8)) {
     if (result == a2) {
       return result;
     }
@@ -1539,12 +1536,11 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
     v19 = *((_DWORD*)v15 + 2);
     v20 = v15 + 2;
     if (v18 == v19) {
-      if (*(float*)(**a3 + (*v17 << 7) + 52) >=
-          *(float*)(**a3 + (*v15 << 7) + 52)) {
+      if (!(*(float*)(**a3 + (*v17 << 7) + 52) < *(float*)(**a3 + (*v15 << 7) + 52))) {
         goto LABEL_17;
       }
     }
-    else if (v18 >= v19) {
+    else if (!(v18 < v19)) {
     LABEL_17:
       v21 = v17[1];
       *v20 = *v17;
@@ -1564,8 +1560,7 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
       v26 = *(__int64*)((char*)a5 + v23 - 16);
       v27 = *(_DWORD*)((char*)a5 + v23 - 8);
       if (v25 == v27) {
-        if (*(float*)(**a3 + (*v17 << 7) + 52) >=
-            *(float*)(**a3 + (v26 << 7) + 52)) {
+        if (!(*(float*)(**a3 + (*v17 << 7) + 52) < *(float*)(**a3 + (v26 << 7) + 52))) {
           v16 = v15;
         LABEL_13:
           *v16 = *v17;
@@ -1581,7 +1576,7 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
           goto LABEL_15;
         }
       }
-      else if (v25 >= v27) {
+      else if (!(v25 < v27)) {
         v16 = (__int64*)((char*)a5 + v23);
         goto LABEL_13;
       }
@@ -1623,12 +1618,11 @@ __int64 GrassObject_c76540(__int64 result, __int64 a2, _QWORD** a3,
       v45 = *(_DWORD*)(v39 + 8);
       v46 = *((_DWORD*)v41 + 2);
       if (v45 == v46) {
-        if (*(float*)(**a3 + (*(_QWORD*)v39 << 7) + 52LL) >=
-            *(float*)(**a3 + (*v41 << 7) + 52)) {
+        if (!(*(float*)(**a3 + (*(_QWORD*)v39 << 7) + 52LL) < *(float*)(**a3 + (*v41 << 7) + 52))) {
           goto LABEL_38;
         }
       }
-      else if (v45 >= v46) {
+      else if (!(v45 < v46)) {
       LABEL_38:
         v43 = *v41;
         v44 = v41[1];
@@ -1825,12 +1819,11 @@ __int64* GrassObject_c76880(__int64* result, __int64* a2, char* a3, _QWORD** a4,
         v71 = *a7;
         v72 = *((_DWORD*)a7 + 2);
         if (v70 == v72) {
-          if (*(float*)(**a4 + (v69 << 7) + 52) >=
-              *(float*)(**a4 + (v71 << 7) + 52)) {
+          if (!(*(float*)(**a4 + (v69 << 7) + 52) < *(float*)(**a4 + (v71 << 7) + 52))) {
             goto LABEL_78;
           }
         }
-        else if (v70 >= v72) {
+        else if (!(v70 < v72)) {
         LABEL_78:
           *result = v71;
           v68 = *((_DWORD*)a7 + 2);
@@ -1875,7 +1868,7 @@ __int64* GrassObject_c76880(__int64* result, __int64* a2, char* a3, _QWORD** a4,
     }
     v19 = -v14;
     v20 = &result[i];
-    if (-v14 >= a6) {
+    if (!(-v14 < a6)) {
       if (v14 == -1) {
         v73 = &result[i];
         *v73 = v12;
@@ -1901,12 +1894,11 @@ __int64* GrassObject_c76880(__int64* result, __int64* a2, char* a3, _QWORD** a4,
         v33 = &v22[2 * (v31 >> 1)];
         v34 = *((_DWORD*)v33 + 2);
         if (v34 == v30) {
-          if (*(float*)(*v11 + (*v33 << 7) + 52) >=
-              *(float*)(*v11 + (*v24 << 7) + 52)) {
+          if (!(*(float*)(*v11 + (*v33 << 7) + 52) < *(float*)(*v11 + (*v24 << 7) + 52))) {
             goto LABEL_24;
           }
         }
-        else if (v34 >= v30) {
+        else if (!(v34 < v30)) {
           goto LABEL_24;
         }
         v22 = v33 + 2;
@@ -2017,7 +2009,7 @@ __int64* GrassObject_c76880(__int64* result, __int64* a2, char* a3, _QWORD** a4,
     }
   LABEL_49:
     v46 = a6 - v21;
-    if (v29 + v21 >= a6 - (v29 + v21) - v14) {
+    if (!(v29 + v21 < a6 - (v29 + v21) - v14)) {
       GrassObject_c76880(v35, v22, a3, a4, -(v29 + v14), a6 - v21, a7, a8);
       v22 = v24;
       v46 = v21;

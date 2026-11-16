@@ -23521,7 +23521,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
           }
           do {
             ++v41;
-            if (v40 >= 0) {
+            if (!(v40 < 0)) {
               v42 = v40;
             }
             else {
@@ -23600,7 +23600,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
                 v67 = v66 - v60;
               }
               do {
-                if (v68 >= 0) {
+                if (!(v68 < 0)) {
                   v70 = v68;
                 }
                 else {
@@ -23629,7 +23629,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
           if (v76) {
             v80 = v79;
           }
-          if (v77 <= 0) {
+          if (!(v77 > 0)) {
             v81 = v80;
           }
           else {
@@ -23725,7 +23725,7 @@ bool AIThink_1277f40(__int64 a1, __int64 a2)
                             COERCE_AS(float32x2_t, LANES128(v98).n128_u64[0])))
                   .n64_f32[0];
           LODWORD(v54) = LANES128(v98).n128_f32[0] >= -0.5f;
-          if (LANES128(v98).n128_f32[0] >= 0.5f) {
+          if (!(LANES128(v98).n128_f32[0] < 0.5f)) {
             LODWORD(v54) = 2;
           }
         }
@@ -23872,7 +23872,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
     return false;
   }
   v7 = *(unsigned int*)(v6 + 12356);
-  if ((int)v7 >= 1) {
+  if (!((int)v7 < 1)) {
     v8 = v5 & 7;
     v9 = v6 + 68;
     v10 = 0;
@@ -23975,7 +23975,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
         goto LABEL_5;
       }
       v39 = *(unsigned int*)(v6 + 24700);
-      if ((int)v39 >= 1) {
+      if (!((int)v39 < 1)) {
         v40 = v97;
         v41 = 0;
         v42 = 0;
@@ -24042,7 +24042,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
               v57 = *(_DWORD*)(v54 + 592);
               v58 = *(char*)(v11 + 1);
               v59 = *(char*)(v11 + 2);
-              if (v57 >= 2) {
+              if (!(v57 < 2)) {
                 v60 = v57 + v48;
                 v61 = v57 + v49;
                 v62 = 10000;
@@ -24057,7 +24057,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
                     v64 = v63 - v59;
                   }
                   do {
-                    if (v65 >= 0) {
+                    if (!(v65 < 0)) {
                       v67 = v65;
                     }
                     else {
@@ -24086,7 +24086,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
               if (v95) {
                 v72 = v71;
               }
-              if (v69 <= 0) {
+              if (!(v69 > 0)) {
                 v73 = v72;
               }
               else {
@@ -24189,7 +24189,7 @@ bool AIThink_12786e0(__int64 a1, unsigned int* a2)
                           COERCE_AS(float32x2_t, LANES128(v91).n128_u64[0])))
                       .n64_f32[0];
               v92 = LANES128(v91).n128_f32[0] >= -0x1.0000000000000p-1f;
-              if (LANES128(v91).n128_f32[0] >= 0x1.0000000000000p-1f) {
+              if (!(LANES128(v91).n128_f32[0] < 0x1.0000000000000p-1f)) {
                 v92 = 2;
               }
               goto LABEL_125;
@@ -24387,7 +24387,7 @@ bool AIThink_1278d00(__int64 a1, unsigned int* a2)
               v34 = v33 - v20;
             }
             do {
-              if (v35 >= 0) {
+              if (!(v35 < 0)) {
                 v37 = v35;
               }
               else {
@@ -24418,7 +24418,7 @@ bool AIThink_1278d00(__int64 a1, unsigned int* a2)
         if (v41) {
           LODWORD(v47) = v46;
         }
-        if (v42 <= 0) {
+        if (!(v42 > 0)) {
           v47 = (unsigned int)v47;
         }
         else {
@@ -24511,7 +24511,7 @@ bool AIThink_1278d00(__int64 a1, unsigned int* a2)
                           COERCE_AS(float32x2_t, LANES128(v65).n128_u64[0])))
                 .n64_f32[0];
         LODWORD(v17) = LANES128(v65).n128_f32[0] >= -0.5f;
-        if (LANES128(v65).n128_f32[0] >= 0.5f) {
+        if (!(LANES128(v65).n128_f32[0] < 0.5f)) {
           LODWORD(v17) = 2;
         }
       }
@@ -24610,7 +24610,7 @@ bool AIThink_12791a0(__int64 a1, __int64 a2)
   v7 = v5 - 1;
   if ((v5 & (v5 - 1)) != 0) {
     v9 = *(_QWORD*)(*(_QWORD*)a1 + 1992LL);
-    if (v4 >= v5) {
+    if (!(v4 < v5)) {
       v9 = v4 % v5;
     }
   }
@@ -24649,7 +24649,7 @@ bool AIThink_12791a0(__int64 a1, __int64 a2)
     if (v13 == v4) {
       break;
     }
-    if (v13 >= v5) {
+    if (!(v13 < v5)) {
       v13 %= v5;
     }
     if (v13 != v9) {
@@ -24736,10 +24736,10 @@ LABEL_26:
     }
     v12 = v53;
     if (v22 != 0) {
-      if (v22 >= 255) {
+      if (!(v22 < 255)) {
         v22 = 255;
       }
-      if (v21 >= 255) {
+      if (!(v21 < 255)) {
         v29 = 255;
       }
       else {
@@ -24819,7 +24819,7 @@ LABEL_26:
                             COERCE_AS(float32x2_t, LANES128(v46).n128_u64[0])))
                   .n64_f32[0];
           LODWORD(v31) = LANES128(v46).n128_f32[0] >= -0.5f;
-          if (LANES128(v46).n128_f32[0] >= 0.5f) {
+          if (!(LANES128(v46).n128_f32[0] < 0.5f)) {
             LODWORD(v31) = 2;
           }
         }
@@ -30574,7 +30574,7 @@ bool AIThink_1299cc0(__int64 a1)
     *(_QWORD*)(v1 + 12336) = 0;
     if (v7 != 0) {
       v8 = v7 & 7;
-      if (v7 >= 8) {
+      if (!(v7 < 8)) {
         v10 = v7 & 0xFFFFFFFFFFFFFFF8LL;
         v9 = 0;
         do {
@@ -30618,7 +30618,7 @@ bool AIThink_1299cc0(__int64 a1)
   result = false;
   if ((v15 & 1) != 0) {
     v79 = *(unsigned int*)(v14 + 12356);
-    if ((int)v79 >= 1) {
+    if (!((int)v79 < 1)) {
       v17 = v14 + 68;
       v18 = 0;
       v77 = v14;
@@ -30657,7 +30657,7 @@ bool AIThink_1299cc0(__int64 a1)
         v27 = *(_DWORD*)(a1 + 24);
         v28 = *v13;
         *(_QWORD*)(a1 + 16688) = 0;
-        if ((unsigned int)(v27 - 1) >= 2) {
+        if (!((unsigned int)(v27 - 1) < 2)) {
           if (v27 != 0) {
             goto LABEL_21;
           }
@@ -30706,8 +30706,8 @@ bool AIThink_1299cc0(__int64 a1)
             if ((v35 & 0x8000000000000000LL) == 0) {
               v36 = *(_QWORD*)(*(_QWORD*)(*GameData_212cfb8[0] + 16) + 8LL);
               if (v36 != 0) {
-                if ((unsigned int)(*(char*)(v34 + 1) +
-                                   32 * *(char*)(v34 + 2)) >= 0x400) {
+                if (!((unsigned int)(*(char*)(v34 + 1) +
+                                     32 * *(char*)(v34 + 2)) < 0x400)) {
                   v37 = 0;
                 }
                 else {
@@ -30817,7 +30817,7 @@ bool AIThink_1299cc0(__int64 a1)
                     if (v49 != 0) {
                       v50 = (*(__int64 (**)(__int64))(*(_QWORD*)v49 + 160LL))(
                           v49);
-                      if (v50 >= 1) {
+                      if (!(v50 < 1)) {
                         goto LABEL_83;
                       }
                     LABEL_90:
@@ -30831,13 +30831,13 @@ bool AIThink_1299cc0(__int64 a1)
                       }
                     LABEL_83:
                       v51 = *(float*)(a1 + 16576) / (float)(unsigned int)v50;
-                      if (v51 <= 0x1.0000000000000p+0f) {
+                      if (!(v51 > 0x1.0000000000000p+0f)) {
                         v52 = *(float*)(a1 + 16576) / (float)(unsigned int)v50;
                       }
                       else {
                         v52 = 0x1.0000000000000p+0f;
                       }
-                      if (v51 >= 0x0.0p+0f) {
+                      if (!(v51 < 0x0.0p+0f)) {
                         v53 = v52;
                       }
                       else {
@@ -30900,7 +30900,7 @@ bool AIThink_1299cc0(__int64 a1)
           v63 = *(_QWORD*)(v61 + 40);
           if (v63 != 0) {
             LODWORD(v64) = *(_DWORD*)(a1 + 16672) + 32 * *(_DWORD*)(a1 + 16676);
-            if ((unsigned int)v64 >= 0x400) {
+            if (!((unsigned int)v64 < 0x400)) {
               v64 = 0;
             }
             else {
@@ -30928,7 +30928,7 @@ bool AIThink_1299cc0(__int64 a1)
           else {
             LODWORD(v61) = *(_DWORD*)(v61 + 8) + 32 * *(_DWORD*)(v61 + 12);
             v66 = *(int*)(a1 + 16680);
-            if ((unsigned int)v61 >= 0x400) {
+            if (!((unsigned int)v61 < 0x400)) {
               v61 = 0;
             }
             else {
@@ -30938,7 +30938,7 @@ bool AIThink_1299cc0(__int64 a1)
                                                  12880LL) +
                                       v61 + 64);
             v68 = *(_QWORD*)(a1 + 16688) / v66;
-            if ((int)v66 >= 7) {
+            if (!((int)v66 < 7)) {
               LODWORD(v66) = 7;
             }
             v69 = v66 + 8 * ((unsigned int)v68 >> 10);

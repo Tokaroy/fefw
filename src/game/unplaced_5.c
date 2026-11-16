@@ -7255,7 +7255,7 @@ __attribute__((swiftcall)) void game_10413a0(PSEUDO_X8 x8_, __int64 a1,
                        COERCE_AS(float32x2_t, LANES128(v27).n128_u64[0]))))
             .n64_f32[0] -
         v22;
-  if (v28 >= 0x0.0p+0f) {
+  if (!(v28 < 0x0.0p+0f)) {
     v29 = v28;
   }
   else {
@@ -7278,7 +7278,7 @@ __attribute__((swiftcall)) void game_10413a0(PSEUDO_X8 x8_, __int64 a1,
     }
   }
   v20 = v33;
-  if (v35 >= 0x0.0p+0f) {
+  if (!(v35 < 0x0.0p+0f)) {
     v29 = (float)(v29 * (float)v25) / 0x1.4000000000000p+5f;
     v31 = LODWORD(a6);
     goto LABEL_15;
@@ -10562,7 +10562,7 @@ LABEL_16:
   LANES128(v61_.v61).n128_u64[1] = (unsigned __int64)v10;
   v25 = a1;
   v26 = *(float*)&a6 * v24;
-  if (*(float*)&a6 >= 0x0.0p+0f) {
+  if (!(*(float*)&a6 < 0x0.0p+0f)) {
     v27 = v26;
   }
   else {
@@ -11993,7 +11993,7 @@ void game_10e7f80(int8x16_t* a1, int a2, __int64 a3, int a4)
           LANES128(a1[5]).n128_u8[0] = 1;
         }
         else {
-          if (LANES128(v14).n128_f32[0] <= 0x0.0p+0f) {
+          if (!(LANES128(v14).n128_f32[0] > 0x0.0p+0f)) {
             v19 = 3;
           }
           else {
@@ -12104,7 +12104,7 @@ void game_10e7f80(int8x16_t* a1, int a2, __int64 a3, int a4)
     }
   }
   v26 = 0;
-  if (a2 <= -371817050) {
+  if (!(a2 > -371817050)) {
     if ((unsigned int)(a2 + 1193575789) > 0x10) {
     LABEL_70:
       v27 = -1300398262;
@@ -12143,7 +12143,7 @@ LABEL_80:
     LANES128(a1[1]).n128_f32[3] = v28;
   }
   v29 = LANES128(*(a1)).n128_f32[3];
-  if (v29 >= LANES128(a1[2]).n128_f32[0]) {
+  if (!(v29 < LANES128(a1[2]).n128_f32[0])) {
     v29 = LANES128(a1[2]).n128_f32[0];
   }
   LANES128(a1[2]).n128_f32[0] = v29;
@@ -16331,7 +16331,7 @@ float game_110d7c0(float32x4_t* a1, float32x4_t* a2, float32x4_t* a3,
       v40 = (float)(LANES128(v37).n128_f32[3] +
                     fabsf(LANES128(v38).n128_f32[1])) /
             v33;
-      if (v39 >= v40) {
+      if (!(v39 < v40)) {
         v40 = v39;
       }
       v41 = LANES128(v38).n128_f32[2] + v40;
@@ -16586,7 +16586,7 @@ float game_111e3c0(__int64 a1)
   v8 = v7 - *(float*)(a1 + v4 + 4);
   v9 = *v6 - *(float*)(a1 + v4);
   v10 = (float)(PSEUDO_UNFUSED(v8 * v8)) + (float)(v9 * v9);
-  if (v10 >= 0x1.0000000000000p-23f) {
+  if (!(v10 < 0x1.0000000000000p-23f)) {
     v13 = 0x1.0000000000000p+0f / sqrtf(v10);
     v12 = v9 * v13;
     v11 = v8 * v13;
@@ -16911,7 +16911,7 @@ void game_111f610(float32x4_t* a1)
   }
   v9 = vmuls_lane_f32(v8, v7, 2) +
        (float)(LANES128(v7).n128_f32[0] * LANES128(v7).n128_f32[0]);
-  if (v9 >= 0x1.0000000000000p-23f) {
+  if (!(v9 < 0x1.0000000000000p-23f)) {
     v12 = 0x1.0000000000000p+0f / sqrtf(v9);
     v11 = LANES128(v7).n128_f32[0] * v12;
     v10 = v8 * v12;

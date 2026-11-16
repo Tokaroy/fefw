@@ -1036,7 +1036,7 @@ void game_5c11f0(float a1, __int64 a2, float32x2_t* a3, float32x2_t* a4,
       }
       return;
     }
-    if (LANES128(v21).n128_f32[1] >= v11) {
+    if (!(LANES128(v21).n128_f32[1] < v11)) {
       return;
     }
     v22 = *(_OWORD*)LANES64(*(a4)).n64_u64;
@@ -1141,7 +1141,7 @@ void game_5c11f0(float a1, __int64 a2, float32x2_t* a3, float32x2_t* a4,
   }
   if (*(_BYTE*)v9 == 0) {
     v48 = *(_OWORD*)LANES64(*(a3)).n64_u64;
-    if (COERCE_FLOAT(HIDWORD(LANES64(*(a3)).n64_u64[0])) >= v11) {
+    if (!(COERCE_FLOAT(HIDWORD(LANES64(*(a3)).n64_u64[0])) < v11)) {
       return;
     }
     DWORD1(v48) = *(_DWORD*)(v9 + 4);
@@ -8641,7 +8641,7 @@ __int64 game_90fd20(__int64 a1, _DWORD* a2)
       *(_DWORD*)((char*)((__int128*)0x10LL) + (_QWORD)v44 + 12) = v48;
       v49 = v48 & 0x7FFFFFFF;
       nn_os_UnlockMutex((__int64)&game_g_random_mutex);
-      if ((float)(v43 * 0x1.3880000000000p+13f) <= (float)(v49 % 0xF4240)) {
+      if (!((float)(v43 * 0x1.3880000000000p+13f) > (float)(v49 % 0xF4240))) {
         goto LABEL_55;
       }
       LODWORD(v13) = *a2 & 0xFFF;
@@ -8699,7 +8699,7 @@ __int64 game_90fd20(__int64 a1, _DWORD* a2)
   v58 = *(_BYTE*)(v36 + 105) == 3;
   v39 = v37 - 1;
   v40 = v58;
-  if (v39 >= 3) {
+  if (!(v39 < 3)) {
     v39 = 3;
   }
   v41 = v37 <= 0 ? 0 : v39;
@@ -10816,7 +10816,7 @@ LABEL_34:
     LANES128(v23).n128_u64[0] = v41;
   }
   v28 = *(_QWORD*)(v6 + 8);
-  if (v25 >= v24) {
+  if (!(v25 < v24)) {
     v29 = v24;
   }
   else {
@@ -14457,13 +14457,13 @@ bool game_11fdbc0(__int64 a1, __int64 a2)
               }
             }
             v16 = v59_.v66 / (float)(unsigned int)v36;
-            if (v16 <= 0x1.0000000000000p+0f) {
+            if (!(v16 > 0x1.0000000000000p+0f)) {
               *(float*)&v5 = v59_.v66 / (float)(unsigned int)v36;
             }
             else {
               *(float*)&v5 = 0x1.0000000000000p+0f;
             }
-            if (v16 >= 0x0.0p+0f) {
+            if (!(v16 < 0x0.0p+0f)) {
               *(float*)&v4 = *(float*)&v5;
             }
             else {
