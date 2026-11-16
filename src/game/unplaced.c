@@ -15339,7 +15339,7 @@ double game_868350()
             v6 = (float)(int)v4;
             LODWORD(result) =
                 COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-            if (v5 < v6) {
+            if (!(v5 >= v6)) {
               *(float*)&result = v5 / v6;
             }
           }

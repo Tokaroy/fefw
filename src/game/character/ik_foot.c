@@ -1162,7 +1162,7 @@ float IKFoot_Unknown3(__int64 a1, float32x4_t a2)
   int8x16_t v8;
 
   v2 = *(float*)(*(_QWORD*)(a1 + 8) + 8LL);
-  if (v2 > 0x0.0p+0f) {
+  if (!(v2 <= 0x0.0p+0f)) {
     v3 = *(float32x4_t**)(*(_QWORD*)(a1 + 24) + 8LL);
     LANES128(a2).n128_u64[0] = LANES128(v3[19]).n128_u64[0];
     v4 = LANES128(a2).n128_f32[1] + (float)(*(float*)(a1 + 104) * v2);

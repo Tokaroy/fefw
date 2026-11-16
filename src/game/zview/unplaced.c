@@ -11306,9 +11306,9 @@ __int64 game_zview_d57520(__int64 result, __int64 a2, char a3, float32x4_t* a4)
                              LANES128_OF(vextq_s8(v6, v6, 8u)).n128_u64[0]),
                    COERCE_AS(float32x2_t, LANES128(v6).n128_u64[0])))
           .n64_u64[0];
-  if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v6).n128_u64[0]),
-                           COERCE_AS(float32x2_t, LANES128(v6).n128_u64[0])))
-          .n64_f32[0] > 0x0.0p+0f) {
+  if (!(LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v6).n128_u64[0]),
+                             COERCE_AS(float32x2_t, LANES128(v6).n128_u64[0])))
+            .n64_f32[0] <= 0x0.0p+0f)) {
     result = *(_QWORD*)(*(_QWORD*)(result + 8) + 8LL);
     if (*(_BYTE*)(result + 145) == 1) {
       result = HubCharacterNatives_cf7940(result);

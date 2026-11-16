@@ -298,7 +298,7 @@ __int64 ResourceBuilder_b6b560(__int64 a1, _QWORD* a2, _QWORD* a3, __int64* a4,
                                 *((float*)&v76 + 2))) +
                 (float)(LANES128(v78).n128_f32[2] * *((float*)&v74 + 2)));
   v21 = 0;
-  if (v20 < 0x0.0p+0f) {
+  if (!(v20 >= 0x0.0p+0f)) {
     v22 = *(float*)&v73 +
           (float)((float)(vmuls_lane_f32(
                               LANES128(v75).n128_f32[0],

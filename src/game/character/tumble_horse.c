@@ -519,7 +519,7 @@ int8x16_t TumbleHorse_Unknown4(__int64 a1)
 LABEL_6:
   v7 = *(float*)(a1 + 48);
   PSEUDO_LOW_LANE128(v5, n128_u64, 0);
-  if (v7 > 0x0.0p+0f) {
+  if (!(v7 <= 0x0.0p+0f)) {
     PSEUDO_LOW_LANE128(
         v5, n128_f32,
         0x1.0000000000000p+0f -

@@ -676,7 +676,7 @@ float32x4_t game_character_CharacterLookAt_Startup_lambda0_Invoke(__int64 a1,
 
   v5 = *(float32x4_t**)(a1 + 8);
   PSEUDO_LOW_LANE128(result, n128_u32, LANES128(v5[6]).n128_u32[2]);
-  if (LANES128(result).n128_f32[0] > 0x0.0p+0f &&
+  if (!(LANES128(result).n128_f32[0] <= 0x0.0p+0f) &&
       (LANES128(v5[1]).n128_u8[0] & 1) != 0) {
     *(_DWORD*)a3[2] &= 0x33FFFFFFu;
     v7 = *a3;

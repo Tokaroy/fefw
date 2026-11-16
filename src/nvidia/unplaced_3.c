@@ -6126,14 +6126,14 @@ __int64 nvidia_61e570(char a1, __int64 a2)
     return 2;
   }
   v3 = *(float*)(a2 + 4);
-  if (v3 < 0x0.0p+0f || v3 > 0x1.4000000000000p+3f) {
+  if (!(v3 >= 0x0.0p+0f) || !(v3 <= 0x1.4000000000000p+3f)) {
     return 11;
   }
-  if (fabsf(*(float*)(a2 + 8)) > 0x1.0000000000000p+0f) {
+  if (!(fabsf(*(float*)(a2 + 8)) <= 0x1.0000000000000p+0f)) {
     return 11;
   }
   v5 = *(float*)(a2 + 12);
-  if (v5 < 0x0.0p+0f || v5 > 0x1.4000000000000p+3f) {
+  if (!(v5 >= 0x0.0p+0f) || !(v5 <= 0x1.4000000000000p+3f)) {
     return 11;
   }
   else {

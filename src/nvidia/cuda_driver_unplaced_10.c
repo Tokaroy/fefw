@@ -816,7 +816,7 @@ __int64 cuda_driver_unplaced_10_1e3920(__int64 a1, _DWORD* a2, _DWORD* a3)
   if (v24 != 0) {
     LODWORD(v17) = *(_DWORD*)(v23 + 156);
     v25 = (double)v17 / (double)v24;
-    if (v25 > 0x0.0p+0) {
+    if (!(v25 <= 0x0.0p+0)) {
       *(double*)(a1 + 14808) = v25;
     }
   }

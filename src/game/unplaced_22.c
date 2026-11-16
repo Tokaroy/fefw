@@ -12839,8 +12839,8 @@ __int64 game_11fc720(__int64 result, signed int a2, unsigned int a3, int a4,
       v17 = a5 * *(float*)(v11 + 16);
       __asm__ volatile("" ::"w"(v17));
     }
-    if (v17 > 0x0.0p+0f) {
-      if (a4 < 1) {
+    if (!(v17 <= 0x0.0p+0f)) {
+      if (!(a4 >= 1)) {
         *(float*)(v15 + 4 * v9) = v17 + *(float*)(v15 + 4 * v9);
       }
       else if (v9 <= 18 && *(_QWORD*)(v16 + 8 * v9) != 0) {
@@ -12851,12 +12851,12 @@ __int64 game_11fc720(__int64 result, signed int a2, unsigned int a3, int a4,
       v18 = a5 * *(float*)(v11 + 8);
       __asm__ volatile("" ::"w"(v18));
     }
-    if (v18 > 0x0.0p+0f) {
+    if (!(v18 <= 0x0.0p+0f)) {
       {
         v19 = a4 - *(__int16*)(v14 + 2);
         __asm__ volatile("" ::"r"(v19));
       }
-      if (v19 < 1) {
+      if (!(v19 >= 1)) {
         *(float*)(v15 + 4 * v9) = v18 + *(float*)(v15 + 4 * v9);
       }
       else if (v9 <= 18 && *(_QWORD*)(v16 + 8 * v9) != 0) {
@@ -12871,7 +12871,7 @@ __int64 game_11fc720(__int64 result, signed int a2, unsigned int a3, int a4,
       break;
     }
     a4 += *(int*)(v11 + 4) * *(__int16*)(v14 + 2) / -100;
-    if (a4 < 1) {
+    if (!(a4 >= 1)) {
       v20 = v8 + 80LL * a2 + 4 * v9;
       *(float*)(v20 + 16360) = a5 + *(float*)(v20 + 16360);
       return result;

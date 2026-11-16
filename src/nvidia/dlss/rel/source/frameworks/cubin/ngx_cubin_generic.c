@@ -1397,9 +1397,10 @@ __int64 CollectGarbage(__int64 a1, double a2)
     v4 = (_QWORD*)(a1 + 96);
     v6 = (atomic_ullong*)NgxData_952b90;
     do {
-      while ((double)(NgxRoutine_e3000_alt1() - v2[4]) / 0x1.e848000000000p+19 <
-                 a2 &&
-             (*(_BYTE*)(a1 + 818) & 1) == 0) {
+      while (
+          !((double)(NgxRoutine_e3000_alt1() - v2[4]) / 0x1.e848000000000p+19 >=
+            a2) &&
+          (*(_BYTE*)(a1 + 818) & 1) == 0) {
         v2 = (__int64*)*v2;
         if (v2 == nullptr) {
           return 0;

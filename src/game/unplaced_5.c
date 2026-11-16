@@ -7090,7 +7090,7 @@ void game_10411d0(__int64 a1)
   if (v1 != 0) {
     v2 = *(float32x4_t**)(a1 + 8);
     v4 = LANES128(v2[44]).n128_f32[2];
-    if (v4 > 0x0.0p+0f) {
+    if (!(v4 <= 0x0.0p+0f)) {
       v12 = v4 * 0x1.0000000000000p+2f;
       v5 = *(float*)(*(_QWORD*)GameData_212dc38[0] + 1064LL);
       v6 = LANES128(v2[45]).n128_f32[0];

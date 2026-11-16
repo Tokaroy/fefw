@@ -1388,7 +1388,7 @@ LABEL_4:
   }
   v15 = *(_QWORD*)(v14 + 16);
   if (v15 == 0 || *(__int64 (**)(void))(v15 + 16) != v6 ||
-      *(float*)(v15 + 8) > *(float*)v15) {
+      !(*(float*)(v15 + 8) <= *(float*)v15)) {
     goto LABEL_3;
   }
   return 1;

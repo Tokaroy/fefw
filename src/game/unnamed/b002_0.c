@@ -2552,7 +2552,7 @@ __int64 GameHr_2a7d60(__int64 result)
       while (1) {
         v6 = *((_QWORD*)SoundVoiceNX_14e360() + *(unsigned __int8*)(v3 + 234) +
                34);
-        if (v6 != 0 && *(float*)(v3 + 256) > 0x0.0p+0f) {
+        if (v6 != 0 && !(*(float*)(v3 + 256) <= 0x0.0p+0f)) {
           break;
         }
         result = BaseNx_2ac010(v5, 0, nullptr);
@@ -2568,7 +2568,7 @@ __int64 GameHr_2a7d60(__int64 result)
       result = BaseNx_2ac010(v5, 1, &v7_.v7);
       ++v4;
       v5 += 96;
-    } while (v4 < *(int*)(v3 + 196));
+    } while (!(v4 >= *(int*)(v3 + 196)));
   }
   return result;
 }

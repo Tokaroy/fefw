@@ -1108,7 +1108,7 @@ __int64 GameHr_10aa3c0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float a5)
   else {
     *(_QWORD*)(a1 + 288) = 0;
   }
-  if (*(float*)(a1 + 196) > 0.0f) {
+  if (!(*(float*)(a1 + 196) <= 0.0f)) {
     if (*(_QWORD*)(a1 + 200) == 0) {
       *(_QWORD*)(a1 + 200) = *(_QWORD*)GameData_212c5c0[0] + 144LL;
     }

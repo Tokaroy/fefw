@@ -87,10 +87,11 @@ float complex catanf(float complex z)
 	x = crealf(z);
 	y = cimagf(z);
 
-	if ((x == 0.0f) && (y > 1.0f))
-		goto ovrf;
+        if ((x == 0.0f) && (!(y <= 1.0f))) {
+          goto ovrf;
+        }
 
-	x2 = x * x;
+        x2 = x * x;
 	a = 1.0f - x2 - (y * y);
 	if (a == 0.0f)
 		goto ovrf;

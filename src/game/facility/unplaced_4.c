@@ -3233,7 +3233,7 @@ __int64 game_facility_1952360(__int64 result)
         result = *(_QWORD*)(v7 + 48);
         if (result != 0) {
           v9 = v7 + 16;
-          if (*(float*)(v3 + 48) < *(float*)v7) {
+          if (!(*(float*)(v3 + 48) >= *(float*)v7)) {
             *(_DWORD*)v4 = *(_DWORD*)v7;
             v10 = *(_QWORD*)(v7 + 48);
             if (v10 != 0) {

@@ -2102,10 +2102,11 @@ void Voice_145e20(__int64 a1, float a2)
     if ((v5 & 1) != 0 ||
         (v7 = snd_Param_isEnvelopeFading(a1 + 40), v6 = a1, (v7 & 1) != 0) ||
         (v8 = snd_Param_isEnvelopeEnded(a1 + 40), v6 = a1, (v8 & 1) != 0) ||
-        *(float*)(*(_QWORD*)(a1 + 5648) + 256LL) < 0.0f ||
-        (v9 = (*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 1088LL))(a1 + 40),
-         v6 = a1,
-         v9 < (float)(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) / 16.667f))) {
+        !(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) >= 0.0f) ||
+        (!(v9 = (*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 1088LL))(a1 + 40),
+           v6 = a1,
+           v9 >=
+               (float)(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) / 16.667f)))) {
       v10 = v6;
       snd_Param_update(v6 + 40, a2);
       v11 = *(_QWORD*)(v10 + 5664);
@@ -2274,8 +2275,8 @@ LABEL_34:
   if (((*(__int64 (**)(__int64))(*(_QWORD*)a1 + 184LL))(a1) & 1) != 0 &&
       ((*(__int64 (**)(__int64))(*(_QWORD*)a1 + 216LL))(a1) & 1) == 0) {
     *(_DWORD*)(a1 + 5792) = 5;
-    if ((*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 328LL))(a1 + 40) >
-        0x0.0p+0f) {
+    if (!((*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 328LL))(a1 + 40) <=
+          0x0.0p+0f)) {
       goto LABEL_43;
     }
     goto LABEL_49;
@@ -2285,8 +2286,8 @@ LABEL_41:
   if (v14 != 5) {
     goto LABEL_44;
   }
-  if ((*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 328LL))(a1 + 40) >
-      0x0.0p+0f) {
+  if (!((*(float (**)(__int64))(*(_QWORD*)(a1 + 40) + 328LL))(a1 + 40) <=
+        0x0.0p+0f)) {
   LABEL_43:
     v14 = *(_DWORD*)(a1 + 5792);
   LABEL_44:
@@ -2325,7 +2326,7 @@ LABEL_60:
   (*(void (**)(_QWORD, __int64))(**(_QWORD**)snd_g_proxy_ptr[0] + 448LL))(
       *(_QWORD*)snd_g_proxy_ptr[0], a1);
   v16 = *(_QWORD*)(a1 + 5648);
-  if (*(float*)(v16 + 256) < 0x0.0p+0f) {
+  if (!(*(float*)(v16 + 256) >= 0x0.0p+0f)) {
     goto LABEL_63;
   }
   if ((snd_(a1 + 40) & 1) != 0) {
@@ -3068,7 +3069,7 @@ __int64 Voice_Unknown98(__int64 result)
   if ((*(_BYTE*)(result + 5895) & 1) != 0) {
     goto LABEL_5;
   }
-  if (*(float*)(*(_QWORD*)(result + 5648) + 256LL) < 0.0 ||
+  if (!(*(float*)(*(_QWORD*)(result + 5648) + 256LL) >= 0.0) ||
       (v3 = result, v4 = snd_Param_isEnvelopeReleased(result + 40), result = v3,
        (v4 & 1) != 0) ||
       (v5 = snd_Param_isEnvelopeFading(v3 + 40), result = v3, (v5 & 1) != 0) ||

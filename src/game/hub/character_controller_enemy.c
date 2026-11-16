@@ -3036,7 +3036,7 @@ __int64 CharacterControllerEnemy_StateReturn_Unknown4(__int64 result)
     v4 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 24LL) + 8LL) +
                     328LL);
     result = GameRoutine_d60750(v4);
-    if (*(float*)(v4 + 376) > 0x0.0p+0f) {
+    if (!(*(float*)(v4 + 376) <= 0x0.0p+0f)) {
       result = CharacterControllerEnemy_10c5990(v1, 1);
       if ((unsigned int)(result - 1) <= 1) {
         if (*(_BYTE*)(v1 + 76) == 1 && *(_DWORD*)(v1 + 72) == 3) {
@@ -3164,7 +3164,7 @@ __int64 CharacterControllerEnemy_StateReturn_Unknown4(__int64 result)
           v10 = v32;
         } while (v11 != 0);
       }
-      if (v13 > 0x1.0000000000000p+0f) {
+      if (!(v13 <= 0x1.0000000000000p+0f)) {
         return result;
       }
     }

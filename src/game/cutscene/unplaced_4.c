@@ -42,12 +42,12 @@ __int64 game_cutscene_17fb660(__int64 result, _OWORD* a2, float a3, float a4)
   if (v7 <= 0xFFFFFFFD) {
     v8 = a4 - a3;
     v5 = 0x0.0p+0f;
-    if (v8 > 0x0.0p+0f) {
+    if (!(v8 <= 0x0.0p+0f)) {
       v5 = 0x1.0000000000000p+0f;
-      if (v8 < *((float*)&v6 + 1)) {
+      if (!(v8 >= *((float*)&v6 + 1))) {
         v9 = v7 - 1;
         v10 = result;
-        if (v9 > 2) {
+        if (!(v9 <= 2)) {
           v11 = 0;
         }
         else {

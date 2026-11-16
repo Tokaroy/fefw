@@ -1580,27 +1580,27 @@ void game_hub_CharacterControllerPlayer_UpdateAccessLookTo_lambda0_Invoke(
            1) != 0) {
         v26 = *(_QWORD*)(v7 + 8);
         if ((*(_BYTE*)(v26 + 186) & 0x40) != 0 ||
-            (v39_.v39[0] = vaddq_f32(
-                 *(float32x4_t*)(*(_QWORD*)(*(_QWORD*)(v26 + 24) + 16LL) +
-                                 560LL),
-                 COERCE_AS(float32x4_t, GameData_1a831c0)),
-             v27 = vsubq_f32(v39_.v39[0], v38),
-             LANES128(v27).n128_f32[1] = vmuls_lane_f32(
-                 0x1.0000000000000p+2f,
-                 COERCE_AS(float32x2_t, LANES128(v27).n128_u64[0]), 1),
-             v28 = vmulq_f32(v27, v27),
-             LANES128(v28).n128_u64[0] =
-                 LANES64_OF(
-                     vadd_f32(
-                         COERCE_AS(
-                             float32x2_t,
-                             LANES128_OF(vextq_s8(v28, v28, 8u)).n128_u64[0]),
-                         COERCE_AS(float32x2_t, LANES128(v28).n128_u64[0])))
-                     .n64_u64[0],
-             LANES64_OF(
-                 vpadd_f32(COERCE_AS(float32x2_t, LANES128(v28).n128_u64[0]),
+            (!(v39_.v39[0] = vaddq_f32(
+                   *(float32x4_t*)(*(_QWORD*)(*(_QWORD*)(v26 + 24) + 16LL) +
+                                   560LL),
+                   COERCE_AS(float32x4_t, GameData_1a831c0)),
+               v27 = vsubq_f32(v39_.v39[0], v38),
+               LANES128(v27).n128_f32[1] = vmuls_lane_f32(
+                   0x1.0000000000000p+2f,
+                   COERCE_AS(float32x2_t, LANES128(v27).n128_u64[0]), 1),
+               v28 = vmulq_f32(v27, v27),
+               LANES128(v28).n128_u64[0] =
+                   LANES64_OF(
+                       vadd_f32(
+                           COERCE_AS(
+                               float32x2_t,
+                               LANES128_OF(vextq_s8(v28, v28, 8u)).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v28).n128_u64[0])))
-                     .n64_f32[0] < 0x1.9000000000000p+12f) &&
+                       .n64_u64[0],
+               LANES64_OF(
+                   vpadd_f32(COERCE_AS(float32x2_t, LANES128(v28).n128_u64[0]),
+                             COERCE_AS(float32x2_t, LANES128(v28).n128_u64[0])))
+                       .n64_f32[0] >= 0x1.9000000000000p+12f)) &&
                 *(_DWORD*)(v26 + 1296) ==
                     (unsigned int)GameRoutine_f71d40_alt1(
                         *GameData_212ebb0[0], (__int64)&v38,

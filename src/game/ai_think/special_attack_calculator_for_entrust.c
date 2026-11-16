@@ -17,14 +17,14 @@ bool SpecialAttackCalculatorForEntrust_Destructor(__int64 a1, int a2, int a3)
 
   if (*(_DWORD*)(*(_QWORD*)(a1 + 8) + 28LL) == 3) {
     v3 = a2 - *(_DWORD*)(GameData_21cd108 + 24);
-    if (v3 < 0) {
+    if (!(v3 >= 0)) {
       v3 = *(_DWORD*)(GameData_21cd108 + 24) - a2;
     }
     v4 = a3 - *(_DWORD*)(GameData_21cd108 + 28);
-    if (v4 < 0) {
+    if (!(v4 >= 0)) {
       v4 = *(_DWORD*)(GameData_21cd108 + 28) - a3;
     }
-    if ((unsigned int)(v4 + v3) < 4) {
+    if (!((unsigned int)(v4 + v3) >= 4)) {
       return false;
     }
   }

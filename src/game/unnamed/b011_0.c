@@ -11174,12 +11174,12 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
     v11 = *result;
     v12 = v6 - *result;
     v13 = 1 - 0x5555555555555555LL * (v12 >> 3);
-    if (v13 > 0xAAAAAAAAAAAAAAALL) {
+    if (!(v13 <= 0xAAAAAAAAAAAAAAALL)) {
     LABEL_104:
       GameRoutine_d1d460();
     }
     v14 = 0xAAAAAAAAAAAAAAABLL * ((__int64)(v5 - v11) >> 3);
-    if (2 * v14 > v13) {
+    if (!(2 * v14 <= v13)) {
       v13 = 2 * v14;
     }
     if (v14 >= 0x555555555555555LL) {
@@ -11188,7 +11188,7 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
     else {
       v15 = v13;
     }
-    if (v15 > 0xAAAAAAAAAAAAAAALL) {
+    if (!(v15 <= 0xAAAAAAAAAAAAAAALL)) {
     LABEL_103:
       GameRoutine_60a210(result);
     }
@@ -11399,7 +11399,7 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
         goto LABEL_26;
       }
       v49 = (float)*(int*)(v47 + 64) / (float)*(int*)(v48 + 64);
-      if (v49 < 0.0) {
+      if (!(v49 >= 0.0)) {
         goto LABEL_26;
       }
       LODWORD(v53) = 0;
@@ -11407,7 +11407,7 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
       v51 = v23[1];
       v52 = v50[2];
       *((float*)&v53 + 1) = (float)(unsigned int)v24;
-      if (v51 < v52) {
+      if (!(v51 >= v52)) {
         *(_DWORD*)v51 = v28;
         *(_QWORD*)(v51 + 8) = v53;
         v27 = (char*)(v51 + 24);
@@ -11418,12 +11418,12 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
       v54 = *v50;
       v55 = v51 - *v50;
       v56 = 0xAAAAAAAAAAAAAAABLL * (v55 >> 3) + 1;
-      if (v56 > 0xAAAAAAAAAAAAAAALL) {
+      if (!(v56 <= 0xAAAAAAAAAAAAAAALL)) {
         goto LABEL_104;
       }
       v66 = v53;
       v57 = 0xAAAAAAAAAAAAAAABLL * ((__int64)(v52 - v54) >> 3);
-      if (2 * v57 > v56) {
+      if (!(2 * v57 <= v56)) {
         v56 = 2 * v57;
       }
       if (v57 >= 0x555555555555555LL) {
@@ -11432,7 +11432,7 @@ _QWORD* GameHr_d2db60(_QWORD* result, __int64 a2, char** a3)
       else {
         v58 = v56;
       }
-      if (v58 > 0xAAAAAAAAAAAAAAALL) {
+      if (!(v58 <= 0xAAAAAAAAAAAAAAALL)) {
         goto LABEL_103;
       }
       v65 = 3 * v58;

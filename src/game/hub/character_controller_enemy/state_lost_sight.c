@@ -29,7 +29,7 @@ __int64 StateLostSight_Unknown4(__int64 result)
     v3 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 24LL) + 8LL) +
                     328LL);
     result = GameRoutine_d60750(v3);
-    if (*(float*)(v3 + 376) > 0.0) {
+    if (!(*(float*)(v3 + 376) <= 0.0)) {
       result = GameRoutine_10c5990(v1, 1);
       if ((unsigned int)(result - 1) <= 1) {
         if (*(_BYTE*)(v1 + 76) == 1 && *(_DWORD*)(v1 + 72) == 3) {
@@ -45,7 +45,7 @@ __int64 StateLostSight_Unknown4(__int64 result)
                  228LL) +
        *(float*)(v2 + 16);
   *(float*)(v2 + 16) = v5;
-  if (v5 < 1.0) {
+  if (!(v5 >= 1.0)) {
     return result;
   }
   if (*(_BYTE*)(v1 + 76) != 1 || *(_DWORD*)(v1 + 72) != 1) {

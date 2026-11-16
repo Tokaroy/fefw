@@ -1610,7 +1610,7 @@ __int64 game_gmap_1327670(float32x4_t* a1, float32x4_t* a2)
   v6 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
   v7 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
   v8 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
-  if (LANES128(v2).n128_f32[2] > 0.0f) {
+  if (!(LANES128(v2).n128_f32[2] <= 0.0f)) {
     if (LANES128(v2).n128_f32[0] >= 0.0f) {
       if (LANES128(v2).n128_f32[0] <= LANES128(v2).n128_f32[2]) {
         v9 = LANES128(v2).n128_f32[0] / LANES128(v2).n128_f32[2];
@@ -1621,7 +1621,7 @@ __int64 game_gmap_1327670(float32x4_t* a1, float32x4_t* a2)
       v12 = 0x1.921fb60000000p+0f;
     }
     else {
-      if (LANES128(v2).n128_f32[0] < v4) {
+      if (!(LANES128(v2).n128_f32[0] >= v4)) {
         v9 = v4 / LANES128(v2).n128_f32[0];
         v10 = -0x1.921fb60000000p+0f;
       LABEL_18:
@@ -1700,7 +1700,7 @@ __int64 game_gmap_1327670(float32x4_t* a1, float32x4_t* a2)
         v12;
     goto LABEL_20;
   }
-  if (LANES128(v2).n128_f32[0] < 0.0f) {
+  if (!(LANES128(v2).n128_f32[0] >= 0.0f)) {
     if (LANES128(v2).n128_f32[2] <= LANES128(v2).n128_f32[0]) {
       v13 = LANES128(v2).n128_f32[0] / LANES128(v2).n128_f32[2];
       v3 = -(float)(v13 * (float)((float)((float)((float)((float)(v8 + (float)((float)((
@@ -1736,7 +1736,7 @@ __int64 game_gmap_1327670(float32x4_t* a1, float32x4_t* a2)
     v12 = -0x1.921fb60000000p+0f;
     goto LABEL_15;
   }
-  if (LANES128(v2).n128_f32[0] > v4) {
+  if (!(LANES128(v2).n128_f32[0] <= v4)) {
     v9 = v4 / LANES128(v2).n128_f32[0];
     v10 = 0x1.921fb60000000p+0f;
     goto LABEL_18;
@@ -1771,13 +1771,13 @@ __int64 game_gmap_1327670(float32x4_t* a1, float32x4_t* a2)
               1.0f);
 LABEL_20:
   v15 = v3 * 0x1.ca5dc00000000p+5f;
-  if (v15 > -0x1.6800000000000p+5f && v15 <= 0x1.6800000000000p+5f) {
+  if (!(v15 <= -0x1.6800000000000p+5f) && v15 <= 0x1.6800000000000p+5f) {
     return 1;
   }
-  if (v15 > 0x1.0e00000000000p+7f || v15 <= -0x1.0e00000000000p+7f) {
+  if (!(v15 <= 0x1.0e00000000000p+7f) || v15 <= -0x1.0e00000000000p+7f) {
     return 2;
   }
-  if (v15 > -0x1.6800000000000p+5f || v15 <= -0x1.0e00000000000p+7f) {
+  if (!(v15 <= -0x1.6800000000000p+5f) || v15 <= -0x1.0e00000000000p+7f) {
     return 4;
   }
   else {
@@ -8395,7 +8395,7 @@ __int64 game_gmap_152b740(__int64 a1)
 
   v1 = *(float*)(game_script_hub_g_frame_counter + 160) + *(float*)(a1 + 192);
   *(float*)(a1 + 192) = v1;
-  if (v1 < 10.0f) {
+  if (!(v1 >= 10.0f)) {
     if (game_ProcGameSkipView_instance_ == 0 ||
         *(_BYTE*)(game_ProcGameSkipView_instance_ + 152) != 3 ||
         (((v2 = *(_DWORD*)(game_ProcGameSkipView_instance_ + 156)) & 8) != 0

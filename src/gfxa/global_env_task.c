@@ -1315,7 +1315,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 goto LABEL_230;
               }
             }
-            else if (v286 < 1) {
+            else if (!(v286 >= 1)) {
             LABEL_230:
               v292 = *(_DWORD*)(v3 + 148);
               *(_BYTE*)(v3 + 144) = 0;
@@ -2539,7 +2539,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v23 = *(_QWORD*)(v20 + 40);
               v25 = v23 - v24;
               if (v23 != v24) {
-                if (v25 < 0) {
+                if (!(v25 >= 0)) {
                   GameRoutine_a9fd80(),
                       v306 = COERCE_AS(
                           __typeof__(v306),
@@ -2649,7 +2649,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v32 = *(_QWORD*)(v20 + 112);
               v34 = v32 - v33;
               if (v32 != v33) {
-                if (0xAAAAAAAAAAAAAAABLL * (v34 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v34 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v35 = fw_memory_HeapManager_Allocate(
@@ -2742,7 +2743,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v41 = *(_QWORD*)(v20 + 192);
               v43 = v41 - v42;
               if (v41 != v42) {
-                if (0xAAAAAAAAAAAAAAABLL * (v43 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v43 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v44 = fw_memory_HeapManager_Allocate(
@@ -2834,7 +2836,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v50 = *(_QWORD*)(v20 + 272);
               v52 = v50 - v51;
               if (v50 != v51) {
-                if (0xAAAAAAAAAAAAAAABLL * (v52 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v52 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v53 = fw_memory_HeapManager_Allocate(
@@ -2926,7 +2929,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v59 = *(_QWORD*)(v20 + 352);
               v61 = v59 - v60;
               if (v59 != v60) {
-                if (0xAAAAAAAAAAAAAAABLL * (v61 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v61 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v62 = fw_memory_HeapManager_Allocate(
@@ -3018,7 +3022,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v68 = *(_QWORD*)(v20 + 432);
               v70 = v68 - v69;
               if (v68 != v69) {
-                if (0xAAAAAAAAAAAAAAABLL * (v70 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v70 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v71 = fw_memory_HeapManager_Allocate(
@@ -3110,7 +3115,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v77 = *(_QWORD*)(v20 + 512);
               v79 = v77 - v78;
               if (v77 != v78) {
-                if (0xAAAAAAAAAAAAAAABLL * (v79 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v79 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v80 = fw_memory_HeapManager_Allocate(
@@ -3202,7 +3208,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v87 = *(_QWORD*)(v20 + 592);
               v88 = v87 - v86;
               if (v87 != v86) {
-                if (0xAAAAAAAAAAAAAAABLL * (v88 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v88 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v89 = fw_memory_HeapManager_Allocate(
@@ -3301,7 +3308,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v100 = *(_QWORD*)(v20 + 712);
               v101 = v100 - v99;
               if (v100 != v99) {
-                if (0xAAAAAAAAAAAAAAABLL * (v101 >> 4) > 0x555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v101 >> 4) <=
+                      0x555555555555555LL)) {
                   goto LABEL_238;
                 }
                 v102 = fw_memory_HeapManager_Allocate(
@@ -3393,7 +3401,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v108 = *(_QWORD*)(v20 + 808);
               v109 = v108 - v107;
               if (v108 != v107) {
-                if (0xAAAAAAAAAAAAAAABLL * (v109 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v109 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v110 = fw_memory_HeapManager_Allocate(
@@ -3492,7 +3501,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v121 = *(_QWORD*)(v20 + 920);
               v122 = v121 - v120;
               if (v121 != v120) {
-                if (0xAAAAAAAAAAAAAAABLL * (v122 >> 4) > 0x555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v122 >> 4) <=
+                      0x555555555555555LL)) {
                   goto LABEL_238;
                 }
                 v123 = fw_memory_HeapManager_Allocate(
@@ -3584,7 +3594,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
               v129 = *(_QWORD*)(v20 + 1016);
               v130 = v129 - v128;
               if (v129 != v128) {
-                if (0xAAAAAAAAAAAAAAABLL * (v130 >> 2) > 0x1555555555555555LL) {
+                if (!(0xAAAAAAAAAAAAAAABLL * (v130 >> 2) <=
+                      0x1555555555555555LL)) {
                   goto LABEL_237;
                 }
                 v131 = fw_memory_HeapManager_Allocate(
@@ -3728,8 +3739,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v150 = *(_QWORD*)(v20 + 1224);
                 v151 = v150 - v149;
                 if (v150 != v149) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v151 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v151 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v152 = fw_memory_HeapManager_Allocate(
@@ -3822,7 +3833,7 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v160 = *(_QWORD*)(v20 + 1296);
                 v161 = v160 - v159;
                 if (v160 != v159) {
-                  if (v161 < 0) {
+                  if (!(v161 >= 0)) {
                     GameRoutine_abae00(),
                         v306 = COERCE_AS(
                             __typeof__(v306),
@@ -3931,8 +3942,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v167 = *(_QWORD*)(v20 + 1376);
                 v168 = v167 - v166;
                 if (v167 != v166) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v168 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v168 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v169 = fw_memory_HeapManager_Allocate(
@@ -4024,8 +4035,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v176 = *(_QWORD*)(v20 + 1456);
                 v177 = v176 - v175;
                 if (v176 != v175) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v177 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v177 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v178 = fw_memory_HeapManager_Allocate(
@@ -4117,8 +4128,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v185 = *(_QWORD*)(v20 + 1536);
                 v186 = v185 - v184;
                 if (v185 != v184) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v186 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v186 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v187 = fw_memory_HeapManager_Allocate(
@@ -4210,8 +4221,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v194 = *(_QWORD*)(v20 + 1616);
                 v195 = v194 - v193;
                 if (v194 != v193) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v195 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v195 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v196 = fw_memory_HeapManager_Allocate(
@@ -4303,8 +4314,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v203 = *(_QWORD*)(v20 + 1696);
                 v204 = v203 - v202;
                 if (v203 != v202) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v204 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v204 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v205 = fw_memory_HeapManager_Allocate(
@@ -4396,8 +4407,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v212 = *(_QWORD*)(v20 + 1776);
                 v213 = v212 - v211;
                 if (v212 != v211) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v213 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v213 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v214 = fw_memory_HeapManager_Allocate(
@@ -4489,8 +4500,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v221 = *(_QWORD*)(v20 + 1856);
                 v222 = v221 - v220;
                 if (v221 != v220) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v222 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v222 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v223 = fw_memory_HeapManager_Allocate(
@@ -4582,8 +4593,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v230 = *(_QWORD*)(v20 + 1936);
                 v231 = v230 - v229;
                 if (v230 != v229) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v231 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v231 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v232 = fw_memory_HeapManager_Allocate(
@@ -4675,8 +4686,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v239 = *(_QWORD*)(v20 + 2016);
                 v240 = v239 - v238;
                 if (v239 != v238) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v240 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v240 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v241 = fw_memory_HeapManager_Allocate(
@@ -4768,8 +4779,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v248 = *(_QWORD*)(v20 + 2096);
                 v249 = v248 - v247;
                 if (v248 != v247) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v249 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v249 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v250 = fw_memory_HeapManager_Allocate(
@@ -4861,8 +4872,8 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                 v257 = *(_QWORD*)(v20 + 2176);
                 v258 = v257 - v256;
                 if (v257 != v256) {
-                  if (0xAAAAAAAAAAAAAAABLL * (v258 >> 2) >
-                      0x1555555555555555LL) {
+                  if (!(0xAAAAAAAAAAAAAAABLL * (v258 >> 2) <=
+                        0x1555555555555555LL)) {
                     goto LABEL_237;
                   }
                   v259 = fw_memory_HeapManager_Allocate(
@@ -5036,9 +5047,9 @@ __int64 GlobalEnvTask_Unknown3(__int64 result, _QWORD* a2)
                   else {
                     v274 = 0;
                   }
-                  if (LANES128_OF(vbslq_s8(vdupq_n_s32(v274),
-                                           *((int8x16_t*)v272 + 6), v273))
-                          .n128_f32[1] > 0x0.0p+0f) {
+                  if (!(LANES128_OF(vbslq_s8(vdupq_n_s32(v274),
+                                             *((int8x16_t*)v272 + 6), v273))
+                            .n128_f32[1] <= 0x0.0p+0f)) {
                     v273 = *((int8x16_t*)GameRoutine_b3f800(
                                  (_QWORD*)(*(_QWORD*)(v271 + 288) + 592LL),
                                  (__int64)"Moon") +

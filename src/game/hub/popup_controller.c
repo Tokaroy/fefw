@@ -562,7 +562,7 @@ __int64 PopupController_d7c300(float32x4_t* a1)
                                     *((float*)&v36 + 2))) +
                     (float)(v18 * *((float*)&v34 + 2)));
         v20 = GameData_1a83090;
-        if (v19 < 0x0.0p+0f) {
+        if (!(v19 >= 0x0.0p+0f)) {
           v21 = *(float*)&v33 +
                 (float)((float)(vmuls_lane_f32(
                                     LANES128(v35).n128_f32[0],

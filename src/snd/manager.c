@@ -4001,7 +4001,7 @@ __int64 Manager_11e4c0(__int64 a1, int* a2)
     return v10 & 1;
   }
   v11 = GameRoutine_f6470(v5, &v25, 0);
-  if (*(int*)(v11 + 552) < 1) {
+  if (!(*(int*)(v11 + 552) >= 1)) {
     goto LABEL_21;
   }
   v12 = v11;
@@ -4027,7 +4027,7 @@ __int64 Manager_11e4c0(__int64 a1, int* a2)
     ++v14;
     v13 += 528;
     v10 |= v17 & (*(float*)(v18 + 168) < 0x0.0p+0f);
-  } while (v14 < *(int*)(v12 + 552));
+  } while (!(v14 >= *(int*)(v12 + 552)));
   return v10 & 1;
 }
 

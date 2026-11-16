@@ -475,7 +475,7 @@ void GameHr_10d7320(__int64 a1, __n128 a2)
           (float)((float)(*(float*)(GameData_2265ef0 + 48) * -0x1.0aefp+4f) /
                   1000.0f);
     *(float*)(a1 + 60) = v11;
-    if (v11 > 0.0f) {
+    if (!(v11 <= 0.0f)) {
       goto LABEL_38;
     }
     *(_DWORD*)(a1 + 56) = 4;

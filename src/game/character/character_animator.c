@@ -640,7 +640,7 @@ LABEL_12:
   }
   v18 = *(_QWORD*)(v9 + 16);
   if (v18 == 0) {
-    if (v11 < 0.0f) {
+    if (!(v11 >= 0.0f)) {
       goto LABEL_26;
     }
   LABEL_28:

@@ -279,7 +279,7 @@ __int64 ParticleActor_Unknown9(__int64 a1, float* a2)
   v4 = v5;
   v6 = *v5;
   if (*v5 != 0 && *(_DWORD*)(v6 + 16) == *((_DWORD*)v4 + 2) &&
-      *a2 > (float)(*(float*)(a1 + 48) + 2.0f)) {
+      !(*a2 <= (float)(*(float*)(a1 + 48) + 2.0f))) {
     v7 = fabsf(*(float*)(a1 + 52));
     if (v7 <= 0x1p-23f || v7 <= (float)(v7 * 0x1p-23f)) {
       return GameRoutine_14a1390(result, 1);

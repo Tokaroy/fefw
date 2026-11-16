@@ -1027,7 +1027,7 @@ void SeqVoice_1299c0(__int64 a1)
     *(float*)(a1 + 5936) =
         (*(float (**)(__int64))(*(_QWORD*)(v6 - 5592) + 520LL))(v6 - 5592);
   }
-  else if (*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) < 0x0.0p+0f ||
+  else if (!(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) >= 0x0.0p+0f) ||
            snd_Param_isEnvelopeReleased_alt1(a1 + 40) ||
            snd_Param_isEnvelopeFading_alt1(a1 + 40) ||
            snd_Param_isEnvelopeEnded_alt1(a1 + 40)) {
@@ -1152,7 +1152,7 @@ void SeqVoice_12a180(__int64 a1)
   }
   else if ((signed __int32)++*(_DWORD*)(*(_QWORD*)(a1 + 6104) + 16LL) >=
            (signed __int32)*(_DWORD*)(*(_QWORD*)(a1 + 6096) + 24LL)) {
-    if (*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) < 0x0.0p+0f ||
+    if (!(*(float*)(*(_QWORD*)(a1 + 5648) + 256LL) >= 0x0.0p+0f) ||
         snd_Param_isEnvelopeReleased_alt1(a1 + 40) ||
         snd_Param_isEnvelopeFading_alt1(a1 + 40) ||
         snd_Param_isEnvelopeEnded_alt1(a1 + 40)) {

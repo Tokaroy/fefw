@@ -597,7 +597,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
           LANES128_OF(vextq_s8(*(int8x16_t*)&v4, *(int8x16_t*)&v4, 8u))
               .n128_u32[0];
       do {
-        if ((int)v8 > (int)v9) {
+        if (!((int)v8 <= (int)v9)) {
           {
             v11 = *(_QWORD*)(v7 + 40 + 8LL * (int)v9);
             __asm__ volatile("" ::"r"(v11));
@@ -612,7 +612,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
           }
         }
         ++v9;
-      } while (v9 < v8);
+      } while (!(v9 >= v8));
     }
     v101 = v4;
     game_14a3920(v5),
@@ -639,7 +639,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
           LANES128_OF(vextq_s8(*(int8x16_t*)&v4, *(int8x16_t*)&v4, 8u))
               .n128_u32[0];
       do {
-        if ((int)v14 > (int)v15) {
+        if (!((int)v14 <= (int)v15)) {
           {
             v16 = *(_QWORD*)(v13 + 40 + 8LL * (int)v15);
             __asm__ volatile("" ::"r"(v16));
@@ -654,7 +654,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
           }
         }
         ++v15;
-      } while (v15 < v14);
+      } while (!(v15 >= v14));
     }
     game_14a3920(v12),
         v57 = COERCE_AS(__typeof__(v57),
@@ -785,7 +785,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
       __asm__ volatile("" ::"w"(v38));
     }
     *(float*)(a1 + 336) = v38;
-    if ((v37 & 1) != 0 || v38 > 0x0.0p+0f) {
+    if ((v37 & 1) != 0 || !(v38 <= 0x0.0p+0f)) {
       goto LABEL_211;
     }
     if (*(_BYTE*)(a1 + 347) == 1) {
@@ -994,7 +994,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
         v90 = 0;
         *((_QWORD*)&v62 + 1) = v63;
         do {
-          if ((int)v89 > (int)v90) {
+          if (!((int)v89 <= (int)v90)) {
             {
               v91 = *(_QWORD*)(v88 + 40 + 8LL * (int)v90);
               __asm__ volatile("" ::"r"(v91));
@@ -1009,7 +1009,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
             }
           }
           ++v90;
-        } while (v90 < v89);
+        } while (!(v90 >= v89));
       }
     }
     game_14a3920(v87),
@@ -1232,7 +1232,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
         v57 = COERCE_AS(__typeof__(v57),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (*(_BYTE*)(v34 + 1144) != 1 ||
-        *(float*)(v34 + 1104) < *(float*)(v34 + 1112)) {
+        !(*(float*)(v34 + 1104) >= *(float*)(v34 + 1112))) {
       goto LABEL_230;
     }
     v103_.v103 = "L_Gauge";
@@ -1278,7 +1278,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
     __asm__ volatile("" ::"w"(v20));
   }
     *(float*)(a1 + 336) = v20;
-    if (v20 > 0x0.0p+0f) {
+    if (!(v20 <= 0x0.0p+0f)) {
       return;
     }
     v103_.v103 = "L_Gauge";
@@ -1364,7 +1364,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
     __asm__ volatile("" ::"w"(v40));
   }
     *(float*)(a1 + 336) = v40;
-    if (v40 > 0x0.0p+0f) {
+    if (!(v40 <= 0x0.0p+0f)) {
       return;
     }
     *(_DWORD*)(a1 + 276) = 6;
@@ -1431,7 +1431,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
           v57 = COERCE_AS(__typeof__(v57),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       if (*(_BYTE*)(v42 + 1144) != 1 ||
-          *(float*)(v42 + 1104) < *(float*)(v42 + 1112)) {
+          !(*(float*)(v42 + 1104) >= *(float*)(v42 + 1112))) {
         goto LABEL_230;
       }
       if ((LayoutAccessor_15635a0_alt1((__int64*)(a1 + 80), (__int64)"Out", 0) &
@@ -1608,7 +1608,7 @@ void BattlePopupBlaze_18c1660(__int64 a1, long double a2, long double a3)
     if (v47 != 0) {
       *(unsigned __int128*)&a2 = *(unsigned __int64*)(a1 + 208);
       for (m = 0; m < v47; ++m) {
-        if ((int)v47 > (int)m) {
+        if (!((int)v47 <= (int)m)) {
           {
             v49 = *(_QWORD*)(v46 + 40 + 8LL * (int)m);
             __asm__ volatile("" ::"r"(v49));

@@ -91,8 +91,8 @@ __int64 AnimatorEx_Unknown23(__int64* a1, int a2, float a3)
   __int64 v10;
 
   v3 = a3;
-  if (a3 < (float)-(float)(unsigned __int16)GameRoutine_56e670(a1) ||
-      v3 > (float)(unsigned __int16)GameRoutine_56e670(a1)) {
+  if (!(a3 >= (float)-(float)(unsigned __int16)GameRoutine_56e670(a1)) ||
+      !(v3 <= (float)(unsigned __int16)GameRoutine_56e670(a1))) {
     v6 = AnimTransformBasic_56e6c0(a1);
     if (a2 != 0 || (v6 & 1) == 0) {
       return AnimTransformBasic_56e6c0(a1);
@@ -278,7 +278,7 @@ __int64 AnimatorEx_Unknown3(__int64 result, float a2)
   if (v2 != 0.0) {
     v4 = *(float*)(result + 32) + (float)(v2 * a2);
     if (v2 <= 0.0) {
-      if (v4 > 0.0) {
+      if (!(v4 <= 0.0)) {
       LABEL_20:
         *(float*)(result + 32) = v4;
         return result;
@@ -312,7 +312,7 @@ __int64 AnimatorEx_Unknown3(__int64 result, float a2)
     }
     else {
       v5 = result;
-      if (v4 < (float)(unsigned __int16)GameRoutine_56e670(result)) {
+      if (!(v4 >= (float)(unsigned __int16)GameRoutine_56e670(result))) {
       LABEL_19:
         result = v5;
         goto LABEL_20;

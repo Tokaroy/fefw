@@ -515,7 +515,7 @@ __int64 ChoiceMenu_Unknown2_1115140(__int64 result)
   __int64 v1;
 
   v1 = *(_QWORD*)(result + 1056);
-  if (v1 == 0 || *(float*)(v1 + 36) < *(float*)(v1 + 32)) {
+  if (v1 == 0 || !(*(float*)(v1 + 36) >= *(float*)(v1 + 32))) {
     return GameRoutine_16df7a0();
   }
   return result;

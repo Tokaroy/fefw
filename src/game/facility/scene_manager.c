@@ -1305,14 +1305,14 @@ LABEL_10:
         v13 = *(float*)(v11 + 16);
         if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
                              0xFFFFFFFFFFFFFFFFLL) != 0) {
-          if (v13 > 0.0) {
+          if (!(v13 <= 0.0)) {
             goto LABEL_24;
           }
         }
         else {
           (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
           result = std___1___shared_weak_count___release_weak(v12);
-          if (v13 > 0.0) {
+          if (!(v13 <= 0.0)) {
             goto LABEL_24;
           }
         }

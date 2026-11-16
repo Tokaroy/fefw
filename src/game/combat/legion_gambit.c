@@ -183,7 +183,7 @@ __int64 LegionGambit_e4bd20(__int64 result)
         v10 = *(_QWORD*)(*(_QWORD*)(v6 + 8) + 168LL);
         if (atomic_fetch_add((atomic_ullong* volatile)(v7 + 8),
                              0xFFFFFFFFFFFFFFFFLL) != 0) {
-          if (v9 > 0x0.0p+0f) {
+          if (!(v9 <= 0x0.0p+0f)) {
           LABEL_16:
             *(float*)(v10 + 92) = v9;
             *(_BYTE*)(v10 + 96) = 1;
@@ -202,14 +202,14 @@ __int64 LegionGambit_e4bd20(__int64 result)
           (*(void (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
           std___1___shared_weak_count___release_weak_alt1(v7);
           result = v15;
-          if (v9 > 0x0.0p+0f) {
+          if (!(v9 <= 0x0.0p+0f)) {
             goto LABEL_16;
           }
         }
       }
       else {
         v10 = *(_QWORD*)(*(_QWORD*)(v6 + 8) + 168LL);
-        if (v9 > 0x0.0p+0f) {
+        if (!(v9 <= 0x0.0p+0f)) {
           goto LABEL_16;
         }
       }

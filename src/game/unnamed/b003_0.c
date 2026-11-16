@@ -5045,9 +5045,10 @@ __int64 GameHr_5823e0(__int64 a1, int a2, float a3)
   __int64 result;
   int v7;
 
-  if (a3 < (float)-(float)(unsigned __int16)((
-               __int64 (*)(void))GameRoutine_56e670)() ||
-      (result = GameRoutine_56e670(a1), a3 > (float)(unsigned __int16)result)) {
+  if (!(a3 >= (float)-(float)(unsigned __int16)((
+                  __int64 (*)(void))GameRoutine_56e670)()) ||
+      (!(result = GameRoutine_56e670(a1),
+         a3 <= (float)(unsigned __int16)result))) {
     result = GameRoutine_56e6c0(a1);
     if (a2 != 0 || (result & 1) == 0) {
       return GameRoutine_56e6c0(a1);
@@ -5081,8 +5082,9 @@ __int64 GameHr_582500(__int64 a1, int a2, float a3)
   __int64 result;
   int v7;
 
-  if (a3 < (float)-(float)(unsigned __int16)GameRoutine_56e670(a1) ||
-      (result = GameRoutine_56e670(a1), a3 > (float)(unsigned __int16)result)) {
+  if (!(a3 >= (float)-(float)(unsigned __int16)GameRoutine_56e670(a1)) ||
+      (!(result = GameRoutine_56e670(a1),
+         a3 <= (float)(unsigned __int16)result))) {
     result = GameRoutine_56e6c0(a1);
     if (a2 != 0 || (result & 1) == 0) {
       return GameRoutine_56e6c0(a1);

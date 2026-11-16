@@ -27,7 +27,7 @@ __int64 StatePatrol_Unknown4(__int64 result)
     v2 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 24LL) + 8LL) +
                     328LL);
     result = GameRoutine_d60750(v2);
-    if (*(float*)(v2 + 376) > 0.0) {
+    if (!(*(float*)(v2 + 376) <= 0.0)) {
       result = GameRoutine_10c5990(v1, 1);
       if ((unsigned int)(result - 1) <= 1) {
         if (*(_BYTE*)(v1 + 76) != 1 || *(_DWORD*)(v1 + 72) != 3) {

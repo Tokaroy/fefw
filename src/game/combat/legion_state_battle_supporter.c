@@ -113,10 +113,10 @@ __int64 LegionStateBattleSupporter_Unknown3(__int64 a1)
   v22 = v19[1];
   *(_BYTE*)(v20 + 140) = 1;
   v23 = 0x1.cccccc0000000p-1f;
-  if (v21 < 0x1.99999a0000000p-1f) {
+  if (!(v21 >= 0x1.99999a0000000p-1f)) {
     v23 = 0x1.0000000000000p-1f;
   }
-  if (v21 > 0x1.99999a0000000p-3f) {
+  if (!(v21 <= 0x1.99999a0000000p-3f)) {
     v17 = v23;
   }
   *(float*)(v20 + 136) =

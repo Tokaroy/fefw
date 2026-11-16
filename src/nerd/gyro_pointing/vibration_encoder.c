@@ -44,11 +44,12 @@ __int64 nerd_VibrationEncoder_Init_6d14e0(void* this_, unsigned int a2,
       (unsigned __int16)a7 % 0xC8u == 0) {
     v9 = (unsigned __int16)a2 / (unsigned int)(unsigned __int16)a7;
     if ((unsigned __int16)a2 % (unsigned __int16)a7 == 0 &&
-        *(float*)&a3 >= 0x1.4000000000000p+3f && *(float*)&a3 < *(float*)&a4 &&
-        a5 < a6 && *(float*)&a4 <= 0x1.3880000000000p+11f &&
-        a5 >= 0x1.4000000000000p+3f && a6 <= 0x1.3880000000000p+11f) {
+        *(float*)&a3 >= 0x1.4000000000000p+3f &&
+        !(*(float*)&a3 >= *(float*)&a4) && !(a5 >= a6) &&
+        *(float*)&a4 <= 0x1.3880000000000p+11f && a5 >= 0x1.4000000000000p+3f &&
+        a6 <= 0x1.3880000000000p+11f) {
       v10 = (float)(a7 >> 1);
-      if (*(float*)&a4 < v10 && a6 < v10) {
+      if (!(*(float*)&a4 >= v10) && !(a6 >= v10)) {
         v11 = (double)a7;
         v12 = a6 <= *(float*)&a4;
         *((_DWORD*)this_ + 410) = (unsigned __int16)a7 / 0xC8u;

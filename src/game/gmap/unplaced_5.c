@@ -616,7 +616,7 @@ __int64 game_gmap_13278a0(float32x4_t* a1, int a2, float32x4_t* a3)
   v7 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
   v8 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
   v9 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
-  if (LANES128(v3).n128_f32[2] > 0.0f) {
+  if (!(LANES128(v3).n128_f32[2] <= 0.0f)) {
     if (LANES128(v3).n128_f32[0] >= 0.0f) {
       if (LANES128(v3).n128_f32[0] <= LANES128(v3).n128_f32[2]) {
         v10 = LANES128(v3).n128_f32[0] / LANES128(v3).n128_f32[2];
@@ -627,7 +627,7 @@ __int64 game_gmap_13278a0(float32x4_t* a1, int a2, float32x4_t* a3)
       v13 = 0x1.921fb60000000p+0f;
     }
     else {
-      if (LANES128(v3).n128_f32[0] < v5) {
+      if (!(LANES128(v3).n128_f32[0] >= v5)) {
         v10 = v5 / LANES128(v3).n128_f32[0];
         v11 = -0x1.921fb60000000p+0f;
       LABEL_18:
@@ -709,7 +709,7 @@ __int64 game_gmap_13278a0(float32x4_t* a1, int a2, float32x4_t* a3)
       v13;
     goto LABEL_20;
   }
-  if (LANES128(v3).n128_f32[0] < 0.0f) {
+  if (!(LANES128(v3).n128_f32[0] >= 0.0f)) {
     if (LANES128(v3).n128_f32[2] <= LANES128(v3).n128_f32[0]) {
       v14 = LANES128(v3).n128_f32[0] / LANES128(v3).n128_f32[2];
       v4 = -(float)(v14 *
@@ -751,7 +751,7 @@ __int64 game_gmap_13278a0(float32x4_t* a1, int a2, float32x4_t* a3)
     v13 = -0x1.921fb60000000p+0f;
     goto LABEL_15;
   }
-  if (LANES128(v3).n128_f32[0] > v5) {
+  if (!(LANES128(v3).n128_f32[0] <= v5)) {
     v10 = v5 / LANES128(v3).n128_f32[0];
     v11 = 0x1.921fb60000000p+0f;
     goto LABEL_18;
@@ -791,9 +791,10 @@ __int64 game_gmap_13278a0(float32x4_t* a1, int a2, float32x4_t* a3)
       1.0f);
 LABEL_20:
   v16 = v4 * 0x1.ca5dc00000000p+5f;
-  if (v16 < 0x1.6800000000000p+4f || v16 > 0x1.0e00000000000p+6f) {
-    if (v16 < 0x1.c200000000000p+6f || v16 > 0x1.3b00000000000p+7f) {
-      if (v16 < -0x1.3b00000000000p+7f || v16 > -0x1.c200000000000p+6f) {
+  if (!(v16 >= 0x1.6800000000000p+4f) || !(v16 <= 0x1.0e00000000000p+6f)) {
+    if (!(v16 >= 0x1.c200000000000p+6f) || !(v16 <= 0x1.3b00000000000p+7f)) {
+      if (!(v16 >= -0x1.3b00000000000p+7f) ||
+          !(v16 <= -0x1.c200000000000p+6f)) {
         result = 0;
         if (v16 >= -0x1.0e00000000000p+6f && v16 <= -0x1.6800000000000p+4f) {
           if (a2 == 3) {

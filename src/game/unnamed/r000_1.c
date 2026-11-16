@@ -1904,7 +1904,7 @@ __int64 GameHr_582640(__int64 result, float a2)
   if (v2 != 0.0) {
     v4 = *(float*)(result + 32) + (float)(v2 * a2);
     if (v2 <= 0.0) {
-      if (v4 > 0.0) {
+      if (!(v4 <= 0.0)) {
         goto LABEL_5;
       }
       v6 = *(_DWORD*)(result + 64);
@@ -1933,8 +1933,8 @@ __int64 GameHr_582640(__int64 result, float a2)
     }
     else {
       v5 = result;
-      if (v4 <
-          (float)(unsigned __int16)((__int64 (*)(void))GameRoutine_56e670)()) {
+      if (!(v4 >= (float)(unsigned __int16)((
+                      __int64 (*)(void))GameRoutine_56e670)())) {
         result = v5;
       LABEL_5:
         *(float*)(result + 32) = v4;

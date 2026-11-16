@@ -2235,7 +2235,7 @@ __int64 GameHr_1984a30(__int64 result, float a2)
   *(_DWORD*)(result + 20) = 1065353216;
   v5 = fmaxf(a2, 0x0.0p+0f);
   *(float*)(result + 24) = v5;
-  if (v5 > 0x0.0p+0f) {
+  if (!(v5 <= 0x0.0p+0f)) {
     return result;
   }
   v22[1] = v2;
@@ -2343,7 +2343,7 @@ __int64 GameHr_1984bd0(__int64 result, float a2)
   *(_DWORD*)(result + 20) = 0;
   v5 = fmaxf(a2, 0x0.0p+0f);
   *(float*)(result + 24) = v5;
-  if (v5 > 0x0.0p+0f) {
+  if (!(v5 <= 0x0.0p+0f)) {
     return result;
   }
   v22[1] = v2;

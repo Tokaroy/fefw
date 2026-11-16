@@ -729,11 +729,11 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
           if ((unsigned int)(int)*(float*)&v12 <= 0xFFFFFFFD) {
             *(float*)&v9 = a3 - *(float*)&v9;
             *(_QWORD*)&v8 = 0;
-            if (*(float*)&v9 > 0x0.0p+0f) {
+            if (!(*(float*)&v9 <= 0x0.0p+0f)) {
               LODWORD(v8) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-              if (*(float*)&v9 < *((float*)&v12 + 1)) {
+              if (!(*(float*)&v9 >= *((float*)&v12 + 1))) {
                 v14 = (int)*(float*)&v12 - 1;
-                if (v14 > 2) {
+                if (!(v14 <= 2)) {
                   v15 = 0;
                 }
                 else {
@@ -1690,11 +1690,11 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
           if ((unsigned int)(int)*(float*)&v42 <= 0xFFFFFFFD) {
             *(float*)&v40 = a3 - *(float*)&v40;
             v43 = 0x0.0p+0f;
-            if (*(float*)&v40 > 0x0.0p+0f) {
+            if (!(*(float*)&v40 <= 0x0.0p+0f)) {
               v43 = 0x1.0000000000000p+0f;
-              if (*(float*)&v40 < *((float*)&v42 + 1)) {
+              if (!(*(float*)&v40 >= *((float*)&v42 + 1))) {
                 v45 = (int)*(float*)&v42 - 1;
-                if (v45 > 2) {
+                if (!(v45 <= 2)) {
                   v46 = 0;
                 }
                 else {
@@ -2840,12 +2840,12 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
                 if ((unsigned int)(int)*(float*)&v81 <= 0xFFFFFFFD) {
                   *(float*)&v79 = a3 - *(float*)&v79;
                   *(_QWORD*)&v78 = 0;
-                  if (*(float*)&v79 > 0x0.0p+0f) {
+                  if (!(*(float*)&v79 <= 0x0.0p+0f)) {
                     LODWORD(v78) =
                         COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-                    if (*(float*)&v79 < *((float*)&v81 + 1)) {
+                    if (!(*(float*)&v79 >= *((float*)&v81 + 1))) {
                       v83 = (int)*(float*)&v81 - 1;
-                      if (v83 > 2) {
+                      if (!(v83 <= 2)) {
                         v84 = 0;
                       }
                       else {
@@ -4095,12 +4095,12 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
                 if ((unsigned int)(int)*(float*)&v120 <= 0xFFFFFFFD) {
                   *(float*)&v118 = a3 - *(float*)&v118;
                   *(_QWORD*)&v117 = 0;
-                  if (*(float*)&v118 > 0x0.0p+0f) {
+                  if (!(*(float*)&v118 <= 0x0.0p+0f)) {
                     LODWORD(v117) =
                         COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-                    if (*(float*)&v118 < *((float*)&v120 + 1)) {
+                    if (!(*(float*)&v118 >= *((float*)&v120 + 1))) {
                       v122 = (int)*(float*)&v120 - 1;
-                      if (v122 > 2) {
+                      if (!(v122 <= 2)) {
                         v123 = 0;
                       }
                       else {
@@ -5176,12 +5176,12 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
           if ((unsigned int)(int)*(float*)&v151 <= 0xFFFFFFFD) {
             *(float*)&v149 = a3 - *(float*)&v149;
             *(_QWORD*)&v148 = 0;
-            if (*(float*)&v149 > 0x0.0p+0f) {
+            if (!(*(float*)&v149 <= 0x0.0p+0f)) {
               LODWORD(v148) =
                   COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-              if (*(float*)&v149 < *((float*)&v151 + 1)) {
+              if (!(*(float*)&v149 >= *((float*)&v151 + 1))) {
                 v153 = (int)*(float*)&v151 - 1;
-                if (v153 > 2) {
+                if (!(v153 <= 2)) {
                   v154 = 0;
                 }
                 else {
@@ -6075,12 +6075,12 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
                 if ((unsigned int)(int)*(float*)&v177 <= 0xFFFFFFFD) {
                   *(float*)&v175 = a3 - *(float*)&v175;
                   *(_QWORD*)&v174 = 0;
-                  if (*(float*)&v175 > 0x0.0p+0f) {
+                  if (!(*(float*)&v175 <= 0x0.0p+0f)) {
                     LODWORD(v174) =
                         COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-                    if (*(float*)&v175 < *((float*)&v177 + 1)) {
+                    if (!(*(float*)&v175 >= *((float*)&v177 + 1))) {
                       v179 = (int)*(float*)&v177 - 1;
-                      if (v179 > 2) {
+                      if (!(v179 <= 2)) {
                         v180 = 0;
                       }
                       else {
@@ -7311,12 +7311,12 @@ __int64 PostEffectActor_Unknown4(__int64 result, double a2, float a3)
           if ((unsigned int)(int)*(float*)&v216 <= 0xFFFFFFFD) {
             *(float*)&v214 = a3 - *(float*)&v214;
             *(_QWORD*)&v213 = 0;
-            if (*(float*)&v214 > 0x0.0p+0f) {
+            if (!(*(float*)&v214 <= 0x0.0p+0f)) {
               LODWORD(v213) =
                   COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
-              if (*(float*)&v214 < *((float*)&v216 + 1)) {
+              if (!(*(float*)&v214 >= *((float*)&v216 + 1))) {
                 v218 = (int)*(float*)&v216 - 1;
-                if (v218 > 2) {
+                if (!(v218 <= 2)) {
                   v219 = 0;
                 }
                 else {

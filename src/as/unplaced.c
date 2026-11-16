@@ -679,13 +679,13 @@ LABEL_15:
                      4384);
     if (v24 != 0) {
       v25 = (*(__int64 (**)(__int64))(*(_QWORD*)v24 + 472LL))(v24);
-      if (v22 > 0x0.0p+0f) {
+      if (!(v22 <= 0x0.0p+0f)) {
         goto LABEL_37;
       }
     }
     else {
       v25 = 0;
-      if (v22 > 0x0.0p+0f) {
+      if (!(v22 <= 0x0.0p+0f)) {
       LABEL_37:
         v26 = *v2;
         v27 =

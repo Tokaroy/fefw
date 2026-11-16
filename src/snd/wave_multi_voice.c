@@ -828,14 +828,14 @@ __int64 WaveMultiVoice_Unknown98(__int64 result)
       (*(_BYTE*)(result + 5895) & 1) != 0) {
     *(_BYTE*)(result + 5896) = 0;
   }
-  else if (*(float*)(*(_QWORD*)(result + 5648) + 256LL) < 0.0 ||
+  else if (!(*(float*)(*(_QWORD*)(result + 5648) + 256LL) >= 0.0) ||
            (v2 = result, v3 = snd_Param_isEnvelopeReleased(result + 40),
             result = v2, (v3 & 1) != 0) ||
            (v4 = snd_Param_isEnvelopeFading(v2 + 40), result = v2,
             (v4 & 1) != 0) ||
            (v5 = snd_Param_isEnvelopeEnded(v2 + 40), result = v2,
             (v5 & 1) != 0)) {
-    if ((unsigned int)(*(_DWORD*)(result + 5792) - 1) < 5 ||
+    if (!((unsigned int)(*(_DWORD*)(result + 5792) - 1) >= 5) ||
         *(_DWORD*)((v6 = *(_QWORD*)(result + 5648)) + 120) != 0 &&
             *(_DWORD*)(v6 + 124) != 0) {
       *(_BYTE*)(v1 + 1800) = 1;

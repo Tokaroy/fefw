@@ -91,10 +91,11 @@ double complex catan(double complex z)
 	x = creal(z);
 	y = cimag(z);
 
-	if (x == 0.0 && y > 1.0)
-		goto ovrf;
+        if (x == 0.0 && !(y <= 1.0)) {
+          goto ovrf;
+        }
 
-	x2 = x * x;
+        x2 = x * x;
 	a = 1.0 - x2 - (y * y);
 	if (a == 0.0)
 		goto ovrf;

@@ -5166,7 +5166,7 @@ _QWORD* GameHr_e42820(__int64 a1)
           v24 = *(_QWORD*)(v23 + 16);
           if (v24 != 0 &&
               *(__int64 (**)(void))(v24 + 16) == eft_ClampCurve_ptr &&
-              *(float*)(v24 + 8) > *(float*)v24) {
+              !(*(float*)(v24 + 8) <= *(float*)v24)) {
             return nullptr;
           }
         }

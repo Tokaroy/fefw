@@ -3939,7 +3939,7 @@ LABEL_21:
   v33 = v34_.v35;
   if (v34_.v35 == 0 || atomic_fetch_add((atomic_ullong* volatile)(v34_.v35 + 8),
                                         0xFFFFFFFFFFFFFFFFLL) != 0) {
-    if (a5 > 0x0.0p+0f) {
+    if (!(a5 <= 0x0.0p+0f)) {
       goto LABEL_35;
     }
     goto LABEL_34;
@@ -4055,7 +4055,7 @@ void GameHr_e80600(__int64* a1, __int64* a2, __int64* a3, _DWORD* a4, float a5)
   v20 = v21_.v22;
   if (v21_.v22 == 0 || atomic_fetch_add((atomic_ullong* volatile)(v21_.v22 + 8),
                                         0xFFFFFFFFFFFFFFFFLL) != 0) {
-    if (a5 > 0x0.0p+0f) {
+    if (!(a5 <= 0x0.0p+0f)) {
       goto LABEL_24;
     }
     goto LABEL_23;
@@ -4329,7 +4329,7 @@ void GameHr_e80c40(__int64 a1, __int64 a2, float a3)
       atomic_fetch_add(
           (atomic_ullong* volatile)(*((_QWORD*)&v20_.v20 + 1) + 8LL),
           0xFFFFFFFFFFFFFFFFLL) != 0) {
-    if (a3 > 0x0.0p+0f) {
+    if (!(a3 <= 0x0.0p+0f)) {
       goto LABEL_16;
     }
     goto LABEL_15;

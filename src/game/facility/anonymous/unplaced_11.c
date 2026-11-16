@@ -750,8 +750,8 @@ __int64 game_facility_anonymous_15ef8e0(__int64 a1)
                          0xFFFFFFFFFFFFFFFFLL) != 0) {
       if (v5 != 0) {
       LABEL_5:
-        if (*(float*)(*(_QWORD*)(a1 + 368) + 36LL) <
-            *(float*)(*(_QWORD*)(a1 + 368) + 32LL)) {
+        if (!(*(float*)(*(_QWORD*)(a1 + 368) + 36LL) >=
+              *(float*)(*(_QWORD*)(a1 + 368) + 32LL))) {
           return 1;
         }
         v12 = *(_QWORD*)(v2 + 136);

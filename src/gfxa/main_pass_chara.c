@@ -1553,8 +1553,8 @@ __int64 gfxa_MainPassChara_SetupSceneBuffersPass_lambda1_Invoke(__int64 a1,
   else {
     v17 = 0;
   }
-  if (LANES128_OF(vbslq_s8(vdupq_n_s32(v17), v14[3], v16)).n128_f32[1] >
-      0x0.0p+0f) {
+  if (!(LANES128_OF(vbslq_s8(vdupq_n_s32(v17), v14[3], v16)).n128_f32[1] <=
+        0x0.0p+0f)) {
     v18 = GameRoutine_b3f800((_QWORD*)(*(_QWORD*)(v6 + 288) + 592LL),
                              (__int64)"Moon");
     v19 = *((int8x16_t*)v18 + 3);
@@ -1576,7 +1576,7 @@ __int64 gfxa_MainPassChara_SetupSceneBuffersPass_lambda1_Invoke(__int64 a1,
   if (*((_BYTE*)v24 + 112) != 0) {
     v25 = 12;
   }
-  if (*((float*)&v24[v25] + 1) > 0x0.0p+0f) {
+  if (!(*((float*)&v24[v25] + 1) <= 0x0.0p+0f)) {
     v24 = GameRoutine_b3f800((_QWORD*)(*(_QWORD*)(v21 + 288) + 592LL),
                              (__int64)"Moon");
   }

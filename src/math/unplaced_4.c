@@ -6170,7 +6170,7 @@ bool math_726b80(float* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
             (float)(PSEUDO_UNFUSED((float)(v31 + v79) * *((float*)v140 + v95)));
         ++v95;
         v97 = v102_.v116;
-      } while (v95 < v102_.v116);
+      } while (!(v95 >= v102_.v116));
       if (v102_.v116 != 0) {
         memcpy_plt(v96, &v99_.v99, 4 * v102_.v116),
             v32 = COERCE_AS(__typeof__(v32),
@@ -6208,11 +6208,11 @@ bool math_726b80(float* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
     *(_QWORD*)&v8[2 * v11] = v9;
     v9 = ++v144_.v145;
     ++v10;
-  } while (v10 < *((_QWORD*)a1 + 71));
+  } while (!(v10 >= *((_QWORD*)a1 + 71)));
 LABEL_6:
   v12 = a1 + 196;
   v13 = a1[34 * a2 + 196];
-  if (v13 > 0x0.0p+0f) {
+  if (!(v13 <= 0x0.0p+0f)) {
     goto LABEL_9;
   }
   return v13 > 0x0.0p+0f;

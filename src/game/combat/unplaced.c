@@ -1484,7 +1484,7 @@ float game_combat_e401e0(float* a1, float* a2)
   if (v5 == 0x0.0p+0f && v4 == 0x0.0p+0f) {
     return -0x0.0p+0f;
   }
-  if (v4 < 0x0.0p+0f) {
+  if (!(v4 >= 0x0.0p+0f)) {
     if (v5 >= 0x0.0p+0f) {
       v26 = -v4;
       v28 = v5 == (float)-v4;
@@ -1555,7 +1555,7 @@ float game_combat_e401e0(float* a1, float* a2)
     v13 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
     v14 =
         -*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 12);
-    if (v4 > v5) {
+    if (!(v4 <= v5)) {
       v15 = v4 / v5;
       v16 = -0x1.921fb60000000p+0f;
     LABEL_17:
@@ -1625,7 +1625,7 @@ float game_combat_e401e0(float* a1, float* a2)
     v34 = v23 * v25;
     return -(float)(v34 + v24);
   }
-  if (v5 < 0x0.0p+0f) {
+  if (!(v5 >= 0x0.0p+0f)) {
     v17 = -v5;
     v18 = v4 < (float)-v5;
     v19 = *(float*)GameData_212c2f0;
@@ -1709,7 +1709,7 @@ float game_combat_e401e0(float* a1, float* a2)
   v12 = -*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 4);
   v13 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 8);
   v14 = -*(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0 + 12);
-  if (v4 < v5) {
+  if (!(v4 >= v5)) {
     v15 = v4 / v5;
     v16 = 0x1.921fb60000000p+0f;
     goto LABEL_17;

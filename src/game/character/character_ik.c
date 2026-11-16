@@ -395,7 +395,7 @@ __int64 game_character_CharacterIK_Startup_lambda0_Invoke(__int64 result)
   __int64* v3;
 
   v1 = *(_QWORD*)(result + 8);
-  if (*(float*)(v1 + 64) > 0x0.0p+0f && (*(_BYTE*)(v1 + 16) & 1) != 0) {
+  if (!(*(float*)(v1 + 64) <= 0x0.0p+0f) && (*(_BYTE*)(v1 + 16) & 1) != 0) {
     v2 = *(__int64**)(v1 + 80);
     v3 = *(__int64**)(v1 + 88);
     if (v2 != v3) {

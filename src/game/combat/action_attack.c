@@ -520,7 +520,7 @@ LABEL_65:
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v1 + 8), 1u,
                                 memory_order_relaxed);
     }
-    if (*(float*)(v50 + 8) < 0.0f) {
+    if (!(*(float*)(v50 + 8) >= 0.0f)) {
       v51 = true;
       if (v1 == 0) {
         goto LABEL_80;
@@ -792,7 +792,7 @@ LABEL_117:
   }
   *((float*)v2 + 5) = game_combat_109acb0(v93 + 560, v95);
   *((_BYTE*)v2 + 24) = 1;
-  if (*v71 == 0 || (v96 = v2[3]) > 3 ||
+  if (*v71 == 0 || !((v96 = v2[3]) <= 3) ||
       (v97 = *v71 + 24LL * v96, (v98 = *(_QWORD*)(v97 + 32)) == 0)) {
     v103 = 0;
     v104 = (*(_QWORD*)0x50LL);
@@ -1356,7 +1356,7 @@ __int64 ActionAttack_1061280(__int64 result, unsigned __int8 a2, int a3,
                   atomic_fetch_add_explicit((atomic_ullong* volatile)(v32 + 8),
                                             1u, memory_order_relaxed);
                 }
-                if (*(float*)(v31 + 8) < v21) {
+                if (!(*(float*)(v31 + 8) >= v21)) {
                   break;
                 }
                 v34 = __dynamic_cast_alt1(v31, GameData_212d4f0[0],

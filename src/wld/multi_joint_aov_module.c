@@ -1097,7 +1097,7 @@ void MultiJointAOVModule_Unknown7(__int64 a1)
   v1 = *(float*)(a1 + 96);
   v2 = *(float*)(a1 + 104);
   v3 = true;
-  if (v1 > 0x0.0p+0f && v2 > 0x0.0p+0f) {
+  if (!(v1 <= 0x0.0p+0f) && !(v2 <= 0x0.0p+0f)) {
     v5 = *(_QWORD*)(a1 + 8);
     if (*(_BYTE*)(v5 + 289) == 1 && (*(_BYTE*)(v5 + 288) & 1) != 0) {
       do {
@@ -1136,7 +1136,7 @@ void MultiJointAOVModule_Unknown7(__int64 a1)
             COERCE_AS(float32x2_t,
                       LANES128_OF(vaddq_f32(v17, v16)).n128_u64[0]),
             1);
-        if ((unsigned __int64)v10 < v11) {
+        if (!((unsigned __int64)v10 >= v11)) {
           *(_DWORD*)v10 = v8;
           v10[1] = v18;
           v10 += 2;
@@ -1150,7 +1150,7 @@ void MultiJointAOVModule_Unknown7(__int64 a1)
                 v17 = COERCE_AS(__typeof__(v17),
                                 PSEUDO_REGISTER(__n128, "v1", "=w"));
           }
-          if ((__int64)(v11 - v9) >> 2 > v21) {
+          if (!((__int64)(v11 - v9) >> 2 <= v21)) {
             v21 = (__int64)(v11 - v9) >> 2;
           }
           if (v11 - v9 >= 0x7FFFFFFFFFFFFFF8LL) {
@@ -1213,7 +1213,7 @@ void MultiJointAOVModule_Unknown7(__int64 a1)
           v32 = *v29;
           v29 += 2;
           v33 = *(_QWORD*)(*(_QWORD*)(a1 + 32) + 112LL * SLODWORD(v32));
-          if (vabds_f32(v30, v31) > 0x1.47ae140000000p-7f) {
+          if (!(vabds_f32(v30, v31) <= 0x1.47ae140000000p-7f)) {
             ++v28;
           }
           *(_DWORD*)(v33 + 124) = v28;

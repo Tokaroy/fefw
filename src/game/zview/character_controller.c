@@ -8460,7 +8460,7 @@ __int64 CharacterController_StateGuard_Loop_Unknown4(__int64 result)
 
   v1 = *(_QWORD*)(result + 8);
   v2 = *(_QWORD*)(*(_QWORD*)(v1 + 8) + 8LL);
-  if (*(float*)(*(_QWORD*)(v2 + 8) + 228LL) > 0x0.0p+0f) {
+  if (!(*(float*)(*(_QWORD*)(v2 + 8) + 228LL) <= 0x0.0p+0f)) {
     v3 = *(_QWORD*)(v2 + 32);
     v6 = 4;
     result = GameRoutine_daa180(v3, &v6);

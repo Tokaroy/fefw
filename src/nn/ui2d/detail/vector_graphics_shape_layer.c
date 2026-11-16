@@ -2845,7 +2845,7 @@ __int64* VectorGraphicsShapeLayer_5ac6c0(__int64 a1, _QWORD* a2, __int64 a3,
       v18 = (unsigned __int16*)(*(_QWORD*)(a1 + 160) + 160 * v17);
       v19 = *v18;
       v20 = v18[8];
-      if (v19 != 0 && v20 != 0 && *(float*)(a1 + 24) > 0.0) {
+      if (v19 != 0 && v20 != 0 && !(*(float*)(a1 + 24) <= 0.0)) {
         v22 = *(_QWORD*)(a1 + 168);
         v23 = *(_DWORD*)(v22 + 48 * v17 + 36);
         if (v23 != 0) {
@@ -2898,7 +2898,7 @@ __int64* VectorGraphicsShapeLayer_5ac6c0(__int64 a1, _QWORD* a2, __int64 a3,
                 v30 = v29 + 48 * v17;
                 ++v32;
                 v31 += 24;
-              } while (v32 < *(unsigned int*)(v30 + 36));
+              } while (!(v32 >= *(unsigned int*)(v30 + 36)));
             }
             result = (__int64*)VectorGraphicsShapeLayer_5ac140_alt1(
                 a1, a2, a3, a4, *(_QWORD*)v30, v27);

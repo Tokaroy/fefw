@@ -261,7 +261,7 @@ __attribute__((swiftcall)) void CharacterSound_1095750(PSEUDO_X8 x8_,
     a5 = 0x1.0000000000000p+0f;
   }
   v9 = a5 * v5;
-  if ((float)(a5 * v5) > 0x0.0p+0f) {
+  if (!((float)(a5 * v5) <= 0x0.0p+0f)) {
     if (GameData_21d92e0 == 6 || GameData_21d92e0 == 1) {
       v11 = *(_DWORD*)(a1 + 128);
       if (v11 == 2) {

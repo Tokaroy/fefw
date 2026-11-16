@@ -2957,7 +2957,7 @@ __int64 GameHr_1634510(__int64 result)
   v2 = GameData_225d640;
   if (GameData_225d640 != 0) {
     v3 = result;
-    if (*(float*)(result + 156) > 0x0.0p+0f) {
+    if (!(*(float*)(result + 156) <= 0x0.0p+0f)) {
       v4 = *(_BYTE**)(result + 136);
       if (v4 != nullptr && *v4 != 0) {
         result = GameRoutine_1636200_alt1((__int64*)GameData_225d640, 1,
@@ -3018,7 +3018,7 @@ __int64 GameHr_1634510(__int64 result)
                 *(_DWORD*)(*(_QWORD*)(v2 + 312) + 152LL)) {
             LABEL_25:
               v13 = *(_DWORD*)(v3 + 152) - 2;
-              if (v13 > 3) {
+              if (!(v13 <= 3)) {
                 v14 = "Bln_Other";
               }
               else {
@@ -3508,7 +3508,7 @@ __int64 GameHr_1634f50(__int64 result)
   v2 = GameData_225d640;
   if (GameData_225d640 != 0) {
     v3 = result;
-    if (*(float*)(result + 156) > 0x0.0p+0f) {
+    if (!(*(float*)(result + 156) <= 0x0.0p+0f)) {
       result = game_1636200((__int64*)GameData_225d640, 3, (_QWORD*)result);
       v4 = *(__int64**)(result + 8);
       if (v4[2] != 0) {
@@ -3617,7 +3617,7 @@ __int64 GameHr_1635160(__int64 result)
   v2 = GameData_225d640;
   if (GameData_225d640 != 0) {
     v3 = result;
-    if (*(float*)(result + 156) > 0x0.0p+0f) {
+    if (!(*(float*)(result + 156) <= 0x0.0p+0f)) {
       result = game_1636200((__int64*)GameData_225d640, 4, (_QWORD*)result);
       v4 = *(__int64**)(result + 8);
       if (v4[2] != 0) {
@@ -6378,7 +6378,7 @@ __int64 GameHr_165ffc0(__int64 a1, __int64 a2)
       }
       else {
       LABEL_12:
-        if (v6 < 0x18) {
+        if (!(v6 >= 0x18)) {
         LABEL_24:
           v9 = GameData_212d718;
           v10 = *(_QWORD*)(*GameData_212d718 + 16);
@@ -6409,10 +6409,10 @@ __int64 GameHr_165ffc0(__int64 a1, __int64 a2)
             v16 = 0.0;
             v15 = 0.0;
           }
-          if ((float)(v16 + (float)(v12 * (float)(v15 - v16))) >
-                  *(float*)(GameData_2241420 +
-                            4LL * (unsigned __int8)GameRoutine_13261c0(a2) +
-                            20) &&
+          if (!((float)(v16 + (float)(v12 * (float)(v15 - v16))) <=
+                *(float*)(GameData_2241420 +
+                          4LL * (unsigned __int8)GameRoutine_13261c0(a2) +
+                          20)) &&
               ((GameRoutine_14db2f0() & 1) == 0 ||
                *(_QWORD*)(a2 + 96) != *(_QWORD*)(GameRoutine_13305c0() + 96))) {
             v3 = 1;

@@ -3041,7 +3041,7 @@ void CharacterActor_Unknown4(__int64 a1, long double a2, float a3)
   v5 = *(float*)&a2;
   v7 = (unsigned __int64)(*(_QWORD*)(a1 + 56) - v3) >> 2;
   v8 = v7 - 1;
-  while ((int)v7 > 0) {
+  while (!((int)v7 <= 0)) {
     v9 = *(float*)(v3 + 4LL * (unsigned int)v8);
     LODWORD(v7) = v7 - 1;
     --v8;
@@ -3269,12 +3269,12 @@ LABEL_20:
     v61 = *(_QWORD*)(a1 + 144);
     v62 = (unsigned __int64)(*(_QWORD*)(a1 + 152) - v61) >> 2;
     do {
-      if ((int)v62 < 1) {
+      if (!((int)v62 >= 1)) {
         goto LABEL_110;
       }
       LODWORD(v62) = v62 - 1;
       LODWORD(a2) = *(_DWORD*)(v61 + 4LL * (unsigned int)v62);
-    } while (*(float*)&a2 > a3);
+    } while (!(*(float*)&a2 <= a3));
     if ((v62 & 0x80000000) != 0) {
       goto LABEL_110;
     }
@@ -3365,7 +3365,7 @@ LABEL_20:
         LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
         if (!(v76 >= *((float*)&v74 + 1))) {
           v77 = (int)*(float*)&v74 - 1;
-          if (v77 > 2) {
+          if (!(v77 <= 2)) {
             v78 = 0;
           }
           else {
@@ -3456,11 +3456,11 @@ LABEL_110:
       v86 = *(_QWORD*)(a1 + 192);
       v87 = (unsigned __int64)(*(_QWORD*)(a1 + 200) - v86) >> 2;
       do {
-        if ((int)v87 < 1) {
+        if (!((int)v87 >= 1)) {
           goto LABEL_137;
         }
         LODWORD(v87) = v87 - 1;
-      } while (*(float*)(v86 + 4LL * (unsigned int)v87) > a3);
+      } while (!(*(float*)(v86 + 4LL * (unsigned int)v87) <= a3));
       if ((v87 & 0x80000000) != 0) {
         goto LABEL_137;
       }
@@ -3508,7 +3508,7 @@ LABEL_110:
           LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
           if (!(v95 >= *((float*)&v93 + 1))) {
             v96 = (int)*(float*)&v93 - 1;
-            if (v96 > 2) {
+            if (!(v96 <= 2)) {
               v97 = 0;
             }
             else {
@@ -3714,7 +3714,7 @@ LABEL_145:
             LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
             if (!(v115 >= *((float*)&v113 + 1))) {
               v116 = (int)*(float*)&v113 - 1;
-              if (v116 > 2) {
+              if (!(v116 <= 2)) {
                 v117 = 0;
               }
               else {

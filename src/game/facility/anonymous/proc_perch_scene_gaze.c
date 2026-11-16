@@ -554,8 +554,8 @@ __int64 ProcPerchSceneGaze_Unknown2(__int64 result)
   if ((v3 & 1) == 0) {
     return result;
   }
-  if (*(float*)(*(_QWORD*)(v1 + 248) + 36LL) <
-      *(float*)(*(_QWORD*)(v1 + 248) + 32LL)) {
+  if (!(*(float*)(*(_QWORD*)(v1 + 248) + 36LL) >=
+        *(float*)(*(_QWORD*)(v1 + 248) + 32LL))) {
     return result;
   }
   result = (*(__int64 (**)(_QWORD))(**(_QWORD**)(v1 + 240) + 56LL))(

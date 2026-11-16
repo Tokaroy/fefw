@@ -228,11 +228,11 @@ __int64 game_menu_anonymous_CalibrationDialog_Tick(__int64 result)
       return BasicMenu_16df7a0(v3);
     }
     v17 = *(float*)(GameData_2258178 + 536);
-    if (v17 <= 0x0.0p+0f || (float)(*(float*)(GameData_2258178 + 548) / v17) <
-                                0x1.0000000000000p+0f) {
+    if (v17 <= 0x0.0p+0f || !((float)(*(float*)(GameData_2258178 + 548) /
+                                      v17) >= 0x1.0000000000000p+0f)) {
       return BasicMenu_16df7a0(v3);
     }
-    if (fabsf(*(float*)(GameData_2258178 + 552)) > 0x1.6800000000000p+6f) {
+    if (!(fabsf(*(float*)(GameData_2258178 + 552)) <= 0x1.6800000000000p+6f)) {
       *(_BYTE*)(v3 + 1300) = 1;
       snd_Fade_Fade_10c830_alt1((__int64)&v28_.v28, 0x0.0p+0f);
       snd_play_ff2d0_alt1(

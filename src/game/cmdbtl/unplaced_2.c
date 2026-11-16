@@ -1373,7 +1373,7 @@ __attribute__((swiftcall)) void game_cmdbtl_f901d0(PSEUDO_X8 x8_, float a2,
     }
     goto LABEL_11;
   }
-  if (*(float*)&GameData_2228060 > 0x0.0p+0f) {
+  if (!(*(float*)&GameData_2228060 <= 0x0.0p+0f)) {
     v3 = a1;
     v6 = GameRoutine_a5e890(a2 * *(float*)&GameData_2228060,
                             a3 + 0x1.0000000000000p+5f);

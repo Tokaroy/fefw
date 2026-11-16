@@ -200,7 +200,7 @@ void WaveStreamPlayer_18a260(_BYTE* a1)
     *v2 = 0;
     *((_DWORD*)a1 + 2778) = 9;
   }
-  else if ((*(float (**)(_BYTE*))(*(_QWORD*)a1 + 104LL))(a1) < 0.001) {
+  else if (!((*(float (**)(_BYTE*))(*(_QWORD*)a1 + 104LL))(a1) >= 0.001)) {
     nn_os_LockMutex(a1 + 11128);
     v3 = WavePlayer_186880((__int64)a1,
                            (int)(float)(*((float*)a1 + 2781) * 1000.0));
@@ -223,7 +223,7 @@ void WaveStreamPlayer_18a260(_BYTE* a1)
           ++v7;
           v9 = (__int64*)((char*)v9 + 44);
           v8 += 38;
-        } while (v7 < *((int*)a1 + 2674));
+        } while (!(v7 >= *((int*)a1 + 2674)));
       }
     }
     else if ((WaveReader_188ee0(*((_QWORD*)a1 + 708)) & 1) != 0) {

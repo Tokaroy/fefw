@@ -298,7 +298,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       else {
         v30 = vcvtd_n_u64_f64(LANES128(v1).n128_f32[0], 0x14u);
         v31 = (v30 - (v30 >> 16) + 7) >> 4;
-        if (LANES128(v1).n128_f32[0] < 0x1.0000000000000p+0f) {
+        if (!(LANES128(v1).n128_f32[0] >= 0x1.0000000000000p+0f)) {
           v28 = v31;
         }
         else {
@@ -401,7 +401,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     else {
       v25 = vcvtd_n_u64_f64(LANES128(v1).n128_f32[0], 0x13u);
       v26 = (v25 - (v25 >> 15) + 7) >> 4;
-      if (LANES128(v1).n128_f32[0] < 0x1.0000000000000p+0f) {
+      if (!(LANES128(v1).n128_f32[0] >= 0x1.0000000000000p+0f)) {
         LOWORD(v27) = v26;
       }
       else {
@@ -533,12 +533,12 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if (v33 != 0 && v32 == 255) {
       LOWORD(v35) = 0x7FFF;
     }
-    else if (v32 > 0x8E || v32 == 142 && v33 > 0x7FE000) {
+    else if (!(v32 <= 0x8E) || v32 == 142 && !(v33 <= 0x7FE000)) {
     LABEL_70:
       LOWORD(v35) = 31744;
     }
-    else if (v32 < 0x71) {
-      if (v32 < 0x67) {
+    else if (!(v32 >= 0x71)) {
+      if (!(v32 >= 0x67)) {
       LABEL_442:
         LOWORD(v35) = 0;
       }
@@ -569,7 +569,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v150 = 0x7FFF;
       }
       else {
-        if (v147 > 0x8E || v147 == 142 && v148 > 0x7FE000) {
+        if (!(v147 <= 0x8E) || v147 == 142 && !(v148 <= 0x7FE000)) {
         LABEL_450:
           v150 = 31744;
           goto LABEL_452;
@@ -577,7 +577,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v163 = v148 >> 14;
         v164 = (v148 >> 13) | ((v147 - 112) << 10);
         v165 = (v163 | 0x200) >> (112 - v147);
-        if (v147 < 0x67) {
+        if (!(v147 >= 0x67)) {
           LOWORD(v165) = 0;
         }
         if (v147 >= 0x71) {
@@ -609,7 +609,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v154 = 0x7FFF;
       }
       else {
-        if (v151 > 0x8E || v151 == 142 && v152 > 0x7FE000) {
+        if (!(v151 <= 0x8E) || v151 == 142 && !(v152 <= 0x7FE000)) {
         LABEL_459:
           v154 = 31744;
           goto LABEL_461;
@@ -617,7 +617,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v166 = v152 >> 14;
         v167 = (v152 >> 13) | ((v151 - 112) << 10);
         v168 = (v166 | 0x200) >> (112 - v151);
-        if (v151 < 0x67) {
+        if (!(v151 >= 0x67)) {
           v168 = 0;
         }
         if (v151 >= 0x71) {
@@ -661,7 +661,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v161 = 0x7FFF;
       }
       else {
-        if (v158 > 0x8E || v158 == 142 && v159 > 0x7FE000) {
+        if (!(v158 <= 0x8E) || v158 == 142 && !(v159 <= 0x7FE000)) {
         LABEL_468:
           v161 = 31744;
           goto LABEL_470;
@@ -669,7 +669,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v169 = v159 >> 14;
         v170 = (v159 >> 13) | ((v158 - 112) << 10);
         v171 = (v169 | 0x200) >> (112 - v158);
-        if (v158 < 0x67) {
+        if (!(v158 >= 0x67)) {
           v171 = 0;
         }
         if (v158 >= 0x71) {
@@ -711,7 +711,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       else {
         v5 = vcvtd_n_u64_f64(LANES128(v1).n128_f32[0], 0xCu);
         v6 = (unsigned __int8)((v5 - (v5 >> 8) + 7) >> 4);
-        if (LANES128(v1).n128_f32[0] < 0x1.0000000000000p+0f) {
+        if (!(LANES128(v1).n128_f32[0] >= 0x1.0000000000000p+0f)) {
           v3 = v6;
         }
         else {
@@ -830,7 +830,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if ((v13 | v10 & 0x7FFFFF) == 0) {
       goto LABEL_156;
     }
-    if (LANES128(v1).n128_i32[0] < 0x800000 && v15 != 0) {
+    if (!(LANES128(v1).n128_i32[0] >= 0x800000) && v15 != 0) {
       goto LABEL_156;
     }
     if (LANES128(v1).n128_i32[0] <= 947912703) {
@@ -844,18 +844,18 @@ int8x16_t* nn_691a40(int8x16_t* result)
     else {
       v17 = ((v15 >> 13) | (v13 << 10)) - 114688;
     }
-    if ((unsigned __int16)((unsigned __int16)v17 >> 10) > 0xEu) {
+    if (!((unsigned __int16)((unsigned __int16)v17 >> 10) <= 0xEu)) {
       v72 = 255;
       goto LABEL_157;
     }
-    if ((unsigned __int16)v17 < 0x800u) {
+    if (!((unsigned __int16)v17 >= 0x800u)) {
       goto LABEL_156;
     }
     if ((unsigned __int16)v17 == 13016) {
       goto LABEL_372;
     }
     if ((unsigned __int16)v17 >> 3 >= 0x65Bu) {
-      if ((unsigned __int16)v17 >> 3 < 0x65Fu) {
+      if (!((unsigned __int16)v17 >> 3 >= 0x65Fu)) {
       LABEL_372:
         LOBYTE(v133) = 0x80;
         goto LABEL_653;
@@ -873,7 +873,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_653;
     }
     if ((unsigned __int16)v17 >= v142) {
-      if ((unsigned int)(unsigned __int16)v17 < SdkData_c92044[v133 | 1]) {
+      if (!((unsigned int)(unsigned __int16)v17 >= SdkData_c92044[v133 | 1])) {
         goto LABEL_653;
       }
       LOBYTE(v133) = v133 | 0x20;
@@ -889,8 +889,8 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_653;
     }
     if ((unsigned __int16)v17 >= v145) {
-      if ((unsigned int)(unsigned __int16)v17 <
-          SdkData_c92044[(unsigned __int8)v133 + 1]) {
+      if (!((unsigned int)(unsigned __int16)v17 >=
+            SdkData_c92044[(unsigned __int8)v133 + 1])) {
         goto LABEL_653;
       }
       v146 = 16;
@@ -910,8 +910,8 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_653;
     }
     if ((unsigned __int16)v17 >= v176) {
-      if ((unsigned int)(unsigned __int16)v17 <
-          SdkData_c92044[(unsigned __int8)v133 + 1]) {
+      if (!((unsigned int)(unsigned __int16)v17 >=
+            SdkData_c92044[(unsigned __int8)v133 + 1])) {
         goto LABEL_653;
       }
       v177 = 8;
@@ -932,7 +932,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if ((unsigned __int16)v17 >= v181) {
       LOBYTE(v133) = v180;
-      if ((unsigned int)(unsigned __int16)v17 < SdkData_c92044[v180 + 1]) {
+      if (!((unsigned int)(unsigned __int16)v17 >= SdkData_c92044[v180 + 1])) {
         goto LABEL_653;
       }
       v182 = 4;
@@ -953,7 +953,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if ((unsigned __int16)v17 >= v201) {
       LOBYTE(v133) = v180;
-      if ((unsigned int)(unsigned __int16)v17 < SdkData_c92044[v180 + 1]) {
+      if (!((unsigned int)(unsigned __int16)v17 >= SdkData_c92044[v180 + 1])) {
         goto LABEL_653;
       }
       v202 = 2;
@@ -974,7 +974,8 @@ int8x16_t* nn_691a40(int8x16_t* result)
       LOBYTE(v133) = v180;
       if ((unsigned __int16)v17 != v219) {
         if ((unsigned __int16)v17 >= v219) {
-          if ((unsigned int)(unsigned __int16)v17 < SdkData_c92044[v180 + 1]) {
+          if (!((unsigned int)(unsigned __int16)v17 >=
+                SdkData_c92044[v180 + 1])) {
             LOBYTE(v133) = v180;
           }
           else {
@@ -994,7 +995,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if ((v73 | v74) == 0) {
       goto LABEL_167;
     }
-    if (LANES128(v1).n128_i32[1] < 0x800000 && v74 != 0) {
+    if (!(LANES128(v1).n128_i32[1] >= 0x800000) && v74 != 0) {
       goto LABEL_167;
     }
     if (LANES128(v1).n128_i32[1] <= 947912703) {
@@ -1019,11 +1020,11 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if ((~v77 & 0x7C00) == 0) {
       v77 = v78;
     }
-    if (v77 >> 10 > 0xE) {
+    if (!(v77 >> 10 <= 0xE)) {
       v79 = 65280;
       goto LABEL_539;
     }
-    if (v77 < 0x800) {
+    if (!(v77 >= 0x800)) {
       v79 = 0;
       goto LABEL_539;
     }
@@ -1031,7 +1032,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_178;
     }
     if (v77 >> 3 >= 0x65B) {
-      if (v77 >> 3 < 0x65F) {
+      if (!(v77 >> 3 >= 0x65F)) {
       LABEL_178:
         LOBYTE(v80) = 0x80;
         goto LABEL_538;
@@ -1049,7 +1050,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_538;
     }
     if (v77 >= v126) {
-      if (v77 < SdkData_c92044[v80 | 1]) {
+      if (!(v77 >= SdkData_c92044[v80 | 1])) {
         goto LABEL_538;
       }
       LOBYTE(v80) = v80 | 0x20;
@@ -1065,7 +1066,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_538;
     }
     if (v77 >= v140) {
-      if (v77 < SdkData_c92044[(unsigned __int8)v80 + 1]) {
+      if (!(v77 >= SdkData_c92044[(unsigned __int8)v80 + 1])) {
         goto LABEL_538;
       }
       v141 = 16;
@@ -1085,7 +1086,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_538;
     }
     if (v77 >= v143) {
-      if (v77 < SdkData_c92044[(unsigned __int8)v80 + 1]) {
+      if (!(v77 >= SdkData_c92044[(unsigned __int8)v80 + 1])) {
         goto LABEL_538;
       }
       v144 = 8;
@@ -1106,7 +1107,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if (v77 >= v174) {
       LOBYTE(v80) = v173;
-      if (v77 < SdkData_c92044[v173 + 1]) {
+      if (!(v77 >= SdkData_c92044[v173 + 1])) {
         goto LABEL_538;
       }
       v175 = 4;
@@ -1127,7 +1128,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if (v77 >= v178) {
       LOBYTE(v80) = v173;
-      if (v77 < SdkData_c92044[v173 + 1]) {
+      if (!(v77 >= SdkData_c92044[v173 + 1])) {
         goto LABEL_538;
       }
       v179 = 2;
@@ -1148,7 +1149,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       LOBYTE(v80) = v173;
       if (v77 != v183) {
         if (v77 >= v183) {
-          if (v77 < SdkData_c92044[v173 + 1]) {
+          if (!(v77 >= SdkData_c92044[v173 + 1])) {
             LOBYTE(v80) = v173;
           }
           else {
@@ -1166,7 +1167,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     v184 = v12 >> 23;
     v185 = v12 & 0x7FFFFF;
     if ((v184 | v185) == 0 ||
-        LANES128(v1).n128_i32[2] < 0x800000 && v185 != 0) {
+        !(LANES128(v1).n128_i32[2] >= 0x800000) && v185 != 0) {
       goto LABEL_542;
     }
     if (LANES128(v1).n128_i32[2] <= 947912703) {
@@ -1191,11 +1192,11 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if ((~v187 & 0x7C00) == 0) {
       v187 = v188;
     }
-    if (v187 >> 10 > 0xE) {
+    if (!(v187 >> 10 <= 0xE)) {
       v189 = 255;
       goto LABEL_602;
     }
-    if (v187 < 0x800) {
+    if (!(v187 >= 0x800)) {
       v189 = 0;
       goto LABEL_602;
     }
@@ -1203,7 +1204,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_555;
     }
     if (v187 >> 3 >= 0x65B) {
-      if (v187 >> 3 < 0x65F) {
+      if (!(v187 >> 3 >= 0x65F)) {
       LABEL_555:
         LOBYTE(v190) = 0x80;
         goto LABEL_601;
@@ -1221,7 +1222,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_601;
     }
     if (v187 >= v191) {
-      if (v187 < SdkData_c92044[v190 | 1]) {
+      if (!(v187 >= SdkData_c92044[v190 | 1])) {
         goto LABEL_601;
       }
       LOBYTE(v190) = v190 | 0x20;
@@ -1237,7 +1238,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_601;
     }
     if (v187 >= v192) {
-      if (v187 < SdkData_c92044[(unsigned __int8)v190 + 1]) {
+      if (!(v187 >= SdkData_c92044[(unsigned __int8)v190 + 1])) {
         goto LABEL_601;
       }
       v193 = 16;
@@ -1257,7 +1258,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       goto LABEL_601;
     }
     if (v187 >= v194) {
-      if (v187 < SdkData_c92044[(unsigned __int8)v190 + 1]) {
+      if (!(v187 >= SdkData_c92044[(unsigned __int8)v190 + 1])) {
         goto LABEL_601;
       }
       v195 = 8;
@@ -1278,7 +1279,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if (v187 >= v197) {
       LOBYTE(v190) = v196;
-      if (v187 < SdkData_c92044[v196 + 1]) {
+      if (!(v187 >= SdkData_c92044[v196 + 1])) {
         goto LABEL_601;
       }
       v198 = 4;
@@ -1299,7 +1300,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     }
     if (v187 >= v199) {
       LOBYTE(v190) = v196;
-      if (v187 < SdkData_c92044[v196 + 1]) {
+      if (!(v187 >= SdkData_c92044[v196 + 1])) {
         goto LABEL_601;
       }
       v200 = 2;
@@ -1320,7 +1321,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       LOBYTE(v190) = v196;
       if (v187 != v203) {
         if (v187 >= v203) {
-          if (v187 < SdkData_c92044[v196 + 1]) {
+          if (!(v187 >= SdkData_c92044[v196 + 1])) {
             LOBYTE(v190) = v196;
           }
           else {
@@ -1338,7 +1339,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     v204 = v14 >> 23;
     v205 = v14 & 0x7FFFFF;
     if ((v204 | v205) == 0 ||
-        LANES128(v1).n128_i32[3] < 0x800000 && v205 != 0) {
+        !(LANES128(v1).n128_i32[3] >= 0x800000) && v205 != 0) {
       goto LABEL_605;
     }
     if (LANES128(v1).n128_i32[3] <= 947912703) {
@@ -1387,7 +1388,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
     if ((LODWORD(v210) & 0x7FFFFF) == 0) {
       v214 = true;
     }
-    if (v212 == 0 && v210 > 0x0.0p+0f && v214) {
+    if (v212 == 0 && !(v210 <= 0x0.0p+0f) && v214) {
       if (v210 >= 0x1.0000000000000p+0f) {
         v213 = -16777216;
       }
@@ -1429,7 +1430,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
       else {
         v8 = vcvtd_n_u64_f64(LANES128(v1).n128_f32[0], 0xEu);
         v9 = ((v8 - (v8 >> 10) + 7) >> 4) & 0x3FF;
-        if (LANES128(v1).n128_f32[0] < 0x1.0000000000000p+0f) {
+        if (!(LANES128(v1).n128_f32[0] >= 0x1.0000000000000p+0f)) {
           v3 = v9;
         }
         else {
@@ -1761,7 +1762,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v50 = 0x7FFF;
       }
       else {
-        if (v47 > 0x8E || v47 == 142 && v48 > 0x7FE000) {
+        if (!(v47 <= 0x8E) || v47 == 142 && !(v48 <= 0x7FE000)) {
         LABEL_96:
           v50 = 31744;
           goto LABEL_105;
@@ -1769,7 +1770,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v134 = v48 >> 14;
         v135 = (v48 >> 13) | ((v47 - 112) << 10);
         v136 = (v134 | 0x200) >> (112 - v47);
-        if (v47 < 0x67) {
+        if (!(v47 >= 0x67)) {
           LOWORD(v136) = 0;
         }
         if (v47 >= 0x71) {
@@ -1801,7 +1802,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v58 = 0x7FFF;
       }
       else {
-        if (v55 > 0x8E || v55 == 142 && v56 > 0x7FE000) {
+        if (!(v55 <= 0x8E) || v55 == 142 && !(v56 <= 0x7FE000)) {
         LABEL_112:
           v58 = 31744;
           goto LABEL_114;
@@ -1809,7 +1810,7 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v137 = v56 >> 14;
         v138 = (v56 >> 13) | ((v55 - 112) << 10);
         v139 = (v137 | 0x200) >> (112 - v55);
-        if (v55 < 0x67) {
+        if (!(v55 >= 0x67)) {
           LOWORD(v139) = 0;
         }
         if (v55 >= 0x71) {
@@ -1846,12 +1847,12 @@ int8x16_t* nn_691a40(int8x16_t* result)
         v62 = 0x7FFF;
       }
       else {
-        if (v59 > 0x8E || v59 == 142 && v60 > 0x7FE000) {
+        if (!(v59 <= 0x8E) || v59 == 142 && !(v60 <= 0x7FE000)) {
         LABEL_121:
           v62 = 31744;
           goto LABEL_123;
         }
-        if (v59 < 0x71) {
+        if (!(v59 >= 0x71)) {
           v172 = ((v60 >> 14) | 0x200) >> (112 - v59);
           if (v59 >= 0x67) {
             v62 = v172;

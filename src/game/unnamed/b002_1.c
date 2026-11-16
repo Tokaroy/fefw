@@ -4001,7 +4001,7 @@ __int64 GameHr_30f2a0(__int64 a1, __int64 a2, int* a3)
   v4 = *(_QWORD*)(a1 + 48);
   v5 = *(_DWORD*)(v4 + 80);
   if (v5 == 0 || *(_BYTE*)(v3 + 86) != 1 ||
-      *(float*)(a2 + 32) > *(float*)(v3 + 80)) {
+      !(*(float*)(a2 + 32) <= *(float*)(v3 + 80))) {
     return 1;
   }
   v6 = *(_DWORD*)(v4 + 84);
