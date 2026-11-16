@@ -38092,7 +38092,7 @@ cc13d0,180,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub18GetObse
 cc1490,208,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub10GetMapNameEv
 cc1560,208,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub11GetAreaNameEv
 cc1630,208,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub15GetAreaFullNameEv
-cc1a00,556,disputed,src/game/script/unplaced_5.c,game_script_cc1a00
+cc1a00,320,disputed,src/game/script/unplaced_5.c,game_script_cc1a00
 cc1e00,296,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub12IsActiveFlagERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE
 cc1f30,236,verified,src/game/script/hub_natives.cpp,_ZN4game6script3hub9EntryFlagERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEb
 cc2020,484,verified,src/game/script/hub_natives_impl.c,hub_IsAlreadyRead
@@ -44623,7 +44623,7 @@ ecb9e0,188,verified,src/game/script/hub_unique_natives.cpp,_ZN4game6script3hub6u
 ecbaa0,188,verified,src/game/script/hub_unique_natives.cpp,_ZN4game6script3hub6unique24OnTitleSeqJobIntroSignalEv
 ecbb60,456,verified,src/game/script/hub_unique_natives_impl.c,hub_unique_OpenCrownDoorAchievement
 ecbd30,2140,verified,src/game/script/unplaced.c,game_script_ecbd30
-ecc660,3252,disputed,src/game/script/unplaced_5.c,game_script_ecc660
+ecc660,3120,disputed,src/game/script/unplaced_5.c,game_script_ecc660
 ecd440,248,verified,src/game/script/cmdbtl_event_natives.cpp,_ZN4game6script6cmdbtl5event20EntryTurnBeginBeforeERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEiiiSB_
 ecd540,604,verified,src/game/script/cmdbtl_event_natives.cpp,_ZN4game6script6cmdbtl5event20EntryTurnBeginBeforeERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEiiiSB_SB_
 ecd7c0,452,verified,src/game/script/cmdbtl_event_natives.cpp,_ZN4game6script6cmdbtl5event20EntryTurnBeginBeforeERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEiiiSB_RKi
