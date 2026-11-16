@@ -42251,7 +42251,7 @@ e2dfe0,1120,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager
 e2e460,496,verified,src/game/combat/combat_legion_manager.c,game_combat_CombatLegionManager_SetAllSoundEnable
 e2e6a0,344,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2e6a0
 e2e800,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
-e2e820,2760,disputed,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2e820
+e2e820,2820,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2e820
 e2f380,488,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2f380
 e2f570,796,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2f570
 e2f8a0,764,verified,src/game/combat/combat_legion_manager.c,CombatLegionManager_e2f8a0

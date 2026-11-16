@@ -3501,7 +3501,7 @@ LABEL_2:
           }
           v104 = v8 + 48 * v99;
           v105 = *(float*)(v104 + 32);
-          if (*(float*)(v103 + 32) >= v105) {
+          if (!(*(float*)(v103 + 32) < v105)) {
             v106 = *(_OWORD*)(v104 + 16);
             v107 = *(_QWORD*)v104;
             do {
@@ -3524,7 +3524,7 @@ LABEL_2:
                 v103 += 48LL;
                 v102 = v110;
               }
-            } while (*(float*)(v103 + 32) >= v105);
+            } while (!(*(float*)(v103 + 32) < v105));
             *(_QWORD*)(v104 + 16) = v106;
             *(_QWORD*)v104 = v107;
             v100 = *(_OWORD*)(v104 + 16);
@@ -3587,7 +3587,7 @@ LABEL_2:
               (-2LL - 0x5555555555555555LL * ((unsigned __int64)v124 >> 4)) >>
               1;
           v126 = v8 + 48 * v125;
-          if (*(float*)(v126 + 32) >= v114) {
+          if (!(*(float*)(v126 + 32) < v114)) {
             goto LABEL_103;
           }
           v113 = *(_OWORD*)(v117 + 16);
@@ -3693,7 +3693,7 @@ LABEL_2:
           v27 = *(float*)(v26 - 16);
           v28 = v26 - 48;
           v26 -= 48LL;
-        } while (v27 >= v18);
+        } while (!(v27 < v18));
       }
     LABEL_31:
       v8 = v25;
@@ -3723,7 +3723,7 @@ LABEL_2:
           do {
             v38 = *(float*)(v31 - 16);
             v31 -= 48LL;
-          } while (v38 >= v18);
+          } while (!(v38 < v18));
         } while (v8 < v31);
       }
       if (v7 != v8 - 48) {
@@ -3762,7 +3762,7 @@ LABEL_2:
       }
     }
     else {
-      if (v18 >= *(a2 - 4)) {
+      if (!(v18 < *(a2 - 4))) {
         v42 = v7 + 48;
         do {
           v8 = v42;
@@ -3771,7 +3771,7 @@ LABEL_2:
           }
           v43 = *(float*)(v42 + 32);
           v42 += 48LL;
-        } while (v18 >= v43);
+        } while (!(v18 < v43));
       }
       else {
         v19 = v7;
@@ -3779,7 +3779,7 @@ LABEL_2:
           v20 = *(float*)(v19 + 80);
           v8 = v19 + 48;
           v19 += 48;
-        } while (v18 >= v20);
+        } while (!(v18 < v20));
       }
       v44 = (unsigned __int64)a2;
       if (v8 < (unsigned __int64)a2) {
@@ -3812,7 +3812,7 @@ LABEL_2:
         do {
           v54 = *(float*)(v8 + 80);
           v8 += 48LL;
-        } while (v18 >= v54);
+        } while (!(v18 < v54));
         do {
           v55 = *(float*)(v44 - 16);
           v44 -= 48LL;
