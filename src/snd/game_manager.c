@@ -391,6 +391,13 @@ void __attribute__((noreturn)) fs_60a230();
 void __cxa_guard_release_alt2(__int64) __asm__("__cxa_guard_release");
 void snd_GameManager_GetListCurrentEncountBattleBGM_lambda0_Invoke(
     __int64 a1, const char** a2);
+__attribute__((swiftcall)) void GameRoutine_a3aba0_alt1(PSEUDO_X8, _QWORD,
+                                                        _QWORD, _QWORD, float);
+__int64 Crc32List_1163b0_alt2();
+__int64 snd_Fade_Destroy_Fade_alt3(_QWORD*);
+__int64 snd_fnd_WeakHandle_get_alt2(__int64);
+bool snd_Voice_hasFeature_alt2(__int64, unsigned int);
+float snd_fnd_calcDistance_fe090_alt2(float*, float*);
 
 __int64 GameManager_Destructor(__int64 a1)
 {
@@ -7419,6 +7426,9 @@ __int64 GameManager_setupFields(__int64 a1)
 
 void GameManager_a32d60(__int64 a1, __int64 a2, float* a3, float* a4)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v8;
   __int64 v9;
   __int64 v10;
@@ -7461,12 +7471,12 @@ void GameManager_a32d60(__int64 a1, __int64 a2, float* a3, float* a4)
 
   *a3 = 0x1.0000000000000p+0f;
   *a4 = 0x0.0p+0f;
-  v8 = snd_fnd_WeakHandle_get_alt1(a2 + 5848);
+  v8 = snd_fnd_WeakHandle_get_alt2(a2 + 5848);
   if (v8 != 0) {
     v9 = v8;
-    v10 = Crc32List_1163b0_alt1();
+    v10 = Crc32List_1163b0_alt2();
     Manager_1181f0((void*)((__int64)&f_.v28), v10, -1);
-    v11 = snd_fnd_WeakHandle_get_alt1((__int64)&f_.v28);
+    v11 = snd_fnd_WeakHandle_get_alt2((__int64)&f_.v28);
     if (v11 != 0) {
       (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64))(
           *(_QWORD*)(v11 - 5552) + 1048LL))((void*)(&f_.v28), v11 - 5552);
@@ -7479,20 +7489,19 @@ void GameManager_a32d60(__int64 a1, __int64 a2, float* a3, float* a4)
       f_.v33 = v12;
       f_.v34 = f_.v29;
       f_.v35 = v30[0];
-      v13 =
-          snd_fnd_calcDistance_fe090_alt1((float*)&f_.v36, (float*)&f_.v33);
+      v13 = snd_fnd_calcDistance_fe090_alt2((float*)&f_.v36, (float*)&f_.v33);
       v14 = (*(float (**)(__int64))(*(_QWORD*)a2 + 112LL))(a2);
-      if (v14 <= 0x0.0p+0f || !(v13 >= v14)) {
+      if (v14 <= 0x0.0p+0f || v13 < v14) {
         f_.v26[0] = v12;
         f_.v26[1] = f_.v34;
         f_.v27 = f_.v35;
         f_.v24[0] = v12;
         f_.v24[1] = f_.v37;
         f_.v25 = f_.v38;
-        game_a3aba0((void*)(&f_.v28), a1 + 544, f_.v26, f_.v24,
-                    0x1.0000000000000p+0f);
+        GameRoutine_a3aba0_alt1((void*)(&f_.v28), a1 + 544, f_.v26, f_.v24,
+                                0x1.0000000000000p+0f);
         if ((f_.v28 & 1) != 0 || (f_.v28 & 0x100) != 0) {
-          if (!(f_.v32 >= 1)) {
+          if (f_.v32 < 1) {
             v19 = 0x0.0p+0f;
           }
           else {
@@ -8508,6 +8517,8 @@ _QWORD* snd_GameManager_main_lambda0_Invoke(__int64 a1, __int64 a2)
 __int64 snd_GameManager_main_lambda0_Invoke_a368c0(__int64 a1, __int64* a2)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v2;
   __int64 result;
@@ -8571,10 +8582,10 @@ __int64 snd_GameManager_main_lambda0_Invoke_a368c0(__int64 a1, __int64* a2)
     return result;
   }
   v8 = (unsigned __int8*)snd_Voice_getBufferLabel(v2);
-  v9 = snd_fnd_WeakHandle_get_alt1(v2 + 5864);
+  v9 = snd_fnd_WeakHandle_get_alt2(v2 + 5864);
   v10 = v9;
   if (v9 != 0) {
-    v11 = snd_fnd_WeakHandle_get_alt1(v9 + 272);
+    v11 = snd_fnd_WeakHandle_get_alt2(v9 + 272);
     if (v11 != 0) {
       v12 = v11 - 5592;
     }
@@ -8598,7 +8609,7 @@ __int64 snd_GameManager_main_lambda0_Invoke_a368c0(__int64 a1, __int64* a2)
   }
   if (v13 == 3) {
     v14 = (f_.v54 & 1) != 0 ? (unsigned __int16*)f_.v56
-                              : (unsigned __int16*)((char*)&f_.v54 + 1);
+                            : (unsigned __int16*)((char*)&f_.v54 + 1);
     v15 = *v14;
     v16 = *((unsigned __int8*)v14 + 2);
     if (v15 == 18242 && v16 == 77) {
@@ -8660,8 +8671,7 @@ __int64 snd_GameManager_main_lambda0_Invoke_a368c0(__int64 a1, __int64* a2)
     }
   LABEL_49:
     result = (*(__int64 (**)(_QWORD, unsigned __int16*))(
-        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0],
-                                                 f_.v51);
+        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0], f_.v51);
     goto LABEL_50;
   }
   v25 = f_.v51;
@@ -8680,9 +8690,8 @@ LABEL_50:
   }
 LABEL_57:
   if ((f_.v54 & 1) != 0) {
-    result = (*(__int64 (**)(_QWORD, _QWORD*))(**(_QWORD**)snd_g_memory_ptr[0] +
-                                               24LL))(*snd_g_memory_ptr[0],
-                                                      f_.v56);
+    result = (*(__int64 (**)(_QWORD, _QWORD*))(
+        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0], f_.v56);
   }
   if (v23) {
     return result;
@@ -8781,8 +8790,7 @@ LABEL_68:
   }
   if ((f_.v47[0] & 1) != 0) {
     result = (*(__int64 (**)(_QWORD, __int64*))(
-        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0],
-                                                 f_.v48);
+        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0], f_.v48);
   }
   if (v10 != 0) {
     v36 = f_.v49 & 1;
@@ -8790,12 +8798,11 @@ LABEL_68:
   }
 LABEL_110:
   if ((f_.v54 & 1) != 0) {
-    result = (*(__int64 (**)(_QWORD, _QWORD*))(**(_QWORD**)snd_g_memory_ptr[0] +
-                                               24LL))(*snd_g_memory_ptr[0],
-                                                      f_.v56);
+    result = (*(__int64 (**)(_QWORD, _QWORD*))(
+        **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0], f_.v56);
   }
   if ((v12 & 1) == 0) {
-    result = snd_Voice_hasFeature_alt1(v2, 0x1Au);
+    result = snd_Voice_hasFeature_alt2(v2, 0x1Au);
     if ((result & 1) == 0) {
       if (!snd_Param_isEnvelopeReleased(v2 + 40)) {
         snd_Fade_Fade_10cb00((__int64)&f_.v54, "FadeTime_AllSounds_Skip_Out");
@@ -8814,7 +8821,7 @@ LABEL_110:
     LABEL_4:
       (*(void (**)(__int64, __int64*, __int64, long double))(v4 + 248))(
           v6, &f_.v54, v7, v5);
-      return snd_Fade_Destroy_Fade_alt2(&f_.v54);
+      return snd_Fade_Destroy_Fade_alt3(&f_.v54);
     }
   }
   return result;

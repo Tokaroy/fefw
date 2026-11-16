@@ -1097,6 +1097,9 @@ __int64 game_Unit_Destroy_Unit_alt3(_QWORD);
 bool AISupportSkillScope_11ff100_alt2(__int64*, int*);
 long double AiBattleSimulator_11fc090_alt3(_QWORD, _QWORD);
 void __attribute__((noreturn)) GameRoutine_60a310_alt3();
+__int64* game_UnitPool_Get_alt2(_BYTE*);
+__int64 GameRoutine_11f2b00_alt2(__int64, __int64, unsigned int);
+void AIDeploy_1274f90_alt4(_QWORD*, __int64, int, unsigned int*);
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -21235,8 +21238,8 @@ LABEL_26:
         if (f_.v36 == nullptr) {
           GameRoutine_60a310_alt3();
         }
-        v18 = (*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v36 + 48LL))(f_.v36,
-                                                                    f_.v37);
+        v18 =
+            (*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v36 + 48LL))(f_.v36, f_.v37);
         v15 = v30;
         if ((v18 & 1) != 0) {
           v19 = (__int64 (***)(void))fw_memory_HeapManager_Allocate_alt2(
@@ -33416,8 +33419,8 @@ LABEL_24:
   v28 = *(unsigned int*)(v13 + 15840);
   if ((int)v28 >= 1) {
     v29 = (_DWORD*)(v13 + 7656);
-    skillIndex = *(int*)((char*)((_UNKNOWN*)0x5CLL) +
-                         game_g_shared_system_skills_ptr);
+    skillIndex =
+        *(int*)((char*)((_UNKNOWN*)0x5CLL) + game_g_shared_system_skills_ptr);
     skillTable = *(_QWORD*)(GameData_21c99b0 + 64);
     skillWanted = *(_QWORD*)(skillTable + 8LL * skillIndex);
     // The wanted skill is read before the loop, even when no unit matches.
@@ -35110,6 +35113,9 @@ bool AIThink_SpecialEntrustEnhancementCondition_Unknown7(__int64 a1, _DWORD* a2)
 
 __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
 {
+
+#pragma clang fp contract(on)
+
   int v8;
   __int64 result;
   __int64 v10;
@@ -35201,7 +35207,7 @@ __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
     (**(void (***)(__int64, _QWORD))(GameData_22400d8 + 8))(
         GameData_22400d8 + 8, *(_QWORD*)(a1 + 8));
     v61 = 2;
-    AIDeploy_1274f90_alt2((_QWORD*)GameData_2240090, *(_QWORD*)(a1 + 8), -1,
+    AIDeploy_1274f90_alt4((_QWORD*)GameData_2240090, *(_QWORD*)(a1 + 8), -1,
                           &v61);
     v12 = *(_QWORD*)(a1 + 8);
     f_.v55 = 0;
@@ -35224,7 +35230,7 @@ __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
     f_.v50 = v61;
     if (a2 != 73) {
     LABEL_19:
-      v14 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+      v14 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
           *(_QWORD*)fw_memory_g_heap_manager_ptr, 48, 16, 0);
       f_.v43 = v14;
       v65 = v12;
@@ -35256,10 +35262,9 @@ __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
                                  8LL * (*(_DWORD*)(v17 + v18) & 0xFFF)) +
                       104LL) == 2) {
           if (f_.v64 == nullptr) {
-            GameRoutine_60a310_alt2();
+            GameRoutine_60a310_alt3();
           }
-          (*(void (**)(_QWORD*, __int64))(*f_.v64 + 48LL))(f_.v64,
-                                                             v17 + v18);
+          (*(void (**)(_QWORD*, __int64))(*f_.v64 + 48LL))(f_.v64, v17 + v18);
           v21 = *v20;
           v16 = *(_QWORD*)(v12 + 1496);
           v17 = *(_QWORD*)(v12 + 1488);
@@ -35295,7 +35300,7 @@ __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
         result = 0;
         goto LABEL_72;
       }
-      GameRoutine_11f2b00_alt1(*(_QWORD*)(a1 + 8), *(_QWORD*)a1, f_.v60);
+      GameRoutine_11f2b00_alt2(*(_QWORD*)(a1 + 8), *(_QWORD*)a1, f_.v60);
       v24 = 2;
       v25 = *GameData_212cfd0[0];
       v26 = (_BYTE*)(*(_QWORD*)(a1 + 8) + 847LL);
@@ -35335,8 +35340,8 @@ __int64 AIThink_12a3060(__int64 a1, int a2, __int64 a3, __int64 a4)
     LABEL_54:
       v28 = *(unsigned __int8*)(v25 + 8);
       *(_DWORD*)(v25 + 40) = v24;
-      if (v28 != 0 && game_UnitPool_Get_alt1((_BYTE*)(v25 + 8)) != nullptr) {
-        v29 = &game_UnitPool_Get_alt1((_BYTE*)(v25 + 8))[(unsigned int)v24];
+      if (v28 != 0 && game_UnitPool_Get_alt2((_BYTE*)(v25 + 8)) != nullptr) {
+        v29 = &game_UnitPool_Get_alt2((_BYTE*)(v25 + 8))[(unsigned int)v24];
         v30 = *((_WORD*)v29 + 414);
         *(_BYTE*)(v25 + 46) = *((_BYTE*)v29 + 830);
         *(_WORD*)(v25 + 44) = v30;

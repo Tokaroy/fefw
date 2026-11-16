@@ -30,10 +30,10 @@ __int64 memcpy(_QWORD, _QWORD, _QWORD);
 __int64 nn_mem_StandardAllocator_Free(_QWORD, _QWORD);
 bool GameRoutine_6e8e50(unsigned __int16*, __int64);
 bool UnitItem_6e8bc0(unsigned __int16*, __int64);
-__int64 GameRoutine_6e8e50_alt1(unsigned __int16*, __int64) __asm__(
-    "GameRoutine_6e8e50");
-__int64 UnitItem_6e8bc0_alt1(unsigned __int16*, __int64) __asm__(
-    "UnitItem_6e8bc0");
+__int64 GameRoutine_6e8e50_alt1(unsigned __int16*,
+                                __int64) __asm__("GameRoutine_6e8e50");
+__int64 UnitItem_6e8bc0_alt1(unsigned __int16*,
+                             __int64) __asm__("UnitItem_6e8bc0");
 extern _UNKNOWN* GameData_212cf50;
 extern __int64 (*GameData_1f95488[])();
 extern __int64 (*GameData_1f95508[])();
@@ -1224,6 +1224,9 @@ LABEL_26:
 __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
                       __int64 a6)
 {
+
+#pragma clang fp contract(on)
+
   int v6;
   int v7;
   bool v9;

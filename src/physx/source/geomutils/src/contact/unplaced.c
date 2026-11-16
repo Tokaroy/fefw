@@ -80,24 +80,24 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   float v69;
   float v70;
   _BYTE v71[12];
-  float v72[3];
-  _BYTE v73[36];
   struct {
-    char gap0_[80];
+    char gap0_[32];
+    float v72[3];
+    _BYTE v73[36];
     float v74;
     float v75;
     float v76;
-    char gap92_[136];
+    float v77[19];
+    _DWORD v78[3];
+    int v79;
+    char gap184_[32];
+    float v80[3];
     float v81[2];
     float v82;
     char gap240_[88];
     float v83;
     float v84;
   } f_;
-  float v77[19];
-  _DWORD v78[3];
-  int v79;
-  float v80[3];
 
   v8 = *a3;
   v7 = a3[1];
@@ -113,7 +113,7 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   f_.v84 = a3[4];
   v67 = a3[6];
   v68 = v17 * v16;
-  physx_Gu_makeConvexShape(a2, a4, (__int64)v77);
+  physx_Gu_makeConvexShape(a2, a4, (__int64)f_.v77);
   v18 = v14 + (float)(v8 * (float)(v8 + v8));
   v19 = -v7;
   v20 = v15 - (float)(v7 * v13);
@@ -123,7 +123,7 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   v22 = v21;
   f_.v74 = -v18;
   f_.v75 = -(float)(f_.v83 + (float)(v10 * v13));
-  physx_Gu_ConvexShape_support((void*)(f_.v81), v77, &f_.v74);
+  physx_Gu_ConvexShape_support((void*)(f_.v81), f_.v77, &f_.v74);
   v23 = (float)((float)((float)(PSEUDO_UNFUSED(v69 * f_.v81[1])) +
                         (float)(f_.v81[0] * v18)) +
                 (float)(f_.v82 * v20)) -
@@ -131,23 +131,23 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   if (v23 >= f_.v84) {
     return *(_DWORD*)(a7 + 20480) != 0;
   }
-  v24 = physx_Gu_ConvexShape_contactFace(v77, &f_.v74, f_.v81, v80,
-                                         (__int64)v78);
+  v24 = physx_Gu_ConvexShape_contactFace(f_.v77, &f_.v74, f_.v81, f_.v80,
+                                         (__int64)f_.v78);
   v25 = f_.v75;
   if (v24 == 0) {
     v26 = f_.v74;
     v27 = f_.v76;
     v70 = v23;
     v28 = 1;
-    v72[0] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v74) *
-                                    0x1.0000000000000p-1f)) +
-             f_.v81[0];
-    v72[1] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v75) *
-                                    0x1.0000000000000p-1f)) +
-             f_.v81[1];
-    v72[2] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v76) *
-                                    0x1.0000000000000p-1f)) +
-             f_.v82;
+    f_.v72[0] =
+        (float)(PSEUDO_UNFUSED((float)(v23 * f_.v74) * 0x1.0000000000000p-1f)) +
+        f_.v81[0];
+    f_.v72[1] =
+        (float)(PSEUDO_UNFUSED((float)(v23 * f_.v75) * 0x1.0000000000000p-1f)) +
+        f_.v81[1];
+    f_.v72[2] =
+        (float)(PSEUDO_UNFUSED((float)(v23 * f_.v76) * 0x1.0000000000000p-1f)) +
+        f_.v82;
     goto LABEL_11;
   }
   v26 = f_.v74;
@@ -156,10 +156,10 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   if (v24 == 1) {
     v29 = 0;
   LABEL_10:
-    v43 = (float*)&v78[3 * v29];
+    v43 = (float*)&f_.v78[3 * v29];
     v44 = v43[1];
     v45 = v43[2];
-    v46 = &v72[3 * v29];
+    v46 = &f_.v72[3 * v29];
     v47 = (float)((float)((float)(PSEUDO_UNFUSED(v69 * v44)) +
                           (float)(*v43 * v18)) +
                   (float)(v45 * v20)) -
@@ -176,9 +176,9 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
     goto LABEL_11;
   }
   v31 = 0;
-  v32 = (float*)&v79;
+  v32 = (float*)&f_.v79;
   v33 = (float*)v71;
-  v34 = (float*)v73;
+  v34 = (float*)f_.v73;
   do {
     v35 = *(v32 - 3);
     v36 = *(v32 - 2);
@@ -231,8 +231,8 @@ LABEL_11:
   LABEL_19:
     if (v49 <= 0xFF) {
       v62 = *(_DWORD*)&v71[4 * v50 - 4];
-      v63 = &v72[3 * v50];
-      *v48 = v49 + 1;
+      v63 = &f_.v72[3 * v50];
+      *(_DWORD*)v48 = v49 + 1;
       v64 = a7 + 80 * v49;
       v65 = *(_QWORD*)v63;
       *(float*)v64 = v26;
@@ -248,13 +248,13 @@ LABEL_11:
   }
   v51 = 0;
   v52 = (int*)v71;
-  v53 = v73;
+  v53 = f_.v73;
   do {
     if (v49 <= 0xFF) {
       v54 = *((_DWORD*)v53 - 1);
       v55 = a7 + 80 * v49;
       v56 = *(_QWORD*)(v53 - 12);
-      *v48 = ++v49;
+      *(_DWORD*)v48 = ++v49;
       *(float*)v55 = v26;
       *(float*)(v55 + 4) = v25;
       *(_DWORD*)(v55 + 52) = -1;
@@ -267,7 +267,7 @@ LABEL_11:
         v58 = *((_DWORD*)v53 + 2);
         v59 = a7 + 80 * v49;
         v60 = *(_QWORD*)v53;
-        *v48 = ++v49;
+        *(_DWORD*)v48 = ++v49;
         *(float*)v59 = v26;
         *(float*)(v59 + 4) = v25;
         *(_DWORD*)(v59 + 52) = -1;

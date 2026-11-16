@@ -60,6 +60,8 @@ void __cxa_guard_release(__int64);
 void game_cfc7c0(__int64, float*, char, float);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 void game_zview_d0eb60(unsigned __int64 a1);
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac_alt1;
 
 void game_zview_d0eb60(unsigned __int64 a1)
 {
@@ -742,11 +744,11 @@ LABEL_24:
                             memory_order_acquire) &
        1) == 0 &&
       __cxa_guard_acquire((__int64)&GameData_22110b8) != 0) {
-    GameData_22110ac = 0;
+    GameData_22110ac_alt1 = 0;
     __cxa_guard_release((__int64)&GameData_22110b8),
         v321 = COERCE_AS(__typeof__(v321), PSEUDO_REGISTER(float, "s1", "=w"));
   }
-  v28 = GameData_22110ac;
+  v28 = GameData_22110ac_alt1;
   v29 = *(_QWORD*)(a1 + 696);
   v30 = *(_QWORD*)(a1 + 688);
   v31 = v29 - v30;
@@ -1157,14 +1159,14 @@ LABEL_24:
                                   memory_order_acquire) &
              1) == 0 &&
             __cxa_guard_acquire((__int64)&GameData_22110b8) != 0) {
-          GameData_22110ac = 0;
+          GameData_22110ac_alt1 = 0;
           __cxa_guard_release((__int64)&GameData_22110b8),
               v321 = COERCE_AS(__typeof__(v321),
                                PSEUDO_REGISTER(float, "s1", "=w"));
         }
         DWORDn(f_.v551, sizeof(f_.v551) / 4 - 1) = 0;
         BYTE3(f_.v552) = 1;
-        *(_QWORD*)(a1 + 668) = GameData_22110ac;
+        *(_QWORD*)(a1 + 668) = GameData_22110ac_alt1;
         *(_QWORD*)(a1 + 640) =
             CharacterModel_d198c0(*(_QWORD**)(v73 + 344), &f_.v548, 0, 0),
                         v321 = COERCE_AS(__typeof__(v321),

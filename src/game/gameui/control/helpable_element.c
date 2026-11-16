@@ -25,6 +25,9 @@ __int64 HelpableElement_18b2f90(_QWORD* a1);
 extern __int64* GameData_212d890[2];
 _QWORD* HelpableElement_18b2c60();
 _QWORD* HelpableElement_18b2cd0(_QWORD* result);
+__int64 FloatingHelp_18ae4d0(__int64, _QWORD*, unsigned int);
+__int64 std___1___shared_weak_count___release_weak_alt1(__int64);
+__int64 std___1___shared_weak_count_lock_alt1(__int64);
 
 __attribute__((swiftcall)) void HelpableElement_18b2990(PSEUDO_X8 x8_,
                                                         _QWORD* a1, __int64 a2)
@@ -198,152 +201,172 @@ _QWORD* HelpableElement_18b2cd0(_QWORD* result)
 
 __int64 HelpableElement_18b2d50(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 result;
-  _QWORD* v4;
-  __int64 v5;
-  _QWORD* v6;
-  __int64 v7;
+  struct {
+    __int64 v4;
+    __int64 v5;
+    __int64 v6;
+    __int64 v7;
+  } f_;
 
-  Element_1885a60((void*)(&v4), a1);
-  v1 = v5;
-  v6 = nullptr;
-  v7 = 0;
-  if (v5 != 0) {
-    v1 = std___1___shared_weak_count_lock(v5);
-    v7 = v1;
+  Element_1885a60((void*)(&f_.v4), a1);
+  v1 = f_.v5;
+  f_.v6 = 0;
+  f_.v7 = 0;
+  if (f_.v5 != 0) {
+    v1 = std___1___shared_weak_count_lock_alt1(f_.v5);
+    f_.v7 = v1;
     if (v1 != 0) {
-      v6 = v4;
+      f_.v6 = f_.v4;
     }
   }
   if (GameData_21f1e08 != 0 && *(_QWORD*)(GameData_21f1e08 + 152) != 0) {
-    GameRoutine_18ae4d0(GameData_21f1e08, &v6, 2u);
-    v1 = v7;
+    FloatingHelp_18ae4d0(GameData_21f1e08, &f_.v6, 2u);
+    v1 = f_.v7;
   }
   if (v1 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v1 + 8),
                                   0xFFFFFFFFFFFFFFFFLL) == 0) {
     v2 = v1;
     (*(void (**)(__int64))(*(_QWORD*)v1 + 16LL))(v1);
-    std___1___shared_weak_count___release_weak(v2);
+    std___1___shared_weak_count___release_weak_alt1(v2);
   }
-  result = v5;
-  if (v5 != 0) {
-    return std___1___shared_weak_count___release_weak(v5);
+  result = f_.v5;
+  if (f_.v5 != 0) {
+    return std___1___shared_weak_count___release_weak_alt1(f_.v5);
   }
   return result;
 }
 
 __int64 HelpableElement_18b2e10(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 result;
-  _QWORD* v4;
-  __int64 v5;
-  _QWORD* v6;
-  __int64 v7;
+  struct {
+    __int64 v4;
+    __int64 v5;
+    __int64 v6;
+    __int64 v7;
+  } f_;
 
-  Element_1885a60((void*)(&v4), a1);
-  v1 = v5;
-  v6 = nullptr;
-  v7 = 0;
-  if (v5 != 0) {
-    v1 = std___1___shared_weak_count_lock(v5);
-    v7 = v1;
+  Element_1885a60((void*)(&f_.v4), a1);
+  v1 = f_.v5;
+  f_.v6 = 0;
+  f_.v7 = 0;
+  if (f_.v5 != 0) {
+    v1 = std___1___shared_weak_count_lock_alt1(f_.v5);
+    f_.v7 = v1;
     if (v1 != 0) {
-      v6 = v4;
+      f_.v6 = f_.v4;
     }
   }
   if (GameData_21f1e08 != 0 && *(_QWORD*)(GameData_21f1e08 + 152) != 0) {
-    GameRoutine_18ae4d0(GameData_21f1e08, &v6, 3u);
-    v1 = v7;
+    FloatingHelp_18ae4d0(GameData_21f1e08, &f_.v6, 3u);
+    v1 = f_.v7;
   }
   if (v1 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v1 + 8),
                                   0xFFFFFFFFFFFFFFFFLL) == 0) {
     v2 = v1;
     (*(void (**)(__int64))(*(_QWORD*)v1 + 16LL))(v1);
-    std___1___shared_weak_count___release_weak(v2);
+    std___1___shared_weak_count___release_weak_alt1(v2);
   }
-  result = v5;
-  if (v5 != 0) {
-    return std___1___shared_weak_count___release_weak(v5);
+  result = f_.v5;
+  if (f_.v5 != 0) {
+    return std___1___shared_weak_count___release_weak_alt1(f_.v5);
   }
   return result;
 }
 
 __int64 HelpableElement_18b2ed0(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 result;
-  _QWORD* v4;
-  __int64 v5;
-  _QWORD* v6;
-  __int64 v7;
+  struct {
+    __int64 v4;
+    __int64 v5;
+    __int64 v6;
+    __int64 v7;
+  } f_;
 
-  Element_1885a60((void*)(&v4), a1);
-  v1 = v5;
-  v6 = nullptr;
-  v7 = 0;
-  if (v5 != 0) {
-    v1 = std___1___shared_weak_count_lock(v5);
-    v7 = v1;
+  Element_1885a60((void*)(&f_.v4), a1);
+  v1 = f_.v5;
+  f_.v6 = 0;
+  f_.v7 = 0;
+  if (f_.v5 != 0) {
+    v1 = std___1___shared_weak_count_lock_alt1(f_.v5);
+    f_.v7 = v1;
     if (v1 != 0) {
-      v6 = v4;
+      f_.v6 = f_.v4;
     }
   }
   if (GameData_21f1e08 != 0 && *(_QWORD*)(GameData_21f1e08 + 152) != 0) {
-    GameRoutine_18ae4d0(GameData_21f1e08, &v6, 0);
-    v1 = v7;
+    FloatingHelp_18ae4d0(GameData_21f1e08, &f_.v6, 0);
+    v1 = f_.v7;
   }
   if (v1 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v1 + 8),
                                   0xFFFFFFFFFFFFFFFFLL) == 0) {
     v2 = v1;
     (*(void (**)(__int64))(*(_QWORD*)v1 + 16LL))(v1);
-    std___1___shared_weak_count___release_weak(v2);
+    std___1___shared_weak_count___release_weak_alt1(v2);
   }
-  result = v5;
-  if (v5 != 0) {
-    return std___1___shared_weak_count___release_weak(v5);
+  result = f_.v5;
+  if (f_.v5 != 0) {
+    return std___1___shared_weak_count___release_weak_alt1(f_.v5);
   }
   return result;
 }
 
 __int64 HelpableElement_18b2f90(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 result;
-  _QWORD* v4;
-  __int64 v5;
-  _QWORD* v6;
-  __int64 v7;
+  struct {
+    __int64 v4;
+    __int64 v5;
+    __int64 v6;
+    __int64 v7;
+  } f_;
 
-  Element_1885a60((void*)(&v4), a1);
-  v1 = v5;
-  v6 = nullptr;
-  v7 = 0;
-  if (v5 != 0) {
-    v1 = std___1___shared_weak_count_lock(v5);
-    v7 = v1;
+  Element_1885a60((void*)(&f_.v4), a1);
+  v1 = f_.v5;
+  f_.v6 = 0;
+  f_.v7 = 0;
+  if (f_.v5 != 0) {
+    v1 = std___1___shared_weak_count_lock_alt1(f_.v5);
+    f_.v7 = v1;
     if (v1 != 0) {
-      v6 = v4;
+      f_.v6 = f_.v4;
     }
   }
   if (GameData_21f1e08 != 0 && *(_QWORD*)(GameData_21f1e08 + 152) != 0) {
-    GameRoutine_18ae4d0(GameData_21f1e08, &v6, 1u);
-    v1 = v7;
+    FloatingHelp_18ae4d0(GameData_21f1e08, &f_.v6, 1u);
+    v1 = f_.v7;
   }
   if (v1 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v1 + 8),
                                   0xFFFFFFFFFFFFFFFFLL) == 0) {
     v2 = v1;
     (*(void (**)(__int64))(*(_QWORD*)v1 + 16LL))(v1);
-    std___1___shared_weak_count___release_weak(v2);
+    std___1___shared_weak_count___release_weak_alt1(v2);
   }
-  result = v5;
-  if (v5 != 0) {
-    return std___1___shared_weak_count___release_weak(v5);
+  result = f_.v5;
+  if (f_.v5 != 0) {
+    return std___1___shared_weak_count___release_weak_alt1(f_.v5);
   }
   return result;
 }

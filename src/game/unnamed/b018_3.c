@@ -1086,6 +1086,11 @@ __int64 GameHr_13fd900(__int64* a1, __int64 a2);
 void GameHr_1409d00(__int64 a1);
 void GameHr_14127e0(__int64 a1, unsigned __int8* a2);
 __int64 GameHr_1425b40(__int64 a1);
+_QWORD* GameRoutine_14514d0_alt2(_QWORD* result, _QWORD*);
+_QWORD* GameRoutine_64df20_alt2(_QWORD*, __int64, unsigned __int64);
+__int64 GameRoutine_1a0b940_alt1(__int64, __int64, unsigned __int64);
+unsigned __int64 GameRoutine_1a09c70_alt1(const char*);
+void __attribute__((noreturn)) GameRoutine_13e0e50_alt2();
 
 __int64 GameHr_1351170(__int64* a1)
 {
@@ -2554,6 +2559,9 @@ __int64 GameHr_1384630(__int64 a1, __int64 a2, __int64 a3)
 
 void GameHr_13dd670(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   __int64 v4;
@@ -2610,7 +2618,7 @@ void GameHr_13dd670(__int64 a1)
           v9 = **(__int64***)(*(_QWORD*)(a1 + 280) + 40LL);
           if (*(__int64**)(*(_QWORD*)(*(_QWORD*)(a1 + 280) + 40LL) + 8LL) ==
               v9) {
-            GameRoutine_13e0e50_alt1();
+            GameRoutine_13e0e50_alt2();
           }
           v10 = *v9;
           v11 = *(_BYTE**)(*v9 + 320);
@@ -2625,7 +2633,7 @@ void GameHr_13dd670(__int64 a1)
           f_.v29 = (__int64)GameData_2036130;
           f_.v30 = v11;
           f_.v32 = &f_.v29;
-          GameRoutine_14514d0_alt1(&f_.v29, v5 + 34);
+          GameRoutine_14514d0_alt2(&f_.v29, v5 + 34);
           if (f_.v32 == &f_.v29) {
             v12 = 32;
           }
@@ -2644,7 +2652,7 @@ void GameHr_13dd670(__int64 a1)
             LABEL_19:
               v14 = *(_BYTE**)(v10 + 328);
               if (v14 != nullptr && *v14 != 0) {
-                v15 = strlen(*(const char**)(v10 + 328));
+                v15 = GameRoutine_1a09c70_alt1(*(const char**)(v10 + 328));
                 if (v15 >= 0xFFFFFFFFFFFFFFF7LL) {
                   String_60a1d0();
                 }
@@ -2690,15 +2698,14 @@ void GameHr_13dd670(__int64 a1)
                               v25 = (unsigned __int64)f_.v30;
                             }
                             else {
-                              v25 =
-                                  (unsigned __int64)(unsigned __int8)f_.v29 >>
-                                  1;
+                              v25 = (unsigned __int64)(unsigned __int8)f_.v29 >>
+                                    1;
                             }
                             SpineModel_64dde0(v22, (__int64)v24, v25);
                             v21 = f_.v29;
                           }
                           else if ((f_.v29 & 1) != 0) {
-                            GameRoutine_64df20_alt1(v22, (__int64)f_.v31,
+                            GameRoutine_64df20_alt2(v22, (__int64)f_.v31,
                                                     (unsigned __int64)f_.v30);
                           }
                           else {
@@ -2727,7 +2734,7 @@ void GameHr_13dd670(__int64 a1)
                     goto LABEL_35;
                   }
                 }
-                memmove((__int64)v17, (__int64)v14, v16);
+                GameRoutine_1a0b940_alt1((__int64)v17, (__int64)v14, v16);
                 goto LABEL_30;
               }
             LABEL_52:

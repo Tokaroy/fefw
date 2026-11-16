@@ -105,6 +105,7 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_facility_anonymous_ProcDiningRecipeMenu_ACall_closure_Invoke_13fad90(
     __int64 a1, __int64* a2);
+__int64 GameRoutine_9244a0_alt2(__int64, __int64);
 
 __int64 ProcDiningRecipeMenu_Unknown84(__int64 a1)
 {
@@ -424,6 +425,8 @@ LABEL_33:
 __int64 game_facility_anonymous_ProcDiningRecipeMenu_ACall(__int64 a1)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v2;
   __int64 v3;
@@ -498,8 +501,8 @@ __int64 game_facility_anonymous_ProcDiningRecipeMenu_ACall(__int64 a1)
   f_.v35 = f_.v34;
   f_.v36[0] = (__int64 (*)())GameData_2037ad0;
   f_.v34[0] = GameData_2037ad0;
-  v10 = GameRoutine_13fa790(v3, (__int64)&v40, (__int64)f_.v38,
-                            (__int64)f_.v36, (__int64)f_.v34);
+  v10 = GameRoutine_13fa790(v3, (__int64)&v40, (__int64)f_.v38, (__int64)f_.v36,
+                            (__int64)f_.v34);
   if (f_.v35 == f_.v34) {
     v11 = 32;
   }
@@ -576,36 +579,36 @@ LABEL_34:
       else {
         v20 = (__int16*)game_gmap_GmapClock_kDefaultTime_ptr;
       }
-      v14 = (unsigned __int16)(*(_WORD*)(v18 + 52));
+      LOWORD(v14) = *(_WORD*)(v18 + 52);
       v21 = (double)v14;
       v22 = GameRoutine_94a700(v20);
       v23 = 0x1.0000000000000p+0;
       v24 = (double)v22 / -0x1.9000000000000p+6 + 0x1.0000000000000p+0;
-      if (!(v24 > 0x1.0000000000000p+0)) {
+      if (v24 <= 0x1.0000000000000p+0) {
         v23 = (double)v22 / -0x1.9000000000000p+6 + 0x1.0000000000000p+0;
       }
-      if (!(v24 < 0x1.47ae147ae147bp-7)) {
+      if (v24 >= 0x1.47ae147ae147bp-7) {
         v25 = v23;
       }
       else {
         v25 = 0x1.47ae147ae147bp-7;
       }
       v26 = (int)(v25 * v21);
-      if (!(v26 > 1)) {
+      if (v26 <= 1) {
         v26 = 1;
       }
       *((_DWORD*)v10 + 392) = v26;
       v27 = *(_QWORD*)(*v6 + 48);
       v28 = *(_QWORD*)(*v6 + 56);
-      if (!((int)((unsigned __int64)(v28 - v27) >> 3) < 1)) {
+      if ((int)((unsigned __int64)(v28 - v27) >> 3) >= 1) {
         v29 = 0;
         do {
-          if (!(v29 < (v28 - v27) >> 3)) {
-            GameRoutine_9244a0_alt1(v18, 0);
+          if (v29 >= (v28 - v27) >> 3) {
+            GameRoutine_9244a0_alt2(v18, 0);
           }
           else {
             v30 = *(_QWORD*)(v27 + 8 * v29);
-            v31 = GameRoutine_9244a0_alt1(v18, v30);
+            v31 = GameRoutine_9244a0_alt2(v18, v30);
             if (v30 != 0) {
               v32 = v31;
               if (*(_BYTE*)(v30 + 2136) != 0) {

@@ -1173,7 +1173,8 @@ void game_map_1141e80(_QWORD* a1, __int64* a2)
       v6 = *(unsigned int*)(v5 - 8);
       v7 = v5 - 32;
       if ((_DWORD)v6 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v6])(&f_.v19, v5 - 32);
+        ((void (*)(char*, __int64))decltype_c81af0_ptr_2012a50[v6])(&f_.v19,
+                                                                    v5 - 32);
       }
       *(_DWORD*)(v5 - 8) = -1;
       v5 -= 32;
@@ -1256,7 +1257,8 @@ void game_map_1142060(_QWORD* a1, __int64* a2)
       v6 = *(unsigned int*)(v5 - 8);
       v7 = v5 - 32;
       if ((_DWORD)v6 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v6])(&f_.v19, v5 - 32);
+        ((void (*)(char*, __int64))decltype_c81af0_ptr_2012a50[v6])(&f_.v19,
+                                                                    v5 - 32);
       }
       *(_DWORD*)(v5 - 8) = -1;
       v5 -= 32;
@@ -1443,7 +1445,8 @@ void game_map_1142440(__int64 (***a1)(), __int64* a2)
       v7 = *(unsigned int*)(v6 - 8);
       v8 = v6 - 32;
       if ((_DWORD)v7 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v7])(&f_.v23, v6 - 32);
+        ((void (*)(char*, __int64))decltype_c81af0_ptr_2012a50[v7])(&f_.v23,
+                                                                    v6 - 32);
       }
       *(_DWORD*)(v6 - 8) = -1;
       v6 -= 32;

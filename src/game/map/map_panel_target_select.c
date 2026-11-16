@@ -47,9 +47,14 @@ extern _UNKNOWN* GameData_212c958;
 extern __int64 GameData_221fdd8;
 void GameRoutine_f172c0(float, __int64, _QWORD*, __int64);
 void MapPanelTargetSelect_Unknown4(__int64 a1);
+__int64 GameRoutine_fcacb0(__int64, __int64, __int64, __int64, __int64,
+                           __int16);
+void nn_mem_StandardAllocator_Free_alt2(__int64, __int64);
 
 void game_map_MapPanelTargetSelect_UpdateTarget(__int64 a1)
 {
+
+#pragma clang fp contract(on)
 
 #pragma clang fp contract(off)
   _QWORD* v2;
@@ -258,7 +263,7 @@ LABEL_32:
     }
     (*(void (**)(__int64))(*f_.v58 + v28))((__int64)f_.v58);
   LABEL_49:
-    GameHr_fcacb0(a1, (__int64)f_.v59, 1, v24, v25, v27);
+    GameRoutine_fcacb0(a1, (__int64)f_.v59, 1, v24, v25, v27);
     if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_21a6130,
                               memory_order_acquire) &
          1) == 0 &&
@@ -279,9 +284,8 @@ LABEL_32:
         v29 = vaddq_f32(v29, v33);
       } while (v32 != (float32x4_t*)f_.v62);
       v29 = vmulq_n_f32(
-          v29,
-          0x1.0000000000000p+0f /
-              (float)(unsigned __int64)((f_.v62 - (__int64)f_.v61) >> 6));
+          v29, 0x1.0000000000000p+0f /
+                   (float)(unsigned __int64)((f_.v62 - (__int64)f_.v61) >> 6));
       LANES128(v29).n128_u32[3] = 0;
     }
     v34 = vsubq_f32(v29, f_.v65);
@@ -314,7 +318,7 @@ LABEL_32:
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v38 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt1(
+      nn_mem_StandardAllocator_Free_alt2(
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v38, f_.v63);
     }
     v39 = (__int64)f_.v61;
@@ -339,7 +343,7 @@ LABEL_32:
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v21 = 56;
         }
-        nn_mem_StandardAllocator_Free_alt1(
+        nn_mem_StandardAllocator_Free_alt2(
             *(_QWORD*)fw_memory_g_heap_manager_ptr + v21, v39);
       }
     }
@@ -354,7 +358,7 @@ LABEL_73:
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v44 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt1(
+    nn_mem_StandardAllocator_Free_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v44, v17);
   }
 LABEL_77:
@@ -369,7 +373,7 @@ LABEL_78:
       v50 = LANES128(v46[17]).n128_f32[2];
       v51 = (float)(*(float*)(*(_QWORD*)v48 + 160LL) * 0x1.0aef000000000p+4f) /
             0x1.f400000000000p+9f;
-      if (!(v50 > 0x0.0p+0f)) {
+      if (v50 <= 0x0.0p+0f) {
         if (LANES128(v46[17]).n128_u8[0] != 0) {
           v54 = 0x1.0000000000000p+0f;
         }

@@ -178,8 +178,8 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
                                                      __int64 result, __int64 a2,
                                                      unsigned __int64 a3,
                                                      __int64 a4, __int64 a5);
-__attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
-                                                     __int128* a2, __int64 a3);
+__attribute__((swiftcall)) void
+LocatorDispos_db4610_alt1(PSEUDO_X8 x8_, _QWORD* a1, __int128* a2, __int64 a3);
 __attribute__((swiftcall)) void LocatorDispos_db4a70(PSEUDO_X8 x8_, _QWORD* a1,
                                                      __int128* a2, __int64 a3,
                                                      __int64 unused_int3,
@@ -282,6 +282,23 @@ __int64* GameRoutine_cb27c0(__int64*, unsigned __int8*);
 __int64* SpineModel_64dde0(__int64*, __int64, unsigned __int64);
 void GameHr_cb2900(__int64, __int64*);
 __int64 LocatorDispos_db5550(__int64 a1, __int64 a2);
+_QWORD* GameRoutine_64df20_alt2(_QWORD*, __int64, unsigned __int64);
+__int64 GameRoutine_1a0b940(__int64, __int64, unsigned __int64);
+__int64 GameRoutine_1a0b950(__int64, __int64, unsigned __int64);
+__int64 GameRoutine_60a020_alt1(__int64, const char*);
+__int64 LocatorDispos_db7380_alt3(__int64, __int64, unsigned __int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+int GameRoutine_1a09bf0(__int64, const char*, ...);
+unsigned __int64 GameRoutine_1a09c70(const char*);
+void GameRoutine_6b7aa0_alt2(__int64, __int64*, __int64*, unsigned __int64);
+void HubNatives_ccbf80_alt3(__int64);
+void Locator_df7860_alt2(_QWORD*, unsigned __int8*, __int64*);
+void __attribute__((noreturn)) GameRoutine_60a210_alt2();
+void __attribute__((noreturn)) String_60a1d0_alt2();
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
+__attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
+                                                     __int128* a2, char* a3);
 
 __attribute__((swiftcall)) void LocatorDispos_db1840(PSEUDO_X8 x8_)
 {
@@ -2631,8 +2648,11 @@ __attribute__((swiftcall)) void LocatorDispos_db43e0(PSEUDO_X8 x8_,
 }
 
 __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
-                                                     __int128* a2, __int64 a3)
+                                                     __int128* a2, char* a3)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* a4 = (_QWORD*)PSEUDO_X8_VALUE(x8_);
   __int128 v8;
   __int64* v9;
@@ -2640,13 +2660,13 @@ __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
   __int64 v11;
   __int64 v12;
   __int64* v13;
-  const char* v14;
+  char* v14;
   char* v15;
   __int64 v16;
   unsigned __int64 v17;
-  unsigned __int64 v18;
+  char* v18;
   __int64* v19;
-  char* v20;
+  __int64 v20;
   __int64 v21;
   __int64 v22;
   char* v23;
@@ -2667,28 +2687,28 @@ __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
   char* v38;
   unsigned __int64 v39;
   __int64 v40;
-  __int64 v41;
+  unsigned __int64 v41;
   char* v42;
   __int64 v43;
   __int64 v44;
-  __int64 result;
-  __int64 v46;
+  __int64 v45;
   struct {
     char gap0_[8];
-    _QWORD v47[6];
-    char v48;
+    _QWORD v46[6];
+    char v47;
     char gap57_[7];
+    __int64 v48;
     __int64 v49;
     __int64 v50;
     __int64 v51;
-    __int64 v52;
-    _QWORD v53[2];
-    __int64 v54;
-    __int64 v55[4];
+    _QWORD v52[2];
+    __int64 v53;
+    _QWORD v54[4];
+    int v55;
     int v56;
-    int v57;
-    __int16 v58;
+    __int16 v57;
     char gap162_[6];
+    __int64 v58;
     __int64 v59;
     __int64 v60;
     __int64 v61;
@@ -2715,96 +2735,99 @@ __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
     __int64 v82;
     __int64 v83;
     __int64 v84;
-    __int64 v85;
-    char v86;
+    char v85;
     char gap385_[63];
-    char v87;
+    char v86;
     char gap449_[7];
-    char v88;
+    char v87;
     char gap457_[63];
-    char v89;
+    char v88;
     char gap521_[7];
-    char v90;
+    char v89;
     char gap529_[63];
-    char v91;
+    char v90;
     char gap593_[7];
-    __int64 v92[2];
-    char* v93;
-    _QWORD v94[2];
-    char* v95;
+    __int64 v91[2];
+    char* v92;
+    char* v93[2];
+    char* v94;
     char gap648_[232];
-    _QWORD v96[2];
-    char* v97;
+    _QWORD v95[2];
+    char* v96;
   } f_;
 
-  LocatorDispos_db1840((void*)(f_.v92));
+  LocatorDispos_db1840((void*)(f_.v91));
   v8 = *a2;
+  f_.v56 = 0;
   f_.v57 = 0;
-  f_.v58 = 0;
-  f_.v48 = 0;
-  f_.v56 = DWORD2(v8);
-  f_.v55[3] = v8;
-  LODWORD(v8) = *((_DWORD*)a2 + 4);
+  f_.v47 = 0;
+  f_.v55 = DWORD2(v8);
+  f_.v54[3] = v8;
+  {
+    __typeof__(v8) z_ = (__typeof__(v8)){0};
+    LODWORD(z_) = *((_DWORD*)a2 + 4);
+    v8 = z_;
+  }
   v9 = (__int64*)a2 + 3;
-  __builtin_memset(f_.v47, 0, sizeof(f_.v47));
+  __builtin_memset(f_.v46, 0, sizeof(f_.v46));
+  f_.v86 = 0;
   f_.v87 = 0;
   f_.v88 = 0;
   f_.v89 = 0;
   f_.v90 = 0;
-  f_.v91 = 0;
+  f_.v48 = 0;
   f_.v49 = 0;
   f_.v50 = 0;
   f_.v51 = 0;
-  f_.v52 = 0;
-  f_.v53[0] = 0;
-  f_.v53[1] = 0;
-  f_.v54 = 0;
-  __builtin_memset(f_.v55, 0, 24);
-  f_.v86 = 0;
-  f_.v84 = 0;
+  f_.v52[0] = 0;
+  f_.v52[1] = 0;
+  f_.v53 = 0;
+  __builtin_memset(f_.v54, 0, 24);
   f_.v85 = 0;
-  f_.v82 = 0;
   f_.v83 = 0;
-  f_.v80 = 0;
+  f_.v84 = 0;
   f_.v81 = 0;
-  f_.v78 = 0;
+  f_.v82 = 0;
   f_.v79 = 0;
-  f_.v76 = 0;
+  f_.v80 = 0;
   f_.v77 = 0;
-  f_.v74 = 0;
+  f_.v78 = 0;
   f_.v75 = 0;
-  f_.v72 = 0;
+  f_.v76 = 0;
   f_.v73 = 0;
-  f_.v70 = 0;
+  f_.v74 = 0;
   f_.v71 = 0;
-  f_.v68 = 0;
+  f_.v72 = 0;
   f_.v69 = 0;
-  f_.v66 = 0;
+  f_.v70 = 0;
   f_.v67 = 0;
-  f_.v64 = 0;
+  f_.v68 = 0;
   f_.v65 = 0;
-  f_.v62 = 0;
+  f_.v66 = 0;
   f_.v63 = 0;
-  f_.v60 = 0;
+  f_.v64 = 0;
   f_.v61 = 0;
+  f_.v62 = 0;
   f_.v59 = 0;
-  f_.v57 = v8;
-  if (f_.v53 != (_QWORD*)((char*)a2 + 24)) {
+  f_.v60 = 0;
+  f_.v58 = 0;
+  f_.v56 = v8;
+  if (f_.v52 != (_QWORD*)((char*)a2 + 24)) {
     if ((*(_BYTE*)v9 & 1) != 0) {
-      GameRoutine_64df20_alt1(f_.v53, *((_QWORD*)a2 + 5), *((_QWORD*)a2 + 4));
+      GameRoutine_64df20_alt2(f_.v52, *((_QWORD*)a2 + 5), *((_QWORD*)a2 + 4));
     }
     else {
       v10 = *v9;
       v11 = *((_QWORD*)a2 + 4);
       v12 = *((_QWORD*)a2 + 5);
-      f_.v53[0] = v10;
-      f_.v53[1] = v11;
-      f_.v54 = v12;
+      f_.v52[0] = v10;
+      f_.v52[1] = v11;
+      f_.v53 = v12;
     }
   }
-  if (f_.v55 != (__int64*)(a2 + 3)) {
-    GameRoutine_6b7aa0(
-        f_.v55, *((__int64**)a2 + 6), *((__int64**)a2 + 7),
+  if (f_.v54 != (_QWORD*)(a2 + 3)) {
+    GameRoutine_6b7aa0_alt2(
+        (__int64)f_.v54, *((__int64**)a2 + 6), *((__int64**)a2 + 7),
         0xAAAAAAAAAAAAAAABLL *
             ((__int64)(*((_QWORD*)a2 + 7) - *((_QWORD*)a2 + 6)) >> 3));
   }
@@ -2815,21 +2838,21 @@ __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
   else {
     v14 = (const char*)(*(_QWORD*)GameData_212dbb8[0] + 65LL);
   }
-  if ((f_.v92[0] & 1) != 0) {
-    v15 = f_.v93;
+  if ((f_.v91[0] & 1) != 0) {
+    v15 = f_.v92;
   }
   else {
-    v15 = (char*)f_.v92 + 1;
+    v15 = (char*)f_.v91 + 1;
   }
-  sprintf(f_.v94, "%s::%s", "PushGroup", v15);
-  sprintf(f_.v96, "%s=%s", v14, (const char*)f_.v94);
-  GameRoutine_60a020((__int64)f_.v47, (__int64)f_.v96);
+  GameRoutine_1a09bf0((__int64)f_.v93, "%s::%s", "PushGroup", v15);
+  GameRoutine_1a09bf0((__int64)f_.v95, "%s=%s", v14, (const char*)f_.v93);
+  GameRoutine_60a020_alt1((__int64)f_.v46, (const char*)f_.v95);
   v16 = *v13;
-  v17 = strlen(a3);
+  v17 = GameRoutine_1a09c70(a3);
   if (v17 >= 0xFFFFFFFFFFFFFFF7LL) {
-    String_60a1d0_alt1();
+    String_60a1d0_alt2();
   }
-  v18 = v17;
+  v18 = (const char*)v17;
   v19 = (__int64*)fw_memory_g_heap_manager_ptr;
   if (v17 >= 0x17) {
     if ((v17 | 7) == 0x17) {
@@ -2838,53 +2861,53 @@ __attribute__((swiftcall)) void LocatorDispos_db4610(PSEUDO_X8 x8_, _QWORD* a1,
     else {
       v21 = (v17 | 7) + 1;
     }
-    v20 = (char*)fw_memory_HeapManager_Allocate_alt1(
+    v20 = fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, v21, 16, 0);
-    f_.v95 = v20;
-    f_.v94[1] = v18;
-    f_.v94[0] = v21 | 1;
+    f_.v94 = (char*)v20;
+    f_.v93[1] = v18;
+    f_.v93[0] = (const char*)(v21 | 1);
   }
   else {
-    LOBYTE(f_.v94[0]) = 2 * v17;
-    v20 = (char*)f_.v94 + 1;
+    LOBYTE(f_.v93[0]) = 2 * v17;
+    v20 = (__int64)f_.v93 + 1;
     if (v17 == 0) {
       goto LABEL_22;
     }
   }
-  memmove(v20, a3, v18);
+  GameRoutine_1a0b940(v20, (__int64)a3, (unsigned __int64)v18);
 LABEL_22:
-  v20[v18] = 0;
-  LocatorDispos_db2180((void*)(f_.v96), (unsigned __int8*)(v16 + 40),
-                       (unsigned __int8*)f_.v94);
-  if ((f_.v94[0] & 1) != 0 && f_.v95 != nullptr) {
+  v18[v20] = 0;
+  LocatorDispos_db2180((void*)(f_.v95), (unsigned __int8*)(v16 + 40),
+                       (unsigned __int8*)f_.v93);
+  if (((__int64)f_.v93[0] & 1) != 0 && f_.v94 != nullptr) {
     v22 = 128;
     if (*(_QWORD*)(*v19 + 200) == 0) {
       v22 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v19 + v22, (__int64)f_.v95);
+    nn_mem_StandardAllocator_Free_alt3(*v19 + v22, (__int64)f_.v94);
   }
-  if ((f_.v96[0] & 1) != 0) {
-    v23 = f_.v97;
-  }
-  else {
-    v23 = (char*)f_.v96 + 1;
-  }
-  if ((f_.v96[0] & 1) != 0) {
-    v24 = f_.v96[1];
+  if ((f_.v95[0] & 1) != 0) {
+    v23 = f_.v96;
   }
   else {
-    v24 = (unsigned __int64)LOBYTE(f_.v96[0]) >> 1;
+    v23 = (char*)f_.v95 + 1;
   }
-  LocatorDispos_db7380_alt1((__int64)f_.v47, (__int64)v23, v24);
+  if ((f_.v95[0] & 1) != 0) {
+    v24 = f_.v95[1];
+  }
+  else {
+    v24 = (unsigned __int64)LOBYTE(f_.v95[0]) >> 1;
+  }
+  LocatorDispos_db7380_alt3((__int64)f_.v46, (__int64)v23, v24);
   v25 = *v19;
-  f_.v94[0] = a3;
-  v26 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(v25, 752, 16, 0);
+  f_.v93[0] = a3;
+  v26 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(v25, 752, 16, 0);
   v27 = v26 + 3;
   v28 = v26;
   v26[1] = 0;
   v26[2] = 0;
   *v26 = GameData_1fdf700;
-  LocatorDispos_db6990_alt1((__int64)(v26 + 3), (__int64)f_.v47, f_.v94);
+  LocatorDispos_db6990((__int64)(v26 + 3), (__int64)f_.v46, f_.v93);
   v29 = (_QWORD*)a1[2];
   v30 = a1[3];
   *a4 = v27;
@@ -2907,9 +2930,9 @@ LABEL_22:
       v36 = v34;
     }
     if (v36 >> 60 != 0) {
-      GameRoutine_60a210_alt1();
+      GameRoutine_60a210_alt2();
     }
-    v37 = fw_memory_HeapManager_Allocate_alt1(*v19, 16 * v36, 16, 0);
+    v37 = fw_memory_HeapManager_Allocate_alt2(*v19, 16 * v36, 16, 0);
     v38 = &v33[v37];
     v39 = v37 + 16 * v36;
     *(_QWORD*)v38 = v27;
@@ -2920,7 +2943,7 @@ LABEL_22:
     v40 = a1[1];
     v41 = a1[2] - v40;
     v42 = &v38[-v41];
-    memcpy(&v38[-v41], v40, v41);
+    GameRoutine_1a0b950((__int64)&v38[-v41], v40, v41);
     a1[1] = v42;
     a1[2] = v31;
     a1[3] = v39;
@@ -2929,7 +2952,7 @@ LABEL_22:
       if (*(_QWORD*)(*v19 + 200) == 0) {
         v43 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(*v19 + v43, (__int64)v40);
+      nn_mem_StandardAllocator_Free_alt3(*v19 + v43, v40);
     }
   }
   else {
@@ -2940,30 +2963,23 @@ LABEL_22:
                               memory_order_relaxed);
   }
   a1[2] = v31;
-  Locator_df7860(*(_QWORD*)(v31 - 16),
-                 (unsigned __int8*)(*(_QWORD*)(v31 - 16) + 328LL),
-                 (__int64*)(*(_QWORD*)(v31 - 16) + 352LL));
-  if ((f_.v96[0] & 1) != 0 && f_.v97 != nullptr) {
+  Locator_df7860_alt2(*(_QWORD**)(v31 - 16),
+                      (unsigned __int8*)(*(_QWORD*)(v31 - 16) + 328LL),
+                      (__int64*)(*(_QWORD*)(v31 - 16) + 352LL));
+  if ((f_.v95[0] & 1) != 0 && f_.v96 != nullptr) {
     v44 = 128;
     if (*(_QWORD*)(*v19 + 200) == 0) {
       v44 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*v19 + v44, (__int64)f_.v97);
+    nn_mem_StandardAllocator_Free_alt3(*v19 + v44, (__int64)f_.v96);
   }
-  result = HubNatives_ccbf80_alt1((__int64)f_.v47);
-  if ((f_.v92[0] & 1) != 0 && f_.v93 != nullptr) {
-    v46 = 128;
+  HubNatives_ccbf80_alt3((__int64)f_.v46);
+  if ((f_.v91[0] & 1) != 0 && f_.v92 != nullptr) {
+    v45 = 128;
     if (*(_QWORD*)(*v19 + 200) == 0) {
-      v46 = 56;
+      v45 = 56;
     }
-    {
-      nn_mem_StandardAllocator_Free_alt2(*v19 + v46, (__int64)f_.v93);
-      return;
-    }
-  }
-  {
-    result;
-    return;
+    nn_mem_StandardAllocator_Free_alt3(*v19 + v45, (__int64)f_.v92);
   }
 }
 
@@ -2987,7 +3003,7 @@ __attribute__((swiftcall)) void LocatorDispos_db4a70(PSEUDO_X8 x8_, _QWORD* a1,
   } v15_;
 
   result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
-  LocatorDispos_db4610((void*)(a5), a1, a2, a3),
+  LocatorDispos_db4610_alt1((void*)(a5), a1, a2, a3),
       result =
           COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
   v7 = *a5;

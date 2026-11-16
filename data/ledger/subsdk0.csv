@@ -528,6 +528,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 30a50,848,verified,src/nvidia/dlss/rel/source/unplaced.c,nvidia_dlss_rel_source_30a50
 30da0,1276,verified,src/nvidia/dlss/rel/source/features/dlaa/dlaa_template_inline.c,dlaa_template_30da0
 312a0,28,verified,src/nvidia/dlss/rel/source/unplaced.c,nvidia_dlss_rel_source_312a0
+312c0,1384,verified,src/nvidia/dlss/rel/source/unplaced_6.c,nvidia_dlss_rel_source_312c0
 31860,180,verified,src/nvidia/dlss/rel/source/unplaced.c,nvidia_dlss_rel_source_31860
 31920,3608,verified,src/nvidia/dlss/rel/source/unplaced.c,unplaced_31920
 32790,188,verified,src/nvidia/dlss/rel/source/unplaced.c,nvidia_dlss_rel_source_32790

@@ -41,7 +41,7 @@ extern __int64* GameData_212cc58[60];
 extern __int64* GameData_212d2b8;
 void* game_97b2f0(__int64);
 void game_16ad210(__int64, __int64, char, __int64);
-unsigned __int8 ProcThermaeThermaeMenu_Unknown100(__int64 a1);
+unsigned __int8 ProcThermaeThermaeMenu_Unknown100_alt1(__int64 a1);
 __attribute__((swiftcall)) void
 GameRoutine_13fa520_alt1(PSEUDO_X8, __int64*,
                          _QWORD*) __asm__("GameRoutine_13fa520");
@@ -63,6 +63,8 @@ void InfoTitle_18b83a0(__int64, _BYTE*, char);
 void InfoTitle_18b8e80(__int64, _BYTE*);
 void InfoTitle_18b90a0(__int64);
 void ProcThermaeThermaeMenu_Unknown88(__int64 a1);
+char* GameRoutine_67ed20(_QWORD*);
+__int64 ProcThermaeThermaeMenu_Unknown100(__int64 a1);
 
 __int64 ProcThermaeThermaeMenu_Unknown84(__int64 a1)
 {
@@ -147,8 +149,11 @@ void ProcThermaeThermaeMenu_Unknown88(__int64 a1)
   }
 }
 
-unsigned __int8 ProcThermaeThermaeMenu_Unknown100(__int64 a1)
+__int64 ProcThermaeThermaeMenu_Unknown100(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   __int64 v4;
@@ -303,7 +308,7 @@ LABEL_34:
                 v24 = game_97b2f0(v25 + 2104);
               }
               else {
-                v24 = GameHr_67ed20(*(_QWORD**)(v25 + 392));
+                v24 = GameRoutine_67ed20(*(_QWORD**)(v25 + 392));
               }
               game_16ad210((__int64)v10, *(_QWORD*)(v25 + 392), 6,
                            (__int64)v24);

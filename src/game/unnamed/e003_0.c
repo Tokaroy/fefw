@@ -89,7 +89,7 @@ void GameHr_c69ba0(__int64);
 void LODModule_a991b0(__int64*, unsigned __int64);
 void LightingAnimModule_c6dc40(__int64, __int64);
 void LightingAnimModule_c6ef90(__int64, float);
-__int64 GameHr_a2d1c0(__int64 result, __int64 a2, char a3);
+__int64 GameHr_a2d1c0_alt1(__int64 result, __int64 a2, char a3);
 __int64 GameHr_a97380(__int64 result, __int64 a2);
 __int64 GameHr_a98a50(__int64 result, __int64 a2);
 void GameHr_b86fb0(__int64 a1, int a2, float a3);
@@ -101,9 +101,14 @@ extern __int64 fw_memory_g_heap_manager;
 __int64 GameHr_b71cc0(__int64 result, __int64* a2, __int64 a3);
 _QWORD* GameRoutine_bf1600_alt1(_QWORD*, _QWORD*) __asm__("GameRoutine_bf1600");
 __int64 GameHr_bf1300(_QWORD* a1, _QWORD* a2);
+int GameRoutine_1a09cf0_alt1(__int64, __int64, unsigned __int64);
+void GameHr_a2d1c0(__int64 result, __int64 a2, char a3);
 
-__int64 GameHr_a2d1c0(__int64 result, __int64 a2, char a3)
+void GameHr_a2d1c0(__int64 result, __int64 a2, char a3)
 {
+
+#pragma clang fp contract(on)
+
   int v3;
   __int64 v4;
   unsigned __int64 v5;
@@ -122,7 +127,7 @@ __int64 GameHr_a2d1c0(__int64 result, __int64 a2, char a3)
     if ((a3 & 1) == 0) {
     LABEL_24:
       *(_BYTE*)(v4 + 2848) = 0;
-      return result;
+      return;
     }
     result = snd_a2c9c0(result, a2);
     v5 = *(unsigned __int8*)(v4 + 712);
@@ -142,7 +147,7 @@ __int64 GameHr_a2d1c0(__int64 result, __int64 a2, char a3)
              ? (v10 = *(_QWORD*)(v4 + 728))
              : (v10 = v4 + 713),
          (v6 & 1) != 0 ? (v11 = *(_QWORD*)(v4 + 2472)) : (v11 = v4 + 2457),
-         (_DWORD)(result = memcmp(v10, v11, v7)) == 0)) {
+         (_DWORD)(result = GameRoutine_1a09cf0_alt1(v10, v11, v7)) == 0)) {
       if ((v5 & 1) != 0) {
         *(_QWORD*)(v4 + 720) = 0;
       }
@@ -168,7 +173,7 @@ __int64 GameHr_a2d1c0(__int64 result, __int64 a2, char a3)
     *(_QWORD*)(v4 + 2464) = 0;
     goto LABEL_23;
   }
-  return result;
+  return;
 }
 
 __int64 GameHr_a31610(__int64 a1, __int64 a2)
@@ -2309,8 +2314,7 @@ LABEL_51:
     }
     v23 = 40;
   }
-  return (*(__int64 (**)(__int64))(*(_QWORD*)f.v28 + v23))(
-      (__int64)f.v28);
+  return (*(__int64 (**)(__int64))(*(_QWORD*)f.v28 + v23))((__int64)f.v28);
 }
 
 _QWORD* GameHr_bf1600(_QWORD* a1, _QWORD* a2)

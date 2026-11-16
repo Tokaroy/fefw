@@ -59,7 +59,7 @@ struct PseudoSret GameRoutine_1560070(_QWORD, _QWORD);
 void __attribute__((noreturn)) GameRoutine_60a310(_QWORD, _QWORD, _QWORD);
 __int64 RelianceMemoryChildMenu_Unknown84(__int64 a1);
 __int64 RelianceMemoryChildMenu_Unknown88(__int64 a1);
-unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1);
+unsigned __int8 RelianceMemoryChildMenu_Unknown100_alt1(__int64 a1);
 __int64 RelianceMemoryChildMenu_Unknown108(__int64 a1, char a2);
 __int64 RelianceMemoryChildMenu_Unknown110(__int64 a1, char a2);
 _QWORD* RelianceMemoryChildMenu_Unknown128(_QWORD* a1, __int64 a2, __int64 a3);
@@ -168,6 +168,14 @@ char* GameRoutine_a4dbe0(__int64, const char*, char);
 extern __int64* GameData_212e348;
 void GameRoutine_156c5d0(__int64, __int64, char);
 void RelianceMemoryChildMenu_19eb1d0(__int64 a1);
+_QWORD* GameRoutine_654050_alt2(_QWORD* result, _QWORD*);
+_QWORD* GameRoutine_87dcb0_alt2(_QWORD* result, _QWORD*);
+__int64* Registration_a4da40_alt1(__int64, const char*);
+__int64 GameRoutine_19577f0_alt2(__int64, __int64);
+__int64 TimelineFile_890160_alt2(const char*);
+__int64 game_GameVariableTable_Find_alt2(_QWORD*, unsigned __int64*);
+void GameRoutine_1957ca0_alt2(int, __int64);
+__int64 RelianceMemoryChildMenu_Unknown100(__int64 a1);
 
 __int64 RelianceMemoryChildMenu_Unknown30(__int64 a1, char a2)
 {
@@ -499,8 +507,11 @@ __int64 RelianceMemoryChildMenu_Unknown88(__int64 a1)
   return GameRoutine_15e04f0(v13);
 }
 
-unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
+__int64 RelianceMemoryChildMenu_Unknown100(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   __int64 v3;
   __int64 v4;
@@ -508,14 +519,14 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
   __int64 v6;
   __int64 v7;
   char v8;
-  const char* v9;
+  char* v9;
   unsigned int v10;
   __int64 v11;
   unsigned int v12;
   unsigned __int64 v13;
   __int64 v14;
   __int64 v15;
-  __int64 v16;
+  char* v16;
   __int64 v17;
   __int64 v18;
   char v19;
@@ -551,7 +562,7 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
             do {
               LOBYTE(v10) = game_GameModeData_instance_;
               if (game_GameModeData_instance_ != 0) {
-                v11 = game_GameVariableTable_Find_alt1(
+                v11 = game_GameVariableTable_Find_alt2(
                     *(_QWORD**)(game_GameModeData_instance_ + 48),
                     (unsigned __int64*)(*(_QWORD*)v6 + 16LL));
                 if (v11 != 0) {
@@ -576,7 +587,7 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
                         v9 = (const char*)*(&GameData_1f9caf8 + v10);
                       }
                     }
-                    TimelineFile_890160_alt1(v9);
+                    TimelineFile_890160_alt2(v9);
                     LOBYTE(v10) = 1;
                   }
                 }
@@ -591,13 +602,13 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
               v14 = v5[1];
               if (v14 != 0 &&
                   (v15 = *(_QWORD*)(*(_QWORD*)(v14 + 24) + 8LL)) != 0) {
-                v16 = *(_QWORD*)(v15 + 32);
+                v16 = *(const char**)(v15 + 32);
               }
               else {
-                v16 = 0;
+                v16 = nullptr;
               }
-              if ((Registration_a4da40(*msg_MessageManager_instance__ptr[0],
-                                       v16) &
+              if (((unsigned __int8)Registration_a4da40_alt1(
+                       *msg_MessageManager_instance__ptr[0], v16) &
                    1) != 0) {
                 f_.v28 = 0;
                 f_.v29 = 0;
@@ -607,7 +618,7 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
                 f_.v30[0] = GameData_21249d8;
                 f_.v30[1] = v5;
                 f_.v31 = f_.v30;
-                GameRoutine_87dcb0_alt1(f_.v30, f_.v25);
+                GameRoutine_87dcb0_alt2(f_.v30, f_.v25);
                 if (f_.v31 == f_.v30) {
                   v17 = 32;
                 }
@@ -620,10 +631,10 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
                 (*(void (**)(__int64))(*f_.v31 + v17))((__int64)f_.v31);
               LABEL_32:
                 BYTE1(f_.v28) = 1;
-                GameRoutine_19577f0_alt1(a1, (__int64)f_.v25);
+                GameRoutine_19577f0_alt2(a1, (__int64)f_.v25);
                 f_.v31 = f_.v30;
                 f_.v30[0] = GameData_2124a58;
-                GameRoutine_1957ca0_alt1(2, (__int64)f_.v30);
+                GameRoutine_1957ca0_alt2(2, (__int64)f_.v30);
                 if (f_.v31 == f_.v30) {
                   v18 = 32;
                 }
@@ -641,7 +652,7 @@ unsigned __int8 RelianceMemoryChildMenu_Unknown100(__int64 a1)
                 *(_BYTE*)(a1 + 1105) = v19;
                 f_.v23[0] = GameData_2124ad8;
                 f_.v30[0] = GameData_2124ad8;
-                GameRoutine_654050_alt1(f_.v30, (_QWORD*)(a1 + 288));
+                GameRoutine_654050_alt2(f_.v30, (_QWORD*)(a1 + 288));
                 if (f_.v31 == f_.v30) {
                   v20 = 32;
                 }

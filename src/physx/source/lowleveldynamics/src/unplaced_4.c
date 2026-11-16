@@ -5,6 +5,7 @@
 __int64 memset(__int64, int, unsigned __int64);
 __int64 physx_source_lowleveldynamics_src_36f220(__int64 a1, _DWORD* a2,
                                                  _DWORD* a3, __int64 a4);
+__int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
 
 __int64 physx_source_lowleveldynamics_src_36f220(__int64 a1, _DWORD* a2,
                                                  _DWORD* a3, __int64 a4)
@@ -156,8 +157,8 @@ __int64 physx_source_lowleveldynamics_src_36f220(__int64 a1, _DWORD* a2,
   _BYTE v147[112];
   __int64 v150;
 
-  memset((__int64)f_.v148, 0, 0x80u);
-  result = memset((__int64)f_.v145, 0, 0x80u);
+  GameRoutine_1a0ba50((__int64)f_.v148, 0, 0x80u);
+  result = GameRoutine_1a0ba50((__int64)f_.v145, 0, 0x80u);
   v9 = *(_BYTE*)(a1 + 149);
   v10 = *(_DWORD*)(a1 + 172);
   v11 = a4 + 12288;

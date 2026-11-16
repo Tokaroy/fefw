@@ -158,14 +158,14 @@ void game_facility_138b860(__int64 a1, __int64 a2)
 
 #pragma clang fp contract(off)
   __int64 v4;
-  const char* v5;
+  char* v5;
   unsigned __int64 v6;
   unsigned __int64 v7;
   char* v8;
   __int64 v9;
   char v10;
   __int64 v11;
-  const char* v12;
+  char* v12;
   unsigned __int64 v13;
   unsigned __int64 v14;
   char* v15;
@@ -690,8 +690,8 @@ LABEL_113:
     }
     else {
       *(_QWORD*)(v45 + 32) = v45;
-      ((void (*)(__int64 (***)(void), unsigned __int64))(*f_.v52)[3])(
-          f_.v52, v45),
+      ((void (*)(__int64 (***)(void), unsigned __int64))(*f_.v52)[3])(f_.v52,
+                                                                      v45),
           v39 = COERCE_AS(__typeof__(v39),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
           v44 = COERCE_AS(__typeof__(v44),

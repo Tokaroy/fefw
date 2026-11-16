@@ -16772,9 +16772,9 @@ LABEL_43:
         }
         if (v43 != 0 && v44 != nullptr) {
           LODWORD(v96[0]) = *(_DWORD*)(v38 + 4 * v42);
-          (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _QWORD*,
-                                                  const char**))(*v40 + 48LL))(
-              (void*)(&f_.v92), v40, v96);
+          (*(__attribute__((swiftcall)) void (**)(
+              PSEUDO_X8, _QWORD*, const char**))(*v40 + 48LL))((void*)(&f_.v92),
+                                                               v40, v96);
           StatusItem_188df50(v44, (unsigned int*)&f_.v92, 1, 0);
           if (f_.v94 != 0) {
             f_.v95 = f_.v94;
@@ -22262,10 +22262,11 @@ game_gameui_Util_SetUnitStatus_lambda0_Invoke(PSEUDO_X8 x8_, __int64 result,
       else {
         // The original reads the kind before it tests v11.
         if (v8 != 0) {
-          v94b = *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(
-                                         *GameData_212c878[0] + 64) +
-                                     8LL * (unsigned __int16)*v9) +
-                                     72LL);
+          v94b =
+              *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c878[0] +
+                                                        64) +
+                                             8LL * (unsigned __int16)*v9) +
+                                  72LL);
           __asm__ volatile("" ::"r"(v94b));
         }
         v94 = v8 != 0 && v11 == 2 && v94b - 5 >= 2;

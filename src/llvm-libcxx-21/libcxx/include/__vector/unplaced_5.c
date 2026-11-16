@@ -67,6 +67,8 @@ void game_1052fc0(_QWORD*, const char*, unsigned __int64);
 void llvm_libcxx_21_libcxx_include___vector_d3ade0(__int64 a1, __int64 a2,
                                                    __int64 a3, __int64 a4,
                                                    __int64 a5);
+__attribute__((swiftcall)) void
+CharacterTrailVertex_d35280(PSEUDO_X8, __int64*, long double, long double);
 
 void llvm_libcxx_21_libcxx_include___vector_d3ade0(__int64 a1, __int64 a2,
                                                    __int64 a3, __int64 a4,
@@ -186,17 +188,16 @@ void llvm_libcxx_21_libcxx_include___vector_d3ade0(__int64 a1, __int64 a2,
   __int64 v115;
   int v116;
   struct {
+    char gap0_[8];
     __int64 v117;
     __int64 v118;
     __int64 v119;
-  } v117_;
-  struct {
     __int64 (**v120)();
     __int64 v121;
     char* v122;
     char gap56_[8];
     __int64 (***v123)();
-  } v120_;
+  } f_;
 
   v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
   v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
@@ -322,33 +323,33 @@ void llvm_libcxx_21_libcxx_include___vector_d3ade0(__int64 a1, __int64 a2,
   if (v19 != 0) {
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v19 + 16), 1u,
                               memory_order_relaxed);
-    v117_.v117 = v18;
-    v117_.v118 = v19;
-    v120_.v120 = GameData_1fdbb60;
-    v120_.v121 = a1;
-    v120_.v123 = &v120_.v120;
+    f_.v117 = v18;
+    f_.v118 = v19;
+    f_.v120 = GameData_1fdbb60;
+    f_.v121 = a1;
+    f_.v123 = &f_.v120;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v19 + 16), 1u,
                               memory_order_relaxed);
   }
   else {
-    v117_.v117 = v18;
-    v117_.v118 = 0;
-    v120_.v120 = GameData_1fdbb60;
-    v120_.v121 = a1;
-    v120_.v123 = &v120_.v120;
+    f_.v117 = v18;
+    f_.v118 = 0;
+    f_.v120 = GameData_1fdbb60;
+    f_.v121 = a1;
+    f_.v123 = &f_.v120;
   }
-  v20 = CharacterTrailModule_d3d630((_QWORD*)(v17 + 56), &v117_.v117,
-                                    (__int64)&v120_.v120, -1),
+  v20 = CharacterTrailModule_d3d630((_QWORD*)(v17 + 56), &f_.v117,
+                                    (__int64)&f_.v120, -1),
   v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
   v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
-  if (v117_.v118 != 0) {
-    std___1___shared_weak_count___release_weak(v117_.v118),
+  if (f_.v118 != 0) {
+    std___1___shared_weak_count___release_weak(f_.v118),
         v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
   }
-  v21 = (__int64*)v120_.v123;
+  v21 = (__int64*)f_.v123;
   *(_DWORD*)(a1 + 192) = v20;
-  if (v21 == (__int64*)&v120_.v120) {
+  if (v21 == (__int64*)&f_.v120) {
     v22 = 32;
   }
   else {
@@ -488,10 +489,10 @@ LABEL_39:
     v42 -= 16;
     v41 -= 16;
   } while (v43 != *v40);
-  v120_.v120 = *(__int64 (***)(void))(*(_QWORD*)(v41 + 8) + 24LL),
+  f_.v120 = *(__int64 (***)(void))(*(_QWORD*)(v41 + 8) + 24LL),
   v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
   v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
-  v38 = GameRoutine_bd3bc0(v32, (__int64*)&v120_.v120),
+  v38 = GameRoutine_bd3bc0(v32, (__int64*)&f_.v120),
   v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
   v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
   *(_QWORD*)(a1 + 184) = v38;
@@ -556,9 +557,9 @@ LABEL_51:
             *(_DWORD*)(*(_QWORD*)v5 + 36LL), v54),
         v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
-        v120_.v121 = 0;
-        v120_.v122 = nullptr;
-        v120_.v120 = nullptr;
+        f_.v121 = 0;
+        f_.v122 = nullptr;
+        f_.v120 = nullptr;
         v59 = *v55;
         v58 = v55[1];
         v60 = (__int64*)fw_memory_g_heap_manager_ptr;
@@ -576,19 +577,19 @@ LABEL_51:
           v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
           v63 = v62 + v61;
-          v120_.v120 = (__int64 (**)(void))v62,
+          f_.v120 = (__int64 (**)(void))v62,
           v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
-          v120_.v122 = (const char*)(v62 + v61);
+          f_.v122 = (const char*)(v62 + v61);
           GameRoutine_1a0b950(v62, v59, v61),
               v56 = COERCE_AS(__typeof__(v56),
                               PSEUDO_REGISTER(__n128, "v0", "=w")),
               v57 = COERCE_AS(__typeof__(v57),
                               PSEUDO_REGISTER(__n128, "v1", "=w"));
-          v120_.v121 = v63;
+          f_.v121 = v63;
         }
-        game_character_d35280((void*)(&v117_.v117), (__int64*)&v120_.v120, v56,
-                              v57),
+        CharacterTrailVertex_d35280((void*)(&f_.v117), (__int64*)&f_.v120, v56,
+                                    v57),
             v56 =
                 COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
             v57 =
@@ -607,14 +608,14 @@ LABEL_51:
               v57 = COERCE_AS(__typeof__(v57),
                               PSEUDO_REGISTER(__n128, "v1", "=w"));
         }
-        v67 = v117_.v118;
-        *(_QWORD*)(a1 + 96) = v117_.v117;
+        v67 = f_.v118;
+        *(_QWORD*)(a1 + 96) = f_.v117;
         *(_QWORD*)(a1 + 104) = v67;
-        v68 = (__int64)v120_.v120;
-        *(_QWORD*)(a1 + 112) = v117_.v119;
+        v68 = (__int64)f_.v120;
+        *(_QWORD*)(a1 + 112) = f_.v119;
         if (v68 != 0) {
           v69 = *v60;
-          v120_.v121 = v68;
+          f_.v121 = v68;
           v70 = 128;
           if (*(_QWORD*)(v69 + 200) == 0) {
             v70 = 56;
@@ -706,10 +707,10 @@ LABEL_51:
       *(_QWORD*)(a1 + 216) = v86;
     }
   }
-  v120_.v121 = 0;
-  v120_.v122 = nullptr;
-  v120_.v120 = nullptr;
-  GameRoutine_1a09ce0((__int64)&v120_.v120, "Trail:", 6u),
+  f_.v121 = 0;
+  f_.v122 = nullptr;
+  f_.v120 = nullptr;
+  GameRoutine_1a09ce0((__int64)&f_.v120, "Trail:", 6u),
       v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
   v89 = *(unsigned __int8*)(a1 + 200);
@@ -727,15 +728,15 @@ LABEL_51:
   else {
     v93 = *(_QWORD*)(a1 + 208);
   }
-  GameRoutine_1a09ce0((__int64)&v120_.v120, v92, v93),
+  GameRoutine_1a09ce0((__int64)&f_.v120, v92, v93),
       v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
   v94 = *(_QWORD*)(a1 + 8);
-  if (((unsigned __int8)v120_.v120 & 1) != 0) {
-    v95 = v120_.v122;
+  if (((unsigned __int8)f_.v120 & 1) != 0) {
+    v95 = f_.v122;
   }
   else {
-    v95 = (char*)&v120_.v120 + 1;
+    v95 = (char*)&f_.v120 + 1;
   }
   v96 = GameRoutine_1a09c70(v95),
   v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -769,13 +770,13 @@ LABEL_51:
   CharacterTrailModule_d3b6a0(a1),
       v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
-  if (((unsigned __int8)v120_.v120 & 1) != 0 && v120_.v122 != nullptr) {
+  if (((unsigned __int8)f_.v120 & 1) != 0 && f_.v122 != nullptr) {
     v101 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v101 = 56;
     }
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v101,
-                                  (__int64)v120_.v122),
+                                  (__int64)f_.v122),
         v56 = COERCE_AS(__typeof__(v56), PSEUDO_REGISTER(__n128, "v0", "=w")),
         v57 = COERCE_AS(__typeof__(v57), PSEUDO_REGISTER(__n128, "v1", "=w"));
   }

@@ -82,8 +82,8 @@ extern __int64 GameData_2241720;
 extern __int64 GameData_2265e90;
 extern int GameData_21668e0;
 extern int GameData_21f61c8;
-__int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
-                                                   int a3);
+__int64 game_anonymous_ProcGameSaveData_StatusTask_alt1(__int64 result,
+                                                        _QWORD* a2, int a3);
 _QWORD* ProcGameSaveData_Destructor_alt1(__int64 a1) __asm__(
     "ProcGameSaveData_Destructor");
 __int64 GameRoutine_18d3e20_alt1(__int64) __asm__("GameRoutine_18d3e20");
@@ -122,6 +122,11 @@ unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 void __attribute__((noreturn)) String_60a1d0_alt1() __asm__("String_60a1d0");
 void save_Task_Open(__int64, __int64*, char);
 void ProcGameSaveData_87b6b0(__int64 a1, const char* a2);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 fw_text_String_CopyTerminated_alt2(__int64*, __int64, unsigned __int64);
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
+void game_anonymous_ProcGameSaveData_StatusTask(__int64 a1, _QWORD* a2, int a3);
 
 __int64 game_anonymous_ProcGameSaveData_SaveTask(__int64 result)
 {
@@ -627,10 +632,11 @@ __int64 game_anonymous_ProcGameSaveData_SaveTask_closure_Invoke(__int64 a1,
   return GameRoutine_18d3e20(*(_QWORD*)(v2 + 304));
 }
 
-__int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
-                                                   int a3)
+void game_anonymous_ProcGameSaveData_StatusTask(__int64 a1, _QWORD* a2, int a3)
 {
-  __int64 v4;
+
+#pragma clang fp contract(on)
+
   unsigned __int64 v5;
   __int64 v6;
   int v7;
@@ -656,9 +662,8 @@ __int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
     __int64 v24;
   } f_;
 
-  v4 = result;
   if ((a2[1] & 1) != 0) {
-    result = fw_text_String_CopyTerminated_alt1(&f_.v22, a2[3], a2[2]);
+    fw_text_String_CopyTerminated_alt2(&f_.v22, a2[3], a2[2]);
   }
   else {
     v5 = a2[2];
@@ -673,16 +678,16 @@ __int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
     v8 = f_.v23;
   }
   if (v8 != 0) {
-    v9 = *(_QWORD*)(v4 + 304);
+    v9 = *(_QWORD*)(a1 + 304);
     if (v7 != 0) {
-      fw_text_String_CopyTerminated_alt1(&f_.v17, f_.v24, f_.v23);
+      fw_text_String_CopyTerminated_alt2(&f_.v17, f_.v24, f_.v23);
     }
     else {
       f_.v17 = f_.v22;
       f_.v18 = f_.v23;
       f_.v19 = f_.v24;
     }
-    v10 = fw_memory_HeapManager_Allocate_alt1(fw_memory_g_heap_manager, 40, 16,
+    v10 = fw_memory_HeapManager_Allocate_alt2(fw_memory_g_heap_manager, 40, 16,
                                               0);
     *(_DWORD*)(v10 + 8) = a3;
     f_.v21 = (_BYTE*)v10;
@@ -697,7 +702,6 @@ __int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
     f_.v19 = 0;
     *(_QWORD*)(v10 + 32) = v13;
     GameRoutine_18d4880(v9, (__int64)f_.v20);
-    result = (__int64)f_.v21;
     if (f_.v21 == f_.v20) {
       v14 = 32;
     }
@@ -707,16 +711,15 @@ __int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
       }
       v14 = 40;
     }
-    result =
-        (*(__int64 (**)(__int64))(*(_QWORD*)f_.v21 + v14))((__int64)f_.v21);
+    (*(void (**)(__int64))(*(_QWORD*)f_.v21 + v14))((__int64)f_.v21);
   LABEL_15:
     if ((f_.v17 & 1) != 0 && f_.v19 != 0) {
       v15 = 128;
       if (*(_QWORD*)(fw_memory_g_heap_manager + 200) == 0) {
         v15 = 56;
       }
-      result = nn_mem_StandardAllocator_Free_alt1(
-          fw_memory_g_heap_manager + v15, f_.v19);
+      nn_mem_StandardAllocator_Free_alt3(fw_memory_g_heap_manager + v15,
+                                         f_.v19);
     }
     v7 = f_.v22 & 1;
   }
@@ -725,10 +728,8 @@ __int64 game_anonymous_ProcGameSaveData_StatusTask(__int64 result, _QWORD* a2,
     if (*(_QWORD*)(fw_memory_g_heap_manager + 200) == 0) {
       v16 = 56;
     }
-    return nn_mem_StandardAllocator_Free_alt1(fw_memory_g_heap_manager + v16,
-                                              f_.v24);
+    nn_mem_StandardAllocator_Free_alt3(fw_memory_g_heap_manager + v16, f_.v24);
   }
-  return result;
 }
 
 __int64 game_anonymous_ProcGameSaveData_StatusTask_closure_Clone(__int64 a1)

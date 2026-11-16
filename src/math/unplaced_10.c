@@ -5,64 +5,39 @@
 #pragma GCC visibility push(hidden)
 
 __attribute__((swiftcall)) void SdkRoutine_87a270(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void SdkRoutine_87a2e0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void SdkRoutine_87a2f0(PSEUDO_X8, _QWORD, _QWORD);
-
 __attribute__((swiftcall)) void math_71ec60(PSEUDO_X8, __int64, _QWORD*,
                                             __int64, unsigned __int64);
-
 __attribute__((swiftcall)) void math_726720(PSEUDO_X8, _QWORD);
-
 __int64 SdkRoutine_7264c0(_QWORD*, __int64);
-
 __int64 SdkRoutine_87a260(__int64);
-
 __int64 SdkRoutine_87a2d0(_QWORD);
-
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 memcpy_plt_alt1(__int64, __int64,
                         unsigned __int64) __asm__("memcpy_plt");
-
 __int64 memset_plt(void* this_, void*, int, unsigned __int64);
-
 __int64 memset_plt_alt1(__int64, int, unsigned __int64) __asm__("memset_plt");
-
 __int64 nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection_plt(_QWORD,
                                                                         _QWORD);
-
 __int64 nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints_plt(
     _QWORD, _QWORD);
-
 float atan2f_plt(float, float);
-
 unsigned __int64* fw_math_LookupStateIndex(unsigned __int64*, __int64*);
-
 unsigned __int64* math_731360(unsigned __int64*, unsigned __int64*);
-
 unsigned __int64 math_7312c0(unsigned __int64*, unsigned __int64*);
-
 __attribute__((swiftcall)) void math_702080(PSEUDO_X8 x8_, __int64 a1,
                                             __int64* a2, __int64* a3,
                                             unsigned __int64 a4);
-
 __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4);
-
 float math_712760(float* a1, float* a2, long double a3, double a4, double a5,
                   long double a6);
-
 _QWORD* math_717820(unsigned __int64* a1, __int64* a2);
-
 __attribute__((swiftcall)) void math_71d560(PSEUDO_X8 x8_, _QWORD* a1,
                                             unsigned __int64* a2);
-
 __attribute__((swiftcall)) void math_728730(PSEUDO_X8 x8_, float* a1);
-
 unsigned __int64 math_730ec0(unsigned __int64* a1, unsigned __int64 a2,
                              unsigned __int64 a3, unsigned __int64 a4);
-
 unsigned __int64 math_731120(unsigned __int64 result, __int64 a2, __int64 a3,
                              unsigned __int64 a4);
 
@@ -89,32 +64,24 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
   __int64 v21;
   unsigned __int64 v22;
   struct {
+    char gap0_[8];
     _BYTE v23[136];
     __int64 v24;
-  } v23_;
-  struct {
     _BYTE v25[136];
     __int64 v26;
     __int64* v27;
-  } v25_;
-  struct {
     __int64 v28;
     char gap312_[32];
     __int64 v29;
-  } v28_;
-  struct {
     _QWORD v30[17];
     __int64 v31;
-  } v30_;
-  struct {
     _BYTE v32[136];
     unsigned __int64 v33;
-  } v32_;
-  _QWORD v34[19];
-  struct {
+    char gap640_[152];
     _QWORD v35[17];
     __int64 v36;
-  } v35_;
+  } f_;
+  _QWORD v34[19];
   _QWORD v37[4];
   _QWORD v38[91];
   _QWORD v39[566];
@@ -125,7 +92,7 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
   v22 = COERCE_AS(__typeof__(v22),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  memset_plt((void*)v32_.v32, nullptr, 288, a4),
+  memset_plt((void*)f_.v32, nullptr, 288, a4),
       v12 = COERCE_AS(__typeof__(v12),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
       v19 = COERCE_AS(__typeof__(v19),
@@ -133,18 +100,18 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
       v22 = COERCE_AS(__typeof__(v22),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
   v5 = a1[970];
-  v32_.v33 = v5;
+  f_.v33 = v5;
   if (v5 != 0) {
     v6 = v5 & 7;
     if ((v5 & 7) != 0) {
       v7 = v5 & 0xFFFFFFFFFFFFFFF8LL;
-      v8 = v32_.v32;
+      v8 = f_.v32;
       do {
         *(_DWORD*)v8 = -8388608;
         v8 += 4;
         --v6;
       } while (v6 != 0);
-      if (!(v5 >= 8)) {
+      if (v5 < 8) {
       LABEL_9:
         v9 = v5 & 7;
         v34[17] = v5;
@@ -156,13 +123,13 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
             v10 = (_QWORD*)((char*)v10 + 4);
             --v9;
           } while (v9 != 0);
-          if (!(v5 >= 8)) {
+          if (v5 < 8) {
             goto LABEL_16;
           }
         }
         else {
           v11 = v5;
-          if (!(v5 >= 8)) {
+          if (v5 < 8) {
             goto LABEL_16;
           }
         }
@@ -178,9 +145,9 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
       }
     }
     else {
-      v8 = v32_.v32;
+      v8 = f_.v32;
       v7 = v5;
-      if (!(v5 >= 8)) {
+      if (v5 < 8) {
         goto LABEL_9;
       }
     }
@@ -196,8 +163,8 @@ __int64 math_711380(__int64* a1, __int64 a2, __int64 a3, unsigned __int64 a4)
   }
 LABEL_16:
   v34[18] = a1 + 548;
-  nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints_plt(
-      a1, v32_.v32),
+  nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints_plt(a1,
+                                                                       f_.v32),
       v12 = COERCE_AS(__typeof__(v12),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
       v19 = COERCE_AS(__typeof__(v19),
@@ -205,21 +172,21 @@ LABEL_16:
       v22 = COERCE_AS(__typeof__(v22),
                       PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
   v13 = *a1;
-  memset(v30_.v30, 0, sizeof(v30_.v30));
-  v30_.v31 = v13;
+  memset(f_.v30, 0, sizeof(f_.v30));
+  f_.v31 = v13;
   if (v13 != 0) {
-    result = memset_plt((void*)v30_.v30, nullptr, 4 * (int)v13, v12),
+    result = memset_plt((void*)f_.v30, nullptr, 4 * (int)v13, v12),
     v12 = COERCE_AS(__typeof__(v12),
                     PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
     v22 = COERCE_AS(__typeof__(v22),
                     PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    v15 = v30_.v31;
-    if (v30_.v31 != 0) {
-      v16 = (float*)v32_.v32;
-      v17 = v30_.v31;
-      while (!(*v16 >= v16[36])) {
+    v15 = f_.v31;
+    if (f_.v31 != 0) {
+      v16 = (float*)f_.v32;
+      v17 = f_.v31;
+      while (*v16 < v16[36]) {
         ++v16;
         if (--v17 == 0) {
           v18 = 0;
@@ -244,8 +211,8 @@ LABEL_24:
   v37[0] = a1;
   v37[3] = v34;
   v38[33] = v15;
-  v37[1] = v30_.v30;
-  v37[2] = v32_.v32;
+  v37[1] = f_.v30;
+  v37[2] = f_.v32;
   if ((v18 & 1) == 0) {
     memset_plt((void*)v38, (char*)((_UNKNOWN*)0xFCLL) + 3, 8 * v15, v19),
         v12 = COERCE_AS(__typeof__(v12),
@@ -273,46 +240,46 @@ LABEL_24:
   v22 = COERCE_AS(__typeof__(v22),
                   PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
   if ((result & 1) != 0) {
-    v35_.v36 = 0;
-    memset(v35_.v35, 0, sizeof(v35_.v35));
-    math_726720((void*)(v35_.v35), v37),
+    f_.v36 = 0;
+    memset(f_.v35, 0, sizeof(f_.v35));
+    math_726720((void*)(f_.v35), v37),
         v12 = COERCE_AS(__typeof__(v12),
                         PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
         v19 = COERCE_AS(__typeof__(v19),
                         PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
         v22 = COERCE_AS(__typeof__(v22),
                         PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    v20 = v35_.v36;
-    if (v35_.v36 != 0) {
-      memcpy_plt(v30_.v30, v35_.v35, 4 * v35_.v36),
+    v20 = f_.v36;
+    if (f_.v36 != 0) {
+      memcpy_plt(f_.v30, f_.v35, 4 * f_.v36),
           v12 = COERCE_AS(__typeof__(v12),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
           v19 = COERCE_AS(__typeof__(v19),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
           v22 = COERCE_AS(__typeof__(v22),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-      v30_.v31 = v20;
-      v23_.v24 = v20;
-      memcpy_plt(v23_.v23, v30_.v30, 4 * v20),
+      f_.v31 = v20;
+      f_.v24 = v20;
+      memcpy_plt(f_.v23, f_.v30, 4 * v20),
           v12 = COERCE_AS(__typeof__(v12),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
           v19 = COERCE_AS(__typeof__(v19),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
           v22 = COERCE_AS(__typeof__(v22),
                           PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-      v21 = v23_.v24;
-      v25_.v26 = v23_.v24;
-      if (v23_.v24 != 0) {
-        memcpy_plt(v25_.v25, v23_.v23, 4 * v23_.v24),
+      v21 = f_.v24;
+      f_.v26 = f_.v24;
+      if (f_.v24 != 0) {
+        memcpy_plt(f_.v25, f_.v23, 4 * f_.v24),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v19 = COERCE_AS(__typeof__(v19),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v22 = COERCE_AS(__typeof__(v22),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        v25_.v27 = a1 + 548;
-        v28_.v29 = v21;
-        memset_plt((void*)&v28_.v28, nullptr, v21, v22),
+        f_.v27 = a1 + 548;
+        f_.v29 = v21;
+        memset_plt((void*)&f_.v28, nullptr, v21, v22),
             v12 = COERCE_AS(__typeof__(v12),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
             v19 = COERCE_AS(__typeof__(v19),
@@ -320,17 +287,17 @@ LABEL_24:
             v22 = COERCE_AS(__typeof__(v22),
                             PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
         return nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection_plt(
-            a1, v25_.v25);
+            a1, f_.v25);
       }
     }
     else {
-      v30_.v31 = 0;
-      v25_.v26 = 0;
+      f_.v31 = 0;
+      f_.v26 = 0;
     }
-    v25_.v27 = a1 + 548;
-    v28_.v29 = 0;
+    f_.v27 = a1 + 548;
+    f_.v29 = 0;
     return nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection_plt(
-        a1, v25_.v25);
+        a1, f_.v25);
   }
   return result;
 }

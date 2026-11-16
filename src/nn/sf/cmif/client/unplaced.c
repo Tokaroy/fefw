@@ -2476,12 +2476,10 @@ __int64 nn_sf_cmif_client_2b3140(__int64 a1, __int64* a2, int a3, signed int a4,
     _QWORD v41[2];
     __int64 v42;
     __int64 v43;
-  } v41_;
-  struct {
     _QWORD v44[2];
     __int64 v45;
     __int64 v46;
-  } v44_;
+  } f_;
 
   v7 = *(_QWORD*)(a1 + 96);
   v13 = *(_DWORD*)(a1 + 116) - a3;
@@ -2501,20 +2499,20 @@ __int64 nn_sf_cmif_client_2b3140(__int64 a1, __int64* a2, int a3, signed int a4,
   }
   else {
     v18 = *(unsigned int*)(a1 + 112);
-    v44_.v45 = 0;
-    v44_.v46 = 0;
-    v44_.v44[0] = 0;
-    v44_.v44[1] = 0;
-    v41_.v42 = 0;
-    v41_.v43 = 0;
-    v41_.v41[0] = 0;
-    v41_.v41[1] = 0;
+    f_.v45 = 0;
+    f_.v46 = 0;
+    f_.v44[0] = 0;
+    f_.v44[1] = 0;
+    f_.v42 = 0;
+    f_.v43 = 0;
+    f_.v41[0] = 0;
+    f_.v41[1] = 0;
     if ((int)v18 >= 1) {
       v19 = v7;
-      memcpy_plt(v41_.v41, a2, 8 * v18);
+      memcpy_plt(f_.v41, a2, 8 * v18);
       v7 = v19;
     }
-    nn_sf_cmif_client_2b37a0(a1, v17, (__int64)v41_.v41, v18, v15, v7, a6);
+    nn_sf_cmif_client_2b37a0(a1, v17, (__int64)f_.v41, v18, v15, v7, a6);
   }
   v20 = v15;
   result = nn_audio_driver_StoreDataCache_plt(v17, *(_QWORD*)(a1 + 104) * v15);
@@ -2537,20 +2535,20 @@ __int64 nn_sf_cmif_client_2b3140(__int64 a1, __int64* a2, int a3, signed int a4,
                                                 *(_QWORD*)(a1 + 104) * v26);
     }
     v27 = *(_DWORD*)(a1 + 112);
-    v44_.v45 = 0;
-    v44_.v46 = 0;
-    v44_.v44[0] = 0;
-    v44_.v44[1] = 0;
-    v41_.v42 = 0;
-    v41_.v43 = 0;
-    v41_.v41[0] = 0;
-    v41_.v41[1] = 0;
+    f_.v45 = 0;
+    f_.v46 = 0;
+    f_.v44[0] = 0;
+    f_.v44[1] = 0;
+    f_.v42 = 0;
+    f_.v43 = 0;
+    f_.v41[0] = 0;
+    f_.v41[1] = 0;
     if (v27 >= 1) {
       v28 = v27 & 7;
       if ((unsigned int)v27 >= 8) {
         v30 = a2 + 4;
         v31 = 0;
-        v32 = v44_.v44;
+        v32 = f_.v44;
         do {
           v31 -= 8;
           v33 = *(v30 - 3) + v25;
@@ -2580,7 +2578,7 @@ __int64 nn_sf_cmif_client_2b3140(__int64 a1, __int64* a2, int a3, signed int a4,
           goto LABEL_24;
         }
       }
-      v38 = &v41_.v41[v29];
+      v38 = &f_.v41[v29];
       v39 = &a2[v29];
       do {
         v40 = *v39++;
@@ -2589,7 +2587,7 @@ __int64 nn_sf_cmif_client_2b3140(__int64 a1, __int64* a2, int a3, signed int a4,
       } while (v28 != 0);
     }
   LABEL_24:
-    nn_sf_cmif_client_2b37a0(a1, v24, (__int64)v41_.v41, v27, v26, v23, a6);
+    nn_sf_cmif_client_2b37a0(a1, v24, (__int64)f_.v41, v27, v26, v23, a6);
     return nn_audio_driver_StoreDataCache_plt(v24, *(_QWORD*)(a1 + 104) * v26);
   }
   return result;

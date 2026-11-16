@@ -120,6 +120,9 @@ __int64 std___1___shared_weak_count___release_weak_alt2(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
 void Object_Destructor_df88c0(__int64 a1, long double a2, long double a3);
 __int64 GameHr_cf62e0(__int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__n128 std___1___shared_weak_count___release_weak_alt3(_QWORD);
 
 void Object_Destructor_df88c0(__int64 a1, long double a2, long double a3)
 {
@@ -966,6 +969,8 @@ __int64 game_hub_Object_EnableAccess(__int64 (**a1)(), __int64 a2, __int64 a3,
                                      float a7)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 (*v9)();
   __int64 v10;
@@ -1026,7 +1031,7 @@ __int64 game_hub_Object_EnableAccess(__int64 (**a1)(), __int64 a2, __int64 a3,
       f_.v28 = nullptr;
     }
     f_.v29 = a1;
-    v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+    v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 80, 16, 0);
     v16 = GameData_1fe1f70;
     v17 = (__int64 (***)(void))v15;
@@ -1059,8 +1064,8 @@ __int64 game_hub_Object_EnableAccess(__int64 (**a1)(), __int64 a2, __int64 a3,
         v24 = f_.v32;
         v11[173] = v23;
         if ((_DWORD)v24 != -1) {
-          ((void (*)(unsigned __int64*, _BYTE*))GameData_1fdce28[v24])(
-              &v33, f_.v30);
+          ((void (*)(unsigned __int64*, _BYTE*))GameData_1fdce28[v24])(&v33,
+                                                                       f_.v30);
         }
         ((void (*)(__int64 (***)(void)))(*v17)[5])(v17);
         if (f_.v28 == f_.v27) {
@@ -1091,7 +1096,7 @@ LABEL_26:
   if (atomic_fetch_add((atomic_ullong* volatile)(v12 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
-    std___1___shared_weak_count___release_weak_alt1(v12);
+    std___1___shared_weak_count___release_weak_alt3(v12);
   }
   return game_hub_dfb3f0(a1);
 }

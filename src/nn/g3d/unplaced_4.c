@@ -510,6 +510,9 @@ LABEL_31:
 
 __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   float32x4_t* v3;
   int v4;
@@ -550,10 +553,12 @@ __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
   float32x4_t v39;
   __int64 v40;
   __int64 v41;
-  _QWORD v42[2];
-  __int64 v43;
-  int* v44;
-  __int64 v45;
+  struct {
+    _QWORD v42[2];
+    __int64 v43;
+    int* v44;
+    __int64 v45;
+  } f_;
   int v46;
 
   v2 = *(_QWORD*)(result + 24);
@@ -603,17 +608,17 @@ __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
   }
   *(_DWORD*)v2 = *(_DWORD*)v2 & 0xFFFFFFF | ((HIBYTE(*(_DWORD*)v2) & 3) << 28);
   v46 = 0;
-  v44 = &v46;
-  v45 = 0;
-  LODWORD(v45) = *(unsigned __int16*)(result + 82);
-  if ((_DWORD)v45 == 0) {
+  f_.v44 = &v46;
+  f_.v45 = 0;
+  LODWORD(f_.v45) = *(unsigned __int16*)(result + 82);
+  if ((_DWORD)f_.v45 == 0) {
     v19 = *(_QWORD*)(result + 24);
     v20 = *(_QWORD*)(result + 88);
-    v42[0] = v5[4];
-    v42[1] = 0;
-    v43 = v19;
+    f_.v42[0] = v5[4];
+    f_.v42[1] = 0;
+    f_.v43 = v19;
     result = (*(__int64 (**)(__int64, int**, _QWORD*))(*(_QWORD*)v20 + 16LL))(
-        v20, &v44, v42);
+        v20, &f_.v44, f_.v42);
     v18 = v46 + 1;
     v46 = v18;
     if (v18 >= v4) {
@@ -661,15 +666,15 @@ __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
                     COERCE_AS(float32x2_t, LANES128(v37).n128_u64[0]), 1),
                 v34, v37, 2),
             v35);
-        if ((_DWORD)v45 == v18) {
+        if ((_DWORD)f_.v45 == v18) {
         LABEL_14:
           v40 = v5[3];
           v41 = v5[11];
-          v42[0] = v5[4] + ((__int64)v18 << 6);
-          v42[1] = 0;
-          v43 = v40 + 96LL * v18;
+          f_.v42[0] = v5[4] + ((__int64)v18 << 6);
+          f_.v42[1] = 0;
+          f_.v43 = v40 + 96LL * v18;
           result = (*(__int64 (**)(__int64, int**, _QWORD*))(
-              *(_QWORD*)v41 + 16LL))(v41, &v44, v42);
+              *(_QWORD*)v41 + 16LL))(v41, &f_.v44, f_.v42);
           v18 = v46;
         }
       }
@@ -686,7 +691,7 @@ __int64 nn_g3d_5f9420(__int64 result, float32x4_t* a2)
         v31 = LANES128(v26[2]).n128_u64[0];
         LANES128(v24[3]).n128_u64[0] = LANES128(v26[3]).n128_u64[0];
         LANES128(v24[2]).n128_u64[0] = v31;
-        if ((_DWORD)v45 == v18) {
+        if ((_DWORD)f_.v45 == v18) {
           goto LABEL_14;
         }
       }
@@ -839,8 +844,7 @@ float32x4_t nn_g3d_5f96c0(__int64 a1, float32x4_t* a2, float32x4_t result)
     v66_.v67 = v20;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v21 + 16LL))(
         v21, &v68_.v68, v66_.v66);
-    result = COERCE_AS(__typeof__(result),
-                       PSEUDO_REGISTER(__n128, "v0", "=w"));
+    result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
     v19 = v70 + 1;
     v70 = v19;
     if (v19 >= v5) {
@@ -1044,6 +1048,9 @@ LABEL_32:
 
 float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
 {
+
+#pragma clang fp contract(on)
+
   float32x4_t* v3;
   float32x4_t* v4;
   int v5;
@@ -1200,10 +1207,8 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
     f_.v73[0] = *(_QWORD*)(a1 + 32);
     f_.v73[1] = v7;
     f_.v74 = v24;
-    (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v25 + 16LL))(
-        v25, &f_.v75, f_.v73);
-    result = COERCE_AS(__typeof__(result),
-                       PSEUDO_REGISTER(__n128, "v0", "=w"));
+    (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v25 + 16LL))(v25, &f_.v75,
+                                                                  f_.v73);
     v22 = v78 + 1;
     v78 = v22;
     if (v22 >= v5) {
@@ -1319,8 +1324,6 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
         f_.v74 = v55 + 96LL * v22;
         (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v56 + 16LL))(
             v56, &f_.v75, f_.v73);
-        result = COERCE_AS(__typeof__(result),
-                           PSEUDO_REGISTER(__n128, "v0", "=w"));
         v22 = v78;
       }
     LABEL_11:

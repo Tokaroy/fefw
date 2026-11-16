@@ -202,6 +202,8 @@ __int64 game_map_19f4d00(__int64 a1, int* a2, _DWORD** a3);
 __attribute__((swiftcall)) void game_map_1a01550(PSEUDO_X8 x8_,
                                                  __int64 unused_int0,
                                                  __int64 a1, char a2, char a3);
+__attribute__((swiftcall)) void game_map_1140e80(PSEUDO_X8, _DWORD*);
+extern __int64 (*decltype_c81af0_ptr_2012a50[6])();
 
 _QWORD* game_map_73aac0()
 {
@@ -3084,7 +3086,8 @@ void game_map_1141940(__int64 a1, __int64 a2)
       v7 = *(unsigned int*)(v6 - 8);
       v8 = v6 - 32;
       if ((_DWORD)v7 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v7])(&v20, v6 - 32);
+        ((void (*)(char*, __int64))decltype_c81af0_ptr_2012a50[v7])(&v20,
+                                                                    v6 - 32);
       }
       *(_DWORD*)(v6 - 8) = -1;
       v6 -= 32;
@@ -3110,7 +3113,7 @@ void game_map_1141940(__int64 a1, __int64 a2)
                                   f_.v15);
   }
   *(_QWORD*)a1 = game_map_MapTreasureboxEvent_vtable;
-  GameRoutine_1140e80((void*)(f_.v12), (_DWORD*)a1);
+  game_map_1140e80((void*)(f_.v12), (_DWORD*)a1);
   (*(void (**)(__int64, _QWORD*))(*(_QWORD*)a1 + 120LL))(a1, f_.v12);
   if ((f_.v12[0] & 1) != 0 && f_.v13 != 0) {
     v11 = 128;

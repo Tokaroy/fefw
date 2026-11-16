@@ -809,11 +809,12 @@ bool game_145c270(__int64 a1, __int64 a2);
 __int64 game_145d6e0();
 void game_145d990(int* a1);
 void game_1489b40(unsigned __int8* a1, const char* a2);
-_QWORD* game_156d210(__int64 a1, int a2, __int16 a3);
+_QWORD* game_156d210_alt1(__int64 a1, int a2, __int16 a3);
 __int64 game_159df00(__int64 a1, char a2);
 __int64 game_159e2c0(__int64 a1, char a2);
 __int64 game_159e540(__int64 a1);
 __int64 game_15fc3b0(__int64 a1, _QWORD* a2, __int64 a3);
+void game_156d210(__int64 a1, int a2, __int16 a3);
 
 __int64 game_55c3a0(__int64 result, __int64 a2, float a3, double a4, float a5,
                     double a6, float a7)
@@ -18094,7 +18095,7 @@ LABEL_131:
   }
 }
 
-_QWORD* game_156d210(__int64 a1, int a2, __int16 a3)
+void game_156d210(__int64 a1, int a2, __int16 a3)
 {
 
 #pragma clang fp contract(off)
@@ -18150,7 +18151,7 @@ _QWORD* game_156d210(__int64 a1, int a2, __int16 a3)
       }
     }
   }
-  return result;
+  return;
 }
 
 __int64 game_159df00(__int64 a1, char a2)

@@ -134,6 +134,7 @@ __int64 std___1___shared_weak_count___release_weak_alt2(__int64);
 __int64 wld_Crc32_alt2(int, unsigned __int8*, unsigned __int64);
 int __cxa_guard_acquire_alt2(__int64);
 void __cxa_guard_release_alt2(__int64);
+unsigned __int64 GameRoutine_11c4280(__int64, __int64);
 
 void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
                                        __int128* a4, __int128* a5, __int128* a6)
@@ -219,7 +220,7 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
   GameData_21d9cf0 = GameData_21d9ce8;
   GameData_21d9d50 = GameData_21d9d48;
   GameData_21d9d78 = 8;
-  GameHr_11c4280(a1, (__int64)f_.v37);
+  GameRoutine_11c4280(a1, (__int64)f_.v37);
   v14 = (__int64*)fw_memory_g_heap_manager_ptr;
   v15 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
       *(_QWORD*)fw_memory_g_heap_manager_ptr, 11832, 16, 0);
@@ -259,8 +260,7 @@ void game_evt_demo_CharacterWork_Equip(__int64 a1, const char* a2, __int128* a3,
     v24 = nullptr;
   LABEL_12:
     f_.v34 = nullptr;
-    CharacterBuilder_107e140((__int64)v24, (__int64*)&f_.v35,
-                             (__int64)f_.v33);
+    CharacterBuilder_107e140((__int64)v24, (__int64*)&f_.v35, (__int64)f_.v33);
     if (f_.v34 == f_.v33) {
       v25 = 32;
     }
