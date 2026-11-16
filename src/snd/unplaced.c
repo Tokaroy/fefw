@@ -415,7 +415,7 @@ __n128
 
 bool snd_BGM_checkFinished(__int64);
 
-bool snd_Voice_hasFeature(__int64, unsigned int);
+__int64 snd_Voice_hasFeature(__int64, unsigned int);
 
 bool snd_Voice_hasSends(__int64);
 

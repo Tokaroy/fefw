@@ -421,7 +421,7 @@ __int64 wld_c03400(_QWORD*);
 
 __n128 GameRoutine_109ded0(__int128*, int8x16_t*, __int64);
 
-bool GameRoutine_10a2760(__int64);
+__int64 GameRoutine_10a2760(__int64);
 
 char* GameRoutine_60a060(char*, __int64, unsigned __int64);
 

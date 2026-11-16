@@ -49,7 +49,7 @@ __int64* MapManager_d6f8d0(__int64* result);
 __int64 game_hub_MapManager_Load_lambda0_Invoke(__int64 a1);
 __int64 GameRoutine_f722c0(__int64, int, __int64, __int64);
 __int64 std___1___shared_weak_count_lock(_QWORD);
-bool ObjectBuildCreate_c13700(__int64, const char*, unsigned __int64);
+__int64 ObjectBuildCreate_c13700(__int64, const char*, unsigned __int64);
 extern __int64 GameData_21ec7c0;
 extern __int64 GameData_220b6c8;
 __int64 MapManager_d6ef90(__int64 result);

@@ -179,7 +179,7 @@ game_VariableManager_SetFlag_alt1(__int64 result,
 __int64 game_gmap_133f780(__int64 result, _DWORD*, char);
 __int64 memmove_alt1(__int64, __int64, unsigned __int64) __asm__("memmove");
 bool GameRoutine_7160c0_alt2(_QWORD*) __asm__("GameRoutine_7160c0");
-bool game_878d80(_QWORD*);
+__int64 game_878d80(_QWORD*);
 char* game_util_Format_alt1(const char*, ...) __asm__("game_util_Format");
 extern char GameData_1ae568e_alt1[] __asm__("GameData_1ae568e");
 float GameRoutine_d5d770_alt1(__int64,

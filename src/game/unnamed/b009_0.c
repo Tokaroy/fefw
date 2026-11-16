@@ -311,7 +311,7 @@ __int64 GameRoutine_a8c5a0_alt1(__int64) __asm__("GameRoutine_a8c5a0");
 __int64 GameRoutine_a8c7e0_alt1(__int64,
                                 __int64*) __asm__("GameRoutine_a8c7e0");
 __int64 GameRoutine_a9d730_alt1(__int64*) __asm__("GameRoutine_a9d730");
-bool GameRoutine_5f6040_alt1(__int64, __int16*, __int64,
+__int64 GameRoutine_5f6040_alt1(__int64, __int16*, __int64,
                              unsigned __int64) __asm__("GameRoutine_5f6040");
 int* GameRoutine_5e9960_alt1(int* result) __asm__("GameRoutine_5e9960");
 int* GameRoutine_5e9bb0_alt1(int* result) __asm__("GameRoutine_5e9bb0");

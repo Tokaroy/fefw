@@ -31,7 +31,7 @@ __int64 std___1___shared_weak_count___release_weak(__int64);
 
 __int64 std___1___shared_weak_count_lock(__int64);
 
-bool llvm_libcxx_21_libcxx_include___memory_d2d4e0();
+__int64 llvm_libcxx_21_libcxx_include___memory_d2d4e0();
 
 extern _QWORD as_g_context_slots[16384];
 

@@ -2,7 +2,7 @@
 
 #pragma GCC visibility push(hidden)
 
-bool GameRoutine_108cdc0(int);
+__int64 GameRoutine_108cdc0(int);
 extern int GameData_21d87e8;
 __int64 game_character_CharacterIK_Startup_lambda0_Invoke(__int64 result);
 bool game_character_CharacterIK_Startup_lambda1_Invoke(__int64 a1, int* a2);

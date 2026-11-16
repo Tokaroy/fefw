@@ -90,7 +90,7 @@ __int64 ui_LayoutAccessor_FindPane(__int64*, const char*);
 __int64 ui_LayoutAccessor_FindTextBox(__int64*, const char*);
 __int64 ui_LayoutAccessor_IsPaneVisible(__int64*, const char*);
 __int64 ui_LayoutAccessor_SetPaneVisible(__int64 result, const char*, char);
-bool LayoutAccessor_1563380(__int64*, __int64, char);
+__int64 LayoutAccessor_1563380(__int64*, __int64, char);
 char* GameRoutine_a4dbe0(__int64, const char*, char);
 double ui_LayoutAccessor_GetPaneTranslate(__int64*, const char*);
 extern _DWORD GameData_1c054d4[3];

@@ -211,7 +211,7 @@ __int64 hub_event_PushArrangementCharaPid();
 __int64 hub_event_SetSeLabel();
 __int64 std___1___shared_weak_count___release_weak(_QWORD);
 __int64 std___1___shared_weak_count_lock(_QWORD);
-bool GameRoutine_e047c0(__int64, __int64*, _DWORD*);
+__int64 GameRoutine_e047c0(__int64, __int64*, _DWORD*);
 bool hub_character_IsIdleForAnimation(__int64);
 char** GameRoutine_d67940(__int64);
 extern _UNKNOWN* GameData_212c540;

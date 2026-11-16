@@ -150,7 +150,7 @@ __int64 std___1___shared_weak_count___release_weak_alt1(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
 __int64 std___1___shared_weak_count_lock(__int64);
 __int64 ui_LayoutAccessor_FindPane(__int64*, __int64);
-bool LayoutAccessor_155d280(__int64, const char*, const char*, char);
+__int64 LayoutAccessor_155d280(__int64, const char*, const char*, char);
 const char* Pane_58fac0(__int64, const char*);
 extern __int64* game_g_frame_clock_ptr[3];
 extern __int64 game_ProcGameSkipView_instance_;

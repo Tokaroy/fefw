@@ -55,7 +55,7 @@ __n128 GameRoutine_658c00(_QWORD*);
 __n128 nn_mem_StandardAllocator_Free_alt1(_QWORD) __asm__(
     "nn_mem_StandardAllocator_Free");
 __n128 std___1___shared_weak_count___release_weak();
-bool MiasmaManager_14a9ce0(__int64, __int64*);
+__int64 MiasmaManager_14a9ce0(__int64, __int64*);
 extern __int64 (*GameData_2044a20[])();
 extern __int64 (*GameData_2044b88[])();
 extern __int64 (*game_ProcInst_vtable[])();

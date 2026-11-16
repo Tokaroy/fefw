@@ -22,7 +22,7 @@ __int64 GameRoutine_e70790(__int64);
 __int64 GameRoutine_e734e0(__int64 result);
 __int64 GameRoutine_e73d00(__int64, __int64);
 __int64 GameRoutine_e749a0(_QWORD, _QWORD);
-bool GameRoutine_e76770(__int64, __int64, unsigned __int16*);
+__int64 GameRoutine_e76770(__int64, __int64, unsigned __int16*);
 __int64 GameRoutine_e7d890(_QWORD);
 __int64 GameRoutine_e7fde0(__int64, __int64*, _QWORD*, int, float, float);
 __int64 GameRoutine_e803d0(_QWORD, _QWORD);

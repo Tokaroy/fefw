@@ -164,7 +164,7 @@ __int64 ui_LayoutAccessor_FindTextBox_alt1(__int64*, __int64) __asm__(
 __int64 ui_LayoutAccessor_SetPaneVisible_alt2(
     __int64 result, __int64, char) __asm__("ui_LayoutAccessor_SetPaneVisible");
 bool BattleInfo_797b50_alt1(__int64) __asm__("BattleInfo_797b50");
-bool LayoutAccessor_1563380_alt1(__int64*, __int64,
+__int64 LayoutAccessor_1563380_alt1(__int64*, __int64,
                                  char) __asm__("LayoutAccessor_1563380");
 char* GameRoutine_a4dbe0_alt1(__int64, _BYTE*,
                               char) __asm__("GameRoutine_a4dbe0");

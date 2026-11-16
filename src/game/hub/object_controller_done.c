@@ -24,8 +24,8 @@ __int64 GameHr_dbc2c0(_QWORD*, __int64);
 __int64 MapObjectModule_a7d640(__int64, __int64, unsigned __int64);
 __int64 Object_dfd100(__int64);
 __int64 game_hub_dfc1e0(__int64);
-bool GameRoutine_e1be10_alt1(__int64, __int64) __asm__("GameRoutine_e1be10");
-bool game_80a5b0();
+__int64 GameRoutine_e1be10_alt1(__int64, __int64) __asm__("GameRoutine_e1be10");
+__int64 game_80a5b0();
 void Object_dfcd80(__int64, __int64, unsigned __int64);
 
 __int64 ObjectControllerDone_Unknown6(__int64 a1)

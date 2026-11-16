@@ -391,7 +391,7 @@ __attribute__((swiftcall)) void
 snd_play_ff2d0_alt1(PSEUDO_X8, __int64, __int64, __int64, unsigned int,
                     unsigned int, int, float, float) __asm__("snd_play_ff2d0");
 __int64 snd_stop_ffc40_alt1(__int64*, __int64) __asm__("snd_stop_ffc40");
-bool GameManager_a35ca0_alt2(__int64,
+__int64 GameManager_a35ca0_alt2(__int64,
                              unsigned __int8*) __asm__("GameManager_a35ca0");
 const char*
 game_HashString32_alt1(const char* result) __asm__("game_HashString32");

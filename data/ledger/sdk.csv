@@ -23934,7 +23934,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 605160,212,verified,src/nvidia/nvrm_surface_query_impl.c,nvrm_surface_query_605160
 605250,104,verified,src/nvidia/nvrm_surface_query.cpp,NvRmSurfaceGetAlignment
 6052c0,180,verified,src/nvidia/unplaced_2.c,nvidia_6052c0
-605380,320,verified,src/nvidia/unplaced_2.c,nvidia_605380
+605380,336,verified,src/nvidia/unplaced_2.c,nvidia_605380
 6054d0,124,verified,src/nvidia/unplaced_2.c,nvidia_6054d0
 6055a0,1116,verified,src/nvidia/unplaced_2.c,nvidia_6055a0
 605ad0,8,verified,src/nvidia/nvrm_surface.cpp,NvRmSurfaceSetup
@@ -24114,7 +24114,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 618120,780,verified,src/nvidia/unplaced_2.c,nvidia_618120
 618460,328,verified,src/nvidia/unplaced_2.c,nvidia_618460
 6185c0,508,verified,src/nvidia/unplaced_2.c,nvidia_6185c0
-6187e0,616,verified,src/nvidia/unplaced_2.c,nvidia_6187e0
+6187e0,624,verified,src/nvidia/unplaced_2.c,nvidia_6187e0
 618a60,216,verified,src/nvidia/unplaced_2.c,nvidia_618a60
 618d00,428,verified,src/nvidia/unplaced_2.c,nvidia_618d00
 6190f0,40,verified,src/nvidia/unplaced_2.c,nvidia_6190f0
@@ -24127,7 +24127,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6197b0,68,verified,src/nvidia/unplaced_2.c,nvidia_6197b0
 619800,72,verified,src/nvidia/unplaced_2.c,nvidia_619800
 619860,236,verified,src/nvidia/unplaced_2.c,nvidia_619860
-619950,1084,verified,src/nvidia/unplaced_2.c,nvidia_619950
+619950,1132,verified,src/nvidia/unplaced_2.c,nvidia_619950
 619fb0,168,verified,src/nvidia/unplaced_3.c,nvidia_619fb0
 61a070,312,verified,src/nvidia/unplaced_3.c,nvidia_61a070
 61b5f0,296,verified,src/nvidia/unplaced_3.c,nvidia_61b5f0

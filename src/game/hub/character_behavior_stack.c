@@ -30,7 +30,7 @@ __int64 nn_mem_StandardAllocator_Free_alt1(_QWORD, _QWORD) __asm__(
     "nn_mem_StandardAllocator_Free");
 __n128 std___1___shared_weak_count___release_weak_alt1(_QWORD) __asm__(
     "std___1___shared_weak_count___release_weak");
-bool CharacterController_d42740(_QWORD*, float32x4_t**, int*);
+__int64 CharacterController_d42740(_QWORD*, float32x4_t**, int*);
 extern __int128 GameData_1a82f60;
 extern __int128 GameData_1a832d0;
 extern __int64* GameData_212ee30[4];

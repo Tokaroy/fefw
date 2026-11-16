@@ -176,7 +176,7 @@ __int64 fw_memory_HeapManager_Allocate_alt1(
     unsigned int) __asm__("fw_memory_HeapManager_Allocate");
 __int64 game_GetHero(unsigned __int8);
 __int64 game_UnitPool_GetFirst(int*);
-bool game_HasSkill(_QWORD*, _DWORD*);
+__int64 game_HasSkill(_QWORD*, _DWORD*);
 extern _QWORD game_g_shared_system_skills_ptr;
 extern __int64 (*GameData_20e83d0[])();
 extern __int64 (*GameData_20e8d38[])();

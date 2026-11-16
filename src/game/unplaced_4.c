@@ -351,7 +351,7 @@ bool GameRoutine_f97e30(__int64, __int64, bool);
 
 bool GameRoutine_fd71c0(__int64, __int64);
 
-bool nn_g3d_5eb5c0(__int64, float32x4_t*);
+__int64 nn_g3d_5eb5c0(__int64, float32x4_t*);
 
 char** GameRoutine_d5f8e0(char** result, __int64, __int64, unsigned __int64);
 

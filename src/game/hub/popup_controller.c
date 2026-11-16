@@ -46,7 +46,7 @@ __attribute__((swiftcall)) void math_Quat_FromYawPitchRoll(PSEUDO_X8, float,
 __int64 game_GameVariableTable_Find_alt1(_QWORD*, unsigned __int64*) __asm__(
     "game_GameVariableTable_Find");
 __int64 game_HashString_alt1(__int64 result) __asm__("game_HashString");
-bool game_hub_d5ae40(__int64, float32x4_t*, __int64);
+__int64 game_hub_d5ae40(__int64, float32x4_t*, __int64);
 extern __int128 GameData_1a829d0;
 extern __int128 GameData_1a83460;
 extern __int128 GameData_1a835f0;

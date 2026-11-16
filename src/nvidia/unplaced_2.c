@@ -98,7 +98,7 @@ __int64 nvrm_surface_query_6074c0(_QWORD);
 __int64
 nvrm_surface_query_6074c0_alt1(int) __asm__("nvrm_surface_query_6074c0");
 __int64 nvrm_surface_query_6075d0(_DWORD*, unsigned int, int);
-bool nvidia_617c10_alt1(_QWORD*, _QWORD*) __asm__("nvidia_617c10");
+__int64 nvidia_617c10_alt1(_QWORD*, _QWORD*) __asm__("nvidia_617c10");
 extern _DWORD SdkData_103f258_alt1[22] __asm__("SdkData_103f258");
 extern _DWORD SdkData_c65064[21];
 extern _DWORD SdkData_c650b8[22];

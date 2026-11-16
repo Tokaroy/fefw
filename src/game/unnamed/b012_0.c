@@ -333,7 +333,7 @@ __int64 GameRoutine_dfc000(__int64 result, long double, long double);
 __int64 GameRoutine_dff3e0(_QWORD);
 __int64 GameRoutine_dff780(_QWORD);
 __int64 GameRoutine_e02840(_QWORD);
-bool GameRoutine_e047c0(__int64, _QWORD*, _DWORD*);
+__int64 GameRoutine_e047c0(__int64, _QWORD*, _DWORD*);
 __int64 GameRoutine_e04c50(_QWORD, _QWORD);
 __int64 GameRoutine_e04d90(_QWORD, _QWORD);
 __int64 GameRoutine_e085c0(_QWORD, _QWORD);

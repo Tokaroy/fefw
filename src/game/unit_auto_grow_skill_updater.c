@@ -27,7 +27,7 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
 void game_UnitAutoGrowSkillUpdater_Update(__int64* a1);
 __int64 Unit_6cc580_alt1(__int64, _DWORD*) __asm__("Unit_6cc580");
 __int64 Unit_6cc9e0_alt1(__int64, _DWORD*) __asm__("Unit_6cc9e0");
-bool GameRoutine_6fcb20_alt1(__int64, _QWORD*) __asm__("GameRoutine_6fcb20");
+__int64 GameRoutine_6fcb20_alt1(__int64, _QWORD*) __asm__("GameRoutine_6fcb20");
 
 void game_UnitAutoGrowSkillUpdater_Update(__int64* a1)
 {

@@ -116,7 +116,7 @@ __int64 TimelineFile_890160_alt1(const char*) __asm__("TimelineFile_890160");
 __int64 memcpy_alt1(__int64, __int64, unsigned __int64) __asm__("memcpy");
 __int64 nn_oe_GetProgramTotalActiveTime_alt1() __asm__(
     "nn_oe_GetProgramTotalActiveTime");
-bool GameHr_8789c0(const char**);
+__int64 GameHr_8789c0(const char**);
 extern char GameData_1abf89f_alt1[] __asm__("GameData_1abf89f");
 unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 void __attribute__((noreturn)) String_60a1d0_alt1() __asm__("String_60a1d0");

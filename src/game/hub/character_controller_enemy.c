@@ -91,7 +91,7 @@ __int64 GameRoutine_d60750(__int64 result);
 __int64 GameRoutine_e18130_alt1(__int64 result) __asm__("GameRoutine_e18130");
 __int64 game_d523c0(__int64);
 __n128 GameRoutine_e21920(_QWORD*, __int64*);
-bool HubCharacterNatives_cf7e00(__int64);
+__int64 HubCharacterNatives_cf7e00(__int64);
 extern _UNKNOWN* GameData_212c188;
 extern _UNKNOWN* GameData_212c190;
 extern _UNKNOWN GameData_22110b8;
