@@ -101,7 +101,7 @@ __int64 MapUtil_753570_alt1(int, int) __asm__("MapUtil_753570");
 __int64 fw_memory_HeapManager_Allocate_alt1(
     __int64, __int64, __int64,
     unsigned int) __asm__("fw_memory_HeapManager_Allocate");
-bool GameRoutine_68e5e0_alt1(__int64, __int64) __asm__("GameRoutine_68e5e0");
+__int64 GameRoutine_68e5e0_alt1(__int64, __int64) __asm__("GameRoutine_68e5e0");
 void __attribute__((noreturn))
 GameRoutine_60a310_alt2() __asm__("GameRoutine_60a310");
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(

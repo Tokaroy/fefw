@@ -21820,7 +21820,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 7ca4a0,160,verified,src/game/unnamed/b006_0.c,GameHr_7ca4a0
 7ca540,324,verified,src/game/map/trick.c,game_map_Trick_Impl_EachDanger
 7ca6c0,400,verified,src/game/unnamed/b006_0.c,GameHr_7ca6c0
-7ca860,276,verified,src/game/map/trick.c,Trick_7ca860
+7ca860,324,verified,src/game/map/trick.c,Trick_7ca860
 7cb0c0,452,verified,src/game/map/trick.c,Trick_7cb0c0
 7cb2a0,308,verified,src/game/map/trick.c,Trick_7cb2a0
 7cb3e0,4,verified,src/game/game_trivial.cpp,_Z15GameStub_7cb3e0v
@@ -69238,7 +69238,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1612ca0,476,verified,src/game/menu/anonymous/proc_unit_info_full.c,game_menu_anonymous_ProcUnitInfoFull_UpdatePage04_closure_Invoke
 1612e80,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::menu::(anonymous namespace)::ProcUnitInfoFull::UpdatePage04()::'lambda'(int, char const*), void (int, char const*)>::target(std::type_info const&)"
 1612ea0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::menu::(anonymous namespace)::ProcUnitInfoFull::UpdatePage04()::'lambda'(int, char const*), void (int, char const*)>::target_type()"
-1612ec0,1228,disputed,src/game/menu/anonymous/unplaced_7.c,game_menu_anonymous_1612ec0
+1612ec0,2476,verified,src/game/menu/anonymous/unplaced_7.c,game_menu_anonymous_1612ec0
 1613a00,968,verified,src/game/unnamed/b021_0.c,GameHr_1613a00
 1613dd0,340,verified,src/game/unnamed/b021_1.c,GameHr_1613dd0
 1613f30,220,verified,src/game/unnamed/b021_1.c,GameHr_1613f30
@@ -77101,7 +77101,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 17a3f40,1532,verified,src/game/unnamed/b023_2.c,GameHr_17a3f40
 17a4580,1564,verified,src/game/unnamed/b023_2.c,GameHr_17a4580
 17a4be0,220,verified,src/game/unnamed/b023_2.c,GameHr_17a4be0
-17a4cc0,3280,verified,src/game/menu/anonymous/unplaced_7.c,game_menu_anonymous_17a4cc0
+17a4cc0,1936,disputed,src/game/menu/anonymous/unplaced_7.c,game_menu_anonymous_17a4cc0
 17a5a00,744,disputed,src/game/menu/anonymous/unplaced_9.c,game_menu_anonymous_17a5a00
 17a5d10,376,verified,src/game/unnamed/b023_2.c,GameHr_17a5d10
 17a5ea0,420,verified,src/game/unnamed/b023_2.c,GameHr_17a5ea0

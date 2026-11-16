@@ -11,8 +11,8 @@ __int64 std___1___shared_weak_count___release_weak(__int64);
 __int64 std___1___shared_weak_count_lock(__int64);
 __int64 ui_LayoutAccessor_FindPane(__int64*, __int64);
 bool GameHr_1613a00(__int64, __int64, __int64);
-bool GameRoutine_1613dd0(__int64*, __int64*, __int64*, __int64*, __int64*);
-bool GameRoutine_1613f30(__int64*, __int64*, __int64*, __int64*, __int64*,
+__int64 GameRoutine_1613dd0(__int64*, __int64*, __int64*, __int64*, __int64*);
+__int64 GameRoutine_1613f30(__int64*, __int64*, __int64*, __int64*, __int64*,
                          __int64*);
 bool GameRoutine_1614020(__int64*, __int64*, __int64*);
 char* game_util_Format(const char*, ...);
