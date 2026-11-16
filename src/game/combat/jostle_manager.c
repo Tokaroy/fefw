@@ -651,15 +651,11 @@ __int64 game_combat_JostleManager_JostleManager(__int64 a1)
   struct {
     __int64 v21;
     __int64 v22;
-  } v21_;
-  struct {
     __int64 v23;
     __int64 v24;
-  } v23_;
-  struct {
     __int64 v25[4];
     __int64* v26;
-  } v25_;
+  } f_;
 
   if (*GameData_212f2e0 == 0) {
     *GameData_212f2e0 = a1;
@@ -713,45 +709,45 @@ __int64 game_combat_JostleManager_JostleManager(__int64 a1)
     std___1___shared_weak_count___release_weak_alt2(v7);
   }
   v8 = *(_QWORD**)(a1 + 96);
-  v25_.v25[0] = (__int64)GameData_1fed2f8;
-  v25_.v25[1] = a1;
-  v25_.v26 = v25_.v25;
-  GameRoutine_654050(v25_.v25, v8);
-  if (v25_.v26 == v25_.v25) {
+  f_.v25[0] = (__int64)GameData_1fed2f8;
+  f_.v25[1] = a1;
+  f_.v26 = f_.v25;
+  GameRoutine_654050(f_.v25, v8);
+  if (f_.v26 == f_.v25) {
     v9 = 32;
   }
   else {
-    if (v25_.v26 == nullptr) {
+    if (f_.v26 == nullptr) {
       goto LABEL_14;
     }
     v9 = 40;
   }
-  (*(void (**)(__int64))(*v25_.v26 + v9))((__int64)v25_.v26);
+  (*(void (**)(__int64))(*f_.v26 + v9))((__int64)f_.v26);
 LABEL_14:
   v10 = GameData_21c9710;
   v11 = *(_QWORD*)(a1 + 96);
   v12 = *(_QWORD*)(a1 + 104);
-  v23_.v23 = v11;
-  v23_.v24 = v12;
+  f_.v23 = v11;
+  f_.v24 = v12;
   if (v12 != 0) {
     v13 = GameData_21c9710;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 16), 1u,
                               memory_order_relaxed);
-    v25_.v25[0] = v11;
-    v25_.v25[1] = v12;
+    f_.v25[0] = v11;
+    f_.v25[1] = v12;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 16), 1u,
                               memory_order_relaxed);
-    GameRoutine_f8f3e0(v13, v25_.v25);
+    GameRoutine_f8f3e0(v13, f_.v25);
     std___1___shared_weak_count___release_weak_alt2(v12);
   }
   else {
-    v25_.v25[0] = v11;
-    v25_.v25[1] = 0;
-    GameRoutine_f8f3e0(GameData_21c9710, v25_.v25);
+    f_.v25[0] = v11;
+    f_.v25[1] = 0;
+    GameRoutine_f8f3e0(GameData_21c9710, f_.v25);
   }
-  GameRoutine_66b000((__int64*)(v10 + 16), &v23_.v23);
-  if (v23_.v24 != 0) {
-    std___1___shared_weak_count___release_weak_alt2(v23_.v24);
+  GameRoutine_66b000((__int64*)(v10 + 16), &f_.v23);
+  if (f_.v24 != 0) {
+    std___1___shared_weak_count___release_weak_alt2(f_.v24);
   }
   v14 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(*v2, 80, 16, 0);
   v15 = *(_QWORD*)(a1 + 16);
@@ -767,44 +763,44 @@ LABEL_14:
     std___1___shared_weak_count___release_weak_alt2(v15);
   }
   v16 = *(_QWORD**)(a1 + 8);
-  v25_.v25[0] = (__int64)GameData_1fed378;
-  v25_.v25[1] = a1;
-  v25_.v26 = v25_.v25;
-  GameRoutine_654050(v25_.v25, v16);
-  if (v25_.v26 == v25_.v25) {
+  f_.v25[0] = (__int64)GameData_1fed378;
+  f_.v25[1] = a1;
+  f_.v26 = f_.v25;
+  GameRoutine_654050(f_.v25, v16);
+  if (f_.v26 == f_.v25) {
     v17 = 32;
   }
   else {
-    if (v25_.v26 == nullptr) {
+    if (f_.v26 == nullptr) {
       goto LABEL_27;
     }
     v17 = 40;
   }
-  (*(void (**)(__int64))(*v25_.v26 + v17))((__int64)v25_.v26);
+  (*(void (**)(__int64))(*f_.v26 + v17))((__int64)f_.v26);
 LABEL_27:
   v18 = *(_QWORD*)(a1 + 8);
   v19 = *(_QWORD*)(a1 + 16);
-  v21_.v21 = v18;
-  v21_.v22 = v19;
+  f_.v21 = v18;
+  f_.v22 = v19;
   if (v19 != 0) {
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v19 + 16), 1u,
                               memory_order_relaxed);
-    v25_.v25[0] = v18;
-    v25_.v25[1] = v19;
+    f_.v25[0] = v18;
+    f_.v25[1] = v19;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v19 + 16), 1u,
                               memory_order_relaxed);
-    GameRoutine_66b160((__int64)v25_.v25);
+    GameRoutine_66b160((__int64)f_.v25);
     std___1___shared_weak_count___release_weak_alt2(v19);
   }
   else {
-    v25_.v25[0] = v18;
-    v25_.v25[1] = 0;
-    GameRoutine_66b160((__int64)v25_.v25);
+    f_.v25[0] = v18;
+    f_.v25[1] = 0;
+    GameRoutine_66b160((__int64)f_.v25);
   }
-  GameRoutine_66b000(&GameData_21c9680, &v21_.v21);
-  result = v21_.v22;
-  if (v21_.v22 != 0) {
-    return std___1___shared_weak_count___release_weak_alt2(v21_.v22);
+  GameRoutine_66b000(&GameData_21c9680, &f_.v21);
+  result = f_.v22;
+  if (f_.v22 != 0) {
+    return std___1___shared_weak_count___release_weak_alt2(f_.v22);
   }
   return result;
 }

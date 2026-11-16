@@ -75,13 +75,13 @@ __int64 g3d_a661a0(__int64 a1, int a2, __int64 a3, int a4)
   __int64 v45;
   __int64 v47;
   struct {
+    char gap0_[16];
     _BYTE v49[32];
     _BYTE* v50;
-  } v49_;
-  struct {
+    char gap56_[8];
     _BYTE v51[32];
     _BYTE* v52;
-  } v51_;
+  } f_;
   _QWORD v53[4];
 
   if (*(_QWORD*)(a1 + 664) == *(_QWORD*)(a1 + 656)) {
@@ -91,63 +91,63 @@ __int64 g3d_a661a0(__int64 a1, int a2, __int64 a3, int a4)
     v5 = *(_BYTE**)(a3 + 32);
     __asm__ volatile("" ::"r"(v5));
   }
-  v49_.v50 = nullptr;
+  f_.v50 = nullptr;
   HIDWORD(v47) = a4;
   if (v5 == nullptr) {
     v6 = nullptr;
   LABEL_10:
-    v51_.v52 = v5;
-    v49_.v50 = v6;
+    f_.v52 = v5;
+    f_.v50 = v6;
     goto LABEL_11;
   }
   if (v5 == (_BYTE*)a3) {
-    v51_.v52 = v51_.v51;
-    (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)v5 + 24LL))(v5, v51_.v51);
-    v6 = v51_.v52;
-    v5 = v49_.v50;
+    f_.v52 = f_.v51;
+    (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)v5 + 24LL))(v5, f_.v51);
+    v6 = f_.v52;
+    v5 = f_.v50;
   }
   else {
     v6 = (_BYTE*)(*(__int64 (**)(_BYTE*))(*(_QWORD*)v5 + 16LL))(v5);
     v5 = nullptr;
-    v51_.v52 = v6;
+    f_.v52 = v6;
   }
-  if (v6 != v51_.v51) {
-    if (v5 == v49_.v49) {
-      (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)v5 + 24LL))(v5, v51_.v51);
-      (*(void (**)(_BYTE*))(*(_QWORD*)v49_.v50 + 32LL))(v49_.v50);
-      v8 = v51_.v52;
-      v51_.v52 = v51_.v51;
-      v5 = v51_.v51;
-      v49_.v50 = v8;
+  if (v6 != f_.v51) {
+    if (v5 == f_.v49) {
+      (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)v5 + 24LL))(v5, f_.v51);
+      (*(void (**)(_BYTE*))(*(_QWORD*)f_.v50 + 32LL))(f_.v50);
+      v8 = f_.v52;
+      f_.v52 = f_.v51;
+      v5 = f_.v51;
+      f_.v50 = v8;
       goto LABEL_17;
     }
     goto LABEL_10;
   }
-  if (v5 == v49_.v49) {
+  if (v5 == f_.v49) {
     (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _BYTE*, _QWORD*))(
         *(_QWORD*)v6 + 24LL))((void*)(v6), v6, v53);
-    (*(void (**)(_BYTE*))(*(_QWORD*)v51_.v52 + 32LL))(v51_.v52);
-    v51_.v52 = nullptr;
-    (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)v49_.v50 + 24LL))(v49_.v50,
-                                                              v51_.v51);
-    (*(void (**)(_BYTE*))(*(_QWORD*)v49_.v50 + 32LL))(v49_.v50);
-    v49_.v50 = nullptr;
-    v51_.v52 = v51_.v51;
-    (*(void (**)(_QWORD*, _BYTE*))(v53[0] + 24LL))(v53, v49_.v49);
+    (*(void (**)(_BYTE*))(*(_QWORD*)f_.v52 + 32LL))(f_.v52);
+    f_.v52 = nullptr;
+    (*(void (**)(_BYTE*, _BYTE*))(*(_QWORD*)f_.v50 + 24LL))(f_.v50,
+                                                              f_.v51);
+    (*(void (**)(_BYTE*))(*(_QWORD*)f_.v50 + 32LL))(f_.v50);
+    f_.v50 = nullptr;
+    f_.v52 = f_.v51;
+    (*(void (**)(_QWORD*, _BYTE*))(v53[0] + 24LL))(v53, f_.v49);
     (*(void (**)(_QWORD*))(v53[0] + 32LL))(v53);
-    v5 = v51_.v52;
-    v49_.v50 = v49_.v49;
+    v5 = f_.v52;
+    f_.v50 = f_.v49;
   }
   else {
     (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, _BYTE*, _BYTE*))(
-        *(_QWORD*)v6 + 24LL))((void*)(v6), v6, v49_.v49);
-    (*(void (**)(_BYTE*))(*(_QWORD*)v51_.v52 + 32LL))(v51_.v52);
-    v5 = v49_.v50;
-    v49_.v50 = v49_.v49;
-    v51_.v52 = v5;
+        *(_QWORD*)v6 + 24LL))((void*)(v6), v6, f_.v49);
+    (*(void (**)(_BYTE*))(*(_QWORD*)f_.v52 + 32LL))(f_.v52);
+    v5 = f_.v50;
+    f_.v50 = f_.v49;
+    f_.v52 = v5;
   }
 LABEL_11:
-  if (v5 == v51_.v51) {
+  if (v5 == f_.v51) {
   LABEL_17:
     v7 = 32;
     goto LABEL_18;
@@ -169,14 +169,14 @@ LABEL_11:
   if (v9 < v10) {
     *(_DWORD*)(v9 + 8) = a2;
     *(_QWORD*)v9 = v47;
-    if (v49_.v50 != nullptr) {
-      if (v49_.v50 == v49_.v49) {
+    if (f_.v50 != nullptr) {
+      if (f_.v50 == f_.v49) {
         *(_QWORD*)(v9 + 48) = v9 + 16;
-        (*(void (**)(_BYTE*))(*(_QWORD*)v49_.v50 + 24LL))(v49_.v50);
+        (*(void (**)(_BYTE*))(*(_QWORD*)f_.v50 + 24LL))(f_.v50);
       }
       else {
         *(_QWORD*)(v9 + 48) = (*(__int64 (**)(__int64))(
-            *(_QWORD*)v49_.v50 + 16LL))((__int64)v49_.v50);
+            *(_QWORD*)f_.v50 + 16LL))((__int64)f_.v50);
       }
       v11 = v9 + 64;
     }
@@ -213,11 +213,11 @@ LABEL_11:
                                        v18 << 6, 16, 0);
   v21 = v20 + v13;
   v22 = v20;
-  v23 = v49_.v50;
+  v23 = f_.v50;
   *(_QWORD*)v21 = v47;
   *(_DWORD*)(v21 + 8) = a2;
   if (v23 != nullptr) {
-    if (v23 == v49_.v49) {
+    if (v23 == f_.v49) {
       *(_QWORD*)(v21 + 48) = v21 + 16;
       (*(void (**)(_BYTE*))(*(_QWORD*)v23 + 24LL))(v23);
     }
@@ -343,10 +343,10 @@ LABEL_56:
     nn_mem_StandardAllocator_Free(*(_QWORD*)fw_memory_g_heap_manager_ptr + v43,
                                   v42);
   }
-  v44 = v49_.v50;
+  v44 = f_.v50;
   *(_BYTE*)(a1 + 504) = 1;
   ++*(_DWORD*)(a1 + 640);
-  if (v44 == v49_.v49) {
+  if (v44 == f_.v49) {
     v45 = 32;
     goto LABEL_70;
   }

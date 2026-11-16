@@ -655,20 +655,18 @@ _QWORD* snd_130d20(_QWORD* result, unsigned __int64 a2, char a3)
   __int64 v24;
   unsigned __int64 v25;
   struct {
+    char gap0_[8];
     __int64 v26;
     unsigned __int64 v27;
     __int64 v28;
-  } v26_;
-  struct {
     __int64 v29;
     int v30;
-  } v29_;
-  struct {
+    char gap44_[4];
     _QWORD v31[3];
     int v32;
     char gap76_[35];
     char v33;
-  } v31_;
+  } f_;
 
   v3 = result[1];
   v4 = a2 - v3;
@@ -679,9 +677,9 @@ _QWORD* snd_130d20(_QWORD* result, unsigned __int64 a2, char a3)
   v5 = result[2];
   v6 = v5 << 6;
   if (v5 << 6 < v4 || v3 > (v5 << 6) - v4) {
-    v26_.v27 = 0;
-    v26_.v28 = 0;
-    v26_.v26 = 0;
+    f_.v27 = 0;
+    f_.v28 = 0;
+    f_.v26 = 0;
     if ((a2 & 0x8000000000000000LL) != 0) {
       GameRoutine_131460();
     }
@@ -696,28 +694,28 @@ _QWORD* snd_130d20(_QWORD* result, unsigned __int64 a2, char a3)
     else {
       v11 = 0x7FFFFFFFFFFFFFFFLL;
     }
-    snd_131280(&v26_.v26, v11);
+    snd_131280(&f_.v26, v11);
     v12 = *v9;
     v13 = v9[1];
     v14 = v9;
-    v29_.v30 = 0;
-    v26_.v27 = v13 + v4;
-    v29_.v29 = v26_.v26;
+    f_.v30 = 0;
+    f_.v27 = v13 + v4;
+    f_.v29 = f_.v26;
     result = X8CALL_X0(void*,
-                       snd_1319c0((void*)(v31_.v31), &v31_.v33, v12, 0,
-                                  v12 + 8 * (v13 >> 6), v13 & 0x3F, &v29_.v29));
+                       snd_1319c0((void*)(f_.v31), &f_.v33, v12, 0,
+                                  v12 + 8 * (v13 >> 6), v13 & 0x3F, &f_.v29));
     v15 = *v9;
     v16 = v9[1];
-    v17 = v26_.v27;
-    v18 = (_QWORD*)v31_.v31[2];
-    LODWORD(v19) = v31_.v32;
-    *v14 = v26_.v26;
+    v17 = f_.v27;
+    v18 = (_QWORD*)f_.v31[2];
+    LODWORD(v19) = f_.v32;
+    *v14 = f_.v26;
     v14[1] = v17;
-    v26_.v26 = v15;
-    v26_.v27 = v16;
+    f_.v26 = v15;
+    f_.v27 = v16;
     v20 = v14[2];
-    v14[2] = v26_.v28;
-    v26_.v28 = v20;
+    v14[2] = f_.v28;
+    f_.v28 = v20;
     if (v15 != 0) {
       result = (_QWORD*)(*(__int64 (**)(__int64))(*(_QWORD*)snd_g_memory +
                                                   24LL))(snd_g_memory);

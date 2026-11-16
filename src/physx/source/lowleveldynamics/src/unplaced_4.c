@@ -149,16 +149,15 @@ __int64 physx_source_lowleveldynamics_src_36f220(__int64 a1, _DWORD* a2,
   struct {
     _BYTE v145[4];
     _BYTE v146[12];
-  } v145_;
-  _BYTE v147[112];
-  struct {
+    char gap16_[112];
     _DWORD v148[1];
     _BYTE v149[12];
-  } v148_;
+  } f_;
+  _BYTE v147[112];
   __int64 v150;
 
-  memset((__int64)v148_.v148, 0, 0x80u);
-  result = memset((__int64)v145_.v145, 0, 0x80u);
+  memset((__int64)f_.v148, 0, 0x80u);
+  result = memset((__int64)f_.v145, 0, 0x80u);
   v9 = *(_BYTE*)(a1 + 149);
   v10 = *(_DWORD*)(a1 + 172);
   v11 = a4 + 12288;
@@ -176,8 +175,8 @@ __int64 physx_source_lowleveldynamics_src_36f220(__int64 a1, _DWORD* a2,
   v16 = 0;
   v15 = 0;
   LODWORD(result) = *(_DWORD*)(a1 + 168);
-  v17 = (unsigned int*)v148_.v149;
-  v18 = (unsigned int*)v145_.v146;
+  v17 = (unsigned int*)f_.v149;
+  v18 = (unsigned int*)f_.v146;
   do {
     v19 = v11 + 104LL * (unsigned int)result;
     if ((*(_BYTE*)(v19 + 1) & 1) != 0) {
@@ -267,18 +266,18 @@ LABEL_28:
     }
   }
   v15 += v33;
-  v34 = v148_.v148[v14];
+  v34 = f_.v148[v14];
   if (v33 > v34) {
     v34 = v33;
   }
-  v148_.v148[v14] = v34;
+  f_.v148[v14] = v34;
   if (v32) {
     v35 = 2 * *(unsigned __int16*)(v31 + 2);
     v15 += v35;
-    if (v35 <= *(_DWORD*)&v145_.v145[4 * v14]) {
-      v35 = *(_DWORD*)&v145_.v145[4 * v14];
+    if (v35 <= *(_DWORD*)&f_.v145[4 * v14]) {
+      v35 = *(_DWORD*)&f_.v145[4 * v14];
     }
-    *(_DWORD*)&v145_.v145[4 * v14] = v35;
+    *(_DWORD*)&f_.v145[4 * v14] = v35;
   }
 LABEL_38:
   *(_DWORD*)a3 = v15;
@@ -308,8 +307,8 @@ LABEL_40:
   v41 = 0;
   v40 = 0;
   v42 = *(_DWORD*)(a1 + 360);
-  v43 = (unsigned int*)v145_.v146;
-  v44 = (unsigned int*)v148_.v149;
+  v43 = (unsigned int*)f_.v146;
+  v44 = (unsigned int*)f_.v149;
   while (2) {
     v45 = v11 + 104LL * v42;
     if ((*(_BYTE*)(v45 + 1) & 1) != 0) {
@@ -403,21 +402,21 @@ LABEL_67:
     }
   }
   v40 += v59;
-  LODWORD(result) = v148_.v148[v39];
+  LODWORD(result) = f_.v148[v39];
   if (v59 <= (unsigned int)result) {
     result = (unsigned int)result;
   }
   else {
     result = v59;
   }
-  v148_.v148[v39] = result;
+  f_.v148[v39] = result;
   if (v58) {
     v60 = 2 * *(unsigned __int16*)(v57 + 2);
     v40 += v60;
-    if (v60 <= *(_DWORD*)&v145_.v145[4 * v39]) {
-      v60 = *(_DWORD*)&v145_.v145[4 * v39];
+    if (v60 <= *(_DWORD*)&f_.v145[4 * v39]) {
+      v60 = *(_DWORD*)&f_.v145[4 * v39];
     }
-    *(_DWORD*)&v145_.v145[4 * v39] = v60;
+    *(_DWORD*)&f_.v145[4 * v39] = v60;
   }
 LABEL_78:
   a3[1] = v40;
@@ -450,8 +449,8 @@ LABEL_82:
   v66 = 0;
   v65 = 0;
   v67 = *(_DWORD*)(a1 + 552);
-  v68 = (unsigned int*)v145_.v146;
-  v69 = (unsigned int*)v148_.v149;
+  v68 = (unsigned int*)f_.v146;
+  v69 = (unsigned int*)f_.v149;
   while (2) {
     v70 = v11 + 104LL * v67;
     if ((*(_BYTE*)(v70 + 1) & 1) != 0) {
@@ -545,21 +544,21 @@ LABEL_109:
     }
   }
   v65 += v84;
-  LODWORD(result) = v148_.v148[v64];
+  LODWORD(result) = f_.v148[v64];
   if (v84 <= (unsigned int)result) {
     result = (unsigned int)result;
   }
   else {
     result = v84;
   }
-  v148_.v148[v64] = result;
+  f_.v148[v64] = result;
   if (v83) {
     v85 = 2 * *(unsigned __int16*)(v82 + 2);
     v65 += v85;
-    if (v85 <= *(_DWORD*)&v145_.v145[4 * v64]) {
-      v85 = *(_DWORD*)&v145_.v145[4 * v64];
+    if (v85 <= *(_DWORD*)&f_.v145[4 * v64]) {
+      v85 = *(_DWORD*)&f_.v145[4 * v64];
     }
-    *(_DWORD*)&v145_.v145[4 * v64] = v85;
+    *(_DWORD*)&f_.v145[4 * v64] = v85;
   }
 LABEL_120:
   a3[2] = v65;
@@ -592,8 +591,8 @@ LABEL_124:
   v91 = 0;
   v90 = 0;
   v92 = *(_DWORD*)(a1 + 744);
-  v93 = (unsigned int*)v145_.v146;
-  v94 = (unsigned int*)v148_.v149;
+  v93 = (unsigned int*)f_.v146;
+  v94 = (unsigned int*)f_.v149;
   while (2) {
     v95 = v11 + 104LL * v92;
     if ((*(_BYTE*)(v95 + 1) & 1) != 0) {
@@ -687,18 +686,18 @@ LABEL_151:
     }
   }
   v90 += v109;
-  v110 = v148_.v148[v89];
+  v110 = f_.v148[v89];
   if (v109 > v110) {
     v110 = v109;
   }
-  v148_.v148[v89] = v110;
+  f_.v148[v89] = v110;
   if (v108) {
     v111 = 2 * *(unsigned __int16*)(v107 + 2);
     v90 += v111;
-    if (v111 <= *(_DWORD*)&v145_.v145[4 * v89]) {
-      v111 = *(_DWORD*)&v145_.v145[4 * v89];
+    if (v111 <= *(_DWORD*)&f_.v145[4 * v89]) {
+      v111 = *(_DWORD*)&f_.v145[4 * v89];
     }
-    *(_DWORD*)&v145_.v145[4 * v89] = v111;
+    *(_DWORD*)&f_.v145[4 * v89] = v111;
   }
 LABEL_161:
   a3[3] = v90;
@@ -757,7 +756,7 @@ LABEL_161:
         goto LABEL_192;
       }
     LABEL_188:
-      v122 = (int*)&v145_.v145[4 * v114];
+      v122 = (int*)&f_.v145[4 * v114];
       do {
         v123 = *v122++;
         if (v123 != 0) {
@@ -804,8 +803,8 @@ LABEL_161:
         goto LABEL_200;
       }
     LABEL_198:
-      v136 = (int*)&v145_.v145[4 * v125];
-      v137 = &v148_.v148[v125];
+      v136 = (int*)&f_.v145[4 * v125];
+      v137 = &f_.v148[v125];
       do {
         v138 = *v137++;
         --v124;

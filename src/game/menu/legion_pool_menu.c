@@ -625,31 +625,29 @@ unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
   __int64 v16;
   __int64 v17[2];
   struct {
+    char gap0_[16];
     _QWORD v18[4];
     _QWORD* v19;
-  } v18_;
-  struct {
+    char gap56_[16];
     __int64* v20;
     __int64 v21;
-  } v20_;
-  struct {
     __int64 (**v22)();
     __int64 v23;
     __int64 v24;
-  } v22_;
+  } f_;
 
-  LayoutAccessor_1560070((void*)(&v20_.v20), (__int64*)(a1 + 848),
+  LayoutAccessor_1560070((void*)(&f_.v20), (__int64*)(a1 + 848),
                          "L_UnitEquipInfo/L_UnitInfo");
-  v18_.v18[0] = GameData_20ef340;
-  v18_.v18[1] = a1;
-  v18_.v19 = v18_.v18;
-  v4 = game_159e890((__int64)a2, 0, (__int64)v18_.v18);
-  if (v20_.v21 != 0) {
-    v5 = std___1___shared_weak_count_lock_alt1(v20_.v21);
+  f_.v18[0] = GameData_20ef340;
+  f_.v18[1] = a1;
+  f_.v19 = f_.v18;
+  v4 = game_159e890((__int64)a2, 0, (__int64)f_.v18);
+  if (f_.v21 != 0) {
+    v5 = std___1___shared_weak_count_lock_alt1(f_.v21);
     if (v5 != 0) {
       v6 = v5;
-      if (v20_.v20 != nullptr) {
-        LayoutAccessor_1572ac0(v20_.v20, (__int64)a2, 0, v4);
+      if (f_.v20 != nullptr) {
+        LayoutAccessor_1572ac0(f_.v20, (__int64)a2, 0, v4);
       }
       if (atomic_fetch_add((atomic_ullong* volatile)(v6 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
@@ -658,30 +656,30 @@ unsigned __int8 game_menu_LegionPoolMenu_UpdateEquipList(__int64 a1,
       }
     }
   }
-  if (v18_.v19 == v18_.v18) {
+  if (f_.v19 == f_.v18) {
     v7 = 32;
   }
   else {
-    if (v18_.v19 == nullptr) {
+    if (f_.v19 == nullptr) {
       goto LABEL_12;
     }
     v7 = 40;
   }
-  (*(void (**)(__int64))(*v18_.v19 + v7))((__int64)v18_.v19);
+  (*(void (**)(__int64))(*f_.v19 + v7))((__int64)f_.v19);
 LABEL_12:
-  if (v20_.v21 != 0) {
-    std___1___shared_weak_count___release_weak_alt1(v20_.v21);
+  if (f_.v21 != 0) {
+    std___1___shared_weak_count___release_weak_alt1(f_.v21);
   }
   v8 = LayoutAccessor_155fbe0((__int64*)(a1 + 848),
                               "L_UnitEquipInfo/L_MenuItem_Info");
   GameHr_157e0f0(v8, (__int64)"MID_DeployMenu_Legion", nullptr);
-  LayoutAccessor_1560070((void*)(&v22_.v22), (__int64*)(a1 + 848),
+  LayoutAccessor_1560070((void*)(&f_.v22), (__int64*)(a1 + 848),
                          "L_UnitEquipInfo/L_AnimalInfo");
-  if (v22_.v23 != 0) {
-    v9 = std___1___shared_weak_count_lock_alt1(v22_.v23);
-    v10 = (__int64)v22_.v22;
-    if (v22_.v23 != 0) {
-      std___1___shared_weak_count___release_weak_alt1(v22_.v23);
+  if (f_.v23 != 0) {
+    v9 = std___1___shared_weak_count_lock_alt1(f_.v23);
+    v10 = (__int64)f_.v22;
+    if (f_.v23 != 0) {
+      std___1___shared_weak_count___release_weak_alt1(f_.v23);
     }
     if (v9 != 0 && v10 != 0) {
       LayoutAccessor_155e830(v10, 0);
@@ -698,22 +696,22 @@ LABEL_12:
 LABEL_23:
   v17[0] = (__int64)"L_UnitEquipInfo/L_LegionInfo";
   v17[1] = 28;
-  GameRoutine_1612340((void*)(&v22_.v22), (__int64*)(a1 + 848), v17);
-  result = v22_.v23;
-  if (v22_.v23 == 0) {
+  GameRoutine_1612340((void*)(&f_.v22), (__int64*)(a1 + 848), v17);
+  result = f_.v23;
+  if (f_.v23 == 0) {
     return result;
   }
-  v12 = std___1___shared_weak_count_lock_alt1(v22_.v23);
-  v13 = (__int64)v22_.v22;
-  result = v22_.v23;
+  v12 = std___1___shared_weak_count_lock_alt1(f_.v23);
+  v13 = (__int64)f_.v22;
+  result = f_.v23;
   if (v12 != 0) {
-    v14 = v22_.v22;
+    v14 = f_.v22;
   }
   else {
     v14 = nullptr;
   }
-  if (v22_.v23 != 0) {
-    result = std___1___shared_weak_count___release_weak_alt1(v22_.v23);
+  if (f_.v23 != 0) {
+    result = std___1___shared_weak_count___release_weak_alt1(f_.v23);
   }
   if (v14 != nullptr) {
     *(_QWORD*)(v13 + 1064) = a2;
@@ -726,15 +724,15 @@ LABEL_23:
     }
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 16), 1u,
                               memory_order_relaxed);
-    v22_.v24 = 0;
-    v22_.v22 = ui_Event_vtable;
-    LODWORD(v22_.v23) = 20;
+    f_.v24 = 0;
+    f_.v22 = ui_Event_vtable;
+    LODWORD(f_.v23) = 20;
     v15 = std___1___shared_weak_count_lock_alt1(v12);
     if (v15 != 0) {
       v16 = v15;
       (*((void (**)(__int64* __return_ptr, __int64 (**)(void),
                     __int64 (***)(void)))v14[9] +
-         2))(v17, v14 + 9, &v22_.v22);
+         2))(v17, v14 + 9, &f_.v22);
       if (atomic_fetch_add((atomic_ullong* volatile)(v16 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         (*(void (**)(__int64))(*(_QWORD*)v16 + 16LL))(v16);

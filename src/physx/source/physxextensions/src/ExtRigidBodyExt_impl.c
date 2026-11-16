@@ -37,21 +37,20 @@ __int64 updateMassAndInertia(__int64 a1, float* a2, unsigned int a3, int* a4,
   int v31;
   float v32;
   struct {
+    char gap0_[52];
     int v33;
     int v34;
     int v35;
-  } v33_;
-  __int128 v36;
-  _DWORD v37[3];
-  struct {
-    char gap88_[4];
+    char gap64_[28];
     float v38;
     __int64 v39;
-  } v38_;
+  } f_;
+  __int128 v36;
+  _DWORD v37[3];
 
-  v38_.v39 = v10;
+  f_.v39 = v10;
   v37[2] = 1065353216;
-  v38_.v38 = 0x1.0000000000000p+0f;
+  f_.v38 = 0x1.0000000000000p+0f;
   *(_QWORD*)v37 = 0x3F8000003F800000LL;
   *(_QWORD*)&v36 = 0;
   *((_QWORD*)&v36 + 1) = 0x3F80000000000000LL;
@@ -59,9 +58,9 @@ __int64 updateMassAndInertia(__int64 a1, float* a2, unsigned int a3, int* a4,
     v15 = *a4;
     v16 = a4[1];
     v17 = a4[2];
-    v33_.v33 = *a4;
-    v33_.v34 = v16;
-    v33_.v35 = v17;
+    f_.v33 = *a4;
+    f_.v34 = v16;
+    f_.v35 = v17;
     if (a2 == nullptr) {
       goto LABEL_9;
     }
@@ -70,9 +69,9 @@ __int64 updateMassAndInertia(__int64 a1, float* a2, unsigned int a3, int* a4,
     v15 = 0;
     v16 = 0;
     v17 = 0;
-    v33_.v33 = 0;
-    v33_.v34 = 0;
-    v33_.v35 = 0;
+    f_.v33 = 0;
+    f_.v34 = 0;
+    f_.v35 = 0;
     if (a2 == nullptr) {
       goto LABEL_9;
     }
@@ -83,13 +82,13 @@ __int64 updateMassAndInertia(__int64 a1, float* a2, unsigned int a3, int* a4,
     if ((computeMassAndInertia((float*)&v26, 1, a1, a2, nullptr, a3, a5 & 1) &
          1) != 0) {
       if (v32 != 0x0.0p+0f) {
-        computeMassAndDiagInertia((__int64)&v26, (__int64)v37, &v36, &v38_.v38,
-                                  (float*)&v33_.v33, a4 != nullptr, a1,
+        computeMassAndDiagInertia((__int64)&v26, (__int64)v37, &v36, &f_.v38,
+                                  (float*)&f_.v33, a4 != nullptr, a1,
                                   "PxRigidBodyExt::updateMassAndInertia");
-        v19 = v38_.v38;
-        v15 = v33_.v33;
-        v16 = v33_.v34;
-        v17 = v33_.v35;
+        v19 = f_.v38;
+        v15 = f_.v33;
+        v16 = f_.v34;
+        v17 = f_.v35;
         v20 = 1;
       LABEL_12:
         physx_Ext_InertiaTensorComputer_Destroy_InertiaTensorComputer(&v26);

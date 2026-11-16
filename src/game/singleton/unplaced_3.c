@@ -439,11 +439,10 @@ void game_singleton_12262c0(__int64 a1)
   struct {
     _QWORD v30[4];
     _QWORD* v31;
-  } v30_;
-  struct {
+    char gap40_[8];
     __int64 v32[4];
     __int64* v33;
-  } v32_;
+  } f_;
 
   if (GameData_22400f8 == 0) {
     GameData_22400f8 = a1;
@@ -594,31 +593,31 @@ void game_singleton_12262c0(__int64 a1)
   v22[32] = 0;
   game_map_UnitFlags_instance_ = (__int64)v22;
   GameRoutine_123e340();
-  v30_.v30[2] = 0;
-  v30_.v30[3] = a1;
-  v32_.v32[2] = 0;
-  v30_.v30[0] = GameData_201a728;
-  v30_.v30[1] = Impl_1226760;
-  v30_.v31 = v30_.v30;
-  v32_.v32[3] = a1;
-  v32_.v33 = v32_.v32;
-  v32_.v32[0] = (__int64)GameData_201a728;
-  v32_.v32[1] = (__int64)Impl_1226760;
-  GameRoutine_122f660(v32_.v32);
-  if (v32_.v33 == v32_.v32) {
+  f_.v30[2] = 0;
+  f_.v30[3] = a1;
+  f_.v32[2] = 0;
+  f_.v30[0] = GameData_201a728;
+  f_.v30[1] = Impl_1226760;
+  f_.v31 = f_.v30;
+  f_.v32[3] = a1;
+  f_.v33 = f_.v32;
+  f_.v32[0] = (__int64)GameData_201a728;
+  f_.v32[1] = (__int64)Impl_1226760;
+  GameRoutine_122f660(f_.v32);
+  if (f_.v33 == f_.v32) {
     v23 = 32;
   }
   else {
-    if (v32_.v33 == nullptr) {
+    if (f_.v33 == nullptr) {
       goto LABEL_14;
     }
     v23 = 40;
   }
-  (*(void (**)(__int64))(*v32_.v33 + v23))((__int64)v32_.v33);
+  (*(void (**)(__int64))(*f_.v33 + v23))((__int64)f_.v33);
 LABEL_14:
-  v24 = v30_.v31;
+  v24 = f_.v31;
   *game_map_history_g_record_alloc_retries_ptr[0] = 100;
-  if (v24 == v30_.v30) {
+  if (v24 == f_.v30) {
     v25 = 32;
     goto LABEL_18;
   }

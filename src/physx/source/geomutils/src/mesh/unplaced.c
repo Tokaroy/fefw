@@ -201,24 +201,22 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   float v182;
   float v183;
   struct {
+    char gap0_[172];
     float v184;
     float v185;
     float v186;
-  } v184_;
+    char gap184_[48];
+    float v191;
+    float v192;
+    float v193;
+    float v194;
+    float v195;
+    float v196;
+  } f_;
   _DWORD v187[3];
   float v188[3];
   float v189[3];
   float v190[3];
-  struct {
-    float v191;
-    float v192;
-    float v193;
-  } v191_;
-  struct {
-    float v194;
-    float v195;
-    float v196;
-  } v194_;
   float v197[3];
   float v198[3];
   float v199[3];
@@ -254,23 +252,23 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   v20 = *v14;
   v21 = v14[1];
   v22 = v14[2];
-  v184_.v185 = v13[1];
-  v184_.v186 = v19;
+  f_.v185 = v13[1];
+  f_.v186 = v19;
   *(float*)v187 = v20;
   *(float*)&v187[1] = v21;
   v23 = v17 - v19;
   v24 = v16 - v21;
   *(float*)&v187[2] = v22;
   v25 = v17 - v22;
-  v184_.v184 = v18;
-  v26 = (float)((float)(v16 - v184_.v185) * v25) -
+  f_.v184 = v18;
+  v26 = (float)((float)(v16 - f_.v185) * v25) -
         (float)(PSEUDO_UNFUSED(v23 * v24));
   v27 = (float)(v23 * (float)(v15 - v20)) -
         (float)(PSEUDO_UNFUSED((float)(v15 - v18) * v25));
   v28 = *(float*)(a1 + 72);
   v29 = *(float*)(a1 + 76);
   v30 = (float)((float)(v15 - v18) * v24) -
-        (float)(PSEUDO_UNFUSED((float)(v16 - v184_.v185) * (float)(v15 - v20)));
+        (float)(PSEUDO_UNFUSED((float)(v16 - f_.v185) * (float)(v15 - v20)));
   v31 = *(float*)(a1 + 80);
   if ((float)((float)((float)(PSEUDO_UNFUSED(v27 * v29)) + (float)(v26 * v28)) +
               (float)(v30 * v31)) <= 0x0.0p+0f) {
@@ -279,7 +277,7 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
     v168 = v30;
     v169 = v27;
     v34 = (float*)v187;
-    v5 = &v184_.v184;
+    v5 = &f_.v184;
     v32 = v26;
     v33 = v27;
   }
@@ -291,7 +289,7 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
     v168 = v30;
     v169 = v27;
     v33 = -v27;
-    v34 = &v184_.v184;
+    v34 = &f_.v184;
     v35 = v18;
     v30 = -v30;
   }
@@ -357,21 +355,21 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   v146 = (float)(v17 + v41) - (float)(v41 + v43);
   v147 = (float)(v16 + v44) - (float)(v44 + v42);
   v148 = (float)(v15 + v37) - (float)(v37 + v20);
-  v191_.v191 = v158;
-  v191_.v192 = (float)(v52 * v54) - (float)(PSEUDO_UNFUSED(v53 * v45));
+  f_.v191 = v158;
+  f_.v192 = (float)(v52 * v54) - (float)(PSEUDO_UNFUSED(v53 * v45));
   v175 = v37 + v37;
   v177 = v44 + v44;
-  v191_.v193 = (float)(v53 * v48) - (float)(PSEUDO_UNFUSED(v50 * v54));
+  f_.v193 = (float)(v53 * v48) - (float)(PSEUDO_UNFUSED(v50 * v54));
   v145 = (float)(v56 * v146) - (float)(PSEUDO_UNFUSED(v57 * v147));
-  v194_.v194 = v145;
-  v194_.v195 =
+  f_.v194 = v145;
+  f_.v195 =
       (float)(v57 * (float)((float)(v15 + v37) - v198[0])) -
       (float)(PSEUDO_UNFUSED((float)((float)(v37 + v35) - v198[0]) * v146));
-  v139 = v194_.v195;
-  v140 = v191_.v192;
+  v139 = f_.v195;
+  v140 = f_.v192;
   v163 = (float)(v58 * v147) - (float)(PSEUDO_UNFUSED(v56 * v148));
-  v164 = v191_.v193;
-  v194_.v196 = v163;
+  v164 = f_.v193;
+  f_.v196 = v163;
   v173 = -(float)(v37 + v37);
   v174 = v41 + v41;
   v171 = -(float)(v44 + v44);
@@ -381,13 +379,13 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
     v59 = v199;
     v60 = v198;
     v61 = v197;
-    v62 = &v194_.v194;
+    v62 = &f_.v194;
   }
   else {
     v59 = v202;
     v60 = v201;
     v61 = v200;
-    v62 = &v191_.v191;
+    v62 = &f_.v191;
   }
   v63 = GameRoutine_4a1f80((float*)a1, v59, v60, v61, v62, (float*)(a1 + 72),
                            &v204, v203, *(float*)(a1 + 296), v179);
@@ -866,48 +864,35 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   float v201;
   float v202;
   struct {
+    char gap0_[172];
     float v203;
     float v204;
     float v205;
-  } v203_;
-  struct {
     _DWORD v206[3];
     float v207[3];
-  } v206_;
-  struct {
     float v208[3];
     float v209[3];
-  } v208_;
-  struct {
     float v210;
     float v211;
     float v212;
     float v213;
     float v214;
     float v215;
-  } v210_;
-  struct {
     float v216[3];
     float v217[3];
-  } v216_;
-  struct {
     float v218[3];
     float v219[3];
-  } v218_;
-  struct {
     float v220[3];
     float v221[3];
-  } v220_;
-  struct {
     _BYTE v222[4];
     float v223;
-  } v222_;
+  } f_;
 
   {
     v3 = *(_QWORD*)(a1 + 176);
     __asm__ volatile("" ::"r"(v3));
   }
-  v7 = (float*)v206_.v206;
+  v7 = (float*)f_.v206;
   if (v3 != 0) {
     v8 = (unsigned int*)(v3 + 12LL * a2);
     {
@@ -980,19 +965,19 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v24 = v16[1];
     __asm__ volatile("" ::"w"(v24));
   }
-  v203_.v204 = v15[1];
-  v203_.v205 = v21;
-  *(float*)v206_.v206 = v23;
-  *(float*)&v206_.v206[1] = v24;
+  f_.v204 = v15[1];
+  f_.v205 = v21;
+  *(float*)f_.v206 = v23;
+  *(float*)&f_.v206[1] = v24;
   v25 = v19 - v21;
   v26 = v18 - v24;
-  *(float*)&v206_.v206[2] = v22;
+  *(float*)&f_.v206[2] = v22;
   v27 = v19 - v22;
-  v203_.v203 = v20;
-  v28 = (float)((float)(v18 - v203_.v204) * v27) -
+  f_.v203 = v20;
+  v28 = (float)((float)(v18 - f_.v204) * v27) -
         (float)(PSEUDO_UNFUSED(v25 * v26));
   v29 = (float)((float)(v17 - v20) * v26) -
-        (float)(PSEUDO_UNFUSED((float)(v18 - v203_.v204) * (float)(v17 - v23)));
+        (float)(PSEUDO_UNFUSED((float)(v18 - f_.v204) * (float)(v17 - v23)));
   {
     v30 = *(float*)(a1 + 264);
     __asm__ volatile("" ::"w"(v30));
@@ -1013,8 +998,8 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v23 = v20;
     v187 = v29;
     v188 = v31;
-    v35 = (float*)v206_.v206;
-    v7 = &v203_.v203;
+    v35 = (float*)f_.v206;
+    v7 = &f_.v203;
     v34 = v28;
   }
   else {
@@ -1025,7 +1010,7 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v187 = v29;
     v188 = v31;
     v31 = -v31;
-    v35 = &v203_.v203;
+    v35 = &f_.v203;
     v36 = v20;
     v29 = -v29;
   }
@@ -1045,8 +1030,8 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v176 = *(float*)(a1 + 524);
     __asm__ volatile("" ::"w"(v176));
   }
-  v222_.v223 = *(float*)(a1 + 272);
-  v222_.v222[0] = 0;
+  f_.v223 = *(float*)(a1 + 272);
+  f_.v222[0] = 0;
   v189 = v28;
   {
     v39 = v35[1];
@@ -1088,20 +1073,20 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v46 = (float)(v19 - v42) - (float)(v44 - v42);
   v184 = v44 - v42;
   v185 = v19 - v42;
-  v220_.v221[2] = v19 - v42;
-  v220_.v220[2] = v44 - v42;
-  v218_.v219[2] = v40 - v42;
+  f_.v221[2] = v19 - v42;
+  f_.v220[2] = v44 - v42;
+  f_.v219[2] = v40 - v42;
   v47 = v18 - v45;
   v48 = v43 - v45;
   v49 = (float)(v18 - v45) - (float)(v43 - v45);
-  v220_.v220[0] = v23 - v38;
-  v220_.v220[1] = v43 - v45;
-  v218_.v219[0] = v36 - v38;
-  v218_.v219[1] = v39 - v45;
+  f_.v220[0] = v23 - v38;
+  f_.v220[1] = v43 - v45;
+  f_.v219[0] = v36 - v38;
+  f_.v219[1] = v39 - v45;
   v168 = v40 - v42;
   v169 = v39 - v45;
-  v220_.v221[0] = v17 - v38;
-  v220_.v221[1] = v18 - v45;
+  f_.v221[0] = v17 - v38;
+  f_.v221[1] = v18 - v45;
   v50 = (float)(PSEUDO_UNFUSED(v31 * v45)) + (float)(v34 * v38);
   v51 = (float)(v39 - v45) - (float)(v43 - v45);
   v52 = v50 + (float)(v29 * v42);
@@ -1110,39 +1095,39 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v55 = (float)(v17 - v38) - (float)(v23 - v38);
   v56 = v18 + v45;
   v202 = v52;
-  v216_.v216[2] = v42 + v40;
-  v216_.v216[0] = v38 + v36;
-  v216_.v216[1] = v45 + v39;
+  f_.v216[2] = v42 + v40;
+  f_.v216[0] = v38 + v36;
+  f_.v216[1] = v45 + v39;
   v57 = (float)(v45 + v39) - (float)(v45 + v43);
   v58 = (float)(v42 + v40) - (float)(v42 + v44);
-  v216_.v217[2] = v42 + v44;
+  f_.v217[2] = v42 + v44;
   v59 = (float)(v38 + v36) - (float)(v38 + v23);
-  v216_.v217[0] = v38 + v23;
-  v216_.v217[1] = v45 + v43;
-  v218_.v218[0] = v17 + v38;
-  v218_.v218[1] = v18 + v45;
-  v218_.v218[2] = v19 + v42;
+  f_.v217[0] = v38 + v23;
+  f_.v217[1] = v45 + v43;
+  f_.v218[0] = v17 + v38;
+  f_.v218[1] = v18 + v45;
+  f_.v218[2] = v19 + v42;
   v200 = v17 + v38;
   v179 = v19 + v42;
   v175 = (float)(v51 * v46) - (float)(PSEUDO_UNFUSED(v53 * v49));
   v165 = (float)(v19 + v42) - (float)(v42 + v44);
   v166 = (float)(v18 + v45) - (float)(v45 + v43);
   v167 = (float)(v17 + v38) - (float)(v38 + v23);
-  v210_.v210 = v175;
-  v210_.v211 = (float)(v53 * v55) - (float)(PSEUDO_UNFUSED(v54 * v46));
+  f_.v210 = v175;
+  f_.v211 = (float)(v53 * v55) - (float)(PSEUDO_UNFUSED(v54 * v46));
   v194 = v38 + v38;
   v196 = v45 + v45;
-  v210_.v212 = (float)(v54 * v49) - (float)(PSEUDO_UNFUSED(v51 * v55));
+  f_.v212 = (float)(v54 * v49) - (float)(PSEUDO_UNFUSED(v51 * v55));
   v164 = (float)(v57 * v165) - (float)(PSEUDO_UNFUSED(v58 * v166));
-  v210_.v213 = v164;
-  v210_.v214 = (float)(v58 * (float)((float)(v17 + v38) - v216_.v217[0])) -
+  f_.v213 = v164;
+  f_.v214 = (float)(v58 * (float)((float)(v17 + v38) - f_.v217[0])) -
                (float)(PSEUDO_UNFUSED(
-                   (float)((float)(v38 + v36) - v216_.v217[0]) * v165));
-  v158 = v210_.v214;
-  v159 = v210_.v211;
+                   (float)((float)(v38 + v36) - f_.v217[0]) * v165));
+  v158 = f_.v214;
+  v159 = f_.v211;
   v182 = (float)(v59 * v166) - (float)(PSEUDO_UNFUSED(v57 * v167));
-  v183 = v210_.v212;
-  v210_.v215 = v182;
+  v183 = f_.v212;
+  f_.v215 = v182;
   v192 = -(float)(v38 + v38);
   v193 = v42 + v42;
   v190 = -(float)(v45 + v45);
@@ -1152,19 +1137,19 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     __asm__ volatile("" ::"w"(v157));
   }
   if (v52 >= 0x0.0p+0f) {
-    v60 = v218_.v218;
-    v61 = v216_.v217;
-    v62 = v216_.v216;
-    v63 = &v210_.v213;
+    v60 = f_.v218;
+    v61 = f_.v217;
+    v62 = f_.v216;
+    v63 = &f_.v213;
   }
   else {
-    v60 = v220_.v221;
-    v61 = v220_.v220;
-    v62 = v218_.v219;
-    v63 = &v210_.v210;
+    v60 = f_.v221;
+    v61 = f_.v220;
+    v62 = f_.v219;
+    v63 = &f_.v210;
   }
   v64 = GameRoutine_4a5700((float*)a1, v60, v61, v62, v63, (float*)(a1 + 260),
-                           &v222_.v223, v222_.v222, *(float*)(a1 + 520), v198);
+                           &f_.v223, f_.v222, *(float*)(a1 + 520), v198);
   v66 = v194;
   v65 = v196;
   v68 = v191;
@@ -1191,9 +1176,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v80 = *(float*)(a1 + 528);
     __asm__ volatile("" ::"w"(v80));
   }
-  v208_.v209[0] = v75;
-  v208_.v209[1] = v76;
-  v208_.v209[2] = v79;
+  f_.v209[0] = v75;
+  f_.v209[1] = v76;
+  f_.v209[2] = v79;
   v81 = v80 - v48;
   if ((v64 & 1) != 0) {
     v82 = v74;
@@ -1210,9 +1195,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v161 = v79;
       v84 = v75;
       v155 = v74;
-      GameRoutine_4a5a10((float*)a1, v220_.v220, v216_.v217, v218_.v219,
-                         v216_.v216, v208_.v209, (float*)(a1 + 260),
-                         &v222_.v223, v157, v198, v222_.v222);
+      GameRoutine_4a5a10((float*)a1, f_.v220, f_.v217, f_.v219,
+                         f_.v216, f_.v209, (float*)(a1 + 260),
+                         &f_.v223, v157, v198, f_.v222);
       v74 = v155;
       v75 = v84;
       v79 = v161;
@@ -1249,10 +1234,10 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
         (float)(v71 * (float)(v180 - v171));
   v94 = (float)(PSEUDO_UNFUSED((float)(v180 - v171) * v73)) +
         (float)(v66 * (float)(v47 - v169));
-  v208_.v208[0] = v92;
-  v208_.v208[1] = v93;
+  f_.v208[0] = v92;
+  f_.v208[1] = v93;
   v95 = v93 * (float)(v80 - v47);
-  v208_.v208[2] = v94;
+  f_.v208[2] = v94;
   if ((v69 & 1) != 0) {
     v96 = v82;
   }
@@ -1274,9 +1259,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v172 = v88;
       v174 = v91;
       v170 = v85;
-      GameRoutine_4a5a10((float*)a1, v218_.v219, v216_.v216, v220_.v221,
-                         v218_.v218, v208_.v208, (float*)(a1 + 260),
-                         &v222_.v223, v157, v198, v222_.v222);
+      GameRoutine_4a5a10((float*)a1, f_.v219, f_.v216, f_.v221,
+                         f_.v218, f_.v208, (float*)(a1 + 260),
+                         &f_.v223, v157, v198, f_.v222);
       v85 = v170;
       v88 = v172;
       v91 = v174;
@@ -1314,9 +1299,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v105 = (float)(PSEUDO_UNFUSED(v71 * v166)) + (float)(v73 * v165);
   v106 = (float)(PSEUDO_UNFUSED(v66 * v165)) + (float)(v68 * v167);
   v107 = (float)(PSEUDO_UNFUSED(v65 * v167)) + (float)(v67 * v166);
-  v206_.v207[0] = v105;
-  v206_.v207[1] = v106;
-  v206_.v207[2] = v107;
+  f_.v207[0] = v105;
+  f_.v207[1] = v106;
+  f_.v207[2] = v107;
   v108 = v74 - v184;
   v109 = v96 - v179;
   v110 = (float)(PSEUDO_UNFUSED(v106 * (float)(v80 - v178))) +
@@ -1333,9 +1318,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v201 = v94;
     v195 = v101;
     v197 = v104;
-    GameRoutine_4a5a10((float*)a1, v220_.v221, v218_.v218, v220_.v220,
-                       v216_.v217, v206_.v207, (float*)(a1 + 260), &v222_.v223,
-                       v157, v111, v222_.v222);
+    GameRoutine_4a5a10((float*)a1, f_.v221, f_.v218, f_.v220,
+                       f_.v217, f_.v207, (float*)(a1 + 260), &f_.v223,
+                       v157, v111, f_.v222);
     v101 = v195;
     v104 = v197;
     v103 = v199;
@@ -1387,10 +1372,10 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     }
   }
 LABEL_52:
-  if (v222_.v222[0] != 1) {
+  if (f_.v222[0] != 1) {
     return 0;
   }
-  v120 = v222_.v223;
+  v120 = f_.v223;
   v121 = GameRoutine_1a0a010(
       (float)((float)(PSEUDO_UNFUSED(v118 * v118)) + (float)(v117 * v117)) +
       (float)(v119 * v119));

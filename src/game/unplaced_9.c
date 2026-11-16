@@ -17179,23 +17179,20 @@ __int64 game_7c6330(__int64 a1)
   __int64 v50;
   int v51[4];
   struct {
+    char gap0_[16];
     __int64 v52;
     char gap24_[24];
     __int64* v53;
-  } v52_;
-  struct {
+    char gap56_[8];
     _QWORD v54[4];
     _QWORD* v55;
-  } v54_;
-  struct {
+    char gap104_[8];
     _QWORD v56[4];
     _QWORD* v57;
-  } v56_;
-  struct {
+    char gap152_[8];
     _QWORD v58[4];
     _QWORD* v59;
-  } v58_;
-  struct {
+    char gap200_[8];
     _QWORD v60[4];
     _QWORD* v61;
     char gap248_[8];
@@ -17206,7 +17203,7 @@ __int64 game_7c6330(__int64 a1)
     __int64 v65;
     __int64 v66;
     __int64 v67;
-  } v60_;
+  } f_;
 
   v2 = *GameData_212cfc0[0];
   v3 = *(_DWORD*)(*GameData_212cfc0[0] + 40);
@@ -17225,9 +17222,9 @@ __int64 game_7c6330(__int64 a1)
   if ((*(_BYTE*)(*(_QWORD*)GameData_212d028[0] + 22LL) & 1) != 0) {
     return result;
   }
-  v60_.v62 = v60_.v64;
-  v60_.v63 = v60_.v65;
-  v60_.v67 = v60_.v66;
+  f_.v62 = f_.v64;
+  f_.v63 = f_.v65;
+  f_.v67 = f_.v66;
   v8 = (_QWORD*)result;
   v9 = v6;
   *(_BYTE*)(result + 22) = 1;
@@ -17355,54 +17352,54 @@ __int64 game_7c6330(__int64 a1)
   if (v31 != 0) {
     (*(void (**)(__int64))(*(_QWORD*)v31 + 8LL))(v31);
   }
-  v52_.v53 = nullptr;
-  v54_.v55 = nullptr;
-  v56_.v57 = nullptr;
-  v58_.v59 = nullptr;
+  f_.v53 = nullptr;
+  f_.v55 = nullptr;
+  f_.v57 = nullptr;
+  f_.v59 = nullptr;
   v51[0] = 1;
-  v60_.v61 = v60_.v60;
-  v60_.v60[0] = GameData_1fdb5c8;
-  v60_.v60[1] = v8;
-  GameRoutine_654050(v60_.v60, v54_.v54);
-  if (v60_.v61 == v60_.v60) {
+  f_.v61 = f_.v60;
+  f_.v60[0] = GameData_1fdb5c8;
+  f_.v60[1] = v8;
+  GameRoutine_654050(f_.v60, f_.v54);
+  if (f_.v61 == f_.v60) {
     v32 = 32;
   }
   else {
-    if (v60_.v61 == nullptr) {
+    if (f_.v61 == nullptr) {
       goto LABEL_33;
     }
     v32 = 40;
   }
-  (*(void (**)(_QWORD*))(*v60_.v61 + v32))(v60_.v61);
+  (*(void (**)(_QWORD*))(*f_.v61 + v32))(f_.v61);
 LABEL_33:
-  v60_.v61 = v60_.v60;
-  v60_.v60[0] = GameData_1fdb648;
-  GameRoutine_d30390(v60_.v60, v58_.v58);
-  if (v60_.v61 == v60_.v60) {
+  f_.v61 = f_.v60;
+  f_.v60[0] = GameData_1fdb648;
+  GameRoutine_d30390(f_.v60, f_.v58);
+  if (f_.v61 == f_.v60) {
     v33 = 32;
   }
   else {
-    if (v60_.v61 == nullptr) {
+    if (f_.v61 == nullptr) {
       goto LABEL_38;
     }
     v33 = 40;
   }
-  (*(void (**)(_QWORD*))(*v60_.v61 + v33))(v60_.v61);
+  (*(void (**)(_QWORD*))(*f_.v61 + v33))(f_.v61);
 LABEL_38:
-  v60_.v61 = v60_.v60;
-  v60_.v60[0] = GameData_1fdb6c8;
-  v60_.v60[1] = v8;
-  GameRoutine_654050(v60_.v60, v56_.v56);
-  if (v60_.v61 == v60_.v60) {
+  f_.v61 = f_.v60;
+  f_.v60[0] = GameData_1fdb6c8;
+  f_.v60[1] = v8;
+  GameRoutine_654050(f_.v60, f_.v56);
+  if (f_.v61 == f_.v60) {
     v34 = 32;
   }
   else {
-    if (v60_.v61 == nullptr) {
+    if (f_.v61 == nullptr) {
       goto LABEL_43;
     }
     v34 = 40;
   }
-  (*(void (**)(_QWORD*))(*v60_.v61 + v34))(v60_.v61);
+  (*(void (**)(_QWORD*))(*f_.v61 + v34))(f_.v61);
 LABEL_43:
   GameRoutine_d55fd0((__int64)GameData_212ec40[0], (__int64)v51);
   GameRoutine_d56220(v9);
@@ -17451,48 +17448,48 @@ LABEL_43:
   if (v46 != 0) {
     (*(void (**)(__int64))(*(_QWORD*)v46 + 8LL))(v46);
   }
-  if (v58_.v59 == v58_.v58) {
+  if (f_.v59 == f_.v58) {
     v47 = 32;
   }
   else {
-    if (v58_.v59 == nullptr) {
+    if (f_.v59 == nullptr) {
       goto LABEL_64;
     }
     v47 = 40;
   }
-  (*(void (**)(_QWORD*))(*v58_.v59 + v47))(v58_.v59);
+  (*(void (**)(_QWORD*))(*f_.v59 + v47))(f_.v59);
 LABEL_64:
-  if (v56_.v57 == v56_.v56) {
+  if (f_.v57 == f_.v56) {
     v48 = 32;
   }
   else {
-    if (v56_.v57 == nullptr) {
+    if (f_.v57 == nullptr) {
       goto LABEL_69;
     }
     v48 = 40;
   }
-  (*(void (**)(_QWORD*))(*v56_.v57 + v48))(v56_.v57);
+  (*(void (**)(_QWORD*))(*f_.v57 + v48))(f_.v57);
 LABEL_69:
-  if (v54_.v55 == v54_.v54) {
+  if (f_.v55 == f_.v54) {
     v49 = 32;
     goto LABEL_73;
   }
-  if (v54_.v55 != nullptr) {
+  if (f_.v55 != nullptr) {
     v49 = 40;
   LABEL_73:
-    (*(void (**)(_QWORD*))(*v54_.v55 + v49))(v54_.v55);
+    (*(void (**)(_QWORD*))(*f_.v55 + v49))(f_.v55);
   }
-  result = (__int64)v52_.v53;
-  if (v52_.v53 == &v52_.v52) {
+  result = (__int64)f_.v53;
+  if (f_.v53 == &f_.v52) {
     v50 = 32;
   }
   else {
-    if (v52_.v53 == nullptr) {
+    if (f_.v53 == nullptr) {
       return result;
     }
     v50 = 40;
   }
-  return (*(__int64 (**)(__int64*))(*v52_.v53 + v50))(v52_.v53);
+  return (*(__int64 (**)(__int64*))(*f_.v53 + v50))(f_.v53);
 }
 
 __int64 game_80c680(__int64 result)

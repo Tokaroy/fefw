@@ -83,21 +83,21 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   float v72[3];
   _BYTE v73[36];
   struct {
+    char gap0_[80];
     float v74;
     float v75;
     float v76;
-  } v74_;
-  float v77[19];
-  _DWORD v78[3];
-  int v79;
-  float v80[3];
-  struct {
+    char gap92_[136];
     float v81[2];
     float v82;
     char gap240_[88];
     float v83;
     float v84;
-  } v81_;
+  } f_;
+  float v77[19];
+  _DWORD v78[3];
+  int v79;
+  float v80[3];
 
   v8 = *a3;
   v7 = a3[1];
@@ -106,52 +106,52 @@ bool physx_source_geomutils_src_contact_4685c0(__int64 a1, __int64 a2,
   v13 = v9 + v9;
   v14 = (float)(v9 * (float)(v9 + v9)) + -0x1.0000000000000p+0f;
   v15 = (float)(v8 + v8) * v10;
-  v81_.v83 = (float)(v8 + v8) * v7;
-  v16 = v81_.v83 + (float)(v10 * (float)(v9 + v9));
+  f_.v83 = (float)(v8 + v8) * v7;
+  v16 = f_.v83 + (float)(v10 * (float)(v9 + v9));
   v17 = a3[5];
   v69 = v16;
-  v81_.v84 = a3[4];
+  f_.v84 = a3[4];
   v67 = a3[6];
   v68 = v17 * v16;
   physx_Gu_makeConvexShape(a2, a4, (__int64)v77);
   v18 = v14 + (float)(v8 * (float)(v8 + v8));
   v19 = -v7;
   v20 = v15 - (float)(v7 * v13);
-  v74_.v76 = -(float)(v15 + (float)(v19 * v13));
-  v21 = (float)(v68 + (float)(v81_.v84 * v18)) + (float)(v67 * v20);
-  v81_.v84 = *a5;
+  f_.v76 = -(float)(v15 + (float)(v19 * v13));
+  v21 = (float)(v68 + (float)(f_.v84 * v18)) + (float)(v67 * v20);
+  f_.v84 = *a5;
   v22 = v21;
-  v74_.v74 = -v18;
-  v74_.v75 = -(float)(v81_.v83 + (float)(v10 * v13));
-  physx_Gu_ConvexShape_support((void*)(v81_.v81), v77, &v74_.v74);
-  v23 = (float)((float)((float)(PSEUDO_UNFUSED(v69 * v81_.v81[1])) +
-                        (float)(v81_.v81[0] * v18)) +
-                (float)(v81_.v82 * v20)) -
+  f_.v74 = -v18;
+  f_.v75 = -(float)(f_.v83 + (float)(v10 * v13));
+  physx_Gu_ConvexShape_support((void*)(f_.v81), v77, &f_.v74);
+  v23 = (float)((float)((float)(PSEUDO_UNFUSED(v69 * f_.v81[1])) +
+                        (float)(f_.v81[0] * v18)) +
+                (float)(f_.v82 * v20)) -
         v22;
-  if (v23 >= v81_.v84) {
+  if (v23 >= f_.v84) {
     return *(_DWORD*)(a7 + 20480) != 0;
   }
-  v24 = physx_Gu_ConvexShape_contactFace(v77, &v74_.v74, v81_.v81, v80,
+  v24 = physx_Gu_ConvexShape_contactFace(v77, &f_.v74, f_.v81, v80,
                                          (__int64)v78);
-  v25 = v74_.v75;
+  v25 = f_.v75;
   if (v24 == 0) {
-    v26 = v74_.v74;
-    v27 = v74_.v76;
+    v26 = f_.v74;
+    v27 = f_.v76;
     v70 = v23;
     v28 = 1;
-    v72[0] = (float)(PSEUDO_UNFUSED((float)(v23 * v74_.v74) *
+    v72[0] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v74) *
                                     0x1.0000000000000p-1f)) +
-             v81_.v81[0];
-    v72[1] = (float)(PSEUDO_UNFUSED((float)(v23 * v74_.v75) *
+             f_.v81[0];
+    v72[1] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v75) *
                                     0x1.0000000000000p-1f)) +
-             v81_.v81[1];
-    v72[2] = (float)(PSEUDO_UNFUSED((float)(v23 * v74_.v76) *
+             f_.v81[1];
+    v72[2] = (float)(PSEUDO_UNFUSED((float)(v23 * f_.v76) *
                                     0x1.0000000000000p-1f)) +
-             v81_.v82;
+             f_.v82;
     goto LABEL_11;
   }
-  v26 = v74_.v74;
-  v27 = v74_.v76;
+  v26 = f_.v74;
+  v27 = f_.v76;
   v28 = v24;
   if (v24 == 1) {
     v29 = 0;

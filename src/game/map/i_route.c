@@ -1294,16 +1294,16 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   int v77;
   char* v78;
   struct {
+    char gap0_[8];
     __int64 v79;
     __int64 v80;
     int v81;
-  } v79_;
-  struct {
+    char gap28_[4];
     char* v82;
     char* v83;
     __int64 v84;
     int v85;
-  } v82_;
+  } f_;
 
   v6 = *(_DWORD*)(a1 + 148);
   v7 = *(_DWORD*)(a1 + 152);
@@ -1467,15 +1467,15 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   v41 = *(_DWORD*)(v40 + 16);
   v43 = *(_QWORD*)v40;
   v42 = *(_QWORD*)(v40 + 8);
-  v82_.v82 = nullptr;
-  v82_.v83 = nullptr;
-  v82_.v84 = 0;
-  v82_.v85 = 0;
-  v79_.v81 = v41;
-  v79_.v79 = v43;
-  v79_.v80 = v42;
-  if (&v79_.v79 != (__int64*)v40) {
-    GameRoutine_7fb7c0(&v82_.v82, *(_QWORD*)(v40 + 24), *(_QWORD*)(v40 + 32),
+  f_.v82 = nullptr;
+  f_.v83 = nullptr;
+  f_.v84 = 0;
+  f_.v85 = 0;
+  f_.v81 = v41;
+  f_.v79 = v43;
+  f_.v80 = v42;
+  if (&f_.v79 != (__int64*)v40) {
+    GameRoutine_7fb7c0(&f_.v82, *(_QWORD*)(v40 + 24), *(_QWORD*)(v40 + 32),
                        (__int64)(*(_QWORD*)(v40 + 32) - *(_QWORD*)(v40 + 24)) >>
                            2);
   }
@@ -1486,9 +1486,9 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   if (v44 == v45) {
     v47 = 0;
   }
-  v82_.v85 = *(_DWORD*)(v40 + 48);
-  LODWORD(v79_.v80) = v79_.v80 - v46;
-  LODWORD(v79_.v79) = 34;
+  f_.v85 = *(_DWORD*)(v40 + 48);
+  LODWORD(f_.v80) = f_.v80 - v46;
+  LODWORD(f_.v79) = 34;
   v48 = v19[1347] + v19[1346];
   if (v47 == v48) {
     GameRoutine_74cd60(v19 + 1342);
@@ -1499,7 +1499,7 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   v19[1] = (__int64)(v19 + 337);
   ++v19[1347];
   IDeploy_7480e0((__int64)v19, *(_DWORD*)(a1 + 156), *(_DWORD*)(a1 + 160),
-                 (int*)&v79_.v79, a5, a6);
+                 (int*)&f_.v79, a5, a6);
   result = v19[1];
   LODWORD(v49) = a2 + 32 * a3;
   if ((unsigned int)v49 >= 0x400) {
@@ -1545,14 +1545,14 @@ __int64 IRoute_7502e0(__int64 a1, int a2, int a3, __int64 a4, __int64 a5,
   }
   v63 = *(_DWORD*)(a1 + 156);
   v62 = *(_DWORD*)(a1 + 160);
-  if (v82_.v82 != nullptr) {
-    v82_.v83 = v82_.v82;
+  if (f_.v82 != nullptr) {
+    f_.v83 = f_.v82;
     v64 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v64 = 56;
     }
     result = nn_mem_StandardAllocator_Free(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v64, v82_.v82);
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v64, f_.v82);
   }
   if (a2 != v63 || a3 != v62) {
     goto LABEL_66;

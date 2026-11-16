@@ -403,15 +403,14 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
     __int64 v394;
     float32x4_t* v395;
     float* v396;
-  } v390_;
+    char gap40_[912];
+    __int64 v401;
+    int v402;
+  } f_;
   _BYTE v397[768];
   _QWORD v398[3];
   int v399;
   _BYTE v400[84];
-  struct {
-    __int64 v401;
-    int v402;
-  } v401_;
   _BYTE v403[4];
   __int64 v404;
   _QWORD v405[4];
@@ -428,12 +427,12 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
     *(_QWORD*)&v400[68] = v8;
     *(_QWORD*)&v400[76] = v9;
     v123 = *(_DWORD*)(a2 + 808);
-    v390_.v395 = a5;
-    v390_.v396 = a8;
+    f_.v395 = a5;
+    f_.v396 = a8;
     v128 = a6;
     v129 = a3;
     v130 = (unsigned int)(4 * v123);
-    v390_.v394 = v130;
+    f_.v394 = v130;
     LOBYTE(v398[1]) = (unsigned int)v130 > 0x1000;
     if ((unsigned int)v130 <= 0x1000) {
       v131 = (_DWORD*)__builtin_alloca((v130 + 15) & 0x1FFFFFFF0LL);
@@ -455,19 +454,19 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
         v145 = a7[6];
         v146 = (unsigned int)(4 * *(_DWORD*)(a2 + 896));
         if ((_DWORD)v146 != 0) {
-          v390_.v391 = a7[2];
-          v390_.v392 = v143;
-          v390_.v393 = v145;
+          f_.v391 = a7[2];
+          f_.v392 = v143;
+          f_.v393 = v145;
           v147 = v144;
           v148 = v137;
-          v390_.v390 = v138;
+          f_.v390 = v138;
           memset((__int64)v397, 0, v146);
-          v138 = v390_.v390;
-          v142 = v390_.v391;
+          v138 = f_.v390;
+          v142 = f_.v391;
           v137 = v148;
           v144 = v147;
-          v143 = v390_.v392;
-          v145 = v390_.v393;
+          v143 = f_.v392;
+          v145 = f_.v393;
         }
         v149 = -v135;
         v150 = -v134;
@@ -724,9 +723,9 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
           LABEL_66:
             if ((_DWORD)v155 == 0) {
             LABEL_90:
-              v306 = (float*)v390_.v395;
-              v305 = v390_.v396;
-              LANES128(*(v390_.v395)).n128_u32[0] = LANES128(v178).n128_u32[0];
+              v306 = (float*)f_.v395;
+              v305 = f_.v396;
+              LANES128(*(f_.v395)).n128_u32[0] = LANES128(v178).n128_u32[0];
               v306[1] = v180;
               v306[2] = v181;
               v306[4] = LANES128(v177).n128_f32[0];
@@ -737,7 +736,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
               v305[2] = v184;
               *((_QWORD*)v305 + 2) = v187;
               v305[6] = v186;
-              if ((unsigned int)v390_.v394 > 0x1000) {
+              if ((unsigned int)f_.v394 > 0x1000) {
                 physx_PxTempAllocator_deallocate((__int64)v398, (__int64)v131);
               }
               return;
@@ -1218,12 +1217,12 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
   v21 = *((_OWORD*)a4 + 1);
   v23 = *(_QWORD*)(a2 + 704) + 12LL * a6;
   v24 = *(_QWORD*)(a2 + 672);
-  v401_.v402 = 0;
-  v401_.v401 = 0;
+  f_.v402 = 0;
+  f_.v401 = 0;
   v25 = *v20;
   v26 = *((unsigned __int8*)v20 + 4);
   if ((_DWORD)v26 != 0) {
-    v27 = (float*)&v401_.v401;
+    v27 = (float*)&f_.v401;
     v28 = v26;
     v29 = (float*)(v24 + 24LL * (unsigned int)v25 + 12);
     v30 = 0x0.0p+0f;
@@ -1350,7 +1349,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
       v86 = (float*)(v84 + 32);
       v87 = 0;
       v88 = (float*)&v404;
-      v89 = (float*)&v401_.v401 + 1;
+      v89 = (float*)&f_.v401 + 1;
       do {
         v90 = *(v89 - 1);
         v91 = *v89;
@@ -1385,7 +1384,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
     }
     v96 = (float*)(v84 + 32 * v85);
     *(float*)&v403[4 * v85] =
-        *((float*)&v401_.v401 + v85) -
+        *((float*)&f_.v401 + v85) -
         (float)((float)((float)((float)(PSEUDO_UNFUSED(
                                     LANES128(v77).n128_f32[1] * v96[5])) +
                                 (float)(v96[4] * LANES128(v77).n128_f32[0])) +

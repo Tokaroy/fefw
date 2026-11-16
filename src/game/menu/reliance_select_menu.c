@@ -1112,14 +1112,13 @@ __int64 RelianceSelectMenu_Unknown112(__int64 a1)
   __int64 v25;
   __int64 v26;
   struct {
+    char gap0_[8];
     __int64* v27;
     __int64* v28;
     __int64 v29;
-  } v27_;
-  struct {
     __int64 v30[2];
     char v31;
-  } v30_;
+  } f_;
   __int64 v32[2];
   _QWORD v33[2];
   _QWORD v34[23];
@@ -1135,15 +1134,15 @@ __int64 RelianceSelectMenu_Unknown112(__int64 a1)
                                                  *(_QWORD*)(v5 + 104)) == 1) {
       v6 = *(_QWORD*)(a1 + 1072);
       v7 = *(_QWORD*)(v5 + 104);
-      v30_.v31 = 0;
+      f_.v31 = 0;
       v8 = *(__int64**)(v6 + 392);
-      v30_.v30[0] = (__int64)v8;
-      v30_.v30[1] = v7;
+      f_.v30[0] = (__int64)v8;
+      f_.v30[1] = v7;
       v9 = 0;
       if ((unsigned int)RelianceSelectMenu_184d1f0((__int64)v8, v7) == 1) {
-        v27_.v27 = v8;
+        f_.v27 = v8;
         v32[0] = v7;
-        GameRoutine_8ca350_alt2(v33, &v27_.v27, v32);
+        GameRoutine_8ca350_alt2(v33, &f_.v27, v32);
         v10 = GameRoutine_8ca200_alt1(v33);
         if (v10 != 0 && (v11 = v10, *(_BYTE*)(v10 + 64) != 4) &&
             (GameRoutine_9e60d0_alt1(*(unsigned int**)(v10 + 24)) & 1) != 0 &&
@@ -1152,16 +1151,16 @@ __int64 RelianceSelectMenu_Unknown112(__int64 a1)
              (unsigned int)game_anonymous_RuntimeTalk_GetCondition_alt1(v11) ==
                  256)) {
           v9 = *(unsigned __int8*)(v11 + 64);
-          v30_.v31 = *(_BYTE*)(v11 + 64);
+          f_.v31 = *(_BYTE*)(v11 + 64);
         }
         else {
           v9 = 0;
         }
       }
-      v27_.v28 = nullptr;
-      v27_.v29 = 0;
-      v27_.v27 = nullptr;
-      GameRoutine_184d360_alt3(v30_.v30, (__int64*)&v27_.v27);
+      f_.v28 = nullptr;
+      f_.v29 = 0;
+      f_.v27 = nullptr;
+      GameRoutine_184d360_alt3(f_.v30, (__int64*)&f_.v27);
       if (v9 != 0 && v8 != nullptr && v7 != 0) {
         v14 = v34;
         v34[0] = GameRoutine_8c9820_alt1((__int64)v8, v7, 0);
@@ -1189,9 +1188,9 @@ __int64 RelianceSelectMenu_Unknown112(__int64 a1)
           --v16;
         } while (v16 != 0);
       }
-      v20 = v27_.v27;
-      if (v27_.v27 != v27_.v28) {
-        GameRoutine_9d5920_alt1(a1, &v27_.v27);
+      v20 = f_.v27;
+      if (f_.v27 != f_.v28) {
+        GameRoutine_9d5920_alt1(a1, &f_.v27);
       }
       v21 = *(_QWORD*)(a1 + 1072);
       *(_BYTE*)(a1 + 1080) = 0;
@@ -2273,40 +2272,39 @@ unsigned __int8 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1)
   __int64 v25;
   __int64 v26;
   struct {
+    char gap0_[8];
     __int64 v28;
     __int64 v29;
     __int64 v30;
-  } v28_;
-  struct {
     __int64* v31;
     __int64* v32;
     __int64 v33;
-  } v31_;
+  } f_;
   _QWORD v34[5];
   unsigned __int64 v35[2];
 
   v1 = *(_QWORD*)(a1 + 8);
-  v31_.v32 = nullptr;
-  v31_.v33 = 0;
-  v28_.v30 = 0;
-  v31_.v31 = nullptr;
+  f_.v32 = nullptr;
+  f_.v33 = 0;
+  f_.v30 = 0;
+  f_.v31 = nullptr;
   v2 = *(_QWORD*)(v1 + 1072);
-  v28_.v28 = 0;
-  v28_.v29 = 0;
+  f_.v28 = 0;
+  f_.v29 = 0;
   if (v2 != 0) {
     v3 = (__int64*)GameData_21c9ac0;
     v4 = GameData_21c9ac8;
     while (v3 != (__int64*)v4) {
       v5 = *v3++;
       RelianceSelectMenu_1852b80_alt1(
-          &v28_.v28, *(_QWORD*)(*(_QWORD*)(v1 + 1072) + 392LL), v5);
+          &f_.v28, *(_QWORD*)(*(_QWORD*)(v1 + 1072) + 392LL), v5);
     }
   }
-  RelianceSelectMenu_1852da0_alt2((__int64)&v28_.v28);
-  v6 = v28_.v28;
-  v7 = v28_.v29;
-  if (v28_.v28 != v28_.v29) {
-    v8 = v28_.v28;
+  RelianceSelectMenu_1852da0_alt2((__int64)&f_.v28);
+  v6 = f_.v28;
+  v7 = f_.v29;
+  if (f_.v28 != f_.v29) {
+    v8 = f_.v28;
     do {
       if (*(_BYTE*)(v8 + 16) != 0) {
         v9 = *(_QWORD*)v8;
@@ -2343,9 +2341,9 @@ unsigned __int8 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1)
       v8 += 24;
     } while (v8 != v7);
   }
-  v19 = v31_.v31;
-  if (v31_.v31 != v31_.v32) {
-    GameRoutine_9d5920_alt1(v1, &v31_.v31);
+  v19 = f_.v31;
+  if (f_.v31 != f_.v32) {
+    GameRoutine_9d5920_alt1(v1, &f_.v31);
   }
   v20 = *(_QWORD*)(v1 + 1072);
   *(_BYTE*)(v1 + 1080) = 0;

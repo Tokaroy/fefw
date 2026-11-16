@@ -990,12 +990,11 @@ void game_map_anonymous_ProcMapSeqBattle_BlowMove(__int64 a1)
   struct {
     __int64 v12[4];
     __int64* v13;
-  } v12_;
-  struct {
+    char gap40_[16];
     __int64 v14;
     __int64 v15;
     __int64 v16;
-  } v14_;
+  } f_;
 
   v9 = COERCE_AS(__typeof__(v9),
                  PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1021,14 +1020,14 @@ void game_map_anonymous_ProcMapSeqBattle_BlowMove(__int64 a1)
   v4 = *(_QWORD*)(a1 + 168);
   v5 = *v3;
   v6 = v3[1];
-  v14_.v15 = 0;
-  v14_.v16 = 0;
-  v14_.v14 = 0;
-  v12_.v12[0] = (__int64)GameData_1f995c8;
-  v12_.v12[1] = (__int64)&v14_.v14;
-  v12_.v13 = v12_.v12;
+  f_.v15 = 0;
+  f_.v16 = 0;
+  f_.v14 = 0;
+  f_.v12[0] = (__int64)GameData_1f995c8;
+  f_.v12[1] = (__int64)&f_.v14;
+  f_.v13 = f_.v12;
   if (*(int*)(v4 + 12356) < 1) {
-    game_map_anonymous_ProcMapSeqBattle_BlowMove_closure_Invoke(v12_.v12,
+    game_map_anonymous_ProcMapSeqBattle_BlowMove_closure_Invoke(f_.v12,
                                                                 v4 + 52),
         v9 = COERCE_AS(__typeof__(v9),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1037,45 +1036,45 @@ void game_map_anonymous_ProcMapSeqBattle_BlowMove(__int64 a1)
     v7 = v4 + 68;
     v8 = 0;
     do {
-      if (v12_.v13 == nullptr) {
+      if (f_.v13 == nullptr) {
         GameRoutine_60a310_alt2(),
             v9 = COERCE_AS(__typeof__(v9),
                            PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
-      (*(void (**)(__int64*, __int64))(*v12_.v13 + 48))(v12_.v13, v7),
+      (*(void (**)(__int64*, __int64))(*f_.v13 + 48))(f_.v13, v7),
           v9 = COERCE_AS(__typeof__(v9),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       ++v8;
       v7 += 12;
     } while (v8 < *(int*)(v4 + 12356));
   }
-  if (v12_.v13 == v12_.v12) {
+  if (f_.v13 == f_.v12) {
     v10 = 32;
   }
   else {
-    if (v12_.v13 == nullptr) {
+    if (f_.v13 == nullptr) {
       goto LABEL_17;
     }
     v10 = 40;
   }
-  (*(void (**)(__int64*, __int64))(*v12_.v13 + v10))(v12_.v13, v9),
+  (*(void (**)(__int64*, __int64))(*f_.v13 + v10))(f_.v13, v9),
       v9 = COERCE_AS(__typeof__(v9),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_17:
-  GameHr_90e760(&v14_.v14, v5, v6, v2),
+  GameHr_90e760(&f_.v14, v5, v6, v2),
       v9 = COERCE_AS(__typeof__(v9),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  game_90edc0((__int64)&v14_.v14),
+  game_90edc0((__int64)&f_.v14),
       v9 = COERCE_AS(__typeof__(v9),
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (v14_.v14 != 0) {
-    v14_.v15 = v14_.v14;
+  if (f_.v14 != 0) {
+    f_.v15 = f_.v14;
     v11 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
     nn_mem_StandardAllocator_Free_alt1(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, v14_.v14),
+        *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, f_.v14),
         v9 = COERCE_AS(__typeof__(v9),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }

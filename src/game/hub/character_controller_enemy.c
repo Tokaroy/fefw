@@ -530,19 +530,16 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
   struct {
     _QWORD v194[4];
     _QWORD* v195;
-  } v194_;
-  struct {
+    char gap40_[8];
     _QWORD v196[4];
     _QWORD* v197;
-  } v196_;
-  struct {
+    char gap88_[8];
     _QWORD v198[4];
     _QWORD* v199;
-  } v198_;
-  struct {
+    char gap136_[8];
     _QWORD v200[4];
     _QWORD* v201;
-  } v200_;
+  } f_;
 
   v19 = COERCE_AS(__typeof__(v19),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -586,20 +583,20 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
       v19 = COERCE_AS(__typeof__(v19),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v6 = *(__int64**)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 24LL) + 32LL);
-  v198_.v198[0] = GameData_200a2a8;
-  v198_.v198[1] = a1;
-  v198_.v199 = v198_.v198;
+  f_.v198[0] = GameData_200a2a8;
+  f_.v198[1] = a1;
+  f_.v199 = f_.v198;
   v7 = (_QWORD*)v6[35];
   if (!((unsigned __int64)v7 < v6[36])) {
-    v9 = GameRoutine_dac2c0_alt1(v6 + 34, v6 + 42, (__int64)v198_.v198),
+    v9 = GameRoutine_dac2c0_alt1(v6 + 34, v6 + 42, (__int64)f_.v198),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   else {
     *v7 = v6[42];
-    v8 = v198_.v199;
-    if (v198_.v199 != nullptr) {
-      if (v198_.v199 == v198_.v198) {
+    v8 = f_.v199;
+    if (f_.v199 != nullptr) {
+      if (f_.v199 == f_.v198) {
         v7[6] = v7 + 2;
         (*(void (**)(_QWORD*))(*v8 + 24LL))(v8),
             v19 = COERCE_AS(__typeof__(v19),
@@ -607,7 +604,7 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
       }
       else {
         v7[6] =
-            (*(__int64 (**)(__int64))(*v198_.v199 + 16LL))((__int64)v198_.v199),
+            (*(__int64 (**)(__int64))(*f_.v199 + 16LL))((__int64)f_.v199),
         v19 = COERCE_AS(__typeof__(v19),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
@@ -619,9 +616,9 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
   }
   v10 = v6[42];
   v6[35] = v9;
-  v11 = v198_.v199;
+  v11 = f_.v199;
   v6[42] = v10 + 1;
-  if (v11 == v198_.v198) {
+  if (v11 == f_.v198) {
     v12 = 32;
   }
   else {
@@ -635,66 +632,66 @@ void game_hub_CharacterControllerEnemy_CharacterControllerEnemy(__int64 a1,
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_14:
   v13 = *(_QWORD*)(a1 + 8);
-  v196_.v196[0] = GameData_200a328;
-  v196_.v196[1] = a1;
-  v200_.v200[0] = GameData_200a328;
-  v200_.v200[1] = a1;
+  f_.v196[0] = GameData_200a328;
+  f_.v196[1] = a1;
+  f_.v200[0] = GameData_200a328;
+  f_.v200[1] = a1;
   v14 = *(_QWORD*)(*(_QWORD*)(v13 + 24) + 32LL);
-  v196_.v197 = v196_.v196;
-  v200_.v201 = v200_.v200;
-  GameRoutine_dac8c0_alt1(v200_.v200, (_QWORD*)(v14 + 176)),
+  f_.v197 = f_.v196;
+  f_.v201 = f_.v200;
+  GameRoutine_dac8c0_alt1(f_.v200, (_QWORD*)(v14 + 176)),
       v19 = COERCE_AS(__typeof__(v19),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  if (v200_.v201 == v200_.v200) {
+  if (f_.v201 == f_.v200) {
     v15 = 32;
   }
   else {
-    if (v200_.v201 == nullptr) {
+    if (f_.v201 == nullptr) {
       goto LABEL_19;
     }
     v15 = 40;
   }
-  (*(void (**)(__int64))(*v200_.v201 + v15))((__int64)v200_.v201),
+  (*(void (**)(__int64))(*f_.v201 + v15))((__int64)f_.v201),
       v19 = COERCE_AS(__typeof__(v19),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_19:
-  if (v196_.v197 == v196_.v196) {
+  if (f_.v197 == f_.v196) {
     v16 = 32;
   }
   else {
-    if (v196_.v197 == nullptr) {
+    if (f_.v197 == nullptr) {
       goto LABEL_24;
     }
     v16 = 40;
   }
-  (*(void (**)(__int64))(*v196_.v197 + v16))((__int64)v196_.v197),
+  (*(void (**)(__int64))(*f_.v197 + v16))((__int64)f_.v197),
       v19 = COERCE_AS(__typeof__(v19),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_24:
   v17 = *(__int64**)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 24LL) + 32LL);
-  v194_.v194[0] = GameData_200a3a8;
-  v194_.v194[1] = a1;
-  v194_.v195 = v194_.v194;
+  f_.v194[0] = GameData_200a3a8;
+  f_.v194[1] = a1;
+  f_.v195 = f_.v194;
   v18 = (_QWORD*)v17[38];
   if (!((unsigned __int64)v18 < v17[39])) {
-    v21 = GameRoutine_dac4e0_alt1(v17 + 37, v17 + 43, (__int64)v194_.v194),
+    v21 = GameRoutine_dac4e0_alt1(v17 + 37, v17 + 43, (__int64)f_.v194),
     v19 = COERCE_AS(__typeof__(v19),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   }
   else {
     *v18 = v17[43];
     v19 = v18 + 2;
-    v20 = v194_.v195;
-    if (v194_.v195 != nullptr) {
-      if (v194_.v195 == v194_.v194) {
+    v20 = f_.v195;
+    if (f_.v195 != nullptr) {
+      if (f_.v195 == f_.v194) {
         v18[6] = v19;
         (*(void (**)(_QWORD*))(*v20 + 24LL))(v20),
             v19 = COERCE_AS(__typeof__(v19),
                             PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
       else {
-        v18[6] = (*(__int64 (**)(_QWORD*, _QWORD*))(*v194_.v195 + 16LL))(
-            v194_.v195, v19),
+        v18[6] = (*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v195 + 16LL))(
+            f_.v195, v19),
         v19 = COERCE_AS(__typeof__(v19),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
@@ -706,9 +703,9 @@ LABEL_24:
   }
   v22 = v17[43];
   v17[38] = v21;
-  v23 = v194_.v195;
+  v23 = f_.v195;
   v17[43] = v22 + 1;
-  if (v23 == v194_.v194) {
+  if (v23 == f_.v194) {
     v24 = 32;
   }
   else {
@@ -722,8 +719,8 @@ LABEL_24:
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
 LABEL_37:
   v25 = *(_QWORD*)(*(_QWORD*)(a1 + 8) + 24LL);
-  LODWORD(v200_.v200[0]) = 3;
-  GameRoutine_ceecc0_alt1((__int64*)(v25 + 344), v200_.v200),
+  LODWORD(f_.v200[0]) = 3;
+  GameRoutine_ceecc0_alt1((__int64*)(v25 + 344), f_.v200),
       v19 = COERCE_AS(__typeof__(v19),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   HubCharacterNatives_cea6b0_alt1(v25),

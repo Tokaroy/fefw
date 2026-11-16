@@ -2113,12 +2113,12 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
   long double v108;
   long double v109;
   struct {
+    char gap0_[16];
     long double v110;
     int v111;
     char gap36_[68];
     __int16 v112;
-  } v110_;
-  struct {
+    char gap106_[14];
     _QWORD v113[2];
     __int64 v114;
     __int64 v115;
@@ -2127,7 +2127,7 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
     __int64 v118;
     __int64 v119;
     __int64 v120;
-  } v113_;
+  } f_;
 
   v4 = *(float*)&a2;
   if (*(_QWORD*)(a1 + 32) == *(_QWORD*)(a1 + 40)) {
@@ -2305,20 +2305,20 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
             v36 = 0;
           }
         }
-        memory_a6ea10((void*)((__int64)v113_.v113), v36, 0);
-        if (v113_.v115 != 0 || v113_.v116 != 0 || v113_.v117 != 0 ||
-            v113_.v118 != 0 || v113_.v119 != 0) {
-          GameRoutine_b3bdc0((__int64*)&v110_.v110, v113_.v113);
-          v88 = *(float**)&v110_.v110;
-          if (*(_QWORD*)&v110_.v110 != 0) {
+        memory_a6ea10((void*)((__int64)f_.v113), v36, 0);
+        if (f_.v115 != 0 || f_.v116 != 0 || f_.v117 != 0 ||
+            f_.v118 != 0 || f_.v119 != 0) {
+          GameRoutine_b3bdc0((__int64*)&f_.v110, f_.v113);
+          v88 = *(float**)&f_.v110;
+          if (*(_QWORD*)&f_.v110 != 0) {
             *v88 = (*(float (**)(_QWORD, float, float, float))(
-                *(_QWORD*)&v110_.v110 + 16LL))(
-                *(_QWORD*)(*(_QWORD*)&v110_.v110 + 24LL), a3 - v32,
-                *(float*)(*(_QWORD*)&v110_.v110 + 4LL),
-                *(float*)(*(_QWORD*)&v110_.v110 + 8LL));
-            v110_.v112 = 0;
+                *(_QWORD*)&f_.v110 + 16LL))(
+                *(_QWORD*)(*(_QWORD*)&f_.v110 + 24LL), a3 - v32,
+                *(float*)(*(_QWORD*)&f_.v110 + 4LL),
+                *(float*)(*(_QWORD*)&f_.v110 + 8LL));
+            f_.v112 = 0;
           }
-          GameRoutine_b3c900((__int64)&v110_.v110);
+          GameRoutine_b3c900((__int64)&f_.v110);
           v89 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)v20 + 32LL) - 8LL);
           v90 = *(_QWORD*)(v89 + 24);
           v91 = *(_QWORD*)(v89 + 32);
@@ -2327,25 +2327,25 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
                                       memory_order_relaxed);
           }
           gfx_render_b3ca50(v90,
-                            *(_QWORD*)(*((_QWORD*)&v110_.v110 + 1) + 72LL));
+                            *(_QWORD*)(*((_QWORD*)&f_.v110 + 1) + 72LL));
           if (v91 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v91 + 8),
                                            0xFFFFFFFFFFFFFFFFLL) == 0) {
             (*(void (**)(__int64))(*(_QWORD*)v91 + 16LL))(v91);
             std___1___shared_weak_count___release_weak_alt1(v91);
           }
-          GameRoutine_b3c6a0((__int64)&v110_.v110);
+          GameRoutine_b3c6a0((__int64)&f_.v110);
         }
       }
       else {
-        v113_.v119 = 0;
-        v113_.v120 = 0;
-        v113_.v117 = 0;
-        v113_.v118 = 0;
-        v113_.v115 = 0;
-        v113_.v116 = 0;
-        v113_.v113[1] = 0;
-        v113_.v114 = 0;
-        v113_.v113[0] = 0;
+        f_.v119 = 0;
+        f_.v120 = 0;
+        f_.v117 = 0;
+        f_.v118 = 0;
+        f_.v115 = 0;
+        f_.v116 = 0;
+        f_.v113[1] = 0;
+        f_.v114 = 0;
+        f_.v113[0] = 0;
       }
       v38 =
           *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)v20 + 32LL) - 8LL) + 40LL);
@@ -2357,13 +2357,13 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
         (*(void (**)(__int64))(*(_QWORD*)v39 + 16LL))(v39);
         std___1___shared_weak_count___release_weak_alt1(v40);
       }
-      if ((v113_.v113[0] & 1) != 0 && v113_.v114 != 0) {
+      if ((f_.v113[0] & 1) != 0 && f_.v114 != 0) {
         v41 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v41 = 56;
         }
         nn_mem_StandardAllocator_Free_alt2(
-            *(_QWORD*)fw_memory_g_heap_manager_ptr + v41, v113_.v114);
+            *(_QWORD*)fw_memory_g_heap_manager_ptr + v41, f_.v114);
       }
       break;
     }
@@ -2443,8 +2443,8 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
           v62 = *(_OWORD*)(v60 + 32);
           LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
           v63 = *(float*)(v60 + 8);
-          *(_QWORD*)&v110_.v110 = v60 + 32;
-          *((_QWORD*)&v110_.v110 + 1) = __PAIR64__(LODWORD(a3), LODWORD(v63));
+          *(_QWORD*)&f_.v110 = v60 + 32;
+          *((_QWORD*)&f_.v110 + 1) = __PAIR64__(LODWORD(a3), LODWORD(v63));
           if ((unsigned int)(int)*(float*)&v62 <= 0xFFFFFFFD) {
             v64 = a3 - v63;
             *(_QWORD*)&a2 = 0;
@@ -2464,8 +2464,8 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
               }
             }
           }
-          v110_.v111 = LODWORD(a2);
-          *(float*)&a2 = PostEffectActor_17fb700((__int64)&v110_.v110,
+          f_.v111 = LODWORD(a2);
+          *(float*)&a2 = PostEffectActor_17fb700((__int64)&f_.v110,
                                                  (__int64*)(v60 + 56), a2);
           v71 = *(_QWORD*)(*v61 + 13224);
           v72 = *(_QWORD*)(v71 + 48);
@@ -2565,8 +2565,8 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
               else {
                 a2 = *(long double*)(v86 + 48);
               }
-              v110_.v110 = a2;
-              v87 = &v110_.v110;
+              f_.v110 = a2;
+              v87 = &f_.v110;
             }
             else {
               v87 = (long double*)GameData_212c960;
@@ -2605,8 +2605,8 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
           v99 = *(_OWORD*)(v97 + 32);
           LODWORD(a2) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
           v100 = *(float*)(v97 + 8);
-          *(_QWORD*)&v110_.v110 = v97 + 32;
-          *((_QWORD*)&v110_.v110 + 1) = __PAIR64__(LODWORD(a3), LODWORD(v100));
+          *(_QWORD*)&f_.v110 = v97 + 32;
+          *((_QWORD*)&f_.v110 + 1) = __PAIR64__(LODWORD(a3), LODWORD(v100));
           if ((unsigned int)(int)*(float*)&v99 <= 0xFFFFFFFD) {
             v101 = a3 - v100;
             *(_QWORD*)&a2 = 0;
@@ -2626,8 +2626,8 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
               }
             }
           }
-          v110_.v111 = LODWORD(a2);
-          v98 = PostEffectActor_17fb700((__int64)&v110_.v110,
+          f_.v111 = LODWORD(a2);
+          v98 = PostEffectActor_17fb700((__int64)&f_.v110,
                                         (__int64*)(v97 + 56), a2);
         }
         v104 = *(_QWORD*)(game_g_frame_clock + 13224);

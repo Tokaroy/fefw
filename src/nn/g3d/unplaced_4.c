@@ -1114,14 +1114,13 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
   float32x4_t v71;
   float32x4_t v72;
   struct {
+    char gap0_[8];
     _QWORD v73[2];
     __int64 v74;
-  } v73_;
-  struct {
     int* v75;
     int v76;
     int v77;
-  } v75_;
+  } f_;
   int v78;
 
   v4 = *(float32x4_t**)(a1 + 24);
@@ -1179,9 +1178,9 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
     *(_OWORD*)v7 = GameData_1a837f0;
     v21 = *(unsigned __int16*)(a1 + 82);
     v78 = 0;
-    v75_.v75 = &v78;
-    v75_.v77 = 0;
-    v75_.v76 = v21;
+    f_.v75 = &v78;
+    f_.v77 = 0;
+    f_.v76 = v21;
     if (v21 != 0) {
       goto LABEL_6;
     }
@@ -1191,18 +1190,18 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
   *(_QWORD*)v7 = LANES128(v4[1]).n128_u64[0];
   v23 = *(unsigned __int16*)(a1 + 82);
   v78 = 0;
-  v75_.v75 = &v78;
-  v75_.v77 = 0;
-  v75_.v76 = v23;
+  f_.v75 = &v78;
+  f_.v77 = 0;
+  f_.v76 = v23;
   if (v23 == 0) {
   LABEL_9:
     v24 = *(_QWORD*)(a1 + 24);
     v25 = *(_QWORD*)(a1 + 88);
-    v73_.v73[0] = *(_QWORD*)(a1 + 32);
-    v73_.v73[1] = v7;
-    v73_.v74 = v24;
+    f_.v73[0] = *(_QWORD*)(a1 + 32);
+    f_.v73[1] = v7;
+    f_.v74 = v24;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v25 + 16LL))(
-        v25, &v75_.v75, v73_.v73);
+        v25, &f_.v75, f_.v73);
     result = COERCE_AS(__typeof__(result),
                        PSEUDO_REGISTER(__n128, "v0", "=w"));
     v22 = v78 + 1;
@@ -1284,7 +1283,7 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
         LABEL_14:
           result = vmulq_f32(*v39, v29[1]);
           *v38 = result;
-          if (v75_.v76 == v22) {
+          if (f_.v76 == v22) {
             goto LABEL_21;
           }
           goto LABEL_11;
@@ -1311,15 +1310,15 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result)
       }
       LANES128(*(v38)).n128_u64[1] = LANES128(*(v39)).n128_u64[1];
       LANES128(*(v38)).n128_u64[0] = LANES128(*(v39)).n128_u64[0];
-      if (v75_.v76 == v22) {
+      if (f_.v76 == v22) {
       LABEL_21:
         v55 = *(_QWORD*)(a1 + 24);
         v56 = *(_QWORD*)(a1 + 88);
-        v73_.v73[0] = *(_QWORD*)(a1 + 32) + ((__int64)v22 << 6);
-        v73_.v73[1] = v7 + 16LL * v22;
-        v73_.v74 = v55 + 96LL * v22;
+        f_.v73[0] = *(_QWORD*)(a1 + 32) + ((__int64)v22 << 6);
+        f_.v73[1] = v7 + 16LL * v22;
+        f_.v74 = v55 + 96LL * v22;
         (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v56 + 16LL))(
-            v56, &v75_.v75, v73_.v73);
+            v56, &f_.v75, f_.v73);
         result = COERCE_AS(__typeof__(result),
                            PSEUDO_REGISTER(__n128, "v0", "=w"));
         v22 = v78;

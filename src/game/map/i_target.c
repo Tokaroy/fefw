@@ -3756,14 +3756,12 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda0_Invoke(__int64 a1, int* a2,
   __int16 v38;
   int v39;
   struct {
+    char gap0_[20];
     _BYTE v40[4];
     char v41;
-  } v40_;
-  struct {
-    char gap24_[1];
     char v42;
     __int16 v43;
-  } v42_;
+  } f_;
 
   v10 = COERCE_AS(__typeof__(v10),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -3775,11 +3773,11 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda0_Invoke(__int64 a1, int* a2,
     LODWORD(v5) = *(_WORD*)(v5 + 16) & 0xFFF;
   }
   v32 = v5;
-  TargetEnumerator_77c150_alt1((__int64)v40_.v40, (__int64*)v6, v3, v4),
+  TargetEnumerator_77c150_alt1((__int64)f_.v40, (__int64*)v6, v3, v4),
       v10 = COERCE_AS(__typeof__(v10),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  if (v42_.v42 != 0) {
-    v8 = game_UnitPool_Get_alt2(&v42_.v42),
+  if (f_.v42 != 0) {
+    v8 = game_UnitPool_Get_alt2(&f_.v42),
     v10 = COERCE_AS(__typeof__(v10),
                     PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   }
@@ -3787,19 +3785,19 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda0_Invoke(__int64 a1, int* a2,
     v8 = nullptr;
   }
   if ((TargetEnumerator_77e300(v6, &v32, v8) & 1) != 0) {
-    v9 = v40_.v41 | 4;
+    v9 = f_.v41 | 4;
   LABEL_8:
-    v40_.v41 = v9;
+    f_.v41 = v9;
     goto LABEL_9;
   }
-  if ((v42_.v43 & 0x8000000000000000LL) != 0) {
+  if ((f_.v43 & 0x8000000000000000LL) != 0) {
     goto LABEL_41;
   }
   v12 = *(_QWORD*)(*(_QWORD*)(GameData_21cd158 + 16) + 8LL);
   if (v12 == 0) {
     goto LABEL_41;
   }
-  v13 = v12 + 144LL * v42_.v43;
+  v13 = v12 + 144LL * f_.v43;
   if ((MapUtil_753bb0(v13) & 1) == 0) {
     goto LABEL_41;
   }
@@ -3878,9 +3876,9 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda0_Invoke(__int64 a1, int* a2,
     goto LABEL_35;
   }
 LABEL_36:
-  v27 = v40_.v41;
+  v27 = f_.v41;
   v28 = *(_QWORD*)(*v14 + 64);
-  v40_.v41 |= 4u;
+  f_.v41 |= 4u;
   v29 = *(_QWORD*)(v28 + 8LL * (v32 & 0xFFF));
   if (v29 != 0 && (unsigned int)*(unsigned __int8*)(v29 + 250) - 15 <= 1) {
     v9 = v27 | 5;
@@ -3983,14 +3981,12 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
   __int64* v13;
   __int64 result;
   struct {
-    char gap8_[3];
+    char gap0_[11];
     char v15[5];
     int v16;
-  } v15_;
-  struct {
     _BYTE v17[4];
     char v18;
-  } v17_;
+  } f_;
   _BYTE v19[7];
   int v20;
 
@@ -4004,7 +4000,7 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
     LODWORD(v5) = *(_WORD*)(v5 + 16) & 0xFFF;
   }
   v20 = v5;
-  TargetEnumerator_77c150_alt1((__int64)v17_.v17, v6, v3, v4),
+  TargetEnumerator_77c150_alt1((__int64)f_.v17, v6, v3, v4),
       v11 = COERCE_AS(__typeof__(v11),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   if (v19[0] != 0) {
@@ -4017,9 +4013,9 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
   }
   if ((TargetEnumerator_77e300((__int64)v6, &v20, v8) & 1) == 0) {
     v13 = *(__int64**)(a1 + 64);
-    v15_.v16 = 0;
-    *(_WORD*)&v15_.v15[3] = -1;
-    strcpy(v15_.v15, "\t\b");
+    f_.v16 = 0;
+    *(_WORD*)&f_.v15[3] = -1;
+    strcpy(f_.v15, "\t\b");
     if (v13 != nullptr) {
       v12 = *v13;
       goto LABEL_14;
@@ -4029,11 +4025,11 @@ __int64 game_map_ITarget_EnumerateSubTarget_lambda1_Invoke(__int64 a1, int* a2,
         v11 = COERCE_AS(__typeof__(v11),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   }
-  v9 = v17_.v18;
-  v17_.v18 |= 8u;
+  v9 = f_.v18;
+  f_.v18 |= 8u;
   v10 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) + 8LL * (v20 & 0xFFF));
   if (v10 != 0 && (unsigned int)*(unsigned __int8*)(v10 + 250) - 15 <= 1) {
-    v17_.v18 = v9 | 9;
+    f_.v18 = v9 | 9;
   }
   v11 = *(__int64**)(a1 + 64);
   if (v11 == nullptr) {

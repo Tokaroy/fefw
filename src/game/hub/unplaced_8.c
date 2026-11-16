@@ -898,15 +898,15 @@ __int64 game_hub_f8ad80(__int64 result)
   __int128 v55;
   float32x4_t v56;
   struct {
+    char gap0_[16];
     __int64 v57;
     int v58;
     char v59;
-  } v57_;
-  struct {
+    char gap29_[3];
     int32x2_t v60;
     void* v61;
     float v62;
-  } v60_;
+  } f_;
 
   if ((*(_BYTE*)(result + 168) & 1) == 0) {
     if ((*(_BYTE*)(GameData_2212268 + 24) & 1) == 0) {
@@ -925,13 +925,13 @@ __int64 game_hub_f8ad80(__int64 result)
       v8 = v5 | v3;
       if ((_DWORD)v4 == 2) {
         v9 = *(_QWORD*)GameData_212dc50[0];
-        v60_.v61 = &GameData_1a95d15;
-        LANES64(v60_.v60).n64_u64[0] =
+        f_.v61 = &GameData_1a95d15;
+        LANES64(f_.v60).n64_u64[0] =
             game_HashString((__int64)&GameData_1a95d15);
         if (game_GameModeData_instance_ != 0 &&
             (v10 = game_GameVariableTable_Find(
                  *(_QWORD**)(game_GameModeData_instance_ + 48),
-                 LANES64(v60_.v60).n64_u64)) != 0) {
+                 LANES64(f_.v60).n64_u64)) != 0) {
           v11 = *(_DWORD*)(v10 + 32);
           v2 = v9;
           v43 = v11 <= 0;
@@ -985,11 +985,11 @@ __int64 game_hub_f8ad80(__int64 result)
         }
       }
     }
-    v57_.v58 = v7;
-    v57_.v57 = v8;
-    v57_.v59 = BYTE4(v7);
+    f_.v58 = v7;
+    f_.v57 = v8;
+    f_.v59 = BYTE4(v7);
     result = (__int64)X8CALL_X0(
-        void*, game_hub_fb48a0((void*)(&v60_.v60), v2, &v57_.v57));
+        void*, game_hub_fb48a0((void*)(&f_.v60), v2, &f_.v57));
     v19 = *(_QWORD*)(GameData_21ec7c0 + 80);
     if (v19 == 0) {
       goto LABEL_77;
@@ -1014,8 +1014,8 @@ __int64 game_hub_f8ad80(__int64 result)
       }
       goto LABEL_77;
     }
-    v24 = v60_.v62;
-    game_zview_d12d30(*(_QWORD*)(LANES128(v20[1]).n128_u64[1] + 16), &v60_.v60,
+    v24 = f_.v62;
+    game_zview_d12d30(*(_QWORD*)(LANES128(v20[1]).n128_u64[1] + 16), &f_.v60,
                       1);
     v25 = vsubq_f32(
         v20[79],
@@ -1035,8 +1035,8 @@ __int64 game_hub_f8ad80(__int64 result)
         *(_BYTE*)(v27 + 12) = 1;
       }
     }
-    v28 = (unsigned int)v60_.v61;
-    LANES128(v20[79]).n128_u64[0] = LANES64(v60_.v60).n64_u64[0];
+    v28 = (unsigned int)f_.v61;
+    LANES128(v20[79]).n128_u64[0] = LANES64(f_.v60).n64_u64[0];
     v29 = v20[79];
     LANES128(v29).n128_u64[1] = v28;
     v20[79] = v29;

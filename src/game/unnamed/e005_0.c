@@ -810,61 +810,60 @@ __int64 GameHr_ebe9e0(int a1, __int64 a2)
   struct {
     _BYTE v11[32];
     _BYTE* v12;
-  } v11_;
-  struct {
+    char gap40_[8];
     __int64 v13;
     __int64 v14;
-  } v13_;
+  } f_;
 
   v2 = a1;
   v3 = *(_QWORD*)(a2 + 32);
   v4 = *GameData_212ea58 + (v2 << 7) + 672;
   if (v3 != 0) {
     if (v3 == a2) {
-      v11_.v12 = v11_.v11;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v3 + 24LL))(v3, v11_.v11);
+      f_.v12 = f_.v11;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v3 + 24LL))(v3, f_.v11);
     }
     else {
-      v11_.v12 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v3 + 16LL))(v3);
+      f_.v12 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v3 + 16LL))(v3);
     }
   }
   else {
-    v11_.v12 = nullptr;
+    f_.v12 = nullptr;
   }
   v5 = *(__int64**)(v4 + 40);
   for (i = *(__int64**)(v4 + 48); v5 != i; v5 += 2) {
-    v13_.v13 = *v5;
+    f_.v13 = *v5;
     v7 = v5[1];
-    v13_.v14 = v7;
+    f_.v14 = v7;
     if (v7 != 0) {
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v7 + 8), 1u,
                                 memory_order_relaxed);
     }
-    if (v11_.v12 == nullptr) {
+    if (f_.v12 == nullptr) {
       GameRoutine_60a310_alt1();
     }
-    (*(void (**)(_BYTE*, __int64*))(*(_QWORD*)v11_.v12 + 48LL))(v11_.v12,
-                                                                &v13_.v13);
-    v8 = v13_.v14;
-    if (v13_.v14 != 0 &&
-        atomic_fetch_add((atomic_ullong* volatile)(v13_.v14 + 8),
+    (*(void (**)(_BYTE*, __int64*))(*(_QWORD*)f_.v12 + 48LL))(f_.v12,
+                                                                &f_.v13);
+    v8 = f_.v14;
+    if (f_.v14 != 0 &&
+        atomic_fetch_add((atomic_ullong* volatile)(f_.v14 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
       (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
       std___1___shared_weak_count___release_weak(v8);
     }
   }
-  result = (__int64)v11_.v12;
-  if (v11_.v12 == v11_.v11) {
+  result = (__int64)f_.v12;
+  if (f_.v12 == f_.v11) {
     v10 = 32;
   }
   else {
-    if (v11_.v12 == nullptr) {
+    if (f_.v12 == nullptr) {
       return result;
     }
     v10 = 40;
   }
-  return (*(__int64 (**)(__int64))(*(_QWORD*)v11_.v12 + v10))(
-      (__int64)v11_.v12);
+  return (*(__int64 (**)(__int64))(*(_QWORD*)f_.v12 + v10))(
+      (__int64)f_.v12);
 }
 
 __int64 GameHr_ec0e30(__int64 a1, __int64 a2)

@@ -208,15 +208,15 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
   unsigned __int16* v81;
   int v83;
   struct {
+    char gap0_[24];
     _QWORD v84[2];
     _QWORD* v85;
     __int64 v86;
     int v87;
-  } v84_;
-  struct {
+    char gap60_[4];
     __int64 v88[4];
     __int64* v89;
-  } v88_;
+  } f_;
 
   if (*a2 != 0) {
     v4 = a2;
@@ -275,12 +275,12 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
               goto LABEL_9;
             }
             v19 = *v4;
-            v84_.v85 = nullptr;
-            v84_.v86 = 0;
-            v84_.v84[0] = 0;
-            v84_.v84[1] = 0;
+            f_.v85 = nullptr;
+            f_.v86 = 0;
+            f_.v84[0] = 0;
+            f_.v84[1] = 0;
             v83 = v13;
-            v84_.v87 = 1065353216;
+            f_.v87 = 1065353216;
             if (v19 != 0) {
               v20 = *(_QWORD*)(*(_QWORD*)(*v5 + 64) + 8 * v19);
               v21 = (*((_DWORD*)v4 + 1) & 0xF) * *(unsigned __int8*)(v20 + 87);
@@ -412,9 +412,9 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
               goto LABEL_64;
             }
           LABEL_102:
-            v65 = v84_.v85;
+            v65 = f_.v85;
             v66 = fw_memory_g_heap_manager_ptr;
-            if (v84_.v85 != nullptr) {
+            if (f_.v85 != nullptr) {
               do {
                 v67 = (_QWORD*)*v65;
                 if (*(_QWORD*)(*(_QWORD*)v66 + 200LL) != 0) {
@@ -428,8 +428,8 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
                 v65 = v67;
               } while (v67 != nullptr);
             }
-            v69 = v84_.v84[0];
-            v84_.v84[0] = 0;
+            v69 = f_.v84[0];
+            f_.v84[0] = 0;
             if (v69 != 0) {
               if (*(_QWORD*)(*(_QWORD*)v66 + 200LL) != 0) {
                 v70 = 128;
@@ -473,21 +473,21 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
           v25 = nullptr;
           v27 = 0;
         LABEL_64:
-          v88_.v88[0] = (__int64)GameData_2019a58;
-          v88_.v89 = v88_.v88;
-          game_UnitUtil_UniqueMap_Commit_1212e40_alt2(v84_.v84, v88_.v88, a3);
-          result = (__int64)v88_.v89;
-          if (v88_.v89 == v88_.v88) {
+          f_.v88[0] = (__int64)GameData_2019a58;
+          f_.v89 = f_.v88;
+          game_UnitUtil_UniqueMap_Commit_1212e40_alt2(f_.v84, f_.v88, a3);
+          result = (__int64)f_.v89;
+          if (f_.v89 == f_.v88) {
             v46 = 32;
           }
           else {
-            if (v88_.v89 == nullptr) {
+            if (f_.v89 == nullptr) {
               goto LABEL_69;
             }
             v46 = 40;
           }
           result =
-              (*(__int64 (**)(__int64))(*v88_.v89 + v46))((__int64)v88_.v89);
+              (*(__int64 (**)(__int64))(*f_.v89 + v46))((__int64)f_.v89);
         LABEL_69:
           if (*(int*)(v12 + 72) < 1) {
             LODWORD(v9) = -1;
@@ -498,7 +498,7 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
             v49 = v25;
             do {
               v50 = *(_QWORD*)(v12 + 8) + v47;
-              result = UnitUtil_1212ac0(v84_.v84, (_WORD*)(v50 + 4));
+              result = UnitUtil_1212ac0(f_.v84, (_WORD*)(v50 + 4));
               if ((int)result >= 2) {
                 if ((unsigned __int64)v49 < v27) {
                   *(_QWORD*)v49 = v50;

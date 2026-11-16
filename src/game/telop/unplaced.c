@@ -1231,13 +1231,13 @@ __int64 game_telop_1745d80(__int64 a1, __int64 a2, int a3, char a4, __int64 a5)
   __int64 v77;
   __int64 v78;
   struct {
+    char gap0_[32];
     _BYTE v84[32];
     _BYTE* v85;
-  } v84_;
-  struct {
+    char gap72_[8];
     _QWORD v86[4];
     _QWORD* v87;
-  } v86_;
+  } f_;
 
   if (a1 == 0) {
     return 0;
@@ -2012,56 +2012,56 @@ __int64 game_telop_1745d80(__int64 a1, __int64 a2, int a3, char a4, __int64 a5)
   *(_BYTE*)(v7 + 338) = 1;
   if (v74 != 0) {
     if (v74 == v71) {
-      v84_.v85 = v84_.v84;
-      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v74 + 24LL))(v74, v84_.v84);
-      v75 = v84_.v85;
+      f_.v85 = f_.v84;
+      (*(void (**)(__int64, _BYTE*))(*(_QWORD*)v74 + 24LL))(v74, f_.v84);
+      v75 = f_.v85;
     }
     else {
       v75 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v74 + 16LL))(v74);
-      v84_.v85 = v75;
+      f_.v85 = v75;
     }
     v76 = (_QWORD*)(v7 + 1328);
     *(_QWORD*)(v7 + 824) = a2;
     *(_DWORD*)(v7 + 832) = a3;
     if (v75 != nullptr) {
-      if (v75 == v84_.v84) {
-        v86_.v87 = v86_.v86;
-        (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v75 + 24LL))(v75, v86_.v86);
+      if (v75 == f_.v84) {
+        f_.v87 = f_.v86;
+        (*(void (**)(_BYTE*, _QWORD*))(*(_QWORD*)v75 + 24LL))(v75, f_.v86);
       }
       else {
-        v86_.v87 =
+        f_.v87 =
             (_QWORD*)(*(__int64 (**)(_BYTE*))(*(_QWORD*)v75 + 16LL))(v75);
       }
     }
     else {
-      v86_.v87 = nullptr;
+      f_.v87 = nullptr;
     }
   }
   else {
-    v84_.v85 = nullptr;
+    f_.v85 = nullptr;
     v76 = (_QWORD*)(v7 + 1328);
-    v86_.v87 = nullptr;
+    f_.v87 = nullptr;
     *(_QWORD*)(v7 + 824) = a2;
     *(_DWORD*)(v7 + 832) = a3;
   }
-  GameRoutine_654050_alt1(v86_.v86, v76);
-  if (v86_.v87 == v86_.v86) {
+  GameRoutine_654050_alt1(f_.v86, v76);
+  if (f_.v87 == f_.v86) {
     v77 = 32;
     goto LABEL_47;
   }
-  if (v86_.v87 != nullptr) {
+  if (f_.v87 != nullptr) {
     v77 = 40;
   LABEL_47:
-    (*(void (**)(__int64))(*v86_.v87 + v77))((__int64)v86_.v87);
+    (*(void (**)(__int64))(*f_.v87 + v77))((__int64)f_.v87);
   }
-  if (v84_.v85 == v84_.v84) {
+  if (f_.v85 == f_.v84) {
     v78 = 32;
     goto LABEL_52;
   }
-  if (v84_.v85 != nullptr) {
+  if (f_.v85 != nullptr) {
     v78 = 40;
   LABEL_52:
-    (*(void (**)(__int64))(*(_QWORD*)v84_.v85 + v78))((__int64)v84_.v85);
+    (*(void (**)(__int64))(*(_QWORD*)f_.v85 + v78))((__int64)f_.v85);
   }
   return v7;
 }

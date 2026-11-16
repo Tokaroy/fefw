@@ -225,6 +225,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
   float v58;
   __int128 v59;
   struct {
+    char gap0_[72];
     unsigned int v60;
     unsigned int v61;
     float v62;
@@ -235,14 +236,9 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     int v67;
     int v68;
     int v69;
-  } v60_;
-  struct {
     __int64 v70;
     int v71;
-  } v70_;
-  float32x4_t v72;
-  float32x4_t v73;
-  struct {
+    char gap124_[36];
     _QWORD v74[4];
     _QWORD* v75;
     char gap200_[76];
@@ -251,7 +247,9 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     char v77;
     char gap305_[39];
     __int64 v78;
-  } v74_;
+  } f_;
+  float32x4_t v72;
+  float32x4_t v73;
 
   if (*(_DWORD*)(GameData_21d96b8 + 8) == 1) {
     v1 = *(_QWORD*)(result + 88);
@@ -281,38 +279,38 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
                    0x1.4000000000000p+1f) +
            -0x1.4000000000000p+10f;
       do {
-        v70_.v70 = 0x10100000000LL;
-        v70_.v71 = 1;
-        v60_.v66 = v7;
-        v60_.v67 = v8;
-        v60_.v68 = v7;
-        v60_.v69 = v8;
-        *(float*)&v60_.v60 = (float)((float)((float)(unsigned int)(v7 + 256) *
+        f_.v70 = 0x10100000000LL;
+        f_.v71 = 1;
+        f_.v66 = v7;
+        f_.v67 = v8;
+        f_.v68 = v7;
+        f_.v69 = v8;
+        *(float*)&f_.v60 = (float)((float)((float)(unsigned int)(v7 + 256) *
                                              0x1.4000000000000p+2f) +
                                      0x1.4000000000000p+1f) +
                              -0x1.4000000000000p+10f;
-        *(float*)&v60_.v61 = (float)((float)((float)(unsigned int)(v8 + 256) *
+        *(float*)&f_.v61 = (float)((float)((float)(unsigned int)(v8 + 256) *
                                              0x1.4000000000000p+2f) +
                                      0x1.4000000000000p+1f) +
                              -0x1.4000000000000p+10f;
-        v60_.v62 = v9 + -0x1.4000000000000p+1f;
-        v60_.v63 = *(float*)&v60_.v61 + -0x1.4000000000000p+1f;
-        v60_.v64 = v9 + 0x1.4000000000000p+1f;
-        v60_.v65 = *(float*)&v60_.v61 + 0x1.4000000000000p+1f;
-        if ((GameRoutine_d740c0_alt1((__int64)&v60_.v60, (int*)&v70_.v70) &
+        f_.v62 = v9 + -0x1.4000000000000p+1f;
+        f_.v63 = *(float*)&f_.v61 + -0x1.4000000000000p+1f;
+        f_.v64 = v9 + 0x1.4000000000000p+1f;
+        f_.v65 = *(float*)&f_.v61 + 0x1.4000000000000p+1f;
+        if ((GameRoutine_d740c0_alt1((__int64)&f_.v60, (int*)&f_.v70) &
              1) != 0) {
-          LANES128(v12).n128_u64[0] = v60_.v60 | 0xC2C8000000000000LL;
+          LANES128(v12).n128_u64[0] = f_.v60 | 0xC2C8000000000000LL;
           v13 = (_QWORD*)*GameData_212ebd0[0];
-          LANES128(v14).n128_u64[0] = v60_.v60 | 0x4348000000000000LL;
-          LANES128(v14).n128_u64[1] = v60_.v61;
+          LANES128(v14).n128_u64[0] = f_.v60 | 0x4348000000000000LL;
+          LANES128(v14).n128_u64[1] = f_.v61;
           v73 = v14;
-          LANES128(v12).n128_u64[1] = v60_.v61;
+          LANES128(v12).n128_u64[1] = f_.v61;
           v72 = v12;
-          game_zview_d16620_alt1((void*)((__int64)v74_.v74), v13, &v73, &v72, 1,
+          game_zview_d16620_alt1((void*)((__int64)f_.v74), v13, &v73, &v72, 1,
                                  0x0.0p+0f);
-          v15 = v74_.v76;
+          v15 = f_.v76;
           v16 = i;
-          if (v74_.v77 == 0) {
+          if (f_.v77 == 0) {
             v15 = -0x1.9000000000000p+6f;
           }
           v58 = v15;
@@ -321,7 +319,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
               (float)((float)((float)(v7 | 0x100u) * 0x1.4000000000000p+2f) +
                       0x1.4000000000000p+1f) +
               -0x1.4000000000000p+10f);
-          v74_.v78 = v17;
+          f_.v78 = v17;
           *((float*)&v18 + 1) = v58;
           *((float*)&v18 + 2) =
               (float)((float)((float)(v8 | 0x100u) * 0x1.4000000000000p+2f) +
@@ -435,7 +433,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
           if (*(_QWORD*)(*i + 200) != 0) {
             v11 = 128;
           }
-          nn_mem_StandardAllocator_Free_alt2(*i + v11, v74_.v78);
+          nn_mem_StandardAllocator_Free_alt2(*i + v11, f_.v78);
         }
         ++v8;
       } while (v8 != 32);
@@ -486,15 +484,15 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     *(_QWORD*)(v55 + 16) = v49;
     *(_QWORD*)(v55 + 24) = v3;
     *(float*)(v55 + 32) = v47;
-    v74_.v75 = (_QWORD*)v55;
+    f_.v75 = (_QWORD*)v55;
     *(_QWORD*)v55 = GameData_1fdd4b0;
     *(_QWORD*)(v55 + 8) = v38;
-    fw_world_SwapCallables_alt1(v74_.v74, v51 + 4);
-    if (v74_.v75 == v74_.v74) {
+    fw_world_SwapCallables_alt1(f_.v74, v51 + 4);
+    if (f_.v75 == f_.v74) {
       v56 = 32;
     }
     else {
-      if (v74_.v75 == nullptr) {
+      if (f_.v75 == nullptr) {
       LABEL_58:
         fw_world_JobQueue_Submit_alt1(*(_QWORD*)(v40 + 16), v46);
         fw_world_JobContext_Wait_alt1(*v39, v46);
@@ -509,7 +507,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
       }
       v56 = 40;
     }
-    (*(void (**)(__int64))(*v74_.v75 + v56))((__int64)v74_.v75);
+    (*(void (**)(__int64))(*f_.v75 + v56))((__int64)f_.v75);
     goto LABEL_58;
   }
   return result;

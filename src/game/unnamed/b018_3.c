@@ -2582,14 +2582,13 @@ void GameHr_13dd670(__int64 a1)
   struct {
     _QWORD v27[4];
     _QWORD* v28;
-  } v27_;
-  struct {
+    char gap40_[8];
     __int64 v29;
     _BYTE* v30;
     char* v31;
     char gap72_[8];
     __int64* v32;
-  } v29_;
+  } f_;
 
   if (*(_QWORD*)(a1 + 280) != 0) {
     v2 = GameData_212dce8;
@@ -2618,29 +2617,29 @@ void GameHr_13dd670(__int64 a1)
           if (v11 == nullptr || *v11 == 0) {
             goto LABEL_19;
           }
-          v27_.v27[2] = v6;
-          v29_.v31 = (char*)v6;
-          v27_.v27[0] = GameData_2036130;
-          v27_.v27[1] = v11;
-          v27_.v28 = v27_.v27;
-          v29_.v29 = (__int64)GameData_2036130;
-          v29_.v30 = v11;
-          v29_.v32 = &v29_.v29;
-          GameRoutine_14514d0_alt1(&v29_.v29, v5 + 34);
-          if (v29_.v32 == &v29_.v29) {
+          f_.v27[2] = v6;
+          f_.v31 = (char*)v6;
+          f_.v27[0] = GameData_2036130;
+          f_.v27[1] = v11;
+          f_.v28 = f_.v27;
+          f_.v29 = (__int64)GameData_2036130;
+          f_.v30 = v11;
+          f_.v32 = &f_.v29;
+          GameRoutine_14514d0_alt1(&f_.v29, v5 + 34);
+          if (f_.v32 == &f_.v29) {
             v12 = 32;
           }
           else {
-            if (v29_.v32 == nullptr) {
+            if (f_.v32 == nullptr) {
             LABEL_14:
-              if (v27_.v28 == v27_.v27) {
+              if (f_.v28 == f_.v27) {
                 v13 = 32;
                 goto LABEL_18;
               }
-              if (v27_.v28 != nullptr) {
+              if (f_.v28 != nullptr) {
                 v13 = 40;
               LABEL_18:
-                (*(void (**)(__int64))(*v27_.v28 + v13))((__int64)v27_.v28);
+                (*(void (**)(__int64))(*f_.v28 + v13))((__int64)f_.v28);
               }
             LABEL_19:
               v14 = *(_BYTE**)(v10 + 328);
@@ -2659,13 +2658,13 @@ void GameHr_13dd670(__int64 a1)
                   }
                   v17 = (char*)fw_memory_HeapManager_Allocate(
                       fw_memory_g_heap_manager, v18, 16, 0);
-                  v29_.v30 = (_BYTE*)v16;
-                  v29_.v31 = v17;
-                  v29_.v29 = v18 | 1;
+                  f_.v30 = (_BYTE*)v16;
+                  f_.v31 = v17;
+                  f_.v29 = v18 | 1;
                 }
                 else {
-                  LOBYTE(v29_.v29) = 2 * v15;
-                  v17 = (char*)&v29_.v29 + 1;
+                  LOBYTE(f_.v29) = 2 * v15;
+                  v17 = (char*)&f_.v29 + 1;
                   if (v15 == 0) {
                   LABEL_30:
                     v17[v16] = 0;
@@ -2677,39 +2676,39 @@ void GameHr_13dd670(__int64 a1)
                     else {
                       if (v19 == nullptr) {
                       LABEL_35:
-                        v21 = v29_.v29;
+                        v21 = f_.v29;
                         v22 = v5 + 46;
-                        if (v5 + 46 != &v29_.v29) {
+                        if (v5 + 46 != &f_.v29) {
                           if ((*(_BYTE*)v22 & 1) != 0) {
-                            if ((v29_.v29 & 1) != 0) {
-                              v24 = v29_.v31;
+                            if ((f_.v29 & 1) != 0) {
+                              v24 = f_.v31;
                             }
                             else {
-                              v24 = (char*)&v29_.v29 + 1;
+                              v24 = (char*)&f_.v29 + 1;
                             }
-                            if ((v29_.v29 & 1) != 0) {
-                              v25 = (unsigned __int64)v29_.v30;
+                            if ((f_.v29 & 1) != 0) {
+                              v25 = (unsigned __int64)f_.v30;
                             }
                             else {
                               v25 =
-                                  (unsigned __int64)(unsigned __int8)v29_.v29 >>
+                                  (unsigned __int64)(unsigned __int8)f_.v29 >>
                                   1;
                             }
                             SpineModel_64dde0(v22, (__int64)v24, v25);
-                            v21 = v29_.v29;
+                            v21 = f_.v29;
                           }
-                          else if ((v29_.v29 & 1) != 0) {
-                            GameRoutine_64df20_alt1(v22, (__int64)v29_.v31,
-                                                    (unsigned __int64)v29_.v30);
+                          else if ((f_.v29 & 1) != 0) {
+                            GameRoutine_64df20_alt1(v22, (__int64)f_.v31,
+                                                    (unsigned __int64)f_.v30);
                           }
                           else {
-                            v23 = (unsigned __int64)v29_.v30;
-                            *v22 = v29_.v29;
+                            v23 = (unsigned __int64)f_.v30;
+                            *v22 = f_.v29;
                             v5[47] = v23;
-                            v5[48] = v29_.v31;
+                            v5[48] = f_.v31;
                           }
                         }
-                        if ((v21 & 1) != 0 && v29_.v31 != nullptr) {
+                        if ((v21 & 1) != 0 && f_.v31 != nullptr) {
                           v26 = 128;
                           if (*(_QWORD*)(*(_QWORD*)
                                              fw_memory_g_heap_manager_ptr +
@@ -2718,7 +2717,7 @@ void GameHr_13dd670(__int64 a1)
                           }
                           nn_mem_StandardAllocator_Free(
                               *(_QWORD*)fw_memory_g_heap_manager_ptr + v26,
-                              (__int64)v29_.v31);
+                              (__int64)f_.v31);
                         }
                         goto LABEL_52;
                       }
@@ -2741,7 +2740,7 @@ void GameHr_13dd670(__int64 a1)
             }
             v12 = 40;
           }
-          (*(void (**)(__int64))(*v29_.v32 + v12))((__int64)v29_.v32);
+          (*(void (**)(__int64))(*f_.v32 + v12))((__int64)f_.v32);
           goto LABEL_14;
         }
       }

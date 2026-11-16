@@ -2842,15 +2842,15 @@ __attribute__((swiftcall)) void game_hub_cb9480(PSEUDO_X8 x8_, __int64 a1,
   __int64 v59;
   __int64 v60[2];
   struct {
+    char gap0_[24];
     float32x4_t* v61;
     __int64 v62;
-  } v61_;
-  _QWORD v63[14];
-  struct {
+    char gap40_[112];
     __int64 v64;
     char gap160_[744];
     float32x4_t** v65;
-  } v64_;
+  } f_;
+  _QWORD v63[14];
 
   result = game_hub_cb9a30(a1);
   v7 = *(_QWORD*)(a1 + 80);
@@ -2887,7 +2887,7 @@ __attribute__((swiftcall)) void game_hub_cb9480(PSEUDO_X8 x8_, __int64 a1,
       v18 = *((unsigned __int8**)a2 + 2);
       v20 = (v17 & 1) == 0;
       v21 = v17 >> 1;
-      v64_.v65 = a3;
+      f_.v65 = a3;
       if (v20) {
         v22 = a2 + 1;
       }
@@ -2979,14 +2979,14 @@ __attribute__((swiftcall)) void game_hub_cb9480(PSEUDO_X8 x8_, __int64 a1,
         v26 = 0;
       }
       game_hub_cb8620_alt1((void*)(v63), v16, a2);
-      GameRoutine_60a020_alt1((__int64)&v64_.v64, (__int64)&GameData_1a9180c);
-      game_hub_cb8930((void*)(&v61_.v61), (_QWORD*)a1, (__int64)v63,
+      GameRoutine_60a020_alt1((__int64)&f_.v64, (__int64)&GameData_1a9180c);
+      game_hub_cb8930((void*)(&f_.v61), (_QWORD*)a1, (__int64)v63,
                       0x100000000LL);
-      v39 = v61_.v62;
-      if (v61_.v62 != 0) {
-        v40 = std___1___shared_weak_count_lock(v61_.v62);
+      v39 = f_.v62;
+      if (f_.v62 != 0) {
+        v40 = std___1___shared_weak_count_lock(f_.v62);
         if (v40 != 0) {
-          v41 = v61_.v61;
+          v41 = f_.v61;
         }
         else {
           v41 = nullptr;
@@ -3088,7 +3088,7 @@ __attribute__((swiftcall)) void game_hub_cb9480(PSEUDO_X8 x8_, __int64 a1,
         if (v54 != 0) {
           std___1___shared_weak_count___release_weak(v54);
         }
-        v55 = v64_.v65;
+        v55 = f_.v65;
         if (v40 != 0) {
           atomic_fetch_add_explicit((atomic_ullong* volatile)(v40 + 16), 1u,
                                     memory_order_relaxed);
@@ -3115,7 +3115,7 @@ __attribute__((swiftcall)) void game_hub_cb9480(PSEUDO_X8 x8_, __int64 a1,
           atomic_fetch_add_explicit((atomic_ullong* volatile)(v33 + 16), 1u,
                                     memory_order_relaxed);
         }
-        v55 = v64_.v65;
+        v55 = f_.v65;
         *(_QWORD*)(a1 + 176) = v41;
         *(_QWORD*)(a1 + 184) = v40;
         if (v40 != 0) {

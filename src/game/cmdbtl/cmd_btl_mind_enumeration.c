@@ -2345,14 +2345,19 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   int v111;
   int v112;
   struct {
-    char gap48_[8];
+    char gap0_[56];
     __int64 v113;
     __int128 v114;
     __int64 v115;
     __int64 v116;
     __int64 v117;
     _BYTE v118[12];
-  } v113_;
+    char gap116_[92];
+    __int64 v128;
+    __int64 v129;
+    char gap224_[4];
+    char v130;
+  } f_;
   _QWORD v119[3];
   int v120;
   _QWORD* v121;
@@ -2362,12 +2367,6 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   __int64 v125;
   int v126;
   _QWORD v127[2];
-  struct {
-    __int64 v128;
-    __int64 v129;
-    char gap224_[4];
-    char v130;
-  } v128_;
 
   v105 = COERCE_AS(__typeof__(v105),
                    PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
@@ -2387,20 +2386,20 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   v9 = *(__int64**)(a1 + 24);
   v11 = *v9;
   v10 = v9[1];
-  v128_.v128 = v11;
-  v128_.v129 = v10;
+  f_.v128 = v11;
+  f_.v129 = v10;
   if (v10 != 0) {
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v10 + 8), 1u,
                               memory_order_relaxed);
   }
-  v12 = game_cmdbtl_e76460(v4, &v128_.v128, (__int64)a2, v111),
+  v12 = game_cmdbtl_e76460(v4, &f_.v128, (__int64)a2, v111),
   v105 = COERCE_AS(__typeof__(v105),
                    PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
   v65 = COERCE_AS(__typeof__(v65),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  v13 = v128_.v129;
-  if (v128_.v129 != 0 &&
-      atomic_fetch_add((atomic_ullong* volatile)(v128_.v129 + 8),
+  v13 = f_.v129;
+  if (f_.v129 != 0 &&
+      atomic_fetch_add((atomic_ullong* volatile)(f_.v129 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     v82 = v12;
     (*(void (**)(__int64))(*(_QWORD*)v13 + 16LL))(v13),
@@ -2479,16 +2478,16 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         goto LABEL_15;
       }
       v112 = 0;
-      LOBYTE(v113_.v114) = 0;
-      v113_.v115 = 0;
-      v113_.v116 = 0;
-      v113_.v117 = 0;
-      *(_QWORD*)&v113_.v118[4] = 0;
+      LOBYTE(f_.v114) = 0;
+      f_.v115 = 0;
+      f_.v116 = 0;
+      f_.v117 = 0;
+      *(_QWORD*)&f_.v118[4] = 0;
       memset(v119, 0, sizeof(v119));
-      *(_QWORD*)((char*)&v113_.v114 + 4) = 0xFFFFFFFF00000000LL;
-      *(_DWORD*)v113_.v118 = -1;
+      *(_QWORD*)((char*)&f_.v114 + 4) = 0xFFFFFFFF00000000LL;
+      *(_DWORD*)f_.v118 = -1;
       v120 = 0;
-      v113_.v113 = v109;
+      f_.v113 = v109;
       v121 = nullptr;
       v122 = nullptr;
       v26 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
@@ -2505,7 +2504,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
       v26[8] = 0;
       v26[9] = 0;
       v26[10] = 0;
-      v26[4] = &v113_.v113;
+      v26[4] = &f_.v113;
       v26[5] = 0;
       v122 = v26;
       *v26 = v108;
@@ -2527,14 +2526,14 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
       v126 = 0;
       v124 = 0;
       v125 = 0;
-      v29 = v113_.v117;
+      v29 = f_.v117;
       v123 = 0;
       v30 = *(_DWORD*)(v5 + 8);
-      LOBYTE(v113_.v114) = 0;
-      v113_.v115 = 0;
-      v113_.v116 = 0;
-      v113_.v117 = 0;
-      *(_QWORD*)((char*)&v113_.v114 + 4) = v30 | 0xFFFFFFFF00000000LL;
+      LOBYTE(f_.v114) = 0;
+      f_.v115 = 0;
+      f_.v116 = 0;
+      f_.v117 = 0;
+      *(_QWORD*)((char*)&f_.v114 + 4) = v30 | 0xFFFFFFFF00000000LL;
       if (v29 != 0) {
         v27 = std___1___shared_weak_count___release_weak_alt1(v29),
         v105 = COERCE_AS(__typeof__(v105),
@@ -2542,16 +2541,16 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         v65 = COERCE_AS(__typeof__(v65),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
       }
-      *(_QWORD*)v113_.v118 = 0xFFFFFFFFLL;
-      *(_DWORD*)&v113_.v118[8] = 0;
-      (*(void (**)(__int64*, long double))(v113_.v113 + 56))(
-          &v113_.v113, *(long double*)&v27),
+      *(_QWORD*)f_.v118 = 0xFFFFFFFFLL;
+      *(_DWORD*)&f_.v118[8] = 0;
+      (*(void (**)(__int64*, long double))(f_.v113 + 56))(
+          &f_.v113, *(long double*)&v27),
           v105 = COERCE_AS(__typeof__(v105),
                            PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v65 = COERCE_AS(__typeof__(v65),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
       v32 = *(__int64**)(a1 + 24);
-      LOBYTE(v113_.v114) = *(_BYTE*)(a1 + 32);
+      LOBYTE(f_.v114) = *(_BYTE*)(a1 + 32);
       v33 = *v32;
       v34 = v32[1];
       if (v34 != 0) {
@@ -2560,9 +2559,9 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         atomic_fetch_add_explicit((atomic_ullong* volatile)(v34 + 16), 1u,
                                   memory_order_relaxed);
       }
-      v35 = v113_.v117;
-      v113_.v116 = v33;
-      v113_.v117 = v34;
+      v35 = f_.v117;
+      f_.v116 = v33;
+      f_.v117 = v34;
       if (v35 != 0) {
         v31 = std___1___shared_weak_count___release_weak_alt1(v35),
         v105 = COERCE_AS(__typeof__(v105),
@@ -2577,12 +2576,12 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         v65 = COERCE_AS(__typeof__(v65),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
       }
-      DWORD2(v113_.v114) = v17;
+      DWORD2(f_.v114) = v17;
       v36 = 0;
       v37 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
                        8LL * (*a2 & 0xFFF));
       v38 = *(_QWORD*)(a1 + 24);
-      v113_.v115 = v37;
+      f_.v115 = v37;
       v39 = *(_QWORD**)(*(_QWORD*)v38 + 16LL);
       if (v39 != nullptr && *(_BYTE*)(v37 + 275) != 0) {
         v40 = v39[218];
@@ -2592,7 +2591,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
                 ((*(_DWORD*)(v40 + 4 * ((v41 >> 5) & 0x7F)) >> v41) & 1) != 0 ||
             ((v42 = v39[55]) == 0 ? (v43 = 9) : (v43 = *(_BYTE*)(v42 + 16)),
              ((1 << v43) & 6) != 0 ||
-                 (v128_.v130 = 0,
+                 (f_.v130 = 0,
                   (v65 = game_Unit_GetParam((__int64)v39)) < 1))) {
           v36 = 0;
         }
@@ -2652,24 +2651,24 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
       else {
         *(_DWORD*)v51 = v112;
         *(_QWORD*)(v51 + 8) = v106;
-        v52 = v113_.v114;
-        v53 = v113_.v115;
-        *(_QWORD*)(v51 + 24) = *((_QWORD*)&v113_.v114 + 1);
+        v52 = f_.v114;
+        v53 = f_.v115;
+        *(_QWORD*)(v51 + 24) = *((_QWORD*)&f_.v114 + 1);
         *(_QWORD*)(v51 + 32) = v53;
         *(_QWORD*)(v51 + 16) = v52;
-        *(_QWORD*)(v51 + 40) = v113_.v116;
-        v54 = v113_.v117;
-        *(_QWORD*)(v51 + 48) = v113_.v117;
+        *(_QWORD*)(v51 + 40) = f_.v116;
+        v54 = f_.v117;
+        *(_QWORD*)(v51 + 48) = f_.v117;
         if (v54 != 0) {
           atomic_fetch_add_explicit((atomic_ullong* volatile)(v54 + 16), 1u,
                                     memory_order_relaxed);
         }
-        v55 = *(_DWORD*)v113_.v118;
+        v55 = *(_DWORD*)f_.v118;
         *(_QWORD*)(v51 + 72) = 0;
         *(_QWORD*)(v51 + 80) = 0;
         *(_QWORD*)(v51 + 88) = 0;
-        *(_QWORD*)(v51 + 56) = __PAIR64__(*(unsigned int*)&v113_.v118[4], v55);
-        *(_DWORD*)(v51 + 64) = *(_DWORD*)&v113_.v118[8];
+        *(_QWORD*)(v51 + 56) = __PAIR64__(*(unsigned int*)&f_.v118[4], v55);
+        *(_DWORD*)(v51 + 64) = *(_DWORD*)&f_.v118[8];
         *(_DWORD*)(v51 + 68) = v119[0];
         v56 = *(_QWORD**)((char*)v119 + 4);
         v57 = *(_QWORD**)((char*)&v119[1] + 4);
@@ -2722,7 +2721,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         *(_QWORD*)(v51 + 112) = v62;
       }
       *(_QWORD*)(v5 + 56) = v18;
-      MindBtlInfo_Destructor_alt1(&v113_.v113),
+      MindBtlInfo_Destructor_alt1(&f_.v113),
           v105 = COERCE_AS(__typeof__(v105),
                            PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v65 = COERCE_AS(__typeof__(v65),
@@ -2734,16 +2733,16 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
     }
   }
   v112 = 0;
-  LOBYTE(v113_.v114) = 0;
-  v113_.v115 = 0;
-  v113_.v116 = 0;
-  *(_QWORD*)((char*)&v113_.v114 + 4) = 0xFFFFFFFF00000000LL;
-  v113_.v117 = 0;
-  *(_DWORD*)v113_.v118 = -1;
-  *(_QWORD*)&v113_.v118[4] = 0;
+  LOBYTE(f_.v114) = 0;
+  f_.v115 = 0;
+  f_.v116 = 0;
+  *(_QWORD*)((char*)&f_.v114 + 4) = 0xFFFFFFFF00000000LL;
+  f_.v117 = 0;
+  *(_DWORD*)f_.v118 = -1;
+  *(_QWORD*)&f_.v118[4] = 0;
   memset(v119, 0, sizeof(v119));
   v120 = 0;
-  v113_.v113 = GameData_212f730[0] + 16;
+  f_.v113 = GameData_212f730[0] + 16;
   v121 = nullptr;
   v122 = nullptr;
   v66 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
@@ -2759,7 +2758,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   v66[8] = 0;
   v66[9] = 0;
   v66[10] = 0;
-  v66[4] = &v113_.v113;
+  v66[4] = &f_.v113;
   v66[5] = 0;
   v122 = v66;
   *v66 = v15 + 2;
@@ -2768,14 +2767,14 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   v126 = 0;
   v124 = 0;
   v125 = 0;
-  v67 = v113_.v117;
+  v67 = f_.v117;
   v123 = 0;
   v68 = *(_DWORD*)(v5 + 8);
-  LOBYTE(v113_.v114) = 0;
-  v113_.v115 = 0;
-  v113_.v116 = 0;
-  v113_.v117 = 0;
-  *(_QWORD*)((char*)&v113_.v114 + 4) = v68 | 0xFFFFFFFF00000000LL;
+  LOBYTE(f_.v114) = 0;
+  f_.v115 = 0;
+  f_.v116 = 0;
+  f_.v117 = 0;
+  *(_QWORD*)((char*)&f_.v114 + 4) = v68 | 0xFFFFFFFF00000000LL;
   if (v67 != 0) {
     std___1___shared_weak_count___release_weak_alt1(v67),
         v105 = COERCE_AS(__typeof__(v105),
@@ -2783,16 +2782,16 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
         v65 = COERCE_AS(__typeof__(v65),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   }
-  *(_DWORD*)&v113_.v118[8] = 0;
-  *(_QWORD*)v113_.v118 = 0xFFFFFFFFLL;
-  (*(void (**)(__int64))((char*)((_UNKNOWN**)0x38LL) + v113_.v113))(
-      (__int64)&v113_.v113),
+  *(_DWORD*)&f_.v118[8] = 0;
+  *(_QWORD*)f_.v118 = 0xFFFFFFFFLL;
+  (*(void (**)(__int64))((char*)((_UNKNOWN**)0x38LL) + f_.v113))(
+      (__int64)&f_.v113),
       v105 = COERCE_AS(__typeof__(v105),
                        PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
       v65 = COERCE_AS(__typeof__(v65),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v70 = *(__int64**)(a1 + 24);
-  LOBYTE(v113_.v114) = *(_BYTE*)(a1 + 32);
+  LOBYTE(f_.v114) = *(_BYTE*)(a1 + 32);
   v71 = *v70;
   v72 = v70[1];
   if (v72 != 0) {
@@ -2801,9 +2800,9 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v72 + 16), 1u,
                               memory_order_relaxed);
   }
-  v73 = v113_.v117;
-  v113_.v116 = v71;
-  v113_.v117 = v72;
+  v73 = f_.v117;
+  f_.v116 = v71;
+  f_.v117 = v72;
   if (v73 != 0) {
     v69 = std___1___shared_weak_count___release_weak_alt1(v73),
     v105 = COERCE_AS(__typeof__(v105),
@@ -2821,7 +2820,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   v74 = 0;
   v75 = *(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) + 8LL * (*a2 & 0xFFF));
   v76 = *(_QWORD*)(a1 + 24);
-  v113_.v115 = v75;
+  f_.v115 = v75;
   v77 = *(_QWORD**)(*(_QWORD*)v76 + 16LL);
   if (v77 != nullptr && *(_BYTE*)(v75 + 275) != 0) {
     v78 = v77[218];
@@ -2889,24 +2888,24 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
   else {
     *(_DWORD*)v90 = v112;
     *(_QWORD*)(v90 + 8) = GameData_212f738 + 16;
-    v91 = v113_.v114;
-    v92 = v113_.v115;
-    *(_QWORD*)(v90 + 24) = *((_QWORD*)&v113_.v114 + 1);
+    v91 = f_.v114;
+    v92 = f_.v115;
+    *(_QWORD*)(v90 + 24) = *((_QWORD*)&f_.v114 + 1);
     *(_QWORD*)(v90 + 32) = v92;
     *(_QWORD*)(v90 + 16) = v91;
-    *(_QWORD*)(v90 + 40) = v113_.v116;
-    v93 = v113_.v117;
-    *(_QWORD*)(v90 + 48) = v113_.v117;
+    *(_QWORD*)(v90 + 40) = f_.v116;
+    v93 = f_.v117;
+    *(_QWORD*)(v90 + 48) = f_.v117;
     if (v93 != 0) {
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v93 + 16), 1u,
                                 memory_order_relaxed);
     }
-    v94 = *(_DWORD*)v113_.v118;
+    v94 = *(_DWORD*)f_.v118;
     *(_QWORD*)(v90 + 72) = 0;
     *(_QWORD*)(v90 + 80) = 0;
     *(_QWORD*)(v90 + 88) = 0;
-    *(_QWORD*)(v90 + 56) = __PAIR64__(*(unsigned int*)&v113_.v118[4], v94);
-    *(_DWORD*)(v90 + 64) = *(_DWORD*)&v113_.v118[8];
+    *(_QWORD*)(v90 + 56) = __PAIR64__(*(unsigned int*)&f_.v118[4], v94);
+    *(_DWORD*)(v90 + 64) = *(_DWORD*)&f_.v118[8];
     *(_DWORD*)(v90 + 68) = v119[0];
     v95 = *(_QWORD**)((char*)v119 + 4);
     v96 = *(_QWORD**)((char*)&v119[1] + 4);
@@ -2962,7 +2961,7 @@ void game_cmdbtl_CmdBtlMindEnumeration_CalcWholeMind_SkillMind_lambda0_Invoke(
     *(_QWORD*)(v90 + 112) = v102;
   }
   *(_QWORD*)(v5 + 56) = v100;
-  MindBtlInfo_Destructor_alt1(&v113_.v113),
+  MindBtlInfo_Destructor_alt1(&f_.v113),
       v105 = COERCE_AS(__typeof__(v105),
                        PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
       v65 = COERCE_AS(__typeof__(v65),

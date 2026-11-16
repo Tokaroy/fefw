@@ -964,11 +964,10 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
   unsigned __int64 v70;
   int v71;
   struct {
+    char gap0_[96];
     float32x4_t v72;
     __int64 v73;
-  } v72_;
-  float32x4_t v74;
-  struct {
+    char gap120_[24];
     __int128 v75;
     __int128 v76;
     __int64 v77;
@@ -980,7 +979,8 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
     __int16 v83;
     char gap222_[2];
     char v84;
-  } v75_;
+  } f_;
+  float32x4_t v74;
 
   v1 = a1;
   if (*(_BYTE*)(a1 + 100) != 1) {
@@ -1049,13 +1049,13 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
       v17 = (float32x4_t*)v15;
       do {
         v19 = *v17;
-        v72_.v72 = vaddq_f32(*v17, COERCE_AS(float32x4_t, GameData_1a82f60));
+        f_.v72 = vaddq_f32(*v17, COERCE_AS(float32x4_t, GameData_1a82f60));
         v74 = vaddq_f32(v19, COERCE_AS(float32x4_t, GameData_1a832d0));
-        collision_670c60_alt1((void*)((__int64)&v75_.v75), &v72_.v72, &v74,
+        collision_670c60_alt1((void*)((__int64)&f_.v75), &f_.v72, &v74,
                               0x100000001LL);
-        if (v75_.v84 == 1) {
-          v20 = DWORD2(v75_.v75);
-          LANES128(*(v17)).n128_u64[0] = v75_.v75;
+        if (f_.v84 == 1) {
+          v20 = DWORD2(f_.v75);
+          LANES128(*(v17)).n128_u64[0] = f_.v75;
           v18 = *v17;
           LANES128(v18).n128_u64[1] = v20;
         }
@@ -1119,22 +1119,22 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
     v69 = v8;
     v8 = v15;
   }
-  v75_.v76 = (__typeof__(v75_.v76)){0};
-  v75_.v75 = (__typeof__(v75_.v75)){0};
+  f_.v76 = (__typeof__(f_.v76)){0};
+  f_.v75 = (__typeof__(f_.v75)){0};
   v65 = v25;
-  v75_.v83 = 256;
+  f_.v83 = 256;
   v30 = *(_QWORD*)(*(_QWORD*)v9 + 24LL);
   v31 = *(_QWORD*)(v30 + 312);
   v32 = *(_DWORD*)(v30 + 528);
-  v75_.v79 = *(_QWORD*)(v30 + 304);
-  v75_.v80 = v31;
+  f_.v79 = *(_QWORD*)(v30 + 304);
+  f_.v80 = v31;
   v33 = *(_QWORD*)(v30 + 320);
-  v75_.v82 = v32;
-  v75_.v81 = v33;
+  f_.v82 = v32;
+  f_.v81 = v33;
   v34 = *(_QWORD*)(v30 + 296);
   v70 = ((__int64)v25 - v8) >> 4;
-  v75_.v77 = *(_QWORD*)(v30 + 288);
-  v75_.v78 = v34;
+  f_.v77 = *(_QWORD*)(v30 + 288);
+  f_.v78 = v34;
   if ((int)v70 >= 2) {
     LODWORD(v35) = 0;
     v36 = GameData_212ee30[0];
@@ -1154,21 +1154,21 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
         v40 = v8;
         v41 = v8 + 16 * v35;
         v42 = (_QWORD*)*v36;
-        *(_QWORD*)&v75_.v75 = *(_QWORD*)v37;
-        *(_QWORD*)&v43 = v75_.v75;
+        *(_QWORD*)&f_.v75 = *(_QWORD*)v37;
+        *(_QWORD*)&v43 = f_.v75;
         *((_QWORD*)&v43 + 1) = *(unsigned int*)(v37 + 8);
-        v75_.v75 = v43;
-        LODWORD(v75_.v76) = *(_OWORD*)v41;
-        DWORD1(v75_.v76) = *(_DWORD*)(v41 + 4);
-        *(_QWORD*)&v43 = v75_.v76;
+        f_.v75 = v43;
+        LODWORD(f_.v76) = *(_OWORD*)v41;
+        DWORD1(f_.v76) = *(_DWORD*)(v41 + 4);
+        *(_QWORD*)&v43 = f_.v76;
         DWORD2(v43) = *(_DWORD*)(v41 + 8);
-        v72_.v73 = 0;
-        v72_.v72 = (__typeof__(v72_.v72)){0};
-        LOBYTE(v75_.v83) = 1;
+        f_.v73 = 0;
+        f_.v72 = (__typeof__(f_.v72)){0};
+        LOBYTE(f_.v83) = 1;
         v44 = (_QWORD*)v42[7];
         v45 = (_QWORD*)v42[8];
         *((_QWORD*)&v43 + 1) = DWORD2(v43);
-        v75_.v76 = v43;
+        f_.v76 = v43;
         while (1) {
           if (v44 == v45) {
             v47 = 0;
@@ -1181,9 +1181,9 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
           v46 = *v44;
           if (((*(__int64 (**)(_QWORD))(*(_QWORD*)*v44 + 32LL))(*v44) & 1) !=
                   0 &&
-              ((v75_.v83 & 0x100) != 0 || v42[1] != v46) &&
+              ((f_.v83 & 0x100) != 0 || v42[1] != v46) &&
               ((*(__int64 (**)(__int64, __int128*, float32x4_t*))(
-                   *(_QWORD*)v46 + 24LL))(v46, &v75_.v75, &v72_.v72) &
+                   *(_QWORD*)v46 + 24LL))(v46, &f_.v75, &f_.v72) &
                1) != 0) {
             break;
           }
@@ -1192,15 +1192,15 @@ bool CharacterBehaviorStack_StackMoveLoop_Destructor(__int64 a1)
         v47 = 1;
       LABEL_63:
         v8 = v40;
-        if (LANES128(v72_.v72).n128_u64[0] != 0) {
-          LANES128(v72_.v72).n128_u64[1] = LANES128(v72_.v72).n128_u64[0];
+        if (LANES128(f_.v72).n128_u64[0] != 0) {
+          LANES128(f_.v72).n128_u64[1] = LANES128(f_.v72).n128_u64[0];
           v49 = 128;
           if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
             v49 = 56;
           }
           nn_mem_StandardAllocator_Free_alt2(
               *(_QWORD*)fw_memory_g_heap_manager_ptr + v49,
-              LANES128(v72_.v72).n128_i64[0]);
+              LANES128(f_.v72).n128_i64[0]);
         }
         if (v47 != 0) {
           goto LABEL_47;
@@ -1277,7 +1277,7 @@ LABEL_97:
     nn_mem_StandardAllocator_Free_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v57, v69);
   }
-  CharacterBehaviorStack_df6260_alt2((__int64*)&v75_.v75, v2);
+  CharacterBehaviorStack_df6260_alt2((__int64*)&f_.v75, v2);
   v58 = *(_QWORD*)(v1 + 72);
   if (v58 != 0) {
     *(_QWORD*)(v1 + 80) = v58;
@@ -1288,12 +1288,12 @@ LABEL_97:
     nn_mem_StandardAllocator_Free_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v59, v58);
   }
-  *(_OWORD*)(v1 + 72) = v75_.v75;
-  *(_QWORD*)(v1 + 88) = v75_.v76;
+  *(_OWORD*)(v1 + 72) = f_.v75;
+  *(_QWORD*)(v1 + 88) = f_.v76;
 LABEL_106:
   v60 = *(_QWORD*)(v1 + 16);
   v61 = *(_DWORD*)(v1 + 96);
-  LODWORD(v75_.v75) = 1;
+  LODWORD(f_.v75) = 1;
   v62 = *(_QWORD*)(*(_QWORD*)(v60 + 16) + 24LL);
   *(_DWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v62 + 16) + 40LL) + 8LL) + 64LL) =
       v61;
@@ -1302,7 +1302,7 @@ LABEL_106:
   *(_BYTE*)(v63 + 32) = 1;
   *(_DWORD*)(v63 + 28) = 1065353216;
   result = CharacterController_d42740((_QWORD*)v63, (float32x4_t**)(v1 + 48),
-                                      (int*)&v75_.v75);
+                                      (int*)&f_.v75);
   *(_BYTE*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 16) + 16LL) + 24LL) + 432LL) =
       1;
   return result;

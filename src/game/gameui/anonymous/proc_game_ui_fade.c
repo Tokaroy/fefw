@@ -246,13 +246,13 @@ __int64 game_gameui_anonymous_ProcGameUIFade_In(__int64 result, int a2,
   int v62;
   int v63;
   struct {
+    char gap0_[32];
     _QWORD v66[4];
     _QWORD* v67;
-  } v66_;
-  struct {
+    char gap72_[8];
     _BYTE v68[32];
     _BYTE* v69;
-  } v68_;
+  } f_;
 
   if ((*(_BYTE*)(result + 152) & 1) != 0) {
     return result;
@@ -266,37 +266,37 @@ __int64 game_gameui_anonymous_ProcGameUIFade_In(__int64 result, int a2,
        (v12 = *(_QWORD*)(v11 + 32)) != 0)) {
     v13 = a5;
     if (v12 == v11) {
-      v68_.v69 = v68_.v68;
+      f_.v69 = f_.v68;
       (*(void (**)(_QWORD, _BYTE*))(**(_QWORD**)(v11 + 32) + 24LL))(
-          *(_QWORD*)(v11 + 32), v68_.v68);
+          *(_QWORD*)(v11 + 32), f_.v68);
     }
     else {
-      v68_.v69 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
+      f_.v69 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v12 + 16LL))(v12);
     }
     a5 = v13;
   }
   else {
-    v68_.v69 = nullptr;
+    f_.v69 = nullptr;
   }
   v14 = *(_QWORD*)(v10 + 40);
   v63 = a5;
   if (v14 == 0) {
   LABEL_46:
-    v66_.v66[0] = GameData_205c4f0;
-    v66_.v66[1] = v10;
-    v66_.v67 = v66_.v66;
-    ProcGameUIFade_15e32a0(v10, 1, a2, a3, a4, v63, a6, (__int64)v66_.v66,
-                           (__int64)v68_.v68);
-    if (v66_.v67 == v66_.v66) {
+    f_.v66[0] = GameData_205c4f0;
+    f_.v66[1] = v10;
+    f_.v67 = f_.v66;
+    ProcGameUIFade_15e32a0(v10, 1, a2, a3, a4, v63, a6, (__int64)f_.v66,
+                           (__int64)f_.v68);
+    if (f_.v67 == f_.v66) {
       v35 = 32;
     }
     else {
-      if (v66_.v67 == nullptr) {
+      if (f_.v67 == nullptr) {
         goto LABEL_51;
       }
       v35 = 40;
     }
-    (*(void (**)(__int64))(*v66_.v67 + v35))((__int64)v66_.v67);
+    (*(void (**)(__int64))(*f_.v67 + v35))((__int64)f_.v67);
     goto LABEL_51;
   }
   if ((unsigned int)(a3 - 1) >= 2) {
@@ -567,16 +567,16 @@ LABEL_43:
     }
   }
 LABEL_51:
-  result = (__int64)v68_.v69;
-  if (v68_.v69 == v68_.v68) {
+  result = (__int64)f_.v69;
+  if (f_.v69 == f_.v68) {
     v36 = 32;
-    return (*(__int64 (**)(__int64))(*(_QWORD*)v68_.v69 + v36))(
-        (__int64)v68_.v69);
+    return (*(__int64 (**)(__int64))(*(_QWORD*)f_.v69 + v36))(
+        (__int64)f_.v69);
   }
-  else if (v68_.v69 != nullptr) {
+  else if (f_.v69 != nullptr) {
     v36 = 40;
-    return (*(__int64 (**)(__int64))(*(_QWORD*)v68_.v69 + v36))(
-        (__int64)v68_.v69);
+    return (*(__int64 (**)(__int64))(*(_QWORD*)f_.v69 + v36))(
+        (__int64)f_.v69);
   }
   return result;
 }

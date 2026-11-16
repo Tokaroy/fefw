@@ -495,11 +495,10 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
   struct {
     _QWORD v23[4];
     _QWORD* v24;
-  } v23_;
-  struct {
+    char gap40_[8];
     _QWORD v25[4];
     _QWORD* v26;
-  } v25_;
+  } f_;
 
   if ((*(_BYTE*)(a1[132] + 356LL) & 1) == 0) {
     return 3;
@@ -511,10 +510,10 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
   }
   v3 = (_QWORD*)a1[29];
   v4 = (_QWORD*)a1[30];
-  v5 = v25_.v25;
-  v25_.v25[0] = GameData_20d7740;
-  v25_.v25[1] = a1;
-  v25_.v26 = v25_.v25;
+  v5 = f_.v25;
+  f_.v25[0] = GameData_20d7740;
+  f_.v25[1] = a1;
+  f_.v26 = f_.v25;
   if (v3 == v4) {
     v8 = 0;
   LABEL_18:
@@ -527,13 +526,13 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
       v7 = __dynamic_cast(*v3, v6, &GameData_20d7488, 0);
       if (v7 != 0) {
         v8 = v7;
-        v23_.v23[0] = v7;
-        if (v25_.v26 == nullptr) {
+        f_.v23[0] = v7;
+        if (f_.v26 == nullptr) {
         LABEL_59:
           GameRoutine_60a310_alt1();
         }
-        if (((*(__int64 (**)(_QWORD*, _QWORD*))(*v25_.v26 + 48LL))(v25_.v26,
-                                                                   v23_.v23) &
+        if (((*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v26 + 48LL))(f_.v26,
+                                                                   f_.v23) &
              1) != 0) {
           break;
         }
@@ -544,11 +543,11 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
       break;
     }
   }
-  v5 = v25_.v26;
-  if (v25_.v26 == v25_.v25) {
+  v5 = f_.v26;
+  if (f_.v26 == f_.v25) {
     goto LABEL_18;
   }
-  if (v25_.v26 != nullptr) {
+  if (f_.v26 != nullptr) {
     v9 = 40;
   LABEL_19:
     (*(void (**)(_QWORD*))(*v5 + v9))(v5);
@@ -588,9 +587,9 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
 LABEL_32:
   v14 = a1[29];
   v13 = a1[30];
-  v15 = v25_.v25;
-  v25_.v25[0] = GameData_20d77c0;
-  v25_.v26 = v25_.v25;
+  v15 = f_.v25;
+  f_.v25[0] = GameData_20d77c0;
+  f_.v26 = f_.v25;
   if (v13 == v14) {
     goto LABEL_43;
   }
@@ -603,12 +602,12 @@ LABEL_32:
       if (v19 == 0) {
         goto LABEL_34;
       }
-      v23_.v23[0] = v19;
-      if (v25_.v26 == nullptr) {
+      f_.v23[0] = v19;
+      if (f_.v26 == nullptr) {
         goto LABEL_59;
       }
-      if (((*(__int64 (**)(_QWORD*, _QWORD*))(*v25_.v26 + 48LL))(v25_.v26,
-                                                                 v23_.v23) &
+      if (((*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v26 + 48LL))(f_.v26,
+                                                                 f_.v23) &
            1) != 0) {
         break;
       }
@@ -618,9 +617,9 @@ LABEL_32:
   LABEL_34:
     ++v16;
   } while (v16 < (v13 - v14) >> 3);
-  v15 = v25_.v26;
-  if (v25_.v26 != v25_.v25) {
-    if (v25_.v26 != nullptr) {
+  v15 = f_.v26;
+  if (f_.v26 != f_.v25) {
+    if (f_.v26 != nullptr) {
       v20 = 40;
       goto LABEL_44;
     }
@@ -634,26 +633,26 @@ LABEL_45:
   *(_DWORD*)(a1[132] + 356LL) &= ~1u;
   a1[148] = 0;
   if (GameRoutine_17b6720_alt1(a1, v8, 1)) {
-    v23_.v23[0] = GameData_20d7840;
-    v23_.v24 = v23_.v23;
-    v25_.v26 = v25_.v25;
-    v25_.v25[0] = GameData_20d7840;
-    GameRoutine_654050_alt1(v25_.v25, a1 + 36);
-    if (v25_.v26 == v25_.v25) {
+    f_.v23[0] = GameData_20d7840;
+    f_.v24 = f_.v23;
+    f_.v26 = f_.v25;
+    f_.v25[0] = GameData_20d7840;
+    GameRoutine_654050_alt1(f_.v25, a1 + 36);
+    if (f_.v26 == f_.v25) {
       v21 = 32;
     LABEL_51:
-      (*(void (**)(__int64))(*v25_.v26 + v21))((__int64)v25_.v26);
+      (*(void (**)(__int64))(*f_.v26 + v21))((__int64)f_.v26);
     }
-    else if (v25_.v26 != nullptr) {
+    else if (f_.v26 != nullptr) {
       v21 = 40;
       goto LABEL_51;
     }
-    if (v23_.v24 == v23_.v23) {
+    if (f_.v24 == f_.v23) {
       v22 = 32;
     LABEL_56:
-      (*(void (**)(__int64))(*v23_.v24 + v22))((__int64)v23_.v24);
+      (*(void (**)(__int64))(*f_.v24 + v22))((__int64)f_.v24);
     }
-    else if (v23_.v24 != nullptr) {
+    else if (f_.v24 != nullptr) {
       v22 = 40;
       goto LABEL_56;
     }
