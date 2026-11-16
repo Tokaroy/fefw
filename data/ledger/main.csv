@@ -15239,7 +15239,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 569610,112,verified,src/game/unnamed/b002_2.c,GameHr_569610
 569680,108,verified,src/nn/ui2d/runtime_type_info.cpp,_ZNK2nn4font24ExtendedTagProcessorBaseIcE18GetRuntimeTypeInfoEv
 5696f0,48,verified,src/memory/new_delete.cpp,deleting destructor at 0x5696f0
-569720,8,disputed,src/game/unnamed/g000_0.c,GameHr_569720
+569720,8,verified,src/game/unnamed/g000_0.c,GameHr_569720
 569730,16,verified,src/nn/font/unplaced_3.c,nn_font_569730
 569740,108,verified,src/game/unnamed/b002_2.c,GameHr_569740
 5697b0,48,verified,src/game/game_trivial_thunks.cpp,_Z15GameStub_5697b0m
