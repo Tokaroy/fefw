@@ -60,9 +60,9 @@ __int64 FxCpuI3dl2ReverbNX_setParam(__int64 a1, __int64 a2, float a3)
                           0x1.6800000000000p+7f) *
                   0x1.45f3060000000p-3f) *
               -0x1.921fb60000000p+2f);
-  if (v14 <= 0x1.921fb60000000p+0f) {
+  if (!(v14 > 0x1.921fb60000000p+0f)) {
     v16 = v14;
-    if (v14 >= -0x1.921fb60000000p+0f) {
+    if (!(v14 < -0x1.921fb60000000p+0f)) {
       goto LABEL_6;
     }
     v15 = -0x1.921fb60000000p+1f;

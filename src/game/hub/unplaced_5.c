@@ -4682,9 +4682,9 @@ game_hub_fb48a0(PSEUDO_X8 x8_, __int64 unused_int0, unsigned __int8* a1)
           (float)(roundf((float)(v33 * 0x1.1df46a0000000p-6f) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v34 <= 0x1.921fb60000000p+0f) {
+    if (!(v34 > 0x1.921fb60000000p+0f)) {
       v36 = v34;
-      if (v34 >= -0x1.921fb60000000p+0f) {
+      if (!(v34 < -0x1.921fb60000000p+0f)) {
       LABEL_57:
         v37 =
             v36 *
@@ -4722,7 +4722,7 @@ game_hub_fb48a0(PSEUDO_X8 x8_, __int64 unused_int0, unsigned __int8* a1)
           v38 = 0x1.0000000000000p+0f;
         }
         v39 = -0x1.921fb60000000p+1f - v34;
-        if (v34 >= -0x1.921fb60000000p+0f) {
+        if (!(v34 < -0x1.921fb60000000p+0f)) {
           v39 = v34;
         }
         v40 = 0x1.921fb60000000p+1f - v34;

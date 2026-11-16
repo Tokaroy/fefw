@@ -121,9 +121,9 @@ float DeployEffectMeshData_ResetMatrix(__int64 a1)
         (float)(roundf((float)(v13 * 0x1.921fb60000000p+1f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v20 <= 0x1.921fb60000000p+0f) {
+  if (!(v20 > 0x1.921fb60000000p+0f)) {
     v22 = 0x1.0000000000000p+0f;
-    if (v20 >= -0x1.921fb60000000p+0f) {
+    if (!(v20 < -0x1.921fb60000000p+0f)) {
       goto LABEL_30;
     }
     v21 = -0x1.921fb60000000p+1f;

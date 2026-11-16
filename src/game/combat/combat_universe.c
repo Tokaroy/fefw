@@ -1435,8 +1435,8 @@ void CombatUniverse_10ddb30(_QWORD* a1)
           }
           v57 = v45 + (float)(roundf(v45 * 0x1.45f3060000000p-3f) *
                               -0x1.921fb60000000p+2f);
-          if (v57 <= 0x1.921fb60000000p+0f) {
-            if (v57 >= -0x1.921fb60000000p+0f) {
+          if (!(v57 > 0x1.921fb60000000p+0f)) {
+            if (!(v57 < -0x1.921fb60000000p+0f)) {
             LABEL_85:
               v59 = v57 * v57;
               v60 =

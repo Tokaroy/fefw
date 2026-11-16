@@ -1412,7 +1412,7 @@ float game_5c4b80(float a1, float a2, float a3, float a4, float a5, float a6)
        (float)(roundf((float)(a1 * a5) * 0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
   v10 = -0x1.921fb60000000p+1f - v9;
-  if (v9 >= -0x1.921fb60000000p+0f) {
+  if (!(v9 < -0x1.921fb60000000p+0f)) {
     v10 = v9;
   }
   if (v9 > 0x1.921fb60000000p+0f) {
@@ -1424,7 +1424,7 @@ float game_5c4b80(float a1, float a2, float a3, float a4, float a5, float a6)
   v17 =
       v6 + (float)(roundf(v6 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v18 = -0x1.921fb60000000p+1f - v17;
-  if (v17 >= -0x1.921fb60000000p+0f) {
+  if (!(v17 < -0x1.921fb60000000p+0f)) {
     v18 = v17;
   }
   if (v17 > 0x1.921fb60000000p+0f) {
@@ -1436,7 +1436,7 @@ float game_5c4b80(float a1, float a2, float a3, float a4, float a5, float a6)
   v20 =
       v7 + (float)(roundf(v7 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v21 = -0x1.921fb60000000p+1f - v20;
-  if (v20 >= -0x1.921fb60000000p+0f) {
+  if (!(v20 < -0x1.921fb60000000p+0f)) {
     v21 = v20;
   }
   if (v20 > 0x1.921fb60000000p+0f) {
@@ -1448,7 +1448,7 @@ float game_5c4b80(float a1, float a2, float a3, float a4, float a5, float a6)
   v23 =
       v8 + (float)(roundf(v8 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v24 = -0x1.921fb60000000p+1f - v23;
-  if (v23 >= -0x1.921fb60000000p+0f) {
+  if (!(v23 < -0x1.921fb60000000p+0f)) {
     v24 = v23;
   }
   if (v23 > 0x1.921fb60000000p+0f) {

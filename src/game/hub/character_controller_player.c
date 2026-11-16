@@ -669,9 +669,9 @@ _QWORD* game_hub_CharacterControllerPlayer_UpdateAccessLookTo(__int64 a1,
         v37 = *(float*)(*(_QWORD*)(*(_QWORD*)(v29 + 16) + 488LL) + 36LL);
         v38 = v37 + (float)(roundf(v37 * 0x1.45f3060000000p-3f) *
                             -0x1.921fb60000000p+2f);
-        if (v38 <= 0x1.921fb60000000p+0f) {
+        if (!(v38 > 0x1.921fb60000000p+0f)) {
           v40 = 0x1.0000000000000p+0f;
-          if (v38 >= -0x1.921fb60000000p+0f) {
+          if (!(v38 < -0x1.921fb60000000p+0f)) {
           LABEL_46:
             v41 = v38 * v38;
             v42 =

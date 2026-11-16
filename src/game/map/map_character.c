@@ -215,7 +215,7 @@ __int64 MapCharacter_9da8e0(__int64 result, float a2)
       v4 = 0x1.0000000000000p+0f;
     }
     v5 = -0x1.921fb60000000p+1f - v3;
-    if (v3 >= -0x1.921fb60000000p+0f) {
+    if (!(v3 < -0x1.921fb60000000p+0f)) {
       v5 = v3;
     }
     if (v3 > 0x1.921fb60000000p+0f) {

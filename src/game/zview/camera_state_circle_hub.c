@@ -505,9 +505,9 @@ float CameraStateCircleHub_Unknown5(float* a1)
        (float)(roundf((float)(v2 * 0x1.921fb60000000p+1f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v5 <= 0x1.921fb60000000p+0f) {
+  if (!(v5 > 0x1.921fb60000000p+0f)) {
     v7 = 0x1.0000000000000p+0f;
-    if (v5 >= -0x1.921fb60000000p+0f) {
+    if (!(v5 < -0x1.921fb60000000p+0f)) {
       goto LABEL_8;
     }
     v6 = -0x1.921fb60000000p+1f;
@@ -595,9 +595,9 @@ float CameraStateCircleHub_Unknown6(float* a1)
        (float)(roundf((float)(v2 * 0x1.921fb60000000p+1f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v5 <= 0x1.921fb60000000p+0f) {
+  if (!(v5 > 0x1.921fb60000000p+0f)) {
     v7 = 0x1.0000000000000p+0f;
-    if (v5 >= -0x1.921fb60000000p+0f) {
+    if (!(v5 < -0x1.921fb60000000p+0f)) {
       goto LABEL_8;
     }
     v6 = -0x1.921fb60000000p+1f;

@@ -857,9 +857,9 @@ float* game_zview_d15100(float* a1, char a2, double a3, double a4, double a5,
     v29 = v27 + v28;
     v30 = v20 +
           (float)(roundf(v20 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v30 <= 0x1.921fb60000000p+0f) {
+    if (!(v30 > 0x1.921fb60000000p+0f)) {
       v54 = 0x1.0000000000000p+0f;
-      if (v30 >= -0x1.921fb60000000p+0f) {
+      if (!(v30 < -0x1.921fb60000000p+0f)) {
       LABEL_31:
         v55 = v30 * v30;
         v56 = *(_QWORD*)a1;
@@ -951,7 +951,7 @@ float* game_zview_d15100(float* a1, char a2, double a3, double a4, double a5,
     v36 = 0x1.0000000000000p+0f;
   }
   v37 = -0x1.921fb60000000p+1f - v35;
-  if (v35 >= -0x1.921fb60000000p+0f) {
+  if (!(v35 < -0x1.921fb60000000p+0f)) {
     v37 = v35;
   }
   v38 = 0x1.921fb60000000p+1f - v35;
@@ -1031,13 +1031,13 @@ float* game_zview_d15100(float* a1, char a2, double a3, double a4, double a5,
   v51 = v141 + (float)(*(float*)&v34 * v44);
   v52 = v47 +
         (float)(roundf(v47 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v52 <= 0x1.921fb60000000p+0f) {
+  if (!(v52 > 0x1.921fb60000000p+0f)) {
     v22 = v151;
     v23 = v152;
     v15 = v150;
     v24 = v149;
     v63 = 0x1.0000000000000p+0f;
-    if (v52 >= -0x1.921fb60000000p+0f) {
+    if (!(v52 < -0x1.921fb60000000p+0f)) {
       goto LABEL_35;
     }
     v53 = -0x1.921fb60000000p+1f;
@@ -1212,7 +1212,7 @@ LABEL_52:
     v103 = 0x1.0000000000000p+0f;
   }
   v104 = -0x1.921fb60000000p+1f - v102;
-  if (v102 >= -0x1.921fb60000000p+0f) {
+  if (!(v102 < -0x1.921fb60000000p+0f)) {
     v104 = v102;
   }
   v105 = 0x1.921fb60000000p+1f - v102;
@@ -1565,9 +1565,9 @@ void game_zview_dab870(__int64 a1, __int64** a2, char a3)
     }
     v20 = v19 +
           (float)(roundf(v19 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v20 <= 0x1.921fb60000000p+0f) {
+    if (!(v20 > 0x1.921fb60000000p+0f)) {
       v22 = 0x1.0000000000000p+0f;
-      if (v20 >= -0x1.921fb60000000p+0f) {
+      if (!(v20 < -0x1.921fb60000000p+0f)) {
       LABEL_30:
         v23 = v20 * v20;
         v24 =

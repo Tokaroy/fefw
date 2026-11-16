@@ -1636,9 +1636,9 @@ __int64 LegionStateBattleFighter_e3b0b0(__int64 a1, unsigned int a2)
     v26 = game_combat_e401e0_alt1(&v67, v66);
     v27 = v26 +
           (float)(roundf(v26 * 0x1.45f3060000000p-3) * -0x1.921fb60000000p+2);
-    if (v27 <= 0x1.921fb60000000p+0) {
+    if (!(v27 > 0x1.921fb60000000p+0)) {
       v29 = 1.0;
-      if (v27 >= -0x1.921fb60000000p+0) {
+      if (!(v27 < -0x1.921fb60000000p+0)) {
         goto LABEL_34;
       }
       v28 = -0x1.921fb60000000p+1;

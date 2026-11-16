@@ -697,9 +697,9 @@ __int64 game_combat_e326e0(__int64 a1, __int64* a2)
                     PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
     v35 = v34 +
           (float)(roundf(v34 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v35 <= 0x1.921fb60000000p+0f) {
+    if (!(v35 > 0x1.921fb60000000p+0f)) {
       v37 = 0x1.0000000000000p+0f;
-      if (v35 >= -0x1.921fb60000000p+0f) {
+      if (!(v35 < -0x1.921fb60000000p+0f)) {
         goto LABEL_26;
       }
       v36 = -0x1.921fb60000000p+1f;
@@ -2296,9 +2296,9 @@ LABEL_20:
         }
         v33 = v32 + (float)(roundf(v32 * 0x1.45f3060000000p-3f) *
                             -0x1.921fb60000000p+2f);
-        if (v33 <= 0x1.921fb60000000p+0f) {
+        if (!(v33 > 0x1.921fb60000000p+0f)) {
           v35 = 0x1.0000000000000p+0f;
-          if (v33 >= -0x1.921fb60000000p+0f) {
+          if (!(v33 < -0x1.921fb60000000p+0f)) {
           LABEL_48:
             v36 = v33 * v33;
             v37 =
@@ -2514,10 +2514,10 @@ int32x2_t* game_combat_e447d0(int32x2_t* result)
         LANES64(result[11]).n64_f32[1] +
         (float)(roundf(LANES64(result[11]).n64_f32[1] * 0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-    if (v13 <= 0x1.921fb60000000p+0f) {
+    if (!(v13 > 0x1.921fb60000000p+0f)) {
       v16 = 1.0f;
       v14 = result;
-      if (v13 >= -0x1.921fb60000000p+0f) {
+      if (!(v13 < -0x1.921fb60000000p+0f)) {
       LABEL_17:
         v17 = v13 * v13;
         v18 = v1[17];

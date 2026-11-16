@@ -437,7 +437,7 @@ float Sound3DEngine_277870(float32x4_t* a1, float* a2, float* a3, float a4,
   v39 = v10;
   v24 = atan2f_alt1(LANES128(v10).n128_f32[0], -LANES128(v10).n128_f32[2]);
   if (v24 >= (float)-a8) {
-    if (v24 >= -0x1.921fb60000000p+0f) {
+    if (!(v24 < -0x1.921fb60000000p+0f)) {
       if (v24 >= (float)-a7) {
         if (v24 >= a7) {
           if (v24 >= 0x1.921fb60000000p+0f) {

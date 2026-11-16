@@ -1423,8 +1423,8 @@ __attribute__((swiftcall)) void InfoCursorBottomImpl_100e7d0(PSEUDO_X8 x8_,
         (float)(roundf((float)(*(float*)&v4 * 0x1.921fb60000000p+1) *
                        0x1.45f3060000000p-3) *
                 -0x1.921fb60000000p+2);
-  if (v12 <= 0x1.921fb60000000p+0) {
-    if (v12 >= -0x1.921fb60000000p+0) {
+  if (!(v12 > 0x1.921fb60000000p+0)) {
+    if (!(v12 < -0x1.921fb60000000p+0)) {
       goto LABEL_20;
     }
     v13 = -0x1.921fb60000000p+1;

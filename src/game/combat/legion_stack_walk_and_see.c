@@ -120,9 +120,9 @@ __int64 LegionStackWalkAndSee_Unknown3(__int64 result)
     v16 = *(float*)(v13 + 92) +
           (float)(roundf(*(float*)(v13 + 92) * 0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v16 <= 0x1.921fb60000000p+0f) {
+    if (!(v16 > 0x1.921fb60000000p+0f)) {
       v18 = 1.0f;
-      if (v16 >= -0x1.921fb60000000p+0f) {
+      if (!(v16 < -0x1.921fb60000000p+0f)) {
         goto LABEL_21;
       }
       v17 = -0x1.921fb60000000p+1f;

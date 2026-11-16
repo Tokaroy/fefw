@@ -277,15 +277,15 @@ void CharacterMaterial_bd7800(__int64 a1, __int64 a2)
   v23 = *(float*)(a1 + 76);
   v24 = v23 + 0x1.99999a0000000p+1;
   v25 = (float)(v23 + *(float*)&GameData_2167618) + *(float*)(a1 + 72);
-  if ((float)(v24 + 0x1.99999a0000000p-4) >= v25) {
+  if (!((float)(v24 + 0x1.99999a0000000p-4) < v25)) {
     v25 = v24 + 0x1.99999a0000000p-4;
   }
   v26 = (float)(v22 * v22) * v62;
-  if (v26 < (float)(v25 * v25)) {
-    if (v26 > 0x1.d97f640000000p+0) {
+  if (!(v26 >= (float)(v25 * v25))) {
+    if (!(v26 <= 0x1.d97f640000000p+0)) {
       v27 = fmaxf(v24, 0x1.75c2900000000p+0);
       v28 = -sqrtf(v62);
-      if (v26 > (float)(v27 * v27)) {
+      if (!(v26 <= (float)(v27 * v27))) {
         v8 = (float)((float)(0x1.0000000000000p+0 -
                              (float)((float)(v25 + (float)(v28 * v22)) /
                                      (float)(v25 - v27))) *
@@ -393,7 +393,8 @@ LABEL_33:
     if (v52 != 0) {
       v53 = v52 >> 4;
       v54 = 0;
-      for (i = 0; v53 != i; ++i) {
+      i = 0;
+      do {
         v57 = *(_DWORD*)(*(_QWORD*)(a1 + 48) + 4 * i);
         v58 = *(_QWORD*)(*(_QWORD*)(v51 + 312) + v54);
         if (v57 == 1) {
@@ -412,7 +413,8 @@ LABEL_33:
             *(_QWORD*)v58 + 16LL))(v58, "PostOutlineScale", 16, v56);
       LABEL_54:
         v54 += 16;
-      }
+        ++i;
+      } while (v53 != i);
     }
   }
 }

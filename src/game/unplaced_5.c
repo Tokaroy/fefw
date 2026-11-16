@@ -12386,7 +12386,7 @@ void game_10e91c0(_QWORD* a1, float32x4_t* a2, float32x4_t* a3)
         v17 = v12 + 8 * v11;
         v18 = v16 / v9;
         v19 = *(_QWORD*)GameData_212d270;
-        while (LANES128(v14[1]).n128_f32[0] >= v18) {
+        while (!(LANES128(v14[1]).n128_f32[0] < v18)) {
           v20 = vsubq_f32(*v14, *a2);
           v21 = vmulq_f32(v20, v20);
           LANES128(v21).n128_u64[0] =
@@ -12421,10 +12421,10 @@ void game_10e91c0(_QWORD* a1, float32x4_t* a2, float32x4_t* a3)
                                LANES128_OF(vextq_s8(v24, v24, 8u)).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v24).n128_u64[0])))
                   .n64_u64[0];
-          if (LANES64_OF(
+          if (!(LANES64_OF(
                   vpadd_f32(COERCE_AS(float32x2_t, LANES128(v24).n128_u64[0]),
                             COERCE_AS(float32x2_t, LANES128(v24).n128_u64[0])))
-                  .n64_f32[0] <= *(float*)(v19 + 488)) {
+                  .n64_f32[0] > *(float*)(v19 + 488))) {
             break;
           }
           v14 += 3;
@@ -12440,7 +12440,7 @@ void game_10e91c0(_QWORD* a1, float32x4_t* a2, float32x4_t* a3)
         }
         nn_os_LockMutex_alt1((__int64)&GameData_216dc28);
         v26 = &LANES128(v14[1]).n128_i64[1];
-        if (LANES128(v14[1]).n128_f32[0] >= v18) {
+        if (!(LANES128(v14[1]).n128_f32[0] < v18)) {
           GameHr_14a1390(v26, 1);
         }
         else {
@@ -16704,8 +16704,8 @@ float game_111e3c0(__int64 a1)
   }
   v49 = v48 +
         (float)(roundf(v48 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v49 <= 0x1.921fb60000000p+0f) {
-    if (v49 >= -0x1.921fb60000000p+0f) {
+  if (!(v49 > 0x1.921fb60000000p+0f)) {
+    if (!(v49 < -0x1.921fb60000000p+0f)) {
       goto LABEL_41;
     }
     v50 = -0x1.921fb60000000p+1f;

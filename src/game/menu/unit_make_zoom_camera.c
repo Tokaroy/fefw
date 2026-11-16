@@ -252,7 +252,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
   v20 = -0x1.921fb60000000p+1f - v19;
-  if (v19 >= -0x1.921fb60000000p+0f) {
+  if (!(v19 < -0x1.921fb60000000p+0f)) {
     v20 = v19;
   }
   if (v19 > 0x1.921fb60000000p+0f) {
@@ -294,7 +294,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
   v31 = -0x1.921fb60000000p+1f - v30;
-  if (v30 >= -0x1.921fb60000000p+0f) {
+  if (!(v30 < -0x1.921fb60000000p+0f)) {
     v31 = v30;
   }
   if (v30 > 0x1.921fb60000000p+0f) {
@@ -330,7 +330,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
     v33 = 1.0f;
   }
   v34 = -0x1.921fb60000000p+1f - v19;
-  if (v19 >= -0x1.921fb60000000p+0f) {
+  if (!(v19 < -0x1.921fb60000000p+0f)) {
     v34 = v19;
   }
   if (v19 > 0x1.921fb60000000p+0f) {
@@ -375,7 +375,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
     v48 = 1.0f;
   }
   v49 = -0x1.921fb60000000p+1f - v30;
-  if (v30 >= -0x1.921fb60000000p+0f) {
+  if (!(v30 < -0x1.921fb60000000p+0f)) {
     v49 = v30;
   }
   if (v30 > 0x1.921fb60000000p+0f) {
@@ -419,7 +419,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
   v55 = -0x1.921fb60000000p+1f - v54;
-  if (v54 >= -0x1.921fb60000000p+0f) {
+  if (!(v54 < -0x1.921fb60000000p+0f)) {
     v55 = v54;
   }
   if (v54 > 0x1.921fb60000000p+0f) {
@@ -453,7 +453,7 @@ bool UnitMakeZoomCamera_1797ef0(__int64 a1, char a2)
     v57 = 1.0f;
   }
   v58 = -0x1.921fb60000000p+1f - v54;
-  if (v54 >= -0x1.921fb60000000p+0f) {
+  if (!(v54 < -0x1.921fb60000000p+0f)) {
     v58 = v54;
   }
   if (v54 > 0x1.921fb60000000p+0f) {

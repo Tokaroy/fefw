@@ -1957,7 +1957,7 @@ __attribute__((swiftcall)) void UnitActor_81b460(PSEUDO_X8 x8_, float a2,
     v4 = 0x1.0000000000000p+0;
   }
   v5 = -0x1.921fb60000000p+1 - v3;
-  if (v3 >= -0x1.921fb60000000p+0) {
+  if (!(v3 < -0x1.921fb60000000p+0)) {
     v5 = v3;
   }
   if (v3 > 0x1.921fb60000000p+0) {

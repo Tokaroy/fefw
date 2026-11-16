@@ -666,9 +666,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
     v35 = v34 * 0x1.45f3060000000p-3f;
   LABEL_37:
     v44 = v34 + (float)(roundf(v35) * -0x1.921fb60000000p+2f);
-    if (v44 <= 0x1.921fb60000000p+0f) {
+    if (!(v44 > 0x1.921fb60000000p+0f)) {
       v46 = 0x1.0000000000000p+0f;
-      if (v44 >= -0x1.921fb60000000p+0f) {
+      if (!(v44 < -0x1.921fb60000000p+0f)) {
         goto LABEL_42;
       }
       v45 = -0x1.921fb60000000p+1f;
@@ -720,9 +720,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)((float)(a5 * 0x1.e000000000000p+3f) / 0x1.9000000000000p+6f);
     v26 = v25 +
       (float)(roundf(v25 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v26 <= 0x1.921fb60000000p+0f) {
+    if (!(v26 > 0x1.921fb60000000p+0f)) {
       v46 = 0x1.0000000000000p+0f;
-      if (v26 >= -0x1.921fb60000000p+0f) {
+      if (!(v26 < -0x1.921fb60000000p+0f)) {
         goto LABEL_67;
       }
       v27 = -0x1.921fb60000000p+1f;
@@ -772,9 +772,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)((float)(a5 * 0x1.4000000000000p+5f) / 0x1.9000000000000p+6f);
     v42 = v41 +
       (float)(roundf(v41 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v42 <= 0x1.921fb60000000p+0f) {
+    if (!(v42 > 0x1.921fb60000000p+0f)) {
       v92 = 0x1.0000000000000p+0f;
-      if (v42 >= -0x1.921fb60000000p+0f) {
+      if (!(v42 < -0x1.921fb60000000p+0f)) {
         goto LABEL_93;
       }
       v43 = -0x1.921fb60000000p+1f;
@@ -824,9 +824,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+1f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v16 <= 0x1.921fb60000000p+0f) {
+    if (!(v16 > 0x1.921fb60000000p+0f)) {
       v51 = 0x1.0000000000000p+0f;
-      if (v16 >= -0x1.921fb60000000p+0f) {
+      if (!(v16 < -0x1.921fb60000000p+0f)) {
         goto LABEL_54;
       }
       v17 = -0x1.921fb60000000p+1f;
@@ -866,9 +866,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+1f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v22 <= 0x1.921fb60000000p+0f) {
+    if (!(v22 > 0x1.921fb60000000p+0f)) {
       v53 = 0x1.0000000000000p+0f;
-      if (v22 >= -0x1.921fb60000000p+0f) {
+      if (!(v22 < -0x1.921fb60000000p+0f)) {
         goto LABEL_58;
       }
       v23 = -0x1.921fb60000000p+1f;
@@ -903,8 +903,8 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       0x1.921fb60000000p+1f;
     v64 = v63 +
       (float)(roundf(v63 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v64 <= 0x1.921fb60000000p+0f) {
-      if (v64 >= -0x1.921fb60000000p+0f) {
+    if (!(v64 > 0x1.921fb60000000p+0f)) {
+      if (!(v64 < -0x1.921fb60000000p+0f)) {
         goto LABEL_63;
       }
       v65 = -0x1.921fb60000000p+1f;
@@ -935,9 +935,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+1f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v38 <= 0x1.921fb60000000p+0f) {
+    if (!(v38 > 0x1.921fb60000000p+0f)) {
       v70 = 0x1.0000000000000p+0f;
-      if (v38 >= -0x1.921fb60000000p+0f) {
+      if (!(v38 < -0x1.921fb60000000p+0f)) {
         goto LABEL_76;
       }
       v39 = -0x1.921fb60000000p+1f;
@@ -972,8 +972,8 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       0x1.921fb60000000p+1f;
     v82 = v81 +
       (float)(roundf(v81 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v82 <= 0x1.921fb60000000p+0f) {
-      if (v82 >= -0x1.921fb60000000p+0f) {
+    if (!(v82 > 0x1.921fb60000000p+0f)) {
+      if (!(v82 < -0x1.921fb60000000p+0f)) {
         goto LABEL_81;
       }
       v83 = -0x1.921fb60000000p+1f;
@@ -1002,8 +1002,8 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       0x1.921fb60000000p+1f;
     v88 = v87 +
       (float)(roundf(v87 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v88 <= 0x1.921fb60000000p+0f) {
-      if (v88 >= -0x1.921fb60000000p+0f) {
+    if (!(v88 > 0x1.921fb60000000p+0f)) {
+      if (!(v88 < -0x1.921fb60000000p+0f)) {
         goto LABEL_86;
       }
       v89 = -0x1.921fb60000000p+1f;
@@ -1036,8 +1036,8 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+0f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v14 <= 0x1.921fb60000000p+0f) {
-      if (v14 >= -0x1.921fb60000000p+0f) {
+    if (!(v14 > 0x1.921fb60000000p+0f)) {
+      if (!(v14 < -0x1.921fb60000000p+0f)) {
         goto LABEL_50;
       }
       v15 = -0x1.921fb60000000p+1f;
@@ -1073,9 +1073,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+0f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v31 <= 0x1.921fb60000000p+0f) {
+    if (!(v31 > 0x1.921fb60000000p+0f)) {
       v68 = 0x1.0000000000000p+0f;
-      if (v31 >= -0x1.921fb60000000p+0f) {
+      if (!(v31 < -0x1.921fb60000000p+0f)) {
         goto LABEL_72;
       }
       v32 = -0x1.921fb60000000p+1f;
@@ -1121,9 +1121,9 @@ float task_618640(int a1, float result, float a3, float a4, float a5)
       (float)(roundf((float)((float)(a4 * 0x1.921fb60000000p+1f) / a5) *
                 0x1.45f3060000000p-3f) *
         -0x1.921fb60000000p+2f);
-    if (v11 <= 0x1.921fb60000000p+0f) {
+    if (!(v11 > 0x1.921fb60000000p+0f)) {
       v48 = 0x1.0000000000000p+0f;
-      if (v11 >= -0x1.921fb60000000p+0f) {
+      if (!(v11 < -0x1.921fb60000000p+0f)) {
         goto LABEL_46;
       }
       v12 = -0x1.921fb60000000p+1f;

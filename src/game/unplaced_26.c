@@ -2920,9 +2920,9 @@ void game_5c38e0(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             v47 = (float)(v46 + v46) +
                   (float)(roundf((float)(v46 + v46) * 0x1.45f3060000000p-3f) *
                           -0x1.921fb60000000p+2f);
-            if (v47 <= 0x1.921fb60000000p+0f) {
+            if (!(v47 > 0x1.921fb60000000p+0f)) {
               v52 = 0x1.0000000000000p+0f;
-              if (v47 >= -0x1.921fb60000000p+0f) {
+              if (!(v47 < -0x1.921fb60000000p+0f)) {
               LABEL_44:
                 v53 = v47 * v47;
                 v45 =
@@ -3208,7 +3208,7 @@ long double game_5c4020(_OWORD* a1, float32x4_t* a2)
   v3 = COERCE_FLOAT(*a2) +
        (float)(roundf(0x1.45f3060000000p-3f * COERCE_FLOAT(*a2)) *
                -0x1.921fb60000000p+2f);
-  if (v3 <= 0x1.921fb60000000p+0f) {
+  if (!(v3 > 0x1.921fb60000000p+0f)) {
     v4 = 0x1.0000000000000p+0f;
     v5 = -0x1.921fb60000000p+1f - v3;
     v6 = *(float*)GameData_212c190;
@@ -3248,24 +3248,24 @@ long double game_5c4020(_OWORD* a1, float32x4_t* a2)
                               1));
   v19 = LANES128(v2).n128_f32[1] + (float)(v18 * -0x1.921fb60000000p+2f);
   v20 = 0x1.921fb60000000p+1f - v19;
-  if (v19 >= -0x1.921fb60000000p+0f) {
+  if (!(v19 < -0x1.921fb60000000p+0f)) {
     v21 = LANES128(v2).n128_f32[1] + (float)(v18 * -0x1.921fb60000000p+2f);
   }
   else {
     v21 = -0x1.921fb60000000p+1f - v19;
   }
   v22 = -0x1.921fb60000000p+1f - v19;
-  if (v19 >= -0x1.921fb60000000p+0f) {
+  if (!(v19 < -0x1.921fb60000000p+0f)) {
     v23 = 0x1.0000000000000p+0f;
   }
   else {
     v23 = -0x1.0000000000000p+0f;
   }
-  if (v19 >= -0x1.921fb60000000p+0f) {
+  if (!(v19 < -0x1.921fb60000000p+0f)) {
     v22 = LANES128(v2).n128_f32[1] + (float)(v18 * -0x1.921fb60000000p+2f);
   }
   v24 = v19 <= 0x1.921fb60000000p+0f;
-  if (v19 <= 0x1.921fb60000000p+0f) {
+  if (!(v19 > 0x1.921fb60000000p+0f)) {
     v25 = v21;
   }
   else {
@@ -3294,11 +3294,11 @@ long double game_5c4020(_OWORD* a1, float32x4_t* a2)
     v31 = 0x1.0000000000000p+0f;
   }
   v32 = -0x1.921fb60000000p+1f - v28;
-  if (v28 >= -0x1.921fb60000000p+0f) {
+  if (!(v28 < -0x1.921fb60000000p+0f)) {
     v32 = v28;
   }
   v33 = v28 <= 0x1.921fb60000000p+0f;
-  if (v28 <= 0x1.921fb60000000p+0f) {
+  if (!(v28 > 0x1.921fb60000000p+0f)) {
     v34 = v30;
   }
   else {

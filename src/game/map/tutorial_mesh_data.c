@@ -84,8 +84,8 @@ float TutorialMeshData_ResetMatrix(__int64 a1)
         (float)(roundf((float)((float)(v14 * v14) * 0x1.921fb60000000p+1f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v15 <= 0x1.921fb60000000p+0f) {
-    if (v15 >= -0x1.921fb60000000p+0f) {
+  if (!(v15 > 0x1.921fb60000000p+0f)) {
+    if (!(v15 < -0x1.921fb60000000p+0f)) {
       goto LABEL_19;
     }
     v16 = -0x1.921fb60000000p+1f;

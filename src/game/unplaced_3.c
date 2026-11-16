@@ -10614,9 +10614,9 @@ LABEL_19:
           (float)(roundf((float)(v20 * 0x1.921fb60000000p+1f) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v21 <= 0x1.921fb60000000p+0f) {
+    if (!(v21 > 0x1.921fb60000000p+0f)) {
       v23 = 0x1.0000000000000p+0f;
-      if (v21 >= -0x1.921fb60000000p+0f) {
+      if (!(v21 < -0x1.921fb60000000p+0f)) {
       LABEL_32:
         v24 = v21 * v21;
         v25 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c188 +

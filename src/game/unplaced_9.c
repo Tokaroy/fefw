@@ -5921,9 +5921,9 @@ float32x4_t game_5be6b0(float32x4_t* a1, float32x4_t* a2, __int64 a3, int a4,
   }
   v26 = v22 +
         (float)(roundf(v22 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v26 <= 0x1.921fb60000000p+0f) {
+  if (!(v26 > 0x1.921fb60000000p+0f)) {
     v28 = 0x1.0000000000000p+0f;
-    if (v26 >= -0x1.921fb60000000p+0f) {
+    if (!(v26 < -0x1.921fb60000000p+0f)) {
       goto LABEL_14;
     }
     v27 = -0x1.921fb60000000p+1f;
@@ -6248,9 +6248,9 @@ float32x4_t game_5beb80(float32x4_t* a1, float32x4_t* a2, __int64 a3, int a4,
   }
   v25 = v21 +
         (float)(roundf(v21 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v25 <= 0x1.921fb60000000p+0f) {
+  if (!(v25 > 0x1.921fb60000000p+0f)) {
     v27 = 0x1.0000000000000p+0f;
-    if (v25 >= -0x1.921fb60000000p+0f) {
+    if (!(v25 < -0x1.921fb60000000p+0f)) {
       goto LABEL_14;
     }
     v26 = -0x1.921fb60000000p+1f;
@@ -6406,7 +6406,7 @@ float32x4_t game_5bf040(float32x4_t* a1, float32x4_t* a2, __int64 a3, float a4,
                                      v20 * -0x1.0000000000000p-1f))) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v22 <= 0x1.921fb60000000p+0f) {
+    if (!(v22 > 0x1.921fb60000000p+0f)) {
       goto LABEL_10;
     }
   LABEL_6:
@@ -7418,7 +7418,7 @@ float32x4_t game_5c05c0(float32x4_t* a1, float32x2_t* a2, float32x4_t* a3,
   v4 = *a3;
   v5 =
       a4 + (float)(roundf(a4 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v5 <= 0x1.921fb60000000p+0f) {
+  if (!(v5 > 0x1.921fb60000000p+0f)) {
     v7 = -0x1.921fb60000000p+1f - v5;
     v6 = 1.0f;
     if (v5 < -0x1.921fb60000000p+0f) {
@@ -8078,9 +8078,9 @@ LABEL_6:
       (float)(PSEUDO_UNFUSED(v7 * (float)(v13 * v14))) +
       (float)(roundf((float)(v7 * (float)(v13 * v14)) * 0x1.45f3060000000p-3f) *
               -0x1.921fb60000000p+2f);
-  if (v19 <= 0x1.921fb60000000p+0f) {
+  if (!(v19 > 0x1.921fb60000000p+0f)) {
     v21 = 0x1.0000000000000p+0f;
-    if (v19 >= -0x1.921fb60000000p+0f) {
+    if (!(v19 < -0x1.921fb60000000p+0f)) {
       goto LABEL_11;
     }
     v20 = -0x1.921fb60000000p+1f;
@@ -9218,9 +9218,9 @@ void game_5c26c0(long double a1, float a2, long double a3, __int64 a4,
             v62 = (float)(v61 + v61) +
                   (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3) *
                           -0x1.921fb60000000p+2);
-            if (v62 <= 0x1.921fb60000000p+0) {
+            if (!(v62 > 0x1.921fb60000000p+0)) {
               v67 = 1.0;
-              if (v62 >= -0x1.921fb60000000p+0) {
+              if (!(v62 < -0x1.921fb60000000p+0)) {
               LABEL_44:
                 v68 = v62 * v62;
                 v60 = (float)((float)((float)((float)(v67 * (float)((float)((float)-(
@@ -9591,9 +9591,9 @@ void game_5c2d00(long double a1, long double a2, __int64 a3, int8x16_t* a4,
             v47 = (float)(v46 + v46) +
                   (float)(roundf((float)(v46 + v46) * 0x1.45f3060000000p-3f) *
                           -0x1.921fb60000000p+2f);
-            if (v47 <= 0x1.921fb60000000p+0f) {
+            if (!(v47 > 0x1.921fb60000000p+0f)) {
               v52 = 0x1.0000000000000p+0f;
-              if (v47 >= -0x1.921fb60000000p+0f) {
+              if (!(v47 < -0x1.921fb60000000p+0f)) {
               LABEL_44:
                 v53 = v47 * v47;
                 v45 =
@@ -9984,9 +9984,9 @@ void game_5c32a0(long double a1, float a2, long double a3, __int64 a4,
             v62 = (float)(v61 + v61) +
                   (float)(roundf((float)(v61 + v61) * 0x1.45f3060000000p-3f) *
                           -0x1.921fb60000000p+2f);
-            if (v62 <= 0x1.921fb60000000p+0f) {
+            if (!(v62 > 0x1.921fb60000000p+0f)) {
               v67 = 0x1.0000000000000p+0f;
-              if (v62 >= -0x1.921fb60000000p+0f) {
+              if (!(v62 < -0x1.921fb60000000p+0f)) {
               LABEL_44:
                 v68 = v62 * v62;
                 v60 =
@@ -10395,7 +10395,7 @@ float game_5c4910(float* a1, float a2, float a3)
        (float)(roundf((float)(v3 / a1[11]) * 0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
   v8 = -0x1.921fb60000000p+1f - v7;
-  if (v7 >= -0x1.921fb60000000p+0f) {
+  if (!(v7 < -0x1.921fb60000000p+0f)) {
     v8 = v7;
   }
   if (v7 > 0x1.921fb60000000p+0f) {
@@ -10407,7 +10407,7 @@ float game_5c4910(float* a1, float a2, float a3)
   v15 =
       v4 + (float)(roundf(v4 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v16 = -0x1.921fb60000000p+1f - v15;
-  if (v15 >= -0x1.921fb60000000p+0f) {
+  if (!(v15 < -0x1.921fb60000000p+0f)) {
     v16 = v15;
   }
   if (v15 > 0x1.921fb60000000p+0f) {
@@ -10419,7 +10419,7 @@ float game_5c4910(float* a1, float a2, float a3)
   v18 =
       v5 + (float)(roundf(v5 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v19 = -0x1.921fb60000000p+1f - v18;
-  if (v18 >= -0x1.921fb60000000p+0f) {
+  if (!(v18 < -0x1.921fb60000000p+0f)) {
     v19 = v18;
   }
   if (v18 > 0x1.921fb60000000p+0f) {
@@ -10431,7 +10431,7 @@ float game_5c4910(float* a1, float a2, float a3)
   v21 =
       v6 + (float)(roundf(v6 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v22 = -0x1.921fb60000000p+1f - v21;
-  if (v21 >= -0x1.921fb60000000p+0f) {
+  if (!(v21 < -0x1.921fb60000000p+0f)) {
     v22 = v21;
   }
   if (v21 > 0x1.921fb60000000p+0f) {
@@ -10528,8 +10528,8 @@ float game_5c4de0(float a1, float a2)
        (float)(roundf((float)(a1 * 0x1.aaaaaa0000000p+0f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v2 <= 0x1.921fb60000000p+0f) {
-    if (v2 >= -0x1.921fb60000000p+0f) {
+  if (!(v2 > 0x1.921fb60000000p+0f)) {
+    if (!(v2 < -0x1.921fb60000000p+0f)) {
       goto LABEL_6;
     }
     v3 = -0x1.921fb60000000p+1f;
@@ -10543,8 +10543,8 @@ LABEL_6:
        (float)(roundf((float)(a2 * 0x1.aaaaaa0000000p+0f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v4 <= 0x1.921fb60000000p+0f) {
-    if (v4 >= -0x1.921fb60000000p+0f) {
+  if (!(v4 > 0x1.921fb60000000p+0f)) {
+    if (!(v4 < -0x1.921fb60000000p+0f)) {
       goto LABEL_11;
     }
     v5 = -0x1.921fb60000000p+1f;
@@ -10558,8 +10558,8 @@ LABEL_11:
        (float)(roundf((float)(a1 * 0x1.30c30c0000000p+1f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v6 <= 0x1.921fb60000000p+0f) {
-    if (v6 >= -0x1.921fb60000000p+0f) {
+  if (!(v6 > 0x1.921fb60000000p+0f)) {
+    if (!(v6 < -0x1.921fb60000000p+0f)) {
       goto LABEL_16;
     }
     v7 = -0x1.921fb60000000p+1f;
@@ -10573,8 +10573,8 @@ LABEL_16:
        (float)(roundf((float)(a2 * 0x1.30c30c0000000p+1f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v8 <= 0x1.921fb60000000p+0f) {
-    if (v8 >= -0x1.921fb60000000p+0f) {
+  if (!(v8 > 0x1.921fb60000000p+0f)) {
+    if (!(v8 < -0x1.921fb60000000p+0f)) {
       goto LABEL_21;
     }
     v9 = -0x1.921fb60000000p+1f;
@@ -10588,8 +10588,8 @@ LABEL_21:
         (float)(roundf((float)(a1 * 0x1.1642c80000000p+2f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v10 <= 0x1.921fb60000000p+0f) {
-    if (v10 >= -0x1.921fb60000000p+0f) {
+  if (!(v10 > 0x1.921fb60000000p+0f)) {
+    if (!(v10 < -0x1.921fb60000000p+0f)) {
       goto LABEL_26;
     }
     v11 = -0x1.921fb60000000p+1f;
@@ -10603,8 +10603,8 @@ LABEL_26:
         (float)(roundf((float)(a2 * 0x1.1642c80000000p+2f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v12 <= 0x1.921fb60000000p+0f) {
-    if (v12 >= -0x1.921fb60000000p+0f) {
+  if (!(v12 > 0x1.921fb60000000p+0f)) {
+    if (!(v12 < -0x1.921fb60000000p+0f)) {
       goto LABEL_31;
     }
     v13 = -0x1.921fb60000000p+1f;
@@ -10618,8 +10618,8 @@ LABEL_31:
         (float)(roundf((float)(a1 * 0x1.aaaaaa0000000p+2f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v14 <= 0x1.921fb60000000p+0f) {
-    if (v14 >= -0x1.921fb60000000p+0f) {
+  if (!(v14 > 0x1.921fb60000000p+0f)) {
+    if (!(v14 < -0x1.921fb60000000p+0f)) {
       goto LABEL_36;
     }
     v15 = -0x1.921fb60000000p+1f;

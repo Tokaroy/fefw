@@ -4558,9 +4558,9 @@ __int64 game_fba950(__int64 a1, char* a2, int a3, __int64 a4)
         (float)(roundf((float)(v11 * 0x1.1df46a0000000p-6f) *
                        0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
-  if (v12 <= 0x1.921fb60000000p+0f) {
+  if (!(v12 > 0x1.921fb60000000p+0f)) {
     v14 = 0x1.0000000000000p+0f;
-    if (v12 >= -0x1.921fb60000000p+0f) {
+    if (!(v12 < -0x1.921fb60000000p+0f)) {
       goto LABEL_13;
     }
     v13 = -0x1.921fb60000000p+1f;
@@ -5718,7 +5718,7 @@ __attribute__((swiftcall)) void game_109e470(PSEUDO_X8 x8_, int32x2_t* a1,
     v28 = 0x1.0000000000000p+0f;
   }
   v29 = -0x1.921fb60000000p+1f - v27;
-  if (v27 >= -0x1.921fb60000000p+0f) {
+  if (!(v27 < -0x1.921fb60000000p+0f)) {
     v29 = v27;
   }
   if (v27 > 0x1.921fb60000000p+0f) {

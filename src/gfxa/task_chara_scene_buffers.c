@@ -657,7 +657,7 @@ __int64 TaskCharaSceneBuffers_bfcea0(__int64 result, _QWORD* a2, int8x16_t* a3)
     else {
       v64 = 0x1.0000000000000p+0;
     }
-    if (v61 >= -0x1.921fb60000000p+0) {
+    if (!(v61 < -0x1.921fb60000000p+0)) {
       v62 = v61;
     }
     v65 = 0x1.921fb60000000p+1 - v61;
@@ -738,11 +738,11 @@ __int64 TaskCharaSceneBuffers_bfcea0(__int64 result, _QWORD* a2, int8x16_t* a3)
       v90 = 0x1.0000000000000p+0;
     }
     v91 = -0x1.921fb60000000p+1 - v89;
-    if (v89 >= -0x1.921fb60000000p+0) {
+    if (!(v89 < -0x1.921fb60000000p+0)) {
       v91 = v89;
     }
     v92 = v89 <= 0x1.921fb60000000p+0;
-    if (v89 <= 0x1.921fb60000000p+0) {
+    if (!(v89 > 0x1.921fb60000000p+0)) {
       v63 = v90;
     }
     v93 = 0x1.921fb60000000p+1 - v89;

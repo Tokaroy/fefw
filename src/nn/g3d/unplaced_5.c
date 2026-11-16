@@ -523,7 +523,7 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     LANES64(v78).n64_u64[0] = LANES64_OF(vdup_n_s32(0xBFC90FDB)).n64_u64[0];
     LANES64(v79).n64_u64[0] = LANES64_OF(vdup_n_s32(0xC0490FDB)).n64_u64[0];
     v80 = -0x1.921fb60000000p+1f - v76;
-    if (v76 >= -0x1.921fb60000000p+0f) {
+    if (!(v76 < -0x1.921fb60000000p+0f)) {
       v80 = v76;
     }
     v81 = v76 <= 0x1.921fb60000000p+0f;

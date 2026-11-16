@@ -68,9 +68,9 @@ __int64 FxI3dl2ReverbNX_setParam(__int64 a1, __int64 a2, float a3)
       0x1.6800000000000p+7f;
   v16 = roundf(v15 * 0x1.45f3060000000p-3f);
   v17 = v15 + (float)(v16 * -0x1.921fb60000000p+2f);
-  if (v17 <= 0x1.921fb60000000p+0f) {
+  if (!(v17 > 0x1.921fb60000000p+0f)) {
     v19 = v15 + (float)(v16 * -0x1.921fb60000000p+2f);
-    if (v17 >= -0x1.921fb60000000p+0f) {
+    if (!(v17 < -0x1.921fb60000000p+0f)) {
       goto LABEL_6;
     }
     v18 = -0x1.921fb60000000p+1f;
@@ -187,8 +187,8 @@ float FxI3dl2ReverbNX_14fb90(float a1, float a2, float a3, float a4)
                               0x1.6800000000000p+7f) *
                       0x1.45f3060000000p-3f) *
                -0x1.921fb60000000p+2f);
-  if (v4 <= 0x1.921fb60000000p+0f) {
-    if (v4 >= -0x1.921fb60000000p+0f) {
+  if (!(v4 > 0x1.921fb60000000p+0f)) {
+    if (!(v4 < -0x1.921fb60000000p+0f)) {
       goto LABEL_6;
     }
     v5 = -0x1.921fb60000000p+1f;
@@ -227,8 +227,8 @@ LABEL_6:
       0x1.6800000000000p+7f;
   v11 = v10 +
         (float)(roundf(v10 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v11 <= 0x1.921fb60000000p+0f) {
-    if (v11 >= -0x1.921fb60000000p+0f) {
+  if (!(v11 > 0x1.921fb60000000p+0f)) {
+    if (!(v11 < -0x1.921fb60000000p+0f)) {
       goto LABEL_11;
     }
     v12 = -0x1.921fb60000000p+1f;

@@ -235,7 +235,7 @@ __int64 GameHr_a2c4f0(_QWORD* a1, char* a2, const char* a3, char a4, char a5,
     v20 = 0x0.0p+0f;
   }
   v21 = snd_getDefineValue("ENVMove_Stop");
-  if (v20 > *(float*)&v21 ||
+  if (!(v20 <= *(float*)&v21) ||
       ((snprintf((__int64)v27, 0x100u, "%s_%s", a2, a3),
         LODWORD(v26[0]) = (unsigned int)snd_fnd_calcCrc32(v27, 0),
         (v22 = snd_data_findFieldData((int*)v26)) != nullptr) &&

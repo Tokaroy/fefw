@@ -1004,7 +1004,7 @@ void game_character_IKChariot_IKChariot_lambda1_Invoke(__int64 a1, __int64 a2,
     v64 = 0x1.0000000000000p+0f;
   }
   v65 = -0x1.921fb60000000p+1f - v63;
-  if (v63 >= -0x1.921fb60000000p+0f) {
+  if (!(v63 < -0x1.921fb60000000p+0f)) {
     v65 = v63;
   }
   v66 = v63 <= 0x1.921fb60000000p+0f;

@@ -362,9 +362,9 @@ float game_combat_1068a00(__int64 a1, float result)
       v9 = *(float*)(v6 + 324) +
            (float)(roundf(*(float*)(v6 + 324) * 0x1.45f3060000000p-3f) *
                    -0x1.921fb60000000p+2f);
-      if (v9 <= 0x1.921fb60000000p+0f) {
+      if (!(v9 > 0x1.921fb60000000p+0f)) {
         v11 = 1.0f;
-        if (v9 >= -0x1.921fb60000000p+0f) {
+        if (!(v9 < -0x1.921fb60000000p+0f)) {
         LABEL_11:
           v12 = v9 * v9;
           v13 =
