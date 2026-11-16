@@ -17668,7 +17668,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 649a00,556,verified,src/task/registration_impl.c,Registration_649a00
 649cd0,124,verified,src/task/unplaced_2.c,task_649cd0
 649d50,384,verified,src/task/unplaced_5.c,task_649d50
-649ee0,1504,disputed,src/task/registration_impl.c,Registration_649ee0
+649ee0,1764,verified,src/task/registration_impl.c,Registration_649ee0
 64a630,68,verified,src/game/unnamed/b004_2.c,GameHr_64a630
 64a680,64,verified,src/game/unnamed/b004_2.c,GameHr_64a680
 64a6c0,332,verified,src/game/unnamed/b004_1.c,GameHr_64a6c0

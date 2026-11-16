@@ -3344,7 +3344,8 @@ LABEL_22:
                             memory_order_acquire) &
        1) == 0 &&
       __cxa_guard_acquire_alt1((__int64)&GameData_22030f0) != 0) {
-    GameRoutine_2b0_alt1();
+    GameRoutine_2b0((_QWORD)GameData_212e730, (_QWORD)&GameData_2203088,
+                    (_QWORD)&GameData_1f50948);
     __cxa_guard_release_alt1((__int64)&GameData_22030f0);
   }
   v13 = GameData_22030a0;
