@@ -1121,7 +1121,7 @@ void AnimTransformBasic_56f760(__int64 a1, float* a2, __int64 a3)
                 }
                 ++v28;
                 v5 = *(unsigned __int16*)v30 == 0;
-                v31 = (_BYTE)a2[22] & 0xFE;
+                v31 = *((_BYTE*)a2 + 88) & 0xFE;
                 if (!v5) {
                   ++v31;
                 }
@@ -1240,6 +1240,7 @@ void AnimTransformBasic_56f760(__int64 a1, float* a2, __int64 a3)
                         v63 = (__int64*)*v63;
                       } while (v63 != v10 && v63 != nullptr);
                     }
+                    __asm__ volatile("" ::"r"(v63));
                     v65 = LayoutEx_58d5b0_alt1(
                         *(_QWORD*)(*((_QWORD*)a2 + 29) + 24LL), 19),
                     v103 = COERCE_AS(__typeof__(v103),

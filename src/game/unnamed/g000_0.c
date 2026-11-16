@@ -2608,7 +2608,7 @@ __int64 GameHr_569720(__int64 a1, int a2, float* a3)
     *((float*)&v47_.v49 + 1) = v38;
   }
 LABEL_16:
-  if (((_BYTE)a3[10] & 1) == 0) {
+  if ((*((_BYTE*)a3 + 40) & 1) == 0) {
     *((float*)&v47_.v49 + 1) = *(float*)(v39 + 64) + v38;
   }
   v43 = *(float*)(v39 + 16);

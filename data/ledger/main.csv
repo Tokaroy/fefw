@@ -15301,7 +15301,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 56f560,148,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_56f560
 56f600,220,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_56f600
 56f700,72,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_56f700
-56f760,2196,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_56f760
+56f760,2348,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_56f760
 570120,2032,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_570120
 5709a0,304,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_5709a0
 570dd0,12,verified,src/nn/ui2d/anim_transform_basic.c,AnimTransformBasic_570dd0

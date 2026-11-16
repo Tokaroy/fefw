@@ -7037,6 +7037,7 @@ __int64 game_1636200(__int64* a1, int a2, _QWORD* a3)
                 v20 = (__int64*)*v20;
               } while (v20 != GameData_212dfc8 && v20 != nullptr);
             }
+            __asm__ volatile("" ::"r"(v20));
           }
           GameRoutine_15b7080((void*)(&v168_.v168));
           v22 = 0;
