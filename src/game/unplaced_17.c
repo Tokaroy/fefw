@@ -541,8 +541,8 @@ void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void std___1_locale_Destroy_locale(__int64);
 void ui_text_190a0c0(float*, __int64, float*, _QWORD*, __int64);
-__int64 game_11c37e0(__int64 a1, __int64 a2, __int64 a3, _QWORD* a4, __int64 a5,
-                     __int64 a6, char a7);
+void game_11c37e0(__int64 a1, __int64 a2, __int64 a3, _QWORD* a4, __int64 a5,
+                  __int64 a6, char a7);
 __int64 game_12a9080(__int64 a1);
 __int64 game_12a9b20(__int64 a1, __int64 a2, char a3);
 __int64 game_12ddb80(__int64 a1, __int64 a2);
@@ -600,8 +600,8 @@ void game_19a0960(__int64 a1, __int64* a2);
 __attribute__((swiftcall)) void game_19a87a0(PSEUDO_X8 x8_, __int64 a1,
                                              __int64 a2, __int64 a3);
 
-__int64 game_11c37e0(__int64 a1, __int64 a2, __int64 a3, _QWORD* a4, __int64 a5,
-                     __int64 a6, char a7)
+void game_11c37e0(__int64 a1, __int64 a2, __int64 a3, _QWORD* a4, __int64 a5,
+                  __int64 a6, char a7)
 {
   unsigned __int64 v13;
   unsigned __int64 v14;
@@ -1329,7 +1329,8 @@ LABEL_167:
     (*(void (**)(_QWORD*))(*v98 + 16LL))(v98);
     std___1___shared_weak_count___release_weak(v98);
   }
-  return TrickEntity_7d1480((__int64)&v119_.v119);
+  (void)(TrickEntity_7d1480((__int64)&v119_.v119));
+  return;
 }
 
 __int64 game_12a9080(__int64 a1)

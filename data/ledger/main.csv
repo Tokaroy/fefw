@@ -54145,7 +54145,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 11c3710,160,verified,src/fs/manager.c,fs_Manager_createFileSync_fs_ResFile_closure_Invoke
 11c37b0,28,verified,src/game/game_trivial_misc.cpp,_Z16GameStub_11c37b0mm
 11c37d0,12,verified,src/game/game_trivial.cpp,_Z16GameStub_11c37d0v
-11c37e0,2444,disputed,src/game/unplaced_17.c,game_11c37e0
+11c37e0,2444,verified,src/game/unplaced_17.c,game_11c37e0
 11c4280,476,verified,src/game/unnamed/b016_2.c,GameHr_11c4280
 11c4460,600,verified,src/game/unnamed/b016_2.c,GameHr_11c4460
 11c46e0,264,verified,src/game/unnamed/b016_2.c,GameHr_11c46e0
@@ -65635,7 +65635,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 151de20,524,verified,src/game/gmap/unplaced_4.c,game_gmap_151de20
 151e060,560,verified,src/game/gmap/unplaced_5.c,game_gmap_151e060
 151e2a0,712,verified,src/game/gmap/unplaced.c,game_gmap_151e2a0
-151e620,580,disputed,src/game/gmap/unplaced.c,game_gmap_151e620
+151e620,580,verified,src/game/gmap/unplaced.c,game_gmap_151e620
 151e8b0,1500,verified,src/game/gmap/unplaced_5.c,game_gmap_151e8b0
 151efe0,900,verified,src/game/gmap/unplaced_5.c,game_gmap_151efe0
 151f430,2024,verified,src/game/gmap/unplaced_5.c,game_gmap_151f430
@@ -66464,7 +66464,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 156bc80,568,verified,src/game/unnamed/r008_0.c,GameHr_156bc80
 156bee0,620,verified,src/game/unnamed/b020_2.c,GameHr_156bee0
 156c160,180,verified,src/game/unplaced_12.c,game_156c160
-156c240,896,disputed,src/game/unplaced_17.c,game_156c240
+156c240,896,verified,src/game/unplaced_17.c,game_156c240
 156c850,180,verified,src/game/unnamed/b020_2.c,GameHr_156c850
 156c910,220,verified,src/game/unplaced_23.c,game_156c910
 156ca00,248,verified,src/game/unnamed/b020_1.c,GameHr_156ca00
@@ -84342,7 +84342,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1912e70,260,verified,src/cspine/spine_model.c,SpineModel_1912e70
 1912fc0,532,verified,src/cspine/spine_model.c,SpineModel_1912fc0
 19131f0,204,verified,src/game/unnamed/b026_0.c,GameHr_19131f0
-19132c0,364,disputed,src/game/unplaced_17.c,game_19132c0
+19132c0,364,verified,src/game/unplaced_17.c,game_19132c0
 19160e0,596,verified,src/cspine/spine_model.c,SpineModel_19160e0
 1916360,336,verified,src/game/unnamed/b026_0.c,GameHr_1916360
 19164c0,336,verified,src/game/unnamed/b026_0.c,GameHr_19164c0

@@ -429,7 +429,7 @@ void game_gmap_14d6b00();
 __n128 game_gmap_14d6b80();
 __int64 game_gmap_1517ac0(__int64 a1, __int64 a2);
 void game_gmap_151e2a0(__int64 a1, __int64 a2, char a3);
-__int64 game_gmap_151e620(__int64 a1, __int64 a2, char a3);
+void game_gmap_151e620(__int64 a1, __int64 a2, char a3);
 __n128 game_gmap_151fdd0_alt1(__int64 a1, __int64 a2,
                               char a3) __asm__("game_gmap_151fdd0");
 _BYTE* game_gmap_1520240_alt1(__int64 a1, __int64 a2,
@@ -6819,7 +6819,7 @@ void game_gmap_151e2a0(__int64 a1, __int64 a2, char a3)
   }
 }
 
-__int64 game_gmap_151e620(__int64 a1, __int64 a2, char a3)
+void game_gmap_151e620(__int64 a1, __int64 a2, char a3)
 {
 
 #pragma clang fp contract(off)
@@ -6912,11 +6912,12 @@ __int64 game_gmap_151e620(__int64 a1, __int64 a2, char a3)
   }
   v17 = fs_609260(a2 + 800, "RegionBlink_Color ", 1);
   if ((a3 & 1) == 0) {
-    return GameRoutine_609140(v17, (__int64)"%f,%f,%f,%f",
+    (void)(GameRoutine_609140(v17, (__int64)"%f,%f,%f,%f",
                               COERCE_FLOAT(*(_OWORD*)(a1 + 640)),
                               COERCE_FLOAT(HIDWORD(*(_QWORD*)(a1 + 640))),
                               COERCE_FLOAT(*(_QWORD*)(a1 + 648)),
-                              COERCE_FLOAT(DWORD3(*(_OWORD*)(a1 + 640))));
+                              COERCE_FLOAT(DWORD3(*(_OWORD*)(a1 + 640)))));
+    return;
   }
   result = *(_QWORD*)(v17 + 24);
   if (result != 0) {
@@ -6929,7 +6930,7 @@ __int64 game_gmap_151e620(__int64 a1, __int64 a2, char a3)
     v19 = (__typeof__(v19)){0};
   }
   *(_OWORD*)(a1 + 640) = v19;
-  return result;
+  return;
 }
 
 void game_gmap_151fdd0(__int64 a1, __int64 a2, char a3)
