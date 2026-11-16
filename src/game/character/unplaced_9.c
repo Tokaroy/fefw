@@ -1588,6 +1588,7 @@ void game_character_10bda00(__int64 a1)
   int8x16_t v41;
   float32x4_t v42;
   int8x16_t v43;
+  float v43_dist;
   float32x4_t* v44;
   float32x4_t v45;
   unsigned __int64 v46;
@@ -1659,7 +1660,7 @@ void game_character_10bda00(__int64 a1)
     v10 = (float)(v7 + -0x1.3333340000000p-3f) +
           (float)((float)(v7 - *(float*)(a1 + 104)) * 0x1.3333340000000p+0f);
     *(_DWORD*)(a1 + 112) = v9 + 1;
-    if (v10 > v8 | v9 < 5) {
+    if (!(v10 <= v8) | v9 < 5) {
       goto LABEL_21;
     }
     *(_BYTE*)(a1 + 100) = 1;
@@ -1866,9 +1867,11 @@ LABEL_40:
                              LANES128_OF(vextq_s8(v41, v41, 8u)).n128_u64[0]),
                    COERCE_AS(float32x2_t, LANES128(v41).n128_u64[0])))
           .n64_u64[0];
-  if (LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v41).n128_u64[0]),
+  v43_dist =
+      LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v41).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v41).n128_u64[0])))
-          .n64_f32[0] != 0x0.0p+0f) {
+          .n64_f32[0];
+  if (v43_dist < 0x0.0p+0f || v43_dist > 0x0.0p+0f) {
     LANES128(v36[19]).n128_u32[0] = LANES128(v38).n128_u32[0];
     LANES128(v36[19]).n128_u32[1] = v37;
     v42 = v36[19];
