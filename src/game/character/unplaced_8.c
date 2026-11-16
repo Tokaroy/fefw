@@ -3495,6 +3495,7 @@ _QWORD* game_character_10ba960(_QWORD* result)
   char v43;
   _BYTE* v44;
   void (*v45)(void);
+  __int64 v45_this;
   int v46;
   __int64 v47;
   __int64 v48;
@@ -3755,6 +3756,7 @@ _QWORD* game_character_10ba960(_QWORD* result)
         v44[696] = 0;
         v44[728] = 0;
         v45 = *(void (**)(void))(*(_QWORD*)v42 + 72LL);
+        v45_this = (__int64)v42;
         goto LABEL_78;
       }
     }
@@ -3887,8 +3889,9 @@ _QWORD* game_character_10ba960(_QWORD* result)
       if (v62 != 0) {
       LABEL_77:
         v45 = *(void (**)(void))(*(_QWORD*)v62 + 8LL);
+        v45_this = (__int64)v62;
       LABEL_78:
-        v45();
+        ((void (*)(__int64))v45)(v45_this);
       }
     }
     else {

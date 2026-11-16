@@ -50774,7 +50774,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 10ba5c0,268,verified,src/game/unnamed/e006_0.c,GameHr_10ba5c0
 10ba7a0,332,verified,src/game/unnamed/b015_1.c,GameHr_10ba7a0
 10ba8f0,84,verified,src/game/character/character_die.c,CharacterDie_Unknown5
-10ba960,2760,disputed,src/game/character/unplaced_8.c,game_character_10ba960
+10ba960,2760,verified,src/game/character/unplaced_8.c,game_character_10ba960
 10bb4d0,132,verified,src/game/character/character_die.c,CharacterDie_Destructor
 10bb560,164,verified,src/game/character/character_die.c,CharacterDie_DeletingDestructor
 10bb610,12,verified,src/game/game_trivial.cpp,_Z16GameStub_10bb610v
