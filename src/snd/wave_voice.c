@@ -48,7 +48,7 @@ __int64 WaveVoice_18e630(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
 __int64 GameHr_18d540(__int64, __int64);
 __int64 Voice_1449c0_alt1(_QWORD*, __int64, __int64, __int64,
                           __int64) __asm__("Voice_1449c0");
-int rand_alt1() __asm__("rand");
+__int64 rand_alt1() __asm__("rand");
 __int64 Crc32List_1212c0(__int64, unsigned __int8*);
 __int64 Voice_1447d0(_QWORD*, char);
 __int64 Voice_144910(__int64 result);

@@ -6132,7 +6132,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 18d490,56,verified,src/snd/wave_stream_reader/cache_buffer.c,CacheBuffer_Destructor
 18d4d0,100,verified,src/snd/wave_stream_reader/cache_buffer.c,CacheBuffer_DeletingDestructor
 18d540,828,verified,src/game/unnamed/b001_0.c,GameHr_18d540
-18d880,2316,disputed,src/snd/wave_voice.c,WaveVoice_18d880
+18d880,2316,verified,src/snd/wave_voice.c,WaveVoice_18d880
 18e190,496,verified,src/game/unnamed/b001_1.c,GameHr_18e190
 18e380,680,verified,src/game/unnamed/b001_1.c,GameHr_18e380
 18e630,320,verified,src/snd/wave_voice.c,WaveVoice_18e630
