@@ -4421,7 +4421,7 @@ void game_1109640(__int64* a1)
   v18 = (float)(PSEUDO_UNFUSED(v15 * v15)) + (float)(v17 * v17);
   v19 = 0x1.0000000000000p+0f;
   v20 = 0x0.0p+0f;
-  if (v18 >= 0x1.0000000000000p-23f) {
+  if (!(v18 < 0x1.0000000000000p-23f)) {
     v21 = 0x1.0000000000000p+0f / sqrtf(v18);
     v20 = v17 * v21;
     v13 = v15 * v21;
@@ -4442,8 +4442,8 @@ void game_1109640(__int64* a1)
   v107 = __PAIR64__(LODWORD(v19), LODWORD(v16));
   v28 = game_combat_e401e0((float*)&v107, (float*)a1 + 13);
   v29 = fabsf(v28);
-  if (v29 >= 0x1.921fb60000000p-1f) {
-    if (v29 <= 0x1.2d97c80000000p+1f) {
+  if (!(v29 < 0x1.921fb60000000p-1f)) {
+    if (!(v29 > 0x1.2d97c80000000p+1f)) {
       if (v28 < 0x0.0p+0f) {
         v30 = 1;
       }
@@ -4550,7 +4550,7 @@ void game_1109640(__int64* a1)
 LABEL_43:
   v39 = 0x0.0p+0f;
   v40 = *((_DWORD*)a1 + 17) - 1;
-  if (v40 <= 4) {
+  if (!(v40 > 4)) {
     v41 = *((_DWORD*)a1 + 14);
     v39 = GameData_1bb1c88[v40];
     *((_DWORD*)a1 + 7) = *((_DWORD*)a1 + 13);
@@ -4562,15 +4562,15 @@ LABEL_43:
     v42 = (float)(v11 * 0x1.e000000000000p+3f) * 0x1.8000000000000p+0f;
   }
   if (v43 != v39) {
-    if (v43 >= v39) {
+    if (!(v43 < v39)) {
       v43 = v43 - v42;
-      if (v43 >= v39) {
+      if (!(v43 < v39)) {
         goto LABEL_53;
       }
     }
     else {
       v43 = v43 + v42;
-      if (v43 <= v39) {
+      if (!(v43 > v39)) {
         goto LABEL_53;
       }
     }
@@ -4591,13 +4591,13 @@ LABEL_53:
   v51 = *((_DWORD*)a1 + 17);
   v52 = (float*)GameData_212c190;
   v53 = (float*)GameData_212c188;
-  if (v51 <= 3) {
-    if (v51 <= 1) {
+  if (!(v51 > 3)) {
+    if (!(v51 > 1)) {
       if (v51 == 0) {
         v58 = *((float*)a1 + 3) - *((float*)a1 + 10);
         v59 = *((float*)a1 + 2) - *((float*)a1 + 9);
         v60 = (float)(PSEUDO_UNFUSED(v58 * v58)) + (float)(v59 * v59);
-        if (v60 >= 0x1.0000000000000p-23f) {
+        if (!(v60 < 0x1.0000000000000p-23f)) {
           v93 = 0x1.0000000000000p+0f / sqrtf(v60);
           v94 = v59 * v93;
           v54 = v58 * v93;
@@ -4700,9 +4700,9 @@ LABEL_71:
   *(float*)&v66 = game_combat_e401e0((float*)&v107, (float*)a1 + 11);
   if (*(float*)&v66 != 0x0.0p+0f) {
     v67 = v11 * 0x1.0000000000000p+2f;
-    if (*(float*)&v66 >= 0x0.0p+0f) {
+    if (!(*(float*)&v66 < 0x0.0p+0f)) {
       *(float*)&v66 = *(float*)&v66 - v67;
-      if (*(float*)&v66 >= 0x0.0p+0f) {
+      if (!(*(float*)&v66 < 0x0.0p+0f)) {
         goto LABEL_77;
       }
       goto LABEL_76;
@@ -4716,9 +4716,9 @@ LABEL_71:
 LABEL_77:
   v68 = *(float*)&v66 + (float)(roundf(*(float*)&v66 * 0x1.45f3060000000p-3f) *
                                 -0x1.921fb60000000p+2f);
-  if (v68 <= 0x1.921fb60000000p+0f) {
+  if (!(v68 > 0x1.921fb60000000p+0f)) {
     v70 = 0x1.0000000000000p+0f;
-    if (v68 >= -0x1.921fb60000000p+0f) {
+    if (!(v68 < -0x1.921fb60000000p+0f)) {
       goto LABEL_82;
     }
     v69 = -0x1.921fb60000000p+1f;
@@ -4784,7 +4784,7 @@ LABEL_82:
   if (*((float*)a1 + 18) == 0x0.0p+0f) {
     v77 = *(_QWORD*)(*a1 + 368);
     v78 = *((_DWORD*)a1 + 17);
-    if (v78 <= 2) {
+    if (!(v78 > 2)) {
       switch (v78) {
       case 0:
         LODWORD(v66) = COERCE_UNSIGNED_INT((float)(-0x1.0000000000000p+0f));
@@ -4807,7 +4807,7 @@ LABEL_82:
       v87 = 387327021;
       goto LABEL_109;
     }
-    if (v78 <= 4) {
+    if (!(v78 > 4)) {
       if (v78 == 3) {
         v89 = *(_QWORD*)(v77 + 40);
         v90 = *(_QWORD*)(v89 + 392);

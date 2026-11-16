@@ -809,8 +809,8 @@ void VectorGraphicsShapeLayer_5aa110(__int64 a1, _QWORD** a2, _DWORD** a3,
     v21 =
         nn_ui2d_5a3700_alt1((unsigned __int16*)(*(_QWORD*)(a4 + 8) + 32LL), a8);
     LANES64(v22).n64_u64[0] = LANES64_OF(vmul_f32(v20, v20)).n64_u64[0];
-    if (LANES64_OF(vsqrt_f32(vpadd_f32(v22, v22))).n64_f32[0] >=
-        (float)(v21 * *(float*)a4)) {
+    if (!(LANES64_OF(vsqrt_f32(vpadd_f32(v22, v22))).n64_f32[0] <
+          (float)(v21 * *(float*)a4))) {
       if ((a6 & 1) == 0) {
         return;
       }

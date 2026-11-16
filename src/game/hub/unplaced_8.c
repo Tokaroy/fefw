@@ -964,7 +964,7 @@ __int64 game_hub_f8ad80(__int64 result)
           v16 = v14;
         }
         v17 = 2;
-        if (*(unsigned __int8*)(GameData_2212268 + 12) <= 6u) {
+        if (!(*(unsigned __int8*)(GameData_2212268 + 12) > 6u)) {
           v13 = v16;
         }
         v18 = 1;
@@ -977,7 +977,7 @@ __int64 game_hub_f8ad80(__int64 result)
         if ((_DWORD)v3 != 2) {
           v18 = v17;
         }
-        if (*(unsigned __int8*)(GameData_2212268 + 12) <= 4u) {
+        if (!(*(unsigned __int8*)(GameData_2212268 + 12) > 4u)) {
           v7 = v18;
         }
         else {
@@ -1071,9 +1071,9 @@ __int64 game_hub_f8ad80(__int64 result)
     *(_BYTE*)(v35 + 25) = 0;
     v36 = v24 +
           (float)(roundf(v24 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v36 <= 0x1.921fb60000000p+0f) {
+    if (!(v36 > 0x1.921fb60000000p+0f)) {
       v38 = v36;
-      if (v36 >= -0x1.921fb60000000p+0f) {
+      if (!(v36 < -0x1.921fb60000000p+0f)) {
       LABEL_61:
         v39 =
             v38 *
@@ -1111,7 +1111,7 @@ __int64 game_hub_f8ad80(__int64 result)
           v40 = 0x1.0000000000000p+0f;
         }
         v41 = -0x1.921fb60000000p+1f - v36;
-        if (v36 >= -0x1.921fb60000000p+0f) {
+        if (!(v36 < -0x1.921fb60000000p+0f)) {
           v41 = v36;
         }
         v42 = 0x1.921fb60000000p+1f - v36;

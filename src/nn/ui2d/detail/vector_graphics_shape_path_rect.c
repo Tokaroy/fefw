@@ -192,17 +192,17 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
 
   v3 = *a2;
   v7 = a1[12] * 0x1.0000000000000p-1f;
-  if (a1[14] <= v7) {
+  if (!(a1[14] > v7)) {
     v7 = a1[14];
   }
-  if (v7 <= (float)(a1[13] * 0x1.0000000000000p-1f)) {
+  if (!(v7 > (float)(a1[13] * 0x1.0000000000000p-1f))) {
     v8 = v7;
   }
   else {
     v8 = a1[13] * 0x1.0000000000000p-1f;
   }
   v9 = acosf((float)(-0x1.0000000000000p+1f / v8) + 0x1.0000000000000p+0f);
-  if (v9 <= 0x0.0p+0f) {
+  if (!(v9 > 0x0.0p+0f)) {
     v11 = 1;
     v12 = 0x1.921fb60000000p+0f;
   LABEL_10:
@@ -230,10 +230,10 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
       v25 = a1[11] + (float)(v19[1] * (float)(v20 - v23));
       v26 = (float)(unsigned int)v13 * 0x1.921fb60000000p+0f;
       if ((v13 & 1) != 0) {
-        if (v22 <= v17) {
+        if (!(v22 > v17)) {
         LABEL_20:
           v27 = (v11 + 1) & 0xFFFFFFFC;
-          if (v11 >= 3) {
+          if (!(v11 < 3)) {
             do {
               v27 -= 4;
               v28 = v26 * 0x1.45f3060000000p+29f;
@@ -297,10 +297,10 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
           goto LABEL_11;
         }
       }
-      else if (v22 <= v16) {
+      else if (!(v22 > v16)) {
         goto LABEL_20;
       }
-      if (v11 >= 3) {
+      if (!(v11 < 3)) {
         break;
       }
       v58 = 0;
@@ -342,11 +342,11 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
         ++*a3;
         v61 = v12 + v26;
         v62 = v60 + 1;
-        if (v60 + 1 >= v11) {
+        if (!(v60 + 1 < v11)) {
         LABEL_34:
           v63 = v12 + v61;
           v64 = v62 + 1;
-          if (v64 >= v11) {
+          if (!(v64 < v11)) {
             goto LABEL_35;
           }
           goto LABEL_39;
@@ -355,7 +355,7 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
       else {
         v61 = v12 + v26;
         v62 = v59 + 1;
-        if (v60 + 1 >= v11) {
+        if (!(v60 + 1 < v11)) {
           goto LABEL_34;
         }
       }
@@ -369,7 +369,7 @@ double VectorGraphicsShapePathRect_5a5320(float* a1, double** a2, _DWORD* a3)
       ++*a3;
       v63 = v12 + v61;
       v64 = v62 + 1;
-      if (v64 >= v11) {
+      if (!(v64 < v11)) {
       LABEL_35:
         v65 = v12 + v63;
         v66 = v64 + 1;

@@ -342,7 +342,7 @@ void nn_g3d_5f2340(__int64* a1, __int64 a2, long double a3, double a4,
             v24 = powf(LANES128(*(v9)).n128_f32[3], *(float*)&v28);
             LODWORD(v14) = LANES128(v19[4]).n128_u32[1];
             v25 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (fabsf(*(float*)&v14) >= 0x1.0624de0000000p-10f) {
+            if (!(fabsf(*(float*)&v14) < 0x1.0624de0000000p-10f)) {
               v25 = *v19;
               __asm__ volatile("" ::"w"(v25));
             }

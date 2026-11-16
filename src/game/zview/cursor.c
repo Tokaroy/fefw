@@ -356,7 +356,7 @@ void Cursor_f56980(int8x16_t* a1)
   if (v16 > v8) {
     v16 = v8;
   }
-  if (*(float*)&v6 >= v8) {
+  if (!(*(float*)&v6 < v8)) {
     v16 = LANES128(a1[18]).n128_f32[2];
   }
   if (v17 < v8) {
@@ -376,7 +376,7 @@ void Cursor_f56980(int8x16_t* a1)
   if (*(float*)&v6 > v9) {
     *(float*)&v6 = v9;
   }
-  if (v12 >= v9) {
+  if (!(v12 < v9)) {
     *(float*)&v6 = v12;
   }
   if (*(float*)&v11 < v9) {
@@ -463,9 +463,9 @@ void Cursor_f56980(int8x16_t* a1)
                                  0x1.0000000000000p-1f) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (v36 <= 0x1.921fb60000000p+0f) {
+    if (!(v36 > 0x1.921fb60000000p+0f)) {
       v39 = 0x1.0000000000000p+0f;
-      if (v36 >= -0x1.921fb60000000p+0f) {
+      if (!(v36 < -0x1.921fb60000000p+0f)) {
       LABEL_36:
         v40 = vmulq_f32(COERCE_AS(float32x4_t, GameData_21a6180),
                         COERCE_AS(float32x4_t, GameData_21a6180));

@@ -5202,7 +5202,7 @@ void game_character_112c460(__int64 result)
     v1 = *(float*)(result + 48);
     __asm__ volatile("" ::"w"(v1));
   }
-  if (v1 >= 0x0.0p+0f) {
+  if (!(v1 < 0x0.0p+0f)) {
     v2 = 0x0.0p+0f;
     {
       v3 = *(_DWORD*)(result + 80) == 2;
@@ -5292,7 +5292,7 @@ void game_character_112c460(__int64 result)
                        COERCE_AS(float32x2_t, LANES128(v21).n128_u64[0]),
                        COERCE_AS(float32x2_t, LANES128(v21).n128_u64[0]))))
             .n64_u32[0];
-    if (v12 >= 0x0.0p+0f) {
+    if (!(v12 < 0x0.0p+0f)) {
       v2 = v12;
       if (v23 < v12) {
         v2 = *(float*)(v5 + 272);
@@ -5307,7 +5307,7 @@ void game_character_112c460(__int64 result)
     v27 = (float)(PSEUDO_UNFUSED((float)(v8 + -0x1.0000000000000p+0f) *
                                  0x1.0000000000000p-1f)) +
           0x1.0000000000000p+0f;
-    if (v2 >= v26) {
+    if (!(v2 < v26)) {
       v34 = v25 - 2;
       v35 = v26 - (float)(v2 - v26);
       if (v25 < 2) {
@@ -5319,7 +5319,7 @@ void game_character_112c460(__int64 result)
         v37 = v26;
         v38 = v35;
         v39 = (v25 - 1) & 7;
-        if (v34 >= 7) {
+        if (!(v34 < 7)) {
           v37 = v26;
           v38 = v35;
           v40 = v36 & 0xFFFFFFF8;
@@ -5365,7 +5365,7 @@ void game_character_112c460(__int64 result)
         v30 = v26;
         v31 = v2;
         v32 = (v25 - 1) & 7;
-        if (v28 >= 7) {
+        if (!(v28 < 7)) {
           v30 = v26;
           v31 = v2;
           v33 = v29 & 0xFFFFFFF8;
@@ -5468,7 +5468,7 @@ void game_character_112c460(__int64 result)
                        COERCE_AS(float32x2_t, LANES128(v57).n128_u64[0]),
                        COERCE_AS(float32x2_t, LANES128(v57).n128_u64[0]))))
             .n64_u32[0];
-    if (v13 >= 0x0.0p+0f) {
+    if (!(v13 < 0x0.0p+0f)) {
       v45 = v13;
       if (v59 < v13) {
         v45 = *(float*)(v5 + 272);
@@ -5483,7 +5483,7 @@ void game_character_112c460(__int64 result)
     v63 = (float)(PSEUDO_UNFUSED((float)(v47 + -0x1.0000000000000p+0f) *
                                  0x1.0000000000000p-1f)) +
           0x1.0000000000000p+0f;
-    if (v45 >= v62) {
+    if (!(v45 < v62)) {
       v70 = v61 - 2;
       v71 = v62 - (float)(v45 - v62);
       if (v61 < 2) {
@@ -5495,7 +5495,7 @@ void game_character_112c460(__int64 result)
         v73 = v62;
         v74 = v71;
         v75 = (v61 - 1) & 7;
-        if (v70 >= 7) {
+        if (!(v70 < 7)) {
           v73 = v62;
           v74 = v71;
           v76 = v72 & 0xFFFFFFF8;
@@ -5541,7 +5541,7 @@ void game_character_112c460(__int64 result)
         v66 = v62;
         v67 = v45;
         v68 = (v61 - 1) & 7;
-        if (v64 >= 7) {
+        if (!(v64 < 7)) {
           v66 = v62;
           v67 = v45;
           v69 = v65 & 0xFFFFFFF8;
