@@ -446,9 +446,9 @@ __int64 cuda_driver_unplaced_7_113960(__int64 a1, __int64 a2, __int64 a3,
 __int64 cuda_driver_120770(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                            __int64 a5, __int64 a6);
 __int64 nvidia_ed630(__int64, __int64, __int64, ...);
-bool CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
+unsigned __int8 CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
 __int64 cuda_driver_119b20_alt2(__int64 result, __int64);
-bool CudaDriverRoutine_1dd060_alt2(__int64);
+unsigned __int8 CudaDriverRoutine_1dd060_alt2(__int64);
 
 __int64 cuda_driver_fabf0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
                           unsigned int a5, __int64 a6, __int64 a7)

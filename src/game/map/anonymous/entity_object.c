@@ -792,7 +792,7 @@ __int64 EntityObject_816f20(__int64 a1)
     *(_DWORD*)(v1 + 128) = 0;
   }
   else {
-    if (v5 >= *(float*)(v1 + 128)) {
+    if (!(v5 < *(float*)(v1 + 128))) {
       result = (*(__int64 (**)(__int64, float*, __int64))(
           *(_QWORD*)(v1 + 120) + 8LL))(v1 + 120, &v10, v1 + 152);
       if ((result & 1) == 0) {
@@ -945,7 +945,7 @@ void EntityObject_ProcState_Unknown2(__int64 a1)
     v11 = *(_BYTE*)(v8 + 145);
     *(_BYTE*)(v8 + 145) = 0;
   LABEL_16:
-    if (v10 >= v9) {
+    if (!(v10 < v9)) {
       if ((v11 & 1) == 0) {
         if (((*(__int64 (**)(_QWORD))(*(_QWORD*)*v7 + 48LL))(*v7) & 1) != 0) {
           return;

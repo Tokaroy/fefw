@@ -262,7 +262,7 @@ __attribute__((swiftcall)) void task_618220(PSEUDO_X8 x8_, float* a1, float a3)
       v11 = *v10;
       v10 += 12;
       v12 = v3 + v11;
-      if ((float)(v3 + v11) >= v7) {
+      if (!((float)(v3 + v11) < v7)) {
         break;
       }
       v3 = v12;
@@ -359,7 +359,7 @@ __attribute__((swiftcall)) void task_618380(PSEUDO_X8 x8_, float* a1, float a3)
       v11 = *v10;
       v10 += 12;
       v12 = v3 + v11;
-      if ((float)(v3 + v11) >= v7) {
+      if (!((float)(v3 + v11) < v7)) {
         break;
       }
       v3 = v12;
@@ -454,7 +454,7 @@ __attribute__((swiftcall)) void task_6184e0(PSEUDO_X8 x8_, float* a1, float a3)
       v11 = *v10;
       v10 += 12;
       v12 = v3 + v11;
-      if ((float)(v3 + v11) >= v7) {
+      if (!((float)(v3 + v11) < v7)) {
         break;
       }
       v3 = v12;

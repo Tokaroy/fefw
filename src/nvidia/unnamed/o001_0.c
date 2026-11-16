@@ -133,11 +133,11 @@ __int64
 CudaDriverRoutine_bc770_alt1(__int64) __asm__("CudaDriverRoutine_bc770");
 __int64 cuda_driver_helpers_b92e0(__int64);
 __int64 memset_plt(__int64, int, unsigned __int64);
-bool CudaDriverRoutine_bbdf0_alt1(__int64) __asm__("CudaDriverRoutine_bbdf0");
-bool CudaDriverRoutine_bbe30_alt1(__int64) __asm__("CudaDriverRoutine_bbe30");
-bool CudaDriverRoutine_e7cb0_alt1(__int64, __int64, unsigned int) __asm__(
+unsigned __int8 CudaDriverRoutine_bbdf0_alt1(__int64) __asm__("CudaDriverRoutine_bbdf0");
+unsigned __int8 CudaDriverRoutine_bbe30_alt1(__int64) __asm__("CudaDriverRoutine_bbe30");
+unsigned __int8 CudaDriverRoutine_e7cb0_alt1(__int64, __int64, unsigned int) __asm__(
     "CudaDriverRoutine_e7cb0");
-bool CudaDriverStub_b9300(__int64);
+unsigned __int8 CudaDriverStub_b9300(__int64);
 __int64 CudaDriverHr_1ce180(__int64 a1, __int64 a2, __int64 a3);
 
 __int64 CudaDriverHr_129320()

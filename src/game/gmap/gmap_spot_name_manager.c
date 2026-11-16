@@ -808,7 +808,7 @@ LABEL_69:
               if (v101 > 0x1.0000000000000p+0f) {
                 v101 = 0x1.0000000000000p+0f;
               }
-              if (v92 <= v93) {
+              if (!(v92 > v93)) {
                 v99 = v59;
               }
               v102 = v100 * v101;
@@ -1194,7 +1194,7 @@ LABEL_2:
         return result;
       }
     }
-    if (v8 <= 2879) {
+    if (!(v8 > 2879)) {
       break;
     }
     if (a3 == 0) {
@@ -1206,7 +1206,7 @@ LABEL_2:
       v129 = v11 >> 1;
       do {
         v130 = v129;
-        if (v128 >= v129) {
+        if (!(v128 < v129)) {
           v131 = (2 * v129) | 1;
           v132 = 2 * v129 + 2;
           v133 = v256_.v272 + 120 * v131;
@@ -1215,7 +1215,7 @@ LABEL_2:
             v131 = 2 * v130 + 2;
           }
           v134 = v256_.v272 + 120 * v130;
-          if (*(float*)(v133 + 96) >= *(float*)(v134 + 96)) {
+          if (!(*(float*)(v133 + 96) < *(float*)(v134 + 96))) {
             v256_.v256 = *(_QWORD*)v134;
             v135 = *(_QWORD*)(v134 + 8);
             v256_.v257 = v135;
@@ -1272,7 +1272,7 @@ LABEL_2:
                 v131 = v146;
               }
               v134 = v145;
-            } while (*(float*)(v133 + 96) >= v144);
+            } while (!(*(float*)(v133 + 96) < v144));
             GmapSpotNameManager_199fe60(v145, &v256_.v256);
             GmapSpotNameManager_17be200_alt1((__int64)&v256_.v256);
           }
@@ -1414,7 +1414,7 @@ LABEL_2:
           *(_DWORD*)(v164 + 112) = v163;
           *(_QWORD*)(v164 + 96) = v161;
           *(_QWORD*)(v164 + 104) = v162;
-        } while (v159 <= (__int64)((unsigned __int64)(v148 - 2) >> 1));
+        } while (!(v159 > (__int64)((unsigned __int64)(v148 - 2) >> 1)));
         if (v150 == v242 - 120) {
           v147 = v242 - 120;
           GmapSpotNameManager_199fe60(v150, v243_.v243);
@@ -1424,7 +1424,7 @@ LABEL_2:
         v147 = v242 - 120;
         GmapSpotNameManager_199fe60(v242 - 120, v243_.v243);
         v181 = v150 - v256_.v272 + 120;
-        if (v181 >= 121) {
+        if (!(v181 < 121)) {
           v182 =
               (-2LL - 0x1111111111111111LL * ((unsigned __int64)v181 >> 3)) >>
               1;
@@ -1573,7 +1573,7 @@ LABEL_2:
         }
       LABEL_179:
         result = GmapSpotNameManager_17be200_alt1((__int64)v243_.v243);
-        if (v148-- <= 2) {
+        if (!(v148-- > 2)) {
           return result;
         }
       }
@@ -1630,16 +1630,16 @@ LABEL_2:
       v243_.v253 = v63;
       v243_.v254 = v64;
       v243_.v252 = v62;
-      if (*(float*)&v63 >= *((float*)a2 - 6)) {
+      if (!(*(float*)&v63 < *((float*)a2 - 6))) {
         v67 = v9 + 120;
         do {
           v7 = v67;
-          if (v67 >= (unsigned __int64)a2) {
+          if (!(v67 < (unsigned __int64)a2)) {
             break;
           }
           v68 = *(float*)(v67 + 96);
           v67 += 120LL;
-        } while (*(float*)&v243_.v253 >= v68);
+        } while (!(*(float*)&v243_.v253 < v68));
       }
       else {
         v65 = v9;
@@ -1647,7 +1647,7 @@ LABEL_2:
           v66 = *(float*)(v65 + 216);
           v7 = v65 + 120;
           v65 += 120;
-        } while (*(float*)&v243_.v253 >= v66);
+        } while (!(*(float*)&v243_.v253 < v66));
       }
       v69 = a2;
       if (v7 < (unsigned __int64)a2) {
@@ -1706,7 +1706,7 @@ LABEL_2:
         do {
           v81 = *(float*)(v7 + 216);
           v7 += 120LL;
-        } while (*(float*)&v243_.v253 >= v81);
+        } while (!(*(float*)&v243_.v253 < v81));
         do {
           v82 = *((float*)v69 - 6);
           v69 -= 15;
@@ -1842,9 +1842,9 @@ LABEL_2:
         v36 = *(float*)(v35 - 24);
         v37 = (__int64*)(v35 - 120);
         v35 -= 120LL;
-      } while (v36 >= *(float*)&v243_.v253);
+      } while (!(v36 < *(float*)&v243_.v253));
     LABEL_41:
-      if (v33 >= (unsigned __int64)v37) {
+      if (!(v33 < (unsigned __int64)v37)) {
         goto LABEL_57;
       }
       v40 = v33;
@@ -1901,7 +1901,7 @@ LABEL_2:
         do {
           v52 = *((float*)v41 - 6);
           v41 -= 15;
-        } while (v52 >= *(float*)&v243_.v253);
+        } while (!(v52 < *(float*)&v243_.v253));
       } while (v40 < (unsigned __int64)v41);
       v53 = (__int64*)(v40 - 120);
     LABEL_58:
@@ -2068,7 +2068,7 @@ LABEL_2:
       *(_QWORD*)(v227 + 216) = v223;
       *(_QWORD*)(v227 + 224) = *(_QWORD*)(v227 + 104);
       *(_DWORD*)(v227 + 232) = *(_DWORD*)(v227 + 112);
-      if (*(float*)&v256_.v269 >= v224) {
+      if (!(*(float*)&v256_.v269 < v224)) {
         GmapSpotNameManager_199fe60(v222, &v256_.v256);
         result = GmapSpotNameManager_17be200_alt1((__int64)&v256_.v256);
         a2 = (__int64*)v219;
@@ -2946,8 +2946,8 @@ bool GmapSpotNameManager_199fb60(__int64 a1, __int64 a2)
   int v40;
 
   v4 = 0xEEEEEEEEEEEEEEEFLL * ((a2 - a1) >> 3);
-  if (v4 <= 2) {
-    if ((unsigned __int64)v4 >= 2) {
+  if (!(v4 > 2)) {
+    if (!((unsigned __int64)v4 < 2)) {
       if (v4 == 2) {
         if (*(float*)(a2 - 24) < *(float*)(a1 + 96)) {
           v5 = *(_QWORD*)(a1 + 8);
@@ -3021,7 +3021,7 @@ LABEL_19:
   }
   v14 = 0;
   v15 = 0;
-  while (*(float*)(v13 + 96) >= *(float*)(v12 + 96)) {
+  while (!(*(float*)(v13 + 96) < *(float*)(v12 + 96))) {
   LABEL_21:
     v12 = v13;
     v13 += 120;
@@ -3076,7 +3076,7 @@ LABEL_19:
     }
     v23 = *(float*)(a1 + v22 + 216);
     v22 -= 120;
-    if (*(float*)&v38 >= v23) {
+    if (!(*(float*)&v38 < v23)) {
       v24 = a1 + v22 + 360;
       goto LABEL_36;
     }

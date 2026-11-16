@@ -495,7 +495,7 @@ void WallCollisionModule_1106720(float* a1, float* a2, float* a3, float a4,
     v15 = a6 + 0x1.47ae140000000p-8f;
     v16 = (float)(a6 + 0x1.47ae140000000p-8f) + *a3;
     v17 = v13 - (float)(a6 + 0x1.47ae140000000p-8f);
-    if (LANES128(v63_.v63).n128_f32[0] >= v16) {
+    if (!(LANES128(v63_.v63).n128_f32[0] < v16)) {
       v18 = LANES128(v63_.v63).n128_f32[0];
     }
     else {
@@ -524,7 +524,7 @@ void WallCollisionModule_1106720(float* a1, float* a2, float* a3, float a4,
                                                 LODWORD(v17))),
                            COERCE_AS(int8x8_t, LANES128(v10).n128_u64[0])))
             .n64_u64[0];
-    if (LANES64(v23).n64_f32[1] >= v20) {
+    if (!(LANES64(v23).n64_f32[1] < v20)) {
       v24 = LANES64(v23).n64_f32[1];
     }
     else {
@@ -657,7 +657,7 @@ void WallCollisionModule_1106720(float* a1, float* a2, float* a3, float a4,
   *a1 = LANES128(v63_.v63).n128_f32[0];
   a1[1] = v40;
   v47 = v45 - (float)(a6 + 0x1.47ae140000000p-8f);
-  if (v41 >= (float)((float)(a6 + 0x1.47ae140000000p-8f) + v42)) {
+  if (!(v41 < (float)((float)(a6 + 0x1.47ae140000000p-8f) + v42))) {
     v48 = v41 <= v47;
   }
   else {
@@ -671,8 +671,8 @@ void WallCollisionModule_1106720(float* a1, float* a2, float* a3, float a4,
     *a1 = v41;
   }
   v49 = v44 - (float)(a6 + 0x1.47ae140000000p-8f);
-  if (v40 >= (float)((float)(a6 + 0x1.47ae140000000p-8f) + v43)) {
-    if (v40 <= v49) {
+  if (!(v40 < (float)((float)(a6 + 0x1.47ae140000000p-8f) + v43))) {
+    if (!(v40 > v49)) {
       return;
     }
   }

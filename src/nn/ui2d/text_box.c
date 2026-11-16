@@ -555,7 +555,7 @@ void TextBox_Unknown12(__int64 a1, float* a2)
     v12 = 0;
     TextBox_59b8f0_alt1(a1, &v11);
     v5 = fabsf(*(float*)(a1 + 80));
-    if (v5 >= (float)(*(float*)&v12 - *(float*)&v11)) {
+    if (!(v5 < (float)(*(float*)&v12 - *(float*)&v11))) {
       v6 = v5;
     }
     else {
@@ -718,13 +718,13 @@ float TextBox_Unknown14(__int64 a1)
     v5 = fabsf(v3);
     v6 = fabsf(v4);
     v7 = v4 + v3;
-    if (v6 >= v5) {
+    if (!(v6 < v5)) {
       v8 = v6;
     }
     else {
       v8 = v5;
     }
-    if (v7 >= v8) {
+    if (!(v7 < v8)) {
       v9 = v6 + v5;
     }
     else {
@@ -2446,10 +2446,10 @@ void TextBox_59d960(__int64 a1, __int64 a2, float a3)
       if (*(_BYTE*)(v12 + 16) == 1) {
         v17 = *(unsigned __int16*)(v14 + 4);
         v13 = a3;
-        if (v17 >= 2) {
+        if (!(v17 < 2)) {
           v18 = *v16;
           v19 = v16[3 * (unsigned int)(v17 - 1)];
-          if (a3 <= v19) {
+          if (!(a3 > v19)) {
             v13 = a3;
             if (a3 < v18) {
               v22 = (float*)(v14 + *(unsigned int*)(v14 + 8));
@@ -2466,7 +2466,7 @@ void TextBox_59d960(__int64 a1, __int64 a2, float a3)
         }
       }
       v11 = nn_ui2d_59f160(v16, *(unsigned __int16*)(v14 + 4), v13);
-      if ((int)v15 <= 2) {
+      if (!((int)v15 > 2)) {
         if ((_DWORD)v15 == 1) {
           v11 = -v11;
         }

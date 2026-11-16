@@ -151,9 +151,10 @@ float jnf(int n, float x)
 			}
 			z = j0f(x);
 			w = j1f(x);
-			if (fabsf(z) >= fabsf(w))
-				b = t*z/b;
-			else
+                        if (!(fabsf(z) < fabsf(w))) {
+                          b = t * z / b;
+                        }
+                        else
 				b = t*w/a;
 		}
 	}

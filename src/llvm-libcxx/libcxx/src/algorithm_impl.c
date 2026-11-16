@@ -5702,7 +5702,7 @@ LABEL_3:
         *(a2 - 1) = v69;
         v72 = *v8;
         v71 = v8[1];
-        if (v70 >= v71) {
+        if (!(v70 < v71)) {
           v72 = v8[1];
           v71 = v70;
         }
@@ -5718,7 +5718,7 @@ LABEL_3:
         else {
           v97 = v8[2];
         }
-        if (*v8 >= v95) {
+        if (!(*v8 < v95)) {
           v95 = *v8;
         }
         v8[2] = v95;
@@ -5730,7 +5730,7 @@ LABEL_3:
         else {
           v99 = *(a2 - 1);
         }
-        if (v96 >= v98) {
+        if (!(v96 < v98)) {
           v98 = v96;
         }
         *(a2 - 1) = v98;
@@ -5813,7 +5813,7 @@ LABEL_3:
         v83 = *((_QWORD*)v8 + 2);
         v82 = v8[3];
         v84 = v8[1];
-        if (v81 >= v82) {
+        if (!(v81 < v82)) {
           v83 = *((_QWORD*)v8 + 3);
           v82 = v81;
         }
@@ -5826,7 +5826,7 @@ LABEL_3:
         else {
           v86 = *(a2 - 1);
         }
-        if (v84 >= v85) {
+        if (!(v84 < v85)) {
           v85 = v84;
         }
         *(a2 - 1) = v85;
@@ -5842,7 +5842,7 @@ LABEL_3:
         if (v88 < *v8) {
           v88 = *v8;
         }
-        if (v90 >= v89) {
+        if (!(v90 < v89)) {
           v87 = v8[2];
           v89 = v90;
         }
@@ -5855,7 +5855,7 @@ LABEL_3:
         if (v88 < v86) {
           v88 = v86;
         }
-        if (v91 >= v89) {
+        if (!(v91 < v89)) {
           v86 = v89;
         }
         *v8 = v87;
@@ -5887,7 +5887,7 @@ LABEL_3:
         return result;
       }
     }
-    if (v11 <= 23) {
+    if (!(v11 > 23)) {
       break;
     }
     if (v9 == 1) {
@@ -5905,7 +5905,7 @@ LABEL_3:
       else {
         v45 = *(a2 - 1);
       }
-      if (*v8 >= v12) {
+      if (!(*v8 < v12)) {
         v12 = *v8;
       }
       *(a2 - 1) = v12;
@@ -5943,7 +5943,7 @@ LABEL_3:
       else {
         v14 = *(a2 - 1);
       }
-      if (*v13 >= v12) {
+      if (!(*v13 < v12)) {
         v12 = *v13;
       }
       *(a2 - 1) = v12;
@@ -5978,7 +5978,7 @@ LABEL_3:
       else {
         v22 = *(a2 - 2);
       }
-      if (v20 >= v21) {
+      if (!(v20 < v21)) {
         v21 = v20;
       }
       *(a2 - 2) = v21;
@@ -6049,7 +6049,7 @@ LABEL_3:
       else {
         v40 = v37;
       }
-      if (v38 >= v37) {
+      if (!(v38 < v37)) {
         v37 = *v13;
       }
       if (v37 < v39) {
@@ -6084,22 +6084,22 @@ LABEL_3:
       }
     }
     v51 = *v8;
-    if (*(v8 - 1) >= *v8) {
-      if (v51 >= *(a2 - 1)) {
+    if (!(*(v8 - 1) < *v8)) {
+      if (!(v51 < *(a2 - 1))) {
         v58 = (unsigned __int64)(v8 + 1);
         do {
           v8 = (double*)v58;
-          if (v58 >= (unsigned __int64)a2) {
+          if (!(v58 < (unsigned __int64)a2)) {
             break;
           }
           v58 += 8LL;
-        } while (v51 >= *v8);
+        } while (!(v51 < *v8));
       }
       else {
         do {
           v57 = v8[1];
           ++v8;
-        } while (v51 >= v57);
+        } while (!(v51 < v57));
       }
       v59 = a2;
       if (v8 < a2) {
@@ -6118,7 +6118,7 @@ LABEL_3:
             v63 = v8[1];
             ++v8;
             v61 = v63;
-          } while (v51 >= v63);
+          } while (!(v51 < v63));
           do {
             v64 = *--v59;
             v62 = v64;
@@ -13933,22 +13933,22 @@ float* algorithm_7cae80(float* a1, float* a2)
   int v85;
 
   v2 = *a1;
-  if (*a1 >= *(a2 - 1)) {
+  if (!(*a1 < *(a2 - 1))) {
     v5 = a1 + 1;
     do {
       v3 = v5;
-      if (v5 >= a2) {
+      if (!(v5 < a2)) {
         break;
       }
       ++v5;
-    } while (v2 >= *v3);
+    } while (!(v2 < *v3));
   }
   else {
     v3 = a1;
     do {
       v4 = v3[1];
       ++v3;
-    } while (v2 >= v4);
+    } while (!(v2 < v4));
   }
   if (v3 < a2) {
     do {
@@ -13978,7 +13978,7 @@ float* algorithm_7cae80(float* a1, float* a2)
     }
     else {
       v41 = v37 & 7;
-      if ((unsigned __int64)v37 >= 8) {
+      if (!((unsigned __int64)v37 < 8)) {
         v42 = 0;
         v12 = 0;
         v43 = v7;
@@ -14149,7 +14149,7 @@ LABEL_53:
     goto LABEL_78;
   }
   v55 = v37 & 7;
-  if ((unsigned __int64)v37 >= 8) {
+  if (!((unsigned __int64)v37 < 8)) {
     v56 = 0;
     v11 = 0;
     v57 = v9;
@@ -14688,22 +14688,22 @@ double* algorithm_7cbc80(double* a1, double* a2)
   __int64 v85;
 
   v2 = *a1;
-  if (*a1 >= *(a2 - 1)) {
+  if (!(*a1 < *(a2 - 1))) {
     v5 = a1 + 1;
     do {
       v3 = v5;
-      if (v5 >= a2) {
+      if (!(v5 < a2)) {
         break;
       }
       ++v5;
-    } while (v2 >= *v3);
+    } while (!(v2 < *v3));
   }
   else {
     v3 = a1;
     do {
       v4 = v3[1];
       ++v3;
-    } while (v2 >= v4);
+    } while (!(v2 < v4));
   }
   if (v3 < a2) {
     do {
@@ -14733,7 +14733,7 @@ double* algorithm_7cbc80(double* a1, double* a2)
     }
     else {
       v41 = v37 & 7;
-      if ((unsigned __int64)v37 >= 8) {
+      if (!((unsigned __int64)v37 < 8)) {
         v42 = 0;
         v12 = 0;
         v43 = v7;
@@ -14904,7 +14904,7 @@ LABEL_53:
     goto LABEL_78;
   }
   v55 = v37 & 7;
-  if ((unsigned __int64)v37 >= 8) {
+  if (!((unsigned __int64)v37 < 8)) {
     v56 = 0;
     v11 = 0;
     v57 = v9;
@@ -15092,7 +15092,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       *(a2 - 1) = v29;
       v32 = *a1;
       v31 = a1[1];
-      if (v30 >= v31) {
+      if (!(v30 < v31)) {
         v32 = a1[1];
         v31 = v30;
       }
@@ -15108,7 +15108,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       else {
         v49 = a1[2];
       }
-      if (*a1 >= v47) {
+      if (!(*a1 < v47)) {
         v47 = *a1;
       }
       a1[2] = v47;
@@ -15120,7 +15120,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       else {
         v51 = *(a2 - 1);
       }
-      if (v48 >= v50) {
+      if (!(v48 < v50)) {
         v50 = v48;
       }
       *(a2 - 1) = v50;
@@ -15203,7 +15203,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       v14 = *((_QWORD*)a1 + 2);
       v13 = a1[3];
       v15 = a1[1];
-      if (v12 >= v13) {
+      if (!(v12 < v13)) {
         v14 = *((_QWORD*)a1 + 3);
         v13 = v12;
       }
@@ -15216,7 +15216,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       else {
         v17 = *(a2 - 1);
       }
-      if (v15 >= v16) {
+      if (!(v15 < v16)) {
         v16 = v15;
       }
       *(a2 - 1) = v16;
@@ -15232,7 +15232,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       if (v19 < *a1) {
         v19 = *a1;
       }
-      if (v21 >= v20) {
+      if (!(v21 < v20)) {
         v18 = a1[2];
         v20 = v21;
       }
@@ -15245,7 +15245,7 @@ bool algorithm_7cc460(double* a1, double* a2)
       if (v19 < v17) {
         v19 = v17;
       }
-      if (v22 >= v20) {
+      if (!(v22 < v20)) {
         v17 = v20;
       }
       *a1 = v18;
@@ -15280,7 +15280,7 @@ bool algorithm_7cc460(double* a1, double* a2)
     else {
       v38 = a1[2];
     }
-    if (v35 >= v34) {
+    if (!(v35 < v34)) {
       v34 = a1[1];
     }
     if (v34 < v36) {
@@ -15346,7 +15346,7 @@ bool algorithm_7cc460(double* a1, double* a2)
   }
   v24 = *(a2 - 1);
   v25 = *a1;
-  if (v24 >= *a1) {
+  if (!(v24 < *a1)) {
     return true;
   }
   *a1 = v24;

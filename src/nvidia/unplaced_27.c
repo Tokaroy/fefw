@@ -36,7 +36,7 @@ __int64 cuda_driver_unplaced_9_1bb6a0(unsigned __int64, unsigned __int64);
 
 __int64 memset_plt(_QWORD, _QWORD, _QWORD);
 
-bool CudaDriverRoutine_9ac20(__int64);
+unsigned __int8 CudaDriverRoutine_9ac20(__int64);
 
 extern __int128 CudaDriverData_1115690;
 
@@ -219,17 +219,17 @@ __int64 nvidia_ed630(__int64, __int64, __int64, ...);
 
 __int64 nvidia_f2e00(unsigned int*, __int64, unsigned __int64*, __int64*);
 
-bool CudaDriverRoutine_11f2f0(__int64);
+unsigned __int8 CudaDriverRoutine_11f2f0(__int64);
 
-bool CudaDriverRoutine_11f690(__int64*);
+unsigned __int8 CudaDriverRoutine_11f690(__int64*);
 
-bool CudaDriverRoutine_11f6d0(__int64);
+unsigned __int8 CudaDriverRoutine_11f6d0(__int64);
 
-bool CudaDriverRoutine_92440(_QWORD*);
+unsigned __int8 CudaDriverRoutine_92440(_QWORD*);
 
-bool CudaDriverRoutine_98110(_BOOL8 result);
+unsigned __int8 CudaDriverRoutine_98110(_BOOL8 result);
 
-bool CudaDriverStub_985a0(__int64);
+unsigned __int8 CudaDriverStub_985a0(__int64);
 
 bool cuda_driver_12ea30(int*);
 
@@ -237,7 +237,7 @@ bool cuda_driver_checks_1031f0(__int64);
 
 bool cuda_driver_checks_103220(__int64);
 
-bool cuda_driver_checks_103250(__int64);
+unsigned __int8 cuda_driver_checks_103250(__int64);
 
 double CudaDriverRoutine_99e50(__int64, unsigned __int64*);
 

@@ -105,7 +105,7 @@ __int64 zstd_decompress_227c40(_DWORD*);
 unsigned __int8 CudaDriverRoutine_5a420(__int64, unsigned __int64,
                                         unsigned int);
 unsigned __int8 CudaDriverRoutine_5adc0(__int64);
-bool CudaDriverRoutine_98110(_BOOL8 result);
+unsigned __int8 CudaDriverRoutine_98110(_BOOL8 result);
 unsigned __int8 CudaDriverRoutine_9aa40(__int64);
 int cuda_driver_12ea30(int*);
 double CudaDriverRoutine_99e50(__int64, unsigned __int64*);
@@ -333,7 +333,7 @@ __int64 cuda_driver_21cce0(unsigned int* a1, __int64 a2);
 __int64 nvidia_118090(__int64);
 bool CudaDriverRoutine_5a420_alt1(
     __int64, unsigned __int64, unsigned int) __asm__("CudaDriverRoutine_5a420");
-bool CudaDriverRoutine_5adc0_alt1(__int64) __asm__("CudaDriverRoutine_5adc0");
+unsigned __int8 CudaDriverRoutine_5adc0_alt1(__int64) __asm__("CudaDriverRoutine_5adc0");
 bool cuda_driver_12ea30_alt1(int*) __asm__("cuda_driver_12ea30");
 __int64 CudaDriverStub_107f90_alt3(__int64);
 __int64 CudaDriverStub_108070_alt3(__int64);

@@ -1630,13 +1630,13 @@ LABEL_22:
             .n128_u64[0];
   v65 = -0x1.fffffe0000000p+127f;
   v66 = *((float*)&v61 + 1);
-  if (*(float*)&v61 >= -0x1.fffffe0000000p+127f) {
+  if (!(*(float*)&v61 < -0x1.fffffe0000000p+127f)) {
     v67 = *(float*)&v61;
   }
   else {
     v67 = -0x1.fffffe0000000p+127f;
   }
-  if (*((float*)&v61 + 1) >= -0x1.fffffe0000000p+127f) {
+  if (!(*((float*)&v61 + 1) < -0x1.fffffe0000000p+127f)) {
     v65 = *((float*)&v61 + 1);
   }
   if (*(float*)&v61 > 0x1.fffffe0000000p+127f) {
@@ -1645,40 +1645,40 @@ LABEL_22:
   if (*((float*)&v61 + 1) > 0x1.fffffe0000000p+127f) {
     v66 = 0x1.fffffe0000000p+127f;
   }
-  if (*(float*)&v62 >= v67) {
+  if (!(*(float*)&v62 < v67)) {
     v67 = *(float*)&v62;
   }
-  if (*((float*)&v62 + 1) >= v65) {
+  if (!(*((float*)&v62 + 1) < v65)) {
     v65 = *((float*)&v62 + 1);
   }
-  if (*(float*)&v61 >= *(float*)&v62) {
+  if (!(*(float*)&v61 < *(float*)&v62)) {
     *(float*)&v61 = *(float*)&v62;
   }
-  if (v66 >= *((float*)&v62 + 1)) {
+  if (!(v66 < *((float*)&v62 + 1))) {
     v66 = *((float*)&v62 + 1);
   }
-  if (*(float*)&v63 >= v67) {
+  if (!(*(float*)&v63 < v67)) {
     v67 = *(float*)&v63;
   }
-  if (*((float*)&v63 + 1) >= v65) {
+  if (!(*((float*)&v63 + 1) < v65)) {
     v65 = *((float*)&v63 + 1);
   }
-  if (*(float*)&v61 >= *(float*)&v63) {
+  if (!(*(float*)&v61 < *(float*)&v63)) {
     *(float*)&v61 = *(float*)&v63;
   }
-  if (v66 >= *((float*)&v63 + 1)) {
+  if (!(v66 < *((float*)&v63 + 1))) {
     v66 = *((float*)&v63 + 1);
   }
-  if (*(float*)&v64 >= v67) {
+  if (!(*(float*)&v64 < v67)) {
     v67 = *(float*)&v64;
   }
-  if (*((float*)&v64 + 1) >= v65) {
+  if (!(*((float*)&v64 + 1) < v65)) {
     v65 = *((float*)&v64 + 1);
   }
   if (*(float*)&v61 < *(float*)&v64) {
     *(float*)&v64 = *(float*)&v61;
   }
-  if (v66 >= *((float*)&v64 + 1)) {
+  if (!(v66 < *((float*)&v64 + 1))) {
     v68 = *((float*)&v64 + 1);
   }
   else {
@@ -2156,28 +2156,28 @@ void Alignment_56d3e0(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                   vaddq_f32(v139,
                             vmlaq_f32(v143, COERCE_AS(float32x4_t, 0), v138)))
                   .n128_u32[0];
-          if (v145 >= -0x1.fffffe0000000p+127f) {
+          if (!(v145 < -0x1.fffffe0000000p+127f)) {
             v91 = v145;
           }
-          if (v145 <= 0x1.fffffe0000000p+127f) {
+          if (!(v145 > 0x1.fffffe0000000p+127f)) {
             v144 = v145;
           }
-          if (v146 >= v91) {
+          if (!(v146 < v91)) {
             v91 = v146;
           }
-          if (v144 >= v146) {
+          if (!(v144 < v146)) {
             v144 = v146;
           }
-          if (v95 >= v91) {
+          if (!(v95 < v91)) {
             v91 = v95;
           }
           if (v144 < v95) {
             v95 = v144;
           }
-          if (v147 >= v91) {
+          if (!(v147 < v91)) {
             v91 = v147;
           }
-          if (v95 >= v147) {
+          if (!(v95 < v147)) {
             v95 = v147;
           }
         }
@@ -2321,31 +2321,31 @@ void Alignment_56d3e0(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                 .n128_u32[0];
         v51 = -0x1.fffffe0000000p+127f;
         v52 = 0x1.fffffe0000000p+127f;
-        if (v49 >= -0x1.fffffe0000000p+127f) {
+        if (!(v49 < -0x1.fffffe0000000p+127f)) {
           v51 = v49;
         }
-        if (v49 <= 0x1.fffffe0000000p+127f) {
+        if (!(v49 > 0x1.fffffe0000000p+127f)) {
           v52 = v49;
         }
-        if (v50 >= v51) {
+        if (!(v50 < v51)) {
           v51 = v50;
         }
-        if (v52 >= v50) {
+        if (!(v52 < v50)) {
           v52 = v50;
         }
-        if (*(float*)&v47 >= v51) {
+        if (!(*(float*)&v47 < v51)) {
           v51 = *(float*)&v47;
         }
         if (v52 < *(float*)&v47) {
           *(float*)&v47 = v52;
         }
-        if (v48 >= v51) {
+        if (!(v48 < v51)) {
           v53 = v48;
         }
         else {
           v53 = v51;
         }
-        if (*(float*)&v47 >= v48) {
+        if (!(*(float*)&v47 < v48)) {
           v54 = v48;
         }
         else {
@@ -2536,25 +2536,25 @@ void Alignment_56d3e0(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                       .n128_u32[0];
               v96 = 0x1.fffffe0000000p+127f;
               v97 = LANES128(a1[17]).n128_u8[6] & 3;
-              if (v93 >= -0x1.fffffe0000000p+127f) {
+              if (!(v93 < -0x1.fffffe0000000p+127f)) {
                 v91 = v93;
               }
-              if (v93 <= 0x1.fffffe0000000p+127f) {
+              if (!(v93 > 0x1.fffffe0000000p+127f)) {
                 v96 = v93;
               }
-              if (v94 >= v91) {
+              if (!(v94 < v91)) {
                 v91 = v94;
               }
-              if (v96 >= v94) {
+              if (!(v96 < v94)) {
                 v96 = v94;
               }
-              if (v92 >= v91) {
+              if (!(v92 < v91)) {
                 v91 = v92;
               }
-              if (v96 >= v92) {
+              if (!(v96 < v92)) {
                 v96 = v92;
               }
-              if (v95 >= v91) {
+              if (!(v95 < v91)) {
                 v91 = v95;
               }
               if (v96 < v95) {
@@ -2570,11 +2570,11 @@ void Alignment_56d3e0(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                 v91 = v53;
               }
             LABEL_106:
-              if (v95 >= *a2) {
+              if (!(v95 < *a2)) {
                 v95 = *a2;
               }
               *a2 = v95;
-              if (*a3 >= v91) {
+              if (!(*a3 < v91)) {
                 v91 = *a3;
               }
               *a3 = v91;
@@ -3117,31 +3117,31 @@ void Alignment_56dd00(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                         COERCE_AS(float32x4_t, 0), v136));
           LANES128(v93).n128_u32[0] = LANES128(v93).n128_u32[1];
           v144 = LANES128(v142).n128_f32[1];
-          if (LANES128(v142).n128_f32[1] >= -0x1.fffffe0000000p+127f) {
+          if (!(LANES128(v142).n128_f32[1] < -0x1.fffffe0000000p+127f)) {
             v141 = LANES128(v142).n128_f32[1];
           }
           if (LANES128(v142).n128_f32[1] > 0x1.fffffe0000000p+127f) {
             v144 = 0x1.fffffe0000000p+127f;
           }
-          if (LANES128(v143).n128_f32[1] >= v141) {
+          if (!(LANES128(v143).n128_f32[1] < v141)) {
             v141 = LANES128(v143).n128_f32[1];
           }
-          if (v144 >= LANES128(v143).n128_f32[1]) {
+          if (!(v144 < LANES128(v143).n128_f32[1])) {
             v144 = LANES128(v143).n128_f32[1];
           }
-          if (LANES128(v93).n128_f32[1] >= v141) {
+          if (!(LANES128(v93).n128_f32[1] < v141)) {
             v141 = LANES128(v93).n128_f32[1];
           }
           if (v144 < LANES128(v93).n128_f32[1]) {
             LANES128(v93).n128_f32[0] = v144;
           }
-          if (LANES128(v140).n128_f32[1] >= v141) {
+          if (!(LANES128(v140).n128_f32[1] < v141)) {
             v94 = LANES128(v140).n128_f32[1];
           }
           else {
             v94 = v141;
           }
-          if (LANES128(v93).n128_f32[0] >= LANES128(v140).n128_f32[1]) {
+          if (!(LANES128(v93).n128_f32[0] < LANES128(v140).n128_f32[1])) {
             LANES128(v93).n128_f32[0] = LANES128(v140).n128_f32[1];
           }
         }
@@ -3273,31 +3273,31 @@ void Alignment_56dd00(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
         LANES128(v50).n128_u32[0] = LANES128(v50).n128_u32[1];
         LODWORD(v51) = DWORD1(v51);
         v52 = LANES128(v48).n128_f32[1];
-        if (LANES128(v48).n128_f32[1] >= -0x1.fffffe0000000p+127f) {
+        if (!(LANES128(v48).n128_f32[1] < -0x1.fffffe0000000p+127f)) {
           v47 = LANES128(v48).n128_f32[1];
         }
         if (LANES128(v48).n128_f32[1] > 0x1.fffffe0000000p+127f) {
           v52 = 0x1.fffffe0000000p+127f;
         }
-        if (LANES128(v49).n128_f32[1] >= v47) {
+        if (!(LANES128(v49).n128_f32[1] < v47)) {
           v47 = LANES128(v49).n128_f32[1];
         }
-        if (v52 >= LANES128(v49).n128_f32[1]) {
+        if (!(v52 < LANES128(v49).n128_f32[1])) {
           v52 = LANES128(v49).n128_f32[1];
         }
-        if (LANES128(v50).n128_f32[1] >= v47) {
+        if (!(LANES128(v50).n128_f32[1] < v47)) {
           v47 = LANES128(v50).n128_f32[1];
         }
         if (v52 < LANES128(v50).n128_f32[1]) {
           LANES128(v50).n128_f32[0] = v52;
         }
-        if (*((float*)&v51 + 1) >= v47) {
+        if (!(*((float*)&v51 + 1) < v47)) {
           v53 = *((float*)&v51 + 1);
         }
         else {
           v53 = v47;
         }
-        if (LANES128(v50).n128_f32[0] >= *((float*)&v51 + 1)) {
+        if (!(LANES128(v50).n128_f32[0] < *((float*)&v51 + 1))) {
           v54 = *((float*)&v51 + 1);
         }
         else {
@@ -3480,31 +3480,31 @@ void Alignment_56dd00(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                   vmlaq_f32(vmlaq_n_f32(v87, v84, v59 * 0x1.0000000000000p-1f),
                             COERCE_AS(float32x4_t, 0), v85));
               LANES128(v93).n128_u32[0] = LANES128(v91).n128_u32[1];
-              if (LANES128(v91).n128_f32[1] >= -0x1.fffffe0000000p+127f) {
+              if (!(LANES128(v91).n128_f32[1] < -0x1.fffffe0000000p+127f)) {
                 v90 = LANES128(v91).n128_f32[1];
               }
               if (LANES128(v91).n128_f32[1] > 0x1.fffffe0000000p+127f) {
                 LANES128(v93).n128_f32[0] = 0x1.fffffe0000000p+127f;
               }
-              if (LANES128(v92).n128_f32[1] >= v90) {
+              if (!(LANES128(v92).n128_f32[1] < v90)) {
                 v90 = LANES128(v92).n128_f32[1];
               }
-              if (LANES128(v93).n128_f32[0] >= LANES128(v92).n128_f32[1]) {
+              if (!(LANES128(v93).n128_f32[0] < LANES128(v92).n128_f32[1])) {
                 LANES128(v93).n128_f32[0] = LANES128(v92).n128_f32[1];
               }
-              if (LANES128(v88).n128_f32[1] >= v90) {
+              if (!(LANES128(v88).n128_f32[1] < v90)) {
                 v90 = LANES128(v88).n128_f32[1];
               }
-              if (LANES128(v93).n128_f32[0] >= LANES128(v88).n128_f32[1]) {
+              if (!(LANES128(v93).n128_f32[0] < LANES128(v88).n128_f32[1])) {
                 LANES128(v93).n128_f32[0] = LANES128(v88).n128_f32[1];
               }
-              if (LANES128(v89).n128_f32[1] >= v90) {
+              if (!(LANES128(v89).n128_f32[1] < v90)) {
                 v94 = LANES128(v89).n128_f32[1];
               }
               else {
                 v94 = v90;
               }
-              if (LANES128(v93).n128_f32[0] >= LANES128(v89).n128_f32[1]) {
+              if (!(LANES128(v93).n128_f32[0] < LANES128(v89).n128_f32[1])) {
                 LANES128(v93).n128_f32[0] = LANES128(v89).n128_f32[1];
               }
               if ((LANES128(a1[17]).n128_u16[2] & 0x1000) != 0) {
@@ -3523,7 +3523,7 @@ void Alignment_56dd00(float32x4_t* a1, float* a2, float* a3, float32x4_t* a4)
                 v94 = v53;
               }
             LABEL_111:
-              if (*a2 >= v94) {
+              if (!(*a2 < v94)) {
                 v94 = *a2;
               }
               *a2 = v94;

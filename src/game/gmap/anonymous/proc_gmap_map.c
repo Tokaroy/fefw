@@ -614,7 +614,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
     while (1) {
       v16 = *(_QWORD*)&v11[8 * v14];
       v17 = *(float*)(v16 + 52);
-      if (vabds_f32(v15, v17) >= 0x1.0000000000000p-23f) {
+      if (!(vabds_f32(v15, v17) < 0x1.0000000000000p-23f)) {
         if (v15 > v17) {
           break;
         }
@@ -639,7 +639,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
       }
     }
     v103 = &v11[-v13];
-    if (a4 - v14 >= v105) {
+    if (!(a4 - v14 < v105)) {
       if (a4 - 1 == v14) {
         *(_QWORD*)&v11[8 * v14] = v12;
         *(_QWORD*)a2 = v16;
@@ -667,8 +667,8 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
         v38 = &v20[8 * (v35 >> 1)];
         v39 = *(_QWORD*)v38;
         v40 = *(float*)(*(_QWORD*)v38 + 52LL);
-        if (vabds_f32(v40, v36) >= 0x1.0000000000000p-23f) {
-          if (v40 <= v36) {
+        if (!(vabds_f32(v40, v36) < 0x1.0000000000000p-23f)) {
+          if (!(v40 > v36)) {
             goto LABEL_45;
           }
         }
@@ -714,7 +714,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
         v27 = &v23[8 * (v24 >> 1)];
         v28 = *(_QWORD*)v27;
         v29 = *(float*)(*(_QWORD*)v27 + 52LL);
-        if (vabds_f32(v25, v29) >= 0x1.0000000000000p-23f) {
+        if (!(vabds_f32(v25, v29) < 0x1.0000000000000p-23f)) {
           if (v25 > v29) {
             goto LABEL_25;
           }
@@ -837,7 +837,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
     v73 = a4 - v32 - v14;
     v74 = v32 + v45;
     v75 = v105 - v45;
-    if (v74 >= v105 + a4 - v74 - v14) {
+    if (!(v74 < v105 + a4 - v74 - v14)) {
       v75 = v45;
       result = ProcGmapMap_1687580(v46, v20, a3, v73, v105 - v45, a6, a7);
       v20 = v23;
@@ -856,7 +856,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
       return result;
     }
   }
-  if (a4 <= v105) {
+  if (!(a4 > v105)) {
     if (v11 == a2) {
       return result;
     }
@@ -877,7 +877,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
       v91 = *(_QWORD*)a6;
       v92 = *(float*)(*(_QWORD*)a2 + 52LL);
       v93 = *(float*)(*(_QWORD*)a6 + 52LL);
-      if (vabds_f32(v92, v93) >= 0x1.0000000000000p-23f) {
+      if (!(vabds_f32(v92, v93) < 0x1.0000000000000p-23f)) {
         if (v92 > v93) {
           goto LABEL_140;
         }
@@ -924,7 +924,7 @@ unsigned __int64 ProcGmapMap_1687580(unsigned __int64 result, char* a2,
     v81 = *(v77 - 1);
     v82 = *(float*)(v81 + 52);
     v83 = *(float*)(v78 + 52);
-    if (vabds_f32(v82, v83) >= 0x1.0000000000000p-23f) {
+    if (!(vabds_f32(v82, v83) < 0x1.0000000000000p-23f)) {
       if (v82 > v83) {
         goto LABEL_102;
       }
@@ -1963,7 +1963,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
               (LayoutAccessor_155ea30_alt1(*(__int64**)(v21 + 24)) & 1) != 0) {
             v29 = *(_QWORD*)(v21 + 56);
             v30 = *(_QWORD*)(v21 + 64);
-            if ((unsigned __int64)(v30 - v29) >= 0x11) {
+            if (!((unsigned __int64)(v30 - v29) < 0x11)) {
               v31 = LayoutAccessor_15638b0(v27, "Change", 1);
               v32 = nn_os_ConvertToTimeSpan(*(_QWORD*)(v23[348] + 128));
               v33 =
@@ -2044,7 +2044,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                 v51 = v50 - v49;
                 v52 = *(_DWORD*)(v21 + 80);
                 v53 = (v51 >> 4) - 1;
-                if (v53 >= v52) {
+                if (!(v53 < v52)) {
                   v53 = *(_DWORD*)(v21 + 80);
                 }
                 if (v52 < 0) {
@@ -2138,7 +2138,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v91 = v84 - (float)(PSEUDO_UNFUSED(v90 * 0x1.0000000000000p-1f));
         v92 = v86 - (float)(PSEUDO_UNFUSED(v90 * 0x1.0000000000000p-1f));
         *(float*)&v93 = v91 + (float)(v90 * 0x0.0p+0f);
-        if (v81 <= 262142) {
+        if (!(v81 > 262142)) {
           *(float*)&v94 = v91 + (float)(v90 * 0x0.0p+0f);
           *((float*)&v94 + 1) = v92 + (float)(v90 * 0x0.0p+0f);
           v95 = v77[2392] + 40LL * v83;
@@ -2155,7 +2155,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v100 = *((_DWORD*)*v56 + 4800);
         v101 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v100 + 1;
-        if (v100 <= 262142) {
+        if (!(v100 > 262142)) {
           LODWORD(v102) = v98;
           *((float*)&v102 + 1) = v92 + (float)(v90 * 0x0.0p+0f);
           v103 = v97[2392] + 40LL * (v100 + 1);
@@ -2173,7 +2173,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v108 = *((_DWORD*)*v56 + 4800);
         v109 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v108 + 1;
-        if (v108 <= 262142) {
+        if (!(v108 > 262142)) {
           *((float*)&v98 + 1) = v106;
           v110 = v105[2392] + 40LL * (v108 + 1);
           *(_QWORD*)v110 = v98;
@@ -2190,7 +2190,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v114 = *((_DWORD*)*v56 + 4800);
         v115 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v114 + 1;
-        if (v114 <= 262142) {
+        if (!(v114 > 262142)) {
           *((float*)&v93 + 1) = v106;
           v116 = v112[2392] + 40LL * (v114 + 1);
           *(_QWORD*)v116 = v93;
@@ -2215,7 +2215,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v124 = v84 - (float)(PSEUDO_UNFUSED(v123 * 0x1.0000000000000p-1f));
         v125 = v86 - (float)(PSEUDO_UNFUSED(v123 * 0x1.0000000000000p-1f));
         *(float*)&v126 = v124 + (float)(v123 * 0x0.0p+0f);
-        if (v81 <= 262142) {
+        if (!(v81 > 262142)) {
           *(float*)&v127 = v124 + (float)(v123 * 0x0.0p+0f);
           *((float*)&v127 + 1) = v125 + (float)(v123 * 0x0.0p+0f);
           v128 = v77[2392] + 40LL * v83;
@@ -2232,7 +2232,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v133 = *((_DWORD*)*v56 + 4800);
         v134 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v133 + 1;
-        if (v133 <= 262142) {
+        if (!(v133 > 262142)) {
           LODWORD(v135) = v131;
           *((float*)&v135 + 1) = v125 + (float)(v123 * 0x0.0p+0f);
           v136 = v130[2392] + 40LL * (v133 + 1);
@@ -2251,7 +2251,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v141 = *((_DWORD*)*v56 + 4800);
         v142 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v141 + 1;
-        if (v141 <= 262142) {
+        if (!(v141 > 262142)) {
           *((float*)&v131 + 1) = v139;
           v143 = v138[2392] + 40LL * (v141 + 1);
           *(_QWORD*)v143 = v131;
@@ -2268,7 +2268,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
         v147 = *((_DWORD*)*v56 + 4800);
         v148 = *((_DWORD*)*v56 + 4320);
         *((_DWORD*)*v56 + 4800) = v147 + 1;
-        if (v147 <= 262142) {
+        if (!(v147 > 262142)) {
           *((float*)&v126 + 1) = v139;
           v149 = v145[2392] + 40LL * (v147 + 1);
           *(_QWORD*)v149 = v126;
@@ -2299,7 +2299,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       *((_QWORD*)&v158 + 1) = v159;
       *(float*)&v159 = v151 + (float)(v120 * 0x0.0p+0f);
       *((_DWORD*)*v56 + 4800) = v156 + 1;
-      if (v156 <= 262142) {
+      if (!(v156 > 262142)) {
         *(float*)&v160 = v151 + (float)(v120 * 0x0.0p+0f);
         *((float*)&v160 + 1) = v152 + (float)(v120 * 0x0.0p+0f);
         v161 = v154[2392] + 40LL * (v156 + 1);
@@ -2316,7 +2316,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v166 = *((_DWORD*)*v56 + 4800);
       v167 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v166 + 1;
-      if (v166 <= 262142) {
+      if (!(v166 > 262142)) {
         LODWORD(v168) = v164;
         *((float*)&v168 + 1) = v152 + (float)(v120 * 0x0.0p+0f);
         v169 = v163[2392] + 40LL * (v166 + 1);
@@ -2334,7 +2334,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v174 = *((_DWORD*)*v56 + 4800);
       v175 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v174 + 1;
-      if (v174 <= 262142) {
+      if (!(v174 > 262142)) {
         *((float*)&v164 + 1) = v172;
         v176 = v171[2392] + 40LL * (v174 + 1);
         *(_QWORD*)v176 = v164;
@@ -2350,7 +2350,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v180 = *((_DWORD*)*v56 + 4800);
       v181 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v180 + 1;
-      if (v180 <= 262142) {
+      if (!(v180 > 262142)) {
         *((float*)&v159 + 1) = v172;
         v182 = v178[2392] + 40LL * (v180 + 1);
         *(_QWORD*)v182 = v159;
@@ -2429,7 +2429,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                 LANES64(v215).n64_f32[1] = v212;
                 do {
                   v216 = (float)v214 / 0x1.4000000000000p+3f;
-                  if (v216 >= 0x1.0000000000000p-1f) {
+                  if (!(v216 < 0x1.0000000000000p-1f)) {
                     v219 = v205[5];
                     v222 = v205[6];
                     v218 = v205[4];
@@ -2554,7 +2554,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                       LANES128_OF(vmulq_n_f32(v247, *(float*)&v209))
                           .n128_u64[0];
                   *((float32x2_t*)&v250 + 1) = v246;
-                  if (v240 <= 262142) {
+                  if (!(v240 > 262142)) {
                     LODWORD(v251) =
                         LANES64_OF(vadd_f32(COERCE_AS(float32x2_t,
                                                       LANES128(v1).n128_u64[0]),
@@ -2575,7 +2575,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                   v256 = *(_DWORD*)(*(_QWORD*)v235 + 19200LL);
                   v257 = *(_DWORD*)(*(_QWORD*)v235 + 17280LL);
                   *(_DWORD*)(*(_QWORD*)v235 + 19200LL) = v256 + 1;
-                  if (v256 <= 262142) {
+                  if (!(v256 > 262142)) {
                     LANES128(v1).n128_u32[0] =
                         LANES64_OF(vsub_f32(COERCE_AS(float32x2_t,
                                                       LANES128(v1).n128_u64[0]),
@@ -2600,7 +2600,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                   v264 = *(_DWORD*)(*(_QWORD*)v235 + 19200LL);
                   v265 = *(_DWORD*)(*(_QWORD*)v235 + 17280LL);
                   *(_DWORD*)(*(_QWORD*)v235 + 19200LL) = v264 + 1;
-                  if (v264 <= 262142) {
+                  if (!(v264 > 262142)) {
                     LANES128(v218).n128_f32[0] =
                         v261 - LANES64(v249).n64_f32[0];
                     v266 = *(_QWORD*)(v260 + 19136) + 40LL * (v264 + 1);
@@ -2619,7 +2619,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                   v270 = *(_DWORD*)(v268 + 19200);
                   v271 = *(_DWORD*)(v268 + 17280);
                   *(_DWORD*)(v268 + 19200) = v270 + 1;
-                  if (v270 <= 262142) {
+                  if (!(v270 > 262142)) {
                     *(float*)&v272 = v261 + LANES64(v249).n64_f32[0];
                     v273 = *(_QWORD*)(v268 + 19136) + 40LL * (v270 + 1);
                     *((float*)&v272 + 1) = v262 + LANES64(v249).n64_f32[1];
@@ -2710,7 +2710,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                     v295 / 0x1.fe00000000000p+7f,
                     COERCE_AS(float32x2_t, LANES128(v294).n128_u64[0]), 1);
                 *((_QWORD*)&v304 + 1) = LANES128(v294).n128_u64[0];
-                if (v298 <= 262142) {
+                if (!(v298 > 262142)) {
                   *(float*)&v305 = v301 + *(float*)&v302;
                   v306 = *(_QWORD*)(v296 + 19136) + 40LL * (v298 + 1);
                   *((float*)&v305 + 1) = v303 + *((float*)&v302 + 1);
@@ -2727,7 +2727,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                 v310 = *(_DWORD*)(*(_QWORD*)v275 + 19200LL);
                 v311 = *(_DWORD*)(*(_QWORD*)v275 + 17280LL);
                 *(_DWORD*)(*(_QWORD*)v275 + 19200LL) = v310 + 1;
-                if (v310 <= 262142) {
+                if (!(v310 > 262142)) {
                   *(float*)&v312 = v301 - *(float*)&v302;
                   v313 = *(_QWORD*)(v308 + 19136) + 40LL * (v310 + 1);
                   *((float*)&v312 + 1) = v303 - *((float*)&v302 + 1);
@@ -2746,7 +2746,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                 v319 = *(_DWORD*)(*(_QWORD*)v275 + 19200LL);
                 v320 = *(_DWORD*)(*(_QWORD*)v275 + 17280LL);
                 *(_DWORD*)(*(_QWORD*)v275 + 19200LL) = v319 + 1;
-                if (v319 <= 262142) {
+                if (!(v319 > 262142)) {
                   *(float*)&v321 = v316 - *(float*)&v302;
                   v322 = *(_QWORD*)(v315 + 19136) + 40LL * (v319 + 1);
                   *((float*)&v321 + 1) = v317 - *((float*)&v302 + 1);
@@ -2764,7 +2764,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
                 v327 = *(_DWORD*)(*(_QWORD*)v275 + 19200LL);
                 v328 = *(_DWORD*)(*(_QWORD*)v275 + 17280LL);
                 *(_DWORD*)(v325 + 2816) = v327 + 1;
-                if (v327 <= 262142) {
+                if (!(v327 > 262142)) {
                   *(float*)&v329 = v316 + *(float*)&v302;
                   v330 = *(_QWORD*)(v324 + 19136) + 40LL * (v327 + 1);
                   *((float*)&v329 + 1) = v317 + *((float*)&v302 + 1);
@@ -2849,7 +2849,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v360 = v354 - (float)(PSEUDO_UNFUSED(v359 * 0x1.0000000000000p-1f));
       v361 = v356 - (float)(PSEUDO_UNFUSED(v359 * 0x1.0000000000000p-1f));
       *(float*)&v362 = v360 + (float)(v359 * 0x0.0p+0f);
-      if (v350 <= 262142) {
+      if (!(v350 > 262142)) {
         *(float*)&v363 = v360 + (float)(v359 * 0x0.0p+0f);
         *((float*)&v363 + 1) = v361 + (float)(v359 * 0x0.0p+0f);
         v364 = v349[2392] + 40LL * v353;
@@ -2866,7 +2866,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v369 = *((_DWORD*)*v56 + 4800);
       v370 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v369 + 1;
-      if (v369 <= 262142) {
+      if (!(v369 > 262142)) {
         LODWORD(v371) = v367;
         *((float*)&v371 + 1) = v361 + (float)(v359 * 0x0.0p+0f);
         v372 = v366[2392] + 40LL * (v369 + 1);
@@ -2884,7 +2884,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v377 = *((_DWORD*)*v56 + 4800);
       v378 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v377 + 1;
-      if (v377 <= 262142) {
+      if (!(v377 > 262142)) {
         *((float*)&v367 + 1) = v375;
         v379 = v374[2392] + 40LL * (v377 + 1);
         *(_QWORD*)v379 = v367;
@@ -2900,7 +2900,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v383 = *((_DWORD*)*v56 + 4800);
       v384 = *((_DWORD*)*v56 + 4320);
       *((_DWORD*)*v56 + 4800) = v383 + 1;
-      if (v383 <= 262142) {
+      if (!(v383 > 262142)) {
         *((float*)&v362 + 1) = v375;
         v385 = v381[2392] + 40LL * (v383 + 1);
         *(_QWORD*)v385 = v362;

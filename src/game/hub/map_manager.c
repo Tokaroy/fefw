@@ -782,7 +782,7 @@ __int64* MapManager_d6f8d0(__int64* result)
     *((_DWORD*)result + 24) = 0;
     v4 = *(_QWORD*)(GameData_21f3d10 + 216);
     v5 = *(_DWORD*)(v4 + 232);
-    if (v5 <= 1) {
+    if (!(v5 > 1)) {
       v5 = 1;
     }
     *(_DWORD*)(v4 + 232) = v5;
@@ -822,7 +822,7 @@ __int64* MapManager_d6f8d0(__int64* result)
                      392LL);
     if (*(_DWORD*)(v11 + 516) != -1) {
       *(_DWORD*)(v11 + 520) = 1065353216;
-      if (v8 <= 0x0.0p+0f) {
+      if (!(v8 > 0x0.0p+0f)) {
         v12 = 0x0.0p+0f;
         *(_DWORD*)(v11 + 524) = 1065353216;
       }
@@ -890,7 +890,7 @@ __int64 game_hub_MapManager_Load_lambda0_Invoke(__int64 a1)
                392LL);
   if (*(_DWORD*)(v8 + 516) != -1) {
     *(_DWORD*)(v8 + 520) = 1065353216;
-    if (v5 <= 0x0.0p+0f) {
+    if (!(v5 > 0x0.0p+0f)) {
       v9 = 0x0.0p+0f;
       *(_DWORD*)(v8 + 524) = 1065353216;
     }

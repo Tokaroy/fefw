@@ -280,7 +280,7 @@ __int64 EmitterSet_5b5c70(__int64 a1, float32x4_t* a2, __int64 a3, char a4,
   unsigned int v12;
   float32x4_t* v14;
 
-  if (*(float*)(a1 + 76) <= 0x0.0p+0f) {
+  if (!(*(float*)(a1 + 76) > 0x0.0p+0f)) {
     if ((GameRoutine_5b45d0((__int64)a2, a3) & 1) != 0) {
       GameRoutine_5b9d90(LANES128(a2[9]).n128_i64[1], (__int64)a2);
       GameRoutine_5b9c80(LANES128(a2[9]).n128_i64[1], (__int64)a2);
@@ -491,16 +491,16 @@ float32x4_t EmitterSet_5b6560(__int64 a1, float32x4_t* a2)
   LANES128(v12).n128_u64[0] = __PAIR64__(LODWORD(v9), LODWORD(v7));
   LANES128(v12).n128_u64[1] = LODWORD(v11);
   *(float32x4_t*)(a1 + 240) = v12;
-  if (v7 <= 0x0.0p+0f) {
+  if (!(v7 > 0x0.0p+0f)) {
     *(_OWORD*)(a1 + 160) = (__typeof__(*(_OWORD*)(a1 + 160))){0};
-    if (v9 <= 0x0.0p+0f) {
+    if (!(v9 > 0x0.0p+0f)) {
       goto LABEL_3;
     }
   LABEL_7:
     v16 = vmulq_n_f32(a2[1], 0x1.0000000000000p+0f / v9);
     v13 = (__typeof__(v13)){0};
     *(float32x4_t*)(a1 + 176) = v16;
-    if (v11 <= 0x0.0p+0f) {
+    if (!(v11 > 0x0.0p+0f)) {
       goto LABEL_5;
     }
     goto LABEL_4;

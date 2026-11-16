@@ -461,7 +461,7 @@ __int64 cuda_driver_unplaced_8_197020(__int64* a1);
 unsigned __int64 cuda_driver_unplaced_8_1a7380(__int64 a1);
 __int64 nvidia_11a720(__int64);
 __int64 nvidia_205ee0(int, __int64, __int64, _QWORD*, int);
-bool CudaDriverStub_985a0_alt1(__int64) __asm__("CudaDriverStub_985a0");
+unsigned __int8 CudaDriverStub_985a0_alt1(__int64) __asm__("CudaDriverStub_985a0");
 __int64 CudaDriverStub_107f90_alt4(_QWORD);
 __int64 CudaDriverStub_108070_alt4(_QWORD);
 

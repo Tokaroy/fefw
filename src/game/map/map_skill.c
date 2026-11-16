@@ -70,7 +70,7 @@ void game_map_MapSkill_TryPutTerrain_lambda0_Invoke_9129a0(__int64 a1, int* a2,
     *(_DWORD*)((char*)((__int128*)0x10LL) + (_QWORD)v11 + 12) = v15;
     v16 = v15 & 0x7FFFFFFF;
     nn_os_UnlockMutex(&game_g_random_mutex);
-    if ((float)(v10 * 0x1.3880000000000p+13f) <= (float)(v16 % 0xF4240)) {
+    if (!((float)(v10 * 0x1.3880000000000p+13f) > (float)(v16 % 0xF4240))) {
     LABEL_9:
       v20 = 0;
       goto LABEL_10;

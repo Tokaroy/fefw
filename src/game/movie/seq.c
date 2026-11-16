@@ -2207,7 +2207,7 @@ void game_movie_Seq_Tick_BgmCtrl(__int64 a1)
            : (v5 = false),
        !v5)) {
     v6 = *(float*)(a1 + 744);
-    if (v6 >= 0x0.0p+0f) {
+    if (!(v6 < 0x0.0p+0f)) {
       if (*(_BYTE*)(a1 + 691) == 1) {
         v7 = *(_QWORD*)(a1 + 680);
         if (v7 != 0) {
@@ -2286,7 +2286,7 @@ void game_movie_Seq_Tick_BgmCtrl(__int64 a1)
         v39 = COERCE_AS(__typeof__(v39), PSEUDO_REGISTER(float, "s0", "=w")),
         v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(float, "s0", "=w"));
     v17 = *(float*)(a1 + 744);
-    if (v17 >= 0x0.0p+0f) {
+    if (!(v17 < 0x0.0p+0f)) {
       if (*(_BYTE*)(a1 + 691) == 1) {
         v18 = *(_QWORD*)(a1 + 680);
         if (v18 != 0) {
@@ -2352,7 +2352,7 @@ void game_movie_Seq_Tick_BgmCtrl(__int64 a1)
         if (v17 < (float)v30 || *(float*)(a1 + 748) >= (float)v30) {
           goto LABEL_65;
         }
-        if (v29 <= 2) {
+        if (!(v29 > 2)) {
           if (v29 == 1) {
             snd_Fade_Fade_10c910_alt1((__int64)v48_.v48, v32),
                 v13 = COERCE_AS(__typeof__(v13),
@@ -2924,7 +2924,7 @@ void game_movie_Seq_Tick_BgmCtrl_lambda0_Invoke(__int64 a1, _QWORD** a2)
   v5 = **(float**)(a1 + 8);
   if (v4 > (float)(v5 + 0x1.2c00000000000p+8f)) {
     v6 = (float)(v4 - v5) / 0x1.f400000000000p+9f;
-    if (v6 <= 0x0.0p+0f) {
+    if (!(v6 > 0x0.0p+0f)) {
       return;
     }
     snd_Fade_Fade_10c830_alt1((__int64)v16, 0x1.9000000000000p+6f);
@@ -2935,7 +2935,7 @@ void game_movie_Seq_Tick_BgmCtrl_lambda0_Invoke(__int64 a1, _QWORD** a2)
   LABEL_7:
     (*(void (**)(_QWORD*, _QWORD*, long double))(v7 + 256))(v8, v16, v10);
     snd_Fade_Destroy_Fade_alt1(v16);
-    if ((*(float (**)(_QWORD*))(*v8 + 88LL))(v8) <= 0x0.0p+0f) {
+    if (!((*(float (**)(_QWORD*))(*v8 + 88LL))(v8) > 0x0.0p+0f)) {
       return;
     }
     snd_Fade_Fade_10c830_alt1((__int64)v16, 0x1.9000000000000p+6f);
@@ -2945,7 +2945,7 @@ void game_movie_Seq_Tick_BgmCtrl_lambda0_Invoke(__int64 a1, _QWORD** a2)
   }
   if (v4 < (float)(v5 + -0x1.2c00000000000p+8f)) {
     v11 = (float)(v5 - v4) / 0x1.f400000000000p+9f;
-    if (v11 <= 0x0.0p+0f) {
+    if (!(v11 > 0x0.0p+0f)) {
       return;
     }
     snd_Fade_Fade_10c830_alt1((__int64)v16, 0x1.9000000000000p+6f);
@@ -2960,7 +2960,7 @@ void game_movie_Seq_Tick_BgmCtrl_lambda0_Invoke(__int64 a1, _QWORD** a2)
   v8 = v2 + 5;
   (*(void (**)(_QWORD*, _QWORD*, double))(v15 + 256))(v8, v16, 0x0.0p+0);
   snd_Fade_Destroy_Fade_alt1(v16);
-  if ((*(float (**)(_QWORD*))(*v8 + 88LL))(v8) >= 0x1.0000000000000p+0f) {
+  if (!((*(float (**)(_QWORD*))(*v8 + 88LL))(v8) < 0x1.0000000000000p+0f)) {
     return;
   }
   snd_Fade_Fade_10c830_alt1((__int64)v16, 0x1.f400000000000p+8f);

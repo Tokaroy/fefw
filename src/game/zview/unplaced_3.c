@@ -498,7 +498,7 @@ void game_zview_d14a80(float* a1)
   v7 = fabsf(*(float*)(*(_QWORD*)(v1 + 8) + 228LL));
   if (v6 > 0x0.0p+0f) {
     v6 = v6 - v7;
-    if (v6 >= 0x0.0p+0f) {
+    if (!(v6 < 0x0.0p+0f)) {
       goto LABEL_9;
     }
     goto LABEL_8;
@@ -544,7 +544,7 @@ LABEL_9:
     v13 = v13 + 0x1.921fb60000000p+2f;
   }
   v14 = fmodf(v13 - v12, 0x1.921fb60000000p+2f);
-  if (v14 >= 0x0.0p+0f) {
+  if (!(v14 < 0x0.0p+0f)) {
     v15 = v14 + 0x0.0p+0f;
   }
   else {
@@ -557,7 +557,7 @@ LABEL_9:
   v17 = v12 + v15;
   if (v12 > v17) {
     v12 = v12 - v16;
-    if (v12 >= v17) {
+    if (!(v12 < v17)) {
       goto LABEL_25;
     }
   LABEL_24:

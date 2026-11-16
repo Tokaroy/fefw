@@ -221,7 +221,7 @@ __int64 game_cmdbtl_anonymous_ProcSeqStock_StockCamera(__int64 a1)
       v15 = -0x1.9999a00000000p-4f;
       if (v11 == 0) {
       LABEL_18:
-        if (v15 >= 0x0.0p+0f) {
+        if (!(v15 < 0x0.0p+0f)) {
           v16 = v15;
         }
         else {
@@ -515,7 +515,7 @@ float ProcSeqStock_f4ad30(__int64 a1)
     }
   }
   v6 = 60.0f / (float)*(int*)(game_g_frame_clock + 476);
-  if (v6 <= 0.0f) {
+  if (!(v6 > 0.0f)) {
     v7 = 0.0167f;
   }
   else {

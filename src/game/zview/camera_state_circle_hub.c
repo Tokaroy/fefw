@@ -101,7 +101,7 @@ _QWORD* CameraStateCircleHub_Unknown2(__int64 a1)
   if ((v9 & 4) != 0) {
     v7 = 2.0f;
   }
-  if (v7 >= v6) {
+  if (!(v7 < v6)) {
     v6 = v7;
   }
   *(float*)(a1 + 628) = v6;

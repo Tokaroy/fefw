@@ -517,7 +517,7 @@ __int64 GmapRegionDrawer_Unknown5(__int64 a1)
     *(_DWORD*)(v1 + 16) = 0;
   }
   else {
-    if (*(float*)(v1 + 16) <= 0.5) {
+    if (!(*(float*)(v1 + 16) > 0.5)) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(v1 + 8) + 8LL))(v1 + 8, &v5, v1 + 40);
       if ((result & 1) == 0) {
@@ -556,7 +556,7 @@ __int64 GmapRegionDrawer_Unknown6(__int64 a1)
     *(_DWORD*)(v1 + 16) = 0;
   }
   else {
-    if (*(float*)(v1 + 16) <= 0.5) {
+    if (!(*(float*)(v1 + 16) > 0.5)) {
       result = (*(__int64 (**)(__int64, int*, __int64))(
           *(_QWORD*)(v1 + 8) + 8LL))(v1 + 8, &v5, v1 + 40);
       if ((result & 1) == 0) {

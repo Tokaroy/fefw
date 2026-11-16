@@ -2218,7 +2218,7 @@ LABEL_35:
             v51 = *(float*)(v45 + 164) - *(float*)(v45 + 156);
             v52 = *(float*)(v45 + 160) - *(float*)(v45 + 152);
             v53 = (float)(PSEUDO_UNFUSED(v51 * v51)) + (float)(v52 * v52);
-            if (v53 >= 0x1.0000000000000p-23f) {
+            if (!(v53 < 0x1.0000000000000p-23f)) {
               v90 = 0x1.0000000000000p+0f / sqrtf(v53);
               v55 = v52 * v90;
               v54 = v51 * v90;
@@ -2273,7 +2273,7 @@ LABEL_35:
               v63 = *(float*)(v61 - 8) - v62;
               v64 = *(float*)(v61 - 4) - *(float*)(v61 + 4);
               v65 = (float)(PSEUDO_UNFUSED(v64 * v64)) + (float)(v63 * v63);
-              if (v65 >= 0x1.0000000000000p-23f) {
+              if (!(v65 < 0x1.0000000000000p-23f)) {
                 v93 = 0x1.0000000000000p+0f / sqrtf(v65);
                 v67 = v63 * v93;
                 v66 = v64 * v93;
@@ -2569,7 +2569,7 @@ __int64 game_combat_106e320(_QWORD* a1)
           v10 = *(float*)(v2 + 164) - *(float*)(v2 + 156);
           v11 = *(float*)(v2 + 160) - *(float*)(v2 + 152);
           v12 = (float)(PSEUDO_UNFUSED(v10 * v10)) + (float)(v11 * v11);
-          if (v12 >= 0x1.0000000000000p-23f) {
+          if (!(v12 < 0x1.0000000000000p-23f)) {
             v29 = 0x1.0000000000000p+0f / sqrtf(v12);
             v14 = v11 * v29;
             v13 = v10 * v29;
@@ -2615,7 +2615,7 @@ LABEL_19:
     v21 = *(float*)(v2 + 156) - *(float*)(v2 + 164);
     v22 = *(float*)(v2 + 152) - *(float*)(v2 + 160);
     v23 = (float)(PSEUDO_UNFUSED(v21 * v21)) + (float)(v22 * v22);
-    if (v23 >= 0x1.0000000000000p-23f) {
+    if (!(v23 < 0x1.0000000000000p-23f)) {
       v31 = 0x1.0000000000000p+0f / sqrtf(v23);
       v25 = v22 * v31;
       v24 = v21 * v31;
@@ -2851,7 +2851,7 @@ __int64 game_combat_106eaa0(_QWORD* a1)
         if (v30 < v31) {
           v31 = v30;
         }
-        if (v30 >= 0) {
+        if (!(v30 < 0)) {
           v32 = v31;
         }
         else {
@@ -2860,7 +2860,7 @@ __int64 game_combat_106eaa0(_QWORD* a1)
         v33 = (__int64*)(v28 + 144LL * v32);
       }
       v34 = *((_DWORD*)v33 + 2);
-      if (v34 <= 3) {
+      if (!(v34 > 3)) {
         v35 = (__int64)&a1[3 * v34 + 3];
         v36 = *(_QWORD*)(v35 + 8);
         if (v36 != 0) {
@@ -3144,7 +3144,7 @@ __int64 game_combat_106eaa0(_QWORD* a1)
             .n64_u32[0];
     v91 = LANES128(v80).n128_u64[0];
     v92 = v81;
-    if (vabds_f32(v79, v77) >= 0x1.0000000000000p-23f) {
+    if (!(vabds_f32(v79, v77) < 0x1.0000000000000p-23f)) {
       v82 = fminf(fmaxf((float)(v81 - v77) / (float)(v79 - v77), 0x0.0p+0f),
                   0x1.0000000000000p+0f);
     }

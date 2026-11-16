@@ -159,7 +159,7 @@ LABEL_40:
   v30 = v28 - v24;
   v31 = v24 + v28;
   v32 = a1[v27];
-  if (v31 >= LANES128(v32).n128_f32[0]) {
+  if (!(v31 < LANES128(v32).n128_f32[0])) {
     __typeof__(v31) z_ = (__typeof__(v31)){0};
     LODWORD(z_) = *(_DWORD*)&(a1[v27]);
     v31 = z_;
@@ -170,7 +170,7 @@ LABEL_40:
   LANES128(a1[v27]).n128_f32[0] = v31;
   LANES128(v32).n128_f32[0] = v29 - v25;
   v33 = v25 + v29;
-  if (v33 >= LANES128(v32).n128_f32[2]) {
+  if (!(v33 < LANES128(v32).n128_f32[2])) {
     v33 = LANES128(v32).n128_f32[2];
   }
   v34 = a1[v27];
@@ -415,7 +415,7 @@ __int64 game_gmap_131a9b0(float32x4_t* a1, float32x4_t* a2)
   v36 = v34 - v31;
   v37 = v31 + v34;
   v38 = a1[v33];
-  if (v37 >= LANES128(v38).n128_f32[0]) {
+  if (!(v37 < LANES128(v38).n128_f32[0])) {
     __typeof__(v37) z_ = (__typeof__(v37)){0};
     LODWORD(z_) = *(_DWORD*)&(a1[v33]);
     v37 = z_;
@@ -426,7 +426,7 @@ __int64 game_gmap_131a9b0(float32x4_t* a1, float32x4_t* a2)
   LANES128(a1[v33]).n128_f32[0] = v37;
   LANES128(v38).n128_f32[0] = v35 - v32;
   v39 = v32 + v35;
-  if (v39 >= LANES128(v38).n128_f32[2]) {
+  if (!(v39 < LANES128(v38).n128_f32[2])) {
     v39 = LANES128(v38).n128_f32[2];
   }
   v40 = a1[v33];

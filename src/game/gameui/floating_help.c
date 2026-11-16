@@ -1286,9 +1286,9 @@ void FloatingHelp_18ae160(unsigned int a1, __int64 a2, _QWORD* a3, _QWORD* a4,
               LANES64_OF(vmul_f32(*(float32x2_t*)&a6, *(float32x2_t*)&a6))
                   .n64_f32[1] +
               (float)(*(float*)&a6 * *(float*)&a6);
-          if ((float)(LANES64_OF(vmul_f32(v39, v39)).n64_f32[1] +
-                      (float)(LANES64(v39).n64_f32[0] *
-                              LANES64(v39).n64_f32[0])) >= *(float*)&a6) {
+          if (!((float)(LANES64_OF(vmul_f32(v39, v39)).n64_f32[1] +
+                        (float)(LANES64(v39).n64_f32[0] *
+                                LANES64(v39).n64_f32[0])) < *(float*)&a6)) {
             return;
           }
           goto LABEL_43;
@@ -1328,7 +1328,7 @@ void FloatingHelp_18ae160(unsigned int a1, __int64 a2, _QWORD* a3, _QWORD* a4,
         LANES64(v36).n64_u32[0] = v33;
         goto LABEL_42;
       }
-      if (v38 >= v37) {
+      if (!(v38 < v37)) {
         return;
       }
     }
@@ -1477,10 +1477,10 @@ __int64 FloatingHelp_18ae5e0(__int64 a1, float* a2)
   v2 = *(float*)(a1 + 276);
   v4 = *(float*)(a1 + 260) + *a2;
   v5 = *(float*)(a1 + 272);
-  if (v2 >= v4) {
+  if (!(v2 < v4)) {
     v2 = *(float*)(a1 + 260) + *a2;
   }
-  if (v4 >= *(float*)(a1 + 268)) {
+  if (!(v4 < *(float*)(a1 + 268))) {
     v6 = v2;
   }
   else {
@@ -1489,10 +1489,10 @@ __int64 FloatingHelp_18ae5e0(__int64 a1, float* a2)
   v7 = *(float*)(a1 + 264);
   *(float*)(a1 + 260) = v6;
   v8 = v7 - a2[1];
-  if (v5 >= v8) {
+  if (!(v5 < v8)) {
     v5 = v8;
   }
-  if (v8 >= *(float*)(a1 + 280)) {
+  if (!(v8 < *(float*)(a1 + 280))) {
     v9 = v5;
   }
   else {

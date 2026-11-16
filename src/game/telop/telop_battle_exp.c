@@ -1509,14 +1509,14 @@ __int64 TelopBattleExp_Unknown37(__int64 a1)
     v6 = 0;
     v7 = 0x1.e000000000000p+5f /
          (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
-    if (v7 <= 0x0.0p+0f) {
+    if (!(v7 > 0x0.0p+0f)) {
       v7 = 0x1.0000000000000p+0f;
     }
     if ((*(_DWORD*)(game_g_game_setting + 944) & 0xB) != 0) {
       v7 = v7 * 0x1.0000000000000p+3f;
     }
     v8 = v1 + v7;
-    if (v8 <= 0x1.e000000000000p+4f) {
+    if (!(v8 > 0x1.e000000000000p+4f)) {
       v2 = v8;
     }
     *(float*)(a1 + 1352) = v2;
@@ -1969,14 +1969,14 @@ __int64 TelopBattleExp_1744940(__int64 result)
     v19 = v18 + v8;
     v20 = (int*)GameData_21d9968;
     v21 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
-    if ((int)v21 >= 99) {
+    if (!((int)v21 < 99)) {
       v22 = 99;
     }
     else {
       v22 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
     }
     v23 = *(_DWORD*)(GameData_21d9968 + 4LL * v22 - 4);
-    if (v23 >= v19) {
+    if (!(v23 < v19)) {
       v23 = v19;
     }
     v24 = v19 >= 0 ? v23 : 0;
@@ -1988,10 +1988,10 @@ __int64 TelopBattleExp_1744940(__int64 result)
       else {
         v25 = 0;
         v26 = v20[(unsigned int)(v21 - 1)];
-        if (v26 >= v24) {
+        if (!(v26 < v24)) {
           v26 = v24;
         }
-        if (v24 >= *v20) {
+        if (!(v24 < *v20)) {
           v27 = v26;
         }
         else {
@@ -2009,7 +2009,7 @@ __int64 TelopBattleExp_1744940(__int64 result)
           else {
             v25 = v28 + 1;
           }
-          if (v25 >= (int)v21) {
+          if (!(v25 < (int)v21)) {
             goto LABEL_48;
           }
         }
@@ -2039,13 +2039,13 @@ __int64 TelopBattleExp_1744940(__int64 result)
       *v32 = v42 - v46;
       if (v45 == 1) {
         LODWORD(v91[0]) = 0;
-        if (v47 >= 0.0) {
+        if (!(v47 < 0.0)) {
           v32 = (float*)v91;
         }
       }
       else {
         LODWORD(v91[0]) = 0;
-        if (v47 <= 0.0) {
+        if (!(v47 > 0.0)) {
           v32 = (float*)v91;
         }
       }
@@ -2056,13 +2056,13 @@ __int64 TelopBattleExp_1744940(__int64 result)
         v35 = *(_DWORD*)(v30 + 36);
       }
       *(_DWORD*)(v30 + 8) = v35;
-      if (v35 >= v34) {
+      if (!(v35 < v34)) {
         v36 = 8;
       }
       else {
         v36 = 36;
       }
-      if (v34 >= v35) {
+      if (!(v34 < v35)) {
         v37 = 8;
       }
       else {
@@ -2122,13 +2122,13 @@ __int64 TelopBattleExp_1744940(__int64 result)
             v75 = v73;
           }
           *(_DWORD*)(v1 + 1072) = v75;
-          if (v75 >= v73) {
+          if (!(v75 < v73)) {
             v76 = 1072;
           }
           else {
             v76 = 1100;
           }
-          if (v73 >= v75) {
+          if (!(v73 < v75)) {
             v77 = 1072;
           }
           else {
@@ -2161,11 +2161,11 @@ __int64 TelopBattleExp_1744940(__int64 result)
             v86 = *(unsigned __int16*)(v80 + 412);
             v87 = *(_WORD*)(v84 + v85);
             v88 = v72 + (v87 & 0x3FF);
-            if (v86 >= v88) {
+            if (!(v86 < v88)) {
               LOWORD(v86) = v88;
             }
             v89 = v86 & 0x3FF;
-            if (v88 >= 0) {
+            if (!(v88 < 0)) {
               v90 = v89;
             }
             else {
@@ -2213,13 +2213,13 @@ __int64 TelopBattleExp_1744940(__int64 result)
         v67 = v65;
       }
       *(_DWORD*)(v1 + 1208) = v67;
-      if (v67 >= v65) {
+      if (!(v67 < v65)) {
         v68 = 1208;
       }
       else {
         v68 = 1236;
       }
-      if (v65 >= v67) {
+      if (!(v65 < v67)) {
         v69 = 1208;
       }
       else {
@@ -2281,7 +2281,7 @@ __int64 TelopBattleExp_Unknown47(__int64 a1)
     v1 = *(float*)(a1 + 1352);
     if (v1 < 90.0) {
       v11 = 60.0 / (float)*(int*)(*game_g_frame_clock_ptr[0] + 476);
-      if (v11 <= 0.0) {
+      if (!(v11 > 0.0)) {
         v11 = 1.0;
       }
       if ((*(_DWORD*)(game_g_game_setting + 944) & 0xB) != 0) {

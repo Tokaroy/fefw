@@ -4042,7 +4042,7 @@ __int64 math_722a20(void* a1, double a2, double a3)
   v7 = COERCE_AS(__typeof__(v7),
                  PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
   v8 = COERCE_AS(__typeof__(v8), PSEUDO_REGISTER(double, "d0", "=w"));
-  if (a3 >= a2) {
+  if (!(a3 < a2)) {
     v9 = 1;
     v10 = 2;
     v11 = 0x1.0000000000000p+0 / (a3 - (a2 + -0x1.0000000000000p+0));
@@ -4142,7 +4142,7 @@ double math_722b40(void* a1, double a2, double a3)
   v20 = COERCE_AS(__typeof__(v20), PSEUDO_REGISTER(double, "d0", "=w")),
   v23 = COERCE_AS(__typeof__(v23), PSEUDO_REGISTER(double, "d0", "=w")),
   v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(double, "d0", "=w"));
-  if (a3 >= a2) {
+  if (!(a3 < a2)) {
     v8 = 1;
     v9 = 2;
     v10 = 0x1.0000000000000p+0 / (a3 - (a2 + -0x1.0000000000000p+0));
@@ -4212,7 +4212,7 @@ double math_722c60(void* a1, double a2, double a3)
   v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(double, "d0", "=w")),
   v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(double, "d0", "=w")),
   v6 = COERCE_AS(__typeof__(v6), PSEUDO_REGISTER(double, "d0", "=w"));
-  if (a3 <= a2) {
+  if (!(a3 > a2)) {
     v8 = 1;
     v9 = 0x1.0000000000000p+0 / a2;
     v10 = 0x1.0000000000000p+0 / a2;
@@ -4477,7 +4477,7 @@ float nerd_linear_algebra_sinc(float* a1)
   float v3;
 
   v1 = *a1;
-  if ((float)(v1 * v1) <= 0.04f) {
+  if (!((float)(v1 * v1) > 0.04f)) {
     return (float)((float)(v1 * v1) *
                    (float)((float)((float)(v1 * v1) *
                                    (float)((float)((float)(v1 * v1) *

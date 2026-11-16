@@ -8849,7 +8849,7 @@ void game_1107040(float32x4_t* a1, _DWORD* a2, double a3, int32x2_t a4)
     v15 += 80;
   } while (v15 != v8);
   v17 = v9 + -0x1.cccccc0000000p-1f;
-  if (v17 <= v11) {
+  if (!(v17 > v11)) {
     goto LABEL_20;
   }
   LANES128(*(a1)).n128_f32[1] = v17;
@@ -8963,7 +8963,7 @@ void game_11073c0(float32x4_t* a1, _DWORD* a2, double a3, int32x2_t a4)
     v15 += 80;
   } while (v15 != v8);
   v17 = v9 + -0x1.3333340000000p-1f;
-  if (v17 <= v11) {
+  if (!(v17 > v11)) {
     goto LABEL_20;
   }
   LANES128(*(a1)).n128_f32[1] = v17;
@@ -9171,8 +9171,8 @@ __int64 game_11c4a00(__int64 result, __int64 a2, float a3)
                 v22 = 0x0.0p+0f;
               }
               if (a3 >= 0x1.99999a0000000p-3f && a3 > 0x0.0p+0f) {
-                if ((unsigned int)(*GameData_212d280 - *(int*)(result + 392)) >=
-                    0xC) {
+                if (!((unsigned int)(*GameData_212d280 -
+                                     *(int*)(result + 392)) < 0xC)) {
                   v22 = a3;
                 }
                 else {
@@ -9293,7 +9293,7 @@ __int64 game_11c4a00(__int64 result, __int64 a2, float a3)
               v45 = v23[95];
               v46 = v23[94];
               v57 = vaddq_f32(v43, v41);
-              if (v44 <= v45) {
+              if (!(v44 > v45)) {
                 v47 = v46;
               }
               else {

@@ -449,7 +449,7 @@ __int64 cuda_driver_checks_1033a0(__int64, unsigned int);
 __int64 memcpy_plt(__int64, __int64, unsigned __int64);
 __int64 memset_plt_alt1(__int64, int, unsigned __int64) __asm__("memset_plt");
 unsigned __int8 CudaDriverRoutine_1a36a0(__int64, __int64);
-bool CudaDriverStub_985a0(__int64);
+unsigned __int8 CudaDriverStub_985a0(__int64);
 extern _UNKNOWN CudaDriverData_1132d00;
 extern _UNKNOWN CudaDriverData_1432cd0;
 extern __int64 CudaDriverData_1432cc8;

@@ -15478,7 +15478,7 @@ __attribute__((swiftcall)) void game_cfdb00(PSEUDO_X8 x8_, __int64 a1,
     v56 = v17;
     v57 = v26;
     v58 = v13;
-    if (v52 >= v78) {
+    if (!(v52 < v78)) {
       v59 = v52;
     }
     else {
@@ -15503,7 +15503,8 @@ __attribute__((swiftcall)) void game_cfdb00(PSEUDO_X8 x8_, __int64 a1,
       if (((char*)v15 - (char*)v10) >> 1 > v63) {
         v63 = ((char*)v15 - (char*)v10) >> 1;
       }
-      if ((unsigned __int64)((char*)v15 - (char*)v10) >= 0x7FFFFFFFFFFFFFFCLL) {
+      if (!((unsigned __int64)((char*)v15 - (char*)v10) <
+            0x7FFFFFFFFFFFFFFCLL)) {
         v64 = 0x3FFFFFFFFFFFFFFFLL;
       }
       else {
@@ -15543,10 +15544,10 @@ __attribute__((swiftcall)) void game_cfdb00(PSEUDO_X8 x8_, __int64 a1,
     v24 = v54;
     v22 = v53;
     v27 = v77;
-    if (v85 >= v52) {
+    if (!(v85 < v52)) {
       v29 = v52;
     }
-    if (v52 >= v13) {
+    if (!(v52 < v13)) {
       v13 = v52;
     }
     v85 = v29;
@@ -21511,18 +21512,18 @@ void game_edf260(float32x4_t* a1, float32x4_t* a2)
          (v15 & v14) != 0)) {
       v16 = LANES128(*(a1)).n128_f32[0];
       v17 = fabsf(LANES128(a2[9]).n128_f32[0]);
-      if (LANES128(*(a1)).n128_f32[0] <= 0x0.0p+0f) {
-        if (LANES128(*(a1)).n128_f32[0] >= 0x0.0p+0f) {
+      if (!(LANES128(*(a1)).n128_f32[0] > 0x0.0p+0f)) {
+        if (!(LANES128(*(a1)).n128_f32[0] < 0x0.0p+0f)) {
           goto LABEL_23;
         }
         v16 = v16 + v17;
-        if (v16 <= 0x0.0p+0f) {
+        if (!(v16 > 0x0.0p+0f)) {
           goto LABEL_23;
         }
       }
       else {
         v16 = v16 - v17;
-        if (v16 >= 0x0.0p+0f) {
+        if (!(v16 < 0x0.0p+0f)) {
           goto LABEL_23;
         }
       }

@@ -96,7 +96,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
   *(float*)&v4 = (float)a3 * 0x1.4000000000000p+2f;
   v5 = a2 + 32 * a3;
   LANES128(v6).n128_u32[1] = -1027080192;
-  if (v5 >= 0x400) {
+  if (!(v5 < 0x400)) {
     v5 = 0;
   }
   v7 = (float*)(a1 + 20LL * v5);
@@ -390,7 +390,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
   v31 = v10[3];
   v32 = 1;
   v33 = v10[4];
-  if (*v10 >= v29) {
+  if (!(*v10 < v29)) {
     v34 = *v10;
   }
   else {
@@ -409,7 +409,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
     v35 = 4;
   }
   v36 = v10[v35];
-  if (v29 >= v28) {
+  if (!(v29 < v28)) {
     v32 = 0;
   }
   else {
@@ -439,7 +439,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
   v40 = v8[3];
   v41 = 1;
   v42 = v8[4];
-  if (*v8 >= v38) {
+  if (!(*v8 < v38)) {
     v43 = *v8;
   }
   else {
@@ -458,7 +458,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
     v44 = 4;
   }
   v45 = v8[v44];
-  if (v38 >= v37) {
+  if (!(v38 < v37)) {
     v41 = 0;
   }
   else {
@@ -488,7 +488,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
   v49 = v9[3];
   v50 = 1;
   v51 = v9[4];
-  if (*v9 >= v47) {
+  if (!(*v9 < v47)) {
     v52 = *v9;
   }
   else {
@@ -507,7 +507,7 @@ float32x4_t* Height_7c41f0(__int64 a1, int a2, int a3)
     v53 = 4;
   }
   v54 = v9[v53];
-  if (v47 >= v46) {
+  if (!(v47 < v46)) {
     v50 = 0;
   }
   else {
@@ -566,7 +566,7 @@ float Height_7c4d10(__int64 a1, float a2, float a3)
 
   v3 = (int)(float)((float)(a2 + 1280.0f) * 0.2f);
   v4 = (int)(float)((float)(a3 + 1280.0f) * 0.2f);
-  if (v3 >= 287) {
+  if (!(v3 < 287)) {
     v5 = 287;
   }
   else {
@@ -576,14 +576,14 @@ float Height_7c4d10(__int64 a1, float a2, float a3)
   if (v3 < 256) {
     v6 = 0;
   }
-  if (v4 >= 287) {
+  if (!(v4 < 287)) {
     v7 = 287;
   }
   else {
     v7 = (int)(float)((float)(a3 + 1280.0f) * 0.2f);
   }
   v8 = v7 - 256;
-  if (v4 >= 256) {
+  if (!(v4 < 256)) {
     v9 = v8;
   }
   else {
@@ -591,49 +591,49 @@ float Height_7c4d10(__int64 a1, float a2, float a3)
   }
   v10 = a2 - (float)((float)v6 * 5.0f);
   v11 = v6 + 32 * v9;
-  if (v11 >= 0x400) {
+  if (!(v11 < 0x400)) {
     v11 = 0;
   }
   v12 = (float*)(a1 + 20LL * v11);
-  if (v10 <= 5.0f) {
+  if (!(v10 > 5.0f)) {
     v13 = v10;
   }
   else {
     v13 = 5.0f;
   }
-  if (v10 >= 0.0f) {
+  if (!(v10 < 0.0f)) {
     v14 = v13;
   }
   else {
     v14 = 0.0f;
   }
   v15 = a3 - (float)((float)v9 * 5.0f);
-  if (v15 <= 5.0f) {
+  if (!(v15 > 5.0f)) {
     v16 = v15;
   }
   else {
     v16 = 5.0f;
   }
-  if (v15 >= 0.0f) {
+  if (!(v15 < 0.0f)) {
     v17 = v16;
   }
   else {
     v17 = 0.0f;
   }
   v18 = v12[4];
-  if ((float)(v14 + v17) <= 5.0f) {
+  if (!((float)(v14 + v17) > 5.0f)) {
     v19 = 1;
   }
   else {
     v19 = 8;
   }
-  if ((float)(v14 + v17) <= 5.0f) {
+  if (!((float)(v14 + v17) > 5.0f)) {
     v20 = 2;
   }
   else {
     v20 = 4;
   }
-  if (v17 >= v14) {
+  if (!(v17 < v14)) {
     v19 = v20;
   }
   if (v19 > 3) {

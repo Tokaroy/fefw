@@ -409,7 +409,7 @@ __int64 LegionStateBattleFighter_e3a100(__int64 a1)
   v14 = v180_.v180;
   v34 = v180_.v181;
 LABEL_37:
-  if ((unsigned __int64)((char*)v34 - (char*)v14) >= 9) {
+  if (!((unsigned __int64)((char*)v34 - (char*)v14) < 9)) {
     v35 = *(_QWORD*)(*(_QWORD*)(v3 + 8) + 176LL);
     v36 = *(_QWORD*)(v35 + 120);
     v37 = *(_QWORD*)(v35 + 136);
@@ -463,7 +463,7 @@ LABEL_37:
         if ((*(_BYTE*)(v48 + 92) & (*(float*)(v48 + 88) < v50)) != 0) {
           v50 = *(float*)(v47 + 88);
         }
-        if (v41 >= v50) {
+        if (!(v41 < v50)) {
           v41 = v50;
         }
       } while (v1 != v43);
@@ -480,7 +480,7 @@ LABEL_37:
     v60 = v55 - v57;
     v61 = (float)(PSEUDO_UNFUSED(v59 * v59)) + (float)(v60 * v60);
     v62 = 0x0.0p+0f;
-    if (v61 >= 0x1.0000000000000p-23f) {
+    if (!(v61 < 0x1.0000000000000p-23f)) {
       v63 = 0x1.0000000000000p+0f / sqrtf(v61);
       v62 = v60 * v63;
       v54 = v59 * v63;
@@ -488,17 +488,17 @@ LABEL_37:
     v64 = v58 - v39;
     v65 = v57 - v38;
     v66 = (float)(PSEUDO_UNFUSED(v64 * v64)) + (float)(v65 * v65);
-    if (v66 >= 0x1.0000000000000p-23f) {
+    if (!(v66 < 0x1.0000000000000p-23f)) {
       v67 = 0x1.0000000000000p+0f / sqrtf(v66);
       v52 = v65 * v67;
       v51 = v64 * v67;
     }
-    if ((float)((float)(PSEUDO_UNFUSED(v54 * v51)) + (float)(v62 * v52)) <=
-        0x0.0p+0f) {
+    if (!((float)((float)(PSEUDO_UNFUSED(v54 * v51)) + (float)(v62 * v52)) >
+          0x0.0p+0f)) {
       v68 = v56 - v39;
       v69 = v55 - v38;
       v66 = (float)(PSEUDO_UNFUSED(v68 * v68)) + (float)(v69 * v69);
-      if (v66 >= 0x1.0000000000000p-23f) {
+      if (!(v66 < 0x1.0000000000000p-23f)) {
         v72 = 0x1.0000000000000p+0f / sqrtf(v66);
         v71 = v69 * v72;
         v70 = v68 * v72;
@@ -507,8 +507,8 @@ LABEL_37:
         v70 = 0x1.0000000000000p+0f;
         v71 = 0x0.0p+0f;
       }
-      if ((float)((float)(PSEUDO_UNFUSED(v54 * v70)) + (float)(v62 * v71)) >=
-          0x0.0p+0f) {
+      if (!((float)((float)(PSEUDO_UNFUSED(v54 * v70)) + (float)(v62 * v71)) <
+            0x0.0p+0f)) {
         v73 = (float)(PSEUDO_UNFUSED((float)(v39 - v58) * v54)) +
               (float)(v62 * (float)(v38 - v57));
         v66 =
@@ -989,12 +989,12 @@ LABEL_117:
       if ((*(_BYTE*)(v131 + 92) & (*(float*)(v131 + 88) < v133)) != 0) {
         v133 = *(float*)(v131 + 88);
       }
-      if ((float)((float)(PSEUDO_UNFUSED(
-                      (float)(*(float*)(v122[15] + 20LL) - v79) *
-                      (float)(*(float*)(v122[15] + 20LL) - v79))) +
-                  (float)((float)(*(float*)(v122[15] + 16LL) - v78) *
-                          (float)(*(float*)(v122[15] + 16LL) - v78))) >=
-          (float)((float)(v85 + v133) * (float)(v85 + v133))) {
+      if (!((float)((float)(PSEUDO_UNFUSED(
+                        (float)(*(float*)(v122[15] + 20LL) - v79) *
+                        (float)(*(float*)(v122[15] + 20LL) - v79))) +
+                    (float)((float)(*(float*)(v122[15] + 16LL) - v78) *
+                            (float)(*(float*)(v122[15] + 16LL) - v78))) <
+            (float)((float)(v85 + v133) * (float)(v85 + v133)))) {
         goto LABEL_121;
       }
       goto LABEL_210;
@@ -1205,12 +1205,12 @@ LABEL_164:
       if ((*(_BYTE*)(v155 + 92) & (*(float*)(v155 + 88) < v157)) != 0) {
         v157 = *(float*)(v155 + 88);
       }
-      if ((float)((float)(PSEUDO_UNFUSED(
-                      (float)(*(float*)(v146[15] + 20LL) - v79) *
-                      (float)(*(float*)(v146[15] + 20LL) - v79))) +
-                  (float)((float)(*(float*)(v146[15] + 16LL) - v78) *
-                          (float)(*(float*)(v146[15] + 16LL) - v78))) >=
-          (float)((float)(v85 + v157) * (float)(v85 + v157))) {
+      if (!((float)((float)(PSEUDO_UNFUSED(
+                        (float)(*(float*)(v146[15] + 20LL) - v79) *
+                        (float)(*(float*)(v146[15] + 20LL) - v79))) +
+                    (float)((float)(*(float*)(v146[15] + 16LL) - v78) *
+                            (float)(*(float*)(v146[15] + 16LL) - v78))) <
+            (float)((float)(v85 + v157) * (float)(v85 + v157)))) {
         goto LABEL_168;
       }
       goto LABEL_210;
@@ -1593,7 +1593,7 @@ __int64 LegionStateBattleFighter_e3b0b0(__int64 a1, unsigned int a2)
     v8 = *(_DWORD*)(v6 + 11784);
   }
   if (a2 - 9 < 2) {
-    if (v8 >= 2) {
+    if (!(v8 < 2)) {
       return 0;
     }
     v14 = a2 == 9 ? 3416160455LL : 3421701581LL;
@@ -1623,8 +1623,8 @@ __int64 LegionStateBattleFighter_e3b0b0(__int64 a1, unsigned int a2)
   LABEL_28:
     LegionStateBattleFighter_e3b770_alt1((void*)(&v65), a1, a2);
     v22 = v65;
-    if ((float)((float)(*((float*)&v65 + 1) * *((float*)&v65 + 1)) +
-                (float)(*(float*)&v65 * *(float*)&v65)) <= 0.0) {
+    if (!((float)((float)(*((float*)&v65 + 1) * *((float*)&v65 + 1)) +
+                  (float)(*(float*)&v65 * *(float*)&v65)) > 0.0)) {
       return 1;
     }
     v23 = *(_QWORD*)(a1 + 8);
@@ -1740,9 +1740,9 @@ __int64 LegionStateBattleFighter_e3b0b0(__int64 a1, unsigned int a2)
       LANES128(v42).n128_f32[0] +
       (float)(roundf(LANES128(v42).n128_f32[0] * 0x1.45f3060000000p-3) *
               -0x1.921fb60000000p+2);
-  if (LANES128(v42).n128_f32[0] <= 0x1.921fb60000000p+0) {
+  if (!(LANES128(v42).n128_f32[0] > 0x1.921fb60000000p+0)) {
     v44 = 1.0;
-    if (LANES128(v42).n128_f32[0] >= -0x1.921fb60000000p+0) {
+    if (!(LANES128(v42).n128_f32[0] < -0x1.921fb60000000p+0)) {
       goto LABEL_42;
     }
     v43 = -0x1.921fb60000000p+1;
@@ -1821,7 +1821,7 @@ LABEL_42:
   LANES128(v42).n128_f32[0] =
       (float)(*((float*)&v65 + 1) * *((float*)&v65 + 1)) +
       (float)(*(float*)&v65 * *(float*)&v65);
-  if (LANES128(v42).n128_f32[0] <= 0.0) {
+  if (!(LANES128(v42).n128_f32[0] > 0.0)) {
     goto LABEL_49;
   }
   v51 = *(_QWORD*)(v4[14] + 176LL);
@@ -1858,7 +1858,7 @@ LABEL_42:
     else {
       v59 = *(_DWORD*)(v57 + 11624);
     }
-    if (v59 >= 2) {
+    if (!(v59 < 2)) {
       v60 = *(_QWORD*)(*(_QWORD*)(GameData_21ec7b0 + 128) + 72LL);
       if (v60 != 0) {
         v61 = ((__n128 (*)(__int64, long double)) *

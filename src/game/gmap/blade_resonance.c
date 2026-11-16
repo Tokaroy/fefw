@@ -1726,7 +1726,7 @@ __int64 BladeResonance_14b8270(__int64 a1)
       *(_DWORD*)(a1 + 208) = 0;
     }
     else {
-      if (*(float*)(a1 + 208) <= 0.5) {
+      if (!(*(float*)(a1 + 208) > 0.5)) {
         if (((*(__int64 (**)(__int64, int*, __int64))(
                  *(_QWORD*)(a1 + 200) + 8LL))(a1 + 200, &v8, a1 + 232) &
              1) == 0) {
@@ -1859,7 +1859,7 @@ __int64 BladeResonance_14b8820(__int64 a1)
     *(_DWORD*)(a1 + 16) = 0;
   }
   else {
-    if (v2 >= *(float*)(a1 + 16)) {
+    if (!(v2 < *(float*)(a1 + 16))) {
       if (((*(__int64 (**)(__int64, __int64*, __int64))(
                *(_QWORD*)(a1 + 8) + 8LL))(a1 + 8, &v30_.v30, a1 + 40) &
            1) == 0) {

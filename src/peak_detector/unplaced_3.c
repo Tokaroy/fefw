@@ -371,7 +371,7 @@ bool peak_detector_758180(void* this_)
       v10 = v9[1];
       __asm__ volatile("" ::"w"(v10));
     }
-    if (v10 >= *v9) {
+    if (!(v10 < *v9)) {
       v11 = *v9;
       __asm__ volatile("" ::"w"(v11));
     }
@@ -379,7 +379,7 @@ bool peak_detector_758180(void* this_)
       v11 = v9[1];
       __asm__ volatile("" ::"w"(v11));
     }
-    if (*v9 >= v10) {
+    if (!(*v9 < v10)) {
       v10 = *v9;
       __asm__ volatile("" ::"w"(v10));
     }
@@ -391,7 +391,7 @@ bool peak_detector_758180(void* this_)
       v12 = v9[3];
       __asm__ volatile("" ::"w"(v12));
     }
-    if (v13 >= v11) {
+    if (!(v13 < v11)) {
       v14 = v11;
     }
     else {
@@ -406,7 +406,7 @@ bool peak_detector_758180(void* this_)
       v10 = v9[2];
       __asm__ volatile("" ::"w"(v10));
     }
-    if (v12 >= v14) {
+    if (!(v12 < v14)) {
       v15 = v14;
       if (v10 < v12) {
       LABEL_17:
@@ -1174,7 +1174,7 @@ bool peak_detector_758180(void* this_)
         __asm__ volatile("" ::"w"(v70));
       }
       v71 = v70;
-      if (v70 >= v69) {
+      if (!(v70 < v69)) {
         goto LABEL_130;
       }
       goto LABEL_72;
@@ -1186,7 +1186,7 @@ bool peak_detector_758180(void* this_)
       __asm__ volatile("" ::"w"(v70));
     }
     v71 = v70;
-    if (v70 >= v69) {
+    if (!(v70 < v69)) {
     LABEL_130:
       v71 = v69;
       if (v68 < v70) {
@@ -1195,7 +1195,7 @@ bool peak_detector_758180(void* this_)
       goto LABEL_131;
     }
   LABEL_72:
-    if (v68 >= v70) {
+    if (!(v68 < v70)) {
     LABEL_131:
       v70 = v68;
     }
@@ -1370,7 +1370,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
         v23 = *v5;
         __asm__ volatile("" ::"r"(v23));
       }
-      if (v6 >= 8) {
+      if (!(v6 < 8)) {
         v25 = 0x0.0p+0f;
         v26 = 0x0.0p+0f;
         v30 = (float*)(v23 + 16);
@@ -1420,7 +1420,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
             v39 = *v5;
             __asm__ volatile("" ::"r"(v39));
           }
-          if (v6 >= 8) {
+          if (!(v6 < 8)) {
             v40 = 0x0.0p+0f;
             v41 = 0x0.0p+0f;
             v44 = (float*)(v39 + 16);
@@ -1499,7 +1499,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
               }
               v42 = v43 + 7;
               v43 += 8;
-              if (v41 >= v60) {
+              if (!(v41 < v60)) {
                 v42 = v48;
               }
               else {
@@ -1576,7 +1576,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
         }
         else {
         LABEL_13:
-          if (v12 >= 3) {
+          if (!(v12 < 3)) {
             v16 += 2;
             while (1) {
               if (*(v16 - 2) == v11) {
@@ -1630,7 +1630,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
           goto LABEL_7;
         }
       LABEL_32:
-        if (v12 >= 3) {
+        if (!(v12 < 3)) {
           v20 += 2;
           while (1) {
             if (*(v20 - 2) == v19) {
@@ -1694,7 +1694,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
     }
     else {
     LABEL_56:
-      if (v12 >= 3) {
+      if (!(v12 < 3)) {
         v27 += 2;
         while (1) {
           if (*(v27 - 2) == v11) {
@@ -1810,7 +1810,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
         }
       }
     LABEL_121:
-      if (v12 >= 3) {
+      if (!(v12 < 3)) {
         v66 += 2;
         while (1) {
           if (*(v66 - 2) == v64) {
@@ -1855,7 +1855,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
         while (*v74 != v64) {
           ++v74;
           if (--v10 == 0) {
-            if (v12 >= 3) {
+            if (!(v12 < 3)) {
               goto LABEL_162;
             }
             goto LABEL_173;
@@ -1868,7 +1868,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
       }
       else {
         v74 = v106;
-        if (v12 >= 3) {
+        if (!(v12 < 3)) {
         LABEL_162:
           v74 += 2;
           while (1) {
@@ -1907,7 +1907,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
       }
     }
   LABEL_175:
-    if (v40 <= v9) {
+    if (!(v40 > v9)) {
       goto LABEL_182;
     }
     v106[v8++] = v42;
@@ -1915,7 +1915,7 @@ float peak_detector_7588a0(void* this_, float* a2, unsigned __int64* a3)
   v8 = v6;
 LABEL_182:
   v77 = v6 - v8;
-  if (v6 - v8 >= 3) {
+  if (!(v6 - v8 < 3)) {
     if (v8 != 0) {
       v78 = 0x0.0p+0f;
       v79 = 0;
@@ -1929,7 +1929,7 @@ LABEL_182:
         v83 = v106;
         if ((v80 & 0x18) == 0x18) {
         LABEL_192:
-          if (v80 >= 0x18) {
+          if (!(v80 < 0x18)) {
             v83 += 2;
             while (1) {
               if (*(v83 - 2) == v79) {
@@ -1989,7 +1989,7 @@ LABEL_182:
       __asm__ volatile("" ::"r"(v87));
     }
     v88 = v6 & 7;
-    if (v6 >= 8) {
+    if (!(v6 < 8)) {
       v78 = 0x0.0p+0f;
       v90 = (float*)(v87 + 16);
       v91 = 0;
@@ -2055,7 +2055,7 @@ LABEL_182:
       if (v103) {
         v104 = 1434;
       }
-      if (v102 >= 3) {
+      if (!(v102 < 3)) {
         v99 = v104;
       }
       else {
@@ -2077,7 +2077,7 @@ LABEL_182:
     v105 = ((signed __int32)((_DWORD)v77 << 20) /
             (signed __int32)((_DWORD)v6 << 10) * v99) >>
            10;
-    if (v105 >= 1024) {
+    if (!(v105 < 1024)) {
       v105 = 1024;
     }
     return vcvts_n_f32_s32(v105, 0xAu);

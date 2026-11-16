@@ -312,7 +312,7 @@ bool GameHr_c36860(float* a1, float* a2)
     if (v2 == 3) {
       v4 = a1[3];
       v5 = *(a2 - 1);
-      if (v4 >= a1[1]) {
+      if (!(v4 < a1[1])) {
         if (v5 < v4) {
           v15 = *((_QWORD*)a1 + 1);
           *((_QWORD*)a1 + 1) = *((_QWORD*)a2 - 1);
@@ -326,7 +326,7 @@ bool GameHr_c36860(float* a1, float* a2)
         return true;
       }
       v3 = *(_QWORD*)a1;
-      if (v5 >= v4) {
+      if (!(v5 < v4)) {
         *(_QWORD*)a1 = *((_QWORD*)a1 + 1);
         *((_QWORD*)a1 + 1) = v3;
         if (*(a2 - 1) < *((float*)&v3 + 1)) {
@@ -347,7 +347,7 @@ bool GameHr_c36860(float* a1, float* a2)
     v10 = a1[3];
     v11 = a1[1];
     v12 = a1[5];
-    if (v10 >= v11) {
+    if (!(v10 < v11)) {
       if (v12 < v10) {
         v21 = *((_QWORD*)a1 + 1);
         v20 = *((_QWORD*)a1 + 2);
@@ -364,10 +364,10 @@ bool GameHr_c36860(float* a1, float* a2)
     }
     v13 = *(_QWORD*)a1;
     LODWORD(v14) = HIDWORD(*(_QWORD*)a1);
-    if (v12 >= v10) {
+    if (!(v12 < v10)) {
       *(_QWORD*)a1 = *((_QWORD*)a1 + 1);
       *((_QWORD*)a1 + 1) = v13;
-      if (v12 >= v14) {
+      if (!(v12 < v14)) {
       LABEL_46:
         if (*(a2 - 1) < v12) {
           v32 = *((_QWORD*)a1 + 2);
@@ -413,7 +413,7 @@ LABEL_13:
   v6 = a1[3];
   v7 = a1[1];
   v8 = a1[5];
-  if (v6 >= v7) {
+  if (!(v6 < v7)) {
     if (v8 < v6) {
       v18 = *((_QWORD*)a1 + 1);
       v17 = *((_QWORD*)a1 + 2);
@@ -428,10 +428,10 @@ LABEL_13:
   }
   else {
     v9 = *(_QWORD*)a1;
-    if (v8 >= v6) {
+    if (!(v8 < v6)) {
       *(_QWORD*)a1 = *((_QWORD*)a1 + 1);
       *((_QWORD*)a1 + 1) = v9;
-      if (v8 >= *((float*)&v9 + 1)) {
+      if (!(v8 < *((float*)&v9 + 1))) {
         goto LABEL_33;
       }
       *((_QWORD*)a1 + 1) = *((_QWORD*)a1 + 2);
@@ -1045,7 +1045,7 @@ bool GameHr_c56bc0(float* a1, float* a2)
       v16 = a1[3];
       v17 = a1[1];
       v18 = *(a2 - 1);
-      if (v16 >= v17) {
+      if (!(v16 < v17)) {
         if (v18 < v16) {
           v25 = *((_DWORD*)a1 + 2);
           a1[2] = *(a2 - 2);
@@ -1067,7 +1067,7 @@ bool GameHr_c56bc0(float* a1, float* a2)
         return true;
       }
       v3 = *a1;
-      if (v18 >= v16) {
+      if (!(v18 < v16)) {
         v34 = *((_DWORD*)a1 + 2);
         a1[2] = v3;
         a1[1] = v16;
@@ -1147,7 +1147,7 @@ bool GameHr_c56bc0(float* a1, float* a2)
   v20 = a1[3];
   v21 = a1[1];
   v22 = a1[5];
-  if (v20 >= v21) {
+  if (!(v20 < v21)) {
     if (v22 < v20) {
       v31 = *((_DWORD*)a1 + 2);
       v32 = *((_DWORD*)a1 + 4);
@@ -1166,13 +1166,13 @@ bool GameHr_c56bc0(float* a1, float* a2)
   }
   else {
     v23 = *a1;
-    if (v22 >= v20) {
+    if (!(v22 < v20)) {
       v36 = *((_DWORD*)a1 + 2);
       a1[2] = v23;
       a1[1] = v20;
       a1[3] = v21;
       *(_DWORD*)a1 = v36;
-      if (v22 >= v21) {
+      if (!(v22 < v21)) {
         goto LABEL_32;
       }
       v37 = *((_DWORD*)a1 + 4);
@@ -1271,7 +1271,7 @@ __int64 GameHr_c6db70(__int64 result, unsigned int a2)
     v5 = *(_DWORD*)(result + 512);
     if (*(_DWORD*)(result + 516) != (_DWORD)v3) {
       v4 = *(_DWORD*)(result + 516);
-      if (*(float*)(result + 524) >= 0.5) {
+      if (!(*(float*)(result + 524) < 0.5)) {
         v5 = *(_DWORD*)(result + 516);
       }
       else {
@@ -1286,7 +1286,7 @@ __int64 GameHr_c6db70(__int64 result, unsigned int a2)
     *(_DWORD*)(result + 512) = v3;
     *(_QWORD*)(result + 524) = 0;
     *(_QWORD*)(result + 516) = 0xFFFFFFFFLL;
-    if (*(int*)(result + 352) >= 1) {
+    if (!(*(int*)(result + 352) < 1)) {
       v7 = result;
       GameRoutine_c71860(result, *(unsigned int*)(result + 556), v3);
       v8 = *(unsigned int*)(v7 + 516);

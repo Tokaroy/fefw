@@ -231,7 +231,7 @@ __int64 game_menu_SubMenu_OnBuild(__int64 a1)
   v22 = 0;
   while (*(_QWORD*)(v21 + 8 * v22) == 0) {
   LABEL_20:
-    if (++v22 >= (unsigned __int64)((v20 - v21) >> 3)) {
+    if (!(++v22 < (unsigned __int64)((v20 - v21) >> 3))) {
       goto LABEL_25;
     }
   }
@@ -271,7 +271,7 @@ LABEL_29:
 LABEL_30:
   v24 = &v79_.v79;
   v79_.v81 = &v79_.v79;
-  if ((float)(v82 + (float)(int)v10) >= v14) {
+  if (!((float)(v82 + (float)(int)v10) < v14)) {
     v14 = v82 + (float)(int)v10;
   }
   v79_.v79 = GameData_209efb8;
@@ -285,7 +285,7 @@ LABEL_30:
   while (2) {
     if (*(_QWORD*)(v26 + 8 * v27) == 0) {
     LABEL_34:
-      if (++v27 >= (unsigned __int64)((v25 - v26) >> 3)) {
+      if (!(++v27 < (unsigned __int64)((v25 - v26) >> 3))) {
         goto LABEL_39;
       }
       continue;
@@ -486,7 +486,7 @@ LABEL_44:
         if (!v67) {
           v66 = v50;
         }
-        if (v66 >= v68) {
+        if (!(v66 < v68)) {
           v69 = v66;
         }
         else {
@@ -702,7 +702,7 @@ LABEL_6:
     if (v19[0] == 0) {
       v14 = 0x0.0p+0f;
     }
-    if (*v13 >= v14) {
+    if (!(*v13 < v14)) {
       v14 = *v13;
     }
     *v13 = v14;

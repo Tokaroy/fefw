@@ -24159,9 +24159,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 61ec10,16,verified,src/nvidia/unplaced_3.c,nvidia_61ec10
 61ec20,24,verified,src/nvidia/unplaced_3.c,nvidia_61ec20
 61ec40,572,verified,src/nvidia/unplaced_3.c,nvidia_61ec40
-61ee80,1028,disputed,src/nvidia/unplaced_3.c,nvidia_61ee80
+61ee80,1048,disputed,src/nvidia/unplaced_3.c,nvidia_61ee80
 61f2b0,88,verified,src/nvidia/unplaced_3.c,nvidia_61f2b0
-61f3b0,2892,verified,src/nvidia/unplaced_3.c,nvidia_61f3b0
+61f3b0,2816,verified,src/nvidia/unplaced_3.c,nvidia_61f3b0
 620430,636,verified,src/nvidia/unplaced_3.c,nvidia_620430
 6207a0,204,verified,src/nvidia/unplaced_3.c,nvidia_6207a0
 620870,608,verified,src/nvidia/unplaced_3.c,nvidia_620870
@@ -30090,8 +30090,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 721c20,716,verified,src/math/symmetric_inverse.cpp,fw::math::InverseSymmetric3
 7222e0,924,verified,src/math/symmetric_inverse.cpp,fw::math::CholeskyInPlace3
 722a20,244,verified,src/math/unplaced_4.c,math_722a20
-722b40,236,disputed,src/math/unplaced_4.c,math_722b40
-722c60,180,disputed,src/math/unplaced_4.c,math_722c60
+722b40,236,verified,src/math/unplaced_4.c,math_722b40
+722c60,180,verified,src/math/unplaced_4.c,math_722c60
 723320,1216,verified,src/math/indexed_matrix.cpp,_ZN4nerd14linear_algebramlIffLl3ELl9ELln30ENS0_11LMatrixType5DenseILb1EEENS2_4ViewIRNS0_7LVectorImLl9ELb0ENS0_11LVectorType5DenseEEERNS6_ImLln30ELb0ES8_EEEEEEDaRKNS0_7LMatrixIT_XT1_EXT2_ET4_EERKNSE_IT0_XT2_EXT3_ET5_EE
 7237f0,544,verified,src/math/matrix_product.cpp,_ZN4nerd14linear_algebramlIffLl3ELl9ELl3ENS0_11LMatrixType5DenseILb1EEENS2_14TransposedViewILb1ES4_EEEEDaRKNS0_7LMatrixIT_XT1_EXT2_ET4_EERKNS7_IT0_XT2_EXT3_ET5_EE
 723a10,2012,verified,src/math/indexed_matrix.cpp,_ZN4nerd14linear_algebramlIffLl3ELl9ELl9ENS0_11LMatrixType5DenseILb1EEENS2_4ViewIRNS0_7LVectorImLl9ELb0ENS0_11LVectorType5DenseEEESA_EEEEDaRKNS0_7LMatrixIT_XT1_EXT2_ET4_EERKNSC_IT0_XT2_EXT3_ET5_EE
@@ -30588,9 +30588,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 74c520,1204,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Encode
 74cb80,784,verified,src/nerd_gillette_internal/otete/unplaced_4.c,nerd_gillette_internal_otete_74cb80
 74dc00,44,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_DecodeInPlace_74dc00
-74dc40,3644,verified,src/nerd_gillette_internal/otete/unplaced_3.c,nerd_gillette_internal_otete_74dc40
+74dc40,3644,disputed,src/nerd_gillette_internal/otete/unplaced_3.c,nerd_gillette_internal_otete_74dc40
 74ead0,44,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_DecodeInPlace_74ead0
-74eb00,2808,verified,src/nerd_gillette_internal/otete/unplaced_3.c,nerd_gillette_internal_otete_74eb00
+74eb00,2808,disputed,src/nerd_gillette_internal/otete/unplaced_3.c,nerd_gillette_internal_otete_74eb00
 74f640,2144,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_EncodeInPlace
 7501b0,368,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_EncodeInPlaceOnlyQuints
 750320,1096,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_EncodeWithQuints
@@ -30622,9 +30622,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 757a40,876,verified,src/peak_detector/unplaced_2.c,peak_detector_757a40
 757de0,124,verified,src/peak_detector/unplaced_2.c,peak_detector_757de0
 757e60,416,verified,src/peak_detector/unplaced_3.c,peak_detector_757e60
-758010,300,verified,src/peak_detector/unplaced_3.c,peak_detector_758010
+758010,320,verified,src/peak_detector/unplaced_3.c,peak_detector_758010
 758180,1808,verified,src/peak_detector/unplaced_3.c,peak_detector_758180
-7588a0,1748,verified,src/peak_detector/unplaced_3.c,peak_detector_7588a0
+7588a0,2300,verified,src/peak_detector/unplaced_3.c,peak_detector_7588a0
 759340,348,verified,src/peak_detector/unplaced_3.c,peak_detector_759340
 7594a0,248,verified,src/peak_detector/unplaced_2.c,peak_detector_7594a0
 759f00,440,verified,src/peak_detector/unplaced_2.c,peak_detector_759f00
