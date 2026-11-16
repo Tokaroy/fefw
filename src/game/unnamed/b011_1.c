@@ -5079,7 +5079,7 @@ __int64 GameHr_d5ad30(__int64 a1, __int64 a2)
 
   if (*(_QWORD*)(a1 + 1384) != *(_QWORD*)(a1 + 1376) &&
       (*(_BYTE*)(a1 + 1452) & 1) == 0 && *(_DWORD*)(a1 + 1244) == 1 &&
-      *(float*)(a1 + 1756) <= 0.0) {
+      !(*(float*)(a1 + 1756) > 0.0)) {
     v2 = *(_QWORD*)(a1 + 104);
     if (v2 == 0) {
       return GameRoutine_d5ae40(a1, a2, 0);

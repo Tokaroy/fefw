@@ -771,7 +771,7 @@ __int64 BattleArea_8b9f80(__int64 a1, __int64 a2, double a3, double a4,
         (*(_DWORD*)(a2 + 848) & 0x80000000) != 0 ||
         (*(_DWORD*)(a2 + 852) & 0x80000000) != 0 ||
         (v26 = *(_QWORD*)(a2 + 72)) != 0 &&
-            (unsigned int)(v27 = *(unsigned __int8*)(v26 + 104)) <= 6 &&
+            !((unsigned int)(v27 = *(unsigned __int8*)(v26 + 104)) > 6) &&
             ((1 << v27) & 0x68) != 0) {
       BattleArea_8bc4c0(v10, a2 + 16);
       BattleArea_8bc4c0(v9 + 128, a2 + 16);
@@ -1003,7 +1003,7 @@ __int64 BattleArea_8b9f80(__int64 a1, __int64 a2, double a3, double a4,
       }
     }
     v30 = *(unsigned __int8*)(v29 + 104);
-    if (v30 <= 6 && ((1 << v30) & 0x68) != 0) {
+    if (!(v30 > 6) && ((1 << v30) & 0x68) != 0) {
       *(_WORD*)(v9 + 248) |= 8u;
     }
     goto LABEL_29;
@@ -1605,8 +1605,8 @@ LABEL_238:
   v180 = *GameData_212ce98[0];
   v181 = *(unsigned __int8*)(*GameData_212ce98[0] + 29);
   v343 = *(unsigned __int8*)(*GameData_212ce98[0] + 31);
-  if (v181 <= v343 && (v182 = *(unsigned __int8*)(v180 + 30),
-                       (v340 = *(unsigned __int8*)(v180 + 28)) <= v182)) {
+  if (!(v181 > v343) && (!(v182 = *(unsigned __int8*)(v180 + 30),
+                           (v340 = *(unsigned __int8*)(v180 + 28)) > v182))) {
     v184 = nullptr;
     v183 = 0;
     v256 = 0;
@@ -2024,12 +2024,12 @@ LABEL_406:
   v278 = *(_DWORD*)(v9 + 48);
   v279 = *(_DWORD*)(v9 + 52);
   *(_QWORD*)(v9 + 240) = 0;
-  if (v278 >= 1 && v279 >= 1) {
+  if (!(v278 < 1) && !(v279 < 1)) {
     v281 = *(_DWORD*)(v9 + 32);
     v282 = *(_DWORD*)(v9 + 36);
     v283 = *(_DWORD*)(v9 + 40);
     v284 = *(_DWORD*)(v9 + 44);
-    if (v282 <= v284 && v281 <= v283) {
+    if (!(v282 > v284) && !(v281 > v283)) {
       v286 = v281 + 32 * v282;
       v287 = -1;
       v288 = GameData_212cfb8[0];

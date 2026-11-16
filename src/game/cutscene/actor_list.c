@@ -1882,7 +1882,7 @@ LABEL_31:
   v30 = v10 + 12;
   v31 = v26;
   v32 = v27;
-  if (v29 == v28 || *(float*)(v28 - 4) <= v27) {
+  if (v29 == v28 || !(*(float*)(v28 - 4) > v27)) {
     AnimCtrlModule_a78450(v30, &v32);
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v31 + 8),
@@ -2065,7 +2065,7 @@ LABEL_31:
   v30 = v10 + 18;
   v31 = v26;
   v32 = v27;
-  if (v29 == v28 || *(float*)(v28 - 4) <= v27) {
+  if (v29 == v28 || !(*(float*)(v28 - 4) > v27)) {
     AnimCtrlModule_a78450(v30, &v32);
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v31 + 8),
@@ -3056,7 +3056,7 @@ LABEL_24:
   v27 = v6 + 16;
   v28 = v23;
   v31 = v24;
-  if (v26 == v25 || *(float*)(v25 - 4) <= v24) {
+  if (v26 == v25 || !(*(float*)(v25 - 4) > v24)) {
     AnimCtrlModule_a78450(v27, &v31);
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v28 + 8),

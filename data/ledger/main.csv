@@ -6286,7 +6286,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 198470,80,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray10InsertLastEPv
 1984c0,96,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray8RemoveAtEj
 198520,92,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray10RemoveLastEv
-198580,396,disputed,src/game/unnamed/e000_0.c,GameHr_198580
+198580,396,verified,src/game/unnamed/e000_0.c,GameHr_198580
 198720,224,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArrayeqERKS_
 1989b0,716,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArray6EqualsEPKvS1_P16asIScriptContextP11SArrayCache
 198de0,12,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArray9FindByRefEPv
@@ -25655,7 +25655,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 8bc4c0,508,verified,src/game/map/battle_area.c,BattleArea_8bc4c0
 8bc6c0,312,verified,src/game/map/battle_area.c,BattleArea_8bc6c0
 8bc800,312,verified,src/game/map/battle_area.c,BattleArea_8bc800
-8bc940,280,disputed,src/game/map/battle_area.c,game_map_BattleArea_Impl_Expand
+8bc940,280,verified,src/game/map/battle_area.c,game_map_BattleArea_Impl_Expand
 8bce30,1748,verified,src/game/map/battle_area.c,BattleArea_8bce30
 8bd540,468,verified,src/game/map/battle_area.c,BattleArea_8bd540
 8bd720,4,verified,src/game/game_trivial.cpp,_Z15GameStub_8bd720v
@@ -40079,7 +40079,7 @@ d59dc0,400,verified,src/game/unnamed/b011_1.c,GameHr_d59dc0
 d5a220,156,verified,src/game/hub/area_event.c,AreaEvent_d5a220
 d5a560,1464,verified,src/game/unnamed/b011_2.c,GameHr_d5a560
 d5ab80,420,disputed,src/game/unnamed/b011_1.c,GameHr_d5ab80
-d5ad30,232,disputed,src/game/unnamed/b011_1.c,GameHr_d5ad30
+d5ad30,268,verified,src/game/unnamed/b011_1.c,GameHr_d5ad30
 d5ae40,836,verified,src/game/hub/unplaced.c,game_hub_d5ae40
 d5b190,832,verified,src/game/hub/unplaced.c,game_hub_d5b190
 d5b4e0,1096,verified,src/game/hub/unplaced.c,game_hub_d5b4e0
@@ -42017,7 +42017,7 @@ e17b00,88,verified,src/game/hub/character_controller_autonomy/state_command.c,St
 e17b60,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe17b60
 e17b90,12,verified,src/game/hub/character_controller_autonomy/state_move_to.c,StateMoveTo_Unknown2_e17b90
 e17ba0,24,verified,src/game/game_trivial_wrappers.cpp,_Z15GameStub_e17ba0m
-e17bc0,640,disputed,src/game/unplaced_26.c,game_e17bc0
+e17bc0,640,verified,src/game/unplaced_26.c,game_e17bc0
 e17e50,160,verified,src/game/hub/character_controller_autonomy/state_move_to.c,StateMoveTo_Unknown5
 e17ef0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 e17f10,4,verified,src/game/game_trivial.cpp,_Z15GameStub_e17f10v
@@ -46128,7 +46128,7 @@ f41f00,280,verified,src/game/unnamed/e005_3.c,GameHr_f41f00
 f42060,168,verified,src/game/unnamed/e005_3.c,GameHr_f42060
 f421a0,104,verified,src/game/map/map_singletons.cpp,_ZN4game5zview15AreaBarrierBaseD2Ev
 f42210,140,verified,src/game/map/map_singletons.cpp,_ZN4game3map2zv11AreaBarrierD0Ev
-f422a0,340,disputed,src/game/unplaced_4.c,game_f422a0
+f422a0,340,verified,src/game/unplaced_4.c,game_f422a0
 f42400,3412,verified,src/game/unplaced_11.c,game_f42400
 f43180,484,verified,src/game/cmdbtl/cmd_btl_camera_cut_success_capture.c,CmdBtlCameraCutSuccessCapture_Destructor
 f43380,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xf43380
@@ -79116,7 +79116,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 18148a0,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_9, void (std::__1::shared_ptr<timeline::IKey> const&)>::__clone(__base*)"
 18148c0,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_9, void (std::__1::shared_ptr<timeline::IKey> const&)>::destroy()"
 18148d0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_9, void (std::__1::shared_ptr<timeline::IKey> const&)>::destroy_deallocate()"
-18148e0,644,disputed,src/game/cutscene/actor_list.c,game_cutscene_ActorList_SetupSorted_lambda9_Invoke
+18148e0,644,verified,src/game/cutscene/actor_list.c,game_cutscene_ActorList_SetupSorted_lambda9_Invoke
 1814ba0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_9, void (std::__1::shared_ptr<timeline::IKey> const&)>::target(std::type_info const&)"
 1814bc0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_9, void (std::__1::shared_ptr<timeline::IKey> const&)>::target_type()"
 1814bd0,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_10, void (std::__1::shared_ptr<timeline::IKey> const&)>::deleting destructor"
@@ -79180,7 +79180,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 18162c0,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_17, void (std::__1::shared_ptr<timeline::IKey> const&)>::__clone(__base*)"
 18162e0,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_17, void (std::__1::shared_ptr<timeline::IKey> const&)>::destroy()"
 18162f0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_17, void (std::__1::shared_ptr<timeline::IKey> const&)>::destroy_deallocate()"
-1816300,604,disputed,src/game/cutscene/actor_list.c,game_cutscene_ActorList_SetupSorted_lambda17_Invoke
+1816300,604,verified,src/game/cutscene/actor_list.c,game_cutscene_ActorList_SetupSorted_lambda17_Invoke
 1816580,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_17, void (std::__1::shared_ptr<timeline::IKey> const&)>::target(std::type_info const&)"
 18165a0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_17, void (std::__1::shared_ptr<timeline::IKey> const&)>::target_type()"
 18165b0,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::cutscene::ActorList::SetupSorted(timeline::Timeline const&, game::UnitEdit const&)::$_18, void (std::__1::shared_ptr<timeline::IKey> const&)>::deleting destructor"

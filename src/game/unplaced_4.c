@@ -4288,7 +4288,7 @@ __int64 game_f422a0(__int64 a1)
   v3 = *(float*)(a1 + 36);
   v4 = fabsf(v2);
   if (!(v3 > 0x0.0p+0f)) {
-    if (v3 >= 0x0.0p+0f || (v3 = v4 + v3) <= 0x0.0p+0f) {
+    if (!(v3 < 0x0.0p+0f) || !((v3 = v4 + v3) > 0x0.0p+0f)) {
     LABEL_9:
       *(float*)(a1 + 36) = v3;
       if (v3 != 0x0.0p+0f) {
