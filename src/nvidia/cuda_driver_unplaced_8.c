@@ -462,6 +462,8 @@ unsigned __int64 cuda_driver_unplaced_8_1a7380(__int64 a1);
 __int64 nvidia_11a720(__int64);
 __int64 nvidia_205ee0(int, __int64, __int64, _QWORD*, int);
 unsigned __int8 CudaDriverStub_985a0_alt1(__int64) __asm__("CudaDriverStub_985a0");
+unsigned __int64 CudaDriverStub_985a0_alt2(__int64) __asm__(
+    "CudaDriverStub_985a0");
 __int64 CudaDriverStub_107f90_alt4(_QWORD);
 __int64 CudaDriverStub_108070_alt4(_QWORD);
 
@@ -5387,7 +5389,7 @@ unsigned __int64 cuda_driver_unplaced_8_1a7380(__int64 a1)
         vars0 = v74;
         _28 = v75;
         vars10 = _38;
-        result = CudaDriverStub_985a0_alt1(*(_QWORD*)a1);
+        result = CudaDriverStub_985a0_alt2(*(_QWORD*)a1);
         v62 = 0;
         v63 = (unsigned __int16)*(_DWORD*)(a1 + 96);
         v64 = (unsigned __int8)*(_DWORD*)(a1 + 96);
@@ -5552,7 +5554,7 @@ unsigned __int64 cuda_driver_unplaced_8_1a7380(__int64 a1)
         goto LABEL_187;
       }
       v16 = *(_QWORD*)a1;
-      CudaDriverStub_985a0_alt1(*(_QWORD*)a1);
+      result = CudaDriverStub_985a0_alt2(*(_QWORD*)a1);
       v17 = 0;
       *(_OWORD*)(a1 + 208) = (__typeof__(*(_OWORD*)(a1 + 208))){0};
       *(_OWORD*)(a1 + 224) = (__typeof__(*(_OWORD*)(a1 + 224))){0};

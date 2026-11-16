@@ -5951,7 +5951,7 @@ ff600,3424,verified,src/nvidia/unplaced_21.c,nvidia_ff600
 1a62a0,156,verified,src/nvidia/unnamed/c003_0.c,CudaDriverHr_1a62a0
 1a6340,3696,verified,src/nvidia/unplaced_27.c,nvidia_1a6340
 1a7250,300,verified,src/nvidia/cuda_driver_unplaced_8.c,cuda_driver_1a7250
-1a7380,2480,disputed,src/nvidia/cuda_driver_unplaced_8.c,cuda_driver_unplaced_8_1a7380
+1a7380,2532,verified,src/nvidia/cuda_driver_unplaced_8.c,cuda_driver_unplaced_8_1a7380
 1a7d80,8,verified,src/nvidia/unplaced_24.c,nvidia_1a7d80
 1a7d90,60,verified,src/nvidia/unnamed/i000_0.c,CudaDriverHr_1a7d90
 1a7da0,88,verified,src/nvidia/unnamed/c003_0.c,CudaDriverHr_1a7da0
