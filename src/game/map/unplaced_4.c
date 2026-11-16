@@ -2124,9 +2124,9 @@ LABEL_216:
       v142 = *(_QWORD*)(*v103 + 432);
       if (game_GameModeData_instance_ != 0 &&
           (v143 = *(_QWORD*)(game_GameModeData_instance_ + 16)) != 0) {
-        LOBYTE(v138) = *(_BYTE*)(v143 + 129);
+        LODWORD(v138) = (unsigned __int8)(*(_BYTE*)(v143 + 129));
         v144 = (float)LODWORD(v138);
-        LOBYTE(v138) = *(_BYTE*)(v143 + 130);
+        LODWORD(v138) = (unsigned __int8)(*(_BYTE*)(v143 + 130));
         v145 = (float)LODWORD(v138);
       }
       else {

@@ -600,7 +600,7 @@ float GameHr_5e3f70(__int64 a1, __int64 a2, float a3)
     v9 = *(float*)(a1 + 28) - v8;
     *(float*)&v10 = a3 - v8;
     v11 = *(float*)&v10 * (float)(1.0 / v9);
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     v13 = *(unsigned __int16*)(a1 + 18);
@@ -719,7 +719,7 @@ LABEL_20:
                      PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v12 = *((unsigned __int16*)a2 + 3);
   if ((v12 & 0x40) != 0) {
-    LOBYTE(v11) = *((_BYTE*)a2 + 5);
+    v11 = (unsigned __int8)(*((_BYTE*)a2 + 5));
     (*(void (**)(__int64, float))GameData_212c110[0])(a1, (float)v11),
         v7 = COERCE_AS(__typeof__(v7),
                        PSEUDO_REGISTER(unsigned long long, "x1", "=r"));

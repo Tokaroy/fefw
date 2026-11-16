@@ -1353,8 +1353,8 @@ void game_menu_16e75a0(__int64* a1, int a2, int a3, int a4)
       if (v17 != 0) {
         v18 = __dynamic_cast(v17, GameData_212d670[0], GameData_212fc70[0], 0);
         if (v18 != 0) {
-          LOWORD(v19) = *(_WORD*)(v18 + 222);
-          LOWORD(v20) = *(_WORD*)(v18 + 224);
+          v19 = (unsigned __int16)(*(_WORD*)(v18 + 222));
+          v20 = (unsigned __int16)(*(_WORD*)(v18 + 224));
           v21 = *(float*)(v18 + 84) * 0.5f;
           v22 = (int)(float)((float)v19 - v21);
           v23 = (int)(float)(v21 - (float)v20);
@@ -1371,8 +1371,8 @@ void game_menu_16e75a0(__int64* a1, int a2, int a3, int a4)
       if (v25 != 0) {
         v26 = __dynamic_cast(v25, GameData_212d670[0], GameData_212fc70[0], 0);
         if (v26 != 0) {
-          LOWORD(v27) = *(_WORD*)(v26 + 222);
-          LOWORD(v28) = *(_WORD*)(v26 + 224);
+          v27 = (unsigned __int16)(*(_WORD*)(v26 + 222));
+          v28 = (unsigned __int16)(*(_WORD*)(v26 + 224));
           v29 = (float)*((int*)a1 + 30);
           *(_BYTE*)(v26 + 88) |= 0x10u;
           *(float*)(v26 + 84) = (float)((float)v27 + v29) + (float)v28;

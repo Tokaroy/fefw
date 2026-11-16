@@ -1949,7 +1949,7 @@ LABEL_16:
       AnimTransformBasic_570de0((unsigned int**)&v22_.v22, v16),
           v18 = COERCE_AS(__typeof__(v18),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      LOWORD(v17) = *(_WORD*)(v22_.v23 + 8);
+      v17 = (unsigned __int16)(*(_WORD*)(v22_.v23 + 8));
       return (float)v17;
     }
   }

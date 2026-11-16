@@ -103,7 +103,7 @@ float ModelAnimObj_Unknown6(__int64 a1, __int64 a2, float a3)
     v9 = *(float*)(a1 + 28) - v8;
     *(float*)&v10 = a3 - v8;
     v11 = *(float*)&v10 * (float)(1.0 / v9);
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     v13 = *(unsigned __int16*)(a1 + 18);
@@ -148,7 +148,7 @@ float ModelAnimObj_Unknown12(__int64 a1, __int64 a2, float a3)
     v9 = *(float*)(a1 + 28) - v8;
     *(float*)&v10 = a3 - v8;
     v11 = *(float*)&v10 * (float)(1.0 / v9);
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     v13 = *(unsigned __int16*)(a1 + 18);
@@ -183,7 +183,7 @@ float ModelAnimObj_Unknown16(__int64 a1, __int64 a2, float a3)
     v9 = *(float*)(a1 + 28) - v8;
     *(float*)&v10 = a3 - v8;
     v11 = *(float*)&v10 * (float)(1.0 / v9);
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     v13 = *(unsigned __int16*)(a1 + 18);
@@ -225,7 +225,7 @@ __int64 ModelAnimObj_Unknown24(__int64 a1, __int64 a2, float a3)
     v6 = *(float*)(a1 + 28) - v5;
     *(float*)&v7 = a3 - v5;
     v8 = *(float*)&v7 * (float)(1.0 / v6);
-    LOWORD(v7) = *(_WORD*)(a1 + 18);
+    v7 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v9 = (int)(float)(v8 * (float)v7);
     *(_DWORD*)(a2 + 8) = v9;
     v10 = *(unsigned __int16*)(a1 + 18);
@@ -270,7 +270,7 @@ __int64 ModelAnimObj_Unknown36(__int64 a1, __int64 a2, float a3)
     v6 = *(float*)(a1 + 28) - v5;
     *(float*)&v7 = a3 - v5;
     v8 = *(float*)&v7 * (float)(1.0 / v6);
-    LOWORD(v7) = *(_WORD*)(a1 + 18);
+    v7 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v9 = (int)(float)(v8 * (float)v7);
     *(_DWORD*)(a2 + 8) = v9;
     v10 = *(unsigned __int16*)(a1 + 18);

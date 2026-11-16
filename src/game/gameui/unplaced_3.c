@@ -2140,8 +2140,8 @@ void game_gameui_19ae1e0(__int64 a1)
           if (v53 == 0) {
             goto LABEL_84;
           }
-          LOWORD(v54) = *(_WORD*)(v53 + 222);
-          LOWORD(v55) = *(_WORD*)(v53 + 224);
+          v54 = (unsigned __int16)(*(_WORD*)(v53 + 222));
+          v55 = (unsigned __int16)(*(_WORD*)(v53 + 224));
           v56 = *(float*)(v53 + 84) * 0x1.0000000000000p-1f;
           v57 = (int)(float)((float)v54 - v56);
           v58 = (int)(float)(v56 - (float)v55);
@@ -2162,8 +2162,8 @@ void game_gameui_19ae1e0(__int64 a1)
               v14 = COERCE_AS(__typeof__(v14),
                               PSEUDO_REGISTER(float, "s1", "=w"));
               if (v61 != 0) {
-                LOWORD(v62) = *(_WORD*)(v61 + 222);
-                LOWORD(v63) = *(_WORD*)(v61 + 224);
+                v62 = (unsigned __int16)(*(_WORD*)(v61 + 222));
+                v63 = (unsigned __int16)(*(_WORD*)(v61 + 224));
                 v64 = (float)*(int*)(a1 + 232);
                 *(_BYTE*)(v61 + 88) |= 0x10u;
                 *(float*)(v61 + 84) = (float)((float)v62 + v64) + (float)v63;

@@ -671,9 +671,9 @@ __int64 GmapSpotInfoSetterForGmap_Unknown6(__int64 a1)
     v3 = result;
     v4 = ui_LayoutAccessor_FindPane(*(_QWORD*)(a1 + 8), &GameData_1ac6c8b);
     v5 = __dynamic_cast(v4, GameData_212d670[0], GameData_212fc70[0], 0);
-    LOWORD(v6) = *(_WORD*)(v5 + 218);
+    v6 = (unsigned __int16)(*(_WORD*)(v5 + 218));
     v7 = (float)v6;
-    LOWORD(v6) = *(_WORD*)(v5 + 220);
+    v6 = (unsigned __int16)(*(_WORD*)(v5 + 220));
     v8 = (float)v6;
     v9 = ui_LayoutAccessor_FindPane(*(_QWORD*)(a1 + 8), "N_DummyMargin");
     if (v9 != 0) {

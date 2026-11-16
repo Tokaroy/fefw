@@ -3690,7 +3690,7 @@ LABEL_10:
         v66 = *(_DWORD*)(v65 + 68);
         v67 = (float)*(int*)(v65 + 64);
         if (a3 < v67 && a2 >= v67) {
-          LOWORD(v4) = *(_WORD*)(v65 + 72);
+          v4 = (unsigned __int16)(*(_WORD*)(v65 + 72));
           v69 = *(_QWORD*)(a1 + 160);
           *(_BYTE*)(a1 + 152) = 1;
           ui_LayoutAccessor_SetPaneVisible_alt1(v69, (__int64)"N_TitleLogo", 1);

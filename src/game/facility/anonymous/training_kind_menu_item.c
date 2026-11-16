@@ -68,7 +68,7 @@ __int64 TrainingKindMenuItem_Unknown55(__int64 result)
         else {
           v5 = (__int16*)game_gmap_GmapClock_kDefaultTime_ptr;
         }
-        LOWORD(v4) = *(_WORD*)(v1[11] + 88);
+        v4 = (unsigned __int16)(*(_WORD*)(v1[11] + 88));
         v6 = (double)v4;
         v7 = (double)(unsigned int)VolunteerArgs_948220(v5);
         v8 = 0x1.0000000000000p+0;

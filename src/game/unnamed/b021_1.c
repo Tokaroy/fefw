@@ -6009,10 +6009,10 @@ __int64 GameHr_162f5c0(__int64 result)
       GameRoutine_179c320(v30, *(_QWORD*)(v4 + v10));
       v15 = *(_QWORD*)(v9 + 168);
       if (v15 != 0) {
-        LOBYTE(v11) = v30[260];
-        LOBYTE(v12) = v30[261];
-        LOBYTE(v13) = v30[262];
-        LOBYTE(v14) = v30[263];
+        v11 = (unsigned __int8)(v30[260]);
+        v12 = (unsigned __int8)(v30[261]);
+        v13 = (unsigned __int8)(v30[262]);
+        v14 = (unsigned __int8)(v30[263]);
         *(float*)&v16 = (float)v11 / 255.0;
         *((float*)&v16 + 1) = (float)v12 / 255.0;
         *((float*)&v16 + 2) = (float)v13 / 255.0;
@@ -6029,24 +6029,24 @@ __int64 GameHr_162f5c0(__int64 result)
       GameRoutine_179c320(v30, *(_QWORD*)(v4 + v18));
       v23 = *(_QWORD*)(v17 + 168);
       if (v23 != 0) {
-        LOBYTE(v19) = v30[256];
-        LOBYTE(v20) = v30[257];
-        LOBYTE(v21) = v30[276];
+        v19 = (unsigned __int8)(v30[256]);
+        v20 = (unsigned __int8)(v30[257]);
+        v21 = (unsigned __int8)(v30[276]);
         LOBYTE(v22) = v30[277];
         *(float*)&v24 = (float)v19 / 255.0;
         *(float*)&v25 = (float)v20 / 255.0;
         *(float*)&v26 = (float)v21 / 255.0;
         DWORD1(v24) = v25;
-        LOBYTE(v25) = v30[258];
+        v25 = (unsigned __int8)(v30[258]);
         *(float*)&v27 = (float)v25 / 255.0;
         DWORD2(v24) = v27;
-        LOBYTE(v27) = v30[259];
+        v27 = (unsigned __int8)(v30[259]);
         *(float*)&v28 = (float)v27 / 255.0;
         DWORD3(v24) = v28;
         LOBYTE(v28) = v30[278];
         v32 = v24;
         *(float*)&v24 = (float)v22;
-        LOBYTE(v22) = v30[279];
+        v22 = (unsigned __int8)(v30[279]);
         *((float*)&v26 + 1) = *(float*)&v24 / 255.0;
         *((_QWORD*)&v26 + 1) =
             __PAIR64__(COERCE_UNSIGNED_INT((float)((float)v22 / 255.0)),

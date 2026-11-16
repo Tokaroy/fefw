@@ -1208,7 +1208,7 @@ LABEL_45:
     if (v43 != 0) {
       LayoutAccessor_1560070((void*)(&v52_.v52), (__int64*)(a1 + 848),
                              "L_Minimap");
-      LOWORD(v44) = *(_WORD*)(v43 + 134);
+      v44 = (unsigned __int16)(*(_WORD*)(v43 + 134));
       GameRoutine_19fc5c0_alt1(a1 + 1072, (__int64)&v52_.v52, (float)v44);
       if (v52_.v53 != 0) {
         std___1___shared_weak_count___release_weak(v52_.v53);
@@ -2341,7 +2341,7 @@ LABEL_12:
       if (v37 != 0) {
         LayoutAccessor_1560070((void*)(&v54_.v54), (__int64*)(a1 + 848),
                                "L_Minimap");
-        LOWORD(v38) = *(_WORD*)(v37 + 134);
+        v38 = (unsigned __int16)(*(_WORD*)(v37 + 134));
         GameRoutine_19fc5c0_alt1(a1 + 1072, (__int64)&v54_.v54, (float)v38);
         if (v54_.v55 != nullptr) {
           std___1___shared_weak_count___release_weak((__int64)v54_.v55);

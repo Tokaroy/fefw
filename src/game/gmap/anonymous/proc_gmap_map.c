@@ -2126,7 +2126,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
       v84 = v79 + COERCE_FLOAT(*(_QWORD*)(a1 + 288));
       LODWORD(v85) = HIDWORD(*(_QWORD*)(a1 + 288));
       v86 = v80 + v85;
-      LOBYTE(v85) = *(_BYTE*)(a1 + 296);
+      LODWORD(v85) = (unsigned __int8)(*(_BYTE*)(a1 + 296));
       v87 = (float)LODWORD(v85) / 0x1.fe00000000000p+7f;
       *(_QWORD*)&v88 = *(_QWORD*)(a1 + 560);
       LANES64(v74).n64_f32[1] = vmuls_lane_f32(v87, v74, 1);
@@ -2202,7 +2202,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
               v113 + 1440LL * v115 + 4LL * *(int*)(v113 + 1440LL * v115 + 256);
           ++*(_DWORD*)(v117 + 260);
         }
-        LOBYTE(v92) = *(_BYTE*)(a1 + 296);
+        LODWORD(v92) = (unsigned __int8)(*(_BYTE*)(a1 + 296));
         v118 = v79 + COERCE_FLOAT(*(_QWORD*)(a1 + 288));
         v119 = v80 + COERCE_FLOAT(HIDWORD(*(_QWORD*)(a1 + 288)));
         v120 = *(float*)(a1 + 648);
@@ -2280,7 +2280,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
               v146 + 1440LL * v148 + 4LL * *(int*)(v146 + 1440LL * v148 + 256);
           ++*(_DWORD*)(v150 + 260);
         }
-        LOBYTE(v125) = *(_BYTE*)(a1 + 296);
+        LODWORD(v125) = (unsigned __int8)(*(_BYTE*)(a1 + 296));
         v118 = v79 + COERCE_FLOAT(*(_QWORD*)(a1 + 288));
         v119 = v80 + COERCE_FLOAT(HIDWORD(*(_QWORD*)(a1 + 288)));
         v120 = *(float*)(a1 + 644);
@@ -2834,7 +2834,7 @@ __int64* ProcGmapMap_Unknown3(__int64 a1)
              COERCE_FLOAT(*(_QWORD*)(a1 + 288));
       LODWORD(v355) = HIDWORD(*(_QWORD*)(a1 + 288));
       v356 = v348 + v355;
-      LOBYTE(v355) = *(_BYTE*)(a1 + 296);
+      LODWORD(v355) = (unsigned __int8)(*(_BYTE*)(a1 + 296));
       v357 = (float)LODWORD(v355) / 0x1.fe00000000000p+7f;
       *(_QWORD*)&v358 = *(_QWORD*)(a1 + 624);
       LANES64(v347).n64_f32[1] = vmuls_lane_f32(v357, v347, 1);

@@ -55,7 +55,7 @@ float nn_g3d_5e4080(__int64 a1, __int64 a2, float a3)
       v11 = *(float*)&v10 * (float)(0x1.0000000000000p+0f / v9);
       __asm__ volatile("" ::"w"(v11));
     }
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     {

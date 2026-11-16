@@ -1291,7 +1291,7 @@ void game_gameui_159b580(__int64 a1, _BYTE* a2, __int64 a3, _DWORD* a4)
       goto LABEL_36;
     }
   }
-  LOBYTE(v16) = *(_BYTE*)(v23 + 89);
+  v16 = (unsigned __int8)(*(_BYTE*)(v23 + 89));
   v25 = *(_QWORD*)(v23 + 24);
   v26 = (float)v16;
   if (v25 != 0) {

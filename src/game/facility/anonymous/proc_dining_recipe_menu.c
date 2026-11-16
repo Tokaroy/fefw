@@ -578,7 +578,7 @@ LABEL_34:
       else {
         v20 = (__int16*)game_gmap_GmapClock_kDefaultTime_ptr;
       }
-      LOWORD(v14) = *(_WORD*)(v18 + 52);
+      v14 = (unsigned __int16)(*(_WORD*)(v18 + 52));
       v21 = (double)v14;
       v22 = GameRoutine_94a700(v20);
       v23 = 0x1.0000000000000p+0;

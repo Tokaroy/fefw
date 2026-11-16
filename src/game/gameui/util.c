@@ -1531,8 +1531,8 @@ void Util_15753b0(__int64 a1, __int64 a2, int a3, unsigned __int8 a4)
                 v47 = *(float*)(v34 + 84);
                 v48 = ui_LayoutAccessor_FindPane_alt2(v10, "A_Contents");
                 v49 = game_156c160_alt1(v48);
-                LOWORD(v50) = *(_WORD*)(v34 + 218);
-                LOWORD(v51) = *(_WORD*)(v34 + 220);
+                v50 = (unsigned __int16)(*(_WORD*)(v34 + 218));
+                v51 = (unsigned __int16)(*(_WORD*)(v34 + 220));
                 ui_LayoutAccessor_SetPaneSize_alt2(
                     (__int64)v10, "Wdw",
                     fmaxf(v46 + v49, (float)v50 + (float)v51), v47);

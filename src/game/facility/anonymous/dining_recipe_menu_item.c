@@ -43,7 +43,7 @@ __int64 DiningRecipeMenuItem_Unknown55(__int64 result)
           else {
             v4 = game_gmap_GmapClock_kDefaultTime_ptr;
           }
-          LOWORD(v3) = *(_WORD*)(v1[11] + 52LL);
+          v3 = (unsigned __int16)(*(_WORD*)(v1[11] + 52LL));
           v5 = (double)v3;
           v6 = (double)(unsigned int)GameRoutine_94a700(v4);
           v7 = 1.0;

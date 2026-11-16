@@ -1187,13 +1187,13 @@ void GameHr_1535cc0()
     }
   LABEL_16:
     v4[1] = i;
-    LOBYTE(v3) = *(_BYTE*)(i + 49);
+    v3 = (unsigned __int8)(*(_BYTE*)(i + 49));
     v16 = (float)v3;
-    LOBYTE(v3) = *(_BYTE*)(i + 50);
+    v3 = (unsigned __int8)(*(_BYTE*)(i + 50));
     v17 = (float)v3;
-    LOBYTE(v3) = *(_BYTE*)(i + 51);
+    v3 = (unsigned __int8)(*(_BYTE*)(i + 51));
     v18 = (float)v3;
-    LOBYTE(v3) = *(_BYTE*)(i + 52);
+    v3 = (unsigned __int8)(*(_BYTE*)(i + 52));
     v19 = (float)v3;
     v20 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(*(_QWORD*)GameData_212c638 + 32LL) -
                                 8LL) +

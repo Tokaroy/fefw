@@ -52,7 +52,7 @@ float CameraAnimObj_5e4270(__int64 a1, __int64 a2, float a3)
     v9 = *(float*)(a1 + 28) - v8;
     *(float*)&v10 = a3 - v8;
     v11 = *(float*)&v10 * (float)(0x1.0000000000000p+0f / v9);
-    LOWORD(v10) = *(_WORD*)(a1 + 18);
+    v10 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v12 = (int)(float)(v11 * (float)v10);
     *(_DWORD*)(a2 + 8) = v12;
     v13 = *(unsigned __int16*)(a1 + 18);
@@ -117,7 +117,7 @@ long double CameraAnimObj_5e4890(__int64 a1, __int64 a2, float a3)
     v7 = *(float*)(a1 + 28) - v6;
     *(float*)&v8 = a3 - v6;
     v9 = *(float*)&v8 * (float)(0x1.0000000000000p+0f / v7);
-    LOWORD(v8) = *(_WORD*)(a1 + 18);
+    v8 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v10 = (int)(float)(v9 * (float)v8);
     *(_DWORD*)(a2 + 8) = v10;
     v11 = *(unsigned __int16*)(a1 + 18);
@@ -169,7 +169,7 @@ int8x16_t CameraAnimObj_5e49a0(__int64 a1, __int64 a2, float a3)
     v7 = *(float*)(a1 + 28) - v6;
     *(float*)&v8 = a3 - v6;
     v9 = *(float*)&v8 * (float)(0x1.0000000000000p+0f / v7);
-    LOWORD(v8) = *(_WORD*)(a1 + 18);
+    v8 = (unsigned __int16)(*(_WORD*)(a1 + 18));
     v10 = (int)(float)(v9 * (float)v8);
     *(_DWORD*)(a2 + 8) = v10;
     v11 = *(unsigned __int16*)(a1 + 18);

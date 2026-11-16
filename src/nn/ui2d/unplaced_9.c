@@ -595,7 +595,7 @@ void nn_ui2d_596660(__int64 a1, __int64 a2, char a3, char a4, int a5, float* a6,
         v29 = 0x1.0000000000000p+1f;
       }
       *(float*)(a2 + 140) = v29;
-      LOBYTE(v29) = *(_BYTE*)(a1 + 90);
+      LODWORD(v29) = (unsigned __int8)(*(_BYTE*)(a1 + 90));
       *(float*)(a2 + 156) =
           *(float*)(a2 + 156) *
           (float)((float)LODWORD(v29) / 0x1.fe00000000000p+7f);

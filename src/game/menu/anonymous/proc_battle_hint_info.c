@@ -961,7 +961,7 @@ LABEL_28:
           atomic_fetch_add_explicit((atomic_ullong* volatile)(v21 + 16), 1u,
                                     memory_order_relaxed);
         }
-        LOWORD(v24) = *(_WORD*)(v2 + 134);
+        v24 = (unsigned __int16)(*(_WORD*)(v2 + 134));
         GameRoutine_19fc5c0(a1 + 1232, (__int64)&v30_.v30, (float)v24);
         if (v30_.v31 != 0) {
           std___1___shared_weak_count___release_weak_alt1(v30_.v31);

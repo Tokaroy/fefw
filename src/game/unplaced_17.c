@@ -5090,11 +5090,11 @@ void game_156c240(__int64* a1)
         } while (v25 != v24 && v25 != nullptr);
         if (v25 != nullptr) {
         LABEL_27:
-          LOWORD(v26) = *(_WORD*)(v16 + 220);
+          v26 = (unsigned __int16)(*(_WORD*)(v16 + 220));
           v28 = (float)v26;
-          LOWORD(v26) = *(_WORD*)(v16 + 222);
+          v26 = (unsigned __int16)(*(_WORD*)(v16 + 222));
           v29 = (float)v26;
-          LOWORD(v26) = *(_WORD*)(v16 + 224);
+          v26 = (unsigned __int16)(*(_WORD*)(v16 + 224));
           v30 = (float)v26;
           if (*(_BYTE*)(v16 + 264) == 2) {
             v31 = 0x0.0p+0f;
@@ -5144,7 +5144,7 @@ void game_156c240(__int64* a1)
             }
           }
           else {
-            LOWORD(v26) = *(_WORD*)(v16 + 218);
+            v26 = (unsigned __int16)(*(_WORD*)(v16 + 218));
             v31 = (float)v26;
           }
           v21 = fmaxf(v21, v31 + v28);
@@ -11758,7 +11758,7 @@ LABEL_73:
   v50 = *(float*)(a1 + 68);
   v51 = v48 * *(float*)(a1 + 64);
   v52 = v48 * v50;
-  LOWORD(v50) = *(_WORD*)(a1 + 32);
+  LODWORD(v50) = (unsigned __int16)(*(_WORD*)(a1 + 32));
   *(float*)&v53 =
       (float)(v49 * (float)(*(float*)(v26 + 104) * (float)LODWORD(v50))) / v51;
   *(float*)&v54 =
@@ -12037,7 +12037,7 @@ LABEL_158:
     v114 = v112[25] * *(float*)(a1 + 12);
     v115 = *(float*)(a1 + 64) * v113;
     v116 = *(float*)(a1 + 68) * v113;
-    LOWORD(v113) = *(_WORD*)(a1 + 32);
+    LODWORD(v113) = (unsigned __int16)(*(_WORD*)(a1 + 32));
     *(float*)&v117 =
         (float)(v114 * (float)(v112[26] * (float)LODWORD(v113))) / v115;
     *(float*)&v118 =

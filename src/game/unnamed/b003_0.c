@@ -7075,7 +7075,7 @@ void GameHr_591940(_BYTE* a1, __int64 a2)
     if (v8 != 0) {
     LABEL_24:
       if ((a1[552] & 4) == 0 && (*(_BYTE*)(v8 + 4) & 2) != 0) {
-        LOBYTE(v5) = *(_BYTE*)(*(_QWORD*)a1 + 90LL);
+        v5 = (unsigned __int8)(*(_BYTE*)(*(_QWORD*)a1 + 90LL));
         *(float*)(v7 + 220) =
             (float)((float)v5 / 0x1.fe00000000000p+7f) / 0x1.fe00000000000p+7f;
       }
@@ -7201,7 +7201,7 @@ __int64 GameHr_591b40(__int64 a1, __int64 a2)
     }
   }
   if ((*(_BYTE*)(v6 + 8) & 0x20) != 0) {
-    LOBYTE(v5) = *(_BYTE*)(*(_QWORD*)a1 + 90LL);
+    LODWORD(v5) = (unsigned __int8)(*(_BYTE*)(*(_QWORD*)a1 + 90LL));
     *(float*)(v10 + 220) = (float)((float)LODWORD(v5) / 0x1.fe00000000000p+7f) /
                            0x1.fe00000000000p+7f;
   }

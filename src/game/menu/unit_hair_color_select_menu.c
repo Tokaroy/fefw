@@ -108,7 +108,7 @@ void UnitHairColorSelectMenu_Unknown84(__int64 a1)
           v11 =
               __dynamic_cast(v10, GameData_212d670[0], GameData_212d678[0], 0);
           v12 = Pane_58f8a0_alt1(v11);
-          LOBYTE(v13) = v24[260];
+          v13 = (unsigned __int8)(v24[260]);
           v14 = v12;
           v15 = powf((float)v13 / 0x1.fe00000000000p+7f, v5);
           v16 = 0x0.0p+0f;
@@ -119,7 +119,7 @@ void UnitHairColorSelectMenu_Unknown84(__int64 a1)
               v17 = 0x1.0000000000000p+0f;
             }
           }
-          LOBYTE(v15) = v24[261];
+          LODWORD(v15) = (unsigned __int8)(v24[261]);
           v18 = powf((float)LODWORD(v15) / 0x1.fe00000000000p+7f, v5);
           if (v18 >= 0x0.0p+0f) {
             v16 = v18;
@@ -127,7 +127,7 @@ void UnitHairColorSelectMenu_Unknown84(__int64 a1)
               v16 = 0x1.0000000000000p+0f;
             }
           }
-          LOBYTE(v18) = v24[262];
+          LODWORD(v18) = (unsigned __int8)(v24[262]);
           v19 = powf((float)LODWORD(v18) / 0x1.fe00000000000p+7f, v5);
           v20 = 0x0.0p+0f;
           if (v19 >= 0x0.0p+0f) {

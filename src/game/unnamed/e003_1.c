@@ -2578,7 +2578,7 @@ LABEL_15:
     v21 = *(_DWORD*)(v18 + 1176);
     switch (v21) {
     case 5:
-      LOBYTE(v17) = *(_BYTE*)(v18 + 1152);
+      v17 = (unsigned __int8)(*(_BYTE*)(v18 + 1152));
       v22 = (float)v17;
       break;
     case 2:

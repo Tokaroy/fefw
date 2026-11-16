@@ -1029,7 +1029,7 @@ __int64 Registration_563900(__int64 result)
         v8 = nn_fontll_ScalableFontEngine_AcquireGlyphmap(
             *(_QWORD*)(v3 + 8), *((unsigned int*)v1 + 12), 8);
         nn_fontll_ScalableFontEngine_GetError(*(_QWORD*)(v3 + 8));
-        LOWORD(v9) = *((_WORD*)v1 + 27);
+        v9 = (unsigned __int16)(*((_WORD*)v1 + 27));
         v10 = (int)(float)((float)(*(float*)(*(_QWORD*)(v3 + 7152) +
                                              28LL *
                                                  *((unsigned __int16*)v1 + 26) +

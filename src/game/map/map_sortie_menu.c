@@ -1053,7 +1053,7 @@ __int64 MapSortieMenu_872a70(__int64* a1)
       if (v23 != 0) {
         LayoutAccessor_1560070((void*)(&v25_.v25), a1 + 106,
                                (__int64)"L_Minimap");
-        LOWORD(v24) = *(_WORD*)(v23 + 134);
+        v24 = (unsigned __int16)(*(_WORD*)(v23 + 134));
         GameRoutine_19fc5c0_alt1((__int64)(a1 + 134), (__int64)&v25_.v25,
                                  (float)v24);
         result = v25_.v26;
