@@ -52,7 +52,7 @@ __int64 TelopCaptureFailResult_Unknown57(__int64 a1)
 
   v2 = GameRoutine_1760e40(a1, 0);
   v11[0] = "L_Txt";
-  v11[1] = (_BYTE*)(((_WORD*)0x4LL) + 1);
+  v11[1] = ((_BYTE*)0x4LL + 1);
   GameRoutine_9b8fe0((void*)(&v12_.v12), v2, v11);
   result = v12_.v13;
   if (v12_.v13 != 0) {

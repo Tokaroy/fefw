@@ -330,7 +330,7 @@ __int64 game_telop_1762890(__int64 a1, int a2)
 
   v3 = GameRoutine_1760e40(a1, 0);
   v12[0] = "L_Txt";
-  v12[1] = (_BYTE*)(((_WORD*)0x4LL) + 1);
+  v12[1] = ((_BYTE*)0x4LL + 1);
   GameRoutine_9b8fe0((void*)(&v13_.v13), v3, v12);
   result = v13_.v14;
   if (v13_.v14 != 0) {
@@ -423,7 +423,7 @@ __int64 game_telop_1762ce0(__int64 a1, __int64 a2, int a3, const char* a4)
 
   v7 = GameRoutine_1760e40(a1, 0x13u);
   v24[0] = "L_Txt";
-  v24[1] = (_BYTE*)(((_WORD*)0x4LL) + 1);
+  v24[1] = ((_BYTE*)0x4LL + 1);
   GameRoutine_9b8fe0((void*)(&v25_.v25), v7, v24);
   if (v25_.v26 != 0) {
     v8 = std___1___shared_weak_count_lock(v25_.v26);
@@ -554,7 +554,7 @@ void game_telop_1768ea0(__int64 a1, __int64* a2)
   } v14_;
 
   v13[0] = "L_Txt";
-  v13[1] = (_BYTE*)(((_WORD*)0x4LL) + 1);
+  v13[1] = ((_BYTE*)0x4LL + 1);
   GameRoutine_9b8fe0((void*)(&v14_.v14), a2, v13);
   if (v14_.v15 != 0) {
     v3 = std___1___shared_weak_count_lock(v14_.v15);

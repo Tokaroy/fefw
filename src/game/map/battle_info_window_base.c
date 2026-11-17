@@ -806,7 +806,7 @@ void game_map_BattleInfoWindowBase_SetSkillIcons(__int64* a1,
                   v103 = "L_Player_EquipOne";
                 }
                 v152[0] = v103;
-                v152[1] = (_BYTE*)(((__int128*)0x10LL) + 1);
+                v152[1] = ((_BYTE*)0x10LL + 1);
                 GameRoutine_18369c0((void*)(&v153_.v153), a1 + 3, v152);
                 if (v153_.v154 != nullptr) {
                   v104 = std___1___shared_weak_count_lock((__int64)v153_.v154);

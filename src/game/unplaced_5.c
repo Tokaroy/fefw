@@ -3106,7 +3106,7 @@ void game_10221c0(__int64 a1)
                                   PSEUDO_REGISTER(float, "s0", "=w"));
               HIBYTE(v205) |= 1u;
               if (v200_.v201 != 0 && v19 == v200_.v201) {
-                v50 = (_WORD*)(((__int128*)0x10LL) + 12);
+                v50 = ((_WORD*)0x10LL + 12);
                 if (v204 > 0) {
                   v50 = (__int16*)&v203
                             [8 * (unsigned __int64)(unsigned int)(v204 - 1) +

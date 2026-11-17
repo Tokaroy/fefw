@@ -1263,7 +1263,7 @@ LABEL_12:
   v30_.v33 = (unsigned __int64*)&v30_.v30;
   v15 = *(unsigned int*)(v14 + 80);
   v30_.v30 = GameData_212d7f8[0] + 2;
-  v30_.v31 = (_QWORD*)(((__int128*)0x10LL) + 4);
+  v30_.v31 = ((_QWORD*)0x10LL + 4);
   if ((int)v15 < 1) {
     goto LABEL_44;
   }

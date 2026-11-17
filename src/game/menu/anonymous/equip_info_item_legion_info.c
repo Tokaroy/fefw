@@ -145,7 +145,7 @@ __int64 EquipInfoItem_LegionInfo_Unknown16(_QWORD* a1)
 
   v2 = a1[7];
   v52[0] = "L_MenuItem_LegionInfo";
-  v52[1] = (_BYTE*)(((__int128*)0x10LL) + 5);
+  v52[1] = ((_BYTE*)0x10LL + 5);
   v51[0] = "LegionInfo";
   v51[1] = 10;
   if (v2 == 0) {

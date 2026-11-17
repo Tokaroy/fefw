@@ -213,7 +213,7 @@ __int64 ItemResult_Unknown33(__int64 a1)
   float v35;
 
   v32[0] = "L_Txt";
-  v32[1] = (_BYTE*)(((_WORD*)0x4LL) + 1);
+  v32[1] = ((_BYTE*)0x4LL + 1);
   GameRoutine_9b8fe0((void*)(&v33_.v33), (__int64*)(a1 + 168), v32);
   if (v33_.v34 != 0) {
     v2 = std___1___shared_weak_count_lock(v33_.v34);

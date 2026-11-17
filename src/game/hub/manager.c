@@ -1449,7 +1449,7 @@ LABEL_151:
       v113 = *(__int64**)(a1 + 752);
       *(_BYTE*)(v112 + 31) = 0;
       v167_.v167 = (_QWORD*)(((char*)0x20LL) + 1);
-      v167_.v168 = (_QWORD*)(((__int128*)0x10LL) + 15);
+      v167_.v168 = ((_QWORD*)0x10LL + 15);
       v167_.v169 = (__int64**)v112;
       *(_QWORD*)v112 = 0xE65FB982E7A08BE6LL;
       *(_QWORD*)(v112 + 8) = 0x83E35FA89CE58089LL;
@@ -1543,7 +1543,7 @@ LABEL_151:
       v140 = fw_memory_HeapManager_Allocate(*v4, 32, 16, 0);
       v141 = *(__int64**)(a1 + 752);
       v167_.v167 = (_QWORD*)(((char*)0x20LL) + 1);
-      v167_.v168 = (_QWORD*)(((__int128*)0x10LL) + 13);
+      v167_.v168 = ((_QWORD*)0x10LL + 13);
       v167_.v169 = (__int64**)v140;
       *(_QWORD*)v140 = 0xE65FB982E7A08BE6LL;
       *(_QWORD*)(v140 + 8) = 0x96E65FA89CE58089LL;

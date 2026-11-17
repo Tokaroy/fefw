@@ -1079,7 +1079,7 @@ void FieldActor_1801f00(__int64 a1, _QWORD* a2)
     }
   }
   else {
-    v16 = (_QWORD*)(((__int128*)0x10LL) + 8);
+    v16 = ((_QWORD*)0x10LL + 8);
   }
   LOWORD(v91_.v91) = 0;
   LOWORD(v91_.v94) = 0;

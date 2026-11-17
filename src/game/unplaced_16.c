@@ -17777,7 +17777,7 @@ __attribute__((swiftcall)) void game_d8f080(PSEUDO_X8 x8_, __int64 a1,
                   0) {
             v44 = *(const char**)(a2 + 8);
             if ((GameHr_94c220(a2) & 1) != 0 &&
-                (v45 = strlen(v44), v3 = (_QWORD**)(((__int128*)0x10LL) + 7),
+                (v45 = strlen(v44), v3 = ((_QWORD**)0x10LL + 7),
                  (GameHr_ffd760(23, (__int64)v44, v45, 1) & 1) != 0)) {
               v86_.v87 = nullptr;
               v86_.v88 = 0;

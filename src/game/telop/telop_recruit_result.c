@@ -323,7 +323,7 @@ LABEL_25:
   }
   game_1841930(v20, *(_QWORD*)(*(_QWORD*)v10 + 64LL));
   v25[0] = "L_GambitInfoTitle";
-  v25[1] = (_BYTE*)(((__int128*)0x10LL) + 1);
+  v25[1] = ((_BYTE*)0x10LL + 1);
   GameRoutine_13fa520((void*)(&v26_.v26), v2, v25);
   if (v26_.v27 != 0) {
     v21 = std___1___shared_weak_count_lock_alt1(v26_.v27);

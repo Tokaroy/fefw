@@ -565,7 +565,7 @@ __int64 game_gmap_GmapSituation_CalcBanquet(__int64 a1, __int64 a2)
   v50_.v53 = (__int64*)&v50_.v50;
   v4 = *(unsigned int*)(v3 + 80);
   v50_.v50 = GameData_1fa80c0;
-  v50_.v51 = (__int64 (**)(void))(((__int128*)0x10LL) + 4);
+  v50_.v51 = ((__int64 (**)(void))0x10LL + 4);
   if ((int)v4 < 1) {
     goto LABEL_11;
   }

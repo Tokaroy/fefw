@@ -1496,7 +1496,7 @@ void BattleInfoWindow_1833f20(__int64* a1, int a2)
               }
               LayoutAccessor_1562cf0((__int64)(a1 + 3), v93);
               v107_.v107 = (char*)v12;
-              v107_.v108 = (_DWORD*)(((__int128*)0x10LL) + 1);
+              v107_.v108 = ((_DWORD*)0x10LL + 1);
               GameRoutine_17c77c0_alt2((void*)(&v111_.v111), a1 + 3,
                                        (const char**)&v107_.v107);
               if (v111_.v112 == nullptr) {
@@ -1710,7 +1710,7 @@ void BattleInfoWindow_1833f20(__int64* a1, int a2)
               LayoutAccessor_1562060_alt2((char*)a1 + 24,
                                           (__int64)"T_CommandInfo_Title", v69);
               v121_.v121 = "L_CommandInfo_Skill";
-              v121_.v122 = (_BYTE*)(((__int128*)0x10LL) + 3);
+              v121_.v122 = ((_BYTE*)0x10LL + 3);
               GameRoutine_15883c0((void*)(&v107_.v107), a1 + 3, &v121_.v121);
               v111_.v111 = nullptr;
               v111_.v112 = nullptr;
@@ -1751,7 +1751,7 @@ void BattleInfoWindow_1833f20(__int64* a1, int a2)
               LayoutAccessor_1562060_alt2((char*)a1 + 24,
                                           (__int64)"T_CommandInfo_Title", v84);
               v121_.v121 = "L_CommandInfo_Skill";
-              v121_.v122 = (_BYTE*)(((__int128*)0x10LL) + 3);
+              v121_.v122 = ((_BYTE*)0x10LL + 3);
               GameRoutine_15883c0((void*)(&v107_.v107), a1 + 3, &v121_.v121);
               v111_.v111 = nullptr;
               v111_.v112 = nullptr;

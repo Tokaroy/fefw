@@ -4292,7 +4292,7 @@ LABEL_425:
         LABEL_649:
           LOBYTE(v740_.v743) = 1;
           v740_.v740 = v363 + 2;
-          v740_.v741 = (_BYTE*)(((__int128*)0x10LL) + 6);
+          v740_.v741 = ((_BYTE*)0x10LL + 6);
           v500 = GameRoutine_19e10();
           v740_.v742 = (*(__int64 (**)(__int64, __int64, const char*, __int64))(
               *(_QWORD*)v500 + 24LL))(

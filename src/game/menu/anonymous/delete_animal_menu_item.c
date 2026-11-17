@@ -224,7 +224,7 @@ game_menu_anonymous_DeleteAnimalMenuItem_ACall_closure_Invoke(__int64 a1)
       v10 = v9;
     }
     v21_.v21 = "MID_ReleaseMenu_Result";
-    v21_.v22 = (_BYTE*)(((__int128*)0x10LL) + 6);
+    v21_.v22 = ((_BYTE*)0x10LL + 6);
     v20[1] = (const char*)strlen((const char*)v3);
     Message_16f9b50(v10);
   }

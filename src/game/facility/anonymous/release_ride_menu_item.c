@@ -230,7 +230,7 @@ game_facility_anonymous_ReleaseRideMenuItem_ACall_closure_Invoke(__int64 a1)
       v10 = v9;
     }
     v14_.v14 = "MID_ReleaseMenu_Result";
-    v14_.v15 = (_BYTE*)(((__int128*)0x10LL) + 6);
+    v14_.v15 = ((_BYTE*)0x10LL + 6);
     v13[1] = (const char*)strlen_alt1((const char*)v3);
     Message_16f9b50(v10);
   }
