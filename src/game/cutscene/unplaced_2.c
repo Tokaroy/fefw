@@ -61,7 +61,7 @@ __int64 game_cutscene_1811840(__int64 result);
 __int64 game_cutscene_1811fa0(__int64 a1, float a2, float a3);
 void game_cutscene_181a480(__int64 a1, char a2);
 __int64 game_cutscene_181a7e0(__int64 a1, char a2);
-__int64 game_cutscene_181acc0(__int64 result);
+float game_cutscene_181acc0(__int64 result);
 __int64 game_ce5d20(__int64, __int64, __int64, __int64, unsigned __int64, char);
 extern __int64 (*game_17e70c0_ptr)();
 void GameHr_ce5c00(__int64);
@@ -1380,7 +1380,7 @@ __int64 game_cutscene_181a7e0(__int64 a1, char a2)
   return result;
 }
 
-__int64 game_cutscene_181acc0(__int64 result)
+float game_cutscene_181acc0(__int64 result)
 {
 
 #pragma clang fp contract(off)
@@ -1396,11 +1396,11 @@ __int64 game_cutscene_181acc0(__int64 result)
   __int64 v10;
 
   if (*(_QWORD*)(result + 48) == 0) {
-    return result;
+    return 0x0.0p+0f;
   }
   v1 = *(_QWORD*)(result + 56);
   if (v1 == 0) {
-    return result;
+    return *(float*)(*(_QWORD*)(result + 48) + 104LL) / 0x1.e000000000000p+5f;
   }
   v3 = *(_QWORD**)(v1 + 24);
   v2 = *(_QWORD*)(v1 + 32);
@@ -1409,8 +1409,9 @@ __int64 game_cutscene_181acc0(__int64 result)
                               memory_order_relaxed);
   }
   if (v3 == nullptr) {
+    v5 = *(float*)(*(_QWORD*)(result + 48) + 104LL) / 0x1.e000000000000p+5f;
     if (v2 == 0) {
-      return result;
+      return v5;
     }
     goto LABEL_18;
   }
@@ -1418,8 +1419,11 @@ __int64 game_cutscene_181acc0(__int64 result)
                0x1.e000000000000p+5f) *
        0x1.e000000000000p+5f;
   v5 = 0x0.0p+0f;
-  if (v4 > 0x0.0p+0f) {
+  if (!(v4 <= 0x0.0p+0f)) {
     v6 = v3[26];
+    // The original loads the second table before the loop, on every path.
+    v10 = v3[23];
+    __asm__ volatile("" ::"r"(v10));
     v7 = 0x0.0p+0f;
     do {
       v8 = (unsigned __int64)(v3[27] - v6) >> 2;
@@ -1431,7 +1435,7 @@ __int64 game_cutscene_181acc0(__int64 result)
         LODWORD(v8) = v8 - 1;
         if (*(float*)(v6 + 4LL * (unsigned int)v8) <= v7) {
           if ((v8 & 0x80000000) == 0) {
-            v9 = *(float*)(v3[23] + 4 * (v8 & 0x7FFFFFFF));
+            v9 = *(float*)(v10 + 4 * (v8 & 0x7FFFFFFF));
           }
           break;
         }
@@ -1440,17 +1444,16 @@ __int64 game_cutscene_181acc0(__int64 result)
       v5 = v5 + (float)(0x1.0000000000000p+0f / v9);
     } while (v7 < v4);
   }
+  v5 = v5 / 0x1.e000000000000p+5f;
   if (v2 != 0) {
   LABEL_18:
     if (atomic_fetch_add((atomic_ullong* volatile)(v2 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v10 = result;
       (*(void (**)(__int64))(*(_QWORD*)v2 + 16LL))(v2);
       std___1___shared_weak_count___release_weak(v2);
-      return v10;
     }
   }
-  return result;
+  return v5;
 }
 
 #pragma GCC visibility pop

@@ -79523,7 +79523,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 181a480,780,verified,src/game/cutscene/unplaced_2.c,game_cutscene_181a480
 181a7e0,528,verified,src/game/cutscene/unplaced_2.c,game_cutscene_181a7e0
 181aa10,296,verified,src/game/cutscene/unplaced.c,game_cutscene_181aa10
-181acc0,288,disputed,src/game/cutscene/unplaced_2.c,game_cutscene_181acc0
+181acc0,288,verified,src/game/cutscene/unplaced_2.c,game_cutscene_181acc0
 181ae20,16,verified,src/game/templates/shared_ptr.cpp,_ZNSt3__120__shared_ptr_emplaceIN4game8cutscene9ActorListENS_9allocatorIS3_EEED2Ev
 181ae30,92,verified,src/game/templates/shared_ptr.cpp,_ZNSt3__120__shared_ptr_emplaceIN4game8cutscene9ActorListENS_9allocatorIS3_EEED0Ev
 181aea0,1196,verified,src/game/unnamed/b024_1.c,GameHr_181aea0
