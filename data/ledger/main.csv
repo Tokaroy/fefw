@@ -21150,7 +21150,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 799ca0,1040,verified,src/game/map/unplaced.c,game_map_799ca0
 79a120,1408,verified,src/game/map/battle_util.c,game_map_BattleUtil_GetFactorSkill
 79ae60,1168,verified,src/game/unnamed/b005_2.c,GameHr_79ae60
-79b2f0,4624,disputed,src/game/map/battle_side.c,game_map_BattleSide_GetHealPower
+79b2f0,4624,verified,src/game/map/battle_side.c,game_map_BattleSide_GetHealPower
 79c520,432,verified,src/game/unnamed/b005_2.c,GameHr_79c520
 79c6d0,280,verified,src/game/unnamed/b005_2.c,GameHr_79c6d0
 79c7f0,332,verified,src/game/unnamed/b005_2.c,GameHr_79c7f0
@@ -21190,7 +21190,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 7a26a0,244,verified,src/game/map/unplaced_17.c,game_map_7a26a0
 7a27a0,328,verified,src/game/unnamed/b005_3.c,GameHr_7a27a0
 7a2950,260,verified,src/game/map/battle_side.c,BattleSide_7a2950
-7a2a60,768,disputed,src/game/map/battle_side.c,game_map_BattleSide_EachMaskSkill
+7a2a60,852,verified,src/game/map/battle_side.c,game_map_BattleSide_EachMaskSkill
 7a2f50,164,verified,src/game/unnamed/b005_3.c,GameHr_7a2f50
 7a3000,264,verified,src/game/unnamed/b005_3.c,GameHr_7a3000
 7a3110,264,verified,src/game/unnamed/b005_3.c,GameHr_7a3110
@@ -26471,7 +26471,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 8f7440,632,verified,src/game/templates/hash_table.cpp,_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN4game11UnrecoveredILj18EEEEENS_22__unordered_map_hasherImNS_4pairIKmS5_EENS_4hashImEENS_8equal_toImEELb1EEENS_21__unordered_map_equalImSA_SE_SC_Lb1EEENS_9allocatorISA_EEE11__do_rehashILb1EEEvm
 8f76e0,332,verified,src/game/unnamed/b007_1.c,GameHr_8f76e0
 8f7920,792,verified,src/game/unit_const.c,UnitConst_8f7920
-8f7c50,532,disputed,src/game/unnamed/e002_1.c,GameHr_8f7c50
+8f7c50,536,verified,src/game/unnamed/e002_1.c,GameHr_8f7c50
 8f7e80,268,verified,src/game/unit_const.c,game_UnitConst_BattleEnhance_Commit
 8f7fa0,252,verified,src/game/unit_const.c,game_UnitConst_BattleInternal_Commit
 8f80c0,272,verified,src/game/unit_const.c,game_UnitConst_CapabilityEnhance_Commit
@@ -70363,7 +70363,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 164c3c0,524,verified,src/game/menu/unplaced_4.c,game_menu_164c3c0
 164c600,1464,verified,src/game/menu/change_dialog.c,ChangeDialog_Unknown135
 164cdb0,512,verified,src/game/menu/exchange_num_dialog.c,game_menu_ExchangeNumDialog_CreateBindExchange
-164cfc0,320,disputed,src/game/menu/unplaced_11.c,game_menu_164cfc0
+164cfc0,320,verified,src/game/menu/unplaced_11.c,game_menu_164cfc0
 164d120,1948,verified,src/game/menu/exchange_num_dialog.c,ExchangeNumDialog_Unknown135
 164da50,140,verified,src/game/menu/exchange_num_dialog.c,ExchangeNumDialog_Unknown85
 164dae0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0x164dae0
