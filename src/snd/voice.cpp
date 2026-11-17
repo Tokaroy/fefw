@@ -493,12 +493,19 @@ float Voice::calcPitch() const {
   if (Voice* owner = owner_.get<Voice>()) {
     value += owner->calcPitch();
   }
-  float result = -2.0f;
-  if (value >= -2.0f) {
+  // A NaN sum is stored as zero.
+  float result;
+  if (value != value) {
+    result = 0.0f;
+  }
+  else if (value < -2.0f) {
+    result = -2.0f;
+  }
+  else if (value <= 2.0f) {
     result = value;
-    if (value > 2.0f) {
-      result = 2.0f;
-    }
+  }
+  else {
+    result = 2.0f;
   }
   results_[1] = result;
   nn::os::UnlockMutex(&mutex_);
@@ -515,12 +522,19 @@ float Voice::calcPan() const {
   if (Voice* owner = owner_.get<Voice>()) {
     value += owner->calcPan();
   }
-  float result = -2.0f;
-  if (value >= -2.0f) {
+  // A NaN sum is stored as zero.
+  float result;
+  if (value != value) {
+    result = 0.0f;
+  }
+  else if (value < -2.0f) {
+    result = -2.0f;
+  }
+  else if (value <= 2.0f) {
     result = value;
-    if (value > 2.0f) {
-      result = 2.0f;
-    }
+  }
+  else {
+    result = 2.0f;
   }
   results_[2] = result;
   nn::os::UnlockMutex(&mutex_);

@@ -4152,9 +4152,9 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 1482c0,680,verified,src/snd/voice.c,Voice_1482c0
 148570,20,verified,src/snd/voice.cpp,_ZNK3snd5Voice11hasFeature7Ev
 148590,8,verified,src/game/game_trivial.cpp,_Z15GameStub_148590m
-1485a0,208,disputed,src/snd/voice.cpp,_ZNK3snd5Voice9calcPitchEv
+1485a0,216,verified,src/snd/voice.cpp,_ZNK3snd5Voice9calcPitchEv
 148680,8,verified,src/snd/voice.cpp,_ZThn40_NK3snd5Voice9calcPitchEv
-148690,224,disputed,src/snd/voice.cpp,_ZNK3snd5Voice7calcPanEv
+148690,232,verified,src/snd/voice.cpp,_ZNK3snd5Voice7calcPanEv
 148780,8,verified,src/snd/voice.cpp,_ZThn40_NK3snd5Voice7calcPanEv
 148790,432,verified,src/snd/voice.cpp,_ZNK3snd5Voice15calcSurroundPanEv
 148940,8,verified,src/snd/voice.cpp,_ZThn40_NK3snd5Voice15calcSurroundPanEv
