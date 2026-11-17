@@ -1980,20 +1980,18 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
   int v48;
   _QWORD* v49;
   __int64 v50;
+  __int128 v51;
+  __int64 v52;
+  __int64 v53;
+  __int64 v54;
+  __int64 v55;
+  __int64 v56;
+  __int64 v57;
+  char v58;
   struct {
-    __int128 v51;
-    __int64 v52;
-    __int64 v53;
-    __int64 v54;
-    char gap40_[8];
-    __int64 v55;
-    __int64 v56;
-    __int64 v57;
-    char v58;
-    char gap73_[7];
     _QWORD v59[4];
     _QWORD* v60;
-  } f_;
+  } v59_;
 
   v49 = COERCE_AS(__typeof__(v49),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -2128,15 +2126,15 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
     v28 = *(float*)(v8 + 8);
     v29 = v19[10];
     v30 = *(_QWORD*)(v4 + 8);
-    f_.v55 = *v19;
-    f_.v56 = v19[1];
-    f_.v51 = *((_OWORD*)v19 + 2);
-    f_.v57 = v19[2];
-    f_.v58 = *((_BYTE*)v19 + 24);
-    f_.v52 = v19[6];
-    f_.v53 = v19[7];
+    v55 = *v19;
+    v56 = v19[1];
+    v51 = *((_OWORD*)v19 + 2);
+    v57 = v19[2];
+    v58 = *((_BYTE*)v19 + 24);
+    v52 = v19[6];
+    v53 = v19[7];
     v31 = v19[9];
-    f_.v54 = v19[8];
+    v54 = v19[8];
     v32 = v29 - v31;
     v33 = (__int64*)fw_memory_g_heap_manager_ptr;
     if (v29 == v31) {
@@ -2178,14 +2176,14 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
     *(_QWORD*)(v40 + 104) = v38;
     v41 = v40;
     *(_QWORD*)v40 = GameData_2005ce0;
-    *(_BYTE*)(v40 + 40) = f_.v58;
-    *(_OWORD*)(v40 + 48) = f_.v51;
-    *(_QWORD*)(v40 + 24) = f_.v56;
-    *(_QWORD*)(v40 + 32) = f_.v57;
-    *(_QWORD*)(v40 + 16) = f_.v55;
-    *(_QWORD*)(v40 + 64) = f_.v52;
-    *(_QWORD*)(v40 + 72) = f_.v53;
-    *(_QWORD*)(v40 + 80) = f_.v54;
+    *(_BYTE*)(v40 + 40) = v58;
+    *(_OWORD*)(v40 + 48) = v51;
+    *(_QWORD*)(v40 + 24) = v56;
+    *(_QWORD*)(v40 + 32) = v57;
+    *(_QWORD*)(v40 + 16) = v55;
+    *(_QWORD*)(v40 + 64) = v52;
+    *(_QWORD*)(v40 + 72) = v53;
+    *(_QWORD*)(v40 + 80) = v54;
     *(_QWORD*)(v40 + 88) = v35;
     v42 = v19[13];
     *(_QWORD*)(v40 + 112) = v19[12];
@@ -2210,18 +2208,18 @@ __int64 game_combat_ActionAttack_OnEnter_lambda2_Invoke(__int64 result,
     game_combat_ActionAttack_OnEnter_lambda2_Clone(v40),
         v49 = COERCE_AS(__typeof__(v49),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-    f_.v60 = v49;
-    GameRoutine_106aeb0_alt1(f_.v59, (_QWORD*)(v30 + 688)),
+    v59_.v60 = v49;
+    GameRoutine_106aeb0_alt1(v59_.v59, (_QWORD*)(v30 + 688)),
         v49 = COERCE_AS(__typeof__(v49),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-    if (f_.v60 == f_.v59) {
+    if (v59_.v60 == v59_.v59) {
       v50 = 32;
     LABEL_55:
-      (*(void (**)(__int64))(*f_.v60 + v50))((__int64)f_.v60),
+      (*(void (**)(__int64))(*v59_.v60 + v50))((__int64)v59_.v60),
           v49 = COERCE_AS(__typeof__(v49),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
     }
-    else if (f_.v60 != nullptr) {
+    else if (v59_.v60 != nullptr) {
       v50 = 40;
       goto LABEL_55;
     }

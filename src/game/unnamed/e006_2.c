@@ -244,6 +244,7 @@ void GameHr_1068020_alt1(__int64 a1);
 __int64 GameHr_1075d50(__int64 a1, __int64 a2);
 __int64 std___1___shared_weak_count___release_weak_alt2(__int64);
 __int64 GameHr_1068020(__int64 a1);
+float GameHr_106b140();
 
 __int64 GameHr_1064b20(__int64 result)
 {
@@ -1884,8 +1885,14 @@ void GameHr_106a860(__int64 a1, float* a2)
   }
 }
 
-__int64 GameHr_106b140(__int64 result, float* a2, float a3)
+float GameHr_106b140()
 {
+
+#pragma clang fp contract(on)
+
+  __int64 v0;
+  float* v1;
+  float result;
   __int64 v3;
   __int64 v4;
   __int64 v5;
@@ -1900,17 +1907,21 @@ __int64 GameHr_106b140(__int64 result, float* a2, float a3)
   float v14;
   float v15;
   float v16;
-  float v17;
-  __int64 v18;
-  float* v19;
-  float v20;
-  __int64 v21;
-  int v22;
-  float v23;
+  __int64 v17;
+  float* v18;
+  float v19;
+  __int64 v20;
+  int v21;
+  float v22;
 
+  result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w")),
+  v0 = COERCE_AS(__typeof__(v0),
+                 PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v1 = COERCE_AS(__typeof__(v1),
+                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   if (GameData_21ec7b0 == 0 || (v3 = *(_QWORD*)(GameData_21ec7b0 + 8)) == 0 ||
       (~*(_DWORD*)(v3 + 112) & 0x28000) != 0) {
-    v4 = *(_QWORD*)(*(_QWORD*)(result + 8) + 88LL);
+    v4 = *(_QWORD*)(*(_QWORD*)(v0 + 8) + 88LL);
     v5 = *(_QWORD*)(v4 + 392);
     v6 = *(_QWORD*)(v4 + 400);
     if (v6 != 0) {
@@ -1924,14 +1935,26 @@ __int64 GameHr_106b140(__int64 result, float* a2, float a3)
     v11 = v10 | v9;
     if (v6 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v6 + 8),
                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v18 = result;
-      v19 = a2;
-      v20 = a3;
-      (*(void (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6);
-      GameRoutine_1a09c50(v6);
-      a3 = v20;
-      result = v18;
-      a2 = v19;
+      v17 = v0;
+      v18 = v1;
+      v19 = result;
+      (*(void (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6),
+          result =
+              COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w")),
+          v0 = COERCE_AS(__typeof__(v0),
+                         PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v1 = COERCE_AS(__typeof__(v1),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      std___1___shared_weak_count___release_weak_alt2(v6),
+          result =
+              COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w")),
+          v0 = COERCE_AS(__typeof__(v0),
+                         PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+          v1 = COERCE_AS(__typeof__(v1),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      result = v19;
+      v0 = v17;
+      v1 = v18;
       if ((v11 & 1) == 0) {
         return result;
       }
@@ -1939,35 +1962,35 @@ __int64 GameHr_106b140(__int64 result, float* a2, float a3)
     else if ((((unsigned __int8)v10 | (unsigned __int8)v9) & 1) == 0) {
       return result;
     }
-    if (a3 == 0.0f) {
-      v12 = *(float**)(result + 8);
-      v13 = a2[1] - v12[11];
-      v14 = *a2 - v12[10];
-      v15 = (float)(v13 * v13) + (float)(v14 * v14);
-      if (!(v15 < 0x1.0000000000000p-23f)) {
-        v23 = 1.0f / sqrtf(v15);
-        v17 = v14 * v23;
-        v16 = v13 * v23;
+    if (result == 0x0.0p+0f) {
+      v12 = *(float**)(v0 + 8);
+      v13 = v1[1] - v12[11];
+      v14 = *v1 - v12[10];
+      v15 = (float)(PSEUDO_UNFUSED(v13 * v13)) + (float)(v14 * v14);
+      if (v15 >= 0x1.0000000000000p-23f) {
+        v22 = 0x1.0000000000000p+0f / sqrtf(v15);
+        v16 = v14 * v22;
+        result = v13 * v22;
       }
       else {
-        v16 = 1.0f;
-        v17 = 0.0f;
+        result = 0x1.0000000000000p+0f;
+        v16 = 0x0.0p+0f;
       }
-      v12[12] = v17;
-      v12[13] = v16;
+      v12[12] = v16;
+      v12[13] = result;
     }
     else {
-      v21 = *(_QWORD*)(result + 8);
-      if (a3 < 0.0f) {
-        a3 = 0.33333f;
+      v20 = *(_QWORD*)(v0 + 8);
+      if (result < 0x0.0p+0f) {
+        result = 0x1.5555560000000p-2f;
       }
-      *(_DWORD*)(result + 44) = *(_DWORD*)(v21 + 48);
-      *(_DWORD*)(result + 48) = *(_DWORD*)(v21 + 52);
-      *(float*)(result + 52) = *a2;
-      v22 = *((_DWORD*)a2 + 1);
-      *(_DWORD*)(result + 60) = 0;
-      *(float*)(result + 64) = a3;
-      *(_DWORD*)(result + 56) = v22;
+      *(_DWORD*)(v0 + 44) = *(_DWORD*)(v20 + 48);
+      *(_DWORD*)(v0 + 48) = *(_DWORD*)(v20 + 52);
+      *(float*)(v0 + 52) = *v1;
+      v21 = *((_DWORD*)v1 + 1);
+      *(_DWORD*)(v0 + 60) = 0;
+      *(float*)(v0 + 64) = result;
+      *(_DWORD*)(v0 + 56) = v21;
     }
   }
   return result;

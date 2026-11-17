@@ -2235,7 +2235,7 @@ ba200,188,verified,src/nn/diag/diag_module_misc.cpp,_ZN2nn4diag6detail9Translate
 ba2c0,4,verified,src/nn/diag/abort_observer.cpp,_ZN2nn4diag6detail20DefaultAbortObserverERKNS0_9AbortInfoE
 ba2d0,56,verified,src/nn/diag/hashed_log_helper.c,HashedLogHelper_Caller_ba2d0
 ba310,4,verified,src/nn/diag/diag_hashed_log.cpp,_ZN2nn4diag6detail34HashedLogPostSerializeProcess_hlogEPKvj
-ba320,1764,disputed,src/nn/diag/unplaced_2.c,nn_diag_ba320
+ba320,1768,disputed,src/nn/diag/unplaced_2.c,nn_diag_ba320
 bab50,8,verified,src/nn/sdk_trivial_forwarders.cpp,_Z13SdkStub_bab50m
 bab60,48,verified,src/nn/diag/unplaced.c,threadName
 baba0,240,verified,src/nn/diag/unplaced.c,nn_diag_baba0
@@ -4838,6 +4838,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 150ec0,1892,verified,src/nn/nlibsdk/unplaced.c,nnmem_nlib_memcplen
 151720,1532,verified,src/nn/nlibsdk/unplaced.c,nnmem_nlib_sanitize_utf8
 151f00,196,verified,src/nn/nlibsdk/unplaced.c,nn_nlibsdk_151f00
+151fd0,292,disputed,src/nn/nlibsdk/unplaced_5.c,nn_nlibsdk_151fd0
 152150,88,verified,src/nn/nlibsdk/unplaced.c,nn_nlibsdk_152150
 1521b0,384,verified,src/nn/nlibsdk/nlib_threadpool.cpp,nnmem_nlib_threadpool_create
 152340,1024,verified,src/nn/nlibsdk/nlib_threadpool.cpp,_ZN2nn7nlibsdk23ManageThreadPoolWorkersEjPv
@@ -25095,7 +25096,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 64b4e0,572,verified,src/nvidia/unplaced_23.c,nvidia_64b4e0
 64b750,488,verified,src/nvidia/unplaced_23.c,nvidia_64b750
 64b9e0,1068,verified,src/nvidia/unplaced_33.c,nvidia_64b9e0
-64be80,1816,disputed,src/nvidia/unplaced_29.c,nvidia_64be80
+64be80,1816,verified,src/nvidia/unplaced_29.c,nvidia_64be80
 64ca20,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca20
 64ca80,84,verified,src/nvidia/unplaced_9.c,nvidia_64ca80
 64cae0,152,verified,src/nvidia/unplaced_9.c,nvidia_64cae0
@@ -26019,6 +26020,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 659c80,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_659c80m
 659c90,56,verified,src/nn/unnamed/s003_2.c,SdkHr_659c90
 659cd0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_659cd0m
+659ce0,52,verified,src/nn/unplaced_19.c,nn_659ce0
 659d20,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_659d20mj
 659d30,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_659d30m
 659d40,56,verified,src/nn/unplaced_3.c,nn_659d40
@@ -26711,6 +26713,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66c8c0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_66c8c0m
 66c8d0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_66c8d0m
 66c8e0,240,verified,src/nn/unnamed/s004_0.c,SdkHr_66c8e0
+66c9e0,148,verified,src/nn/unplaced_19.c,nn_66c9e0
 66ca80,76,verified,src/nn/unnamed/s004_0.c,SdkHr_66ca80
 66cad0,16,verified,src/nn/sdk_trivial_wrappers.cpp,_Z14SdkStub_66cad0mm
 66cae0,316,verified,src/nn/unplaced_8.c,nn_66cae0
@@ -27161,6 +27164,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 69e8b0,36,verified,src/nn/unnamed/s004_1.c,SdkHr_69e8b0
 69e8e0,44,verified,src/nn/unnamed/s004_1.c,SdkHr_69e8e0
 69e910,96,verified,src/nn/unnamed/s004_1.c,SdkHr_69e910
+69e970,460,verified,src/nn/unplaced_19.c,nn_69e970
 69eb40,440,verified,src/nn/unnamed/s004_1.c,SdkHr_69eb40
 69ed80,208,verified,src/nn/unnamed/s004_1.c,SdkHr_69ed80
 69efd0,12,verified,src/nn/unnamed/u000_2.c,SdkHr_69efd0

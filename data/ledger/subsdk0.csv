@@ -384,7 +384,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 7ab0,4,verified,src/nvidia/ngx_trivial.cpp,_Z12NgxStub_7ab0v
 7ac0,44,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7ac0
 7af0,16,verified,src/nvidia/unnamed/x000_0.c,NgxHr_7af0
-7b00,252,disputed,src/nvidia/unnamed/m000_0.c,NgxHr_7b00
+7b00,264,verified,src/nvidia/unnamed/m000_0.c,NgxHr_7b00
 7c10,44,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7c10
 7c40,16,verified,src/nvidia/unnamed/x000_0.c,NgxHr_7c40
 7c60,252,verified,src/nvidia/unnamed/m000_0.c,NgxHr_7c60

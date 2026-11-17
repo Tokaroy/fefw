@@ -30,6 +30,8 @@ void GameRoutine_7d6200(__int64*, _DWORD*);
 void __cxa_guard_release(__int64);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 float game_zview_character_controller_d40ea0();
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac_alt1;
 
 float game_zview_character_controller_d40ea0()
 {
@@ -493,7 +495,7 @@ float game_zview_character_controller_d40ea0()
                        memory_order_acquire) &
                    1) == 0 &&
                   __cxa_guard_acquire((__int64)&GameData_22110b8) != 0) {
-                GameData_22110ac = 0;
+                GameData_22110ac_alt1 = 0;
                 __cxa_guard_release((__int64)&GameData_22110b8),
                     result = COERCE_AS(__typeof__(result),
                                        PSEUDO_REGISTER(float, "s0", "=w")),
@@ -501,7 +503,7 @@ float game_zview_character_controller_d40ea0()
                         __typeof__(v0),
                         PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
               }
-              *(_QWORD*)(*(_QWORD*)(v13 + 8) + 584LL) = GameData_22110ac;
+              *(_QWORD*)(*(_QWORD*)(v13 + 8) + 584LL) = GameData_22110ac_alt1;
               v83 = 0x0.0p+0f;
               v84 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v13 + 8) + 8LL) + 24LL);
               if (v59 > 0x0.0p+0f) {
@@ -1125,7 +1127,7 @@ float game_zview_character_controller_d40ea0()
                          memory_order_acquire) &
                      1) == 0 &&
                     __cxa_guard_acquire((__int64)&GameData_22110b8) != 0) {
-                  GameData_22110ac = 0;
+                  GameData_22110ac_alt1 = 0;
                   __cxa_guard_release((__int64)&GameData_22110b8),
                       result = COERCE_AS(__typeof__(result),
                                          PSEUDO_REGISTER(float, "s0", "=w")),
@@ -1133,7 +1135,7 @@ float game_zview_character_controller_d40ea0()
                           __typeof__(v0),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
                 }
-                *(_QWORD*)(*(_QWORD*)(v13 + 8) + 584LL) = GameData_22110ac;
+                *(_QWORD*)(*(_QWORD*)(v13 + 8) + 584LL) = GameData_22110ac_alt1;
                 goto LABEL_166;
               }
               v138 = *(_QWORD*)(v13 + 144);

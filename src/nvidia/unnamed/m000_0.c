@@ -100,6 +100,7 @@ __int64 NgxRoutine_e3120(_QWORD, _QWORD, _QWORD);
 __int64 NgxRoutine_e37f0(_QWORD, _QWORD);
 __int64 NgxRoutine_e3810(_QWORD);
 __int64 NgxHr_7c60(__int64 result);
+__int64 NgxHr_7b00(__int64 result);
 
 __int64 NgxHr_4760(__int64 a1)
 {
@@ -200,6 +201,9 @@ LABEL_14:
 
 __int64 NgxHr_7b00(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   int v1;
   __int64 v2;
   __int64 v3;

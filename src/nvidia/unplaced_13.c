@@ -210,6 +210,9 @@ __int64 cuda_driver_203220_alt1(unsigned __int64, unsigned __int64,
                                 unsigned __int64);
 __int64 CudaDriverStub_12db70_alt2(_QWORD);
 __int64 CudaDriverStub_203210_alt1();
+__int64 CudaDriverRoutine_103520_alt1(__int64 result, __int64);
+__int64 CudaDriverRoutine_103780_alt1(__int64, __int64);
+__int64 cuda_driver_misc_helpers_ded50_alt1(__int64, __int64*, unsigned int);
 
 __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
 {
@@ -238,7 +241,7 @@ __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
   __int64 v28;
   unsigned int v30;
   _DWORD* v31;
-  int* v32;
+  __int64 v32;
   int v33;
   __int64 v34;
 
@@ -247,7 +250,7 @@ __int64 nvidia_42ee0(__int64 a1, _DWORD* a2, __int64 a3)
   if ((_DWORD)result != 0) {
     return result;
   }
-  result = cuda_driver_misc_helpers_ded50(v34, nullptr, 0);
+  result = cuda_driver_misc_helpers_ded50_alt1(v34, nullptr, 0);
   if ((_DWORD)result != 0) {
     return result;
   }
@@ -340,7 +343,7 @@ LABEL_16:
         if (v23 != 3) {
           goto LABEL_35;
         }
-        if (*v21 != 3) {
+        if (*(_DWORD*)v21 != 3) {
           goto LABEL_63;
         }
       LABEL_36:
@@ -350,7 +353,7 @@ LABEL_16:
           goto LABEL_64;
         }
       }
-      if (*(_DWORD*)(a1 + 16) != 1 && *v21 != 0) {
+      if (*(_DWORD*)(a1 + 16) != 1 && *(_DWORD*)v21 != 0) {
         result = CudaDriverRoutine_1251c0((unsigned int*)v16[*(v21 - 1) + 35]);
         if ((_DWORD)result != 0) {
           return result;
@@ -366,7 +369,7 @@ LABEL_16:
     for (i = a3; i != 0; --i) {
       v26 = *(v24 - 2);
       if (v26 == 3) {
-        if (*v24 != 3) {
+        if (*(_DWORD*)v24 != 3) {
         LABEL_63:
           v30 = 801;
           nvidia_ed630((__int64)"CUDA", 0,
@@ -379,8 +382,8 @@ LABEL_16:
         if (v26 == 1) {
           v27 = *(_DWORD*)(a1 + 16);
           v28 = (int)*(v24 - 1);
-          if (v27 == 1 && (_DWORD)v28 == v12) {
-            if (*v24 != 3) {
+          if (v27 == 1 & (_DWORD)v28 == v12) {
+            if (*(_DWORD*)v24 != 3) {
               v30 = 101;
               nvidia_ed630((__int64)"CUDA", 0,
                            (__int64)"Modifying accessibility of memory pool on "
@@ -388,7 +391,7 @@ LABEL_16:
               return v30;
             }
           }
-          else if (v27 != 1 && *v24 != 0) {
+          else if (v27 != 1 && *(_DWORD*)v24 != 0) {
             result = CudaDriverRoutine_1251c0((unsigned int*)v16[v28 + 35]);
             if ((_DWORD)result != 0) {
               return result;
@@ -405,15 +408,15 @@ LABEL_16:
     v31 = a2 + 2;
     do {
       if (*(v31 - 2) == 1) {
-        v32 = (int*)v16[*(v31 - 1) + 35];
-        if (*v31 == 3) {
-          result = CudaDriverRoutine_103780(v9, v32);
+        v32 = v16[*(v31 - 1) + 35];
+        if (*(_DWORD*)v31 == 3) {
+          result = CudaDriverRoutine_103780_alt1(v9, v32);
           if ((_DWORD)result != 0) {
             return result;
           }
         }
-        else if (*v31 == 0) {
-          CudaDriverRoutine_103520(v9, v32);
+        else if (*(_DWORD*)v31 == 0) {
+          CudaDriverRoutine_103520_alt1(v9, v32);
         }
       }
       --a3;

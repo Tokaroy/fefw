@@ -299,6 +299,8 @@ extern GameAlign_22110ac GameData_22110ac_alt2;
 void __cxa_guard_release_alt2(__int64);
 void nn_mem_StandardAllocator_Free_alt4(__int64, __int64);
 double CharacterController_StateJump_Unknown4();
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac_alt3;
 
 void CharacterController_StateWarpTo_Unknown3(__int64 a1)
 {
@@ -4432,7 +4434,7 @@ LABEL_108:
                               memory_order_acquire) &
          1) == 0 &&
         __cxa_guard_acquire_alt2((__int64)&GameData_22110b8) != 0) {
-      GameData_22110ac_alt2 = 0;
+      GameData_22110ac_alt3 = 0;
       __cxa_guard_release_alt2((__int64)&GameData_22110b8),
           v0 = COERCE_AS(__typeof__(v0),
                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -4452,7 +4454,7 @@ LABEL_108:
       v58 = v57;
     }
     else {
-      v58 = GameData_22110ac_alt2;
+      v58 = GameData_22110ac_alt3;
     }
     v60 = *(float*)(v54 + 364);
     v61 = 0x1.0000000000000p+0f;

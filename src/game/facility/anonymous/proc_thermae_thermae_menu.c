@@ -69,6 +69,7 @@ extern __int64 GameData_212cc58_alt1[60];
 void game_16ad210_alt1(__int64, __int64, char, const char*);
 __int64 GameRoutine_13fa790_alt1(__int64, __int64, __int64, __int64, __int64);
 __int64 GameRoutine_60a020_alt1(__int64, const char*);
+void* GameRoutine_67ed20_alt1(_QWORD*);
 
 __int64 ProcThermaeThermaeMenu_Unknown84(__int64 a1)
 {
@@ -314,7 +315,8 @@ LABEL_34:
                 v24 = (const char*)game_97b2f0(v25 + 2104);
               }
               else {
-                v24 = GameRoutine_67ed20(*(_QWORD**)(v25 + 392));
+                v24 = (const char*)GameRoutine_67ed20_alt1(
+                    *(_QWORD**)(v25 + 392));
               }
               game_16ad210_alt1(v10, *(_QWORD*)(v25 + 392), 6, v24);
               v20 = *v6;
