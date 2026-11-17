@@ -99,7 +99,7 @@ __int64 game_facility_94ad40(__int64 a1)
       v9 = 1;
     }
     v10 = (*(_DWORD*)(game_GameModeData_instance_ + 72) - v9) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 72) - v9) >> 31);
+          ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) - v9)) >> 31);
     if (v10 >= 9999999) {
       v10 = 9999999;
     }

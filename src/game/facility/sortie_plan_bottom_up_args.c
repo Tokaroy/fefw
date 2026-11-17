@@ -411,9 +411,8 @@ __int64 SortiePlanBottomUpArgs_Unknown6(__int64 result, __int64 a2, __int64 a3)
       v3 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
     }
     v4 = (*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) - *(_DWORD*)(a3 + 504)) &
-         ~((*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) -
-            *(_DWORD*)(a3 + 504)) >>
-           31);
+         ~((int)((*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) -
+            *(_DWORD*)(a3 + 504))) >> 31);
   }
   *(_DWORD*)(a2 + 8) = v4;
   *(_QWORD*)a2 = a3;
@@ -446,9 +445,8 @@ __int64 SortiePlanBottomUpArgs_Unknown5(__int64 result, __int64 a2, __int64 a3)
       v3 = (unsigned __int64)(GameData_21d9970 - GameData_21d9968) >> 2;
     }
     v4 = (*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) - *(_DWORD*)(a3 + 504)) &
-         ~((*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) -
-            *(_DWORD*)(a3 + 504)) >>
-           31);
+         ~((int)((*(_DWORD*)(GameData_21d9968 + 4LL * v3 - 4) -
+            *(_DWORD*)(a3 + 504))) >> 31);
   }
   *(_DWORD*)(a2 + 8) = v4;
   *(_QWORD*)a2 = a3;

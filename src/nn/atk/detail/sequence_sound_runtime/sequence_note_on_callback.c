@@ -414,7 +414,7 @@ __int64 SequenceNoteOnCallback_292680(__int64 result, __int64 a2, __int64 a3,
         *(_QWORD*)(v16 + 8) = v8;
         *v8 = v16;
         v17 = (*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) &
-              ~((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) >> 31);
+              ~((int)((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288))) >> 31);
         if (v17 >= 127) {
           v17 = 127;
         }

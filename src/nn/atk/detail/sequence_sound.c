@@ -212,10 +212,10 @@ __int64 SequenceSound_Unknown9(__int64 result)
   }
   v8 = *(_QWORD**)(v1 + 40);
   if (v8 != v5) {
-    v9 = (v3 + v2) & ~((v3 + v2) >> 31);
+    v9 = (v3 + v2) & ~((int)((v3 + v2)) >> 31);
     do {
       v10 = (*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) &
-            ~((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) >> 31);
+            ~((int)((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288))) >> 31);
       if (v10 >= 127) {
         v10 = 127;
       }

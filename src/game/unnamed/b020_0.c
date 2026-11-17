@@ -3830,8 +3830,7 @@ __int64 GameHr_1525070(__int64 a1)
   if (*(_WORD*)(v3 + 64) != 0 && GameData_21caab0 != 0) {
     v4 =
         (*(_DWORD*)(GameData_21caab0 + 72) + *(unsigned __int16*)(v3 + 64)) &
-        ~((*(_DWORD*)(GameData_21caab0 + 72) + *(unsigned __int16*)(v3 + 64)) >>
-          31);
+        ~((int)((*(_DWORD*)(GameData_21caab0 + 72) + *(unsigned __int16*)(v3 + 64))) >> 31);
     if (v4 >= 9999999) {
       v4 = 9999999;
     }

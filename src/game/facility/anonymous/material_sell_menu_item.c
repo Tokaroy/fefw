@@ -283,9 +283,8 @@ __int64 MaterialSellMenuItem_Unknown76(__int64 a1)
   if (game_GameModeData_instance_ != 0) {
     v7 = (*(_DWORD*)(game_GameModeData_instance_ + 72) +
           *(_DWORD*)(a1 + 84) * v4) &
-         ~((*(_DWORD*)(game_GameModeData_instance_ + 72) +
-            *(_DWORD*)(a1 + 84) * v4) >>
-           31);
+         ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) +
+            *(_DWORD*)(a1 + 84) * v4)) >> 31);
     if (v7 >= 9999999) {
       v7 = 9999999;
     }

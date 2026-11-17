@@ -8482,9 +8482,8 @@ bool game_90cb60(__int64 a1)
   }
   return v16 <= ((*(_DWORD*)(*(_QWORD*)(a1 + 24) + 104LL) -
                   *(_DWORD*)(*(_QWORD*)(a1 + 24) + 108LL)) &
-                 ~((*(_DWORD*)(*(_QWORD*)(a1 + 24) + 104LL) -
-                    *(_DWORD*)(*(_QWORD*)(a1 + 24) + 108LL)) >>
-                   31));
+                 ~((int)((*(_DWORD*)(*(_QWORD*)(a1 + 24) + 104LL) -
+                    *(_DWORD*)(*(_QWORD*)(a1 + 24) + 108LL))) >> 31));
 }
 
 __int64 game_90fd20(__int64 a1, _DWORD* a2)

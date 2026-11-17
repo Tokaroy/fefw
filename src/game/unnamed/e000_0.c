@@ -3536,7 +3536,7 @@ __int64 GameHr_188d70(__int64 a1, __int64 a2, int a3, float a4)
     v11 = (*(__int64 (**)(__int64))(*(_QWORD*)v11 + 72LL))(v11);
   }
   GameRoutine_1a0b950(a2, v11 + *(int*)(a1 + 76), v5);
-  v12 = (*(_DWORD*)(a1 + 76) + v5) & ~((*(_DWORD*)(a1 + 76) + v5) >> 31);
+  v12 = (*(_DWORD*)(a1 + 76) + v5) & ~((int)((*(_DWORD*)(a1 + 76) + v5)) >> 31);
   v13 = *(_QWORD*)(a1 + 48);
   *(_DWORD*)(a1 + 76) = v12;
   v15 = GameRoutine_112290(v13 + 24, v14);

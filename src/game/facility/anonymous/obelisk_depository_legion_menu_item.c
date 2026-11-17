@@ -414,8 +414,7 @@ __int64 ObeliskDepositoryLegionMenuItem_Unknown73(__int64 a1)
           }
           if (game_GameModeData_instance_ != 0) {
             v16 = (*(_DWORD*)(game_GameModeData_instance_ + 80) - v15) &
-                  ~((*(_DWORD*)(game_GameModeData_instance_ + 80) - (int)v15) >>
-                    31);
+                  ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 80) - (int)v15)) >> 31);
             if (v16 >= 99999) {
               v16 = 99999;
             }

@@ -319,15 +319,15 @@ __int64 WaveStreamReader_Unknown8(__int64 a1, int a2, int a3)
     }
     v9 = snd_fnd_WeakHandle_get(v8);
     v10 = (*(__int64 (**)(__int64))(*(_QWORD*)v9 + 80LL))(v9);
-    v4 = (v10 + a2) & ~((v10 + a2) >> 31);
+    v4 = (v10 + a2) & ~((int)((v10 + a2)) >> 31);
     v11 = *(_QWORD*)(a1 + 48);
   }
   else {
     if (a3 != 0) {
-      v4 = (*(_DWORD*)(a1 + 76) + a2) & ~((*(_DWORD*)(a1 + 76) + a2) >> 31);
+      v4 = (*(_DWORD*)(a1 + 76) + a2) & ~((int)((*(_DWORD*)(a1 + 76) + a2)) >> 31);
     }
     else {
-      v4 = a2 & ~(a2 >> 31);
+      v4 = a2 & ~((int)(a2) >> 31);
     }
     v11 = *(_QWORD*)(a1 + 48);
     v6 = a1 + 56;
@@ -382,7 +382,7 @@ __int64 WaveStreamReader_Unknown9(__int64 a1, __int64 a2, int a3)
 
   if (*(_DWORD*)(a1 + 72) == 7) {
     memset_alt1(a2, 0, a3);
-    v5 = (*(_DWORD*)(a1 + 76) + a3) & ~((*(_DWORD*)(a1 + 76) + a3) >> 31);
+    v5 = (*(_DWORD*)(a1 + 76) + a3) & ~((int)((*(_DWORD*)(a1 + 76) + a3)) >> 31);
     v6 = *(_QWORD*)(a1 + 48);
     *(_DWORD*)(a1 + 76) = v5;
     if (v6 != 0) {
@@ -417,7 +417,7 @@ __int64 WaveStreamReader_Unknown9(__int64 a1, __int64 a2, int a3)
         v18 = 0;
       }
       memcpy_alt1(a2, v18, a3);
-      v19 = (*(_DWORD*)(a1 + 76) + a3) & ~((*(_DWORD*)(a1 + 76) + a3) >> 31);
+      v19 = (*(_DWORD*)(a1 + 76) + a3) & ~((int)((*(_DWORD*)(a1 + 76) + a3)) >> 31);
       v20 = *(_QWORD*)(a1 + 48);
       *(_DWORD*)(a1 + 76) = v19;
       if (v20 != 0) {

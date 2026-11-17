@@ -2546,7 +2546,7 @@ __int64 GameHr_27c340(__int64 result)
         *(_QWORD*)(v13 + 8) = v8;
         *v8 = v13;
         v14 = (*((_DWORD*)v8 - 97) + *((unsigned __int8*)v8 - 256)) &
-              ~((*((_DWORD*)v8 - 97) + *((unsigned __int8*)v8 - 256)) >> 31);
+              ~((int)((*((_DWORD*)v8 - 97) + *((unsigned __int8*)v8 - 256))) >> 31);
         if (v14 >= 127) {
           v14 = 127;
         }
@@ -2625,13 +2625,13 @@ __int64 GameHr_27c6a0(__int64 a1, __int64 a2)
   __int64 v16;
 
   v2 = (*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) &
-       ~((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) >> 31);
+       ~((int)((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256))) >> 31);
   if (v2 >= 127) {
     v3 = 127;
   }
   else {
     v3 = (*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) &
-         ~((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) >> 31);
+         ~((int)((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256))) >> 31);
   }
   if (*(_DWORD*)(a1 + 64) == 0) {
     return 0;
@@ -2647,7 +2647,7 @@ __int64 GameHr_27c6a0(__int64 a1, __int64 a2)
   LABEL_16:
     v9 = *(_QWORD*)(a1 + 24);
     v6 = (*(_DWORD*)(v9 - 388) + *(unsigned __int8*)(v9 - 256)) &
-         ~((*(_DWORD*)(v9 - 388) + *(unsigned __int8*)(v9 - 256)) >> 31);
+         ~((int)((*(_DWORD*)(v9 - 388) + *(unsigned __int8*)(v9 - 256))) >> 31);
     if (*(_BYTE*)(a1 + 128) == 1) {
       if (v6 >= v3) {
         return 0;
@@ -2681,16 +2681,14 @@ LABEL_19:
   v13 = *(_QWORD**)(a1 + 24);
   if (v13 != (_QWORD*)(a1 + 16)) {
     v14 = (*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) &
-          ~((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256)) >> 31);
+          ~((int)((*(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256))) >> 31);
     if ((*(_BYTE*)(a1 + 128) & 1) != 0) {
       if (v14 >= 0x7F) {
         v14 = 127;
       }
       do {
         if (((*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256)) &
-             (unsigned int)~(
-                 (*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256)) >>
-                 31)) >= v14) {
+             (unsigned int)~((int)((*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256))) >> 31)) >= v14) {
           break;
         }
         v13 = (_QWORD*)v13[1];
@@ -2699,7 +2697,7 @@ LABEL_19:
     else {
       do {
         v15 = (*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256)) &
-              ~((*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256)) >> 31);
+              ~((int)((*((_DWORD*)v13 - 97) + *((unsigned __int8*)v13 - 256))) >> 31);
         if (v15 >= 127) {
           v15 = 127;
         }
@@ -3762,7 +3760,7 @@ __int64 GameHr_27ea60(__int64 result, __int64 a2, __int64 a3, __int64 a4,
         *(_QWORD*)(v16 + 8) = v8;
         *v8 = v16;
         v17 = (*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) &
-              ~((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288)) >> 31);
+              ~((int)((*((_DWORD*)v8 - 105) + *((unsigned __int8*)v8 - 288))) >> 31);
         if (v17 >= 127) {
           v17 = 127;
         }
@@ -3889,7 +3887,7 @@ __int64* GameHr_27ee40(_QWORD* a1, int a2, int a3, __int64 a4, __int64 a5)
   v6 = a1 + 6;
   v7 = a1 + 4;
   v10 = a2;
-  v12 = (a3 + a2) & ~((a3 + a2) >> 31);
+  v12 = (a3 + a2) & ~((int)((a3 + a2)) >> 31);
   if (v5 == a1 + 6) {
     v25 = a5;
     while (1) {
@@ -3898,7 +3896,7 @@ __int64* GameHr_27ee40(_QWORD* a1, int a2, int a3, __int64 a4, __int64 a5)
         return nullptr;
       }
       v20 = (*((_DWORD*)v19 - 105) + *((unsigned __int8*)v19 - 288)) &
-            ~((*((_DWORD*)v19 - 105) + *((unsigned __int8*)v19 - 288)) >> 31);
+            ~((int)((*((_DWORD*)v19 - 105) + *((unsigned __int8*)v19 - 288))) >> 31);
       if (v20 >= 127) {
         v20 = 127;
       }
@@ -3931,7 +3929,7 @@ __int64* GameHr_27ee40(_QWORD* a1, int a2, int a3, __int64 a4, __int64 a5)
       BasicSound_2804d0((__int64)(v5 - 68), v10, a3);
       for (i = (_QWORD*)a1[5]; i != v7; i = (_QWORD*)i[1]) {
         v17 = (*((_DWORD*)i - 105) + *((unsigned __int8*)i - 288)) &
-              ~((*((_DWORD*)i - 105) + *((unsigned __int8*)i - 288)) >> 31);
+              ~((int)((*((_DWORD*)i - 105) + *((unsigned __int8*)i - 288))) >> 31);
         if (v17 >= 127) {
           v17 = 127;
         }

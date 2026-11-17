@@ -504,7 +504,7 @@ LABEL_29:
     v16 = GameRoutine_9db9e0(0x12u, *(unsigned __int16*)(v15 + 50));
     if (game_GameModeData_instance_ != 0) {
       v17 = (*(_DWORD*)(game_GameModeData_instance_ + 72) - v16) &
-            ~((*(_DWORD*)(game_GameModeData_instance_ + 72) - v16) >> 31);
+            ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) - v16)) >> 31);
       if (v17 >= 9999999) {
         v17 = 9999999;
       }
@@ -1250,9 +1250,8 @@ LABEL_13:
   if (*(_WORD*)(v17 + 64) != 0 && game_GameModeData_instance_ != 0) {
     v18 = (*(_DWORD*)(game_GameModeData_instance_ + 72) +
            *(unsigned __int16*)(v17 + 64)) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 72) +
-             *(unsigned __int16*)(v17 + 64)) >>
-            31);
+          ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) +
+             *(unsigned __int16*)(v17 + 64))) >> 31);
     if (v18 >= 9999999) {
       v18 = 9999999;
     }

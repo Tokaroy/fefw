@@ -116,7 +116,7 @@ void ShopMenuItem_Sell_Unknown76(__int64 a1)
   }
   if (game_GameModeData_instance_ != 0) {
     v9 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v6) &
-         ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v6) >> 31);
+         ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) + v6)) >> 31);
     if (v9 >= 9999999) {
       v9 = 9999999;
     }

@@ -9140,7 +9140,7 @@ __int64 GameHr_13da8a0(_QWORD* a1)
       v8 = v7;
     }
     v9 = (*((_DWORD*)v8 + 1) + *(_DWORD*)v8) &
-         ~((*((_DWORD*)v8 + 1) + *(_DWORD*)v8) >> 31);
+         ~((int)((*((_DWORD*)v8 + 1) + *(_DWORD*)v8)) >> 31);
     if (v9 >= 100) {
       v9 = 100;
     }

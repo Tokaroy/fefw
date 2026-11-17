@@ -300,7 +300,7 @@ __int64 ProcGmapCarriageList_Unknown100(__int64 a1)
       GameRoutine_9db9e0(23, *(unsigned __int16*)(*(_QWORD*)(v1 + 288) + 64LL));
   if (game_GameModeData_instance_ != 0) {
     v4 = (*(_DWORD*)(game_GameModeData_instance_ + 72) - v3) &
-         ~((*(_DWORD*)(game_GameModeData_instance_ + 72) - v3) >> 31);
+         ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) - v3)) >> 31);
     if (v4 >= 9999999) {
       v4 = 9999999;
     }

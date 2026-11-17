@@ -940,7 +940,7 @@ __int64 game_map_MapUnitInfo_TryUpdateDataSimple_lambda1_Invoke(__int64 result,
     v5 = (*a2 >> 19) & 0x1F;
   }
   **(_DWORD**)(result + 8) = (v5 - ((*a2 >> 12) & 0x7F) + v4) &
-                             ~((v5 - ((*a2 >> 12) & 0x7F) + v4) >> 31);
+                             ~((int)((v5 - ((*a2 >> 12) & 0x7F) + v4)) >> 31);
   return result;
 }
 

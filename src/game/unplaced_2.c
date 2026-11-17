@@ -3694,7 +3694,7 @@ bool game_8ae640(__int64* a1, __int64 a2, char a3)
         }
         if (game_GameModeData_instance_ != 0) {
           v23 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v20) &
-                ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v20) >> 31);
+                ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) + v20)) >> 31);
           if (v23 >= 9999999) {
             v23 = 9999999;
           }

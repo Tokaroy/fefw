@@ -748,7 +748,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 40740,568,verified,src/opus/celt/vq_impl2.c,alg_unquant
 40a00,504,verified,src/opus/celt/vq.c,renormalise_vector
 40c20,1012,verified,src/opus/unplaced_2.c,opus_40c20
-41040,3824,verified,src/opus/unplaced_2.c,opus_41040
+41040,3824,disputed,src/opus/unplaced_2.c,opus_41040
 422a0,4244,verified,src/opus/silk/A2NLSF.c,silk_A2NLSF
 437c0,228,verified,src/opus/silk/CNG.c,silk_CNG_Reset
 44290,344,verified,src/opus/silk/HP_variable_cutoff.c,silk_HP_variable_cutoff

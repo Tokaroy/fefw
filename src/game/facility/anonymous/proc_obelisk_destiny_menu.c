@@ -510,9 +510,8 @@ game_facility_anonymous_ProcObeliskDestinyMenu_ZLCall_closure_Invoke(__int64 a1)
               if (game_GameModeData_instance_ != 0) {
                 v9 = (*(_DWORD*)(game_GameModeData_instance_ + 80) +
                       *(unsigned __int16*)(v5 + 64)) &
-                     ~((*(_DWORD*)(game_GameModeData_instance_ + 80) +
-                        *(unsigned __int16*)(v5 + 64)) >>
-                       31);
+                     ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 80) +
+                        *(unsigned __int16*)(v5 + 64))) >> 31);
                 if (v9 >= 99999) {
                   v9 = 99999;
                 }

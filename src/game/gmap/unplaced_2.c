@@ -1713,7 +1713,7 @@ __int64 game_gmap_1536730(__int64 a1)
     if (*(_WORD*)(*(_QWORD*)(a1 + 168) + v3) != 0) {
       v4 = *(unsigned __int16*)(*(_QWORD*)(a1 + 168) + v3);
       v5 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v4) &
-           ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v4) >> 31);
+           ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) + v4)) >> 31);
       if (v5 >= 9999999) {
         v5 = 9999999;
       }

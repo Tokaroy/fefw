@@ -373,15 +373,15 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
       }
     }
     v10 = v4 + (float)(v7 * v8);
-    if (!(v10 >= 0x1.0624de0000000p-10f)) {
+    if (v10 < 0x1.0624de0000000p-10f) {
       v10 = 0x0.0p+0f;
     }
     v11 = LANES64(result[12]).n64_f32[1];
-    if (!(v10 <= 0x1.ff7cee0000000p-1f)) {
+    if (v10 > 0x1.ff7cee0000000p-1f) {
       v10 = 0x1.0000000000000p+0f;
     }
     LANES64(result[13]).n64_f32[0] = v10;
-    if (!(v11 > 0x0.0p+0f) || !(v10 <= 0x0.0p+0f)) {
+    if (v11 <= 0x0.0p+0f || !(v10 <= 0x0.0p+0f)) {
       v12 = v10 > 0x0.0p+0f;
       if (!(v11 <= 0x0.0p+0f)) {
         v12 = false;
@@ -430,7 +430,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_29:
     v19 = LANES64(result[57]).n64_f32[1];
     LANES64(result[57]).n64_f32[0] = v13;
-    if (!(vabds_f32(v19, v13) >= 0x1.a36e2e0000000p-14f)) {
+    if (vabds_f32(v19, v13) < 0x1.a36e2e0000000p-14f) {
       LANES64(result[57]).n64_f32[0] = v19;
     }
   LABEL_31:
@@ -465,7 +465,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_39:
     v25 = LANES64(result[59]).n64_f32[0];
     LANES64(result[58]).n64_f32[1] = v20;
-    if (!(vabds_f32(v25, v20) >= 0x1.a36e2e0000000p-14f)) {
+    if (vabds_f32(v25, v20) < 0x1.a36e2e0000000p-14f) {
       LANES64(result[58]).n64_f32[1] = v25;
     }
   LABEL_41:
@@ -500,7 +500,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_49:
     v31 = LANES64(result[60]).n64_f32[1];
     LANES64(result[60]).n64_f32[0] = v26;
-    if (!(vabds_f32(v31, v26) >= 0x1.a36e2e0000000p-14f)) {
+    if (vabds_f32(v31, v26) < 0x1.a36e2e0000000p-14f) {
       LANES64(result[60]).n64_f32[0] = v31;
     }
   LABEL_51:
@@ -535,7 +535,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_59:
     v37 = LANES64(result[62]).n64_f32[0];
     LANES64(result[61]).n64_f32[1] = v32;
-    if (!(vabds_f32(v37, v32) >= 0x1.a36e2e0000000p-14f)) {
+    if (vabds_f32(v37, v32) < 0x1.a36e2e0000000p-14f) {
       LANES64(result[61]).n64_f32[1] = v37;
     }
   LABEL_61:
@@ -593,7 +593,7 @@ float32x2_t* CharacterLookAt_Unknown5(float32x2_t* result)
   LABEL_69:
     v43 = LANES64(result[18]).n64_f32[1];
     LANES64(result[18]).n64_f32[0] = v38;
-    if (!(vabds_f32(v43, v38) >= 0x1.a36e2e0000000p-14f)) {
+    if (vabds_f32(v43, v38) < 0x1.a36e2e0000000p-14f) {
       LANES64(result[18]).n64_f32[0] = v43;
     }
     goto LABEL_71;

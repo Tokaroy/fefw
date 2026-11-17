@@ -2926,9 +2926,8 @@ __int64 GameSideStoryData_12b7700(__int64 a1)
   if (*(_WORD*)(v2 + 336) != 0 && game_GameModeData_instance_ != 0) {
     v3 = (*(_DWORD*)(game_GameModeData_instance_ + 72) +
           *(unsigned __int16*)(v2 + 336)) &
-         ~((*(_DWORD*)(game_GameModeData_instance_ + 72) +
-            *(unsigned __int16*)(v2 + 336)) >>
-           31);
+         ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) +
+            *(unsigned __int16*)(v2 + 336))) >> 31);
     if (v3 >= 9999999) {
       v3 = 9999999;
     }

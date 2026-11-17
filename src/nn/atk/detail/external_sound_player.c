@@ -111,7 +111,7 @@ __int64 ExternalSoundPlayer_282cc0(__int64 a1, __int64 a2)
   }
   else {
     v6 = *(_DWORD*)(a2 + 124) + *(unsigned __int8*)(a2 + 256);
-    v7 = v6 & ~(v6 >> 31);
+    v7 = v6 & ~((int)(v6) >> 31);
     while (1) {
       v8 = 0;
       v9 = v2;
@@ -129,7 +129,7 @@ __int64 ExternalSoundPlayer_282cc0(__int64 a1, __int64 a2)
         v13 = (_DWORD*)(v2 - 404);
         v14 = v2 - 528;
         v2 = *(_QWORD*)(v2 + 8);
-        v15 = (*v13 + *v12) & ~((*v13 + *v12) >> 31);
+        v15 = (*v13 + *v12) & ~((int)((*v13 + *v12)) >> 31);
         if (v15 >= 127) {
           v15 = 127;
         }
@@ -144,8 +144,7 @@ __int64 ExternalSoundPlayer_282cc0(__int64 a1, __int64 a2)
         return result;
       }
       v16 = (*(_DWORD*)(result + 124) + *(unsigned __int8*)(result + 256)) &
-            ~((*(_DWORD*)(result + 124) + *(unsigned __int8*)(result + 256)) >>
-              31);
+            ~((int)((*(_DWORD*)(result + 124) + *(unsigned __int8*)(result + 256))) >> 31);
       if (v16 >= 127) {
         v16 = 127;
       }
@@ -207,7 +206,7 @@ __int64 ExternalSoundPlayer_282e40(__int64 result, int a2)
         v10 = (_DWORD*)(v4 - 404);
         v11 = v4 - 528;
         v4 = *(_QWORD*)(v4 + 8);
-        v12 = (*v10 + *v9) & ~((*v10 + *v9) >> 31);
+        v12 = (*v10 + *v9) & ~((int)((*v10 + *v9)) >> 31);
         if (v12 >= 127) {
           v12 = 127;
         }
@@ -271,7 +270,7 @@ bool ExternalSoundPlayer_Unknown2(__int64 a1, int a2)
       v10 = (_DWORD*)(v3 - 404);
       v11 = v3 - 528;
       v3 = *(_QWORD*)(v3 + 8);
-      v12 = (*v10 + *v9) & ~((*v10 + *v9) >> 31);
+      v12 = (*v10 + *v9) & ~((int)((*v10 + *v9)) >> 31);
       if (v12 >= 127) {
         v12 = 127;
       }
@@ -286,7 +285,7 @@ bool ExternalSoundPlayer_Unknown2(__int64 a1, int a2)
       return false;
     }
     v13 = *(_DWORD*)(v8 + 124) + *(unsigned __int8*)(v8 + 256);
-    v14 = v13 & ~(v13 >> 31);
+    v14 = v13 & ~((int)(v13) >> 31);
     if (v14 >= 127) {
       v14 = 127;
     }

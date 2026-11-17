@@ -1586,7 +1586,7 @@ LABEL_10:
         AsyncLoadThumbImage_189adc0(
             a1,
             (v48 - ((*v1 >> 12) & 0x7F) + v49) &
-                ~((v48 - ((*v1 >> 12) & 0x7F) + v49) >> 31),
+                ~((int)((v48 - ((*v1 >> 12) & 0x7F) + v49)) >> 31),
             v49 + v48);
         v50 = *(_DWORD*)(a1 + 1076);
         v51 = v50 & 0xFFF;
@@ -1673,7 +1673,7 @@ LABEL_10:
       else {
         v70 = v65;
       }
-      AsyncLoadThumbImage_189adc0(a1, (v69 + v70) & ~((v69 + v70) >> 31),
+      AsyncLoadThumbImage_189adc0(a1, (v69 + v70) & ~((int)((v69 + v70)) >> 31),
                                   v70 + v68);
       v71 = *(_DWORD*)(a1 + 1076);
       v72 = v71 & 0xFFF;

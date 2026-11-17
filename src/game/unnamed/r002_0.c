@@ -1650,7 +1650,7 @@ __int64 GameHr_8b0370(__int64 result, int a2)
   }
   if (GameData_21caab0 != 0) {
     v2 = (*(_DWORD*)(GameData_21caab0 + 72) + a2) &
-         ~((*(_DWORD*)(GameData_21caab0 + 72) + a2) >> 31);
+         ~((int)((*(_DWORD*)(GameData_21caab0 + 72) + a2)) >> 31);
     if (v2 >= 9999999) {
       v2 = 9999999;
     }

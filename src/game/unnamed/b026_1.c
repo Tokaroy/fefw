@@ -11009,7 +11009,7 @@ __int64 GameHr_197fc00(__int64 result)
     if (v3 >= 1) {
       if (GameData_21caab0 != 0) {
         v5 = (*(_DWORD*)(GameData_21caab0 + 72) + v3) &
-             ~((*(_DWORD*)(GameData_21caab0 + 72) + v3) >> 31);
+             ~((int)((*(_DWORD*)(GameData_21caab0 + 72) + v3)) >> 31);
         if (v5 >= 9999999) {
           v5 = 9999999;
         }

@@ -1610,13 +1610,13 @@ void Manager_e9b830(__int64 a1, int a2)
   v3 = *(_QWORD*)(**(_QWORD**)(GameData_2203490 + 712) + 16LL);
   if (v3 != 0) {
     v4 = (*(_DWORD*)(GameData_2203490 + 684) + a2) &
-         ~((*(_DWORD*)(GameData_2203490 + 684) + a2) >> 31);
+         ~((int)((*(_DWORD*)(GameData_2203490 + 684) + a2)) >> 31);
     v5 =
         *(_DWORD*)(GameData_2203490 + 692) + *(_DWORD*)(GameData_2203490 + 688);
     if (v5 <= 1) {
       v5 = 1;
     }
-    v6 = (v5 + a2) & ~((v5 + a2) >> 31);
+    v6 = (v5 + a2) & ~((int)((v5 + a2)) >> 31);
     v7 = GameRoutine_e743f0(GameData_2203490 + 672);
     if (*(_DWORD*)(v2 + 680) != 0) {
       v8 = 0;

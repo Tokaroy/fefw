@@ -3433,7 +3433,7 @@ bool game_8aed00(_QWORD* a1, __int64 a2, int a3)
   }
   if (game_GameModeData_instance_ != 0) {
     v13 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v10) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v10) >> 31);
+          ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) + v10)) >> 31);
     if (v13 >= 9999999) {
       v13 = 9999999;
     }

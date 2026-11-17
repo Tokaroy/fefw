@@ -552,9 +552,9 @@ __int64 LegionShopMenuItem_Sell_Unknown74(__int64 a1)
                                         8LL * *(unsigned __int8*)v11) +
                              52LL);
     v13 = (*(_DWORD*)(game_GameModeData_instance_ + 84) + v12) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 84) + v12) >> 31);
+          ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 84) + v12)) >> 31);
     v14 = (*(_DWORD*)(game_GameModeData_instance_ + 88) + v12) &
-          ~((*(_DWORD*)(game_GameModeData_instance_ + 88) + v12) >> 31);
+          ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 88) + v12)) >> 31);
     if (v13 >= 99999) {
       v13 = 99999;
     }

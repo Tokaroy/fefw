@@ -10715,7 +10715,7 @@ void game_1255300(__int64 a1)
     if (game_GameModeData_instance_ != 0) {
       v2 = a1;
       v3 = (*(_DWORD*)(game_GameModeData_instance_ + 72) + v1) &
-           ~((*(_DWORD*)(game_GameModeData_instance_ + 72) + v1) >> 31);
+           ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) + v1)) >> 31);
       if (v3 >= 9999999) {
         v3 = 9999999;
       }
@@ -11060,9 +11060,8 @@ void game_12645e0(__int64* a1)
   if (*(_WORD*)(*a1 + 426) != 0 && game_GameModeData_instance_ != 0) {
     v3 = (*(_DWORD*)(game_GameModeData_instance_ + 72) +
           *(unsigned __int16*)(*a1 + 426)) &
-         ~((*(_DWORD*)(game_GameModeData_instance_ + 72) +
-            *(unsigned __int16*)(*a1 + 426)) >>
-           31);
+         ~((int)((*(_DWORD*)(game_GameModeData_instance_ + 72) +
+            *(unsigned __int16*)(*a1 + 426))) >> 31);
     if (v3 >= 9999999) {
       v3 = 9999999;
     }
