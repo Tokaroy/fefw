@@ -19,6 +19,8 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
                                                char a3);
 void GameRoutine_4a5a10_alt1(float*, float*, float*, float*, float*, float*,
                              float*, float*, float, float);
+void GameRoutine_4a2290_alt1(float*, float*, float*, float*, float*, float*,
+                             float*, float*, float, float);
 
 __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
 {
@@ -154,82 +156,104 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   float v133;
   int v134;
   int v135;
-  float v136;
-  float v137;
-  float v138;
-  float v139;
-  float v140;
-  float v141;
-  float v142;
-  float v143;
-  float v144;
-  float v145;
-  float v146;
-  float v147;
-  float v148;
-  float v149;
-  float v150;
-  float v151;
-  float v152;
-  float v153;
-  float v154;
-  float v155;
-  float v156;
-  float v157;
-  float v158;
-  float v159;
-  float v160;
-  float v161;
-  float v162;
-  float v163;
-  float v164;
-  float v165;
-  float v166;
-  float v167;
-  float v168;
-  float v169;
-  float v170;
-  float v171;
-  float v172;
-  float v173;
-  float v174;
-  float v175;
-  float v176;
-  float v177;
-  float v178;
-  float v179;
-  float v180;
-  float v181;
-  float v182;
-  float v183;
   struct {
-    char gap0_[172];
+    char gap0_[20];
+    union {
+      float v136;
+      float v137;
+    };
+    float v138;
+    float v139;
+    float v140;
+    union {
+      float v141;
+      float v142;
+      float v143;
+      float v144;
+    };
+    float v145;
+    float v146;
+    float v147;
+    float v148;
+    float v149;
+    union {
+      float v150;
+      float v151;
+    };
+    union {
+      float v152;
+      float v153;
+    };
+    union {
+      float v154;
+      float v155;
+    };
+    union {
+      float v156;
+      float v157;
+    };
+    float v158;
+    float v159;
+    float v160;
+    union {
+      float v161;
+      float v162;
+    };
+    float v163;
+    float v164;
+    float v165;
+    float v166;
+    float v167;
+    float v168;
+    float v169;
+    float v170;
+    float v171;
+    float v172;
+    float v173;
+    float v174;
+    union {
+      float v175;
+      float v176;
+    };
+    union {
+      float v177;
+      float v178;
+    };
+    union {
+      float v179;
+      float v180;
+    };
+    union {
+      float v181;
+      float v182;
+    };
+    float v183;
+    char gap160_[12];
     float v184;
     float v185;
     float v186;
-    char gap184_[48];
+    _DWORD v187[3];
+    float v188[3];
+    float v189[3];
+    float v190[3];
     float v191;
     float v192;
     float v193;
     float v194;
     float v195;
     float v196;
+    float v197[3];
+    float v198[3];
+    float v199[3];
+    float v200[3];
+    float v201[3];
+    float v202[3];
+    _BYTE v203[4];
+    float v204;
   } f_;
-  _DWORD v187[3];
-  float v188[3];
-  float v189[3];
-  float v190[3];
-  float v197[3];
-  float v198[3];
-  float v199[3];
-  float v200[3];
-  float v201[3];
-  float v202[3];
-  _BYTE v203[4];
-  float v204;
 
   v2 = *(_QWORD*)(a1 + 48);
-  v5 = (float*)v187;
+  v5 = (float*)f_.v187;
   if (v2 != 0) {
     v6 = (unsigned int*)(v2 + 12LL * a2);
     v7 = *v6;
@@ -256,11 +280,11 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   v22 = v14[2];
   f_.v185 = v13[1];
   f_.v186 = v19;
-  *(float*)v187 = v20;
-  *(float*)&v187[1] = v21;
+  *(float*)f_.v187 = v20;
+  *(float*)&f_.v187[1] = v21;
   v23 = v17 - v19;
   v24 = v16 - v21;
-  *(float*)&v187[2] = v22;
+  *(float*)&f_.v187[2] = v22;
   v25 = v17 - v22;
   f_.v184 = v18;
   v26 = (float)((float)(v16 - f_.v185) * v25) -
@@ -276,9 +300,9 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
               (float)(v30 * v31)) <= 0x0.0p+0f) {
     v35 = v20;
     v20 = v18;
-    v168 = v30;
-    v169 = v27;
-    v34 = (float*)v187;
+    f_.v168 = v30;
+    f_.v169 = v27;
+    v34 = (float*)f_.v187;
     v5 = &f_.v184;
     v32 = v26;
     v33 = v27;
@@ -288,49 +312,50 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
       return 0;
     }
     v32 = -v26;
-    v168 = v30;
-    v169 = v27;
+    f_.v168 = v30;
+    f_.v169 = v27;
     v33 = -v27;
     v34 = &f_.v184;
     v35 = v18;
     v30 = -v30;
   }
   v36 = v29 * *(float*)(a1 + 304);
-  v141 = *(float*)(a1 + 304);
+  f_.v141 = *(float*)(a1 + 304);
   v37 = *(float*)(a1 + 312);
-  v156 = *(float*)(a1 + 300);
-  v204 = *(float*)(a1 + 84);
-  v203[0] = 0;
-  v170 = v26;
+  f_.v156 = *(float*)(a1 + 300);
+  f_.v204 = *(float*)(a1 + 84);
+  f_.v203[0] = 0;
+  f_.v170 = v26;
   v38 = v34[1];
   v39 = v34[2];
-  v152 = v35 - v37;
-  v154 = v20 - v37;
-  v161 = v15 - v37;
-  v40 = (float)(v36 + (float)(v156 * v28)) + (float)(*(float*)(a1 + 308) * v31);
-  v167 = *(float*)(a1 + 308);
+  f_.v152 = v35 - v37;
+  f_.v154 = v20 - v37;
+  f_.v161 = v15 - v37;
+  v40 = (float)(v36 + (float)(f_.v156 * v28)) +
+        (float)(*(float*)(a1 + 308) * v31);
+  f_.v167 = *(float*)(a1 + 308);
   v41 = *(float*)(a1 + 320);
   v42 = v5[1];
   v43 = v5[2];
-  v179 = v40;
+  f_.v179 = v40;
   v44 = *(float*)(a1 + 316);
   v45 = (float)(v17 - v41) - (float)(v43 - v41);
-  v165 = v43 - v41;
-  v166 = v17 - v41;
-  v202[2] = v17 - v41;
-  v201[2] = v43 - v41;
-  v200[2] = v39 - v41;
+  f_.v165 = v43 - v41;
+  f_.v166 = v17 - v41;
+  f_.v202[2] = v17 - v41;
+  f_.v201[2] = v43 - v41;
+  f_.v200[2] = v39 - v41;
   v46 = v16 - v44;
   v47 = v42 - v44;
   v48 = (float)(v16 - v44) - (float)(v42 - v44);
-  v201[0] = v20 - v37;
-  v201[1] = v42 - v44;
-  v200[0] = v35 - v37;
-  v200[1] = v38 - v44;
-  v149 = v39 - v41;
-  v150 = v38 - v44;
-  v202[0] = v15 - v37;
-  v202[1] = v16 - v44;
+  f_.v201[0] = v20 - v37;
+  f_.v201[1] = v42 - v44;
+  f_.v200[0] = v35 - v37;
+  f_.v200[1] = v38 - v44;
+  f_.v149 = v39 - v41;
+  f_.v150 = v38 - v44;
+  f_.v202[0] = v15 - v37;
+  f_.v202[1] = v16 - v44;
   v49 = (float)(PSEUDO_UNFUSED(v33 * v44)) + (float)(v32 * v37);
   v50 = (float)(v38 - v44) - (float)(v42 - v44);
   v51 = v49 + (float)(v30 * v41);
@@ -338,79 +363,79 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   v53 = (float)(v35 - v37) - (float)(v20 - v37);
   v54 = (float)(v15 - v37) - (float)(v20 - v37);
   v55 = v16 + v44;
-  v183 = v51;
-  v197[2] = v41 + v39;
-  v197[0] = v37 + v35;
-  v197[1] = v44 + v38;
+  f_.v183 = v51;
+  f_.v197[2] = v41 + v39;
+  f_.v197[0] = v37 + v35;
+  f_.v197[1] = v44 + v38;
   v56 = (float)(v44 + v38) - (float)(v44 + v42);
   v57 = (float)(v41 + v39) - (float)(v41 + v43);
-  v198[2] = v41 + v43;
+  f_.v198[2] = v41 + v43;
   v58 = (float)(v37 + v35) - (float)(v37 + v20);
-  v198[0] = v37 + v20;
-  v198[1] = v44 + v42;
-  v199[0] = v15 + v37;
-  v199[1] = v16 + v44;
-  v199[2] = v17 + v41;
-  v181 = v15 + v37;
-  v160 = v17 + v41;
-  v158 = (float)(v50 * v45) - (float)(PSEUDO_UNFUSED(v52 * v48));
-  v146 = (float)(v17 + v41) - (float)(v41 + v43);
-  v147 = (float)(v16 + v44) - (float)(v44 + v42);
-  v148 = (float)(v15 + v37) - (float)(v37 + v20);
-  f_.v191 = v158;
+  f_.v198[0] = v37 + v20;
+  f_.v198[1] = v44 + v42;
+  f_.v199[0] = v15 + v37;
+  f_.v199[1] = v16 + v44;
+  f_.v199[2] = v17 + v41;
+  f_.v181 = v15 + v37;
+  f_.v160 = v17 + v41;
+  f_.v158 = (float)(v50 * v45) - (float)(PSEUDO_UNFUSED(v52 * v48));
+  f_.v146 = (float)(v17 + v41) - (float)(v41 + v43);
+  f_.v147 = (float)(v16 + v44) - (float)(v44 + v42);
+  f_.v148 = (float)(v15 + v37) - (float)(v37 + v20);
+  f_.v191 = f_.v158;
   f_.v192 = (float)(v52 * v54) - (float)(PSEUDO_UNFUSED(v53 * v45));
-  v175 = v37 + v37;
-  v177 = v44 + v44;
+  f_.v175 = v37 + v37;
+  f_.v177 = v44 + v44;
   f_.v193 = (float)(v53 * v48) - (float)(PSEUDO_UNFUSED(v50 * v54));
-  v145 = (float)(v56 * v146) - (float)(PSEUDO_UNFUSED(v57 * v147));
-  f_.v194 = v145;
-  f_.v195 =
-      (float)(v57 * (float)((float)(v15 + v37) - v198[0])) -
-      (float)(PSEUDO_UNFUSED((float)((float)(v37 + v35) - v198[0]) * v146));
-  v139 = f_.v195;
-  v140 = f_.v192;
-  v163 = (float)(v58 * v147) - (float)(PSEUDO_UNFUSED(v56 * v148));
-  v164 = f_.v193;
-  f_.v196 = v163;
-  v173 = -(float)(v37 + v37);
-  v174 = v41 + v41;
-  v171 = -(float)(v44 + v44);
-  v172 = -(float)(v41 + v41);
-  v138 = *(float*)(a1 + 296);
+  f_.v145 = (float)(v56 * f_.v146) - (float)(PSEUDO_UNFUSED(v57 * f_.v147));
+  f_.v194 = f_.v145;
+  f_.v195 = (float)(v57 * (float)((float)(v15 + v37) - f_.v198[0])) -
+            (float)(PSEUDO_UNFUSED((float)((float)(v37 + v35) - f_.v198[0]) *
+                                   f_.v146));
+  f_.v139 = f_.v195;
+  f_.v140 = f_.v192;
+  f_.v163 = (float)(v58 * f_.v147) - (float)(PSEUDO_UNFUSED(v56 * f_.v148));
+  f_.v164 = f_.v193;
+  f_.v196 = f_.v163;
+  f_.v173 = -(float)(v37 + v37);
+  f_.v174 = v41 + v41;
+  f_.v171 = -(float)(v44 + v44);
+  f_.v172 = -(float)(v41 + v41);
+  f_.v138 = *(float*)(a1 + 296);
   if (v51 >= 0x0.0p+0f) {
-    v59 = v199;
-    v60 = v198;
-    v61 = v197;
+    v59 = f_.v199;
+    v60 = f_.v198;
+    v61 = f_.v197;
     v62 = &f_.v194;
   }
   else {
-    v59 = v202;
-    v60 = v201;
-    v61 = v200;
+    v59 = f_.v202;
+    v60 = f_.v201;
+    v61 = f_.v200;
     v62 = &f_.v191;
   }
   v63 = GameRoutine_4a1f80((float*)a1, v59, v60, v61, v62, (float*)(a1 + 72),
-                           &v204, v203, *(float*)(a1 + 296), v179);
-  v65 = v175;
-  v64 = v177;
-  v67 = v172;
-  v66 = v173;
+                           &f_.v204, f_.v203, *(float*)(a1 + 296), f_.v179);
+  v65 = f_.v175;
+  v64 = f_.v177;
+  v67 = f_.v172;
+  v66 = f_.v173;
   v68 = v63;
-  v69 = v141 - v46;
-  v70 = v174;
-  v159 = v55;
-  v71 = v141 - v55;
-  v72 = v171;
+  v69 = f_.v141 - v46;
+  v70 = f_.v174;
+  f_.v159 = v55;
+  v71 = f_.v141 - v55;
+  v72 = f_.v171;
   v73 = *(float*)(a1 + 308);
-  v74 = (float)(PSEUDO_UNFUSED(v177 * v57)) + (float)(v56 * v172);
-  v75 = (float)(PSEUDO_UNFUSED(v174 * v58)) + (float)(v57 * v173);
-  v76 = v175 * v56;
+  v74 = (float)(PSEUDO_UNFUSED(f_.v177 * v57)) + (float)(v56 * f_.v172);
+  v75 = (float)(PSEUDO_UNFUSED(f_.v174 * v58)) + (float)(v57 * f_.v173);
+  v76 = f_.v175 * v56;
   v77 = *(float*)(a1 + 300);
-  v78 = v76 + (float)(v58 * v171);
+  v78 = v76 + (float)(v58 * f_.v171);
   v79 = *(float*)(a1 + 304);
-  v190[0] = v74;
-  v190[1] = v75;
-  v190[2] = v78;
+  f_.v190[0] = v74;
+  f_.v190[1] = v75;
+  f_.v190[2] = v78;
   v80 = v79 - v47;
   if ((v63 & 1) != 0) {
     v81 = v73;
@@ -419,134 +444,137 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
   else {
     v81 = v73;
     v82 = v77;
-    if ((float)(v183 * (float)((float)((float)(PSEUDO_UNFUSED(
-                                           v75 * *(float*)(a1 + 76))) +
-                                       (float)(v74 * *(float*)(a1 + 72))) +
-                               (float)(v78 * *(float*)(a1 + 80)))) >=
+    if ((float)(f_.v183 * (float)((float)((float)(PSEUDO_UNFUSED(
+                                              v75 * *(float*)(a1 + 76))) +
+                                          (float)(v74 * *(float*)(a1 + 72))) +
+                                  (float)(v78 * *(float*)(a1 + 80)))) >=
         0x0.0p+0f) {
-      v142 = v78;
+      f_.v142 = v78;
       v83 = v74;
-      v136 = v73;
-      GameRoutine_4a2290((float*)a1, v201, v198, v200, v197, v190,
-                         (float*)(a1 + 72), &v204, v138, v179, v203);
-      v73 = v136;
+      f_.v136 = v73;
+      GameRoutine_4a2290_alt1((float*)a1, f_.v201, f_.v198, f_.v200, f_.v197,
+                              f_.v190, (float*)(a1 + 72), &f_.v204, f_.v138,
+                              f_.v179);
+      v73 = f_.v136;
       v74 = v83;
-      v78 = v142;
-      v72 = v171;
-      v67 = v172;
-      v66 = v173;
-      v70 = v174;
-      v65 = v175;
-      v64 = v177;
+      v78 = f_.v142;
+      v72 = f_.v171;
+      v67 = f_.v172;
+      v66 = f_.v173;
+      v70 = f_.v174;
+      v65 = f_.v175;
+      v64 = f_.v177;
       v82 = *(float*)(a1 + 300);
       v79 = *(float*)(a1 + 304);
       v81 = *(float*)(a1 + 308);
     }
   }
   v84 = v75 * v80;
-  v85 = v156 - v181;
-  v86 = v156 - v161;
-  v87 = v69 * v140;
-  v88 = v71 * v139;
-  v89 = v82 - v161;
-  v90 = v77 - v154;
-  v91 = (float)(PSEUDO_UNFUSED((float)(v46 - v150) * v67)) +
-        (float)(v64 * (float)(v166 - v149));
-  v92 = (float)(PSEUDO_UNFUSED((float)(v166 - v149) * v66)) +
-        (float)(v70 * (float)(v161 - v152));
-  v93 = (float)(PSEUDO_UNFUSED((float)(v161 - v152) * v72)) +
-        (float)(v65 * (float)(v46 - v150));
-  v189[0] = v91;
-  v189[1] = v92;
+  v85 = f_.v156 - f_.v181;
+  v86 = f_.v156 - f_.v161;
+  v87 = v69 * f_.v140;
+  v88 = v71 * f_.v139;
+  v89 = v82 - f_.v161;
+  v90 = v77 - f_.v154;
+  v91 = (float)(PSEUDO_UNFUSED((float)(v46 - f_.v150) * v67)) +
+        (float)(v64 * (float)(f_.v166 - f_.v149));
+  v92 = (float)(PSEUDO_UNFUSED((float)(f_.v166 - f_.v149) * v66)) +
+        (float)(v70 * (float)(f_.v161 - f_.v152));
+  v93 = (float)(PSEUDO_UNFUSED((float)(f_.v161 - f_.v152) * v72)) +
+        (float)(v65 * (float)(v46 - f_.v150));
+  f_.v189[0] = v91;
+  f_.v189[1] = v92;
   v94 = v92 * (float)(v79 - v46);
-  v189[2] = v93;
+  f_.v189[2] = v93;
   if ((v68 & 1) != 0) {
     v95 = v81;
   }
   else {
-    v96 =
-        (float)(v183 * (float)((float)((float)(PSEUDO_UNFUSED(
-                                           v92 * *(float*)(a1 + 76))) +
-                                       (float)(v91 * *(float*)(a1 + 72))) +
-                               (float)(v93 * *(float*)(a1 + 80)))) < 0x0.0p+0f;
+    v96 = (float)(f_.v183 * (float)((float)((float)(PSEUDO_UNFUSED(
+                                                v92 * *(float*)(a1 + 76))) +
+                                            (float)(v91 * *(float*)(a1 + 72))) +
+                                    (float)(v93 * *(float*)(a1 + 80)))) <
+          0x0.0p+0f;
     v95 = v81;
     if (!v96) {
-      v143 = v78;
+      f_.v143 = v78;
       v97 = v74;
-      v137 = v73;
-      v98 = (float)(PSEUDO_UNFUSED((float)(v161 - v152) * v72)) +
-            (float)(v65 * (float)(v46 - v150));
-      v162 = v156 - v181;
-      v155 = v90;
-      v157 = v86;
-      v151 = v84;
-      v153 = v87;
-      GameRoutine_4a2290((float*)a1, v200, v197, v202, v199, v189,
-                         (float*)(a1 + 72), &v204, v138, v179, v203);
-      v84 = v151;
-      v87 = v153;
-      v90 = v155;
-      v86 = v157;
-      v85 = v162;
+      f_.v137 = v73;
+      v98 = (float)(PSEUDO_UNFUSED((float)(f_.v161 - f_.v152) * v72)) +
+            (float)(v65 * (float)(v46 - f_.v150));
+      f_.v162 = f_.v156 - f_.v181;
+      f_.v155 = v90;
+      f_.v157 = v86;
+      f_.v151 = v84;
+      f_.v153 = v87;
+      GameRoutine_4a2290_alt1((float*)a1, f_.v200, f_.v197, f_.v202, f_.v199,
+                              f_.v189, (float*)(a1 + 72), &f_.v204, f_.v138,
+                              f_.v179);
+      v84 = f_.v151;
+      v87 = f_.v153;
+      v90 = f_.v155;
+      v86 = f_.v157;
+      v85 = f_.v162;
       v93 = v98;
       v74 = v97;
-      v73 = v137;
-      v78 = v143;
-      v72 = v171;
-      v67 = v172;
+      v73 = f_.v137;
+      v78 = f_.v143;
+      v72 = f_.v171;
+      v67 = f_.v172;
       v82 = *(float*)(a1 + 300);
-      v66 = v173;
-      v70 = v174;
-      v65 = v175;
-      v64 = v177;
+      v66 = f_.v173;
+      v70 = f_.v174;
+      v65 = f_.v175;
+      v64 = f_.v177;
       v79 = *(float*)(a1 + 304);
       v95 = *(float*)(a1 + 308);
     }
   }
   v99 = v94 + (float)(v89 * v91);
   v100 = v84 + (float)(v90 * v74);
-  v101 = v81 - v166;
-  v102 = v88 + (float)(v85 * v145);
-  v103 = v87 + (float)(v86 * v158);
-  v104 = (float)(PSEUDO_UNFUSED(v70 * v147)) + (float)(v72 * v146);
-  v105 = (float)(PSEUDO_UNFUSED(v65 * v146)) + (float)(v67 * v148);
-  v106 = (float)(PSEUDO_UNFUSED(v64 * v148)) + (float)(v66 * v147);
-  v188[0] = v104;
-  v188[1] = v105;
-  v188[2] = v106;
-  v107 = v73 - v165;
-  v108 = v95 - v160;
-  v109 = (float)(PSEUDO_UNFUSED(v105 * (float)(v79 - v159))) +
-         (float)((float)(v82 - v181) * v104);
+  v101 = v81 - f_.v166;
+  v102 = v88 + (float)(v85 * f_.v145);
+  v103 = v87 + (float)(v86 * f_.v158);
+  v104 = (float)(PSEUDO_UNFUSED(v70 * f_.v147)) + (float)(v72 * f_.v146);
+  v105 = (float)(PSEUDO_UNFUSED(v65 * f_.v146)) + (float)(v67 * f_.v148);
+  v106 = (float)(PSEUDO_UNFUSED(v64 * f_.v148)) + (float)(v66 * f_.v147);
+  f_.v188[0] = v104;
+  f_.v188[1] = v105;
+  f_.v188[2] = v106;
+  v107 = v73 - f_.v165;
+  v108 = v95 - f_.v160;
+  v109 = (float)(PSEUDO_UNFUSED(v105 * (float)(v79 - f_.v159))) +
+         (float)((float)(v82 - f_.v181) * v104);
   if ((v68 & 1) == 0 &&
-      (float)(v183 * (float)((float)((float)(PSEUDO_UNFUSED(
-                                         v105 * *(float*)(a1 + 76))) +
-                                     (float)(v104 * *(float*)(a1 + 72))) +
-                             (float)(v106 * *(float*)(a1 + 80)))) >=
+      (float)(f_.v183 * (float)((float)((float)(PSEUDO_UNFUSED(
+                                            v105 * *(float*)(a1 + 76))) +
+                                        (float)(v104 * *(float*)(a1 + 72))) +
+                                (float)(v106 * *(float*)(a1 + 80)))) >=
           0x0.0p+0f) {
-    v110 = v179;
-    v144 = v78;
-    v180 = v102;
-    v182 = v93;
-    v176 = v100;
-    v178 = v103;
-    GameRoutine_4a2290((float*)a1, v202, v199, v201, v198, v188,
-                       (float*)(a1 + 72), &v204, v138, v110, v203);
-    v100 = v176;
-    v103 = v178;
-    v102 = v180;
-    v93 = v182;
-    v78 = v144;
+    v110 = f_.v179;
+    f_.v144 = v78;
+    f_.v180 = v102;
+    f_.v182 = v93;
+    f_.v176 = v100;
+    f_.v178 = v103;
+    GameRoutine_4a2290_alt1((float*)a1, f_.v202, f_.v199, f_.v201, f_.v198,
+                            f_.v188, (float*)(a1 + 72), &f_.v204, f_.v138,
+                            v110);
+    v100 = f_.v176;
+    v103 = f_.v178;
+    v102 = f_.v180;
+    v93 = f_.v182;
+    v78 = f_.v144;
   }
   v111 = v100 + (float)(v107 * v78);
-  v112 = v102 + (float)((float)(v167 - v160) * v163);
-  v113 = v103 + (float)((float)(v167 - v166) * v164);
+  v112 = v102 + (float)((float)(f_.v167 - f_.v160) * f_.v163);
+  v113 = v103 + (float)((float)(f_.v167 - f_.v166) * f_.v164);
   v114 = v99 + (float)(v101 * v93);
   v115 = v109 + (float)(v108 * v106);
-  if (v183 < 0x0.0p+0f) {
-    v117 = v169;
-    v116 = v170;
-    v118 = v168;
+  if (f_.v183 < 0x0.0p+0f) {
+    v117 = f_.v169;
+    v116 = f_.v170;
+    v118 = f_.v168;
     if (v112 < 0x0.0p+0f) {
       goto LABEL_51;
     }
@@ -572,9 +600,9 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
     }
     goto LABEL_35;
   }
-  v117 = v169;
-  v116 = v170;
-  v118 = v168;
+  v117 = f_.v169;
+  v116 = f_.v170;
+  v118 = f_.v168;
   if (v112 <= 0x0.0p+0f && v113 >= 0x0.0p+0f && v111 >= 0x0.0p+0f &&
       v114 >= 0x0.0p+0f) {
     v119 = 0x0.0p+0f;
@@ -583,10 +611,10 @@ __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
     }
   }
 LABEL_51:
-  if (v203[0] != 1) {
+  if (f_.v203[0] != 1) {
     return 0;
   }
-  v119 = v204;
+  v119 = f_.v204;
   v120 = GameRoutine_1a0a010(
       (float)((float)(PSEUDO_UNFUSED(v117 * v117)) + (float)(v116 * v116)) +
       (float)(v118 * v118));

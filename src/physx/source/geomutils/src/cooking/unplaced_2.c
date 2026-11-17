@@ -278,50 +278,61 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
   unsigned int* v219;
   _DWORD* v220;
   unsigned int v221;
-  __int64 v223;
-  int v224;
-  unsigned __int64 v226;
-  __int64 v227;
-  __int64 v228;
-  __int64 v229;
-  __int64 v230;
-  __int64 v231;
-  __int64 v232;
-  int v233;
-  unsigned int v234;
-  int v235;
-  __int64 v236;
-  __int64 v238;
-  __int64 v239;
-  unsigned __int64 v240;
-  __int64 v241;
-  unsigned int v242;
-  int v243;
-  int v244;
-  int v245;
-  int v246;
-  int v247;
-  int v248;
-  int v249;
-  int v250;
-  __int64 v251;
-  __int64 v252;
-  __int64 v253;
-  __int64 v254;
-  __int64 v255;
   struct {
+    char gap0_[64];
+    __int64 v223;
+    char gap72_[12];
+    int v224;
+    char gap88_[8];
+    unsigned __int64 v226;
+    __int64 v227;
+    __int64 v228;
+    __int64 v229;
+    __int64 v230;
+    __int64 v231;
+    __int64 v232;
+    int v233;
+    unsigned int v234;
+    int v235;
+    char gap164_[4];
+    __int64 v236;
+    char gap176_[8];
+    __int64 v238;
+    __int64 v239;
+    unsigned __int64 v240;
+    __int64 v241;
+    char gap216_[4];
+    unsigned int v242;
+    int v243;
+    int v244;
+    int v245;
+    int v246;
+    int v247;
+    int v248;
+    int v249;
+    int v250;
+    char gap256_[8];
+    __int64 v251;
+    __int64 v252;
+    __int64 v253;
+    __int64 v254;
+    __int64 v255;
     __int64 v256;
     char gap312_[4];
     _BYTE v257[4];
-  } v256_;
-  __int64 v258;
-  _DWORD v259[2];
-  float v260;
-  float v261;
-  struct {
+    __int64 v258;
+    union {
+      _DWORD v259[2];
+      struct {
+        char pad332_v260_[4];
+        float v260;
+      };
+    };
+    float v261;
+    char gap340_[2];
     char v262;
     _BYTE v263[9];
-  } v262_;
+  } f_;
 
   v3 = a3 - 2;
   if (a3 < 2) {
@@ -334,7 +345,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
     v8 = *(_QWORD*)(a1 + 40);
     v9 = *(_QWORD*)(a1 + 48);
     v10 = 0;
-    v234 = a3 - 1;
+    f_.v234 = a3 - 1;
     v12 = *(_QWORD*)(a1 + 56);
     v11 = *(_QWORD*)(a1 + 64);
     if (a3 <= 3) {
@@ -343,44 +354,44 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
     else {
       v13 = 2;
     }
-    v239 = v3;
-    v242 = a3 >> 1;
+    f_.v239 = v3;
+    f_.v242 = a3 >> 1;
     v14 = (int)(a3 - v13);
-    v224 = a3 - 2 * v13;
-    v15 = (unsigned int)(v224 + 1);
-    v256_.v256 = *(_QWORD*)(a1 + 80);
+    f_.v224 = a3 - 2 * v13;
+    v15 = (unsigned int)(f_.v224 + 1);
+    f_.v256 = *(_QWORD*)(a1 + 80);
     v16 = (unsigned int)v15 & 0xFFFFFFFC;
-    v227 = ((_BYTE)v13 - 2) & 7;
-    v254 = v11;
-    v255 = v7;
+    f_.v227 = ((_BYTE)v13 - 2) & 7;
+    f_.v254 = v11;
+    f_.v255 = v7;
     v17 = -v16;
-    v233 = a3 - v13 - v13;
-    v226 = v14 - v3;
+    f_.v233 = a3 - v13 - v13;
+    f_.v226 = v14 - v3;
     v18 = a3 & 7;
     v19 = -(__int64)(a3 & 0xFFFFFFF8);
-    v240 = v15 - 1;
-    v251 = v8;
-    v252 = v9;
-    v253 = v12;
-    v238 = a3 - (unsigned int)v13;
-    v231 = v18;
-    v232 = v14;
-    v229 = v19;
-    v230 = v16;
-    v228 = v17;
-    v223 = 4LL * (unsigned int)v13 + 8;
-    v235 = v13 - (a3 >> 1);
-    v236 = v13;
-    v249 = -3 - v13;
-    v250 = -3 - 2 * v13;
-    v247 = -2 - v13;
-    v248 = (2 * v13) ^ 0xFFFFFFFE;
-    v245 = ~(_DWORD)v13;
-    v246 = ~(2 * v13);
-    v244 = -(int)v13;
-    v243 = -2 * v13;
+    f_.v240 = v15 - 1;
+    f_.v251 = v8;
+    f_.v252 = v9;
+    f_.v253 = v12;
+    f_.v238 = a3 - (unsigned int)v13;
+    f_.v231 = v18;
+    f_.v232 = v14;
+    f_.v229 = v19;
+    f_.v230 = v16;
+    f_.v228 = v17;
+    f_.v223 = 4LL * (unsigned int)v13 + 8;
+    f_.v235 = v13 - (a3 >> 1);
+    f_.v236 = v13;
+    f_.v249 = -3 - v13;
+    f_.v250 = -3 - 2 * v13;
+    f_.v247 = -2 - v13;
+    f_.v248 = (2 * v13) ^ 0xFFFFFFFE;
+    f_.v245 = ~(_DWORD)v13;
+    f_.v246 = ~(2 * v13);
+    f_.v244 = -(int)v13;
+    f_.v243 = -2 * v13;
     while (1) {
-      v22 = *(&v251 + v10);
+      v22 = *(&f_.v251 + v10);
       if (*(_DWORD*)(a1 + 96) == v6) {
         v23 = *(unsigned int**)(a1 + 8);
         if (v6 < 8) {
@@ -420,7 +431,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         goto LABEL_36;
       }
       v25 = *(_QWORD*)(a1 + 88);
-      v26 = *(&v254 + v10);
+      v26 = *(&f_.v254 + v10);
       if (v6 >= 8) {
         break;
       }
@@ -429,8 +440,8 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         goto LABEL_26;
       }
     LABEL_28:
-      GameRoutine_362560_alt1(v25, v6, (__int64)v262_.v263,
-                              (__int64)&v262_.v262, 0x20u);
+      GameRoutine_362560_alt1(v25, v6, (__int64)f_.v263, (__int64)&f_.v262,
+                              0x20u);
       v42 = *(_QWORD*)(a1 + 88);
       v23 = *(unsigned int**)(a1 + 8);
       if (v6 < 8) {
@@ -477,18 +488,18 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         v52 = vminq_f32(v52, *v54);
         v53 = vmaxq_f32(v53, v54[1]);
       }
-      if ((int)v13 <= (int)v238) {
+      if ((int)v13 <= (int)f_.v238) {
         v55 = *(_QWORD*)(a1 + 24);
-        if (v240 < 3) {
+        if (f_.v240 < 3) {
           v56 = 0;
           v57 = v13;
-          if ((((_BYTE)v224 + 1) & 3) == 0) {
+          if ((((_BYTE)f_.v224 + 1) & 3) == 0) {
             goto LABEL_47;
           }
         LABEL_45:
           v85 = (_DWORD*)(v55 + 4 * v56);
           v86 = &v23[v57];
-          v87 = ((_BYTE)v224 + 1) & 3;
+          v87 = ((_BYTE)f_.v224 + 1) & 3;
           do {
             v88 = *v86++;
             --v87;
@@ -523,7 +534,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         }
         v58 = (_DWORD*)(v55 + 8);
         v59 = 0;
-        v60 = (unsigned int*)((char*)v23 + v223);
+        v60 = (unsigned int*)((char*)v23 + f_.v223);
         do {
           v59 -= 4;
           v61 = (float32x4_t*)(v50 + 32LL * *(v60 - 2));
@@ -628,21 +639,21 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         } while (v17 != v59);
         v57 = v13 - v59;
         v56 = -v59;
-        if ((((_BYTE)v224 + 1) & 3) != 0) {
+        if ((((_BYTE)f_.v224 + 1) & 3) != 0) {
           goto LABEL_45;
         }
       }
     LABEL_47:
-      v94 = (float32x4_t*)(v50 + 32LL * v23[v234]);
+      v94 = (float32x4_t*)(v50 + 32LL * v23[f_.v234]);
       v95 = *v94;
       v96 = v94[1];
-      if ((int)v239 <= (int)v14) {
+      if ((int)f_.v239 <= (int)v14) {
         goto LABEL_56;
       }
-      v97 = v227;
-      if (v227 == 0) {
-        v98 = v239;
-        if (v226 > 0xFFFFFFFFFFFFFFF8LL) {
+      v97 = f_.v227;
+      if (f_.v227 == 0) {
+        v98 = f_.v239;
+        if (f_.v226 > 0xFFFFFFFFFFFFFFF8LL) {
           goto LABEL_56;
         }
       LABEL_54:
@@ -684,7 +695,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         } while (v98 > v14);
         goto LABEL_56;
       }
-      v98 = v239;
+      v98 = f_.v239;
       do {
         v99 = v23[v98--];
         --v97;
@@ -692,17 +703,17 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         v95 = vminq_f32(v95, *v100);
         v96 = vmaxq_f32(v96, v100[1]);
       } while (v97 != 0);
-      if (v226 <= 0xFFFFFFFFFFFFFFF8LL) {
+      if (f_.v226 <= 0xFFFFFFFFFFFFFFF8LL) {
         goto LABEL_54;
       }
     LABEL_56:
-      v241 = v10;
+      f_.v241 = v10;
       if ((int)v14 >= (int)v13) {
         v131 = *(_QWORD*)(a1 + 32);
-        if (v240 >= 3) {
+        if (f_.v240 >= 3) {
           v134 = (_DWORD*)(v131 + 8);
           v133 = 0;
-          v135 = &v23[v238 - 1];
+          v135 = &v23[f_.v238 - 1];
           do {
             v133 += 4;
             v136 = (float32x4_t*)(v50 + 32LL * v135[1]);
@@ -817,13 +828,13 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                     .n64_u32[0];
             v134 += 4;
           } while (v16 != v133);
-          v132 = v238 - v133;
-          if ((((_BYTE)v224 + 1) & 3) == 0) {
+          v132 = f_.v238 - v133;
+          if ((((_BYTE)f_.v224 + 1) & 3) == 0) {
             goto LABEL_65;
           }
         LABEL_63:
           v160 = (_DWORD*)(v131 + 4 * v133);
-          v161 = ((_BYTE)v224 + 1) & 3;
+          v161 = ((_BYTE)f_.v224 + 1) & 3;
           v162 = &v23[v132];
           do {
             v163 = *v162--;
@@ -858,68 +869,73 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           } while (v161 != 0);
           goto LABEL_65;
         }
-        v132 = v238;
+        v132 = f_.v238;
         v133 = 0;
-        if ((((_BYTE)v224 + 1) & 3) != 0) {
+        if ((((_BYTE)f_.v224 + 1) & 3) != 0) {
           goto LABEL_63;
         }
       }
     LABEL_65:
-      if (v233 < 0) {
+      if (f_.v233 < 0) {
         v20 = 0;
         v21 = 0x1.fffffe0000000p+127f;
       }
       else {
-        if (v240 >= 3) {
+        if (f_.v240 >= 3) {
           v178 = v6;
           v169 = 0;
           v20 = 0;
           v21 = 0x1.fffffe0000000p+127f;
           do {
-            v179 = (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
-                                                    4LL * (int)(v243 + v178)) *
-                                          (float)(int)(v244 + v178))) +
-                   (float)((float)(unsigned int)(v13 + v169) *
-                           *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169));
+            v179 =
+                (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
+                                                 4LL * (int)(f_.v243 + v178)) *
+                                       (float)(int)(f_.v244 + v178))) +
+                (float)((float)(unsigned int)(v13 + v169) *
+                        *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169));
             if (v179 < v21 ||
-                v179 <= v21 && (v180 = GameRoutine_1a0cd30_alt1(v235 + v169)) <
-                                   GameRoutine_1a0cd30_alt1(v20 - v242)) {
+                v179 <= v21 &&
+                    (v180 = GameRoutine_1a0cd30_alt1(f_.v235 + v169)) <
+                        GameRoutine_1a0cd30_alt1(v20 - f_.v242)) {
               v21 = v179;
               v20 = v13 + v169;
             }
-            v181 = (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
-                                                    4LL * (int)(v246 + v178)) *
-                                          (float)(int)(v245 + v178))) +
-                   (float)((float)(unsigned int)(v13 + v169 + 1) *
-                           *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 4));
+            v181 =
+                (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
+                                                 4LL * (int)(f_.v246 + v178)) *
+                                       (float)(int)(f_.v245 + v178))) +
+                (float)((float)(unsigned int)(v13 + v169 + 1) *
+                        *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 4));
             if (v181 < v21 ||
                 v181 <= v21 &&
-                    (v182 = GameRoutine_1a0cd30_alt1(v235 + v169 + 1)) <
-                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
+                    (v182 = GameRoutine_1a0cd30_alt1(f_.v235 + v169 + 1)) <
+                        GameRoutine_1a0cd30_alt1(v20 - f_.v242)) {
               v21 = v181;
               v20 = v13 + v169 + 1;
             }
-            v183 = (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
-                                                    4LL * (int)(v248 + v178)) *
-                                          (float)(int)(v247 + v178))) +
-                   (float)((float)(unsigned int)(v13 + v169 + 2) *
-                           *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 8));
+            v183 =
+                (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
+                                                 4LL * (int)(f_.v248 + v178)) *
+                                       (float)(int)(f_.v247 + v178))) +
+                (float)((float)(unsigned int)(v13 + v169 + 2) *
+                        *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 8));
             if (v183 < v21 ||
                 v183 <= v21 &&
-                    (v184 = GameRoutine_1a0cd30_alt1(v235 + v169 + 2)) <
-                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
+                    (v184 = GameRoutine_1a0cd30_alt1(f_.v235 + v169 + 2)) <
+                        GameRoutine_1a0cd30_alt1(v20 - f_.v242)) {
               v21 = v183;
               v20 = v13 + v169 + 2;
             }
-            v185 = (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
-                                                    4LL * (int)(v250 + v178)) *
-                                          (float)(int)(v249 + v178))) +
-                   (float)((float)(unsigned int)(v13 + v169 + 3) *
-                           *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 12));
+            v185 =
+                (float)(PSEUDO_UNFUSED(*(float*)(*(_QWORD*)(a1 + 32) +
+                                                 4LL * (int)(f_.v250 + v178)) *
+                                       (float)(int)(f_.v249 + v178))) +
+                (float)((float)(unsigned int)(v13 + v169 + 3) *
+                        *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 12));
             if (v185 < v21 ||
                 v185 <= v21 &&
-                    (v186 = GameRoutine_1a0cd30_alt1(v235 + v169 + 3)) <
-                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
+                    (v186 = GameRoutine_1a0cd30_alt1(f_.v235 + v169 + 3)) <
+                        GameRoutine_1a0cd30_alt1(v20 - f_.v242)) {
               v21 = v185;
               v20 = v13 + v169 + 3;
             }
@@ -932,13 +948,13 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           v20 = 0;
           v21 = 0x1.fffffe0000000p+127f;
         }
-        if ((((_BYTE)v224 + 1) & 3) != 0) {
+        if ((((_BYTE)f_.v224 + 1) & 3) != 0) {
           v170 = 4 * v169;
           v171 = 0;
-          v172 = v224 - v169;
-          v173 = v236 + v169;
-          v174 = a3 - (v236 + v169);
-          v175 = v235 + v169;
+          v172 = f_.v224 - v169;
+          v173 = f_.v236 + v169;
+          v174 = a3 - (f_.v236 + v169);
+          v175 = f_.v235 + v169;
           do {
             v176 = (float)(PSEUDO_UNFUSED(
                        *(float*)(*(_QWORD*)(a1 + 32) + 4LL * v172) *
@@ -947,31 +963,31 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                            *(float*)(*(_QWORD*)(a1 + 24) + v170 + 4 * v171));
             if (v176 < v21 ||
                 v176 <= v21 && (v177 = GameRoutine_1a0cd30_alt1(v175 + v171)) <
-                                   GameRoutine_1a0cd30_alt1(v20 - v242)) {
+                                   GameRoutine_1a0cd30_alt1(v20 - f_.v242)) {
               v21 = v176;
               v20 = v173 + v171;
             }
             ++v171;
             --v172;
             --v174;
-          } while ((((_BYTE)v224 + 1) & 3) != v171);
+          } while ((((_BYTE)f_.v224 + 1) & 3) != v171);
         }
       }
       v6 = a3;
-      v13 = v236;
-      *(float*)&v259[v241] = v21;
-      v18 = v231;
-      v14 = v232;
-      v19 = v229;
-      v16 = v230;
-      *(_DWORD*)&v256_.v257[4 * v241] = v20;
-      v17 = v228;
-      v10 = v241 + 1;
-      if (v241 == 2) {
-        if (*(float*)v259 <= v260 & *(float*)v259 <= v261) {
-          v189 = v256_.v257;
-          v188 = &v254;
-          v191 = v251;
+      v13 = f_.v236;
+      *(float*)&f_.v259[f_.v241] = v21;
+      v18 = f_.v231;
+      v14 = f_.v232;
+      v19 = f_.v229;
+      v16 = f_.v230;
+      *(_DWORD*)&f_.v257[4 * f_.v241] = v20;
+      v17 = f_.v228;
+      v10 = f_.v241 + 1;
+      if (f_.v241 == 2) {
+        if (*(float*)f_.v259 <= f_.v260 & *(float*)f_.v259 <= f_.v261) {
+          v189 = f_.v257;
+          v188 = &f_.v254;
+          v191 = f_.v251;
           if (*(_DWORD*)(a1 + 96) != a3) {
             goto LABEL_107;
           }
@@ -1015,13 +1031,13 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           } while (v192 != 0);
           goto LABEL_129;
         }
-        v188 = &v256_.v256;
-        v189 = (char*)&v258 + 4;
-        v190 = &v253;
-        if (v260 <= v261) {
-          v188 = &v255;
-          v190 = &v252;
-          v189 = (char*)&v258;
+        v188 = &f_.v256;
+        v189 = (char*)&f_.v258 + 4;
+        v190 = &f_.v253;
+        if (f_.v260 <= f_.v261) {
+          v188 = &f_.v255;
+          v190 = &f_.v252;
+          v189 = (char*)&f_.v258;
         }
         v191 = *v190;
         if (*(_DWORD*)(a1 + 96) == a3) {
@@ -1069,8 +1085,8 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           } while (v196 != 0);
         }
       LABEL_121:
-        GameRoutine_362560_alt1(v195, a3, (__int64)v262_.v263,
-                                (__int64)&v262_.v262, 0x20u);
+        GameRoutine_362560_alt1(v195, a3, (__int64)f_.v263, (__int64)&f_.v262,
+                                0x20u);
         v212 = *(_QWORD*)(a1 + 88);
         v213 = a3 & 7;
         if (a3 >= 8) {
