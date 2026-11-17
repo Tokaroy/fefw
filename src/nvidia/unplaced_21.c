@@ -442,6 +442,8 @@ __int64 cuda_driver_89100_alt1(__int64, __int64, __int64*, __int128*, int,
 bool cuda_driver_predicates_10ebb0_alt1(__int64);
 bool CudaDriverRoutine_efe40_alt1(__int64);
 bool cuda_driver_predicates_9ac80_alt1(__int64);
+bool CudaDriverRoutine_bbe70_alt1(__int64);
+bool cuda_driver_predicates_9ae50_alt1(__int64);
 
 __int64 nvidia_5bd0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, _QWORD* a5,
                     __int64 a6)
@@ -5507,10 +5509,7 @@ __int64 nvidia_e6320(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
   if ((_DWORD)result != 0) {
     goto LABEL_2;
   }
-  {
-    v16 = *(_QWORD*)(a2 + 848);
-    __asm__ volatile("" ::"r"(v16));
-  }
+  v16 = *(_QWORD*)(a2 + 848);
   if ((v16 & 0xEBFFFFFFFFFFFFF6LL | *(_QWORD*)(a2 + 856)) != 0) {
     nvidia_ed630(
         (__int64)"CUDA", 0,
@@ -5534,7 +5533,7 @@ __int64 nvidia_e6320(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
     cuda_driver_20b420(3u, 0xAu, (__int64)&v26_.v26);
   }
   LODWORD(result) =
-      (*(__int64 (**)(__int64, __int64, _QWORD, __int64, __int64))(
+      (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
           *(_QWORD*)(a1 + 64) + 18520LL))(a1, a2, *(_QWORD*)(a6 + 32), a6, a7);
   if ((_DWORD)result != 0) {
   LABEL_2:
@@ -5569,23 +5568,11 @@ __int64 nvidia_e6320(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                     (_QWORD)CudaDriverData_1422118) &
           0x40) != 0 ||
          *(_DWORD*)(a6 + 424) != 1 ||
-         !cuda_driver_predicates_9ae50(*(_QWORD*)(a1 + 64)))) {
-      {
-        v18 = *(_QWORD*)(a1 + 64);
-        __asm__ volatile("" ::"r"(v18));
-      }
-      {
-        v19 = *(int*)(a6 + 172) * *(int*)(a6 + 168);
-        __asm__ volatile("" ::"r"(v19));
-      }
-      {
-        v20 = *(_DWORD*)(a6 + 176);
-        __asm__ volatile("" ::"r"(v20));
-      }
-      {
-        v21 = *(_DWORD*)(a6 + 288);
-        __asm__ volatile("" ::"r"(v21));
-      }
+         !cuda_driver_predicates_9ae50_alt1(*(_QWORD*)(a1 + 64)))) {
+      v18 = *(_QWORD*)(a1 + 64);
+      v19 = *(int*)(a6 + 172) * *(int*)(a6 + 168);
+      v20 = *(_DWORD*)(a6 + 176);
+      v21 = *(_DWORD*)(a6 + 288);
       v26_.v26 = 0;
       v22 = v19 * v20;
       v23 = CudaDriverRoutine_99f40(v18, (_DWORD*)(a7 + 16), v21);
@@ -5593,15 +5580,15 @@ __int64 nvidia_e6320(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
                                    *(unsigned int*)(a6 + 288), 0)) {
         return 999;
       }
-      v25 = v26_.v26 > 2 && v23 != 0;
+      v25 = v26_.v26 > 2 & v23 != 0;
       *(_BYTE*)(a6 + 205) = v25;
     }
-    if (!CudaDriverRoutine_bbe70(a2)) {
+    if (!CudaDriverRoutine_bbe70_alt1(a2)) {
       return (*(__int64 (**)(__int64, __int64, __int64, __int64))(
           *(_QWORD*)(a1 + 64) + 18528LL))(a1, a2, a6, a7);
     }
-    result = (*(__int64 (**)(__int64, __int64, _QWORD, __int64, __int64,
-                             _QWORD))(*(_QWORD*)(a1 + 64) + 18688LL))(
+    result = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64,
+                             __int64))(*(_QWORD*)(a1 + 64) + 18688LL))(
         a1, a2, 0, a6, a6 + 40, *(_QWORD*)(a6 + 24));
     if ((_DWORD)result == 0) {
       return (*(__int64 (**)(__int64, __int64, __int64, __int64))(
