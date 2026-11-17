@@ -384,10 +384,10 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 7ab0,4,verified,src/nvidia/ngx_trivial.cpp,_Z12NgxStub_7ab0v
 7ac0,44,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7ac0
 7af0,16,verified,src/nvidia/unnamed/x000_0.c,NgxHr_7af0
-7b00,264,verified,src/nvidia/unnamed/m000_0.c,NgxHr_7b00
+7b00,252,disputed,src/nvidia/unnamed/m000_0.c,NgxHr_7b00
 7c10,44,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7c10
 7c40,16,verified,src/nvidia/unnamed/x000_0.c,NgxHr_7c40
-7c60,252,disputed,src/nvidia/unnamed/m000_0.c,NgxHr_7c60
+7c60,252,verified,src/nvidia/unnamed/m000_0.c,NgxHr_7c60
 7d70,44,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7d70
 7da0,16,verified,src/nvidia/unnamed/x000_0.c,NgxHr_7da0
 7dc0,252,verified,src/nvidia/unnamed/n000_0.c,NgxHr_7dc0
@@ -761,7 +761,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 7d820,156,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_7d820
 7de60,892,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_7de60
 7e4c0,960,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_7e4c0
-7f200,448,disputed,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_7f200
+7f200,448,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_7f200
 7f4a0,556,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_9.c,nvidia_dlss_rel_source_features_dlaa_7f4a0
 7f7c0,492,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_7f7c0
 7fa60,464,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_9.c,nvidia_dlss_rel_source_features_dlaa_7fa60
@@ -771,7 +771,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 80bc0,960,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_80bc0
 81900,500,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_8.c,nvidia_dlss_rel_source_features_dlaa_81900
 81ec0,496,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_7.c,nvidia_dlss_rel_source_features_dlaa_81ec0
-82160,492,disputed,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_82160
+82160,492,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_82160
 82400,788,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_82400
 82720,776,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_82720
 82d80,932,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_5.c,nvidia_dlss_rel_source_features_dlaa_82d80
@@ -785,7 +785,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 856e0,1016,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_856e0
 85e00,452,disputed,src/nvidia/dlss/rel/source/features/dlaa/unplaced_11.c,nvidia_dlss_rel_source_features_dlaa_85e00
 863c0,636,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_6.c,nvidia_dlss_rel_source_features_dlaa_863c0
-866e0,484,disputed,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_866e0
+866e0,484,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_10.c,nvidia_dlss_rel_source_features_dlaa_866e0
 86980,636,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_86980
 871c0,1272,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_2.c,nvidia_dlss_rel_source_features_dlaa_871c0
 876c0,572,verified,src/nvidia/dlss/rel/source/features/dlaa/unplaced_9.c,nvidia_dlss_rel_source_features_dlaa_876c0
@@ -1161,7 +1161,7 @@ b9420,224,verified,src/nvidia/dlss/rel/source/frameworks/cubin/ngx_cubin_vulkan.
 b9500,316,verified,src/nvidia/dlss/rel/source/frameworks/cubin/ngx_cubin_vulkan.c,GetResourceDeviceMemoryHandle
 b9640,360,verified,src/nvidia/dlss/rel/source/frameworks/cubin/ngx_cubin_vulkan.c,ngx_cubin_vulkan_b9640
 b97b0,72,verified,src/nvidia/dlss/rel/source/frameworks/cubin/ngx_cubin_vulkan.c,ngx_cubin_vulkan_b97b0
-b98e0,620,verified,src/nvidia/unnamed/n000_3.c,NgxHr_b98e0
+b98e0,628,verified,src/nvidia/unnamed/n000_3.c,NgxHr_b98e0
 b9b70,488,verified,src/nvidia/unnamed/n000_3.c,NgxHr_b9b70
 b9d60,548,verified,src/nvidia/unnamed/n000_3.c,NgxHr_b9d60
 b9f90,40,verified,src/nvidia/unnamed/n000_2.c,NgxHr_b9f90
@@ -1173,7 +1173,7 @@ ba200,164,verified,src/nvidia/unnamed/n000_2.c,NgxHr_ba200
 ba2b0,20,verified,src/nvidia/unnamed/x000_0.c,NgxHr_ba2b0
 ba2d0,236,verified,src/nvidia/unplaced_17.c,nvidia_ba2d0
 ba3c0,48,verified,src/nvidia/ngx_trivial_thunks.cpp,_Z13NgxStub_ba3c0m
-badc0,312,verified,src/nvidia/unnamed/n000_3.c,NgxHr_badc0
+badc0,316,verified,src/nvidia/unnamed/n000_3.c,NgxHr_badc0
 baf00,4,verified,src/nvidia/ngx_trivial.cpp,_Z13NgxStub_baf00v
 baf10,40,verified,src/nvidia/unnamed/n000_2.c,NgxHr_baf10
 baf40,20,verified,src/nvidia/unnamed/n000_2.c,NgxHr_baf40
@@ -1250,7 +1250,7 @@ bd750,96,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd750
 bd7b0,148,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd7b0
 bd860,80,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd860
 bd8b0,108,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd8b0
-bd920,216,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd920
+bd920,656,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bd920
 bdbf0,276,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bdbf0
 bdd10,100,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bdd10
 bdd80,108,verified,src/nvidia/unnamed/n000_3.c,NgxHr_bdd80
@@ -1415,7 +1415,7 @@ d1930,16,verified,src/nvidia/unplaced_14.c,nvidia_d1930
 d1940,12,verified,src/nvidia/unnamed/x000_0.c,NgxHr_d1940
 d1950,20,verified,src/nvidia/unplaced_14.c,nvidia_d1950
 d1ce0,4,verified,src/nvidia/ngx_trivial.cpp,_Z13NgxStub_d1ce0v
-d1d00,1332,verified,src/nvidia/unnamed/m000_0.c,NgxHr_d1d00
+d1d00,1380,verified,src/nvidia/unnamed/m000_0.c,NgxHr_d1d00
 d3290,4,verified,src/nvidia/unnamed/x000_0.c,NgxHr_d3290
 d3294,4,verified,src/nvidia/unnamed/x000_0.c,NgxHr_d3294
 d3298,188,verified,src/nvidia/unnamed/n001_0.c,NgxHr_d3298

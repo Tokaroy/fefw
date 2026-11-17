@@ -3,195 +3,103 @@
 #pragma GCC visibility push(hidden)
 
 extern __int64 NgxData_2b8a118;
-
 extern __int64 NgxData_2b8a128;
-
 extern __int64 NgxData_2b8a130;
-
 extern __int64 NgxData_2b8a140;
-
 extern __int64 NgxData_2b8a328;
-
 extern __int64 NgxData_2b8a338;
-
 extern __int64 NgxData_2b8a340;
-
 extern __int64 NgxData_2b8a350;
-
 extern __int64 NgxData_2b8a358;
-
 extern __int64 NgxData_2b8a368;
-
 extern __int64 NgxData_2b8a370;
-
 extern __int64 NgxData_2b8a380;
-
 extern __int64 NgxData_2b8a388;
-
 extern __int64 NgxData_2b8a398;
-
 extern __int64 NgxData_2b8a3a0;
-
 extern __int64 NgxData_2b8a3b0;
-
 extern __int64 NgxData_2b8a3b8;
-
 extern __int64 NgxData_2b8a3c8;
-
 extern __int64 NgxData_2b8a3d0;
-
 extern __int64 NgxData_2b8a3e0;
-
 extern __int64 NgxData_2b8a3e8;
-
 extern __int64 NgxData_2b8a3f8;
-
 extern __int64 NgxData_2b8a400;
-
 extern __int64 NgxData_2b8a410;
-
 extern __int64 NgxData_2b8a418;
-
 extern __int64 NgxData_2b8a428;
-
 extern __int64 NgxData_2b8a430;
-
 extern __int64 NgxData_2b8a440;
-
 extern __int64 NgxData_2b8a448;
-
 extern __int64 NgxData_2b8a458;
-
 extern __int64 NgxData_2b8a460;
-
 extern __int64 NgxData_2b8a470;
-
 extern __int64 NgxData_2b8a6b8;
-
 extern __int64 NgxData_2b8a6c8;
-
 extern __int64 NgxData_2b8a6d0;
-
 extern __int64 NgxData_2b8a6e0;
-
 extern __int64 NgxData_2b8a6e8;
-
 extern __int64 NgxData_2b8a6f8;
-
 extern __int64 NgxData_2b8a700;
-
 extern __int64 NgxData_2b8a710;
-
 extern __int64 NgxData_2b8a718;
-
 extern __int64 NgxData_2b8a728;
-
 extern __int64 NgxData_2b8a730;
-
 extern __int64 NgxData_2b8a740;
-
 extern __int64 NgxData_2b8a748;
-
 extern __int64 NgxData_2b8a758;
-
 extern __int64 NgxData_2b8a760;
-
 extern __int64 NgxData_2b8a770;
-
 extern __int64 NgxData_2b8a778;
-
 extern __int64 NgxData_2b8a788;
-
 extern __int64 NgxData_2b8a790;
-
 extern __int64 NgxData_2b8a7a0;
-
 extern __int64 NgxData_2b8a7a8;
-
 extern __int64 NgxData_2b8a7b8;
-
 extern __int64 NgxData_2b8a7c0;
-
 extern __int64 NgxData_2b8a7d0;
-
 extern __int64 NgxData_2b8a7d8;
-
 extern __int64 NgxData_2b8a7e8;
-
 extern __int64 NgxData_2b8a7f0;
-
 extern __int64 NgxData_2b8a800;
-
 extern __int64 NgxData_2b8a808;
-
 extern __int64 NgxData_2b8a818;
-
 extern __int64 NgxData_2b8a820;
-
 extern __int64 NgxData_2b8a830;
-
 extern __int64 NgxData_2b8a838;
-
 extern __int64 NgxData_2b8a848;
-
 extern __int64 NgxData_2b8a850;
-
 extern __int64 NgxData_2b8a860;
-
 extern __int64 NgxData_2b8a868;
-
 extern __int64 NgxData_2b8a878;
-
 extern __int64 NgxData_2b8a880;
-
 extern __int64 NgxData_2b8a890;
-
 extern __int64 NgxData_2b8a898;
-
 extern __int64 NgxData_2b8a8a8;
-
 extern __int64 NgxData_2b8a8b0;
-
 extern __int64 NgxData_2b8a8c0;
-
 extern __int64 NgxData_2b8a8c8;
-
 extern __int64 NgxData_2b8a8d8;
-
 extern __int64 NgxData_2b8a8e0;
-
 extern __int64 NgxData_2b8a8f0;
-
 extern __int64 NgxData_9513e8;
-
 __int64 NgxRoutine_36f0(_QWORD, _QWORD);
-
 __int64 NgxRoutine_420(_QWORD);
-
 __int64 NgxRoutine_430(_QWORD, _QWORD);
-
 __int64 NgxRoutine_bfa50(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                          _QWORD);
-
 __int64 NgxRoutine_d1ce0();
-
 __int64 NgxRoutine_d3a70(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                          _QWORD, _QWORD, _QWORD);
-
 __int64 NgxRoutine_d5c30(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                          _QWORD, _QWORD, _QWORD);
-
 void __attribute__((noreturn)) NgxRoutine_e2320(void);
-
 __int64 NgxRoutine_e3100(_QWORD, _QWORD, _QWORD);
-
 __int64 NgxRoutine_e3110(_QWORD, _QWORD);
-
 __int64 NgxRoutine_e3120(_QWORD, _QWORD, _QWORD);
-
 __int64 NgxRoutine_e37f0(_QWORD, _QWORD);
-
 __int64 NgxRoutine_e3810(_QWORD);
+__int64 NgxHr_7c60(__int64 result);
 
 __int64 NgxHr_4760(__int64 a1)
 {
@@ -355,6 +263,9 @@ LABEL_11:
 
 __int64 NgxHr_7c60(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   int v1;
   __int64 v2;
   __int64 v3;

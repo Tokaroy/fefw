@@ -202,6 +202,8 @@ __int64 nvidia_212770(unsigned int* a1);
 __int64 nvidia_21aee0(__int64 a1, unsigned int* a2);
 __int64 nvidia_23a160(__int64 a1);
 __int64 nvidia_6e8f0(__int64 a1, long double a2);
+unsigned int* CudaDriverRoutine_4edf0_alt1(unsigned int* result, int, int, int,
+                                           int, unsigned int, int*, int*);
 
 __int64 nvidia_140e0(__int64 a1)
 {
@@ -1820,9 +1822,8 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
   unsigned __int64 v43;
   unsigned __int64 v44;
   unsigned __int64 v45;
-  int* v47;
+  int v47;
   int v48;
-  int v49;
 
   if (result != nullptr && a13 != nullptr) {
     v16 = result;
@@ -1840,15 +1841,14 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
     else {
       v20 = 2 * a10;
     }
-    v49 = v19;
-    v48 = v20;
+    v48 = v19;
+    v47 = v20;
     if (a2 <= 1) {
       v21 = 1;
     }
     else {
       v21 = a2;
     }
-    v47 = (int*)(result + 5);
     if (a3 <= 1) {
       v22 = 1;
     }
@@ -1872,7 +1872,7 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
           v30 = v30 / a7 + 1;
         }
       }
-      v31 = v22 + v49;
+      v31 = v22 + v48;
       if (a8 >= 2) {
         if (v31 / a8 * a8 == v31) {
           v31 /= a8;
@@ -1881,27 +1881,15 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
           v31 = v31 / a8 + 1;
         }
       }
-      v32 = v23 + v48;
-      {
-        v33 = *a13;
-        __asm__ volatile("" ::"r"(v33));
-      }
+      v32 = v23 + v47;
+      v33 = *a13;
       v16[2] = *((_DWORD*)a13 + 2);
       *(_QWORD*)v16 = v33;
       if (a12 < 2 || a6 != 0 && v45 > v30 || v31 < 8 << *((_DWORD*)a13 + 1)) {
         v34 = 1;
-        {
-          v35 = *v16;
-          __asm__ volatile("" ::"r"(v35));
-        }
-        {
-          v36 = v16[1];
-          __asm__ volatile("" ::"r"(v36));
-        }
-        {
-          v37 = v16[2];
-          __asm__ volatile("" ::"r"(v37));
-        }
+        v35 = *v16;
+        v36 = v16[1];
+        v37 = v16[2];
         if (*v16 == 0) {
           goto LABEL_50;
         }
@@ -1913,18 +1901,9 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
         else {
           v34 = 1;
         }
-        {
-          v35 = *v16;
-          __asm__ volatile("" ::"r"(v35));
-        }
-        {
-          v36 = v16[1];
-          __asm__ volatile("" ::"r"(v36));
-        }
-        {
-          v37 = v16[2];
-          __asm__ volatile("" ::"r"(v37));
-        }
+        v35 = *v16;
+        v36 = v16[1];
+        v37 = v16[2];
         if (*v16 == 0) {
           goto LABEL_50;
         }
@@ -1952,21 +1931,11 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
       *v16 = v35;
       v16[1] = v36;
       v16[2] = v37;
-      result = CudaDriverRoutine_4edf0(v16, v30, v31, v32, a6, v34,
-                                       (int*)v16 + 3, (int*)v16 + 4, v47);
-      {
-        v41 = v16[5];
-        __asm__ volatile("" ::"r"(v41));
-      }
-      {
-        v42 = v16[4] * (unsigned __int64)v16[3];
-        __asm__ volatile("" ::"r"(v42));
-      }
-      {
-        v43 =
-            1LL << (*(_BYTE*)v16 + *((_BYTE*)v16 + 4) + *((_BYTE*)v16 + 8) + 9);
-        __asm__ volatile("" ::"r"(v43));
-      }
+      result = CudaDriverRoutine_4edf0_alt1(v16, v30, v31, v32, a6, v34,
+                                            (int*)v16 + 3, (int*)v16 + 4);
+      v41 = v16[5];
+      v42 = v16[4] * (unsigned __int64)v16[3];
+      v43 = 1LL << (*(_BYTE*)v16 + *((_BYTE*)v16 + 4) + *((_BYTE*)v16 + 8) + 9);
       if (DWORDn(v42, sizeof(v42) / 4 - 1) == 0 ||
           (sizeof((v42) * (v41)) > 4
                ? ((unsigned __int128)(unsigned long long)(v42) *
@@ -1995,11 +1964,8 @@ unsigned int* nvidia_4ef40(unsigned int* result, unsigned int a2,
                          32 ==
                      0)) {
       LABEL_19:
-        {
-          v24 = v44 << (*(_BYTE*)v16 + *((_BYTE*)v16 + 4) + *((_BYTE*)v16 + 8) +
-                        9);
-          __asm__ volatile("" ::"r"(v24));
-        }
+        v24 =
+            v44 << (*(_BYTE*)v16 + *((_BYTE*)v16 + 4) + *((_BYTE*)v16 + 8) + 9);
         *((_QWORD*)v16 + 3) = v17;
         *((_QWORD*)v16 + 4) = v24;
         v25 = __CFADD__(v17, v24);

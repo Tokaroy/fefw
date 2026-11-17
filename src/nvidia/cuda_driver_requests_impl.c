@@ -171,6 +171,7 @@ __int64 cuda_driver_requests_8e9c0(__int64 result, __int64 a2);
 __int64 CudaDriverRoutine_12e340_alt1(__int64 result);
 __int64 CudaDriverRoutine_12e510_alt1(__int64, __int64);
 __int64 CudaDriverStub_57450_alt1(_QWORD);
+__int64 NvRmGpuDeviceWaitForPause_plt_alt1();
 
 __int64 cuda_driver_requests_65a20(_DWORD* a1)
 {
@@ -1199,6 +1200,9 @@ __int64 cuda_driver_requests_67910(__int64 a1)
 
 __int64 cuda_driver_requests_679a0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v1;
   __int64 result;
   unsigned int v4;
@@ -1214,7 +1218,7 @@ __int64 cuda_driver_requests_679a0(__int64 a1)
   if (*(_DWORD*)a1 < 0x2Cu) {
     return 2;
   }
-  result = NvRmGpuDeviceWaitForPause_plt(*(_QWORD*)(a1 + 4), v1);
+  result = NvRmGpuDeviceWaitForPause_plt_alt1();
   v4 = *(_DWORD*)(a1 + 16);
   if (v4 >= 0x40 && *(_DWORD*)(a1 + 12) != 0) {
     v5 = v1 + 4;

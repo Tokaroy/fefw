@@ -108,7 +108,7 @@ nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration(
 __int64 nerd_gyro_pointing_GyroPointingCore_Update(__int64 this_);
 float nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate(
     __int64 a1, float* a2);
-void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
+void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_alt1(
     float* a1, float a2, float a3, float a4, float a5);
 __int64 nerd_gyro_pointing_GyroPointingCore_Recover(void* this_, char a2);
 float nerd_gyro_pointing_GyroPointingCore_GetHeuristicOrientationWithoutAccumulated(
@@ -186,6 +186,7 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_plt_alt1(
 __int64
 nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration_plt_alt1(
     __int64);
+float nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation();
 
 void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                                                __int64 a2)
@@ -6478,9 +6479,18 @@ float nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate(
   return v25 + v24;
 }
 
-void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
-    float* a1, float a2, float a3, float a4, float a5)
+float nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation()
 {
+  float* v0;
+  float v1;
+  float v2;
+  float v3;
+  float v4;
+  float v5;
+  float v6;
+  float* v7;
+  float v8;
+  float v9;
   float v10;
   float v11;
   float v12;
@@ -6555,23 +6565,40 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
   float v81;
   float v82;
   float v83;
-  float v84;
+  float result;
   float v85;
   float v86;
   float v87;
 
+  v0 = COERCE_AS(__typeof__(v0),
+                 PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
   v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
   v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
+  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+  v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+  v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+  v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
+  v5 = v4;
+  v6 = v3;
+  v7 = v0;
+  v8 = v2;
+  v9 = v1;
   v10 =
       nerd_gyro_pointing_GyroPointingCore_GetHeuristicOrientationWithoutAccumulated_plt(),
+  v0 = COERCE_AS(__typeof__(v0),
+                 PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
   v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
   v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
-  v11 = a1[3823];
-  v12 = a1[3824];
-  v13 = a1[3825];
-  v14 = a1[3826];
+  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+  v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+  v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+  v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
+  v11 = v7[3823];
+  v12 = v7[3824];
+  v13 = v7[3825];
+  v14 = v7[3826];
   v17 = (float)(PSEUDO_UNFUSED(v14 * v16)) + (float)(PSEUDO_UNFUSED(v15 * v12));
   v18 = (float)(PSEUDO_UNFUSED(v14 * v10)) + (float)(PSEUDO_UNFUSED(v15 * v11));
   v20 = -(float)((float)((float)((float)((float)(v10 * v11) + 0x0.0p+0f) +
@@ -6584,24 +6611,24 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
   v24 = v18 + v22;
   v25 = (float)((float)(v10 * v12) - (float)(PSEUDO_UNFUSED(v11 * v16))) + v21;
   v26 = v17 + (float)(v23 + (float)(v19 * v11));
-  v27 = a2 - a1[3852];
-  v28 = a4 - a1[3854];
-  v29 = a3 - a1[3853];
-  v30 = (float)(a1[2117] * v27) + 0x0.0p+0f;
-  v31 = (float)((float)((float)(a1[2114] * v27) + 0x0.0p+0f) +
-                (float)(a1[2115] * v29)) +
-        (float)(a1[2116] * v28);
-  v32 = (float)((float)((float)(a1[2120] * v27) + 0x0.0p+0f) +
-                (float)(a1[2121] * v29)) +
-        (float)(a1[2122] * v28);
-  v33 = (float)(v30 + (float)(a1[2118] * v29)) + (float)(a1[2119] * v28);
-  v34 = a1[3101];
-  v35 = a5 * v31;
-  v36 = a5 * v32;
-  v37 = a1[3100];
-  v38 = a5 * v33;
-  v39 = a1[3102];
-  v40 = a1[3103];
+  v27 = v9 - v7[3852];
+  v28 = v6 - v7[3854];
+  v29 = v8 - v7[3853];
+  v30 = (float)(v7[2117] * v27) + 0x0.0p+0f;
+  v31 = (float)((float)((float)(v7[2114] * v27) + 0x0.0p+0f) +
+                (float)(v7[2115] * v29)) +
+        (float)(v7[2116] * v28);
+  v32 = (float)((float)((float)(v7[2120] * v27) + 0x0.0p+0f) +
+                (float)(v7[2121] * v29)) +
+        (float)(v7[2122] * v28);
+  v33 = (float)(v30 + (float)(v7[2118] * v29)) + (float)(v7[2119] * v28);
+  v34 = v7[3101];
+  v35 = v5 * v31;
+  v36 = v5 * v32;
+  v37 = v7[3100];
+  v38 = v5 * v33;
+  v39 = v7[3102];
+  v40 = v7[3103];
   v41 = 0x1.0000000000000p+0f /
         (float)((float)((float)((float)(PSEUDO_UNFUSED(v37 * v37)) +
                                 (float)(PSEUDO_UNFUSED(v34 * v34))) +
@@ -6635,9 +6662,15 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
                               (float)(PSEUDO_UNFUSED(v47 * v47)))) +
               0x1.0000000000000p-126f);
   v51 = atan2f_plt(v50, v46),
+  v0 = COERCE_AS(__typeof__(v0),
+                 PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
   v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
   v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
+  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+  v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+  v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+  v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
   v52 = v51 + v51;
   v53 = (float)(v51 + v51) * (float)(v47 / v50);
   v54 = v52 * (float)(v48 / v50);
@@ -6649,7 +6682,7 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
               (float)((float)(PSEUDO_UNFUSED(v53 * v53)) +
                       (float)(PSEUDO_UNFUSED(v54 * v54)))) != 0x0.0p+0f &&
       v56 != 0x0.0p+0f) {
-    v57 = sqrtf(v56) + (float)(a5 * -0x1.47ae140000000p-7f);
+    v57 = sqrtf(v56) + (float)(v5 * -0x1.47ae140000000p-7f);
     if (v57 > 0x0.0p+0f) {
       v58 = (float)((float)((float)((float)(v53 * v35) + 0x0.0p+0f) +
                             (float)(v54 * v38)) +
@@ -6691,34 +6724,46 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
       }
       else {
         v66 = sinf_plt(v65) / v65,
+        v0 = COERCE_AS(__typeof__(v0),
+                       PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+        v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
         v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
         v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-        v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
+        v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+        v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+        v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+        v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
       }
       v67 = v66 * 0x1.0000000000000p-1f;
       v68 = cosf_plt(v65),
+      v0 = COERCE_AS(__typeof__(v0),
+                     PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+      v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
       v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
       v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-      v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
-      v69 = a1[3100];
-      v70 = a1[3101];
-      v71 = a1[3102];
-      v72 = a1[3103];
-      a1[3103] =
+      v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+      v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+      v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+      v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
+      v69 = v7[3100];
+      v70 = v7[3101];
+      v71 = v7[3102];
+      v72 = v7[3103];
+      v7[3103] =
           -(float)((float)((float)((float)((float)(v69 * (float)(v87 * v67)) +
                                            0x0.0p+0f) +
                                    (float)(v70 * (float)(v63 * v67))) +
                            (float)(v71 * (float)(v64 * v67))) -
                    (float)(v72 * v68));
-      a1[3100] = (float)((float)(PSEUDO_UNFUSED(v72 * (float)(v87 * v67))) +
+      v7[3100] = (float)((float)(PSEUDO_UNFUSED(v72 * (float)(v87 * v67))) +
                          (float)(PSEUDO_UNFUSED(v68 * v69))) +
                  (float)((float)(v70 * (float)(v64 * v67)) -
                          (float)(PSEUDO_UNFUSED((float)(v63 * v67) * v71)));
-      a1[3101] = (float)((float)(PSEUDO_UNFUSED(v72 * (float)(v63 * v67))) +
+      v7[3101] = (float)((float)(PSEUDO_UNFUSED(v72 * (float)(v63 * v67))) +
                          (float)(PSEUDO_UNFUSED(v68 * v70))) +
                  (float)((float)(v71 * (float)(v87 * v67)) -
                          (float)(PSEUDO_UNFUSED((float)(v64 * v67) * v69)));
-      a1[3102] = (float)((float)(v69 * (float)(v63 * v67)) -
+      v7[3102] = (float)((float)(v69 * (float)(v63 * v67)) -
                          (float)(PSEUDO_UNFUSED((float)(v87 * v67) * v70))) +
                  (float)((float)(PSEUDO_UNFUSED(v72 * (float)(v64 * v67))) +
                          (float)(PSEUDO_UNFUSED(v68 * v71)));
@@ -6743,25 +6788,37 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
   }
   else {
     v74 = sinf_plt(v73) / v73,
+    v0 = COERCE_AS(__typeof__(v0),
+                   PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+    v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
     v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
     v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-    v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
+    v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+    v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+    v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+    v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
   }
   v75 = v74 * 0x1.0000000000000p-1f;
   v76 = cosf_plt(v73),
+  v0 = COERCE_AS(__typeof__(v0),
+                 PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+  v1 = COERCE_AS(__typeof__(v1), PSEUDO_REGISTER(float, "s0", "=w")),
   v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(float, "s3", "=w")),
   v16 = COERCE_AS(__typeof__(v16), PSEUDO_REGISTER(float, "s1", "=w")),
-  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w"));
-  v77 = a1[3100];
-  v78 = a1[3101];
-  v79 = a1[3102];
-  v80 = a1[3103];
+  v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s2", "=w")),
+  v2 = COERCE_AS(__typeof__(v2), PSEUDO_REGISTER(float, "s1", "=w")),
+  v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s2", "=w")),
+  v4 = COERCE_AS(__typeof__(v4), PSEUDO_REGISTER(float, "s3", "=w"));
+  v77 = v7[3100];
+  v78 = v7[3101];
+  v79 = v7[3102];
+  v80 = v7[3103];
   v81 = -(float)((float)((float)((float)((float)(v77 * (float)(v35 * v75)) +
                                          0x0.0p+0f) +
                                  (float)(v78 * (float)(v38 * v75))) +
                          (float)(v79 * (float)(v36 * v75))) -
                  (float)(v80 * v76));
-  a1[3103] = v81;
+  v7[3103] = v81;
   v82 = (float)((float)(PSEUDO_UNFUSED(v80 * (float)(v35 * v75))) +
                 (float)(PSEUDO_UNFUSED(v76 * v77))) +
         (float)((float)(v78 * (float)(v36 * v75)) -
@@ -6770,24 +6827,26 @@ void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation(
                 (float)(PSEUDO_UNFUSED(v76 * v78))) +
         (float)((float)(v79 * (float)(v35 * v75)) -
                 (float)(PSEUDO_UNFUSED((float)(v36 * v75) * v77)));
-  v84 = (float)((float)(v77 * (float)(v38 * v75)) -
-                (float)(PSEUDO_UNFUSED((float)(v35 * v75) * v78))) +
-        (float)((float)(PSEUDO_UNFUSED(v80 * (float)(v36 * v75))) +
-                (float)(PSEUDO_UNFUSED(v76 * v79)));
-  a1[3100] = v82;
-  a1[3101] = v83;
-  a1[3102] = v84;
+  result = (float)((float)(v77 * (float)(v38 * v75)) -
+                   (float)(PSEUDO_UNFUSED((float)(v35 * v75) * v78))) +
+           (float)((float)(PSEUDO_UNFUSED(v80 * (float)(v36 * v75))) +
+                   (float)(PSEUDO_UNFUSED(v76 * v79)));
+  v7[3100] = v82;
+  v7[3101] = v83;
+  v7[3102] = result;
   v85 = (float)(PSEUDO_UNFUSED(v81 * v81)) +
-        (float)((float)(PSEUDO_UNFUSED(v84 * v84)) +
+        (float)((float)(PSEUDO_UNFUSED(result * result)) +
                 (float)((float)(PSEUDO_UNFUSED(v83 * v83)) +
                         (float)(PSEUDO_UNFUSED(v82 * v82))));
   if (v85 != 0x0.0p+0f) {
     v86 = 0x1.0000000000000p+0f / sqrtf(v85);
-    a1[3102] = v84 * v86;
-    a1[3100] = v82 * v86;
-    a1[3101] = v83 * v86;
-    a1[3103] = v81 * v86;
+    v7[3102] = result * v86;
+    v7[3100] = v82 * v86;
+    v7[3101] = v83 * v86;
+    v7[3103] = v81 * v86;
+    return v81 * v86;
   }
+  return result;
 }
 
 __int64 nerd_gyro_pointing_GyroPointingCore_Recover(void* this_, char a2)

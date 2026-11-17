@@ -3549,12 +3549,11 @@ __int64 cuda_driver_6ec30(__int64 a1, long double a2)
   __int64 v19;
   int v20;
   __int64 v21;
+  _BYTE v22[36];
   struct {
-    _BYTE v22[36];
-    char gap36_[12];
     __int64 v23;
     _QWORD* v24;
-  } f_;
+  } v23_;
 
   if (a1 == 0) {
     return 4;
@@ -3621,9 +3620,9 @@ __int64 cuda_driver_6ec30(__int64 a1, long double a2)
   a2 = *(long double*)(v6 + 8);
   v10 = *(_DWORD*)v6;
   v17 = *(unsigned int*)(v6 + 4);
-  *(_DWORD*)&f_.v22[32] = *(_DWORD*)(v6 + 40);
-  *(long double*)f_.v22 = a2;
-  *(_OWORD*)&f_.v22[16] = *(_OWORD*)(v6 + 24);
+  *(_DWORD*)&v22[32] = *(_DWORD*)(v6 + 40);
+  *(long double*)v22 = a2;
+  *(_OWORD*)&v22[16] = *(_OWORD*)(v6 + 24);
   if (*(int*)v6 > 3) {
     if ((unsigned int)(v10 - 5) < 4) {
       LODWORD(v3) = DWORD1(a2);
@@ -3658,24 +3657,24 @@ __int64 cuda_driver_6ec30(__int64 a1, long double a2)
       v7 = *(_QWORD*)(v6 + 52);
       v5 = *(_DWORD*)(v6 + 76);
       v13 = DWORDn(a2, sizeof(a2) / 4 - 1);
-      f_.v23 = *(_QWORD*)(v6 + 64);
-      a2 = *(long double*)&f_.v22[20];
-      LODWORD(v3) = *(_DWORD*)f_.v22;
-      LODWORD(f_.v24) = *(_DWORD*)(v6 + 72);
+      v23_.v23 = *(_QWORD*)(v6 + 64);
+      a2 = *(long double*)&v22[20];
+      LODWORD(v3) = *(_DWORD*)v22;
+      LODWORD(v23_.v24) = *(_DWORD*)(v6 + 72);
       v10 = 2;
-      LODWORD(v6) = *(_DWORD*)&f_.v22[16];
+      LODWORD(v6) = *(_DWORD*)&v22[16];
       goto LABEL_24;
     }
     if (v10 == 3) {
       v13 = DWORD1(a2);
-      a2 = *(long double*)&f_.v22[12];
+      a2 = *(long double*)&v22[12];
       v2 = v17 | (v4 << 32);
-      LODWORD(v3) = *(_DWORD*)f_.v22;
+      LODWORD(v3) = *(_DWORD*)v22;
       v7 = *(_QWORD*)(v6 + 44);
       v12 = 0;
       v14 = 0;
-      v6 = DWORDn(*(_QWORD*)&f_.v22[4], sizeof(*(_QWORD*)&f_.v22[4]) / 4 - 1);
-      v4 = *(_QWORD*)&f_.v22[28];
+      v6 = DWORDn(*(_QWORD*)&v22[4], sizeof(*(_QWORD*)&v22[4]) / 4 - 1);
+      v4 = *(_QWORD*)&v22[28];
       goto LABEL_24;
     }
   LABEL_32:
@@ -3687,10 +3686,10 @@ __int64 cuda_driver_6ec30(__int64 a1, long double a2)
     goto LABEL_24;
   }
   v19 = a1;
-  f_.v23 = *(_QWORD*)(v6 + 32);
-  f_.v24 = nullptr;
+  v23_.v23 = *(_QWORD*)(v6 + 32);
+  v23_.v24 = nullptr;
   v20 = CudaDriverRoutine_1a0a80((__int64)CudaDriverRoutine_76d70,
-                                 (__int64)&f_.v23);
+                                 (__int64)&v23_.v23);
   v14 = 10;
   v10 = 1;
   v12 = 0;
@@ -3701,17 +3700,17 @@ __int64 cuda_driver_6ec30(__int64 a1, long double a2)
   }
   v13 = 0;
   a1 = v19;
-  if (f_.v24 != nullptr) {
-    v21 = f_.v24[2];
+  if (v23_.v24 != nullptr) {
+    v21 = v23_.v24[2];
     if (v21 != 0 && *(_QWORD*)(v21 + 8) != 0) {
-      v2 = f_.v24[5];
-      v3 = f_.v24[6];
-      v13 = *(_DWORD*)&f_.v22[16];
+      v2 = v23_.v24[5];
+      v3 = v23_.v24[6];
+      v13 = *(_DWORD*)&v22[16];
       v14 = 0;
       LODWORD(v6) = v17;
       v12 = v3 & 0xFFFFFFFF00000000LL;
-      a2 = *(long double*)f_.v22;
-      v4 = *(_QWORD*)&f_.v22[16];
+      a2 = *(long double*)v22;
+      v4 = *(_QWORD*)&v22[16];
       goto LABEL_24;
     }
     v12 = 0;
@@ -3722,14 +3721,14 @@ LABEL_24:
   *(_DWORD*)a1 = v10;
   *(_QWORD*)(a1 + 8) = v2;
   *(_QWORD*)(a1 + 16) = v12 | (unsigned int)v3;
-  v18 = f_.v23;
+  v18 = v23_.v23;
   *(long double*)(a1 + 32) = a2;
   *(_QWORD*)(a1 + 48) = v4;
   *(_QWORD*)(a1 + 56) = v7;
   *(_DWORD*)(a1 + 64) = v8;
   *(_QWORD*)(a1 + 24) = v13 | ((unsigned __int64)(unsigned int)v6 << 32);
   *(_QWORD*)(a1 + 68) = v18;
-  *(_DWORD*)(a1 + 76) = (_DWORD)f_.v24;
+  *(_DWORD*)(a1 + 76) = (_DWORD)v23_.v24;
   *(_DWORD*)(a1 + 80) = v5;
   return v14;
 }

@@ -741,7 +741,7 @@ LABEL_30:
     return 0;
   }
 LABEL_34:
-  nvidia_ed630_alt1((__int64)"CUDA", 0, "Mismatched operand protection\n");
+  nvidia_ed630((__int64)"CUDA", 0, (__int64)"Mismatched operand protection\n");
   return 800;
 }
 
