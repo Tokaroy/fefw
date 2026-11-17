@@ -10876,15 +10876,14 @@ __int64 game_12e1990(__int64 a1, char** a2)
   __int16 v9;
   __int64 v10;
   __int64 v11;
-  // Order and alignment put both objects at the original's frame offsets.
-  struct __attribute__((aligned(16))) {
-    char* v15[4];
-    char** v16;
-  } v15_;
-  struct __attribute__((aligned(16))) {
+  struct {
     _QWORD v13[4];
     _QWORD* v14;
   } v13_;
+  struct {
+    char* v15[4];
+    char** v16;
+  } v15_;
 
   v4 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
                                       1648, 16, 0);
@@ -10902,10 +10901,7 @@ __int64 game_12e1990(__int64 a1, char** a2)
   *(_QWORD*)(v4 + 1624) = 0;
   *(_QWORD*)(v4 + 1632) = 0;
   *(_QWORD*)(v4 + 1580) = *v5;
-  {
-    v6 = *(_QWORD*)(a1 + 40);
-    __asm__ volatile("" ::"r"(v6));
-  }
+  v6 = *(_QWORD*)(a1 + 40);
   if (v6 != 0) {
     *(_QWORD*)(v6 + 48) = v4;
     *(_QWORD*)(v4 + 56) = *(_QWORD*)(a1 + 40);
@@ -10924,27 +10920,15 @@ __int64 game_12e1990(__int64 a1, char** a2)
       (*(_WORD*)(v4 + 136) & 0x100) == 0) {
     *(_WORD*)(v4 + 136) |= 0x100u;
   }
-  {
-    v7 = *(_BYTE**)(v4 + 32);
-    __asm__ volatile("" ::"r"(v7));
-  }
-  {
-    v8 = v7[138];
-    __asm__ volatile("" ::"r"(v8));
-  }
+  v7 = *(_BYTE**)(v4 + 32);
+  v8 = v7[138];
   if (v8 == 0) {
     (*(void (**)(_QWORD))(*(_QWORD*)v7 + 64LL))(*(_QWORD*)(v4 + 32));
-    {
-      v8 = v7[138];
-      __asm__ volatile("" ::"r"(v8));
-    }
+    v8 = v7[138];
   }
   v7[138] = v8 + 1;
   v13_.v14 = v13_.v13;
-  {
-    v9 = *(_WORD*)(v4 + 136);
-    __asm__ volatile("" ::"r"(v9));
-  }
+  v9 = *(_WORD*)(v4 + 136);
   v15_.v16 = v15_.v15;
   *(_WORD*)(v4 + 136) = v9 | 2;
   v13_.v13[0] = GameData_2023828;

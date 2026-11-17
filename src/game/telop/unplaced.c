@@ -310,6 +310,7 @@ const char* game_HashString32_alt3(const char* result);
 void GameRoutine_8679c0_alt1();
 void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 __int64 GameRoutine_867df0_alt4();
+void GameRoutine_867df0_alt5();
 
 __attribute__((swiftcall)) void game_telop_1376180(PSEUDO_X8 x8_, __int64* a1,
                                                    __int64* a2)
@@ -1997,7 +1998,7 @@ __int64 game_telop_1745d80(__int64 a1, __int64 a2, int a3, char a4, __int64 a5)
   }
   *(_DWORD*)(v7 + 320) = 2;
   if ((a4 & 1) != 0) {
-    GameRoutine_867df0_alt4();
+    GameRoutine_867df0_alt5();
     v71 = a5;
   }
   else {

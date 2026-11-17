@@ -7624,14 +7624,11 @@ void game_cfc7c0(__int64 a1, float* a2, char a3, float a4)
   float32x4_t v159;
   float32x4_t v160;
   float32x4_t v161;
-  // The bounds record a call fills from its start, packed as in the frame.
-  struct __attribute__((packed)) {
-    float32x4_t v162;
-    __int64 v163;
-    int v164;
-    __int64 v165;
-    int v166;
-  } r_;
+  float32x4_t v162;
+  __int64 v163;
+  int v164;
+  __int64 v165;
+  int v166;
   float32x4_t v167;
   struct {
     float v168[20];
@@ -7746,11 +7743,11 @@ LABEL_27:
       LANES128(v27).n128_u64[0] =
           __PAIR64__(LODWORD(v25), LANES128(v26).n128_u32[0]);
       LANES128(v27).n128_u64[1] = LANES128(v26).n128_u32[1];
-      r_.v162 = v27;
+      v162 = v27;
       LANES128(v26).n128_u32[1] = -1027080192;
       LANES128(v26).n128_u64[1] = LANES128(v27).n128_u32[2];
       v167 = v26;
-      game_cfdb00((void*)((__int64)v168_.v168), a1, &r_.v162, &v167, v18);
+      game_cfdb00((void*)((__int64)v168_.v168), a1, &v162, &v167, v18);
       v22 = v168_.v168[1];
       v21 = v139;
       v20 = (LOBYTE(v168_.v168[3]) & 1) != 0 ? v168_.v168[2] : v168_.v168[1];
@@ -7814,9 +7811,9 @@ LABEL_27:
   LANES128(v32).n128_u32[1] = -1027080192;
   LANES128(v75).n128_u64[1] = v35;
   LANES128(v32).n128_u64[1] = v35;
-  r_.v162 = v75;
+  v162 = v75;
   v167 = v32;
-  GameRoutine_1085a10_alt1((void*)(v168_.v168), v37 + 160, &r_.v162, &v167);
+  GameRoutine_1085a10_alt1((void*)(v168_.v168), v37 + 160, &v162, &v167);
   v144 = v168_.v168[1];
   if (v168_.v168[1] == -0x1.9000000000000p+6f) {
     goto LABEL_127;
@@ -7958,9 +7955,9 @@ LABEL_68:
       }
       v59 = v64 - v59;
     LABEL_109:
-      r_.v166 = 0;
-      r_.v162 = COERCE_AS(float32x4_t, 0x4020000040200000uLL);
-      r_.v163 = 0x40A0000040A00000LL;
+      v166 = 0;
+      v162 = COERCE_AS(float32x4_t, 0x4020000040200000uLL);
+      v163 = 0x40A0000040A00000LL;
       LANES128(v65).n128_f32[0] =
           (float)(PSEUDO_UNFUSED(
               v49 *
@@ -8004,26 +8001,26 @@ LABEL_68:
                          0x1.99999a0000000p-3f);
       v68 = (int)(float)((float)(v66 + 0x1.4000000000000p+10f) *
                          0x1.99999a0000000p-3f);
-      r_.v164 = v67 - 256;
-      r_.v165 = (unsigned int)(v68 - 256);
+      v164 = v67 - 256;
+      v165 = (unsigned int)(v68 - 256);
       if (((v67 - 256) | (v68 - 256)) != 0) {
-        DWORDn(r_.v165, sizeof(r_.v165) / 4 - 1) = v67 - 256;
-        r_.v166 = v68 - 256;
-        LANES128(r_.v162).n128_f32[0] =
+        DWORDn(v165, sizeof(v165) / 4 - 1) = v67 - 256;
+        v166 = v68 - 256;
+        LANES128(v162).n128_f32[0] =
             (float)((float)((float)v67 * 0x1.4000000000000p+2f) +
                     0x1.4000000000000p+1f) +
             -0x1.4000000000000p+10f;
-        LANES128(r_.v162).n128_f32[1] =
+        LANES128(v162).n128_f32[1] =
             (float)((float)((float)v68 * 0x1.4000000000000p+2f) +
                     0x1.4000000000000p+1f) +
             -0x1.4000000000000p+10f;
-        LANES128(r_.v162).n128_f32[2] =
-            LANES128(r_.v162).n128_f32[0] + -0x1.4000000000000p+1f;
-        LANES128(r_.v162).n128_f32[3] =
-            LANES128(r_.v162).n128_f32[1] + -0x1.4000000000000p+1f;
-        *(float*)&r_.v163 = LANES128(r_.v162).n128_f32[0] + 0x1.4000000000000p+1f;
-        *((float*)&r_.v163 + 1) =
-            LANES128(r_.v162).n128_f32[1] + 0x1.4000000000000p+1f;
+        LANES128(v162).n128_f32[2] =
+            LANES128(v162).n128_f32[0] + -0x1.4000000000000p+1f;
+        LANES128(v162).n128_f32[3] =
+            LANES128(v162).n128_f32[1] + -0x1.4000000000000p+1f;
+        *(float*)&v163 = LANES128(v162).n128_f32[0] + 0x1.4000000000000p+1f;
+        *((float*)&v163 + 1) =
+            LANES128(v162).n128_f32[1] + 0x1.4000000000000p+1f;
       }
       v69 = *(_QWORD*)(a1 + 16);
       v70 = LANES128(v160).n128_u32[1];
@@ -8049,7 +8046,7 @@ LABEL_68:
                                         (float)(v63 * v63)) +
                                 0x1.0000000000000p+0f)))) +
             LANES128(v160).n128_f32[0];
-        if ((GameRoutine_d740c0((__int64)&r_.v162, (int*)v71) & 1) == 0) {
+        if ((GameRoutine_d740c0((__int64)&v162, (int*)v71) & 1) == 0) {
           goto LABEL_91;
         }
         v70 = LANES128(v160).n128_u32[1];
@@ -8109,7 +8106,7 @@ LABEL_129:
     LANES128(v79).n128_u64[0] =
         __PAIR64__(LODWORD(v21), LANES128(v77).n128_u32[0]);
     LANES128(v79).n128_u64[1] = LANES128(v77).n128_u32[1];
-    r_.v162 = v79;
+    v162 = v79;
     LANES128(v77).n128_f32[1] = v20 + -0x1.0000000000000p-1f;
     LANES128(v77).n128_u64[1] = LANES128(v79).n128_u64[1];
     v167 = v77;
@@ -8120,10 +8117,10 @@ LABEL_129:
       v80 = 0x1.99999a0000000p-4f;
     }
     if (v80 <= 0x0.0p+0f) {
-      collision_670c60((void*)((__int64)v168_.v168), &r_.v162, &v167, 2);
+      collision_670c60((void*)((__int64)v168_.v168), &v162, &v167, 2);
       if ((v168_.v169 & 1) != 0) {
         v158 = v168_.v168[1];
-        collision_670c60((void*)((__int64)v168_.v168), &r_.v162, &v167, 3);
+        collision_670c60((void*)((__int64)v168_.v168), &v162, &v167, 3);
         if (v168_.v169 == 1) {
           goto LABEL_140;
         }
@@ -8132,12 +8129,12 @@ LABEL_129:
       v76 = 1;
     }
     else {
-      collision_6725f0((void*)((__int64)v168_.v168), &r_.v162, &v167, 2, v80);
+      collision_6725f0((void*)((__int64)v168_.v168), &v162, &v167, 2, v80);
       if ((v168_.v169 & 1) == 0) {
         goto LABEL_141;
       }
       v158 = v168_.v168[1];
-      collision_6725f0((void*)((__int64)v168_.v168), &r_.v162, &v167, 3, v80);
+      collision_6725f0((void*)((__int64)v168_.v168), &v162, &v167, 3, v80);
       if ((v168_.v169 & 1) == 0) {
         goto LABEL_141;
       }
@@ -8400,8 +8397,8 @@ LABEL_168:
     v123 = 0x0.0p+0f;
     v124 = 0;
     if (v90 != 0 && (*(_BYTE*)(a1 + 128) & 1) != 0) {
-      if (!((float)(*(float*)(a1 + 92) - *(float*)(a1 + 124)) >
-            (float)(a4 + a4))) {
+      if ((float)(*(float*)(a1 + 92) - *(float*)(a1 + 124)) <=
+          (float)(a4 + a4)) {
         v124 = 0;
       }
       else {
