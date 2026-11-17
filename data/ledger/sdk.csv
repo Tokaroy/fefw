@@ -31579,6 +31579,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7910b0,96,verified,src/musl/src/complex/ctanhl.c,ctanhl
 791110,88,verified,src/musl/src/complex/ctanl.c,ctanl
 791170,12,verified,src/musl/src/crypt/crypt.c,crypt
+791180,376,verified,src/musl/src/crypt/unplaced_2.c,musl_src_crypt_791180
 791330,148,verified,src/musl/src/crypt/crypt_blowfish_impl.c,BF_crypt
 791840,336,verified,src/musl/src/crypt/crypt_blowfish.c,BF_set_key
 791990,192,verified,src/musl/src/crypt/crypt_blowfish.c,BF_decode
