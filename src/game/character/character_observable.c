@@ -5318,6 +5318,8 @@ game_character_CharacterObservable_CharacterObservable_lambda18_Invoke_10d2020(
 
   v2 = *(_QWORD**)(*(_QWORD*)(a1 + 8) + 40LL);
   v5_.v7 = *(_DWORD*)(*(_QWORD*)a2 + 32LL);
+  // The owner of the character weak pointer is read and dropped.
+  (void)*(volatile __int64*)(*(_QWORD*)(*(_QWORD*)(a1 + 8) + 32LL) + 8);
   v5_.v6 = v5_.v5;
   v5_.v5[0] = GameData_200b0f0;
   v5_.v5[1] = &v5_.v7;
