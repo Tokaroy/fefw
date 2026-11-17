@@ -5731,6 +5731,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 173f30,12,verified,src/nn/result/result_c_api.cpp,nnResultIsFailure
 173f40,8,verified,src/nn/result/result_c_api.cpp,nnResultSuccess
 173f50,100,verified,src/nn/ro/ro_api.cpp,_ZN2nn2ro20InitializeForRuntimeEv
+173fc0,408,verified,src/nn/ro/unplaced_4.c,nn_ro_173fc0
 174170,12,verified,src/nn/ro/ro_api.cpp,_ZN2nn2ro10InitializeEv
 174180,404,verified,src/nn/ro/unplaced.c,nn_ro_Finalize
 174340,48,verified,src/nn/ro/ro_symbol_table_parser.cpp,_ZN2nn2ro13GetBufferSizeEPmPKv
@@ -16745,6 +16746,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 4c37b0,168,verified,src/nn/movie/detail/movie_heap.cpp,MovieMallocUsableSize
 4c3a80,728,verified,src/nn/movie/detail/movie_media_extractor_state.cpp,_ZN2nn5movie6detail19MediaExtractorStateC2Ev
 4c3d60,404,verified,src/nn/movie/detail/movie_media_extractor_state.cpp,_ZNK2nn5movie6detail19MediaExtractorState20ValidateCurrentStateENS2_23MediaExtractorFunctionsE
+4c3f00,140,verified,src/nn/movie/detail/unplaced_7.c,nn_movie_detail_4c3f00
 4c3fa0,380,verified,src/nn/movie/detail/unplaced.c,nn_movie_detail_ParseAacProfileFromCsd
 4c4120,320,verified,src/nandroid/libstagefright/a_lookup.c,nandroid_ALookup_ALookup_4c4120
 4c4270,76,verified,src/nn/unnamed/s002_0.c,SdkHr_4c4270

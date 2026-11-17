@@ -464,6 +464,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 28c40,64,verified,src/nvidia/ngx_trivial_thunks.cpp,_Z13NgxStub_28c40m
 28c80,140,verified,src/nvidia/unnamed/n000_0.c,NgxHr_28c80
 28d10,8,verified,src/nvidia/ngx_trivial_forwarders.cpp,_Z13NgxStub_28d10m
+28d20,972,verified,src/nvidia/unplaced_44.c,nvidia_28d20
 29320,148,verified,src/nvidia/unnamed/n000_0.c,NgxHr_29320
 293c0,144,verified,src/nvidia/unnamed/n000_0.c,NgxHr_293c0
 29450,96,verified,src/nvidia/unnamed/n000_0.c,NgxHr_29450
@@ -1065,6 +1066,7 @@ b0e60,324,verified,src/nvidia/unnamed/n000_2.c,NgxHr_b0e60
 b1080,20,verified,src/nvidia/unnamed/x000_0.c,NgxHr_b1080
 b10a0,28,verified,src/nvidia/ngx_trivial_more.cpp,_Z13NgxStub_b10a0mm
 b1500,172,verified,src/nvidia/unplaced_17.c,nvidia_b1500
+b1640,1020,verified,src/nvidia/unplaced_44.c,nvidia_b1640
 b1a80,804,verified,src/nvidia/unplaced_17.c,nvidia_b1a80
 b1dc0,216,verified,src/nvidia/unnamed/n000_2.c,NgxHr_b1dc0
 b2810,124,verified,src/nvidia/ngx_api.cpp,NVSDK_NGX_VULKAN_RequiredExtensions
@@ -1174,6 +1176,8 @@ ba200,164,verified,src/nvidia/unnamed/n000_2.c,NgxHr_ba200
 ba2b0,20,verified,src/nvidia/unnamed/x000_0.c,NgxHr_ba2b0
 ba2d0,236,verified,src/nvidia/unplaced_17.c,nvidia_ba2d0
 ba3c0,48,verified,src/nvidia/ngx_trivial_thunks.cpp,_Z13NgxStub_ba3c0m
+ba400,1016,disputed,src/nvidia/unplaced_44.c,nvidia_ba400
+ba840,976,verified,src/nvidia/unplaced_44.c,nvidia_ba840
 badc0,316,verified,src/nvidia/unnamed/n000_3.c,NgxHr_badc0
 baf00,4,verified,src/nvidia/ngx_trivial.cpp,_Z13NgxStub_baf00v
 baf10,40,verified,src/nvidia/unnamed/n000_2.c,NgxHr_baf10
@@ -1337,6 +1341,7 @@ c0680,76,verified,src/nvidia/unnamed/n001_0.c,NgxHr_c0680
 c06d0,184,verified,src/nvidia/unplaced_17.c,nvidia_c06d0
 c07a0,52,verified,src/nvidia/unnamed/n001_0.c,NgxHr_c07a0
 c07e0,260,verified,src/nvidia/unplaced_18.c,nvidia_c07e0
+c0ac0,1016,disputed,src/nvidia/unplaced_44.c,nvidia_c0ac0
 c0f38,36,verified,src/nvidia/unnamed/n001_1.c,NgxHr_c0f38
 c0f70,1248,verified,src/nvidia/unplaced_18.c,nvidia_c0f70
 c1620,1224,verified,src/nvidia/unplaced_18.c,nvidia_c1620
