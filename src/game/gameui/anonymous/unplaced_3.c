@@ -334,7 +334,7 @@ __int64 game_gameui_anonymous_1738240(__int64 a1)
   if ((v10 & 1) == 0) {
   LABEL_17:
     v12 = *(__int64**)(a1 + 152);
-    v13 = LayoutAccessor_15638b0_alt1(v12, "IO", 0);
+    v13 = LayoutAccessor_15638b0(v12, "IO", 0);
     LayoutAccessor_15636c0((__int64)v12, (__int64)"IO", 0, v13);
   }
   result = ((__int64 (*)(__int64*, __int64, char))LayoutAccessor_1563380)(

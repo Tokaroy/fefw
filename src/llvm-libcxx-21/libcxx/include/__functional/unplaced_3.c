@@ -400,9 +400,9 @@ __int64 llvm_libcxx_21_libcxx_include___functional_87bb70(__int64 result,
                                                           _QWORD* a2, int a3);
 __int64 llvm_libcxx_21_libcxx_include___functional_9c4bd0(_QWORD* a1);
 __int64 llvm_libcxx_21_libcxx_include___functional_a96c40();
-__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
-                                                          __int64 a2,
-                                                          _QWORD* a3);
+__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0_alt1(__int64 a1,
+                                                               __int64 a2,
+                                                               _QWORD* a3);
 __int64 llvm_libcxx_21_libcxx_include___functional_e789d0(__int64 a1,
                                                           unsigned __int16* a2);
 void llvm_libcxx_21_libcxx_include___functional_1003ce0(double a1, double a2,
@@ -450,6 +450,12 @@ extern __int64 (
     *game_menu_SubMenuItem_Destroy_SubMenuItem_86dff0_ptr_1fea450[])();
 int GameRoutine_1a09cf0(__int64, __int64, unsigned __int64);
 void __attribute__((noreturn)) String_60a230();
+_QWORD* game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable_alt1(__int64);
+__int64 ResourceBuilder_b782c0_alt1(__int64, _QWORD*, _QWORD*, __int64*,
+                                    __int64);
+__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
+                                                          __int64 a2,
+                                                          __int64* a3);
 
 void llvm_libcxx_21_libcxx_include___functional_7c2a10(__int64 a1)
 {
@@ -2952,7 +2958,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_a96c40()
 
 __int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
                                                           __int64 a2,
-                                                          _QWORD* a3)
+                                                          __int64* a3)
 {
 
 #pragma clang fp contract(off)
@@ -3324,7 +3330,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
       v35 = COERCE_AS(__typeof__(v35),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  return ResourceBuilder_b782c0(v70, v61, v60, a3, (__int64)&v75);
+  return ResourceBuilder_b782c0_alt1(v70, v61, v60, a3, (__int64)&v75);
 }
 
 float llvm_libcxx_21_libcxx_include___functional_e4ff70(__int64 a1, int* a2)
@@ -4125,8 +4131,8 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
                         *(_DWORD*)(v192 + 356) & 0xFFFFFFFB | v216;
                   }
                   else {
-                    game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable(v192,
-                                                                           1);
+                    game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable_alt1(
+                        v192);
                   }
                 LABEL_414:
                   v224 = 128;

@@ -486,6 +486,9 @@ __int64 game_UnitSkillList_GetRangeAddImpl(__int64 a1, __int64 a2)
 
 __int64 game_UnitSkillList_GetUseFactorImpl(__int64 a1, __int64 a2)
 {
+
+#pragma clang fp contract(on)
+
   char v3;
   __int64 result;
   __int64 v5;
@@ -508,12 +511,13 @@ __int64 game_UnitSkillList_GetUseFactorImpl(__int64 a1, __int64 a2)
     int v21;
     char gap28_[4];
     unsigned int* v22;
+    char gap40_[4];
+    unsigned int v23;
   } v18_;
-  unsigned int v23;
 
   v3 = *(_BYTE*)(a1 + 88);
   result = 1;
-  v23 = 1;
+  v18_.v23 = 1;
   if ((v3 & 0x10) != 0) {
     v18_.v21 = 0;
     v18_.v19 = 0;
@@ -525,7 +529,7 @@ __int64 game_UnitSkillList_GetUseFactorImpl(__int64 a1, __int64 a2)
     }
     else {
       v5 = a2;
-      GameRoutine_7fb7c0_alt2(&v18_.v18, *(_QWORD*)a2, *(_QWORD*)(a2 + 8),
+      GameRoutine_7fb7c0_alt3(&v18_.v18, *(_QWORD*)a2, *(_QWORD*)(a2 + 8),
                               (__int64)(*(_QWORD*)(a2 + 8) - *(_QWORD*)a2) >>
                                   2);
       v7 = v18_.v18;
@@ -533,16 +537,16 @@ __int64 game_UnitSkillList_GetUseFactorImpl(__int64 a1, __int64 a2)
       a2 = v5;
     }
     v18_.v21 = *(_DWORD*)(a2 + 24);
-    v18_.v22 = &v23;
+    v18_.v22 = &v18_.v23;
     v8 = (__int64*)fw_memory_g_heap_manager_ptr;
-    v9 = fw_memory_HeapManager_Allocate_alt1(
+    v9 = fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 48, 16, 0);
     *(_QWORD*)(v9 + 16) = 0;
     *(_QWORD*)(v9 + 24) = 0;
     *(_DWORD*)(v9 + 32) = 0;
     *(_QWORD*)v9 = GameData_1fa10e8;
     *(_QWORD*)(v9 + 8) = 0;
-    GameRoutine_7fb7c0_alt2((__int64*)(v9 + 8), v7, v6, (v6 - v7) >> 2);
+    GameRoutine_7fb7c0_alt3((__int64*)(v9 + 8), v7, v6, (v6 - v7) >> 2);
     *(_DWORD*)(v9 + 32) = v18_.v21;
     *(_QWORD*)(v9 + 40) = v18_.v22;
     if ((*(_BYTE*)(a1 + 88) & 0x10) != 0) {
@@ -576,9 +580,9 @@ __int64 game_UnitSkillList_GetUseFactorImpl(__int64 a1, __int64 a2)
       if (*(_QWORD*)(v16 + 200) == 0) {
         v17 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt1(v16 + v17, v18_.v18);
+      nn_mem_StandardAllocator_Free_alt2(v16 + v17, v18_.v18);
     }
-    return v23;
+    return v18_.v23;
   }
   return result;
 }

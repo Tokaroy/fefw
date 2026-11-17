@@ -2157,7 +2157,7 @@ __attribute__((swiftcall)) void Manager_62b880(PSEUDO_X8 x8_, __int64 a1,
   GameRoutine_62ec90(v19, a1);
   v20 = *(unsigned int*)(v19 + 8);
   if ((_DWORD)v20 != 0x2000 &&
-      (v21 = (__int64*)((char*)&as_g_context_slots + 16 * v20))[1] == v19) {
+      (v21 = &as_g_context_slots_alt2[2 * v20])[1] == v19) {
     v72 = *v21;
     v74 = *(_DWORD*)(v19 + 8);
     GameRoutine_1a09bf0_alt1((__int64)v77, "%s_%16zx", a2, v19);
@@ -2231,7 +2231,7 @@ __attribute__((swiftcall)) void Manager_62b880(PSEUDO_X8 x8_, __int64 a1,
     v36 = as_g_context_slots_ptr;
     goto LABEL_13;
   }
-  v36 = &as_g_context_slots;
+  v36 = as_g_context_slots_alt2;
   if (v35 != nullptr) {
     v37 = 40;
   LABEL_13:

@@ -212,7 +212,7 @@ void UnitActor_81d740(__int64);
 void __attribute__((noreturn)) GameRoutine_60a210(_QWORD);
 void __attribute__((noreturn)) GameRoutine_6c1f60(void);
 __int64 Manager_e63720();
-void game_cmdbtl_Manager_Manager(__int64 a1);
+void game_cmdbtl_Manager_Manager_alt1(__int64 a1);
 __attribute__((swiftcall)) void Manager_e9af40(PSEUDO_X8 x8_, __int64 a1);
 void Manager_e9b550(__int64 a1, int a2, unsigned int a3);
 __n128 game_cmdbtl_Manager_FindBattleUnit(_QWORD* a1, __int64 a2, __int64 a3);
@@ -248,6 +248,14 @@ void game_120faa0();
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void Manager_Destructor_e99e00(__int64 a1);
+__int64 GameRoutine_66ae00_alt1(__int64 result);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_combat_JostleManager_JostleManager(__int64);
+__int64 nn_os_LockMutex_alt1(__int64);
+__int64 nn_os_UnlockMutex_alt1(__int64);
+__int64 std___1___shared_weak_count___release_weak_alt4(__int64);
+__int64 game_cmdbtl_Manager_Manager(__int64 a1);
 
 __int64 Manager_e63720()
 {
@@ -345,10 +353,11 @@ __int64 game_cmdbtl_Manager_OnEndEventManager(__int64 a1, long double a2)
   return ((__int64 (*)(__int64))(*v15_.v17)[v10])((__int64)v15_.v17);
 }
 
-void game_cmdbtl_Manager_Manager(__int64 a1)
+__int64 game_cmdbtl_Manager_Manager(__int64 a1)
 {
 
-#pragma clang fp contract(off)
+#pragma clang fp contract(on)
+
   __int64* v2;
   __int64* v3;
   __int64* v4;
@@ -363,13 +372,13 @@ void game_cmdbtl_Manager_Manager(__int64 a1)
   __int64* v13;
   __int64 v14;
   __int64* v15;
-  long double v16;
-  __int64 v17;
-  __int64* v18;
-  int v19;
+  __int64 v16;
+  __int64* v17;
+  int v18;
+  unsigned int v19;
   unsigned int v20;
-  unsigned int v21;
-  int v22;
+  int v21;
+  __int64 result;
   int v23;
   int v24;
   struct {
@@ -377,8 +386,8 @@ void game_cmdbtl_Manager_Manager(__int64 a1)
     __int64 v26;
   } v25_;
   struct {
-    __int64 v27[4];
-    __int64* v28;
+    _QWORD v27[4];
+    _QWORD* v28;
   } v27_;
 
   if (*GameData_212ea58 == 0) {
@@ -484,7 +493,7 @@ void game_cmdbtl_Manager_Manager(__int64 a1)
   *(_QWORD*)(a1 + 1264) = GameData_212f5c8[0] + 16;
   *(_BYTE*)(a1 + 12576) = 0;
   v5 = (__int64*)fw_memory_g_heap_manager_ptr;
-  v6 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+  v6 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
       *(_QWORD*)fw_memory_g_heap_manager_ptr, 80, 16, 0);
   v6[2] = 0;
   v7 = GameData_212ee40[0];
@@ -497,10 +506,10 @@ void game_cmdbtl_Manager_Manager(__int64 a1)
   if (v8 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v8 + 8),
                                   0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
-    std___1___shared_weak_count___release_weak_alt1(v8);
+    std___1___shared_weak_count___release_weak_alt4(v8);
   }
   v9 = *(_QWORD**)(a1 + 1184);
-  v27_.v27[0] = (__int64)GameData_1fec798;
+  v27_.v27[0] = GameData_1fec798;
   v27_.v27[1] = a1;
   v27_.v28 = v27_.v27;
   GameRoutine_654050(v27_.v27, v9);
@@ -526,17 +535,17 @@ LABEL_11:
     v27_.v27[1] = v12;
     atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 16), 1u,
                               memory_order_relaxed);
-    GameRoutine_66ae00(v27_.v27);
-    std___1___shared_weak_count___release_weak_alt1(v12);
+    GameRoutine_66ae00_alt1((__int64)v27_.v27);
+    std___1___shared_weak_count___release_weak_alt4(v12);
   }
   else {
     v27_.v27[0] = v11;
     v27_.v27[1] = 0;
-    GameRoutine_66ae00(v27_.v27);
+    GameRoutine_66ae00_alt1((__int64)v27_.v27);
   }
   GameRoutine_66b000(&GameData_21c9668, &v25_.v25);
   if (v25_.v26 != 0) {
-    std___1___shared_weak_count___release_weak_alt1(v25_.v26);
+    std___1___shared_weak_count___release_weak_alt4(v25_.v26);
   }
   v13 = GameData_212f2e0;
   v14 = *GameData_212f2e0;
@@ -544,38 +553,39 @@ LABEL_11:
     ++*GameData_212f2e8[0];
   }
   else {
-    v15 = (__int64*)fw_memory_HeapManager_Allocate_alt1(*v5, 144, 16, 0);
-    *(__n128*)&v16 = GameRoutine_ea0930((__int64)v15);
-    v17 = *v15;
+    v15 = (__int64*)fw_memory_HeapManager_Allocate_alt2(*v5, 144, 16, 0);
+    game_combat_JostleManager_JostleManager((__int64)v15);
+    v16 = *v15;
     *v13 = (__int64)v15;
-    (*(void (**)(__int64*, long double))(v17 + 16))(v15, v16);
+    (*(void (**)(__int64))(v16 + 16))((__int64)v15);
     v14 = *v13;
   }
   *(_BYTE*)(v14 + 115) = 1;
-  nn_os_LockMutex(&game_g_random_mutex);
-  v18 = game_map_MapRandom_instance__ptr[0];
-  v19 = *(_DWORD*)((char*)game_map_MapRandom_instance__ptr[0] +
+  nn_os_LockMutex_alt1((__int64)&game_g_random_mutex);
+  v17 = game_map_MapRandom_instance__ptr[0];
+  v18 = *(_DWORD*)((char*)game_map_MapRandom_instance__ptr[0] +
                    (unsigned __int64)((_UNKNOWN**)0x8LL));
-  v20 = *(_DWORD*)((char*)game_map_MapRandom_instance__ptr[0] +
+  v19 = *(_DWORD*)((char*)game_map_MapRandom_instance__ptr[0] +
                    (unsigned __int64)((_UNKNOWN**)0x8LL) + 4);
-  v21 = *(_DWORD*)game_map_MapRandom_instance__ptr[0] ^
+  v20 = *(_DWORD*)game_map_MapRandom_instance__ptr[0] ^
         (*(_DWORD*)game_map_MapRandom_instance__ptr[0] << 11);
   *(_DWORD*)game_map_MapRandom_instance__ptr[0] =
       *((_DWORD*)game_map_MapRandom_instance__ptr[0] + 1);
-  *((_DWORD*)v18 + 1) = v19;
-  v22 = (v21 >> 8) ^ (v20 >> 19) ^ v21 ^ v20;
-  *(_DWORD*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v18) = v20;
-  *(_DWORD*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v18 + 4) = v22;
-  nn_os_UnlockMutex(&game_g_random_mutex);
+  *((_DWORD*)v17 + 1) = v18;
+  v21 = (v20 >> 8) ^ (v19 >> 19) ^ v20 ^ v19;
+  *(_DWORD*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v17) = v19;
+  *(_DWORD*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)v17 + 4) = v21;
+  result = nn_os_UnlockMutex_alt1((__int64)&game_g_random_mutex);
   *(_DWORD*)(a1 + 1216) =
-      vcvts_n_u64_f32(vcvts_n_f32_u32((unsigned __int16)v22, 0x10u), 0x10u);
+      vcvts_n_u64_f32(vcvts_n_f32_u32((unsigned __int16)v21, 0x10u), 0x10u);
   v23 = *(_DWORD*)(a1 + 612);
   if (v23 <= 0) {
     v24 = *(_DWORD*)(a1 + 1204);
     *(_DWORD*)(a1 + 612) = 1;
     *(_DWORD*)(a1 + 1204) = v24 | 0x40;
-    *(_DWORD*)(a1 + 616) = *(_DWORD*)(a1 + 616) - v23 + 1;
+    *(_DWORD*)(a1 + 616) = *(int*)(a1 + 616) - v23 + 1;
   }
+  return result;
 }
 
 void Manager_Destructor_e99e00(__int64 a1)

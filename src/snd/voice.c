@@ -163,6 +163,8 @@ __int64 snd_FadeRandom_start(__int64 result, double, float, float, float);
 extern __int64 snd_g_frameCount_ptr;
 bool Voice_1471b0(__int64 a1);
 __int64 Voice_145cc0(__int64 a1, __int64 a2);
+__int64 snd_Fade_Destroy_Fade_alt2(_QWORD*);
+double snd_Fade_Fade_10c830_alt2(__int64, float);
 
 __int64 Voice_1434a0(__int64 a1, __int64 a2, __int64 a3, char a4, int a5,
                      __int64 a6)
@@ -2003,42 +2005,39 @@ void Voice_DeletingDestructor(__int64 a1)
 
 __int64 Voice_145cc0(__int64 a1, __int64 a2)
 {
-  _QWORD* v4;
+  __int64* v4;
   __int64 result;
   float v6;
   float v7;
   float v8;
-  float v9;
-  float v10;
-  float v11;
-  long double v12;
-  __int64 v13;
-  __int64 v14;
-  __int64 v15;
-  long double v16;
-  __int64 v17;
+  __int64 v9;
+  __int64 v10;
+  __int64 v11;
+  __int64 v12;
   struct {
-    char gap0_[8];
-    _QWORD v18[25];
+    _QWORD v13[25];
     char gap208_[4];
-    _BYTE v19[4];
-    float v20;
-    float v21;
-  } f_;
+    _BYTE v14[4];
+  } v13_;
+  struct {
+    float v15;
+    float v16;
+  } v15_;
 
-  v4 = (_QWORD*)snd_g_proxy_ptr[0];
-  result = (*(__int64 (**)(_QWORD))(**(_QWORD**)snd_g_proxy_ptr[0] + 336LL))(
+  v4 = (__int64*)snd_g_proxy_ptr[0];
+  result = (*(__int64 (**)(__int64))(**(_QWORD**)snd_g_proxy_ptr[0] + 336LL))(
       *(_QWORD*)snd_g_proxy_ptr[0]);
   if ((result & 1) != 0) {
-    (*(void (**)(__int64, float*, float*, _BYTE*))(*(_QWORD*)a2 + 88LL))(
-        a2, &f_.v21, &f_.v20, f_.v19);
-    if (((*(__int64 (**)(_QWORD, float*, float*, _BYTE*))(
-             *(_QWORD*)*v4 + 352LL))(*v4, &f_.v21, &f_.v20, f_.v19) &
+    (*(void (**)(__int64, __int64, __int64, __int64))(*(_QWORD*)a2 + 88LL))(
+        a2, (__int64)&v15_.v16, (__int64)&v15_.v15, (__int64)v13_.v14);
+    if (((*(__int64 (**)(__int64, __int64, __int64, __int64))(
+             *(_QWORD*)*v4 + 352LL))(*v4, (__int64)&v15_.v16,
+                                     (__int64)&v15_.v15, (__int64)v13_.v14) &
          1) != 0) {
-      v6 = fabsf(f_.v21);
-      v7 = fabsf(f_.v20);
-      f_.v20 = v7;
-      f_.v21 = v6;
+      v6 = fabsf(v15_.v16);
+      v7 = fabsf(v15_.v15);
+      v15_.v15 = v7;
+      v15_.v16 = v6;
       if (v6 <= v7) {
         v8 = v7;
       }
@@ -2046,37 +2045,25 @@ __int64 Voice_145cc0(__int64 a1, __int64 a2)
         v8 = v6;
       }
       if (v8 > 0x1.0000000000000p+0f) {
-        v9 = (*(float (**)(_QWORD))(*(_QWORD*)*v4 + 344LL))(*v4);
-        v10 = v9 - (float)(v8 + -0x1.0000000000000p+0f);
-        if (v10 < 0x0.0p+0f) {
-          v10 = 0x0.0p+0f;
-        }
-        v11 = *(float*)(*(_QWORD*)(a1 + 5648) + 152LL) +
-              (float)((float)(0x1.0000000000000p+0f -
-                              *(float*)(*(_QWORD*)(a1 + 5648) + 152LL)) *
-                      (float)(v10 / v9));
-        snd_Fade_Fade_10c830_alt1((__int64)f_.v18, 0x0.0p+0f);
-        *(float*)&v12 = v11;
-        (*(void (**)(__int64, _QWORD*, long double))(
-            *(_QWORD*)(a1 + 40) + 144LL))(a1 + 40, f_.v18, v12);
-        return snd_Fade_Destroy_Fade_alt1(f_.v18);
+        (*(void (**)(__int64))(*(_QWORD*)*v4 + 344LL))(*v4);
+        snd_Fade_Fade_10c830_alt2((__int64)v13_.v13, 0x0.0p+0f);
+        (*(void (**)(__int64, __int64))(*(_QWORD*)(a1 + 40) + 144LL))(
+            a1 + 40, (__int64)v13_.v13);
+        return snd_Fade_Destroy_Fade_alt2(v13_.v13);
       }
-      snd_Fade_Fade_10c830_alt1((__int64)f_.v18, 0x0.0p+0f);
-      v17 = *(_QWORD*)(a1 + 40);
-      v14 = a1 + 40;
-      v13 = v17;
-      LODWORD(v16) = COERCE_UNSIGNED_INT((float)(0x1.0000000000000p+0f));
+      snd_Fade_Fade_10c830_alt2((__int64)v13_.v13, 0x0.0p+0f);
+      v12 = *(_QWORD*)(a1 + 40);
+      v10 = a1 + 40;
+      v9 = v12;
     }
     else {
-      snd_Fade_Fade_10c830_alt1((__int64)f_.v18, 0x0.0p+0f);
-      v15 = *(_QWORD*)(a1 + 40);
-      v14 = a1 + 40;
-      v13 = v15;
-      *(_QWORD*)&v16 = 0;
+      snd_Fade_Fade_10c830_alt2((__int64)v13_.v13, 0x0.0p+0f);
+      v11 = *(_QWORD*)(a1 + 40);
+      v10 = a1 + 40;
+      v9 = v11;
     }
-    (*(void (**)(__int64, _QWORD*, long double))(v13 + 144))(v14, f_.v18,
-                                                             v16);
-    return snd_Fade_Destroy_Fade_alt1(f_.v18);
+    (*(void (**)(__int64, __int64))(v9 + 144))(v10, (__int64)v13_.v13);
+    return snd_Fade_Destroy_Fade_alt2(v13_.v13);
   }
   return result;
 }

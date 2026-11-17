@@ -3457,8 +3457,10 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
   int v43;
   int v44;
   int v45;
-  _BYTE v46[20];
-  int v47;
+  struct {
+    _BYTE v46[20];
+    int v47;
+  } v46_;
 
   v5 = *(unsigned __int8*)(result + 228);
   *(_BYTE*)(result + 95) = 0;
@@ -3469,9 +3471,9 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
   *(_QWORD*)(result + 164) = 0;
   if (v5 == 1) {
     v6 = result;
-    result = nn_hid_GetNmouseHandles((__int64)v46, 2, 0);
+    result = nn_hid_GetNmouseHandles((__int64)v46_.v46, 2, 0);
     if ((int)result >= 1) {
-      v7 = v46;
+      v7 = v46_.v46;
       v8 = (unsigned int)result;
       v9 = (float****)game_g_game_setting_ptr;
       do {
@@ -3479,8 +3481,8 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
         v10 = v45;
         if ((v45 & 4) != 0) {
           v15 = *v9;
-          v47 = 0;
-          NpadStyleSetERKj = nn_hid_GetNpadStyleSet((__int64)&v47);
+          v46_.v47 = 0;
+          NpadStyleSetERKj = nn_hid_GetNpadStyleSet((__int64)&v46_.v47);
           if ((NpadStyleSetERKj & 2) != 0) {
             goto LABEL_21;
           }
@@ -3488,8 +3490,8 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
             if ((NpadStyleSetERKj & 1) != 0) {
               goto LABEL_25;
             }
-            v47 = 32;
-            v17 = nn_hid_GetNpadStyleSet((__int64)&v47);
+            v46_.v47 = 32;
+            v17 = nn_hid_GetNpadStyleSet((__int64)&v46_.v47);
             if ((v17 & 2) != 0) {
               goto LABEL_21;
             }
@@ -3514,9 +3516,9 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
           goto LABEL_5;
         }
         v11 = *v9;
-        v47 = 0;
+        v46_.v47 = 0;
         v12 = v11 + 75;
-        v13 = nn_hid_GetNpadStyleSet((__int64)&v47);
+        v13 = nn_hid_GetNpadStyleSet((__int64)&v46_.v47);
         if ((v13 & 2) == 0) {
           if ((v13 & 4) != 0) {
             goto LABEL_23;
@@ -3524,8 +3526,8 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
           if ((v13 & 1) != 0) {
             goto LABEL_14;
           }
-          v47 = 32;
-          v14 = nn_hid_GetNpadStyleSet((__int64)&v47);
+          v46_.v47 = 32;
+          v14 = nn_hid_GetNpadStyleSet((__int64)&v46_.v47);
           if ((v14 & 2) == 0) {
             if ((v14 & 4) != 0) {
             LABEL_23:
@@ -3556,7 +3558,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
             if (v24 < v25) {
               v24 = v25;
             }
-            if ((float)(v24 + -0x1.0000000000000p+0f) > *(float*)(v6 + 208) ||
+            if ((float)(v24 + -0x1.0000000000000p+0f) > *(float*)(v6 + 208) |
                 v23 >= *(float*)(v6 + 216)) {
               *(_BYTE*)(v20 + 94) = 0;
             }
@@ -3571,11 +3573,11 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
           v31 = v29 & ~v28;
           v32 = *(_DWORD*)(v20 + 72);
           v33 = v28 & ~v29;
-          v34 = *(_DWORD*)(v20 + 68) + *(_DWORD*)(v20 + 32);
+          v34 = *(int*)(v20 + 68) + *(int*)(v20 + 32);
           *(_DWORD*)(v20 + 48) = v29;
           *(_DWORD*)(v20 + 52) = v31;
           v35 = *(_DWORD*)(v20 + 16);
-          v36 = *(_DWORD*)(v20 + 20) - 540;
+          v36 = *(int*)(v20 + 20) - 540;
           *(_DWORD*)(v20 + 64) = v36;
           *(_DWORD*)(v20 + 68) = v34;
           v37 = v35 - 960;
@@ -3618,14 +3620,14 @@ __int64 llvm_libcxx_21_libcxx_include___functional_1990c40(__int64 result)
               *(_BYTE*)(v20 + 94) = 1;
               if ((v10 & 4) != 0) {
                 v42 = *(_DWORD*)(v6 + 224);
-                v43 = (v37 + *(_DWORD*)(v6 + 220)) &
-                      ~((v37 + *(_DWORD*)(v6 + 220)) >> 31);
+                v43 = (v37 + *(int*)(v6 + 220)) &
+                      ~((signed __int32)(v37 + *(int*)(v6 + 220)) >> 31);
                 if (v43 >= 1920) {
                   v43 = 1920;
                 }
                 *(_DWORD*)(v6 + 220) = v43;
-                v44 = (*(_DWORD*)(v20 + 64) + v42) &
-                      ~((*(_DWORD*)(v20 + 64) + v42) >> 31);
+                v44 = (*(int*)(v20 + 64) + v42) &
+                      ~((signed __int32)(*(int*)(v20 + 64) + v42) >> 31);
                 if (v44 >= 1080) {
                   v44 = 1080;
                 }

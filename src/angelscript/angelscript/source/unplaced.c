@@ -33,6 +33,9 @@ extern __int64 (*GameData_219a968)(void);
 __int64 angelscript_angelscript_source_1b8c00(__int64 a1);
 __int64 angelscript_angelscript_source_1bf860(__int64 a1);
 __int64 angelscript_angelscript_source_1e0f40(__int64 a1);
+__int64 asCBuilder_RegisterScriptFunctionFromNode_alt1(__int64, __int64,
+                                                       __int64, __int64, char,
+                                                       char, __int64, char);
 
 __int64 angelscript_angelscript_source_1b8c00(__int64 a1)
 {
@@ -438,9 +441,8 @@ LABEL_8:
                 asCScriptNode_DisconnectParent(v30);
                 v31 = *(_QWORD*)v26;
                 v32 = CastToObjectType(*(_QWORD*)(v26 + 48));
-                asCBuilder_RegisterScriptFunctionFromNode(
-                    a1, (__int64)v30, v31, v32, 1, 0, 0, *(_BYTE*)(v26 + 56),
-                    0);
+                asCBuilder_RegisterScriptFunctionFromNode_alt1(
+                    a1, (__int64)v30, v31, v32, 1, 0, 0, *(_BYTE*)(v26 + 56));
               }
             } while (v27 != nullptr);
             v24 = *(unsigned int*)(a1 + 288);
@@ -474,9 +476,8 @@ LABEL_8:
                 asCScriptNode_DisconnectParent(v38);
                 v39 = *(_QWORD*)v34;
                 v40 = CastToObjectType(*(_QWORD*)(v34 + 48));
-                asCBuilder_RegisterScriptFunctionFromNode(
-                    a1, (__int64)v38, v39, v40, 0, 0, 0, *(_BYTE*)(v34 + 56),
-                    0);
+                asCBuilder_RegisterScriptFunctionFromNode_alt1(
+                    a1, (__int64)v38, v39, v40, 0, 0, 0, *(_BYTE*)(v34 + 56));
               }
             } while (v35 != nullptr);
             break;

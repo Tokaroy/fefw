@@ -17,12 +17,13 @@ void __attribute__((noreturn)) GameRoutine_18b0de0();
 void __attribute__((noreturn)) GameRoutine_60a210();
 void game_gameui_18ae960(_QWORD*, char);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
-__int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3);
+__int64 game_gameui_18af480_alt1(_QWORD* a1, __int64* a2, __int64 a3);
 __int64 game_gameui_18afc00(__int64 (****a1)(__int64));
+_QWORD* game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3);
 
-__int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
+_QWORD* game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
 {
-  __int64 result;
+  _QWORD* result;
   __int64 v7;
   __int64 v8;
   __int64* v9;
@@ -68,7 +69,7 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
   __int64 v49;
   struct {
     __int64 v50;
-    __int64 v51;
+    _QWORD* v51;
   } v50_;
   struct {
     _QWORD v52[2];
@@ -81,18 +82,18 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
     _QWORD* v56;
   } v55_;
 
-  result = a2[1];
-  if (result != 0) {
-    result = std___1___shared_weak_count_lock(result);
-    if (result != 0) {
+  result = (_QWORD*)a2[1];
+  if (result != nullptr) {
+    result = (_QWORD*)std___1___shared_weak_count_lock((__int64)result);
+    if (result != nullptr) {
       v7 = *a2;
-      v8 = result;
+      v8 = (__int64)result;
       if (*a2 == 0) {
         goto LABEL_84;
       }
       v9 = (__int64*)a1[24];
       v10 = (__int64*)a1[25];
-      atomic_fetch_add_explicit((atomic_ullong* volatile)(result + 8), 1u,
+      atomic_fetch_add_explicit((atomic_ullong* volatile)(result + 1), 1u,
                                 memory_order_relaxed);
       if (v9 != v10) {
         while (1) {
@@ -141,7 +142,7 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
           v52_.v53 = nullptr;
         }
         GameRoutine_18b2560(&v50_.v50, v9 + 2);
-        result = (__int64)v52_.v53;
+        result = v52_.v53;
         if (v52_.v53 == &v50_.v50) {
           v17 = 32;
         }
@@ -151,12 +152,13 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
           }
           v17 = 40;
         }
-        result = (*(__int64 (**)(__int64))(*v52_.v53 + v17))((__int64)v52_.v53);
+        result = (_QWORD*)(*(__int64 (**)(__int64))(*v52_.v53 + v17))(
+            (__int64)v52_.v53);
       LABEL_84:
         if (atomic_fetch_add((atomic_ullong* volatile)(v8 + 8),
                              0xFFFFFFFFFFFFFFFFLL) == 0) {
           (*(void (**)(__int64))(*(_QWORD*)v8 + 16LL))(v8);
-          return std___1___shared_weak_count___release_weak(v8);
+          return (_QWORD*)std___1___shared_weak_count___release_weak(v8);
         }
         return result;
       }
@@ -164,7 +166,7 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
       atomic_fetch_add_explicit((atomic_ullong* volatile)(v8 + 16), 1u,
                                 memory_order_relaxed);
       v50_.v50 = v7;
-      v50_.v51 = v8;
+      v50_.v51 = (_QWORD*)v8;
       v16 = *(_QWORD*)(a3 + 32);
       if (v16 != 0) {
         if (v16 == a3) {
@@ -191,7 +193,7 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
           v19 = a1[26];
           if ((unsigned __int64)v20 < v19) {
             *v20 = v50_.v50;
-            v21 = v50_.v51;
+            v21 = (__int64)v50_.v51;
             v20[1] = v50_.v51;
             if (v21 != 0) {
               atomic_fetch_add_explicit((atomic_ullong* volatile)(v21 + 16), 1u,
@@ -237,7 +239,7 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
           v30 = v29 << 6;
           v31 = fw_memory_HeapManager_Allocate(
               *(_QWORD*)fw_memory_g_heap_manager_ptr, v29 << 6, 16, 0);
-          v32 = v50_.v51;
+          v32 = (__int64)v50_.v51;
           v33 = &v24[v31];
           v34 = v31;
           *(_QWORD*)v33 = v50_.v50;
@@ -293,8 +295,9 @@ __int64 game_gameui_18af480(_QWORD* a1, __int64* a2, __int64 a3)
             (*(void (**)(__int64))(*v48 + v49))((__int64)v48);
           LABEL_82:
             result = v50_.v51;
-            if (v50_.v51 != 0) {
-              result = std___1___shared_weak_count___release_weak(v50_.v51);
+            if (v50_.v51 != nullptr) {
+              result = (_QWORD*)std___1___shared_weak_count___release_weak(
+                  (__int64)v50_.v51);
             }
             goto LABEL_84;
           }

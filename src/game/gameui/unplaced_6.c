@@ -10,17 +10,21 @@ __int64 game_anonymous_RuntimeTalk_GetCondition(__int64, __int64);
 char* LayoutAccessor_1562060(char* result, __int64, const char*);
 extern __int64 game_GameModeData_instance_;
 extern char* GameData_204f038[98];
-__int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3);
+__int64 game_gameui_157d910_alt1(char* a1, _QWORD* a2, unsigned __int8 a3);
 bool game_gameui_15a2a40(__int64* a1, __int64* a2);
+__int64 LayoutAccessor_1562680(__int64 result, const char*, float);
+__int64 game_anonymous_RuntimeTalk_GetCondition_alt1(__int64);
+void LayoutAccessor_1562060_alt1(__int64*, __int64, const char*);
+__int64 game_gameui_157d910(__int64* a1, _QWORD* a2, unsigned __int8 a3);
 
-__int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
+__int64 game_gameui_157d910(__int64* a1, _QWORD* a2, unsigned __int8 a3)
 {
-  const char* v6;
+  char* v6;
   bool v7;
   _QWORD* v8;
   __int64* v9;
   __int64 v10;
-  const char* v11;
+  char* v11;
   __int64 v12;
   __int64 v13;
   __int64 v14;
@@ -30,16 +34,12 @@ __int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
   }
   else {
     v6 = GameData_204f038[(unsigned __int8)(a3 - 1)];
-    __asm__ volatile("" ::"r"(v6));
   }
-  LayoutAccessor_1562060(a1, (__int64)"T_Rank", v6);
-  {
-    v7 = *a2 == 0 || a2[1] == 0;
-    __asm__ volatile("" ::"r"(v7));
-  }
+  LayoutAccessor_1562060_alt1(a1, (__int64)"T_Rank", v6);
+  v7 = *a2 == 0 | a2[1] == 0;
   if (v7 || (v8 = a2 + 2, a2[a3 + 2] == 0)) {
     v11 = "None";
-    return GameHr_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
+    return LayoutAccessor_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
   }
   v9 = game_821090(1);
   if (game_GameModeData_instance_ == 0 ||
@@ -47,7 +47,7 @@ __int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
            *(_QWORD**)(game_GameModeData_instance_ + 48),
            (unsigned __int64*)v9)) == 0) {
     v11 = "CantTalk";
-    return GameHr_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
+    return LayoutAccessor_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
   }
   v11 = "CantTalk";
   if (*(int*)(v10 + 32) >= 1) {
@@ -55,7 +55,6 @@ __int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
     if (*a2 != 0) {
       if (a2[1] != 0) {
         v12 = v8[a3];
-        __asm__ volatile("" ::"r"(v12));
       }
       v13 = game_GameModeData_instance_;
       if (game_GameModeData_instance_ != 0) {
@@ -65,7 +64,8 @@ __int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
             (unsigned __int64*)(*(_QWORD*)(v12 + 24) + 40LL));
         if (v14 != 0 && *(_DWORD*)(v14 + 32) != 0) {
           v11 = "Done";
-          return GameHr_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
+          return LayoutAccessor_1562680((__int64)a1, v11,
+                                        0x1.0000000000000p+0f);
         }
       }
     }
@@ -75,15 +75,15 @@ __int64 game_gameui_157d910(char* a1, _QWORD* a2, unsigned __int8 a3)
         goto LABEL_16;
       }
     }
-    if ((unsigned __int16)game_anonymous_RuntimeTalk_GetCondition(
-            v8[a3], (__int64)v11) != 0) {
+    if ((unsigned __int16)game_anonymous_RuntimeTalk_GetCondition_alt1(
+            v8[a3]) != 0) {
       v11 = "CantTalk";
     }
     else {
       v11 = "CanTalk";
     }
   }
-  return GameHr_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
+  return LayoutAccessor_1562680((__int64)a1, v11, 0x1.0000000000000p+0f);
 }
 
 bool game_gameui_15a2a40(__int64* a1, __int64* a2)

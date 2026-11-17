@@ -93,6 +93,7 @@ extern __int64 GameData_21d99a8;
 extern __int64 GameData_21d99b0;
 __int64 game_menu_UnitTroopMenuItem_OnUpdateContent_lambda0_Invoke(
     __int64 result, unsigned __int8* a2, int* a3);
+__int64 game_HasSkill_alt2(_QWORD*, unsigned int*);
 
 __int64 game_menu_UnitTroopMenuItem_OnUpdateContent(__int64 a1)
 {
@@ -1598,7 +1599,7 @@ __int64 game_menu_UnitTroopMenuItem_OnUpdateContent_lambda0_Invoke(
           if (v10 != nullptr) {
           LABEL_7:
             v11 = *(_DWORD**)(v6 + 16);
-            v12 = (*v11)++;
+            v12 = (*(_DWORD*)v11)++;
             v13 = game_util_Format("L_MasteryInfoItem%02d", v12);
             LayoutAccessor_1560070((void*)(&v33_.v33), v10, v13);
             result = v33_.v34;
@@ -1682,7 +1683,7 @@ __int64 game_menu_UnitTroopMenuItem_OnUpdateContent_lambda0_Invoke(
               }
             }
             LODWORD(v33_.v33) = *game_g_shared_system_skills_ptr & 0xFFF;
-            v29 = game_HasSkill_alt1((_QWORD*)(v17 + 1744),
+            v29 = game_HasSkill_alt2((_QWORD*)(v17 + 1744),
                                      (unsigned int*)&v33_.v33);
             v30 = *(_QWORD*)(v17 + 440);
             if ((v29 & 1) == 0 ||

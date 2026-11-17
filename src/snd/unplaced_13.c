@@ -43,6 +43,7 @@ __int64 snd_db740(__int64 result, __int64 a2, __int64 a3);
 __int64 snd_129560(__int64 result);
 bool snd_141a80(__int64 a1, unsigned __int8 a2);
 __int64 snd_188f70(__int64 a1, __int64 a2);
+double snd_Fade_Fade_10c830_alt1(__int64, float);
 
 __int64 snd_db740(__int64 result, __int64 a2, __int64 a3)
 {
@@ -101,7 +102,7 @@ __int64 snd_db740(__int64 result, __int64 a2, __int64 a3)
                                                      (__int64)v12_.v13);
       }
       if (!v11) {
-        snd_Fade_Fade_10c830((__int64)v12_.v12, 0x0.0p+0f);
+        snd_Fade_Fade_10c830_alt1((__int64)v12_.v12, 0x0.0p+0f);
         (*(void (**)(__int64, __int64, __int64))(*v4 + 48LL))(
             (__int64)v4, (__int64)v12_.v12, 0);
         snd_Fade_Destroy_Fade(v12_.v12);

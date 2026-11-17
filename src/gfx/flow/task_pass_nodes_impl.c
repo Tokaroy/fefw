@@ -712,6 +712,8 @@ __int64 TaskPassNodes_b9a290(__int64 a1, __int64** a2, __int64* a3);
 __int64 GameRoutine_b48f90_alt2(__int64, __int64);
 __int64 GameRoutine_b68480_alt2(__int64*, const char*, __int64);
 __int64 TaskPassNodes_baae90(__int64 a1, __int64** a2, __int64* a3);
+__int64 GameRoutine_b4a3f0_alt2(__int64, __int64);
+__int64 GameRoutine_b4a510_alt2(__int64, __int64);
 
 __int64 TaskPassNodes_b88c20(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -11542,6 +11544,8 @@ __int64 TaskPassNodes_bb4bc0(__int64 result, __int64 a2, __int64 a3)
 __int64 TaskPassNodes_bb51a0(__int64 result, __int64* a2, __int64 a3)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64* v3;
   __int64 v4;
@@ -11635,7 +11639,7 @@ __int64 TaskPassNodes_bb51a0(__int64 result, __int64* a2, __int64 a3)
   v21 = 0;
   do {
     *(_QWORD*)(v19 + 8 * v21 + 24) =
-        GameRoutine_b4a3f0_alt1(a3, *(_QWORD*)&v31_.v31[2 * v21 + 6]);
+        GameRoutine_b4a3f0_alt2(a3, *(_QWORD*)&v31_.v31[2 * v21 + 6]);
     *(_DWORD*)(v19 + 4 * v21) = v31_.v31[v21];
     ++v21;
   } while (v6 != v21);
@@ -11643,7 +11647,7 @@ __int64 TaskPassNodes_bb51a0(__int64 result, __int64* a2, __int64 a3)
   v22 = 0;
   v23 = a2[1];
   do {
-    result = GameRoutine_b4a510_alt1(a3, *(__int64*)((char*)&v33_.v33 + v22));
+    result = GameRoutine_b4a510_alt2(a3, *(__int64*)((char*)&v33_.v33 + v22));
     *(_QWORD*)(v23 + v22) = result;
     v22 += 8;
   } while (8 * v6 != v22);

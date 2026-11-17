@@ -133,6 +133,8 @@ extern int GameData_1bc9de0_alt1[8];
 unsigned __int64 GameRoutine_1a09c70_alt1(const char*);
 void nn_mem_StandardAllocator_Free_alt2(__int64, __int64);
 __int64 TelopCausationConverge_Unknown33(__int64 a1);
+__int64 GameRoutine_60a020_alt5(__int64, const char*);
+void game_156c5d0(__int64, __int64, char);
 
 __int64 TelopCausationConverge_Unknown30(__int64 a1)
 {
@@ -392,7 +394,7 @@ __int64 TelopCausationConverge_Unknown33(__int64 a1)
   else {
     v23 = *v19;
   }
-  GameRoutine_60a020_alt4((char*)(*v17 + 14704), v23),
+  GameRoutine_60a020_alt5(*v17 + 14704, v23),
       v33 = COERCE_AS(__typeof__(v33),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v24 = *v17;
@@ -425,7 +427,7 @@ __int64 TelopCausationConverge_Unknown33(__int64 a1)
     v33 = COERCE_AS(__typeof__(v33),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (v27 != 0) {
-      GameRoutine_156c5d0_alt2(v27, v26, 0),
+      game_156c5d0(v27, v26, 0),
           v33 = COERCE_AS(__typeof__(v33),
                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
@@ -471,7 +473,8 @@ __int64 TelopCausationConverge_Unknown33(__int64 a1)
   v43_.v49 = v30;
   LODWORD(v43_.v45) = 9;
   v43_.v44 = "UI_Deco_Causation";
-  v32 = Manager_bc6460_alt2(*eft_g_effectSystem_ptr[0], (__int64)v43_.v43, 0),
+  v32 = Manager_bc6460(*(_QWORD**)eft_g_effectSystem_ptr[0], (__int64)v43_.v43,
+                       0),
   v33 = COERCE_AS(__typeof__(v33),
                   PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   result = GameRoutine_14a10d0_alt1(&v36_.v36, (__int64)v32, v33,

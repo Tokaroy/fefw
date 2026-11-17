@@ -329,7 +329,7 @@ void game_cutscene_AnimPlayer_PlayMaterialAnim(__int64* a1, __int64 a2,
                   v17 = 0;
                 }
               }
-              memory_a6ea10((void*)((__int64)v128_.v128), v17, 0),
+              memory_a6ea10((void*)(v128_.v128), v17, 0),
                   v41 = COERCE_AS(__typeof__(v41),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
               v34 = *(_QWORD*)(v9 + 32);
@@ -438,7 +438,7 @@ void game_cutscene_AnimPlayer_PlayMaterialAnim(__int64* a1, __int64 a2,
                   v32 = 0;
                 }
               }
-              memory_a6ea10((void*)((__int64)v128_.v128), v32, 0),
+              memory_a6ea10((void*)(v128_.v128), v32, 0),
                   v41 = COERCE_AS(__typeof__(v41),
                                   PSEUDO_REGISTER(float, "s0", "=w"));
               AnimCtrlModule_a77c00_alt1(v24, 0),

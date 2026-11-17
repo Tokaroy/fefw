@@ -830,6 +830,8 @@ __int64 game_menu_17992d0(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
 __int64 game_menu_1799d90(__int64 a1, __int64 a2, __int64 a3, __int64* a4,
                           char a5);
 void game_menu_179ac50(__int64 a1, __int64 a2, int a3);
+__int64 game_gameui_1597cc0(__int64*, __int64, int, int);
+__int64 ui_LayoutAccessor_FindAlignment_alt1(__int64*, __int64);
 
 __int64 game_menu_1630040(__int64 a1)
 {
@@ -2807,7 +2809,7 @@ __int64 game_menu_16f5ea0(__int64 a1)
     if (v19_.v20 != 0) {
       result = std___1___shared_weak_count___release_weak(v19_.v20);
     }
-    if (v3 == 0 || v4 == nullptr) {
+    if (v3 == 0 | v4 == nullptr) {
       if (v3 == 0) {
         return result;
       }
@@ -2815,7 +2817,8 @@ __int64 game_menu_16f5ea0(__int64 a1)
     }
     v6 = *(_DWORD*)(a1 + 1076);
     v7 = *(_QWORD*)(a1 + 1088);
-    if (v6 < (unsigned __int64)((*(_QWORD*)(a1 + 1096) - v7) >> 2)) {
+    if (v6 <
+        (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 1096) - v7) >> 2)) {
       v6 = *(_DWORD*)(v7 + 4LL * v6);
     }
     if (v6 == 1) {
@@ -2856,7 +2859,7 @@ __int64 game_menu_16f5ea0(__int64 a1)
       if (((1 << v14) & 0xF1) == 0) {
         LayoutAccessor_1562cf0((__int64)v4, (unsigned int*)"Page01_CanScout");
         v18 = LayoutAccessor_155fbe0((__int64*)(a1 + 848), "L_List");
-        GameRoutine_1597cc0(v18, *(_QWORD*)(*(_QWORD*)(a1 + 1064) + 392LL), 1,
+        game_gameui_1597cc0(v18, *(_QWORD*)(*(_QWORD*)(a1 + 1064) + 392LL), 1,
                             1);
         goto LABEL_39;
       }
@@ -2879,7 +2882,7 @@ __int64 game_menu_16f5ea0(__int64 a1)
   LABEL_38:
     LayoutAccessor_1562cf0((__int64)v4, (unsigned int*)v11);
   LABEL_39:
-    result = ui_LayoutAccessor_FindAlignment(v4, "MenuItemList");
+    result = ui_LayoutAccessor_FindAlignment_alt1(v4, (__int64)"MenuItemList");
     if (result != 0) {
       result = Alignment_56b600(result);
     }

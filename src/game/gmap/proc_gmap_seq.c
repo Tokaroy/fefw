@@ -640,6 +640,7 @@ __int64 GameRoutine_8ab560(int);
 __int64 LayoutAccessor_155e830_alt2(__int64 result, char);
 __int64 LayoutAccessor_1567000_alt2(__int64, char);
 __int64 game_GameVariableTable_Find_alt2(_QWORD*, unsigned __int64*);
+__int64 UnitActor_81a540_alt1(__int64, int, __int64);
 
 __int64 game_gmap_ProcGmapSeq_Initialize(__int64 a1)
 {
@@ -5713,7 +5714,7 @@ __int64 (***game_gmap_ProcGmapSeq_LimitOver(__int64 a1))()
     if ((*(_QWORD*)(*v4 + 96) | *(_QWORD*)(*v4 + 552)) == 0) {
       GameRoutine_888970_alt3((__int64*)(v6 + 24), 0, 0, 0);
     }
-    UnitActor_81a540(v6 + 112, 0x723D4B8u, (__int64)&GameData_1b45704);
+    UnitActor_81a540_alt1(v6 + 112, 119788728, (__int64)&GameData_1b45704);
   }
   if (game_GameModeData_instance_ == 0) {
     goto LABEL_37;

@@ -710,6 +710,7 @@ double GameRoutine_1a09f80(double);
 void AISupportSkillScope_11fef70_alt3(_DWORD*);
 void BattleSide_Destructor_alt3(_QWORD*);
 void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
+__int64 GameRoutine_11fe0c0_alt5(__int64, __int64);
 
 __int64 game_128e520(__int64 a1)
 {
@@ -2874,7 +2875,7 @@ __int64 game_1294f20(__int64 a1, signed int* a2)
   if (v15 == 0 || (unsigned int)*(unsigned __int8*)(v15 + 105) - 2 > 2) {
     return 0;
   }
-  GameRoutine_11fe0c0_alt4((__int64)v179_.v179, *(_QWORD*)a1);
+  GameRoutine_11fe0c0_alt5((__int64)v179_.v179, *(_QWORD*)a1);
   v170_.v176 = 0;
   v170_.v177 = 0;
   v170_.v178 = nullptr;
@@ -3268,7 +3269,7 @@ LABEL_62:
           v192_.v197 = v151;
           GameRoutine_6c2b50((__int64)v198);
           GameRoutine_6c2b50((__int64)v199);
-          GameRoutine_790080_alt2((__int64)v200);
+          GameRoutine_790080((__int64)v200);
           v192_.v197 = v150;
           v204_.v206 = 0;
           v204_.v208 = -1;

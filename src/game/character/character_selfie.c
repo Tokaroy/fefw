@@ -73,6 +73,7 @@ __int64 std___1___shared_weak_count___release_weak_alt2(__int64);
 double GameRoutine_1a09ff0(double, double);
 float GameRoutine_1a0a550(float, float);
 long double GameRoutine_1a0a000(long double, long double);
+long double GameRoutine_1a09ff0_alt1(double, double);
 
 __n128 CharacterSelfie_Destructor(_QWORD* a1)
 {
@@ -1038,11 +1039,11 @@ LABEL_41:
       v46, n128_f32,
       vmuls_lane_f32(LANES128(v50).n128_f32[1], v50, 2) +
           (float)(LANES128(v50).n128_f32[0] * LANES128(v50).n128_f32[3]));
-  *(double*)&v56 =
-      GameRoutine_1a09ff0(LANES128(v46).n128_f32[0] + LANES128(v46).n128_f32[0],
-                          (LANES128_OF(vmulq_f32(v50, v50)).n128_f32[0] + v53) *
-                                  -0x1.0000000000000p+1 +
-                              0x1.0000000000000p+0);
+  v56 = GameRoutine_1a09ff0_alt1(
+      LANES128(v46).n128_f32[0] + LANES128(v46).n128_f32[0],
+      (LANES128_OF(vmulq_f32(v50, v50)).n128_f32[0] + v53) *
+              -0x1.0000000000000p+1 +
+          0x1.0000000000000p+0);
   *((_QWORD*)&v55 + 1) = LANES128(v127).n128_u64[1];
   v54 = *(double*)&v56;
   *(float*)&v56 = vmuls_lane_f32(-LANES128(v127).n128_f32[0], v127, 2);
@@ -1061,7 +1062,7 @@ LABEL_41:
   *(float*)&v57 =
       vmuls_lane_f32(LANES128(v127).n128_f32[0],
                      COERCE_AS(float32x2_t, LANES128(v127).n128_u64[0]), 1);
-  GameRoutine_1a09ff0(
+  GameRoutine_1a09ff0_alt1(
       (float)(*(float*)&v57 + (float)(v52 * LANES128(v127).n128_f32[3])) +
           (float)(*(float*)&v57 + (float)(v52 * LANES128(v127).n128_f32[3])),
       (v53 + vmuls_lane_f32(v52, v127, 2)) * -0x1.0000000000000p+1 +

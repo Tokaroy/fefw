@@ -2757,7 +2757,7 @@ __int64 game_menu_16f75a0(__int64 a1, char** a2)
   v4 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
                                       1584, 16, 0);
   v10_.v10[0] = *a2;
-  GameRoutine_1647b80_alt1(v4, v10_.v10);
+  GameRoutine_1647b80(v4, v10_.v10);
   *(_WORD*)(v4 + 1496) = 0;
   *(_QWORD*)(v4 + 1520) = 0;
   *(_QWORD*)(v4 + 1528) = 0;

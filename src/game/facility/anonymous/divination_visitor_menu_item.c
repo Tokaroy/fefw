@@ -20,6 +20,7 @@ extern __int64 (*GameData_211b318[])();
 extern __int64 (*game_sound_PlayDecideLightSe_ptr[6])();
 extern __int64* GameData_212d2b8;
 __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1);
+__int64 GameRoutine_13fa790_alt1(__int64, __int64, __int64, __int64, __int64);
 
 __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1)
 {
@@ -27,7 +28,7 @@ __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1)
 #pragma clang fp contract(on)
 
   __int64 v2;
-  _QWORD* v3;
+  __int64 v3;
   __int64 v4;
   __int64 v6;
   __int64 v7;
@@ -58,8 +59,8 @@ __int64 game_facility_anonymous_DivinationVisitorMenuItem_ACall(__int64 a1)
   v12_.v13 = v12_.v12;
   v12_.v12[0] = (__int64 (*)())GameData_211b318;
   v10_.v10[0] = GameData_211b318;
-  v3 = GameRoutine_13fa790(v2, (__int64)&v16, (__int64)v14_.v14,
-                           (__int64)v12_.v12, (__int64)v10_.v10);
+  v3 = GameRoutine_13fa790_alt1(v2, (__int64)&v16, (__int64)v14_.v14,
+                                (__int64)v12_.v12, (__int64)v10_.v10);
   if (v10_.v11 == v10_.v10) {
     v4 = 32;
   }
@@ -99,7 +100,7 @@ LABEL_18:
   v12_.v12[1] = game_sound_PlayDecideLightSe_ptr[0];
   v14_.v14[0] = (__int64 (*)())(GameData_212d2b8 + 2);
   v14_.v14[1] = game_sound_PlayDecideLightSe_ptr[0];
-  GameRoutine_654050(v14_.v14, v3 + 144);
+  GameRoutine_654050(v14_.v14, (_QWORD*)(v3 + 1152));
   if (v14_.v15 == v14_.v14) {
     v8 = 32;
   }
@@ -120,7 +121,7 @@ LABEL_23:
   LABEL_27:
     (*(void (**)(__int64))((char*)*v12_.v13 + v9))((__int64)v12_.v13);
   }
-  *((_DWORD*)v3 + 392) = *(_DWORD*)(a1 + 84);
+  *(_DWORD*)(v3 + 1568) = *(_DWORD*)(a1 + 84);
   return 12;
 }
 

@@ -10,6 +10,7 @@ float spine_MathUtil_abs(float result);
 __int64 spine_SkeletonClipping_clip(__int64 a1, __int64 a2, _QWORD* a3,
                                     float a4, float a5, float a6, float a7,
                                     float a8, float a9);
+__int64 __assert_fail_alt1();
 
 __int64 spine_SkeletonClipping_clip(__int64 a1, __int64 a2, _QWORD* a3,
                                     float a4, float a5, float a6, float a7,
@@ -1140,9 +1141,7 @@ LABEL_49:
   }
   else {
   LABEL_165:
-    __assert_fail("inIndex < _size",
-                  "/Program/Externals/Spine/include\\spine/Vector.h", 162,
-                  "operator[]");
+    __assert_fail_alt1();
     do {
       *(_DWORD*)(*(_QWORD*)(v10 + 24) + 4 * v20++) = 0;
     LABEL_167:

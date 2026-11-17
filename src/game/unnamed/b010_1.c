@@ -480,6 +480,7 @@ void GameRoutine_c24eb0(_QWORD*, __int64);
 void __attribute__((noreturn)) GameRoutine_60a210_alt2();
 void __attribute__((noreturn)) GameRoutine_98f290();
 __int64 GameHr_c77930(__int64 a1, __int64 a2);
+extern __int64 as_g_engine_ptr_alt1[10];
 
 __int64 GameHr_bbf020(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -17048,8 +17049,8 @@ LABEL_6:
       }
     }
     else if (v5 == (*(unsigned int (**)(__int64, __int64))(
-                       **(_QWORD**)as_g_engine_ptr[0] + 416LL))(
-                       *as_g_engine_ptr[0], (__int64)"string")) {
+                       **(_QWORD**)as_g_engine_ptr_alt1[0] + 416LL))(
+                       *(_QWORD*)as_g_engine_ptr_alt1[0], (__int64)"string")) {
       v11 = (__int64*)GameRoutine_194210(a2);
       as_c81b50((__int64*)a1, (__int64*)a1, v11);
       return 1;
