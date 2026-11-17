@@ -344,12 +344,21 @@ __int64 game_gameui_anonymous_1738240(__int64 a1)
     v16 = *(_QWORD*)(a1 + 160);
     v17 = *(__int64**)(a1 + 184);
     v18 = std___1___shared_weak_count_lock(v15[1]);
-    if (v18 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v18 + 8),
-                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v19 = v18;
-      (*(void (**)(__int64))(*(_QWORD*)v18 + 16LL))(v18);
-      std___1___shared_weak_count___release_weak(v19);
+    if (v18 != 0) {
+      // An expired weak owner reads the use count again, the load is dead.
+      __int64 wk1_o = *(__int64*)(__int64)(v15);
+      int wk1_f = wk1_o != 0 ? (*(unsigned char*)(wk1_o + 24) != 0 ? wk1_o + 152 : 0) != *(__int64*)((__int64)(v15) + 16) : 1;
+      if (atomic_fetch_add((atomic_ullong* volatile)(v18 + 8), 0xFFFFFFFFFFFFFFFFLL) == 0) {
+        v19 = v18;
+        (*(void (**)(__int64))(*(_QWORD*)v18 + 16LL))(v18);
+        std___1___shared_weak_count___release_weak(v19);
+      }
+      if (wk1_f == 0) {
+        goto WK1_SKIP;
+      }
     }
+    (void)*(volatile __int64*)(*(__int64*)((__int64)(v15) + 8) + 8);
+  WK1_SKIP:;
     LayoutAccessor_155ed40((void*)(&v25_.v25), v15, v17, v16,
                            (const char*)(*(_QWORD*)(v15[2] + 24) + 176LL));
     result = v25_.v26;
