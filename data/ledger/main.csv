@@ -38807,7 +38807,7 @@ cfc680,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 cfc6a0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<void game::character::CharacterBuilder::EachModule<wld::ClothModule, game::zview::CharacterModel::ClothStabilize()::$_0>(game::zview::CharacterModel::ClothStabilize()::$_0&&) const::'lambda'(wld::Object&), void (wld::Object&)>::target_type()"
 cfc6b0,100,verified,src/game/game_trivial_shared_pointers.cpp,_Z15GameStub_cfc6b0m
 cfc720,136,verified,src/game/game_trivial_owner_deletes.cpp,_Z15GameStub_cfc720m
-cfc7c0,2956,disputed,src/game/unplaced_10.c,game_cfc7c0
+cfc7c0,2948,disputed,src/game/unplaced_10.c,game_cfc7c0
 cfd8e0,164,verified,src/game/unnamed/b011_0.c,GameHr_cfd8e0
 cfd990,256,verified,src/game/unnamed/f000_0.c,GameHr_cfd990
 cfdb00,1224,verified,src/game/unplaced_16.c,game_cfdb00
@@ -41785,7 +41785,7 @@ dff3e0,708,verified,src/game/unnamed/b012_0.c,GameHr_dff3e0
 dff780,1588,verified,src/game/hub/unplaced.c,game_hub_dff780
 dffec0,276,verified,src/game/unnamed/b012_0.c,GameHr_dffec0
 dfffe0,244,verified,src/game/unnamed/b012_0.c,GameHr_dfffe0
-e00100,1724,disputed,src/game/hub/unplaced_19.c,game_hub_e00100
+e00100,1836,verified,src/game/hub/unplaced_19.c,game_hub_e00100
 e00880,288,verified,src/game/hub/ui_treasure_counter.c,UiTreasureCounter_e00880
 e009e0,1920,verified,src/game/hub/unplaced.c,game_hub_e009e0
 e01240,1488,verified,src/game/hub/unplaced.c,game_hub_e01240
@@ -46450,6 +46450,7 @@ f52bb0,80,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 f52c00,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::PrimitiveDrawStack::DrawOptimize()::$_0, void (game::map::PrimitiveDrawStack::MeshDrawElement&)>::__clone(__base*)"
 f52c20,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::PrimitiveDrawStack::DrawOptimize()::$_0, void (game::map::PrimitiveDrawStack::MeshDrawElement&)>::destroy()"
 f52c30,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::PrimitiveDrawStack::DrawOptimize()::$_0, void (game::map::PrimitiveDrawStack::MeshDrawElement&)>::destroy_deallocate()"
+f52c40,676,verified,src/llvm-libcxx-21/libcxx/include//functional/unplaced_14.c,llvm_libcxx_21_libcxx_include___functional_f52c40
 f52ef0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::PrimitiveDrawStack::DrawOptimize()::$_0, void (game::map::PrimitiveDrawStack::MeshDrawElement&)>::target(std::type_info const&)"
 f52f10,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::PrimitiveDrawStack::DrawOptimize()::$_0, void (game::map::PrimitiveDrawStack::MeshDrawElement&)>::target_type()"
 f52f20,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<base::jobs::Variance<1ul>::Variance<game::map::PrimitiveDrawStack::DrawOptimize()::$_1>(game::map::PrimitiveDrawStack::DrawOptimize()::$_1&&)::'lambda'(int, std::__1::atomic<int>&), void (int, std::__1::atomic<int>&)>::deleting destructor"
@@ -50954,6 +50955,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 10be300,292,verified,src/game/unnamed/b015_1.c,GameHr_10be300
 10be430,376,verified,src/game/unnamed/b015_1.c,GameHr_10be430
 10be5c0,4936,disputed,src/game/unplaced_41.c,game_10be5c0
+10bfbf0,744,verified,src/game/unplaced_42.c,game_10bfbf0
 10bfee0,308,verified,src/game/unnamed/f001_0.c,GameHr_10bfee0
 10c0060,84,verified,src/game/zview/character_facial.c,CharacterFacial_Destructor
 10c00c0,148,verified,src/game/zview/character_facial.c,CharacterFacial_DeletingDestructor
@@ -85342,6 +85344,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1943880,4,verified,src/memory/new_delete.cpp,complete destructor at 0x1943880
 1943890,44,verified,src/memory/new_delete.cpp,deleting destructor at 0x1943890
 19438c0,536,verified,src/gfx/render/view_volume_culling.c,ViewVolumeCulling_Unknown2
+1943ae0,644,verified,src/gfx/render/unplaced_7.c,gfx_render_1943ae0
 1943d80,348,verified,src/gfx/render/view_volume_culling.c,ViewVolumeCulling_Unknown4
 1943ee0,208,verified,src/cphysx/thread/executor.c,Executor_Unknown2
 1943fe0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0x1943fe0
