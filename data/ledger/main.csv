@@ -11412,7 +11412,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 347300,212,verified,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic.cpp,_ZN5physx2Dy30computeSphericalJointPositionsERKNS_7PxQuatTIfEES4_S4_
 3473e0,200,verified,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic.cpp,_ZN5physx2Dy24FeatherstoneArticulation31computeAndEnforceJointPositionsERNS0_16ArticulationDataE
 3475a0,1284,disputed,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic_impl.c,physx_Dy_FeatherstoneArticulation_propagateLinksDown
-348260,1012,disputed,src/game/unnamed/b028_0.c,GameHr_348260
+348260,1020,disputed,src/game/unnamed/b028_0.c,GameHr_348260
 349500,12,verified,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic.cpp,_ZN5physx2Dy24FeatherstoneArticulation15updateBodiesTGSERKNS0_22ArticulationSolverDescEPNS_2Cm14SpatialVectorFEf
 349510,420,verified,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic.cpp,_ZN5physx2Dy24FeatherstoneArticulation14updateRootBodyERKNS_2Cm14SpatialVectorFERKNS_12PxTransformTIfEERNS0_16ArticulationDataEf
 34a130,2188,verified,src/physx/source/lowleveldynamics/src/DyFeatherstoneForwardDynamic.cpp,_ZN5physx2Dy13SpatialMatrix10getInverseEv
@@ -14412,6 +14412,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 515800,252,verified,src/physx/source/geomutils/src/GuIncrementalAABBTree.cpp,_ZN5physx7PxArrayIPNS_2Gu23IncrementalAABBTreeNodeENS_21PxReflectionAllocatorIS3_EEE15growAndPushBackERKS3_
 515910,232,verified,src/physx/source/geomutils/src/GuSAH.cpp,_ZN5physx2Gu11SAH_BuffersC2Ej
 515a00,164,verified,src/physx/source/geomutils/src/GuSAH.cpp,_ZN5physx2Gu11SAH_BuffersD2Ev
+515ac0,2276,disputed,src/physx/source/geomutils/src/unplaced_5.c,physx_source_geomutils_src_515ac0
 516780,100,verified,src/physx/source/geomutils/src/GuBVH.cpp,_ZN5physx2Gu3BVHC2EPNS0_11MeshFactoryE
 5167f0,136,verified,src/physx/source/geomutils/src/GuBVH.cpp,_ZN5physx2Gu3BVHC2EPNS0_11MeshFactoryERNS0_7BVHDataE
 516880,172,verified,src/game/unnamed/b002_2.c,GameHr_516880
@@ -38807,7 +38808,7 @@ cfc680,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 cfc6a0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<void game::character::CharacterBuilder::EachModule<wld::ClothModule, game::zview::CharacterModel::ClothStabilize()::$_0>(game::zview::CharacterModel::ClothStabilize()::$_0&&) const::'lambda'(wld::Object&), void (wld::Object&)>::target_type()"
 cfc6b0,100,verified,src/game/game_trivial_shared_pointers.cpp,_Z15GameStub_cfc6b0m
 cfc720,136,verified,src/game/game_trivial_owner_deletes.cpp,_Z15GameStub_cfc720m
-cfc7c0,2948,disputed,src/game/unplaced_10.c,game_cfc7c0
+cfc7c0,2888,disputed,src/game/unplaced_10.c,game_cfc7c0
 cfd8e0,164,verified,src/game/unnamed/b011_0.c,GameHr_cfd8e0
 cfd990,256,verified,src/game/unnamed/f000_0.c,GameHr_cfd990
 cfdb00,1224,verified,src/game/unplaced_16.c,game_cfdb00
