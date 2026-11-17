@@ -106,12 +106,25 @@ LABEL_7:
       if (v12 != 0 && v13 != 0) {
         ui_LayoutAccessor_SetPaneVisible(v13, (__int64)"N_MiracleLv", 0);
         v14 = std___1___shared_weak_count_lock(*(_QWORD*)(v13 + 8));
-        if (v14 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v14 + 8),
-                                         0xFFFFFFFFFFFFFFFFLL) == 0) {
-          v16 = v14;
-          (*(void (**)(__int64))(*(_QWORD*)v14 + 16LL))(v14);
-          std___1___shared_weak_count___release_weak(v16);
+        if (v14 != 0) {
+          // An expired weak owner reads the use count again, the load is dead.
+          __int64 wk_o = *(_QWORD*)v13;
+          int wk_f = wk_o != 0 ? (*(unsigned char*)(wk_o + 24) != 0 ? wk_o + 152
+                                                                      : 0) !=
+                                     *(_QWORD*)(v13 + 16)
+                               : 1;
+          if (atomic_fetch_add((atomic_ullong* volatile)(v14 + 8),
+                               0xFFFFFFFFFFFFFFFFLL) == 0) {
+            v16 = v14;
+            (*(void (**)(__int64))(*(_QWORD*)v14 + 16LL))(v14);
+            std___1___shared_weak_count___release_weak(v16);
+          }
+          if (wk_f == 0) {
+            goto WK_SKIP;
+          }
         }
+        (void)*(volatile __int64*)(*(_QWORD*)(v13 + 8) + 8);
+      WK_SKIP:
         result = GameRoutine_159d0c0(
             *(_QWORD*)(*(_QWORD*)(v13 + 16) + 24LL) + 32LL, 0, 1);
       }

@@ -63382,7 +63382,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1463ec0,72,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_OnDeselect
 1463f10,1924,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_DrawText
 14646a0,388,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_IsActive
-1464830,508,disputed,src/game/menu/anonymous/unplaced_13.c,game_menu_anonymous_1464830
+1464830,532,verified,src/game/menu/anonymous/unplaced_13.c,game_menu_anonymous_1464830
 1464a50,372,verified,src/game/unnamed/b019_0.c,GameHr_1464a50
 1464bd0,316,verified,src/game/unnamed/b019_1.c,GameHr_1464bd0
 1464d10,152,verified,src/game/facility/anonymous/proc_facility_motivation_record.c,ProcFacilityMotivationRecord_Destructor
