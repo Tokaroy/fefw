@@ -283,27 +283,31 @@ void game_6d5fc0(unsigned __int64 a1, int* a2)
   __int64 v82;
   __int64 v83;
   __int64 v84;
-  __int64 v85[2];
-  __int64 v86;
-  __int64 v87;
-  __int64 v88;
-  __int64 v89;
-  __int64 v90;
-  __int64 v91;
-  __int64 v92;
-  __int64 v93;
-  __int64 v94;
-  int v95;
-  __int64 v96;
-  int v97;
-  char v98;
-  int v99;
-  __int64 v100;
-  __int64 v101;
-  __int64 v102;
-  __int64 v103;
-  __int64 v104;
   int v105;
+  // The record the mastery helpers take, laid out as the original frame.
+  struct __attribute__((packed)) {
+    __int64 v85[2];
+    __int64 v86;
+    __int64 v87;
+    __int64 v88;
+    __int64 v89;
+    __int64 v90;
+    __int64 v91;
+    __int64 v92;
+    __int64 v93;
+    __int64 v94;
+    int v95;
+    __int64 v96;
+    int v97;
+    char v98;
+    int v99;
+    char gap109_[3];
+    __int64 v100;
+    __int64 v101;
+    __int64 v102;
+    __int64 v103;
+    __int64 v104;
+  } f_;
 
   {
     v2 = *((_QWORD*)a2 + 1);
@@ -415,18 +419,18 @@ LABEL_6:
   else {
     v9 = 5;
   }
-  v85[0] = v2;
-  v85[1] = v5;
-  v86 = 0;
-  v87 = 0;
-  v88 = 0;
-  v89 = 0;
-  v90 = 0;
-  v91 = 0;
-  v92 = 0;
-  v93 = 0;
-  v94 = 0;
-  v96 = 0x3F80000000000000LL;
+  f_.v85[0] = v2;
+  f_.v85[1] = v5;
+  f_.v86 = 0;
+  f_.v87 = 0;
+  f_.v88 = 0;
+  f_.v89 = 0;
+  f_.v90 = 0;
+  f_.v91 = 0;
+  f_.v92 = 0;
+  f_.v93 = 0;
+  f_.v94 = 0;
+  f_.v96 = 0x3F80000000000000LL;
   if (game_GameModeData_instance_ != 0) {
     v10 = *(_DWORD*)(game_GameModeData_instance_ + 60);
     __asm__ volatile("" ::"r"(v10));
@@ -434,12 +438,12 @@ LABEL_6:
   else {
     v10 = 0;
   }
-  v97 = v10;
-  v100 = 0;
-  v101 = 0;
-  v102 = 0;
-  v103 = 0;
-  v99 = 262;
+  f_.v97 = v10;
+  f_.v100 = 0;
+  f_.v101 = 0;
+  f_.v102 = 0;
+  f_.v103 = 0;
+  f_.v99 = 262;
   if (v7 != 0) {
     goto LABEL_45;
   }
@@ -495,17 +499,17 @@ LABEL_45:
     v17 = *(unsigned __int8*)(v2 + 444);
     __asm__ volatile("" ::"r"(v17));
   }
-  v98 = v9;
-  v104 = v8;
+  f_.v98 = v9;
+  f_.v104 = v8;
   if (v7 > v17) {
     v17 = v7;
   }
-  v95 = v17;
-  game_6e4de0((int*)v85);
-  game_6e50e0((__int64)v85);
-  game_6e5480(v85);
+  f_.v95 = v17;
+  game_6e4de0((int*)&f_);
+  game_6e50e0((__int64)&f_);
+  game_6e5480((__int64*)&f_);
   GameHr_6c3050(a1);
-  game_Unit_AutoGrowMasteryLevel(a1, v85);
+  game_Unit_AutoGrowMasteryLevel(a1, (__int64*)&f_);
   {
     v18 = *(_QWORD*)a2;
     __asm__ volatile("" ::"r"(v18));
@@ -971,53 +975,53 @@ LABEL_158:
     *(_DWORD*)(a1 + 416) &= ~0x10000000u;
   }
   v76 = (__int64*)fw_memory_g_heap_manager_ptr;
-  if (v100 != 0) {
+  if (f_.v100 != 0) {
     {
       v77 = *(_QWORD*)fw_memory_g_heap_manager_ptr;
       __asm__ volatile("" ::"r"(v77));
     }
-    v101 = v100;
+    f_.v101 = f_.v100;
     v78 = 128;
     if (*(_QWORD*)(v77 + 200) == 0) {
       v78 = 56;
     }
-    nn_mem_StandardAllocator_Free(v77 + v78, v100);
+    nn_mem_StandardAllocator_Free(v77 + v78, f_.v100);
   }
-  if (v92 != 0) {
+  if (f_.v92 != 0) {
     {
       v79 = *v76;
       __asm__ volatile("" ::"r"(v79));
     }
-    v93 = v92;
+    f_.v93 = f_.v92;
     v80 = 128;
     if (*(_QWORD*)(v79 + 200) == 0) {
       v80 = 56;
     }
-    nn_mem_StandardAllocator_Free(v79 + v80, v92);
+    nn_mem_StandardAllocator_Free(v79 + v80, f_.v92);
   }
-  if (v89 != 0) {
+  if (f_.v89 != 0) {
     {
       v81 = *v76;
       __asm__ volatile("" ::"r"(v81));
     }
-    v90 = v89;
+    f_.v90 = f_.v89;
     v82 = 128;
     if (*(_QWORD*)(v81 + 200) == 0) {
       v82 = 56;
     }
-    nn_mem_StandardAllocator_Free(v81 + v82, v89);
+    nn_mem_StandardAllocator_Free(v81 + v82, f_.v89);
   }
-  if (v86 != 0) {
+  if (f_.v86 != 0) {
     {
       v83 = *v76;
       __asm__ volatile("" ::"r"(v83));
     }
-    v87 = v86;
+    f_.v87 = f_.v86;
     v84 = 128;
     if (*(_QWORD*)(v83 + 200) == 0) {
       v84 = 56;
     }
-    nn_mem_StandardAllocator_Free(v83 + v84, v86);
+    nn_mem_StandardAllocator_Free(v83 + v84, f_.v86);
   }
 }
 

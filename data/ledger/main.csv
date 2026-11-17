@@ -18780,7 +18780,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 6d46e0,2560,verified,src/game/unit/unit_heroes_impl.c,UnitHeroes_6d46e0
 6d5120,2384,verified,src/game/unnamed/b005_0.c,GameHr_6d5120
 6d5d00,660,verified,src/game/unnamed/b005_1.c,GameHr_6d5d00
-6d5fc0,2328,disputed,src/game/unplaced_21.c,game_6d5fc0
+6d5fc0,2400,verified,src/game/unplaced_21.c,game_6d5fc0
 6d69a0,1608,verified,src/game/unplaced_26.c,game_6d69a0
 6d7010,492,verified,src/game/unnamed/e001_3.c,GameHr_6d7010
 6d7270,448,verified,src/game/unplaced.c,game_6d7270
