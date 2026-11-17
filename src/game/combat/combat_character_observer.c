@@ -1063,7 +1063,10 @@ LABEL_44:
                               memory_order_relaxed);
     v27 = *(_QWORD*)(v25 + 40);
     v28 = *(_QWORD*)(v26 + 8) == -1 || v27 == 0;
-    if (v28 || (v29 = *(_QWORD*)(v27 + 80)) == 0 ||
+    // The owner check reads the use count again, the load is dead.
+    if (v28 ||
+        ((void)*(volatile __int64*)(v26 + 8), v29 = *(_QWORD*)(v27 + 80)) ==
+            0 ||
         (*(_QWORD*)(v29 + 8) != -1 ? (v30 = *(_QWORD*)(v27 + 88) == 0)
                                    : (v30 = true),
          v30)) {
@@ -1094,6 +1097,7 @@ LABEL_44:
           }
         }
       }
+      (void)*(volatile __int64*)(*(_QWORD*)(v56 + 80) + 8);
       v36 = *(_QWORD*)(v56 + 88);
       v38 = *(_QWORD*)(v36 + 392);
       v37 = *(_QWORD*)(v36 + 400);
@@ -1251,6 +1255,7 @@ LABEL_44:
           *(float*)(v98 + 52) = v89;
           game_combat_1068b40(v98, 1);
           game_combat_1068a00(v98);
+          (void)*(volatile __int64*)(*(_QWORD*)(v98 + 80) + 8);
           CharacterBuilder_10821f0(*(_QWORD*)(v98 + 88));
           v82 = v112;
         }
@@ -1286,6 +1291,7 @@ LABEL_44:
           *(float*)(v110 + 52) = v107;
           game_combat_1068b40(v110, 1);
           game_combat_1068a00(v110);
+          (void)*(volatile __int64*)(*(_QWORD*)(v110 + 80) + 8);
           CharacterBuilder_10821f0(*(_QWORD*)(v110 + 88));
         }
       }
