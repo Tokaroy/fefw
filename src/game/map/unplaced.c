@@ -1220,6 +1220,7 @@ void game_map_786aa0(int* a1, int* a2, _QWORD* a3, unsigned __int64 a4,
                      int* a5);
 void Camera_7c0910(__int64, __int64);
 void game_map_7c0910(__int64, __int64);
+void game_map_75a370_alt1(__int64*, __int64*, __int64*, _QWORD*);
 
 void game_map_724ae0()
 {
@@ -4311,7 +4312,7 @@ bool game_map_75a760(__int64* a1, __int64* a2, __int64* a3)
   }
   switch (v6) {
   case 3LL:
-    game_map_75a370(a1, a1 + 1, a2 - 1, a3),
+    game_map_75a370_alt1(a1, a1 + 1, a2 - 1, a3),
         v11 = COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
         v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s0", "=w")),
         v21 = COERCE_AS(__typeof__(v21), PSEUDO_REGISTER(float, "s0", "=w")),
@@ -4342,7 +4343,7 @@ bool game_map_75a760(__int64* a1, __int64* a2, __int64* a3)
   }
 LABEL_11:
   v13 = a1 + 2;
-  game_map_75a370(a1, a1 + 1, a1 + 2, a3),
+  game_map_75a370_alt1(a1, a1 + 1, a1 + 2, a3),
       v11 = COERCE_AS(__typeof__(v11), PSEUDO_REGISTER(float, "s0", "=w")),
       v19 = COERCE_AS(__typeof__(v19), PSEUDO_REGISTER(float, "s0", "=w")),
       v21 = COERCE_AS(__typeof__(v21), PSEUDO_REGISTER(float, "s0", "=w")),

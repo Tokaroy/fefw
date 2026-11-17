@@ -30,7 +30,7 @@ char** ActionAttack_1063100_alt2(char** result) __asm__("ActionAttack_1063100");
 float game_combat_ActionAttack_OnEnter_lambda2_Clone(__int64 a1);
 float game_combat_ActionAttack_OnEnter_lambda2_CloneInto(__int64 a1,
                                                          __int64 a2);
-__int64 game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1);
+__int64 game_combat_ActionAttack_OnEnter_lambda3_Invoke_alt1(__int64 a1);
 __int64 game_combat_ActionAttack_OnEnter_lambda4_Invoke(__int64 a1);
 __int64 GameRoutine_106aeb0(_QWORD, _QWORD);
 __int64 GameRoutine_d2b5f0(_QWORD);
@@ -108,6 +108,9 @@ __int64 std___1___shared_weak_count___release_weak_alt1(__int64);
 extern __int64* GameData_212ecb0[8];
 unsigned __int64 GameRoutine_d2b5f0_alt1(__int64);
 void __attribute__((noreturn)) GameRoutine_1063f60_alt1();
+__attribute__((swiftcall)) void game_combat_10691b0(PSEUDO_X8, __int64 result);
+float game_character_CharacterAim_Start(__int64, _DWORD*, float);
+float game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1);
 
 __int64 ActionAttack_DeletingDestructor(_QWORD* a1)
 {
@@ -2408,8 +2411,12 @@ game_combat_ActionAttack_OnEnter_lambda2_Invoke_10643b0(PSEUDO_X8 x8_,
   }
 }
 
-__int64 game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1)
+float game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
+#pragma clang fp contract(off)
   __int64 v1;
   __int64 v2;
   __int64 v3;
@@ -2421,21 +2428,22 @@ __int64 game_combat_ActionAttack_OnEnter_lambda3_Invoke(__int64 a1)
 
   v1 = *(_QWORD*)(a1 + 8);
   v2 = *GameData_212d448[0] +
-       24LL * (((*(_DWORD*)(*(_QWORD*)(v1 + 8) + 96LL) - 1) & 0xFFFFFFFD) != 0);
+       24LL * (((*(int*)(*(_QWORD*)(v1 + 8) + 96LL) - 1) & 0xFFFFFFFD) != 0);
   v3 = *(_QWORD*)(v2 + 32);
   atomic_fetch_add_explicit((atomic_ullong* volatile)(v3 + 16), 1u,
                             memory_order_relaxed);
   v4 = *(_QWORD*)(v2 + 40);
-  v5 = *(_QWORD*)(v3 + 8) == -1 || v4 == 0;
+  v5 = *(_QWORD*)(v3 + 8) == -1 | v4 == 0;
   if (v5 || (v6 = *(_QWORD*)(v4 + 80)) == 0 ||
       (*(_QWORD*)(v6 + 8) != -1 ? (v7 = *(_QWORD*)(v4 + 88) == 0) : (v7 = true),
        v7)) {
     v4 = 0;
   }
-  std___1___shared_weak_count___release_weak(v3);
-  *(struct PseudoSret*)(v9) = GameRoutine_10691b0(v4);
-  return GameRoutine_10b64f0(
-      *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 88LL) + 64LL), v9, -1234.5f);
+  std___1___shared_weak_count___release_weak_alt1(v3);
+  game_combat_10691b0((void*)(v9), v4);
+  return game_character_CharacterAim_Start(
+      *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 8) + 88LL) + 64LL), v9,
+      -0x1.34a0000000000p+10f);
 }
 
 __int64 game_combat_ActionAttack_OnEnter_lambda4_Invoke(__int64 a1)

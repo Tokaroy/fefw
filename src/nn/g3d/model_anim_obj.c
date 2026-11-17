@@ -22,7 +22,7 @@ __int64 ModelAnimObj_Unknown36(__int64 a1, __int64 a2, float a3);
 __int64 ModelAnimObj_Unknown42(__int64 a1, float a2);
 __int64 ModelAnimObj_Unknown9(__int64 result, __int64 a2);
 __int64 ModelAnimObj_Unknown13(__int64 result, __int64 a2);
-__int64 ModelAnimObj_Unknown17(__int64 result);
+__int64 ModelAnimObj_Unknown17_alt1(__int64 result);
 __int64 ModelAnimObj_Unknown21(__int64 result);
 _QWORD* ModelAnimObj_Unknown33(_QWORD* result, __int64 a2, float a3);
 _QWORD* ModelAnimObj_Unknown35(_QWORD* result, __int64 a2, float a3);
@@ -37,6 +37,9 @@ void nn_g3d_5f33e0(__int64, __int64, __int64, int, float);
 void nn_g3d_5f3800(__int64, __int64, __int64, int, float);
 void ModelAnimObj_Unknown45(__int64* a1, __int64 a2, float a3);
 void ModelAnimObj_Unknown47(__int64* a1, __int64 a2, float a3);
+void CameraAnimObj_5e9680(__int64, __int64, long double);
+void CameraAnimObj_5e9780(__int64, __int64, __int64, long double);
+void ModelAnimObj_Unknown17(__int64 a1, long double a2);
 
 float ModelAnimObj_Destructor(__int64* a1, __int64 a2, float a3)
 {
@@ -443,58 +446,70 @@ __int64 ModelAnimObj_Unknown13(__int64 result, __int64 a2)
   return result;
 }
 
-__int64 ModelAnimObj_Unknown17(__int64 result)
+void ModelAnimObj_Unknown17(__int64 a1, long double a2)
 {
-  __int64 v1;
+
+#pragma clang fp contract(on)
+
+#pragma clang fp contract(off)
   __int64 v2;
-  _QWORD* v3;
-  float v4;
+  __int64 v3;
   int v5;
-  __int64 v7;
+  int v6;
   __int64 v8;
   __int64 v9;
   __int64 v10;
   __int64 v11;
-  unsigned __int8* v12;
-  __int64 v13;
-  unsigned int v14;
+  __int64 v12;
+  unsigned __int8* v13;
+  __int64 v14;
+  __int64 v15;
+  unsigned int v16;
 
-  v1 = *(_QWORD*)(result + 72);
-  v2 = *(unsigned __int16*)(result + 100);
-  v3 = (_QWORD*)result;
-  v4 = **(float**)(result + 8);
-  v5 = *(_DWORD*)(result + 60);
-  if (v5 >= 1 && v5 <= *(_DWORD*)(result + 56)) {
-    if (*(_WORD*)(result + 100) != 0) {
-      v8 = 4 * v2;
-      v9 = 46;
-      v10 = 0;
+  v2 = *(_QWORD*)(a1 + 72);
+  v3 = *(unsigned __int16*)(a1 + 100);
+  v5 = **(_DWORD**)(a1 + 8);
+  v6 = *(_DWORD*)(a1 + 60);
+  if (v6 >= 1 & v6 <= (signed __int32)*(_DWORD*)(a1 + 56)) {
+    if (*(_WORD*)(a1 + 100) != 0) {
+      v9 = 4 * v3;
+      v10 = 46;
       v11 = 0;
+      v12 = 0;
       do {
-        v12 = (unsigned __int8*)(v3[14] + v9);
-        v14 = *v12;
-        result = (__int64)(v12 - 46);
-        v13 = v14;
-        if ((*(_BYTE*)(v3[11] + v10 + 3) & 0x40) == 0) {
-          result = GameRoutine_5e9780(result, v1, v3[6] + 12 * v11, v4);
+        v13 = (unsigned __int8*)(*(_QWORD*)(a1 + 112) + v10);
+        v16 = *v13;
+        v14 = (__int64)(v13 - 46);
+        v15 = v16;
+        if ((*(_BYTE*)(*(_QWORD*)(a1 + 88) + v11 + 3) & 0x40) == 0) {
+          {
+            __typeof__(a2) z_ = (__typeof__(a2)){0};
+            LODWORD(z_) = v5;
+            a2 = z_;
+          }
+          CameraAnimObj_5e9780(v14, v2, *(_QWORD*)(a1 + 48) + 12 * v12, a2);
         }
-        v11 += v13;
-        v10 += 4;
-        v1 += 48;
-        v9 += 56;
-      } while (v8 != v10);
+        v12 += v15;
+        v11 += 4;
+        v2 += 48;
+        v10 += 56;
+      } while (v9 != v11);
     }
   }
-  else if (*(_WORD*)(result + 100) != 0) {
-    v7 = 0;
+  else if (*(_WORD*)(a1 + 100) != 0) {
+    v8 = 0;
     do {
-      if ((*(_DWORD*)(v3[11] + 4 * v7) & 0x40000000) == 0) {
-        result = GameRoutine_5e9680(v3[14] + 56 * v7, v1 + 48 * v7, v4);
+      if ((*(_DWORD*)(*(_QWORD*)(a1 + 88) + 4 * v8) & 0x40000000) == 0) {
+        {
+          __typeof__(a2) z_ = (__typeof__(a2)){0};
+          LODWORD(z_) = v5;
+          a2 = z_;
+        }
+        CameraAnimObj_5e9680(*(_QWORD*)(a1 + 112) + 56 * v8, v2 + 48 * v8, a2);
       }
-      ++v7;
-    } while (v7 != v2);
+      ++v8;
+    } while (v8 != v3);
   }
-  return result;
 }
 
 __int64 ModelAnimObj_Unknown21(__int64 result)

@@ -157,8 +157,12 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
       COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0]), 0);
   PSEUDO_LOW_LANE128(
       v18, n128_f32,
-      -COERCE_FLOAT(HIDWORD(
-          *(_QWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c188))));
+      -COERCE_FLOAT(DWORDn(
+          *(_QWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c188),
+          sizeof(*(_QWORD*)((char*)((_UNKNOWN*)0x4LL) +
+                            (_QWORD)GameData_212c188)) /
+                  4 -
+              1)));
   v24 = vmlaq_f32(
       vdupq_lane_s32(COERCE_AS(int32x2_t, LANES128(v18).n128_u64[0]), 0), v17,
       v23);
@@ -357,13 +361,13 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
         LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, LANES128(v58).n128_u64[0]),
                              COERCE_AS(float32x2_t, LANES128(v58).n128_u64[0])))
             .n64_f32[0];
-    if (!(v59 >= 0x0.0p+0f)) {
+    if (v59 < 0x0.0p+0f) {
       v60 = -v59;
     }
     else {
       v60 = v59;
     }
-    if (!(v59 >= 0x0.0p+0f)) {
+    if (v59 < 0x0.0p+0f) {
       v61 = -0x1.0000000000000p+0f;
     }
     else {
@@ -372,7 +376,7 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     v62 = sqrtf(0x1.0000000000000p+0f - (float)(v60 * v60));
     v63 = a4 / v56;
     v64 = -LANES64(v5).n64_f32[0];
-    if (!(v60 < 0x0.0p+0f)) {
+    if (v60 >= 0x0.0p+0f) {
       v68 = *(float*)((char*)((_UNKNOWN**)0x8LL) + (_QWORD)GameData_212c2f0);
       v69 = *(float*)((char*)((__int128*)0x10LL) + (_QWORD)GameData_212c2f0);
       v70 =
@@ -439,11 +443,11 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
                                                (_QWORD)GameData_212c2f0 + 12)) *
                              (float)(v72 * v72)) +
                   0x1.0000000000000p+0f);
-      if (!(v60 > 0x1.6a09e60000000p-1f)) {
+      if (v60 <= 0x1.6a09e60000000p-1f) {
         v66 = v73;
       }
     }
-    else if (!(v60 < -0x1.6a09e60000000p-1f)) {
+    else if (v60 >= -0x1.6a09e60000000p-1f) {
       v67 = (float)-v60 / v62;
       v66 =
           (float)(PSEUDO_UNFUSED(
@@ -523,7 +527,7 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     LANES64(v78).n64_u64[0] = LANES64_OF(vdup_n_s32(0xBFC90FDB)).n64_u64[0];
     LANES64(v79).n64_u64[0] = LANES64_OF(vdup_n_s32(0xC0490FDB)).n64_u64[0];
     v80 = -0x1.921fb60000000p+1f - v76;
-    if (!(v76 < -0x1.921fb60000000p+0f)) {
+    if (v76 >= -0x1.921fb60000000p+0f) {
       v80 = v76;
     }
     v81 = v76 <= 0x1.921fb60000000p+0f;
@@ -582,13 +586,13 @@ int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int a2, float32x4_t a3,
     LANES64(v96).n64_u64[0] = LANES64_OF(vmul_f32(v92, v94)).n64_u64[0];
     v97 = (float)(0x1.0000000000000p+0f / v91) * LANES64(v96).n64_f32[0];
     v98 = vmuls_lane_f32(v61, v96, 1) * v95;
-    if (!(v60 > 0x1.fffeb00000000p-1f)) {
+    if (v60 <= 0x1.fffeb00000000p-1f) {
       v99 = v97;
     }
     else {
       v99 = v82;
     }
-    if (!(v60 <= 0x1.fffeb00000000p-1f)) {
+    if (v60 > 0x1.fffeb00000000p-1f) {
       v98 = v84;
     }
     result[2] = vmlaq_n_f32(vmulq_n_f32(v47, v99), v57, v98);
@@ -1315,8 +1319,7 @@ float32x4_t nn_g3d_5f9b20(__int64 a1, float32x4_t* a2, float32x4_t result)
     v79_.v80 = v20;
     (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v21 + 16LL))(
         v21, &v81_.v81, v79_.v79);
-    result = COERCE_AS(__typeof__(result),
-                       PSEUDO_REGISTER(__n128, "v0", "=w"));
+    result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
     v19 = v83 + 1;
     v83 = v19;
     if (v19 >= v5) {
@@ -1376,8 +1379,8 @@ float32x4_t nn_g3d_5f9b20(__int64 a1, float32x4_t* a2, float32x4_t result)
         v79_.v79[1] = v4 + v64 + 16;
         (*(void (**)(__int64, int**, _QWORD*))(*(_QWORD*)v62 + 16LL))(
             v62, &v81_.v81, v79_.v79);
-        result = COERCE_AS(__typeof__(result),
-                           PSEUDO_REGISTER(__n128, "v0", "=w"));
+        result =
+            COERCE_AS(__typeof__(result), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v19 = v83;
       }
       v83 = ++v19;

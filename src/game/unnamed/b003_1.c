@@ -459,10 +459,10 @@ float Pane_58e030(__int64);
 long double DrawInfo_576b40(__int64, __int64);
 void Pane_58e740(__int64, __int64, __int64, char, long double);
 void GameHr_595740(__int64 a1, __int64 a2, __int64 a3, char a4, long double a5);
-__int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
-                      float* a4, _DWORD* a5, __int64 a6,
-                      __int64 (*a7)(__int64*, char*, __int64, __int64),
-                      __int64 a8);
+__int64 GameHr_5a18c0_alt1(__int64 a1, __int64 (*a2)(__int64, _QWORD),
+                           __int64 a3, float* a4, _DWORD* a5, __int64 a6,
+                           __int64 (*a7)(__int64*, char*, __int64, __int64),
+                           __int64 a8);
 __int64 GameHr_5a1bc0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
                       float* a4, _DWORD* a5, __int64 a6,
                       __int64 (*a7)(__int64*, char*, __int64, __int64),
@@ -482,6 +482,10 @@ __int64 GameHr_5b0c00(__int64 result, __int64 a2, float* a3, __int64 a4,
 __int64 GameHr_5b1ee0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, float* a5,
                       unsigned int a6);
 __int64 GameRoutine_55ea10_alt2(_QWORD*);
+__int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
+                      float* a4, _DWORD* a5, __int64 a6,
+                      __int64 (*a7)(__int64, __int64, __int64, __int64),
+                      __int64 a8);
 
 __int64 GameHr_577d50(unsigned __int8* a1, unsigned __int8* a2)
 {
@@ -4977,7 +4981,7 @@ __int64 GameHr_5a1730(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int a5,
 
 __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
                       float* a4, _DWORD* a5, __int64 a6,
-                      __int64 (*a7)(__int64*, char*, __int64, __int64),
+                      __int64 (*a7)(__int64, __int64, __int64, __int64),
                       __int64 a8)
 {
 
@@ -5048,7 +5052,7 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
     v44 = a4[1];
     v58[0] = a6;
     LODWORD(v58[1]) = (int)v44;
-    WORD2(v58[1]) = *a5;
+    WORD2(v58[1]) = *(_DWORD*)a5;
     HIBYTE(v58[1]) = 1;
     v45 = LayoutEx_579180(56);
     v16 = v45;
@@ -5056,7 +5060,7 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
       Registration_560330(v45);
     }
     ScalableFont_5603e0(v16, (__int64)v58);
-    ++*a5;
+    ++*(_DWORD*)a5;
   }
   else if (v8 != 0) {
     return 0;
@@ -5064,9 +5068,7 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
   else {
     v11 = *((unsigned int*)a4 + 1);
     v60 = 0;
-    v14 = (unsigned int*)((
-        __int64 (*)(__int64*, char*, __int64, __int64, _DWORD*, __int64))a7)(
-        &v60, (char*)a4 + v11, 1718578804, a8, a5, a6);
+    v14 = (unsigned int*)a7((__int64)&v60, (__int64)a4 + v11, 1718578804, a8);
     v15 = (_QWORD*)LayoutEx_579180(264);
     v16 = (__int64)v15;
     if (v15 != nullptr) {
@@ -5110,9 +5112,9 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
           v32 = v24[1];
           v33 = v24[2];
           v34 = v24[3];
-          *v22 = *v24;
+          *(_DWORD*)v22 = *(_DWORD*)v24;
           v22[1] = v33;
-          *v23 = v32;
+          *(_DWORD*)v23 = v32;
           v23[1] = v34;
           v35 = v24[4];
           v36 = v24[5];
@@ -5134,10 +5136,10 @@ __int64 GameHr_5a18c0(__int64 a1, __int64 (*a2)(__int64, _QWORD), __int64 a3,
         v41 = (int*)((char*)&a4[2 * v20 + 1] + v18);
         do {
           --v19;
-          *v40++ = *(v41 - 1);
+          *(_DWORD*)v40++ = *(v41 - 1);
           v42 = *v41;
           v41 += 2;
-          *v39++ = v42;
+          *(_DWORD*)v39++ = v42;
         } while (v19 != 0);
       }
       Registration_55fd60(v16, v17, (__int64)v58, (__int64)v56);

@@ -62,6 +62,7 @@ int8x16_t* SkeletalAnimObj_5f7910(int8x16_t* result, unsigned int, float32x4_t,
 float GameRoutine_1a0a550(_QWORD, float, float);
 float32x4_t* nn_g3d_5f80f0(float32x4_t* result, float32x4_t*, float, double);
 int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int, float32x4_t, float);
+float GameRoutine_1a0a550_alt1(float, float);
 
 __int64 nn_g3d_5e2c00(__int64 result)
 {
@@ -930,12 +931,12 @@ void nn_g3d_5f1f50(__int64* a1, __int64 a2, float a3)
           v19[2] = vaddq_f32(v19[2], vmulq_n_f32(v30, v4));
           v19[3] = v32;
           if ((*((_BYTE*)a1 + 12) & 1) != 0) {
-            v40 = powf_alt1(*(v9 - 5), v4);
-            v39 = powf_alt1(*(v9 - 4), a3);
-            v36 = powf_alt1(*(v9 - 3), a3);
+            v40 = GameRoutine_1a0a550_alt1(*(v9 - 5), v4);
+            v39 = GameRoutine_1a0a550_alt1(*(v9 - 4), a3);
+            v36 = GameRoutine_1a0a550_alt1(*(v9 - 3), a3);
             v37 = LANES128(v19[4]).n128_f32[1];
             v38 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (!(fabsf(v37) < 0x1.0624de0000000p-10f)) {
+            if (fabsf(v37) >= 0x1.0624de0000000p-10f) {
               v38 = *v19;
             }
             v4 = a3;

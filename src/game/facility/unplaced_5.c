@@ -1069,6 +1069,10 @@ __int64 game_facility_16d7050(__int64 a1);
 __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2);
 __attribute__((swiftcall)) void game_facility_19532e0(PSEUDO_X8 x8_, _QWORD* a1,
                                                       _QWORD* a2, float a4);
+__int64 GameRoutine_1a0b940(__int64, __int64, unsigned __int64);
+__int64 GameRoutine_1a0b950(__int64, __int64, unsigned __int64);
+__int64 snd_play_ff2d0_alt1(__int64, __int64, __int64, unsigned int,
+                            unsigned int, int, float, float);
 
 __int64 game_facility_94af40()
 {
@@ -7320,7 +7324,8 @@ game_facility_148da00(PSEUDO_X8 x8_, char* result, char* a2, char* a3, char* a4)
               *((_QWORD*)v5 - 15) = v47;
               *((_QWORD*)v5 - 14) = v47 + 16 * v46;
               if (v40 != v41) {
-                memcpy(v47, (__int64)v40, v42 & 0xFFFFFFFFFFFFFFF0LL);
+                GameRoutine_1a0b950(v47, (__int64)v40,
+                                    v42 & 0xFFFFFFFFFFFFFFF0LL);
                 v48 += v42 & 0xFFFFFFFFFFFFFFF0LL;
               }
               *((_QWORD*)v5 - 15) = v48;
@@ -7989,7 +7994,6 @@ __int64 game_facility_16d7050(__int64 a1)
 
 __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2)
 {
-  _QWORD handle[2];
   __int64 v3;
   __int64 v5;
   __int64 v6;
@@ -8037,7 +8041,7 @@ __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2)
   __int64 v49;
   __int64 v50;
   signed __int64 v51;
-  const char* v52;
+  char* v52;
   _QWORD v53[25];
 
   v3 = *(_QWORD*)(*a1 + 336LL);
@@ -8136,13 +8140,13 @@ __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2)
         }
       }
       else if (
-          (int)v27 +
-              *(_DWORD*)(*(_QWORD*)(*(_QWORD*)
-                                        game_TransporterConst_List_instance__ptr
-                                            [0] +
-                                    8LL) +
-                         84LL) +
-              1 <=
+          (signed __int32)((int)v27 +
+                           *(int*)(*(_QWORD*)(*(_QWORD*)
+                                                  game_TransporterConst_List_instance__ptr
+                                                      [0] +
+                                              8LL) +
+                                   84LL) +
+                           1) <=
           (signed __int32)*(
               _DWORD*)(*(_QWORD*)(*(_QWORD*)
                                       game_TransporterConst_List_instance__ptr
@@ -8186,7 +8190,7 @@ __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2)
           v49 = (__int64)&v40[v46 + -8 * v41];
           *(_QWORD*)&v40[v46] = v6;
           v38 = (__int64)&v40[v46 + 8];
-          memcpy(v49, v39, v48);
+          GameRoutine_1a0b950(v49, v39, v48);
           a1[1] = v49;
           a1[2] = v38;
           a1[3] = v47;
@@ -8289,7 +8293,7 @@ __int64 game_facility_186ad20(_QWORD* a1, _WORD* a2)
     LABEL_94:
       v51 = v7 - (v8 + 8);
       if (v7 != v8 + 8) {
-        memmove((__int64)v8, (__int64)(v8 + 8), v7 - (v8 + 8));
+        GameRoutine_1a0b940((__int64)v8, (__int64)(v8 + 8), v7 - (v8 + 8));
       }
       a1[2] = &v8[v51];
     }
@@ -8302,8 +8306,8 @@ LABEL_97:
     v52 = "SE_SYS_Multiple_Select";
   }
   snd_Fade_Fade_10c830((__int64)v53, 0x0.0p+0f);
-  snd_play_ff2d0((void*)(handle), (__int64)v52, (__int64)v52, (__int64)v53, 0,
-                 0x10001u, 0, 0x0.0p+0f, 0x1.0000000000000p+0f);
+  snd_play_ff2d0_alt1((__int64)v52, (__int64)v52, (__int64)v53, 0, 0x10001u, 0,
+                      0x0.0p+0f, 0x1.0000000000000p+0f);
   snd_Fade_Destroy_Fade(v53);
   GameRoutine_1872af0(v6, (*(_BYTE*)(v6 + 88) & 1) == 0);
   return 0;

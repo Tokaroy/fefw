@@ -707,6 +707,9 @@ __int64
 game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke(__int64 a1, _DWORD* a2,
                                                          unsigned int* a3)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v3;
   unsigned __int64 v4;
   __int64 v5;
@@ -722,7 +725,7 @@ game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke(__int64 a1, _DWORD* a2,
   unsigned int v15;
 
   v3 = *(_QWORD**)(a1 + 8);
-  if (*a2 == 1) {
+  if (*(_DWORD*)a2 == 1) {
     v10 = *a3;
     v11 = v3[171];
     v12 = v3[170];
@@ -731,7 +734,7 @@ game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke(__int64 a1, _DWORD* a2,
     }
     return 0;
   }
-  if (*a2 != 0) {
+  if (*(_DWORD*)a2 != 0) {
     return 0;
   }
   v4 = *a3;
@@ -739,7 +742,7 @@ game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke(__int64 a1, _DWORD* a2,
     return 0;
   }
   v5 = v3[170];
-  if (((v4 >> 5) & 0x7F) + 1 > (v3[171] - v5) >> 2 ||
+  if (((v4 >> 5) & 0x7F) + 1 > (signed __int64)(v3[171] - v5) >> 2 ||
       ((*(_DWORD*)(v5 + 4 * ((v4 >> 5) & 0x7F)) >> v4) & 1) == 0) {
     return 1;
   }

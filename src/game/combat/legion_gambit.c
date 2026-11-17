@@ -1595,6 +1595,9 @@ __attribute__((swiftcall)) void
 game_combat_LegionGambit_MakeTimeline_Chariot_lambda2_Invoke(
     PSEUDO_X8 x8_, __int64 a1, __int64 unused_int1, int* a2)
 {
+
+#pragma clang fp contract(on)
+
   float* a3 = (float*)PSEUDO_X8_VALUE(x8_);
   float v3;
   __int64 v4;
@@ -1611,7 +1614,7 @@ game_combat_LegionGambit_MakeTimeline_Chariot_lambda2_Invoke(
 
   v3 = *(float*)(a1 + 4LL * *a2 + 16) * 0x1.1df46a0000000p-6f;
   v4 = *(_QWORD*)(**(_QWORD**)(a1 + 8) +
-                  8LL * (((*(_DWORD*)(*(_QWORD*)(a1 + 8) + 88LL) - 1) &
+                  8LL * (((*(int*)(*(_QWORD*)(a1 + 8) + 88LL) - 1) &
                           0xFFFFFFFD) == 0) +
                   16);
   v5 = *(float*)(v4 + 136);
@@ -1622,10 +1625,10 @@ game_combat_LegionGambit_MakeTimeline_Chariot_lambda2_Invoke(
     v8 = 0x1.921fb60000000p+1f;
   LABEL_5:
     v7 = v8 - v7;
-    v9 = -1.0f;
+    v9 = -0x1.0000000000000p+0f;
     goto LABEL_6;
   }
-  v9 = 1.0f;
+  v9 = 0x1.0000000000000p+0f;
   if (v7 < -0x1.921fb60000000p+0f) {
     v8 = -0x1.921fb60000000p+1f;
     goto LABEL_5;
@@ -1659,7 +1662,7 @@ LABEL_6:
                                                          (float)(v7 * v7))) *
                                          (float)(v7 * v7))) *
                       (float)(v7 * v7)) +
-              1.0f);
+              0x1.0000000000000p+0f);
   v12 =
       v9 *
       (float)((float)((float)-(
@@ -1685,9 +1688,9 @@ LABEL_6:
                                                          v10)) *
                                          v10)) *
                       v10) +
-              1.0f);
-  v13 = (float)(v6 * v11) + (float)(v5 * v12);
-  result = (float)(v6 * v12) - (float)(v5 * v11);
+              0x1.0000000000000p+0f);
+  v13 = (float)(PSEUDO_UNFUSED(v6 * v11)) + (float)(v5 * v12);
+  result = (float)(PSEUDO_UNFUSED(v6 * v12)) - (float)(v5 * v11);
   *a3 = v13;
   a3[1] = result;
   {

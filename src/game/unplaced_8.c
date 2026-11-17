@@ -580,6 +580,8 @@ void game_16ad210(__int64* a1, __int64 a2, char a3, const char* a4);
 __attribute__((swiftcall)) void game_195ba40(PSEUDO_X8 x8_, char** a1);
 __int64 game_195c040(char** a1);
 __int64 game_19a14c0(__int64 a1);
+__int64* game_165e2a0(__int64* result, __int64*, __int64*, __int64, __int64,
+                      __int64*, __int64);
 
 __int64* game_165dd80(__int64* result, __int64* a2, unsigned __int64 a3,
                       __int64* a4, __int64 a5)
@@ -612,7 +614,8 @@ __int64* game_165dd80(__int64* result, __int64* a2, unsigned __int64 a3,
 
   if (a3 >= 2) {
     if (a3 == 2) {
-      if (*((_DWORD*)a2 - 2) < *((_DWORD*)result + 2)) {
+      if ((signed __int32)*((_DWORD*)a2 - 2) <
+          (signed __int32)*((_DWORD*)result + 2)) {
         v5 = *result;
         *result = *(a2 - 2);
         *(a2 - 2) = v5;
@@ -643,7 +646,7 @@ __int64* game_165dd80(__int64* result, __int64* a2, unsigned __int64 a3,
                   goto LABEL_13;
                 }
                 v19 -= 16;
-              } while (v16 < *((_DWORD*)v20 - 2));
+              } while (v16 < (signed __int32)*((_DWORD*)v20 - 2));
               v15 = (__int64*)((char*)result + v19 + 16);
             LABEL_13:
               *v15 = v18;
@@ -668,7 +671,8 @@ __int64* game_165dd80(__int64* result, __int64* a2, unsigned __int64 a3,
         v25 = &v23[2 * a3];
         v26 = v24;
         while (v26 != v25) {
-          if (*((_DWORD*)v26 + 2) >= *((_DWORD*)v23 + 2)) {
+          if ((signed __int32)*((_DWORD*)v26 + 2) >=
+              (signed __int32)*((_DWORD*)v23 + 2)) {
             v27 = v23;
             v23 += 2;
           }
@@ -708,7 +712,7 @@ __int64* game_165dd80(__int64* result, __int64* a2, unsigned __int64 a3,
         v9 = result;
         game_165dd80(result, &result[2 * v6], a3 >> 1, a4, a5);
         game_165dd80(&v9[2 * v6], a2, v8, a4, a5);
-        return GameRoutine_165e2a0(v9, &v9[2 * v6], a2, v6, v8, a4, a5);
+        return game_165e2a0(v9, &v9[2 * v6], a2, v6, v8, a4, a5);
       }
     }
   }

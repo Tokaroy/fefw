@@ -85,7 +85,7 @@ void GameRoutine_17b1f70_alt1(__int64, __int64) __asm__("GameRoutine_17b1f70");
 void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 _QWORD* InventoryUnitTroopListMenu_17b5ac0(_QWORD* a1);
-unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1);
+unsigned __int8 InventoryUnitTroopListMenu_17b5f20_alt2(_QWORD* a1);
 __int64 GameRoutine_17b1d00(__int64, __int64, __int64*, __int64, __int64, char,
                             char, char);
 __int64 memmove(__int64, __int64, unsigned __int64);
@@ -99,6 +99,12 @@ void game_menu_BasicMenu_Destroy_BasicMenu(__int64);
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 void InventoryUnitTroopListMenu_DeletingDestructor(_QWORD* a1);
 bool InventoryUnitTroopListMenu_17b6720(_QWORD* a1, __int64 a2, char a3);
+_QWORD* GameRoutine_654050_alt2(_QWORD* result, _QWORD*);
+__int64 BasicMenu_16dea40(__int64 result, char, unsigned __int8,
+                          unsigned __int8);
+__int64 game_IsVibrationEnabled_alt2(_BYTE*);
+void __attribute__((noreturn)) GameRoutine_60a310_alt2();
+__int64 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1);
 
 void InventoryUnitTroopListMenu_DeletingDestructor(_QWORD* a1)
 {
@@ -470,8 +476,11 @@ __int64 InventoryUnitTroopListMenu_17b5cb0(_QWORD* a1)
   }
 }
 
-unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
+__int64 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v3;
   _QWORD* v4;
   _QWORD* v5;
@@ -495,25 +504,26 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
   struct {
     _QWORD v23[4];
     _QWORD* v24;
-    char gap40_[8];
+  } v23_;
+  struct {
     _QWORD v25[4];
     _QWORD* v26;
-  } f_;
+  } v25_;
 
   if ((*(_BYTE*)(a1[132] + 356LL) & 1) == 0) {
     return 3;
   }
-  (*(void (**)(_QWORD*))(*a1 + 576LL))(a1);
+  (*(void (**)(__int64))(*a1 + 576LL))((__int64)a1);
   if (a1[148] == 0) {
     v8 = 0;
     goto LABEL_32;
   }
   v3 = (_QWORD*)a1[29];
   v4 = (_QWORD*)a1[30];
-  v5 = f_.v25;
-  f_.v25[0] = GameData_20d7740;
-  f_.v25[1] = a1;
-  f_.v26 = f_.v25;
+  v5 = v25_.v25;
+  v25_.v25[0] = GameData_20d7740;
+  v25_.v25[1] = a1;
+  v25_.v26 = v25_.v25;
   if (v3 == v4) {
     v8 = 0;
   LABEL_18:
@@ -526,13 +536,13 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
       v7 = __dynamic_cast(*v3, v6, &GameData_20d7488, 0);
       if (v7 != 0) {
         v8 = v7;
-        f_.v23[0] = v7;
-        if (f_.v26 == nullptr) {
+        v23_.v23[0] = v7;
+        if (v25_.v26 == nullptr) {
         LABEL_59:
-          GameRoutine_60a310_alt1();
+          GameRoutine_60a310_alt2();
         }
-        if (((*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v26 + 48LL))(f_.v26,
-                                                                   f_.v23) &
+        if (((*(__int64 (**)(__int64, __int64))(*v25_.v26 + 48LL))(
+                 (__int64)v25_.v26, (__int64)v23_.v23) &
              1) != 0) {
           break;
         }
@@ -543,24 +553,24 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
       break;
     }
   }
-  v5 = f_.v26;
-  if (f_.v26 == f_.v25) {
+  v5 = v25_.v26;
+  if (v25_.v26 == v25_.v25) {
     goto LABEL_18;
   }
-  if (f_.v26 != nullptr) {
+  if (v25_.v26 != nullptr) {
     v9 = 40;
   LABEL_19:
-    (*(void (**)(_QWORD*))(*v5 + v9))(v5);
+    (*(void (**)(__int64))(*v5 + v9))((__int64)v5);
   }
   if (v8 != 0) {
-    (*(void (**)(__int64, _QWORD))(*(_QWORD*)v8 + 56LL))(v8, 0);
+    (*(void (**)(__int64, __int64))(*(_QWORD*)v8 + 56LL))(v8, 0);
     v10 = a1[42];
     if (v10 != v8) {
       if (v10 != 0) {
         (*(void (**)(__int64))(*(_QWORD*)v10 + 168LL))(v10);
       }
       a1[42] = v8;
-      _ZN4game4menu9BasicMenu13Unknown16dea40Ebbb((__int64)a1, 0, 1u, 0);
+      BasicMenu_16dea40((__int64)a1, 0, 1u, 0);
       v11 = a1[42];
       if (v11 == 0) {
         v12 = 4;
@@ -569,7 +579,7 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
         goto LABEL_32;
       }
       (*(void (**)(__int64))(*(_QWORD*)v11 + 160LL))(v11);
-      game_IsVibrationEnabled_alt1(
+      game_IsVibrationEnabled_alt2(
           (_BYTE*)(*(_QWORD*)game_g_game_setting_ptr + 712LL));
       v10 = a1[42];
     }
@@ -587,9 +597,9 @@ unsigned __int8 InventoryUnitTroopListMenu_17b5f20(_QWORD* a1)
 LABEL_32:
   v14 = a1[29];
   v13 = a1[30];
-  v15 = f_.v25;
-  f_.v25[0] = GameData_20d77c0;
-  f_.v26 = f_.v25;
+  v15 = v25_.v25;
+  v25_.v25[0] = GameData_20d77c0;
+  v25_.v26 = v25_.v25;
   if (v13 == v14) {
     goto LABEL_43;
   }
@@ -602,12 +612,12 @@ LABEL_32:
       if (v19 == 0) {
         goto LABEL_34;
       }
-      f_.v23[0] = v19;
-      if (f_.v26 == nullptr) {
+      v23_.v23[0] = v19;
+      if (v25_.v26 == nullptr) {
         goto LABEL_59;
       }
-      if (((*(__int64 (**)(_QWORD*, _QWORD*))(*f_.v26 + 48LL))(f_.v26,
-                                                                 f_.v23) &
+      if (((*(__int64 (**)(__int64, __int64))(*v25_.v26 + 48LL))(
+               (__int64)v25_.v26, (__int64)v23_.v23) &
            1) != 0) {
         break;
       }
@@ -617,9 +627,9 @@ LABEL_32:
   LABEL_34:
     ++v16;
   } while (v16 < (v13 - v14) >> 3);
-  v15 = f_.v26;
-  if (f_.v26 != f_.v25) {
-    if (f_.v26 != nullptr) {
+  v15 = v25_.v26;
+  if (v25_.v26 != v25_.v25) {
+    if (v25_.v26 != nullptr) {
       v20 = 40;
       goto LABEL_44;
     }
@@ -628,31 +638,31 @@ LABEL_32:
 LABEL_43:
   v20 = 32;
 LABEL_44:
-  (*(void (**)(_QWORD*))(*v15 + v20))(v15);
+  (*(void (**)(__int64))(*v15 + v20))((__int64)v15);
 LABEL_45:
   *(_DWORD*)(a1[132] + 356LL) &= ~1u;
   a1[148] = 0;
-  if (GameRoutine_17b6720_alt1(a1, v8, 1)) {
-    f_.v23[0] = GameData_20d7840;
-    f_.v24 = f_.v23;
-    f_.v26 = f_.v25;
-    f_.v25[0] = GameData_20d7840;
-    GameRoutine_654050_alt1(f_.v25, a1 + 36);
-    if (f_.v26 == f_.v25) {
+  if (InventoryUnitTroopListMenu_17b6720(a1, v8, 1)) {
+    v23_.v23[0] = GameData_20d7840;
+    v23_.v24 = v23_.v23;
+    v25_.v26 = v25_.v25;
+    v25_.v25[0] = GameData_20d7840;
+    GameRoutine_654050_alt2(v25_.v25, a1 + 36);
+    if (v25_.v26 == v25_.v25) {
       v21 = 32;
     LABEL_51:
-      (*(void (**)(__int64))(*f_.v26 + v21))((__int64)f_.v26);
+      (*(void (**)(__int64))(*v25_.v26 + v21))((__int64)v25_.v26);
     }
-    else if (f_.v26 != nullptr) {
+    else if (v25_.v26 != nullptr) {
       v21 = 40;
       goto LABEL_51;
     }
-    if (f_.v24 == f_.v23) {
+    if (v23_.v24 == v23_.v23) {
       v22 = 32;
     LABEL_56:
-      (*(void (**)(__int64))(*f_.v24 + v22))((__int64)f_.v24);
+      (*(void (**)(__int64))(*v23_.v24 + v22))((__int64)v23_.v24);
     }
-    else if (f_.v24 != nullptr) {
+    else if (v23_.v24 != nullptr) {
       v22 = 40;
       goto LABEL_56;
     }

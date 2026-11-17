@@ -923,6 +923,7 @@ bool game_878d80(const char** a1);
 __attribute__((swiftcall)) void game_9470c0(PSEUDO_X8 x8_, __int64 a1);
 typedef __int64 GameAlign_21f430c __attribute__((aligned(4)));
 extern GameAlign_21f430c GameData_21f430c_alt1 __asm__("GameData_21f430c");
+bool GameRoutine_90c9e0_alt1(__int64);
 
 bool game_869980()
 {
@@ -5457,8 +5458,9 @@ __int64 game_90d5a0(__int64 result)
         v5 = *(_DWORD*)(v1 + 4);
         v6 = *(_DWORD**)(*(_QWORD*)(v1 + 16) + 24LL);
         v7 = v6[105];
-        if ((v7 <= 2 || v6[103] > v5) && (v7 <= 1 || v6[102] > v5)) {
-          v10 = v7 >= 1 && v6[101] <= v5;
+        if ((v7 <= 2 | (signed __int32)v6[103] > v5) &&
+            (v7 <= 1 | (signed __int32)v6[102] > v5)) {
+          v10 = v7 >= 1 & (signed __int32)v6[101] <= v5;
           if (!v10 && (int)v6[104] <= 0) {
             *(_BYTE*)(v1 + 8) &= ~1u;
           }
@@ -5474,7 +5476,7 @@ __int64 game_90d5a0(__int64 result)
   }
   v11 = 0;
   do {
-    result = GameRoutine_90c9e0(v1 + 32 * v11);
+    result = ((__int64 (*)(__int64))GameRoutine_90c9e0_alt1)(v1 + 32 * v11);
     v1 = *(_QWORD*)(v3 + 8);
     if ((result & 1) == 0) {
       goto LABEL_23;
@@ -5486,8 +5488,9 @@ __int64 game_90d5a0(__int64 result)
     v14 = *(_DWORD*)(v13 + 4);
     v15 = *(_DWORD**)(*(_QWORD*)(v13 + 16) + 24LL);
     v16 = v15[105];
-    if ((v16 <= 2 || v15[103] > v14) && (v16 <= 1 || v15[102] > v14)) {
-      v19 = v16 >= 1 && v15[101] <= v14;
+    if ((v16 <= 2 | (signed __int32)v15[103] > v14) &&
+        (v16 <= 1 | (signed __int32)v15[102] > v14)) {
+      v19 = v16 >= 1 & (signed __int32)v15[101] <= v14;
       if (!v19 && (int)v15[104] < 1) {
         goto LABEL_23;
       }
@@ -5543,7 +5546,7 @@ __int64 game_90d5a0(__int64 result)
   if ((int)v12 >= 1) {
     v31 = 0;
     while (1) {
-      result = GameRoutine_90c9e0(v1 + 32 * v31);
+      result = ((__int64 (*)(__int64))GameRoutine_90c9e0_alt1)(v1 + 32 * v31);
       v1 = *(_QWORD*)(v3 + 8);
       if ((result & 1) == 0) {
         v32 = v1 + 32 * v31;
@@ -5551,8 +5554,9 @@ __int64 game_90d5a0(__int64 result)
           v33 = *(_DWORD*)(v32 + 4);
           v34 = *(_DWORD**)(*(_QWORD*)(v32 + 16) + 24LL);
           v35 = v34[105];
-          if ((v35 <= 2 || v34[103] > v33) && (v35 <= 1 || v34[102] > v33)) {
-            v38 = v35 >= 1 && v34[101] <= v33;
+          if ((v35 <= 2 | (signed __int32)v34[103] > v33) &&
+              (v35 <= 1 | (signed __int32)v34[102] > v33)) {
+            v38 = v35 >= 1 & (signed __int32)v34[101] <= v33;
             if (!v38 && (int)v34[104] < 1) {
               goto LABEL_53;
             }
@@ -13551,7 +13555,7 @@ __int64 game_990a70(__int64 a1)
   __int64 v9;
   __int64 v10;
   __int64 v11;
-  __int64 (*v12)(_QWORD);
+  __int64 (*v12)(__int64);
   __int64 v13;
   _QWORD* v14;
 
@@ -13562,7 +13566,8 @@ __int64 game_990a70(__int64 a1)
     v5 = *(_BYTE**)(a1 + 48);
     v6 = a1;
     if (v5 == nullptr || *v5 == 0 ||
-        (LODWORD(a1) = game_990a70(a1), (int)a1 >= *(_DWORD*)(v6 + 60))) {
+        (LODWORD(a1) = game_990a70(a1),
+         (int)a1 >= (signed __int32)*(_DWORD*)(v6 + 60))) {
       if (*(_WORD*)(v6 + 72) == 0) {
         return *(unsigned int*)(v6 + 60);
       }
@@ -13580,13 +13585,13 @@ __int64 game_990a70(__int64 a1)
                 *(_QWORD**)(game_GameModeData_instance_ + 48),
                 (unsigned __int64*)v8);
             if (v11 != 0) {
-              v12 = *(__int64 (**)(_QWORD))(v11 + 72);
+              v12 = *(__int64 (**)(__int64))(v11 + 72);
               v13 = *(_QWORD*)(v11 + 80);
               v14 = (_QWORD*)(v11 + (v13 >> 1));
               if ((v13 & 1) != 0) {
-                v12 = *(__int64 (**)(_QWORD))((char*)v12 + *v14);
+                v12 = *(__int64 (**)(__int64))((char*)v12 + *v14);
               }
-              LOBYTE(a1) = v12(v14);
+              LOBYTE(a1) = v12((__int64)v14);
             }
             else {
               LOBYTE(a1) = 1;

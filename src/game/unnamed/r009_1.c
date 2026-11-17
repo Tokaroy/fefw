@@ -26,6 +26,7 @@ void GameHr_17c4f00(__int64*, unsigned __int64);
 void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
                     unsigned __int64 a4);
 __int64 GameRoutine_1a0b950_alt1(__int64, __int64, unsigned __int64);
+void CmdBtlCombatWindow_17c4f00(__int64*, unsigned __int64);
 
 __int64 GameHr_179af60(__int64 a1, char a2, char a3)
 {
@@ -174,8 +175,7 @@ __int64 GameHr_17bbf00()
   return result;
 }
 
-void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
-                    unsigned __int64 a4)
+void GameHr_17c4d00(__int64* a1, _QWORD* a2, __int64 a3, unsigned __int64 a4)
 {
 
 #pragma clang fp contract(on)
@@ -197,23 +197,23 @@ void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
   __int64 v22;
   __int64 v23;
 
-  v4 = result[1];
-  v5 = result[2];
+  v4 = a1[1];
+  v5 = a1[2];
   if (v5 == v4) {
     v10 = 0;
   }
   else {
     v10 = 2 * (v5 - v4) - 1;
   }
-  v11 = result[5];
-  v12 = v11 + result[4];
+  v11 = a1[5];
+  v12 = v11 + a1[4];
   v13 = v10 - v12;
   if (a4 > v13) {
-    GameHr_17c4f00(result, a4 - v13);
-    v11 = result[5];
-    v4 = result[1];
-    v5 = result[2];
-    v12 = result[4] + v11;
+    CmdBtlCombatWindow_17c4f00(a1, a4 - v13);
+    v11 = a1[5];
+    v4 = a1[1];
+    v5 = a1[2];
+    v12 = a1[4] + v11;
   }
   v14 = (_QWORD*)(v4 + 8 * (v12 >> 4));
   if (v5 != v4) {
@@ -235,7 +235,7 @@ void GameHr_17c4d00(__int64* result, _QWORD* a2, __int64 a3,
     goto LABEL_12;
   }
 LABEL_8:
-  v17 = a4 + 0x4FBCDA3AC10C9715LL * ((v16 - *v14) >> 2);
+  v17 = a4 + 0x4FBCDA3AC10C9715LL * ((signed __int64)(v16 - *v14) >> 2);
   if (v17 < 1) {
     v19 = 15 - v17;
     v18 = &v14[-(v19 >> 4)];
@@ -272,10 +272,10 @@ LABEL_8:
         }
         v21 += 244;
       } while (v21 != v20);
-      v11 = result[5];
+      v11 = a1[5];
     }
     v11 += 0x4FBCDA3AC10C9715LL * ((v20 - v15) >> 2);
-    result[5] = v11;
+    a1[5] = v11;
     if (v14 == v18) {
       break;
     }

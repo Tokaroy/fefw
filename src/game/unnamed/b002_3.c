@@ -111,6 +111,11 @@ unsigned __int64 strlen(const char*);
 __int64 GameHr_572ae0_alt1(__int64 a1, __int64 a2, __int64 a3,
                            const char* a4) __asm__("GameHr_572ae0");
 __int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, char* a4);
+__int64 GameRoutine_59ec70_alt2();
+__int64 LayoutArchive_5722a0(__int64 result, __int64);
+__int64 nn_util_SNPrintf_alt1(_QWORD, _QWORD, _QWORD, _QWORD);
+int GameRoutine_1a09cf0_alt1(__int64, __int64, unsigned __int64);
+unsigned __int64 GameRoutine_1a09c70_alt1(const char*);
 
 __int64 GameHr_55b820(__int64** a1)
 {
@@ -2532,12 +2537,12 @@ __int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, char* a4)
   _QWORD v20[32];
   char v21[8];
 
-  GameHr_5722a0_alt1(a1, a3);
+  LayoutArchive_5722a0(a1, a3);
   v6 = *(_QWORD*)(a1 + 176);
   if (v6 != 0) {
     v7 = *(_QWORD*)(v6 + 56);
     if (a4 != nullptr) {
-      v8 = strlen(a4);
+      v8 = GameRoutine_1a09c70_alt1(a4);
     }
     else {
       v8 = 0;
@@ -2562,25 +2567,26 @@ __int64 GameHr_572ae0(__int64 a1, __int64 a2, __int64 a3, char* a4)
       v11 = v9 + 16 * v10;
     }
     v16 = *(unsigned __int16**)(v11 + 8);
-    if (v8 == *v16 && memcmp((__int64)(v16 + 1), (__int64)a4, v8) == 0) {
+    if (v8 == *v16 &&
+        GameRoutine_1a09cf0_alt1((__int64)(v16 + 1), (__int64)a4, v8) == 0) {
       v17 = v11 - v7 - 24;
       if ((~v17 & 0xFFFFFFFF0LL) != 0 &&
           *(_QWORD*)(*(_QWORD*)(v6 + 40) + 8LL * (int)(v17 >> 4)) != 0) {
-        return GameRoutine_59ec70_alt1();
+        return GameRoutine_59ec70_alt2();
       }
     }
   }
   memset(v20, 0, sizeof(v20));
   strcpy(v21, "timg");
   if (*(_BYTE*)(a1 + 64) == 46 && *(_BYTE*)(a1 + 65) == 0) {
-    nn_util_SNPrintf(v20, 255, "%s/%s", v21, a4);
+    nn_util_SNPrintf_alt1(v20, 255, "%s/%s", v21);
     v19 = nn_ui2d_5756e0(a1 + 8, (const char*)v20);
     if (v19 == -1) {
       return 0;
     }
     goto LABEL_22;
   }
-  nn_util_SNPrintf(v20, 255, "%s/%s/%s", (const char*)(a1 + 64), v21, a4);
+  nn_util_SNPrintf_alt1(v20, 255, "%s/%s/%s", a1 + 64);
   v19 = nn_ui2d_5756e0(a1 + 8, (const char*)v20);
   if (v19 != -1) {
   LABEL_22:

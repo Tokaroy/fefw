@@ -110,6 +110,9 @@ extern __int64 (*GameData_1fb5be8[])();
 void BasicMenu_16e1f40(_QWORD*, __int64, __int64);
 __int64 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_SortAndFilter(
     __int64 a1);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+void __attribute__((noreturn)) GameRoutine_60a310_alt1();
 __int64
 
 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_OnInit(__int64 a1)
@@ -322,26 +325,30 @@ __int64 ProcObeliskDepositoryMaterialMenu_Unknown109(_QWORD* a1)
 
 _QWORD* ProcObeliskDepositoryMaterialMenu_Unknown128(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   __int64 v4;
-  __int64 v5;
   _QWORD* result;
+  __int64 v6;
   __int64 v7;
   __int64 v8;
   __int64 v9;
   __int64 v10;
-  __int64 v11;
-  _QWORD v12[4];
-  _QWORD* v13;
+  struct {
+    _QWORD v11[4];
+    _QWORD* v12;
+  } v11_;
 
-  v2 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      96, 16, 0);
+  v2 = fw_memory_HeapManager_Allocate_alt2(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 96, 16, 0);
   *(_QWORD*)(v2 + 72) = 0;
   *(_QWORD*)(v2 + 80) = 0;
   *(_QWORD*)(v2 + 16) = 0;
   *(_QWORD*)(v2 + 24) = 0;
-  v4 = v2;
+  v3 = v2;
   *(_QWORD*)(v2 + 32) = 0;
   *(_QWORD*)(v2 + 40) = 0;
   *(_QWORD*)(v2 + 48) = 0;
@@ -353,46 +360,44 @@ _QWORD* ProcObeliskDepositoryMaterialMenu_Unknown128(__int64 a1)
   *(_QWORD*)(v2 + 88) = 0;
   *(_QWORD*)v2 = game_facility_EmptyDepositoryMenuItem_vtable;
   *(_QWORD*)(v2 + 8) = 0;
-  v5 = *(_QWORD*)(a1 + 344);
-  if (v5 != 0) {
-    (*(void (**)(__int64))(*(_QWORD*)v5 + 8LL))(v5);
+  v4 = *(_QWORD*)(a1 + 344);
+  if (v4 != 0) {
+    (*(void (**)(__int64))(*(_QWORD*)v4 + 8LL))(v4);
   }
-  result = v12;
-  *(_QWORD*)(v4 + 8) = a1;
-  *(_QWORD*)(a1 + 344) = v4;
-  v12[0] = GameData_1fb5ae8;
-  v12[1] = a1;
-  v13 = v12;
-  v7 = *(_QWORD*)(game_TransporterConst_List_instance_ + 8);
-  v8 = *(unsigned int*)(v7 + 80);
-  if ((int)v8 < 1) {
+  result = v11_.v11;
+  *(_QWORD*)(v3 + 8) = a1;
+  *(_QWORD*)(a1 + 344) = v3;
+  v11_.v11[0] = GameData_1fb5ae8;
+  v11_.v11[1] = a1;
+  v11_.v12 = v11_.v11;
+  v6 = *(_QWORD*)(game_TransporterConst_List_instance_ + 8);
+  v7 = *(unsigned int*)(v6 + 80);
+  if ((int)v7 < 1) {
     goto LABEL_12;
   }
-  v9 = 0;
-  v10 = 12 * v8;
+  v8 = 0;
+  v9 = 12 * v7;
   do {
-    v3 = *(_QWORD*)(v7 + 8) + v9;
-    if (*(_WORD*)(v3 + 2) != 0) {
-      if (v13 == nullptr) {
-        GameRoutine_60a310(0);
+    if (*(_WORD*)(*(_QWORD*)(v6 + 8) + v8 + 2) != 0) {
+      if (v11_.v12 == nullptr) {
+        GameRoutine_60a310_alt1();
       }
-      (*(void (**)(_QWORD*))(*v13 + 48LL))(v13);
+      (*(void (**)(__int64))(*v11_.v12 + 48LL))((__int64)v11_.v12);
     }
-    v9 += 12;
-  } while (v10 != v9);
-  result = v13;
-  if (v13 == v12) {
+    v8 += 12;
+  } while (v9 != v8);
+  result = v11_.v12;
+  if (v11_.v12 == v11_.v11) {
   LABEL_12:
-    v11 = 32;
+    v10 = 32;
   }
   else {
-    if (v13 == nullptr) {
+    if (v11_.v12 == nullptr) {
       return result;
     }
-    v11 = 40;
+    v10 = 40;
   }
-  return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v11))(result,
-                                                                     v3);
+  return (_QWORD*)(*(__int64 (**)(__int64))(*result + v10))((__int64)result);
 }
 
 __int64 game_facility_anonymous_ProcObeliskDepositoryMaterialMenu_SortAndFilter(

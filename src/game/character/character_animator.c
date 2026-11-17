@@ -23,7 +23,7 @@ __int64 CharacterAnimator_1079d90(__int64 a1, __int64 a2);
 __int64 CharacterAnimator_1079e10(__int64 a1);
 void CharacterAnimator_1079fe0(__int64 a1);
 __int64 CharacterAnimator_107a6f0(__int64 a1);
-__int64 CharacterAnimator_107a7e0(__int64 a1);
+__int64 CharacterAnimator_107a7e0_alt1(__int64 a1);
 __int64 CharacterAnimator_107a870(__int64 a1, float a2);
 float*
 CharacterAnimator_107a920_alt1(float* result,
@@ -71,6 +71,9 @@ extern __int64 (*eft_ClampCurve_ptr)();
 float CharacterAnimator_1079580_alt1(__int64, int, float, float, float) __asm__(
     "CharacterAnimator_1079580");
 void CharacterAnimator_Unknown5(__int64 a1);
+__int64* CharacterModel_1070c00_alt2(__int64, __int64);
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+__int64* CharacterAnimator_107a7e0(__int64 a1);
 
 __int64 CharacterAnimator_Unknown8(__int64 a1)
 {
@@ -1135,30 +1138,33 @@ LABEL_11:
   return *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(v1 + 24) + 72LL) + 104LL * (int)v6);
 }
 
-__int64 CharacterAnimator_107a7e0(__int64 a1)
+__int64* CharacterAnimator_107a7e0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 v3;
   __int64 v4;
-  __int64 result;
-  __int64 v6;
+  __int64* result;
+  __int64* v6;
 
   v1 = *(_QWORD*)(a1 + 40);
   v2 = *(unsigned int*)(a1 + 120);
   v3 = *(_QWORD*)(v1 + 392);
   v4 = *(_QWORD*)(v1 + 400);
   if (v4 == 0) {
-    return CharacterModel_1070c00(*(_QWORD*)(v3 + 11608), v2);
+    return CharacterModel_1070c00_alt2(*(_QWORD*)(v3 + 11608), v2);
   }
   atomic_fetch_add_explicit((atomic_ullong* volatile)(v4 + 8), 1u,
                             memory_order_relaxed);
-  result = CharacterModel_1070c00(*(_QWORD*)(v3 + 11608), v2);
+  result = CharacterModel_1070c00_alt2(*(_QWORD*)(v3 + 11608), v2);
   if (atomic_fetch_add((atomic_ullong* volatile)(v4 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
     v6 = result;
     (*(void (**)(__int64))(*(_QWORD*)v4 + 16LL))(v4);
-    std___1___shared_weak_count___release_weak(v4);
+    std___1___shared_weak_count___release_weak_alt2(v4);
     return v6;
   }
   return result;

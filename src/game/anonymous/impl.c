@@ -246,6 +246,9 @@ void GameRoutine_71e8e0_alt1(__int64*) __asm__("GameRoutine_71e8e0");
 void GameRoutine_71ed40_alt1(__int64*) __asm__("GameRoutine_71ed40");
 void TransporterConst_89c760_alt1(__int64,
                                   __int64) __asm__("TransporterConst_89c760");
+void GameRoutine_15547e0_alt3(__int64*);
+void GameRoutine_1557060_alt3(__int64***);
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 
 __int64 Impl_Destructor_6eb1e0(_QWORD* a1)
 {
@@ -6250,6 +6253,9 @@ LABEL_11:
 
 void Impl_1551900()
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v0;
   __int64 v1;
   __int64 v2;
@@ -6290,26 +6296,26 @@ void Impl_1551900()
   }
   (*(void (**)(__int64))(*v16_.v17 + v3))((__int64)v16_.v17);
 LABEL_7:
-  GameRoutine_15547e0_alt2(v0 + 19);
+  GameRoutine_15547e0_alt3(v0 + 19);
   v4 = (__int64****)v0[18];
   v0[18] = 0;
   v5 = fw_memory_g_heap_manager_ptr;
   if (v4 != nullptr) {
     v6 = *v4;
     if (*v4 != nullptr) {
-      GameRoutine_1557060_alt2(*v4);
+      GameRoutine_1557060_alt3(*v4);
       v7 = 128;
       if (*(_QWORD*)(*(_QWORD*)v5 + 200LL) == 0) {
         v7 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(*(_QWORD*)v5 + v7, (__int64)v6);
+      nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)v5 + v7, (__int64)v6);
       *v4 = nullptr;
     }
     v8 = 128;
     if (*(_QWORD*)(*(_QWORD*)v5 + 200LL) == 0) {
       v8 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(*(_QWORD*)v5 + v8, (__int64)v4);
+    nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)v5 + v8, (__int64)v4);
   }
   v9 = (_QWORD*)v0[16];
   if (v9 == v0 + 12) {
@@ -6349,7 +6355,7 @@ LABEL_25:
   if (*(_QWORD*)(*(_QWORD*)v5 + 200LL) == 0) {
     v15 = 56;
   }
-  nn_mem_StandardAllocator_Free_alt2(*(_QWORD*)v5 + v15, (__int64)v0);
+  nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)v5 + v15, (__int64)v0);
   GameData_2258178 = 0;
 LABEL_33:
   *(_BYTE*)(*(_QWORD*)v1 + 941LL) = 1;

@@ -31,7 +31,10 @@ __int64 nn_atk_278700(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
 __n128 nn_atk_2ae7a0(__int64* a1);
 __int64 nn_atk_2aed70(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
                       __int64 a5, __int64 a6, int* a7);
-__n128 nn_atk_2b8e00(__int64 a1, __int64* a2);
+__n128 nn_atk_2b8e00_alt1(__int64 a1, __int64* a2);
+__int64 nn_os_LockMutex_alt1(__int64);
+__int64 nn_os_UnlockMutex_alt1(__int64);
+__int64 nn_atk_2b8e00(__int64 a1, __int64* a2);
 
 float32x4_t nn_atk_277c50(float32x4_t* a1, float32x4_t* a2)
 {
@@ -457,7 +460,7 @@ LABEL_35:
   return 0;
 }
 
-__n128 nn_atk_2b8e00(__int64 a1, __int64* a2)
+__int64 nn_atk_2b8e00(__int64 a1, __int64* a2)
 {
   __int64 i;
   signed int v5;
@@ -472,10 +475,10 @@ __n128 nn_atk_2b8e00(__int64 a1, __int64* a2)
   __int64 v14;
   __int64 v15;
 
-  nn_os_LockMutex(a1 + 16);
+  nn_os_LockMutex_alt1(a1 + 16);
   for (i = *(_QWORD*)(a1 + 8); i != a1; i = *(_QWORD*)(i + 8)) {
     v5 = atomic_load((unsigned int*)(i + 44));
-    if (v5 < *(_DWORD*)(i + 32)) {
+    if (v5 < (signed __int32)*(_DWORD*)(i + 32)) {
       v6 = *(_DWORD*)(i + 36);
       v7 = (_QWORD*)(*(_QWORD*)(i + 24) + 88LL * v6);
       *(_DWORD*)(i + 36) = v6 + 1;
@@ -504,7 +507,7 @@ __n128 nn_atk_2b8e00(__int64 a1, __int64* a2)
       atomic_fetch_add((atomic_uint* volatile)(i + 44), 1u);
     }
   }
-  return nn_os_UnlockMutex(a1 + 16);
+  return nn_os_UnlockMutex_alt1(a1 + 16);
 }
 
 #pragma GCC visibility pop

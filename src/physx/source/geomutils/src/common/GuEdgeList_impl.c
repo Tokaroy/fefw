@@ -16,6 +16,11 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
 __int64 PxGetBroadcastAllocator_alt1(_BYTE*) __asm__("PxGetBroadcastAllocator");
 __int64 PxGetFoundation_alt1() __asm__("PxGetFoundation");
 float sqrtf_alt1(float) __asm__("sqrtf");
+__int64 PxGetBroadcastAllocator_alt2(_BYTE*);
+__int64 PxGetFoundation_alt2();
+float GameRoutine_1a0a010(float);
+float GameRoutine_1a0ab40(float, float);
+float GameRoutine_1a0ccb0(float);
 
 __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                                              __int64 a3, __int64 a4, __int64 a5,
@@ -29,7 +34,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
   __int64 v13;
   __int64 v14;
   bool* v15;
-  const char* v16;
+  char* v16;
   int v17;
   bool v18;
   unsigned int v19;
@@ -300,7 +305,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
   unsigned __int8* v292;
   int v293;
   __int64 v294;
-  const char* v295;
+  char* v295;
   unsigned int v296;
   __int64 v297;
   __int64 v300;
@@ -353,7 +358,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     _118 = _D8;
     v295 = v16;
     v296 = v17;
-    v297 = PxGetFoundation_alt1();
+    v297 = PxGetFoundation_alt2();
     return (*(__int64 (**)(__int64, __int64, const char*, _QWORD, const char*))(
         *(_QWORD*)v297 + 88LL))(
         v297, 8,
@@ -384,12 +389,12 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     goto LABEL_9;
   }
   v11 = *((_QWORD*)a1 + 4);
-  v12 = PxGetBroadcastAllocator_alt1(nullptr);
-  v13 = (*(__int64 (**)(__int64, __int64, char*, const char*, __int64))(
-      *(_QWORD*)v12 + 16LL))(
-      v12, v8, &GameData_1a9f09e,
-      "/Inside/Lib/PhysX/O/physx/source/geomutils/src/common/GuEdgeList.cpp",
-      318);
+  v12 = PxGetBroadcastAllocator_alt2(nullptr);
+  v13 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v12 + 16LL))(v12, v8, (__int64)&GameData_1a9f09e,
+                             (__int64)"/Inside/Lib/PhysX/O/physx/source/"
+                                      "geomutils/src/common/GuEdgeList.cpp",
+                             318);
   v14 = v11;
   v300 = v13;
   v15 = (bool*)v13;
@@ -401,13 +406,12 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     }
     v336 = v14;
     if (v19 != 2) {
-      v33 = (unsigned int)(3 *
-                           *(_DWORD*)(v337 + 4LL * *(unsigned int*)(v14 + 4)));
+      v33 = (unsigned int)(3 * *(int*)(v337 + 4LL * *(unsigned int*)(v14 + 4)));
       if (a4 != 0) {
         v34 = *(unsigned int*)(a4 + 4 * v33);
         v35 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v33 + 1));
         v36 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v33 + 2));
-        if (!(v19 < 2)) {
+        if (v19 >= 2) {
           goto LABEL_31;
         }
       }
@@ -415,7 +419,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
         v34 = *(unsigned __int16*)(v6 + 2 * v33);
         v35 = *(unsigned __int16*)(v6 + 2LL * (unsigned int)(v33 + 1));
         v36 = *(unsigned __int16*)(v6 + 2LL * (unsigned int)(v33 + 2));
-        if (!(v19 < 2)) {
+        if (v19 >= 2) {
         LABEL_31:
           v308 = v15;
           v310 = v8;
@@ -434,15 +438,14 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
           while (1) {
             v42 =
                 (unsigned int)(3 *
-                               *(_DWORD*)(v337 +
-                                          4LL * (unsigned int)(v37 +
-                                                               *(_DWORD*)(v14 +
-                                                                          4))));
+                               *(int*)(v337 +
+                                       4LL * (unsigned int)(v37 +
+                                                            *(int*)(v14 + 4))));
             if (a4 != 0) {
               v43 = *(unsigned int*)(a4 + 4 * v42);
               v44 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v42 + 1));
               v45 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v42 + 2));
-              if (v43 != v34 && v43 != v35 && v43 != v36) {
+              if (v43 != v34 & v43 != v35 && v43 != v36) {
                 goto LABEL_72;
               }
             }
@@ -450,10 +453,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
               v43 = *(unsigned __int16*)(v311 + 2 * v42);
               v44 = *(unsigned __int16*)(v311 + 2LL * (unsigned int)(v42 + 1));
               v45 = *(unsigned __int16*)(v311 + 2LL * (unsigned int)(v42 + 2));
-              if (v43 != v34 && v43 != v35 && v43 != v36) {
+              if (v43 != v34 & v43 != v35 && v43 != v36) {
               LABEL_72:
                 if (v38 == 2) {
-                  v85 = v43 == v41 || v43 == v40 || v43 == v39;
+                  v85 = v43 == v41 | v43 == v40 || v43 == v39;
                   if (!v85 ||
                       (v44 != v41 ? (v86 = v44 == v40) : (v86 = true),
                        !v86 ? (v87 = v44 == v39) : (v87 = true),
@@ -496,10 +499,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                       (float)(v96 * v100) - (float)(PSEUDO_UNFUSED(v98 * v99));
                   v111 =
                       (float)(v98 * v97) - (float)(PSEUDO_UNFUSED(v95 * v100));
-                  v112 =
-                      sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v110 * v110)) +
-                                         (float)(v109 * v109)) +
-                                 (float)(v111 * v111));
+                  v112 = GameRoutine_1a0a010(
+                      (float)((float)(PSEUDO_UNFUSED(v110 * v110)) +
+                              (float)(v109 * v109)) +
+                      (float)(v111 * v111));
                   if (v112 > 0x0.0p+0f) {
                     v113 = 0x1.0000000000000p+0f / v112;
                     v109 = v109 * v113;
@@ -516,10 +519,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                   v119 = (float)((float)(v328 - v106) * v116) -
                          (float)(PSEUDO_UNFUSED(v114 * (float)(v315 - v106)));
                   v120 = v118 + (float)(v114 * v115);
-                  v121 =
-                      sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v119 * v119)) +
-                                         (float)(v117 * v117)) +
-                                 (float)(v120 * v120));
+                  v121 = GameRoutine_1a0a010(
+                      (float)((float)(PSEUDO_UNFUSED(v119 * v119)) +
+                              (float)(v117 * v117)) +
+                      (float)(v120 * v120));
                   if (v121 > 0x0.0p+0f) {
                     v122 = 0x1.0000000000000p+0f / v121;
                     v117 = v117 * v122;
@@ -543,11 +546,11 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                 goto LABEL_33;
               }
             }
-            if (v44 != v34 && v44 != v35 && v44 != v36) {
+            if (v44 != v34 & v44 != v35 && v44 != v36) {
               goto LABEL_72;
             }
-            v52 = v45 == v34 || v45 == v35;
-            if (!v52 && v45 != v36) {
+            v52 = v45 == v34 | v45 == v35;
+            if (!v52 & v45 != v36) {
               goto LABEL_72;
             }
             v54 = (float*)(a6 + 12LL * (unsigned int)v44);
@@ -573,9 +576,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
             v70 = (float)(v64 * v68) - (float)(PSEUDO_UNFUSED(v65 * v67));
             v71 = (float)(v65 * v69) - (float)(PSEUDO_UNFUSED(v66 * v68));
             v72 = (float)(v66 * v67) - (float)(PSEUDO_UNFUSED(v64 * v69));
-            v73 = sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v71 * v71)) +
-                                     (float)(v70 * v70)) +
-                             (float)(v72 * v72));
+            v73 =
+                GameRoutine_1a0a010((float)((float)(PSEUDO_UNFUSED(v71 * v71)) +
+                                            (float)(v70 * v70)) +
+                                    (float)(v72 * v72));
             if (v73 > 0x0.0p+0f) {
               v74 = 0x1.0000000000000p+0f / v73;
               v70 = v70 * v74;
@@ -592,9 +596,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
             v80 = (float)((float)(v327 - v59) * v77) -
                   (float)(PSEUDO_UNFUSED(v75 * (float)(v314 - v59)));
             v81 = v79 + (float)(v75 * v76);
-            v82 = sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v80 * v80)) +
-                                     (float)(v78 * v78)) +
-                             (float)(v81 * v81));
+            v82 =
+                GameRoutine_1a0a010((float)((float)(PSEUDO_UNFUSED(v80 * v80)) +
+                                            (float)(v78 * v78)) +
+                                    (float)(v81 * v81));
             if (v82 > 0x0.0p+0f) {
               v83 = 0x1.0000000000000p+0f / v82;
               v78 = v78 * v83;
@@ -641,7 +646,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                                (float)(v194 * v194)) +
                        (float)(v196 * v196);
                 if (v197 > 0x0.0p+0f) {
-                  sqrtf_alt1(v197);
+                  GameRoutine_1a0a010(v197);
                   v181 = *v180;
                   v182 = v180[1];
                   v186 = v180[2];
@@ -674,9 +679,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                     (float)(v204 * v208) - (float)(PSEUDO_UNFUSED(v206 * v207));
                 v211 =
                     (float)(v206 * v205) - (float)(PSEUDO_UNFUSED(v203 * v208));
-                v212 = sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v210 * v210)) +
-                                          (float)(v209 * v209)) +
-                                  (float)(v211 * v211));
+                v212 = GameRoutine_1a0a010(
+                    (float)((float)(PSEUDO_UNFUSED(v210 * v210)) +
+                            (float)(v209 * v209)) +
+                    (float)(v211 * v211));
                 v6 = v311;
                 v15 = v308;
                 if (v212 > 0x0.0p+0f) {
@@ -695,9 +701,10 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                 v218 = (float)((float)(v330 - v186) * (float)(v325 - v181)) -
                        (float)(PSEUDO_UNFUSED(v214 * (float)(v191 - v186)));
                 v219 = v217 + (float)(v214 * v215);
-                v220 = sqrtf_alt1((float)((float)(PSEUDO_UNFUSED(v218 * v218)) +
-                                          (float)(v216 * v216)) +
-                                  (float)(v219 * v219));
+                v220 = GameRoutine_1a0a010(
+                    (float)((float)(PSEUDO_UNFUSED(v218 * v218)) +
+                            (float)(v216 * v216)) +
+                    (float)(v219 * v219));
                 if (v220 > 0x0.0p+0f) {
                   v221 = 0x1.0000000000000p+0f / v220;
                   v216 = v216 * v221;
@@ -759,7 +766,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                                  (float)(v241 * v241)) +
                          (float)(v243 * v243);
                   if (v247 > 0x0.0p+0f) {
-                    v248 = sqrtf_alt1(v247);
+                    v248 = GameRoutine_1a0a010(v247);
                     v230 = *v229;
                     v231 = v229[1];
                     v234 = v229[2];
@@ -771,16 +778,16 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                     v246 = v243 * v249;
                   }
                   v15 = v308;
-                  if (!((float)((float)((float)(PSEUDO_UNFUSED(
-                                            v245 *
-                                            *(float*)(a6 + 12LL * v228 + 4))) +
-                                        (float)(*(float*)(a6 + 12LL * v228) *
-                                                v244)) +
-                                (float)(*(float*)(a6 + 12LL * v228 + 8) *
-                                        v246)) <
-                        (float)((float)((float)(PSEUDO_UNFUSED(v245 * v231)) +
-                                        (float)(v230 * v244)) +
-                                (float)(v234 * v246)))) {
+                  if ((float)((float)((float)(PSEUDO_UNFUSED(
+                                          v245 *
+                                          *(float*)(a6 + 12LL * v228 + 4))) +
+                                      (float)(*(float*)(a6 + 12LL * v228) *
+                                              v244)) +
+                              (float)(*(float*)(a6 + 12LL * v228 + 8) *
+                                      v246)) >=
+                      (float)((float)((float)(PSEUDO_UNFUSED(v245 * v231)) +
+                                      (float)(v230 * v244)) +
+                              (float)(v234 * v246))) {
                     LODWORD(v8) = v310;
                     v6 = v311;
                     v18 = false;
@@ -809,7 +816,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                            (float)(PSEUDO_UNFUSED(v260 * v261));
                     v265 = (float)(v260 * v259) -
                            (float)(PSEUDO_UNFUSED(v257 * v262));
-                    v266 = sqrtf_alt1(
+                    v266 = GameRoutine_1a0a010(
                         (float)((float)(PSEUDO_UNFUSED(v264 * v264)) +
                                 (float)(v263 * v263)) +
                         (float)(v265 * v265));
@@ -832,7 +839,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                         (float)((float)(v335 - v234) * (float)(v331 - v230)) -
                         (float)(PSEUDO_UNFUSED(v268 * (float)(v321 - v234)));
                     v273 = v271 + (float)(v268 * v269);
-                    v274 = sqrtf_alt1(
+                    v274 = GameRoutine_1a0a010(
                         (float)((float)(PSEUDO_UNFUSED(v272 * v272)) +
                                 (float)(v270 * v270)) +
                         (float)(v273 * v273));
@@ -853,12 +860,12 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                     v225 = (float)(v264 * v273) -
                            (float)(PSEUDO_UNFUSED(v265 * v272));
                   LABEL_150:
-                    v276 = sqrtf_alt1(
+                    v276 = GameRoutine_1a0a010(
                         (float)((float)(PSEUDO_UNFUSED(v222 * v222)) +
                                 (float)(v225 * v225)) +
                         (float)(v223 * v223));
-                    v277 = atan2f(v276, v224);
-                    v18 = fabsf(v277) > a2;
+                    v277 = GameRoutine_1a0ab40(v276, v224);
+                    v18 = GameRoutine_1a0ccb0(v277) > a2;
                   LABEL_115:
                     v14 = v336;
                   }
@@ -887,8 +894,8 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     }
     v309 = v8;
     v20 = *(unsigned int*)(v14 + 4);
-    v21 = (unsigned int)(3 * *(_DWORD*)(v337 + 4 * v20));
-    v22 = 3 * *(_DWORD*)(v337 + 4LL * (unsigned int)(v20 + 1));
+    v21 = (unsigned int)(3 * *(int*)(v337 + 4 * v20));
+    v22 = 3 * *(int*)(v337 + 4LL * (unsigned int)(v20 + 1));
     if (a4 != 0) {
       v23 = *(unsigned int*)(a4 + 4 * v21);
       v24 = *(unsigned int*)(a4 + 4LL * (unsigned int)(v21 + 1));
@@ -973,7 +980,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
         (float)((float)(PSEUDO_UNFUSED(v136 * v136)) + (float)(v135 * v135)) +
         (float)(v137 * v137);
     if (v141 > 0x0.0p+0f) {
-      v142 = sqrtf_alt1(v141);
+      v142 = GameRoutine_1a0a010(v141);
       v125 = *v123;
       v124 = v123[1];
       v128 = v123[2];
@@ -1009,7 +1016,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     v160 = (float)(v154 * v158) - (float)(PSEUDO_UNFUSED(v155 * v156));
     v161 = (float)(v155 * v159) - (float)(PSEUDO_UNFUSED(v157 * v158));
     v162 = (float)(v157 * v156) - (float)(PSEUDO_UNFUSED(v154 * v159));
-    v163 = sqrtf_alt1(
+    v163 = GameRoutine_1a0a010(
         (float)((float)(PSEUDO_UNFUSED(v161 * v161)) + (float)(v160 * v160)) +
         (float)(v162 * v162));
     if (v151 < v147) {
@@ -1032,7 +1039,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
       v167 =
           (float)((float)(v313 - v125) * (float)(v329 - v124)) -
           (float)(PSEUDO_UNFUSED((float)(v316 - v124) * (float)(v324 - v125)));
-      v168 = sqrtf_alt1(
+      v168 = GameRoutine_1a0a010(
           (float)((float)(PSEUDO_UNFUSED(v166 * v166)) + (float)(v165 * v165)) +
           (float)(v167 * v167));
       if (v168 > 0x0.0p+0f) {
@@ -1041,7 +1048,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
         v166 = v166 * v169;
         v167 = v167 * v169;
       }
-      v170 = sqrtf_alt1(
+      v170 = GameRoutine_1a0a010(
           (float)((float)(PSEUDO_UNFUSED(
                       (float)((float)(v162 * v165) -
                               (float)(PSEUDO_UNFUSED(v160 * v167))) *
@@ -1055,10 +1062,11 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
                           (float)(PSEUDO_UNFUSED(v161 * v165))) *
                   (float)((float)(v160 * v166) -
                           (float)(PSEUDO_UNFUSED(v161 * v165)))));
-      v171 = atan2f(v170, (float)((float)(PSEUDO_UNFUSED(v161 * v166)) +
-                                  (float)(v160 * v165)) +
-                              (float)(v162 * v167));
-      v18 = fabsf(v171) > a2;
+      v171 = GameRoutine_1a0ab40(
+          v170,
+          (float)((float)(PSEUDO_UNFUSED(v161 * v166)) + (float)(v160 * v165)) +
+              (float)(v162 * v167));
+      v18 = GameRoutine_1a0ccb0(v171) > a2;
       goto LABEL_115;
     }
     LODWORD(v8) = v309;
@@ -1078,7 +1086,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
     v176 = (float)((float)(v319 - v128) * (float)(v324 - v125)) -
            (float)(PSEUDO_UNFUSED((float)(v313 - v125) * (float)(v333 - v128)));
     v177 = v175 + (float)((float)(v313 - v125) * v173);
-    v178 = sqrtf_alt1(
+    v178 = GameRoutine_1a0a010(
         (float)((float)(PSEUDO_UNFUSED(v176 * v176)) + (float)(v174 * v174)) +
         (float)(v177 * v177));
     if (v178 > 0x0.0p+0f) {
@@ -1129,7 +1137,7 @@ __int64 physx_Gu_EdgeList_computeActiveEdges(unsigned int* a1, float a2,
   }
   v284 = *((_QWORD*)a1 + 4);
   v285 = v283 & 7;
-  if (!(v283 < 8)) {
+  if (v283 >= 8) {
     v287 = (_BYTE*)(v300 + 3);
     v288 = (_WORD*)(v284 + 32);
     v289 = 0;
@@ -1223,7 +1231,7 @@ LABEL_191:
     } while (v285 != 0);
   }
 LABEL_196:
-  v294 = PxGetBroadcastAllocator_alt1(nullptr);
+  v294 = PxGetBroadcastAllocator_alt2(nullptr);
   (*(void (**)(__int64, __int64))(*(_QWORD*)v294 + 24LL))(v294, v300);
   return 1;
 }

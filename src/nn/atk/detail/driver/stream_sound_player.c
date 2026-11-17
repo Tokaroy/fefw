@@ -166,6 +166,11 @@ __int64 BaseNx_29e640_alt1(__int64) __asm__("BaseNx_29e640");
 __int64
 StreamSoundPlayer_29e740_alt1(__int64 result,
                               __int64) __asm__("StreamSoundPlayer_29e740");
+__int64 BaseNx_29e640_alt2(__int64);
+__int64 BaseNx_2a9f20_alt2(__int64 result, int, __int64*);
+__int64 StreamSoundPlayer_29bb80_alt2(__int64, __int64, int, __int64, __int64,
+                                      unsigned int);
+__int64 StreamSoundPlayer_29e740_alt2(__int64 result, __int64);
 
 __int64 StreamSoundPlayer_Destructor(_QWORD* a1)
 {
@@ -1832,6 +1837,9 @@ __int64 StreamSoundPlayer_299550(__int64 a1, __int64 a2)
 __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
                                  unsigned __int16 a4)
 {
+
+#pragma clang fp contract(on)
+
   int v5;
   __int64 result;
   int v7;
@@ -1885,7 +1893,7 @@ __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
   }
   if ((a2 & 1) == 0) {
     *((_BYTE*)a1 + 67) = 1;
-    (*(void (**)(int*))(*(_QWORD*)a1 + 40LL))(a1);
+    (*(void (**)(__int64))(*(_QWORD*)a1 + 40LL))((__int64)a1);
     return 0;
   }
   v7 = a1[104];
@@ -1931,7 +1939,7 @@ __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
         for (i = 0; i < v16; ++i) {
           v19 = *(__int64**)(a3 + 8 * i);
           if (v19 != nullptr) {
-            BaseNx_2a9f20_alt1(*v17, 0, v19);
+            BaseNx_2a9f20_alt2(*v17, 0, v19);
             v16 = a1[284];
           }
           v17 += 528;
@@ -2021,7 +2029,7 @@ __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
               else {
                 v28 = 1;
               }
-              StreamSoundPlayer_29bb80_alt1(v26, (__int64)v50, v27, v23, v25,
+              StreamSoundPlayer_29bb80_alt2(v26, (__int64)v50, v27, v23, v25,
                                             v28);
               v29 = a1[69];
               v30 = a1[68];
@@ -2047,7 +2055,7 @@ __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
   v13 = 0;
   v14 = a1;
   while (1) {
-    v15 = BaseNx_29e640_alt1(*((_QWORD*)a1 + 33));
+    v15 = BaseNx_29e640_alt2(*((_QWORD*)a1 + 33));
     if (v15 == 0) {
       break;
     }
@@ -2060,11 +2068,11 @@ __int64 StreamSoundPlayer_299620(int* a1, char a2, __int64 a3,
     }
   }
   for (; v13 != 0; v12 += 528) {
-    StreamSoundPlayer_29e740_alt1(*((_QWORD*)a1 + 33), *v12);
+    StreamSoundPlayer_29e740_alt2(*((_QWORD*)a1 + 33), *v12);
     *v12 = 0;
     --v13;
   }
-  (*(void (**)(int*))(*(_QWORD*)a1 + 24LL))(a1);
+  (*(void (**)(__int64))(*(_QWORD*)a1 + 24LL))((__int64)a1);
   *((_BYTE*)a1 + 68) = 1;
   return 0;
 }

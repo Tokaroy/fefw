@@ -2,6 +2,8 @@
 
 #pragma GCC visibility push(hidden)
 
+#undef VFX_LESS
+#undef VFX_KEY_LESS
 _DWORD* nn_vfx_5d5fa0_alt1(float*, unsigned __int64) __asm__("nn_vfx_5d5fa0");
 __attribute__((swiftcall)) void GameRoutine_a6e580(PSEUDO_X8, _QWORD*,
                                                    const char*);
@@ -34,14 +36,18 @@ __int64 nn_vfx_5d2580(__int64 a1, __int64 a2, int a3, int a4, int a5, int a6,
 __int64* nn_vfx_5d5380(__int64* result, float* a2, __int64 a3, __int64 a4,
                        char a5);
 __int64* nn_vfx_5d5de0(__int64* result, __int64* a2, __int64* a3, __int64* a4);
-float* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2);
+float* nn_vfx_5d5fa0_alt2(float* a1, unsigned __int64 a2);
 bool nn_vfx_5d6260(_QWORD* a1, float* a2, __int64 a3);
 __int64* nn_vfx_5d66c0(__int64* a1, __int64* a2, __int64* a3, __int64 a4);
 __int64* nn_vfx_5d7840(__int64 a1, unsigned __int64 a2);
 bool nn_vfx_5d79a0(_QWORD* a1, float* a2);
 _QWORD* nn_vfx_5d7e00(__int64 a1, _QWORD* a2, _QWORD* a3, __int64 a4);
 float* nn_vfx_5d8200(float* result, float* a2, __int64 a3, __int64 a4, char a5);
-__int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2);
+__int64 nn_vfx_bc5ea0_alt1(_QWORD* a1, const char* a2);
+__attribute__((swiftcall)) void memory_a6e580(PSEUDO_X8, _QWORD*, const char*);
+int GameRoutine_1a09d30(const char*, const char*);
+_DWORD* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2);
+__int64 nn_vfx_bc5ea0(_QWORD* a1, char* a2);
 
 __int64 nn_vfx_5d2580(__int64 a1, __int64 a2, int a3, int a4, int a5, int a6,
                       __int64 a7, char a8)
@@ -280,7 +286,7 @@ LABEL_3:
       v62 = *(a2 - 2);
       if (v62 > *(float*)v9 ||
           !(v62 < *(float*)v9) && (signed __int32)*((_DWORD*)a2 - 1) >=
-                                    (signed __int32)*((_DWORD*)v9 + 1)) {
+                                      (signed __int32)*((_DWORD*)v9 + 1)) {
         return result;
       }
     LABEL_197:
@@ -406,7 +412,7 @@ LABEL_3:
         v22 = *(a2 - 2);
         if (v22 > v14 ||
             !(v22 < v14) && (signed __int32)*((_DWORD*)a2 - 1) >=
-                              (signed __int32)*((_DWORD*)v13 + 1)) {
+                                (signed __int32)*((_DWORD*)v13 + 1)) {
           v23 = *v9;
           *v9 = *v13;
           *v13 = v23;
@@ -428,7 +434,7 @@ LABEL_3:
       v28 = *((float*)v13 - 2);
       v29 = *((float*)v9 + 2);
       if (v28 > v29 || !(v28 < v29) && (signed __int32)*((_DWORD*)v13 - 1) >=
-                                         (signed __int32)*((_DWORD*)v9 + 3)) {
+                                           (signed __int32)*((_DWORD*)v9 + 3)) {
         v30 = *(a2 - 4);
         if (!(v30 > v28) &&
             (v30 < v28 || (signed __int32)*((_DWORD*)a2 - 3) <
@@ -451,7 +457,7 @@ LABEL_3:
         v35 = *(a2 - 4);
         if (v35 > v28 ||
             !(v35 < v28) && (signed __int32)*((_DWORD*)a2 - 3) >=
-                              (signed __int32)*((_DWORD*)v13 - 1)) {
+                                (signed __int32)*((_DWORD*)v13 - 1)) {
           v36 = v9[1];
           v9[1] = *(v13 - 1);
           *(v13 - 1) = v36;
@@ -473,7 +479,7 @@ LABEL_3:
       v38 = *((float*)v13 + 2);
       v39 = *((float*)v9 + 4);
       if (v38 > v39 || !(v38 < v39) && (signed __int32)*((_DWORD*)v13 + 3) >=
-                                         (signed __int32)*((_DWORD*)v9 + 5)) {
+                                           (signed __int32)*((_DWORD*)v9 + 5)) {
         v40 = *(a2 - 6);
         if (!(v40 > v38) &&
             (v40 < v38 || (signed __int32)*((_DWORD*)a2 - 5) <
@@ -496,7 +502,7 @@ LABEL_3:
         v45 = *(a2 - 6);
         if (v45 > v38 ||
             !(v45 < v38) && (signed __int32)*((_DWORD*)a2 - 5) >=
-                              (signed __int32)*((_DWORD*)v13 + 3)) {
+                                (signed __int32)*((_DWORD*)v13 + 3)) {
           v46 = v9[2];
           v9[2] = v13[1];
           v13[1] = v46;
@@ -519,7 +525,7 @@ LABEL_3:
       v49 = *((float*)v13 - 2);
       if (*(float*)v13 > v49 ||
           !(*(float*)v13 < v49) && (signed __int32)*((_DWORD*)v13 + 1) >=
-                                     (signed __int32)*((_DWORD*)v13 - 1)) {
+                                       (signed __int32)*((_DWORD*)v13 - 1)) {
         v50 = *((float*)v13 + 2);
         if (!(v50 > v48) &&
             (v50 < v48 || (signed __int32)*((_DWORD*)v13 + 3) <
@@ -541,7 +547,7 @@ LABEL_3:
         v54 = *((float*)v13 + 2);
         if (v54 > v48 ||
             !(v54 < v48) && (signed __int32)*((_DWORD*)v13 + 3) >=
-                              (signed __int32)*((_DWORD*)v13 + 1)) {
+                                (signed __int32)*((_DWORD*)v13 + 1)) {
           v55 = *(v13 - 1);
           *(v13 - 1) = *v13;
           *v13 = v55;
@@ -574,7 +580,7 @@ LABEL_3:
              (signed __int32)*((_DWORD*)v13 + 1))) {
       v25 = *(a2 - 2);
       if (v25 > v18 || !(v25 < v18) && (signed __int32)*((_DWORD*)a2 - 1) >=
-                                         (signed __int32)*((_DWORD*)v9 + 1)) {
+                                           (signed __int32)*((_DWORD*)v9 + 1)) {
         v26 = *v13;
         *v13 = *v9;
         *v9 = v26;
@@ -600,7 +606,7 @@ LABEL_3:
     }
     v19 = *(a2 - 2);
     if (v19 > v18 || !(v19 < v18) && (signed __int32)*((_DWORD*)a2 - 1) >=
-                                       (signed __int32)*((_DWORD*)v9 + 1)) {
+                                         (signed __int32)*((_DWORD*)v9 + 1)) {
       goto LABEL_68;
     }
     v20 = *v9;
@@ -620,7 +626,7 @@ LABEL_3:
       v57 = *((float*)v9 - 2);
       if (v57 > *(float*)v9 ||
           !(v57 < *(float*)v9) && (signed __int32)*((_DWORD*)v9 - 1) >=
-                                    (signed __int32)*((_DWORD*)v9 + 1)) {
+                                      (signed __int32)*((_DWORD*)v9 + 1)) {
         result = (__int64*)nn_vfx_5d5fa0_alt1((float*)v9, (unsigned __int64)a2),
         v59 = COERCE_AS(__typeof__(v59),
                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -677,8 +683,9 @@ LABEL_3:
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       v65 = *(a2 - 2);
       v66 = *((float*)v8 + 6);
-      if (!(v65 > v66) && (v65 < v66 || (signed __int32)*((_DWORD*)a2 - 1) <
-                                          (signed __int32)*((_DWORD*)v8 + 7))) {
+      if (!(v65 > v66) &&
+          (v65 < v66 || (signed __int32)*((_DWORD*)a2 - 1) <
+                            (signed __int32)*((_DWORD*)v8 + 7))) {
         v67 = *v64;
         *v64 = *((_QWORD*)a2 - 1);
         *((_QWORD*)a2 - 1) = v67;
@@ -692,9 +699,8 @@ LABEL_3:
           v71 = COERCE_FLOAT(*v64);
           *v63 = *v64;
           *v64 = v70;
-          if (!(v69 < v71) &&
-              (v69 > v71 ||
-               (signed __int32)*((_DWORD*)v8 + 3) > SHIDWORD(v68))) {
+          if (!(v69 < v71) && (v69 > v71 || (signed __int32)*((_DWORD*)v8 + 3) >
+                                                SHIDWORD(v68))) {
             v72 = *(float*)v8;
             v73 = v8[1];
             v8[1] = v68;
@@ -719,7 +725,7 @@ LABEL_3:
                                 (signed __int32)*((_DWORD*)v9 + 1))) {
     v93 = *(a2 - 2);
     if (!(v93 > v75) && (v93 < v75 || (signed __int32)*((_DWORD*)a2 - 1) <
-                                        (signed __int32)*((_DWORD*)v9 + 3))) {
+                                          (signed __int32)*((_DWORD*)v9 + 3))) {
       goto LABEL_197;
     }
     v94 = *v9;
@@ -738,7 +744,7 @@ LABEL_3:
   }
   v76 = *(a2 - 2);
   if (!(v76 > v75) && (v76 < v75 || (signed __int32)*((_DWORD*)a2 - 1) <
-                                      (signed __int32)*((_DWORD*)v9 + 3))) {
+                                        (signed __int32)*((_DWORD*)v9 + 3))) {
     v77 = v9[1];
     v9[1] = *((_QWORD*)a2 - 1);
     *((_QWORD*)a2 - 1) = v77;
@@ -838,35 +844,37 @@ __int64* nn_vfx_5d5de0(__int64* result, __int64* a2, __int64* a3, __int64* a4)
   return result;
 }
 
-float* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2)
+_DWORD* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2)
 {
 
 #pragma clang fp contract(off)
-  int v2;
+  float v2;
   int v3;
   float v4;
   float v5;
-  float* i;
+  _DWORD* i;
   unsigned __int64 v7;
   float v8;
   __int64 v9;
   float v10;
   float v11;
 
-  v2 = *(_DWORD*)a1;
+  v2 = *a1;
   v3 = *((_DWORD*)a1 + 1);
   v4 = *(float*)(a2 - 8);
   v5 = *a1;
-  if (v4 < *a1 || !(v4 > *a1) && !(v3 < (signed __int32)*(_DWORD*)(a2 - 4))) {
+  if (v4 < *a1 || v4 <= *a1 && v3 >= (signed __int32)*(_DWORD*)(a2 - 4)) {
     for (i = a1 + 2;
          (unsigned __int64)i < a2 &&
-         (*i < v5 || *i <= v5 && v3 >= (signed __int32)*((_DWORD*)i + 1));
-         i += 2)
+         (*(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1]);
+         i += 2) {
       ;
+    }
   }
   else {
     for (i = a1 + 2;
-         *i < v5 || *i <= v5 && v3 >= (signed __int32)*((_DWORD*)i + 1); i += 2)
+         *(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1];
+         i += 2)
       ;
   }
   if ((unsigned __int64)i < a2) {
@@ -875,37 +883,37 @@ float* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2)
   else {
     v7 = a2;
   }
-  if ((unsigned __int64)i < a2 && !(v4 < v5)) {
+  if ((unsigned __int64)i < a2 && v4 >= v5) {
     v7 = a2 - 8;
     do {
-      if (!(v4 > v5) && !(v3 < (signed __int32)*(_DWORD*)(v7 + 4))) {
+      if (v4 <= v5 && v3 >= (signed __int32)*(_DWORD*)(v7 + 4)) {
         break;
       }
       v8 = *(float*)(v7 - 8);
       v7 -= 8LL;
       v4 = v8;
-    } while (!(v8 < v5));
+    } while (v8 >= v5);
   }
   while ((unsigned __int64)i < v7) {
     v9 = *(_QWORD*)i;
     *(_QWORD*)i = *(_QWORD*)v7;
     i += 2;
     *(_QWORD*)v7 = v9;
-    while (*i < v5 || !(*i > v5) && !(v3 < (signed __int32)*((_DWORD*)i + 1))) {
+    while (*(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1]) {
       i += 2;
     }
     do {
       v10 = *(float*)(v7 - 8);
       v7 -= 8LL;
       v11 = v10;
-    } while (!(v10 < v5) &&
+    } while (v10 >= v5 &&
              (v11 > v5 || v3 < (signed __int32)*(_DWORD*)(v7 + 4)));
   }
-  if (a1 != i - 2) {
+  if (a1 != (float*)(i - 2)) {
     *(_QWORD*)a1 = *((_QWORD*)i - 1);
   }
-  *((_DWORD*)i - 2) = v2;
-  *((_DWORD*)i - 1) = v3;
+  *((float*)i - 2) = v2;
+  *(i - 1) = v3;
   return i;
 }
 
@@ -1151,11 +1159,10 @@ LABEL_32:
 }
 
 // The key is a float then an int. Unordered floats fall to the int.
-#define VFX_KEY_LESS(af, ai, bf, bi) \
+#define VFX_KEY_LESS(af, ai, bf, bi)                                           \
   (!((af) > (bf)) && ((af) < (bf) || (ai) < (bi)))
-#define VFX_LESS(a, b)                                                    \
-  VFX_KEY_LESS(*(float*)(a), *((int*)(a) + 1), *(float*)(b),             \
-               *((int*)(b) + 1))
+#define VFX_LESS(a, b)                                                         \
+  VFX_KEY_LESS(*(float*)(a), *((int*)(a) + 1), *(float*)(b), *((int*)(b) + 1))
 
 __int64* nn_vfx_5d66c0(__int64* a1, __int64* a2, __int64* a3, __int64 a4)
 {
@@ -1240,9 +1247,6 @@ __int64* nn_vfx_5d66c0(__int64* a1, __int64* a2, __int64* a3, __int64 a4)
   }
   return a3;
 }
-
-#undef VFX_LESS
-#undef VFX_KEY_LESS
 
 __int64* nn_vfx_5d7840(__int64 a1, unsigned __int64 a2)
 {
@@ -2412,8 +2416,9 @@ LABEL_3:
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     v9 = (float*)(v66 + 1);
     v69 = v68;
-    result = (float*)((__int64 (*)(__int64*, __int64*, __int64))
-                          GameRoutine_5d93c0)(v66 + 1, (__int64*)a2, a3),
+    result =
+        (float*)((__int64 (*)(__int64*, __int64*, __int64))GameRoutine_5d93c0)(
+            v66 + 1, (__int64*)a2, a3),
     v67 = COERCE_AS(__typeof__(v67),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     if (((unsigned __int8)result & 1) != 0) {
@@ -2572,7 +2577,7 @@ LABEL_3:
   return result;
 }
 
-__int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
+__int64 nn_vfx_bc5ea0(_QWORD* a1, char* a2)
 {
   __int64 v2;
   __int64 v3;
@@ -2593,7 +2598,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
   __int64 v21;
   __int64 v22;
   _BOOL4 v24;
-  const char* v25;
+  char* v25;
   int v27;
   __int64 i;
   int v29;
@@ -2622,7 +2627,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
 
   v2 = a1[14];
   v3 = *(_QWORD*)(v2 + 24);
-  v4 = v3 == 0 || a2 == nullptr;
+  v4 = v3 == 0 | a2 == nullptr;
   if (v4 ||
       ((v5 = *(_DWORD*)(v2 + 32), *a2 != 0) ? (v7 = v5 == 0) : (v7 = true),
        v7)) {
@@ -2637,7 +2642,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
   while (1) {
     v10 = (v5 + v9) >> 1;
     v11 = v3 + 336LL * v10;
-    v12 = strcmp(*(const char**)v11, a2);
+    v12 = GameRoutine_1a09d30(*(const char**)v11, a2);
     if (v12 == 0) {
       break;
     }
@@ -2655,7 +2660,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
   v21 = *(_QWORD*)(v20 + 16);
   if (v21 == v20 + 8) {
   LABEL_22:
-    v24 = *(_QWORD*)(v11 + 8) == 0 && *(_QWORD*)(v11 + 24) != 0;
+    v24 = *(_QWORD*)(v11 + 8) == 0 & *(_QWORD*)(v11 + 24) != 0;
   LABEL_28:
     v16 = 0;
     v15 = 0;
@@ -2678,7 +2683,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
     }
   }
   v25 = *(const char**)(v11 + 8);
-  v24 = v25 == nullptr && *(_QWORD*)(v11 + 24) != 0;
+  v24 = v25 == nullptr & *(_QWORD*)(v11 + 24) != 0;
   if ((*(_BYTE*)(v21 - 7) & 1) != 0) {
     goto LABEL_28;
   }
@@ -2813,7 +2818,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
         else {
           v39 = nullptr;
         }
-        GameRoutine_a6e580((void*)(v47_.v47), v39, *(const char**)(v11 + 40));
+        memory_a6e580((void*)(v47_.v47), v39, *(const char**)(v11 + 40));
         v16 = v47_.v49 != 0 && (*(_BYTE*)(v47_.v49 + 4) & 4) != 0;
         if ((v47_.v47[0] & 1) != 0 && v47_.v48 != 0) {
           v40 = 128;
@@ -2832,7 +2837,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
                   ? (_QWORD*)ResFile_5e5f00(
                         *(_QWORD*)(*(_QWORD*)(v38 + 8) + 592LL))
                   : nullptr;
-        GameRoutine_a6e580((void*)(v47_.v47), v41, *(const char**)(v11 + 48));
+        memory_a6e580((void*)(v47_.v47), v41, *(const char**)(v11 + 48));
         v16 = (v16 & 1) != 0 ||
               v47_.v49 != 0 && (*(_BYTE*)(v47_.v49 + 4) & 4) != 0;
         if ((v47_.v47[0] & 1) != 0 && v47_.v48 != 0) {
@@ -2849,7 +2854,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
                   ? (_QWORD*)ResFile_5e5f00(
                         *(_QWORD*)(*(_QWORD*)(v38 + 8) + 592LL))
                   : nullptr;
-        GameRoutine_a6e580((void*)(v47_.v47), v43, *(const char**)(v11 + 56));
+        memory_a6e580((void*)(v47_.v47), v43, *(const char**)(v11 + 56));
         v16 = (v16 & 1) != 0 ||
               v47_.v49 != 0 && (*(_BYTE*)(v47_.v49 + 4) & 4) != 0;
         if ((v47_.v47[0] & 1) != 0 && v47_.v48 != 0) {
@@ -2866,7 +2871,7 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, const char* a2)
                   ? (_QWORD*)ResFile_5e5f00(
                         *(_QWORD*)(*(_QWORD*)(v38 + 8) + 592LL))
                   : nullptr;
-        GameRoutine_a6e580((void*)(v47_.v47), v45, *(const char**)(v11 + 64));
+        memory_a6e580((void*)(v47_.v47), v45, *(const char**)(v11 + 64));
         v16 = (v16 & 1) != 0 ||
               v47_.v49 != 0 && (*(_BYTE*)(v47_.v49 + 4) & 4) != 0;
         if ((v47_.v47[0] & 1) != 0 && v47_.v48 != 0) {

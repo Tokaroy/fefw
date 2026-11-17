@@ -917,8 +917,7 @@ float GameHr_11055e0(_QWORD* a1)
     v12[696] = 0;
     v12[728] = 0;
     (*(void (**)(__int64))(*(_QWORD*)v6 + 72LL))(v6);
-    result =
-        COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
+    result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   }
   return result;
 }
@@ -6959,7 +6958,7 @@ __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
   __int64 v8;
   __int64 i;
   int v10;
-  __int64 (*v11)();
+  void (*v11)(__int64, __int64);
   struct {
     _BYTE v12[24];
     int v13;
@@ -6994,17 +6993,17 @@ __int64* GameHr_1140d20(__int64 a1, int a2, __int64* a3)
     v12_.v13 = -1;
     v10 = *(_DWORD*)(v8 + 24);
     if (v10 != -1) {
-      v11 = GameData_2012a68[v10];
+      v11 = (void (*)(__int64, __int64))GameData_2012a68[v10];
       v14 = v12_.v12;
-      ((void (*)(_BYTE**, __int64))v11)(&v14, v8);
+      v11((__int64)&v14, v8);
       v12_.v13 = v10;
     }
     result = (__int64*)GameRoutine_eaec10_alt1((__int64*)(a1 + 64),
                                                (__int64)v12_.v12);
     if (v12_.v13 != -1) {
       result = (__int64*)((
-          __int64 (*)(_BYTE**, _BYTE*))decltype_c81af0_ptr_2012a50[v12_.v13])(
-          &v14, v12_.v12);
+          __int64 (*)(__int64, __int64))decltype_c81af0_ptr_2012a50[v12_.v13])(
+          (__int64)&v14, (__int64)v12_.v12);
     }
   }
   *(_DWORD*)(a1 + 88) = *((_DWORD*)a3 + 12);

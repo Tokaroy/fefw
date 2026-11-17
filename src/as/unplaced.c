@@ -83,6 +83,7 @@ void nn_mem_StandardAllocator_Free_alt2(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 __attribute__((swiftcall)) void as_628be0(PSEUDO_X8, __int64, __int64, char,
                                           char);
+extern __int64 (*decltype_c81af0_ptr_1fd3058[3])();
 
 __int64 as_607560(__int64 a1)
 {
@@ -190,7 +191,8 @@ __int64 as_607560(__int64 a1)
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
             as_628be0((void*)((__int64)&f_.v80), *(_QWORD*)(a1 + 16),
-                      (__int64)f_.v79, *(_BYTE*)(a1 + 323), *(_BYTE*)(a1 + 324)),
+                      (__int64)f_.v79, *(_BYTE*)(a1 + 323),
+                      *(_BYTE*)(a1 + 324)),
                 v67 = COERCE_AS(__typeof__(v67),
                                 PSEUDO_REGISTER(__n128, "v0", "=w"));
             v9 = f_.v80;
@@ -267,8 +269,8 @@ __int64 as_607560(__int64 a1)
                               PSEUDO_REGISTER(__n128, "v0", "=w"));
           GameData_21a5450 = a1;
           v27 = *(__int64**)as_g_engine_ptr[0];
-          if ((CScriptBuilder_StartNewModule(f_.v79, *(_QWORD*)as_g_engine_ptr[0],
-                                             a1 + 56) &
+          if ((CScriptBuilder_StartNewModule(
+                   f_.v79, *(_QWORD*)as_g_engine_ptr[0], a1 + 56) &
                0x80000000) != 0) {
           LABEL_67:
             GameRoutine_607dc0((__int64)f_.v79),
@@ -336,10 +338,12 @@ __int64 as_607560(__int64 a1)
              0x80000000) != 0) {
           goto LABEL_67;
         }
-        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79, "AS_SCRIPT"),
+        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79,
+                                                             "AS_SCRIPT"),
             v67 =
                 COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
-        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79, "_MSC_VER"),
+        ((void (*)(_QWORD*, const char*))GameRoutine_1a1460)(f_.v79,
+                                                             "_MSC_VER"),
             v67 =
                 COERCE_AS(__typeof__(v67), PSEUDO_REGISTER(__n128, "v0", "=w"));
         v31 = (unsigned __int8*)(*(__int64 (**)(_QWORD))(
@@ -1657,7 +1661,7 @@ __int64* as_c81b50(__int64* result, __int64* a2, __int64* a3)
   __int64* v9;
   __int64 v10;
   __int64 v11;
-  __int64 v12;
+  char* v12;
   bool v13;
   unsigned __int64 v14;
   unsigned __int64 v15;
@@ -1693,18 +1697,19 @@ __int64* as_c81b50(__int64* result, __int64* a2, __int64* a3)
         goto LABEL_11;
       }
     }
-    result = (__int64*)((__int64 (*)(char*, __int64*))decltype_c81af0_ptr[v5])(
-        &v21, v9);
+    result = (__int64*)((
+        __int64 (*)(__int64, __int64))decltype_c81af0_ptr_1fd3058[v5])(
+        (__int64)&v21, (__int64)v9);
     goto LABEL_11;
   }
   if (a2 != a3) {
     v6 = *(unsigned __int8*)a3;
     if ((*(_BYTE*)a2 & 1) != 0) {
-      v12 = a3[2];
+      v12 = (char*)a3[2];
       v13 = (v6 & 1) == 0;
       v14 = v6 >> 1;
       if (v13) {
-        v12 = (__int64)a3 + 1;
+        v12 = (char*)a3 + 1;
       }
       if (v13) {
         v15 = v14;
@@ -1712,7 +1717,7 @@ __int64* as_c81b50(__int64* result, __int64* a2, __int64* a3)
       else {
         v15 = a3[1];
       }
-      return SpineModel_64dde0(a2, v12, v15);
+      return SpineModel_64dde0(a2, (__int64)v12, v15);
     }
     else if ((v6 & 1) != 0) {
       return GameRoutine_64df20(a2, a3[2], a3[1]);

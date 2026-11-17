@@ -22,6 +22,7 @@ __int64 nn_g3d_5f4340(__int64 result, float32x4_t* a2);
 float32x4_t* nn_g3d_5f80f0(float32x4_t* result, float32x4_t* a2, float a3,
                            double a4, double a5, double a6, double a7,
                            double a8);
+float GameRoutine_1a0a550(float, float);
 
 float nn_g3d_5e4080(__int64 a1, __int64 a2, float a3)
 {
@@ -306,66 +307,55 @@ void nn_g3d_5f2340(__int64* a1, __int64 a2, long double a3, double a4,
   __int64 v28;
 
   if (*(_WORD*)(a2 + 100) != 0) {
-    {
-      v8 = 4LL * *(unsigned __int16*)(a2 + 100);
-      __asm__ volatile("" ::"r"(v8));
-    }
-    {
-      v9 = *(float32x4_t**)(a2 + 72);
-      __asm__ volatile("" ::"r"(v9));
-    }
-    {
-      v10 = *a1;
-      __asm__ volatile("" ::"r"(v10));
-    }
+    v8 = 4LL * *(unsigned __int16*)(a2 + 100);
+    v9 = *(float32x4_t**)(a2 + 72);
+    v10 = *a1;
     v13 = 0;
-    {
-      v28 = *(_QWORD*)&a3;
-      __asm__ volatile("" ::"r"(v28));
-    }
+    v28 = *(_QWORD*)&a3;
     v14 = 0x1.000003f800000p-7;
     do {
       if ((*(_DWORD*)(*(_QWORD*)(a2 + 88) + v13) & 0x80000000) == 0) {
-        {
-          v18 = *(_DWORD*)(*(_QWORD*)(a2 + 88) + v13) & 0x7FFF;
-          __asm__ volatile("" ::"r"(v18));
-        }
+        v18 = *(_DWORD*)(*(_QWORD*)(a2 + 88) + v13) & 0x7FFF;
         if (v18 != 0x7FFF) {
           v19 = (float32x4_t*)(v10 + 80LL * v18);
           nn_g3d_5f80f0(v19, v9, *(float*)&a3, v14, *(double*)&a5,
                         *(double*)&a6, a7, a8);
           if ((*((_BYTE*)a1 + 12) & 1) != 0) {
-            *(float*)&v22 = powf(LANES128(*(v9)).n128_f32[1], *(float*)&v28);
+            *(float*)&v22 =
+                GameRoutine_1a0a550(LANES128(*(v9)).n128_f32[1], *(float*)&v28);
             v27 = v22;
-            *(float*)&v23 = powf(LANES128(*(v9)).n128_f32[2], *(float*)&v28);
+            *(float*)&v23 =
+                GameRoutine_1a0a550(LANES128(*(v9)).n128_f32[2], *(float*)&v28);
             v26 = v23;
-            v24 = powf(LANES128(*(v9)).n128_f32[3], *(float*)&v28);
-            LODWORD(v14) = LANES128(v19[4]).n128_u32[1];
+            v24 =
+                GameRoutine_1a0a550(LANES128(*(v9)).n128_f32[3], *(float*)&v28);
+            {
+              __typeof__(v14) z_ = (__typeof__(v14)){0};
+              LODWORD(z_) = LANES128(v19[4]).n128_u32[1];
+              v14 = z_;
+            }
             v25 = COERCE_AS(float32x4_t, GameData_1a837f0);
-            if (!(fabsf(*(float*)&v14) < 0x1.0624de0000000p-10f)) {
+            if (fabsf(*(float*)&v14) >= 0x1.0624de0000000p-10f) {
               v25 = *v19;
-              __asm__ volatile("" ::"w"(v25));
             }
             a7 = v26;
             a8 = v27;
-            {
-              v15 = LANES128(v19[4]).n128_u32[0];
-              __asm__ volatile("" ::"r"(v15));
-            }
+            v15 = LANES128(v19[4]).n128_u32[0];
             LANES128(v16).n128_u64[0] = __PAIR64__(LODWORD(v26), LODWORD(v27));
             LANES128(v16).n128_u64[1] = LODWORD(v24);
             *v19 = vmulq_f32(v16, v25);
-            LODWORD(a3) = v28;
+            {
+              __typeof__(a3) z_ = (__typeof__(a3)){0};
+              LODWORD(z_) = v28;
+              a3 = z_;
+            }
             LANES128(v16).n128_u64[0] = LANES128(v9[1]).n128_u64[0];
             *(float*)&v14 = *(float*)&v28 + *(float*)&v14;
             LANES128(v16).n128_u64[1] = LANES128(v9[1]).n128_u32[2];
             a6 = COERCE_LONG_DOUBLE(vmulq_n_f32(v16, *(float*)&v28));
             a5 = COERCE_LONG_DOUBLE(vaddq_f32(v19[1], *(float32x4_t*)&a6));
             *(long double*)&v19[1] = a5;
-            {
-              v17 = LANES128(*(v9)).n128_u32[0];
-              __asm__ volatile("" ::"r"(v17));
-            }
+            v17 = LANES128(*(v9)).n128_u32[0];
             LANES128(v19[4]).n128_u32[1] = LODWORD(v14);
             LANES128(v19[4]).n128_u32[0] = v15 | ~v17;
           }
@@ -373,10 +363,7 @@ void nn_g3d_5f2340(__int64* a1, __int64 a2, long double a3, double a4,
             LANES128(v20).n128_u64[0] =
                 *(unsigned __int64*)((char*)LANES128(*(v9)).n128_u64 + 4);
             *(_QWORD*)&a6 = v28;
-            {
-              v21 = LANES128(v19[4]).n128_u32[0];
-              __asm__ volatile("" ::"r"(v21));
-            }
+            v21 = LANES128(v19[4]).n128_u32[0];
             LANES128(v20).n128_u64[1] = LANES128(*(v9)).n128_u32[3];
             a5 = *(long double*)&v19[1];
             *v19 = vaddq_f32(*v19, vmulq_n_f32(v20, *(float*)&v28));
@@ -388,7 +375,11 @@ void nn_g3d_5f2340(__int64* a1, __int64 a2, long double a3, double a4,
             *(float*)&a3 = *(float*)&v28 + LANES128(v19[4]).n128_f32[1];
             LANES128(v19[4]).n128_u32[0] = v21 | ~LANES128(*(v9)).n128_u32[0];
             LANES128(v19[4]).n128_u32[1] = LODWORD(a3);
-            LODWORD(a3) = v28;
+            {
+              __typeof__(a3) z_ = (__typeof__(a3)){0};
+              LODWORD(z_) = v28;
+              a3 = z_;
+            }
           }
         }
       }

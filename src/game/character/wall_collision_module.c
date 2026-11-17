@@ -39,6 +39,12 @@ __int64 game_109f1e0(__int64, const char*);
 extern _UNKNOWN* GameData_212deb8;
 extern int* GameData_212deb0;
 float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3);
+__attribute__((swiftcall)) void
+    GameRoutine_1085a10_alt1(PSEUDO_X8, _QWORD, _QWORD, _QWORD, _QWORD);
+__int64 WallCollisionModule_1106720_alt2(float*, float*, float*, double, double,
+                                         float);
+int __cxa_guard_acquire_alt2(__int64);
+void __cxa_guard_release_alt2(__int64);
 
 int32x2_t* WallCollisionModule_1105be0(_QWORD* a1, float a2)
 {
@@ -146,6 +152,8 @@ __int64 WallCollisionModule_Unknown8(__int64 result)
 float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v4;
   int8x16_t v5;
@@ -202,7 +210,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
   _QWORD* v59;
   int8x16_t v60;
   int8x16_t v61;
-  unsigned __int32 v62;
+  __int64 v62;
   double v63;
   __int128 v64;
   __int128 v65;
@@ -249,7 +257,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
     a3 = z_;
   }
   v11 = fabsf(*(float*)&a3);
-  if (v10 < 0x1.0000000000000p-23f && v11 < 0x1.0000000000000p-23f) {
+  if (v10 < 0x1.0000000000000p-23f & v11 < 0x1.0000000000000p-23f) {
     LANES128(v24).n128_u32[0] = LANES128(v5).n128_u32[2];
     LANES128(v5).n128_u64[1] = LANES128(v5).n128_u32[2];
     *(int8x16_t*)(a1 + 32) = v5;
@@ -263,12 +271,12 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
     else {
       v13 = nullptr;
     }
-    WallCollisionModule_1106720_alt1((float*)&v63, (float*)&v66, v13, v7, a3,
+    WallCollisionModule_1106720_alt2((float*)&v63, (float*)&v66, v13, v7, a3,
                                      *(float*)(a1 + 48));
     v14 = v61;
-    v15 = HIDWORD(v63);
+    v15 = DWORDn(v63, sizeof(v63) / 4 - 1);
     v16 = LODWORD(v63);
-    if (*(float*)&v63 == LANES128(v61).n128_f32[0] &&
+    if (*(float*)&v63 == LANES128(v61).n128_f32[0] &
         *((float*)&v63 + 1) == v57) {
       LANES128(v24).n128_f32[0] = v57;
       LANES128(v14).n128_u64[1] = LODWORD(v57);
@@ -291,7 +299,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
             v49 = v29;
             v53 = v16;
             v56 = v15;
-            v47 = __cxa_guard_acquire_alt1((__int64)GameData_212deb8);
+            v47 = __cxa_guard_acquire_alt2((__int64)GameData_212deb8);
             v18 = LANES128(v61).n128_u32[1];
             v16 = v53;
             v15 = v56;
@@ -302,7 +310,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
             v28 = v59;
             if (v47 != 0) {
               *GameData_212deb0 = wld_Crc32(0, "CharacterBuilder", 0x10u);
-              __cxa_guard_release_alt1((__int64)GameData_212deb8);
+              __cxa_guard_release_alt2((__int64)GameData_212deb8);
               v18 = LANES128(v61).n128_u32[1];
               v16 = v53;
               v15 = v56;
@@ -335,11 +343,12 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
                   *(_QWORD*)&v45 = v16 | 0xC2C8000000000000LL;
                   *((_QWORD*)&v45 + 1) = v44;
                   v64 = v45;
-                  GameRoutine_1085a10(v37 + 160, &v65, &v64, 0);
+                  GameRoutine_1085a10_alt1((void*)(&v62), v37 + 160, &v65, &v64,
+                                           0);
                   v16 = v51;
                   v15 = v54;
                   v14 = v61;
-                  v18 = v62;
+                  v18 = DWORDn(v62, sizeof(v62) / 4 - 1);
                   goto LABEL_20;
                 }
               }
@@ -352,7 +361,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
           v52 = v16;
           v55 = v15;
           v50 = v18;
-          v46 = __cxa_guard_acquire_alt1((__int64)GameData_212deb8);
+          v46 = __cxa_guard_acquire_alt2((__int64)GameData_212deb8);
           v18 = v50;
           v16 = v52;
           v15 = v55;
@@ -361,7 +370,7 @@ float WallCollisionModule_Unknown5(__int64 a1, double a2, double a3)
           v28 = v58;
           if (v46 != 0) {
             *GameData_212deb0 = wld_Crc32(0, "CharacterBuilder", 0x10u);
-            __cxa_guard_release_alt1((__int64)GameData_212deb8);
+            __cxa_guard_release_alt2((__int64)GameData_212deb8);
             v18 = v50;
             v16 = v52;
             v15 = v55;

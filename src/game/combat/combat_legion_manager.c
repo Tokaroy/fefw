@@ -182,6 +182,7 @@ void __attribute__((noreturn)) GameRoutine_e30890();
 void game_combat_e45540(__int64, __int64);
 void game_combat_e566a0(__int64, __int64, int);
 __int64* game_combat_CombatLegionManager_CombatLegionManager(__int64 a1);
+void nn_mem_StandardAllocator_Free_alt5(__int64, __int64);
 
 __int64* game_combat_CombatLegionManager_CombatLegionManager(__int64 a1)
 {
@@ -2593,6 +2594,9 @@ LABEL_65:
 
 void CombatLegionManager_e2ddb0(__int64 a1, __int64 a2, __int64 a3)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v5;
   __int64 v6;
   float v7;
@@ -2697,7 +2701,7 @@ void CombatLegionManager_e2ddb0(__int64 a1, __int64 a2, __int64 a3)
     v11 = 0x0.0p+0f;
     v12 = (float)(PSEUDO_UNFUSED(v9 * v9)) + (float)(v10 * v10);
     v13 = 0x1.0000000000000p+0f;
-    if (!(v12 < 0x1.0000000000000p-23f)) {
+    if (v12 >= 0x1.0000000000000p-23f) {
       v14 = 0x1.0000000000000p+0f / sqrtf(v12);
       v11 = v10 * v14;
       v13 = v9 * v14;
@@ -2762,7 +2766,7 @@ LABEL_8:
   if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
     v26 = 56;
   }
-  nn_mem_StandardAllocator_Free_alt4(
+  nn_mem_StandardAllocator_Free_alt5(
       *(_QWORD*)fw_memory_g_heap_manager_ptr + v26, (__int64)v5);
 }
 

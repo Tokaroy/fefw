@@ -39,6 +39,8 @@ unsigned __int64 strlen_alt1(const char*) __asm__("strlen");
 extern _UNKNOWN* GameData_2135448;
 extern __int128 GameData_1a82dc0;
 __int64 SkeletalAnimObj_5f1900(__int64 a1, __int64 a2, __int64 a3);
+int GameRoutine_1a09cf0(__int64, __int64, unsigned __int64);
+unsigned __int64 GameRoutine_1a09c70(const char*);
 
 __int64 SkeletalAnimObj_5f1520(__int64 a1, __int64 a2)
 {
@@ -207,12 +209,15 @@ __int64 SkeletalAnimObj_5f1840(__int64 a1, __int64 a2)
 
 __int64 SkeletalAnimObj_5f1900(__int64 a1, __int64 a2, __int64 a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v6;
   unsigned int v7;
   __int64 v8;
   __int64 v9;
-  const char* v10;
+  char* v10;
   int v11;
   unsigned __int64 v12;
   __int64 v13;
@@ -270,7 +275,7 @@ __int64 SkeletalAnimObj_5f1900(__int64 a1, __int64 a2, __int64 a3)
       }
       v10 = (const char*)(*(_QWORD*)(*(_QWORD*)(a1 + 112) + 56 * v6) + 2LL);
       v11 = *(_DWORD*)(*(_QWORD*)(a1 + 88) + 4 * v6);
-      v12 = strlen_alt1(v10);
+      v12 = GameRoutine_1a09c70(v10);
       v13 = v9 + 8;
       v14 = *(unsigned __int16*)(v9 + 12);
       v15 = v9 + 8 + 16 * v14;
@@ -292,7 +297,7 @@ __int64 SkeletalAnimObj_5f1900(__int64 a1, __int64 a2, __int64 a3)
       }
       v20 = *(unsigned __int16**)(v15 + 8);
       if (v12 != *v20 ||
-          memcmp_alt1((__int64)(v20 + 1), (__int64)v10, v12) != 0 ||
+          GameRoutine_1a09cf0((__int64)(v20 + 1), (__int64)v10, v12) != 0 ||
           (v11 & 0x7FFF) == 0x7FFF ||
           ((v21 = v15 - v9 - 24) & 0x800000000LL) != 0) {
       LABEL_13:

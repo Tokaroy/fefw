@@ -236,6 +236,8 @@ __int64 GameHr_d8e0(unsigned __int8* a1, __int64 a2, unsigned __int64 a3);
 __int64* GameHr_10f800(__int64* result, unsigned __int64 a2);
 __int64* GameHr_131ec0(__int64* result, unsigned __int64 a2);
 __int64* GameHr_179600(__int64* result, unsigned __int64 a2);
+__int64 GameRoutine_1a0b950_alt1(__int64, __int64, unsigned __int64);
+void GameRoutine_651250_alt2(__int64);
 
 void GameHr_3880(_QWORD* a1)
 {
@@ -4738,6 +4740,9 @@ _BYTE* GameHr_190120(_BYTE* result, unsigned __int8* a2)
 
 __int64 GameHr_19ace0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   unsigned int v2;
   __int64 v3;
@@ -4766,18 +4771,20 @@ __int64 GameHr_19ace0(__int64 a1)
       do {
         v6 = *(int*)(v3 + 32);
         v7 = *(_QWORD*)(v3 + 24) + 8LL;
-        memcpy((__int64)v14, v7 + (int)v6 * v4, v6);
-        memcpy(v7 + (int)v6 * v4, v7 + (int)v6 * v5, v6);
-        memcpy(*(_QWORD*)(v3 + 24) + *(int*)(v3 + 32) * (__int64)v5 + 8,
-               (__int64)v14, *(int*)(v3 + 32));
+        GameRoutine_1a0b950_alt1((__int64)v14, v7 + (int)v6 * v4, v6);
+        GameRoutine_1a0b950_alt1(v7 + (int)v6 * v4, v7 + (int)v6 * v5, v6);
+        GameRoutine_1a0b950_alt1(*(_QWORD*)(v3 + 24) +
+                                     *(int*)(v3 + 32) * (__int64)v5 + 8,
+                                 (__int64)v14, *(int*)(v3 + 32));
         v8 = *(int*)(v3 + 32);
         v9 = *(_QWORD*)(v3 + 24) + 8LL;
-        memcpy((__int64)v14, v9 + (int)v8 + (int)v8 * v4, v8);
+        GameRoutine_1a0b950_alt1((__int64)v14, v9 + (int)v8 + (int)v8 * v4, v8);
         v10 = v2 + (v4 ^ 0xFFFFFFFE);
-        memcpy(v9 + (int)v8 + (int)v8 * v4, v9 + (int)v8 * v10, v8);
-        result =
-            memcpy(*(_QWORD*)(v3 + 24) + *(int*)(v3 + 32) * (__int64)v10 + 8,
-                   (__int64)v14, *(int*)(v3 + 32));
+        GameRoutine_1a0b950_alt1(v9 + (int)v8 + (int)v8 * v4,
+                                 v9 + (int)v8 * v10, v8);
+        result = GameRoutine_1a0b950_alt1(
+            *(_QWORD*)(v3 + 24) + *(int*)(v3 + 32) * (__int64)v10 + 8,
+            (__int64)v14, *(int*)(v3 + 32));
         v4 += 2;
         v5 -= 2;
       } while (((v2 >> 1) & 0x7FFFFFFE) != v4);
@@ -4785,11 +4792,12 @@ __int64 GameHr_19ace0(__int64 a1)
     if ((v2 & 2) != 0) {
       v11 = *(int*)(v3 + 32);
       v12 = *(_QWORD*)(v3 + 24) + 8LL;
-      memcpy((__int64)v14, v12 + (int)v11 * v4, v11);
+      GameRoutine_1a0b950_alt1((__int64)v14, v12 + (int)v11 * v4, v11);
       v13 = v2 + ~v4;
-      memcpy(v12 + (int)v11 * v4, v12 + (int)v11 * v13, v11);
-      return memcpy(*(_QWORD*)(v3 + 24) + *(int*)(v3 + 32) * (__int64)v13 + 8,
-                    (__int64)v14, *(int*)(v3 + 32));
+      GameRoutine_1a0b950_alt1(v12 + (int)v11 * v4, v12 + (int)v11 * v13, v11);
+      return GameRoutine_1a0b950_alt1(*(_QWORD*)(v3 + 24) +
+                                          *(int*)(v3 + 32) * (__int64)v13 + 8,
+                                      (__int64)v14, *(int*)(v3 + 32));
     }
   }
   return result;
@@ -5710,8 +5718,11 @@ LABEL_206:
 
 void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v6;
-  void (*v8)(const char*, const char*, __int64);
+  void (*v8)(__int64, __int64, __int64);
   __int64 v9;
   int v10;
   __int64 v11;
@@ -5775,12 +5786,13 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
   __int64 v71;
 
   v6 = a2;
-  v8 = (void (*)(const char*, const char*, __int64))dtAssertFailGetCustom();
+  v8 = (void (*)(__int64, __int64, __int64))dtAssertFailGetCustom();
   v9 = *a1;
   if (v8 != nullptr) {
     if (v9 == 0) {
-      v8("m_nav",
-         "/Program/Externals/recastnavigation/Sources/DetourNavMeshQuery.cpp",
+      v8((__int64)"m_nav",
+         (__int64)"/Program/Externals/recastnavigation/Sources/"
+                  "DetourNavMeshQuery.cpp",
          538);
       v9 = *a1;
     }
@@ -5791,7 +5803,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
         "/Program/Externals/recastnavigation/Sources/DetourNavMeshQuery.cpp",
         538, "closestPointOnPolyBoundary");
     dtFindNearestPolyQuery_Destroy_dtFindNearestPolyQuery(v62);
-    GameRoutine_651250_alt1(v62);
+    GameRoutine_651250_alt2(v62);
     return;
   }
   v70 = 0;
@@ -5824,21 +5836,21 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       do {
         v15 += 4;
         v19 = (_DWORD*)(v14 + 12LL * *(v17 - 3));
-        *((_DWORD*)v18 - 6) = *v19;
+        *((_DWORD*)v18 - 6) = *(_DWORD*)v19;
         *((_DWORD*)v18 - 5) = v19[1];
         *((_DWORD*)v18 - 4) = v19[2];
         v20 = (_DWORD*)(v14 + 12LL * *(v17 - 2));
-        *((_DWORD*)v18 - 3) = *v20;
+        *((_DWORD*)v18 - 3) = *(_DWORD*)v20;
         *((_DWORD*)v18 - 2) = v20[1];
         *((_DWORD*)v18 - 1) = v20[2];
         v21 = (_DWORD*)(v14 + 12LL * *(v17 - 1));
-        *(_DWORD*)v18 = *v21;
+        *(_DWORD*)v18 = *(_DWORD*)v21;
         *((_DWORD*)v18 + 1) = v21[1];
         *((_DWORD*)v18 + 2) = v21[2];
         v22 = *v17;
         v17 += 4;
         v23 = (_DWORD*)(v14 + 12LL * v22);
-        *((_DWORD*)v18 + 3) = *v23;
+        *((_DWORD*)v18 + 3) = *(_DWORD*)v23;
         *((_DWORD*)v18 + 4) = v23[1];
         *((_DWORD*)v18 + 5) = v23[2];
         v18 += 6;
@@ -5855,9 +5867,9 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
         v26 = *(unsigned __int16*)(v24 + 2 * v15++);
         --v13;
         v27 = (_DWORD*)(v14 + 12LL * v26);
-        *(v25 - 2) = *v27;
+        *(v25 - 2) = *(_DWORD*)v27;
         *(v25 - 1) = v27[1];
-        *v25 = v27[2];
+        *(_DWORD*)v25 = v27[2];
         v25 += 3;
       } while (v13 != 0);
       v6 = v15 - 1;
@@ -5904,7 +5916,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     v34 = (float*)&v67;
     while (1) {
       v35 = *(v34 - 3);
-      if (!(v35 < v29)) {
+      if (v35 >= v29) {
         v35 = v29;
         v36 = v33 + 1;
         v37 = *(v34 - 2);
@@ -5912,7 +5924,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
         if (v37 < v35) {
         LABEL_33:
           v39 = v36 + 1;
-          if (!(v37 < v35)) {
+          if (v37 >= v35) {
             goto LABEL_34;
           }
           goto LABEL_50;
@@ -5929,7 +5941,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       }
       v38 = v35;
       v39 = v36 + 1;
-      if (!(v37 < v35)) {
+      if (v37 >= v35) {
       LABEL_34:
         v40 = *(v34 - 1);
         v41 = v40;
@@ -5945,7 +5957,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v40 < v38) {
       LABEL_35:
         v42 = v39 + 1;
-        if (!(v40 < v38)) {
+        if (v40 >= v38) {
           goto LABEL_36;
         }
         goto LABEL_52;
@@ -5953,7 +5965,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_51:
       v41 = v38;
       v42 = v39 + 1;
-      if (!(v40 < v38)) {
+      if (v40 >= v38) {
       LABEL_36:
         v43 = *v34;
         v44 = *v34;
@@ -5969,7 +5981,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (*v34 < v41) {
       LABEL_37:
         v45 = v42 + 1;
-        if (!(v43 < v41)) {
+        if (v43 >= v41) {
           goto LABEL_38;
         }
         goto LABEL_54;
@@ -5977,7 +5989,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_53:
       v44 = v41;
       v45 = v42 + 1;
-      if (!(v43 < v41)) {
+      if (v43 >= v41) {
       LABEL_38:
         v46 = v34[1];
         v47 = v46;
@@ -5993,7 +6005,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v46 < v44) {
       LABEL_39:
         v48 = v45 + 1;
-        if (!(v46 < v44)) {
+        if (v46 >= v44) {
           goto LABEL_40;
         }
         goto LABEL_56;
@@ -6001,7 +6013,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_55:
       v47 = v44;
       v48 = v45 + 1;
-      if (!(v46 < v44)) {
+      if (v46 >= v44) {
       LABEL_40:
         v49 = v34[2];
         v50 = v49;
@@ -6017,7 +6029,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v49 < v47) {
       LABEL_41:
         v51 = v48 + 1;
-        if (!(v49 < v47)) {
+        if (v49 >= v47) {
           goto LABEL_42;
         }
         goto LABEL_58;
@@ -6025,7 +6037,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_57:
       v50 = v47;
       v51 = v48 + 1;
-      if (!(v49 < v47)) {
+      if (v49 >= v47) {
       LABEL_42:
         v52 = v34[3];
         v53 = v52;
@@ -6041,7 +6053,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       if (v52 < v50) {
       LABEL_43:
         v54 = v51 + 1;
-        if (!(v52 < v50)) {
+        if (v52 >= v50) {
           goto LABEL_44;
         }
         goto LABEL_60;
@@ -6049,7 +6061,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_59:
       v53 = v50;
       v54 = v51 + 1;
-      if (!(v52 < v50)) {
+      if (v52 >= v50) {
       LABEL_44:
         v55 = v34[4];
         v29 = v55;

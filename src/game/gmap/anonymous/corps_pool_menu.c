@@ -103,6 +103,8 @@ void __attribute__((noreturn))
 GameRoutine_60a310_alt1() __asm__("GameRoutine_60a310");
 __int64 game_gmap_anonymous_CorpsPoolMenu_MoveTab(__int64 a1, int a2, char a3);
 __int64 CorpsPoolMenu_Unknown148(__int64 a1, unsigned __int8 a2);
+__int64 MultiMenu_1788690(_QWORD*, char);
+__int64 game_gmap_anonymous_CorpsPoolMenu_MoveTab_alt3(__int64);
 
 __int64 CorpsPoolMenu_Destructor(__int64 a1)
 {
@@ -680,16 +682,20 @@ __int64 CorpsPoolMenu_Unknown7(__int64 a1, char a2)
 
 __int64 CorpsPoolMenu_Unknown8(__int64 a1, char a2)
 {
-  __int64 v2;
 
-  v2 = a1 - 176;
-  if (*(_DWORD*)(a1 + 484) >= *(_DWORD*)(a1 + 480) &&
-      (*(unsigned int (**)(__int64))(*(_QWORD*)v2 + 1120LL))(a1 - 176) != 0 &&
+#pragma clang fp contract(on)
+
+  _QWORD* v2;
+
+  v2 = (_QWORD*)(a1 - 176);
+  if ((signed __int32)*(_DWORD*)(a1 + 484) >=
+          (signed __int32)*(_DWORD*)(a1 + 480) &&
+      (*(unsigned int (**)(__int64))(*v2 + 1120LL))(a1 - 176) != 0 &&
       (a2 & 1) != 0 && (*(_DWORD*)(*(_QWORD*)(a1 + 880) + 356LL) & 1) == 0) {
-    return GameRoutine_1788690(v2, 1);
+    return MultiMenu_1788690(v2, 1);
   }
   else {
-    return game_gmap_anonymous_CorpsPoolMenu_MoveTab_alt2(v2, 1, a2 & 1);
+    return game_gmap_anonymous_CorpsPoolMenu_MoveTab_alt3((__int64)v2);
   }
 }
 

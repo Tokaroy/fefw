@@ -171,9 +171,9 @@ Manager_62b060_alt1(__attribute__((swift_indirect_result)) void*,
                     char) __asm__("Manager_62b060");
 __int64 GameHr_62ec90_alt1(_QWORD, _QWORD) __asm__("GameHr_62ec90");
 __attribute__((swiftcall)) void
-Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
-               const char* a2, __int64 a3, __int64 a4, __int64 a5, int a6,
-               int a7, char a8);
+Manager_62b880_alt2(__attribute__((swift_indirect_result)) void* x8_,
+                    __int64 a1, const char* a2, __int64 a3, __int64 a4,
+                    __int64 a5, int a6, int a7, char a8);
 __int64 scene_652cd0(_QWORD, _QWORD, _QWORD, _QWORD);
 __attribute__((swiftcall)) void
 Manager_629f20(__attribute__((swift_indirect_result)) void* x8_, __int64 result,
@@ -189,6 +189,19 @@ __int64 GameRoutine_1a09bf0(_QWORD, const char*, ...);
 __int64 GameRoutine_1a09d30(_QWORD, _QWORD);
 __int64 nn_os_UnlockMutex_alt3(_QWORD);
 extern _QWORD as_g_context_slots_alt2[16384];
+__attribute__((swiftcall)) void Manager_62b060_alt3(PSEUDO_X8, __int64 result,
+                                                    const char*, __int64,
+                                                    const char*, int, int,
+                                                    char);
+__int64 GameRoutine_1a09be0_alt1(__int64, const char*);
+__int64 nn_os_LockMutex_alt2(__int64);
+__int64 nn_os_UnlockMutex_alt4(__int64);
+int GameRoutine_1a09bf0_alt1(__int64, const char*, ...);
+int GameRoutine_1a09d30_alt1(const char*, const char*);
+__attribute__((swiftcall)) void Manager_62b880(PSEUDO_X8 x8_, __int64 a1,
+                                               char* a2, __int64 a3, char* a4,
+                                               __int64 a5, int a6, int a7,
+                                               char a8);
 
 __int64 Manager_626d20(__int64 a1, __int64 a2)
 {
@@ -1555,16 +1568,16 @@ __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
   int v14;
   unsigned int v15;
   __int64 v16;
-  __int64 v17;
-  __int64 v24;
-  int v31;
-  __int64 v32;
-  __int64 v34;
-  unsigned int v35;
-  unsigned __int64 v36;
-  __int64 v37;
-  unsigned __int64 v38;
-  __int64 v39;
+  char* v17;
+  char* v18;
+  int v19;
+  __int64 v20;
+  __int64 v22;
+  unsigned int v23;
+  unsigned __int64 v24;
+  __int64 v25;
+  unsigned __int64 v26;
+  __int64 v27;
 
   if (a2 == 0) {
     return 0;
@@ -1586,7 +1599,7 @@ __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
     v8 = &GameData_1a9f09e;
   }
   v9 = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_thread_info + 72LL))(
-      (__int64)as_g_thread_info);
+      as_g_thread_info);
   v10 = as_g_script_manager + ((unsigned __int64)v9 << 7);
   v11 = as_g_script_manager + 4LL * v9;
   v12 = *(int*)(v11 + 4640) + 1LL;
@@ -1596,19 +1609,20 @@ __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
   v13 = (*(__int64 (**)(__int64))(*(_QWORD*)v5 + 192LL))(v5);
   if (v13 < 1) {
   LABEL_19:
-    v34 = 0;
+    v22 = 0;
   }
   else {
     v14 = v13;
     v15 = 0;
     while (1) {
-      v16 = (*(__int64 (**)(__int64, _QWORD))(*(_QWORD*)v5 + 200LL))(v5, v15);
-      v17 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 56LL))(v16);
-      if ((unsigned int)GameRoutine_1a09d30(v17, v7) == 0) {
-        v24 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 48LL))(v16);
-        if ((unsigned int)GameRoutine_1a09d30(v24, v8) == 0) {
-          v31 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 192LL))(v16);
-          if (v31 >= 1) {
+      v16 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v5 + 200LL))(v5, v15);
+      v17 = (const char*)(*(__int64 (**)(__int64))(*(_QWORD*)v16 + 56LL))(v16);
+      if (GameRoutine_1a09d30_alt1(v17, v7) == 0) {
+        v18 =
+            (const char*)(*(__int64 (**)(__int64))(*(_QWORD*)v16 + 48LL))(v16);
+        if (GameRoutine_1a09d30_alt1(v18, v8) == 0) {
+          v19 = (*(__int64 (**)(__int64))(*(_QWORD*)v16 + 192LL))(v16);
+          if (v19 >= 1) {
             break;
           }
         }
@@ -1619,29 +1633,29 @@ __int64 Manager_62a740(__int64 a1, __int64 a2, char* a3, char* a4, __int64 a5)
       }
     }
     while (1) {
-      v32 = (*(__int64 (**)(__int64, __int64, __int64))(*(_QWORD*)v16 + 216LL))(
+      v20 = (*(__int64 (**)(__int64, __int64, __int64))(*(_QWORD*)v16 + 216LL))(
           v16, a5, 1);
-      if (v32 != 0) {
+      if (v20 != 0) {
         break;
       }
-      if (--v31 == 0) {
+      if (--v19 == 0) {
         goto LABEL_11;
       }
     }
-    v34 = v32;
+    v22 = v20;
   }
-  v35 = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_thread_info + 72LL))(
+  v23 = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_thread_info + 72LL))(
       as_g_thread_info);
-  v36 = (unsigned __int64)v35 << 7;
-  v37 = 4LL * v35;
-  v38 = as_g_script_manager + v36;
-  v39 = *(int*)(as_g_script_manager + v37 + 4640);
-  *(_DWORD*)(as_g_script_manager + v37 + 4640) = v39 - 1;
-  *(_QWORD*)(v38 + 8 * v39 + 288) = 0;
-  *(_QWORD*)(as_g_script_manager + 8LL * v35 + 4384) =
-      *(_QWORD*)(as_g_script_manager + v36 +
-                 8LL * *(int*)(as_g_script_manager + v37 + 4640) + 288);
-  return v34;
+  v24 = (unsigned __int64)v23 << 7;
+  v25 = 4LL * v23;
+  v26 = as_g_script_manager + v24;
+  v27 = *(int*)(as_g_script_manager + v25 + 4640);
+  *(_DWORD*)(as_g_script_manager + v25 + 4640) = v27 - 1;
+  *(_QWORD*)(v26 + 8 * v27 + 288) = 0;
+  *(_QWORD*)(as_g_script_manager + 8LL * v23 + 4384) =
+      *(_QWORD*)(as_g_script_manager + v24 +
+                 8LL * *(int*)(as_g_script_manager + v25 + 4640) + 288);
+  return v22;
 }
 
 __attribute__((swiftcall)) void Manager_62b060(PSEUDO_X8 x8_, __int64 a1,
@@ -2057,13 +2071,15 @@ LABEL_44:
   *(_QWORD*)(a8 + 16) = v92;
 }
 
-__attribute__((swiftcall)) void
-
-Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
-               const char* a2, __int64 a3, __int64 a4, __int64 a5, int a6,
-               int a7, char a8)
+__attribute__((swiftcall)) void Manager_62b880(PSEUDO_X8 x8_, __int64 a1,
+                                               char* a2, __int64 a3, char* a4,
+                                               __int64 a5, int a6, int a7,
+                                               char a8)
 {
-  __int64 a9 = (__int64)(unsigned __int64)x8_;
+
+#pragma clang fp contract(on)
+
+  __int64 a9 = (__int64)PSEUDO_X8_VALUE(x8_);
   __int64 v16;
   __int64 v17;
   int v18;
@@ -2123,28 +2139,28 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
   __int64 v72;
   unsigned int v74;
   __int64 v75;
-  _BYTE v77[136];
+  char v77[136];
 
   if (a5 == 0) {
     X8CALL_X0(__int64,
-              Manager_62b060_alt2((void*)(a9), a1, a2, a3, a4, a6, a7, a8));
+              Manager_62b060_alt3((void*)(a9), a1, a2, a3, a4, a6, a7, a8));
     return;
   }
-  nn_os_LockMutex(a1 + 5096);
+  nn_os_LockMutex_alt2(a1 + 5096);
   v16 = *(_QWORD*)(a1 + 5080);
   v17 = *(int*)(a1 + 5088);
   v18 = *(_DWORD*)(v16 + 4 * v17);
   *(_DWORD*)(a1 + 5088) = v17 + 1;
   *(_DWORD*)(v16 + 4 * v17) = -1;
-  nn_os_UnlockMutex_alt3(a1 + 5096);
+  nn_os_UnlockMutex_alt4(a1 + 5096);
   v19 = *(_QWORD*)(a1 + 5072) + 2272LL * v18;
-  GameHr_62ec90_alt2(v19, a1);
+  GameRoutine_62ec90(v19, a1);
   v20 = *(unsigned int*)(v19 + 8);
   if ((_DWORD)v20 != 0x2000 &&
-      (v21 = &as_g_context_slots_alt2[2 * v20])[1] == v19) {
+      (v21 = (__int64*)((char*)&as_g_context_slots + 16 * v20))[1] == v19) {
     v72 = *v21;
     v74 = *(_DWORD*)(v19 + 8);
-    GameRoutine_1a09bf0(v77, "%s_%16zx", a2, v19);
+    GameRoutine_1a09bf0_alt1((__int64)v77, "%s_%16zx", a2, v19);
     v75 = v72;
     v23 = 0;
     if (v21[1] != 0) {
@@ -2160,7 +2176,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     }
   }
   else {
-    GameRoutine_1a09bf0(v77, "%s_%16zx", a2, v19);
+    GameRoutine_1a09bf0_alt1((__int64)v77, "%s_%16zx", a2, v19);
     v22 = 0;
     v23 = 1;
     v74 = 0x2000;
@@ -2189,7 +2205,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
   }
   v33 = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_engine + 464LL))(as_g_engine);
   *(_BYTE*)(v19 + 336) = 0;
-  GameRoutine_1a09be0(v19 + 80, v77);
+  GameRoutine_1a09be0_alt1(v19 + 80, v77);
   *(_BYTE*)(v19 + 208) = 0;
   *(_QWORD*)(v19 + 24) = v33;
   *(_QWORD*)(v19 + 32) = 0;
@@ -2215,15 +2231,15 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     v36 = as_g_context_slots_ptr;
     goto LABEL_13;
   }
-  v36 = as_g_context_slots_alt2;
+  v36 = &as_g_context_slots;
   if (v35 != nullptr) {
     v37 = 40;
   LABEL_13:
-    (*(void (**)(_QWORD*))(*v35 + v37))(v35);
+    (*(void (**)(__int64))(*v35 + v37))((__int64)v35);
   }
-  (*(void (**)(_QWORD, _QWORD))(**(_QWORD**)(v19 + 24) + 464LL))(
+  (*(void (**)(__int64, __int64))(**(_QWORD**)(v19 + 24) + 464LL))(
       *(_QWORD*)(v19 + 24), 0);
-  (*(void (**)(_QWORD, __int64))(**(_QWORD**)(v19 + 24) + 448LL))(
+  (*(void (**)(__int64, __int64))(**(_QWORD**)(v19 + 24) + 448LL))(
       *(_QWORD*)(v19 + 24), 1);
   result = (*(__int64 (**)(__int64))(*(_QWORD*)as_g_thread_info + 72LL))(
       as_g_thread_info);
@@ -2262,7 +2278,7 @@ Manager_62b880(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
       return;
     }
   }
-  GameRoutine_1a09be0(v19 + 208, a4);
+  GameRoutine_1a09be0_alt1(v19 + 208, a4);
   if ((v23 & 1) != 0) {
     v47 = v75;
   }
@@ -2322,7 +2338,7 @@ LABEL_28:
   *(_DWORD*)(v19 + 2116) = a7;
   *(_WORD*)(v19 + 2144) = *(_WORD*)(v19 + 2144) & 0xFFBF | ((a8 & 1) << 6);
   if (*(_BYTE*)(a1 + 4785) == 1) {
-    result = nn_os_LockMutex(a1 + 4792);
+    result = nn_os_LockMutex_alt2(a1 + 4792);
   }
   v65 = *(int*)(v19 + 48);
   v66 = *(_QWORD*)(a1 + 24 + 8 * v65);
@@ -2337,7 +2353,7 @@ LABEL_28:
     *(_QWORD*)(a1 + 24 + 8 * v65) = v19;
   }
   if (*(_BYTE*)(a1 + 4785) == 1) {
-    result = nn_os_UnlockMutex_alt3(a1 + 4792);
+    result = nn_os_UnlockMutex_alt4(a1 + 4792);
   }
   if ((v23 & 1) != 0) {
     goto LABEL_46;

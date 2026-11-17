@@ -578,6 +578,11 @@ __int64 game_gmap_133fe00(__int64 a1, unsigned __int8 a2, float a3);
 void game_gmap_1347e20();
 void game_gmap_151fdd0(__int64 a1, __int64 a2, char a3);
 __int64 game_gmap_1520240(__int64 a1, __int64 a2, char a3);
+__int64 Impl_13261c0_alt2(__int64);
+__int64 snd_Fade_Destroy_Fade_alt2(_QWORD*);
+__int64 snd_play_ff2d0_alt2(__int64, __int64, __int64, unsigned int,
+                            unsigned int, int, float, float);
+void snd_Fade_Fade_10c830_alt3(__int64, float);
 
 bool game_gmap_887a40(__int64 a1)
 {
@@ -934,14 +939,16 @@ LABEL_23:
 
 __int64 game_gmap_1319ce0(__int64 result)
 {
+
+#pragma clang fp contract(off)
   __int64 v1;
   __int64 v2;
-  float32x4_t* v3;
+  __int64 v3;
   __int64 v4;
   __int64 v5;
   float32x4_t** v6;
   float32x4_t** v7;
-  float32x4_t* v8;
+  __int64 v8;
   float v9;
   float32x4_t v10;
   float32x4_t* v11;
@@ -949,15 +956,11 @@ __int64 game_gmap_1319ce0(__int64 result)
   int8x16_t v13;
   float v14;
   __int64 v16;
-  long double v17;
-  const char* v18;
-  __int64 v19;
-  __int64 v20;
-  _BYTE v21[200];
-  __int64 v22;
-  __int64 v23;
+  char* v17;
+  __int64 v18;
+  _QWORD v19[27];
 
-  v3 = *(float32x4_t**)(result + 96);
+  v3 = *(_QWORD*)(result + 96);
   *(_QWORD*)(result + 96) = 0;
   if (*(_BYTE*)(game_g_game_setting + 807) == 1 &&
       ((*(_BYTE*)(game_g_game_setting + 804) & 1) != 0 ||
@@ -985,18 +988,18 @@ __int64 game_gmap_1319ce0(__int64 result)
     goto LABEL_12;
   }
 LABEL_13:
-  v22 = v1;
-  v23 = v2;
+  v19[25] = v1;
+  v19[26] = v2;
   v5 = *(_QWORD*)(GameData_21c9700 + 8);
   v6 = *(float32x4_t***)(v5 + 48);
   v7 = *(float32x4_t***)(v5 + 56);
   if (v6 == v7) {
-    v8 = nullptr;
+    v8 = 0;
   }
   else {
     v10 = *(float32x4_t*)(result + v4);
-    v8 = nullptr;
-    v9 = 0x1.f400000000000p+9;
+    v8 = 0;
+    v9 = 0x1.f400000000000p+9f;
     LANES128(v10).n128_u32[1] = 0;
     do {
       v11 = *v6;
@@ -1015,43 +1018,41 @@ LABEL_13:
                            COERCE_AS(float32x2_t, LANES128(v13).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v13).n128_u64[0]))))
                 .n64_f32[0];
-        if (v14 < 10.0 && v14 < v9) {
+        if (v14 < 0x1.4000000000000p+3f & v14 < v9) {
           v9 = v14;
           *(_QWORD*)(result + 96) = v11;
-          v8 = v11;
+          v8 = (__int64)v11;
         }
       }
       ++v6;
     } while (v6 != v7);
   }
   if (v3 != v8) {
-    if ((*(_BYTE*)(result + 176) & 1) == 0 && v8 != nullptr &&
+    if ((*(_BYTE*)(result + 176) & 1) == 0 && v8 != 0 &&
         (*(_BYTE*)(result + 169) & 1) != 0) {
       v16 = result;
-      if ((unsigned __int8)Impl_13261c0(v8) != 0 &&
-          (unsigned __int8)Impl_13261c0(*(_QWORD*)(v16 + 96)) != 1) {
-        v19 = *(_QWORD*)(v16 + 96);
-        if (*(_QWORD*)(v19 + 120) == 0 ||
-            (unsigned __int8)Impl_13261c0(*(_QWORD*)(v16 + 96)) == 13 ||
-            (unsigned __int8)Impl_13261c0(v19) == 12 ||
-            (unsigned __int8)Impl_13261c0(v19) == 11) {
-          *(_QWORD*)&v17 = 0;
-          snd_Fade_Fade_10c830(v21, v17);
-          v18 = "SE_SYS_GMAP_CursorGrip_L";
+      if ((unsigned __int8)Impl_13261c0_alt2(v8) != 0 &&
+          (unsigned __int8)Impl_13261c0_alt2(*(_QWORD*)(v16 + 96)) != 1) {
+        v18 = *(_QWORD*)(v16 + 96);
+        if (*(_QWORD*)(v18 + 120) == 0 ||
+            (unsigned __int8)Impl_13261c0_alt2(*(_QWORD*)(v16 + 96)) == 13 ||
+            (unsigned __int8)Impl_13261c0_alt2(v18) == 12 ||
+            (unsigned __int8)Impl_13261c0_alt2(v18) == 11) {
+          snd_Fade_Fade_10c830_alt3((__int64)v19, 0x0.0p+0f);
+          v17 = "SE_SYS_GMAP_CursorGrip_L";
         }
         else {
-          *(_QWORD*)&v17 = 0;
-          snd_Fade_Fade_10c830(v21, v17);
-          v18 = "SE_SYS_GMAP_CursorGrip_M";
+          snd_Fade_Fade_10c830_alt3((__int64)v19, 0x0.0p+0f);
+          v17 = "SE_SYS_GMAP_CursorGrip_M";
         }
       }
       else {
-        *(_QWORD*)&v17 = 0;
-        snd_Fade_Fade_10c830(v21, v17);
-        v18 = "SE_SYS_GMAP_CursorGrip_H";
+        snd_Fade_Fade_10c830_alt3((__int64)v19, 0x0.0p+0f);
+        v17 = "SE_SYS_GMAP_CursorGrip_H";
       }
-      snd_play_ff2d0((void*)(&v20), v18, v18, v21, 0, 65537, 0, 0.0, 1.0);
-      snd_Fade_Destroy_Fade(v21);
+      snd_play_ff2d0_alt2((__int64)v17, (__int64)v17, (__int64)v19, 0, 0x10001u,
+                          0, 0x0.0p+0f, 0x1.0000000000000p+0f);
+      snd_Fade_Destroy_Fade_alt2(v19);
       result = v16;
     }
     *(_BYTE*)(result + 172) = 0;

@@ -130,6 +130,11 @@ __int64* game_UnitSkillList_GetRangeAddImpl_lambda0_CloneInto(__int64 a1,
                                                               __int64 a2);
 __int64* game_UnitSkillList_GetUseFactorImpl_lambda0_CloneInto(__int64 a1,
                                                                __int64 a2);
+__int64* GameRoutine_7fb7c0_alt3(__int64* result, __int64, __int64,
+                                 unsigned __int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+void nn_mem_StandardAllocator_Free_alt2(__int64, __int64);
 
 bool game_UnitSkillList_Remove(__int64 a1, _WORD* a2)
 {
@@ -378,11 +383,14 @@ __int64 game_UnitSkillList_GetMaxValue(_QWORD* a1, __int64* a2, __int64 a3)
 
 __int64 game_UnitSkillList_GetRangeAddImpl(__int64 a1, __int64 a2)
 {
+
+#pragma clang fp contract(on)
+
   char v3;
   __int64 result;
   __int64 v5;
   __int64 v6;
-  char* v7;
+  __int64 v7;
   __int64* v8;
   __int64 v9;
   __int64 v10;
@@ -394,48 +402,48 @@ __int64 game_UnitSkillList_GetRangeAddImpl(__int64 a1, __int64 a2)
   __int64 v16;
   __int64 v17;
   struct {
-    char* v18;
-    char* v19;
+    __int64 v18;
+    __int64 v19;
     __int64 v20;
     int v21;
     char gap28_[4];
     unsigned int* v22;
+    char gap40_[4];
+    unsigned int v23;
   } v18_;
-  unsigned int v23;
 
   v3 = *(_BYTE*)(a1 + 88);
   result = 0;
-  v23 = 0;
+  v18_.v23 = 0;
   if ((v3 & 8) != 0) {
     v18_.v21 = 0;
-    v18_.v19 = nullptr;
+    v18_.v19 = 0;
     v18_.v20 = 0;
-    v18_.v18 = nullptr;
-    if (&v18_.v18 == (char**)a2) {
+    v18_.v18 = 0;
+    if (&v18_.v18 == (__int64*)a2) {
       v6 = 0;
-      v7 = nullptr;
+      v7 = 0;
     }
     else {
       v5 = a2;
-      GameRoutine_7fb7c0_alt1(&v18_.v18, *(_QWORD*)a2, *(_QWORD*)(a2 + 8),
+      GameRoutine_7fb7c0_alt3(&v18_.v18, *(_QWORD*)a2, *(_QWORD*)(a2 + 8),
                               (__int64)(*(_QWORD*)(a2 + 8) - *(_QWORD*)a2) >>
                                   2);
       v7 = v18_.v18;
-      v6 = (__int64)v18_.v19;
+      v6 = v18_.v19;
       a2 = v5;
     }
     v18_.v21 = *(_DWORD*)(a2 + 24);
-    v18_.v22 = &v23;
+    v18_.v22 = &v18_.v23;
     v8 = (__int64*)fw_memory_g_heap_manager_ptr;
-    v9 = fw_memory_HeapManager_Allocate_alt1(
+    v9 = fw_memory_HeapManager_Allocate_alt2(
         *(_QWORD*)fw_memory_g_heap_manager_ptr, 48, 16, 0);
     *(_QWORD*)(v9 + 16) = 0;
     *(_QWORD*)(v9 + 24) = 0;
     *(_DWORD*)(v9 + 32) = 0;
     *(_QWORD*)v9 = GameData_1fa1068;
     *(_QWORD*)(v9 + 8) = 0;
-    GameRoutine_7fb7c0_alt1((char**)(v9 + 8), (__int64)v7, v6,
-                            (v6 - (__int64)v7) >> 2);
+    GameRoutine_7fb7c0_alt3((__int64*)(v9 + 8), v7, v6, (v6 - v7) >> 2);
     *(_DWORD*)(v9 + 32) = v18_.v21;
     *(_QWORD*)(v9 + 40) = v18_.v22;
     if ((*(_BYTE*)(a1 + 88) & 8) != 0) {
@@ -462,16 +470,16 @@ __int64 game_UnitSkillList_GetRangeAddImpl(__int64 a1, __int64 a2)
       }
     }
     (*(void (**)(__int64))(*(_QWORD*)v9 + 40LL))(v9);
-    if (v18_.v18 != nullptr) {
+    if (v18_.v18 != 0) {
       v16 = *v8;
       v18_.v19 = v18_.v18;
       v17 = 128;
       if (*(_QWORD*)(v16 + 200) == 0) {
         v17 = 56;
       }
-      nn_mem_StandardAllocator_Free(v16 + v17, v18_.v18);
+      nn_mem_StandardAllocator_Free_alt2(v16 + v17, v18_.v18);
     }
-    return v23;
+    return v18_.v23;
   }
   return result;
 }

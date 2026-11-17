@@ -300,7 +300,9 @@ __int64 nn_g3d_5ef450(__int64 result, __int64 a2)
             (float)(v18 * LANES128(v19).n128_f32[0]);
       v22 = -(float)(v21 +
                      (float)((float)-v16 *
-                             COERCE_FLOAT(HIDWORD(*(_QWORD*)(v15 + 16 * v6)))));
+                             COERCE_FLOAT(DWORDn(
+                                 *(_QWORD*)(v15 + 16 * v6),
+                                 sizeof(*(_QWORD*)(v15 + 16 * v6)) / 4 - 1))));
       v23 =
           -(float)(v20 + (float)((float)-v18 *
                                  COERCE_FLOAT(*(_QWORD*)(v15 + 16 * v6 + 8))));
@@ -329,15 +331,21 @@ __int64 nn_g3d_5ef450(__int64 result, __int64 a2)
                           (float)(v24 * COERCE_FLOAT(
                                             *(_QWORD*)(v15 + 16 * v6 + 8)))) +
                   (float)(v28 *
-                          COERCE_FLOAT(HIDWORD(*(_QWORD*)(v15 + 16 * v6))))) +
-          (float)(v27 * COERCE_FLOAT(HIDWORD(*(_OWORD*)(v15 + 16 * v6))));
+                          COERCE_FLOAT(DWORDn(
+                              *(_QWORD*)(v15 + 16 * v6),
+                              sizeof(*(_QWORD*)(v15 + 16 * v6)) / 4 - 1)))) +
+          (float)(v27 * COERCE_FLOAT(
+                            DWORDn(*(_OWORD*)(v15 + 16 * v6),
+                                   sizeof(*(_OWORD*)(v15 + 16 * v6)) / 4 - 1)));
       *(float*)(v10 + 24) =
           (float)((float)(vmuls_lane_f32(v23, *(float32x2_t*)(v15 + 16 * v6),
                                          1) +
                           (float)(COERCE_FLOAT(*(_OWORD*)(v15 + 16 * v6)) *
                                   v27)) +
                   (float)(v28 * COERCE_FLOAT(*(_QWORD*)(v15 + 16 * v6 + 8)))) +
-          (float)(v25 * COERCE_FLOAT(HIDWORD(*(_OWORD*)(v15 + 16 * v6))));
+          (float)(v25 * COERCE_FLOAT(
+                            DWORDn(*(_OWORD*)(v15 + 16 * v6),
+                                   sizeof(*(_OWORD*)(v15 + 16 * v6)) / 4 - 1)));
     }
     if ((v12 & 0x80000000) != 0) {
       v2 = v35;
@@ -367,7 +375,7 @@ __int64 nn_g3d_5ef450(__int64 result, __int64 a2)
           3LL * ((unsigned __int8)*(_DWORD*)(*(_QWORD*)(v3 + 136) + 4LL) >> 6) +
           1;
     }
-    result = ((__int64 (*)(__int64, _QWORD))SkeletalAnimObj_5f6770_ptr[v32])(
+    result = ((__int64 (*)(__int64, __int64))SkeletalAnimObj_5f6770_ptr[v32])(
         v10, *(_DWORD*)(v14 + 52) & 0x700000);
   LABEL_4:
     ++v6;
@@ -1630,7 +1638,7 @@ __int64 nn_g3d_5f4620(__int64 result, float32x4_t* a2)
     v3 = 0;
     v4 = (float32x4_t*)(*(_QWORD*)result + 48LL);
     do {
-      if (!(fabsf(LANES128(v4[1]).n128_f32[1]) < 0x1.0624de0000000p-10f)) {
+      if (fabsf(LANES128(v4[1]).n128_f32[1]) >= 0x1.0624de0000000p-10f) {
         LANES128(v2[-5]).n128_u32[0] =
             (LANES128(v2[-5]).n128_u32[0] & 0xF07FFFFF |
              (((LANES128(v4[1]).n128_u32[0] >> 23) & 0x1F) << 23)) ^

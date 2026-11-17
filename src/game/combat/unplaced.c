@@ -2213,7 +2213,7 @@ void game_combat_e44050(float32x4_t* a1)
   LABEL_16:
     v14 = v9 - v11;
     v15 = (float)(PSEUDO_UNFUSED(v14 * v14)) + (float)(v12 * v12);
-    if (!(v15 < 0x1.0000000000000p-23f)) {
+    if (v15 >= 0x1.0000000000000p-23f) {
       v18 = 0x1.0000000000000p+0f / sqrtf(v15);
       v17 = v12 * v18;
       v16 = v14 * v18;
@@ -2245,7 +2245,7 @@ LABEL_20:
     LANES128(a1[1]).n128_u32[0] = LANES128(a1[1]).n128_u32[2];
     LANES128(a1[1]).n128_u32[1] = v19;
   }
-  if (!(LANES128(a1[8]).n128_i32[0] > 0)) {
+  if (LANES128(a1[8]).n128_i32[0] <= 0) {
     LANES128(v39).n128_u64[0] = 0x3F80000000000000LL;
     v20 = game_combat_e401e0((float*)&v39, (float*)&a1[1]);
     LANES128(v39).n128_u64[0] = 0x3F80000000000000LL;
@@ -2253,7 +2253,7 @@ LABEL_20:
     v22 = (_QWORD*)LANES128(*(a1)).n128_u64[1];
     v23 = 0x0.0p+0f;
     v24 = v22[6];
-    if (v24 != 0 && *(_QWORD*)(v24 + 8) != -1 && v22[7] != 0) {
+    if (v24 != 0 && *(_QWORD*)(v24 + 8) != -1 & v22[7] != 0) {
       v26 = v22[1];
       if (v26 != 0) {
         v23 = (float)((float)(*(float*)(*(_QWORD*)(v26 + 496) + 16LL) *
@@ -2264,7 +2264,7 @@ LABEL_20:
     }
     v27 = v23 * LANES128(a1[6]).n128_f32[2];
     v28 = GameRoutine_1a0a6a0(v21 - v20, 0x1.921fb60000000p+2f);
-    if (!(v28 < 0x0.0p+0f)) {
+    if (v28 >= 0x0.0p+0f) {
       v29 = v28 + 0x0.0p+0f;
     }
     else {
@@ -2275,18 +2275,18 @@ LABEL_20:
     }
     v30 = fabsf(v27);
     v31 = v20 + v29;
-    if (!(v20 > v31)) {
-      if (!(v20 < v31)) {
+    if (v20 <= v31) {
+      if (v20 >= v31) {
         goto LABEL_41;
       }
       v20 = v20 + v30;
-      if (!(v20 > v31)) {
+      if (v20 <= v31) {
         goto LABEL_41;
       }
     }
     else {
       v20 = v20 - v30;
-      if (!(v20 < v31)) {
+      if (v20 >= v31) {
       LABEL_41:
         v32 = GameRoutine_1a0a6a0(v20 + 0x1.921fb60000000p+1f,
                                   0x1.921fb60000000p+2f) +
@@ -2296,9 +2296,9 @@ LABEL_20:
         }
         v33 = v32 + (float)(roundf(v32 * 0x1.45f3060000000p-3f) *
                             -0x1.921fb60000000p+2f);
-        if (!(v33 > 0x1.921fb60000000p+0f)) {
+        if (v33 <= 0x1.921fb60000000p+0f) {
           v35 = 0x1.0000000000000p+0f;
-          if (!(v33 < -0x1.921fb60000000p+0f)) {
+          if (v33 >= -0x1.921fb60000000p+0f) {
           LABEL_48:
             v36 = v33 * v33;
             v37 =

@@ -63,6 +63,8 @@ int GameRoutine_1a09cf0_alt1(__int64, __int64, unsigned __int64);
 unsigned __int64 GameRoutine_1a09c70_alt1(const char*);
 __int64 snd_dfd00(__int64 a1, char* a2);
 __int64 snd_11f260(__int64 a1, __int64 a2);
+__int64 Wind_e5340_alt1(__int64 result, const char*, const char*, const char*,
+                        __int64, __int64);
 
 __int64 snd_dfd00(__int64 a1, char* a2)
 {
@@ -414,11 +416,11 @@ LABEL_19:
           }
           ++v24;
         } while (v24 != 64);
-        v17 = *(char**)v58;
+        v17 = *(const char**)v58;
         v18 = Crc32List_1163b0();
         v59 = (unsigned int)snd_fnd_calcCrc32(*(unsigned __int8**)(v58 + 8), 0);
         Manager_11ec80((void*)((__int64)&v60_.v60), v18, (int*)&v59);
-        result = Wind_e5340(v6, v17, a3, a4, v20, (__int64)&v60_.v60);
+        result = Wind_e5340_alt1(v6, v17, a3, a4, v20, (__int64)&v60_.v60);
         v5 = v55;
         v14 = v55[4];
       }

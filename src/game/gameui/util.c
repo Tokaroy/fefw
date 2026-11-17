@@ -887,6 +887,12 @@ __attribute__((swiftcall)) void game_gameui_15ad0c0_alt1(PSEUDO_X8, _QWORD*,
 __int64 std___1___shared_weak_count___release_weak_alt3(__int64);
 __int64 std___1___shared_weak_count_lock_alt2(__int64);
 unsigned __int64 GameRoutine_1a09c70(const char*);
+__int64 GameRoutine_1a0b950(__int64, __int64, unsigned __int64);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_Unit_GetUnknown6cba30_alt2(__int64);
+void __attribute__((noreturn)) GameRoutine_60a210_alt2();
+void __attribute__((noreturn)) GameRoutine_6e3e20_alt2();
 
 __int64 game_gameui_Util_CountAvailableArtsNum(__int64 a1, __int64 a2,
                                                __int64 a3)
@@ -18515,6 +18521,9 @@ __attribute__((swiftcall)) void
 game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
                                               __int64 a2)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* a3 = (_QWORD*)PSEUDO_X8_VALUE(x8_);
   __int64* v6;
   _QWORD* v7;
@@ -18561,7 +18570,7 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
   v30_.v31 = 0;
   v30_.v30[0] = 8;
   v6 = (__int64*)fw_memory_g_heap_manager_ptr;
-  v7 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(
+  v7 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(
       *(_QWORD*)fw_memory_g_heap_manager_ptr, 40, 16, 0);
   v7[4] = a3;
   v28_.v29 = v7;
@@ -18579,7 +18588,7 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
   LABEL_5:
     (*(void (**)(__int64))(*v28_.v29 + v8))((__int64)v28_.v29);
   }
-  if ((unsigned __int8)game_Unit_GetUnknown6cba30_alt1(v32) == 2 &&
+  if ((unsigned __int8)game_Unit_GetUnknown6cba30_alt2(v32) == 2 &&
       (v30_.v31 & 0xFFF) != 0) {
     for (i = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21c99b0 + 64) +
                                    8LL * (v30_.v31 & 0xFFF)) +
@@ -18603,7 +18612,7 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
         v18 = ((__int64)v15 - v16) >> 2;
         v19 = v18 + 1;
         if ((unsigned __int64)(v18 + 1) >> 62 != 0) {
-          GameRoutine_6e3e20_alt1();
+          GameRoutine_6e3e20_alt2();
         }
         v20 = v14 - v16;
         if (v20 >> 1 > v19) {
@@ -18614,9 +18623,9 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
                   : v19;
         if (v21 != 0) {
           if (v21 >> 62 != 0) {
-            GameRoutine_60a210_alt1();
+            GameRoutine_60a210_alt2();
           }
-          v22 = fw_memory_HeapManager_Allocate_alt1(*v6, 4 * v21, 16, 0);
+          v22 = fw_memory_HeapManager_Allocate_alt2(*v6, 4 * v21, 16, 0);
         }
         else {
           v22 = 0;
@@ -18626,7 +18635,7 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
         v25 = (__int64)&v17[v22 + -4 * v18];
         *(_DWORD*)&v17[v22] = v13;
         v10 = (__int64)&v17[v22 + 4];
-        memcpy_alt1(v25, v16, v24);
+        GameRoutine_1a0b950(v25, v16, v24);
         a3[3] = v25;
         a3[4] = v10;
         a3[5] = v23;
@@ -18635,7 +18644,7 @@ game_gameui_Util_CollectBlazeArtsInfo_159cce0(PSEUDO_X8 x8_, __int64 a1,
           if (*(_QWORD*)(*v6 + 200) == 0) {
             v26 = 56;
           }
-          nn_mem_StandardAllocator_Free_alt3(*v6 + v26, v16);
+          nn_mem_StandardAllocator_Free_alt4(*v6 + v26, v16);
         }
       }
       v11 = GameData_21c99b0;

@@ -84,6 +84,8 @@ __int64 GameHr_14a1390(__int64*, char);
 __int64 std___1___shared_weak_count___release_weak_alt2(__int64) __asm__(
     "std___1___shared_weak_count___release_weak");
 void Cursor_Impl_Destructor(__int64 a1);
+int __cxa_guard_acquire_alt2(__int64);
+void __cxa_guard_release_alt2(__int64);
 
 __int64 Cursor_Destructor_f565b0(_QWORD* a1)
 {
@@ -266,6 +268,9 @@ LABEL_36:
 
 void Cursor_f56980(int8x16_t* a1)
 {
+
+#pragma clang fp contract(on)
+
   float v2;
   float v3;
   float v4;
@@ -330,7 +335,11 @@ void Cursor_f56980(int8x16_t* a1)
   v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s1", "=w"));
   v4 = LANES128(a1[13]).n128_f32[1];
   v5 = game_script_hub_g_frame_counter_ptr[0];
-  LODWORD(v6) = LANES128(a1[18]).n128_u32[2];
+  {
+    __typeof__(v6) z_ = (__typeof__(v6)){0};
+    LODWORD(z_) = LANES128(a1[18]).n128_u32[2];
+    v6 = z_;
+  }
   v7 = *(_QWORD*)game_script_hub_g_frame_counter_ptr[0];
   v8 = v4 * (float)(v2 * 0x1.0000000000000p+4f);
   v9 = v4 * (float)(v3 * 0x1.0000000000000p+4f);
@@ -356,7 +365,7 @@ void Cursor_f56980(int8x16_t* a1)
   if (v16 > v8) {
     v16 = v8;
   }
-  if (!(*(float*)&v6 < v8)) {
+  if (*(float*)&v6 >= v8) {
     v16 = LANES128(a1[18]).n128_f32[2];
   }
   if (v17 < v8) {
@@ -376,7 +385,7 @@ void Cursor_f56980(int8x16_t* a1)
   if (*(float*)&v6 > v9) {
     *(float*)&v6 = v9;
   }
-  if (!(v12 < v9)) {
+  if (v12 >= v9) {
     *(float*)&v6 = v12;
   }
   if (*(float*)&v11 < v9) {
@@ -409,8 +418,11 @@ void Cursor_f56980(int8x16_t* a1)
     LANES128(v30).n128_u32[1] = LANES128(a1[10]).n128_u32[2];
     *(_QWORD*)&v32 = DWORD1(v31);
     DWORD1(v31) = LANES128(v30).n128_u32[1];
-    LANES128(v30).n128_u64[1] = HIDWORD(LANES128(a1[17]).n128_u64[1]);
-    *((_QWORD*)&v31 + 1) = HIDWORD(LANES128(a1[18]).n128_u64[0]);
+    LANES128(v30).n128_u64[1] =
+        DWORDn(LANES128(a1[17]).n128_u64[1],
+               sizeof(LANES128(a1[17]).n128_u64[1]) / 4 - 1);
+    *((_QWORD*)&v31 + 1) = DWORDn(LANES128(a1[18]).n128_u64[0],
+                                  sizeof(LANES128(a1[18]).n128_u64[0]) / 4 - 1);
     v55 = v31;
     v56[0] = v30;
     game_zview_d16b40(0x1.cccccc0000000p-2f, LANES128(v30).n128_f64[1],
@@ -443,14 +455,14 @@ void Cursor_f56980(int8x16_t* a1)
                               memory_order_acquire) &
          1) == 0) {
       v51 = (float)(v33 * 0x1.0aef000000000p+4f) / 0x1.f400000000000p+9f;
-      v52 = __cxa_guard_acquire(&GameData_21a6190),
+      v52 = __cxa_guard_acquire_alt2((__int64)&GameData_21a6190),
       v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s1", "=w"));
       v35 = v51;
       if (v52 != 0) {
         v53 = *((_QWORD*)GameData_212c558 + 1);
         *(_QWORD*)&GameData_21a6180 = *(_QWORD*)GameData_212c558;
         *((_QWORD*)&GameData_21a6180 + 1) = v53;
-        __cxa_guard_release(&GameData_21a6190),
+        __cxa_guard_release_alt2((__int64)&GameData_21a6190),
             v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s1", "=w"));
         v35 = v51;
       }
@@ -463,9 +475,9 @@ void Cursor_f56980(int8x16_t* a1)
                                  0x1.0000000000000p-1f) *
                          0x1.45f3060000000p-3f) *
                   -0x1.921fb60000000p+2f);
-    if (!(v36 > 0x1.921fb60000000p+0f)) {
+    if (v36 <= 0x1.921fb60000000p+0f) {
       v39 = 0x1.0000000000000p+0f;
-      if (!(v36 < -0x1.921fb60000000p+0f)) {
+      if (v36 >= -0x1.921fb60000000p+0f) {
       LABEL_36:
         v40 = vmulq_f32(COERCE_AS(float32x4_t, GameData_21a6180),
                         COERCE_AS(float32x4_t, GameData_21a6180));
@@ -602,11 +614,11 @@ void Cursor_f56980(int8x16_t* a1)
   if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_21a5680,
                             memory_order_acquire) &
        1) == 0 &&
-      (unsigned int)__cxa_guard_acquire(&GameData_21a5680) != 0) {
+      __cxa_guard_acquire_alt2((__int64)&GameData_21a5680) != 0) {
     v54 = *((_QWORD*)GameData_212c2f8 + 1);
     *(_QWORD*)&GameData_21a5670 = *(_QWORD*)GameData_212c2f8;
     *((_QWORD*)&GameData_21a5670 + 1) = v54;
-    __cxa_guard_release(&GameData_21a5680),
+    __cxa_guard_release_alt2((__int64)&GameData_21a5680),
         v3 = COERCE_AS(__typeof__(v3), PSEUDO_REGISTER(float, "s1", "=w"));
   }
   v38 = LANES128_OF(vextq_s8(COERCE_AS(int8x16_t, GameData_21a5670),

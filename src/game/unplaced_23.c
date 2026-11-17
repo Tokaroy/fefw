@@ -2706,6 +2706,7 @@ __int64 game_11c4a00(__int64 result, __int64 a2, float a3);
 bool game_1214620(_DWORD* a1, int* a2);
 void game_156c910(__int64 result, char* a2, int a3, ...);
 bool game_1732160(_DWORD* a1, int* a2);
+float GameRoutine_1a0a6a0(float, float);
 
 void game_5c2180(float a1, float a2, __int64 a3, float32x4_t* a4, __int64 a5,
                  float32x4_t* a6, float* a7)
@@ -2771,7 +2772,8 @@ void game_5c2180(float a1, float a2, __int64 a3, float32x4_t* a4, __int64 a5,
   LANES128(v11).n128_u32[0] = *(unsigned __int32*)&(*a6);
   *a4 = v11;
   v9 = *a6;
-  LANES128(v11).n128_u32[1] = HIDWORD(LANES128(*(a6)).n128_u64[0]);
+  LANES128(v11).n128_u32[1] = DWORDn(
+      LANES128(*(a6)).n128_u64[0], sizeof(LANES128(*(a6)).n128_u64[0]) / 4 - 1);
   *a4 = v11;
   v10 = *a6;
   LANES128(v11).n128_u64[1] = (unsigned int)LANES128(*(a6)).n128_u64[1];
@@ -2795,10 +2797,11 @@ void game_5c2180(float a1, float a2, __int64 a3, float32x4_t* a4, __int64 a5,
           v19 = a4;
           v20 = a7;
           v21 = a5;
-          v22 = fmodf(a2 + (float)((float)(*a7 * (float)LODWORD(a1)) *
-                                   (float)v15),
-                      (float)v15) /
-                (float)v15;
+          v22 =
+              GameRoutine_1a0a6a0(
+                  a2 + (float)((float)(*a7 * (float)LODWORD(a1)) * (float)v15),
+                  (float)v15) /
+              (float)v15;
           a2 = v18;
           a5 = v21;
           a7 = v20;

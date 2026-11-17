@@ -732,8 +732,8 @@ void game_zview_d12d30_alt1(__int64, int32x2_t*,
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 void snd_Fade_Fade_10c830(__int64, float);
 void snd_Fade_Fade_10c910(__int64, int);
-__int64 game_55c3a0(__int64 result, __int64 a2, float a3, double a4, float a5,
-                    double a6, float a7);
+__int64 game_55c3a0_alt1(__int64 result, __int64 a2, float a3, double a4,
+                         float a5, double a6, float a7);
 void game_5c11f0(float a1, __int64 a2, float32x2_t* a3, float32x2_t* a4,
                  float* a5, int32x4_t* a6, _QWORD* a7, int a8, __int64 a9);
 float game_5c4340(__int128* a1, __int64 a2, __int64 a3, int a4, float* a5,
@@ -815,136 +815,175 @@ __int64 game_159e2c0(__int64 a1, char a2);
 __int64 game_159e540(__int64 a1);
 __int64 game_15fc3b0(__int64 a1, _QWORD* a2, __int64 a3);
 void game_156d210(__int64 a1, int a2, __int16 a3);
+__int64 game_55c3a0(__int64 result, __int64 a2, float a3, double a4, double a5,
+                    double a6, double a7, double a8, double a9);
 
-__int64 game_55c3a0(__int64 result, __int64 a2, float a3, double a4, float a5,
-                    double a6, float a7)
+__int64 game_55c3a0(__int64 result, __int64 a2, float a3, double a4, double a5,
+                    double a6, double a7, double a8, double a9)
 {
-  unsigned int v8;
-  float v9;
-  float v10;
+  unsigned int v10;
   float v11;
-  unsigned int v12;
+  float v12;
   float v13;
-  float v14;
+  unsigned int v14;
   float v15;
   float v16;
   float v17;
   float v18;
   unsigned int v19;
-  float v20;
-  unsigned int v21;
+  unsigned int v20;
+  float v21;
   float v22;
   float v23;
   float v24;
-  float v25;
-  float v26;
-  __int64 v27;
-  int v28;
-  float v29;
-  float v30;
+  __int64 v25;
+  int v26;
+  float v27;
+  float v28;
+  unsigned int v29;
+  unsigned int v30;
   unsigned int v31;
-  unsigned int v32;
-  unsigned int v33;
-  __int64 v34;
+  __int64 v32;
+  float v33;
+  float v34;
   __int64 v35;
   char v36;
   float v37;
-  int v38;
+  float v38;
   float v39;
-  long double v40;
+  int v40;
   float v41;
+  long double v42;
+  float v43;
 
-  v8 = *(unsigned __int16*)(a2 + 24);
-  v9 = (float)v8;
+  v10 = *(unsigned __int16*)(a2 + 24);
+  v11 = (float)v10;
   if (*(_BYTE*)(*(_QWORD*)(result + 40) + 9LL) == 1) {
-    LOWORD(a5) = *(_WORD*)(a2 + 20);
-    v10 = (float)(*(unsigned __int16*)(a2 + 14) + v8);
-    v11 = (float)LODWORD(a5);
-    v12 = *(unsigned __int16*)(a2 + 26);
-    v13 = (float)(v9 + -0x1.0000000000000p-1f) / v11;
-    v14 = (float)(v10 + 0x1.0000000000000p-1f) / v11;
-    v15 = *(float*)(result + 12);
-    v16 = *(float*)(result + 16);
-    v17 = *(float*)(result + 24);
-    a3 = a3 + (float)(v15 * -0x1.0000000000000p-1f);
-    v18 = v17 + (float)(v16 * -0x1.0000000000000p-1f);
-    LOWORD(v17) = *(_WORD*)(a2 + 10);
-    *(float*)&v19 = (float)LODWORD(v17) + 0x1.0000000000000p+0f;
-    v20 = v15 * *(float*)&v19;
-    LOWORD(v19) = *(_WORD*)(a2 + 16);
-    *(float*)&v21 = (float)v19;
-    v22 = *(float*)&v21 + 0x1.0000000000000p+0f;
-    LOWORD(v21) = *(_WORD*)(a2 + 22);
-    v23 = (float)v21;
-    v24 = (float)((float)v12 + -0x1.0000000000000p-1f) / (float)v21;
-    v25 = v16 * v22;
-    v26 = (float)((float)(*(unsigned __int16*)(a2 + 18) + v12) +
+    {
+      __typeof__(a5) z_ = (__typeof__(a5)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 20);
+      a5 = z_;
+    }
+    v12 = (float)(*(unsigned __int16*)(a2 + 14) + v10);
+    v13 = (float)LODWORD(a5);
+    v14 = *(unsigned __int16*)(a2 + 26);
+    v15 = (float)(v11 + -0x1.0000000000000p-1f) / v13;
+    *(float*)&a5 = (float)(v12 + 0x1.0000000000000p-1f) / v13;
+    v16 = *(float*)(result + 12);
+    v17 = *(float*)(result + 16);
+    v18 = *(float*)(result + 24);
+    a3 = a3 + (float)(v16 * -0x1.0000000000000p-1f);
+    *(float*)&a6 = v18 + (float)(v17 * -0x1.0000000000000p-1f);
+    {
+      __typeof__(v18) z_ = (__typeof__(v18)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 10);
+      v18 = z_;
+    }
+    *(float*)&v19 = (float)LODWORD(v18) + 0x1.0000000000000p+0f;
+    *(float*)&a7 = v16 * *(float*)&v19;
+    {
+      __typeof__(v19) z_ = (__typeof__(v19)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 16);
+      v19 = z_;
+    }
+    *(float*)&v20 = (float)v19;
+    v21 = *(float*)&v20 + 0x1.0000000000000p+0f;
+    {
+      __typeof__(v20) z_ = (__typeof__(v20)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 22);
+      v20 = z_;
+    }
+    v22 = (float)v20;
+    v23 = (float)((float)v14 + -0x1.0000000000000p-1f) / (float)v20;
+    *(float*)&a9 = v17 * v21;
+    v24 = (float)((float)(*(unsigned __int16*)(a2 + 18) + v14) +
                   0x1.0000000000000p-1f) /
-          v23;
-    v27 = *(_QWORD*)(result + 48);
-    v28 = *(_DWORD*)(v27 + 156);
-    if (v28 >= (signed __int32)*(_DWORD*)(v27 + 152)) {
+          v22;
+    v25 = *(_QWORD*)(result + 48);
+    v26 = *(_DWORD*)(v25 + 156);
+    if (v26 >= (signed __int32)*(_DWORD*)(v25 + 152)) {
       return result;
     }
   }
   else {
-    LOWORD(a5) = *(_WORD*)(a2 + 20);
-    LOWORD(a7) = *(_WORD*)(a2 + 22);
-    v29 = (float)LODWORD(a5);
-    v30 = (float)(*(unsigned __int16*)(a2 + 14) + v8);
-    v31 = *(unsigned __int16*)(a2 + 26);
-    v13 = v9 / v29;
-    v14 = v30 / v29;
-    *(float*)&v32 = (float)v31;
-    v24 = (float)v31 / (float)LODWORD(a7);
-    LOWORD(v32) = *(_WORD*)(a2 + 10);
-    v26 = (float)(*(unsigned __int16*)(a2 + 18) + v31) / (float)LODWORD(a7);
-    *(float*)&v33 = (float)v32;
-    v20 = *(float*)(result + 12) * *(float*)&v33;
-    LOWORD(v33) = *(_WORD*)(a2 + 16);
-    v25 = *(float*)(result + 16) * (float)v33;
-    v18 = *(float*)(result + 24);
-    v27 = *(_QWORD*)(result + 48);
-    v28 = *(_DWORD*)(v27 + 156);
-    if (v28 >= (signed __int32)*(_DWORD*)(v27 + 152)) {
+    {
+      __typeof__(a5) z_ = (__typeof__(a5)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 20);
+      a5 = z_;
+    }
+    {
+      __typeof__(a7) z_ = (__typeof__(a7)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 22);
+      a7 = z_;
+    }
+    v27 = (float)LODWORD(a5);
+    v28 = (float)(*(unsigned __int16*)(a2 + 14) + v10);
+    v29 = *(unsigned __int16*)(a2 + 26);
+    v15 = v11 / v27;
+    *(float*)&a5 = v28 / v27;
+    *(float*)&v30 = (float)v29;
+    v23 = (float)v29 / (float)LODWORD(a7);
+    {
+      __typeof__(v30) z_ = (__typeof__(v30)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 10);
+      v30 = z_;
+    }
+    v24 = (float)(*(unsigned __int16*)(a2 + 18) + v29) / (float)LODWORD(a7);
+    *(float*)&v31 = (float)v30;
+    *(float*)&a7 = *(float*)(result + 12) * *(float*)&v31;
+    {
+      __typeof__(v31) z_ = (__typeof__(v31)){0};
+      LOWORD(z_) = *(_WORD*)(a2 + 16);
+      v31 = z_;
+    }
+    *(float*)&a9 = *(float*)(result + 16) * (float)v31;
+    {
+      __typeof__(a6) z_ = (__typeof__(a6)){0};
+      LODWORD(z_) = *(_DWORD*)(result + 24);
+      a6 = z_;
+    }
+    v25 = *(_QWORD*)(result + 48);
+    v26 = *(_DWORD*)(v25 + 156);
+    if (v26 >= (signed __int32)*(_DWORD*)(v25 + 152)) {
       return result;
     }
   }
-  v34 = result;
-  *(_DWORD*)(v27 + 156) = v28 + 1;
-  v35 = *(_QWORD*)(*(_QWORD*)(result + 48) + 160LL) + 56LL * v28;
-  *(float*)v35 = v20;
-  *(float*)(v35 + 4) = v25;
+  v32 = result;
+  *(_DWORD*)(v25 + 156) = v26 + 1;
+  v33 = 0x1.0000000000000p+0f - v24;
+  v34 = 0x1.0000000000000p+0f - v23;
+  v35 = *(_QWORD*)(*(_QWORD*)(result + 48) + 160LL) + 56LL * v26;
+  *(_DWORD*)v35 = LODWORD(a7);
+  *(_DWORD*)(v35 + 4) = LODWORD(a9);
   *(float*)(v35 + 8) = a3;
-  *(float*)(v35 + 12) = v18;
+  *(_DWORD*)(v35 + 12) = LODWORD(a6);
   *(_DWORD*)(v35 + 16) = *(_DWORD*)result;
   *(_DWORD*)(v35 + 20) = *(_DWORD*)(result + 4);
   v36 = *(_BYTE*)(result + 57);
-  *(float*)(v35 + 24) = v13;
-  *(float*)(v35 + 28) = 0x1.0000000000000p+0f - v24;
-  *(float*)(v35 + 32) = v14;
-  *(float*)(v35 + 36) = 0x1.0000000000000p+0f - v26;
+  *(float*)(v35 + 24) = v15;
+  *(float*)(v35 + 28) = v34;
+  *(_DWORD*)(v35 + 32) = LODWORD(a5);
+  *(float*)(v35 + 36) = v33;
   *(_BYTE*)(v35 + 51) = v36;
-  v37 = *(float*)(result + 36) * *(float*)(result + 12);
-  *(_WORD*)(v35 + 48) =
-      (int)(float)(v37 * (float)(int)X8CALL_X0(
-                             _QWORD*, (*(__attribute__((swiftcall)) void (**)(
-                                          PSEUDO_X8, _QWORD))(
-                                          **(_QWORD**)(result + 40) + 32LL))(
-                                          (void*)*(_QWORD**)(result + 40),
-                                          *(_QWORD*)(result + 40))));
-  v38 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(v34 + 40) + 40LL))(
-      *(_QWORD*)(v34 + 40));
-  v39 = *(float*)(v34 + 16);
-  *(float*)&v40 = v39 * (float)v38;
-  v41 = v39 + *(float*)&v40;
-  if (*(_BYTE*)(*(_QWORD*)(v34 + 40) + 9LL) != 0) {
-    *(float*)&v40 = v41;
+  v37 = *(float*)(result + 36);
+  v38 = *(float*)(result + 12);
+  v39 = (float)(v37 * v38) *
+        (float)(*(int (**)(__int64, float, float, double, double, double, float,
+                           double, float))(**(_QWORD**)(result + 40) + 32LL))(
+            *(_QWORD*)(result + 40), v37, v38, a5, a6, a7, v34, a9, v33);
+  *(_WORD*)(v35 + 48) = (int)v39;
+  v40 = (*(__int64 (**)(__int64, float))(**(_QWORD**)(v32 + 40) + 40LL))(
+      *(_QWORD*)(v32 + 40), v39);
+  v41 = *(float*)(v32 + 16);
+  *(float*)&v42 = v41 * (float)v40;
+  v43 = v41 + *(float*)&v42;
+  if (*(_BYTE*)(*(_QWORD*)(v32 + 40) + 9LL) != 0) {
+    *(float*)&v42 = v43;
   }
-  GameRoutine_55d680(*(_QWORD*)(v34 + 48), v40);
+  GameRoutine_55d680(*(_QWORD*)(v32 + 48), v42);
   *(_BYTE*)(v35 + 50) = *(_BYTE*)(a2 + 42);
-  result = (*(__int64 (**)(_QWORD))(**(_QWORD**)(v34 + 40) + 280LL))(
-      *(_QWORD*)(v34 + 40));
+  result = (*(__int64 (**)(__int64))(**(_QWORD**)(v32 + 40) + 280LL))(
+      *(_QWORD*)(v32 + 40));
   *(_QWORD*)(v35 + 40) = *(_QWORD*)(a2 + 32) | result & 1;
   return result;
 }

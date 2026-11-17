@@ -101,6 +101,7 @@ snd_fnd_calcCrc32Reverse_alt1(const char* result,
                               int) __asm__("snd_fnd_calcCrc32Reverse");
 unsigned __int64
 GameRoutine_190020_alt1(__int64*, const char*) __asm__("GameRoutine_190020");
+__int64 TargetFile_a392e0(__int64, __int64, ...);
 
 void VibVoice_13f5c0(__int64 a1, __int64 a2)
 {
@@ -1121,6 +1122,8 @@ __int64 VibVoice_140a70(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int* a5,
                         float a11)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v19;
   __int64* v21;
@@ -1213,7 +1216,7 @@ __int64 VibVoice_140a70(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int* a5,
     v32 = Data_f6c20(a5, (_QWORD*)(a1 + 6096));
     v33 = *(_DWORD**)(a1 + 6088);
     v34 = *(_DWORD*)(v32 + 4);
-    *v33 = *(_DWORD*)v32;
+    *(_DWORD*)v33 = *(_DWORD*)v32;
     v33[1] = v34;
     GameRoutine_190200((__int64)(v33 + 2), *(char**)(v32 + 8));
     goto LABEL_19;
@@ -1224,14 +1227,14 @@ __int64 VibVoice_140a70(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int* a5,
   v23[1] = v24;
   v25 = *a5;
   ConstructString_1901f0(&v84_.v84);
-  GameRoutine_a392e0((__int64)&v84_.v84, (__int64)"[ %08x:%08x ]", v25, v24);
+  TargetFile_a392e0((__int64)&v84_.v84, (__int64)"[ %08x:%08x ]", v25, v24);
   v26 = *(_QWORD*)(a1 + 6088);
   v29 = *(_BYTE*)(v26 + 8);
   v28 = (__int64*)(v26 + 8);
   v27 = v29;
   if (v28 == &v84_.v84) {
     if ((v27 & 1) != 0) {
-      (*(void (**)(__int64, _QWORD))(*(_QWORD*)snd_g_memory + 24LL))(
+      (*(void (**)(__int64, __int64))(*(_QWORD*)snd_g_memory + 24LL))(
           snd_g_memory, *(_QWORD*)(*(_QWORD*)(a1 + 6088) + 24LL));
     }
     v36 = v84_.v85;
@@ -1271,8 +1274,8 @@ __int64 VibVoice_140a70(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int* a5,
         goto LABEL_19;
       }
     LABEL_18:
-      (*(void (**)(_QWORD, char*))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
-          *snd_g_memory_ptr[0], v84_.v86);
+      (*(void (**)(__int64, __int64))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
+          *snd_g_memory_ptr[0], (__int64)v84_.v86);
       goto LABEL_19;
     }
     GameRoutine_a3a3a0(v28, (__int64)v84_.v86, v84_.v85);
@@ -1386,7 +1389,7 @@ LABEL_19:
     }
   LABEL_32:
     if ((v46 & 1) != 0) {
-      (*(void (**)(_QWORD, _QWORD))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
+      (*(void (**)(__int64, __int64))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
           *snd_g_memory_ptr[0], *(_QWORD*)(a1 + 5752));
     }
     v59 = v84_.v84;
@@ -1426,8 +1429,8 @@ LABEL_22:
       }
     }
   LABEL_64:
-    (*(void (**)(_QWORD, char*))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
-        *snd_g_memory_ptr[0], v84_.v86);
+    (*(void (**)(__int64, __int64))(**(_QWORD**)snd_g_memory_ptr[0] + 24LL))(
+        *snd_g_memory_ptr[0], (__int64)v84_.v86);
     goto LABEL_65;
   }
   if ((v84_.v84 & 1) != 0) {
@@ -1458,9 +1461,9 @@ LABEL_65:
   snd_fnd_WeakHandle_set((__int64)&v84_.v84, v79);
   GameRoutine_112180(a1 + 5800, (__int64)&v84_.v84);
   (*(void (**)(__int64, __int64))(*(_QWORD*)a1 + 16LL))(a1, a4);
-  v80 =
-      (*(__int64 (**)(__int64, _QWORD, _QWORD))(*(_QWORD*)snd_g_proxy + 552LL))(
-          snd_g_proxy, *(_QWORD*)(a1 + 32), *(unsigned int*)(a7 + 212));
+  v80 = (*(__int64 (**)(__int64, __int64, __int64))(
+      *(_QWORD*)snd_g_proxy + 552LL))(snd_g_proxy, *(_QWORD*)(a1 + 32),
+                                      *(unsigned int*)(a7 + 212));
   v81 = *(_QWORD*)(a1 + 40);
   *(_QWORD*)(a1 + 6136) = v80;
   (*(void (**)(__int64, float, float, float))(v81 + 1024))(a1 + 40, a9, a10,

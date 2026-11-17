@@ -42,6 +42,7 @@ unsigned __int64
 GameRoutine_190020_alt1(__int64*, const char*) __asm__("GameRoutine_190020");
 void nn_diag_detail_AbortImpl_1a0a590_alt1() __asm__(
     "nn_diag_detail_AbortImpl_1a0a590");
+float snd_fnd_calcDistanceTo_alt2(float*, float*);
 
 __int64 GameAlloc_e1ba0(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                         __int64 a5, __int64 a6)
@@ -239,6 +240,8 @@ __int64 GameAlloc_e2400(__int64 a1, __int64 a2, __int64 a3)
 void GameAlloc_e2920(__int64 a1, __int64 a2)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v7;
   __int64 v8;
@@ -284,9 +287,10 @@ void GameAlloc_e2920(__int64 a1, __int64 a2)
           v26_.v26[1] = 0;
           v26_.v27 = 0;
           v19 = Env_e0b20(a1, v18, (__int64)v26_.v26, a2);
-          HIDWORD(v26_.v26[1]) = *(_DWORD*)(a2 + 12);
+          DWORDn(v26_.v26[1], sizeof(v26_.v26[1]) / 4 - 1) =
+              *(_DWORD*)(a2 + 12);
           v20 =
-              snd_fnd_calcDistanceTo_alt1((float*)(a1 + 392), (float*)v26_.v26);
+              snd_fnd_calcDistanceTo_alt2((float*)(a1 + 392), (float*)v26_.v26);
           v17 = *v10;
           v21 = 0x0.0p+0f;
           v22 = *(float*)(*v10 + 180);

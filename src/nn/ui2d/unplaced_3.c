@@ -41,6 +41,16 @@ float32x4_t nn_ui2d_56d270(float32x4_t* a1);
 void nn_ui2d_572660(_QWORD* a1, __int64 a2);
 __int64 nn_ui2d_575670(__int64 a1, unsigned int* a2, signed int a3);
 _QWORD* nn_ui2d_577870(_QWORD* result, _QWORD* a2);
+typedef __int64 GameAlign_21a387c __attribute__((aligned(4)));
+extern GameAlign_21a387c GameData_21a387c_alt1;
+typedef __int64 GameAlign_21a3884 __attribute__((aligned(4)));
+extern GameAlign_21a3884 GameData_21a3884_alt1;
+typedef __int64 GameAlign_21a388c __attribute__((aligned(4)));
+extern GameAlign_21a388c GameData_21a388c_alt1;
+typedef int GameAlign_21a3853 __attribute__((aligned(1)));
+extern GameAlign_21a3853 GameData_21a3853_alt1;
+typedef int GameAlign_21a3877 __attribute__((aligned(1)));
+extern GameAlign_21a3877 GameData_21a3877_alt1;
 
 float32x4_t nn_ui2d_56d270(float32x4_t* a1)
 {
@@ -435,7 +445,7 @@ _QWORD* nn_ui2d_577870(_QWORD* result, _QWORD* a2)
     v3 = v2;
     result = v8;
     if (v3 != 0) {
-      GameData_21a3853 = 0;
+      GameData_21a3853_alt1 = 0;
       GameData_21a3857 = 0;
       GameData_21a3850 = 1025;
       GameData_21a3852 = 5;
@@ -458,13 +468,13 @@ _QWORD* nn_ui2d_577870(_QWORD* result, _QWORD* a2)
     v5 = v4;
     result = v9;
     if (v5 != 0) {
-      GameData_21a3877 = 0;
+      GameData_21a3877_alt1 = 0;
       GameData_21a387b = 0;
       GameData_21a3874 = 1025;
       GameData_21a3876 = 5;
-      GameData_21a387c = 0x1040300010401LL;
-      GameData_21a3884 = 0x1010500080001LL;
-      GameData_21a388c = 0x1000100050001LL;
+      GameData_21a387c_alt1 = 0x1040300010401LL;
+      GameData_21a3884_alt1 = 0x1010500080001LL;
+      GameData_21a388c_alt1 = 0x1000100050001LL;
       GameData_21a3894 = 589825;
       __cxa_guard_release((__int64)&GameData_21a3848);
       result = v9;

@@ -65,6 +65,9 @@ __int64 WaveStreamReader_Unknown9(__int64 a1, __int64 a2, int a3);
 __int64 WaveStreamReader_Unknown10(__int64 a1, __int64 a2, int a3);
 __int64 memset_alt2(_QWORD, _QWORD, _QWORD) __asm__("memset");
 __int64 WaveStreamReader_GetInterfaceCount(__int64 a1);
+__int64 nn_os_LockMutex_alt2(__int64);
+__int64 nn_os_UnlockMutex_alt3(__int64);
+__int64 snd_fnd_WeakHandle_get_alt2(__int64);
 
 __int64 WaveStreamReader_Destructor(_QWORD* a1)
 {
@@ -1049,6 +1052,9 @@ LABEL_11:
 
 __int64 WaveStreamReader_18c820(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   int v2;
   __int64 v3;
   __int64 v4;
@@ -1087,24 +1093,24 @@ __int64 WaveStreamReader_18c820(__int64 a1)
   __int64 v39;
   __int64 v40;
   __int64 v41;
-  signed int v42;
-  int v43;
-  signed int v44;
-  int v45;
+  unsigned int* v42;
+  signed int v43;
+  int v44;
+  signed int v45;
   int v46;
-  __int64 v47;
-  int v48;
+  int v47;
+  __int64 v48;
   int v49;
-  unsigned int v50;
-  __int64 v51;
+  int v50;
+  unsigned int v51;
   __int64 v52;
   __int64 v53;
   __int64 v54;
-  _QWORD** v55;
-  __int64 v56;
+  __int64 v55;
+  __int64* v56;
   __int64 v57;
-  __int64 (*v58)(void);
-  int v59;
+  __int64 v58;
+  unsigned int v59;
   int v60;
   __int64 v61;
   int v62;
@@ -1131,27 +1137,27 @@ __int64 WaveStreamReader_18c820(__int64 a1)
   __int16 v83;
   __int64 v84;
   __int64 v85;
-  __int64 i;
+  __int64 v86;
   __int16 v87;
   __int64 v88;
   __int64 v89;
-  __int64 j;
+  __int64 i;
   __int16 v91;
   __int64 v92;
   __int64 v93;
-  __int64 k;
+  __int64 j;
   __int16 v95;
   __int64 v96;
   __int64 v97;
-  __int64 m;
+  __int64 k;
   __int16 v99;
   __int64 v100;
   __int64 v101;
-  __int64 n;
+  __int64 m;
   __int16 v103;
   __int64 v104;
   __int64 v105;
-  __int64 ii;
+  __int64 n;
   __int16 v107;
   __int64 v108;
   __int64 v109;
@@ -1177,20 +1183,21 @@ __int64 WaveStreamReader_18c820(__int64 a1)
   int v130;
   int v131;
   int v132;
-  __int16* v133;
+  __int64 v133;
   int v134;
   int v135;
+  char v136[8];
 
-  nn_os_LockMutex_alt1(a1 + 120);
+  nn_os_LockMutex_alt2(a1 + 120);
   v2 = *(_DWORD*)(a1 + 412);
   if (v2 <= 0) {
-    (*(void (**)(_QWORD, const char*))(**(_QWORD**)snd_g_proxy_ptr[0] + 392LL))(
+    (*(void (**)(__int64, __int64))(**(_QWORD**)snd_g_proxy_ptr[0] + 392LL))(
         *(_QWORD*)snd_g_proxy_ptr[0],
-        "#SoundLibrary : WaveStreamReader request Q count error !!\n");
-    nn_os_LockMutex_alt1(a1 + 120);
+        (__int64)"#SoundLibrary : WaveStreamReader request Q count error !!\n");
+    nn_os_LockMutex_alt2(a1 + 120);
     *(_DWORD*)(a1 + 72) = 3;
-    nn_os_UnlockMutex_alt2(a1 + 120);
-    return nn_os_UnlockMutex_alt2(a1 + 120);
+    nn_os_UnlockMutex_alt3(a1 + 120);
+    return nn_os_UnlockMutex_alt3(a1 + 120);
   }
   v3 = a1 + 284;
   *(_DWORD*)(a1 + 412) = v2 - 1;
@@ -1201,7 +1208,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
   v8 = v5[2];
   v9 = v5[3];
   *(_DWORD*)(a1 + 416) = ((_BYTE)v4 + 1) & 7;
-  nn_os_UnlockMutex_alt2(a1 + 120);
+  nn_os_UnlockMutex_alt3(a1 + 120);
   v10 = a1 + 424;
   v11 = *(_QWORD*)(a1 + 424 + 8 * v9);
   v12 = *(_DWORD*)(v11 + 8);
@@ -1210,10 +1217,11 @@ __int64 WaveStreamReader_18c820(__int64 a1)
     LABEL_8:
       if ((*(_BYTE*)(v11 + 40) & 1) != 0) {
       LABEL_9:
-        (*(void (**)(_QWORD, const char*))(**(_QWORD**)snd_g_proxy_ptr[0] +
-                                           392LL))(
+        (*(void (**)(__int64, __int64))(**(_QWORD**)snd_g_proxy_ptr[0] +
+                                        392LL))(
             *(_QWORD*)snd_g_proxy_ptr[0],
-            "#SoundLibrary : WaveStreamReader cache already using !!\n");
+            (__int64)"#SoundLibrary : WaveStreamReader cache already using "
+                     "!!\n");
         goto LABEL_10;
       }
       v126 = (_BYTE*)(v11 + 40);
@@ -1226,7 +1234,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
         else {
           v34 = a1 + 56;
         }
-        v35 = snd_fnd_WeakHandle_get_alt1(v34);
+        v35 = snd_fnd_WeakHandle_get_alt2(v34);
         v130 = (*(__int64 (**)(__int64))(*(_QWORD*)v35 + 80LL))(v35);
         v131 = v6 + v7;
         if (v6 + v7 >= v130) {
@@ -1237,7 +1245,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
           else {
             v37 = a1 + 56;
           }
-          v38 = snd_fnd_WeakHandle_get_alt1(v37);
+          v38 = snd_fnd_WeakHandle_get_alt2(v37);
           v7 = (*(__int64 (**)(__int64))(*(_QWORD*)v38 + 80LL))(v38)-v6;
         }
         v39 = *(_QWORD*)(a1 + 48);
@@ -1249,58 +1257,65 @@ __int64 WaveStreamReader_18c820(__int64 a1)
         else {
           v40 = a1 + 56;
         }
-        v41 = snd_fnd_WeakHandle_get_alt1(v40);
-        (*(void (**)(__int64, _QWORD, _QWORD, _QWORD))(*(_QWORD*)v41 + 96LL))(
-            v41, *(_QWORD*)(a1 + 456), v6, v7);
+        v41 = snd_fnd_WeakHandle_get_alt2(v40);
+        (*(void (**)(__int64, __int64, __int64, __int64))(
+            *(_QWORD*)v41 + 96LL))(v41, *(_QWORD*)(a1 + 456), v6, v7);
         *(_DWORD*)(v11 + 8) = v6;
         *(_DWORD*)(v11 + 12) = v7;
         *(_DWORD*)(v11 + 20) = v8;
         *(_DWORD*)(*(_QWORD*)(a1 + 160) + 68LL) = v6;
-        v42 = bswap32(**(_DWORD**)(a1 + 456)) + 8;
-        if (v42 <= (signed __int32)*(_DWORD*)(v11 + 12)) {
-          v47 = *(_QWORD*)(v11 + 32);
-          v48 = 0;
+        v42 = *(unsigned int**)(a1 + 456);
+        v43 = bswap32(*v42) + 8;
+        if (v43 <= (signed __int32)*(_DWORD*)(v11 + 12)) {
+          v48 = *(_QWORD*)(v11 + 32);
           v49 = 0;
-          v50 = v42;
-          v133 = *(__int16**)(a1 + 464);
-          v51 = *(unsigned int*)(*(_QWORD*)(a1 + 160) + 32LL);
-          v52 = v51 & 7;
-          v53 = v51 & 0x7FFFFFF8;
-          v54 = 2 * v51;
-          v132 = 0x20000uLL / (2LL * (int)v51) - 960;
+          v50 = 0;
+          v51 = v43;
+          v133 = *(_QWORD*)(a1 + 464);
+          v52 = *(unsigned int*)(*(_QWORD*)(a1 + 160) + 32LL);
+          v53 = v52 & 7;
+          v54 = v52 & 0x7FFFFFF8;
+          v55 = 2 * v52;
+          v132 = 0x20000uLL / (2LL * (int)v52) - 960;
           while (1) {
-            v55 = *(_QWORD***)(a1 + 160);
-            v134 = v48;
-            v43 = v49;
-            v56 = v11;
-            v57 = v51;
+            v56 = *(__int64**)(a1 + 160);
+            v134 = v49;
+            v44 = v50;
+            v57 = v11;
+            v58 = v52;
             if (*(_BYTE*)(a1 + 42) == 1) {
-              v58 = *(__int64 (**)(void))(*v55[1] + 88LL);
+              v59 =
+                  (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64,
+                                  __int64, __int64))(*(_QWORD*)v56[1] + 88LL))(
+                      v56[1], (__int64)v136, (__int64)&v135, v133, 11520,
+                      (__int64)v42, 4096);
             }
             else {
-              v58 = *(__int64 (**)(void))(**v55 + 72LL);
+              v59 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64,
+                                    __int64, __int64))(*(_QWORD*)*v56 + 72LL))(
+                  *v56, (__int64)v136, (__int64)&v135, v133, 3840, (__int64)v42,
+                  4096);
             }
-            v59 = v58();
             if (v59 != 0) {
-              return (*(__int64 (**)(_QWORD, const char*, ...))(
+              return (*(__int64 (**)(__int64, __int64, __int64))(
                   **(_QWORD**)snd_g_proxy_ptr[0] + 392LL))(
                   *(_QWORD*)snd_g_proxy_ptr[0],
-                  "#Sound Library : opus decode failed.[%d]", v59);
+                  (__int64)"#Sound Library : opus decode failed.[%d]", v59);
             }
             v60 = v135;
-            v51 = v57;
-            if ((int)v57 < 1) {
+            v52 = v58;
+            if ((int)v58 < 1) {
               v62 = v135;
-              v11 = v56;
+              v11 = v57;
             }
             else {
-              v11 = v56;
+              v11 = v57;
               if (v135 < 1) {
                 v62 = v135;
               }
               else {
-                if ((unsigned int)v51 >= 8) {
-                  v72 = v133;
+                if ((unsigned int)v52 >= 8) {
+                  v72 = (__int16*)v133;
                   v73 = 1;
                   v74 = 2;
                   v75 = 3;
@@ -1311,94 +1326,122 @@ __int64 WaveStreamReader_18c820(__int64 a1)
                   v79 = 6;
                   v80 = 7;
                   do {
-                    v81 = 0;
-                    v82 = v72;
-                    do {
-                      v83 = *v82;
-                      v82 = (__int16*)((char*)v82 + v54);
-                      v84 = v81 + (int)v61 * v77;
-                      ++v81;
-                      *(_WORD*)(v47 + 2 * v84) = v83;
-                      v77 = v135;
-                    } while (v81 < v135);
+                    if (v77 >= 1) {
+                      v81 = 0;
+                      v82 = v72;
+                      do {
+                        v83 = *v82;
+                        v82 = (__int16*)((char*)v82 + v55);
+                        v84 = v81 + (int)v61 * v77;
+                        ++v81;
+                        *(_WORD*)(v48 + 2 * v84) = v83;
+                        v77 = v135;
+                      } while (v81 < v135);
+                    }
+                    if (v77 < 1) {
+                      goto LABEL_88;
+                    }
                     v85 = 2;
-                    for (i = 0; i < v135; ++i) {
+                    v86 = 0;
+                    do {
                       v87 = *(__int16*)((char*)v72 + v85);
-                      v85 += v54;
-                      v88 = i + v73 * v77;
-                      *(_WORD*)(v47 + 2 * v88) = v87;
+                      v85 += v55;
+                      v88 = v86 + v73 * v77;
+                      ++v86;
+                      *(_WORD*)(v48 + 2 * v88) = v87;
                       v77 = v135;
+                    } while (v86 < v135);
+                    if (v135 < 1) {
+                      goto LABEL_88;
                     }
                     v89 = 4;
-                    for (j = 0; j < v135; ++j) {
+                    for (i = 0; i < v135; ++i) {
                       v91 = *(__int16*)((char*)v72 + v89);
-                      v89 += v54;
-                      v92 = j + v74 * v77;
-                      *(_WORD*)(v47 + 2 * v92) = v91;
+                      v89 += v55;
+                      v92 = i + v74 * v77;
+                      *(_WORD*)(v48 + 2 * v92) = v91;
                       v77 = v135;
+                    }
+                    if (v135 < 1) {
+                      goto LABEL_88;
                     }
                     v93 = 6;
-                    for (k = 0; k < v135; ++k) {
+                    for (j = 0; j < v135; ++j) {
                       v95 = *(__int16*)((char*)v72 + v93);
-                      v93 += v54;
-                      v96 = k + v75 * v77;
-                      *(_WORD*)(v47 + 2 * v96) = v95;
+                      v93 += v55;
+                      v96 = j + v75 * v77;
+                      *(_WORD*)(v48 + 2 * v96) = v95;
                       v77 = v135;
+                    }
+                    if (v135 < 1) {
+                      goto LABEL_88;
                     }
                     v97 = 8;
-                    for (m = 0; m < v135; ++m) {
+                    for (k = 0; k < v135; ++k) {
                       v99 = *(__int16*)((char*)v72 + v97);
-                      v97 += v54;
-                      v100 = m + v76 * v77;
-                      *(_WORD*)(v47 + 2 * v100) = v99;
+                      v97 += v55;
+                      v100 = k + v76 * v77;
+                      *(_WORD*)(v48 + 2 * v100) = v99;
                       v77 = v135;
+                    }
+                    if (v135 < 1) {
+                      goto LABEL_88;
                     }
                     v101 = 10;
-                    for (n = 0; n < v135; ++n) {
+                    for (m = 0; m < v135; ++m) {
                       v103 = *(__int16*)((char*)v72 + v101);
-                      v101 += v54;
-                      v104 = n + v78 * v77;
-                      *(_WORD*)(v47 + 2 * v104) = v103;
+                      v101 += v55;
+                      v104 = m + v78 * v77;
+                      *(_WORD*)(v48 + 2 * v104) = v103;
                       v77 = v135;
+                    }
+                    if (v135 < 1) {
+                      goto LABEL_88;
                     }
                     v105 = 12;
-                    for (ii = 0; ii < v135; ++ii) {
+                    for (n = 0; n < v135; ++n) {
                       v107 = *(__int16*)((char*)v72 + v105);
-                      v105 += v54;
-                      v108 = ii + v79 * v77;
-                      *(_WORD*)(v47 + 2 * v108) = v107;
+                      v105 += v55;
+                      v108 = n + v79 * v77;
+                      *(_WORD*)(v48 + 2 * v108) = v107;
                       v77 = v135;
                     }
-                    v109 = 14;
-                    v110 = 0;
-                    v60 = v135;
-                    do {
-                      v111 = *(__int16*)((char*)v72 + v109);
-                      v109 += v54;
-                      v112 = v110 + v80 * v60;
-                      ++v110;
-                      *(_WORD*)(v47 + 2 * v112) = v111;
+                    if (v135 >= 1) {
+                      v109 = 14;
+                      v110 = 0;
                       v60 = v135;
-                    } while (v110 < v135);
+                      do {
+                        v111 = *(__int16*)((char*)v72 + v109);
+                        v109 += v55;
+                        v112 = v110 + v80 * v60;
+                        ++v110;
+                        *(_WORD*)(v48 + 2 * v112) = v111;
+                        v60 = v135;
+                      } while (v110 < v135);
+                    }
+                    else {
+                    LABEL_88:
+                      v60 = v77;
+                    }
                     v61 += 8;
                     v72 += 8;
                     v73 += 8;
                     v74 += 8;
-                    v77 = v135;
+                    v77 = v60;
                     v75 += 8;
                     v76 += 8;
                     v78 += 8;
                     v79 += 8;
                     v80 += 8;
-                  } while (v61 != v53);
+                  } while (v61 != v54);
                 }
                 else {
                   v61 = 0;
                 }
                 v62 = v60;
-                if (v52 != 0) {
+                if (v53 != 0) {
                   v63 = 0;
-                  v64 = &v133[v61];
+                  v64 = (__int16*)(v133 + 2 * v61);
                   v62 = v60;
                   do {
                     if (v62 >= 1) {
@@ -1406,74 +1449,75 @@ __int64 WaveStreamReader_18c820(__int64 a1)
                       v66 = v64;
                       do {
                         v67 = *v66;
-                        v66 = (__int16*)((char*)v66 + v54);
+                        v66 = (__int16*)((char*)v66 + v55);
                         v68 = v65 + (int)v61 * v62;
                         ++v65;
-                        *(_WORD*)(v47 + 2 * v68) = v67;
+                        *(_WORD*)(v48 + 2 * v68) = v67;
                         v62 = v135;
                       } while (v65 < v135);
                     }
                     ++v63;
                     LODWORD(v61) = v61 + 1;
                     ++v64;
-                  } while (v63 != v52);
+                  } while (v63 != v53);
                 }
               }
             }
-            *(_DWORD*)(*(_QWORD*)(a1 + 160) + 68LL) += v50;
+            *(_DWORD*)(*(_QWORD*)(a1 + 160) + 68LL) += v51;
             v69 = *(_QWORD*)(a1 + 160);
             if ((*(_BYTE*)(v69 + 100) & 1) == 0 && v131 >= v130 &&
-                v42 >= (signed __int32)*(_DWORD*)(v11 + 12)) {
+                v43 >= (signed __int32)*(_DWORD*)(v11 + 12)) {
               break;
             }
             v70 = *(_DWORD*)(v69 + 92);
-            if (v70 >= 1 && *(_DWORD*)(v11 + 20) + v43 + 1 == v70) {
-              *(_DWORD*)(v69 + 96) = *(_DWORD*)(v11 + 8) + v42;
+            if (v70 >= 1 && *(int*)(v11 + 20) + v44 + 1 == v70) {
+              *(_DWORD*)(v69 + 96) = *(int*)(v11 + 8) + v43;
             }
-            v48 = v62 + v134;
+            v49 = v62 + v134;
             if (v62 + v134 > v132 ||
-                (v71 = *(_DWORD*)(v11 + 12), v42 + 8 >= v71)) {
+                (v71 = *(_DWORD*)(v11 + 12), v43 + 8 >= v71)) {
               v113 = *(_DWORD*)(v11 + 20);
-              *(_DWORD*)(v11 + 16) = v42;
-              v46 = v113 + v43;
-              goto LABEL_107;
+              *(_DWORD*)(v11 + 16) = v43;
+              v47 = v113 + v44;
+              goto LABEL_118;
             }
-            v49 = v43 + 1;
-            v47 += 2LL * v62 * (int)v51;
-            v50 = bswap32(*(_DWORD*)(*(_QWORD*)(a1 + 456) + v42)) + 8;
-            v44 = v42;
-            v42 += v50;
-            if (v42 > v71) {
+            v50 = v44 + 1;
+            v48 += 2LL * v62 * (int)v52;
+            v42 = (unsigned int*)(*(_QWORD*)(a1 + 456) + v43);
+            v51 = bswap32(*v42) + 8;
+            v45 = v43;
+            v43 += v51;
+            if (v43 > v71) {
               goto LABEL_58;
             }
           }
           v124 = *(_DWORD*)(v11 + 20);
-          *(_DWORD*)(v11 + 16) = v42;
-          v125 = v124 + v43;
+          *(_DWORD*)(v11 + 16) = v43;
+          v125 = v124 + v44;
           *(_DWORD*)(v11 + 24) = v125;
           *(_DWORD*)(*(_QWORD*)(a1 + 160) + 88LL) = v125;
         }
         else {
-          v43 = -1;
-          v44 = 0;
+          v44 = -1;
+          v45 = 0;
         LABEL_58:
-          v45 = *(_DWORD*)(v11 + 20);
-          *(_DWORD*)(v11 + 16) = v44;
-          v46 = v43 + v45;
-        LABEL_107:
-          *(_DWORD*)(v11 + 24) = v46;
+          v46 = *(_DWORD*)(v11 + 20);
+          *(_DWORD*)(v11 + 16) = v45;
+          v47 = v44 + v46;
+        LABEL_118:
+          *(_DWORD*)(v11 + 24) = v47;
         }
-        nn_os_LockMutex_alt1(a1 + 120);
+        nn_os_LockMutex_alt2(a1 + 120);
         *v126 = 1;
-        nn_os_UnlockMutex_alt2(a1 + 120);
+        nn_os_UnlockMutex_alt3(a1 + 120);
         v9 = v127;
         v3 = a1 + 284;
         v10 = v129;
-        nn_os_LockMutex_alt1(a1 + 120);
+        nn_os_LockMutex_alt2(a1 + 120);
         if (*(_DWORD*)(a1 + 412) != 0) {
-          return nn_os_UnlockMutex_alt2(a1 + 120);
+          return nn_os_UnlockMutex_alt3(a1 + 120);
         }
-        goto LABEL_109;
+        goto LABEL_120;
       }
       v128 = a1 + 424;
       v6 = *(_DWORD*)(*(_QWORD*)(a1 + 160) + 64LL);
@@ -1488,7 +1532,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
         else {
           v17 = a1 + 56;
         }
-        v18 = snd_fnd_WeakHandle_get_alt1(v17);
+        v18 = snd_fnd_WeakHandle_get_alt2(v17);
         if (v6 + v7 > (*(int (**)(__int64))(*(_QWORD*)v18 + 80LL))(v18)) {
           v19 = *(_QWORD*)(a1 + 48);
           if (v19 != 0) {
@@ -1497,7 +1541,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
           else {
             v20 = a1 + 56;
           }
-          v21 = snd_fnd_WeakHandle_get_alt1(v20);
+          v21 = snd_fnd_WeakHandle_get_alt2(v20);
           v7 = (*(__int64 (**)(__int64))(*(_QWORD*)v21 + 80LL))(v21)-v6;
         }
         v22 = *(_QWORD*)(a1 + 48);
@@ -1507,9 +1551,9 @@ __int64 WaveStreamReader_18c820(__int64 a1)
         else {
           v23 = a1 + 56;
         }
-        v24 = snd_fnd_WeakHandle_get_alt1(v23);
-        (*(void (**)(__int64, _QWORD, _QWORD, _QWORD))(*(_QWORD*)v24 + 96LL))(
-            v24, *(_QWORD*)(a1 + 456), v6, v7);
+        v24 = snd_fnd_WeakHandle_get_alt2(v23);
+        (*(void (**)(__int64, __int64, __int64, __int64))(
+            *(_QWORD*)v24 + 96LL))(v24, *(_QWORD*)(a1 + 456), v6, v7);
         *(_DWORD*)(*(_QWORD*)(a1 + 160) + 68LL) = v6;
         if (v14 == v8) {
           break;
@@ -1523,7 +1567,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
           v27 = *(_QWORD*)(a1 + 160);
           ++v14;
           v28 = *(_DWORD*)(v27 + 92);
-          if (v28 >= 1 && v14 == v28) {
+          if (v28 >= 1 & v14 == v28) {
             *(_DWORD*)(v27 + 96) = v26 + v6;
           }
           v25 = v26;
@@ -1537,7 +1581,7 @@ __int64 WaveStreamReader_18c820(__int64 a1)
         }
         v30 = *(_QWORD*)(a1 + 48);
         v31 = v30 != 0 ? v30 + 24 : a1 + 56;
-        v32 = snd_fnd_WeakHandle_get_alt1(v31);
+        v32 = snd_fnd_WeakHandle_get_alt2(v31);
       } while (v6 < (*(int (**)(__int64))(*(_QWORD*)v32 + 80LL))(v32));
     LABEL_44:
       v8 = v16;
@@ -1558,18 +1602,18 @@ __int64 WaveStreamReader_18c820(__int64 a1)
     goto LABEL_8;
   }
 LABEL_10:
-  nn_os_LockMutex_alt1(a1 + 120);
+  nn_os_LockMutex_alt2(a1 + 120);
   if (*(_DWORD*)(a1 + 412) == 0) {
-  LABEL_109:
+  LABEL_120:
     *(_DWORD*)(a1 + 72) = 3;
     v114 = (v9 + 1) % 3uLL;
     if (*(_DWORD*)(*(_QWORD*)(v10 + 8 * v114) + 12LL) == 0) {
       v115 = *(_DWORD**)(a1 + 160);
       v116 = *(_DWORD*)(v11 + 24);
       v117 = v115[22];
-      if ((signed __int32)*(_DWORD*)(v11 + 20) > v117 || v116 < v117) {
+      if ((signed __int32)*(_DWORD*)(v11 + 20) > v117 | v116 < v117) {
         v120 = v116 + 1;
-        v119 = *(_DWORD*)(v11 + 16) + *(_DWORD*)(v11 + 8);
+        v119 = *(int*)(v11 + 16) + *(int*)(v11 + 8);
       }
       else {
         v120 = v115[23];
@@ -1588,7 +1632,7 @@ LABEL_10:
       GameRoutine_17ca30(v123);
     }
   }
-  return nn_os_UnlockMutex_alt2(a1 + 120);
+  return nn_os_UnlockMutex_alt3(a1 + 120);
 }
 
 __int64 WaveStreamReader_18d1e0(__int64 a1)

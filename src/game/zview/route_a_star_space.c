@@ -86,6 +86,25 @@ void game_zview_RouteAStarSpace_ConnectNodes_lambda0_Invoke(__int64 a1,
                                                             atomic_uint* a3);
 void __attribute__((noreturn)) GameRoutine_cdcc10();
 void RouteAStarSpace_d737a0(char** a1, char* a2, char* a3);
+_QWORD* fw_world_SwapCallables_alt2(_QWORD* result, _QWORD*);
+__attribute__((swiftcall)) void game_zview_d16620_alt2(PSEUDO_X8, _QWORD*,
+                                                       float32x4_t*,
+                                                       float32x4_t*, __int64,
+                                                       float);
+__int64 GameRoutine_d740c0_alt2(__int64, int*);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 fw_world_JobContext_Drain_alt2(unsigned int*);
+__int64 fw_world_JobContext_Wait_alt2(__int64 result, unsigned int);
+__int64 fw_world_JobQueue_Submit_alt2(__int64, int);
+__int64 game_zview_d17160_alt2(float, __int64, __int64, float32x4_t*,
+                               float32x4_t*);
+__int64 nn_os_ClearLightEvent_alt2(__int64);
+__int64 nn_os_LockMutex_alt2(__int64);
+__int64 nn_os_UnlockMutex_alt2(__int64);
+void __attribute__((noreturn)) GameRoutine_60a210_alt2();
+void __attribute__((noreturn)) GameRoutine_d73a90_alt2();
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 
 __int64 RouteAStarSpace_Unknown5(_QWORD* a1)
 {
@@ -165,6 +184,9 @@ __int64 RouteAStarSpace_Unknown5(_QWORD* a1)
 
 __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   __int64 v3;
@@ -217,15 +239,14 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
   _QWORD* v50;
   _QWORD* v51;
   __int64 v52;
-  unsigned __int64 v53;
+  __int64 v53;
   __int64 v54;
-  __int64 v55;
+  float* v55;
   __int64 v56;
   __int64 v57;
   float v58;
   __int128 v59;
   struct {
-    char gap0_[72];
     unsigned int v60;
     unsigned int v61;
     float v62;
@@ -236,20 +257,23 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     int v67;
     int v68;
     int v69;
+  } v60_;
+  struct {
     __int64 v70;
     int v71;
-    char gap124_[36];
+  } v70_;
+  float32x4_t v72;
+  float32x4_t v73;
+  struct {
     _QWORD v74[4];
-    _QWORD* v75;
+    float* v75;
     char gap200_[76];
     float v76;
     char gap280_[24];
     char v77;
     char gap305_[39];
     __int64 v78;
-  } f_;
-  float32x4_t v72;
-  float32x4_t v73;
+  } v74_;
 
   if (*(_DWORD*)(GameData_21d96b8 + 8) == 1) {
     v1 = *(_QWORD*)(result + 88);
@@ -265,7 +289,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
         else {
           v6 = 56;
         }
-        nn_mem_StandardAllocator_Free_alt2(*i + v6, v5);
+        nn_mem_StandardAllocator_Free_alt3(*i + v6, v5);
       }
     }
     *(_QWORD*)(v3 + 96) = v1;
@@ -279,54 +303,54 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
                    0x1.4000000000000p+1f) +
            -0x1.4000000000000p+10f;
       do {
-        f_.v70 = 0x10100000000LL;
-        f_.v71 = 1;
-        f_.v66 = v7;
-        f_.v67 = v8;
-        f_.v68 = v7;
-        f_.v69 = v8;
-        *(float*)&f_.v60 = (float)((float)((float)(unsigned int)(v7 + 256) *
+        v70_.v70 = 0x10100000000LL;
+        v70_.v71 = 1;
+        v60_.v66 = v7;
+        v60_.v67 = v8;
+        v60_.v68 = v7;
+        v60_.v69 = v8;
+        *(float*)&v60_.v60 = (float)((float)((float)(unsigned int)(v7 + 256) *
                                              0x1.4000000000000p+2f) +
                                      0x1.4000000000000p+1f) +
                              -0x1.4000000000000p+10f;
-        *(float*)&f_.v61 = (float)((float)((float)(unsigned int)(v8 + 256) *
+        *(float*)&v60_.v61 = (float)((float)((float)(unsigned int)(v8 + 256) *
                                              0x1.4000000000000p+2f) +
                                      0x1.4000000000000p+1f) +
                              -0x1.4000000000000p+10f;
-        f_.v62 = v9 + -0x1.4000000000000p+1f;
-        f_.v63 = *(float*)&f_.v61 + -0x1.4000000000000p+1f;
-        f_.v64 = v9 + 0x1.4000000000000p+1f;
-        f_.v65 = *(float*)&f_.v61 + 0x1.4000000000000p+1f;
-        if ((GameRoutine_d740c0_alt1((__int64)&f_.v60, (int*)&f_.v70) &
+        v60_.v62 = v9 + -0x1.4000000000000p+1f;
+        v60_.v63 = *(float*)&v60_.v61 + -0x1.4000000000000p+1f;
+        v60_.v64 = v9 + 0x1.4000000000000p+1f;
+        v60_.v65 = *(float*)&v60_.v61 + 0x1.4000000000000p+1f;
+        if ((GameRoutine_d740c0_alt2((__int64)&v60_.v60, (int*)&v70_.v70) &
              1) != 0) {
-          LANES128(v12).n128_u64[0] = f_.v60 | 0xC2C8000000000000LL;
+          LANES128(v12).n128_u64[0] = v60_.v60 | 0xC2C8000000000000LL;
           v13 = (_QWORD*)*GameData_212ebd0[0];
-          LANES128(v14).n128_u64[0] = f_.v60 | 0x4348000000000000LL;
-          LANES128(v14).n128_u64[1] = f_.v61;
+          LANES128(v14).n128_u64[0] = v60_.v60 | 0x4348000000000000LL;
+          LANES128(v14).n128_u64[1] = v60_.v61;
           v73 = v14;
-          LANES128(v12).n128_u64[1] = f_.v61;
+          LANES128(v12).n128_u64[1] = v60_.v61;
           v72 = v12;
-          game_zview_d16620_alt1((void*)((__int64)f_.v74), v13, &v73, &v72, 1,
+          game_zview_d16620_alt2((void*)((__int64)v74_.v74), v13, &v73, &v72, 1,
                                  0x0.0p+0f);
-          v15 = f_.v76;
+          v15 = v74_.v76;
           v16 = i;
-          if (f_.v77 == 0) {
+          if (v74_.v77 == 0) {
             v15 = -0x1.9000000000000p+6f;
           }
           v58 = v15;
-          v17 = fw_memory_HeapManager_Allocate_alt1(*i, 4608, 16, 0);
+          v17 = fw_memory_HeapManager_Allocate_alt2(*i, 4608, 16, 0);
           v18 = COERCE_UNSIGNED_INT(
               (float)((float)((float)(v7 | 0x100u) * 0x1.4000000000000p+2f) +
                       0x1.4000000000000p+1f) +
               -0x1.4000000000000p+10f);
-          f_.v78 = v17;
+          v74_.v78 = v17;
           *((float*)&v18 + 1) = v58;
           *((float*)&v18 + 2) =
               (float)((float)((float)(v8 | 0x100u) * 0x1.4000000000000p+2f) +
                       0x1.4000000000000p+1f) +
               -0x1.4000000000000p+10f;
           v59 = v18;
-          nn_os_LockMutex_alt1(v3 + 168);
+          nn_os_LockMutex_alt2(v3 + 168);
           v19 = *(_QWORD*)(v3 + 88);
           v20 = *(_QWORD*)(v3 + 96);
           v21 = 0xAAAAAAAAAAAAAAABLL * ((__int64)(v20 - v19) >> 5);
@@ -347,7 +371,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
           else {
             v23 = v21 + 1;
             if (v21 + 1 > 0x2AAAAAAAAAAAAAALL) {
-              GameRoutine_d73a90_alt1();
+              GameRoutine_d73a90_alt2();
             }
             v24 = 0xAAAAAAAAAAAAAAABLL * ((__int64)(v22 - v19) >> 5);
             if (2 * v24 > v23) {
@@ -360,10 +384,10 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
               v25 = v23;
             }
             if (v25 > 0x2AAAAAAAAAAAAAALL) {
-              GameRoutine_60a210_alt1();
+              GameRoutine_60a210_alt2();
             }
             v26 = 96 * v25;
-            v27 = fw_memory_HeapManager_Allocate_alt1(*v16, 96 * v25, 16, 0);
+            v27 = fw_memory_HeapManager_Allocate_alt2(*v16, 96 * v25, 16, 0);
             v28 = v27 + v20 - v19;
             v29 = v27;
             *(_DWORD*)v28 = 0;
@@ -409,7 +433,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
                   if (*(_QWORD*)(*v16 + 200) != 0) {
                     v34 = 128;
                   }
-                  nn_mem_StandardAllocator_Free_alt2(*v16 + v34, v33);
+                  nn_mem_StandardAllocator_Free_alt3(*v16 + v34, v33);
                 }
                 v19 += 96;
               } while (v19 != v20);
@@ -424,16 +448,16 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
               if (*(_QWORD*)(*i + 200) != 0) {
                 v35 = 128;
               }
-              nn_mem_StandardAllocator_Free_alt2(*i + v35, v19);
+              nn_mem_StandardAllocator_Free_alt3(*i + v35, v19);
             }
           }
           *(_QWORD*)(v3 + 96) = v10;
-          nn_os_UnlockMutex_alt1(v3 + 168);
+          nn_os_UnlockMutex_alt2(v3 + 168);
           v11 = 56;
           if (*(_QWORD*)(*i + 200) != 0) {
             v11 = 128;
           }
-          nn_mem_StandardAllocator_Free_alt2(*i + v11, f_.v78);
+          nn_mem_StandardAllocator_Free_alt3(*i + v11, v74_.v78);
         }
         ++v8;
       } while (v8 != 32);
@@ -443,7 +467,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     v38 = *(_QWORD*)(v3 + 88);
     v37 = *(_QWORD*)(v3 + 96);
     v39 = (__int64*)GameData_21323e8[0];
-    fw_world_JobContext_Drain_alt1(*(unsigned int**)GameData_21323e8[0]);
+    fw_world_JobContext_Drain_alt2(*(unsigned int**)GameData_21323e8[0]);
     v40 = *v39;
     v41 = *v39 + 32;
     do {
@@ -463,8 +487,8 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     v47 = v36 * v36;
     v48 = (unsigned __int64*)(v41 + 32LL * (v42 & 0x3F));
     v49 = 0xAAAAAAAAAAAAAAABLL * (v45 >> 5);
-    nn_os_ClearLightEvent_alt1((__int64)(v48 + 1));
-    v50 = (_QWORD*)fw_memory_HeapManager_Allocate_alt1(*i, 80, 16, 0);
+    nn_os_ClearLightEvent_alt2((__int64)(v48 + 1));
+    v50 = (_QWORD*)fw_memory_HeapManager_Allocate_alt2(*i, 80, 16, 0);
     v50[2] = 0;
     v51 = v50;
     v52 = GameData_212e368[0];
@@ -474,28 +498,28 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
     v53 = v48[3];
     v48[3] = (unsigned __int64)v51;
     if (v53 != 0) {
-      (*(void (**)(unsigned __int64))(*(_QWORD*)v53 + 8LL))(v53);
+      (*(void (**)(__int64))(*(_QWORD*)v53 + 8LL))(v53);
     }
     atomic_store(v46, v48);
     v51[1] = v40;
     v54 = *i;
     *((_DWORD*)v51 + 4) = v46;
-    v55 = fw_memory_HeapManager_Allocate_alt1(v54, 40, 16, 0);
-    *(_QWORD*)(v55 + 16) = v49;
-    *(_QWORD*)(v55 + 24) = v3;
-    *(float*)(v55 + 32) = v47;
-    f_.v75 = (_QWORD*)v55;
+    v55 = (float*)fw_memory_HeapManager_Allocate_alt2(v54, 40, 16, 0);
+    *((_QWORD*)v55 + 2) = v49;
+    *((_QWORD*)v55 + 3) = v3;
+    v55[8] = v47;
+    v74_.v75 = v55;
     *(_QWORD*)v55 = GameData_1fdd4b0;
-    *(_QWORD*)(v55 + 8) = v38;
-    fw_world_SwapCallables_alt1(f_.v74, v51 + 4);
-    if (f_.v75 == f_.v74) {
+    *((_QWORD*)v55 + 1) = v38;
+    fw_world_SwapCallables_alt2(v74_.v74, v51 + 4);
+    if (v74_.v75 == (float*)v74_.v74) {
       v56 = 32;
     }
     else {
-      if (f_.v75 == nullptr) {
+      if (v74_.v75 == nullptr) {
       LABEL_58:
-        fw_world_JobQueue_Submit_alt1(*(_QWORD*)(v40 + 16), v46);
-        fw_world_JobContext_Wait_alt1(*v39, v46);
+        fw_world_JobQueue_Submit_alt2(*(_QWORD*)(v40 + 16), v46);
+        fw_world_JobContext_Wait_alt2(*v39, v46);
         *(_DWORD*)(v3 + 120) = 0;
         *(_BYTE*)(v3 + 136) = 0;
         *(_BYTE*)(v3 + 152) = 0;
@@ -507,7 +531,7 @@ __int64 game_zview_RouteAStarSpace_ConnectNodes(__int64 result)
       }
       v56 = 40;
     }
-    (*(void (**)(__int64))(*f_.v75 + v56))((__int64)f_.v75);
+    (*(void (**)(__int64))(*(_QWORD*)v74_.v75 + v56))((__int64)v74_.v75);
     goto LABEL_58;
   }
   return result;
@@ -1449,6 +1473,8 @@ __int64 game_zview_RouteAStarSpace_CalclateNodeCost_lambda0_Invoke(
     __int64 result, __int64 a2, atomic_uint* a3)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   int v3;
   __int64 v4;
@@ -1501,8 +1527,8 @@ __int64 game_zview_RouteAStarSpace_CalclateNodeCost_lambda0_Invoke(
             v13 = *(_QWORD*)(v4 + 24);
             do {
               v17 = *v11;
-              result = game_zview_d17160(0x1.3333340000000p-2f, *v5, v13 + 120,
-                                         v10 + 4, *v11 + 4);
+              result = game_zview_d17160_alt2(0x1.3333340000000p-2f, *v5,
+                                              v13 + 120, v10 + 4, *v11 + 4);
               if ((result & 1) != 0) {
                 v14 = vsubq_f32(v10[4], v17[4]);
                 v15 = vmulq_f32(v14, v14);

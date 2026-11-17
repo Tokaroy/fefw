@@ -1309,6 +1309,12 @@ extern __int64 (*game_talk_anonymous_EndingRelianceUnitList_vtable[])();
 extern __int64 (*game_talk_anonymous_PersonListMenuItem_vtable[])();
 void nn_mem_StandardAllocator_Free(__int64, __int64);
 _QWORD* GameHr_163b8a0(__int64 a1);
+__int64 GameRoutine_1629140_alt2(__int64 result, __int64, unsigned __int64,
+                                 __int64*);
+__int64 GameRoutine_1635860_alt1(__int64 result, __int64*, __int64, __int64*,
+                                 __int64);
+char* GameRoutine_1629380_alt1(char* result, char*, char*, __int64, __int64,
+                               __int64, __int64);
 
 __int64 GameHr_15d9080(__int64 a1, __int64 a2, _QWORD* a3)
 {
@@ -5160,6 +5166,8 @@ char* GameHr_1628ee0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
                      __int64 a5)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v5;
   __int64 v6;
@@ -5202,10 +5210,10 @@ char* GameHr_1628ee0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
       if ((__int64)a3 <= a5) {
         v20 = result;
         v22 = a4;
-        GameRoutine_1629140_alt1((__int64)result, (__int64)&result[8 * v14],
+        GameRoutine_1629140_alt2((__int64)result, (__int64)&result[8 * v14],
                                  a3 >> 1, a4);
         v23 = &v22[v14];
-        result = (char*)GameRoutine_1629140_alt1((__int64)&v20[8 * v14],
+        result = (char*)GameRoutine_1629140_alt2((__int64)&v20[8 * v14],
                                                  (__int64)a2, v16, v23);
         v24 = &v22[a3];
         v25 = v23;
@@ -5249,8 +5257,8 @@ char* GameHr_1628ee0(char* result, char* a2, unsigned __int64 a3, __int64* a4,
         v17 = result;
         GameHr_1628ee0(result, &result[8 * v14], a3 >> 1, a4, a5);
         GameHr_1628ee0(&v17[8 * v14], a2, v16, a4, a5);
-        return GameHr_1629380(v17, &v17[8 * v14], a2, v14, v16, (__int64)a4,
-                              a5);
+        return GameRoutine_1629380_alt1(v17, &v17[8 * v14], a2, v14, v16,
+                                        (__int64)a4, a5);
       }
     }
     else if (result != a2) {
@@ -6643,6 +6651,8 @@ __int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
                        __int64* a4)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v4;
   __int64 v5;
@@ -6692,9 +6702,9 @@ __int64 GameHr_1635a80(__int64 result, __int64* a2, unsigned __int64 a3,
       v16 = result;
       v20 = (__int64*)(result + 8 * (a3 >> 1));
       v21 = 8 * (a3 >> 1);
-      GameHr_1635860_alt1(result, v20, v15, a4, v15);
-      result =
-          GameHr_1635860_alt1((__int64)v20, a2, a3 - v15, &a4[v15], a3 - v15);
+      GameRoutine_1635860_alt1(result, v20, v15, a4, v15);
+      result = GameRoutine_1635860_alt1((__int64)v20, a2, a3 - v15, &a4[v15],
+                                        a3 - v15);
       if (v21 != 0) {
         v22 = v20;
         v23 = a4;

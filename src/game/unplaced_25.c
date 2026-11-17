@@ -518,7 +518,8 @@ float32x4_t game_1102cc0(__int64 a1, float32x4_t result)
       v11 = *(_DWORD*)(v9[9] + 120LL);
       {
         __typeof__(v12) z_ = (__typeof__(v12)){0};
-        LODWORD(z_) = HIDWORD(*(_QWORD*)(v9[1] + 304LL));
+        LODWORD(z_) = DWORDn(*(_QWORD*)(v9[1] + 304LL),
+                             sizeof(*(_QWORD*)(v9[1] + 304LL)) / 4 - 1);
         v12 = z_;
       }
       LANES128(v7).n128_u32[3] = 0;
@@ -606,7 +607,8 @@ LABEL_21:
     v27 = *(_DWORD*)(v25[9] + 120LL);
     {
       __typeof__(v28) z_ = (__typeof__(v28)){0};
-      LODWORD(z_) = HIDWORD(*(_QWORD*)(v25[1] + 304LL));
+      LODWORD(z_) = DWORDn(*(_QWORD*)(v25[1] + 304LL),
+                           sizeof(*(_QWORD*)(v25[1] + 304LL)) / 4 - 1);
       v28 = z_;
     }
     LANES128(v6).n128_u32[3] = 0;

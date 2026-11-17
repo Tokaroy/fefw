@@ -410,7 +410,7 @@ __int64 TaskPassNodes_baa610_alt1(__int64 a1, __int64 a2,
                                   _QWORD* a3) __asm__("TaskPassNodes_baa610");
 __int64 TaskPassNodes_baa9b0(__int64 a1, _QWORD** a2, __int64 a3);
 __int64 TaskPassNodes_baab10(__int64 a1, _QWORD** a2, _QWORD* a3);
-__int64 TaskPassNodes_baae90(__int64 a1, _QWORD** a2, __int64 a3);
+__int64 TaskPassNodes_baae90_alt1(__int64 a1, _QWORD** a2, __int64 a3);
 __int64 TaskPassNodes_bab050(__int64 a1, __int64 a2, _QWORD* a3);
 __int64 TaskPassNodes_bab410(__int64 a1, __int64 a2, __int64 a3);
 __int64 TaskPassNodes_bab580_alt1(__int64 a1, __int64 a2,
@@ -709,6 +709,9 @@ __int64 TaskPassNodes_bc3990(__int64 a1, __int64 a2, __int64* a3);
 __int64 GameRoutine_b66510_alt1(__int64*, const char*,
                                 __int64) __asm__("GameRoutine_b66510");
 __int64 TaskPassNodes_b9a290(__int64 a1, __int64** a2, __int64* a3);
+__int64 GameRoutine_b48f90_alt2(__int64, __int64);
+__int64 GameRoutine_b68480_alt2(__int64*, const char*, __int64);
+__int64 TaskPassNodes_baae90(__int64 a1, __int64** a2, __int64* a3);
 
 __int64 TaskPassNodes_b88c20(__int64 a1, __int64 a2, __int64 a3)
 {
@@ -8829,9 +8832,12 @@ __int64 TaskPassNodes_baab10(__int64 a1, _QWORD** a2, _QWORD* a3)
   return ResourceBuilder_b4d4e0(v3, *a2, a2[1], a3, (__int64)&v5);
 }
 
-__int64 TaskPassNodes_baae90(__int64 a1, _QWORD** a2, __int64 a3)
+__int64 TaskPassNodes_baae90(__int64 a1, __int64** a2, __int64* a3)
 {
-  _QWORD* v4;
+
+#pragma clang fp contract(on)
+
+  __int64* v4;
   __int64 v6;
   int v7;
   __int64 v8;
@@ -8841,12 +8847,15 @@ __int64 TaskPassNodes_baae90(__int64 a1, _QWORD** a2, __int64 a3)
   unsigned __int64 v12;
   __int64* v13;
   __int64 result;
-  __int64 v15;
-  int v16;
-  int v17;
-  __int64 v18;
-  char v19;
-  int v20;
+  struct {
+    __int64 v15;
+    int v16;
+    int v17;
+    __int64 v18;
+    char v19;
+    char gap25_[3];
+    int v20;
+  } v15_;
 
   v6 = **(_QWORD**)(a1 + 8);
   v7 = *(unsigned __int8*)(v6 + 16700);
@@ -8857,17 +8866,17 @@ __int64 TaskPassNodes_baae90(__int64 a1, _QWORD** a2, __int64 a3)
     v9 = v10;
   }
   v11 = *v9;
-  v12 = HIDWORD(*v9);
+  v12 = DWORDn(*v9, sizeof(*v9) / 4 - 1);
   v4 = *a2;
-  *v4 = GameRoutine_b48f90(a3, ***(_QWORD***)(a1 + 16));
-  v20 = 0;
-  v16 = v11;
-  v17 = v12;
+  *v4 = GameRoutine_b48f90_alt2((__int64)a3, ***(_QWORD***)(a1 + 16));
+  v15_.v20 = 0;
+  v15_.v16 = v11;
+  v15_.v17 = v12;
   v13 = a2[1];
-  v15 = 0x1400000000LL;
-  v18 = 0x100000001LL;
-  v19 = 1;
-  result = GameRoutine_b68480(a3, "FxaaGradingDst", &v15);
+  v15_.v15 = 0x1400000000LL;
+  v15_.v18 = 0x100000001LL;
+  v15_.v19 = 1;
+  result = GameRoutine_b68480_alt2(a3, "FxaaGradingDst", (__int64)&v15_.v15);
   *v13 = result;
   return result;
 }

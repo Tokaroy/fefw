@@ -289,9 +289,10 @@ __int64 spine_SkeletonClipping_clip(__int64 a1, __int64 a2, _QWORD* a3,
   v42 = v19[3];
   v19[2] = 8;
   v43 = GameRoutine_19e10();
-  v44 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
+  v44 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
       *(_QWORD*)v43 + 32LL))(
-      v43, v42, 32, "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+      v43, v42, 32, (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+      106);
   v45 = v19[1];
   v19[3] = v44;
   v19[1] = v45 + 1;
@@ -303,7 +304,7 @@ __int64 spine_SkeletonClipping_clip(__int64 a1, __int64 a2, _QWORD* a3,
 LABEL_9:
   v24 = v19[3];
   v25 = (int)(float)((float)v23 * 0x1.c000000000000p+0f);
-  if (!(v25 > 8)) {
+  if (v25 <= 8) {
     v26 = 8;
   }
   else {
@@ -311,10 +312,10 @@ LABEL_9:
   }
   v19[2] = v26;
   v27 = GameRoutine_19e10();
-  v28 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
-      *(_QWORD*)v27 + 32LL))(v27, v24, 4LL * v26,
-                             "/Program/Externals/Spine/include\\spine/Vector.h",
-                             106);
+  v28 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v27 + 32LL))(
+      v27, v24, 4LL * v26,
+      (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
   v29 = v19[1];
   v19[3] = v28;
   v19[1] = v29 + 1;
@@ -334,7 +335,7 @@ LABEL_9:
 LABEL_21:
   v47 = v19[3];
   v48 = (int)(float)((float)v30 * 0x1.c000000000000p+0f);
-  if (!(v48 > 8)) {
+  if (v48 <= 8) {
     v49 = 8;
   }
   else {
@@ -342,10 +343,10 @@ LABEL_21:
   }
   v19[2] = v49;
   v50 = GameRoutine_19e10();
-  v51 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
-      *(_QWORD*)v50 + 32LL))(v50, v47, 4LL * v49,
-                             "/Program/Externals/Spine/include\\spine/Vector.h",
-                             106);
+  v51 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v50 + 32LL))(
+      v50, v47, 4LL * v49,
+      (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
   v52 = v19[1];
   v19[3] = v51;
   v19[1] = v52 + 1;
@@ -365,7 +366,7 @@ LABEL_21:
 LABEL_25:
   v53 = v19[3];
   v54 = (int)(float)((float)v32 * 0x1.c000000000000p+0f);
-  if (!(v54 > 8)) {
+  if (v54 <= 8) {
     v55 = 8;
   }
   else {
@@ -373,10 +374,10 @@ LABEL_25:
   }
   v19[2] = v55;
   v56 = GameRoutine_19e10();
-  v57 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
-      *(_QWORD*)v56 + 32LL))(v56, v53, 4LL * v55,
-                             "/Program/Externals/Spine/include\\spine/Vector.h",
-                             106);
+  v57 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v56 + 32LL))(
+      v56, v53, 4LL * v55,
+      (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
   v58 = v19[1];
   v19[3] = v57;
   v19[1] = v58 + 1;
@@ -396,7 +397,7 @@ LABEL_25:
 LABEL_29:
   v59 = v19[3];
   v60 = (int)(float)((float)v34 * 0x1.c000000000000p+0f);
-  if (!(v60 > 8)) {
+  if (v60 <= 8) {
     v61 = 8;
   }
   else {
@@ -404,10 +405,10 @@ LABEL_29:
   }
   v19[2] = v61;
   v62 = GameRoutine_19e10();
-  v63 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
-      *(_QWORD*)v62 + 32LL))(v62, v59, 4LL * v61,
-                             "/Program/Externals/Spine/include\\spine/Vector.h",
-                             106);
+  v63 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v62 + 32LL))(
+      v62, v59, 4LL * v61,
+      (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
   v64 = v19[1];
   v19[3] = v63;
   v19[1] = v64 + 1;
@@ -425,7 +426,7 @@ LABEL_29:
   LABEL_37:
     v71 = v19[3];
     v72 = (int)(float)((float)v38 * 0x1.c000000000000p+0f);
-    if (!(v72 > 8)) {
+    if (v72 <= 8) {
       v73 = 8;
     }
     else {
@@ -433,10 +434,10 @@ LABEL_29:
     }
     v19[2] = v73;
     v74 = GameRoutine_19e10();
-    v75 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
+    v75 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
         *(_QWORD*)v74 + 32LL))(
-        v74, v71, 4LL * v73, "/Program/Externals/Spine/include\\spine/Vector.h",
-        106);
+        v74, v71, 4LL * v73,
+        (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
     v76 = v19[1];
     v19[3] = v75;
     v19[1] = v76 + 1;
@@ -449,7 +450,7 @@ LABEL_29:
   LABEL_41:
     v77 = v19[3];
     v78 = (int)(float)((float)v40 * 0x1.c000000000000p+0f);
-    if (!(v78 > 8)) {
+    if (v78 <= 8) {
       v79 = 8;
     }
     else {
@@ -457,10 +458,10 @@ LABEL_29:
     }
     v19[2] = v79;
     v80 = GameRoutine_19e10();
-    v81 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
+    v81 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
         *(_QWORD*)v80 + 32LL))(
-        v80, v77, 4LL * v79, "/Program/Externals/Spine/include\\spine/Vector.h",
-        106);
+        v80, v77, 4LL * v79,
+        (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
     v82 = v19[1];
     v19[3] = v81;
     v19[1] = v82 + 1;
@@ -470,7 +471,7 @@ LABEL_29:
 LABEL_33:
   v65 = v19[3];
   v66 = (int)(float)((float)v36 * 0x1.c000000000000p+0f);
-  if (!(v66 > 8)) {
+  if (v66 <= 8) {
     v67 = 8;
   }
   else {
@@ -478,10 +479,10 @@ LABEL_33:
   }
   v19[2] = v67;
   v68 = GameRoutine_19e10();
-  v69 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
-      *(_QWORD*)v68 + 32LL))(v68, v65, 4LL * v67,
-                             "/Program/Externals/Spine/include\\spine/Vector.h",
-                             106);
+  v69 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+      *(_QWORD*)v68 + 32LL))(
+      v68, v65, 4LL * v67,
+      (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
   v70 = v19[1];
   v19[3] = v69;
   v19[1] = v70 + 1;
@@ -538,17 +539,17 @@ LABEL_49:
       v251 = -(float)(v249 - v93);
       while (1) {
         v97 = v19[1];
-        if (!(v91 < v97)) {
+        if (v91 >= v97) {
           goto LABEL_165;
         }
-        if (!(v91 + 1 < v97)) {
+        if (v91 + 1 >= v97) {
           goto LABEL_165;
         }
-        if (!(v91 + 2 < v97)) {
+        if (v91 + 2 >= v97) {
           goto LABEL_165;
         }
         v20 = v91 + 3;
-        if (!(v91 + 3 < v97)) {
+        if (v91 + 3 >= v97) {
           goto LABEL_165;
         }
         v98 = v19[3];
@@ -559,12 +560,12 @@ LABEL_49:
         v103 = v99[3];
         v104 = (float)(v254 * (float)(v103 - v94)) -
                (float)(PSEUDO_UNFUSED((float)(v101 - v95) * v253));
-        if (!((float)((float)(v254 * (float)(v102 - v94)) -
-                      (float)(PSEUDO_UNFUSED((float)(v100 - v95) * v253))) >
-              0x0.0p+0f)) {
+        if ((float)((float)(v254 * (float)(v102 - v94)) -
+                    (float)(PSEUDO_UNFUSED((float)(v100 - v95) * v253))) <=
+            0x0.0p+0f) {
           break;
         }
-        if (!(v104 > 0x0.0p+0f)) {
+        if (v104 <= 0x0.0p+0f) {
           v127 = v101 - v100;
           v128 = v103 - v102;
           if (spine_MathUtil_abs((float)(PSEUDO_UNFUSED(v127 * v251)) +
@@ -581,7 +582,7 @@ LABEL_49:
               v84 = 0x1.c000000000000p+0f;
               v132 = v90[3];
               v133 = (int)(float)((float)v129 * 0x1.c000000000000p+0f);
-              if (!(v133 > 8)) {
+              if (v133 <= 8) {
                 v134 = 8;
               }
               else {
@@ -589,10 +590,11 @@ LABEL_49:
               }
               v90[2] = v134;
               v135 = GameRoutine_19e10();
-              v136 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+              v136 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                      __int64))(*(_QWORD*)v135 + 32LL))(
                   v135, v132, 4LL * v134,
-                  "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                  (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                  106);
               v137 = v90[1];
               v90[3] = v136;
               v90[1] = v137 + 1;
@@ -620,7 +622,7 @@ LABEL_49:
             }
             v181 = v90[3];
             v182 = (int)(float)((float)v138 * v84);
-            if (!(v182 > 8)) {
+            if (v182 <= 8) {
               v183 = 8;
             }
             else {
@@ -628,10 +630,11 @@ LABEL_49:
             }
             v90[2] = v183;
             v184 = GameRoutine_19e10();
-            v185 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+            v185 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                    __int64))(*(_QWORD*)v184 + 32LL))(
                 v184, v181, 4LL * v183,
-                "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                106);
             v186 = v90[1];
             v90[3] = v185;
             v90[1] = v186 + 1;
@@ -647,7 +650,7 @@ LABEL_49:
             v84 = 0x1.c000000000000p+0f;
             v165 = v90[3];
             v166 = (int)(float)((float)v164 * 0x1.c000000000000p+0f);
-            if (!(v166 > 8)) {
+            if (v166 <= 8) {
               v167 = 8;
             }
             else {
@@ -655,10 +658,11 @@ LABEL_49:
             }
             v90[2] = v167;
             v168 = GameRoutine_19e10();
-            v169 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+            v169 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                    __int64))(*(_QWORD*)v168 + 32LL))(
                 v168, v165, 4LL * v167,
-                "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                106);
             v170 = v90[1];
             v94 = v249;
             v90[3] = v169;
@@ -686,7 +690,7 @@ LABEL_49:
           }
           v202 = v90[3];
           v203 = (int)(float)((float)v171 * v84);
-          if (!(v203 > 8)) {
+          if (v203 <= 8) {
             v204 = 8;
           }
           else {
@@ -694,10 +698,10 @@ LABEL_49:
           }
           v90[2] = v204;
           v205 = GameRoutine_19e10();
-          v206 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                                 __int64))(*(_QWORD*)v205 + 32LL))(
+          v206 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+              *(_QWORD*)v205 + 32LL))(
               v205, v202, 4LL * v204,
-              "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+              (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
           v207 = v90[1];
           v90[3] = v206;
           v90[1] = v207 + 1;
@@ -708,7 +712,7 @@ LABEL_49:
         if (v105 == v90[2]) {
           v106 = v90[3];
           v107 = (int)(float)((float)v105 * v84);
-          if (!(v107 > 8)) {
+          if (v107 <= 8) {
             v108 = 8;
           }
           else {
@@ -716,10 +720,10 @@ LABEL_49:
           }
           v90[2] = v108;
           v109 = GameRoutine_19e10();
-          v110 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                                 __int64))(*(_QWORD*)v109 + 32LL))(
+          v110 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+              *(_QWORD*)v109 + 32LL))(
               v109, v106, 4LL * v108,
-              "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+              (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
           v111 = v90[1];
           v90[3] = v110;
           v90[1] = v111 + 1;
@@ -729,7 +733,7 @@ LABEL_49:
           LABEL_86:
             v142 = v90[3];
             v143 = (int)(float)((float)v112 * v84);
-            if (!(v143 > 8)) {
+            if (v143 <= 8) {
               v144 = 8;
             }
             else {
@@ -737,10 +741,11 @@ LABEL_49:
             }
             v90[2] = v144;
             v145 = GameRoutine_19e10();
-            v146 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+            v146 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                    __int64))(*(_QWORD*)v145 + 32LL))(
                 v145, v142, 4LL * v144,
-                "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                106);
             v147 = v90[1];
             v90[3] = v146;
             v90[1] = v147 + 1;
@@ -762,7 +767,7 @@ LABEL_49:
         *(float*)(v113 + 4 * v112) = v103;
       LABEL_56:
         v91 = v20 - 1;
-        if (!(v20 - 1 < v89)) {
+        if (v20 - 1 >= v89) {
           v208 = v90[1];
           if (v208 == 0) {
             goto LABEL_158;
@@ -771,7 +776,7 @@ LABEL_49:
           if (v208 == v90[2]) {
             v210 = *v209;
             v211 = (int)(float)((float)v208 * v84);
-            if (!(v211 > 8)) {
+            if (v211 <= 8) {
               v20 = 8;
             }
             else {
@@ -779,10 +784,11 @@ LABEL_49:
             }
             v90[2] = (int)v20;
             v212 = GameRoutine_19e10();
-            v213 = (*(__int64 (**)(__int64, int*, __int64, const char*,
+            v213 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                    __int64))(*(_QWORD*)v212 + 32LL))(
-                v212, v209, 4LL * (int)v20,
-                "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                v212, (__int64)v209, 4LL * (int)v20,
+                (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                106);
             v214 = v90[1];
             v90[3] = v213;
             v90[1] = v214 + 1;
@@ -793,14 +799,14 @@ LABEL_49:
             v209[v208] = *v209;
           }
           v215 = v90[1];
-          if (!(v215 > 1)) {
+          if (v215 <= 1) {
             goto LABEL_165;
           }
           v216 = v90[3];
           if (v215 == v90[2]) {
             v217 = *(_DWORD*)(v216 + 4);
             v218 = (int)(float)((float)v215 * v84);
-            if (!(v218 > 8)) {
+            if (v218 <= 8) {
               v219 = 8;
             }
             else {
@@ -808,10 +814,11 @@ LABEL_49:
             }
             v90[2] = v219;
             v220 = GameRoutine_19e10();
-            v221 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+            v221 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                    __int64))(*(_QWORD*)v220 + 32LL))(
                 v220, v216, 4LL * v219,
-                "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                106);
             v222 = v90[1];
             v90[3] = v221;
             v90[1] = v222 + 1;
@@ -824,12 +831,12 @@ LABEL_49:
                 v235 = v241[2];
                 v236 = v20 - 2;
                 v241[1] = v20 - 2;
-                if (!(v235 < v20 - 2)) {
+                if (v235 >= v20 - 2) {
                   goto LABEL_168;
                 }
                 v237 = v241[3];
                 v238 = (int)(float)((float)v236 * 0x1.c000000000000p+0f);
-                if (!(v238 > 8)) {
+                if (v238 <= 8) {
                   v239 = 8;
                 }
                 else {
@@ -837,11 +844,11 @@ LABEL_49:
                 }
                 v241[2] = v239;
                 v240 = GameRoutine_19e10();
-                v241[3] =
-                    (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                                    __int64))(*(_QWORD*)v240 + 32LL))(
-                        v240, v237, 4LL * v239,
-                        "/Program/Externals/Spine/include\\spine/Vector.h", 82);
+                v241[3] = (*(__int64 (**)(__int64, __int64, __int64, __int64,
+                                          __int64))(*(_QWORD*)v240 + 32LL))(
+                    v240, v237, 4LL * v239,
+                    (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                    82);
                 goto LABEL_167;
               }
               v241[1] = 0;
@@ -857,9 +864,8 @@ LABEL_49:
                 if (v227 == v241[2]) {
                   v228 = *(_DWORD*)(v226 + 4 * v224);
                   v229 = v241[3];
-                  if (!((unsigned int)(int)(float)((float)v227 *
-                                                   0x1.c000000000000p+0f) >
-                        8)) {
+                  if ((unsigned int)(int)(float)((float)v227 *
+                                                 0x1.c000000000000p+0f) <= 8) {
                     v230 = 8;
                   }
                   else {
@@ -867,10 +873,12 @@ LABEL_49:
                   }
                   v241[2] = v230;
                   v231 = GameRoutine_19e10();
-                  v232 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+                  v232 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                          __int64))(*(_QWORD*)v231 + 32LL))(
                       v231, v229, 4LL * v230,
-                      "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                      (__int64)"/Program/Externals/Spine/include\\spine/"
+                               "Vector.h",
+                      106);
                   v233 = v241[1];
                   v241[3] = v232;
                   v241[1] = v233 + 1;
@@ -903,13 +911,13 @@ LABEL_49:
           v19 = v90;
           v85 = v244;
           v83 = *(_QWORD*)(a2 + 8);
-          if (!(v244 < v83)) {
+          if (v244 >= v83) {
             goto LABEL_165;
           }
           goto LABEL_49;
         }
       }
-      if (!(v104 > 0x0.0p+0f)) {
+      if (v104 <= 0x0.0p+0f) {
         goto LABEL_55;
       }
       if (spine_MathUtil_abs(
@@ -926,7 +934,7 @@ LABEL_49:
           v84 = 0x1.c000000000000p+0f;
           v117 = v90[3];
           v118 = (int)(float)((float)v114 * 0x1.c000000000000p+0f);
-          if (!(v118 > 8)) {
+          if (v118 <= 8) {
             v119 = 8;
           }
           else {
@@ -934,10 +942,10 @@ LABEL_49:
           }
           v90[2] = v119;
           v120 = GameRoutine_19e10();
-          v121 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                                 __int64))(*(_QWORD*)v120 + 32LL))(
+          v121 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+              *(_QWORD*)v120 + 32LL))(
               v120, v117, 4LL * v119,
-              "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+              (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
           v122 = v90[1];
           v90[3] = v121;
           v90[1] = v122 + 1;
@@ -965,7 +973,7 @@ LABEL_49:
             LABEL_125:
               v195 = v90[3];
               v196 = (int)(float)((float)v163 * v84);
-              if (!(v196 > 8)) {
+              if (v196 <= 8) {
                 v197 = 8;
               }
               else {
@@ -973,10 +981,11 @@ LABEL_49:
               }
               v90[2] = v197;
               v198 = GameRoutine_19e10();
-              v199 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
+              v199 = (*(__int64 (**)(__int64, __int64, __int64, __int64,
                                      __int64))(*(_QWORD*)v198 + 32LL))(
                   v198, v195, 4LL * v197,
-                  "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+                  (__int64)"/Program/Externals/Spine/include\\spine/Vector.h",
+                  106);
               v200 = v90[1];
               v90[3] = v199;
               v90[1] = v200 + 1;
@@ -1004,7 +1013,7 @@ LABEL_49:
         }
         v174 = v90[3];
         v175 = (int)(float)((float)v123 * v84);
-        if (!(v175 > 8)) {
+        if (v175 <= 8) {
           v176 = 8;
         }
         else {
@@ -1012,10 +1021,10 @@ LABEL_49:
         }
         v90[2] = v176;
         v177 = GameRoutine_19e10();
-        v178 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                               __int64))(*(_QWORD*)v177 + 32LL))(
+        v178 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+            *(_QWORD*)v177 + 32LL))(
             v177, v174, 4LL * v176,
-            "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+            (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
         v179 = v90[1];
         v90[3] = v178;
         v90[1] = v179 + 1;
@@ -1029,7 +1038,7 @@ LABEL_49:
       LABEL_96:
         v157 = v90[3];
         v158 = (int)(float)((float)v126 * v84);
-        if (!(v158 > 8)) {
+        if (v158 <= 8) {
           v159 = 8;
         }
         else {
@@ -1037,10 +1046,10 @@ LABEL_49:
         }
         v90[2] = v159;
         v160 = GameRoutine_19e10();
-        v161 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                               __int64))(*(_QWORD*)v160 + 32LL))(
+        v161 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+            *(_QWORD*)v160 + 32LL))(
             v160, v157, 4LL * v159,
-            "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+            (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
         v162 = v90[1];
         v90[3] = v161;
         v90[1] = v162 + 1;
@@ -1056,7 +1065,7 @@ LABEL_49:
         v84 = 0x1.c000000000000p+0f;
         v149 = v90[3];
         v150 = (int)(float)((float)v148 * 0x1.c000000000000p+0f);
-        if (!(v150 > 8)) {
+        if (v150 <= 8) {
           v151 = 8;
         }
         else {
@@ -1064,10 +1073,10 @@ LABEL_49:
         }
         v90[2] = v151;
         v152 = GameRoutine_19e10();
-        v153 = (*(__int64 (**)(__int64, __int64, __int64, const char*,
-                               __int64))(*(_QWORD*)v152 + 32LL))(
+        v153 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
+            *(_QWORD*)v152 + 32LL))(
             v152, v149, 4LL * v151,
-            "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+            (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
         v154 = v90[1];
         v90[3] = v153;
         v90[1] = v154 + 1;
@@ -1103,7 +1112,7 @@ LABEL_49:
       }
       v188 = v90[3];
       v189 = (int)(float)((float)v155 * v84);
-      if (!(v189 > 8)) {
+      if (v189 <= 8) {
         v190 = 8;
       }
       else {
@@ -1111,10 +1120,10 @@ LABEL_49:
       }
       v90[2] = v190;
       v191 = GameRoutine_19e10();
-      v192 = (*(__int64 (**)(__int64, __int64, __int64, const char*, __int64))(
+      v192 = (*(__int64 (**)(__int64, __int64, __int64, __int64, __int64))(
           *(_QWORD*)v191 + 32LL))(
           v191, v188, 4LL * v190,
-          "/Program/Externals/Spine/include\\spine/Vector.h", 106);
+          (__int64)"/Program/Externals/Spine/include\\spine/Vector.h", 106);
       v193 = v90[1];
       v90[3] = v192;
       v90[1] = v193 + 1;

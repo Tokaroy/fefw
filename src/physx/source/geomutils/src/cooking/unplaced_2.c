@@ -15,6 +15,8 @@ void GameRoutine_3f2da0();
 __int64 physx_source_geomutils_src_cooking_54c110(__int64 a1);
 __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                                                   unsigned int a3);
+int GameRoutine_1a0cd30_alt1(int);
+void GameRoutine_362560_alt1(__int64, int, __int64, __int64, unsigned int);
 
 __int64 physx_source_geomutils_src_cooking_54c110(__int64 a1)
 {
@@ -307,14 +309,19 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
   __int64 v253;
   __int64 v254;
   __int64 v255;
-  __int64 v256;
-  _BYTE v257[4];
+  struct {
+    __int64 v256;
+    char gap312_[4];
+    _BYTE v257[4];
+  } v256_;
   __int64 v258;
   _DWORD v259[2];
   float v260;
   float v261;
-  char v262;
-  _BYTE v263[9];
+  struct {
+    char v262;
+    _BYTE v263[9];
+  } v262_;
 
   v3 = a3 - 2;
   if (a3 < 2) {
@@ -341,7 +348,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
     v14 = (int)(a3 - v13);
     v224 = a3 - 2 * v13;
     v15 = (unsigned int)(v224 + 1);
-    v256 = *(_QWORD*)(a1 + 80);
+    v256_.v256 = *(_QWORD*)(a1 + 80);
     v16 = (unsigned int)v15 & 0xFFFFFFFC;
     v227 = ((_BYTE)v13 - 2) & 7;
     v254 = v11;
@@ -398,7 +405,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           *(v28 - 3) = *(v29 - 3);
           *(v28 - 2) = *(v29 - 2);
           *(v28 - 1) = *(v29 - 1);
-          *v28 = *v29;
+          *(_DWORD*)v28 = *(_DWORD*)v29;
           v28[1] = v29[1];
           v28[2] = v29[2];
           v31 = v29[3];
@@ -422,7 +429,8 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         goto LABEL_26;
       }
     LABEL_28:
-      GameRoutine_362560(v25, v6, (__int64)v263, (__int64)&v262, 0x20u);
+      GameRoutine_362560_alt1(v25, v6, (__int64)v262_.v263,
+                              (__int64)&v262_.v262, 0x20u);
       v42 = *(_QWORD*)(a1 + 88);
       v23 = *(unsigned int**)(a1 + 8);
       if (v6 < 8) {
@@ -447,7 +455,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         *(v44 - 3) = *(_DWORD*)(v22 + 4LL * *(v45 - 3));
         *(v44 - 2) = *(_DWORD*)(v22 + 4LL * *(v45 - 2));
         *(v44 - 1) = *(_DWORD*)(v22 + 4LL * *(v45 - 1));
-        *v44 = *(_DWORD*)(v22 + 4LL * *v45);
+        *(_DWORD*)v44 = *(_DWORD*)(v22 + 4LL * *v45);
         v44[1] = *(_DWORD*)(v22 + 4LL * v45[1]);
         v44[2] = *(_DWORD*)(v22 + 4LL * v45[2]);
         v47 = v45[3];
@@ -504,11 +512,12 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
             v93 = vmulq_f32(v90, v92);
             LANES128(v93).n128_u64[0] =
                 LANES128_OF(vpaddq_f32(v93, v93)).n128_u64[0];
-            *v85++ = LANES64_OF(
-                         vpadd_f32(
-                             COERCE_AS(float32x2_t, LANES128(v93).n128_u64[0]),
-                             COERCE_AS(float32x2_t, LANES128(v93).n128_u64[0])))
-                         .n64_u32[0];
+            *(_DWORD*)v85++ =
+                LANES64_OF(
+                    vpadd_f32(
+                        COERCE_AS(float32x2_t, LANES128(v93).n128_u64[0]),
+                        COERCE_AS(float32x2_t, LANES128(v93).n128_u64[0])))
+                    .n64_u32[0];
           } while (v87 != 0);
           goto LABEL_47;
         }
@@ -584,7 +593,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           v79 = vmulq_f32(v77, v66);
           LANES128(v79).n128_u64[0] =
               LANES128_OF(vpaddq_f32(v79, v79)).n128_u64[0];
-          *v58 =
+          *(_DWORD*)v58 =
               LANES64_OF(
                   vpadd_f32(COERCE_AS(float32x2_t, LANES128(v79).n128_u64[0]),
                             COERCE_AS(float32x2_t, LANES128(v79).n128_u64[0])))
@@ -771,11 +780,12 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
             v154 = vmulq_f32(v152, v141);
             LANES128(v154).n128_u64[0] =
                 LANES128_OF(vpaddq_f32(v154, v154)).n128_u64[0];
-            *v134 = LANES64_OF(
-                        vpadd_f32(
-                            COERCE_AS(float32x2_t, LANES128(v154).n128_u64[0]),
-                            COERCE_AS(float32x2_t, LANES128(v154).n128_u64[0])))
-                        .n64_u32[0];
+            *(_DWORD*)v134 =
+                LANES64_OF(
+                    vpadd_f32(
+                        COERCE_AS(float32x2_t, LANES128(v154).n128_u64[0]),
+                        COERCE_AS(float32x2_t, LANES128(v154).n128_u64[0])))
+                    .n64_u32[0];
             v155 = *(v135 - 2);
             v135 -= 4;
             v156 = (float32x4_t*)(v50 + 32 * v155);
@@ -839,7 +849,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
             v168 = vmulq_f32(v165, v167);
             LANES128(v168).n128_u64[0] =
                 LANES128_OF(vpaddq_f32(v168, v168)).n128_u64[0];
-            *v160++ =
+            *(_DWORD*)v160++ =
                 LANES64_OF(
                     vpadd_f32(
                         COERCE_AS(float32x2_t, LANES128(v168).n128_u64[0]),
@@ -872,9 +882,8 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                    (float)((float)(unsigned int)(v13 + v169) *
                            *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169));
             if (v179 < v21 ||
-                v179 <= v21 &&
-                    (v180 = GameRoutine_1a0cd30((unsigned int)(v235 + v169))) <
-                        (int)GameRoutine_1a0cd30(v20 - v242)) {
+                v179 <= v21 && (v180 = GameRoutine_1a0cd30_alt1(v235 + v169)) <
+                                   GameRoutine_1a0cd30_alt1(v20 - v242)) {
               v21 = v179;
               v20 = v13 + v169;
             }
@@ -884,9 +893,9 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                    (float)((float)(unsigned int)(v13 + v169 + 1) *
                            *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 4));
             if (v181 < v21 ||
-                v181 <= v21 && (v182 = GameRoutine_1a0cd30(
-                                    (unsigned int)(v235 + v169 + 1))) <
-                                   (int)GameRoutine_1a0cd30(v20 - v242)) {
+                v181 <= v21 &&
+                    (v182 = GameRoutine_1a0cd30_alt1(v235 + v169 + 1)) <
+                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
               v21 = v181;
               v20 = v13 + v169 + 1;
             }
@@ -896,9 +905,9 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                    (float)((float)(unsigned int)(v13 + v169 + 2) *
                            *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 8));
             if (v183 < v21 ||
-                v183 <= v21 && (v184 = GameRoutine_1a0cd30(
-                                    (unsigned int)(v235 + v169 + 2))) <
-                                   (int)GameRoutine_1a0cd30(v20 - v242)) {
+                v183 <= v21 &&
+                    (v184 = GameRoutine_1a0cd30_alt1(v235 + v169 + 2)) <
+                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
               v21 = v183;
               v20 = v13 + v169 + 2;
             }
@@ -908,9 +917,9 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                    (float)((float)(unsigned int)(v13 + v169 + 3) *
                            *(float*)(*(_QWORD*)(a1 + 24) + 4 * v169 + 12));
             if (v185 < v21 ||
-                v185 <= v21 && (v186 = GameRoutine_1a0cd30(
-                                    (unsigned int)(v235 + v169 + 3))) <
-                                   (int)GameRoutine_1a0cd30(v20 - v242)) {
+                v185 <= v21 &&
+                    (v186 = GameRoutine_1a0cd30_alt1(v235 + v169 + 3)) <
+                        GameRoutine_1a0cd30_alt1(v20 - v242)) {
               v21 = v185;
               v20 = v13 + v169 + 3;
             }
@@ -937,9 +946,8 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
                    (float)((float)(unsigned int)(v173 + v171) *
                            *(float*)(*(_QWORD*)(a1 + 24) + v170 + 4 * v171));
             if (v176 < v21 ||
-                v176 <= v21 &&
-                    (v177 = GameRoutine_1a0cd30((unsigned int)(v175 + v171))) <
-                        (int)GameRoutine_1a0cd30(v20 - v242)) {
+                v176 <= v21 && (v177 = GameRoutine_1a0cd30_alt1(v175 + v171)) <
+                                   GameRoutine_1a0cd30_alt1(v20 - v242)) {
               v21 = v176;
               v20 = v173 + v171;
             }
@@ -956,12 +964,12 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
       v14 = v232;
       v19 = v229;
       v16 = v230;
-      *(_DWORD*)&v257[4 * v241] = v20;
+      *(_DWORD*)&v256_.v257[4 * v241] = v20;
       v17 = v228;
       v10 = v241 + 1;
       if (v241 == 2) {
-        if (*(float*)v259 <= v260 && *(float*)v259 <= v261) {
-          v189 = v257;
+        if (*(float*)v259 <= v260 & *(float*)v259 <= v261) {
+          v189 = v256_.v257;
           v188 = &v254;
           v191 = v251;
           if (*(_DWORD*)(a1 + 96) != a3) {
@@ -979,7 +987,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
               *(v200 - 3) = *(v198 - 3);
               *(v200 - 2) = *(v198 - 2);
               *(v200 - 1) = *(v198 - 1);
-              *v200 = *v198;
+              *(_DWORD*)v200 = *(_DWORD*)v198;
               v200[1] = v198[1];
               v200[2] = v198[2];
               v201 = v198[3];
@@ -1003,11 +1011,11 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           do {
             v204 = *v203++;
             --v192;
-            *v202++ = v204;
+            *(_DWORD*)v202++ = v204;
           } while (v192 != 0);
           goto LABEL_129;
         }
-        v188 = &v256;
+        v188 = &v256_.v256;
         v189 = (char*)&v258 + 4;
         v190 = &v253;
         if (v260 <= v261) {
@@ -1033,7 +1041,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
             *(v205 - 3) = *(_DWORD*)(v194 + 4LL * *(v207 - 3));
             *(v205 - 2) = *(_DWORD*)(v194 + 4LL * *(v207 - 2));
             *(v205 - 1) = *(_DWORD*)(v194 + 4LL * *(v207 - 1));
-            *v205 = *(_DWORD*)(v194 + 4LL * *v207);
+            *(_DWORD*)v205 = *(_DWORD*)(v194 + 4LL * *v207);
             v205[1] = *(_DWORD*)(v194 + 4LL * v207[1]);
             v205[2] = *(_DWORD*)(v194 + 4LL * v207[2]);
             v208 = v207[3];
@@ -1057,11 +1065,12 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           do {
             v211 = *v210++;
             --v196;
-            *v209++ = *(_DWORD*)(v194 + 4LL * v211);
+            *(_DWORD*)v209++ = *(_DWORD*)(v194 + 4LL * v211);
           } while (v196 != 0);
         }
       LABEL_121:
-        GameRoutine_362560(v195, a3, (__int64)v263, (__int64)&v262, 0x20u);
+        GameRoutine_362560_alt1(v195, a3, (__int64)v262_.v263,
+                                (__int64)&v262_.v262, 0x20u);
         v212 = *(_QWORD*)(a1 + 88);
         v213 = a3 & 7;
         if (a3 >= 8) {
@@ -1074,7 +1083,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
             *(v217 - 3) = *(_DWORD*)(v191 + 4LL * *(v215 - 3));
             *(v217 - 2) = *(_DWORD*)(v191 + 4LL * *(v215 - 2));
             *(v217 - 1) = *(_DWORD*)(v191 + 4LL * *(v215 - 1));
-            *v217 = *(_DWORD*)(v191 + 4LL * *v215);
+            *(_DWORD*)v217 = *(_DWORD*)(v191 + 4LL * *v215);
             v217[1] = *(_DWORD*)(v191 + 4LL * v215[1]);
             v217[2] = *(_DWORD*)(v191 + 4LL * v215[2]);
             v218 = v215[3];
@@ -1091,7 +1100,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
           v214 = 0;
           if ((a3 & 7) == 0) {
           LABEL_129:
-            if (*(_DWORD*)v189 == 0 && a3 == 3) {
+            if (*(_DWORD*)v189 == 0 & a3 == 3) {
               return 1;
             }
             else {
@@ -1104,7 +1113,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
         do {
           v221 = *v219++;
           --v213;
-          *v220++ = *(_DWORD*)(v191 + 4LL * v221);
+          *(_DWORD*)v220++ = *(_DWORD*)(v191 + 4LL * v221);
         } while (v213 != 0);
         goto LABEL_129;
       }
@@ -1118,7 +1127,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
       *(v35 - 3) = *(_DWORD*)(v26 + 4LL * *(v34 - 3));
       *(v35 - 2) = *(_DWORD*)(v26 + 4LL * *(v34 - 2));
       *(v35 - 1) = *(_DWORD*)(v26 + 4LL * *(v34 - 1));
-      *v35 = *(_DWORD*)(v26 + 4LL * *v34);
+      *(_DWORD*)v35 = *(_DWORD*)(v26 + 4LL * *v34);
       v35[1] = *(_DWORD*)(v26 + 4LL * v34[1]);
       v35[2] = *(_DWORD*)(v26 + 4LL * v34[2]);
       v37 = v34[3];
@@ -1135,7 +1144,7 @@ __int64 physx_source_geomutils_src_cooking_554500(__int64 a1, __int64 a2,
     v39 = (unsigned int*)(a2 + 4 * v27);
     for (k = v18; k != 0; --k) {
       v41 = *v39++;
-      *v38++ = *(_DWORD*)(v26 + 4LL * v41);
+      *(_DWORD*)v38++ = *(_DWORD*)(v26 + 4LL * v41);
     }
     goto LABEL_28;
   }

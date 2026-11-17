@@ -141,6 +141,7 @@ __int64 Camera_7c16d0(__int64 a1, unsigned int a2);
 __int64 Camera_Unknown8(__int64 result, __int64 a2);
 __int64 Camera_Unknown2_7c1a10(__int64 result, __int64 a2);
 __int64 Camera_7c23c0(__int64 a1);
+float GameRoutine_1a0a6a0(float, float);
 
 __int64 Camera_7be4c0(__int64 a1, __int64 a2)
 {
@@ -2317,6 +2318,9 @@ LABEL_8:
 __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
                                               int8x16_t* a2)
 {
+
+#pragma clang fp contract(on)
+
   float32x4_t* a3 = (float32x4_t*)PSEUDO_X8_VALUE(x8_);
   _QWORD* v3;
   __int64 v6;
@@ -2324,100 +2328,110 @@ __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
   float v8;
   float v9;
   float v10;
-  bool v11;
-  float v12;
+  float v11;
+  bool v12;
   float v13;
   float v14;
   float v15;
   float v16;
-  float32x4_t v17;
+  float v17;
   float32x4_t v18;
   float32x4_t v19;
   float32x4_t v20;
-  float v21;
-  float32x4_t v22;
+  float32x4_t v21;
+  float v22;
   float32x4_t v23;
   float32x4_t v24;
-  int8x16_t v25;
-  float32x4_t v26;
+  float32x4_t v25;
+  int8x16_t v26;
   float32x4_t v27;
   float32x4_t v28;
   float32x4_t v29;
   float32x4_t v30;
-  int8x16_t v31;
-  float32x4_t v32;
+  float32x4_t v31;
+  int8x16_t v32;
   float32x4_t v33;
   float32x4_t v34;
+  float32x4_t v35;
   __n128 result;
-  float32x4_t v36;
+  float32x4_t v37;
 
+  v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(float, "s0", "=w")),
+  v9 = COERCE_AS(__typeof__(v9), PSEUDO_REGISTER(float, "s0", "=w"));
   v3 = *(_QWORD**)(a1 + 432);
   v6 = v3[2];
   v3 += 2;
-  v7 = (*(float (**)(_QWORD*))(v6 + 16))(v3);
-  v8 = (*(float (**)(_QWORD*))(*v3 + 16LL))(v3);
-  v9 = fmodf(v8, 0x1.6800000000000p+8f);
-  if (v7 < 0x0.0p+0f) {
-    v9 = v9 + 0x1.6800000000000p+8f;
+  (*(void (**)(__int64))(v6 + 16))((__int64)v3),
+      v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(float, "s0", "=w")),
+      v9 = COERCE_AS(__typeof__(v9), PSEUDO_REGISTER(float, "s0", "=w"));
+  v8 = v7;
+  (*(void (**)(__int64))(*v3 + 16LL))((__int64)v3),
+      v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(float, "s0", "=w")),
+      v9 = COERCE_AS(__typeof__(v9), PSEUDO_REGISTER(float, "s0", "=w"));
+  v10 = GameRoutine_1a0a6a0(v9, 0x1.6800000000000p+8f),
+  v7 = COERCE_AS(__typeof__(v7), PSEUDO_REGISTER(float, "s0", "=w")),
+  v9 = COERCE_AS(__typeof__(v9), PSEUDO_REGISTER(float, "s0", "=w"));
+  if (v8 < 0x0.0p+0f) {
+    v10 = v10 + 0x1.6800000000000p+8f;
   }
-  if (!(v9 < 0x1.6800000000000p+5f)) {
-    if (!(v9 < 0x1.0e00000000000p+7f)) {
-      if (!(v9 < 0x1.c200000000000p+7f)) {
-        v11 = v9 < 0x1.3b00000000000p+8f;
-        v10 = 0x1.921fb60000000p+0f;
-        if (v11) {
-          v10 = 0x1.f6a7a20000000p+1f;
+  if (v10 >= 0x1.6800000000000p+5f) {
+    if (v10 >= 0x1.0e00000000000p+7f) {
+      if (v10 >= 0x1.c200000000000p+7f) {
+        v12 = v10 < 0x1.3b00000000000p+8f;
+        v11 = 0x1.921fb60000000p+0f;
+        if (v12) {
+          v11 = 0x1.f6a7a20000000p+1f;
         }
       }
       else {
-        v10 = 0x1.921fb60000000p+1f;
+        v11 = 0x1.921fb60000000p+1f;
       }
     }
     else {
-      v10 = 0x1.2d97c80000000p+1f;
+      v11 = 0x1.2d97c80000000p+1f;
     }
   }
   else {
-    v10 = 0x1.921fb60000000p+0f;
+    v11 = 0x1.921fb60000000p+0f;
   }
-  v12 = v10 +
-        (float)(roundf(v10 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-  if (v12 < -0x1.921fb60000000p+0f) {
-    v13 = -0x1.0000000000000p+0f;
-  }
-  else {
-    v13 = 0x1.0000000000000p+0f;
-  }
-  v14 = -0x1.921fb60000000p+1f - v12;
-  if (!(v12 < -0x1.921fb60000000p+0f)) {
-    v14 = v12;
-  }
-  if (v12 > 0x1.921fb60000000p+0f) {
-    v15 = 0x1.921fb60000000p+1f - v12;
+  v13 = v11 +
+        (float)(roundf(v11 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
+  if (v13 < -0x1.921fb60000000p+0f) {
+    v14 = -0x1.0000000000000p+0f;
   }
   else {
-    v15 = v14;
+    v14 = 0x1.0000000000000p+0f;
   }
-  if (v12 > 0x1.921fb60000000p+0f) {
-    v16 = -0x1.0000000000000p+0f;
+  v15 = -0x1.921fb60000000p+1f - v13;
+  if (v13 >= -0x1.921fb60000000p+0f) {
+    v15 = v13;
+  }
+  if (v13 > 0x1.921fb60000000p+0f) {
+    v16 = 0x1.921fb60000000p+1f - v13;
   }
   else {
-    v16 = v13;
+    v16 = v15;
   }
-  LANES128(v17).n128_u64[0] =
+  if (v13 > 0x1.921fb60000000p+0f) {
+    v17 = -0x1.0000000000000p+0f;
+  }
+  else {
+    v17 = v14;
+  }
+  LANES128(v18).n128_u64[0] =
       LANES64_OF(vpadd_f32(COERCE_AS(float32x2_t, 0x3F80000000000000LL),
                            COERCE_AS(float32x2_t, 0x3F80000000000000LL)))
           .n64_u64[0];
-  LANES128(v17).n128_u64[1] = LANES128(v17).n128_u64[0];
-  v18 = vrsqrteq_f32(v17);
-  v19 = vmulq_f32(v18, vrsqrtsq_f32(v18, vmulq_f32(v17, v18)));
-  v20 =
-      vbicq_s8(vmulq_f32(vmulq_f32(v19, vrsqrtsq_f32(v19, vmulq_f32(v17, v19))),
-                         COERCE_AS(float32x4_t, GameData_1a83610)),
-               vceqzq_f32(v17));
-  PSEUDO_LOW_LANE128(v19, n128_f32, v15 * v15);
+  LANES128(v18).n128_u64[1] = LANES128(v18).n128_u64[0];
+  v19 = vrsqrteq_f32(v18);
+  v20 = vmulq_f32(v19, vrsqrtsq_f32(v19, vmulq_f32(v18, v19)));
   v21 =
-      v16 *
+      vbicq_s8(vmulq_f32(vmulq_f32(v20, vrsqrtsq_f32(v20, vmulq_f32(v18, v20))),
+                         COERCE_AS(float32x4_t, GameData_1a83610)),
+               vceqzq_f32(v18));
+  PSEUDO_LOW_LANE128(v20, n128_f32, v16 * v16);
+  v22 =
+      v17 *
       (float)((float)((float)-(
                           float)(*(float*)((char*)((__int128*)0x10LL) +
                                            (_QWORD)GameData_212c188) -
@@ -2437,21 +2451,21 @@ __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
                                                                                     (float)(*(float*)
                                                                                                 GameData_212c188 *
                                                                                             LANES128(
-                                                                                                v19)
+                                                                                                v20)
                                                                                                 .n128_f32
                                                                                                     [0])) *
                                                                             LANES128(
-                                                                                v19)
+                                                                                v20)
                                                                                 .n128_f32
                                                                                     [0])) *
-                                                         LANES128(v19)
+                                                         LANES128(v20)
                                                              .n128_f32[0])) *
-                                         LANES128(v19).n128_f32[0])) *
-                      LANES128(v19).n128_f32[0]) +
+                                         LANES128(v20).n128_f32[0])) *
+                      LANES128(v20).n128_f32[0]) +
               0x1.0000000000000p+0f);
-  v22 = vmulq_n_f32(
-      v20,
-      v15 *
+  v23 = vmulq_n_f32(
+      v21,
+      v16 *
           (float)((float)((float)-(
                               float)(*(float*)((char*)((__int128*)0x10LL) +
                                                (_QWORD)GameData_212c190) -
@@ -2470,98 +2484,98 @@ __attribute__((swiftcall)) void Camera_7c13a0(PSEUDO_X8 x8_, __int64 a1,
                                                                                           1) -
                                                                                         (float)(*(float*)
                                                                                                     GameData_212c190 *
-                                                                                                (float)(v15 *
-                                                                                                        v15))) *
-                                                                                (float)(v15 *
-                                                                                        v15))) *
-                                                             (float)(v15 *
-                                                                     v15))) *
-                                             (float)(v15 * v15))) *
-                          (float)(v15 * v15)) +
+                                                                                                (float)(v16 *
+                                                                                                        v16))) *
+                                                                                (float)(v16 *
+                                                                                        v16))) *
+                                                             (float)(v16 *
+                                                                     v16))) *
+                                             (float)(v16 * v16))) *
+                          (float)(v16 * v16)) +
                   0x1.0000000000000p+0f));
-  LANES128(v23).n128_u64[0] = LANES128(*(a2)).n128_u64[0];
-  v24 = v22;
-  LANES128(v24).n128_f32[3] = v21;
-  v25 = vmulq_f32(v24, COERCE_AS(float32x4_t, GameData_1a829d0));
-  LANES128(v26).n128_u64[0] =
+  LANES128(v24).n128_u64[0] = LANES128(*(a2)).n128_u64[0];
+  v25 = v23;
+  LANES128(v25).n128_f32[3] = v22;
+  v26 = vmulq_f32(v25, COERCE_AS(float32x4_t, GameData_1a829d0));
+  LANES128(v27).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(*a2, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
           .n64_u64[0];
-  LANES128(v27).n128_u64[0] =
+  LANES128(v28).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(*a2, COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
           .n64_u64[0];
-  LANES128(v20).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v25, COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
+  LANES128(v21).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(v26, COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
           .n64_u64[0];
-  LANES128(v28).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v25, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
+  LANES128(v29).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(v26, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
           .n64_u64[0];
-  LANES128(v23).n128_u64[1] = LANES128(v26).n128_u64[0];
-  LANES128(v27).n128_u64[1] = LANES128(v27).n128_u64[0];
-  *(int8x8_t*)&LANES128(v20).n128_i8[8] =
-      vqtbl1_s8(v25, COERCE_AS(int8x8_t, 0x30201000F0E0D0CLL));
-  *(int32x2_t*)&LANES128(v28).n128_i8[8] =
-      vdup_lane_s32(COERCE_AS(int32x2_t, LANES128(v25).n128_u64[0]), 1);
-  v29 = vmlaq_f32(vmulq_f32(v25, v27), COERCE_AS(float32x4_t, GameData_1a83800),
-                  vmulq_f32(v23, v20));
-  LANES128(v23).n128_u64[0] =
+  LANES128(v24).n128_u64[1] = LANES128(v27).n128_u64[0];
+  LANES128(v28).n128_u64[1] = LANES128(v28).n128_u64[0];
+  *(int8x8_t*)&LANES128(v21).n128_i8[8] =
+      vqtbl1_s8(v26, COERCE_AS(int8x8_t, 0x30201000F0E0D0CLL));
+  *(int32x2_t*)&LANES128(v29).n128_i8[8] =
+      vdup_lane_s32(COERCE_AS(int32x2_t, LANES128(v26).n128_u64[0]), 1);
+  v30 = vmlaq_f32(vmulq_f32(v26, v28), COERCE_AS(float32x4_t, GameData_1a83800),
+                  vmulq_f32(v24, v21));
+  LANES128(v24).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(*a2, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
           .n64_u64[0];
-  LANES128(v26).n128_u64[1] = LANES128(v23).n128_u64[0];
-  LANES128(v23).n128_u64[1] = LANES128(*(a2)).n128_u64[0];
-  LANES128(v30).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v25, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
+  LANES128(v27).n128_u64[1] = LANES128(v24).n128_u64[0];
+  LANES128(v24).n128_u64[1] = LANES128(*(a2)).n128_u64[0];
+  LANES128(v31).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(v26, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
           .n64_u64[0];
-  *(int8x8_t*)&LANES128(v30).n128_i8[8] =
-      vqtbl1_s8(v25, COERCE_AS(int8x8_t, 0xB0A090803020100LL));
-  v31 = vmlsq_f32(vmlaq_f32(v29, COERCE_AS(float32x4_t, GameData_1a83800),
-                            vmulq_f32(v23, v28)),
-                  v30, v26);
-  LANES128(v32).n128_u64[0] = LANES128(v22).n128_u64[0];
-  LANES128(v24).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(COERCE_AS(int8x16_t,
-                                     __PAIR128__(LANES128(v24).n128_u64[1],
-                                                 LANES128(v22).n128_u64[0])),
-                           COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
-          .n64_u64[0];
+  *(int8x8_t*)&LANES128(v31).n128_i8[8] =
+      vqtbl1_s8(v26, COERCE_AS(int8x8_t, 0xB0A090803020100LL));
+  v32 = vmlsq_f32(vmlaq_f32(v30, COERCE_AS(float32x4_t, GameData_1a83800),
+                            vmulq_f32(v24, v29)),
+                  v31, v27);
+  LANES128(v33).n128_u64[0] = LANES128(v23).n128_u64[0];
   LANES128(v25).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(COERCE_AS(int8x16_t,
-                                     __PAIR128__(LANES128(v24).n128_u64[1],
-                                                 LANES128(v22).n128_u64[0])),
+                                     __PAIR128__(LANES128(v25).n128_u64[1],
+                                                 LANES128(v23).n128_u64[0])),
+                           COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
+          .n64_u64[0];
+  LANES128(v26).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(COERCE_AS(int8x16_t,
+                                     __PAIR128__(LANES128(v25).n128_u64[1],
+                                                 LANES128(v23).n128_u64[0])),
                            COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
           .n64_u64[0];
-  LANES128(v33).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v31, COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
+  LANES128(v34).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(v32, COERCE_AS(int8x8_t, 0xF0E0D0C0F0E0D0CLL)))
           .n64_u64[0];
-  LANES128(v30).n128_u64[0] =
+  LANES128(v31).n128_u64[0] =
       LANES64_OF(vqtbl1_s8(COERCE_AS(int8x16_t,
-                                     __PAIR128__(LANES128(v24).n128_u64[1],
-                                                 LANES128(v22).n128_u64[0])),
+                                     __PAIR128__(LANES128(v25).n128_u64[1],
+                                                 LANES128(v23).n128_u64[0])),
                            COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
           .n64_u64[0];
-  LANES128(v34).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v31, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
+  LANES128(v35).n128_u64[0] =
+      LANES64_OF(vqtbl1_s8(v32, COERCE_AS(int8x8_t, 0x30201000B0A0908LL)))
           .n64_u64[0];
-  LANES128(v24).n128_u64[1] = LANES128(v24).n128_u64[0];
-  LANES128(v32).n128_u64[1] = LANES128(v25).n128_u64[0];
-  *(int8x8_t*)&LANES128(v33).n128_i8[8] =
-      vqtbl1_s8(v31, COERCE_AS(int8x8_t, 0x30201000F0E0D0CLL));
-  LANES128(v25).n128_u64[1] = LANES128(v30).n128_u64[0];
-  LANES128(v30).n128_u64[1] = LANES128(v22).n128_u64[0];
-  *(int32x2_t*)&LANES128(v34).n128_i8[8] =
-      vdup_lane_s32(COERCE_AS(int32x2_t, LANES128(v31).n128_u64[0]), 1);
+  LANES128(v25).n128_u64[1] = LANES128(v25).n128_u64[0];
+  LANES128(v33).n128_u64[1] = LANES128(v26).n128_u64[0];
+  *(int8x8_t*)&LANES128(v34).n128_i8[8] =
+      vqtbl1_s8(v32, COERCE_AS(int8x8_t, 0x30201000F0E0D0CLL));
+  LANES128(v26).n128_u64[1] = LANES128(v31).n128_u64[0];
+  LANES128(v31).n128_u64[1] = LANES128(v23).n128_u64[0];
+  *(int32x2_t*)&LANES128(v35).n128_i8[8] =
+      vdup_lane_s32(COERCE_AS(int32x2_t, LANES128(v32).n128_u64[0]), 1);
   LANES128(result).n128_u64[0] =
-      LANES64_OF(vqtbl1_s8(v31, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
+      LANES64_OF(vqtbl1_s8(v32, COERCE_AS(int8x8_t, 0xB0A090807060504LL)))
           .n64_u64[0];
   *(int8x8_t*)&LANES128(result).n128_i8[8] =
-      vqtbl1_s8(v31, COERCE_AS(int8x8_t, 0xB0A090803020100LL));
-  v36 = vmlsq_f32(vmlaq_f32(vmlaq_f32(vmulq_f32(v24, v31),
+      vqtbl1_s8(v32, COERCE_AS(int8x8_t, 0xB0A090803020100LL));
+  v37 = vmlsq_f32(vmlaq_f32(vmlaq_f32(vmulq_f32(v25, v32),
                                       COERCE_AS(float32x4_t, GameData_1a83800),
-                                      vmulq_f32(v32, v33)),
+                                      vmulq_f32(v33, v34)),
                             COERCE_AS(float32x4_t, GameData_1a83800),
-                            vmulq_f32(v30, v34)),
-                  result, v25);
-  LANES128(v36).n128_u32[3] = 0;
-  *a3 = v36;
+                            vmulq_f32(v31, v35)),
+                  result, v26);
+  LANES128(v37).n128_u32[3] = 0;
+  *a3 = v37;
   {
     result;
     return;

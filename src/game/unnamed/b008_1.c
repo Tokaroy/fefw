@@ -9502,6 +9502,9 @@ __int64 GameHr_a15c60(_QWORD* a1, int a2, int a3)
 
 __int64 GameHr_a15d40(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   int v1;
   __int64 v2;
   int v3;
@@ -9530,7 +9533,7 @@ __int64 GameHr_a15d40(__int64 result)
     v8 = *(_QWORD*)(*(_QWORD*)(*GameData_212c878[0] + 64) + 8LL * v7);
     v2 = *(_QWORD*)(v8 + 192);
     v9 = *(unsigned __int8*)(v8 + 72);
-    v10 = v2 == 0 || v9 > 7;
+    v10 = v2 == 0 | v9 > 7;
     if (v10 || *(_BYTE*)(v2 + 105) == 0) {
       v2 = 0;
       if (v1 != 3) {
@@ -9558,7 +9561,7 @@ LABEL_4:
       v3 = *(unsigned __int8*)(v2 + 104);
       if ((((unsigned __int16)*GameData_212cf08[0] >> v3) & 1) != 0) {
         v4 = *(unsigned __int8*)(v2 + 106);
-        if (*(_BYTE*)(v2 + 106) == 0 || v4 == 6) {
+        if (*(_BYTE*)(v2 + 106) == 0 | v4 == 6) {
           v6 = *(_QWORD*)(v2 + 576);
           if (v6 != 0) {
             goto LABEL_39;
@@ -9570,7 +9573,7 @@ LABEL_4:
           LABEL_39:
             v16 = *(unsigned __int8*)(v6 + 72);
             v17 = *(unsigned __int8*)(v6 + 73);
-            if (v3 != 2 || v16 > 7 || v17 != 1) {
+            if (v3 != 2 | v16 > 7 || v17 != 1) {
               return 0;
             }
             return *(_BYTE*)(v2 + 105) == 1;
@@ -9590,7 +9593,7 @@ LABEL_4:
   v12 = *(_QWORD*)(*(_QWORD*)(*GameData_212c878[0] + 64) + 8LL * v11);
   v13 = *(unsigned __int8*)(v12 + 72);
   v14 = *(unsigned __int8*)(v12 + 73);
-  return v13 < 8 && v14 == 7;
+  return v13 < 8 & v14 == 7;
 }
 
 void GameHr_a15ec0(__int64* a1)

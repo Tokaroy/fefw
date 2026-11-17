@@ -941,7 +941,7 @@ llvm_libcxx_21_libcxx_include___functional_a5cb20(PSEUDO_X8 x8_, __int64 a1,
   v5 = *(_QWORD*)(a1 + 224);
   result = std___1___hash_memory(a2, a3);
   v8 = *(_QWORD*)(v5 - 32);
-  if (v8 == 0 || *(_QWORD*)(v5 - 16) == 0) {
+  if (v8 == 0 | *(_QWORD*)(v5 - 16) == 0) {
     goto LABEL_28;
   }
   v10 = v8 - 1;
@@ -1002,7 +1002,7 @@ llvm_libcxx_21_libcxx_include___functional_a5cb20(PSEUDO_X8 x8_, __int64 a1,
 LABEL_25:
   v16 = v13[3];
   v17 = *(_QWORD*)(v4 - 24);
-  if (v16 >= (*(_QWORD*)(v4 - 16) - v17) >> 4) {
+  if (v16 >= (signed __int64)(*(_QWORD*)(v4 - 16) - v17) >> 4) {
   LABEL_28:
     *a4 = 0;
     a4[1] = 0;

@@ -255,6 +255,7 @@ void BasicMenuCursor_16de600(__int64);
 void GameRoutine_8679c0();
 void __cxa_guard_release(__int64);
 __int64 game_gameui_anonymous_1738620(__int64 a1, int a2, char a3);
+float LayoutAccessor_15638b0_alt1(__int64*, const char*, char);
 
 __int64 game_gameui_anonymous_1738240(__int64 a1)
 {
@@ -318,7 +319,7 @@ __int64 game_gameui_anonymous_1738240(__int64 a1)
     }
   }
   else {
-    v10 = (*(_BYTE*)0x940LL);
+    v10 = (*(_UNKNOWN*)0x940LL);
   }
   if (atomic_fetch_add((atomic_ullong* volatile)(v7 + 8),
                        0xFFFFFFFFFFFFFFFFLL) == 0) {
@@ -333,7 +334,7 @@ __int64 game_gameui_anonymous_1738240(__int64 a1)
   if ((v10 & 1) == 0) {
   LABEL_17:
     v12 = *(__int64**)(a1 + 152);
-    v13 = LayoutAccessor_15638b0(v12, "IO", 0);
+    v13 = LayoutAccessor_15638b0_alt1(v12, "IO", 0);
     LayoutAccessor_15636c0((__int64)v12, (__int64)"IO", 0, v13);
   }
   result = ((__int64 (*)(__int64*, __int64, char))LayoutAccessor_1563380)(
@@ -360,7 +361,7 @@ __int64 game_gameui_anonymous_1738240(__int64 a1)
       v21 = *v20;
       v22 = v21 > 0x10;
       v23 = (1 << v21) & 0x1CE00;
-      if (!v22 && v23 != 0) {
+      if (!v22 & v23 != 0) {
         *(_WORD*)(a1 + 136) |= 0x80u;
       }
     }

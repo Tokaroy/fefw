@@ -11,6 +11,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                                               unsigned int a3, float* a4,
                                               float32x4_t* a5, unsigned int a6,
                                               float* a7, float* a8);
+__int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
 
 void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                                               unsigned int a3, float* a4,
@@ -403,40 +404,45 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
     __int64 v394;
     float32x4_t* v395;
     float* v396;
-    char gap40_[912];
+  } v390_;
+  _BYTE v397[768];
+  struct {
+    _QWORD v398[3];
+    char gap832_[4];
+    int v399;
+    char gap840_[4];
+    _BYTE v400[84];
+  } v398_;
+  struct {
     __int64 v401;
     int v402;
-  } f_;
-  _BYTE v397[768];
-  _QWORD v398[3];
-  int v399;
-  _BYTE v400[84];
-  _BYTE v403[4];
+    _BYTE v403[4];
+  } v401_;
   __int64 v404;
   _QWORD v405[4];
 
   if (*(_DWORD*)(a1 + 40LL * a6 + 32) != a3) {
-    *(_QWORD*)&v400[4] = v17;
-    *(_QWORD*)&v400[12] = v16;
-    *(_QWORD*)&v400[20] = v15;
-    *(_QWORD*)&v400[28] = v14;
-    *(_QWORD*)&v400[36] = v13;
-    *(_QWORD*)&v400[44] = v12;
-    *(_QWORD*)&v400[52] = v11;
-    *(_QWORD*)&v400[60] = v10;
-    *(_QWORD*)&v400[68] = v8;
-    *(_QWORD*)&v400[76] = v9;
+    *(_QWORD*)&v398_.v400[4] = v17;
+    *(_QWORD*)&v398_.v400[12] = v16;
+    *(_QWORD*)&v398_.v400[20] = v15;
+    *(_QWORD*)&v398_.v400[28] = v14;
+    *(_QWORD*)&v398_.v400[36] = v13;
+    *(_QWORD*)&v398_.v400[44] = v12;
+    *(_QWORD*)&v398_.v400[52] = v11;
+    *(_QWORD*)&v398_.v400[60] = v10;
+    *(_QWORD*)&v398_.v400[68] = v8;
+    *(_QWORD*)&v398_.v400[76] = v9;
     v123 = *(_DWORD*)(a2 + 808);
-    f_.v395 = a5;
-    f_.v396 = a8;
+    v390_.v395 = a5;
+    v390_.v396 = a8;
     v128 = a6;
     v129 = a3;
     v130 = (unsigned int)(4 * v123);
-    f_.v394 = v130;
-    LOBYTE(v398[1]) = (unsigned int)v130 > 0x1000;
+    v390_.v394 = v130;
+    LOBYTE(v398_.v398[1]) = (unsigned int)v130 > 0x1000;
     if ((unsigned int)v130 <= 0x1000) {
-      v131 = (_DWORD*)__builtin_alloca((v130 + 15) & 0x1FFFFFFF0LL);
-      v398[0] = v131;
+      v131 = (_DWORD*)((char*)&v390_.v390 - ((v130 + 15) & 0x1FFFFFFF0LL));
+      v398_.v398[0] = v131;
       v132 = a3;
       if (a3 == (unsigned __int64)a6) {
       LABEL_36:
@@ -452,21 +458,21 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
         v144 = a7[4];
         v143 = a7[5];
         v145 = a7[6];
-        v146 = (unsigned int)(4 * *(_DWORD*)(a2 + 896));
+        v146 = (unsigned int)(4 * *(int*)(a2 + 896));
         if ((_DWORD)v146 != 0) {
-          f_.v391 = a7[2];
-          f_.v392 = v143;
-          f_.v393 = v145;
+          v390_.v391 = a7[2];
+          v390_.v392 = v143;
+          v390_.v393 = v145;
           v147 = v144;
           v148 = v137;
-          f_.v390 = v138;
-          memset((__int64)v397, 0, v146);
-          v138 = f_.v390;
-          v142 = f_.v391;
+          v390_.v390 = v138;
+          GameRoutine_1a0ba50((__int64)v397, 0, v146);
+          v138 = v390_.v390;
+          v142 = v390_.v391;
           v137 = v148;
           v144 = v147;
-          v143 = f_.v392;
-          v145 = f_.v393;
+          v143 = v390_.v392;
+          v145 = v390_.v393;
         }
         v149 = -v135;
         v150 = -v134;
@@ -552,7 +558,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                 v203 = (float*)(v189 + 64 + 32 * v200);
                 v204 = (float*)&v397[4 * v200 + 8];
                 v205 = 0;
-                v206 = (float*)&v399;
+                v206 = (float*)&v398_.v399;
                 do {
                   v205 -= 4;
                   v207 =
@@ -635,12 +641,9 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                     v185 = v185 + (float)(PSEUDO_UNFUSED(v231 * v229[4]));
                     v184 = v184 + (float)(PSEUDO_UNFUSED(v231 * v229[5]));
                     v187 = __PAIR64__(
-                        COERCE_UNSIGNED_INT(
-                            *((float*)&v187 + 1) +
-                            (float)(PSEUDO_UNFUSED(v231 * v229[1]))),
-                        COERCE_UNSIGNED_INT(
-                            *(float*)&v187 +
-                            (float)(PSEUDO_UNFUSED(v231 * *v229))));
+                        *((float*)&v187 + 1) +
+                            (float)(PSEUDO_UNFUSED(v231 * v229[1])),
+                        *(float*)&v187 + (float)(PSEUDO_UNFUSED(v231 * *v229)));
                     if (v226 == v197) {
                       goto LABEL_44;
                     }
@@ -648,7 +651,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                   v231 = 0x0.0p+0f;
                   v232 = 0;
                   v233 = (float*)v228;
-                  v234 = (float*)v400;
+                  v234 = (float*)v398_.v400;
                   do {
                     v232 -= 8;
                     v235 =
@@ -677,7 +680,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                     goto LABEL_56;
                   }
                 LABEL_63:
-                  v240 = (float*)&v398[2] + v230 + 1;
+                  v240 = (float*)&v398_.v398[2] + v230 + 1;
                   v241 = (float*)(v225 + 12 * v230);
                   v242 = v197 & 7;
                   do {
@@ -701,7 +704,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                 goto LABEL_54;
               }
             LABEL_52:
-              v218 = (float*)&v398[2] + v201 + 1;
+              v218 = (float*)&v398_.v398[2] + v201 + 1;
               v219 = (float*)&v397[4 * v201 + 4 * v200];
               v220 = (float*)(v189 + 16 + 32 * v201 + 32 * v200);
               do {
@@ -723,9 +726,9 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
           LABEL_66:
             if ((_DWORD)v155 == 0) {
             LABEL_90:
-              v306 = (float*)f_.v395;
-              v305 = f_.v396;
-              LANES128(*(f_.v395)).n128_u32[0] = LANES128(v178).n128_u32[0];
+              v306 = (float*)v390_.v395;
+              v305 = v390_.v396;
+              LANES128(*(v390_.v395)).n128_u32[0] = LANES128(v178).n128_u32[0];
               v306[1] = v180;
               v306[2] = v181;
               v306[4] = LANES128(v177).n128_f32[0];
@@ -736,8 +739,9 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
               v305[2] = v184;
               *((_QWORD*)v305 + 2) = v187;
               v305[6] = v186;
-              if ((unsigned int)f_.v394 > 0x1000) {
-                physx_PxTempAllocator_deallocate((__int64)v398, (__int64)v131);
+              if ((unsigned int)v390_.v394 > 0x1000) {
+                physx_PxTempAllocator_deallocate((__int64)v398_.v398,
+                                                 (__int64)v131);
               }
               return;
             }
@@ -776,7 +780,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
               v262 = (float*)(v251 + 32 * v259);
               v263 = (float*)&v397[4 * v259 + 8];
               v264 = 0;
-              v265 = (float*)&v399;
+              v265 = (float*)&v398_.v399;
               do {
                 v264 -= 4;
                 v266 = (float)(PSEUDO_UNFUSED(v179 * v262[5])) +
@@ -875,7 +879,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                 v290 = 0x0.0p+0f;
                 v291 = 0;
                 v292 = (float*)v287;
-                v293 = (float*)v400;
+                v293 = (float*)v398_.v400;
                 do {
                   v291 -= 8;
                   v294 =
@@ -904,7 +908,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
                   goto LABEL_80;
                 }
               LABEL_87:
-                v299 = (float*)&v398[2] + v289 + 1;
+                v299 = (float*)&v398_.v398[2] + v289 + 1;
                 v300 = (float*)(v284 + 12 * v289);
                 v301 = v256 & 7;
                 do {
@@ -928,7 +932,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
               goto LABEL_78;
             }
           LABEL_76:
-            v277 = (float*)&v398[2] + v260 + 1;
+            v277 = (float*)&v398_.v398[2] + v260 + 1;
             v278 = (float*)&v397[4 * v260 + 4 * v259];
             v279 = (float*)(v252 + 32 * v260 + 32 * v259);
             do {
@@ -1187,7 +1191,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
           (__int64)"/Inside/Lib/PhysX/O/physx/source/lowleveldynamics/src/"
                    "DyFeatherstoneArticulation.cpp",
           0x787u);
-      v398[0] = v131;
+      v398_.v398[0] = v131;
       v132 = v129;
       if (v129 == v128) {
         goto LABEL_36;
@@ -1217,12 +1221,12 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
   v21 = *((_OWORD*)a4 + 1);
   v23 = *(_QWORD*)(a2 + 704) + 12LL * a6;
   v24 = *(_QWORD*)(a2 + 672);
-  f_.v402 = 0;
-  f_.v401 = 0;
+  v401_.v402 = 0;
+  v401_.v401 = 0;
   v25 = *v20;
   v26 = *((unsigned __int8*)v20 + 4);
   if ((_DWORD)v26 != 0) {
-    v27 = (float*)&f_.v401;
+    v27 = (float*)&v401_.v401;
     v28 = v26;
     v29 = (float*)(v24 + 24LL * (unsigned int)v25 + 12);
     v30 = 0x0.0p+0f;
@@ -1349,7 +1353,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
       v86 = (float*)(v84 + 32);
       v87 = 0;
       v88 = (float*)&v404;
-      v89 = (float*)&f_.v401 + 1;
+      v89 = (float*)&v401_.v401 + 1;
       do {
         v90 = *(v89 - 1);
         v91 = *v89;
@@ -1383,8 +1387,8 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
       }
     }
     v96 = (float*)(v84 + 32 * v85);
-    *(float*)&v403[4 * v85] =
-        *((float*)&f_.v401 + v85) -
+    *(float*)&v401_.v403[4 * v85] =
+        *((float*)&v401_.v401 + v85) -
         (float)((float)((float)((float)(PSEUDO_UNFUSED(
                                     LANES128(v77).n128_f32[1] * v96[5])) +
                                 (float)(v96[4] * LANES128(v77).n128_f32[0])) +
@@ -1417,7 +1421,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
           LANES128(v97).n128_f32[2] + (float)(PSEUDO_UNFUSED(v108 * v102[2]));
       v104 = v108 * v102[4];
       v105 = v108 * v102[5];
-      DWORD3(v106) = DWORD3(v83);
+      DWORDn(v106, sizeof(v106) / 4 - 1) = DWORDn(v83, sizeof(v83) / 4 - 1);
       *(float*)&v106 = *(float*)&v83 + (float)(PSEUDO_UNFUSED(v108 * v102[3]));
       *((float*)&v106 + 1) = *((float*)&v83 + 1) + v104;
       v97 = v103;
@@ -1454,7 +1458,7 @@ void physx_source_lowleveldynamics_src_327da0(__int64 a1, __int64 a2,
       goto LABEL_16;
     }
   LABEL_23:
-    v117 = (float*)&v403[4 * v107];
+    v117 = (float*)&v401_.v403[4 * v107];
     v118 = (float*)(v100 + 12 * v107);
     v119 = v26 & 7;
     do {
@@ -1473,7 +1477,7 @@ LABEL_27:
   LANES128(v78).n128_u32[3] = 0;
   *a5 = v78;
   a5[1] = v82;
-  DWORD3(v106) = 0;
+  DWORDn(v106, sizeof(v106) / 4 - 1) = 0;
   LANES128(v103).n128_u32[3] = 0;
   *(_OWORD*)a8 = v106;
   *((float32x4_t*)a8 + 1) = v103;

@@ -114,11 +114,12 @@ __int64 game_map_anonymous_RegistPosList_Search_closure_Invoke(__int64 result,
   int v10;
   char* i;
 
-  v3 = **(_DWORD**)(result + 8) + *a2;
-  v4 = **(_DWORD**)(result + 16) + *a3;
+  v3 = **(_DWORD**)(result + 8) + *(int*)a2;
+  v4 = **(_DWORD**)(result + 16) + *(int*)a3;
   if (((v4 | v3) & 0x80000000) == 0) {
     v5 = *(_QWORD*)(result + 24);
-    if (v3 < *(_DWORD*)v5 && v4 < *(_DWORD*)(v5 + 4)) {
+    if (v3 < (signed __int32)*(_DWORD*)v5 &&
+        v4 < (signed __int32)*(_DWORD*)(v5 + 4)) {
       v6 = **(_QWORD**)(result + 32);
       if (*(unsigned __int16*)(*(_QWORD*)(v5 + 104) + 2LL * (v3 + 32 * v4)) ==
           *(unsigned __int16*)(v6 + 16)) {

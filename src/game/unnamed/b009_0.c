@@ -312,7 +312,7 @@ __int64 GameRoutine_a8c7e0_alt1(__int64,
                                 __int64*) __asm__("GameRoutine_a8c7e0");
 __int64 GameRoutine_a9d730_alt1(__int64*) __asm__("GameRoutine_a9d730");
 __int64 GameRoutine_5f6040_alt1(__int64, __int16*, __int64,
-                             unsigned __int64) __asm__("GameRoutine_5f6040");
+                                unsigned __int64) __asm__("GameRoutine_5f6040");
 int* GameRoutine_5e9960_alt1(int* result) __asm__("GameRoutine_5e9960");
 int* GameRoutine_5e9bb0_alt1(int* result) __asm__("GameRoutine_5e9bb0");
 int* GameRoutine_5e9e10_alt1(int* result) __asm__("GameRoutine_5e9e10");
@@ -345,6 +345,10 @@ _QWORD* GameHr_a7e4a0(__int64 a1, __int64 a2, _QWORD* a3, __int64 a4, int a5);
 __int64 GameHr_a99910(__int64 result, __int64 a2, __int64 a3, int a4);
 __int64 GameHr_aa21d0(__int64 a1, int* a2);
 __int64 GameHr_a81a70(__int64 a1, unsigned __int64 a2);
+_QWORD* GameRoutine_5f6010(_QWORD* result);
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+bool GameRoutine_5f6040(__int64, __int16*, __int64, unsigned __int64);
+void __attribute__((noreturn)) GameRoutine_a78a10();
 
 __int64* GameHr_a67980(_QWORD* a1, __int64 a2)
 {
@@ -3243,6 +3247,9 @@ __int64 GameHr_a73d40(__int64 result, __int64 a2)
 
 bool GameHr_a76440(__int64 a1, __int64 a2, __int64 a3, int a4)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64 v4;
   __int64* v7;
   __int64 v8;
@@ -3298,7 +3305,7 @@ bool GameHr_a76440(__int64 a1, __int64 a2, __int64 a3, int a4)
   *(_QWORD*)(a1 + 88) = 0;
   if (a4 != 0) {
     if (a4 < 0) {
-      GameRoutine_a78a10_alt1();
+      GameRoutine_a78a10();
     }
     v8 = fw_memory_HeapManager_Allocate(*v7, 104LL * a4, 16, 0);
     v9 = 104LL * (int)v4 - 104;
@@ -3438,7 +3445,9 @@ bool GameHr_a76440(__int64 a1, __int64 a2, __int64 a3, int a4)
       *(_QWORD*)(v15 + 88) = a1;
       ++v14;
       v8 = *(_QWORD*)(a1 + 72);
-    } while (0x4EC4EC4EC4EC4EC5LL * ((*(_QWORD*)(a1 + 80) - v8) >> 3) > v14);
+    } while (0x4EC4EC4EC4EC4EC5LL *
+                 ((signed __int64)(*(_QWORD*)(a1 + 80) - v8) >> 3) >
+             v14);
     v16 = *(_QWORD*)(a1 + 112);
     v17 = *(_QWORD*)(a1 + 96);
   }
@@ -3469,7 +3478,7 @@ bool GameHr_a76440(__int64 a1, __int64 a2, __int64 a3, int a4)
         if (v28 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v28 + 8),
                                          0xFFFFFFFFFFFFFFFFLL) == 0) {
           (*(void (**)(__int64))(*(_QWORD*)v28 + 16LL))(v28);
-          std___1___shared_weak_count___release_weak_alt1(v28);
+          std___1___shared_weak_count___release_weak_alt2(v28);
         }
         v17 += 32;
       } while (v17 != v18);
@@ -3494,10 +3503,10 @@ bool GameHr_a76440(__int64 a1, __int64 a2, __int64 a3, int a4)
   v34_.v39 = 0;
   v34_.v40 = -1;
   LODWORD(v34_.v34) = *(unsigned __int16*)(*(_QWORD*)(v30 + 24) + 56LL);
-  GameRoutine_5f6010_alt1(&v34_.v34);
+  GameRoutine_5f6010(&v34_.v34);
   v31 = v34_.v35;
   v32 = fw_memory_HeapManager_Allocate(*v7, v34_.v35, 16, 0);
-  result = GameRoutine_5f6040_alt1(a1 + 368, (__int16*)&v34_.v34, v32, v31);
+  result = GameRoutine_5f6040(a1 + 368, (__int16*)&v34_.v34, v32, v31);
   *(_WORD*)(a1 + 378) = *(_WORD*)(*(_QWORD*)(v30 + 24) + 56LL);
   return result;
 }

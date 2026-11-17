@@ -10896,6 +10896,9 @@ __int64 GameHr_fb0db0(__int64 result)
 
 __int64 GameHr_fb1b40(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   unsigned int v2;
   __int64* v3;
@@ -10931,7 +10934,7 @@ __int64 GameHr_fb1b40(__int64 a1)
         }
         v13 = *v12;
         v14 = *((unsigned __int8*)v12 + 8);
-        if (v13 == 0x726F745365646953LL && v14 == 121) {
+        if (v13 == 0x726F745365646953LL & v14 == 121) {
           return 16;
         }
         return 1;
@@ -10961,7 +10964,7 @@ __int64 GameHr_fb1b40(__int64 a1)
         if ((*(_BYTE*)a1 & 1) == 0) {
           v17 = (_DWORD*)(a1 + 1);
         }
-        if (*v17 == 1701736270) {
+        if (*(_DWORD*)v17 == 1701736270) {
           return 1;
         }
         return 1;
@@ -10973,7 +10976,8 @@ __int64 GameHr_fb1b40(__int64 a1)
       if ((*(_BYTE*)a1 & 1) == 0) {
         v10 = (_DWORD*)(a1 + 1);
       }
-      v11 = (*v10 ^ 0x74697845 | *(_DWORD*)((char*)v10 + 3) ^ 0x736F5074) == 0;
+      v11 = (*(_DWORD*)v10 ^ 0x74697845 |
+             *(_DWORD*)((char*)v10 + 3) ^ 0x736F5074) == 0;
       v2 = 128;
     }
   LABEL_56:
@@ -11022,7 +11026,7 @@ __int64 GameHr_fb1b40(__int64 a1)
       v4 = *v3;
       v5 = v3[1];
       v6 = *((unsigned __int8*)v3 + 16);
-      if (v4 == 0x736575516E69614DLL && v5 == 0x6F69747365755174LL &&
+      if (v4 == 0x736575516E69614DLL & v5 == 0x6F69747365755174LL &&
           v6 == 110) {
         return 4;
       }
@@ -11036,7 +11040,7 @@ __int64 GameHr_fb1b40(__int64 a1)
   }
   v24 = *v22;
   v23 = v22[1];
-  if (v24 != 0x736575516E69614DLL || v23 != 0x746C756166654474LL) {
+  if (v24 != 0x736575516E69614DLL | v23 != 0x746C756166654474LL) {
     return 1;
   }
   return 2;

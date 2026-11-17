@@ -4663,6 +4663,9 @@ __int64 GameHr_e41bc0(__int64 a1)
 
 __int64 GameHr_e41cc0(__int64 a1, int a2)
 {
+
+#pragma clang fp contract(on)
+
   _QWORD* v2;
   __int64 v3;
   bool v4;

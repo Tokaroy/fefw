@@ -534,6 +534,7 @@ void GameHr_e273d0(__int64 a1);
 void GameHr_e2a160(__int64 a1, unsigned int a2, unsigned __int16* a3);
 __int64 GameHr_e30f30(__int64 a1, __int64 a2);
 char* GameRoutine_60a020_alt2(char*, const char*) __asm__("GameRoutine_60a020");
+bool GameRoutine_e0abc0_alt2(unsigned __int64*, unsigned __int64*);
 
 bool GameHr_db2940(__int64 a1)
 {
@@ -4964,6 +4965,9 @@ __int64 GameHr_e096e0(__int64* a1, __int64 a2)
 
 __int64 GameHr_e0a200(__int64 result, unsigned __int64* a2, __int64 a3, char a4)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64* v7;
   unsigned __int64* v8;
   __int64 v9;
@@ -5264,7 +5268,7 @@ __int64 GameHr_e0a200(__int64 result, unsigned __int64* a2, __int64 a3, char a4)
       LABEL_10:
         if (v9 <= 23) {
           v74 = v8 + 1;
-          v76 = v8 == a2 || v74 == a2;
+          v76 = v8 == a2 | v74 == a2;
           if ((a4 & 1) != 0) {
             if (!v76) {
               v77 = 8;
@@ -5709,10 +5713,11 @@ __int64 GameHr_e0a200(__int64 result, unsigned __int64* a2, __int64 a3, char a4)
       if (v40 < v41) {
         goto LABEL_83;
       }
-      v50 = GameRoutine_e0abc0_alt1(v8, v49);
+      v50 = GameRoutine_e0abc0_alt2(v8, v49);
       v8 = v49 + 1;
       v51 = v50;
-      result = GameRoutine_e0abc0_alt1(v49 + 1, a2);
+      result = ((__int64 (*)(unsigned __int64*, unsigned __int64*))
+                    GameRoutine_e0abc0_alt2)(v49 + 1, a2);
       if ((result & 1) != 0) {
         break;
       }

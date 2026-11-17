@@ -33,6 +33,9 @@ float32x4_t nn_g3d_5f9fe0(__int64 a1, float32x4_t* a2, float32x4_t result);
 
 __int64 nn_g3d_5f8720(__int64 result, float32x4_t* a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   float32x4_t* v3;
   unsigned int v4;
@@ -187,6 +190,9 @@ __int64 nn_g3d_5f8720(__int64 result, float32x4_t* a2)
 
 float32x4_t nn_g3d_5f8c60(__int64 a1, float32x4_t* a2, float32x4_t result)
 {
+
+#pragma clang fp contract(on)
+
   float32x4_t* v3;
   __int64 v4;
   unsigned int v5;
@@ -1409,6 +1415,9 @@ LABEL_33:
 _WORD* nn_g3d_5fa6a0(_WORD* result, double a2, double a3, double a4, double a5,
                      double a6, double a7, double a8, double a9)
 {
+
+#pragma clang fp contract(on)
+
   int32x2_t v9;
   int32x2_t v10;
   __int64 v11;
@@ -1486,10 +1495,18 @@ _WORD* nn_g3d_5fa6a0(_WORD* result, double a2, double a3, double a4, double a5,
       v20 = vdupq_laneq_s32(v16, 2);
       v21 = vdupq_n_s32(0x3E22F983u);
       v22 = vdupq_n_s32(0xC0C90FDB);
-      *(float*)&a8 = -COERCE_FLOAT(HIDWORD(
-          *(_QWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c190)));
-      *(float*)&a9 = -COERCE_FLOAT(HIDWORD(
-          *(_OWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c190)));
+      *(float*)&a8 = -COERCE_FLOAT(DWORDn(
+          *(_QWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c190),
+          sizeof(*(_QWORD*)((char*)((_UNKNOWN*)0x4LL) +
+                            (_QWORD)GameData_212c190)) /
+                  4 -
+              1));
+      *(float*)&a9 = -COERCE_FLOAT(DWORDn(
+          *(_OWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c190),
+          sizeof(*(_OWORD*)((char*)((_UNKNOWN*)0x4LL) +
+                            (_QWORD)GameData_212c190)) /
+                  4 -
+              1));
       v23 = -*(float*)GameData_212c188;
       v24 = vdupq_lane_s32(COERCE_AS(int32x2_t, LANES128(v17).n128_u64[0]), 0);
       v25 = vdupq_laneq_s32(v17, 2);
@@ -1499,12 +1516,20 @@ _WORD* nn_g3d_5fa6a0(_WORD* result, double a2, double a3, double a4, double a5,
       v29 = vdupq_n_s32(0x40490FDBu);
       PSEUDO_LOW_LANE64(
           v9, n64_f32,
-          -COERCE_FLOAT(HIDWORD(*(_QWORD*)((char*)((_UNKNOWN*)0x4LL) +
-                                           (_QWORD)GameData_212c188))));
+          -COERCE_FLOAT(DWORDn(
+              *(_QWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c188),
+              sizeof(*(_QWORD*)((char*)((_UNKNOWN*)0x4LL) +
+                                (_QWORD)GameData_212c188)) /
+                      4 -
+                  1)));
       PSEUDO_LOW_LANE64(
           v10, n64_f32,
-          -COERCE_FLOAT(HIDWORD(*(_OWORD*)((char*)((_UNKNOWN*)0x4LL) +
-                                           (_QWORD)GameData_212c188))));
+          -COERCE_FLOAT(DWORDn(
+              *(_OWORD*)((char*)((_UNKNOWN*)0x4LL) + (_QWORD)GameData_212c188),
+              sizeof(*(_OWORD*)((char*)((_UNKNOWN*)0x4LL) +
+                                (_QWORD)GameData_212c188)) /
+                      4 -
+                  1)));
       v30 = vdupq_n_s32(0xBFC90FDB);
       v31 = vdupq_lane_s32(v9, 0);
       v32 = vdupq_lane_s32(v10, 0);

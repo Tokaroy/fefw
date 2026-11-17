@@ -2809,7 +2809,7 @@ void game_map_1141200(_QWORD* a1, int a2, __int64* a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v5 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v5, v12_.v17);
   }
   v6 = v12_.v14;
@@ -2822,7 +2822,8 @@ void game_map_1141200(_QWORD* a1, int a2, __int64* a3)
       v8 = *(unsigned int*)(v7 - 8);
       v9 = v7 - 32;
       if ((_DWORD)v8 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v8])(&v12_.v18, v7 - 32);
+        ((void (*)(__int64, __int64))decltype_c81af0_ptr_2012a50[v8])(
+            (__int64)&v12_.v18, v7 - 32);
       }
       *(_DWORD*)(v7 - 8) = -1;
       v7 -= 32;
@@ -2835,7 +2836,7 @@ void game_map_1141200(_QWORD* a1, int a2, __int64* a3)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v10 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(
+      nn_mem_StandardAllocator_Free_alt3(
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, v6);
     }
   }
@@ -2844,7 +2845,7 @@ void game_map_1141200(_QWORD* a1, int a2, __int64* a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, v12_.v13);
   }
   *a1 = game_map_MapAccessTrickEventBase_vtable;
@@ -2868,17 +2869,18 @@ void game_map_1141500(_QWORD* a1, int a2, __int64* a3)
     char v16;
     char gap81_[15];
     __int64 v17;
+    char gap104_[7];
+    char v18;
   } v12_;
-  char v18;
 
   GameRoutine_1141380(v12_.v12, a3);
-  GameRoutine_1140d20((__int64)a1, a2, v12_.v12);
+  GameHr_1140d20((__int64)a1, a2, v12_.v12);
   if ((v12_.v16 & 1) != 0 && v12_.v17 != 0) {
     v5 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v5 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v5, v12_.v17);
   }
   v6 = v12_.v14;
@@ -2891,7 +2893,8 @@ void game_map_1141500(_QWORD* a1, int a2, __int64* a3)
       v8 = *(unsigned int*)(v7 - 8);
       v9 = v7 - 32;
       if ((_DWORD)v8 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v8])(&v18, v7 - 32);
+        ((void (*)(__int64, __int64))decltype_c81af0_ptr_2012a50[v8])(
+            (__int64)&v12_.v18, v7 - 32);
       }
       *(_DWORD*)(v7 - 8) = -1;
       v7 -= 32;
@@ -2904,7 +2907,7 @@ void game_map_1141500(_QWORD* a1, int a2, __int64* a3)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v10 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(
+      nn_mem_StandardAllocator_Free_alt3(
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, v6);
     }
   }
@@ -2913,7 +2916,7 @@ void game_map_1141500(_QWORD* a1, int a2, __int64* a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, v12_.v13);
   }
   *a1 = game_map_MapAccessDestroyEventBase_vtable;
@@ -2948,7 +2951,7 @@ void game_map_11416c0(_QWORD* a1, int a2, __int64* a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v5 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v5, v12_.v17);
   }
   v6 = v12_.v14;
@@ -2961,7 +2964,8 @@ void game_map_11416c0(_QWORD* a1, int a2, __int64* a3)
       v8 = *(unsigned int*)(v7 - 8);
       v9 = v7 - 32;
       if ((_DWORD)v8 != -1) {
-        ((void (*)(char*, __int64))decltype_c81af0_ptr[v8])(&v12_.v18, v7 - 32);
+        ((void (*)(__int64, __int64))decltype_c81af0_ptr_2012a50[v8])(
+            (__int64)&v12_.v18, v7 - 32);
       }
       *(_DWORD*)(v7 - 8) = -1;
       v7 -= 32;
@@ -2974,7 +2978,7 @@ void game_map_11416c0(_QWORD* a1, int a2, __int64* a3)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v10 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(
+      nn_mem_StandardAllocator_Free_alt3(
           *(_QWORD*)fw_memory_g_heap_manager_ptr + v10, v6);
     }
   }
@@ -2983,7 +2987,7 @@ void game_map_11416c0(_QWORD* a1, int a2, __int64* a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
+    nn_mem_StandardAllocator_Free_alt3(
         *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, v12_.v13);
   }
   *a1 = game_map_MapAccessNotTrickEventBase_vtable;

@@ -2646,7 +2646,8 @@ __int64 GameHr_d4a700(__int64 result, _BYTE* a2, _BYTE* a3)
       return result;
     }
     v5 = a3;
-    result = ((__int64 (*)(char*, __int64))GameData_1fdc1d8[v4])(&v7, v3);
+    result =
+        ((__int64 (*)(__int64, __int64))GameData_1fdc1d8[v4])((__int64)&v7, v3);
     a3 = v5;
   }
   *(_DWORD*)(v3 + 96) = -1;
@@ -2694,12 +2695,13 @@ __int64 GameHr_d4aae0(__int64 result, _DWORD* a2, _DWORD* a3)
   v4 = *(_DWORD*)(*(_QWORD*)result + 96LL);
   if (v4 != -1) {
     if (v4 == 6) {
-      *a2 = *a3;
+      *(_DWORD*)a2 = *(_DWORD*)a3;
       a2[1] = a3[1];
       return result;
     }
     v5 = a3;
-    result = ((__int64 (*)(char*, __int64))GameData_1fdc1d8[v4])(&v6, v3);
+    result =
+        ((__int64 (*)(__int64, __int64))GameData_1fdc1d8[v4])((__int64)&v6, v3);
     a3 = v5;
   }
   *(_DWORD*)(v3 + 96) = -1;
