@@ -31319,6 +31319,7 @@ a8a6a0,700,verified,src/wld/object.c,Object_a8a6a0
 a8a960,572,verified,src/wld/object.c,Object_Destructor_a8a960
 a8aba0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xa8aba0
 a8ade0,1636,verified,src/wld/object.c,Object_a8ade0
+a8b480,252,disputed,src/wld/unplaced_14.c,wld_a8b480
 a8b5a0,1852,disputed,src/wld/unplaced_11.c,wld_a8b5a0
 a8bfe0,212,verified,src/wld/object.c,Object_a8bfe0
 a8c0c0,228,verified,src/game/unnamed/b009_0.c,GameHr_a8c0c0
@@ -63342,6 +63343,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1463ec0,72,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_OnDeselect
 1463f10,1924,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_DrawText
 14646a0,388,verified,src/game/menu/anonymous/temple_miracle_menu_item.c,TempleMiracleMenuItem_IsActive
+1464830,508,disputed,src/game/menu/anonymous/unplaced_13.c,game_menu_anonymous_1464830
 1464a50,372,verified,src/game/unnamed/b019_0.c,GameHr_1464a50
 1464bd0,316,verified,src/game/unnamed/b019_1.c,GameHr_1464bd0
 1464d10,152,verified,src/game/facility/anonymous/proc_facility_motivation_record.c,ProcFacilityMotivationRecord_Destructor
