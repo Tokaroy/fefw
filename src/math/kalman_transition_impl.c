@@ -2829,40 +2829,30 @@ bool nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_7104e0(
   struct {
     _BYTE v242[136];
     unsigned __int64 v243;
-  } v242_;
-  struct {
     _BYTE v244[136];
     unsigned __int64 v245;
     unsigned __int64* v246;
-  } v244_;
-  struct {
     __int64 v247;
     char gap304_[32];
     unsigned __int64 v248;
-  } v247_;
-  _DWORD v249[4];
-  struct {
+    _DWORD v249[4];
     __int64 v250;
     char gap368_[112];
     unsigned __int64 v251;
-  } v250_;
-  struct {
     _QWORD v252[17];
     unsigned __int64 v253;
-  } v252_;
-  unsigned __int64 v254;
-  __int64 v255;
-  __int64 v256;
-  _QWORD v257[48];
-  unsigned __int64 v258;
-  _BYTE v259[8];
-  _DWORD v260[8];
-  __int64 v261;
-  _QWORD v262[44];
-  __int64 v263[3];
-  _QWORD v264[3];
-  unsigned __int64 v265;
-  struct {
+    unsigned __int64 v254;
+    __int64 v255;
+    __int64 v256;
+    _QWORD v257[48];
+    unsigned __int64 v258;
+    _BYTE v259[8];
+    _DWORD v260[8];
+    __int64 v261;
+    _QWORD v262[44];
+    __int64 v263[3];
+    _QWORD v264[3];
+    unsigned __int64 v265;
     __int64 v266;
     __int64 v267;
     __int64 v268;
@@ -2882,36 +2872,36 @@ bool nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_7104e0(
     _QWORD v282[4];
     _BYTE v283[132];
     _BYTE v284[108];
-  } v266_;
+  } f_;
 
   v11 = a1 + 548;
   v12 = a5[1];
-  v263[0] = *a5;
+  f_.v263[0] = *a5;
   v13 = a5[2];
-  v263[1] = v12;
-  v263[2] = v13;
-  v263[0] = *fw_math_LookupStateIndex(a1 + 548, v263);
-  v263[1] = *fw_math_LookupStateIndex(v11, &v263[1]);
-  v14 = fw_math_LookupStateIndex(v11, &v263[2]);
+  f_.v263[1] = v12;
+  f_.v263[2] = v13;
+  f_.v263[0] = *fw_math_LookupStateIndex(a1 + 548, f_.v263);
+  f_.v263[1] = *fw_math_LookupStateIndex(v11, &f_.v263[1]);
+  v14 = fw_math_LookupStateIndex(v11, &f_.v263[2]);
   v15 = *a3;
   v16 = a3[1];
   v17 = a3[6];
   v18 = a3[7];
   v19 = a3[8];
-  v263[2] = *v14;
-  qmemcpy(v264, v263, sizeof(v264));
-  v20 = (__int64)a1 + 4 * v263[0] + 16;
-  v21 = (__int64)a1 + 4 * v263[1] + 16;
-  v22 = *(float*)(v20 + 132 * v263[0]);
-  v23 = *(float*)(v20 + 132 * v263[1]);
-  v24 = *(float*)(v21 + 132 * v263[0]);
-  v25 = *(float*)(v21 + 132 * v263[1]);
-  v26 = *(float*)(v20 + 132 * v263[2]);
-  v27 = *(float*)(v21 + 132 * v263[2]);
-  v28 = (__int64)a1 + 4 * v263[2] + 16;
-  v29 = *(float*)(v28 + 132 * v263[0]);
-  v30 = *(float*)(v28 + 132 * v263[1]);
-  v31 = *(float*)(v28 + 132 * v263[2]);
+  f_.v263[2] = *v14;
+  qmemcpy(f_.v264, f_.v263, sizeof(f_.v264));
+  v20 = (__int64)a1 + 4 * f_.v263[0] + 16;
+  v21 = (__int64)a1 + 4 * f_.v263[1] + 16;
+  v22 = *(float*)(v20 + 132 * f_.v263[0]);
+  v23 = *(float*)(v20 + 132 * f_.v263[1]);
+  v24 = *(float*)(v21 + 132 * f_.v263[0]);
+  v25 = *(float*)(v21 + 132 * f_.v263[1]);
+  v26 = *(float*)(v20 + 132 * f_.v263[2]);
+  v27 = *(float*)(v21 + 132 * f_.v263[2]);
+  v28 = (__int64)a1 + 4 * f_.v263[2] + 16;
+  v29 = *(float*)(v28 + 132 * f_.v263[0]);
+  v30 = *(float*)(v28 + 132 * f_.v263[1]);
+  v31 = *(float*)(v28 + 132 * f_.v263[2]);
   v32 = a3[2];
   v33 = a3[3];
   v34 = (float)((float)((float)(v15 * v22) + 0x0.0p+0f) + (float)(v16 * v23)) +
@@ -3188,23 +3178,23 @@ LABEL_57:
     return v110 >= v109;
   }
   v111 = a1[1];
-  v262[43] = 0;
-  v254 = (unsigned __int64)(a1 + 2);
-  v257[2] = 0;
-  v255 = 1;
-  v257[0] = v264;
-  v256 = 33;
-  v257[1] = v111;
-  SdkRoutine_87a1a0((void*)(&v265), a3, &v254);
-  v112 = v265;
-  v258 = v265;
-  memset_plt_alt1((__int64)v259, 0, 0x18Cu);
+  f_.v262[43] = 0;
+  f_.v254 = (unsigned __int64)(a1 + 2);
+  f_.v257[2] = 0;
+  f_.v255 = 1;
+  f_.v257[0] = f_.v264;
+  f_.v256 = 33;
+  f_.v257[1] = v111;
+  SdkRoutine_87a1a0((void*)(&f_.v265), a3, &f_.v254);
+  v112 = f_.v265;
+  f_.v258 = f_.v265;
+  memset_plt_alt1((__int64)f_.v259, 0, 0x18Cu);
   if (v112 != 0) {
     v113 = v112 & 7;
     if (v112 >= 8) {
       v115 = 0;
-      v116 = (int*)&v266_.v267 + 1;
-      v117 = v262;
+      v116 = (int*)&f_.v267 + 1;
+      v117 = f_.v262;
       do {
         v118 = *(v116 - 2);
         v115 -= 8;
@@ -3229,8 +3219,8 @@ LABEL_57:
         v126 = v112 & 7;
         if (v112 >= 8) {
           v128 = 0;
-          v129 = (int*)v266_.v283;
-          v130 = &v261;
+          v129 = (int*)f_.v283;
+          v130 = &f_.v261;
           do {
             v131 = *(v129 - 6);
             v128 -= 8;
@@ -3255,8 +3245,8 @@ LABEL_57:
             v139 = v112 & 7;
             if (v112 >= 8) {
               v141 = 0;
-              v142 = (int*)v266_.v284;
-              v143 = (_DWORD*)&v261 + 1;
+              v142 = (int*)f_.v284;
+              v143 = (_DWORD*)&f_.v261 + 1;
               do {
                 v144 = *(v142 - 6);
                 v141 -= 8;
@@ -3284,12 +3274,12 @@ LABEL_57:
               v140 = 0;
               if ((v112 & 7) == 0) {
               LABEL_88:
-                v112 = v258;
+                v112 = f_.v258;
                 goto LABEL_89;
               }
             }
-            v149 = &v260[3 * v140];
-            v150 = (int*)&v266_.v283[4 * v140 + 104];
+            v149 = &f_.v260[3 * v140];
+            v150 = (int*)&f_.v283[4 * v140 + 104];
             do {
               v151 = *v150++;
               --v139;
@@ -3305,8 +3295,8 @@ LABEL_57:
             goto LABEL_80;
           }
         }
-        v136 = &v259[12 * v127 + 4];
-        v137 = (int*)v266_.v282 + v127 + 1;
+        v136 = &f_.v259[12 * v127 + 4];
+        v137 = (int*)f_.v282 + v127 + 1;
         do {
           v138 = *v137++;
           --v126;
@@ -3322,8 +3312,8 @@ LABEL_57:
         goto LABEL_72;
       }
     }
-    v123 = &v259[12 * v114];
-    v124 = (int*)&v265 + v114 + 2;
+    v123 = &f_.v259[12 * v114];
+    v124 = (int*)&f_.v265 + v114 + 2;
     do {
       v125 = *v124++;
       --v113;
@@ -3333,17 +3323,17 @@ LABEL_57:
     goto LABEL_72;
   }
 LABEL_89:
-  *(_QWORD*)&v266_.v284[100] = 0;
-  v265 = v112;
-  memset_plt_alt1((__int64)&v266_.v266, 0, 0x18Cu);
+  *(_QWORD*)&f_.v284[100] = 0;
+  f_.v265 = v112;
+  memset_plt_alt1((__int64)&f_.v266, 0, 0x18Cu);
   if (v112 != 0) {
     if (v112 == 1) {
       v152 = 0;
     }
     else {
       v153 = v112 & 0xFFFFFFFFFFFFFFFELL;
-      v154 = (float*)v260;
-      v155 = (float*)&v266_.v267;
+      v154 = (float*)f_.v260;
+      v155 = (float*)&f_.v267;
       v152 = 6 * (((v112 & 0xFFFFFFFFFFFFFFFELL) - 2) >> 1) + 6;
       do {
         v156 = *(v154 - 2);
@@ -3377,56 +3367,56 @@ LABEL_89:
     }
     if ((v112 & 1) != 0) {
       v164 = 4 * v152;
-      v165 = *(float*)&v259[4 * v152];
+      v165 = *(float*)&f_.v259[4 * v152];
       v166 = 4 * v152 + 4;
-      v167 = *(float*)&v259[v166];
-      v168 = *(float*)&v259[v164 + 8];
-      *(float*)((char*)&v266_.v266 + v164) =
+      v167 = *(float*)&f_.v259[v166];
+      v168 = *(float*)&f_.v259[v164 + 8];
+      *(float*)((char*)&f_.v266 + v164) =
           (float)((float)((float)(v165 * v107) + 0x0.0p+0f) +
                   (float)(v167 * v103)) +
           (float)(v168 * v104);
-      *(float*)((char*)&v266_.v266 + v166) =
+      *(float*)((char*)&f_.v266 + v166) =
           (float)((float)((float)(v165 * v103) + 0x0.0p+0f) +
                   (float)(v167 * v105)) +
           (float)(v168 * v102);
-      *(float*)((char*)&v266_.v266 + v164 + 8) =
+      *(float*)((char*)&f_.v266 + v164 + 8) =
           (float)((float)((float)(v165 * v104) + 0x0.0p+0f) +
                   (float)(v167 * v102)) +
           (float)(v168 * v99);
     }
   }
-  memcpy_plt_alt1((__int64)&v254, (__int64)&v265, 0x198u);
-  v169 = v254;
-  memset(v252_.v252, 0, sizeof(v252_.v252));
-  v266_.v282[0] = v254;
-  if (v254 != 0) {
-    v266_.v281 = 0;
-    v266_.v280 = 0;
-    v266_.v279 = 0;
-    v266_.v278 = 0;
-    v266_.v277 = 0;
-    v266_.v276 = 0;
-    v266_.v275 = 0;
-    v266_.v274 = 0;
-    v266_.v273 = 0;
-    v266_.v272 = 0;
-    v266_.v271 = 0;
-    v266_.v270 = 0;
-    v266_.v269 = 0;
-    v266_.v268 = 0;
-    v266_.v267 = 0;
-    v266_.v266 = 0;
-    v265 = 0;
-    memset_plt_alt1((__int64)&v265, 0, 4 * v254);
+  memcpy_plt_alt1((__int64)&f_.v254, (__int64)&f_.v265, 0x198u);
+  v169 = f_.v254;
+  memset(f_.v252, 0, sizeof(f_.v252));
+  f_.v282[0] = f_.v254;
+  if (f_.v254 != 0) {
+    f_.v281 = 0;
+    f_.v280 = 0;
+    f_.v279 = 0;
+    f_.v278 = 0;
+    f_.v277 = 0;
+    f_.v276 = 0;
+    f_.v275 = 0;
+    f_.v274 = 0;
+    f_.v273 = 0;
+    f_.v272 = 0;
+    f_.v271 = 0;
+    f_.v270 = 0;
+    f_.v269 = 0;
+    f_.v268 = 0;
+    f_.v267 = 0;
+    f_.v266 = 0;
+    f_.v265 = 0;
+    memset_plt_alt1((__int64)&f_.v265, 0, 4 * f_.v254);
     v170 = *a2;
     v171 = a2[1];
     v172 = a2[2];
     v173 = v169 & 3;
     v174 = 0;
     if (v169 >= 4) {
-      v175 = (float*)&v266_.v266;
+      v175 = (float*)&f_.v266;
       v176 = 0;
-      v177 = (float*)v257 + 1;
+      v177 = (float*)f_.v257 + 1;
       do {
         v176 -= 4;
         v178 = (float)((float)((float)(*(v177 - 2) * v170) + 0x0.0p+0f) +
@@ -3454,8 +3444,8 @@ LABEL_89:
       v174 = -v176;
     }
     if ((v169 & 3) != 0) {
-      v185 = (float*)&v265 + v174;
-      v186 = (float*)&v257[-1] + 3 * v174;
+      v185 = (float*)&f_.v265 + v174;
+      v186 = (float*)&f_.v257[-1] + 3 * v174;
       do {
         --v173;
         v187 = (float)((float)(*(v186 - 2) * v170) + 0x0.0p+0f) +
@@ -3465,36 +3455,36 @@ LABEL_89:
         *v185++ = v187 + (float)(v188 * v172);
       } while (v173 != 0);
     }
-    v250_.v251 = v266_.v282[0];
-    if (v266_.v282[0] != 0) {
-      memcpy_plt_alt1((__int64)v249, (__int64)&v265, 4LL * v266_.v282[0]);
-      v189 = v250_.v251;
-      v266_.v282[0] = v250_.v251;
-      if (v250_.v251 != 0) {
-        v266_.v281 = 0;
-        v266_.v280 = 0;
-        v266_.v279 = 0;
-        v266_.v278 = 0;
-        v266_.v277 = 0;
-        v266_.v276 = 0;
-        v266_.v275 = 0;
-        v266_.v274 = 0;
-        v266_.v273 = 0;
-        v266_.v272 = 0;
-        v266_.v271 = 0;
-        v266_.v270 = 0;
-        v266_.v269 = 0;
-        v266_.v268 = 0;
-        v266_.v267 = 0;
-        v266_.v266 = 0;
-        v265 = 0;
-        memset_plt_alt1((__int64)&v265, 0, 4 * v250_.v251);
+    f_.v251 = f_.v282[0];
+    if (f_.v282[0] != 0) {
+      memcpy_plt_alt1((__int64)f_.v249, (__int64)&f_.v265, 4LL * f_.v282[0]);
+      v189 = f_.v251;
+      f_.v282[0] = f_.v251;
+      if (f_.v251 != 0) {
+        f_.v281 = 0;
+        f_.v280 = 0;
+        f_.v279 = 0;
+        f_.v278 = 0;
+        f_.v277 = 0;
+        f_.v276 = 0;
+        f_.v275 = 0;
+        f_.v274 = 0;
+        f_.v273 = 0;
+        f_.v272 = 0;
+        f_.v271 = 0;
+        f_.v270 = 0;
+        f_.v269 = 0;
+        f_.v268 = 0;
+        f_.v267 = 0;
+        f_.v266 = 0;
+        f_.v265 = 0;
+        memset_plt_alt1((__int64)&f_.v265, 0, 4 * f_.v251);
         v190 = v189 & 7;
         v191 = 0;
         if (v189 >= 8) {
-          v192 = (float*)&v266_.v267;
+          v192 = (float*)&f_.v267;
           v193 = 0;
-          v194 = (float*)&v250_.v250;
+          v194 = (float*)&f_.v250;
           do {
             v193 -= 8;
             v195 = -*(v194 - 3);
@@ -3516,49 +3506,47 @@ LABEL_89:
           v191 = -v193;
         }
         if ((v189 & 7) != 0) {
-          v200 = (float*)&v265 + v191;
-          v201 = (float*)&v249[v191];
+          v200 = (float*)&f_.v265 + v191;
+          v201 = (float*)&f_.v249[v191];
           do {
             v202 = *v201++;
             --v190;
             *v200++ = -v202;
           } while (v190 != 0);
         }
-        v252_.v253 = v266_.v282[0];
-        if (v266_.v282[0] != 0) {
-          memcpy_plt_alt1((__int64)v252_.v252, (__int64)&v265,
-                          4LL * v266_.v282[0]);
-          v242_.v243 = v252_.v253;
-          if (v252_.v253 != 0) {
-            memcpy_plt_alt1((__int64)v242_.v242, (__int64)v252_.v252,
-                            4 * v252_.v253);
-            v203 = v242_.v243;
-            v244_.v245 = v242_.v243;
-            if (v242_.v243 == 0) {
+        f_.v253 = f_.v282[0];
+        if (f_.v282[0] != 0) {
+          memcpy_plt_alt1((__int64)f_.v252, (__int64)&f_.v265,
+                          4LL * f_.v282[0]);
+          f_.v243 = f_.v253;
+          if (f_.v253 != 0) {
+            memcpy_plt_alt1((__int64)f_.v242, (__int64)f_.v252, 4 * f_.v253);
+            v203 = f_.v243;
+            f_.v245 = f_.v243;
+            if (f_.v243 == 0) {
             LABEL_118:
-              v244_.v246 = v11;
-              v247_.v248 = 0;
+              f_.v246 = v11;
+              f_.v248 = 0;
               goto LABEL_119;
             }
-            memcpy_plt_alt1((__int64)v244_.v244, (__int64)v242_.v242,
-                            4 * v242_.v243);
-            v244_.v246 = v11;
-            v247_.v248 = v203;
-            memset_plt_alt1((__int64)&v247_.v247, 0, v203);
+            memcpy_plt_alt1((__int64)f_.v244, (__int64)f_.v242, 4 * f_.v243);
+            f_.v246 = v11;
+            f_.v248 = v203;
+            memset_plt_alt1((__int64)&f_.v247, 0, v203);
           LABEL_119:
             nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection_plt_alt1(
-                (__int64)a1, (__int64)v244_.v244);
+                (__int64)a1, (__int64)f_.v244);
             v204 = *a1;
-            v247_.v248 = 0;
-            v244_.v245 = 0;
-            v242_.v243 = 0;
+            f_.v248 = 0;
+            f_.v245 = 0;
+            f_.v243 = 0;
             if (v204 != 0) {
               v205 = a1[1];
               if (v205 != 0) {
                 v206 = 0;
                 v207 = 0;
                 for (i = (float*)(a1 + 3);; i += 33) {
-                  v209 = (float*)&v255 + 3 * v207;
+                  v209 = (float*)&f_.v255 + 3 * v207;
                   v210 = *v209;
                   v211 = v209[1];
                   v212 = v209[2];
@@ -3578,7 +3566,7 @@ LABEL_89:
                 }
                 v214 = 0;
                 v215 = i;
-                v216 = (float*)&v261 + 1;
+                v216 = (float*)&f_.v261 + 1;
                 do {
                   v217 = *v215;
                   v218 = v215[1];
@@ -3642,7 +3630,7 @@ LABEL_89:
                 }
               LABEL_129:
                 v235 = v213 + v206;
-                v236 = (float*)&v260[3 * v213];
+                v236 = (float*)&f_.v260[3 * v213];
                 v237 = v205 & 7;
                 v238 = (float*)a1 + v235 + 4;
                 do {
@@ -3663,7 +3651,7 @@ LABEL_89:
       }
     }
   }
-  v244_.v245 = 0;
+  f_.v245 = 0;
   goto LABEL_118;
 }
 

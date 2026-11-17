@@ -634,27 +634,26 @@ __int64 nn_irsensor_GetPulseRateProcessorState(__int64 a1, __int64 a2)
     __int64 v31;
     __int64 v32;
     __int64 v33;
-  } v29_;
-  _QWORD v34[23];
-  __int64 v35;
-  _QWORD v36[282];
-  struct {
+    _QWORD v34[23];
+    __int64 v35;
+    char gap232_[2452];
     int v37;
     char gap2688_[2860];
     int v38;
-  } v37_;
+  } f_;
+  _QWORD v36[282];
 
   v3 = 82125;
-  v37_.v38 = 0;
+  f_.v38 = 0;
   v4 = (_QWORD*)SdkData_10492f0[(
       int)nn_irsensor_detail_GetIrCameraHandlePlayerNumber_plt(a2)];
   memset_plt((void*)v36, nullptr, 5120);
   nn_irsensor_GetTeraPluginProcessorStates_plt(v36);
-  v7 = v37_.v38;
-  if (v37_.v38 == 0) {
+  v7 = f_.v38;
+  if (f_.v38 == 0) {
     return v3;
   }
-  memset_plt((void*)v34, nullptr, 384);
+  memset_plt((void*)f_.v34, nullptr, 384);
   if ((unsigned int)v7 < 8) {
     v9 = 0;
     if ((v7 & 7) == 0) {
@@ -662,9 +661,9 @@ __int64 nn_irsensor_GetPulseRateProcessorState(__int64 a1, __int64 a2)
     }
     goto LABEL_8;
   }
-  v10 = &v35;
+  v10 = &f_.v35;
   v11 = 0;
-  v12 = &v37_.v37;
+  v12 = &f_.v37;
   do {
     *(v10 - 1) = (__int64)v12;
     *v10 = 300;
@@ -706,7 +705,7 @@ __int64 nn_irsensor_GetPulseRateProcessorState(__int64 a1, __int64 a2)
   LABEL_8:
     v19 = v7 & 7;
     v20 = (char*)&v36[40 * v9 + 2] + 4;
-    v21 = &v34[3 * v9 + 1];
+    v21 = &f_.v34[3 * v9 + 1];
     do {
       v8 = *(_QWORD*)(v20 - 20);
       v21[1] = 300;
@@ -719,26 +718,26 @@ __int64 nn_irsensor_GetPulseRateProcessorState(__int64 a1, __int64 a2)
   }
 LABEL_10:
   *(_QWORD*)(a1 + 8) = v8;
-  v29_.v32 = 0;
-  v29_.v33 = 0;
-  v29_.v30 = 0;
-  v29_.v31 = 0;
-  v29_.v29 = 0;
-  HeartRateCaptureState_HeartRateCaptureState_plt(&v29_.v29);
-  if ((HeartRateDriver_GetCaptureState_plt(*v4, &v29_.v29, v34, v37_.v38) &
-       1) != 0) {
-    v22 = v29_.v32;
+  f_.v32 = 0;
+  f_.v33 = 0;
+  f_.v30 = 0;
+  f_.v31 = 0;
+  f_.v29 = 0;
+  HeartRateCaptureState_HeartRateCaptureState_plt(&f_.v29);
+  if ((HeartRateDriver_GetCaptureState_plt(*v4, &f_.v29, f_.v34, f_.v38) & 1) !=
+      0) {
+    v22 = f_.v32;
     v3 = 0;
-    *(_QWORD*)(a1 + 28) = v29_.v31;
-    v24 = v29_.v29;
-    v23 = HIDWORD(v29_.v29);
+    *(_QWORD*)(a1 + 28) = f_.v31;
+    v24 = f_.v29;
+    v23 = HIDWORD(f_.v29);
     *(_DWORD*)(a1 + 36) = v22;
-    v25 = v29_.v30;
+    v25 = f_.v30;
     *(_DWORD*)(a1 + 16) = v23;
-    v26 = v29_.v33;
+    v26 = f_.v33;
     *(_QWORD*)(a1 + 20) = v25;
     *(_QWORD*)(a1 + 48) = v26;
-    *(_DWORD*)(a1 + 40) = HIDWORD(v29_.v32);
+    *(_DWORD*)(a1 + 40) = HIDWORD(f_.v32);
     if ((unsigned int)(v24 - 1) >= 5) {
       v27 = 0;
     }

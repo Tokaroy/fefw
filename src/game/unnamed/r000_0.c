@@ -238,6 +238,7 @@ __int64* GameHr_131ec0(__int64* result, unsigned __int64 a2);
 __int64* GameHr_179600(__int64* result, unsigned __int64 a2);
 __int64 GameRoutine_1a0b950_alt1(__int64, __int64, unsigned __int64);
 void GameRoutine_651250_alt2(__int64);
+__int64 __assert_fail_alt1();
 
 void GameHr_3880(_QWORD* a1)
 {
@@ -5777,12 +5778,16 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
   float v60;
   float v61;
   __int64 v62;
-  float v65[6];
-  float v66[4];
-  __int64 v67;
-  _DWORD v68[6];
-  __int64 v69;
-  __int64 v70;
+  struct {
+    char gap0_[40];
+    float v65[6];
+    float v66[4];
+    __int64 v67;
+    _DWORD v68[6];
+    __int64 v69;
+    char gap120_[40];
+    __int64 v70;
+  } f_;
   __int64 v71;
 
   v6 = a2;
@@ -5798,26 +5803,23 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     }
   }
   else if (v9 == 0) {
-    v62 = __assert_fail(
-        "m_nav",
-        "/Program/Externals/recastnavigation/Sources/DetourNavMeshQuery.cpp",
-        538, "closestPointOnPolyBoundary");
+    v62 = __assert_fail_alt1();
     dtFindNearestPolyQuery_Destroy_dtFindNearestPolyQuery(v62);
     GameRoutine_651250_alt2(v62);
     return;
   }
-  v70 = 0;
+  f_.v70 = 0;
   v71 = 0;
-  v10 = dtNavMesh_getTileAndPolyByRef(v9, v6, &v71, &v70);
+  v10 = dtNavMesh_getTileAndPolyByRef(v9, v6, &v71, &f_.v70);
   if (a3 != 0 && (v10 & 0x80000000) == 0 &&
       (*(_DWORD*)a3 & 0x7FFFFFFFu) <= 0x7F7FFFFF &&
       (*(_DWORD*)(a3 + 4) & 0x7FFFFFFFu) <= 0x7F7FFFFF && a4 != 0 &&
       (*(_DWORD*)(a3 + 8) & 0x7FFFFFFFu) < 0x7F800000) {
-    v11 = v70;
-    v12 = *(unsigned __int8*)(v70 + 30);
-    if (*(_BYTE*)(v70 + 30) == 0) {
-      dtDistancePtPolyEdgesSqr((float*)a3, (__int64)v68, 0, (__int64)v66,
-                               (__int64)v65);
+    v11 = f_.v70;
+    v12 = *(unsigned __int8*)(f_.v70 + 30);
+    if (*(_BYTE*)(f_.v70 + 30) == 0) {
+      dtDistancePtPolyEdgesSqr((float*)a3, (__int64)f_.v68, 0, (__int64)f_.v66,
+                               (__int64)f_.v65);
     LABEL_23:
       *(_DWORD*)a4 = *(_DWORD*)a3;
       *(_DWORD*)(a4 + 4) = *(_DWORD*)(a3 + 4);
@@ -5830,9 +5832,9 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     v14 = *(_QWORD*)(v71 + 24);
     if (v12 >= 4) {
       v16 = (unsigned __int8)v12 & 0xFC;
-      v17 = (unsigned __int16*)(v70 + 10);
+      v17 = (unsigned __int16*)(f_.v70 + 10);
       v15 = 0;
-      v18 = &v69;
+      v18 = &f_.v69;
       do {
         v15 += 4;
         v19 = (_DWORD*)(v14 + 12LL * *(v17 - 3));
@@ -5862,7 +5864,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     }
     if (v13 != 0) {
       v24 = v11 + 4;
-      v25 = &v68[3 * v15 + 2];
+      v25 = &f_.v68[3 * v15 + 2];
       do {
         v26 = *(unsigned __int16*)(v24 + 2 * v15++);
         --v13;
@@ -5874,8 +5876,8 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       } while (v13 != 0);
       v6 = v15 - 1;
     }
-    if ((dtDistancePtPolyEdgesSqr((float*)a3, (__int64)v68, v15, (__int64)v66,
-                                  (__int64)v65) &
+    if ((dtDistancePtPolyEdgesSqr((float*)a3, (__int64)f_.v68, v15,
+                                  (__int64)f_.v66, (__int64)f_.v65) &
          1) != 0) {
       goto LABEL_23;
     }
@@ -5883,17 +5885,17 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
       v31 = 0;
       LODWORD(v15) = 1;
     LABEL_68:
-      v57 = (float*)&v68[3 * v31];
+      v57 = (float*)&f_.v68[3 * v31];
       v58 = v57[1];
-      v59 = (float*)&v68[3 * ((v31 + 1) % (unsigned int)v15)];
-      v60 = v65[v31];
+      v59 = (float*)&f_.v68[3 * ((v31 + 1) % (unsigned int)v15)];
+      v60 = f_.v65[v31];
       v61 = v59[1];
       *(float*)a4 = *v57 + (float)((float)(*v59 - *v57) * v60);
       *(float*)(a4 + 4) = v58 + (float)((float)(v61 - v58) * v60);
       v28 = v57[2] + (float)((float)(v59[2] - v57[2]) * v60);
       goto LABEL_69;
     }
-    v29 = v66[0];
+    v29 = f_.v66[0];
     v30 = ((_BYTE)v15 - 1) & 7;
     if ((unsigned __int64)(unsigned int)v15 - 2 < 7) {
       v31 = 0;
@@ -5901,8 +5903,8 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     LABEL_64:
       if ((((_BYTE)v15 - 1) & 7) != 0) {
         do {
-          if (v66[v32] < v29) {
-            v29 = v66[v32];
+          if (f_.v66[v32] < v29) {
+            v29 = f_.v66[v32];
             v31 = v32;
           }
           ++v32;
@@ -5913,7 +5915,7 @@ void GameHr_268280(__int64* a1, unsigned int a2, __int64 a3, __int64 a4)
     }
     v31 = 0;
     v33 = 0;
-    v34 = (float*)&v67;
+    v34 = (float*)&f_.v67;
     while (1) {
       v35 = *(v34 - 3);
       if (v35 >= v29) {

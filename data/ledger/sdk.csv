@@ -2812,7 +2812,7 @@ da7c0,100,verified,src/nn/fs/unplaced.c,nn_fs_da7c0
 da830,8,verified,src/nn/sdk_trivial.cpp,_Z13SdkStub_da830m
 da840,168,verified,src/nn/fs/unplaced.c,nn_fs_da840
 da8f0,168,verified,src/nn/fs/unplaced.c,nn_fs_da8f0
-da9a0,564,disputed,src/nn/fs/unplaced.c,nn_fs_da9a0
+da9a0,664,verified,src/nn/fs/unplaced.c,nn_fs_da9a0
 dad00,492,verified,src/nn/fs/unplaced.c,nn_fs_dad00
 daf00,412,verified,src/nn/fs/unplaced.c,nn_fs_daf00
 db130,492,disputed,src/nn/fs/unplaced.c,nn_fs_db130
@@ -30075,7 +30075,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 70f680,836,verified,src/math/kalman_transition_impl.c,kalman_transition_70f680
 70f9d0,824,verified,src/math/kalman_transition_impl.c,kalman_transition_70f9d0
 70fd20,1952,verified,src/math/kalman_transition.cpp,_ZN4nerd6kalman20ExtendedKalmanFilterIfNS_13gyro_pointing24GyroPointingKalmanFilterELln33ELb0EE16TransitionUpdateILl9ELl6ENS_14linear_algebra11LMatrixType5DenseILb1EEEEEvRKNS6_7LMatrixIfXT0_EXT_ET1_EERKNS6_7LVectorImXT_ELb0ENS6_11LVectorType5DenseEEERKNSF_ImXT0_ELb0ESH_EERKNSA_IfXT0_EXT0_ES9_EE
-7104e0,484,disputed,src/math/kalman_transition_impl.c,nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_7104e0
+7104e0,484,verified,src/math/kalman_transition_impl.c,nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_7104e0
 711380,408,verified,src/math/unplaced_10.c,math_711380
 7116a0,744,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Recover
 711990,600,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_GetHeuristicOrientationWithoutAccumulated
@@ -30566,6 +30566,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7422e0,424,verified,src/nn/irsensor/detail/unplaced.c,nn_irsensor_GetHandAnalysisImageState
 7424e0,208,verified,src/nn/irsensor/unplaced.c,nn_irsensor_7424e0
 742df0,184,verified,src/nn/irsensor/detail/unplaced.c,nn_irsensor_RunPulseRateProcessor
+742ec0,160,verified,src/nn/irsensor/detail/unplaced.c,nn_irsensor_GetPulseRateProcessorState
 743110,44,verified,src/nn/irsensor/detail/unplaced.c,nn_irsensor_ResetPulseRateProcessorState
 743140,300,verified,src/nn/irsensor/detail/unplaced.c,nn_irsensor_detail_CreateIrSensorServerProxy
 743270,144,verified,src/nn/irsensor/unplaced.c,nn_irsensor_743270

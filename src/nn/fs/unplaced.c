@@ -224,6 +224,10 @@ __int64 nn_os_SdkMutexType_Lock_plt_alt1(__int64);
 __int64 nn_os_SdkMutexType_Unlock_plt_alt1(__int64);
 unsigned __int64 strlen_plt_alt1(const char*);
 void nn_diag_detail_AbortImpl_plt_856170_alt1();
+__attribute__((swiftcall)) void nn_fs_dc600_alt1(PSEUDO_X8, __int64,
+                                                 const char*);
+__int64 nn_fs_dcb60_alt1(__int64*, const char*, __int64, __int64, __int64);
+__int64 strnlen_plt_alt1(__int64, __int64);
 
 __int64 nn_fs_Commit(void* this_, const char* const* a2)
 {
@@ -2600,177 +2604,175 @@ __int64 nn_fs_da8f0(__int64 a1)
 
 __int64 nn_fs_da9a0(__int64 a1, __int64 a2, __int64 a3)
 {
-  __int64 v7;
-  unsigned int v8;
+  __int64 v6;
+  unsigned int v7;
+  char* v8;
   __int64 v9;
-  __int64 v10;
-  char v11;
-  unsigned int v12;
-  __int64 v13;
+  char v10;
+  unsigned int v11;
+  char* v12;
+  unsigned __int64 v13;
   unsigned __int64 v14;
-  unsigned __int64 v15;
-  __int64 v16;
-  signed __int64 v17;
+  __int64 v15;
+  signed __int64 v16;
+  _QWORD* v17;
   _QWORD* v18;
   _QWORD* v19;
-  _QWORD* v20;
-  signed __int64 v21;
+  signed __int64 v20;
+  _QWORD* v21;
   _QWORD* v22;
-  _QWORD* v23;
-  bool v24;
+  bool v23;
+  __int64 v24;
   __int64 v25;
-  __int64 v26;
   struct {
-    __int64 v28[2];
+    char gap0_[8];
+    __int64 v27[2];
+    __int64 v28;
     __int64 v29;
     __int64 v30;
-  } v28_;
-  __int64 v31;
-  struct {
-    __int64 v32;
-    unsigned __int64 v33;
+    __int64 v31;
+    unsigned __int64 v32;
+    __int64 v33;
     __int64 v34;
-    __int64 v35;
-  } v32_;
+  } f_;
 
-  nn_os_SdkMutexType_Lock_plt(a1 + 152);
+  nn_os_SdkMutexType_Lock_plt_alt1(a1 + 152);
   if ((*(_BYTE*)(a1 + 156) & 1) == 0) {
-    memset_plt_alt1((void*)&v32_.v32, nullptr, 512);
-    v7 = *(_QWORD*)(a1 + 8);
-    v31 = 0;
-    v8 = (*(__int64 (**)(__int64, __int64*))(*(_QWORD*)v7 + 48LL))(v7, &v31);
-    if (v8 != 0 ||
-        v31 <= 511 &&
-            (v8 = (*(__int64 (**)(_QWORD, __int64))(
+    memset_plt_alt2((__int64)&f_.v31, 0, 0x200u);
+    v6 = *(_QWORD*)(a1 + 8);
+    f_.v30 = 0;
+    v7 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v6 + 48LL))(
+        v6, (__int64)&f_.v30);
+    if (v7 != 0 ||
+        f_.v30 <= 511 &&
+            (v7 = (*(__int64 (**)(__int64, __int64))(
                  **(_QWORD**)(a1 + 8) + 40LL))(*(_QWORD*)(a1 + 8), 512)) != 0 ||
-        (v8 = (*(__int64 (**)(_QWORD, _QWORD, __int64*, __int64))(
-             **(_QWORD**)(a1 + 8) + 24LL))(*(_QWORD*)(a1 + 8), 0, &v32_.v32,
-                                           512)) != 0 ||
-        (v8 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 8) + 32LL))(
+        (v7 = (*(__int64 (**)(__int64, __int64, __int64, __int64))(
+             **(_QWORD**)(a1 + 8) + 24LL))(*(_QWORD*)(a1 + 8), 0,
+                                           (__int64)&f_.v31, 512)) != 0 ||
+        (v7 = (*(__int64 (**)(__int64))(**(_QWORD**)(a1 + 8) + 32LL))(
              *(_QWORD*)(a1 + 8))) != 0) {
     LABEL_43:
-      v12 = v8;
+      v11 = v7;
       goto LABEL_46;
     }
     *(_BYTE*)(a1 + 156) = 1;
   }
-  v32_.v34 = 0;
-  v32_.v35 = 0;
-  v32_.v32 = 0;
-  v32_.v33 = 0;
-  v9 = nn_fs_Path_GetString_plt(a2);
-  nn_fs_dc600((void*)(&v32_.v32), a1, v9);
-  v28_.v30 = v32_.v35;
-  if ((v32_.v32 & 1) == 0) {
-    v28_.v28[0] = v32_.v32;
-    v28_.v28[1] = v32_.v33;
-    v28_.v29 = v32_.v34;
-    v10 = SdkRoutine_85af90(a1 + 40, v28_.v28);
-    if ((v28_.v28[0] & 1) == 0) {
+  f_.v33 = 0;
+  f_.v34 = 0;
+  f_.v31 = 0;
+  f_.v32 = 0;
+  v8 = (const char*)nn_fs_Path_GetString_plt_alt1(a2);
+  nn_fs_dc600_alt1((void*)(&f_.v31), a1, v8);
+  f_.v29 = f_.v34;
+  if ((f_.v31 & 1) == 0) {
+    f_.v27[0] = f_.v31;
+    f_.v27[1] = f_.v32;
+    f_.v28 = f_.v33;
+    v9 = SdkRoutine_85af90_alt1(a1 + 40, (__int64)f_.v27);
+    if ((f_.v27[0] & 1) == 0) {
       goto LABEL_13;
     }
     goto LABEL_12;
   }
-  nn_fs_dcab0(v28_.v28, v32_.v34, v32_.v33);
-  v10 = SdkRoutine_85af90(a1 + 40, v28_.v28);
-  if ((v28_.v28[0] & 1) != 0) {
+  nn_fs_dcab0(f_.v27, f_.v33, f_.v32);
+  v9 = SdkRoutine_85af90_alt1(a1 + 40, (__int64)f_.v27);
+  if ((f_.v27[0] & 1) != 0) {
   LABEL_12:
-    (*(void (**)(__int64, __int64, unsigned __int64, __int64))(
-        *(_QWORD*)v28_.v30 + 24LL))(v28_.v30, v28_.v29,
-                                    v28_.v28[0] & 0xFFFFFFFFFFFFFFFELL, 16);
+    (*(void (**)(__int64, __int64, __int64, __int64))(*(_QWORD*)f_.v29 + 24LL))(
+        f_.v29, f_.v28, f_.v27[0] & 0xFFFFFFFFFFFFFFFELL, 16);
   }
 LABEL_13:
-  if (a1 + 48 != v10 && *(_DWORD*)(v10 + 80) == 0) {
+  if (a1 + 48 != v9 && *(_DWORD*)(v9 + 80) == 0) {
+    v10 = 0;
     v11 = 0;
-    v12 = 0;
-    if ((v32_.v32 & 1) == 0) {
+    if ((f_.v31 & 1) == 0) {
       goto LABEL_17;
     }
     goto LABEL_16;
   }
-  v12 = 514;
-  v11 = 1;
-  if ((v32_.v32 & 1) != 0) {
+  v11 = 514;
+  v10 = 1;
+  if ((f_.v31 & 1) != 0) {
   LABEL_16:
-    (*(void (**)(__int64, __int64, unsigned __int64, __int64))(
-        *(_QWORD*)v32_.v35 + 24LL))(v32_.v35, v32_.v34,
-                                    v32_.v32 & 0xFFFFFFFFFFFFFFFELL, 16);
+    (*(void (**)(__int64, __int64, __int64, __int64))(*(_QWORD*)f_.v34 + 24LL))(
+        f_.v34, f_.v33, f_.v31 & 0xFFFFFFFFFFFFFFFELL, 16);
   }
 LABEL_17:
-  if ((v11 & 1) == 0) {
-    v13 = nn_fs_Path_GetString_plt(a2);
-    v14 = nn_fs_Path_GetString_plt(a2);
-    v15 = v14 + strnlen_plt(v14, 768);
+  if ((v10 & 1) == 0) {
+    v12 = (const char*)nn_fs_Path_GetString_plt_alt1(a2);
+    v13 = nn_fs_Path_GetString_plt_alt1(a2);
+    v14 = v13 + strnlen_plt_alt1(v13, 768);
     do {
-      v16 = v15;
-      if (v15 <= v14) {
+      v15 = v14;
+      if (v14 <= v13) {
         break;
       }
-      --v15;
-    } while (*(_BYTE*)(v16 - 1) != 47);
+      --v14;
+    } while (*(_BYTE*)(v15 - 1) != 47);
     if (a3 != 0) {
-      v17 = (a3 + 7) & 0xFFFFFFFFFFFFFFF8LL;
-      if (v17 < a3) {
-        v12 = 3109378;
+      v16 = (a3 + 7) & 0xFFFFFFFFFFFFFFF8LL;
+      if (v16 < a3) {
+        v11 = 3109378;
         goto LABEL_46;
       }
-      v18 = *(_QWORD**)(a1 + 112);
-      v19 = (_QWORD*)(a1 + 120);
-      if (v18 == (_QWORD*)(a1 + 120)) {
+      v17 = *(_QWORD**)(a1 + 112);
+      v18 = (_QWORD*)(a1 + 120);
+      if (v17 == (_QWORD*)(a1 + 120)) {
         goto LABEL_45;
       }
-      v20 = (_QWORD*)(a1 + 120);
+      v19 = (_QWORD*)(a1 + 120);
       do {
-        v21 = v18[5];
-        if (v21 >= v17 && (v20 == v19 || v21 < (signed __int64)v20[5])) {
-          v20 = v18;
+        v20 = v17[5];
+        if (v20 >= v16 && (v19 == v18 || v20 < (signed __int64)v19[5])) {
+          v19 = v17;
         }
-        v22 = (_QWORD*)v18[1];
-        if (v22 != nullptr) {
+        v21 = (_QWORD*)v17[1];
+        if (v21 != nullptr) {
           do {
-            v23 = v22;
-            v22 = (_QWORD*)*v22;
-          } while (v22 != nullptr);
+            v22 = v21;
+            v21 = (_QWORD*)*v21;
+          } while (v21 != nullptr);
         }
         else {
           do {
-            v23 = (_QWORD*)v18[2];
-            v24 = v18 == (_QWORD*)*v23;
-            v18 = v23;
-          } while (!v24);
+            v22 = (_QWORD*)v17[2];
+            v23 = v17 == (_QWORD*)*v22;
+            v17 = v22;
+          } while (!v23);
         }
-        v18 = v23;
-      } while (v23 != v19);
-      if (v20 == v19) {
+        v17 = v22;
+      } while (v22 != v18);
+      if (v19 == v18) {
       LABEL_45:
-        v12 = 15362;
+        v11 = 15362;
         goto LABEL_46;
       }
-      v25 = v20[4];
+      v24 = v19[4];
     }
     else {
-      v25 = 0;
+      v24 = 0;
     }
-    v8 = nn_fs_dcb60((__int64*)(a1 + 32), v13, v16, v25, a3);
-    if (v8 == 0) {
-      v26 = *(_QWORD*)(a1 + 8);
-      v32_.v32 = 0;
-      v8 = (*(__int64 (**)(__int64, __int64*))(*(_QWORD*)v26 + 48LL))(
-          v26, &v32_.v32);
-      if (v8 == 0) {
-        if (*(_QWORD*)(a1 + 144) + 512LL <= v32_.v32) {
-          v12 = 0;
+    v7 = nn_fs_dcb60_alt1((__int64*)(a1 + 32), v12, v15, v24, a3);
+    if (v7 == 0) {
+      v25 = *(_QWORD*)(a1 + 8);
+      f_.v31 = 0;
+      v7 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v25 + 48LL))(
+          v25, (__int64)&f_.v31);
+      if (v7 == 0) {
+        if ((signed __int64)(*(_QWORD*)(a1 + 144) + 512LL) <= f_.v31) {
+          v11 = 0;
           goto LABEL_46;
         }
-        v8 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(a1 + 8) + 40LL))(
+        v7 = (*(__int64 (**)(__int64))(**(_QWORD**)(a1 + 8) + 40LL))(
             *(_QWORD*)(a1 + 8));
       }
     }
     goto LABEL_43;
   }
 LABEL_46:
-  nn_os_SdkMutexType_Unlock_plt(a1 + 152);
-  return v12;
+  nn_os_SdkMutexType_Unlock_plt_alt1(a1 + 152);
+  return v11;
 }
 
 __int64 nn_fs_dad00(__int64 a1, __int64 a2)

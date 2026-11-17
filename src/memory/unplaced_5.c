@@ -2923,16 +2923,17 @@ __int64 memory_c04c40(__int64 a1)
   int v120;
   __int64 v121;
   __int64 v122;
-  __int64 v123;
-  __int64 v124;
-  float32x4_t v125;
-  _QWORD v126[8];
   struct {
+    __int64 v123;
+    __int64 v124;
+    float32x4_t v125;
+    _QWORD v126[8];
+    char gap96_[8];
     __int64 v127;
     __int64 v128;
     char gap120_[16];
     __int64 v129;
-  } v127_;
+  } f_;
 
   v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
   v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -2967,7 +2968,7 @@ __int64 memory_c04c40(__int64 a1)
   *(_BYTE*)(a1 + 313) = v3;
   v7 = *(float*)(a1 + 304);
   v8 = *(float*)(*(_QWORD*)(v1 + 496) + 16LL);
-  wld_c03400(&v127_.v127),
+  wld_c03400(&f_.v127),
       v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
       v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
@@ -2985,7 +2986,7 @@ __int64 memory_c04c40(__int64 a1)
     goto LABEL_151;
   }
   v10 = *(_QWORD*)(GameData_21c6978 + 32);
-  v124 = result;
+  f_.v124 = result;
   if (*(_QWORD*)(GameData_21c6978 + 24) == v10 ||
       (v11 = *(_QWORD*)(v10 - 8)) == 0) {
     v13 = nullptr;
@@ -2995,10 +2996,10 @@ __int64 memory_c04c40(__int64 a1)
   v12 = *(_QWORD*)(v11 + 32);
   if (v12 == 0) {
   LABEL_29:
-    v123 = 0;
+    f_.v123 = 0;
     goto LABEL_30;
   }
-  v123 = v12;
+  f_.v123 = v12;
   atomic_fetch_add_explicit((atomic_ullong* volatile)(v12 + 8), 1u,
                             memory_order_relaxed);
 LABEL_30:
@@ -3101,10 +3102,10 @@ LABEL_30:
                      v38, COERCE_AS(float32x2_t, LANES128(v40).n128_u64[0]), 1),
       v39, v40, 2);
   v42 = vceqzq_f32(v23);
-  *(int8x16_t*)v126 = vbicq_s8(v37, v42);
-  *(int8x16_t*)&v126[2] = vbicq_s8(v38, v42);
-  *(int8x16_t*)&v126[4] = vbicq_s8(v39, v42);
-  *(int8x16_t*)&v126[6] = vbicq_s8(v41, v42);
+  *(int8x16_t*)f_.v126 = vbicq_s8(v37, v42);
+  *(int8x16_t*)&f_.v126[2] = vbicq_s8(v38, v42);
+  *(int8x16_t*)&f_.v126[4] = vbicq_s8(v39, v42);
+  *(int8x16_t*)&f_.v126[6] = vbicq_s8(v41, v42);
   GameRoutine_5eaef0_alt1(),
       v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
       v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),
@@ -3117,11 +3118,11 @@ LABEL_30:
       v45 = COERCE_AS(__typeof__(v45), PSEUDO_REGISTER(__n128, "v0", "=w"));
   v43 = *(float32x4_t**)(a1 + 224);
   v44 = *(float32x4_t**)(a1 + 232);
-  v125 = v45;
+  f_.v125 = v45;
   if (v43 != v44) {
-    v46 = v127_.v127;
+    v46 = f_.v127;
     v47 = *(_DWORD*)(*(_QWORD*)(a1 + 8) + 284LL);
-    v127_.v129 = a1 + 256;
+    f_.v129 = a1 + 256;
     if (v47 == 1) {
       v48 = 64;
     }
@@ -3133,14 +3134,14 @@ LABEL_30:
       v50 = LANES128(v43[2]).n128_u64[0];
       v51 = LANES128(v43[1]).n128_u64[1];
       v52 = *(_BYTE**)(a1 + 296);
-      v126[3] = LANES128(v43[2]).n128_u64[1];
+      f_.v126[3] = LANES128(v43[2]).n128_u64[1];
       v53 = LANES128(v43[1]).n128_u64[0];
-      v126[1] = v51;
-      v126[2] = v50;
-      v126[0] = v53;
+      f_.v126[1] = v51;
+      f_.v126[2] = v50;
+      f_.v126[0] = v53;
       if (v52[8] == 1 &&
           ((*(__int64 (**)(__int64, __int64))(*(_QWORD*)v52 + 24LL))(
-               (__int64)v52, (__int64)v126) &
+               (__int64)v52, (__int64)f_.v126) &
            1) == 0) {
         v65 = 0;
         v57 = false;
@@ -3149,7 +3150,7 @@ LABEL_30:
         v66 = 1;
         goto LABEL_108;
       }
-      v54 = vsubq_f32(*v43, v125);
+      v54 = vsubq_f32(*v43, f_.v125);
       v55 = vmulq_f32(v54, v54);
       LANES128(v55).n128_u64[0] =
           LANES64_OF(
@@ -3180,7 +3181,7 @@ LABEL_30:
                                     LANES128(v43[3]).n128_f32[0]));
       }
       v58 = *(_DWORD*)(a1 + 248);
-      v59 = v127_.v129;
+      v59 = f_.v129;
       if ((v58 & 0x80000000) == 0) {
         v59 = *(_QWORD*)(v46 + 32) + 56LL * v58 + 24;
       }
@@ -3402,25 +3403,25 @@ LABEL_30:
       v43 += 7;
     } while (v43 != v44);
   }
-  if (v123 != 0) {
-    result = v124;
-    if (atomic_fetch_add((atomic_ullong* volatile)(v123 + 8),
+  if (f_.v123 != 0) {
+    result = f_.v124;
+    if (atomic_fetch_add((atomic_ullong* volatile)(f_.v123 + 8),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
-      (*(void (**)(__int64))(*(_QWORD*)v123 + 16LL))(v123),
+      (*(void (**)(__int64))(*(_QWORD*)f_.v123 + 16LL))(f_.v123),
           v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v45 = COERCE_AS(__typeof__(v45), PSEUDO_REGISTER(__n128, "v0", "=w"));
-      std___1___shared_weak_count___release_weak(v123),
+      std___1___shared_weak_count___release_weak(f_.v123),
           v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
           v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),
           v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
           v45 = COERCE_AS(__typeof__(v45), PSEUDO_REGISTER(__n128, "v0", "=w"));
-      result = v124;
+      result = f_.v124;
     }
   }
   else {
-    result = v124;
+    result = f_.v124;
   }
 LABEL_151:
   v118 = *(_QWORD*)(a1 + 24);
@@ -3448,10 +3449,9 @@ LABEL_151:
     v18 = COERCE_AS(__typeof__(v18), PSEUDO_REGISTER(__n128, "v2", "=w")),
     v45 = COERCE_AS(__typeof__(v45), PSEUDO_REGISTER(__n128, "v0", "=w"));
   }
-  v122 = v127_.v128;
-  if (v127_.v128 != 0 &&
-      atomic_fetch_add((atomic_ullong* volatile)(v127_.v128 + 8),
-                       0xFFFFFFFFFFFFFFFFLL) == 0) {
+  v122 = f_.v128;
+  if (f_.v128 != 0 && atomic_fetch_add((atomic_ullong* volatile)(f_.v128 + 8),
+                                       0xFFFFFFFFFFFFFFFFLL) == 0) {
     (*(void (**)(__int64))(*(_QWORD*)v122 + 16LL))(v122),
         v15 = COERCE_AS(__typeof__(v15), PSEUDO_REGISTER(__n128, "v1", "=w")),
         v17 = COERCE_AS(__typeof__(v17), PSEUDO_REGISTER(__n128, "v0", "=w")),

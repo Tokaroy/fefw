@@ -9457,11 +9457,12 @@ bool game_a691e0(__int64 a1, __int64 a2)
   __int64 v28;
   __int64 v29;
   __int64 v30;
-  __int64 v32;
   struct {
+    __int64 v32;
+    char gap8_[8];
     _BYTE v33[32];
     _BYTE* v34;
-  } v33_;
+  } f_;
 
   v3 = a1;
   v4 = (a2 - a1) >> 6;
@@ -9580,20 +9581,20 @@ LABEL_34:
       goto LABEL_38;
     }
     v17 = *(_QWORD*)(v14 + 48);
-    v32 = *(_QWORD*)v14;
+    f_.v32 = *(_QWORD*)v14;
     if (v17 != 0) {
       if (v17 == v14 + 16) {
-        v33_.v34 = v33_.v33;
-        (*(void (**)(__int64, __int64))(*(_QWORD*)v17 + 24LL))(
-            v17, (__int64)v33_.v33);
+        f_.v34 = f_.v33;
+        (*(void (**)(__int64, __int64))(*(_QWORD*)v17 + 24LL))(v17,
+                                                               (__int64)f_.v33);
       }
       else {
-        v33_.v34 = *(_BYTE**)(v14 + 48);
+        f_.v34 = *(_BYTE**)(v14 + 48);
         *(_QWORD*)(v14 + 48) = 0;
       }
     }
     else {
-      v33_.v34 = nullptr;
+      f_.v34 = nullptr;
     }
     v18 = v15;
     do {
@@ -9641,12 +9642,12 @@ LABEL_34:
         }
       }
       v18 = v20 - 64;
-    } while (SDWORDn(v32, sizeof(v32) / 4 - 1) <
+    } while (SDWORDn(f_.v32, sizeof(f_.v32) / 4 - 1) <
              (signed __int32)*(_DWORD*)(v3 + v20 + 68));
     v25 = (_QWORD*)(v3 + v18 + 192);
   LABEL_60:
     v26 = v3 + v20;
-    *v25 = v32;
+    *v25 = f_.v32;
     v27 = *(_QWORD**)(v26 + 176);
     *(_QWORD*)(v26 + 176) = 0;
     if ((_QWORD*)(v26 + 144) == v27) {
@@ -9658,30 +9659,30 @@ LABEL_34:
       v28 = 40;
       goto LABEL_64;
     }
-    if (v33_.v34 != nullptr) {
-      if (v33_.v34 == v33_.v33) {
-        v29 = (__int64)v33_.v34;
+    if (f_.v34 != nullptr) {
+      if (f_.v34 == f_.v33) {
+        v29 = (__int64)f_.v34;
         *(_QWORD*)(v26 + 176) = v26 + 144;
         (*(void (**)(__int64, __int64))(*(_QWORD*)v29 + 24LL))(v29, v26 + 144);
         goto LABEL_69;
       }
-      *(_QWORD*)(v26 + 176) = v33_.v34;
+      *(_QWORD*)(v26 + 176) = f_.v34;
       ++v16;
     }
     else {
       *(_QWORD*)(v26 + 176) = 0;
     LABEL_69:
       ++v16;
-      if (v33_.v34 == v33_.v33) {
+      if (f_.v34 == f_.v33) {
         v30 = 32;
       }
       else {
-        if (v33_.v34 == nullptr) {
+        if (f_.v34 == nullptr) {
           goto LABEL_37;
         }
         v30 = 40;
       }
-      (*(void (**)(__int64))(*(_QWORD*)v33_.v34 + v30))((__int64)v33_.v34);
+      (*(void (**)(__int64))(*(_QWORD*)f_.v34 + v30))((__int64)f_.v34);
     }
   LABEL_37:
     if (v16 != 8) {

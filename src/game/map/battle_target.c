@@ -773,38 +773,41 @@ __int64 BattleTarget_8fe740(__int64 a1)
   __int64 v3;
   __int64 v4;
   __int64* v6;
+  __int64 v7;
+  __int64* v8;
   __int64 v9;
-  __int64* v10;
+  int v10;
   __int64 v11;
   int v12;
-  __int64 v13;
-  int v14;
-  __int64 v16;
+  __int64 v14;
   struct {
     char gap0_[4];
+    int v15;
+    int v16;
     int v17;
-    int v18;
   } f_;
-  int v19;
 
   v2 = (__int64)BattleTarget_8fe340_alt2(a1);
   if (v2 != 0) {
     v3 = v2;
     v4 = game_g_shared_system_skills_ptr;
-    f_.v18 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x44LL) +
+    f_.v16 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x44LL) +
                         game_g_shared_system_skills_ptr) &
              0xFFF;
-    if (game_HasSkill_alt2((_QWORD*)(v2 + 1744), &f_.v18)) {
+    if ((game_HasSkill((_QWORD*)(v2 + 1744), (unsigned int*)&f_.v16) & 1) !=
+        0) {
       goto LABEL_31;
     }
-    if (*(_WORD*)(v3 + 492) == 0 && *(_BYTE*)(v3 + 496) == 0) {
-      v19 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x144LL) + v4) & 0xFFF;
-      if (game_HasSkill_alt2((_QWORD*)(v3 + 1744), &v19)) {
+    if (*(_WORD*)(v3 + 492) == 0 & *(_BYTE*)(v3 + 496) == 0) {
+      f_.v17 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x144LL) + v4) & 0xFFF;
+      if ((game_HasSkill((_QWORD*)(v3 + 1744), (unsigned int*)&f_.v17) & 1) !=
+          0) {
         goto LABEL_31;
       }
     }
-    f_.v17 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x4CLL) + v4) & 0xFFF;
-    if (game_HasSkill_alt2((_QWORD*)(v3 + 1744), &f_.v17) ||
+    f_.v15 = *(_DWORD*)((_BYTE*)((_UNKNOWN*)0x4CLL) + v4) & 0xFFF;
+    if ((game_HasSkill((_QWORD*)(v3 + 1744), (unsigned int*)&f_.v15) & 1) !=
+            0 ||
         *(_BYTE*)(a1 + 8) == 0) {
       goto LABEL_31;
     }
@@ -827,37 +830,37 @@ __int64 BattleTarget_8fe740(__int64 a1)
           goto LABEL_31;
         }
         if (*(_BYTE*)(a1 + 8) != 0) {
-          v9 = v2;
-          v10 = game_UnitPool_Get_alt2((_BYTE*)(a1 + 8));
-          if (v10 != nullptr && (v11 = v10[55]) != 0) {
-            v12 = *(unsigned __int8*)(v11 + 16);
+          v7 = v2;
+          v8 = game_UnitPool_Get_alt2((_BYTE*)(a1 + 8));
+          if (v8 != nullptr && (v9 = v8[55]) != 0) {
+            v10 = *(unsigned __int8*)(v9 + 16);
           }
           else {
-            v12 = 9;
+            v10 = 9;
           }
-          v2 = v9;
+          v2 = v7;
         }
         else {
-          v12 = 9;
+          v10 = 9;
         }
-        v13 = v6[55];
-        v14 = v13 != 0 ? *(unsigned __int8*)(v13 + 16) : 9;
-        if (v12 == v14) {
+        v11 = v6[55];
+        v12 = v11 != 0 ? *(unsigned __int8*)(v11 + 16) : 9;
+        if (v10 == v12) {
           goto LABEL_31;
         }
-        if (v12 != 0) {
-          if (v12 == 3 && v14 == 0) {
+        if (v10 != 0) {
+          if (v10 == 3 && v12 == 0) {
             goto LABEL_31;
           }
           goto LABEL_34;
         }
-        if (v14 != 3) {
+        if (v12 != 3) {
         LABEL_34:
-          v16 = v2;
+          v14 = v2;
           v2 = game_map_BattleUtil_GetRevengeSkill_alt2((__int64)v6);
           if (v2 != 0) {
             LOBYTE(v2) = game_map_BattleTarget_Commit_8fdda0(a1, 7, (__int64)v6,
-                                                             v16, v2);
+                                                             v14, v2);
           }
           return v2 & 1;
         }

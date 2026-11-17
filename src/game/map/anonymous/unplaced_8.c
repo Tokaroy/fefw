@@ -20,6 +20,7 @@ extern __int64 GameData_21cd158;
 void __attribute__((noreturn)) GameRoutine_60a310();
 __int64 game_map_anonymous_7807a0(__int64 a1, _WORD* a2, int a3, int a4,
                                   __int64 a5);
+__int64 Trick_7d2180_alt1(__int64, int, int, __int64);
 
 __int64 game_map_anonymous_7807a0(__int64 a1, _WORD* a2, int a3, int a4,
                                   __int64 a5)
@@ -246,8 +247,8 @@ LABEL_10:
         goto LABEL_19;
       }
     }
-    if ((Trick_7d2180(*(_QWORD*)(*GameData_212cfb8[0] + 16), f_.v45, f_.v46,
-                      v28) &
+    if ((Trick_7d2180_alt1(*(_QWORD*)(*GameData_212cfb8[0] + 16), f_.v45,
+                           f_.v46, v28) &
          1) == 0) {
     LABEL_19:
       LOBYTE(v27) = 0;
