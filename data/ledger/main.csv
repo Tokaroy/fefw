@@ -16863,6 +16863,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 5f4aa0,428,verified,src/nn/g3d/unplaced_2.c,nn_g3d_5f4aa0
 5f5020,220,verified,src/nn/g3d/unplaced.c,nn_g3d_5f5020
 5f5100,340,verified,src/nn/g3d/unplaced_2.c,nn_g3d_5f5100
+5f5260,412,verified,src/nn/g3d/unplaced_10.c,nn_g3d_5f5260
 5f5400,440,verified,src/nn/g3d/unplaced_2.c,nn_g3d_5f5400
 5f55c0,404,verified,src/nn/g3d/unplaced_2.c,nn_g3d_5f55c0
 5f5760,416,verified,src/nn/g3d/unplaced_2.c,nn_g3d_5f5760
@@ -36804,6 +36805,7 @@ c47570,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vect
 c475a0,488,verified,src/world/manager_impl.c,Manager_c475a0
 c47790,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 c477c0,516,verified,src/world/manager_impl.c,Manager_c477c0
+c47a00,636,verified,src/world/unplaced.c,world_c47a00
 c47c80,632,verified,src/world/manager_impl.c,Manager_c47c80
 c47f40,904,verified,src/game/unnamed/r003_0.c,GameHr_c47f40
 c48550,700,verified,src/wld/gfx_loader.c,GfxLoader_c48550
@@ -36938,6 +36940,7 @@ c543f0,20,verified,src/gfx/light/actor.c,Actor_Unknown2
 c544b0,120,verified,src/gfx/light/point_light_actor.c,PointLightActor_Unknown3
 c54530,696,verified,src/gfx/light/spot_light_actor.c,SpotLightActor_Unknown2
 c548d0,468,verified,src/gfx/light/unplaced_4.c,gfx_light_c548d0
+c54ab0,488,verified,src/gfx/light/unplaced_5.c,gfx_light_c54ab0
 c54ca0,720,verified,src/gfx/light/unplaced_2.c,gfx_light_c54ca0
 c54f70,468,verified,src/gfx/light/unplaced_4.c,gfx_light_c54f70
 c55150,488,verified,src/gfx/light/box_directional_light_actor.c,BoxDirectionalLightActor_Unknown3
@@ -39807,6 +39810,7 @@ d40860,932,verified,src/game/zview/character_controller.c,CharacterController_d4
 d40c10,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xd40c10
 d40c40,164,verified,src/game/zview/character_controller/state_jump.c,StateJump_Unknown2
 d40cf0,96,verified,src/game/zview/character_controller/state_move_to.c,StateMoveTo_Unknown3
+d40ea0,1156,disputed,src/game/zview/character_controller/unplaced.c,game_zview_character_controller_d40ea0
 d41fa0,1212,verified,src/game/zview/character_controller.c,CharacterController_d41fa0
 d42740,268,verified,src/game/zview/character_controller.c,CharacterController_d42740
 d42860,308,verified,src/game/zview/character_controller/state_move_to.c,StateMoveTo_d42860
@@ -44932,6 +44936,7 @@ edf260,508,verified,src/game/unplaced_16.c,game_edf260
 edf460,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 edf480,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 edf4a0,104,verified,src/game/unplaced_4.c,game_edf4a0
+edf510,520,verified,src/game/unplaced_37.c,game_edf510
 edf720,328,verified,src/game/cmdbtl/cmd_btl_camera_cut_selfie.c,CmdBtlCameraCutSelfie_Destructor
 edf880,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xedf880
 edf8d0,284,verified,src/game/cmdbtl/cmd_btl_camera_cut_selfie.c,CmdBtlCameraCutSelfie_Unknown2
@@ -49985,6 +49990,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 106a690,292,verified,src/game/combat/combat_character.c,game_combat_CombatCharacter_CombatCharacter_lambda1_Invoke
 106a7c0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::CombatCharacter::CombatCharacter(util::PtrHolder<wld::Object>, int)::$_1, void (game::combat::CombatPhase const&)>::target(std::type_info const&)"
 106a7e0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::combat::CombatCharacter::CombatCharacter(util::PtrHolder<wld::Object>, int)::$_1, void (game::combat::CombatPhase const&)>::target_type()"
+106a7f0,96,verified,src/llvm-libcxx-21/libcxx/include//functional/unplaced_12.c,llvm_libcxx_21_libcxx_include___functional_106a7f0
 106a860,632,verified,src/game/unnamed/e006_2.c,GameHr_106a860
 106aaf0,944,verified,src/game/combat/unplaced_3.c,game_combat_106aaf0
 106aeb0,320,verified,src/game/templates/function.cpp,_ZNSt3__110__function12__value_funcIFvPN4game11UnrecoveredILj31EEEEE4swapB8nn210108ERS7_
@@ -50990,6 +50996,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 10c3a60,4,verified,src/game/hub/character_controller_base.c,CharacterControllerBase_DeletingDestructor
 10c3a70,244,verified,src/game/hub/unplaced_2.c,game_hub_10c3a70
 10c3b70,300,verified,src/game/hub/unplaced_2.c,game_hub_10c3b70
+10c3ca0,328,verified,src/game/hub/unplaced_18.c,game_hub_10c3ca0
 10c3df0,480,verified,src/game/hub/character_controller_enemy.c,CharacterControllerEnemy_10c3df0
 10c3fd0,2576,disputed,src/game/hub/character_controller_enemy.c,game_hub_CharacterControllerEnemy_CharacterControllerEnemy
 10c4f40,820,disputed,src/game/hub/character_controller_enemy.c,CharacterControllerEnemy_Destructor
@@ -52504,6 +52511,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 111d6e0,148,verified,src/game/character/lifetime_module.c,LifetimeModule_DeletingDestructor
 111d780,8,verified,src/game/game_trivial.cpp,_Z16GameStub_111d780v
 111d790,12,verified,src/game/game_trivial.cpp,_Z16GameStub_111d790v
+111d7a0,320,verified,src/game/unplaced_37.c,game_111d7a0
 111d920,1532,verified,src/game/unplaced_22.c,game_111d920
 111df40,1076,verified,src/game/unplaced_33.c,game_111df40
 111e3c0,932,verified,src/game/unplaced_5.c,game_111e3c0
@@ -54274,6 +54282,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 11c46e0,264,verified,src/game/unnamed/b016_2.c,GameHr_11c46e0
 11c4800,252,verified,src/game/unnamed/f001_0.c,GameHr_11c4800
 11c4a00,964,verified,src/game/unplaced_23.c,game_11c4a00
+11c4de0,460,verified,src/game/unplaced_37.c,game_11c4de0
 11c4fc0,912,verified,src/game/unnamed/b016_2.c,GameHr_11c4fc0
 11c53a0,796,verified,src/game/evt/demo/character_work.c,game_evt_demo_CharacterWork_Equip
 11c56e0,72,verified,src/game/evt/demo/character_work.c,CharacterWork_11c56e0
@@ -62067,6 +62076,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1417e50,32,verified,src/game/facility/scene_character_movement.c,SceneCharacterMovement_Unknown2
 1417e70,228,verified,src/game/facility/scene_character_movement.c,SceneCharacterMovement_1417e70
 1418100,632,verified,src/game/facility/scene_character_movement.c,SceneCharacterMovement_Unknown3
+1418380,204,verified,src/game/facility/unplaced_20.c,game_facility_1418380
 1418520,396,verified,src/game/facility/unplaced.c,game_facility_1418520
 14187c0,200,verified,src/game/facility/unplaced.c,game_facility_14187c0
 1418960,292,verified,src/game/wld_module_finders.cpp,_ZNK3wld6search12ModuleFinderINS0_11CharacterIKEEclERKS3_PKNS0_4NodeE
@@ -66503,7 +66513,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 15622b0,56,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor15SetTextBoxColorEPKcRKj
 15622f0,136,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor17FitPaneSizeToTextEPKc
 1562380,76,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor11GetTextSizeEPKc
-15623e0,368,disputed,src/ui/unplaced_10.c,ui_15623e0
+15623e0,368,verified,src/ui/unplaced_10.c,ui_15623e0
 15625b0,200,verified,src/ui/layout_accessor_impl.c,LayoutAccessor_15625b0
 1562680,1188,verified,src/game/unnamed/b020_1.c,GameHr_1562680
 1562b50,384,verified,src/ui/layout_accessor.c,LayoutAccessor_1562b50
