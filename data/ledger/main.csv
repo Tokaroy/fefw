@@ -49973,7 +49973,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1067bd0,860,verified,src/game/combat/combat_character.c,CombatCharacter_Destructor
 1067f50,128,verified,src/game/combat/combat_character_move.c,CombatCharacterMove_Destructor
 1067fd0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0x1067fd0
-1068020,112,disputed,src/game/unnamed/e006_2.c,GameHr_1068020
+1068020,112,verified,src/game/unnamed/e006_2.c,GameHr_1068020
 1068090,152,verified,src/game/combat/unplaced_7.c,game_combat_1068090
 1068130,176,verified,src/game/unnamed/e006_2.c,GameHr_1068130
 10681e0,192,verified,src/game/unnamed/e006_2.c,GameHr_10681e0

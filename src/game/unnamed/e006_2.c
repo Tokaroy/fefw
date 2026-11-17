@@ -996,6 +996,8 @@ __int64 GameHr_1068020(__int64 a1)
   __int64 result;
   __int64 v5;
 
+  // The owner of the first weak pointer is read and dropped on entry.
+  (void)*(volatile __int64*)(*(_QWORD*)(a1 + 80) + 8);
   v1 = *(_QWORD*)(a1 + 88);
   v2 = *(_QWORD*)(v1 + 392);
   v3 = *(_QWORD*)(v1 + 400);
