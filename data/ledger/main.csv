@@ -1921,7 +1921,7 @@ fdde0,332,verified,src/snd/data_impl.c,Data_fdde0
 fdf60,100,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd9calcCrc32EPKcj
 fdfe0,164,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd16calcCrc32ReverseEPKcj
 fe090,48,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd12calcDistanceERKNS0_4Vec3ES3_
-fe0c0,144,disputed,src/snd/fnd/math.cpp,_ZN3snd3fnd9calcCurveENS0_9CurveTypeEffff
+fe0c0,144,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd9calcCurveENS0_9CurveTypeEffff
 fec10,24,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd12calcDistanceEffff
 fec30,32,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd12calcDistanceEffffff
 fec50,48,verified,src/snd/fnd/math.cpp,_ZN3snd3fnd14calcDistanceToERKNS0_4Vec3ES3_
@@ -31502,7 +31502,7 @@ a9fe50,192,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings5FloatD0
 a9ff10,216,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE10ApplyMixedERNS0_17BaseParamInstanceERKS3_S6_fff
 a9fff0,132,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE5ApplyERNS0_17BaseParamInstanceERKS3_ff
 aa0080,636,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_ff
-aa0340,860,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_S6_ff
+aa0340,776,disputed,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_S6_ff
 aa0c20,16,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIfE7HasKeysEv
 aa0c30,20,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamInstanceIfE5ResetEv
 aa0c50,20,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamInstanceIfE5ClearEv
@@ -31566,7 +31566,7 @@ ab7e60,196,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings3IntD0Ev
 ab7f30,212,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE10ApplyMixedERNS0_17BaseParamInstanceERKS3_S6_fff
 ab8010,136,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE5ApplyERNS0_17BaseParamInstanceERKS3_ff
 ab80a0,668,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_ff
-ab8340,1768,disputed,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_S6_ff
+ab8340,356,disputed,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE12ApplyLayeredERNS0_17BaseParamInstanceERKS3_S6_S6_ff
 ab8c40,8,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE8HasValueEv
 ab8c50,16,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIiE7HasKeysEv
 ab8c60,20,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamInstanceIiE5ResetEv
@@ -31592,7 +31592,7 @@ aba990,20,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamI
 aba9b0,20,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIbE4LerpEbbf
 aba9d0,196,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamInstanceIbED0Ev
 abaaa0,304,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIbE8EvaluateENSt3__18optionalIbEEf
-ababe0,536,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIbE12EvaluateOverENSt3__18optionalIbEES2_f
+ababe0,540,verified,src/gfx/settings/param_instance.cpp,_ZNK3gfx8settings14TParamInstanceIbE12EvaluateOverENSt3__18optionalIbEES2_f
 abae00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 abae20,180,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings14TParamInstanceIN2nn4util8Vector3fEED2Ev
 abaee0,196,verified,src/gfx/settings/param_instance.cpp,_ZN3gfx8settings6Float3D0Ev
@@ -38252,7 +38252,7 @@ cce1c0,132,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hu
 cce250,68,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character7IsValidEPKNS_3hub15CharacterHandleE
 cce2a0,304,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character14GetHandleLabelERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
 cce4c0,404,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character19GetHandleGlobalHashEm
-cce680,304,disputed,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character17TryGetHandleLabelERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
+cce680,300,disputed,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character17TryGetHandleLabelERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE
 cce8a0,404,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character22TryGetHandleGlobalHashEm
 ccea60,416,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character15GetHandlePlayerEv
 ccec00,488,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character23GetHandleAccessingCharaEv
@@ -42024,7 +42024,7 @@ e13510,224,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4tal
 e135f0,224,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk18ShowYesNoDialogArgERKN2as6stringES6_
 e136d0,268,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk19ShowYesNoDialogArg2ERKN2as6stringES6_S6_
 e137e0,268,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk29ShowYesNoDialogWithYesNoLabelERKN2as6stringES6_S6_
-e13900,1088,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk14ShowChoiceMenuER12CScriptArray
+e13900,1092,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk14ShowChoiceMenuER12CScriptArray
 e13d50,172,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk19GetChoiceMenuResultEv
 e13e00,184,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk14ExitSelectMenuEv
 e13ec0,536,verified,src/game/script/hub_talk_natives.cpp,_ZN4game6script3hub4talk24IsExistEventTalkedLabelsERKN2as6stringE
@@ -59141,7 +59141,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 132d100,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::GetCaravans() const::$_1, void (game::GmapTroopData const*)>::__clone(__base*)"
 132d120,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::GetCaravans() const::$_1, void (game::GmapTroopData const*)>::destroy()"
 132d130,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::GetCaravans() const::$_1, void (game::GmapTroopData const*)>::destroy_deallocate()"
-132d140,216,disputed,src/game/game_vector_pushes.cpp,_Z16GamePush_132d140mPKP4ItemILi2EE
+132d140,264,disputed,src/game/game_vector_pushes.cpp,_Z16GamePush_132d140mPKP4ItemILi2EE
 132d260,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::GetCaravans() const::$_1, void (game::GmapTroopData const*)>::target(std::type_info const&)"
 132d280,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::GetCaravans() const::$_1, void (game::GmapTroopData const*)>::target_type()"
 132d290,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::Spot::CountTroop() const::$_0, bool (game::gmap::Troop*)>::deleting destructor"
@@ -87548,7 +87548,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 19f8040,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::SpecialMenuItem::GetCheckEnable()::'lambda'(game::UnitSkill const&), void (game::UnitSkill const&)>::__clone(__base*)"
 19f8060,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::SpecialMenuItem::GetCheckEnable()::'lambda'(game::UnitSkill const&), void (game::UnitSkill const&)>::destroy()"
 19f8070,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::SpecialMenuItem::GetCheckEnable()::'lambda'(game::UnitSkill const&), void (game::UnitSkill const&)>::destroy_deallocate()"
-19f8080,428,disputed,src/game/map/escape_menu_item.cpp,_ZNSt3__110__function6__funcIZN4game3map12_GLOBAL__N_115SpecialMenuItem14GetCheckEnableEvEUlRKNS2_9UnitSkillEE_FvS8_EEclES8_
+19f8080,428,verified,src/game/map/escape_menu_item.cpp,_ZNSt3__110__function6__funcIZN4game3map12_GLOBAL__N_115SpecialMenuItem14GetCheckEnableEvEUlRKNS2_9UnitSkillEE_FvS8_EEclES8_
 19f8230,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::SpecialMenuItem::GetCheckEnable()::'lambda'(game::UnitSkill const&), void (game::UnitSkill const&)>::target(std::type_info const&)"
 19f8250,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::SpecialMenuItem::GetCheckEnable()::'lambda'(game::UnitSkill const&), void (game::UnitSkill const&)>::target_type()"
 19f8260,152,verified,src/game/map/escape_menu_item.cpp,_ZN4game3map12_GLOBAL__N_117PollutionMenuItemD0Ev
