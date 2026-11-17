@@ -744,6 +744,7 @@ void GameRoutine_7a8220_alt2(__int64*, _QWORD*);
 __int64 GameRoutine_1a0b940(__int64, __int64, unsigned __int64);
 __int64* game_fc76e0(__int64* result, __int64* a2, __int64* a3, __int64 a4,
                      __int64 a5, __int64 a6, __int64 a7, __int64 a8);
+float GameRoutine_1a0a6a0(float, float);
 
 __attribute__((swiftcall)) void game_ec1260(PSEUDO_X8 x8_)
 {
@@ -5695,6 +5696,8 @@ __int64 game_f87cd0(__int64 a1, __int64 a2)
 void game_f8eb50(__int64 a1)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v1;
   __int64 v2;
@@ -5723,8 +5726,10 @@ void game_f8eb50(__int64 a1)
   float v27;
   float32x4_t v28;
   float32x4_t v29;
-  float32x4_t v30;
-  long double v31;
+  struct {
+    float32x4_t v30;
+    long double v31;
+  } f_;
   float v32;
 
   if (GameData_21c6978 != 0) {
@@ -5742,11 +5747,11 @@ void game_f8eb50(__int64 a1)
           goto LABEL_49;
         }
         v7 = ((long double (*)(float*)) * (_QWORD*)(*(_QWORD*)v4 + 40LL))(v4);
-        v31 = v7;
-        DWORD3(v7) = 0;
+        f_.v31 = v7;
+        HIDWORD(v7) = 0;
         v9 = v4[21];
         v8 = v4[22];
-        v30 = *(float32x4_t*)&v7;
+        f_.v30 = *(float32x4_t*)&v7;
         if (game_ProcGameSkipView_instance_ != 0 &&
             *(_BYTE*)(game_ProcGameSkipView_instance_ + 152) == 3) {
           v10 = *(_DWORD*)(game_ProcGameSkipView_instance_ + 156);
@@ -5781,12 +5786,12 @@ void game_f8eb50(__int64 a1)
           LABEL_43:
             if (LANES128(v12[5]).n128_u8[0] == 1) {
               LANES128(v12[4]).n128_f32[0] = v9;
-              LANES128(v12[3]).n128_u64[0] = *(_QWORD*)&v31;
+              LANES128(v12[3]).n128_u64[0] = *(_QWORD*)&f_.v31;
               v28 = v12[3];
-              LANES128(v28).n128_u64[1] = DWORD2(v31);
+              LANES128(v28).n128_u64[1] = DWORD2(f_.v31);
             }
             else {
-              v28 = v30;
+              v28 = f_.v30;
               LANES128(v12[4]).n128_f32[0] = v9;
               LANES128(v12[5]).n128_u8[0] = 1;
             }
@@ -5799,7 +5804,7 @@ void game_f8eb50(__int64 a1)
                 *(float*)(a1 + 64) = v9;
                 *(float*)(a1 + 68) = v8;
                 *(_BYTE*)(a1 + 80) = 1;
-                *(float32x4_t*)(a1 + 48) = v30;
+                *(float32x4_t*)(a1 + 48) = f_.v30;
                 if (v3 == 0) {
                   return;
                 }
@@ -5814,9 +5819,9 @@ void game_f8eb50(__int64 a1)
             }
             LANES128(v12[4]).n128_f32[0] = v9;
             LANES128(v12[4]).n128_f32[1] = v8;
-            LANES128(v12[3]).n128_u64[0] = *(_QWORD*)&v31;
+            LANES128(v12[3]).n128_u64[0] = *(_QWORD*)&f_.v31;
             v29 = v12[3];
-            LANES128(v29).n128_u64[1] = DWORD2(v31);
+            LANES128(v29).n128_u64[1] = DWORD2(f_.v31);
             v12[3] = v29;
           LABEL_49:
             if (v3 == 0) {
@@ -5839,7 +5844,7 @@ void game_f8eb50(__int64 a1)
         if (*GameData_212d168 == 1) {
           v18 = 0x1.4000000000000p+4f;
         }
-        v19 = vsubq_f32(v12[3], v30);
+        v19 = vsubq_f32(v12[3], f_.v30);
         v20 = vmulq_f32(v19, v19);
         LANES128(v20).n128_u64[0] =
             LANES64_OF(
@@ -5854,8 +5859,9 @@ void game_f8eb50(__int64 a1)
                            COERCE_AS(float32x2_t, LANES128(v20).n128_u64[0]))))
                 .n64_f32[0] /
             v18;
-        v21 = fmodf(LANES128(v12[4]).n128_f32[0] - v9, 0x1.6800000000000p+8f);
-        if (!(v21 < 0x0.0p+0f)) {
+        v21 = GameRoutine_1a0a6a0(LANES128(v12[4]).n128_f32[0] - v9,
+                                  0x1.6800000000000p+8f);
+        if (v21 >= 0x0.0p+0f) {
           v22 = v21 + 0x0.0p+0f;
         }
         else {
@@ -5865,10 +5871,11 @@ void game_f8eb50(__int64 a1)
           v22 = v22 + -0x1.6800000000000p+8f;
         }
         v23 = fabsf(v22) / v17;
-        v24 = fmodf(*(float*)(a1 + 68) - v8, 0x1.6800000000000p+8f);
+        v24 =
+            GameRoutine_1a0a6a0(*(float*)(a1 + 68) - v8, 0x1.6800000000000p+8f);
         v12 = (float32x4_t*)a1;
         v25 = fmaxf(v23, 0x0.0p+0f);
-        if (!(v24 < 0x0.0p+0f)) {
+        if (v24 >= 0x0.0p+0f) {
           v26 = v24 + 0x0.0p+0f;
         }
         else {

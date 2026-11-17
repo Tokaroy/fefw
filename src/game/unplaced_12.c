@@ -523,20 +523,23 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
   unsigned __int64 v116;
   __int64 v117;
   unsigned __int64 v118;
-  __int64* v120;
   struct {
+    char gap0_[8];
+    __int64* v120;
+    char gap16_[16];
     _QWORD v121[4];
     _QWORD* v122;
-  } v121_;
-  __int64 v123;
+    char gap72_[8];
+    __int64 v123;
+  } f_;
   __int64 v124;
 
   v3 = *(_QWORD*)result;
   v5 = (__int64*)result;
-  v6 = v121_.v121;
-  v121_.v121[0] = GameData_201fad8;
-  v121_.v122 = v121_.v121;
-  v120 = (__int64*)result;
+  v6 = f_.v121;
+  f_.v121[0] = GameData_201fad8;
+  f_.v122 = f_.v121;
+  f_.v120 = (__int64*)result;
   if (v3 == 0 || (v7 = *(_QWORD*)(*(_QWORD*)(v3 + 24) + 32LL)) == 0 ||
       ((unsigned int)a2 >= 0x50 ? (v8 = 80) : (v8 = a2),
        (v9 = v8 - 1, a2 <= 0) ? (v10 = 0) : (v10 = v9),
@@ -553,8 +556,8 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                               GameData_1a94a43_alt1) == 0) {
         goto LABEL_38;
       }
-      nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-      v14 = game_HashString((__int64)&v123);
+      nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s", "IID_");
+      v14 = game_HashString((__int64)&f_.v123);
       if (v14 == 0) {
         goto LABEL_38;
       }
@@ -619,13 +622,13 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
     LABEL_42:
       v22 = v20[3];
     LABEL_39:
-      v123 = v22;
-      if (v121_.v122 == nullptr) {
+      f_.v123 = v22;
+      if (f_.v122 == nullptr) {
       LABEL_312:
         GameRoutine_60a310();
       }
-      result = (*(__int64 (**)(__int64, __int64))(*v121_.v122 + 48LL))(
-          (__int64)v121_.v122, (__int64)&v123);
+      result = (*(__int64 (**)(__int64, __int64))(*f_.v122 + 48LL))(
+          (__int64)f_.v122, (__int64)&f_.v123);
       if ((result & 1) != 0) {
         break;
       }
@@ -636,25 +639,25 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
       break;
     }
   }
-  if (v121_.v122 == v121_.v121) {
-    v5 = v120;
+  if (f_.v122 == f_.v121) {
+    v5 = f_.v120;
     v24 = 32;
-    v6 = v121_.v122;
+    v6 = f_.v122;
   LABEL_44:
     result = (*(__int64 (**)(__int64))(*v6 + v24))((__int64)v6);
   }
   else {
-    v5 = v120;
-    if (v121_.v122 != nullptr) {
+    v5 = f_.v120;
+    if (f_.v122 != nullptr) {
       v24 = 40;
-      v6 = v121_.v122;
+      v6 = f_.v122;
       goto LABEL_44;
     }
   }
   v25 = *v5;
-  v26 = v121_.v121;
-  v121_.v121[0] = GameData_201fb58;
-  v121_.v122 = v121_.v121;
+  v26 = f_.v121;
+  f_.v121[0] = GameData_201fb58;
+  f_.v122 = f_.v121;
   if (v25 == 0 || (v27 = *(_QWORD*)(*(_QWORD*)(v25 + 24) + 40LL)) == 0 ||
       ((unsigned int)a2 >= 0x50 ? (v28 = 80) : (v28 = a2),
        (v29 = v28 - 1, a2 <= 0) ? (v30 = 0) : (v30 = v29),
@@ -670,8 +673,8 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                               GameData_1a94a43_alt1) == 0) {
         goto LABEL_82;
       }
-      nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-      v32 = game_HashString((__int64)&v123);
+      nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s", "IID_");
+      v32 = game_HashString((__int64)&f_.v123);
       if (v32 == 0) {
         goto LABEL_82;
       }
@@ -735,33 +738,33 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
     LABEL_86:
       v40 = v38[3];
     LABEL_83:
-      v123 = v40;
-      if (v121_.v122 == nullptr) {
+      f_.v123 = v40;
+      if (f_.v122 == nullptr) {
         goto LABEL_312;
       }
-      result = (*(__int64 (**)(__int64, __int64))(*v121_.v122 + 48LL))(
-          (__int64)v121_.v122, (__int64)&v123);
+      result = (*(__int64 (**)(__int64, __int64))(*f_.v122 + 48LL))(
+          (__int64)f_.v122, (__int64)&f_.v123);
       if ((result & 1) != 0) {
       LABEL_286:
-        if (v121_.v122 == v121_.v121) {
-          v5 = v120;
+        if (f_.v122 == f_.v121) {
+          v5 = f_.v120;
           v42 = 32;
-          v26 = v121_.v122;
+          v26 = f_.v122;
         LABEL_88:
           result = (*(__int64 (**)(__int64))(*v26 + v42))((__int64)v26);
         }
         else {
-          v5 = v120;
-          if (v121_.v122 != nullptr) {
+          v5 = f_.v120;
+          if (f_.v122 != nullptr) {
             v42 = 40;
-            v26 = v121_.v122;
+            v26 = f_.v122;
             goto LABEL_88;
           }
         }
         v43 = *v5;
-        v44 = v121_.v121;
-        v121_.v121[0] = GameData_201fbd8;
-        v121_.v122 = v121_.v121;
+        v44 = f_.v121;
+        f_.v121[0] = GameData_201fbd8;
+        f_.v122 = f_.v121;
         if (v43 == 0 || (v45 = *(_QWORD*)(*(_QWORD*)(v43 + 24) + 48LL)) == 0 ||
             ((unsigned int)a2 >= 0x50 ? (v46 = 80) : (v46 = a2),
              (v47 = v46 - 1, a2 <= 0) ? (v48 = 0) : (v48 = v47),
@@ -777,8 +780,8 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                                     GameData_1a94a43_alt1) == 0) {
               goto LABEL_126;
             }
-            nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-            v50 = game_HashString((__int64)&v123);
+            nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s", "IID_");
+            v50 = game_HashString((__int64)&f_.v123);
             if (v50 == 0) {
               goto LABEL_126;
             }
@@ -842,33 +845,33 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
           LABEL_130:
             v58 = v56[3];
           LABEL_127:
-            v123 = v58;
-            if (v121_.v122 == nullptr) {
+            f_.v123 = v58;
+            if (f_.v122 == nullptr) {
               goto LABEL_312;
             }
-            result = (*(__int64 (**)(__int64, __int64))(*v121_.v122 + 48LL))(
-                (__int64)v121_.v122, (__int64)&v123);
+            result = (*(__int64 (**)(__int64, __int64))(*f_.v122 + 48LL))(
+                (__int64)f_.v122, (__int64)&f_.v123);
             if ((result & 1) != 0) {
             LABEL_290:
-              if (v121_.v122 == v121_.v121) {
-                v5 = v120;
+              if (f_.v122 == f_.v121) {
+                v5 = f_.v120;
                 v60 = 32;
-                v44 = v121_.v122;
+                v44 = f_.v122;
               LABEL_132:
                 result = (*(__int64 (**)(__int64))(*v44 + v60))((__int64)v44);
               }
               else {
-                v5 = v120;
-                if (v121_.v122 != nullptr) {
+                v5 = f_.v120;
+                if (f_.v122 != nullptr) {
                   v60 = 40;
-                  v44 = v121_.v122;
+                  v44 = f_.v122;
                   goto LABEL_132;
                 }
               }
               v61 = *v5;
-              v62 = v121_.v121;
-              v121_.v121[0] = GameData_201fc58;
-              v121_.v122 = v121_.v121;
+              v62 = f_.v121;
+              f_.v121[0] = GameData_201fc58;
+              f_.v122 = f_.v121;
               if (v61 == 0 ||
                   (v63 = *(_QWORD*)(*(_QWORD*)(v61 + 24) + 56LL)) == 0 ||
                   ((unsigned int)a2 >= 0x50 ? (v64 = 80) : (v64 = a2),
@@ -885,8 +888,8 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                                           GameData_1a94a43_alt1) == 0) {
                     goto LABEL_170;
                   }
-                  nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-                  v68 = game_HashString((__int64)&v123);
+                  nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s", "IID_");
+                  v68 = game_HashString((__int64)&f_.v123);
                   if (v68 == 0) {
                     goto LABEL_170;
                   }
@@ -951,34 +954,34 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                 LABEL_174:
                   v76 = v74[3];
                 LABEL_171:
-                  v123 = v76;
-                  if (v121_.v122 == nullptr) {
+                  f_.v123 = v76;
+                  if (f_.v122 == nullptr) {
                     goto LABEL_312;
                   }
-                  result = (*(__int64 (**)(__int64, __int64))(
-                      *v121_.v122 + 48LL))((__int64)v121_.v122, (__int64)&v123);
+                  result = (*(__int64 (**)(__int64, __int64))(*f_.v122 + 48LL))(
+                      (__int64)f_.v122, (__int64)&f_.v123);
                   if ((result & 1) != 0) {
                   LABEL_294:
-                    if (v121_.v122 == v121_.v121) {
-                      v5 = v120;
+                    if (f_.v122 == f_.v121) {
+                      v5 = f_.v120;
                       v78 = 32;
-                      v62 = v121_.v122;
+                      v62 = f_.v122;
                     LABEL_176:
                       result =
                           (*(__int64 (**)(__int64))(*v62 + v78))((__int64)v62);
                     }
                     else {
-                      v5 = v120;
-                      if (v121_.v122 != nullptr) {
+                      v5 = f_.v120;
+                      if (f_.v122 != nullptr) {
                         v78 = 40;
-                        v62 = v121_.v122;
+                        v62 = f_.v122;
                         goto LABEL_176;
                       }
                     }
                     v79 = *v5;
-                    v80 = v121_.v121;
-                    v121_.v121[0] = GameData_201fcd8;
-                    v121_.v122 = v121_.v121;
+                    v80 = f_.v121;
+                    f_.v121[0] = GameData_201fcd8;
+                    f_.v122 = f_.v121;
                     if (v79 == 0 ||
                         (v81 = *(_QWORD*)(*(_QWORD*)(v79 + 24) + 64LL)) == 0 ||
                         ((unsigned int)a2 >= 0x50 ? (v82 = 80) : (v82 = a2),
@@ -995,8 +998,8 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                                                 GameData_1a94a43_alt1) == 0) {
                           goto LABEL_214;
                         }
-                        nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-                        v86 = game_HashString((__int64)&v123);
+                        nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s", "IID_");
+                        v86 = game_HashString((__int64)&f_.v123);
                         if (v86 == 0) {
                           goto LABEL_214;
                         }
@@ -1064,35 +1067,35 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                       LABEL_218:
                         v94 = v92[3];
                       LABEL_215:
-                        v123 = v94;
-                        if (v121_.v122 == nullptr) {
+                        f_.v123 = v94;
+                        if (f_.v122 == nullptr) {
                           goto LABEL_312;
                         }
                         result = (*(__int64 (**)(__int64, __int64))(
-                            *v121_.v122 + 48LL))((__int64)v121_.v122,
-                                                 (__int64)&v123);
+                            *f_.v122 + 48LL))((__int64)f_.v122,
+                                              (__int64)&f_.v123);
                         if ((result & 1) != 0) {
                         LABEL_298:
-                          if (v121_.v122 == v121_.v121) {
-                            v5 = v120;
+                          if (f_.v122 == f_.v121) {
+                            v5 = f_.v120;
                             v96 = 32;
-                            v80 = v121_.v122;
+                            v80 = f_.v122;
                           LABEL_220:
                             result = (*(__int64 (**)(__int64))(*v80 + v96))(
                                 (__int64)v80);
                           }
                           else {
-                            v5 = v120;
-                            if (v121_.v122 != nullptr) {
+                            v5 = f_.v120;
+                            if (f_.v122 != nullptr) {
                               v96 = 40;
-                              v80 = v121_.v122;
+                              v80 = f_.v122;
                               goto LABEL_220;
                             }
                           }
                           v97 = *v5;
-                          v98 = v121_.v121;
-                          v121_.v121[0] = GameData_201fd58;
-                          v121_.v122 = v121_.v121;
+                          v98 = f_.v121;
+                          f_.v121[0] = GameData_201fd58;
+                          f_.v122 = f_.v121;
                           if (v97 == 0 ||
                               (v99 = *(_QWORD*)(*(_QWORD*)(v97 + 24) + 72LL)) ==
                                   0 ||
@@ -1116,8 +1119,9 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                                       GameData_1a94a43_alt1) == 0) {
                                 goto LABEL_258;
                               }
-                              nn_util_SNPrintf_alt1(&v123, 80, "%s%s", "IID_");
-                              v104 = game_HashString((__int64)&v123);
+                              nn_util_SNPrintf_alt1(&f_.v123, 80, "%s%s",
+                                                    "IID_");
+                              v104 = game_HashString((__int64)&f_.v123);
                               if (v104 == 0) {
                                 goto LABEL_258;
                               }
@@ -1187,13 +1191,13 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                             LABEL_262:
                               v112 = v110[3];
                             LABEL_259:
-                              v123 = v112;
-                              if (v121_.v122 == nullptr) {
+                              f_.v123 = v112;
+                              if (f_.v122 == nullptr) {
                                 goto LABEL_312;
                               }
                               result = (*(__int64 (**)(__int64, __int64))(
-                                  *v121_.v122 + 48LL))((__int64)v121_.v122,
-                                                       (__int64)&v123);
+                                  *f_.v122 + 48LL))((__int64)f_.v122,
+                                                    (__int64)&f_.v123);
                               if ((result & 1) != 0) {
                                 break;
                               }
@@ -1204,21 +1208,21 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                               break;
                             }
                           }
-                          if (v121_.v122 == v121_.v121) {
+                          if (f_.v122 == f_.v121) {
                             v114 = 32;
                           LABEL_311:
-                            v98 = v121_.v122;
+                            v98 = f_.v122;
                             goto LABEL_264;
                           }
-                          if (v121_.v122 != nullptr) {
+                          if (f_.v122 != nullptr) {
                             v114 = 40;
                             goto LABEL_311;
                           }
                         LABEL_265:
-                          v115 = (char*)&v123;
+                          v115 = (char*)&f_.v123;
                           if (v22 != 0) {
                             v115 = (char*)&v124;
-                            v123 = v22;
+                            f_.v123 = v22;
                           }
                           if (v40 != 0) {
                             *(_QWORD*)v115 = v40;
@@ -1243,19 +1247,19 @@ __attribute__((swiftcall)) void game_127cec0(PSEUDO_X8 x8_, __int64 result,
                           a3[1] = 0;
                           a3[2] = 0;
                           *a3 = 0;
-                          v116 = v115 - (char*)&v123;
-                          if (v115 != (char*)&v123) {
+                          v116 = v115 - (char*)&f_.v123;
+                          if (v115 != (char*)&f_.v123) {
                             if ((v116 & 0x8000000000000000LL) != 0) {
                               GameRoutine_6e5c60();
                             }
                             v117 = fw_memory_HeapManager_Allocate(
                                 *(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                v115 - (char*)&v123, 16, 0);
+                                v115 - (char*)&f_.v123, 16, 0);
                             v118 = v117 + v116;
                             *a3 = v117;
                             a3[2] = v117 + v116;
-                            result =
-                                GameRoutine_1a0b950(v117, (__int64)&v123, v116);
+                            result = GameRoutine_1a0b950(
+                                v117, (__int64)&f_.v123, v116);
                             a3[1] = v118;
                           }
                           {

@@ -763,7 +763,8 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
         LABEL_55:
           GameRoutine_60a310();
         }
-        (*(void (**)(_QWORD*, __int64))(*f_.v51 + 48LL))(f_.v51, v10 + v11);
+        (*(void (**)(__int64, __int64))(*f_.v51 + 48LL))((__int64)f_.v51,
+                                                         v10 + v11);
         v14 = *v13;
         v9 = *(_QWORD*)(a1 + 1112);
         v10 = *(_QWORD*)(a1 + 1104);
@@ -808,7 +809,8 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
         if (f_.v51 == nullptr) {
           goto LABEL_55;
         }
-        (*(void (**)(_QWORD*, __int64))(*f_.v51 + 48LL))(f_.v51, v19 + v20);
+        (*(void (**)(__int64, __int64))(*f_.v51 + 48LL))((__int64)f_.v51,
+                                                         v19 + v20);
         v23 = *v22;
         v18 = *(_QWORD*)(a2 + 1112);
         v19 = *(_QWORD*)(a2 + 1104);
@@ -829,7 +831,7 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
     }
     (*(void (**)(__int64))(*v16 + v24))((__int64)v16);
   LABEL_35:
-    if (SHIDWORD(v52) > (int)v52) {
+    if (SDWORDn(v52, sizeof(v52) / 4 - 1) > (int)v52) {
       return (_DWORD*)(((_UNKNOWN*)0x0LL) + 1);
     }
     v25 = f_.v50;
@@ -857,7 +859,8 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
         if (f_.v51 == nullptr) {
           goto LABEL_55;
         }
-        (*(void (**)(_QWORD*, __int64))(*f_.v51 + 48LL))(f_.v51, v28 + v29);
+        (*(void (**)(__int64, __int64))(*f_.v51 + 48LL))((__int64)f_.v51,
+                                                         v28 + v29);
         v32 = *v31;
         v27 = *(_QWORD*)(a1 + 1112);
         v28 = *(_QWORD*)(a1 + 1104);
@@ -902,7 +905,8 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
         if (f_.v51 == nullptr) {
           goto LABEL_55;
         }
-        (*(void (**)(_QWORD*, __int64))(*f_.v51 + 48LL))(f_.v51, v37 + v38);
+        (*(void (**)(__int64, __int64))(*f_.v51 + 48LL))((__int64)f_.v51,
+                                                         v37 + v38);
         v41 = *v40;
         v36 = *(_QWORD*)(a2 + 1112);
         v37 = *(_QWORD*)(a2 + 1104);
@@ -923,8 +927,8 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
     }
     (*(void (**)(__int64))(*v34 + v42))((__int64)v34);
   LABEL_61:
-    f_.v44 = SHIDWORD(v52) > (int)v52;
-    if (SHIDWORD(v52) > (int)v52) {
+    f_.v44 = SDWORDn(v52, sizeof(v52) / 4 - 1) > (int)v52;
+    if (SDWORDn(v52, sizeof(v52) / 4 - 1) > (int)v52) {
       return (_DWORD*)(((_UNKNOWN*)0x0LL) + 1);
     }
     f_.v50[0] = GameData_204e398;
@@ -952,7 +956,7 @@ int* game_gameui_158cbc0(__int64 a1, __int64 a2)
   }
   v5 = 0;
   result = &f_.v46;
-  while ((unsigned int)(*v4 - 28) > 9) {
+  while ((unsigned int)(*(int*)v4 - 28) > 9) {
     ++v4;
     if ((unsigned __int16)f_.v48 != f_.v47[0]) {
       ++v5;
