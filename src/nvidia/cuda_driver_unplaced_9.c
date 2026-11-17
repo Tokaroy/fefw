@@ -404,6 +404,7 @@ __int64 cuda_driver_unplaced_9_1d0980(__int64* a1, __int64 a2, __int64 a3,
 __int64 cuda_driver_unplaced_9_1d8110(__int64* a1, __int64* a2, __int64 a3,
                                       __int64* a4);
 __int64 nvidia_98650(__int64, char);
+__int64 CudaDriverStub_57450_alt2(_QWORD);
 
 __int64 cuda_driver_1b2e40(__int64 a1, __int64 a2, __int64 a3, char* a4)
 {
@@ -1171,8 +1172,10 @@ void cuda_driver_1b39a0(__int64 a1, _QWORD* a2)
   unsigned __int64 v16;
   int v17;
   int v18;
-  _BYTE v19[9216];
-  _DWORD v20[768];
+  struct {
+    _BYTE v19[9216];
+    _DWORD v20[768];
+  } f_;
   float32x4x3_t v21;
   float32x4x3_t v22;
 
@@ -1188,13 +1191,13 @@ void cuda_driver_1b39a0(__int64 a1, _QWORD* a2)
       LABEL_8:
         v13 = v6 + 1;
         v14 = v6 + 2;
-        *(_DWORD*)&v19[4 * v6] = v5;
-        v20[v6] = 5265160;
+        *(_DWORD*)&f_.v19[4 * v6] = v5;
+        f_.v20[v6] = 5265160;
         v6 += 3;
-        *(_DWORD*)&v19[4 * v13] = v5;
-        *(_DWORD*)&v19[4 * v14] = v5++;
-        v20[v13] = 5265176;
-        v20[v14] = 5265168;
+        *(_DWORD*)&f_.v19[4 * v13] = v5;
+        *(_DWORD*)&f_.v19[4 * v14] = v5++;
+        f_.v20[v13] = 5265176;
+        f_.v20[v14] = 5265168;
       } while (v5 < v4);
       goto LABEL_9;
     }
@@ -1203,10 +1206,10 @@ void cuda_driver_1b39a0(__int64 a1, _QWORD* a2)
     LANES128(v8).n128_u64[0] = 0x800000008LL;
     LANES128(v8).n128_u64[1] = 0x800000008LL;
     v5 = v4 & 0x7FFFFFF8;
-    v9 = (float*)v19;
+    v9 = (float*)f_.v19;
     v21.val[0] = COERCE_AS(float32x4_t, CudaDriverData_1115690);
     v6 = 3 * (v4 & 0x7FFFFFF8);
-    v10 = v20;
+    v10 = f_.v20;
     v11 = v4 & 0x7FFFFFF8;
     do {
       v22.val[0] = vaddq_s32(v21.val[0], v7);
@@ -1244,11 +1247,11 @@ LABEL_9:
     v17 = 0;
     do {
       ++v16;
-      *a2 = *(_QWORD*)&v19[8 * v17 + 3072];
-      a2[2] = *(_QWORD*)&v19[8 * (v17 + 1) + 3072];
+      *a2 = *(_QWORD*)&f_.v19[8 * v17 + 3072];
+      a2[2] = *(_QWORD*)&f_.v19[8 * (v17 + 1) + 3072];
       v18 = v17 + 2;
       v17 += 3;
-      a2[6] = *(_QWORD*)&v19[8 * v18 + 3072];
+      a2[6] = *(_QWORD*)&f_.v19[8 * v18 + 3072];
       a2 += 40;
     } while (v16 < *(unsigned int*)(v2 + 3732));
   }
@@ -2689,22 +2692,25 @@ long double cuda_driver_1bc660(__int64 a1, __int64 a2, unsigned int* a3,
   unsigned int v30;
   __int128 v31;
   long double result;
-  __int64 v33;
-  _DWORD v34[8];
-  _QWORD v35[2];
+  struct {
+    char gap0_[8];
+    __int64 v33;
+    _DWORD v34[8];
+    _QWORD v35[2];
+  } f_;
   _BYTE v36[48];
 
   v4 = a3[7];
-  v33 = 0;
-  memset(v34, 0, sizeof(v34));
-  *(_OWORD*)v35 = (__typeof__(*(_OWORD*)v35)){0};
+  f_.v33 = 0;
+  memset(f_.v34, 0, sizeof(f_.v34));
+  *(_OWORD*)f_.v35 = (__typeof__(*(_OWORD*)f_.v35)){0};
   *(_OWORD*)v36 = (__typeof__(*(_OWORD*)v36)){0};
   a3[7] = v4 & 0x3FFFFFF;
   v9 = a3[11] & 0xFFFCBFFF;
   memset(&v36[16], 0, 32);
   a3[11] = v9;
-  CudaDriverRoutine_bbd70(a2, &v33);
-  a3[8] = v33;
+  CudaDriverRoutine_bbd70(a2, &f_.v33);
+  a3[8] = f_.v33;
   a3[11] |= 0x44000000u;
   a3[45] = a3[45] & 0x7FFFFFF | 0x8000000;
   v10 = *(_BYTE*)(a2 + 392);
@@ -2721,14 +2727,14 @@ long double cuda_driver_1bc660(__int64 a1, __int64 a2, unsigned int* a3,
            (((unsigned __int64)(unsigned int)(v11 - 1) + 8448) / v11 * v11) &
                0x3FFFF;
   v12 = CudaDriverStub_112e30(*(_QWORD*)(a1 + 96));
-  CudaDriverRoutine_96f20(a1, a2, v12, 0, (__int64)v35, (__int64)v34);
+  CudaDriverRoutine_96f20(a1, a2, v12, 0, (__int64)f_.v35, (__int64)f_.v34);
   v13 = *(unsigned int**)(a1 + 64);
   if (v13[944] != 0) {
     v14 = 975;
     v15 = 0;
     do {
       while (1) {
-        v16 = v35[v15];
+        v16 = f_.v35[v15];
         if (v16 != 0) {
           break;
         }
@@ -2740,7 +2746,7 @@ long double cuda_driver_1bc660(__int64 a1, __int64 a2, unsigned int* a3,
           goto LABEL_6;
         }
       }
-      v17 = (v34[v15] + v13[946] - 1) / v13[946] * v13[946];
+      v17 = (f_.v34[v15] + v13[946] - 1) / v13[946] * v13[946];
       a3[(unsigned int)(v15 + 640) >> 5] |= 1 << v15;
       a3[v14 >> 5] = a3[v14 >> 5] & 0x7FFF | (v17 << 15);
       LOBYTE(a3[(v14 - 15) >> 5]) = BYTE4(v16);
@@ -2751,7 +2757,7 @@ long double cuda_driver_1bc660(__int64 a1, __int64 a2, unsigned int* a3,
     } while (v15 < v13[944]);
   }
 LABEL_6:
-  v18 = v33;
+  v18 = f_.v33;
   a3[(v13[2927] + 640) >> 5] |= 1 << v13[2927];
   v19 =
       (unsigned int)((*(_DWORD*)(*(_QWORD*)(a1 + 64) + 11708LL) << 6) + 975) >>
@@ -2792,7 +2798,7 @@ LABEL_6:
   *(_QWORD*)&v29 = 0x100000001LL;
   *((_QWORD*)&v29 + 1) = 0x100000001LL;
   v30 = *(_DWORD*)(a1 + 1284);
-  v31 = *(_OWORD*)v35;
+  v31 = *(_OWORD*)f_.v35;
   *((_QWORD*)a3 + 280) = 0;
   a3[520] = v28;
   *((_QWORD*)a3 + 295) = 0;
@@ -2884,81 +2890,81 @@ _DWORD* cuda_driver_1bcc80(__int64 a1, __int64* a2, __int64 a3)
     __int128 v58;
     __int128 v59;
     __int128 v60;
-  } v45_;
-  _DWORD v61[8];
-  _QWORD v62[8];
+    _DWORD v61[8];
+    _QWORD v62[8];
+  } f_;
   __int64 v63;
 
   v3 = *a2;
-  memset(v61, 0, sizeof(v61));
-  memset(v62, 0, sizeof(v62));
+  memset(f_.v61, 0, sizeof(f_.v61));
+  memset(f_.v62, 0, sizeof(f_.v62));
   v7 = *(_QWORD*)(CudaDriverRoutine_98340(a1) + 1072);
   v63 = 0;
   v8 = *(_QWORD*)(v7 + 392);
   v9 = *(_QWORD*)(a3 + 136);
-  *(_OWORD*)v45_.v45 = (__typeof__(*(_OWORD*)v45_.v45)){0};
-  v45_.v46 = (__typeof__(v45_.v46)){0};
-  v45_.v47 = (__typeof__(v45_.v47)){0};
-  v45_.v48 = (__typeof__(v45_.v48)){0};
+  *(_OWORD*)f_.v45 = (__typeof__(*(_OWORD*)f_.v45)){0};
+  f_.v46 = (__typeof__(f_.v46)){0};
+  f_.v47 = (__typeof__(f_.v47)){0};
+  f_.v48 = (__typeof__(f_.v48)){0};
   v10 = *(_QWORD*)(v9 + 192);
   v11 = *(_QWORD*)(a1 + 64);
-  v45_.v49 = (__typeof__(v45_.v49)){0};
-  v45_.v50 = (__typeof__(v45_.v50)){0};
+  f_.v49 = (__typeof__(f_.v49)){0};
+  f_.v50 = (__typeof__(f_.v50)){0};
   v12 = *(unsigned int*)(v11 + 11708);
-  v45_.v51 = (__typeof__(v45_.v51)){0};
-  v45_.v52 = (__typeof__(v45_.v52)){0};
-  v45_.v53 = (__typeof__(v45_.v53)){0};
-  v45_.v54 = (__typeof__(v45_.v54)){0};
-  v45_.v55 = (__typeof__(v45_.v55)){0};
-  v45_.v56 = (__typeof__(v45_.v56)){0};
+  f_.v51 = (__typeof__(f_.v51)){0};
+  f_.v52 = (__typeof__(f_.v52)){0};
+  f_.v53 = (__typeof__(f_.v53)){0};
+  f_.v54 = (__typeof__(f_.v54)){0};
+  f_.v55 = (__typeof__(f_.v55)){0};
+  f_.v56 = (__typeof__(f_.v56)){0};
   v13 = *(_QWORD*)(a3 + 8 * v12 + 40);
-  v45_.v57 = (__typeof__(v45_.v57)){0};
-  v45_.v58 = (__typeof__(v45_.v58)){0};
-  v45_.v59 = (__typeof__(v45_.v59)){0};
-  v45_.v60 = (__typeof__(v45_.v60)){0};
-  *((_QWORD*)&v45_.v46 + 1) = 0x3C00000000001000LL;
+  f_.v57 = (__typeof__(f_.v57)){0};
+  f_.v58 = (__typeof__(f_.v58)){0};
+  f_.v59 = (__typeof__(f_.v59)){0};
+  f_.v60 = (__typeof__(f_.v60)){0};
+  *((_QWORD*)&f_.v46 + 1) = 0x3C00000000001000LL;
   CudaDriverRoutine_bbd70(v8, &v63);
   v14 = *(_QWORD*)(a1 + 96);
-  *(_QWORD*)((char*)&v45_.v50 + 4) = 0;
-  HIDWORD(v45_.v47) = 1141047296;
+  *(_QWORD*)((char*)&f_.v50 + 4) = 0;
+  HIDWORD(f_.v47) = 1141047296;
   v15 = *(_DWORD*)(v8 + 392);
-  LODWORD(v45_.v47) = v63;
-  DWORD1(v45_.v56) = 0x8000000;
-  DWORD2(v45_.v56) = v15 << 24;
+  LODWORD(f_.v47) = v63;
+  DWORD1(f_.v56) = 0x8000000;
+  DWORD2(f_.v56) = v15 << 24;
   v16 = *(_DWORD**)(a1 + 64);
   v17 = v16[791];
   v18 = v16[790];
   v19 = (unsigned int)v16[972];
-  HIDWORD(v45_.v56) = (v17 << 24) + (v18 << 28);
-  DWORD1(v45_.v49) =
+  HIDWORD(f_.v56) = (v17 << 24) + (v18 << 28);
+  DWORD1(f_.v49) =
       (((unsigned __int64)(unsigned int)(v19 - 1) + 8448) / v19 * v19) &
       0x3FFFF;
-  DWORD2(v45_.v49) = 23;
+  DWORD2(f_.v49) = 23;
   v20 = CudaDriverStub_112e30(v14);
-  CudaDriverRoutine_96f20(a1, v8, v20, 0, (__int64)v62, (__int64)v61);
+  CudaDriverRoutine_96f20(a1, v8, v20, 0, (__int64)f_.v62, (__int64)f_.v61);
   v21 = *(unsigned int**)(a1 + 64);
   v22 = v21[944];
   if ((_DWORD)v22 != 0) {
     v23 = 975;
     for (i = 0; i < v22; ++i) {
       while (1) {
-        v25 = v62[i];
+        v25 = f_.v62[i];
         if (v25 != 0) {
           break;
         }
-        *((_DWORD*)v45_.v45 + ((unsigned int)(i + 640) >> 5)) &= ~(1 << i);
+        *((_DWORD*)f_.v45 + ((unsigned int)(i + 640) >> 5)) &= ~(1 << i);
         ++i;
         v23 += 64;
         if (i >= v22) {
           goto LABEL_6;
         }
       }
-      v26 = (v61[i] + v21[946] - 1) / v21[946] * v21[946];
-      *((_DWORD*)v45_.v45 + ((unsigned int)(i + 640) >> 5)) |= 1 << i;
-      *((_DWORD*)v45_.v45 + (v23 >> 5)) =
-          *((_DWORD*)v45_.v45 + (v23 >> 5)) & 0x7FFF | (v26 << 15);
-      *((_BYTE*)v45_.v45 + 4 * ((v23 - 15) >> 5)) = BYTE4(v25);
-      *((_DWORD*)v45_.v45 + ((v23 - 47) >> 5)) = v25;
+      v26 = (f_.v61[i] + v21[946] - 1) / v21[946] * v21[946];
+      *((_DWORD*)f_.v45 + ((unsigned int)(i + 640) >> 5)) |= 1 << i;
+      *((_DWORD*)f_.v45 + (v23 >> 5)) =
+          *((_DWORD*)f_.v45 + (v23 >> 5)) & 0x7FFF | (v26 << 15);
+      *((_BYTE*)f_.v45 + 4 * ((v23 - 15) >> 5)) = BYTE4(v25);
+      *((_DWORD*)f_.v45 + ((v23 - 47) >> 5)) = v25;
       v23 += 64;
     }
   }
@@ -2967,36 +2973,36 @@ LABEL_6:
   v28 = v27 + 640;
   v29 = 1 << v27;
   v27 <<= 6;
-  *((_DWORD*)v45_.v45 + (v28 >> 5)) |= v29;
-  *((_DWORD*)v45_.v45 + ((v27 + 975) >> 5)) =
-      *((_DWORD*)v45_.v45 + ((v27 + 975) >> 5)) & 0x7FFF | 0xE000000;
-  *((_DWORD*)v45_.v45 + ((v27 + 928) >> 5)) = v13;
-  *((_BYTE*)v45_.v45 + 4 * ((v27 + 960) >> 5)) = BYTE4(v13);
-  WORD5(v45_.v49) = 1;
-  HIDWORD(v45_.v49) = 65537;
-  v30 = BYTE7(v45_.v56);
+  *((_DWORD*)f_.v45 + (v28 >> 5)) |= v29;
+  *((_DWORD*)f_.v45 + ((v27 + 975) >> 5)) =
+      *((_DWORD*)f_.v45 + ((v27 + 975) >> 5)) & 0x7FFF | 0xE000000;
+  *((_DWORD*)f_.v45 + ((v27 + 928) >> 5)) = v13;
+  *((_BYTE*)f_.v45 + 4 * ((v27 + 960) >> 5)) = BYTE4(v13);
+  WORD5(f_.v49) = 1;
+  HIDWORD(f_.v49) = 65537;
+  v30 = BYTE7(f_.v56);
   v31 = *(_DWORD*)(CudaDriverRoutine_98340(a1) + 1276) & 0xFFFFFF | (v30 << 24);
-  v32 = BYTE11(v45_.v56);
-  DWORD1(v45_.v56) = v31;
+  v32 = BYTE11(f_.v56);
+  DWORD1(f_.v56) = v31;
   v33 = *(_DWORD*)(CudaDriverRoutine_98340(a1) + 1280) & 0xFFFFFF | (v32 << 24);
-  v34 = HIBYTE(v45_.v56);
-  DWORD2(v45_.v56) = v33;
+  v34 = HIBYTE(f_.v56);
+  DWORD2(f_.v56) = v33;
   v35 = CudaDriverRoutine_98340(a1);
-  v36 = DWORD2(v45_.v46);
-  HIDWORD(v45_.v56) = *(_DWORD*)(v35 + 1284) & 0xFFFFFF | (v34 << 24);
+  v36 = DWORD2(f_.v46);
+  HIDWORD(f_.v56) = *(_DWORD*)(v35 + 1284) & 0xFFFFFF | (v34 << 24);
   v37 = CudaDriverStub_1223e0(*(_QWORD*)(v10 + 24));
-  v38 = v45_.v51;
+  v38 = f_.v51;
   v39 = v37;
   v40 = CudaDriverStub_8e230(v10);
-  HIDWORD(v45_.v50) = v39;
-  LODWORD(v45_.v51) = v38 & 0x7B8FFF00 | 0x84000000 | BYTE4(v39);
-  DWORD1(v45_.v51) = v40;
-  DWORD2(v45_.v46) = v36 & 0xFFFFF2C0 | 0x400;
+  HIDWORD(f_.v50) = v39;
+  LODWORD(f_.v51) = v38 & 0x7B8FFF00 | 0x84000000 | BYTE4(v39);
+  DWORD1(f_.v51) = v40;
+  DWORD2(f_.v46) = v36 & 0xFFFFF2C0 | 0x400;
   v41 = *(__int64 (**)(__int64, __int64, _QWORD, _QWORD*, __int64, __int64))(
       *(_QWORD*)(a1 + 64) + 19248LL);
-  *(_QWORD*)&v45_.v48 = 0x1000100000001LL;
+  *(_QWORD*)&f_.v48 = 0x1000100000001LL;
   v42 = CudaDriverRoutine_98340(a1);
-  v43 = (_DWORD*)v41(v3, v42, *(_QWORD*)(v10 + 8), v45_.v45, 256, 2);
+  v43 = (_DWORD*)v41(v3, v42, *(_QWORD*)(v10 + 8), f_.v45, 256, 2);
   result = CudaDriverRoutine_1cfa50(v43, *(_QWORD*)(v10 + 8), 1);
   *a2 = (__int64)result;
   return result;
@@ -8563,47 +8569,44 @@ __int64 cuda_driver_1e0d60(__int64 a1)
   struct {
     __int64 v28;
     __int64 v29;
-  } v28_;
-  struct {
     char gap16_[4];
     int v30;
     __int64 v31;
     __int64 v32;
-  } v30_;
-  int v33;
-  __int64 v34;
-  int v35;
-  __int64 v36;
-  unsigned int v37;
-  char* v38;
-  __int64 v39;
-  __int64 v40;
-  __int64 v41;
-  __int64 v42;
-  __int64* v43;
-  int v44;
+    int v33;
+    __int64 v34;
+    int v35;
+    __int64 v36;
+    unsigned int v37;
+    char* v38;
+    __int64 v39;
+    __int64 v40;
+    __int64 v41;
+    __int64 v42;
+    __int64* v43;
+    int v44;
+  } f_;
   __int64 v45;
 
   v1 = *(unsigned int*)(a1 + 28);
   v3 = *(_QWORD*)(a1 + 16);
   v45 = 0;
-  v42 = 0;
-  v41 = 0;
-  v44 = 0;
-  v43 = nullptr;
-  v34 = 0;
-  v35 = 68;
-  v33 = 12;
+  f_.v42 = 0;
+  f_.v41 = 0;
+  f_.v44 = 0;
+  f_.v43 = nullptr;
+  f_.v34 = 0;
+  f_.v35 = 68;
+  f_.v33 = 12;
   v4 = *(_QWORD*)v3;
   v5 = *(_QWORD*)(**(_QWORD**)v3 + 8LL);
   result = nvidia_98650(v5, 0);
   if ((_DWORD)result == 0) {
-    v28_.v28 = v4;
-    v28_.v29 = v4 + 0x8000;
+    f_.v28 = v4;
+    f_.v29 = v4 + 0x8000;
     if (*(_DWORD*)(a1 + 28) != 0) {
       v10 = 0;
-      v11 =
-          (char*)&v28_.v28 - ((24LL * (unsigned int)v1 + 15) & 0x3FFFFFFFF0LL);
+      v11 = (char*)&f_.v28 - ((24LL * (unsigned int)v1 + 15) & 0x3FFFFFFFF0LL);
       do {
         v12 = (unsigned int)(v10 + *(_DWORD*)(a1 + 24)) % *(_DWORD*)(v3 + 8);
         v13 = *(_QWORD*)(v3 + 64);
@@ -8617,48 +8620,48 @@ __int64 cuda_driver_1e0d60(__int64 a1)
         v11 += 24;
       } while (v10 < *(unsigned int*)(a1 + 28));
     }
-    CudaDriverStub_57450_alt1(v5);
-    v15 = v28_.v29;
-    LOBYTE(v44) = 0;
-    v16 = *(_BYTE*)(v28_.v29 + 1424);
-    v17 = *(_QWORD*)(v28_.v29 + 1096);
+    CudaDriverStub_57450_alt2(v5);
+    v15 = f_.v29;
+    LOBYTE(f_.v44) = 0;
+    v16 = *(_BYTE*)(f_.v29 + 1424);
+    v17 = *(_QWORD*)(f_.v29 + 1096);
     if (v16 != 0 && *(_DWORD*)(v17 + 68) != 0) {
       v18 = (unsigned int)(*(_DWORD*)(v17 + 72) + 1) % *(_DWORD*)(v17 + 64);
       v19 = *(_QWORD*)(v17 + 8LL * v18 + 48);
-      v42 = *(unsigned int*)(v17 + 68);
-      v41 = v19;
+      f_.v42 = *(unsigned int*)(v17 + 68);
+      f_.v41 = v19;
     }
     else {
       v18 = 0;
     }
     v20 = *(_QWORD*)(v17 + 32);
-    v38 = (char*)&v28_.v28 - ((24LL * (unsigned int)v1 + 15) & 0x3FFFFFFFF0LL);
-    v36 = v20;
-    v37 = 0x80000000;
-    v21 = *(_QWORD*)(v28_.v29 + 1432);
-    v39 = v1;
-    BYTE1(v44) = v16;
-    v40 = v21;
-    v43 = &v45;
+    f_.v38 = (char*)&f_.v28 - ((24LL * (unsigned int)v1 + 15) & 0x3FFFFFFFF0LL);
+    f_.v36 = v20;
+    f_.v37 = 0x80000000;
+    v21 = *(_QWORD*)(f_.v29 + 1432);
+    f_.v39 = v1;
+    BYTE1(f_.v44) = v16;
+    f_.v40 = v21;
+    f_.v43 = &v45;
     v22 = CudaDriverData_1422bb0;
     v23 = (*(__int64 (**)(int*))((char*)((__int64*)0x18LL) +
-                                 CudaDriverData_1422bb0))(&v35);
+                                 CudaDriverData_1422bb0))(&f_.v35);
     if ((_DWORD)v23 == 0 ||
         (_DWORD)(result = CudaDriverRoutine_1e9390(v23)) == 0) {
       if (*(_BYTE*)(v15 + 1424) != 0) {
         v24 = *(_QWORD*)(v15 + 1096);
         if (*(_DWORD*)(v24 + 104) == 3) {
-          v30_.v30 = 20;
-          v30_.v31 = v45;
-          v30_.v32 = 0;
+          f_.v30 = 20;
+          f_.v31 = v45;
+          f_.v32 = 0;
           v25 = (*(__int64 (**)(int*))((char*)((_UNKNOWN*)0xD8LL) + v22))(
-              &v30_.v30);
+              &f_.v30);
           if ((_DWORD)v25 != 0) {
             return CudaDriverRoutine_1e9390(v25);
           }
-          CudaDriverRoutine_5bfe0(v28_.v28, v30_.v32, HIDWORD(v30_.v32));
-          v34 = v45;
-          (*(void (**)(int*))((char*)((_UNKNOWN*)0xF8LL) + v22))(&v33);
+          CudaDriverRoutine_5bfe0(f_.v28, f_.v32, HIDWORD(f_.v32));
+          f_.v34 = v45;
+          (*(void (**)(int*))((char*)((_UNKNOWN*)0xF8LL) + v22))(&f_.v33);
           *(_BYTE*)(v15 + 1456) = 1;
         }
         else {
@@ -8668,8 +8671,8 @@ __int64 cuda_driver_1e0d60(__int64 a1)
           CudaDriverStub_108070(*(_QWORD*)(v15 + 1096) + 80LL);
           if (v26 != 0) {
             v27 = *(void (**)(int*))((char*)((_UNKNOWN*)0xF8LL) + v22);
-            v34 = v26;
-            v27(&v33);
+            f_.v34 = v26;
+            v27(&f_.v33);
           }
           *(_DWORD*)(*(_QWORD*)(v15 + 1096) + 72LL) = v18;
         }

@@ -311,6 +311,7 @@ unsigned __int8 CudaDriverRoutine_9aa30(__int64);
 extern _DWORD CudaDriverData_135e0a0[5];
 __int64 cuda_driver_unplaced_10_1e29b0(__int64 a1, int a2, __int64 a3);
 __int64 cuda_driver_unplaced_10_1e3920(__int64 a1, _DWORD* a2, _DWORD* a3);
+bool CudaDriverRoutine_9ac20_alt1(__int64);
 
 __int64 cuda_driver_1e1e60(__int64 a1)
 {
@@ -7135,17 +7136,20 @@ void cuda_driver_1fb7e0(__int64 a1, _QWORD* a2)
   int v64;
   int32x4_t v65;
   int32x4_t v66;
-  _BYTE v67[3];
-  _BYTE v68[6144];
+  struct {
+    _BYTE v67[3];
+    char gap3_[12285];
+    _BYTE v68[6144];
+  } f_;
   float32x4x3_t v69;
   float32x4x3_t v70;
 
   v26 = COERCE_AS(__typeof__(v26),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  memset_plt(v68, 0, 6144),
+  memset_plt(f_.v68, 0, 6144),
       v26 = COERCE_AS(__typeof__(v26),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  memset_plt(v67, 0, 12288),
+  memset_plt(f_.v67, 0, 12288),
       v26 = COERCE_AS(__typeof__(v26),
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v4 = *(_QWORD*)(a1 + 64);
@@ -7158,12 +7162,12 @@ void cuda_driver_1fb7e0(__int64 a1, _QWORD* a2)
     if ((unsigned int)v6 < 0x41) {
       if (v7 >= 0xC &&
           (v5 == 1 ? (v12 = v7 - 1431655766 >= 0xAAAAAAAB) : (v12 = false),
-           v12 && (v9 >= (unsigned __int64)&v68[12 * v7] ||
-                   (unsigned __int64)v68 >=
+           v12 && (v9 >= (unsigned __int64)&f_.v68[12 * v7] ||
+                   (unsigned __int64)f_.v68 >=
                        v8 + 4 * (unsigned __int64)(v7 - 1) + 28))) {
         v13 = v7 & 0x7FFFFFF8;
         v59 = (int32x4_t*)(v8 + 40);
-        v60 = (float*)v68;
+        v60 = (float*)f_.v68;
         v14 = 3 * (v7 & 0x7FFFFFF8);
         v61 = vdupq_n_s32(0x504624u);
         v62 = vdupq_n_s32(0x504614u);
@@ -7200,10 +7204,10 @@ void cuda_driver_1fb7e0(__int64 a1, _QWORD* a2)
         ++v13;
         v15 += v5;
         v16 += 5260820;
-        *(_DWORD*)&v68[4 * v14] = v16;
+        *(_DWORD*)&f_.v68[4 * v14] = v16;
         v14 += 3;
-        *(_DWORD*)&v68[4 * v17] = v16 + 32;
-        *(_DWORD*)&v68[4 * v18] = v16 + 16;
+        *(_DWORD*)&f_.v68[4 * v17] = v16 + 32;
+        *(_DWORD*)&f_.v68[4 * v18] = v16 + 16;
       } while (v13 < v7);
       goto LABEL_22;
     }
@@ -7219,24 +7223,24 @@ void cuda_driver_1fb7e0(__int64 a1, _QWORD* a2)
         v10 += 2;
         LANES64(v20).n64_u64[0] =
             LANES64_OF(vld1_dup_f32((const float*)(v9 + 4LL * v19))).n64_u64[0];
-        *(int32x2_t*)&v68[4 * v11] =
+        *(int32x2_t*)&f_.v68[4 * v11] =
             vadd_s32(v20, COERCE_AS(int32x2_t, 0x50463400504614LL));
-        *(int32x2_t*)&v68[4 * (v11 + 2)] =
+        *(int32x2_t*)&f_.v68[4 * (v11 + 2)] =
             vadd_s32(v20, COERCE_AS(int32x2_t, 0x50461C00504624LL));
-        *(int32x2_t*)&v68[4 * (v11 + 4)] =
+        *(int32x2_t*)&f_.v68[4 * (v11 + 4)] =
             vadd_s32(v20, COERCE_AS(int32x2_t, 0x50475000504758LL));
         v21 = v5 + v19;
         v19 += 2 * v5;
         LANES64(v22).n64_u64[0] =
             LANES64_OF(vld1_dup_f32((const float*)(v9 + 4LL * v21))).n64_u64[0];
         v23 = 4LL * (unsigned int)(v11 + 8);
-        *(int32x2_t*)&v68[4 * (v11 + 6)] =
+        *(int32x2_t*)&f_.v68[4 * (v11 + 6)] =
             vadd_s32(v22, COERCE_AS(int32x2_t, 0x50463400504614LL));
         v24 = v11 + 10;
         v11 += 12;
-        *(int32x2_t*)&v68[v23] =
+        *(int32x2_t*)&f_.v68[v23] =
             vadd_s32(v22, COERCE_AS(int32x2_t, 0x50461C00504624LL));
-        *(int32x2_t*)&v68[4 * v24] =
+        *(int32x2_t*)&f_.v68[4 * v24] =
             vadd_s32(v22, COERCE_AS(int32x2_t, 0x50475000504758LL));
       } while ((v7 & 0xFFFFFFFE) != v10);
     }
@@ -7245,11 +7249,11 @@ void cuda_driver_1fb7e0(__int64 a1, _QWORD* a2)
           LANES64_OF(
               vld1_dup_f32((const float*)(v9 + 4LL * (unsigned int)(v5 * v10))))
               .n64_u64[0];
-      *(int32x2_t*)&v68[4 * v11] =
+      *(int32x2_t*)&f_.v68[4 * v11] =
           vadd_s32(v25, COERCE_AS(int32x2_t, 0x50463400504614LL));
-      *(int32x2_t*)&v68[4 * (v11 + 2)] =
+      *(int32x2_t*)&f_.v68[4 * (v11 + 2)] =
           vadd_s32(v25, COERCE_AS(int32x2_t, 0x50461C00504624LL));
-      *(int32x2_t*)&v68[4 * (v11 + 4)] =
+      *(int32x2_t*)&f_.v68[4 * (v11 + 4)] =
           vadd_s32(v25, COERCE_AS(int32x2_t, 0x50475000504758LL));
     }
   }
@@ -7262,7 +7266,7 @@ LABEL_22:
                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   if (v26 == 0) {
     if (*(_BYTE*)(v4 + 3744) != 0) {
-      CudaDriverRoutine_9ac20(*(_QWORD*)(a1 + 64)),
+      CudaDriverRoutine_9ac20_alt1(*(_QWORD*)(a1 + 64)),
           v26 = COERCE_AS(__typeof__(v26),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
       if (*(_DWORD*)(v4 + 3724) != 0) {
@@ -7270,13 +7274,13 @@ LABEL_22:
         v28 = 0;
         do {
           if ((_DWORD)v6 != 0) {
-            v29 = *(_QWORD*)&v67[8 * v28];
+            v29 = *(_QWORD*)&f_.v67[8 * v28];
             v30 = 0;
-            v31 = *(_QWORD*)&v67[8 * (v28 | 1)];
-            v32 = *(_QWORD*)&v67[8 * (v28 + 2)];
-            v33 = *(_QWORD*)&v67[8 * (v28 + 3)];
-            v34 = *(_QWORD*)&v67[8 * (v28 + 4)];
-            v35 = *(_QWORD*)&v67[8 * (v28 + 5)];
+            v31 = *(_QWORD*)&f_.v67[8 * (v28 | 1)];
+            v32 = *(_QWORD*)&f_.v67[8 * (v28 + 2)];
+            v33 = *(_QWORD*)&f_.v67[8 * (v28 + 3)];
+            v34 = *(_QWORD*)&f_.v67[8 * (v28 + 4)];
+            v35 = *(_QWORD*)&f_.v67[8 * (v28 + 5)];
             do {
               while (1) {
                 if (v30 > 0x3F) {
@@ -7336,12 +7340,12 @@ LABEL_22:
         v57 = 0;
         do {
           ++v57;
-          v58 = *(_QWORD*)&v67[8 * (v56 - 1)];
-          a2[2] = *(_QWORD*)&v67[8 * v56];
+          v58 = *(_QWORD*)&f_.v67[8 * (v56 - 1)];
+          a2[2] = *(_QWORD*)&f_.v67[8 * v56];
           *a2 = v58;
           LODWORD(v58) = v56 + 1;
           v56 += 3;
-          a2[6] = *(_QWORD*)&v67[8 * (unsigned int)v58];
+          a2[6] = *(_QWORD*)&f_.v67[8 * (unsigned int)v58];
           a2 += 40;
         } while (v57 < *(unsigned int*)(v4 + 3732));
       }
@@ -7350,17 +7354,17 @@ LABEL_22:
         v50 = 0;
         do {
           ++v49;
-          v51 = *(_QWORD*)&v67[8 * (v50 + 3)];
-          v52 = *(_QWORD*)&v67[8 * (v50 + 1)];
-          v53 = *(_QWORD*)&v67[8 * (v50 + 2)];
-          *a2 = *(_QWORD*)&v67[8 * v50];
+          v51 = *(_QWORD*)&f_.v67[8 * (v50 + 3)];
+          v52 = *(_QWORD*)&f_.v67[8 * (v50 + 1)];
+          v53 = *(_QWORD*)&f_.v67[8 * (v50 + 2)];
+          *a2 = *(_QWORD*)&f_.v67[8 * v50];
           a2[1] = v51;
-          v54 = *(_QWORD*)&v67[8 * (v50 + 4)];
+          v54 = *(_QWORD*)&f_.v67[8 * (v50 + 4)];
           a2[2] = v52;
           a2[3] = v54;
           LODWORD(v52) = v50 + 5;
           v50 += 6;
-          v55 = *(_QWORD*)&v67[8 * (unsigned int)v52];
+          v55 = *(_QWORD*)&f_.v67[8 * (unsigned int)v52];
           a2[6] = v53;
           a2[7] = v55;
           a2 += 40;

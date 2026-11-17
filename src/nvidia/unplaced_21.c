@@ -440,6 +440,8 @@ bool CudaDriverRoutine_ba980_alt1(_QWORD*);
 __int64 cuda_driver_89100_alt1(__int64, __int64, __int64*, __int128*, int,
                                __int64, __int64, __int64, char);
 bool cuda_driver_predicates_10ebb0_alt1(__int64);
+bool CudaDriverRoutine_efe40_alt1(__int64);
+bool cuda_driver_predicates_9ac80_alt1(__int64);
 
 __int64 nvidia_5bd0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, _QWORD* a5,
                     __int64 a6)
@@ -6040,34 +6042,31 @@ __int64 nvidia_f2e00(unsigned int* a1, __int64 a2, unsigned __int64* a3,
   __int64 v15;
   unsigned int v16;
   unsigned __int64 v17;
-  unsigned __int64 v18;
-  __int64 v19;
-  __int64 v20;
-  _DWORD v21[2];
-  __int128 v22;
-  __int128 v23;
-  __int128 v24;
-  __int128 v25;
-  __int64 v26;
+  struct {
+    char gap0_[8];
+    unsigned __int64 v18;
+    __int64 v19;
+    __int64 v20;
+    _DWORD v21[2];
+    __int128 v22;
+    __int128 v23;
+    __int128 v24;
+    __int128 v25;
+    __int64 v26;
+  } f_;
   __int64 v27;
 
   v15 = COERCE_AS(__typeof__(v15),
                   PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
-  {
-    v4 = *a3;
-    __asm__ volatile("" ::"r"(v4));
-  }
+  v4 = *a3;
   *a4 = 0;
-  v18 = v4;
-  v19 = 0;
+  f_.v18 = v4;
+  f_.v19 = 0;
   if (v4 != 0 || (v4 = atomic_fetch_or(
                       (atomic_ullong* volatile)((char*)CudaDriverData_1422118 +
                                                 8 * *a1 + 18392),
                       0)) != 0) {
-    {
-      v8 = *(_DWORD*)(v4 + 112);
-      __asm__ volatile("" ::"r"(v8));
-    }
+    v8 = *(_DWORD*)(v4 + 112);
     result = CudaDriverStub_118070(a2),
     v15 = COERCE_AS(__typeof__(v15),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
@@ -6076,33 +6075,28 @@ __int64 nvidia_f2e00(unsigned int* a1, __int64 a2, unsigned __int64* a3,
     }
   }
   else if ((unsigned __int8)CudaDriverStub_4f840(a1) != 0 &&
-           cuda_driver_predicates_9ac80((__int64)a1)) {
-    {
-      v16 = *a1;
-      __asm__ volatile("" ::"r"(v16));
-    }
+           cuda_driver_predicates_9ac80_alt1((__int64)a1)) {
+    v16 = *a1;
     v27 = 0;
-    v26 = 0;
-    v21[0] = 1;
-    v21[1] = v16;
-    v25 = (__typeof__(v25)){0};
-    v24 = (__typeof__(v24)){0};
-    v23 = (__typeof__(v23)){0};
-    v22 = (__typeof__(v22)){0};
-    v20 = 1;
-    result = CudaDriverRoutine_f2a00(v21, 0, v15, (unsigned __int64*)&v27),
+    f_.v26 = 0;
+    f_.v21[0] = 1;
+    f_.v21[1] = v16;
+    f_.v25 = (__typeof__(f_.v25)){0};
+    f_.v24 = (__typeof__(f_.v24)){0};
+    f_.v23 = (__typeof__(f_.v23)){0};
+    f_.v22 = (__typeof__(f_.v22)){0};
+    f_.v20 = 1;
+    result = CudaDriverRoutine_f2a00(f_.v21, 0, v15, (unsigned __int64*)&v27),
     v15 = COERCE_AS(__typeof__(v15),
                     PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
     if ((_DWORD)result == 0) {
-      result = CudaDriverRoutine_f0380(&v20, 0, v27, 1u, 0, (__int64*)&v18),
+      result =
+          CudaDriverRoutine_f0380(&f_.v20, 0, v27, 1u, 0, (__int64*)&f_.v18),
       v15 = COERCE_AS(__typeof__(v15),
                       PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
       if ((_DWORD)result == 0) {
-        v4 = v18;
-        {
-          v8 = *(_DWORD*)(v18 + 112);
-          __asm__ volatile("" ::"r"(v8));
-        }
+        v4 = f_.v18;
+        v8 = *(_DWORD*)(f_.v18 + 112);
         result = CudaDriverStub_118070(a2),
         v15 = COERCE_AS(__typeof__(v15),
                         PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
@@ -6132,12 +6126,12 @@ __int64 nvidia_f2e00(unsigned int* a1, __int64 a2, unsigned __int64* a3,
             }
             if ((unsigned __int8)CudaDriverRoutine_8b1c0(
                     (__int64)&CudaDriverRoutine_4768 + (_QWORD)v10,
-                    *(_DWORD*)(a2 + 348), v8, &v19, v17) == 0) {
+                    *(_DWORD*)(a2 + 348), v8, &f_.v19, v17) == 0) {
               CudaDriverRoutine_101ff0(v12),
                   v15 = COERCE_AS(
                       __typeof__(v15),
                       PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
-              v12 = v19;
+              v12 = f_.v19;
             }
           }
           v13 = 0;
@@ -10308,14 +10302,17 @@ __int64 nvidia_1ba340(int a1, unsigned __int64 a2)
 {
   unsigned int* v4;
   char* v5;
-  __int64 v7;
-  int v8;
-  int v9;
-  __int128 v10;
-  __int128 v11;
-  __int128 v12;
-  __int128 v13;
-  __int64 v14;
+  struct {
+    char gap0_[8];
+    __int64 v7;
+    int v8;
+    int v9;
+    __int128 v10;
+    __int128 v11;
+    __int128 v12;
+    __int128 v13;
+    __int64 v14;
+  } f_;
   __int64 v15;
 
   if (a1 >=
@@ -10323,10 +10320,7 @@ __int64 nvidia_1ba340(int a1, unsigned __int64 a2)
                                          (_QWORD)CudaDriverData_1422118)) {
     return 1;
   }
-  {
-    v4 = *((unsigned int**)CudaDriverData_1422118 + a1 + 35);
-    __asm__ volatile("" ::"r"(v4));
-  }
+  v4 = *((unsigned int**)CudaDriverData_1422118 + a1 + 35);
   v5 = (char*)CudaDriverData_1422118 + 8 * *v4;
   if (*((_QWORD*)v5 + 2363) < a2) {
     *((_QWORD*)v5 + 2363) = a2;
@@ -10334,22 +10328,22 @@ __int64 nvidia_1ba340(int a1, unsigned __int64 a2)
   if (CudaDriverRoutine_f0f30(v4) != 0) {
     return 208;
   }
-  if (!CudaDriverRoutine_efe40((__int64)v4)) {
+  if (!CudaDriverRoutine_efe40_alt1((__int64)v4)) {
     return 801;
   }
   v15 = 0;
   if (a2 == 0) {
     return CudaDriverRoutine_f2c20((int*)v4, &v15);
   }
-  v14 = 0;
-  v8 = 1;
-  v9 = a1;
-  v13 = (__typeof__(v13)){0};
-  v12 = (__typeof__(v12)){0};
-  v11 = (__typeof__(v11)){0};
-  v10 = (__typeof__(v10)){0};
-  v7 = 1;
-  return CudaDriverRoutine_f0380(&v7, 0, a2, 1u, 0, &v15);
+  f_.v14 = 0;
+  f_.v8 = 1;
+  f_.v9 = a1;
+  f_.v13 = (__typeof__(f_.v13)){0};
+  f_.v12 = (__typeof__(f_.v12)){0};
+  f_.v11 = (__typeof__(f_.v11)){0};
+  f_.v10 = (__typeof__(f_.v10)){0};
+  f_.v7 = 1;
+  return CudaDriverRoutine_f0380(&f_.v7, 0, a2, 1u, 0, &v15);
 }
 
 __int64 nvidia_1bd060(__int64 a1, __int64 a2, unsigned int a3, int a4,
@@ -11173,68 +11167,53 @@ void nvidia_1d4420(__int64 a1, _QWORD* a2)
   unsigned __int64 v22;
   int32x4_t v23;
   int32x4_t v24;
-  char v25;
-  _DWORD v26[768];
+  struct {
+    char v25;
+    char gap1_[6143];
+    _DWORD v26[768];
+  } f_;
   float32x4x3_t v27;
   float32x4x3_t v28;
 
   v13 = COERCE_AS(__typeof__(v13),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  {
-    v2 = *(_QWORD*)(a1 + 64);
-    __asm__ volatile("" ::"r"(v2));
-  }
-  {
-    v4 = *(unsigned int*)(v2 + 3732);
-    __asm__ volatile("" ::"r"(v4));
-  }
+  v2 = *(_QWORD*)(a1 + 64);
+  v4 = *(unsigned int*)(v2 + 3732);
   if ((_DWORD)v4 != 0) {
-    {
-      v5 = *(int32x4_t**)(a1 + 16104);
-      __asm__ volatile("" ::"r"(v5));
-    }
+    v5 = *(int32x4_t**)(a1 + 16104);
     v6 = v5 + 2;
     if ((unsigned int)v4 < 0xC ||
         ((unsigned int)(v4 - 1) <= 0x55555554 ? (v7 = (v4 - 1) >> 32 == 0)
                                               : (v7 = false),
-         !v7 || v6 < (int32x4_t*)&v26[3 * (unsigned int)v4] &&
-                    v26 < (_DWORD*)&v5[2] + v4)) {
+         !v7 || v6 < (int32x4_t*)&f_.v26[3 * (unsigned int)v4] &&
+                    f_.v26 < (_DWORD*)&v5[2] + v4)) {
       v8 = 0;
       v9 = 0;
       do {
       LABEL_11:
-        {
-          v10 = LANES128(*(v6)).n128_i32[v8];
-          __asm__ volatile("" ::"r"(v10));
-        }
+        v10 = LANES128(*(v6)).n128_i32[v8];
         v11 = v9 + 1;
         v12 = v9 + 2;
         ++v8;
         v10 += 5260820;
-        v26[v9] = v10;
+        f_.v26[v9] = v10;
         v9 += 3;
-        v26[v11] = v10 + 32;
-        v26[v12] = v10 + 16;
+        f_.v26[v11] = v10 + 32;
+        f_.v26[v12] = v10 + 16;
       } while (v8 < v4);
       goto LABEL_12;
     }
     v8 = (unsigned int)v4 & 0xFFFFFFF8;
     v17 = v5 + 3;
     v9 = 3 * (v4 & 0xFFFFFFF8);
-    v18 = (float*)v26;
+    v18 = (float*)f_.v26;
     v19 = vdupq_n_s32(0x504624u);
     v20 = vdupq_n_s32(0x504614u);
     v21 = vdupq_n_s32(0x504634u);
     v22 = v8;
     do {
-      {
-        v23 = v17[-1];
-        __asm__ volatile("" ::"w"(v23));
-      }
-      {
-        v24 = *v17;
-        __asm__ volatile("" ::"w"(v24));
-      }
+      v23 = v17[-1];
+      v24 = *v17;
       v22 -= 8LL;
       v17 += 2;
       v27.val[2] = vaddq_s32(v23, v19);
@@ -11263,14 +11242,11 @@ LABEL_12:
     v15 = 0;
     do {
       ++v15;
-      *a2 = *((_QWORD*)&v25 + v14 - 2);
+      *a2 = *((_QWORD*)&f_.v25 + v14 - 2);
       a2[1] = 0;
-      a2[2] = *((_QWORD*)&v25 + v14 - 1);
+      a2[2] = *((_QWORD*)&f_.v25 + v14 - 1);
       a2[3] = 0;
-      {
-        v16 = *((_QWORD*)&v25 + v14);
-        __asm__ volatile("" ::"r"(v16));
-      }
+      v16 = *((_QWORD*)&f_.v25 + v14);
       v14 += 3;
       a2[6] = v16;
       a2[7] = 0;

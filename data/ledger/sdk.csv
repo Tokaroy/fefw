@@ -2811,10 +2811,10 @@ da7c0,100,verified,src/nn/fs/unplaced.c,nn_fs_da7c0
 da830,8,verified,src/nn/sdk_trivial.cpp,_Z13SdkStub_da830m
 da840,168,verified,src/nn/fs/unplaced.c,nn_fs_da840
 da8f0,168,verified,src/nn/fs/unplaced.c,nn_fs_da8f0
-da9a0,576,verified,src/nn/fs/unplaced.c,nn_fs_da9a0
+da9a0,576,disputed,src/nn/fs/unplaced.c,nn_fs_da9a0
 dad00,492,verified,src/nn/fs/unplaced.c,nn_fs_dad00
 daf00,412,verified,src/nn/fs/unplaced.c,nn_fs_daf00
-db130,392,disputed,src/nn/fs/unplaced.c,nn_fs_db130
+db130,492,disputed,src/nn/fs/unplaced.c,nn_fs_db130
 db3c0,280,verified,src/nn/fs/unplaced.c,nn_fs_db3c0
 db4e0,240,verified,src/nn/fs/unplaced.c,nn_fs_db4e0
 db5d0,56,verified,src/nn/fs/unplaced.c,nn_fs_db5d0
@@ -24166,6 +24166,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 61d8a0,100,verified,src/nvidia/unplaced_3.c,nvidia_61d8a0
 61d910,88,verified,src/nvidia/unplaced_3.c,nvidia_61d910
 61db80,120,verified,src/nvidia/unplaced_3.c,nvidia_61db80
+61dc00,580,verified,src/nvidia/unplaced_36.c,nvidia_61dc00
 61de50,1216,verified,src/nvidia/unplaced_3.c,nvidia_61de50
 61e450,112,verified,src/nvidia/unplaced_3.c,nvidia_61e450
 61e4c0,152,verified,src/nvidia/unplaced_3.c,nvidia_61e4c0
@@ -24502,7 +24503,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 632420,292,verified,src/nvidia/unplaced_5.c,nvidia_632420
 632550,64,verified,src/nvidia/unplaced_5.c,nvidia_632550
 632590,392,verified,src/nvidia/unplaced_5.c,nvidia_632590
-632740,556,verified,src/nvidia/unplaced_6.c,nvidia_632740
+632740,1444,verified,src/nvidia/unplaced_6.c,nvidia_632740
 632d00,356,verified,src/nvidia/unplaced_6.c,nvidia_632d00
 632e70,12,verified,src/nn/sdk_trivial_more.cpp,_Z14SdkStub_632e70mmmmmmm
 632e80,92,verified,src/nvidia/unplaced_6.c,nvidia_632e80
@@ -24545,7 +24546,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6355c0,12,verified,src/nvidia/unplaced_6.c,nvidia_6355c0
 6355d0,20,verified,src/nvidia/unplaced_6.c,nvidia_6355d0
 6355f0,24,verified,src/nvidia/unplaced_6.c,nvidia_6355f0
-635610,92,verified,src/nvidia/unplaced_6.c,nvidia_635610
+635610,96,verified,src/nvidia/unplaced_6.c,nvidia_635610
 635670,84,verified,src/nvidia/unplaced_6.c,nvidia_635670
 6356d0,88,verified,src/nvidia/unplaced_6.c,nvidia_6356d0
 635730,8,verified,src/nvidia/nvrm_gpu_wrappers.cpp,NvRmGpuNvgpuGetGpuCtrlFd
@@ -24555,7 +24556,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 635770,904,verified,src/nvidia/nvstl/impl/nvstl_mutex_impl_nvos_inline.c,nvstl_mutex_impl_nvos_635770
 635b00,196,verified,src/nvidia/unplaced_6.c,nvidia_635b00
 635be0,224,verified,src/nvidia/unplaced_6.c,nvidia_635be0
-635f20,1172,verified,src/nvidia/unplaced_6.c,nvidia_635f20
+635f20,1368,verified,src/nvidia/unplaced_6.c,nvidia_635f20
 6364e0,564,verified,src/nvidia/unplaced_6.c,nvidia_6364e0
 636720,8,verified,src/nn/sdk_trivial_forwarders.cpp,_Z14SdkStub_636720m
 636730,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_636730m
@@ -24572,9 +24573,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 636e00,120,verified,src/nvidia/unplaced_6.c,nvidia_636e00
 636e80,228,verified,src/nvidia/unplaced_6.c,nvidia_636e80
 636f70,72,verified,src/nvidia/unplaced_6.c,nvidia_636f70
-636fc0,188,verified,src/nvidia/unplaced_6.c,nvidia_636fc0
+636fc0,228,verified,src/nvidia/unplaced_6.c,nvidia_636fc0
 6370b0,72,verified,src/nvidia/unplaced_6.c,nvidia_6370b0
-637100,188,verified,src/nvidia/unplaced_6.c,nvidia_637100
+637100,228,verified,src/nvidia/unplaced_6.c,nvidia_637100
 6371f0,72,verified,src/nvidia/unplaced_6.c,nvidia_6371f0
 637240,52,verified,src/nvidia/unplaced_6.c,nvidia_637240
 637280,184,verified,src/nvidia/unplaced_6.c,nvidia_637280
@@ -24592,9 +24593,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 637a00,140,verified,src/nvidia/unplaced_6.c,nvidia_637a00
 637a90,92,verified,src/nvidia/unplaced_6.c,nvidia_637a90
 637b20,116,verified,src/nvidia/unplaced_6.c,nvidia_637b20
+637ba0,380,verified,src/nvidia/unplaced_6.c,nvidia_637ba0
 637d30,296,verified,src/nvidia/unplaced_6.c,nvidia_637d30
 637e60,556,verified,src/nvidia/unplaced_25.c,nvidia_637e60
-638160,312,verified,src/nvidia/unplaced_6.c,nvidia_638160
+638160,344,verified,src/nvidia/unplaced_6.c,nvidia_638160
 6382d0,252,verified,src/nvidia/nvstl/impl/nvstl_mutex_impl_nvos_inline.c,nvstl_mutex_impl_nvos_6382d0
 6383e0,44,verified,src/nn/sdk_trivial_more.cpp,_Z14SdkStub_6383e0m
 638410,132,verified,src/nvidia/unplaced_6.c,nvidia_638410
@@ -30043,13 +30045,14 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 701aa0,1008,verified,src/nerd/gyro_pointing/unplaced.c,nerd_gyro_pointing_CompareBitwise
 701e90,476,verified,src/math/unplaced_4.c,linear_algebra_701e90
 702080,512,verified,src/math/unplaced_6.c,math_702080
+7022a0,2188,verified,src/math/unplaced_11.c,math_7022a0
 702b40,1592,verified,src/math/matrix.cpp,_ZN4nerd14linear_algebra17NormalizeDiagonalIfLl27EEENS0_7LMatrixIT_XT0_EXT0_ENS0_11LMatrixType5DenseILb1EEEEES7_
 7035b0,2532,verified,src/math/unplaced_14.c,math_7035b0
 704160,2160,verified,src/math/inversion.cpp,_ZN4nerd23GaussJordanInversionROKIfEEbPT_mS2_mm
 704a60,1392,verified,src/math/symmetric_inverse.cpp,fw::math::InverseSymmetricFixed27
 7050a0,1348,verified,src/math/symmetric_inverse.cpp,fw::math::CholeskyFixed27
 705650,8,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZN4nerd13gyro_pointing16GyroPointingCore21SetProcessingTimestepENS_4Unit12BaseQuantityIfNSt3__15ratioILl0ELl1EEEJS6_S6_NS5_ILl1ELl1EEES6_EEE
-705660,2764,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate
+705660,2980,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate
 706280,756,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration
 706580,128,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore14GetOrientationEv
 706600,8,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore17GetIntegrityStateEv
@@ -30071,7 +30074,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 70f9d0,824,verified,src/math/kalman_transition_impl.c,kalman_transition_70f9d0
 70fd20,1952,verified,src/math/kalman_transition.cpp,_ZN4nerd6kalman20ExtendedKalmanFilterIfNS_13gyro_pointing24GyroPointingKalmanFilterELln33ELb0EE16TransitionUpdateILl9ELl6ENS_14linear_algebra11LMatrixType5DenseILb1EEEEEvRKNS6_7LMatrixIfXT0_EXT_ET1_EERKNS6_7LVectorImXT_ELb0ENS6_11LVectorType5DenseEEERKNSF_ImXT0_ELb0ESH_EERKNSA_IfXT0_EXT0_ES9_EE
 7104e0,484,disputed,src/math/kalman_transition_impl.c,nerd_kalman_ExtendedKalmanFilter_ObservationUpdate_7104e0
-711380,408,disputed,src/math/unplaced_10.c,math_711380
+711380,408,verified,src/math/unplaced_10.c,math_711380
 7116a0,744,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Recover
 711990,600,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_GetHeuristicOrientationWithoutAccumulated
 712000,1792,verified,src/math/kalman_reset.cpp,_ZN4nerd6kalman20ExtendedKalmanFilterIfNS_13gyro_pointing24GyroPointingKalmanFilterELln33ELb0EE16TransitionUpdateILl0ELl3ENS_14linear_algebra11LMatrixType5DenseILb1EEEEEvRKNS6_7LMatrixIfXT0_EXT_ET1_EERKNS6_7LVectorImXT_ELb0ENS6_11LVectorType5DenseEEERKNSF_ImXT0_ELb0ESH_EERKNSA_IfXT0_EXT0_ES9_EE
@@ -30199,7 +30202,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 734570,1104,verified,src/math/matrix.cpp,_ZN4nerd14linear_algebraplIffLl9ELl9ENS0_11LMatrixType5DenseILb1EEES4_EEDaRKNS0_7LMatrixIT_XT1_EXT2_ET3_EERKNS5_IT0_XT1_EXT2_ET4_EE
 7349c0,624,verified,src/nn/unnamed/s005_0.c,SdkHr_7349c0
 734c60,472,verified,src/nn/unnamed/s005_0.c,SdkHr_734c60
-734e60,704,verified,src/math/unplaced_11.c,math_734e60
+734e60,704,disputed,src/math/unplaced_11.c,math_734e60
 735fc0,356,verified,src/nerd/gyro_pointing/gyro_pointing_state_detector.cpp,_ZN4nerd13gyro_pointing25GyroPointingStateDetectorC2ENS_4Unit12BaseQuantityIfNSt3__15ratioILln2ELl1EEEJNS5_ILl1ELl1EEENS5_ILl0ELl1EEES6_S8_EEENS3_IfS8_JS8_S8_NS5_ILln1ELl1EEES8_EEE
 736170,248,verified,src/nerd/gyro_pointing/gyro_pointing_state_detector.cpp,_ZN4nerd13gyro_pointing25GyroPointingStateDetector9AddSampleERKNS0_7ImuDataE
 736270,1032,verified,src/nerd/gyro_pointing/gyro_pointing_state_detector_impl.c,nerd_gyro_pointing_GyroPointingStateDetector_AddCorrectedGlobalAcc
@@ -33894,7 +33897,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 824fb0,64,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__110__time_getC2EPKc
 825090,80,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__110__time_getC2ERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 825130,28,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__110__time_getD2Ev
-825160,2908,disputed,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1___time_get_storage___analyze
+825160,3272,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1___time_get_storage___analyze
 827538,28,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_827538
 827580,360,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__114__scan_keywordB8ne180100IPcPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_5ctypeIcEEEET0_RT_SC_SB_SB_RKT1_Rjb
 8278a0,2280,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__118__time_get_storageIwE9__analyzeEcRKNS_5ctypeIwEE

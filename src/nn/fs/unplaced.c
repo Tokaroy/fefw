@@ -3003,17 +3003,16 @@ __int64 nn_fs_db130(__int64 a1, __int64 a2)
   __int64 v17;
   __int64 v18;
   struct {
+    char gap0_[8];
     __int64 v20[2];
     __int64 v21;
     __int64 v22;
-  } v20_;
-  __int64 v23;
-  struct {
+    __int64 v23;
     __int64 v24;
     __int64 v25;
     __int64 v26;
     __int64 v27;
-  } v24_;
+  } f_;
 
   v4 = (_BYTE*)nn_fs_Path_GetString_plt_alt1(a2);
   if (*v4 == 47 && v4[1] == 0) {
@@ -3021,18 +3020,18 @@ __int64 nn_fs_db130(__int64 a1, __int64 a2)
   }
   nn_os_SdkMutexType_Lock_plt_alt1(a1 + 152);
   if ((*(_BYTE*)(a1 + 156) & 1) == 0) {
-    memset_plt_alt2((__int64)&v24_.v24, 0, 0x200u);
+    memset_plt_alt2((__int64)&f_.v24, 0, 0x200u);
     v5 = *(_QWORD*)(a1 + 8);
-    v23 = 0;
+    f_.v23 = 0;
     v6 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v5 + 48LL))(
-        v5, (__int64)&v23);
+        v5, (__int64)&f_.v23);
     if (v6 != 0 ||
-        v23 <= 511 &&
+        f_.v23 <= 511 &&
             (v6 = (*(__int64 (**)(__int64, __int64))(
                  **(_QWORD**)(a1 + 8) + 40LL))(*(_QWORD*)(a1 + 8), 512)) != 0 ||
         (v6 = (*(__int64 (**)(__int64, __int64, __int64, __int64))(
              **(_QWORD**)(a1 + 8) + 24LL))(*(_QWORD*)(a1 + 8), 0,
-                                           (__int64)&v24_.v24, 512)) != 0 ||
+                                           (__int64)&f_.v24, 512)) != 0 ||
         (v6 = (*(__int64 (**)(__int64))(**(_QWORD**)(a1 + 8) + 32LL))(
              *(_QWORD*)(a1 + 8))) != 0) {
       v7 = v6;
@@ -3040,13 +3039,13 @@ __int64 nn_fs_db130(__int64 a1, __int64 a2)
     }
     *(_BYTE*)(a1 + 156) = 1;
   }
-  v24_.v25 = 0;
-  v24_.v26 = 0;
-  v24_.v24 = 0;
+  f_.v25 = 0;
+  f_.v26 = 0;
+  f_.v24 = 0;
   v8 = (const char*)nn_fs_Path_GetString_plt_alt1(a2);
   v9 = *(_QWORD*)(a1 + 24);
   v10 = (__int64)v8;
-  v24_.v27 = v9;
+  f_.v27 = v9;
   v11 = strlen_plt_alt1(v8);
   if (v11 >= 0xFFFFFFFFFFFFFFF7LL) {
     unplaced_dc4d0();
@@ -3065,45 +3064,44 @@ __int64 nn_fs_db130(__int64 a1, __int64 a2)
       nn_diag_detail_AbortImpl_plt_856170_alt1();
     }
     v13 = (char*)v17;
-    v24_.v25 = v12;
-    v24_.v26 = v17;
-    v24_.v24 = v16 | 1;
+    f_.v25 = v12;
+    f_.v26 = v17;
+    f_.v24 = v16 | 1;
   LABEL_21:
     memmove_plt_alt1((__int64)v13, v10, v12);
     v13[v12] = 0;
-    v14 = v24_.v27;
-    v15 = v24_.v24;
-    v20_.v22 = v24_.v27;
-    if ((v24_.v24 & 1) == 0) {
+    v14 = f_.v27;
+    v15 = f_.v24;
+    f_.v22 = f_.v27;
+    if ((f_.v24 & 1) == 0) {
       goto LABEL_15;
     }
   LABEL_22:
-    nn_fs_dcab0(v20_.v20, v24_.v26, v24_.v25);
+    nn_fs_dcab0(f_.v20, f_.v26, f_.v25);
     goto LABEL_23;
   }
-  LOBYTE(v24_.v24) = 2 * v11;
-  v13 = (char*)&v24_.v24 + 1;
+  LOBYTE(f_.v24) = 2 * v11;
+  v13 = (char*)&f_.v24 + 1;
   if (v11 != 0) {
     goto LABEL_21;
   }
-  BYTE1(v24_.v24) = 0;
-  v14 = v24_.v27;
-  v15 = v24_.v24;
-  v20_.v22 = v24_.v27;
-  if ((v24_.v24 & 1) != 0) {
+  BYTE1(f_.v24) = 0;
+  v14 = f_.v27;
+  v15 = f_.v24;
+  f_.v22 = f_.v27;
+  if ((f_.v24 & 1) != 0) {
     goto LABEL_22;
   }
 LABEL_15:
-  v20_.v20[0] = v24_.v24;
-  v20_.v20[1] = v24_.v25;
-  v20_.v21 = v24_.v26;
+  f_.v20[0] = f_.v24;
+  f_.v20[1] = f_.v25;
+  f_.v21 = f_.v26;
 LABEL_23:
-  v18 = SdkRoutine_85af90_alt1(a1 + 40, (__int64)v20_.v20);
-  v23 = v18;
-  if ((v20_.v20[0] & 1) != 0) {
-    (*(void (**)(__int64, __int64, __int64, __int64))(
-        *(_QWORD*)v20_.v22 + 24LL))(v20_.v22, v20_.v21,
-                                    v20_.v20[0] & 0xFFFFFFFFFFFFFFFELL, 16);
+  v18 = SdkRoutine_85af90_alt1(a1 + 40, (__int64)f_.v20);
+  f_.v23 = v18;
+  if ((f_.v20[0] & 1) != 0) {
+    (*(void (**)(__int64, __int64, __int64, __int64))(*(_QWORD*)f_.v22 + 24LL))(
+        f_.v22, f_.v21, f_.v20[0] & 0xFFFFFFFFFFFFFFFELL, 16);
   }
   if (a1 + 48 == v18 || *(_DWORD*)(v18 + 80) != 0) {
     v7 = 514;
@@ -3112,12 +3110,12 @@ LABEL_23:
     }
     goto LABEL_28;
   }
-  nn_fs_dd680(a1 + 32, &v23);
+  nn_fs_dd680(a1 + 32, &f_.v23);
   v7 = 0;
   if ((v15 & 1) != 0) {
   LABEL_28:
     (*(void (**)(__int64, __int64, __int64, __int64))(*(_QWORD*)v14 + 24LL))(
-        v14, v24_.v26, v24_.v24 & 0xFFFFFFFFFFFFFFFELL, 16);
+        v14, f_.v26, f_.v24 & 0xFFFFFFFFFFFFFFFELL, 16);
   }
 LABEL_29:
   nn_os_SdkMutexType_Unlock_plt_alt1(a1 + 152);

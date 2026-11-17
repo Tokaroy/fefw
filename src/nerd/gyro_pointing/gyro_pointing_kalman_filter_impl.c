@@ -42,9 +42,9 @@ void __attribute__((noreturn)) nn_codec_hwacod_32f020(_QWORD, _QWORD);
 float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
                                          unsigned __int64* a2, __int64 a3,
                                          unsigned __int64 a4);
-float gyro_pointing_kalman_filter_729580(unsigned __int64* a1,
-                                         unsigned __int64* a2, __int64 a3,
-                                         unsigned __int64 a4);
+float gyro_pointing_kalman_filter_729580_alt1(unsigned __int64* a1,
+                                              unsigned __int64* a2, __int64 a3,
+                                              unsigned __int64 a4);
 float gyro_pointing_kalman_filter_729c20(unsigned __int64* a1,
                                          unsigned __int64* a2, __int64 a3,
                                          unsigned __int64 a4);
@@ -75,6 +75,12 @@ unsigned __int64 unplaced_4_730ec0(unsigned __int64*, unsigned __int64,
 unsigned __int64*
 nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(
     unsigned __int64* a1, float a2);
+__int64 memcpy_plt_alt1(__int64, __int64, unsigned __int64);
+__int64 memset_plt_alt2(__int64, int, unsigned __int64);
+unsigned __int64 unplaced_4_730ec0_alt1(unsigned __int64*, unsigned __int64,
+                                        unsigned __int64);
+float gyro_pointing_kalman_filter_729580(unsigned __int64* a1,
+                                         unsigned __int64* a2, __int64 a3);
 
 float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
                                          unsigned __int64* a2, __int64 a3,
@@ -488,29 +494,29 @@ LABEL_39:
 }
 
 float gyro_pointing_kalman_filter_729580(unsigned __int64* a1,
-                                         unsigned __int64* a2, __int64 a3,
-                                         unsigned __int64 a4)
+                                         unsigned __int64* a2, __int64 a3)
 {
 
 #pragma clang fp contract(off)
+  unsigned __int64 v4;
   unsigned __int64 v5;
-  unsigned __int64 v6;
-  unsigned __int64* v9;
+  unsigned __int64* v8;
+  __int64 v9;
   unsigned __int64 v10;
-  unsigned __int64 v11;
+  __int64 v11;
   unsigned __int64 v12;
-  unsigned __int64 v13;
+  __int64 v13;
   unsigned __int64 v14;
-  unsigned __int64 v15;
+  __int64 v15;
   unsigned __int64 v16;
-  unsigned __int64 v17;
+  __int64 v17;
   unsigned __int64 v18;
-  unsigned __int64 v19;
+  __int64 v19;
   unsigned __int64 v20;
-  unsigned __int64 v21;
+  __int64 v21;
   unsigned __int64 v22;
   unsigned __int64 v23;
-  unsigned __int64 v24;
+  __int64 v24;
   unsigned __int64 v25;
   unsigned __int64 v26;
   unsigned __int64 v27;
@@ -519,929 +525,283 @@ float gyro_pointing_kalman_filter_729580(unsigned __int64* a1,
   unsigned __int64 v30;
   unsigned __int64 v31;
   unsigned __int64 v32;
-  unsigned __int64 v33;
-  unsigned __int64 v34;
-  unsigned __int64 v36;
-  unsigned __int64 v37;
-  unsigned __int64 v38;
-  unsigned __int64 v39;
-  unsigned __int64 v40;
-  unsigned __int64 v41;
+  __int64 v33;
+  char v34;
+  __int64 v35;
+  __int64 v36;
+  __int64 v37;
+  __int64 v38;
+  __int64 v39;
+  __int64 v40;
+  __int64 v41;
   __int64 v42;
-  __int64 v43;
-  char v44;
+  char* v43;
+  unsigned __int64 v44;
   __int64 v45;
   __int64 v46;
   __int64 v47;
   __int64 v48;
-  __int64 v49;
+  unsigned __int64 v49;
   __int64 v50;
   __int64 v51;
-  char* v52;
-  char* v53;
-  unsigned __int64 v54;
+  __int64 v52;
+  __int64 v53;
+  __int64 v54;
   __int64 v55;
   __int64 v56;
-  void* v57;
-  void* v65;
-  unsigned __int64 v66;
-  __int64 v67;
-  __int64 v68;
-  void* v69;
-  void* v77;
-  __int64 v78;
-  __int64 v79;
-  __int64 v80;
-  __int64 v81;
-  __int64 v82;
-  __int64 v83;
-  __int64 v85;
-  __int64 v86;
-  _QWORD v87[5];
-  __int64 v88[9];
+  __int64 v57;
+  __int64 v58;
+  __int64 v59;
   struct {
-    unsigned __int64 v89;
-    unsigned __int64 v90;
-    _QWORD v91[546];
-  } v89_;
+    __int64 v61;
+    __int64 v62;
+    _QWORD v63[5];
+    __int64 v64[9];
+    unsigned __int64 v65;
+    unsigned __int64 v66;
+    _QWORD v67[546];
+  } f_;
 
-  v12 = COERCE_AS(__typeof__(v12),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v15 = COERCE_AS(__typeof__(v15),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v18 = COERCE_AS(__typeof__(v18),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v21 = COERCE_AS(__typeof__(v21),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v24 = COERCE_AS(__typeof__(v24),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v27 = COERCE_AS(__typeof__(v27),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v30 = COERCE_AS(__typeof__(v30),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-  v34 = COERCE_AS(__typeof__(v34),
-                  PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v5 = a1[547];
-  v6 = *a1;
-  v9 = a1 + 937;
-  *a2 = v5;
-  a1[a1[970]++ + 937] = v5;
-  math_730ec0(a1 + 548, v5, v6, a4),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v10 = a1[547] + 1;
-  a1[547] = v10;
-  a2[1] = v10;
-  v11 = a1[547];
-  v9[a1[970]++] = v11;
-  math_730ec0(a1 + 548, v11, v6 + 1, v12),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
+  v4 = a1[547];
+  v5 = *a1;
+  v8 = a1 + 937;
+  *a2 = v4;
+  a1[a1[970]++ + 937] = v4;
+  unplaced_4_730ec0_alt1(a1 + 548, v4, v5);
+  v9 = a1[547] + 1;
+  a1[547] = v9;
+  a2[1] = v9;
+  v10 = a1[547];
+  v8[a1[970]++] = v10;
+  unplaced_4_730ec0_alt1(a1 + 548, v10, v5 + 1);
+  v11 = a1[547] + 1;
+  a1[547] = v11;
+  a2[2] = v11;
+  v12 = a1[547];
+  v8[a1[970]++] = v12;
+  unplaced_4_730ec0_alt1(a1 + 548, v12, v5 + 2);
   v13 = a1[547] + 1;
   a1[547] = v13;
-  a2[2] = v13;
+  a2[3] = v13;
   v14 = a1[547];
-  v9[a1[970]++] = v14;
-  math_730ec0(a1 + 548, v14, v6 + 2, v15),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v16 = a1[547] + 1;
-  a1[547] = v16;
-  a2[3] = v16;
-  v17 = a1[547];
-  v9[a1[970]++] = v17;
-  math_730ec0(a1 + 548, v17, v6 + 3, v18),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
+  v8[a1[970]++] = v14;
+  unplaced_4_730ec0_alt1(a1 + 548, v14, v5 + 3);
+  v15 = a1[547] + 1;
+  a1[547] = v15;
+  a2[4] = v15;
+  v16 = a1[547];
+  v8[a1[970]++] = v16;
+  unplaced_4_730ec0_alt1(a1 + 548, v16, v5 + 4);
+  v17 = a1[547] + 1;
+  a1[547] = v17;
+  a2[5] = v17;
+  v18 = a1[547];
+  v8[a1[970]++] = v18;
+  unplaced_4_730ec0_alt1(a1 + 548, v18, v5 + 5);
   v19 = a1[547] + 1;
   a1[547] = v19;
-  a2[4] = v19;
+  a2[6] = v19;
   v20 = a1[547];
-  v9[a1[970]++] = v20;
-  math_730ec0(a1 + 548, v20, v6 + 4, v21),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v22 = a1[547] + 1;
-  a1[547] = v22;
-  a2[5] = v22;
-  v23 = a1[547];
-  v9[a1[970]++] = v23;
-  math_730ec0(a1 + 548, v23, v6 + 5, v24),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v25 = a1[547] + 1;
-  a1[547] = v25;
-  a2[6] = v25;
-  v26 = a1[547];
-  v9[a1[970]++] = v26;
-  math_730ec0(a1 + 548, v26, v6 + 6, v27),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v28 = a1[547] + 1;
-  a1[547] = v28;
-  a2[7] = v28;
-  v29 = a1[547];
-  v9[a1[970]++] = v29;
-  math_730ec0(a1 + 548, v29, v6 + 7, v30),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v31 = v6 + 8;
-  v32 = a1[547] + 1;
-  a1[547] = v32;
-  a2[8] = v32;
-  v33 = a1[547];
-  v9[a1[970]++] = v33;
-  math_730ec0(a1 + 548, v33, v6 + 8, v34),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v36 = *a1;
-  v37 = a1[1];
-  v38 = v6 + 9;
+  v8[a1[970]++] = v20;
+  unplaced_4_730ec0_alt1(a1 + 548, v20, v5 + 6);
+  v21 = a1[547] + 1;
+  a1[547] = v21;
+  a2[7] = v21;
+  v22 = a1[547];
+  v8[a1[970]++] = v22;
+  unplaced_4_730ec0_alt1(a1 + 548, v22, v5 + 7);
+  v23 = v5 + 8;
+  v24 = a1[547] + 1;
+  a1[547] = v24;
+  a2[8] = v24;
+  v25 = a1[547];
+  v8[a1[970]++] = v25;
+  unplaced_4_730ec0_alt1(a1 + 548, v25, v5 + 8);
+  v26 = *a1;
+  v27 = a1[1];
+  v28 = v5 + 9;
   ++a1[547];
-  if (__PAIR128__(v6 + 9, v6 + 9) == __PAIR128__(v37, v36)) {
-    goto LABEL_39;
+  if (v5 + 9 == v26 && v28 == v27) {
+    goto LABEL_40;
   }
-  if (v38 >= 0x22) {
-    v89_.v91[544] = 0;
-    v89_.v89 = v6 + 9;
-    v89_.v90 = v6 + 9;
-    memset_plt((void*)v89_.v91, nullptr, 4356),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    if (v38 >= v36) {
-      v39 = v36;
+  if (v28 >= 0x22) {
+    f_.v67[544] = 0;
+    f_.v65 = v5 + 9;
+    f_.v66 = v5 + 9;
+    memset_plt_alt2((__int64)f_.v67, 0, 0x1104u);
+    if (v28 >= v26) {
+      v29 = v26;
     }
     else {
-      v39 = v6 + 9;
+      v29 = v5 + 9;
     }
-    if (v36 == 0 || v37 == 0) {
-      goto LABEL_24;
+    if (v26 == 0 || v27 == 0) {
+      goto LABEL_25;
     }
-    if (v38 >= v37) {
-      v40 = v37;
+    if (v28 >= v27) {
+      v30 = v27;
     }
     else {
-      v40 = v6 + 9;
+      v30 = v5 + 9;
     }
-    v41 = v39 & 7;
-    v42 = 4 * v40;
-    if (v39 - 1 >= 7) {
-      v48 = 0;
-      v49 = 0;
-      v50 = -(__int64)(v39 & 0xFFFFFFFFFFFFFFF8LL);
+    v31 = v29 & 7;
+    v32 = 4 * v30;
+    if (v29 - 1 >= 7) {
+      v38 = 0;
+      v39 = 0;
+      v40 = -(__int64)(v29 & 0xFFFFFFFFFFFFFFF8LL);
       do {
-        memcpy_plt(&v89_.v91[v49], &a1[v49 + 2], v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt((char*)&v89_.v91[v49 + 16] + 4, (char*)&a1[v49 + 18] + 4,
-                   v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v89_.v91[v49 + 33], &a1[v49 + 35], v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt((char*)&v89_.v91[v49 + 49] + 4, (char*)&a1[v49 + 51] + 4,
-                   v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v89_.v91[v49 + 66], &a1[v49 + 68], v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt((char*)&v89_.v91[v49 + 82] + 4, (char*)&a1[v49 + 84] + 4,
-                   v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt(&v89_.v91[v49 + 99], &a1[v49 + 101], v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memcpy_plt((char*)&v89_.v91[v49 + 115] + 4, (char*)&a1[v49 + 117] + 4,
-                   v42),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        v49 += 132;
-        v48 -= 8;
-      } while (v50 != v48);
-      v43 = -v48;
-      if (v41 == 0) {
-        goto LABEL_24;
+        memcpy_plt_alt1((__int64)&f_.v67[v39], (__int64)&a1[v39 + 2], v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 16] + 4,
+                        (__int64)&a1[v39 + 18] + 4, v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 33], (__int64)&a1[v39 + 35],
+                        v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 49] + 4,
+                        (__int64)&a1[v39 + 51] + 4, v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 66], (__int64)&a1[v39 + 68],
+                        v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 82] + 4,
+                        (__int64)&a1[v39 + 84] + 4, v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 99], (__int64)&a1[v39 + 101],
+                        v32);
+        memcpy_plt_alt1((__int64)&f_.v67[v39 + 115] + 4,
+                        (__int64)&a1[v39 + 117] + 4, v32);
+        v39 += 132;
+        v38 -= 8;
+      } while (v40 != v38);
+      v33 = -v38;
+      if (v31 == 0) {
+        goto LABEL_25;
       }
     }
     else {
-      v43 = 0;
-      if (v41 == 0) {
-      LABEL_24:
-        v54 = v89_.v90;
-        *a1 = v89_.v89;
-        a1[1] = v54;
-        memcpy_plt(a1 + 2, v89_.v91, 4356),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        goto LABEL_39;
+      v33 = 0;
+      if (v31 == 0) {
+      LABEL_25:
+        v44 = f_.v66;
+        *a1 = f_.v65;
+        a1[1] = v44;
+        memcpy_plt_alt1((__int64)(a1 + 2), (__int64)f_.v67, 0x1104u);
+        goto LABEL_40;
       }
     }
-    v51 = 132 * v43 + 16;
-    v52 = (char*)a1 + v51;
-    v53 = (char*)&v89_.v89 + v51;
+    v41 = 132 * v33 + 16;
+    v42 = (__int64)a1 + v41;
+    v43 = (char*)&f_.v65 + v41;
     do {
-      memcpy_plt(v53, v52, v42),
-          v12 = COERCE_AS(__typeof__(v12),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v15 = COERCE_AS(__typeof__(v15),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v18 = COERCE_AS(__typeof__(v18),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v21 = COERCE_AS(__typeof__(v21),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v24 = COERCE_AS(__typeof__(v24),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v27 = COERCE_AS(__typeof__(v27),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v30 = COERCE_AS(__typeof__(v30),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v34 = COERCE_AS(__typeof__(v34),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-      v52 += 132;
-      v53 += 132;
-      --v41;
-    } while (v41 != 0);
-    goto LABEL_24;
+      memcpy_plt_alt1((__int64)v43, v42, v32);
+      v42 += 132;
+      v43 += 132;
+      --v31;
+    } while (v31 != 0);
+    goto LABEL_25;
   }
-  v44 = v38 - v36;
-  *a1 = v38;
-  if (v38 > v36 && v37 != 0) {
-    v45 = 33 * v36;
-    v46 = v44 & 7;
-    if (v6 - v36 + 8 >= 7) {
-      v85 = 33 * v36;
-      v86 = a3;
-      v55 = 0;
-      v56 = -(__int64)(v44 & 0x38);
-      v57 = (void*)((char*)a1 + 4 * v45 + 940);
+  v34 = v28 - v26;
+  *a1 = v28;
+  if (v28 > v26 && v27 != 0) {
+    v35 = 33 * v26;
+    v36 = v34 & 7;
+    if (v5 - v26 + 8 >= 7) {
+      f_.v61 = 33 * v26;
+      f_.v62 = a3;
+      v45 = 0;
+      v46 = -(__int64)(v34 & 0x38);
+      v47 = (__int64)a1 + 4 * v35 + 940;
       do {
-        memset_plt((void*)((char*)v57 - 924), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 792), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 660), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 528), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 396), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 264), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt((void*)((char*)v57 - 132), nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        memset_plt(v57, nullptr, 4 * v37),
-            v12 = COERCE_AS(__typeof__(v12),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v15 = COERCE_AS(__typeof__(v15),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v18 = COERCE_AS(__typeof__(v18),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v21 = COERCE_AS(__typeof__(v21),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v24 = COERCE_AS(__typeof__(v24),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v27 = COERCE_AS(__typeof__(v27),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v30 = COERCE_AS(__typeof__(v30),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-            v34 = COERCE_AS(__typeof__(v34),
-                            PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-        v57 = (void*)((char*)v57 + 1056);
-        v55 -= 8;
-      } while (v56 != v55);
-      v45 = v85;
-      a3 = v86;
-      v47 = -v55;
-      if (v46 == 0) {
-        goto LABEL_30;
+        memset_plt_alt2(v47 - 924, 0, 4 * v27);
+        memset_plt_alt2(v47 - 792, 0, 4 * v27);
+        memset_plt_alt2(v47 - 660, 0, 4 * v27);
+        memset_plt_alt2(v47 - 528, 0, 4 * v27);
+        memset_plt_alt2(v47 - 396, 0, 4 * v27);
+        memset_plt_alt2(v47 - 264, 0, 4 * v27);
+        memset_plt_alt2(v47 - 132, 0, 4 * v27);
+        memset_plt_alt2(v47, 0, 4 * v27);
+        v47 += 1056;
+        v45 -= 8;
+      } while (v46 != v45);
+      v35 = f_.v61;
+      a3 = f_.v62;
+      v37 = -v45;
+      if (v36 == 0) {
+        goto LABEL_31;
       }
     }
     else {
-      v47 = 0;
-      if (v46 == 0) {
-        goto LABEL_30;
+      v37 = 0;
+      if (v36 == 0) {
+        goto LABEL_31;
       }
     }
-    v65 = (void*)((char*)a1 + 132 * v47 + 4 * v45 + 16);
+    v48 = (__int64)a1 + 132 * v37 + 4 * v35 + 16;
     do {
-      memset_plt(v65, nullptr, 4 * v37),
-          v12 = COERCE_AS(__typeof__(v12),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v15 = COERCE_AS(__typeof__(v15),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v18 = COERCE_AS(__typeof__(v18),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v21 = COERCE_AS(__typeof__(v21),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v24 = COERCE_AS(__typeof__(v24),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v27 = COERCE_AS(__typeof__(v27),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v30 = COERCE_AS(__typeof__(v30),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v34 = COERCE_AS(__typeof__(v34),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-      v65 = (void*)((char*)v65 + 132);
-      --v46;
-    } while (v46 != 0);
+      memset_plt_alt2(v48, 0, 4 * v27);
+      v48 += 132;
+      --v36;
+    } while (v36 != 0);
   }
-LABEL_30:
-  a1[1] = v38;
-  if (v38 <= v37) {
-    goto LABEL_39;
+LABEL_31:
+  a1[1] = v28;
+  if (v28 <= v27) {
+    goto LABEL_40;
   }
-  v66 = v38 & 7;
-  if (v31 < 7) {
-    v67 = 0;
-    if ((v38 & 7) == 0) {
-      goto LABEL_39;
+  v49 = v28 & 7;
+  if (v23 < 7) {
+    v50 = 0;
+    if ((v28 & 7) == 0) {
+      goto LABEL_40;
     }
-    goto LABEL_37;
+    goto LABEL_38;
   }
-  v68 = 0;
-  v69 = (void*)((char*)a1 + 4 * v37 + 940);
+  v51 = 0;
+  v52 = (__int64)a1 + 4 * v27 + 940;
   do {
-    memset_plt((void*)((char*)v69 - 924), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 792), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 660), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 528), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 396), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 264), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt((void*)((char*)v69 - 132), nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    memset_plt(v69, nullptr, 4 * (v38 - v37)),
-        v12 = COERCE_AS(__typeof__(v12),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v15 = COERCE_AS(__typeof__(v15),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v18 = COERCE_AS(__typeof__(v18),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v21 = COERCE_AS(__typeof__(v21),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v24 = COERCE_AS(__typeof__(v24),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v27 = COERCE_AS(__typeof__(v27),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v30 = COERCE_AS(__typeof__(v30),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-        v34 = COERCE_AS(__typeof__(v34),
-                        PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-    v69 = (void*)((char*)v69 + 1056);
-    v68 -= 8;
-  } while (-(__int64)(v38 & 0x38) != v68);
-  v67 = -v68;
-  if ((v38 & 7) != 0) {
-  LABEL_37:
-    v77 = (void*)((char*)a1 + 132 * v67 + 4 * v37 + 16);
+    memset_plt_alt2(v52 - 924, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 792, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 660, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 528, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 396, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 264, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52 - 132, 0, 4 * (v28 - v27));
+    memset_plt_alt2(v52, 0, 4 * (v28 - v27));
+    v52 += 1056;
+    v51 -= 8;
+  } while (-(__int64)(v28 & 0x38) != v51);
+  v50 = -v51;
+  if ((v28 & 7) != 0) {
+  LABEL_38:
+    v53 = (__int64)a1 + 132 * v50 + 4 * v27 + 16;
     do {
-      memset_plt(v77, nullptr, 4 * (v38 - v37)),
-          v12 = COERCE_AS(__typeof__(v12),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v15 = COERCE_AS(__typeof__(v15),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v18 = COERCE_AS(__typeof__(v18),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v21 = COERCE_AS(__typeof__(v21),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v24 = COERCE_AS(__typeof__(v24),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v27 = COERCE_AS(__typeof__(v27),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v30 = COERCE_AS(__typeof__(v30),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-          v34 = COERCE_AS(__typeof__(v34),
-                          PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-      v77 = (void*)((char*)v77 + 132);
-      --v66;
-    } while (v66 != 0);
+      memset_plt_alt2(v53, 0, 4 * (v28 - v27));
+      v53 += 132;
+      --v49;
+    } while (v49 != 0);
   }
-LABEL_39:
-  v78 = a2[6];
-  v79 = a2[7];
-  v80 = a2[8];
-  v89_.v90 = 0;
-  memset(v89_.v91, 0, 56);
-  v88[6] = v78;
-  v88[7] = v79;
-  v88[8] = v80;
-  v89_.v89 = 0;
-  v81 = a2[3];
-  v88[2] = a2[2];
-  v88[3] = v81;
-  v82 = a2[5];
-  v88[4] = a2[4];
-  v88[5] = v82;
-  v83 = a2[1];
-  v88[0] = *a2;
-  v88[1] = v83;
-  fw_math_MapStateIndices9((void*)((__int64*)&v89_.v89), a1 + 548, v88),
-      v12 = COERCE_AS(__typeof__(v12),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v15 = COERCE_AS(__typeof__(v15),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v18 = COERCE_AS(__typeof__(v18),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v21 = COERCE_AS(__typeof__(v21),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v24 = COERCE_AS(__typeof__(v24),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v27 = COERCE_AS(__typeof__(v27),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v30 = COERCE_AS(__typeof__(v30),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r")),
-      v34 = COERCE_AS(__typeof__(v34),
-                      PSEUDO_REGISTER(unsigned long long, "x3", "=r"));
-  v87[4] = &v89_.v89;
-  v87[0] = a1 + 2;
-  v87[1] = 1;
-  v87[2] = 33;
-  v87[3] = &v89_.v89;
-  return math_7314a0((__int64)v87, a3);
+LABEL_40:
+  v54 = a2[6];
+  v55 = a2[7];
+  v56 = a2[8];
+  f_.v66 = 0;
+  memset(f_.v67, 0, 56);
+  f_.v64[6] = v54;
+  f_.v64[7] = v55;
+  f_.v64[8] = v56;
+  f_.v65 = 0;
+  v57 = a2[3];
+  f_.v64[2] = a2[2];
+  f_.v64[3] = v57;
+  v58 = a2[5];
+  f_.v64[4] = a2[4];
+  f_.v64[5] = v58;
+  v59 = a2[1];
+  f_.v64[0] = *a2;
+  f_.v64[1] = v59;
+  fw_math_MapStateIndices9((void*)((__int64*)&f_.v65), a1 + 548, f_.v64);
+  f_.v63[4] = &f_.v65;
+  f_.v63[0] = a1 + 2;
+  f_.v63[1] = 1;
+  f_.v63[2] = 33;
+  f_.v63[3] = &f_.v65;
+  return math_7314a0((__int64)f_.v63, a3);
 }
 
 float gyro_pointing_kalman_filter_729c20(unsigned __int64* a1,

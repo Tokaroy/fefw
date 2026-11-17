@@ -284,68 +284,53 @@ void nvidia_233a60(__int64 a1, _QWORD* a2)
   unsigned __int64 v22;
   int32x4_t v23;
   int32x4_t v24;
-  char v25;
-  _DWORD v26[768];
+  struct {
+    char v25;
+    char gap1_[6143];
+    _DWORD v26[768];
+  } f_;
   float32x4x3_t v27;
   float32x4x3_t v28;
 
   v13 = COERCE_AS(__typeof__(v13),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  {
-    v2 = *(_QWORD*)(a1 + 64);
-    __asm__ volatile("" ::"r"(v2));
-  }
-  {
-    v4 = *(unsigned int*)(v2 + 3732);
-    __asm__ volatile("" ::"r"(v4));
-  }
+  v2 = *(_QWORD*)(a1 + 64);
+  v4 = *(unsigned int*)(v2 + 3732);
   if ((_DWORD)v4 != 0) {
-    {
-      v5 = *(_QWORD*)(a1 + 16104);
-      __asm__ volatile("" ::"r"(v5));
-    }
+    v5 = *(_QWORD*)(a1 + 16104);
     v6 = v5 + 1048;
     if ((unsigned int)v4 < 0xC ||
         ((unsigned int)(v4 - 1) <= 0x55555554 ? (v7 = (v4 - 1) >> 32 == 0)
                                               : (v7 = false),
-         !v7 || v6 < (unsigned __int64)&v26[3 * (unsigned int)v4] &&
-                    (unsigned __int64)v26 < v5 + 4 * v4 + 1048)) {
+         !v7 || v6 < (unsigned __int64)&f_.v26[3 * (unsigned int)v4] &&
+                    (unsigned __int64)f_.v26 < v5 + 4 * v4 + 1048)) {
       v8 = 0;
       v9 = 0;
       do {
       LABEL_11:
-        {
-          v10 = *(_DWORD*)(v6 + 4 * v8);
-          __asm__ volatile("" ::"r"(v10));
-        }
+        v10 = *(_DWORD*)(v6 + 4 * v8);
         v11 = v9 + 1;
         v12 = v9 + 2;
         ++v8;
         v10 += 5261064;
-        v26[v9] = v10;
+        f_.v26[v9] = v10;
         v9 += 3;
-        v26[v11] = v10 + 16;
-        v26[v12] = v10 + 8;
+        f_.v26[v11] = v10 + 16;
+        f_.v26[v12] = v10 + 8;
       } while (v8 < v4);
       goto LABEL_12;
     }
     v8 = (unsigned int)v4 & 0xFFFFFFF8;
     v17 = (int32x4_t*)(v5 + 1064);
     v9 = 3 * (v4 & 0xFFFFFFF8);
-    v18 = (float*)v26;
+    v18 = (float*)f_.v26;
     v19 = vdupq_n_s32(0x504710u);
     v20 = vdupq_n_s32(0x504708u);
     v21 = vdupq_n_s32(0x504718u);
     v22 = v8;
     do {
-      {
-        v23 = v17[-1];
-        __asm__ volatile("" ::"w"(v23));
-      }
-      {
-        v24 = *v17;
-        __asm__ volatile("" ::"w"(v24));
-      }
+      v23 = v17[-1];
+      v24 = *v17;
       v22 -= 8LL;
       v17 += 2;
       v27.val[2] = vaddq_s32(v23, v19);
@@ -374,11 +359,11 @@ LABEL_12:
     v15 = 0;
     do {
       ++v14;
-      *a2 = *((_QWORD*)&v25 + v15);
-      a2[2] = *((_QWORD*)&v25 + v15 + 1);
+      *a2 = *((_QWORD*)&f_.v25 + v15);
+      a2[2] = *((_QWORD*)&f_.v25 + v15 + 1);
       v16 = v15 + 2;
       v15 += 3;
-      a2[6] = *((_QWORD*)&v25 + v16);
+      a2[6] = *((_QWORD*)&f_.v25 + v16);
       a2 += 40;
     } while (v14 < *(unsigned int*)(v2 + 3732));
   }
@@ -688,68 +673,53 @@ void nvidia_245e20(__int64 a1, _QWORD* a2)
   unsigned __int64 v22;
   int32x4_t v23;
   int32x4_t v24;
-  char v25;
-  _DWORD v26[768];
+  struct {
+    char v25;
+    char gap1_[6143];
+    _DWORD v26[768];
+  } f_;
   float32x4x3_t v27;
   float32x4x3_t v28;
 
   v13 = COERCE_AS(__typeof__(v13),
                   PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-  {
-    v2 = *(_QWORD*)(a1 + 64);
-    __asm__ volatile("" ::"r"(v2));
-  }
-  {
-    v4 = *(unsigned int*)(v2 + 3732);
-    __asm__ volatile("" ::"r"(v4));
-  }
+  v2 = *(_QWORD*)(a1 + 64);
+  v4 = *(unsigned int*)(v2 + 3732);
   if ((_DWORD)v4 != 0) {
-    {
-      v5 = *(_QWORD*)(a1 + 16104);
-      __asm__ volatile("" ::"r"(v5));
-    }
+    v5 = *(_QWORD*)(a1 + 16104);
     v6 = v5 + 1048;
     if ((unsigned int)v4 < 0xC ||
         ((unsigned int)(v4 - 1) <= 0x55555554 ? (v7 = (v4 - 1) >> 32 == 0)
                                               : (v7 = false),
-         !v7 || v6 < (unsigned __int64)&v26[3 * (unsigned int)v4] &&
-                    (unsigned __int64)v26 < v5 + 4 * v4 + 1048)) {
+         !v7 || v6 < (unsigned __int64)&f_.v26[3 * (unsigned int)v4] &&
+                    (unsigned __int64)f_.v26 < v5 + 4 * v4 + 1048)) {
       v8 = 0;
       v9 = 0;
       do {
       LABEL_11:
-        {
-          v10 = *(_DWORD*)(v6 + 4 * v8);
-          __asm__ volatile("" ::"r"(v10));
-        }
+        v10 = *(_DWORD*)(v6 + 4 * v8);
         v11 = v9 + 1;
         v12 = v9 + 2;
         ++v8;
         v10 += 5261064;
-        v26[v9] = v10;
+        f_.v26[v9] = v10;
         v9 += 3;
-        v26[v11] = v10 + 16;
-        v26[v12] = v10 + 8;
+        f_.v26[v11] = v10 + 16;
+        f_.v26[v12] = v10 + 8;
       } while (v8 < v4);
       goto LABEL_12;
     }
     v8 = (unsigned int)v4 & 0xFFFFFFF8;
     v17 = (int32x4_t*)(v5 + 1064);
     v9 = 3 * (v4 & 0xFFFFFFF8);
-    v18 = (float*)v26;
+    v18 = (float*)f_.v26;
     v19 = vdupq_n_s32(0x504710u);
     v20 = vdupq_n_s32(0x504708u);
     v21 = vdupq_n_s32(0x504718u);
     v22 = v8;
     do {
-      {
-        v23 = v17[-1];
-        __asm__ volatile("" ::"w"(v23));
-      }
-      {
-        v24 = *v17;
-        __asm__ volatile("" ::"w"(v24));
-      }
+      v23 = v17[-1];
+      v24 = *v17;
       v22 -= 8LL;
       v17 += 2;
       v27.val[2] = vaddq_s32(v23, v19);
@@ -778,11 +748,11 @@ LABEL_12:
     v15 = 0;
     do {
       ++v14;
-      *a2 = *((_QWORD*)&v25 + v15);
-      a2[2] = *((_QWORD*)&v25 + v15 + 1);
+      *a2 = *((_QWORD*)&f_.v25 + v15);
+      a2[2] = *((_QWORD*)&f_.v25 + v15 + 1);
       v16 = v15 + 2;
       v15 += 3;
-      a2[6] = *((_QWORD*)&v25 + v16);
+      a2[6] = *((_QWORD*)&f_.v25 + v16);
       a2 += 40;
     } while (v14 < *(unsigned int*)(v2 + 3732));
   }

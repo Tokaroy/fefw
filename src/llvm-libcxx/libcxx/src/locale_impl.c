@@ -18050,23 +18050,26 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
   __int64 v316;
   __int64 v317;
   __int64 v318;
-  int v319;
-  __int64 v321;
-  unsigned __int8* v322;
-  char* v323;
-  unsigned __int8* v324;
-  unsigned __int8* v325;
-  int v326;
-  unsigned __int8* v327;
   struct {
+    char gap0_[4];
+    int v319;
+    char gap8_[8];
+    __int64 v321;
+    unsigned __int8* v322;
+    char* v323;
+    unsigned __int8* v324;
+    unsigned __int8* v325;
+    char gap56_[4];
+    int v326;
+    unsigned __int8* v327;
     _BYTE v328[4];
     _BYTE v329[100];
-  } v328_;
+  } f_;
   _QWORD v330[8];
 
   v4 = *(_QWORD*)a1;
-  v328_.v328[1] = a2;
-  v328_.v328[2] = 0;
+  f_.v328[1] = a2;
+  f_.v328[2] = 0;
   v330[5] = 0;
   v330[6] = 0;
   v330[0] = 0x370000003BLL;
@@ -18074,21 +18077,21 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
   v330[2] = 0xA10000000BLL;
   v330[3] = 0x16C00000006LL;
   v330[4] = 0xFFFFFFFFLL;
-  v328_.v328[0] = 37;
-  result = strftime_l_plt_alt1((__int64)v328_.v329, 0x64u, (__int64)v328_.v328,
+  f_.v328[0] = 37;
+  result = strftime_l_plt_alt1((__int64)f_.v329, 0x64u, (__int64)f_.v328,
                                (__int64)v330, v4);
   *a4 = 0;
   a4[1] = 0;
   a4[2] = 0;
-  v321 = result;
+  f_.v321 = result;
   if (result != 0) {
-    v9 = v328_.v329;
-    v10 = &v328_.v329[result];
-    v323 = (char*)a4 + 1;
-    v324 = (unsigned __int8*)(a1 + 8);
-    v322 = (unsigned __int8*)(a1 + 920);
-    v325 = (unsigned __int8*)(a1 + 344);
-    v319 = a2;
+    v9 = f_.v329;
+    v10 = &f_.v329[result];
+    f_.v323 = (char*)a4 + 1;
+    f_.v324 = (unsigned __int8*)(a1 + 8);
+    f_.v322 = (unsigned __int8*)(a1 + 920);
+    f_.v325 = (unsigned __int8*)(a1 + 344);
+    f_.v319 = a2;
     do {
       v13 = (char)*v9;
       if ((v13 & 0x8000000000000000LL) == 0 &&
@@ -18148,7 +18151,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
         v88 = v9 + 1;
         while (1) {
           if (v88 == v10) {
-            v9 = &v328_.v329[v321];
+            v9 = &f_.v329[f_.v321];
             goto LABEL_8;
           }
           v89 = (char)*v88;
@@ -18164,12 +18167,12 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
         v9 = v88;
         continue;
       }
-      v327 = v9;
-      v326 = 0;
-      result = (__int64)SdkRoutine_827580(&v327, v10, v324, v325, (__int64)a3,
-                                          &v326, 0);
-      v14 = result - (_QWORD)v324;
-      if (result - (__int64)v324 <= 335) {
+      f_.v327 = v9;
+      f_.v326 = 0;
+      result = (__int64)SdkRoutine_827580(&f_.v327, v10, f_.v324, f_.v325,
+                                          (__int64)a3, &f_.v326, 0);
+      v14 = result - (_QWORD)f_.v324;
+      if (result - (__int64)f_.v324 <= 335) {
         v15 = *(unsigned __int8*)a4;
         if ((v15 & 1) == 0) {
           if ((_DWORD)v15 == 44) {
@@ -18179,7 +18182,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
             goto LABEL_30;
           }
           *(_BYTE*)a4 = v15 + 2;
-          *(_WORD*)&v323[v15 >> 1] = 37;
+          *(_WORD*)&f_.v323[v15 >> 1] = 37;
           v47 = *(unsigned __int8*)a4;
           if (v14 > 167) {
             goto LABEL_58;
@@ -18339,11 +18342,11 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
         v12 = 97;
         goto LABEL_6;
       }
-      v327 = v9;
-      result = (__int64)SdkRoutine_827580(&v327, v10, v325, v322, (__int64)a3,
-                                          &v326, 0);
-      v19 = result - (_QWORD)v325;
-      if (result - (__int64)v325 > 575) {
+      f_.v327 = v9;
+      result = (__int64)SdkRoutine_827580(&f_.v327, v10, f_.v325, f_.v322,
+                                          (__int64)a3, &f_.v326, 0);
+      v19 = result - (_QWORD)f_.v325;
+      if (result - (__int64)f_.v325 > 575) {
         v31 = *(unsigned __int8*)(a1 + 920);
         if ((v31 & 1) != 0) {
           v32 = *(_QWORD*)(a1 + 928);
@@ -18359,12 +18362,13 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
           v34 = v33 >> 1;
         }
         if (v32 + v34 == 0 ||
-            (v327 = v9, (result = (__int64)SdkRoutine_827580(
-                             &v327, v10, v322, (unsigned __int8*)(a1 + 968),
-                             (__int64)a3, &v326, 0)) -
-                                (__int64)v322 >
-                            47)) {
-          v327 = v9;
+            (f_.v327 = v9,
+             (result = (__int64)SdkRoutine_827580(&f_.v327, v10, f_.v322,
+                                                  (unsigned __int8*)(a1 + 968),
+                                                  (__int64)a3, &f_.v326, 0)) -
+                     (__int64)f_.v322 >
+                 47)) {
+          f_.v327 = v9;
           v42 = (char)*v9;
           if (v42 < 0) {
             goto LABEL_82;
@@ -18466,7 +18470,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
                   goto LABEL_249;
                 }
                 *(_BYTE*)a4 = v43 + 2;
-                *(_WORD*)&v323[v43 >> 1] = 37;
+                *(_WORD*)&f_.v323[v43 >> 1] = 37;
                 v139 = *(unsigned __int8*)a4;
                 if ((v139 & 1) != 0) {
                   goto LABEL_284;
@@ -18555,7 +18559,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
             if (v79 != v10) {
               goto LABEL_131;
             }
-            v326 |= 2u;
+            f_.v326 |= 2u;
             if (v80 > 30) {
             LABEL_132:
               if (v80 <= 60) {
@@ -19686,7 +19690,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
               continue;
             }
           LABEL_316:
-            v175 = v327;
+            v175 = f_.v327;
             while (2) {
               if (v175 == v79) {
                 goto LABEL_353;
@@ -19746,7 +19750,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
               v176 = (unsigned __int8*)(v185 + v180);
               *v176 = v177;
               v176[1] = 0;
-              v175 = ++v327;
+              v175 = ++f_.v327;
               continue;
             }
           }
@@ -19952,7 +19956,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
             goto LABEL_198;
           }
           *(_BYTE*)a4 = v35 + 2;
-          *(_WORD*)&v323[v35 >> 1] = 37;
+          *(_WORD*)&f_.v323[v35 >> 1] = 37;
           v117 = *(unsigned __int8*)a4;
           if ((v117 & 1) != 0) {
             goto LABEL_230;
@@ -20002,7 +20006,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
       else {
         if ((_DWORD)v20 != 44) {
           *(_BYTE*)a4 = v20 + 2;
-          *(_WORD*)&v323[v20 >> 1] = 37;
+          *(_WORD*)&f_.v323[v20 >> 1] = 37;
           v71 = *(unsigned __int8*)a4;
           if (v19 > 287) {
             goto LABEL_107;
@@ -20079,7 +20083,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
           *(_BYTE*)a4 = v71 + 2;
         }
         *(_WORD*)(v99 + v73) = 98;
-        if (v319 == 120) {
+        if (f_.v319 == 120) {
           goto LABEL_220;
         }
         goto LABEL_7;
@@ -20136,9 +20140,9 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
       a4[1] = v94 + 1;
     LABEL_219:
       *(_WORD*)(v100 + v94) = 66;
-      if (v319 == 120) {
+      if (f_.v319 == 120) {
       LABEL_220:
-        v110 = &v325[8 * (v19 >> 3)];
+        v110 = &f_.v325[8 * (v19 >> 3)];
         if ((*v110 & 1) != 0) {
           v111 = *((char**)v110 + 2);
         }
@@ -20162,7 +20166,7 @@ std___1___time_get_storage___analyze(PSEUDO_X8 x8_, __int64 a1,
         }
       }
     LABEL_7:
-      v9 = v327;
+      v9 = f_.v327;
     LABEL_8:;
     } while (v9 != v10);
   }

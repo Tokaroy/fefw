@@ -3,368 +3,193 @@
 #pragma GCC visibility push(hidden)
 
 _QWORD* nvidia_632590(_QWORD* result, __int64, __int64);
-
 __int64 NvOsAlloc_plt(_QWORD);
-
 __int64 NvOsDrvClose_plt(_QWORD);
-
 __int64 NvOsDrvOpen_plt(_QWORD);
-
 __int64 NvOsEventDestroy_plt(void);
-
 __int64 NvOsEventPoolWait_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 NvOsEventWait_plt(_QWORD, _QWORD);
-
 __int64 NvOsFree_plt(_QWORD);
-
 __int64 NvOsGetTimeUS_plt(void);
-
 __int64 NvOsMapRegSpace_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 NvOsSystemEventCreate_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 NvOsUnMapRegSpace_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 NvRmMemHandleFree_plt(_QWORD);
-
 __int64 NvRmMemLoadMapBufferSgl_plt(_QWORD);
-
 __int64 NvRmMemMap_plt(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 NvRmMemRead_plt(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 NvRmMemUnmap_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 NvRmSyncCalculateSizeForInplaceSyncpoints_plt(_QWORD);
-
 __int64 SdkRoutine_629ca0(_QWORD);
-
 __int64 SdkRoutine_6318c0(unsigned int*, __int64, _QWORD*, unsigned __int64,
                           __int64);
-
 __int64 SdkRoutine_634120(void);
-
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 memset_plt(void* this_, void*, int, unsigned __int64);
-
 __int64 nvidia_623fe0(__int64*, unsigned __int64);
-
 __int64 nvidia_624080(_QWORD*, unsigned __int64);
-
 __int64 nvidia_624a40(__int64*, unsigned __int64);
-
 __int64 nvidia_626630(__int64*, _DWORD*);
-
 __int64 nvidia_626ca0(__int64, _BYTE*, __int64*);
-
 __int64 nvidia_627b10(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_627de0(_QWORD*, __int64, _QWORD*);
-
 __int64 nvidia_6280e0(__int64*, unsigned __int64);
-
 __int64 nvidia_628d40(__int64*, unsigned __int64);
-
 __int64 nvidia_629030(_QWORD*);
-
 __int64 nvidia_6290b0(__int64, int, __int64, int, unsigned int*, __int64);
-
 __int64 nvidia_629e00(__int64);
-
 __int64 nvidia_62ad20(_QWORD*, unsigned __int64);
-
 __int64 nvidia_62ae40(_QWORD*, unsigned __int64);
-
 __int64 nvidia_62cfe0(_QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_62d0f0(__int64, __int64);
-
 __int64 nvidia_62ed90(__int64, __int64*);
-
 __int64 nvidia_631e20(_QWORD*, unsigned __int64);
-
 __int64 nvidia_632100(__int64, int, __int64, __int64);
-
 __int64 nvidia_632390(__int64);
-
 __int64 nvidia_632550(__int64);
-
 __int64 nvidia_635560_alt1(_QWORD, _QWORD) __asm__("nvidia_635560");
-
 __int64 nvidia_637730(_QWORD, _QWORD);
-
 __int64 nvidia_637780(_QWORD, _QWORD);
-
 __int64 nvidia_638760_alt1(_QWORD, _QWORD) __asm__("nvidia_638760");
-
 __int64 nvidia_638c20(_QWORD);
-
 __int64 nvidia_6391b0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_639270(_QWORD);
-
 __int64 nvidia_639330(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_6393c0(_QWORD);
-
 __int64 nvidia_639440(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_6394d0(_QWORD);
-
 __int64 nvidia_639550(_QWORD);
-
 __int64 nvidia_639830(_QWORD, _QWORD);
-
 __int64 nvidia_639960(_QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_63b590(_QWORD, _QWORD);
-
 __int64 nvidia_63b5f0(_QWORD, _QWORD);
-
 __int64 nvidia_63b750(_QWORD, _QWORD);
-
 __int64 nvidia_63cb90(__int64, __int64);
-
 __int64 nvidia_63cbf0(__int64, __int64*);
-
 __int64 nvidia_63d350(_QWORD, _QWORD);
-
 __int64 nvidia_644ce0(_QWORD, _QWORD);
-
 __int64 nvidia_644cf0(__int64, __int64, _QWORD*, __int64, __int64*,
                       unsigned __int64);
-
 __int64 nvidia_644cf0_alt1(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                            _QWORD) __asm__("nvidia_644cf0");
-
 __int64 nvidia_644da0(_QWORD, _QWORD, _QWORD, _QWORD);
-
 __int64 nvidia_644da0_alt1(__int64, __int64, __int64,
                            __int64) __asm__("nvidia_644da0");
-
 __int64 nvstl_mutex_impl_nvos_6321d0(__int64, _DWORD*, __int64);
-
 __int64 nvstl_mutex_impl_nvos_633a70(__int64, _DWORD*, __int64);
-
 __int64 nvstl_mutex_impl_nvos_634620(void);
-
 __int64 nvstl_mutex_impl_nvos_639790(_QWORD, _QWORD);
-
 __int64 nvstl_mutex_impl_nvos_63ce10(_QWORD, _QWORD);
-
 __int64 strcmp_plt(void* this_, const char*);
-
 extern _BYTE* SdkData_e89a10;
-
 extern _BYTE* SdkData_e89a18;
-
 extern _BYTE* SdkData_e89a90;
-
 extern _DWORD SdkData_c773a8[3];
-
 extern _DWORD SdkData_c773c0[3];
-
 extern _DWORD SdkData_c77530[3];
-
 extern __int64 (*SdkData_e73090)();
-
 extern __int64 (*SdkData_e744d0[])();
-
 extern __int64 SdkData_ea4520;
-
 extern __int64* SdkData_e89a40;
-
 extern __int64* SdkData_e89a68[5];
-
 extern __int64* SdkData_e89a70[4];
-
 extern __int64* SdkData_e89a78[3];
-
 extern __int64* SdkData_e89aa8[2];
-
 extern __int64* SdkData_e89ab0;
-
 extern char SdkData_10406ce;
-
 extern char SdkData_10406cf;
-
 extern char SdkData_10406d0;
-
 extern char SdkData_10406d1;
-
 extern char SdkData_10406f8;
-
 extern char SdkData_10406fa;
-
 extern unsigned int SdkData_c773b4[3];
-
 void nn_os_detail_RemoveNativeWaitHolder();
-
 void nvidia_627100(__int64, __int64*, _DWORD*);
-
 __int64 nvidia_632740(__int64 a1, __int64 a2);
-
 __int64 nvidia_632d00(__int64* a1, _QWORD* a2);
-
 __int64 nvidia_632e80(__int64 a1, __int64 a2, int a3);
-
 __int64 nvidia_632ee0(__int64 a1, __int64* a2, __int64 a3);
-
 __int64 nvidia_632fb0(__int64 a1, unsigned __int8* a2);
-
 __int64 nvidia_6330b0(__int64 a1, unsigned int a2);
-
 __int64 nvidia_633200(_QWORD* a1, unsigned int a2);
-
 __int64 nvidia_633270(__int64 a1);
-
 __int64 nvidia_633290(__int64 a1, unsigned int a2);
-
 __int64 nvidia_633350(__int64 a1, int a2);
-
 __int64 nvidia_6333b0(__int64 a1, int a2);
-
 __int64 nvidia_6333e0(__int64 a1, int a2);
-
 __int64 nvidia_633450(__int64 a1, int a2, int a3, _DWORD* a4);
-
 __int64 nvidia_6334e0(__int64 a1, int a2);
-
 __int64 nvidia_633540(__int64 a1, int a2);
-
 __int64 nvidia_6335b0(__int64 a1, int a2);
-
 __int64 nvidia_633720(__int64 a1, int* a2);
-
 __int64 nvidia_633860(__int64 a1, __int64 a2);
-
 __int64 nvidia_633af0(__int64 a1);
-
 __int64 nvidia_633b30(__int64 a1, __int64 a2);
-
 unsigned int* nvidia_633e30(unsigned int* result, _QWORD* a2, _QWORD* a3,
                             _QWORD* a4);
-
 __int64 nvidia_633e50(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int* a5,
                       __int64 a6, __int64 a7);
-
 __int64 nvidia_634da0(__int64 a1, __int64 a2, __int64 a3);
-
 __int64 nvidia_634ea0(__int64 a1);
-
 __int64 nvidia_634fa0(__int64 a1);
-
 __int64 nvidia_635140(__int64 a1, __int64 a2);
-
 __int64 nvidia_635390(__int64 result, _QWORD* a2, _QWORD* a3, _QWORD* a4);
-
 __int64 nvidia_635510(__int64 a1, __int64 a2);
-
 __int64 nvidia_635560(__int64 a1);
-
 __int64 nvidia_6355c0(__int64 result, _QWORD* a2);
-
 __int64 nvidia_6355d0(__int64 a1, unsigned int a2);
-
 __int64 nvidia_6355f0(__int64 a1, __int64 a2, __int64* a3);
-
 __int64 nvidia_635610(__int64 a1);
-
 __int64 nvidia_635670(__int64 a1);
-
 void nvidia_6356d0(__int64 a1);
-
 __int64 nvidia_635b00(__int64 a1);
-
 __int64 nvidia_635be0(__int64 a1, __int64* a2);
-
 __int64 nvidia_635f20(__int64 result, int* a2);
-
 __int64 nvidia_6364e0(__int64 a1, __int64 a2, int* a3);
-
 __int64 nvidia_636750(__int64 a1, int a2, __int64 a3, int a4, __int64 a5,
                       __int64 a6, int* a7);
-
 __int64 nvidia_636870(__int64 a1, int a2, __int64 a3, int a4, __int64 a5,
                       unsigned int* a6);
-
 __int64 nvidia_636960(_QWORD* a1, __int64 a2, __int64 a3, int a4, __int64 a5,
                       __int64 a6, _DWORD* a7);
-
 __int64 nvidia_6369f0(__int64 a1, _QWORD* a2);
-
 __int64 nvidia_636a10();
-
 __int64 nvidia_636a50(__int64 a1, __int64 a2, __int64* a3);
-
 __int64 nvidia_636b20(__int64 a1, __int64 a2, __int64* a3);
-
 __int64 nvidia_636cc0(__int64 a1, unsigned int a2, unsigned int a3, int a4,
                       unsigned int a5);
-
 __int64 nvidia_636e00(_QWORD* a1, _QWORD* a2);
-
 __int64 nvidia_636e80(__int64 a1, unsigned __int64 a2, unsigned int a3,
                       __int64 a4);
-
 __int64 nvidia_636f70(__int64 a1, int a2);
-
 __int64 nvidia_636fc0(__int64 a1, unsigned __int64 a2, unsigned int a3,
                       __int64 a4);
-
 __int64 nvidia_6370b0(__int64 a1, int a2);
-
 __int64 nvidia_637100(__int64 a1, unsigned __int64 a2, unsigned int a3,
                       __int64 a4);
-
 __int64 nvidia_6371f0(__int64 a1, int a2);
-
 __int64 nvidia_637240(__int64 a1);
-
 __int64 nvidia_637280(__int64 a1, _QWORD* a2, __int64 a3);
-
 __int64 nvidia_637340(__int64 a1, _QWORD* a2, __int64 a3);
-
 __int64 nvidia_637400(__int64 a1, __int64 a2, __int64* a3);
-
 __int64 nvidia_6374d0(__int64 a1, __int64 a2, __int64* a3);
-
 __int64 nvidia_6375a0(__int64 a1, __int64 a2);
-
 __int64 nvidia_6375c0(__int64 a1, __int64 a2, __int64 a3, __int64* a4);
-
 __int64 nvidia_6376a0(__int64 a1);
-
 __int64 nvidia_637800(__int64 a1);
-
 __int64 nvidia_637840(__int64* a1, const char* a2, __int64* a3);
-
 __int64 nvidia_637990(__int64 a1, _BYTE* a2);
-
 __int64 nvidia_637a00(__int64 a1, unsigned int a2);
-
 __int64 nvidia_637a90(__int64 a1, __int64 a2, __int64 a3, unsigned int a4);
-
 __int64 nvidia_637b20(__int64 a1, _QWORD* a2);
-
 __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4);
-
 __int64 nvidia_637d30(__int64 a1, _BYTE* a2, unsigned __int64* a3);
-
 __int64 nvidia_638160(__int64 a1, __int64* a2, unsigned int a3, int* a4);
-
 __int64 nvidia_638410(_QWORD* a1);
-
 void (***nvidia_6384a0(_QWORD* a1))(_QWORD);
-
 __int64 nvidia_638690(_QWORD* a1);
-
 __int64 nvidia_638760(unsigned int* a1, __int64* a2);
-
 __int64 nvidia_638990(__int64* a1, unsigned __int64 a2);
-
 __int64 nvidia_638a20(__int64* a1, unsigned __int64 a2);
 
 __int64 nvidia_632740(__int64 a1, __int64 a2)
@@ -3680,25 +3505,28 @@ __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)
   _QWORD* v22;
   __int64 v23;
   __int64 v24;
-  _QWORD v25[6];
-  __int64 v26;
-  __int64 v27[4];
-  _QWORD v28[2];
+  struct {
+    _QWORD v25[6];
+    __int64 v26;
+    char gap56_[3016];
+    __int64 v27[4];
+    _QWORD v28[2];
+  } f_;
   __int64 v29;
 
   v29 = 0;
-  memset_plt((void*)v25, nullptr, 3072, a4);
-  v27[2] = (__int64)v25;
-  v27[3] = 3072;
-  v28[0] = &v29;
-  v28[1] = 8;
-  v27[0] = (__int64)&v29;
-  v27[1] = 8;
+  memset_plt((void*)f_.v25, nullptr, 3072, a4);
+  f_.v27[2] = (__int64)f_.v25;
+  f_.v27[3] = 3072;
+  f_.v28[0] = &v29;
+  f_.v28[1] = 8;
+  f_.v27[0] = (__int64)&v29;
+  f_.v27[1] = 8;
   if (*(_DWORD*)(*(_QWORD*)(a1 + 928) + 52LL) <= 0xFu) {
     return 2;
   }
-  result =
-      nvidia_644cf0(*(unsigned int*)(a1 + 920), 3221767952LL, v28, 1, v27, 2u);
+  result = nvidia_644cf0(*(unsigned int*)(a1 + 920), 3221767952LL, f_.v28, 1,
+                         f_.v27, 2u);
   if ((_DWORD)result != 0) {
     return result;
   }
@@ -3709,7 +3537,7 @@ __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)
       v10 = (__int64*)(a2 + 96);
       v11 = 0;
       v12 = -(__int64)(v7 & 0xFFFFFFFC);
-      v13 = &v26;
+      v13 = &f_.v26;
       do {
         v14 = *(v13 - 5);
         v11 -= 4;
@@ -3745,7 +3573,7 @@ __int64 nvidia_637ba0(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)
         return 0;
       }
     }
-    v21 = &v25[3 * v9 + 1];
+    v21 = &f_.v25[3 * v9 + 1];
     v22 = (_QWORD*)(a2 + 48 * v9 + 16);
     do {
       v23 = *v21;

@@ -87,19 +87,24 @@ _QWORD* math_7022a0(_QWORD* a1, _QWORD* a2)
   float v62;
   float v63;
   float v64;
-  char v65;
-  _QWORD v66[364];
-  _BYTE v67[2916];
-  _QWORD v68[364];
-  _BYTE v69[2916];
-  _BYTE v70[2916];
-  __int64 v71[21];
-  __int64 v72;
-  __int64 v73;
-  __int64 v74;
-  __int64 v75;
-  __int64 v76;
-  __int64 v77;
+  struct {
+    char v65;
+    char gap1_[2915];
+    _QWORD v66[364];
+    char gap5828_[4];
+    _BYTE v67[2916];
+    _QWORD v68[364];
+    char gap11660_[4];
+    _BYTE v69[2916];
+    _BYTE v70[2916];
+    __int64 v71[21];
+    __int64 v72;
+    __int64 v73;
+    __int64 v74;
+    __int64 v75;
+    __int64 v76;
+    __int64 v77;
+  } f_;
   __int64 v78[28];
 
   {
@@ -116,20 +121,20 @@ _QWORD* math_7022a0(_QWORD* a1, _QWORD* a2)
   }
   v7 = v3 + 2;
   {
-    v72 = a2[21];
-    __asm__ volatile("" ::"r"(v72));
+    f_.v72 = a2[21];
+    __asm__ volatile("" ::"r"(f_.v72));
   }
-  v71[18] = v6;
+  f_.v71[18] = v6;
   v78[0] = v2;
   v78[1] = v2 + 1;
   v8 = v3 + 1;
-  v71[19] = v6 + 1;
-  v71[20] = v6 + 2;
-  v73 = v72 + 1;
-  v74 = v72 + 2;
-  v75 = v72 + 3;
-  v76 = v72 + 4;
-  v77 = v72 + 5;
+  f_.v71[19] = v6 + 1;
+  f_.v71[20] = v6 + 2;
+  f_.v73 = f_.v72 + 1;
+  f_.v74 = f_.v72 + 2;
+  f_.v75 = f_.v72 + 3;
+  f_.v76 = f_.v72 + 4;
+  f_.v77 = f_.v72 + 5;
   v78[2] = v2 + 2;
   v78[3] = v3;
   {
@@ -172,8 +177,8 @@ _QWORD* math_7022a0(_QWORD* a1, _QWORD* a2)
   v78[10] = v10 + 1;
   v78[11] = v10 + 2;
   v16 = v12 + 2;
-  v71[6] = v14;
-  v71[9] = v15;
+  f_.v71[6] = v14;
+  f_.v71[9] = v15;
   v78[18] = v12;
   v78[19] = v12 + 1;
   {
@@ -191,35 +196,35 @@ _QWORD* math_7022a0(_QWORD* a1, _QWORD* a2)
   v78[24] = v13 + 3;
   v78[25] = v13 + 4;
   v78[26] = v13 + 5;
-  v71[7] = v14 + 1;
-  v71[8] = v14 + 2;
-  v71[17] = v15 + 8;
-  v71[11] = v15 + 2;
-  v71[13] = v15 + 4;
-  v71[10] = v15 + 1;
-  v71[12] = v15 + 3;
-  v71[14] = v15 + 5;
-  v71[15] = v15 + 6;
-  v71[16] = v15 + 7;
-  v71[0] = v17;
-  v71[3] = v18;
-  v71[1] = v17 + 1;
-  v71[2] = v17 + 2;
-  v71[4] = v18 + 1;
-  v71[5] = v18 + 2;
-  memset_plt((__int64)v70, 0, 0xB64u);
-  math_702080((void*)((__int64)v70), (__int64)(a1 + 22), v78, v78);
-  memset_plt((__int64)v69, 0, 0xB64u);
-  math_702080((void*)((__int64)v69), (__int64)(a2 + 22), v71, v71);
+  f_.v71[7] = v14 + 1;
+  f_.v71[8] = v14 + 2;
+  f_.v71[17] = v15 + 8;
+  f_.v71[11] = v15 + 2;
+  f_.v71[13] = v15 + 4;
+  f_.v71[10] = v15 + 1;
+  f_.v71[12] = v15 + 3;
+  f_.v71[14] = v15 + 5;
+  f_.v71[15] = v15 + 6;
+  f_.v71[16] = v15 + 7;
+  f_.v71[0] = v17;
+  f_.v71[3] = v18;
+  f_.v71[1] = v17 + 1;
+  f_.v71[2] = v17 + 2;
+  f_.v71[4] = v18 + 1;
+  f_.v71[5] = v18 + 2;
+  memset_plt((__int64)f_.v70, 0, 0xB64u);
+  math_702080((void*)((__int64)f_.v70), (__int64)(a1 + 22), v78, v78);
+  memset_plt((__int64)f_.v69, 0, 0xB64u);
+  math_702080((void*)((__int64)f_.v69), (__int64)(a2 + 22), f_.v71, f_.v71);
   v19 = 0x0.0p+0f;
   v20 = 0;
   do {
     {
-      v21 = (float*)&v70[v20];
+      v21 = (float*)&f_.v70[v20];
       __asm__ volatile("" ::"r"(v21));
     }
     {
-      v22 = (float*)&v69[v20];
+      v22 = (float*)&f_.v69[v20];
       __asm__ volatile("" ::"r"(v22));
     }
     v20 += 336;
@@ -280,16 +285,16 @@ _QWORD* math_7022a0(_QWORD* a1, _QWORD* a2)
       v19 = v33;
     }
   } while (v20 != 3024);
-  memset_plt((__int64)v68, 0, 0xB64u);
-  memcpy_plt((__int64)v67, (__int64)v70, 0xB64u);
-  SdkRoutine_879ef0((void*)(v68), v67);
-  memset_plt((__int64)v66, 0, 0xB64u);
-  memcpy_plt((__int64)&v65, (__int64)v69, 0xB64u);
-  result = X8CALL_X0(void*, SdkRoutine_879ef0((void*)(v66), &v65));
+  memset_plt((__int64)f_.v68, 0, 0xB64u);
+  memcpy_plt((__int64)f_.v67, (__int64)f_.v70, 0xB64u);
+  SdkRoutine_879ef0((void*)(f_.v68), f_.v67);
+  memset_plt((__int64)f_.v66, 0, 0xB64u);
+  memcpy_plt((__int64)&f_.v65, (__int64)f_.v69, 0xB64u);
+  result = X8CALL_X0(void*, SdkRoutine_879ef0((void*)(f_.v66), &f_.v65));
   v35 = 0;
   do {
-    v36 = (float*)((char*)v68 + v35);
-    v37 = (float*)((char*)v66 + v35);
+    v36 = (float*)((char*)f_.v68 + v35);
+    v37 = (float*)((char*)f_.v66 + v35);
     v35 += 108;
     v38 = vabds_f32(*v36, *v37) * 0x1.0000000000000p+23f;
     v39 = vabds_f32(v36[1], v37[1]) * 0x1.0000000000000p+23f;

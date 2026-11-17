@@ -854,7 +854,7 @@ long double cuda_driver_229040(__int64 a1, __int64 a2, unsigned int* a3,
   a3[11] = v9;
   CudaDriverRoutine_bbd70(a2, &f_.v50);
   v10 = a3[17];
-  v11 = HIDWORD(f_.v50) & 0x1FFFF | (a3[49] >> 17 << 17);
+  v11 = DWORDn(f_.v50, sizeof(f_.v50) / 4 - 1) & 0x1FFFF | (a3[49] >> 17 << 17);
   a3[48] = f_.v50;
   a3[49] = v11;
   a3[11] |= 0x44000000u;
@@ -905,8 +905,8 @@ long double cuda_driver_229040(__int64 a1, __int64 a2, unsigned int* a3,
       v25 = ((f_.v51[v23] + v21[946] - 1) / v21[946] * v21[946]) << 15;
       a3[(unsigned int)(v23 + 640) >> 5] |= 1 << v23;
       a3[v22 >> 5] = v25 & 0xFFF80000 | a3[v22 >> 5] & 0x7FFFF;
-      a3[(v22 - 19) >> 5] =
-          HIDWORD(v24) & 0x1FFFF | (a3[(v22 - 19) >> 5] >> 17 << 17);
+      a3[(v22 - 19) >> 5] = DWORDn(v24, sizeof(v24) / 4 - 1) & 0x1FFFF |
+                            (a3[(v22 - 19) >> 5] >> 17 << 17);
       a3[(v22 - 51) >> 5] = v24;
       v21 = *(unsigned int**)(a1 + 64);
       ++v23;
@@ -961,7 +961,7 @@ LABEL_6:
   v38 = CudaDriverRoutine_22bf00(v35);
   v39 = CudaDriverRoutine_229ac0(v37);
   v40 = v39;
-  v41 = HIDWORD(v39);
+  v41 = DWORDn(v39, sizeof(v39) / 4 - 1);
   v42 = CudaDriverRoutine_15fd0(a2);
   PSEUDO_LOW_LANE128(v43, n128_u64, f_.v55);
   v44 = v42;
