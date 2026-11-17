@@ -2213,7 +2213,7 @@ void game_combat_e44050(float32x4_t* a1)
   LABEL_16:
     v14 = v9 - v11;
     v15 = (float)(PSEUDO_UNFUSED(v14 * v14)) + (float)(v12 * v12);
-    if (v15 >= 0x1.0000000000000p-23f) {
+    if (!(v15 < 0x1.0000000000000p-23f)) {
       v18 = 0x1.0000000000000p+0f / sqrtf(v15);
       v17 = v12 * v18;
       v16 = v14 * v18;
