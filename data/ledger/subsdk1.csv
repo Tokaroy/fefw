@@ -1324,6 +1324,7 @@ fcc0,1876,verified,src/nvidia/unnamed/c000_0.c,CudaDriverHr_fcc0
 52ef0,524,verified,src/nvidia/unnamed/o000_3.c,CudaDriverHr_52ef0
 53100,144,verified,src/nvidia/unnamed/c000_1.c,CudaDriverHr_53100
 531c0,132,verified,src/nvidia/unnamed/c000_1.c,CudaDriverHr_531c0
+53250,956,verified,src/nvidia/unplaced_43.c,nvidia_53250
 53610,384,verified,src/nvidia/cuda_driver_unplaced_2.c,cuda_driver_53610
 537a0,1392,verified,src/nvidia/unnamed/c000_1.c,CudaDriverHr_537a0
 53d40,128,verified,src/nvidia/unnamed/c000_1.c,CudaDriverHr_53d40
