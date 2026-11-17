@@ -2120,7 +2120,10 @@ void game_combat_e43d60(__int64 a1)
                             memory_order_relaxed);
   v12 = *(_QWORD*)(v9 + 40);
   v13 = *(_QWORD*)(v10 + 8) == -1 || v12 == 0;
-  if (v13 || (v14 = *(_QWORD*)(v12 + 80)) == 0 ||
+  // The owner check reads the use count again, the load is dead.
+  if (v13 ||
+      ((void)*(volatile __int64*)(v10 + 8), v14 = *(_QWORD*)(v12 + 80)) ==
+          0 ||
       (*(_QWORD*)(v14 + 8) != -1 ? (v15 = *(_QWORD*)(v12 + 88) == 0)
                                  : (v15 = true),
        v15 || *(_QWORD*)(v10 + 8) == -1)) {

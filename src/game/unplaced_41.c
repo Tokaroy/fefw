@@ -1494,7 +1494,8 @@ LABEL_38:
                                     memory_order_relaxed);
           v202 = *(int8x16_t**)(v200 + 40);
           if (*(_QWORD*)(v201 + 8) == -1 || v202 == nullptr ||
-              (v203 = LANES128(v202[5]).n128_u64[0]) == 0 ||
+              ((void)*(volatile __int64*)(v201 + 8),
+               v203 = LANES128(v202[5]).n128_u64[0]) == 0 ||
               *(_QWORD*)(v203 + 8) == -1 ||
               LANES128(v202[5]).n128_u64[1] == 0 ||
               *(_QWORD*)(v201 + 8) == -1) {
@@ -1528,7 +1529,8 @@ LABEL_38:
                                     memory_order_relaxed);
           v206 = *(int8x16_t**)(v204 + 64);
           if (*(_QWORD*)(v205 + 8) == -1 || v206 == nullptr ||
-              (v207 = LANES128(v206[5]).n128_u64[0]) == 0 ||
+              ((void)*(volatile __int64*)(v205 + 8),
+               v207 = LANES128(v206[5]).n128_u64[0]) == 0 ||
               *(_QWORD*)(v207 + 8) == -1 ||
               LANES128(v206[5]).n128_u64[1] == 0 ||
               *(_QWORD*)(v205 + 8) == -1) {
