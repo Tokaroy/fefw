@@ -4702,12 +4702,14 @@ __int64 nvidia_64e500(__int64 a1, __int64 a2, __int64* a3, unsigned int* a4,
   unsigned int v46;
   unsigned int v47;
   __int64 v48;
-  __int128 v49;
-  __int128 v50;
-  __int128 v51;
-  __int128 v52;
   __int128 v53;
   _QWORD v54[3];
+  struct __attribute__((packed)) {
+    __int128 v49;
+    __int128 v50;
+    __int128 v51;
+    __int128 v52;
+  } g_;
 
   v6 = a4[2];
   v7 = a2;
@@ -4783,18 +4785,18 @@ __int64 nvidia_64e500(__int64 a1, __int64 a2, __int64* a3, unsigned int* a4,
   v48 = a5;
   v54[0] = v25 | 0x10000010000LL | (unsigned __int16)(v26 + v6);
   v53 = 0u;
-  v49 = 0u;
-  v50 = 0u;
-  v52 = 0u;
-  v51 = 0u;
-  LODWORD(v49) = v23;
+  g_.v49 = 0u;
+  g_.v50 = 0u;
+  g_.v52 = 0u;
+  g_.v51 = 0u;
+  LODWORD(g_.v49) = v23;
   LODWORD(v53) = v17;
-  LODWORD(v50) = 1;
+  LODWORD(g_.v50) = 1;
   if ((a6 & 0x18) != 0) {
     if ((a6 & 8) != 0) {
       a5 += v23 * (v18 - 1);
       v48 = a5;
-      LODWORD(v49) = -v23;
+      LODWORD(g_.v49) = -v23;
     }
     if ((a6 & 0x10) != 0) {
       v27 = v24 * (v19 - 1);

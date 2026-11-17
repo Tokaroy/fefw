@@ -15285,7 +15285,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 48a500,408,verified,src/nn/gs/unplaced.c,nn_gs_48a500
 48a6b0,764,verified,src/nn/gs/unplaced.c,nn_gs_48a6b0
 48ce20,228,verified,src/nn/gs/unplaced.c,nn_gs_48ce20
-48d060,692,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
+48d060,720,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
 48d380,220,verified,src/nn/gs/unplaced.c,nn_gs_48d380
 48d480,212,verified,src/nn/gs/unplaced.c,nn_gs_48d480
 48d560,656,verified,src/nn/gs/unplaced.c,nn_gs_48d560
@@ -25112,8 +25112,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 64d7a0,404,verified,src/nvidia/unplaced_9.c,nvidia_64d7a0
 64d950,176,verified,src/nvidia/unplaced_19.c,nvidia_64d950
 64da00,780,verified,src/nvidia/unplaced_9.c,nvidia_64da00
-64de60,1688,disputed,src/nvidia/unplaced_9.c,nvidia_64de60
-64e500,828,disputed,src/nvidia/unplaced_9.c,nvidia_64e500
+64de60,1688,verified,src/nvidia/unplaced_9.c,nvidia_64de60
+64e500,828,verified,src/nvidia/unplaced_9.c,nvidia_64e500
 64e860,420,verified,src/nvidia/unplaced_9.c,nvidia_64e860
 64ea10,104,verified,src/nvidia/unplaced_9.c,nvidia_64ea10
 64ea80,700,verified,src/nvidia/unplaced_9.c,nvidia_64ea80
@@ -30063,7 +30063,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 706580,128,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore14GetOrientationEv
 706600,8,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZNK4nerd13gyro_pointing16GyroPointingCore17GetIntegrityStateEv
 706610,24,verified,src/nerd/gyro_pointing/gyro_pointing_core.cpp,_ZN4nerd13gyro_pointing16GyroPointingCore21UpdateIfEnoughSamplesEv
-706640,388,disputed,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Update
+706640,14804,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_Update
 70a5e0,352,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_UpdateFusedGyroBiasEstimate
 70a740,1440,verified,src/nerd/gyro_pointing/gyro_pointing_core_impl.c,nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation
 70ace0,144,verified,src/nerd/gyro_pointing/unplaced_2.c,nerd_gyro_pointing_70ace0

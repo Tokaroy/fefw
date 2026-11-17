@@ -7798,7 +7798,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 263940,64,verified,src/angelscript/angelscript/source/as_variablescope.cpp,_ZN16asCVariableScope19GetVariableByOffsetEi
 263990,16,verified,src/game/unnamed/v000_0.c,GameHr_263990
 2639a0,284,disputed,src/nn/atk/unplaced_2.c,nn_atk_2639a0
-263bf0,632,disputed,src/nn/atk/unplaced_2.c,nn_atk_263bf0
+263bf0,604,disputed,src/nn/atk/unplaced_2.c,nn_atk_263bf0
 263e70,600,verified,src/nn/atk/unplaced_2.c,nn_atk_263e70
 2640d0,492,disputed,src/nn/atk/unplaced_2.c,nn_atk_2640d0
 264560,564,verified,src/nn/atk/unplaced_2.c,nn_atk_264560
@@ -66878,7 +66878,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 159b930,392,verified,src/game/gameui/unplaced_4.c,game_gameui_159b930
 159bae0,452,disputed,src/game/gameui/util.c,game_gameui_Util_CollectArtsInfoList
 159c780,392,verified,src/game/gameui/util.c,game_gameui_Util_CollectBlazeArtsInfo_159c780
-159cce0,612,verified,src/game/gameui/util.c,game_gameui_Util_CollectBlazeArtsInfo_159cce0
+159cce0,612,disputed,src/game/gameui/util.c,game_gameui_Util_CollectBlazeArtsInfo_159cce0
 159cf80,184,verified,src/game/gameui/util.c,game_gameui_Util_IsVisibleSpecialPage
 159d0c0,720,verified,src/game/unnamed/b020_2.c,GameHr_159d0c0
 159d390,724,verified,src/game/unplaced_12.c,game_159d390
@@ -79184,7 +79184,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 180c220,1236,verified,src/game/cutscene/light_actor.c,LightActor_180c220
 180c730,516,verified,src/game/cutscene/light_actor.c,LightActor_Unknown7
 180c940,220,verified,src/game/cutscene/light_actor.c,LightActor_Unknown8
-180ca40,2580,disputed,src/game/cutscene/light_actor.c,LightActor_Unknown4
+180ca40,2664,disputed,src/game/cutscene/light_actor.c,LightActor_Unknown4
 180d660,584,verified,src/game/cutscene/light_actor.c,LightActor_Unknown5
 180d8b0,152,verified,src/game/cutscene/movie_actor.c,MovieActor_Destructor
 180d950,176,verified,src/game/cutscene/movie_actor.c,MovieActor_DeletingDestructor

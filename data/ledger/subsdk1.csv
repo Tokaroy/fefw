@@ -228,7 +228,7 @@ e2a0,120,verified,src/nvidia/unnamed/c000_0.c,CudaDriverHr_e2a0
 e320,520,verified,src/nvidia/cuda_driver_unplaced.c,cuda_driver_e320
 e7b0,8,verified,src/nvidia/cuda_driver_stubs.cpp,_Z19CudaDriverStub_e7b0v
 e7c0,8,verified,src/nvidia/cuda_driver_stubs.cpp,_Z19CudaDriverStub_e7c0v
-e7e0,2856,disputed,src/nvidia/unplaced_28.c,nvidia_e7e0
+e7e0,2008,disputed,src/nvidia/unplaced_28.c,nvidia_e7e0
 f6a0,312,verified,src/nvidia/cuda_driver_unplaced.c,cuda_driver_f6a0
 f7f0,4,verified,src/nvidia/cuda_driver_stubs.cpp,_Z19CudaDriverStub_f7f0v
 f800,4,verified,src/nvidia/cuda_driver_stubs.cpp,_Z19CudaDriverStub_f800v
