@@ -1489,9 +1489,9 @@ de260,56,verified,src/snd/game_ctrl.cpp,_ZN3snd3Env7destroyEv
 de2a0,124,verified,src/snd/env.cpp,_ZN3snd3Env6updateEv
 de340,1124,verified,src/snd/env.c,Env_de340
 de920,4064,verified,src/snd/env.c,Env_de920
-df9a0,320,verified,src/snd/env_wind.cpp,_ZN3snd3Env4stopEPKc
+df9a0,324,verified,src/snd/env_wind.cpp,_ZN3snd3Env4stopEPKc
 dfb00,280,verified,src/snd/env.cpp,_ZN3snd3Env9findGroupEPKc
-dfc30,196,disputed,src/snd/env_wind.cpp,_ZN3snd3fnd9FastAllocINS_3Env5GroupELj0EE6createEv
+dfc30,196,verified,src/snd/env_wind.cpp,_ZN3snd3fnd9FastAllocINS_3Env5GroupELj0EE6createEv
 dfd00,516,verified,src/snd/unplaced_10.c,snd_dfd00
 dff40,80,verified,src/snd/env.cpp,_ZN3snd3Env5resetEv
 dffb0,136,verified,src/snd/env.cpp,_ZN3snd3Env4playEPKcPKvS2_S2_hPv
@@ -1544,7 +1544,7 @@ e4830,56,verified,src/snd/game_ctrl.cpp,_ZN3snd4Wind7destroyEv
 e4880,136,verified,src/snd/env_wind.cpp,_ZN3snd4Wind6updateEv
 e4920,308,verified,src/snd/env_wind.cpp,_ZN3snd4Wind4stopEPKc
 e4a80,280,verified,src/snd/env_wind.cpp,_ZN3snd4Wind9findGroupEPKc
-e4bb0,196,disputed,src/snd/env_wind.cpp,_ZN3snd3fnd9FastAllocINS_4Wind5GroupELj0EE6createEv
+e4bb0,196,verified,src/snd/env_wind.cpp,_ZN3snd3fnd9FastAllocINS_4Wind5GroupELj0EE6createEv
 e4c80,288,disputed,src/snd/env_wind.cpp,_ZN3snd4Wind9stopGroupEPKc
 e4ec0,80,verified,src/snd/env_wind.cpp,_ZN3snd4Wind5resetEv
 e4f40,684,disputed,src/snd/unplaced_10.c,snd_e4f40
@@ -38284,7 +38284,7 @@ cd0de0,260,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hu
 cd0f00,244,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character18ClearBehaviorStackENS_3hub15CharacterHandleE
 cd1000,284,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character16PushBehaviorMoveENS_3hub15CharacterHandleERKN4math4Vec3Ef
 cd1120,692,verified,src/game/script/hub_character_natives_impl.c,HubCharacterNatives_cd1120
-cd13f0,408,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character24SetBehaviorEnableRunningENS_3hub15CharacterHandleEb
+cd13f0,436,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character24SetBehaviorEnableRunningENS_3hub15CharacterHandleEb
 cd1500,244,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character18SetBehaviorRestartENS_3hub15CharacterHandleE
 cd1600,316,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character19IsBehaviorExceptionENS_3hub15CharacterHandleE
 cd1760,288,verified,src/game/script/hub_character_natives.cpp,_ZN4game6script3hub9character18IsBehaviorCompleteENS_3hub15CharacterHandleE
