@@ -552,12 +552,21 @@ __int64 ProcPopup_Unknown2(__int64 a1)
                                                   (__int64)"IO", 0) &
                       1) == 0) {
         v6 = std___1___shared_weak_count_lock_alt1(*(_QWORD*)(v4 + 8));
-        if (v6 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v6 + 8),
-                                        0xFFFFFFFFFFFFFFFFLL) == 0) {
-          v7 = v6;
-          (*(void (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6);
-          std___1___shared_weak_count___release_weak_alt2(v7);
+        if (v6 != 0) {
+          // An expired weak owner reads the use count again, the load is dead.
+          __int64 wk1_o = *(__int64*)(__int64)(v4);
+          int wk1_f = wk1_o != 0 ? (*(unsigned char*)(wk1_o + 24) != 0 ? wk1_o + 152 : 0) != *(__int64*)((__int64)(v4) + 16) : 1;
+          if (atomic_fetch_add((atomic_ullong* volatile)(v6 + 8), 0xFFFFFFFFFFFFFFFFLL) == 0) {
+            v7 = v6;
+            (*(void (**)(__int64))(*(_QWORD*)v6 + 16LL))(v6);
+            std___1___shared_weak_count___release_weak_alt2(v7);
+          }
+          if (wk1_f == 0) {
+            goto WK1_SKIP;
+          }
         }
+        (void)*(volatile __int64*)(*(__int64*)((__int64)(v4) + 8) + 8);
+      WK1_SKIP:;
         {
           v8 = *(_QWORD**)(*(_QWORD*)(v4 + 16) + 24LL);
           __asm__ volatile("" ::"r"(v8));
@@ -601,12 +610,21 @@ __int64 ProcPopup_Unknown2(__int64 a1)
       (LayoutAccessor_1563280_alt1(*(__int64**)(a1 + 304), (__int64)"IO", 0) &
        1) == 0) {
     v14 = std___1___shared_weak_count_lock_alt1(*(_QWORD*)(v12 + 8));
-    if (v14 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v14 + 8),
-                                     0xFFFFFFFFFFFFFFFFLL) == 0) {
-      v15 = v14;
-      (*(void (**)(__int64))(*(_QWORD*)v14 + 16LL))(v14);
-      std___1___shared_weak_count___release_weak_alt2(v15);
+    if (v14 != 0) {
+      // An expired weak owner reads the use count again, the load is dead.
+      __int64 wk2_o = *(__int64*)(__int64)(v12);
+      int wk2_f = wk2_o != 0 ? (*(unsigned char*)(wk2_o + 24) != 0 ? wk2_o + 152 : 0) != *(__int64*)((__int64)(v12) + 16) : 1;
+      if (atomic_fetch_add((atomic_ullong* volatile)(v14 + 8), 0xFFFFFFFFFFFFFFFFLL) == 0) {
+        v15 = v14;
+        (*(void (**)(__int64))(*(_QWORD*)v14 + 16LL))(v14);
+        std___1___shared_weak_count___release_weak_alt2(v15);
+      }
+      if (wk2_f == 0) {
+        goto WK2_SKIP;
+      }
     }
+    (void)*(volatile __int64*)(*(__int64*)((__int64)(v12) + 8) + 8);
+  WK2_SKIP:;
     {
       v16 = *(_QWORD**)(*(_QWORD*)(v12 + 16) + 24LL);
       __asm__ volatile("" ::"r"(v16));
@@ -657,12 +675,21 @@ __int64 ProcPopup_Unknown2(__int64 a1)
           LayoutAccessor_1563280_alt1(*(__int64**)(a1 + 320), (__int64)"IO", 0);
       if ((result & 1) == 0) {
         v21 = std___1___shared_weak_count_lock_alt1(*(_QWORD*)(v19 + 8));
-        if (v21 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v21 + 8),
-                                         0xFFFFFFFFFFFFFFFFLL) == 0) {
-          v22 = v21;
-          (*(void (**)(__int64))(*(_QWORD*)v21 + 16LL))(v21);
-          std___1___shared_weak_count___release_weak_alt2(v22);
+        if (v21 != 0) {
+          // An expired weak owner reads the use count again, the load is dead.
+          __int64 wk3_o = *(__int64*)(__int64)(v19);
+          int wk3_f = wk3_o != 0 ? (*(unsigned char*)(wk3_o + 24) != 0 ? wk3_o + 152 : 0) != *(__int64*)((__int64)(v19) + 16) : 1;
+          if (atomic_fetch_add((atomic_ullong* volatile)(v21 + 8), 0xFFFFFFFFFFFFFFFFLL) == 0) {
+            v22 = v21;
+            (*(void (**)(__int64))(*(_QWORD*)v21 + 16LL))(v21);
+            std___1___shared_weak_count___release_weak_alt2(v22);
+          }
+          if (wk3_f == 0) {
+            goto WK3_SKIP;
+          }
         }
+        (void)*(volatile __int64*)(*(__int64*)((__int64)(v19) + 8) + 8);
+      WK3_SKIP:;
         {
           v23 = *(_QWORD**)(*(_QWORD*)(v19 + 16) + 24LL);
           __asm__ volatile("" ::"r"(v23));

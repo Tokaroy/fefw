@@ -75673,12 +75673,12 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 17358f0,372,verified,src/game/unplaced_17.c,game_17358f0
 1735a70,224,verified,src/game/unnamed/b023_0.c,GameHr_1735a70
 1735b60,692,verified,src/game/unplaced_14.c,game_1735b60
-1735f10,680,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_1735f10
+1735f10,704,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_1735f10
 17361d0,524,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_17361d0
-1736c50,388,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_1736c50
+1736c50,412,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_1736c50
 1736df0,308,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_Destructor
 1736f50,80,verified,src/memory/new_delete.cpp,deleting destructor at 0x1736f50
-1736fa0,800,disputed,src/game/gameui/anonymous/proc_popup.c,ProcPopup_Unknown2
+1736fa0,824,verified,src/game/gameui/anonymous/proc_popup.c,ProcPopup_Unknown2
 17372e0,104,verified,src/game/unnamed/b023_0.c,GameHr_17372e0
 1737960,376,verified,src/game/unnamed/b023_0.c,GameHr_1737960
 1737ae0,216,verified,src/game/unnamed/b023_0.c,GameHr_1737ae0
