@@ -27019,6 +27019,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 689990,548,verified,src/nn/unnamed/s004_2.c,SdkHr_689990
 689bc0,264,verified,src/nn/unnamed/s004_1.c,SdkHr_689bc0
 689ce0,668,verified,src/nn/unnamed/s004_1.c,SdkHr_689ce0
+689f90,564,verified,src/nn/unplaced_20.c,nn_689f90
 68a1d0,200,verified,src/nn/unnamed/s004_1.c,SdkHr_68a1d0
 68a2a0,20648,verified,src/graphics/program_commands.cpp,graphics::EmitProgramCommands
 68f9e0,5396,verified,src/graphics/unplaced.c,graphics_68f9e0
