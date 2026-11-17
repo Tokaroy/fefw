@@ -1021,6 +1021,8 @@ LABEL_24:
     else if ((*(_BYTE*)(v13 + 340) & 1) != 0) {
       goto LABEL_37;
     }
+    // The owner use count is read again and dropped.
+    (void)*(volatile __int64*)(v12 + 8);
     CharacterFacialController_10b2650_alt2(
         a1, *(_DWORD*)(*(_QWORD*)(v13 + 72) + 120LL));
   }

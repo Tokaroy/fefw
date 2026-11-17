@@ -317,7 +317,9 @@ void llvm_libcxx_21_libcxx_include___vector_d3ade0(__int64 a1, __int64 a2,
     v16 = v14 + 9;
   }
   *(_QWORD*)(a1 + 64) = *v16;
+  (void)*(volatile __int64*)(*(_QWORD*)(a1 + 48) + 8);
   v17 = v14[9];
+  (void)*(volatile __int64*)(*(_QWORD*)(a1 + 48) + 8);
   v18 = v14[6];
   v19 = v14[7];
   if (v19 != 0) {
@@ -388,6 +390,7 @@ LABEL_19:
   *((_QWORD*)&v25 + 1) = 1056964608;
   *(_OWORD*)(a1 + 144) = v25;
   *(_OWORD*)(a1 + 160) = v24;
+  (void)*(volatile __int64*)(*(_QWORD*)(a1 + 48) + 8);
   v27 = *(_QWORD*)(v26 + 392);
   v28 = *(_QWORD*)(v26 + 400);
   if (v28 != 0) {
@@ -419,6 +422,7 @@ LABEL_19:
   else {
     v31 = 440;
   }
+  (void)*(volatile __int64*)(*(_QWORD*)(a1 + 48) + 8);
   v32 = *(_QWORD*)(*(_QWORD*)(a1 + 56) + v31);
   if (v32 == 0) {
     goto LABEL_51;

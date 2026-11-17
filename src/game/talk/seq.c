@@ -2417,7 +2417,8 @@ LABEL_30:
                                 memory_order_relaxed);
       v44 = *(_QWORD*)(v42 + 40);
       v45 = *(_QWORD*)(v43 + 8) == -1 | v44 == 0;
-      if (v45 || (v46 = *(_QWORD*)(v44 + 80)) == 0 ||
+      if (v45 || ((void)*(volatile __int64*)(v43 + 8),
+                  (v46 = *(_QWORD*)(v44 + 80)) == 0) ||
           (*(_QWORD*)(v46 + 8) != -1 ? (v47 = *(_QWORD*)(v44 + 88) == 0)
                                      : (v47 = true),
            v47 || *(_QWORD*)(v43 + 8) == -1)) {

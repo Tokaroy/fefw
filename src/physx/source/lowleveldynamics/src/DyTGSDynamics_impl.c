@@ -117,8 +117,8 @@ void physx_Dy_DynamicsTGSContext_iterativeSolveIsland(__int64 a1, __int64 a2,
   __int64 v92;
   float* v93;
   __int64 v94;
-  int v95;
-  unsigned int v96;
+  unsigned int v95;
+  __int64 v96;
   __int64 v97;
   __int64 v98;
   __int64 v99;
@@ -195,17 +195,10 @@ void physx_Dy_DynamicsTGSContext_iterativeSolveIsland(__int64 a1, __int64 a2,
           } while (v48 != a5);
         }
         else {
-          v95 = a5 & 7;
-          if (a5 >= 8) {
-            v96 = a5 & 0xFFFFFFF8;
-            do {
-              v96 -= 8;
-            } while (v96 != 0);
-          }
-          if ((a5 & 7) != 0) {
-            do {
-              --v95;
-            } while (v95 != 0);
+          // Gravity with no body still reads the volatile count once a step.
+          v96 = *(_QWORD*)(a2 + 120);
+          for (v95 = a5; v95 != 0; --v95) {
+            (void)*(volatile int*)(v96 + 24);
           }
         }
       }
