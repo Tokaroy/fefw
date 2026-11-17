@@ -55659,7 +55659,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 12314f0,148,verified,src/game/map/history_records.cpp,_ZN4game3map7history18DataAdditionalUnitD0Ev
 1231590,508,verified,src/game/map/history_records.cpp,_ZNK4game3map7history18DataAdditionalUnit9SerializeERNS_6StreamE
 1231790,8,verified,src/game/map/history_data.cpp,_ZNK4game3map7history18DataAdditionalUnit9Unknown03Ev
-12317a0,296,disputed,src/game/map/history_records.cpp,_ZN4game3map7history18DataAdditionalUnit11DeserializeERNS_6StreamE
+12317a0,296,verified,src/game/map/history_records.cpp,_ZN4game3map7history18DataAdditionalUnit11DeserializeERNS_6StreamE
 1231910,4,verified,src/memory/new_delete.cpp,complete destructor at 0x1231910
 1231920,44,verified,src/memory/new_delete.cpp,deleting destructor at 0x1231920
 1231950,212,verified,src/game/map/history_records.cpp,_ZNK4game3map7history15DataDeletedUnit9SerializeERNS_6StreamE
