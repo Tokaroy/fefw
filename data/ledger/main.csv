@@ -2547,7 +2547,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 11efe0,172,verified,src/snd/manager.c,snd_Manager_resetVolumeSlot
 11f0a0,180,verified,src/snd/manager.c,snd_Manager_setLPFSlot
 11f180,180,verified,src/snd/manager.c,snd_Manager_setSendAuxASlot
-11f260,252,verified,src/snd/unplaced_10.c,snd_11f260
+11f260,252,disputed,src/snd/unplaced_10.c,snd_11f260
 11f360,180,verified,src/snd/manager.c,Manager_11f360
 11f420,1376,verified,src/snd/fnd/crc32_list.c,Crc32List_11f420
 11f980,196,verified,src/snd/manager.c,Manager_11f980
@@ -21161,7 +21161,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 79ec90,164,verified,src/game/map/battle_side.c,BattleSide_79ec90
 79ed40,348,verified,src/game/map/battle_side.c,BattleSide_79ed40
 79eea0,336,verified,src/game/map/battle_side.c,BattleSide_79eea0
-79f000,2784,disputed,src/game/map/unplaced_10.c,game_map_79f000
+79f000,1328,disputed,src/game/map/unplaced_10.c,game_map_79f000
 79fd30,588,verified,src/game/map/battle_side.c,BattleSide_79fd30
 79ff80,724,verified,src/game/map/battle_side.c,BattleSide_79ff80
 7a0260,724,verified,src/game/map/battle_side.c,BattleSide_7a0260
@@ -36364,7 +36364,7 @@ c032b0,300,verified,src/game/templates/vector.cpp,_ZNSt3__16vectorINS_10shared_p
 c03400,1436,verified,src/wld/unplaced_4.c,wld_c03400
 c04760,1120,verified,src/wld/grass_module.c,GrassModule_Destructor
 c04bf0,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xc04bf0
-c04c40,2352,disputed,src/memory/unplaced_5.c,memory_c04c40
+c04c40,2328,disputed,src/memory/unplaced_5.c,memory_c04c40
 c05600,44,verified,src/wld/grass_module.c,GrassModule_Unknown9
 c05630,8,verified,src/game/game_trivial.cpp,_Z15GameStub_c05630v
 c05640,12,verified,src/game/game_trivial.cpp,_Z15GameStub_c05640v
@@ -36662,7 +36662,7 @@ c2c570,364,verified,src/game/unnamed/b010_0.c,GameHr_c2c570
 c2c6e0,420,verified,src/game/unnamed/b010_0.c,GameHr_c2c6e0
 c2c890,484,verified,src/wld/unplaced.c,wld_c2c890
 c2ca80,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
-c2caa0,6756,verified,src/wld/unplaced.c,wld_c2caa0
+c2caa0,6596,verified,src/wld/unplaced.c,wld_c2caa0
 c2faa0,1872,verified,src/wld/unplaced.c,wld_c2faa0
 c30250,336,verified,src/game/unnamed/b010_1.c,GameHr_c30250
 c303a0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -36687,7 +36687,7 @@ c32560,452,verified,src/game/unnamed/b010_1.c,GameHr_c32560
 c32960,316,verified,src/game/unnamed/b010_1.c,GameHr_c32960
 c32aa0,724,verified,src/game/unnamed/r003_0.c,GameHr_c32aa0
 c32db0,412,verified,src/game/unnamed/b010_1.c,GameHr_c32db0
-c32fa0,4348,verified,src/wld/unplaced.c,wld_c32fa0
+c32fa0,4372,verified,src/wld/unplaced.c,wld_c32fa0
 c34200,1008,verified,src/game/unnamed/b010_1.c,GameHr_c34200
 c34600,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 c34620,16,verified,src/game/templates/shared_ptr.cpp,_ZNSt3__120__shared_ptr_emplaceIN3wld3map14ObjectLayouter13LoadingObjectENS_9allocatorIS4_EEED2Ev
@@ -42619,13 +42619,13 @@ e43d00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vect
 e43d20,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe43d20
 e43d30,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe43d30
 e43d60,624,disputed,src/game/combat/unplaced.c,game_combat_e43d60
-e44050,888,verified,src/game/combat/unplaced.c,game_combat_e44050
+e44050,888,disputed,src/game/combat/unplaced.c,game_combat_e44050
 e44660,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe44660
 e44670,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe44670
 e446a0,296,verified,src/game/combat/unplaced.c,game_combat_e446a0
 e447d0,472,verified,src/game/combat/unplaced.c,game_combat_e447d0
 e449b0,788,verified,src/game/combat/unplaced.c,game_combat_e449b0
-e44cd0,1328,verified,src/game/combat/unplaced.c,game_combat_e44cd0
+e44cd0,1328,disputed,src/game/combat/unplaced.c,game_combat_e44cd0
 e45210,800,verified,src/game/combat/unplaced.c,game_combat_e45210
 e45540,316,verified,src/game/combat/unplaced_4.c,game_combat_e45540
 e4b940,656,verified,src/game/unnamed/b012_1.c,GameHr_e4b940
@@ -80153,7 +80153,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1829440,12,verified,src/game/map/map_unit_info.c,MapUnitInfo_Unknown6
 1829450,12,verified,src/game/map/map_unit_info.c,MapUnitInfo_DeletingDestructor
 1829460,2360,verified,src/game/map/unplaced_10.c,game_map_1829460
-1829dc0,3224,disputed,src/game/map/unplaced_10.c,game_map_1829dc0
+1829dc0,3124,disputed,src/game/map/unplaced_10.c,game_map_1829dc0
 182aaa0,440,verified,src/game/map/map_unit_info.c,MapUnitInfo_182aaa0
 182ac80,464,verified,src/game/map/map_unit_info.c,game_map_MapUnitInfo_CloseSimple
 182ae70,808,verified,src/game/unnamed/b024_2.c,GameHr_182ae70

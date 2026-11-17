@@ -1232,18 +1232,17 @@ void math_734e60(void* this_)
   double v260;
   double v261;
   double v262;
-  _BYTE v263[16];
-  __int64 v264;
   struct {
+    _BYTE v263[16];
+    __int64 v264;
+    char gap24_[488];
     __int64 v265;
     char gap520_[1016];
     __int64 v266;
-  } v265_;
-  _BYTE v267[512];
-  struct {
+    _BYTE v267[512];
     double v268;
     double v269;
-  } v268_;
+  } f_;
 
   {
     v1 = *((_QWORD*)this_ + 551);
@@ -1915,7 +1914,7 @@ LABEL_114:
     v144 = 0x0.0p+0f;
     v40 = 0x0.0p+0f;
   }
-  memset_plt((__int64)v263, 0, 0x608u);
+  memset_plt((__int64)f_.v263, 0, 0x608u);
   if ((v39 & 1) == 0) {
     if ((v39 & 2) == 0) {
       v200 = 0;
@@ -1924,8 +1923,8 @@ LABEL_114:
       }
       goto LABEL_240;
     }
-    memset_plt((__int64)v263, 0, 0x200u);
-    v200 = ++v265_.v266;
+    memset_plt((__int64)f_.v263, 0, 0x200u);
+    v200 = ++f_.v266;
     if (v1 != 0) {
     LABEL_185:
       v201 = v145 / v40;
@@ -1945,7 +1944,7 @@ LABEL_114:
         v206 = v202 - v1 + v205;
         v204 = 0;
         {
-          v207 = (double*)&v263[512 * v200 - 512];
+          v207 = (double*)&f_.v263[512 * v200 - 512];
           __asm__ volatile("" ::"r"(v207));
         }
         v208 = (char*)this_ + 12 * v206 + 3644;
@@ -2010,7 +2009,7 @@ LABEL_114:
         v223 = (v200 << 9) + 8 * v204;
         v224 = v205 + v204 + v202 - v1;
         {
-          v225 = (double*)&v263[v223 - 512];
+          v225 = (double*)&f_.v263[v223 - 512];
           __asm__ volatile("" ::"r"(v225));
         }
         v226 = (char*)this_ + 12 * v224 + 3644;
@@ -2031,7 +2030,7 @@ LABEL_114:
           *v225++ = (float)(v228 - v201);
         } while (v203 != 0);
       }
-      v200 = v265_.v266;
+      v200 = f_.v266;
       if (v66) {
         goto LABEL_240;
       }
@@ -2039,8 +2038,8 @@ LABEL_114:
     }
     goto LABEL_213;
   }
-  memset_plt((__int64)v263, 0, 0x200u);
-  v265_.v266 = 1;
+  memset_plt((__int64)f_.v263, 0, 0x200u);
+  f_.v266 = 1;
   if (v1 != 0) {
     v173 = v147 / v40;
     {
@@ -2058,7 +2057,7 @@ LABEL_114:
     if (v117 >= 3) {
       v178 = v174 - v1 + v177;
       v176 = 0;
-      v179 = (double*)&v264;
+      v179 = (double*)&f_.v264;
       v180 = (char*)this_ + 12 * v178 + 3640;
       v181 = (char*)this_ + 12 * (v177 + v174) - 12 * v1 + 3676;
       do {
@@ -2119,7 +2118,7 @@ LABEL_114:
     }
     if ((v1 & 3) != 0) {
       {
-        v195 = (double*)&v263[8 * v176];
+        v195 = (double*)&f_.v263[8 * v176];
         __asm__ volatile("" ::"r"(v195));
       }
       v196 = v177 + v176 + v174 - v1;
@@ -2141,10 +2140,10 @@ LABEL_114:
         *v195++ = (float)(v199 - v173);
       } while (v175 != 0);
     }
-    v200 = v265_.v266;
+    v200 = f_.v266;
     if ((v39 & 2) != 0) {
-      memset_plt((__int64)&v263[512 * v265_.v266], 0, 0x200u);
-      v200 = ++v265_.v266;
+      memset_plt((__int64)&f_.v263[512 * f_.v266], 0, 0x200u);
+      v200 = ++f_.v266;
       goto LABEL_185;
     }
   LABEL_213:
@@ -2157,13 +2156,13 @@ LABEL_114:
     v200 = 1;
     goto LABEL_213;
   }
-  memset_plt((__int64)&v265_.v265, 0, 0x200u);
-  v200 = ++v265_.v266;
+  memset_plt((__int64)&f_.v265, 0, 0x200u);
+  v200 = ++f_.v266;
   if (!v66) {
   LABEL_214:
-    memset_plt((__int64)&v263[512 * v200], 0, 0x200u);
-    v229 = v265_.v266;
-    v200 = ++v265_.v266;
+    memset_plt((__int64)&f_.v263[512 * v200], 0, 0x200u);
+    v229 = f_.v266;
+    v200 = ++f_.v266;
     if (v1 != 0) {
       v230 = v144 / v40;
       {
@@ -2182,7 +2181,7 @@ LABEL_114:
         v235 = v231 - v1 + v234;
         v233 = 0;
         {
-          v236 = (double*)&v263[512 * v229 + 16];
+          v236 = (double*)&f_.v263[512 * v229 + 16];
           __asm__ volatile("" ::"r"(v236));
         }
         v237 = (char*)this_ + 12 * v235 + 3648;
@@ -2245,7 +2244,7 @@ LABEL_114:
       }
       if ((v1 & 3) != 0) {
         {
-          v252 = (double*)&v263[512 * v229 + 8 * v233];
+          v252 = (double*)&f_.v263[512 * v229 + 8 * v233];
           __asm__ volatile("" ::"r"(v252));
         }
         v253 = v234 + v233 + v231 - v1;
@@ -2267,21 +2266,21 @@ LABEL_114:
           *v252++ = (float)(v256 - v230);
         } while (v232 != 0);
       }
-      v200 = v265_.v266;
+      v200 = f_.v266;
     }
   }
 LABEL_240:
   if (v200 != 0) {
     v257 = 0x0.0p+0;
-    v258 = v263;
+    v258 = f_.v263;
     for (i = v200; i != 0; --i) {
-      memset_plt((__int64)&v268_.v268, 0, 0x208u);
-      memcpy_plt((__int64)v267, (__int64)v258, 0x200u);
-      SdkRoutine_87a3f0((void*)(&v268_.v268), v267, 1, 3);
+      memset_plt((__int64)&f_.v268, 0, 0x208u);
+      memcpy_plt((__int64)f_.v267, (__int64)v258, 0x200u);
+      SdkRoutine_87a3f0((void*)(&f_.v268), f_.v267, 1, 3);
       v258 += 512;
       v257 = v257 +
-             PSEUDO_UNFUSED(v268_.v268 * 0x1.0000000000000p+6) * v268_.v268 +
-             PSEUDO_UNFUSED(v268_.v269 * 0x1.0000000000000p+6) * v268_.v269;
+             PSEUDO_UNFUSED(f_.v268 * 0x1.0000000000000p+6) * f_.v268 +
+             PSEUDO_UNFUSED(f_.v269 * 0x1.0000000000000p+6) * f_.v269;
     }
     v260 = vcvtd_n_f64_u64(2 * v200, 1u);
   }
