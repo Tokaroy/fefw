@@ -213,6 +213,13 @@ __int64 nvidia_64ea10(__int64 a1, __int64 a2, __int64 a3, __int128* a4, int a5,
                       __int64 a6, unsigned int a7, unsigned int a8);
 _QWORD* nvidia_64ea80(_QWORD* result, __int64 a2);
 __int64 unplaced_9_6499c0(_QWORD* a1);
+__int64 nn_66a6d0(__int64 result, __int64, __int64*);
+__int64 nvidia_64b750(__int64 result, __int64, __int64);
+__int64 nvidia_64d7a0_alt2(__int64 result, __int64, __int64, __int64,
+                           unsigned int, unsigned int, unsigned int,
+                           unsigned int, int, int, int);
+__int64 nvidia_64f5d0_alt1(__int64, __int64, int, __int64, int, int, int, int,
+                           int, int, int, int, int, char, char, char, char);
 
 __int64 nvidia_647010(__int64 a1, int a2)
 {
@@ -4280,13 +4287,13 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
   _DWORD* v28;
   int v29;
   __int64 v30;
-  unsigned int v31;
+  int v31;
   unsigned int v32;
   int v33;
   int v34;
   __int64 v35;
   int v36;
-  unsigned int v37;
+  int v37;
   int v38;
   unsigned int v39;
   unsigned int v40;
@@ -4315,38 +4322,42 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
   unsigned int v63;
   __int64 v64;
   __int64 v65;
-  _DWORD** v66;
+  _QWORD* v66;
   __int64 v67;
   __int64 v68;
   int v69;
-  int v70;
+  __int64 v70;
   int v71;
-  unsigned int v72;
-  __int64 v73;
+  int v72;
+  int v73;
   int v74;
-  unsigned int v75;
+  int v75;
   unsigned int v76;
   unsigned int v77;
   int v78;
-  unsigned int v79;
-  unsigned int v80;
-  int v81;
-  char* v82;
-  _BYTE v84[12];
-  unsigned int v85;
-  unsigned int v86;
-  unsigned int v87;
-  unsigned int v88;
-  int v89;
-  int v90;
-  __int64 v91;
-  __int64 v92;
-  __int64 v93;
+  char* v79;
+  struct {
+    _BYTE v81[12];
+    unsigned int v82;
+    unsigned int v83;
+    char gap172_[12];
+    unsigned int v84;
+    unsigned int v85;
+    char gap192_[32];
+    int v86;
+    char gap228_[4];
+    int v87;
+  } v81_;
+  struct {
+    __int64 v88;
+    __int64 v89;
+  } v88_;
+  __int64 v90;
+  __int128 v91;
+  __int128 v92;
+  __int128 v93;
   __int128 v94;
   __int128 v95;
-  __int128 v96;
-  __int128 v97;
-  __int128 v98;
 
   v6 = a6;
   v7 = result;
@@ -4363,7 +4374,7 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     v13 = a5[3];
     v14 = (char*)SdkData_e89ba0 + 48 * (int)v10;
     v15 = (unsigned __int8)v14[8];
-    v82 = v14;
+    v79 = v14;
     v16 = (unsigned __int8)v14[9];
     v17 = *(unsigned __int8*)(a3 + 84);
     if ((*(_QWORD*)(a3 + 40) & 0xFE000000LL) == 0x6000000) {
@@ -4394,7 +4405,7 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     v21 = *(_DWORD*)(result + 144);
     v22 = *(_DWORD*)(result + 148);
     v23 = v13 * v17;
-    v92 = 0;
+    v88_.v89 = 0;
     if (v21 != 0) {
       v23 = v21;
     }
@@ -4417,72 +4428,71 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     else {
       LOWORD(v26) = 0;
     }
-    v93 = a2;
-    v91 = v25 | 0x10000010000LL | (unsigned __int16)(v26 + v9);
-    v98 = 0u;
-    v95 = 0u;
-    v97 = 0u;
-    v96 = 0u;
-    v94 = 0u;
-    LODWORD(v98) = v17;
-    LODWORD(v94) = v23;
-    LODWORD(v95) = 1;
+    v90 = a2;
+    v88_.v88 = v25 | 0x10000010000LL | (unsigned __int16)(v26 + v9);
+    v95 = (__typeof__(v95)){0};
+    v92 = (__typeof__(v92)){0};
+    v94 = (__typeof__(v94)){0};
+    v93 = (__typeof__(v93)){0};
+    v91 = (__typeof__(v91)){0};
+    LODWORD(v95) = v17;
+    LODWORD(v91) = v23;
+    LODWORD(v92) = 1;
     if ((a6 & 0x18) != 0) {
       if ((a6 & 8) != 0) {
         a2 += v23 * (v18 - 1);
-        v93 = a2;
-        LODWORD(v94) = -v23;
+        v90 = a2;
+        LODWORD(v91) = -v23;
       }
       if ((a6 & 0x10) != 0) {
         v27 = v24 * (v19 - 1);
         v24 = -v24;
-        v93 = a2 + v27;
+        v90 = a2 + v27;
       }
     }
     v28 = *(_DWORD**)result;
     if ((unsigned __int64)(*(_QWORD*)result + 4LL) > *(_QWORD*)(result + 8)) {
       v29 = v24;
-      result = SdkRoutine_64b750_alt1(
-          result, (__int64)v28,
-          4LL * (unsigned int)(*(_DWORD*)(result + 104) + 1));
+      result = nvidia_64b750(result, (__int64)v28,
+                             4LL * (unsigned int)(*(int*)(result + 104) + 1));
       v28 = *(_DWORD**)v7;
       v24 = v29;
     }
     v30 = *(unsigned int*)(v7 + 24);
     if ((unsigned int)v30 <= 4) {
-      *v28++ = SdkData_c77c7c[v30];
+      *(_DWORD*)v28++ = SdkData_c77c7c[v30];
     }
     *(_QWORD*)v7 = v28;
     if (v19 != 0) {
       v31 = v18;
-      v79 = v16;
-      v80 = v15;
+      v76 = v16;
+      v77 = v15;
       v32 = v15 - 1;
       v33 = v16 - 1;
       v34 = v6 & 4;
       v35 = v24;
       do {
-        SdkRoutine_66a6d0(a3, v84, &v91);
-        v36 = v89;
-        if ((unsigned int)(v89 - 1) >= 2) {
-          if (((v90 - 51) & 0xFFFFFFFD) != 0) {
+        nn_66a6d0(a3, (__int64)v81_.v81, &v88_.v88);
+        v36 = v81_.v86;
+        if ((unsigned int)(v81_.v86 - 1) >= 2) {
+          if (((v81_.v87 - 51) & 0xFFFFFFFD) != 0) {
             v36 = 0;
           }
           else {
             v36 = 3;
           }
         }
-        if ((unsigned __int8)v82[8] >= 2u) {
-          v85 = (v32 + v85) / v80;
-          v86 = (v33 + v86) / v79;
-          v87 = (v32 + v87) / v80;
-          v88 = (v33 + v88) / v79;
+        if ((unsigned __int8)v79[8] >= 2u) {
+          v81_.v82 = (v32 + v81_.v82) / v77;
+          v81_.v83 = (v33 + v81_.v83) / v76;
+          v81_.v84 = (v32 + v81_.v84) / v77;
+          v81_.v85 = (v33 + v81_.v85) / v76;
         }
-        result = nvidia_64d7a0_alt1(v7, &v93, v84, 0, 0, v12, v20, v13, v31,
-                                    v36, v34);
+        result = nvidia_64d7a0_alt2(v7, (__int64)&v90, (__int64)v81_.v81, 0, 0,
+                                    v12, v20, v13, v31, v36, v34);
         --v19;
-        v93 += v35;
-        LOWORD(v91) = v91 + 1;
+        v90 += v35;
+        LOWORD(v88_.v88) = v88_.v88 + 1;
       } while (v19 != 0);
       v28 = *(_DWORD**)v7;
     }
@@ -4494,16 +4504,16 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     else {
       v11 = v8 >> 55;
     }
-    v76 = v11;
+    v73 = v11;
     v37 = a5[3];
     v38 = a5[4];
-    v77 = a5[1];
+    v74 = a5[1];
     v39 = *(unsigned __int8*)(a3 + 84);
     if ((*(_QWORD*)(a3 + 40) & 0xFE000000LL) == 0x6000000) {
       LOWORD(v40) = a5[1];
       v41 = a5[4];
       v38 = 1;
-      v77 = 0;
+      v74 = 0;
     }
     else {
       v40 = a5[2];
@@ -4512,15 +4522,15 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     v42 = *(_DWORD*)(result + 144);
     v43 = *(_DWORD*)(result + 148);
     v44 = 1;
-    DWORD2(v94) = v38;
-    v74 = v38;
-    v95 = 0u;
-    v97 = 0u;
-    v96 = 0u;
+    DWORD2(v91) = v38;
+    v71 = v38;
+    v92 = (__typeof__(v92)){0};
+    v94 = (__typeof__(v94)){0};
+    v93 = (__typeof__(v93)){0};
     if (v42 == 0) {
       v42 = v39 * v37;
     }
-    LODWORD(v94) = v42;
+    LODWORD(v91) = v42;
     if (v43 != 0) {
       v45 = v43;
     }
@@ -4528,12 +4538,12 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
       v45 = v42 * v38;
     }
     v46 = *(_DWORD*)(*(_QWORD*)(result + 112) + 76LL);
-    v98 = 0u;
-    LODWORD(v98) = v39;
-    DWORD3(v94) = v41;
-    LODWORD(v95) = 1;
-    DWORD2(v98) = v76;
-    v72 = *a5;
+    v95 = (__typeof__(v95)){0};
+    LODWORD(v95) = v39;
+    DWORDn(v91, sizeof(v91) / 4 - 1) = v41;
+    LODWORD(v92) = 1;
+    DWORD2(v95) = v73;
+    v69 = *a5;
     if ((a6 & 0x1C) != 0) {
       v47 = v37 & (a6 << 29 >> 31);
       if ((a6 & 4) != 0) {
@@ -4567,10 +4577,10 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     v53 = (unsigned int)(v46 - 1);
     v54 = 0x300010000010000LL;
     v55 = ((unsigned int)v53 & (unsigned int)a2) / v39;
-    v92 = 0;
-    v93 = a2 & ~v53;
-    v73 = v93;
-    DWORD1(v94) = v55 + v37;
+    v88_.v89 = 0;
+    v90 = a2 & ~v53;
+    v70 = v90;
+    DWORD1(v91) = v55 + v37;
     if (a4 == nullptr) {
       goto LABEL_79;
     }
@@ -4582,70 +4592,66 @@ __int64 nvidia_64de60(__int64 result, __int64 a2, __int64 a3, __int64* a4,
     LABEL_79:
       LOWORD(v56) = 0;
     }
-    v75 = v37;
-    v91 = v54 | (unsigned __int16)(v56 + v40);
+    v72 = v37;
+    v88_.v88 = v54 | (unsigned __int16)(v56 + v40);
     v28 = *(_DWORD**)result;
     if ((unsigned __int64)(*(_QWORD*)result + 4LL) > *(_QWORD*)(result + 8)) {
       v57 = v41;
       v58 = v45;
-      result = SdkRoutine_64b750_alt1(
-          result, (__int64)v28,
-          4LL * (unsigned int)(*(_DWORD*)(result + 104) + 1));
+      result = nvidia_64b750(result, (__int64)v28,
+                             4LL * (unsigned int)(*(int*)(result + 104) + 1));
       v28 = *(_DWORD**)v7;
       v45 = v58;
       v41 = v57;
     }
     v59 = *(unsigned int*)(v7 + 24);
     if ((unsigned int)v59 <= 4) {
-      *v28++ = SdkData_c77c7c[v59];
+      *(_DWORD*)v28++ = SdkData_c77c7c[v59];
     }
     *(_QWORD*)v7 = v28;
     if (v41 != 0) {
       v60 = 16 * v49;
       v61 = v45;
       v62 = v41;
-      SdkRoutine_66a6d0(a3, v84, &v91);
-      v81 = v44 << 15;
-      v78 = v44;
+      nn_66a6d0(a3, (__int64)v81_.v81, &v88_.v88);
+      v78 = v44 << 15;
+      v75 = v44;
       result =
-          nvidia_64f5d0(v7, &v93, v76, v84, v76, 16 * (v55 + v47) + 8 * v44,
-                        (unsigned int)(v60 + 8 * v50), v72, v77, v75, v74,
-                        v44 << 15, v50 << 15, 15, 1, 0, 1);
+          nvidia_64f5d0_alt1(v7, (__int64)&v90, v73, (__int64)v81_.v81, v73,
+                             16 * (v55 + v47) + 8 * v44, v60 + 8 * v50, v69,
+                             v74, v72, v71, v44 << 15, v50 << 15, 15, 1, 0, 1);
       v63 = v62 - 1;
       v64 = v61;
-      LOWORD(v91) = v91 + 1;
-      v65 = v73 + v61;
-      v66 = (_DWORD**)v7;
-      v93 = v65;
+      LOWORD(v88_.v88) = v88_.v88 + 1;
+      v65 = v70 + v61;
+      v66 = (_QWORD*)v7;
+      v90 = v65;
       if (v63 != 0) {
-        v67 = v73 + 2 * v64;
+        v67 = v70 + 2 * v64;
         do {
-          SdkRoutine_66a6d0(a3, v84, &v91);
-          LOBYTE(v71) = 0;
-          LOBYTE(v70) = 0;
-          LOBYTE(v69) = 1;
-          result = nvidia_64f5d0(v66, &v93, v76, v84, v76,
-                                 16 * (v55 + v47) + 8 * v78,
-                                 (unsigned int)(v60 + 8 * v50), v72, v77, v75,
-                                 v74, v81, v50 << 15, 15, v69, v70, v71);
-          v93 = v67;
+          nn_66a6d0(a3, (__int64)v81_.v81, &v88_.v88);
+          result = nvidia_64f5d0_alt1(
+              (__int64)v66, (__int64)&v90, v73, (__int64)v81_.v81, v73,
+              16 * (v55 + v47) + 8 * v75, v60 + 8 * v50, v69, v74, v72, v71,
+              v78, v50 << 15, 15, 1, 0, 0);
+          v90 = v67;
           --v63;
           v67 += v64;
-          LOWORD(v91) = v91 + 1;
+          LOWORD(v88_.v88) = v88_.v88 + 1;
         } while (v63 != 0);
       }
-      v28 = *v66;
+      v28 = (_DWORD*)*v66;
       v7 = (__int64)v66;
     }
   }
   if ((unsigned __int64)(v28 + 1) > *(_QWORD*)(v7 + 8)) {
-    result = SdkRoutine_64b750_alt1(
-        v7, (__int64)v28, 4LL * (unsigned int)(*(_DWORD*)(v7 + 104) + 1));
+    result = nvidia_64b750(v7, (__int64)v28,
+                           4LL * (unsigned int)(*(int*)(v7 + 104) + 1));
     v28 = *(_DWORD**)v7;
   }
   v68 = *(unsigned int*)(v7 + 24);
   if ((unsigned int)v68 <= 4) {
-    *v28++ = SdkData_c77cf4[v68];
+    *(_DWORD*)v28++ = SdkData_c77cf4[v68];
   }
   *(_QWORD*)v7 = v28;
   return result;

@@ -243,7 +243,7 @@ __int64 anonymous_itanium_demangle_AbstractManglingParser_make_841040(
     __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6,
     __int64 a7, __int64 a8, __int64 a9);
 _QWORD*
-anonymous_itanium_demangle_AbstractManglingParser_ScopedTemplateParamList_Destroy_ScopedTemplateParamList(
+anonymous_itanium_demangle_AbstractManglingParser_ScopedTemplateParamList_Destroy_ScopedTemplateParamList_alt1(
     _QWORD* result);
 __int64
 anonymous_itanium_demangle_AbstractManglingParser_make_841430(__int64 a1,
@@ -370,6 +370,9 @@ void __attribute__((noreturn)) std_terminate_plt_alt2(void);
 unsigned __int128
 anonymous_itanium_demangle_AbstractManglingParser_popTrailingNodeArray(
     _QWORD* a1, unsigned __int64 a2);
+void free_plt_alt2(__int64);
+void anonymous_itanium_demangle_AbstractManglingParser_ScopedTemplateParamList_Destroy_ScopedTemplateParamList(
+    _QWORD* a1);
 
 __int64 __cxa_demangle(__int64 a1, __int64 a2, unsigned __int64* a3, int* a4)
 {
@@ -3822,24 +3825,24 @@ __int64 anonymous_itanium_demangle_AbstractManglingParser_make_841040(
   return result;
 }
 
-_QWORD*
-
-anonymous_itanium_demangle_AbstractManglingParser_ScopedTemplateParamList_Destroy_ScopedTemplateParamList(
-    _QWORD* result)
+void anonymous_itanium_demangle_AbstractManglingParser_ScopedTemplateParamList_Destroy_ScopedTemplateParamList(
+    _QWORD* a1)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64 v1;
   __int64 v2;
 
-  v1 = result[1];
-  v2 = *(_QWORD*)(*result + 664LL);
-  if (v1 > (*(_QWORD*)(*result + 672LL) - v2) >> 3) {
-    SdkRoutine_84c1f0("libc++abi: ");
+  v1 = a1[1];
+  v2 = *(_QWORD*)(*a1 + 664LL);
+  if (v1 > (signed __int64)(*(_QWORD*)(*a1 + 672LL) - v2) >> 3) {
+    SdkRoutine_84c1f0_alt2((__int64)"libc++abi: ");
   }
-  *(_QWORD*)(*result + 672LL) = v2 + 8 * v1;
-  if ((_QWORD*)result[2] != result + 5) {
-    return (_QWORD*)free_plt(result[2]);
+  *(_QWORD*)(*a1 + 672LL) = v2 + 8 * v1;
+  if ((_QWORD*)a1[2] != a1 + 5) {
+    free_plt_alt2(a1[2]);
   }
-  return result;
 }
 
 __int64

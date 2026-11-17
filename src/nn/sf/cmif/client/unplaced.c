@@ -283,8 +283,8 @@ __int64 nn_sf_cmif_client_2b36d0(__int64 a1, __int64 a2, __int64 a3, int a4,
 __int64 nn_sf_cmif_client_2b37a0(__int64 result, __int64 a2, __int64 a3,
                                  unsigned int a4, unsigned int a5, __int64 a6,
                                  __int64 a7);
-__int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
-                                 char a5, __int64 a6);
+__int64 nn_sf_cmif_client_2b3cc0_alt2(__int64 a1, __int64* a2, int a3, int a4,
+                                      char a5, __int64 a6);
 __int64 nn_sf_cmif_client_2b4120(__int64 result, __int64 a2, __int64 a3,
                                  unsigned int a4, unsigned int a5, __int64 a6,
                                  __int64 a7);
@@ -331,6 +331,12 @@ __int64 nn_sf_cmif_client_4bfad0(__int64 a1, _DWORD* a2, char a3, char a4,
 __int64 nn_sf_cmif_client_5a4050(__int64 a1, _BYTE* a2, _DWORD* a3, __int64 a4,
                                  __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                                  char a9, unsigned int a10);
+__int64 memcpy_plt_alt1(__int64, __int64, unsigned __int64);
+__int64 nn_audio_driver_InvalidateDataCache_plt_alt1(__int64, unsigned __int64);
+__int64 nn_sf_cmif_client_2b4120_alt1(__int64, __int64, __int64, unsigned int,
+                                      unsigned int, unsigned __int64, __int64);
+__int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
+                                 char a5, unsigned __int64 a6);
 
 __int64 nn_sf_cmif_client_ecb30(__int64 a1, __int64* a2, unsigned int a3)
 {
@@ -3050,7 +3056,7 @@ __int64 nn_sf_cmif_client_2b37a0(__int64 result, __int64 a2, __int64 a3,
 }
 
 __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
-                                 char a5, __int64 a6)
+                                 char a5, unsigned __int64 a6)
 {
   __int64 v6;
   __int64 v7;
@@ -3060,7 +3066,7 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
   __int64 v15;
   __int64 result;
   __int64 v17;
-  __int64 v18;
+  unsigned __int64 v18;
   __int64 v19;
   __int64 v20;
   signed int v21;
@@ -3069,9 +3075,9 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
   _QWORD* v24;
   __int64 v25;
   _QWORD* v26;
-  __int64 v27;
-  __int64 v28;
-  __int64 v29;
+  unsigned __int64 v27;
+  unsigned __int64 v28;
+  unsigned __int64 v29;
   __int64 v30;
   __int64 v31;
   _QWORD* v32;
@@ -3090,15 +3096,15 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
 
   v7 = *(_QWORD*)(a1 + 96);
   v6 = *(_QWORD*)(a1 + 104);
-  v12 = *(_DWORD*)(a1 + 116) - a3;
+  v12 = *(int*)(a1 + 116) - a3;
   v13 = *(_QWORD*)(a1 + 64) + v6 * a3;
   v14 = (unsigned int)(a4 - v12);
   if (a4 < v12) {
     v12 = a4;
   }
   v15 = v12;
-  nn_audio_driver_InvalidateDataCache_plt(*(_QWORD*)(a1 + 64) + v6 * a3,
-                                          v6 * v12);
+  nn_audio_driver_InvalidateDataCache_plt_alt1(*(_QWORD*)(a1 + 64) + v6 * a3,
+                                               v6 * v12);
   if ((a5 & 1) != 0) {
     result = nn_sf_cmif_client_2b36d0(a1, *a2, v13, *(_DWORD*)(a1 + 112), v15,
                                       a6, v7);
@@ -3109,7 +3115,8 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
     v18 = a6 * v15;
     v19 = *(_QWORD*)(a1 + 96);
     v20 = *(_QWORD*)(a1 + 64);
-    nn_audio_driver_InvalidateDataCache_plt(v20, *(_QWORD*)(a1 + 104) * v14);
+    nn_audio_driver_InvalidateDataCache_plt_alt1(v20,
+                                                 *(_QWORD*)(a1 + 104) * v14);
     if ((a5 & 1) != 0) {
       return nn_sf_cmif_client_2b36d0(a1, *a2 + v18 * *(int*)(a1 + 112), v20,
                                       *(_DWORD*)(a1 + 112), v14, a6, v19);
@@ -3124,8 +3131,8 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
     v35_.v35[0] = 0;
     v35_.v35[1] = 0;
     if (v21 < 1) {
-      return nn_sf_cmif_client_2b4120(a1, (__int64)v35_.v35, v20, v21, v14, a6,
-                                      v19);
+      return nn_sf_cmif_client_2b4120_alt1(a1, (__int64)v35_.v35, v20, v21, v14,
+                                           a6, v19);
     }
     v22 = v21 & 7;
     if ((unsigned int)v21 >= 8) {
@@ -3152,15 +3159,15 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
       } while (-(__int64)(v21 & 0x7FFFFFF8) != v25);
       v23 = -v25;
       if ((v21 & 7) == 0) {
-        return nn_sf_cmif_client_2b4120(a1, (__int64)v35_.v35, v20, v21, v14,
-                                        a6, v19);
+        return nn_sf_cmif_client_2b4120_alt1(a1, (__int64)v35_.v35, v20, v21,
+                                             v14, a6, v19);
       }
     }
     else {
       v23 = 0;
       if ((v21 & 7) == 0) {
-        return nn_sf_cmif_client_2b4120(a1, (__int64)v35_.v35, v20, v21, v14,
-                                        a6, v19);
+        return nn_sf_cmif_client_2b4120_alt1(a1, (__int64)v35_.v35, v20, v21,
+                                             v14, a6, v19);
       }
     }
     v32 = &v35_.v35[v23];
@@ -3170,8 +3177,8 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
       --v22;
       *v32++ = v34 + v18;
     } while (v22 != 0);
-    return nn_sf_cmif_client_2b4120(a1, (__int64)v35_.v35, v20, v21, v14, a6,
-                                    v19);
+    return nn_sf_cmif_client_2b4120_alt1(a1, (__int64)v35_.v35, v20, v21, v14,
+                                         a6, v19);
   }
   v17 = *(unsigned int*)(a1 + 112);
   v38_.v39 = 0;
@@ -3183,10 +3190,10 @@ __int64 nn_sf_cmif_client_2b3cc0(__int64 a1, __int64* a2, int a3, int a4,
   v35_.v35[0] = 0;
   v35_.v35[1] = 0;
   if ((int)v17 >= 1) {
-    memcpy_plt(v35_.v35, a2, 8 * v17);
+    memcpy_plt_alt1((__int64)v35_.v35, (__int64)a2, 8 * v17);
   }
-  result =
-      nn_sf_cmif_client_2b4120(a1, (__int64)v35_.v35, v13, v17, v15, a6, v7);
+  result = nn_sf_cmif_client_2b4120_alt1(a1, (__int64)v35_.v35, v13, v17, v15,
+                                         a6, v7);
   if ((int)v14 >= 1) {
     goto LABEL_9;
   }

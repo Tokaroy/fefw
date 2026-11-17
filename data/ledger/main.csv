@@ -13926,7 +13926,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 4a25e0,7200,verified,src/physx/source/geomutils/src/mesh/GuBV4_CapsuleSweep.cpp,_Z22BV4_CapsuleSweepSingleRKN5physx2Gu7CapsuleERKNS_7PxVec3TIfEEfRKNS0_7BV4TreeEPNS0_8SweepHitEj
 4a4560,464,verified,src/physx/source/geomutils/src/mesh/GuBV4_CapsuleSweep.cpp,_ZL23computeBoxAroundCapsuleRKN5physx2Gu7CapsuleERNS0_3BoxERNS_7PxVec3TIfEE
 4a4760,1632,verified,src/physx/source/geomutils/src/mesh/GuBV4_CapsuleSweep.cpp,_ZL16prepareSweepDataRKN5physx2Gu3BoxERKNS_7PxVec3TIfEEfPN12_GLOBAL__N_114BoxSweepParamsE.696
-4a4dc0,2324,disputed,src/physx/source/geomutils/src/mesh/unplaced.c,physx_source_geomutils_src_mesh_4a4dc0
+4a4dc0,2240,disputed,src/physx/source/geomutils/src/mesh/unplaced.c,physx_source_geomutils_src_mesh_4a4dc0
 4a5700,772,verified,src/game/unnamed/f000_0.c,GameHr_4a5700
 4a5a10,840,verified,src/game/unnamed/f000_0.c,GameHr_4a5a10
 4a5d60,7032,verified,src/physx/source/geomutils/src/mesh/GuBV4_OBBSweep.cpp,_Z13Sweep_OBB_BV4RKN5physx2Gu3BoxERKNS_7PxVec3TIfEEfRKNS0_7BV4TreeEPNS0_8SweepHitEj
@@ -21176,6 +21176,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 7a1a00,596,verified,src/game/map/battle_side.c,BattleSide_7a1a00
 7a1f40,592,verified,src/game/map/battle_side.c,BattleSide_7a1f40
 7a2480,508,verified,src/game/map/battle_side.c,BattleSide_7a2480
+7a26a0,244,verified,src/game/map/unplaced_17.c,game_map_7a26a0
 7a27a0,328,verified,src/game/unnamed/b005_3.c,GameHr_7a27a0
 7a2950,260,verified,src/game/map/battle_side.c,BattleSide_7a2950
 7a2a60,768,disputed,src/game/map/battle_side.c,game_map_BattleSide_EachMaskSkill
@@ -31033,6 +31034,7 @@ a6bec0,248,verified,src/g3d/unplaced_2.c,g3d_a6bec0
 a6bfc0,756,verified,src/game/unnamed/b009_0.c,GameHr_a6bfc0
 a6c2c0,344,verified,src/game/templates/vector.cpp,_ZNSt3__16vectorIN4game16UnrecoveredValueILj0ELm16ELm8EEENS_9allocatorIS3_EEE8__appendEm
 a6c420,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
+a6c440,224,verified,src/llvm-libcxx-21/libcxx/include//vector/unplaced_9.c,llvm_libcxx_21_libcxx_include___vector_a6c440
 a6c520,840,verified,src/g3d/unplaced_4.c,g3d_a6c520
 a6c880,484,verified,src/g3d/unplaced.c,g3d_a6c880
 a6ca80,3712,verified,src/game/unnamed/b028_1.c,GameHr_a6ca80
@@ -43477,6 +43479,7 @@ e734e0,952,verified,src/game/cmdbtl/cmd_btl_party.c,CmdBtlParty_e734e0
 e738c0,712,verified,src/game/script/cmdbtl_party_natives_impl.c,CmdbtlPartyNatives_e738c0
 e73d00,256,verified,src/game/script/cmdbtl_party_natives_impl.c,CmdbtlPartyNatives_e73d00
 e73e20,460,verified,src/game/script/unplaced_7.c,game_script_e73e20
+e74040,932,verified,src/game/script/unplaced_9.c,game_script_e74040
 e743f0,808,verified,src/game/cmdbtl/unplaced.c,game_cmdbtl_e743f0
 e74760,568,verified,src/game/unnamed/b012_4.c,GameHr_e74760
 e749a0,320,verified,src/game/cmdbtl/unplaced_5.c,game_cmdbtl_e749a0
@@ -66489,6 +66492,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 15622b0,56,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor15SetTextBoxColorEPKcRKj
 15622f0,136,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor17FitPaneSizeToTextEPKc
 1562380,76,verified,src/ui/layout_accessor.cpp,_ZN2ui14LayoutAccessor11GetTextSizeEPKc
+15623e0,368,disputed,src/ui/unplaced_10.c,ui_15623e0
 15625b0,200,verified,src/ui/layout_accessor_impl.c,LayoutAccessor_15625b0
 1562680,1188,verified,src/game/unnamed/b020_1.c,GameHr_1562680
 1562b50,384,verified,src/ui/layout_accessor.c,LayoutAccessor_1562b50
@@ -69874,6 +69878,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1638c80,16,verified,src/game/game_trivial.cpp,_Z16GameStub_1638c80m
 1638c90,8,verified,src/game/cmdbtl/unit_menu_item.cpp,_ZN4game6cmdbtl12_GLOBAL__N_112UnitMenuItem9Unknown71Ev
 1638ca0,8,verified,src/game/cmdbtl/unit_menu_item.cpp,_ZN4game6cmdbtl12_GLOBAL__N_112UnitMenuItem9Unknown72Ev
+1638cb0,92,verified,src/game/cmdbtl/unplaced_14.c,game_cmdbtl_1638cb0
 1638d20,2832,verified,src/game/templates/introsort.cpp,_ZNSt3__111__introsortINS_17_ClassicAlgPolicyERPFbPN4game11UnrecoveredILj201EEES5_EPS5_Lb0EEEvT1_SA_T0_NS_15iterator_traitsISA_E15difference_typeEb
 1639680,340,verified,src/game/unnamed/b021_1.c,GameHr_1639680
 16397e0,636,disputed,src/game/templates/unplaced_10.c,game_templates_16397e0

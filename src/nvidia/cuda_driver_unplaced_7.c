@@ -345,8 +345,9 @@ __int64 cuda_driver_108c40(__int64 result, unsigned __int64* a2);
 __int64 cuda_driver_109c80(__int64 a1, __int64 a2);
 __int64 cuda_driver_10a130(_DWORD* a1, _OWORD* a2, __int64 a3, __int64 a4,
                            _BYTE* a5);
-unsigned __int8 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3,
-                                   _DWORD* a4, int a5, unsigned __int64 a6);
+unsigned __int8 cuda_driver_10a530_alt1(__int64 a1, __int64 a2, __int64 a3,
+                                        _DWORD* a4, int a5,
+                                        unsigned __int64 a6);
 __int64 cuda_driver_10c1d0(int a1, unsigned int a2);
 long double cuda_driver_10c800(int a1);
 __int64 cuda_driver_10d580(__int64* a1, __int64 a2, unsigned int a3);
@@ -446,9 +447,14 @@ __int64 cuda_driver_unplaced_7_113960(__int64 a1, __int64 a2, __int64 a3,
 __int64 cuda_driver_120770(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                            __int64 a5, __int64 a6);
 __int64 nvidia_ed630(__int64, __int64, __int64, ...);
-unsigned __int8 CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
+unsigned __int8
+CudaDriverRoutine_1dd060_alt1(__int64) __asm__("CudaDriverRoutine_1dd060");
 __int64 cuda_driver_119b20_alt2(__int64 result, __int64);
 unsigned __int8 CudaDriverRoutine_1dd060_alt2(__int64);
+__int64 nvidia_ed630_alt1(__int64, __int64, const char*, ...);
+bool CudaDriverRoutine_1dd060_alt3(__int64);
+__int64 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3, _DWORD* a4,
+                           int a5, unsigned __int64 a6);
 
 __int64 cuda_driver_fabf0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4,
                           unsigned int a5, __int64 a6, __int64 a7)
@@ -644,7 +650,7 @@ __int64 cuda_driver_fb050(__int64 a1, __int64 a2, char a3, bool* a4, bool* a5)
     LABEL_11:
       v17 = a1;
       v18 = a2;
-      v19 = CudaDriverRoutine_1dd060_alt2(v13);
+      v19 = CudaDriverRoutine_1dd060_alt3(v13);
       a2 = v18;
       v12 = v19;
       a1 = v17;
@@ -708,7 +714,7 @@ LABEL_19:
       }
     }
   LABEL_27:
-    if (v12 != CudaDriverRoutine_1dd060_alt2(v21)) {
+    if (v12 != CudaDriverRoutine_1dd060_alt3(v21)) {
       goto LABEL_34;
     }
     goto LABEL_31;
@@ -735,7 +741,7 @@ LABEL_30:
     return 0;
   }
 LABEL_34:
-  nvidia_ed630((__int64)"CUDA", 0, (__int64)"Mismatched operand protection\n");
+  nvidia_ed630_alt1((__int64)"CUDA", 0, "Mismatched operand protection\n");
   return 800;
 }
 
@@ -3744,8 +3750,8 @@ __int64 cuda_driver_10a130(_DWORD* a1, _OWORD* a2, __int64 a3, __int64 a4,
   return result;
 }
 
-unsigned __int8 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3,
-                                   _DWORD* a4, int a5, unsigned __int64 a6)
+__int64 cuda_driver_10a530(__int64 a1, __int64 a2, __int64 a3, _DWORD* a4,
+                           int a5, unsigned __int64 a6)
 {
   __int64 v6;
   __int64 v7;
@@ -3930,14 +3936,14 @@ LABEL_25:
   if (v12 > v17) {
     goto LABEL_46;
   }
-  if (v9 < (int)(v23 * (int)(v18 + v20 - 1) / (int)v18 * v18) || v9 < v24) {
+  if (v9 < (int)(v23 * (int)(v18 + v20 - 1) / (int)v18 * v18) | v9 < v24) {
     goto LABEL_46;
   }
   if (v23 < 1) {
     v19 = 0x7FFFFFFF;
   }
   else {
-    v26 = ((unsigned int)v10 >> __clz(__rbit32(v18))) / v23;
+    v26 = ((unsigned int)v10 >> __clz((unsigned int)(__rbit32(v18)))) / v23;
     if (v14 == 0) {
       goto LABEL_45;
     }
@@ -4051,7 +4057,7 @@ LABEL_46:
             }
             v88 = v19;
             if (v52 == -1) {
-              v53 = *a4 - 1;
+              v53 = *(int*)a4 - 1;
               if (v53 >= 3) {
                 v54 = v45;
                 v55 = v14;
@@ -4121,10 +4127,10 @@ LABEL_46:
           goto LABEL_107;
         }
         v49 = v47 - 0x8000;
-        if (*a4 == 3) {
+        if (*(_DWORD*)a4 == 3) {
           v49 = (v49 + v47) >> 1;
         }
-        else if (*a4 != 2) {
+        else if (*(_DWORD*)a4 != 2) {
           goto LABEL_85;
         }
         v48 = 1;
@@ -4133,7 +4139,7 @@ LABEL_46:
         v61 = *(_DWORD*)(a3 + 20);
         v62 = *(_QWORD*)(a3 + 24);
         v16 = 2;
-        v64 = v61 != 0 && a6 > v62;
+        v64 = v61 != 0 & a6 > v62;
         v65 = *(_QWORD*)(a2 + 64);
         v66 = v65 + *(_QWORD*)(a3 + 8);
         if (((1 << v44) & 0x68) != 0) {

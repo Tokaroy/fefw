@@ -55,8 +55,8 @@ void nerd_gyro_pointing_GyroPointingKalmanFilter_ApplyCorrection(__int64 a1,
 float nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints(
     __int64 a1, __int64 a2);
 __int64*
-nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
-                                                                   float a2);
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances_alt1(
+    _QWORD* a1, float a2);
 __attribute__((swiftcall)) void
 nerd_gyro_pointing_GyroPointingKalmanFilter_StoreState(PSEUDO_X8 x8_,
                                                        void* this_,
@@ -72,6 +72,9 @@ __int64
 nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState(void* this_);
 unsigned __int64 unplaced_4_730ec0(unsigned __int64*, unsigned __int64,
                                    unsigned __int64, unsigned __int64);
+unsigned __int64*
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(
+    unsigned __int64* a1, float a2);
 
 float gyro_pointing_kalman_filter_728fe0(unsigned __int64* a1,
                                          unsigned __int64* a2, __int64 a3,
@@ -3377,18 +3380,20 @@ float nerd_gyro_pointing_GyroPointingKalmanFilter_UpdateBoxConstraints(
   return v131;
 }
 
-__int64*
+unsigned __int64*
 
-nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
-                                                                   float a2)
+nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(
+    unsigned __int64* a1, float a2)
 {
-  __int64 v3;
+
+#pragma clang fp contract(off)
+  unsigned __int64 v3;
   float v5;
-  __int64* v6;
-  __int64 v7;
-  __int64 v8;
-  _QWORD* v9;
-  __int64 v10;
+  unsigned __int64* v6;
+  unsigned __int64 v7;
+  unsigned __int64 v8;
+  unsigned __int64* v9;
+  unsigned __int64 v10;
   __int64 v11;
   __int64 v12;
   __int64 v13;
@@ -3397,7 +3402,7 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
   unsigned __int64 v16;
   bool v17;
   unsigned __int64 v18;
-  __int64 v19;
+  unsigned __int64 v19;
   unsigned __int64 v20;
   __int64 v21;
   unsigned __int64 v22;
@@ -3405,21 +3410,21 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
   float v24;
   float v25;
   float v26;
-  __int64 v27;
+  unsigned __int64 v27;
   float v28;
-  __int64* result;
-  __int64 v30;
-  __int64 v31;
-  __int64 v32;
+  unsigned __int64* result;
+  unsigned __int64 v30;
+  unsigned __int64 v31;
+  unsigned __int64 v32;
   char* v33;
   char* v34;
   char* v35;
-  __int64 v36;
+  unsigned __int64 v36;
   unsigned __int64 v37;
   unsigned __int64 v38;
   unsigned __int64 v39;
   unsigned __int64 v40;
-  __int64 v41;
+  unsigned __int64 v41;
   unsigned __int64 v42;
   float* v43;
   float v44;
@@ -3427,33 +3432,33 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
   float v46;
   float v47;
   float v48;
-  __int64 v49;
-  __int64 v50;
-  __int64 v51;
+  unsigned __int64 v49;
+  unsigned __int64 v50;
+  unsigned __int64 v51;
 
   v3 = a1[1011];
-  v5 = a2 * 0.01f;
+  v5 = a2 * 0x1.47ae160000000p-7f;
   v49 = a1[1010];
   v50 = v3;
   v51 = a1[1012];
-  v49 = *(_QWORD*)fw_math_LookupStateIndex_alt1(a1 + 548, &v49);
-  v50 = *(_QWORD*)fw_math_LookupStateIndex_alt1(a1 + 548, &v50);
-  v6 = (__int64*)fw_math_LookupStateIndex_alt1(a1 + 548, &v51);
+  v49 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v49);
+  v50 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v50);
+  v6 = fw_math_LookupStateIndex(a1 + 548, (__int64*)&v51);
   v7 = v49;
   v8 = v50;
   v9 = a1 + 2;
   v10 = *v6;
   v11 = (__int64)a1 + 132 * v49 + 16;
   *(float*)(v11 + 4 * v49) = v5 + *(float*)(v11 + 4 * v49);
-  *(float*)(v11 + 4 * v8) = *(float*)(v11 + 4 * v8) + 0.0f;
-  *(float*)(v11 + 4 * v10) = *(float*)(v11 + 4 * v10) + 0.0f;
+  *(float*)(v11 + 4 * v8) = *(float*)(v11 + 4 * v8) + 0x0.0p+0f;
+  *(float*)(v11 + 4 * v10) = *(float*)(v11 + 4 * v10) + 0x0.0p+0f;
   v12 = (__int64)a1 + 132 * v8 + 16;
   v13 = (__int64)a1 + 132 * v10 + 16;
-  *(float*)(v12 + 4 * v7) = *(float*)(v12 + 4 * v7) + 0.0f;
+  *(float*)(v12 + 4 * v7) = *(float*)(v12 + 4 * v7) + 0x0.0p+0f;
   *(float*)(v12 + 4 * v8) = v5 + *(float*)(v12 + 4 * v8);
-  *(float*)(v12 + 4 * v10) = *(float*)(v12 + 4 * v10) + 0.0f;
-  *(float*)(v13 + 4 * v7) = *(float*)(v13 + 4 * v7) + 0.0f;
-  *(float*)(v13 + 4 * v8) = *(float*)(v13 + 4 * v8) + 0.0f;
+  *(float*)(v12 + 4 * v10) = *(float*)(v12 + 4 * v10) + 0x0.0p+0f;
+  *(float*)(v13 + 4 * v7) = *(float*)(v13 + 4 * v7) + 0x0.0p+0f;
+  *(float*)(v13 + 4 * v8) = *(float*)(v13 + 4 * v8) + 0x0.0p+0f;
   *(float*)(v13 + 4 * v10) = v5 + *(float*)(v13 + 4 * v10);
   v14 = a1[1520];
   if (v14 != 0) {
@@ -3480,42 +3485,42 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
       --v14;
       v23 = (float*)(v21 - 1860 * v22);
       v21 += 1860;
-      v24 = *(v23 - 21) + 0.0f;
+      v24 = *(v23 - 21) + 0x0.0p+0f;
       *(v23 - 22) = v5 + *(v23 - 22);
       *(v23 - 21) = v24;
-      *(v23 - 20) = *(v23 - 20) + 0.0f;
+      *(v23 - 20) = *(v23 - 20) + 0x0.0p+0f;
       v25 = v5 + *v23;
-      *(v23 - 1) = *(v23 - 1) + 0.0f;
+      *(v23 - 1) = *(v23 - 1) + 0x0.0p+0f;
       *v23 = v25;
-      v23[1] = v23[1] + 0.0f;
-      v26 = v23[21] + 0.0f;
-      v23[20] = v23[20] + 0.0f;
+      v23[1] = v23[1] + 0x0.0p+0f;
+      v26 = v23[21] + 0x0.0p+0f;
+      v23[20] = v23[20] + 0x0.0p+0f;
       v23[21] = v26;
       v23[22] = v5 + v23[22];
     } while (v14 != 0);
   }
   v27 = a1[1030];
-  v28 = a2 * 4.0e-10f;
+  v28 = a2 * 0x1.b7cdfc0000000p-32f;
   v49 = a1[1029];
   v50 = v27;
   v51 = a1[1031];
-  v49 = *(_QWORD*)fw_math_LookupStateIndex_alt1(a1 + 548, &v49);
-  v50 = *(_QWORD*)fw_math_LookupStateIndex_alt1(a1 + 548, &v50);
-  result = (__int64*)fw_math_LookupStateIndex_alt1(a1 + 548, &v51);
+  v49 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v49);
+  v50 = *fw_math_LookupStateIndex(a1 + 548, (__int64*)&v50);
+  result = fw_math_LookupStateIndex(a1 + 548, (__int64*)&v51);
   v30 = v49;
   v31 = v50;
   v32 = *result;
   v33 = (char*)v9 + 132 * v49;
   *(float*)&v33[4 * v49] = v28 + *(float*)&v33[4 * v49];
-  *(float*)&v33[4 * v31] = *(float*)&v33[4 * v31] + 0.0f;
-  *(float*)&v33[4 * v32] = *(float*)&v33[4 * v32] + 0.0f;
+  *(float*)&v33[4 * v31] = *(float*)&v33[4 * v31] + 0x0.0p+0f;
+  *(float*)&v33[4 * v32] = *(float*)&v33[4 * v32] + 0x0.0p+0f;
   v34 = (char*)v9 + 132 * v31;
   v35 = (char*)v9 + 132 * v32;
-  *(float*)&v34[4 * v30] = *(float*)&v34[4 * v30] + 0.0f;
+  *(float*)&v34[4 * v30] = *(float*)&v34[4 * v30] + 0x0.0p+0f;
   *(float*)&v34[4 * v31] = v28 + *(float*)&v34[4 * v31];
-  *(float*)&v34[4 * v32] = *(float*)&v34[4 * v32] + 0.0f;
-  *(float*)&v35[4 * v30] = *(float*)&v35[4 * v30] + 0.0f;
-  *(float*)&v35[4 * v31] = *(float*)&v35[4 * v31] + 0.0f;
+  *(float*)&v34[4 * v32] = *(float*)&v34[4 * v32] + 0x0.0p+0f;
+  *(float*)&v35[4 * v30] = *(float*)&v35[4 * v30] + 0x0.0p+0f;
+  *(float*)&v35[4 * v31] = *(float*)&v35[4 * v31] + 0x0.0p+0f;
   *(float*)&v35[4 * v32] = v28 + *(float*)&v35[4 * v32];
   v36 = a1[1520];
   if (v36 != 0) {
@@ -3537,18 +3542,18 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_AddVariableCovariances(_QWORD* a1,
       v42 = v38 + v41 - v40 - v39;
       ++v38;
       v43 = (float*)a1 + 465 * v42 + 2110;
-      v44 = v43[1] + 0.0f;
-      v45 = v43[23] + 0.0f;
+      v44 = v43[1] + 0x0.0p+0f;
+      v45 = v43[23] + 0x0.0p+0f;
       *v43 = v28 + *v43;
       v43[1] = v44;
       v46 = v43[2];
       v43[23] = v45;
-      v43[2] = v46 + 0.0f;
+      v43[2] = v46 + 0x0.0p+0f;
       v47 = v28 + v43[22];
-      v43[21] = v43[21] + 0.0f;
+      v43[21] = v43[21] + 0x0.0p+0f;
       v43[22] = v47;
-      v48 = v43[43] + 0.0f;
-      v43[42] = v43[42] + 0.0f;
+      v48 = v43[43] + 0x0.0p+0f;
+      v43[42] = v43[42] + 0x0.0p+0f;
       v43[43] = v48;
       v43[44] = v28 + v43[44];
     } while (v36 != 0);

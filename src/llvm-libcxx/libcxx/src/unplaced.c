@@ -6,206 +6,132 @@ __attribute__((swiftcall)) void SdkRoutine_7d2270(PSEUDO_X8,
                                                   unsigned __int64 result, int,
                                                   char, unsigned int, __int64,
                                                   __int64);
-
 __int64 SdkRoutine_7dbcf0(_QWORD);
-
 __int64 SdkRoutine_7dbea0(_QWORD);
-
 __int64 SdkRoutine_857220(_QWORD, _QWORD);
-
 __int64 SdkRoutine_85e050(unsigned __int64);
-
 __int64 SdkRoutine_86fc80(_QWORD, _QWORD, _QWORD);
-
 __int64 SdkRoutine_87cba0(_QWORD);
-
 __int64 SdkRoutine_87cc40(_QWORD);
-
 __int64 _Unwind_Resume_plt(_QWORD);
-
 __int64 charconv_7ced40(_QWORD);
-
 __int64 charconv_7ced70(_QWORD);
-
 __int64 charconv_7ced70_alt1(char) __asm__("charconv_7ced70");
-
 __int64 isalnum_plt(void);
-
 __int64 isspace_plt(_QWORD);
-
 __int64 isxdigit_plt(_QWORD);
-
 __int64
 llvmlibcxx_libcxx_7d0300_alt1(unsigned __int64, char, unsigned int, __int64,
                               __int64) __asm__("llvmlibcxx_libcxx_7d0300");
-
 unsigned __int128
 llvmlibcxx_libcxx_7d0300_alt1_pair(unsigned __int64, char, unsigned int,
                                    __int64,
                                    __int64) __asm__("llvmlibcxx_libcxx_7d0300");
-
 __int64 llvmlibcxx_libcxx_7d0680_alt1(__int64, __int64,
                                       int) __asm__("llvmlibcxx_libcxx_7d0680");
-
 __int64
     llvmlibcxx_libcxx_7d18c0_alt1(_QWORD,
                                   _QWORD) __asm__("llvmlibcxx_libcxx_7d18c0");
-
 __int64 memcpy_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 memmove_plt(_QWORD, _QWORD, _QWORD);
-
 __int64 std___throw_bad_alloc_plt(void);
-
 __int64 std_exception_ptr_Destroy_exception_ptr_plt(_QWORD);
-
 __int64 strlen_plt(_QWORD);
-
 __int64 tolower_plt(_QWORD);
-
-
 char* std___1___fs_filesystem_path___filename(void* this_);
-
 unsigned __int128 std___1___fs_filesystem_path___filename_pair(
     void* this_) __asm__("std___1___fs_filesystem_path___filename");
-
 double _Unwind_Resume_plt_alt1(_QWORD) __asm__("_Unwind_Resume_plt");
-
 extern _UNKNOWN SdkData_e7dcb0;
-
 extern float SdkData_ce00d8[12];
-
 extern unsigned __int8 SdkData_ce2c88[24];
-
 unsigned __int64 SdkRoutine_7d0530(__int64, int);
-
 unsigned __int128 SdkRoutine_7d0530_pair(__int64,
                                          int) __asm__("SdkRoutine_7d0530");
-
 void __attribute__((noreturn)) locale_7d3920();
-
 void __attribute__((noreturn)) std___throw_bad_alloc(_QWORD);
-
 void std_exception_Destroy_exception_plt_87c890();
-
 __int64 llvmlibcxx_libcxx_7cd640(__int64 a1, unsigned __int64 a2, __int64 a3,
                                  unsigned __int8 a4);
-
 __attribute__((swiftcall)) void
 llvmlibcxx_libcxx_7cfbe0(PSEUDO_X8 x8_, __int64 result, __int64 a2,
                          unsigned __int8* a3, char a4);
-
 __attribute__((swiftcall)) void
 llvmlibcxx_libcxx_7cfd00(PSEUDO_X8 x8_, __int64 result, unsigned __int8* a2,
                          unsigned __int8* a3, char a4);
-
 __attribute__((swiftcall)) void llvmlibcxx_libcxx_7cfe20(PSEUDO_X8 x8_,
                                                          __int64 a1, __int64 a2,
                                                          __int64 a3, char a4);
-
 __attribute__((swiftcall)) void
 llvmlibcxx_libcxx_7d00e0(PSEUDO_X8 x8_, unsigned __int64 result, __int64 a2,
                          int a3, __int64 a4, char a5);
-
 unsigned __int64 llvmlibcxx_libcxx_7d0300(unsigned __int64 a1, char a2, int a3,
                                           __int64 a4, __int64 a5);
-
 __int64 llvmlibcxx_libcxx_7d0680(__int64 a1, unsigned __int64 a2, int a3);
-
 __int64 llvmlibcxx_libcxx_7d1080(__int64 result, __int64 a2,
                                  unsigned __int64 a3);
-
 __int64 llvmlibcxx_libcxx_7d1420(__int64 result, int a2);
-
 __int64 llvmlibcxx_libcxx_7d18c0(int* a1, unsigned int a2);
-
 __attribute__((swiftcall)) void
 llvmlibcxx_libcxx_7d1b60(PSEUDO_X8 x8_, __int64 result, __int64 a2,
                          unsigned __int8* a3, char a4);
-
 __attribute__((swiftcall)) void
 llvmlibcxx_libcxx_7d1c80(PSEUDO_X8 x8_, __int64 result, unsigned __int8* a2,
                          unsigned __int8* a3, char a4);
-
 __attribute__((swiftcall)) void llvmlibcxx_libcxx_7d1da0(PSEUDO_X8 x8_,
                                                          __int64 result,
                                                          __int64 a2, __int64 a3,
                                                          char a4);
-
 __attribute__((swiftcall)) void llvmlibcxx_libcxx_7d2040(PSEUDO_X8 x8_,
                                                          _QWORD* result,
                                                          __int64 a2, int a3,
                                                          __int64 a4, char a5);
-
 __attribute__((swiftcall)) void llvmlibcxx_libcxx_7d2620(PSEUDO_X8 x8_,
                                                          __int64 a1,
                                                          unsigned __int64 a2,
                                                          int a3);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7d3494(__int64 a1, __int64 a2,
                                                         __int64 a3, __int64 a4,
                                                         __int64 a5, __int64 a6,
                                                         __int64 a7, __int64 a8,
                                                         __int64 a9);
-
 __int64 llvmlibcxx_libcxx_7d58e0(__int64 result);
-
 unsigned __int64* llvmlibcxx_libcxx_7d5b60(unsigned __int64* result);
-
 unsigned __int64* llvmlibcxx_libcxx_7d5dc0(unsigned __int64* a1,
                                            unsigned __int64 a2, __int64 a3);
-
 void __attribute__((noreturn))
 llvmlibcxx_libcxx_7d6004(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                          __int64 a5, __int64 a6, __int64 a7, __int64 a8,
                          __int64 a9, __int64 a10, __int64 a11, __int64 a12);
-
 void* llvmlibcxx_libcxx_7d6030(void* this_, unsigned __int64* a2);
-
 void* llvmlibcxx_libcxx_7d61a0(void* this_, _BYTE* a2);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7d8050();
-
 __int64 llvmlibcxx_libcxx_7dbcdc(__int64 a1);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7dbd60(__int64 a1);
-
 __int64 llvmlibcxx_libcxx_7dbe8c(__int64 a1);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7dbf10(__int64 a1);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7e455c(__int64 a1, __int64 a2,
                                                         __int64 a3, __int64 a4,
                                                         __int64 a5, __int64 a6,
                                                         __int64 a7, __int64 a8,
                                                         __int64 a9, char a10);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7e5698(__int64 a1, __int64 a2,
                                                         __int64 a3, __int64 a4,
                                                         __int64 a5, __int64 a6,
                                                         __int64 a7, __int64 a8,
                                                         __int64 a9);
-
 void __attribute__((noreturn)) llvmlibcxx_libcxx_7e5e9c(__int64 a1);
-
 extern __int64 SdkData_e89398;
-
 extern __int64 SdkData_e893a0;
-
 void SdkRoutine_8584f0(void*, void*);
-
 _QWORD* std_logic_error_logic_error(_QWORD* result, __int64 a2);
-
 __int64 unplaced_7dbdb0(__int64 result, void* a2);
-
 __int64 std_runtime_error_runtime_error(_QWORD* a1, __int64 a2);
-
 __int64 std_runtime_error_runtime_error_7dbea0_alt1(_QWORD) __asm__(
     "std_runtime_error_runtime_error_7dbea0");
-
 __int64 unplaced_7dbe8c(__int64 a1);
-
 __int64 std_runtime_error_runtime_error_7dbea0(_QWORD* a1, __int64 a2);
+__int64 charconv_7ced70_alt2(char);
 
 __int64 llvmlibcxx_libcxx_7cd640(__int64 a1, unsigned __int64 a2, __int64 a3,
                                  unsigned __int8 a4)
@@ -2423,7 +2349,7 @@ __int64 llvmlibcxx_libcxx_7d18c0(int* a1, unsigned int a2)
   unsigned int v29;
   unsigned __int64 v30;
   int v31;
-  int v32;
+  unsigned int v32;
   int v33;
   unsigned int v34;
   unsigned int v36;
@@ -2474,7 +2400,7 @@ __int64 llvmlibcxx_libcxx_7d18c0(int* a1, unsigned int a2)
           *((_BYTE*)a1 + 8) = 1;
         }
         v19 -= 2;
-      } while (-(__int64)(((_DWORD)v16 + 1) & 0xFFFFFFFE) != v19);
+      } while (-(__int64)(((int)v16 + 1) & 0xFFFFFFFE) != v19);
       v28 = v16 + v19;
       v29 = v15 + v19;
       if ((v16 & 1) != 0) {
@@ -2525,7 +2451,7 @@ __int64 llvmlibcxx_libcxx_7d18c0(int* a1, unsigned int a2)
     }
     v13 = *v9++;
     v12 = v13;
-    result = charconv_7ced70_alt1(result);
+    result = charconv_7ced70_alt2(result);
     if ((_DWORD)result != v13) {
       break;
     }

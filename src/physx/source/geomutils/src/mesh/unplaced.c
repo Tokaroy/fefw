@@ -17,6 +17,8 @@ void GameRoutine_4a5a10(float*, float*, float*, float*, float*, float*, float*,
 __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2);
 __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
                                                char a3);
+void GameRoutine_4a5a10_alt1(float*, float*, float*, float*, float*, float*,
+                             float*, float*, float, float);
 
 __int64 physx_source_geomutils_src_mesh_4a1740(__int64 a1, unsigned int a2)
 {
@@ -864,142 +866,95 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   float v201;
   float v202;
   struct {
-    char gap0_[172];
     float v203;
     float v204;
     float v205;
+  } v203_;
+  struct {
     _DWORD v206[3];
     float v207[3];
+  } v206_;
+  struct {
     float v208[3];
     float v209[3];
+  } v208_;
+  struct {
     float v210;
     float v211;
     float v212;
     float v213;
     float v214;
     float v215;
+  } v210_;
+  struct {
     float v216[3];
     float v217[3];
+  } v216_;
+  struct {
     float v218[3];
     float v219[3];
+  } v218_;
+  struct {
     float v220[3];
     float v221[3];
+  } v220_;
+  struct {
     _BYTE v222[4];
     float v223;
-  } f_;
+  } v222_;
 
-  {
-    v3 = *(_QWORD*)(a1 + 176);
-    __asm__ volatile("" ::"r"(v3));
-  }
-  v7 = (float*)f_.v206;
+  v3 = *(_QWORD*)(a1 + 176);
+  v7 = (float*)v206_.v206;
   if (v3 != 0) {
     v8 = (unsigned int*)(v3 + 12LL * a2);
-    {
-      v9 = *v8;
-      __asm__ volatile("" ::"r"(v9));
-    }
-    {
-      v10 = v8[1];
-      __asm__ volatile("" ::"r"(v10));
-    }
-    {
-      v11 = v8[2];
-      __asm__ volatile("" ::"r"(v11));
-    }
+    v9 = *v8;
+    v10 = v8[1];
+    v11 = v8[2];
   }
   else {
-    {
-      v12 = (unsigned __int16*)(*(_QWORD*)(a1 + 184) + 6LL * a2);
-      __asm__ volatile("" ::"r"(v12));
-    }
-    {
-      v9 = *v12;
-      __asm__ volatile("" ::"r"(v9));
-    }
-    {
-      v10 = v12[1];
-      __asm__ volatile("" ::"r"(v10));
-    }
-    {
-      v11 = v12[2];
-      __asm__ volatile("" ::"r"(v11));
-    }
+    v12 = (unsigned __int16*)(*(_QWORD*)(a1 + 184) + 6LL * a2);
+    v9 = *v12;
+    v10 = v12[1];
+    v11 = v12[2];
   }
-  {
-    v13 = *(_QWORD*)(a1 + 192);
-    __asm__ volatile("" ::"r"(v13));
-  }
+  v13 = *(_QWORD*)(a1 + 192);
   v14 = (float*)(v13 + 12LL * v9);
   v15 = (float*)(v13 + 12LL * v10);
   v16 = (float*)(v13 + 12LL * v11);
-  {
-    v17 = *v14;
-    __asm__ volatile("" ::"w"(v17));
-  }
-  {
-    v18 = v14[1];
-    __asm__ volatile("" ::"w"(v18));
-  }
-  {
-    v19 = v14[2];
-    __asm__ volatile("" ::"w"(v19));
-  }
-  {
-    v20 = *v15;
-    __asm__ volatile("" ::"w"(v20));
-  }
-  {
-    v21 = v15[2];
-    __asm__ volatile("" ::"w"(v21));
-  }
-  {
-    v22 = v16[2];
-    __asm__ volatile("" ::"w"(v22));
-  }
-  {
-    v23 = *v16;
-    __asm__ volatile("" ::"w"(v23));
-  }
-  {
-    v24 = v16[1];
-    __asm__ volatile("" ::"w"(v24));
-  }
-  f_.v204 = v15[1];
-  f_.v205 = v21;
-  *(float*)f_.v206 = v23;
-  *(float*)&f_.v206[1] = v24;
+  v17 = *v14;
+  v18 = v14[1];
+  v19 = v14[2];
+  v20 = *v15;
+  v21 = v15[2];
+  v22 = v16[2];
+  v23 = *v16;
+  v24 = v16[1];
+  v203_.v204 = v15[1];
+  v203_.v205 = v21;
+  *(float*)v206_.v206 = v23;
+  *(float*)&v206_.v206[1] = v24;
   v25 = v19 - v21;
   v26 = v18 - v24;
-  *(float*)&f_.v206[2] = v22;
+  *(float*)&v206_.v206[2] = v22;
   v27 = v19 - v22;
-  f_.v203 = v20;
-  v28 = (float)((float)(v18 - f_.v204) * v27) -
+  v203_.v203 = v20;
+  v28 = (float)((float)(v18 - v203_.v204) * v27) -
         (float)(PSEUDO_UNFUSED(v25 * v26));
   v29 = (float)((float)(v17 - v20) * v26) -
-        (float)(PSEUDO_UNFUSED((float)(v18 - f_.v204) * (float)(v17 - v23)));
-  {
-    v30 = *(float*)(a1 + 264);
-    __asm__ volatile("" ::"w"(v30));
-  }
+        (float)(PSEUDO_UNFUSED((float)(v18 - v203_.v204) * (float)(v17 - v23)));
+  v30 = *(float*)(a1 + 264);
   v31 = (float)(v25 * (float)(v17 - v23)) -
         (float)(PSEUDO_UNFUSED((float)(v17 - v20) * v27));
-  {
-    v32 = *(float*)(a1 + 260);
-    __asm__ volatile("" ::"w"(v32));
-  }
-  {
-    v33 = *(float*)(a1 + 268);
-    __asm__ volatile("" ::"w"(v33));
-  }
+  v32 = *(float*)(a1 + 260);
+  v33 = *(float*)(a1 + 268);
   if ((float)((float)((float)(PSEUDO_UNFUSED(v31 * v30)) + (float)(v28 * v32)) +
               (float)(v29 * v33)) <= 0x0.0p+0f) {
     v36 = v23;
     v23 = v20;
     v187 = v29;
     v188 = v31;
-    v35 = (float*)f_.v206;
-    v7 = &f_.v203;
+    v35 = (float*)v206_.v206;
+    v7 = &v203_.v203;
     v34 = v28;
   }
   else {
@@ -1010,83 +965,46 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v187 = v29;
     v188 = v31;
     v31 = -v31;
-    v35 = &f_.v203;
+    v35 = &v203_.v203;
     v36 = v20;
     v29 = -v29;
   }
-  {
-    v37 = v30 * *(float*)(a1 + 528);
-    __asm__ volatile("" ::"w"(v37));
-  }
-  {
-    v160 = *(float*)(a1 + 528);
-    __asm__ volatile("" ::"w"(v160));
-  }
-  {
-    v38 = *(float*)(a1 + 536);
-    __asm__ volatile("" ::"w"(v38));
-  }
-  {
-    v176 = *(float*)(a1 + 524);
-    __asm__ volatile("" ::"w"(v176));
-  }
-  f_.v223 = *(float*)(a1 + 272);
-  f_.v222[0] = 0;
+  v37 = v30 * *(float*)(a1 + 528);
+  v160 = *(float*)(a1 + 528);
+  v38 = *(float*)(a1 + 536);
+  v176 = *(float*)(a1 + 524);
+  v222_.v223 = *(float*)(a1 + 272);
+  v222_.v222[0] = 0;
   v189 = v28;
-  {
-    v39 = v35[1];
-    __asm__ volatile("" ::"w"(v39));
-  }
-  {
-    v40 = v35[2];
-    __asm__ volatile("" ::"w"(v40));
-  }
+  v39 = v35[1];
+  v40 = v35[2];
   v171 = v36 - v38;
   v173 = v23 - v38;
   v180 = v17 - v38;
-  {
-    v41 =
-        (float)(v37 + (float)(v176 * v32)) + (float)(*(float*)(a1 + 532) * v33);
-    __asm__ volatile("" ::"w"(v41));
-  }
-  {
-    v186 = *(float*)(a1 + 532);
-    __asm__ volatile("" ::"w"(v186));
-  }
-  {
-    v42 = *(float*)(a1 + 544);
-    __asm__ volatile("" ::"w"(v42));
-  }
-  {
-    v43 = v7[1];
-    __asm__ volatile("" ::"w"(v43));
-  }
-  {
-    v44 = v7[2];
-    __asm__ volatile("" ::"w"(v44));
-  }
+  v41 = (float)(v37 + (float)(v176 * v32)) + (float)(*(float*)(a1 + 532) * v33);
+  v186 = *(float*)(a1 + 532);
+  v42 = *(float*)(a1 + 544);
+  v43 = v7[1];
+  v44 = v7[2];
   v198 = v41;
-  {
-    v45 = *(float*)(a1 + 540);
-    __asm__ volatile("" ::"w"(v45));
-  }
+  v45 = *(float*)(a1 + 540);
   v46 = (float)(v19 - v42) - (float)(v44 - v42);
   v184 = v44 - v42;
   v185 = v19 - v42;
-  f_.v221[2] = v19 - v42;
-  f_.v220[2] = v44 - v42;
-  f_.v219[2] = v40 - v42;
+  v220_.v221[2] = v19 - v42;
+  v220_.v220[2] = v44 - v42;
+  v218_.v219[2] = v40 - v42;
   v47 = v18 - v45;
   v48 = v43 - v45;
   v49 = (float)(v18 - v45) - (float)(v43 - v45);
-  f_.v220[0] = v23 - v38;
-  f_.v220[1] = v43 - v45;
-  f_.v219[0] = v36 - v38;
-  f_.v219[1] = v39 - v45;
+  v220_.v220[0] = v23 - v38;
+  v220_.v220[1] = v43 - v45;
+  v218_.v219[0] = v36 - v38;
+  v218_.v219[1] = v39 - v45;
   v168 = v40 - v42;
   v169 = v39 - v45;
-  f_.v221[0] = v17 - v38;
-  f_.v221[1] = v18 - v45;
+  v220_.v221[0] = v17 - v38;
+  v220_.v221[1] = v18 - v45;
   v50 = (float)(PSEUDO_UNFUSED(v31 * v45)) + (float)(v34 * v38);
   v51 = (float)(v39 - v45) - (float)(v43 - v45);
   v52 = v50 + (float)(v29 * v42);
@@ -1095,61 +1013,58 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v55 = (float)(v17 - v38) - (float)(v23 - v38);
   v56 = v18 + v45;
   v202 = v52;
-  f_.v216[2] = v42 + v40;
-  f_.v216[0] = v38 + v36;
-  f_.v216[1] = v45 + v39;
+  v216_.v216[2] = v42 + v40;
+  v216_.v216[0] = v38 + v36;
+  v216_.v216[1] = v45 + v39;
   v57 = (float)(v45 + v39) - (float)(v45 + v43);
   v58 = (float)(v42 + v40) - (float)(v42 + v44);
-  f_.v217[2] = v42 + v44;
+  v216_.v217[2] = v42 + v44;
   v59 = (float)(v38 + v36) - (float)(v38 + v23);
-  f_.v217[0] = v38 + v23;
-  f_.v217[1] = v45 + v43;
-  f_.v218[0] = v17 + v38;
-  f_.v218[1] = v18 + v45;
-  f_.v218[2] = v19 + v42;
+  v216_.v217[0] = v38 + v23;
+  v216_.v217[1] = v45 + v43;
+  v218_.v218[0] = v17 + v38;
+  v218_.v218[1] = v18 + v45;
+  v218_.v218[2] = v19 + v42;
   v200 = v17 + v38;
   v179 = v19 + v42;
   v175 = (float)(v51 * v46) - (float)(PSEUDO_UNFUSED(v53 * v49));
   v165 = (float)(v19 + v42) - (float)(v42 + v44);
   v166 = (float)(v18 + v45) - (float)(v45 + v43);
   v167 = (float)(v17 + v38) - (float)(v38 + v23);
-  f_.v210 = v175;
-  f_.v211 = (float)(v53 * v55) - (float)(PSEUDO_UNFUSED(v54 * v46));
+  v210_.v210 = v175;
+  v210_.v211 = (float)(v53 * v55) - (float)(PSEUDO_UNFUSED(v54 * v46));
   v194 = v38 + v38;
   v196 = v45 + v45;
-  f_.v212 = (float)(v54 * v49) - (float)(PSEUDO_UNFUSED(v51 * v55));
+  v210_.v212 = (float)(v54 * v49) - (float)(PSEUDO_UNFUSED(v51 * v55));
   v164 = (float)(v57 * v165) - (float)(PSEUDO_UNFUSED(v58 * v166));
-  f_.v213 = v164;
-  f_.v214 = (float)(v58 * (float)((float)(v17 + v38) - f_.v217[0])) -
+  v210_.v213 = v164;
+  v210_.v214 = (float)(v58 * (float)((float)(v17 + v38) - v216_.v217[0])) -
                (float)(PSEUDO_UNFUSED(
-                   (float)((float)(v38 + v36) - f_.v217[0]) * v165));
-  v158 = f_.v214;
-  v159 = f_.v211;
+                   (float)((float)(v38 + v36) - v216_.v217[0]) * v165));
+  v158 = v210_.v214;
+  v159 = v210_.v211;
   v182 = (float)(v59 * v166) - (float)(PSEUDO_UNFUSED(v57 * v167));
-  v183 = f_.v212;
-  f_.v215 = v182;
+  v183 = v210_.v212;
+  v210_.v215 = v182;
   v192 = -(float)(v38 + v38);
   v193 = v42 + v42;
   v190 = -(float)(v45 + v45);
   v191 = -(float)(v42 + v42);
-  {
-    v157 = *(float*)(a1 + 520);
-    __asm__ volatile("" ::"w"(v157));
-  }
+  v157 = *(float*)(a1 + 520);
   if (v52 >= 0x0.0p+0f) {
-    v60 = f_.v218;
-    v61 = f_.v217;
-    v62 = f_.v216;
-    v63 = &f_.v213;
+    v60 = v218_.v218;
+    v61 = v216_.v217;
+    v62 = v216_.v216;
+    v63 = &v210_.v213;
   }
   else {
-    v60 = f_.v221;
-    v61 = f_.v220;
-    v62 = f_.v219;
-    v63 = &f_.v210;
+    v60 = v220_.v221;
+    v61 = v220_.v220;
+    v62 = v218_.v219;
+    v63 = &v210_.v210;
   }
   v64 = GameRoutine_4a5700((float*)a1, v60, v61, v62, v63, (float*)(a1 + 260),
-                           &f_.v223, f_.v222, *(float*)(a1 + 520), v198);
+                           &v222_.v223, v222_.v222, *(float*)(a1 + 520), v198);
   v66 = v194;
   v65 = v196;
   v68 = v191;
@@ -1160,25 +1075,16 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v178 = v56;
   v72 = v160 - v56;
   v73 = v190;
-  {
-    v74 = *(float*)(a1 + 532);
-    __asm__ volatile("" ::"w"(v74));
-  }
+  v74 = *(float*)(a1 + 532);
   v75 = (float)(PSEUDO_UNFUSED(v196 * v58)) + (float)(v57 * v191);
   v76 = (float)(PSEUDO_UNFUSED(v193 * v59)) + (float)(v58 * v192);
   v77 = v194 * v57;
-  {
-    v78 = *(float*)(a1 + 524);
-    __asm__ volatile("" ::"w"(v78));
-  }
+  v78 = *(float*)(a1 + 524);
   v79 = v77 + (float)(v59 * v190);
-  {
-    v80 = *(float*)(a1 + 528);
-    __asm__ volatile("" ::"w"(v80));
-  }
-  f_.v209[0] = v75;
-  f_.v209[1] = v76;
-  f_.v209[2] = v79;
+  v80 = *(float*)(a1 + 528);
+  v208_.v209[0] = v75;
+  v208_.v209[1] = v76;
+  v208_.v209[2] = v79;
   v81 = v80 - v48;
   if ((v64 & 1) != 0) {
     v82 = v74;
@@ -1195,9 +1101,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v161 = v79;
       v84 = v75;
       v155 = v74;
-      GameRoutine_4a5a10((float*)a1, f_.v220, f_.v217, f_.v219,
-                         f_.v216, f_.v209, (float*)(a1 + 260),
-                         &f_.v223, v157, v198, f_.v222);
+      GameRoutine_4a5a10_alt1((float*)a1, v220_.v220, v216_.v217, v218_.v219,
+                              v216_.v216, v208_.v209, (float*)(a1 + 260),
+                              &v222_.v223, v157, v198);
       v74 = v155;
       v75 = v84;
       v79 = v161;
@@ -1207,18 +1113,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v71 = v193;
       v66 = v194;
       v65 = v196;
-      {
-        v83 = *(float*)(a1 + 524);
-        __asm__ volatile("" ::"w"(v83));
-      }
-      {
-        v80 = *(float*)(a1 + 528);
-        __asm__ volatile("" ::"w"(v80));
-      }
-      {
-        v82 = *(float*)(a1 + 532);
-        __asm__ volatile("" ::"w"(v82));
-      }
+      v83 = *(float*)(a1 + 524);
+      v80 = *(float*)(a1 + 528);
+      v82 = *(float*)(a1 + 532);
     }
   }
   v85 = v76 * v81;
@@ -1234,10 +1131,10 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
         (float)(v71 * (float)(v180 - v171));
   v94 = (float)(PSEUDO_UNFUSED((float)(v180 - v171) * v73)) +
         (float)(v66 * (float)(v47 - v169));
-  f_.v208[0] = v92;
-  f_.v208[1] = v93;
+  v208_.v208[0] = v92;
+  v208_.v208[1] = v93;
   v95 = v93 * (float)(v80 - v47);
-  f_.v208[2] = v94;
+  v208_.v208[2] = v94;
   if ((v69 & 1) != 0) {
     v96 = v82;
   }
@@ -1259,9 +1156,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v172 = v88;
       v174 = v91;
       v170 = v85;
-      GameRoutine_4a5a10((float*)a1, f_.v219, f_.v216, f_.v221,
-                         f_.v218, f_.v208, (float*)(a1 + 260),
-                         &f_.v223, v157, v198, f_.v222);
+      GameRoutine_4a5a10_alt1((float*)a1, v218_.v219, v216_.v216, v220_.v221,
+                              v218_.v218, v208_.v208, (float*)(a1 + 260),
+                              &v222_.v223, v157, v198);
       v85 = v170;
       v88 = v172;
       v91 = v174;
@@ -1273,22 +1170,13 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v79 = v162;
       v73 = v190;
       v68 = v191;
-      {
-        v83 = *(float*)(a1 + 524);
-        __asm__ volatile("" ::"w"(v83));
-      }
+      v83 = *(float*)(a1 + 524);
       v67 = v192;
       v71 = v193;
       v66 = v194;
       v65 = v196;
-      {
-        v80 = *(float*)(a1 + 528);
-        __asm__ volatile("" ::"w"(v80));
-      }
-      {
-        v96 = *(float*)(a1 + 532);
-        __asm__ volatile("" ::"w"(v96));
-      }
+      v80 = *(float*)(a1 + 528);
+      v96 = *(float*)(a1 + 532);
     }
   }
   v100 = v95 + (float)(v90 * v92);
@@ -1299,9 +1187,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v105 = (float)(PSEUDO_UNFUSED(v71 * v166)) + (float)(v73 * v165);
   v106 = (float)(PSEUDO_UNFUSED(v66 * v165)) + (float)(v68 * v167);
   v107 = (float)(PSEUDO_UNFUSED(v65 * v167)) + (float)(v67 * v166);
-  f_.v207[0] = v105;
-  f_.v207[1] = v106;
-  f_.v207[2] = v107;
+  v206_.v207[0] = v105;
+  v206_.v207[1] = v106;
+  v206_.v207[2] = v107;
   v108 = v74 - v184;
   v109 = v96 - v179;
   v110 = (float)(PSEUDO_UNFUSED(v106 * (float)(v80 - v178))) +
@@ -1318,9 +1206,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v201 = v94;
     v195 = v101;
     v197 = v104;
-    GameRoutine_4a5a10((float*)a1, f_.v221, f_.v218, f_.v220,
-                       f_.v217, f_.v207, (float*)(a1 + 260), &f_.v223,
-                       v157, v111, f_.v222);
+    GameRoutine_4a5a10_alt1((float*)a1, v220_.v221, v218_.v218, v220_.v220,
+                            v216_.v217, v206_.v207, (float*)(a1 + 260),
+                            &v222_.v223, v157, v111);
     v101 = v195;
     v104 = v197;
     v103 = v199;
@@ -1372,10 +1260,10 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     }
   }
 LABEL_52:
-  if (f_.v222[0] != 1) {
+  if (v222_.v222[0] != 1) {
     return 0;
   }
-  v120 = f_.v223;
+  v120 = v222_.v223;
   v121 = GameRoutine_1a0a010(
       (float)((float)(PSEUDO_UNFUSED(v118 * v118)) + (float)(v117 * v117)) +
       (float)(v119 * v119));
@@ -1395,16 +1283,12 @@ LABEL_36:
     return 0;
   }
   v124 = -v123;
-  {
-    v125 = *(float*)(a1 + 552);
-    __asm__ volatile("" ::"w"(v125));
-  }
+  v125 = *(float*)(a1 + 552);
   if (v120 == 0x0.0p+0f) {
     goto LABEL_48;
   }
   if (v120 <= v125) {
     v126 = *(float*)(a1 + 552);
-    __asm__ volatile("" ::"w"(v126));
   }
   else {
     v126 = v120;
@@ -1420,10 +1304,7 @@ LABEL_36:
   LABEL_48:
     *(float*)(a1 + 272) = v120;
     *(_DWORD*)(a1 + 276) = a2;
-    {
-      v129 = *(_QWORD*)v14;
-      __asm__ volatile("" ::"r"(v129));
-    }
+    v129 = *(_QWORD*)v14;
     *(float*)(a1 + 548) = v124;
     if (v125 >= v120) {
       v125 = v120;
@@ -1431,71 +1312,38 @@ LABEL_36:
     *(float*)(a1 + 552) = v125;
     *(_QWORD*)(a1 + 288) = v129;
     *(float*)(a1 + 296) = v14[2];
-    {
-      v130 = *((_DWORD*)v15 + 1);
-      __asm__ volatile("" ::"r"(v130));
-    }
+    v130 = *((_DWORD*)v15 + 1);
     *(float*)(a1 + 300) = *v15;
-    {
-      v131 = *((_DWORD*)v15 + 2);
-      __asm__ volatile("" ::"r"(v131));
-    }
+    v131 = *((_DWORD*)v15 + 2);
     *(_DWORD*)(a1 + 304) = v130;
     *(_DWORD*)(a1 + 308) = v131;
-    {
-      v132 = *v16;
-      __asm__ volatile("" ::"w"(v132));
-    }
-    {
-      v133 = *((_DWORD*)v16 + 1);
-      __asm__ volatile("" ::"r"(v133));
-    }
+    v132 = *v16;
+    v133 = *((_DWORD*)v16 + 1);
     *(float*)(a1 + 324) = v117;
     *(float*)(a1 + 328) = v118;
     *(float*)(a1 + 312) = v132;
-    {
-      v134 = *((_DWORD*)v16 + 2);
-      __asm__ volatile("" ::"r"(v134));
-    }
+    v134 = *((_DWORD*)v16 + 2);
     *(_DWORD*)(a1 + 316) = v133;
     *(float*)(a1 + 332) = v119;
     *(_DWORD*)(a1 + 320) = v134;
     result = 1;
     if ((a3 & 1) != 0) {
-      {
-        v136 = v125 * *(float*)(a1 + 348);
-        __asm__ volatile("" ::"w"(v136));
-      }
-      {
-        v137 = *(float*)(a1 + 268);
-        __asm__ volatile("" ::"w"(v137));
-      }
-      {
-        v138 = v125 * *(float*)(a1 + 264);
-        __asm__ volatile("" ::"w"(v138));
-      }
+      v136 = v125 * *(float*)(a1 + 348);
+      v137 = *(float*)(a1 + 268);
+      v138 = v125 * *(float*)(a1 + 264);
       v139 = (float)(PSEUDO_UNFUSED(v125 * *(float*)(a1 + 340))) +
              *(float*)(a1 + 352);
       v140 = (float)(PSEUDO_UNFUSED(v125 * *(float*)(a1 + 344))) +
              *(float*)(a1 + 356);
-      {
-        v141 = *(float*)(a1 + 360);
-        __asm__ volatile("" ::"w"(v141));
-      }
+      v141 = *(float*)(a1 + 360);
       *(float*)(a1 + 64) = v139;
       *(float*)(a1 + 68) = v140;
       v142 = v136 + v141;
-      {
-        v143 = *(float*)(a1 + 260);
-        __asm__ volatile("" ::"w"(v143));
-      }
+      v143 = *(float*)(a1 + 260);
       *(float*)(a1 + 72) = v142;
       v144 = v125 * v143;
       v145 = (float)(v125 * v137) * 0x1.0000000000000p-1f;
-      {
-        v146 = *(float*)(a1 + 244);
-        __asm__ volatile("" ::"w"(v146));
-      }
+      v146 = *(float*)(a1 + 244);
       v147 = (float)(PSEUDO_UNFUSED(v138 * 0x1.0000000000000p-1f)) +
              *(float*)(a1 + 240);
       *(float*)(a1 + 32) =
@@ -1503,23 +1351,11 @@ LABEL_36:
           *(float*)(a1 + 236);
       *(float*)(a1 + 36) = v147;
       v148 = v145 + v146;
-      {
-        v149 = *(float*)(a1 + 128);
-        __asm__ volatile("" ::"w"(v149));
-      }
-      {
-        v150 = *(float*)(a1 + 132);
-        __asm__ volatile("" ::"w"(v150));
-      }
+      v149 = *(float*)(a1 + 128);
+      v150 = *(float*)(a1 + 132);
       *(float*)(a1 + 40) = v148;
-      {
-        v151 = *(float*)(a1 + 160);
-        __asm__ volatile("" ::"w"(v151));
-      }
-      {
-        v152 = *(float*)(a1 + 148);
-        __asm__ volatile("" ::"w"(v152));
-      }
+      v151 = *(float*)(a1 + 160);
+      v152 = *(float*)(a1 + 148);
       v153 = (float)((float)(PSEUDO_UNFUSED(v140 * *(float*)(a1 + 164))) +
                      (float)(v139 * v149)) +
              (float)(v142 * *(float*)(a1 + 152));

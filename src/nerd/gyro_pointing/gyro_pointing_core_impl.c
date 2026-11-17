@@ -183,6 +183,9 @@ nerd_gyro_pointing_GyroPointingKalmanFilter_TestParameterStates_plt_alt1(
 void math_711380_alt1(__int64*);
 void nerd_gyro_pointing_GyroPointingCore_UpdateStableOrientation_plt_alt1(
     __int64, float, float, float, float);
+__int64
+nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration_plt_alt1(
+    __int64);
 
 void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                                                __int64 a2)
@@ -433,7 +436,7 @@ void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
     if (v21 != v20) {
       return;
     }
-    nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration_plt(
+    nerd_gyro_pointing_GyroPointingCore_InitializeOrientationFromAcceleration_plt_alt1(
         a1);
     v23 = *(float*)(a1 + 8224);
     v24 = *(float*)(a1 + 15292);
@@ -494,7 +497,7 @@ void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
               0x1.dcd6500000000p+29f) >= v39) {
   LABEL_20:
     if ((unsigned int)
-            nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt(
+            nerd_gyro_pointing_GyroPointingKalmanFilter_GetIntegrityState_plt_alt1(
                 a1 + 200) == 0) {
       v40 = *(_QWORD*)(a1 + 8440);
       v41 = *(_QWORD*)a2;
@@ -730,7 +733,7 @@ void nerd_gyro_pointing_GyroPointingCore_FeedImuSampleNoUpdate(__int64 a1,
                                (float)(PSEUDO_UNFUSED(v135 * v135)))) +
                0x1.0000000000000p-126f) *
          0x1.0000000000000p-1f;
-  if (!((float)(v137 * v137) > 0x1.47ae140000000p-5f)) {
+  if ((float)(v137 * v137) <= 0x1.47ae140000000p-5f) {
     v138 =
         (float)((float)((float)((float)((float)((float)((float)((float)((float)((float)(v137 *
                                                                                         v137) *

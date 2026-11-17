@@ -3,95 +3,54 @@
 #pragma GCC visibility push(hidden)
 
 __int64 nn_diag_detail_Abort_plt(_QWORD);
-
 __int64 nn_diag_detail_InvokeAbortObserver_plt(_QWORD);
-
 __int64 nn_os_ConvertToTimeSpan_plt(_QWORD);
-
 __int64 nn_os_GetCurrentThread_plt();
-
 __int64 nn_os_GetSystemTick_plt();
-
 __int64 nn_os_GetThreadNamePointer_plt(__int64);
-
 __int64 nn_os_SdkMutexType_IsLockedByCurrentThread_plt(_QWORD);
-
 __int64 nn_os_SdkMutexType_Lock_plt(_QWORD);
-
 __int64 nn_util_MessagePackWriter_GetRemainSize_plt(__int64);
-
 __int64 nn_util_MessagePackWriter_MessagePackWriter_plt(__int64, __int64);
-
 __int64 nn_util_MessagePackWriter_WriteArray16_plt(__int64, unsigned __int16);
-
 __int64 nn_util_MessagePackWriter_WriteFloat64_plt(__int64, double);
-
 __int64 nn_util_MessagePackWriter_WriteSignedIntegerAutoSize_plt(__int64,
                                                                  __int64);
-
 __int64 nn_util_MessagePackWriter_WriteString_plt(_QWORD, _QWORD);
-
 __int64 nn_util_MessagePackWriter_WriteUnsignedInteger64_plt(__int64,
                                                              unsigned __int64);
-
 __int64
 nn_util_MessagePackWriter_WriteUnsignedIntegerAutoSize_plt(__int64,
                                                            unsigned __int64);
-
 __int64 threadName();
-
 extern _UNKNOWN SdkData_eae2f0;
-
 extern _UNKNOWN SdkData_eae2f8;
-
 extern __int64 (*SdkData_eae388)(_QWORD);
-
 extern __int64 SdkData_eae300[];
-
 extern __int64 SdkData_eae308;
-
 extern __int64 SdkData_eae310;
-
 extern __int64 SdkData_eae318;
-
 extern __int64 SdkData_eae320;
-
 extern __int64 SdkData_eae328;
-
 extern __int64 SdkData_eae330;
-
 extern __int64 SdkData_eae338;
-
 extern __int64 SdkData_eae340;
-
 extern __int64 SdkData_eae348;
-
 extern __int64 SdkData_eae350;
-
 extern __int64 SdkData_eae358;
-
 extern __int64 SdkData_eae360;
-
 extern __int64 SdkData_eae368;
-
 extern __int64 SdkData_eae370;
-
 extern __int64 SdkData_eae378;
-
 extern __int64 SdkData_eae380;
-
 extern char SdkData_bbbd5c;
-
 int __cxa_guard_acquire_plt(__int64);
-
 void __cxa_guard_release_plt(__int64);
-
 void nn_detail_UnexpectedDefaultImpl_plt_857150();
-
 void __attribute__((noreturn)) nn_diag_ba140(void* this_, const char* a2,
                                              const char* a3);
-
 __int64 nn_diag_ba320(_QWORD* a1);
+extern _UNKNOWN* SdkData_eae388_alt1;
 
 __int64 nn_diag_ba320(_QWORD* a1)
 {
@@ -99,7 +58,7 @@ __int64 nn_diag_ba320(_QWORD* a1)
 #pragma clang fp contract(off)
   unsigned __int64 v1;
   unsigned __int8** v2;
-  __int64 (*v3)(_QWORD*, _QWORD);
+  __int64 (*v3)(__int64, __int64);
   __int64 v4;
   unsigned __int64 v5;
   __int64 v6;
@@ -175,7 +134,7 @@ __int64 nn_diag_ba320(_QWORD* a1)
                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v1 = a1[1];
   v2 = (unsigned __int8**)a1[2];
-  v3 = (__int64 (*)(_QWORD*, _QWORD))a1[3],
+  v3 = (__int64 (*)(__int64, __int64))a1[3],
   result = COERCE_AS(__typeof__(result),
                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v67_.v68 = 0;
@@ -234,9 +193,7 @@ __int64 nn_diag_ba320(_QWORD* a1)
     SdkData_eae318 = 0;
     *(_OWORD*)SdkData_eae300 = (__typeof__(*(_OWORD*)SdkData_eae300)){0};
     SdkData_eae380 = 0;
-    SdkData_eae388 = (__int64 (*)(_QWORD))threadName,
-    result = COERCE_AS(__typeof__(result),
-                       PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+    SdkData_eae388_alt1 = threadName;
     __cxa_guard_release_plt((__int64)&SdkData_eae2f8),
         result = COERCE_AS(__typeof__(result),
                            PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -297,7 +254,7 @@ __int64 nn_diag_ba320(_QWORD* a1)
         }
       }
       else {
-        v15 = (char*)&SdkData_eae388;
+        v15 = (char*)&SdkData_eae388_alt1;
         if (v13 < 0x70) {
           goto LABEL_40;
         }
@@ -335,7 +292,9 @@ __int64 nn_diag_ba320(_QWORD* a1)
     goto LABEL_11;
   }
 LABEL_16:
-  v16 = SdkData_eae388(v7);
+  v16 = ((__int64 (*)(__int64))SdkData_eae388_alt1)(v7),
+  result = COERCE_AS(__typeof__(result),
+                     PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
   v17 = SdkData_eae300[0];
   if (SdkData_eae300[0] == 0) {
     SdkData_eae308 = v7;
@@ -575,7 +534,7 @@ LABEL_41:
                 v61 = -5;
               }
               v54 = v61 + v53;
-              if (v61 + (_DWORD)v53 == 0) {
+              if (v61 + (int)v53 == 0) {
               LABEL_110:
                 LODWORD(v59) = 0;
                 goto LABEL_111;
@@ -648,7 +607,7 @@ LABEL_116:
   result =
       nn_util_MessagePackWriter_WriteArray16_plt((__int64)&v67_.v67, v67_.v68);
   if ((int)v67_.v68 >= 3) {
-    return v3(v69, v63);
+    return v3((__int64)v69, v63);
   }
   return result;
 }

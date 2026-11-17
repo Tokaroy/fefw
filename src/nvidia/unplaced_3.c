@@ -179,7 +179,7 @@ __int64 nvidia_620e80(__int64 result, __int64 a2, __int64 a3, __int64 a4);
 long double nvidia_621720(float a1);
 float nvidia_621a20(__int64 a1, __int64 a2, float a3, float a4, float a5,
                     float a6);
-float nvidia_622350(__int64 a1, long double a2);
+float nvidia_622350_alt1(__int64 a1, long double a2);
 float nvidia_623710(__int64 a1, float a2);
 _QWORD* nvidia_623a50(__int64 a1);
 __int64 nvidia_623a90(__int64 result, _QWORD* a2);
@@ -219,6 +219,9 @@ __int64 nvidia_626a60(__int64 a1, unsigned int a2, unsigned __int16* a3,
 __int64 nvidia_626be0(int a1);
 __int64 nvidia_626c20(__int64 result, unsigned __int8 a2, __int64 a3);
 __int64 nvidia_626ca0(__int64 a1, _BYTE* a2, __int64* a3);
+float log10f_plt_alt1(float);
+float powf_plt_alt3(float, float);
+float nvidia_622350(float* a1, float a2);
 
 bool nvidia_619fb0(__int64 a1, __int64 a2)
 {
@@ -9259,140 +9262,123 @@ float nvidia_621a20(__int64 a1, __int64 a2, float a3, float a4, float a5,
   return result;
 }
 
-float nvidia_622350(__int64 a1, long double a2)
+float nvidia_622350(float* a1, float a2)
 {
   float v3;
-  int v4;
+  float v4;
   float v5;
-  long double v6;
-  long double v7;
-  long double v8;
-  int v9;
+  float v6;
+  float v7;
+  float v8;
+  float v9;
   float v10;
-  long double v11;
+  int v11;
   float v12;
-  long double v13;
+  float v13;
   float v14;
-  int v15;
+  float v15;
   float v16;
   float v17;
   float v18;
-  long double v19;
-  float v20;
-  long double v21;
-  int v22;
+  float v19;
+  int v20;
+  float v21;
+  float v22;
   float v23;
-  long double v24;
+  float v24;
   float v25;
-  long double v26;
-  float v27;
-  int v28;
-  float v29;
-  float v30;
-  long double v31;
-  float v32;
-  float v33;
-  float v34;
 
-  if (!(*(float*)&a2 > 0.0)) {
-    *(float*)&a2 = 0.0001;
+  if (a2 <= 0x0.0p+0f) {
+    a2 = 0x1.a36e2e0000000p-14f;
   }
-  v3 = log10f_plt(a2);
-  v4 = *(_DWORD*)(a1 + 160);
+  v3 = log10f_plt_alt1(a2);
+  v4 = a1[40];
   v5 = v3;
-  LODWORD(v6) = v4;
-  if (!(v5 > log10f_plt(v6))) {
-    LODWORD(v7) = *(_DWORD*)(a1 + 164);
-    v17 = *(float*)(a1 + 184);
-    v18 = log10f_plt(v7);
-    LODWORD(v19) = v4;
-    v20 = (float)(v18 - (float)(v17 * log10f_plt(v19))) + (float)(v5 * v17);
+  if (v3 <= log10f_plt_alt1(v4)) {
+    v13 = a1[46];
+    v14 = log10f_plt_alt1(a1[41]);
+    v15 = (float)(v14 - (float)(v13 * log10f_plt_alt1(v4))) + (float)(v5 * v13);
   }
   else {
-    LODWORD(v7) = v4;
-    *(float*)&v8 = log10f_plt(v7);
-    v9 = *(_DWORD*)(a1 + 168);
-    if (v5 > *(float*)&v8) {
-      LODWORD(v8) = *(_DWORD*)(a1 + 168);
-      if (v5 < log10f_plt(v8)) {
-        LODWORD(v8) = v4;
-        v10 = (float)(v5 - log10f_plt(v8)) * 7.0;
-        LODWORD(v11) = v9;
-        v12 = log10f_plt(v11);
-        LODWORD(v13) = v4;
-        v14 = v10 / (float)(v12 - log10f_plt(v13));
-        if (!(v14 < -2147500000.0)) {
-          if (!(v14 > 2147483650.0)) {
-            v15 = (int)v14 & ~((int)v14 >> 31);
-            v16 = v14 - (float)(int)v14;
-            if (!(v15 < 7)) {
-              v15 = 7;
-            }
-          }
-          else {
-            v15 = 7;
-            v16 = v14 + -2147500000.0;
+    v6 = log10f_plt_alt1(v4);
+    v7 = a1[42];
+    if (v5 > v6 && v5 < log10f_plt_alt1(a1[42])) {
+      v8 = (float)(v5 - log10f_plt_alt1(v4)) * 0x1.c000000000000p+2f;
+      v9 = log10f_plt_alt1(v7);
+      v10 = v8 / (float)(v9 - log10f_plt_alt1(v4));
+      if (v10 >= -0x1.0000000000000p+31f) {
+        if (v10 <= 0x1.fffffffc00000p+30) {
+          v11 = (int)v10 & ~((int)v10 >> 31);
+          v12 = v10 - (float)(int)v10;
+          if (v11 >= 7) {
+            v11 = 7;
           }
         }
         else {
-          v15 = 0;
-          v16 = v14 + 2147500000.0;
+          v11 = 7;
+          v12 = v10 + -0x1.0000000000000p+31f;
         }
-        v32 = *(float*)(a1 + 16LL * (unsigned int)v15);
-        v33 = *(float*)(a1 + 16LL * (unsigned int)(v15 + 1));
-        v34 = *(float*)(a1 + 16LL * (unsigned int)(v15 + 2));
-      LABEL_24:
-        v20 = (float)((float)((float)(v32 * 0.5) + (float)(v33 * 0.5)) +
-                      (float)(v34 * 0.0)) +
-              (float)((float)(v16 * (float)((float)(v33 - v32) +
-                                            (float)(v34 * 0.0))) +
-                      (float)((float)(v16 * v16) *
-                              (float)((float)((float)(v32 * 0.5) - v33) +
-                                      (float)(v34 * 0.5))));
-        return powf_plt_alt1(10.0, v20);
       }
+      else {
+        v11 = 0;
+        v12 = v10 + 0x1.0000000000000p+31f;
+      }
+      v23 = a1[4 * v11];
+      v24 = a1[4 * (v11 + 1)];
+      v25 = a1[4 * (v11 + 2)];
+    LABEL_24:
+      v15 =
+          (float)((float)((float)(PSEUDO_UNFUSED(v23 * 0x1.0000000000000p-1f)) +
+                          (float)(PSEUDO_UNFUSED(v24 *
+                                                 0x1.0000000000000p-1f))) +
+                  (float)(PSEUDO_UNFUSED(v25 * 0x0.0p+0f))) +
+          (float)((float)(PSEUDO_UNFUSED(
+                      v12 *
+                      (float)((float)(v24 - v23) +
+                              (float)(PSEUDO_UNFUSED(v25 * 0x0.0p+0f))))) +
+                  (float)((float)(v12 * v12) *
+                          (float)((float)((float)(PSEUDO_UNFUSED(
+                                              v23 * 0x1.0000000000000p-1f)) -
+                                          v24) +
+                                  (float)(PSEUDO_UNFUSED(
+                                      v25 * 0x1.0000000000000p-1f)))));
+      return powf_plt_alt3(0x1.4000000000000p+3f, v15);
     }
-    LODWORD(v8) = v9;
-    if (!(v5 < log10f_plt(v8))) {
-      v22 = *(_DWORD*)(a1 + 176);
-      LODWORD(v21) = v22;
-      if (v5 < log10f_plt(v21)) {
-        LODWORD(v21) = v9;
-        v23 = (float)(v5 - log10f_plt(v21)) * 7.0;
-        LODWORD(v24) = v22;
-        v25 = log10f_plt(v24);
-        LODWORD(v26) = v9;
-        v27 = v23 / (float)(v25 - log10f_plt(v26));
-        if (!(v27 < -2147500000.0)) {
-          if (!(v27 > 2147483650.0)) {
-            v28 = (int)v27 & ~((int)v27 >> 31);
-            v16 = v27 - (float)(int)v27;
-            if (!(v28 < 7)) {
-              v28 = 7;
+    if (v5 >= log10f_plt_alt1(v7)) {
+      v16 = a1[44];
+      if (v5 < log10f_plt_alt1(v16)) {
+        v17 = (float)(v5 - log10f_plt_alt1(v7)) * 0x1.c000000000000p+2f;
+        v18 = log10f_plt_alt1(v16);
+        v19 = v17 / (float)(v18 - log10f_plt_alt1(v7));
+        if (v19 >= -0x1.0000000000000p+31f) {
+          if (v19 <= 0x1.fffffffc00000p+30) {
+            v20 = (int)v19 & ~((int)v19 >> 31);
+            v12 = v19 - (float)(int)v19;
+            if (v20 >= 7) {
+              v20 = 7;
             }
           }
           else {
-            v28 = 7;
-            v16 = v27 + -2147500000.0;
+            v20 = 7;
+            v12 = v19 + -0x1.0000000000000p+31f;
           }
         }
         else {
-          v28 = 0;
-          v16 = v27 + 2147500000.0;
+          v20 = 0;
+          v12 = v19 + 0x1.0000000000000p+31f;
         }
-        v32 = *(float*)(a1 + 16LL * (unsigned int)v28 + 4);
-        v33 = *(float*)(a1 + 16LL * (unsigned int)(v28 + 1) + 4);
-        v34 = *(float*)(a1 + 16LL * (unsigned int)(v28 + 2) + 4);
+        v23 = a1[4 * v20 + 1];
+        v24 = a1[4 * (v20 + 1) + 1];
+        v25 = a1[4 * (v20 + 2) + 1];
         goto LABEL_24;
       }
     }
-    LODWORD(v21) = *(_DWORD*)(a1 + 180);
-    v29 = *(float*)(a1 + 188);
-    v30 = log10f_plt(v21);
-    LODWORD(v31) = *(_DWORD*)(a1 + 176);
-    v20 = (float)(v30 - (float)(v29 * log10f_plt(v31))) + (float)(v5 * v29);
+    v21 = a1[47];
+    v22 = log10f_plt_alt1(a1[45]);
+    v15 = (float)(v22 - (float)(v21 * log10f_plt_alt1(a1[44]))) +
+          (float)(v5 * v21);
   }
-  return powf_plt_alt1(10.0, v20);
+  return powf_plt_alt3(0x1.4000000000000p+3f, v15);
 }
 
 float nvidia_623710(__int64 a1, float a2)

@@ -3195,7 +3195,7 @@ LABEL_57:
   v257[0] = v264;
   v256 = 33;
   v257[1] = v111;
-  SdkRoutine_87a1a0_alt1();
+  SdkRoutine_87a1a0((void*)(&v265), a3, &v254);
   v112 = v265;
   v258 = v265;
   memset_plt_alt1((__int64)v259, 0, 0x18Cu);

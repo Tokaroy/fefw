@@ -467,6 +467,8 @@ unsigned __int64
 CudaDriverStub_985a0_alt2(__int64) __asm__("CudaDriverStub_985a0");
 __int64 CudaDriverStub_107f90_alt4(_QWORD);
 __int64 CudaDriverStub_108070_alt4(_QWORD);
+__int64 CudaDriverStub_107f90_alt5(_QWORD, _QWORD, _QWORD);
+__int64 CudaDriverStub_12e320_alt1(void);
 
 __int64 cuda_driver_120c20(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
 {
@@ -1585,6 +1587,8 @@ LABEL_30:
 __int64 cuda_driver_126320(unsigned __int64 a1, __int64 a2, int a3, _DWORD* a4,
                            unsigned __int64 a5)
 {
+
+#pragma clang fp contract(off)
   unsigned int v10;
   unsigned __int64 v11;
   __int64 v12;
@@ -1593,28 +1597,28 @@ __int64 cuda_driver_126320(unsigned __int64 a1, __int64 a2, int a3, _DWORD* a4,
   unsigned __int64 v15;
   unsigned __int64 v16;
   unsigned int v17;
-  void (*v18)(unsigned __int64, unsigned __int64, unsigned __int64*);
+  void (*v18)(__int64, __int64, __int64, double);
   unsigned __int64 v19;
   unsigned __int64 v20;
-  void (*v21)(unsigned __int64, unsigned __int64, unsigned __int64*);
-  void (*v22)(unsigned __int64, unsigned __int64, unsigned __int64*);
-  void (*v23)(unsigned __int64, unsigned __int64, unsigned __int64*);
+  void (*v21)(__int64, __int64, __int64);
+  void (*v22)(__int64, __int64, __int64, double);
+  void (*v23)(__int64, __int64, __int64);
   unsigned __int64 v24;
   __int128 v25;
   _OWORD* v26;
   unsigned __int64 v27;
-  __int64 v28;
+  unsigned __int64 v28;
   _DWORD* v29;
   unsigned __int64 v31;
 
-  v10 = CudaDriverStub_12e320(a1);
+  v10 = CudaDriverStub_12e320_alt1();
   v11 = a1 / v10 * v10;
   v12 = a1 + a2;
   v13 = (_QWORD*)CudaDriverData_1423360;
   v14 = v12 + v10 - 1;
   v15 = v14 - v11;
   v16 = v14 % v10;
-  CudaDriverStub_107f90_alt4(*(_QWORD*)CudaDriverData_1423360);
+  CudaDriverStub_107f90_alt5(*(_QWORD*)CudaDriverData_1423360, 0, 0);
   v17 = 0;
   if (a3 > 4) {
     if (a3 > 6) {
@@ -1622,40 +1626,35 @@ __int64 cuda_driver_126320(unsigned __int64 a1, __int64 a2, int a3, _DWORD* a4,
         if (a3 != 8) {
           goto LABEL_33;
         }
-        v21 = *(void (**)(unsigned __int64, unsigned __int64,
-                          unsigned __int64*))(*v13 + 312LL);
+        v21 = *(void (**)(__int64, __int64, __int64))(*v13 + 312LL);
       LABEL_17:
         v31 = 0xFFFFFFFE00000000LL;
-        v21(v11, v15 - v16, &v31);
+        v21(v11, v15 - v16, (__int64)&v31);
         v17 = 0;
-        *a4 = HIDWORD(v31);
+        *(_DWORD*)a4 = DWORDn(v31, sizeof(v31) / 4 - 1);
         goto LABEL_33;
       }
-      v23 = *(void (**)(unsigned __int64, unsigned __int64, unsigned __int64*))(
-          *v13 + 312LL);
+      v23 = *(void (**)(__int64, __int64, __int64))(*v13 + 312LL);
     }
     else {
       if (a3 != 5) {
-        v21 = *(void (**)(unsigned __int64, unsigned __int64,
-                          unsigned __int64*))(*v13 + 360LL);
+        v21 = *(void (**)(__int64, __int64, __int64))(*v13 + 360LL);
         goto LABEL_17;
       }
-      v23 = *(void (**)(unsigned __int64, unsigned __int64, unsigned __int64*))(
-          *v13 + 360LL);
+      v23 = *(void (**)(__int64, __int64, __int64))(*v13 + 360LL);
     }
     v31 = 0xFFFFFFFE00000000LL;
-    v23(v11, v15 - v16, &v31);
+    v23(v11, v15 - v16, (__int64)&v31);
     v17 = 0;
-    *a4 = v31;
+    *(_DWORD*)a4 = v31;
     goto LABEL_33;
   }
   if (a3 > 2) {
     if (a3 != 3) {
-      *a4 = -2;
-      v22 = *(void (**)(unsigned __int64, unsigned __int64, unsigned __int64*))(
-          *v13 + 312LL);
+      *(_DWORD*)a4 = -2;
+      v22 = *(void (**)(__int64, __int64, __int64, double))(*v13 + 312LL);
       v31 = 0xFFFFFFFE00000000LL;
-      v22(v11, v15 - v16, &v31);
+      v22(v11, v15 - v16, (__int64)&v31, __builtin_nanf(""));
       v19 = v31;
       if ((unsigned int)(v31 - 2) < 3) {
         goto LABEL_6;
@@ -1685,40 +1684,38 @@ __int64 cuda_driver_126320(unsigned __int64 a1, __int64 a2, int a3, _DWORD* a4,
       v28 = a5 - v24;
       v29 = &a4[v24];
       do {
-        *v29++ = -2;
+        *(_DWORD*)v29++ = -2;
         --v28;
       } while (v28 != 0);
     }
   LABEL_32:
-    v17 = (*(__int64 (**)(unsigned __int64, unsigned __int64, _DWORD*,
-                          unsigned __int64))(*v13 + 384LL))(v11, v15 - v16, a4,
-                                                            a5);
+    v17 = (*(__int64 (**)(__int64, __int64, __int64, __int64))(*v13 + 384LL))(
+        v11, v15 - v16, (__int64)a4, a5);
     goto LABEL_33;
   }
   if (a3 == 1) {
-    *a4 = 0;
-    (*(void (**)(unsigned __int64, unsigned __int64, _DWORD*))(*v13 + 336LL))(
-        v11, v15 - v16, a4);
+    *(_DWORD*)a4 = 0;
+    (*(void (**)(__int64, __int64, __int64))(*v13 + 336LL))(v11, v15 - v16,
+                                                            (__int64)a4);
     v17 = 0;
   }
   else if (a3 == 2) {
-    *a4 = -2;
-    v18 = *(void (**)(unsigned __int64, unsigned __int64, unsigned __int64*))(
-        *v13 + 360LL);
+    *(_DWORD*)a4 = -2;
+    v18 = *(void (**)(__int64, __int64, __int64, double))(*v13 + 360LL);
     v31 = 0xFFFFFFFE00000000LL;
-    v18(v11, v15 - v16, &v31);
+    v18(v11, v15 - v16, (__int64)&v31, __builtin_nanf(""));
     v19 = v31;
     if ((unsigned int)(v31 - 2) < 3) {
     LABEL_6:
       LODWORD(v20) = -1;
     LABEL_26:
       v17 = 0;
-      *a4 = v20;
+      *(_DWORD*)a4 = v20;
       goto LABEL_33;
     }
   LABEL_12:
     if ((_DWORD)v19 == 1) {
-      v20 = HIDWORD(v19);
+      v20 = DWORDn(v19, sizeof(v19) / 4 - 1);
     }
     else {
       LODWORD(v20) = -2;

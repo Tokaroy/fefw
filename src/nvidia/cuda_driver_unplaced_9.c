@@ -4943,17 +4943,17 @@ __int64 cuda_driver_1c6c40(__int64 a1, unsigned int a2, __int64* a3)
             if ((unsigned int)v14 > 0x40) {
               v18 = 0;
             }
-            if (((*(_QWORD*)(v17 + 48) >> (v14 & 63) << (v18 & 63)) & 1) == 0) {
+            if (((*(_QWORD*)(v17 + 48) >> v14 << v18) & 1) == 0) {
               goto LABEL_9;
             }
           }
-          result = (*(__int64 (**)(__int64, _QWORD, _QWORD, int*))(v6 + 973))(
-              v13, a2, (unsigned int)v14, &v22);
+          result = (*(__int64 (**)(__int64, __int64, __int64, __int64))(
+              v6 + 973))(v13, a2, (unsigned int)v14, (__int64)&v22);
           if ((_DWORD)result != 0) {
             return result;
           }
-          v19 = 1LL << (v14 & 63);
-          v20 = (1LL << (v14 & 63)) | v15;
+          v19 = 1LL << v14;
+          v20 = (1LL << v14) | v15;
           if (v14 > 0x3F) {
             v19 = 0;
           }

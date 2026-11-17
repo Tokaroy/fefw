@@ -44,6 +44,7 @@ unsigned __int16* opus_silk_302300(unsigned __int16* result, _DWORD* a2,
                                    _DWORD* a3, int* a4, int a5, int a6);
 __int64 opus_silk_303100(__int64 result, __int64 a2, __int64 a3, __int64 a4,
                          __int64 a5, int a6, int a7, int a8);
+__int64 memcpy_plt_alt1(__int64, __int64, unsigned __int64);
 
 __int64 opus_silk_2ecc40(__int64 result, __int64 a2, int a3, int a4,
                          unsigned int a5)
@@ -1826,10 +1827,10 @@ __int64 opus_silk_2fe960(__int64 a1, __int64 a2, _BYTE* a3, int* a4, _DWORD* a5,
   v74 = 0;
   if (a9 <= 0) {
     *a3 = 1;
-    memcpy_plt(a2, (char*)&v74 + 4, a9);
+    memcpy_plt_alt1(a2, (__int64)&v74 + 4, a9);
     v49 = *v11;
     *a3 = 2;
-    memcpy_plt(a2, (char*)&v74 + 4, a9);
+    memcpy_plt_alt1(a2, (__int64)&v74 + 4, a9);
     v50 = 0;
     goto LABEL_37;
   }
@@ -1850,8 +1851,10 @@ __int64 opus_silk_2fe960(__int64 a1, __int64 a2, _BYTE* a3, int* a4, _DWORD* a5,
       v22 = silk_log2lin(6229 - v19);
       silk_VQ_WMat_EC_c(v13, (unsigned int*)&v74, (int*)&v73 + 1, &v73, v17,
                         v16, v64, v18, v67, a8, v22 - 51, v21);
-      v23 = HIDWORD(v73) + v70;
-      v24 = HIDWORD(v73) + v70 <= -1 ? 0x7FFFFFFF : HIDWORD(v73) + v70;
+      v23 = DWORDn(v73, sizeof(v73) / 4 - 1) + v70;
+      v24 = (signed __int32)(DWORDn(v73, sizeof(v73) / 4 - 1) + v70) <= -1
+                ? 0x7FFFFFFF
+                : DWORDn(v73, sizeof(v73) / 4 - 1) + v70;
       v70 = v24;
       if ((int)(silk_lin2log((int)v73 + 51) + v19) < 896) {
         break;
@@ -1874,7 +1877,7 @@ LABEL_9:
   v25 = (char*)&v74 + 4;
   v59 = v19;
   *a3 = 0;
-  memcpy_plt(a2, (char*)&v74 + 4, a9);
+  memcpy_plt_alt1(a2, (__int64)&v74 + 4, a9);
   v26 = 0;
   v27 = v14;
   v28 = v15;
@@ -1890,11 +1893,11 @@ LABEL_9:
       v32 = silk_log2lin(6229 - v31);
       silk_VQ_WMat_EC_c(v25, (unsigned int*)&v74, (int*)&v73 + 1, &v73, v28,
                         v27, v65, v63, v68, a8, v32 - 51, v29);
-      if (HIDWORD(v73) + v26 <= -1) {
+      if ((signed __int32)(DWORDn(v73, sizeof(v73) / 4 - 1) + v26) <= -1) {
         v26 = 0x7FFFFFFF;
       }
       else {
-        v26 += HIDWORD(v73);
+        v26 += DWORDn(v73, sizeof(v73) / 4 - 1);
       }
       if ((int)(silk_lin2log((int)v73 + 51) + v31) < 896) {
         break;
@@ -1917,7 +1920,7 @@ LABEL_9:
 LABEL_16:
   if (v26 <= v70) {
     *a3 = 1;
-    memcpy_plt(a2, (char*)&v74 + 4, a9);
+    memcpy_plt_alt1(a2, (__int64)&v74 + 4, a9);
     v23 = v26;
     v59 = v31;
   }
@@ -1941,11 +1944,11 @@ LABEL_16:
         v40 = 0x7FFFFFFF;
       }
       v71 = v40;
-      if (HIDWORD(v73) + v34 <= -1) {
+      if ((signed __int32)(DWORDn(v73, sizeof(v73) / 4 - 1) + v34) <= -1) {
         v34 = 0x7FFFFFFF;
       }
       else {
-        v34 += HIDWORD(v73);
+        v34 += DWORDn(v73, sizeof(v73) / 4 - 1);
       }
       if ((int)(silk_lin2log((int)v73 + 51) + v38) < 896) {
         break;
@@ -1968,7 +1971,7 @@ LABEL_16:
 LABEL_27:
   if (v34 <= v23) {
     *a3 = 2;
-    memcpy_plt(a2, (char*)&v74 + 4, a9);
+    memcpy_plt_alt1(a2, (__int64)&v74 + 4, a9);
     v59 = v38;
   }
   v41 = 0;
@@ -2026,7 +2029,7 @@ LABEL_37:
     v55 = 2;
   }
   result = silk_lin2log(v50 >> v55);
-  *v10 = -3 * (__int16)(result - 1920);
+  *(_DWORD*)v10 = -3 * (__int16)(result - 1920);
   return result;
 }
 

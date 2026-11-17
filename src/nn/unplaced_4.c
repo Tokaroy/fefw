@@ -282,8 +282,8 @@ __int64 nn_67fe00(__int64 result, unsigned int a2, unsigned int a3,
                   char a9, char a10);
 __int64 nn_6804c0(__int64 result, __int64 a2);
 __int64 nn_680950(__int64 result, __int64 a2);
-__int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3,
-                  const float* a4);
+__int64 nn_681ca0_alt1(__int64 result, unsigned int a2, unsigned int a3,
+                       const float* a4);
 __int64 nn_681f60(__int64 result, unsigned int a2, unsigned int a3,
                   const float* a4);
 double nn_682650(__int64 a1, __int64 a2);
@@ -331,6 +331,8 @@ int8x8_t nn_69d490(int8x8_t* a1);
 double nn_69d8e0(__int64 a1, int a2);
 bool nn_69e030(char* a1, char* a2, __int64 a3, __int64 a4, _QWORD* a5);
 __int64 (*nn_69f0c0(__int64 a1))(__int64);
+__int64 nvidia_64b750(__int64 result, __int64, __int64);
+__int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3, float* a4);
 
 bool nn_66fe20(int64x2_t* a1)
 {
@@ -10447,8 +10449,7 @@ __int64 nn_680950(__int64 result, __int64 a2)
   return result;
 }
 
-__int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3,
-                  const float* a4)
+__int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3, float* a4)
 {
 
 #pragma clang fp contract(off)
@@ -10466,12 +10467,12 @@ __int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3,
   int32x4_t v19;
   int32x4_t v20;
   int32x4_t v21;
-  const float* v22;
+  float* v22;
   int32x4_t v23;
   __int64 v24;
   int v25;
   __int64 v26;
-  const float* v27;
+  float* v27;
   unsigned int v28;
   int v29;
   int v30;
@@ -10484,8 +10485,8 @@ __int64 nn_681ca0(__int64 result, unsigned int a2, unsigned int a3,
   v8 = (float**)result;
   if (*(_QWORD*)result + 4 * (unsigned __int64)(2 * a3) >
       *(_QWORD*)(result + 8)) {
-    result = SdkRoutine_64b750(result, (__int64)v5,
-                               4LL * (*(_DWORD*)(result + 104) + 2 * a3));
+    result = nvidia_64b750(result, (__int64)v5,
+                           4LL * (*(int*)(result + 104) + 2 * a3));
     v5 = *v8;
   }
   if ((int)a3 < 1) {
@@ -12574,8 +12575,8 @@ __int64 nn_695c40(__int64 result, int a2, __int64* a3, __int64** a4, __int64 a5,
         v16 = v88_.v101;
         LANES64(v14).n64_u64[0] =
             LANES64_OF(vmin_s32(v14, v88_.v90)).n64_u64[0];
-        v36 = (*(_QWORD*)(v19 + 40) & 0xFE000000LL) == 0x4000000 &&
-              v88_.v91 > 1;
+        v36 =
+            (*(_QWORD*)(v19 + 40) & 0xFE000000LL) == 0x4000000 && v88_.v91 > 1;
         v13 |= v36;
         goto LABEL_26;
       }
@@ -12664,9 +12665,9 @@ LABEL_29:
   *(_DWORD*)(v12 + 8) = v38;
   *(_DWORD*)(v12 + 12) = v40 & 0x1F;
   v41 = LANES64(v88_.v90).n64_u32[0];
-  *(_DWORD*)(v12 + 16) =
-      v88_.v95 & 0xF | (unsigned __int8)(16 * (v88_.v96 & 0xF)) |
-      ((v88_.v97 & 0xF) << 8);
+  *(_DWORD*)(v12 + 16) = v88_.v95 & 0xF |
+                         (unsigned __int8)(16 * (v88_.v96 & 0xF)) |
+                         ((v88_.v97 & 0xF) << 8);
   *(_DWORD*)(v12 + 20) = v88_.v99 >> 2;
   v42 = LANES64(v88_.v90).n64_u32[1];
   v43 = v88_.v91;
@@ -12679,8 +12680,7 @@ LABEL_29:
   *(_DWORD*)(v12 + 40) = v44;
   *(_DWORD*)(v12 + 44) = (unsigned __int16)v43;
   result = SdkRoutine_66a500(*(_DWORD**)(v11 + 112), (__int64)&v81_.v81, v41,
-                             v42, v43, SHIDWORD(v88_.v101),
-                             *(char*)(v37 + 31),
+                             v42, v43, SHIDWORD(v88_.v101), *(char*)(v37 + 31),
                              *(_WORD*)(v37 + 40));
   if (*(_DWORD*)(*(_QWORD*)(v11 + 112) + 7292LL) == 147371889) {
     v46 = v12 + 48;
@@ -14769,8 +14769,8 @@ __int64 nn_69abc0(_QWORD* a1)
         v21_.v23 = 4;
         v21_.v21[0] = 0x2800010001LL;
         v21_.v21[1] = v14;
-        ((void(*)(
-            _QWORD*, __int64, __int64))SdkData_ea8308[0])(v21_.v21, v9, v10);
+        ((void (*)(_QWORD*, __int64, __int64))SdkData_ea8308[0])(v21_.v21, v9,
+                                                                 v10);
       }
     }
     if (SdkData_ea83a0[0] != nullptr) {
@@ -14785,8 +14785,8 @@ __int64 nn_69abc0(_QWORD* a1)
         v21_.v21[0] = 0x4000090003LL;
         v21_.v21[1] = v16;
         v21_.v25 = v18;
-        ((void(*)(
-            _QWORD*, __int64, __int64))SdkData_ea83a0[0])(v21_.v21, v9, v10);
+        ((void (*)(_QWORD*, __int64, __int64))SdkData_ea83a0[0])(v21_.v21, v9,
+                                                                 v10);
       }
     }
     nn_os_UnlockMutex_plt(&SdkData_ea7c40),
@@ -15351,9 +15351,8 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
                 v34 =
                     COERCE_AS(__typeof__(v34),
                               PSEUDO_REGISTER(unsigned long long, "x2", "=r"));
-            v35 =
-                *(void(**)(_QWORD*, __int64, __int64))(
-                    (char*)((__int64*)0x48LL) + (_QWORD)v15);
+            v35 = *(void (**)(_QWORD*, __int64, __int64))(
+                (char*)((__int64*)0x48LL) + (_QWORD)v15);
             if (v35 != nullptr) {
               if (v7 != 0) {
                 v36 = *(_QWORD*)(v7 + 16);
@@ -15371,8 +15370,7 @@ __int64 nn_69b9e0(__int64 a1, int a2, __int64 a3)
               }
             }
             else if (v7 != 0) {
-              v37 = *(
-                  void(**)(_QWORD*, __int64, __int64))(
+              v37 = *(void (**)(_QWORD*, __int64, __int64))(
                   (char*)((_UNKNOWN*)0xC0LL) + (_QWORD)v15);
               if (v37 != nullptr) {
                 v38 = *(_QWORD*)(v7 + 16);
