@@ -27332,6 +27332,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 947a30,180,verified,src/game/facility/volunteer_args.c,VolunteerArgs_947a30
 947af0,444,verified,src/game/facility/volunteer_args.c,VolunteerArgs_947af0
 947cc0,608,verified,src/game/facility/volunteer_args.c,VolunteerArgs_947cc0
+947f80,576,verified,src/game/facility/unplaced_25.c,game_facility_947f80
 948220,268,verified,src/game/facility/volunteer_args.c,VolunteerArgs_948220
 948340,668,verified,src/game/facility/facility_util.c,FacilityUtil_948340
 948620,464,verified,src/game/facility/facility_util.c,FacilityUtil_948620
