@@ -16,7 +16,7 @@ extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_script_hub_g_frame_counter_ptr[3];
 extern __int64* GameData_212ec50[3];
 float GameRoutine_d78a40(_QWORD);
-float powf(_QWORD, float, float);
+float powf(float, float);
 __int64 ProcHubSeqFieldKill_Destructor(__int64 a1);
 __int64 ProcHubSeqFieldKill_DeletingDestructor(__int64 a1);
 void ProcHubSeqFieldKill_Unknown3(__int64 a1);

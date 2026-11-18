@@ -24,7 +24,7 @@ __int64 FxSpectrumNX_Destructor(_QWORD* a1);
 void FxSpectrumNX_153d20(__int64 a1);
 __int64 FxSpectrumNX_Unknown9(_QWORD* a1);
 __int64 FxSpectrumNX_Unknown25(__int64 a1, int a2);
-float log10f(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, float);
+float log10f(float);
 void FxSpectrumNx_16f420(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                          __int64 a5, __int64 a6);
 __int64 FxSpectrum_16f2b0(__int64);
@@ -431,7 +431,7 @@ void FxSpectrumNx_16f420(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
         return;
       }
     }
-    v20 = log10f(a1, a2, a3, a4, a5, a6, v14) * 20.0;
+    v20 = log10f(v14) * 20.0;
     if (v20 < (float)*(int*)(a1 + 6676)) {
       v20 = (float)*(int*)(a1 + 6676);
     }

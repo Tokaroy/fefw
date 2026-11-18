@@ -64,7 +64,7 @@ __int64 GameRoutine_1a09fd0(_QWORD);
 __int64 GameRoutine_1a09fe0(_QWORD);
 __int64 GameRoutine_1a0a0c0(_QWORD);
 __int64 GameRoutine_1a0a4e0(_QWORD);
-float GameRoutine_1a0a550(_QWORD, float, float);
+float GameRoutine_1a0a550(float, float);
 __int64 GameRoutine_1a0b950(_QWORD, _QWORD, _QWORD);
 void __attribute__((noreturn)) GameRoutine_60a210(_QWORD);
 __int64 GameRoutine_610540(_QWORD, _QWORD);

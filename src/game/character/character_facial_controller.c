@@ -49,7 +49,7 @@ extern int* GameData_212ea98;
 float* GameRoutine_a1b580(__int64, float);
 float GameRoutine_109d070();
 float GameRoutine_a5e890(float, float);
-float powf(_QWORD, float, float);
+float powf(float, float);
 void CharacterFacialController_10b2650_alt1(__int64, int) __asm__(
     "CharacterFacialController_10b2650");
 void GameRoutine_10b3d80(__int64, double);

@@ -16,7 +16,7 @@ __int64 nvidia_dlss_rel_source_features_dlaa_7c3b0(__int64, __int64, __int64,
                                                    char);
 __int64 sqrtf_plt(float);
 extern _UNKNOWN* NgxData_952228;
-float roundf_plt(_QWORD, float);
+float roundf_plt(float);
 void __attribute__((noreturn)) cornflower_rook_00389_2b270(const char*);
 void __attribute__((noreturn)) nvidia_dlss_rel_source_features_dlaa_2b250();
 __int64 nvidia_dlss_rel_source_features_dlaa_5eab0(__int64 a1, __int64 a2,
@@ -1699,9 +1699,9 @@ __int64 nvidia_dlss_rel_source_features_dlaa_61540(__int64 a1, __int64 a2,
                   (float)((float)(v42 * 0x1.0000000000000p-1f) *
                           (float)(v41 * 0x1.0000000000000p-1f))),
   v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(float, "s0", "=w"));
-  v53 = roundf_plt(v51, (float)((float)(v52 + -0x1.0000000000000p+0f) /
-                                0x1.8000000000000p+1f) *
-                            0x1.c000000000000p+2f),
+  v53 = roundf_plt(
+      (float)((float)(v52 + -0x1.0000000000000p+0f) / 0x1.8000000000000p+1f) *
+      0x1.c000000000000p+2f),
   v52 = COERCE_AS(__typeof__(v52), PSEUDO_REGISTER(float, "s0", "=w"));
   v54 = *(unsigned __int8*)(a4 + 640);
   v55 = (int)v53 & ~((int)v53 >> 31);

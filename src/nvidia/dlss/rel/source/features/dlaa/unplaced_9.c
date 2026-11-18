@@ -14,7 +14,7 @@ char* nvidia_dlss_rel_source_features_dlaa_97540(__int64, char*, char*,
 char* nvidia_dlss_rel_source_features_dlaa_97540_alt1(__int64, __int64,
                                                       __int64*,
                                                       unsigned __int64);
-float logf_plt(_QWORD, float);
+float logf_plt(float);
 float logf_plt_alt1(float);
 float sqrtf_plt_alt1(float);
 void __attribute__((noreturn)) nvidia_dlss_rel_source_common_33410();
@@ -588,7 +588,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));

@@ -6,7 +6,7 @@
 
 __int64 sqrtf_plt(float);
 float fabsf_plt(float);
-float logf_plt(_QWORD, float);
+float logf_plt(float);
 __attribute__((swiftcall)) void
 nvidia_dlss_rel_source_common_33a60(PSEUDO_X8 x8_, char a1, char a2, char a3,
                                     unsigned __int8 a4, float a6, float a7,
@@ -132,7 +132,7 @@ nvidia_dlss_rel_source_common_33a60(PSEUDO_X8 x8_, char a1, char a2, char a3,
   LABEL_21:
     v28 = *(float*)&v29;
   }
-  v53 = logf_plt(v23, 0x1.0000000000000p+1f),
+  v53 = logf_plt(0x1.0000000000000p+1f),
   v20 = COERCE_AS(__typeof__(v20), PSEUDO_REGISTER(float, "s0", "=w")),
   v24 = COERCE_AS(__typeof__(v24), PSEUDO_REGISTER(float, "s0", "=w"));
   fabsf_plt(v25),

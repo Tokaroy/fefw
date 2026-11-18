@@ -11,7 +11,7 @@ __int64 nn_os_LockMutex(_QWORD);
 __n128 nn_os_UnlockMutex(_QWORD);
 extern __int64 GameData_21347b0[5];
 extern __int64* snd_g_memory_ptr[2];
-float log10f(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, float);
+float log10f(float);
 __int64 FxVib_Destructor(_QWORD* a1);
 void FxVib_Unknown5_alt1(__int64 a1, __int64 a2,
                          unsigned int* a3) __asm__("FxVib_Unknown5");

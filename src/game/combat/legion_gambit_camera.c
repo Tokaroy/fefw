@@ -33,7 +33,7 @@ __n128 nn_mem_StandardAllocator_Free_alt1(_QWORD) __asm__(
     "nn_mem_StandardAllocator_Free");
 extern _UNKNOWN* GameData_212c188;
 extern __int64 GameData_21ec7b0;
-float powf(_QWORD, float, float);
+float powf(float, float);
 float32x4_t LegionGambit_e4c8c0(__int64, _QWORD*, _QWORD*, char);
 void __attribute__((noreturn)) GameRoutine_8123d0(_QWORD, long double);
 void __attribute__((noreturn))

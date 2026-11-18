@@ -132,7 +132,7 @@ float CharacterWork_11c7720(__int64, float32x4_t*, float32x4_t*, int8x16_t*,
                             int8x16_t*, char*, _DWORD*, _DWORD*, float, float,
                             float, float);
 float GameRoutine_11c4de0(__int64, char, float result);
-float powf(_QWORD, float, float);
+float powf(float, float);
 float strtof(_QWORD, _QWORD);
 long double strtof_alt2(_QWORD, _QWORD) __asm__("strtof");
 unsigned __int8* snd_fnd_calcCrc32(unsigned __int8* result, int);

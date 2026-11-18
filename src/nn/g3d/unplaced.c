@@ -21,7 +21,7 @@ extern __int128 GameData_1a837f0;
 extern __int128 GameData_1a83800;
 extern __int64 (*GameData_1f8dbd8[4])();
 extern int* GameData_2136530;
-float powf(_QWORD, float, float);
+float powf(float, float);
 float32x4_t* GameRoutine_5f80f0(float32x4_t* result, float32x4_t*, float,
                                 double, double, double, double, double);
 float32x4_t* GameRoutine_5f80f0_alt1(float32x4_t* result, float32x4_t*,
@@ -59,7 +59,7 @@ extern __int64 (*nn_g3d_5f3f20_ptr[4])();
 float powf_alt1(float, float) __asm__("powf");
 int8x16_t* SkeletalAnimObj_5f7910(int8x16_t* result, unsigned int, float32x4_t,
                                   float);
-float GameRoutine_1a0a550(_QWORD, float, float);
+float GameRoutine_1a0a550(float, float);
 float32x4_t* nn_g3d_5f80f0(float32x4_t* result, float32x4_t*, float, double);
 int8x16_t* nn_g3d_5f7910(int8x16_t* result, unsigned int, float32x4_t, float);
 float GameRoutine_1a0a550_alt1(float, float);
@@ -1048,19 +1048,23 @@ void nn_g3d_5f2710(__int64* a1, __int64 a2, double a3, double a4,
         v24 = v8 + v13;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
         LABEL_12:
-          *(float*)&v27 = powf(v23, *(float*)(v24 + 4), *(float*)&a3),
-          v28 = COERCE_AS(__typeof__(v28),
-                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
-          v30 = COERCE_AS(__typeof__(v30),
-                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+          *(float *)&v27 = powf(*(float *)(v24 + 4), *(float *)&a3),
+                  v28 = COERCE_AS(
+                      __typeof__(v28),
+                      PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+                  v30 = COERCE_AS(
+                      __typeof__(v30),
+                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
           v34 = v27;
-          *(float*)&v29 = powf(v28, *(float*)(v24 + 8), *(float*)&a3),
-          v28 = COERCE_AS(__typeof__(v28),
-                          PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
-          v30 = COERCE_AS(__typeof__(v30),
-                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
+          *(float *)&v29 = powf(*(float *)(v24 + 8), *(float *)&a3),
+                  v28 = COERCE_AS(
+                      __typeof__(v28),
+                      PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
+                  v30 = COERCE_AS(
+                      __typeof__(v30),
+                      PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
           v33 = v29;
-          v31 = powf(v30, *(float*)(v24 + 12), *(float*)&a3),
+          v31 = powf(*(float *)(v24 + 12), *(float *)&a3),
           v28 = COERCE_AS(__typeof__(v28),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v30 = COERCE_AS(__typeof__(v30),
@@ -1537,17 +1541,17 @@ void nn_g3d_5f31a0(__int64* a1, __int64 a2, float a3)
         v28 = v4 + v9;
         if ((*((_BYTE*)a1 + 12) & 1) != 0) {
         LABEL_12:
-          f_.v38 = GameRoutine_1a0a550(v27, *(float*)(v28 + 4), f_.v39),
+          f_.v38 = GameRoutine_1a0a550(*(float *)(v28 + 4), f_.v39),
           v32 = COERCE_AS(__typeof__(v32),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v33 = COERCE_AS(__typeof__(v33),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-          f_.v37 = GameRoutine_1a0a550(v32, *(float*)(v28 + 8), f_.v39),
+          f_.v37 = GameRoutine_1a0a550(*(float *)(v28 + 8), f_.v39),
           v32 = COERCE_AS(__typeof__(v32),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v33 = COERCE_AS(__typeof__(v33),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
-          v34 = GameRoutine_1a0a550(v33, *(float*)(v28 + 12), f_.v39),
+          v34 = GameRoutine_1a0a550(*(float *)(v28 + 12), f_.v39),
           v32 = COERCE_AS(__typeof__(v32),
                           PSEUDO_REGISTER(unsigned long long, "x0", "=r")),
           v33 = COERCE_AS(__typeof__(v33),

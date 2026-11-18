@@ -7,7 +7,7 @@ __int64 nn_diag_detail_AbortImpl_1a0a590(_QWORD);
 extern __int64 (*GameData_1f6b708[])();
 extern __int64 (*GameData_1f6bb70[])();
 extern __int64 (*snd_fx_FxMSEQ_vtable[])();
-float log10f(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, float);
+float log10f(float);
 __int64 FxMSCtrl_Unknown5(__int64 result, __int64 a2, int* a3);
 float log10f_alt1(float) __asm__("log10f");
 void nn_diag_detail_AbortImpl_1a0a590_alt1() __asm__(

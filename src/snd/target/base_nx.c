@@ -168,7 +168,7 @@ __n128 Slot_137b40(__int64, __int64);
 extern __int64 (*GameData_1f66740[])();
 extern __int64 (*GameData_1f66840[])();
 extern __int64* snd_s_target_ptr;
-float powf(_QWORD, float, float);
+float powf(float, float);
 float snd_fnd_calcDistance_fec30(float, float, float, float, float, float);
 unsigned __int64 GameRoutine_190020(__int64*, char*);
 void* BaseNx_2a1b90();

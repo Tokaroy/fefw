@@ -34,7 +34,7 @@ extern __int64 GameData_220b6f0;
 extern __int64 game_GameModeData_instance_;
 float GameRoutine_d1fae0(_QWORD);
 float GameRoutine_d20650(_QWORD, _QWORD);
-float powf(_QWORD, float, float);
+float powf(float, float);
 __attribute__((swiftcall)) void
 CameraStateCircleHub_d31ee0(PSEUDO_X8 x8_, __int64 a1, unsigned int a2);
 float CameraStateCircleHub_Unknown5(float* a1);

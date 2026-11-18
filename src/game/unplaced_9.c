@@ -1466,7 +1466,7 @@ extern int GameData_21cf818;
 float fmodf(float, float);
 float game_5bd9a0(_OWORD*, _OWORD*, __int64, float, __int64, __int64, float*);
 float game_5c4340(__int128*, __int64, __int64, int, float*, float);
-float powf(_QWORD, float, float);
+float powf(float, float);
 float powf_alt1(long double, float) __asm__("powf");
 float32x4_t game_5bdd90(_OWORD*, float32x4_t*, __int64, float, __int64, __int64,
                         float*);

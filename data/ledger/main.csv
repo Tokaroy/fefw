@@ -4490,7 +4490,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 153e70,76,verified,src/snd/target/fx_nx.cpp,_ZN3snd6target12FxSpectrumNX7disableEv
 153ec0,12,verified,src/snd/target/fx_nx.cpp,_ZNK3snd6target12FxSpectrumNX11isRemovableEv
 153ed0,24,verified,src/snd/target/fx_nx.cpp,_ZN3snd6target12FxSpectrumNX9unknown24EPv
-153f00,592,verified,src/snd/target/fx_spectrum_nx.c,FxSpectrumNX_Unknown25
+153f00,524,verified,src/snd/target/fx_spectrum_nx.c,FxSpectrumNX_Unknown25
 154160,20,verified,src/snd/target/fx_nx.cpp,_ZN3snd6target12FxSpectrumNX14setUnknown8070Eb
 154180,20,verified,src/snd/target/fx_nx.cpp,_ZNK3snd6target12FxSpectrumNX14getUnknown8070Ev
 1541a0,296,verified,src/snd/target/fx_nx.cpp,_ZN3snd6target7FxVibNXC2EPNS_7ManagerEPvjj
@@ -4697,9 +4697,9 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 15b090,280,verified,src/snd/target/base_nx.c,BaseNX_loadMemoryArchive
 15b1b0,768,verified,src/snd/target/base_nx.c,BaseNX_unloadArchive
 15b4c0,396,verified,src/snd/target/base_nx.c,BaseNX_15b4c0
-15b9c0,456,verified,src/snd/target/base_nx.c,BaseNX_unloadAddonArchive
-15bba0,764,verified,src/snd/target/base_nx.c,BaseNX_loadMemoryAddonArchive
-15bee0,436,verified,src/snd/target/base_nx.c,BaseNX_unloadMemoryAddonArchive
+15b9c0,456,disputed,src/snd/target/base_nx.c,BaseNX_unloadAddonArchive
+15bba0,764,disputed,src/snd/target/base_nx.c,BaseNX_loadMemoryAddonArchive
+15bee0,436,disputed,src/snd/target/base_nx.c,BaseNX_unloadMemoryAddonArchive
 15c0b0,124,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX9getItemIdEPKc
 15c130,132,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX10getSoundIdEPKc
 15c1c0,316,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX10findItemIdEPKcPiPS3_
@@ -4841,7 +4841,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 162bf0,56,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX12getAddonNameEii
 162c30,60,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX15getAddonArchiveEii
 162c70,52,verified,src/snd/target/base_nx.cpp,_ZN3snd6target6BaseNX13getAddonCountEi
-162cc0,232,verified,src/snd/target/base_nx.c,BaseNX_getInfo
+162cc0,268,verified,src/snd/target/base_nx.c,BaseNX_getInfo
 162df0,56,verified,src/snd/target/sound_archive_parameters_hook.c,SoundArchiveParametersHook_Destructor
 162e30,100,verified,src/snd/target/sound_archive_parameters_hook.c,SoundArchiveParametersHook_DeletingDestructor
 162ea0,8,verified,src/game/game_trivial.cpp,_Z15GameStub_162ea0v
@@ -5485,7 +5485,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 16f2a0,4,verified,src/snd/fx/fx.cpp,_ZN3snd2fx10FxSpectrum7destroyEv
 16f2b0,24,verified,src/snd/fx/fx_spectrum.c,FxSpectrum_16f2b0
 16f2e0,296,verified,src/snd/fx/fx_spectrum.c,FxSpectrum_16f2e0
-16f420,248,verified,src/snd/target/fx_spectrum_nx.c,FxSpectrumNx_16f420
+16f420,496,verified,src/snd/target/fx_spectrum_nx.c,FxSpectrumNx_16f420
 16f660,4,verified,src/snd/fx/fx.cpp,_ZN3snd2fx10FxSpectrum12mainUnlockedEv
 16f670,108,verified,src/snd/fx/fx.cpp,_ZN3snd2fx10FxSpectrum11getRegistryEv
 16f6e0,4,verified,src/snd/fx/fx.cpp,_ZN3snd2fx10FxSpectrum6enableEv
@@ -16850,7 +16850,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 5f1d60,200,verified,src/nn/g3d/skeletal_anim_obj.c,SkeletalAnimObj_Unknown6
 5f1e40,104,verified,src/nn/g3d/skeletal_anim_obj.c,SkeletalAnimObj_Unknown2
 5f1ec0,96,verified,src/nn/g3d/skeletal_anim_obj.c,SkeletalAnimObj_Unknown3
-5f1f50,452,verified,src/nn/g3d/unplaced.c,nn_g3d_5f1f50
+5f1f50,452,disputed,src/nn/g3d/unplaced.c,nn_g3d_5f1f50
 5f21c0,172,verified,src/nn/g3d/model_anim_obj.c,ModelAnimObj_Unknown33
 5f2280,172,verified,src/nn/g3d/model_anim_obj.c,ModelAnimObj_Unknown35
 5f2340,468,verified,src/nn/g3d/unplaced_6.c,nn_g3d_5f2340
@@ -40928,7 +40928,7 @@ da4660,472,verified,src/game/hub/anonymous/proc_hub_seq_field_kill.c,ProcHubSeqF
 da48a0,132,verified,src/game/unnamed/r004_0.c,GameHr_da48a0
 da4960,156,verified,src/game/unnamed/r004_0.c,GameHr_da4960
 da4a70,336,verified,src/game/unnamed/r004_1.c,GameHr_da4a70
-da4bc0,352,verified,src/game/hub/anonymous/proc_hub_seq_field_kill.c,ProcHubSeqFieldKill_da4bc0
+da4bc0,1476,verified,src/game/hub/anonymous/proc_hub_seq_field_kill.c,ProcHubSeqFieldKill_da4bc0
 da51e0,2304,verified,src/game/unnamed/e004_1.c,GameHr_da51e0
 da5c00,464,verified,src/game/unnamed/e004_4.c,GameHr_da5c00
 da5e00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -45218,7 +45218,7 @@ efa2e0,564,verified,src/game/hub/talk_support.c,TalkSupport_Destructor
 efa530,80,verified,src/memory/new_delete.cpp,deleting destructor at 0xefa530
 efa580,992,verified,src/game/hub/unplaced_4.c,game_hub_efa580
 efa9a0,752,verified,src/game/hub/unplaced.c,game_hub_efa9a0
-efaca0,808,verified,src/game/unnamed/f000_1.c,GameHr_efaca0
+efaca0,884,verified,src/game/unnamed/f000_1.c,GameHr_efaca0
 efb030,300,verified,src/game/unnamed/b013_1.c,GameHr_efb030
 efb160,320,verified,src/game/hub/unplaced.c,game_hub_efb160
 efb2d0,372,verified,src/game/hub/unplaced.c,game_hub_efb2d0

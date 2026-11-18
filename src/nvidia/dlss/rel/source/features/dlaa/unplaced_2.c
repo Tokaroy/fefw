@@ -36,8 +36,8 @@ extern __int64* NgxData_952b78;
 extern __int64* NgxData_952b88[2];
 extern char* NgxData_94d8e8;
 extern char** NgxData_952b80;
-float expf_plt(_QWORD, float);
-float logf_plt(_QWORD, float);
+float expf_plt(float);
+float logf_plt(float);
 void __attribute__((noreturn)) NgxRoutine_27cf0();
 void __attribute__((noreturn)) nvidia_dlss_rel_source_common_33410();
 __int64 nvidia_dlss_rel_source_features_dlaa_7d150(__int64 a1, _DWORD* a2,
@@ -386,7 +386,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
@@ -1209,11 +1209,10 @@ LABEL_58:
         v109 = memcpy_plt(v151, &v153, 4);
         v110 = fmaxf(fminf(*(float*)v151, 0x1.e000000000000p+3f),
                      -0x1.e000000000000p+3f);
-        v111 = expf_plt(v109,
-                        (float)(v110 * (float)((float)((float)(v110 * v110) /
+        v111 = expf_plt((float)(v110 * (float)((float)((float)(v110 * v110) /
                                                        -0x1.5180000000000p+9f) +
                                                0x1.0000000000000p+0f)) +
-                            -0x1.c000000000000p+1f);
+                        -0x1.c000000000000p+1f);
         *(float*)v151 = v111;
         memcpy_plt(&v153, v151, 4);
         v112 = v153 & 0x7FFFFFFF;
@@ -2377,11 +2376,10 @@ LABEL_58:
         v109 = memcpy_plt(v151, &v153, 4);
         v110 = fmaxf(fminf(*(float*)v151, 0x1.e000000000000p+3f),
                      -0x1.e000000000000p+3f);
-        v111 = expf_plt(v109,
-                        (float)(v110 * (float)((float)((float)(v110 * v110) /
+        v111 = expf_plt((float)(v110 * (float)((float)((float)(v110 * v110) /
                                                        -0x1.5180000000000p+9f) +
                                                0x1.0000000000000p+0f)) +
-                            -0x1.c000000000000p+1f);
+                        -0x1.c000000000000p+1f);
         *(float*)v151 = v111;
         memcpy_plt(&v153, v151, 4);
         v112 = v153 & 0x7FFFFFFF;
@@ -2919,7 +2917,7 @@ char* nvidia_dlss_rel_source_features_dlaa_833e0(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -3891,7 +3889,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
@@ -4183,7 +4181,7 @@ char* nvidia_dlss_rel_source_features_dlaa_856e0(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -5110,7 +5108,7 @@ char* nvidia_dlss_rel_source_features_dlaa_88060(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -6277,7 +6275,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
@@ -6569,7 +6567,7 @@ char* nvidia_dlss_rel_source_features_dlaa_8a5c0(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -7479,7 +7477,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
@@ -7771,7 +7769,7 @@ char* nvidia_dlss_rel_source_features_dlaa_8cb00(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -8727,7 +8725,7 @@ char* nvidia_dlss_rel_source_features_dlaa_8f020(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -9434,7 +9432,7 @@ LABEL_11:
   }
   v25 = *v18;
   v24 = v18[1];
-  v26 = logf_plt(v16, 0x1.0000000000000p+1f),
+  v26 = logf_plt(0x1.0000000000000p+1f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
   result = (_WORD*)sqrtf_plt(0x1.0000000000000p+5f),
   v28 = COERCE_AS(__typeof__(v28), PSEUDO_REGISTER(float, "s0", "=w"));
@@ -9726,7 +9724,7 @@ char* nvidia_dlss_rel_source_features_dlaa_91300(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -10156,7 +10154,7 @@ char* nvidia_dlss_rel_source_features_dlaa_93500(__int64 a1, _QWORD* a2,
 
   v7 = (_QWORD*)a1;
   v8 = **(_QWORD**)(a1 + 8);
-  v9 = logf_plt(a1, 0x1.0000000000000p+1f);
+  v9 = logf_plt(0x1.0000000000000p+1f);
   if (v8 == 0) {
     v11 = 0;
     v12 = 0;
@@ -11117,11 +11115,10 @@ LABEL_58:
         v109 = memcpy_plt(v151, &v153, 4);
         v110 = fmaxf(fminf(*(float*)v151, 0x1.e000000000000p+3f),
                      -0x1.e000000000000p+3f);
-        v111 = expf_plt(v109,
-                        (float)(v110 * (float)((float)((float)(v110 * v110) /
+        v111 = expf_plt((float)(v110 * (float)((float)((float)(v110 * v110) /
                                                        -0x1.5180000000000p+9f) +
                                                0x1.0000000000000p+0f)) +
-                            -0x1.c000000000000p+1f);
+                        -0x1.c000000000000p+1f);
         *(float*)v151 = v111;
         memcpy_plt(&v153, v151, 4);
         v112 = v153 & 0x7FFFFFFF;
