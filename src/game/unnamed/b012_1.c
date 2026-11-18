@@ -4710,6 +4710,8 @@ __int64 GameHr_e41cc0(__int64 a1, int a2)
     v7 -= 16;
     v6 -= 16;
   } while (v8 != GameData_220f854);
+  // The owner use count is read and dropped before the model is taken.
+  (void)*(volatile __int64*)(*(_QWORD*)(*(_QWORD*)(v6 + 8) + 32LL) + 8);
   v9 = *(_QWORD*)(*(_QWORD*)(v6 + 8) + 40LL);
   v10 = *(_QWORD*)(v9 + 392);
   v11 = *(_QWORD*)(v9 + 400);
