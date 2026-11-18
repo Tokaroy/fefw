@@ -1073,7 +1073,7 @@ public:
       return {};
     }
     for (const std::shared_ptr<Character>& entry : characters_) {
-      if (entry->GetDisposLabel() == label) {
+      if (label == entry->GetDisposLabel()) {
         return entry;
       }
     }
