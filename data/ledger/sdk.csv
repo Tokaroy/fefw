@@ -13092,7 +13092,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 39a7f0,24,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts.cpp,_ZN2nn5codec20adtsRead_CrcStartRegEPNS0_11STRUCT_ADTSEPNS0_13FDK_BITSTREAMEi
 39a810,20,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts.cpp,_ZN2nn5codec18adtsRead_CrcEndRegEPNS0_11STRUCT_ADTSEPNS0_13FDK_BITSTREAMEi
 39a830,72,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts.cpp,_ZN2nn5codec17adtsRead_CrcCheckEPNS0_11STRUCT_ADTSE
-39a880,3036,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts_impl.c,nn_codec_adtsRead_DecodeHeader
+39a880,3276,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts_impl.c,nn_codec_adtsRead_DecodeHeader
 39b7e0,108,verified,src/fdk-aac/libMpegTPDec/src/tpdec_adts.cpp,_ZN2nn5codec30adtsRead_GetRawDataBlockLengthEPNS0_11STRUCT_ADTSEi
 39b850,8,verified,src/fdk-aac/libMpegTPDec/src/tpdec_asc.cpp,_ZN2nn5codec20CProgramConfig_ResetEPNS0_14CProgramConfigE
 39b860,48,verified,src/fdk-aac/libMpegTPDec/src/tpdec_asc.cpp,_ZN2nn5codec19CProgramConfig_InitEPNS0_14CProgramConfigE
@@ -14492,7 +14492,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 43d540,76,verified,src/nn/fontll/itype/fsglue.c,delete_key
 43d590,116,verified,src/nn/fontll/itype/fsglue.c,get_dropout_control
 43d610,368,verified,src/nn/fontll/itype/unplaced_2.c,fsg_ReduceMatrix
-43d780,2364,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
+43d780,3324,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
 43e6c0,2612,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_43e6c0
 43f120,2404,verified,src/nn/fontll/itype/unplaced_3.c,trim_convert
 43fb70,80,verified,src/nn/fontll/itype/fs_font.c,copy_graymap
@@ -14549,7 +14549,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 44d780,232,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d780
 44d880,688,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d880
 44dba0,868,verified,src/nn/fontll/itype/unplaced_7.c,nn_fontll_itype_44dba0
-44e2c0,1444,disputed,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
+44e2c0,1456,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
 44e9e0,292,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e9e0
 44eb20,296,disputed,src/nn/unnamed/h000_0.c,SdkHr_44eb20
 44ec60,56,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60

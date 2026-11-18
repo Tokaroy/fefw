@@ -3582,7 +3582,7 @@ __int64 nn_fontll_itype_441300(unsigned __int16* a1, __int64 a2, __int64 a3)
   else {
     v12 = strtoul_plt(v10, &v44, 0);
     a1[1] = v12;
-    if ((unsigned int)v12 - 1 > 8) {
+    if ((unsigned int)(unsigned int)(v12 - 1) > 8) {
       return 445;
     }
     v10 = v44 + 1;

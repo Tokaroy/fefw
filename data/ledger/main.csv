@@ -104,7 +104,7 @@ bb40,244,verified,src/game/unnamed/r000_0.c,GameHr_bb40
 bc68,4,verified,src/timeline/unplaced_5.c,timeline_bc68
 bc80,640,verified,src/timeline/unplaced_7.c,timeline_bc80
 bf10,232,verified,src/game/unnamed/e000_0.c,GameHr_bf10
-c000,292,verified,src/timeline/unplaced_7.c,timeline_c000
+c000,296,verified,src/timeline/unplaced_7.c,timeline_c000
 c178,4,verified,src/timeline/unplaced_5.c,timeline_c178
 c1a0,544,verified,src/timeline/unplaced_5.c,timeline_c1a0
 c3e0,1124,verified,src/timeline/unplaced_5.c,timeline_c3e0
@@ -115,7 +115,7 @@ cca0,456,verified,src/timeline/unplaced_6.c,timeline_cca0
 ce90,96,verified,src/timeline/unplaced_9.c,timeline_ce90
 cf00,296,verified,src/timeline/unplaced_5.c,timeline_cf00
 d078,4,verified,src/timeline/unplaced_5.c,timeline_d078
-d0a0,292,verified,src/timeline/unplaced_7.c,timeline_d0a0
+d0a0,296,verified,src/timeline/unplaced_7.c,timeline_d0a0
 d218,4,verified,src/timeline/unplaced_5.c,timeline_d218
 d240,492,disputed,src/game/unnamed/e000_0.c,GameHr_d240
 d470,288,verified,src/game/unnamed/r000_0.c,GameHr_d470
@@ -16408,7 +16408,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 5c1520,1232,verified,src/game/unplaced_9.c,game_5c1520
 5c19f0,596,verified,src/game/unplaced_9.c,game_5c19f0
 5c1c50,140,disputed,src/game/unplaced_9.c,game_5c1c50
-5c2180,1312,disputed,src/game/unplaced_23.c,game_5c2180
+5c2180,1312,verified,src/game/unplaced_23.c,game_5c2180
 5c26c0,1524,disputed,src/game/unplaced_9.c,game_5c26c0
 5c2d00,1364,verified,src/game/unplaced_9.c,game_5c2d00
 5c32a0,1536,verified,src/game/unplaced_9.c,game_5c32a0
@@ -20691,7 +20691,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 7730f0,132,verified,src/game/map/i_target.c,ITarget_7730f0
 773180,380,verified,src/game/map/i_target.c,ITarget_773180
 773300,268,verified,src/game/map/i_target.c,ITarget_773300
-773420,7152,disputed,src/game/map/i_target.c,ITarget_773420
+773420,7152,verified,src/game/map/i_target.c,ITarget_773420
 775510,100,verified,src/game/map/i_target.c,game_map_ITarget_Enumerate
 775580,4372,verified,src/game/map/unplaced_10.c,game_map_775580
 776720,2312,verified,src/game/map/i_target.c,ITarget_776720
@@ -20895,7 +20895,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 780fd0,152,verified,src/game/map/i_target.c,game_map_ITarget_EnumerateSubTarget_lambda0_CloneInto
 781070,48,verified,src/game/game_trivial_functions.cpp,_Z15GameStub_781070m
 7810a0,12,verified,src/game/game_trivial_forwarders.cpp,_Z15GameStub_7810a0m
-7810b0,604,disputed,src/game/map/i_target.c,game_map_ITarget_EnumerateSubTarget_lambda0_Invoke
+7810b0,604,verified,src/game/map/i_target.c,game_map_ITarget_EnumerateSubTarget_lambda0_Invoke
 781350,28,verified,src/game/game_trivial_calls.cpp,_Z15GameStub_781350mm
 781370,12,verified,src/game/game_trivial.cpp,_Z15GameStub_781370v
 781380,60,verified,src/game/game_trivial_functions.cpp,_Z15GameStub_781380m
@@ -75582,7 +75582,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 17316f0,152,verified,src/game/game_trivial_shared_owners.cpp,_Z16GameStub_17316f0m
 1731790,8,verified,src/game/facility/blacksmith_item_menu_item.cpp,_ZN4game4menu13BasicMenuItem10GetHelpMidEv
 17317a0,2056,verified,src/game/unnamed/b023_0.c,GameHr_17317a0
-1732160,564,disputed,src/game/unplaced_23.c,game_1732160
+1732160,564,verified,src/game/unplaced_23.c,game_1732160
 1732480,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::GmapCorpsMenu::ExchangeImpl(bool, game::gmap::GmapCorpsMenuItem*, game::gmap::GmapCorpsMenuItem*, bool)::$_0::operator()(game::gmap::(anonymous namespace)::CorpsMenuBase*) const::'lambda'(auto), bool (game::gmap::GmapCorpsMenuItem*)>::deleting destructor"
 17324b0,80,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::GmapCorpsMenu::ExchangeImpl(bool, game::gmap::GmapCorpsMenuItem*, game::gmap::GmapCorpsMenuItem*, bool)::$_0::operator()(game::gmap::(anonymous namespace)::CorpsMenuBase*) const::'lambda'(auto), bool (game::gmap::GmapCorpsMenuItem*)>::__clone()"
 1732500,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::gmap::GmapCorpsMenu::ExchangeImpl(bool, game::gmap::GmapCorpsMenuItem*, game::gmap::GmapCorpsMenuItem*, bool)::$_0::operator()(game::gmap::(anonymous namespace)::CorpsMenuBase*) const::'lambda'(auto), bool (game::gmap::GmapCorpsMenuItem*)>::__clone(__base*)"

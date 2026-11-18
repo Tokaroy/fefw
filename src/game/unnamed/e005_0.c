@@ -2200,7 +2200,7 @@ __int64 GameHr_f321d0(__int64 a1, __int64 a2)
       goto LABEL_31;
     }
     v14 = GameRoutine_6cb640(a2);
-    if ((unsigned int)v14 - 2 < 4) {
+    if ((unsigned int)(unsigned int)(v14 - 2) < 4) {
       v15 = v14;
       if ((atomic_load_explicit((atomic_uchar* volatile)&GameData_2220b80,
                                 memory_order_acquire) &

@@ -775,7 +775,7 @@ LABEL_126:
         v146 = v147;
         v144 = v149;
       } while (v143 != 0);
-      if ((unsigned int)v111 - 1 < 7) {
+      if ((unsigned int)(unsigned int)(v111 - 1) < 7) {
       LABEL_147:
         v129 = SdkData_e87a50[0];
         v118 = 16 * v111 + 72;
@@ -786,7 +786,7 @@ LABEL_126:
       v128 = v192;
       v148 = v197 - 2 * v111 - 9;
       v145 = v111;
-      if ((unsigned int)v111 - 1 < 7) {
+      if ((unsigned int)(unsigned int)(v111 - 1) < 7) {
         goto LABEL_147;
       }
     }

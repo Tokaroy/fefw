@@ -150,7 +150,7 @@ LABEL_21:
                                32LL * (v25 - GameData_1b37d88[28 - v29]));
       v27 = (__int64)(v26 + 16);
       v28 = v26[16];
-      if ((unsigned int)v28 - 6 > 4) {
+      if ((unsigned int)(unsigned int)(v28 - 6) > 4) {
         goto LABEL_27;
       }
     }
@@ -158,7 +158,7 @@ LABEL_21:
       v26 = (unsigned __int8*)(*(_QWORD*)(v3 + 8) + 32 * v23);
       v27 = (__int64)(v26 + 16);
       v28 = v26[16];
-      if ((unsigned int)v28 - 6 > 4) {
+      if ((unsigned int)(unsigned int)(v28 - 6) > 4) {
       LABEL_27:
         v30 = *v26;
         if ((unsigned int)(v30 - 6) <= 4) {

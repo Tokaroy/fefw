@@ -6250,7 +6250,7 @@ __int64 GameHr_1574a0(__int64 a1, __int64 a2)
   *(_WORD*)(a1 + 4538) = v19;
   if (v19 != 0) {
     v24 = v19 & 7;
-    if ((unsigned int)v19 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v19 - 1) >= 7) {
       v25 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 4528) + 2 * v25) = v25;
@@ -6346,7 +6346,7 @@ __int64 GameHr_1574a0(__int64 a1, __int64 a2)
   *(_WORD*)(a1 + 4698) = v37;
   if (v37 != 0) {
     v42 = v37 & 7;
-    if ((unsigned int)v37 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v37 - 1) >= 7) {
       v43 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 4688) + 2 * v43) = v43;
@@ -6394,7 +6394,7 @@ __int64 GameHr_1574a0(__int64 a1, __int64 a2)
   *(_WORD*)(a1 + 4778) = v46;
   if (v46 != 0) {
     v51 = v46 & 7;
-    if ((unsigned int)v46 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v46 - 1) >= 7) {
       v52 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 4768) + 2 * v52) = v52;
@@ -6442,7 +6442,7 @@ __int64 GameHr_1574a0(__int64 a1, __int64 a2)
   *(_WORD*)(a1 + 4858) = v55;
   if (v55 != 0) {
     v60 = v55 & 7;
-    if ((unsigned int)v55 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v55 - 1) >= 7) {
       v61 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 4848) + 2 * v61) = v61;

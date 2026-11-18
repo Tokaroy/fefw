@@ -934,7 +934,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2234) = v4;
   if (v4 != 0) {
     v9 = v4 & 7;
-    if ((unsigned int)v4 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v4 - 1) >= 7) {
       v10 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2224) + 2 * v10) = v10;
@@ -983,7 +983,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2314) = v14;
   if (v14 != 0) {
     v19 = v14 & 7;
-    if ((unsigned int)v14 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v14 - 1) >= 7) {
       v20 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2304) + 2 * v20) = v20;
@@ -1032,7 +1032,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2394) = v24;
   if (v24 != 0) {
     v29 = v24 & 7;
-    if ((unsigned int)v24 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v24 - 1) >= 7) {
       v30 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2384) + 2 * v30) = v30;
@@ -1081,7 +1081,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2474) = v34;
   if (v34 != 0) {
     v39 = v34 & 7;
-    if ((unsigned int)v34 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v34 - 1) >= 7) {
       v40 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2464) + 2 * v40) = v40;
@@ -1130,7 +1130,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2554) = v44;
   if (v44 != 0) {
     v49 = v44 & 7;
-    if ((unsigned int)v44 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v44 - 1) >= 7) {
       v50 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2544) + 2 * v50) = v50;
@@ -1179,7 +1179,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2634) = v54;
   if (v54 != 0) {
     v59 = v54 & 7;
-    if ((unsigned int)v54 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v54 - 1) >= 7) {
       v60 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2624) + 2 * v60) = v60;
@@ -1228,7 +1228,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2714) = v64;
   if (v64 != 0) {
     v69 = v64 & 7;
-    if ((unsigned int)v64 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v64 - 1) >= 7) {
       v70 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2704) + 2 * v70) = v70;
@@ -1277,7 +1277,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2794) = v74;
   if (v74 != 0) {
     v79 = v74 & 7;
-    if ((unsigned int)v74 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v74 - 1) >= 7) {
       v80 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2784) + 2 * v80) = v80;
@@ -1331,7 +1331,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2874) = v86;
   if (v86 != 0) {
     v91 = v86 & 7;
-    if ((unsigned int)v86 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v86 - 1) >= 7) {
       v92 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2864) + 2 * v92) = v92;
@@ -1380,7 +1380,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 2954) = v96;
   if (v96 != 0) {
     v101 = v96 & 7;
-    if ((unsigned int)v96 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v96 - 1) >= 7) {
       v102 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 2944) + 2 * v102) = v102;
@@ -1429,7 +1429,7 @@ __int64 Manager_113100(__int64 a1)
   *(_WORD*)(a1 + 3034) = v106;
   if (v106 != 0) {
     v111 = v106 & 7;
-    if ((unsigned int)v106 - 1 >= 7) {
+    if ((unsigned int)(unsigned int)(v106 - 1) >= 7) {
       v112 = 0;
       do {
         *(_WORD*)(*(_QWORD*)(a1 + 3024) + 2 * v112) = v112;
