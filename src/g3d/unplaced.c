@@ -31,6 +31,7 @@ g3d_ada070(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
 __attribute__((swiftcall)) void
 g3d_ada970(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
            __int64 a2, __int64 a3);
+__int64 GameRoutine_ad6d20_alt1(_QWORD, _QWORD, _QWORD, _QWORD);
 
 __int64 g3d_a6c880(__int64* a1, __int64 a2, unsigned __int64 a3)
 {
@@ -219,7 +220,7 @@ g3d_ada070(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
       v15[8] = 0;
     }
     v21 = v16;
-    GameHr_ad6d20(v9, a1, a2, v20);
+    GameRoutine_ad6d20_alt1(v9, a1, a2, v20);
     if (v21 == v20) {
       v17 = 32;
     }
@@ -243,7 +244,7 @@ g3d_ada070(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     }
   }
   v21 = nullptr;
-  GameHr_ad6d20(v9, a1, a2, v20);
+  GameRoutine_ad6d20_alt1(v9, a1, a2, v20);
   result = v21;
   if (v21 == v20) {
     goto LABEL_5;
@@ -335,7 +336,7 @@ g3d_ada970(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
       v15[8] = 0;
     }
     v21 = v16;
-    GameHr_ad6d20(v9, a1, a2, v20);
+    GameRoutine_ad6d20_alt1(v9, a1, a2, v20);
     if (v21 == v20) {
       v17 = 32;
     }
@@ -359,7 +360,7 @@ g3d_ada970(__attribute__((swift_indirect_result)) void* x8_, __int64 a1,
     }
   }
   v21 = nullptr;
-  GameHr_ad6d20(v9, a1, a2, v20);
+  GameRoutine_ad6d20_alt1(v9, a1, a2, v20);
   result = v21;
   if (v21 == v20) {
     goto LABEL_5;
