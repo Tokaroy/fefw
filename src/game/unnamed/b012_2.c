@@ -1305,14 +1305,14 @@ __int64 GameHr_e96270(_QWORD* a1, int a2)
     }
     (*(void (**)(_QWORD*))(*a1 + 568LL))(a1);
     break;
-  case 11:
-    (*(void (**)(_QWORD*))(*a1 + 560LL))(a1);
-    break;
   case 10:
     v3 = a1[42];
     if (v3 != 0) {
       (*(void (**)(__int64, __int64))(*(_QWORD*)v3 + 64LL))(v3, 1);
     }
+    // Case 10 falls into case 11 in the original.
+  case 11:
+    (*(void (**)(_QWORD*))(*a1 + 560LL))(a1);
     break;
   default:
     (*(void (**)(_QWORD*))(*a1 + 552LL))(a1);

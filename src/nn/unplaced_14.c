@@ -100,7 +100,7 @@ __int64 nn_69b6e0(__int64 a1, int a2, __int64 a3)
       v9 = *(_QWORD**)(a1 + 120);
       __asm__ volatile("" ::"r"(v9));
     }
-    if (v9 != nullptr && *v9 != 0 & (_DWORD)v5 != 0) {
+    if (v9 != nullptr && *(volatile _QWORD*)v9 != 0 & (_DWORD)v5 != 0) {
       v12 = (__int64*)(a3 + 8);
       v5 = (unsigned int)v5;
       v13 = SdkData_e89c10;

@@ -40304,7 +40304,7 @@ d64690,320,verified,src/game/script/hub_event_natives.cpp,_ZN4game6script3hub5ev
 d647d0,524,verified,src/game/script/hub_event_natives_impl.c,hub_event_RestoreExecuteDelete
 d64a10,696,verified,src/game/script/hub_event_natives_impl.c,hub_event_GetEraceFlagByDisposLabel
 d64cd0,240,verified,src/game/script/hub_event_natives.cpp,_ZN4game6script3hub5event19ClearSelectItemListERKNS_3hub15AreaEventHandleE
-d64dc0,1032,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d64dc0
+d64dc0,1032,disputed,src/game/script/hub_event_natives_impl.c,HubEventNatives_d64dc0
 d65310,640,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d65310
 d655a0,1224,verified,src/game/unnamed/b011_1.c,GameHr_d655a0
 d65b20,1584,verified,src/game/unnamed/b011_1.c,GameHr_d65b20
@@ -40314,7 +40314,7 @@ d661d0,764,verified,src/game/script/hub_event_natives_impl.c,hub_event_PushArran
 d664d0,636,verified,src/game/script/hub_event_natives_impl.c,hub_event_PushArrangementCharaAnim
 d66750,652,verified,src/game/script/hub_event_natives_impl.c,hub_event_PushArrangementCharaAnimOnetime
 d669e0,636,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d669e0
-d66da0,624,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d66da0
+d66da0,816,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d66da0
 d67180,908,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d67180
 d675c0,616,verified,src/game/script/hub_event_natives_impl.c,HubEventNatives_d675c0
 d67940,372,verified,src/game/script/hub_event_natives_impl.c,hub_event_SetDestinationOverride
@@ -41181,7 +41181,7 @@ dbc050,8,verified,src/game/game_trivial.cpp,_Z15GameStub_dbc050m
 dbc060,280,verified,src/game/unnamed/b012_0.c,GameHr_dbc060
 dbc1e0,184,verified,src/game/unnamed/b012_0.c,GameHr_dbc1e0
 dbc2c0,312,verified,src/game/unnamed/b012_0.c,GameHr_dbc2c0
-dbc400,636,disputed,src/game/unnamed/b012_1.c,GameHr_dbc400
+dbc400,644,disputed,src/game/unnamed/b012_1.c,GameHr_dbc400
 dbc6c0,264,verified,src/game/unnamed/b012_0.c,GameHr_dbc6c0
 dbc980,268,verified,src/game/unnamed/b012_0.c,GameHr_dbc980
 dbca90,284,verified,src/game/unplaced_3.c,game_dbca90
@@ -42553,7 +42553,7 @@ e382a0,3100,verified,src/game/combat/unplaced_4.c,game_combat_e382a0
 e39fe0,280,verified,src/game/unnamed/b012_2.c,GameHr_e39fe0
 e3a100,2264,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3a100
 e3ae20,652,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3ae20
-e3b0b0,1056,disputed,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b0b0
+e3b0b0,1056,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b0b0
 e3b650,280,verified,src/game/templates/vector.cpp,_ZNSt3__16vectorIN4game16UnrecoveredValueILj5ELm8ELm8EEENS_9allocatorIS3_EEE9push_backB8nn210108ERKS3_
 e3b770,300,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b770
 e3b8c0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -42675,7 +42675,7 @@ e43d00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vect
 e43d20,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe43d20
 e43d30,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe43d30
 e43d60,632,verified,src/game/combat/unplaced.c,game_combat_e43d60
-e44050,884,disputed,src/game/combat/unplaced.c,game_combat_e44050
+e44050,884,verified,src/game/combat/unplaced.c,game_combat_e44050
 e44660,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe44660
 e44670,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe44670
 e446a0,296,verified,src/game/combat/unplaced.c,game_combat_e446a0
@@ -44034,7 +44034,7 @@ e96160,8,verified,src/game/menu/sub_menu.cpp,_ZN4game4menu7SubMenu9Unknown64Ev
 e96170,108,verified,src/game/menu/anonymous/gmap_talk_command_menu.c,GmapTalkCommandMenu_Unknown69
 e961e0,108,verified,src/game/menu/anonymous/gmap_talk_command_menu.c,GmapTalkCommandMenu_Unknown72
 e96250,20,verified,src/game/game_trivial_wrappers.cpp,_Z15GameStub_e96250m
-e96270,172,disputed,src/game/unnamed/b012_2.c,GameHr_e96270
+e96270,172,verified,src/game/unnamed/b012_2.c,GameHr_e96270
 e96320,44,verified,src/game/game_trivial_misc.cpp,_Z15GameStub_e96320m
 e96350,8,verified,src/game/game_trivial.cpp,_Z15GameStub_e96350v
 e96360,8,verified,src/game/menu/sub_menu.cpp,_ZN4game4menu7SubMenu13ImplUnknown09Ev

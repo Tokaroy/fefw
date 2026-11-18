@@ -1579,6 +1579,7 @@ __int64 LegionStateBattleFighter_e3b0b0(__int64 a1, unsigned int a2)
   __int64 v67;
 
   v4 = *(_QWORD**)(*(_QWORD*)(a1 + 8) + 176LL);
+  (void)*(volatile __int64*)(v4[6] + 8);
   v5 = v4[7];
   v6 = *(_QWORD*)(v5 + 392);
   v7 = *(_QWORD*)(v5 + 400);

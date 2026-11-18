@@ -1625,7 +1625,7 @@ _QWORD* GameHr_dbc400(_QWORD* result, __int64 a2, int a3)
       v10 = v8 - v9 - 8;
       if ((~(_BYTE)v10 & 0x18) != 0) {
         v11 = ((unsigned __int8)((unsigned int)v10 >> 3) + 1) & 3;
-        while (*(_QWORD*)v9 != a2) {
+        while (*(volatile _QWORD*)v9 != a2) {
           v9 += 8;
           if (--v11 == 0) {
             goto LABEL_23;
@@ -1637,16 +1637,16 @@ _QWORD* GameHr_dbc400(_QWORD* result, __int64 a2, int a3)
         if (v10 >= 0x18) {
           v12 = v9 + 16;
           do {
-            if (*(v12 - 2) == a2) {
+            if (*(volatile _QWORD*)(v12 - 2) == a2) {
               break;
             }
-            if (*(v12 - 1) == a2) {
+            if (*(volatile _QWORD*)(v12 - 1) == a2) {
               break;
             }
-            if (*v12 == a2) {
+            if (*(volatile _QWORD*)v12 == a2) {
               break;
             }
-            if (v12[1] == a2) {
+            if (*(volatile _QWORD*)(v12 + 1) == a2) {
               break;
             }
             v13 = (char*)(v12 + 2);
