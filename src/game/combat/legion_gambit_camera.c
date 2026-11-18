@@ -330,10 +330,10 @@ void LegionGambitCamera_e5a1c0(float32x4_t* a1)
                             LANES128_OF(vextq_s8(v29, v29, 8u)).n128_u64[0]),
                   COERCE_AS(float32x2_t, LANES128(v29).n128_u64[0])))
               .n64_u64[0];
-      if (LANES64_OF(
-              vpadd_f32(COERCE_AS(float32x2_t, LANES128(v29).n128_u64[0]),
-                        COERCE_AS(float32x2_t, LANES128(v29).n128_u64[0])))
-              .n64_f32[0] >= 0x1.47ae140000000p-7f) {
+      if (!(LANES64_OF(
+                vpadd_f32(COERCE_AS(float32x2_t, LANES128(v29).n128_u64[0]),
+                          COERCE_AS(float32x2_t, LANES128(v29).n128_u64[0])))
+                .n64_f32[0] < 0x1.47ae140000000p-7f)) {
         v30 = *(float32x4_t**)(v1 + 72);
         v31 = f_.v36;
         LANES128(*(v30)).n128_u32[2] = 0;
@@ -356,9 +356,9 @@ void LegionGambitCamera_e5a1c0(float32x4_t* a1)
          (float)(roundf((float)(v6 * 0x1.921fb60000000p+1f) *
                         0x1.45f3060000000p-3f) *
                  -0x1.921fb60000000p+2f);
-    if (v8 <= 0x1.921fb60000000p+0f) {
+    if (!(v8 > 0x1.921fb60000000p+0f)) {
       v10 = 0x1.0000000000000p+0f;
-      if (v8 >= -0x1.921fb60000000p+0f) {
+      if (!(v8 < -0x1.921fb60000000p+0f)) {
       LABEL_10:
         v11 = v8 * v8;
         v12 =

@@ -43208,7 +43208,7 @@ e59410,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe59410
 e59440,1828,disputed,src/memory/unplaced_5.c,memory_e59440
 e59e90,312,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e59e90
 e59fd0,496,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e59fd0
-e5a1c0,716,disputed,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e5a1c0
+e5a1c0,732,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e5a1c0
 e5a4a0,320,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e5a4a0
 e5a5e0,568,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e5a5e0
 e5a880,400,verified,src/game/combat/legion_gambit_camera.c,LegionGambitCamera_e5a880
