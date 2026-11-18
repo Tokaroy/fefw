@@ -138,7 +138,7 @@ void game_cmdbtl_anonymous_1625bc0(__int64* a1)
         }
       }
     }
-    if (*((float*)a1 + 12) >= 0x1.4000000000000p+2f &&
+    if (!(*((float*)a1 + 12) < 0x1.4000000000000p+2f) &&
         ((v2 & 0x20) == 0 || (*(_BYTE*)(GameData_225ca88 + 1908) & 1) != 0) &&
         *(_QWORD*)(GameData_225ca88 + 1896) != 0) {
       v4 =
