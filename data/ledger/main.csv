@@ -28518,6 +28518,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 9acba0,200,verified,src/game/unnamed/b008_0.c,GameHr_9acba0
 9acc80,672,verified,src/game/unnamed/b008_1.c,GameHr_9acc80
 9ad180,320,verified,src/game/templates/deque.cpp,_ZNSt3__114__split_bufferIPPN4game11UnrecoveredILj34EEENS_9allocatorIS5_EEE12emplace_backIJRS5_EEEvDpOT_
+9ad2e0,224,verified,src/game/templates/unplaced_12.c,game_templates_9ad2e0
 9ad3e0,172,verified,src/game/templates/hash_table.cpp,_ZNSt3__113unordered_mapImPN4game11UnrecoveredILj10EEENS_4hashImEENS_8equal_toImEENS_9allocatorINS_4pairIKmS4_EEEEED2B8nn210108Ev
 9ad4a0,172,verified,src/game/templates/hash_table.cpp,_ZNSt3__113unordered_mapImPN4game11UnrecoveredILj11EEENS_4hashImEENS_8equal_toImEENS_9allocatorINS_4pairIKmS4_EEEEED2B8nn210108Ev
 9ad560,972,verified,src/game/unnamed/b008_0.c,GameHr_9ad560
