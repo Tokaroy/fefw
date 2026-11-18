@@ -3535,6 +3535,7 @@ LABEL_35:
 
 __int64 game_menu_179b0a0(__int64 result)
 {
+#pragma clang fp contract(off)
   unsigned int v1;
   __int64 v3;
   __int64 v4;
