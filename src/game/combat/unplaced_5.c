@@ -147,7 +147,7 @@ __attribute__((swiftcall)) void game_combat_106b310(PSEUDO_X8 x8_, float* a1,
       v9 = v17;
     }
   }
-  else if (v6 >= -0x1.6a09e60000000p-1f) {
+  else if (!(v6 < -0x1.6a09e60000000p-1f)) {
     v10 = (float)-v6 / v7;
     v9 =
         (float)(PSEUDO_UNFUSED(
@@ -227,7 +227,7 @@ __attribute__((swiftcall)) void game_combat_106b310(PSEUDO_X8 x8_, float* a1,
   v18 =
       v9 + (float)(roundf(v9 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
   v19 = -0x1.921fb60000000p+1f - v18;
-  if (v18 >= -0x1.921fb60000000p+0f) {
+  if (!(v18 < -0x1.921fb60000000p+0f)) {
     v19 = v18;
   }
   if (v18 > 0x1.921fb60000000p+0f) {
@@ -280,7 +280,7 @@ __attribute__((swiftcall)) void game_combat_106b310(PSEUDO_X8 x8_, float* a1,
         (float)(roundf((float)(v27 * v9) * 0x1.45f3060000000p-3f) *
                 -0x1.921fb60000000p+2f);
   v30 = -0x1.921fb60000000p+1f - v29;
-  if (v29 >= -0x1.921fb60000000p+0f) {
+  if (!(v29 < -0x1.921fb60000000p+0f)) {
     v30 = v29;
   }
   if (v29 > 0x1.921fb60000000p+0f) {

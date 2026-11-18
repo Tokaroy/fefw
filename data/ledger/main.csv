@@ -50068,7 +50068,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 106aff0,304,verified,src/game/combat/unplaced.c,game_combat_106aff0
 106b140,320,verified,src/game/unnamed/e006_2.c,GameHr_106b140
 106b2c0,80,verified,src/game/combat/unplaced.c,game_combat_106b2c0
-106b310,892,disputed,src/game/combat/unplaced_5.c,game_combat_106b310
+106b310,1068,verified,src/game/combat/unplaced_5.c,game_combat_106b310
 106b740,104,verified,src/game/combat/combat_character_turn.c,CombatCharacterTurn_DeletingDestructor
 106b7b0,816,verified,src/game/unnamed/b015_0.c,GameHr_106b7b0
 106bae0,260,verified,src/game/combat/combat_universe.c,game_combat_CombatUniverse_Setup
