@@ -42668,19 +42668,19 @@ e42f30,480,verified,src/game/unnamed/b012_1.c,GameHr_e42f30
 e43110,308,verified,src/game/unnamed/b012_1.c,GameHr_e43110
 e43260,608,verified,src/game/unnamed/b012_1.c,GameHr_e43260
 e43560,244,verified,src/game/unnamed/b012_1.c,GameHr_e43560
-e436c0,904,verified,src/game/combat/unplaced.c,game_combat_e436c0
+e436c0,888,verified,src/game/combat/unplaced.c,game_combat_e436c0
 e43ac0,496,verified,src/game/unnamed/b012_1.c,GameHr_e43ac0
 e43d00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 e43d20,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe43d20
 e43d30,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe43d30
-e43d60,632,disputed,src/game/combat/unplaced.c,game_combat_e43d60
-e44050,884,verified,src/game/combat/unplaced.c,game_combat_e44050
+e43d60,624,disputed,src/game/combat/unplaced.c,game_combat_e43d60
+e44050,884,disputed,src/game/combat/unplaced.c,game_combat_e44050
 e44660,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe44660
 e44670,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe44670
 e446a0,296,verified,src/game/combat/unplaced.c,game_combat_e446a0
 e447d0,472,verified,src/game/combat/unplaced.c,game_combat_e447d0
 e449b0,788,verified,src/game/combat/unplaced.c,game_combat_e449b0
-e44cd0,1124,disputed,src/game/combat/unplaced.c,game_combat_e44cd0
+e44cd0,1228,disputed,src/game/combat/unplaced.c,game_combat_e44cd0
 e45210,800,verified,src/game/combat/unplaced.c,game_combat_e45210
 e45540,316,verified,src/game/combat/unplaced_4.c,game_combat_e45540
 e4b940,656,verified,src/game/unnamed/b012_1.c,GameHr_e4b940
