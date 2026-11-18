@@ -495,7 +495,7 @@ f80,156,verified,src/nvidia/unnamed/n000_0.c,NgxHr_f80
 29cc0,48,verified,src/nvidia/unnamed/n000_1.c,NgxHr_29cc0
 29cf0,220,verified,src/nvidia/unplaced_17.c,nvidia_29cf0
 29e50,128,verified,src/nvidia/unplaced_17.c,nvidia_29e50
-29ee0,2500,disputed,src/nvidia/dlss/rel/source/features/dlaa/weights/cornflower_rook_00389/cornflower_rook_00389.c,cornflower_rook_00389_29ee0
+29ee0,2368,disputed,src/nvidia/dlss/rel/source/features/dlaa/weights/cornflower_rook_00389/cornflower_rook_00389.c,cornflower_rook_00389_29ee0
 2a920,180,verified,src/nvidia/dlss/rel/source/features/dlaa/weights/cornflower_rook_00389/cornflower_rook_00389.c,cornflower_rook_00389_2a920
 2a9e0,180,verified,src/nvidia/dlss/rel/source/features/dlaa/weights/cornflower_rook_00389/cornflower_rook_00389.c,cornflower_rook_00389_2a9e0
 2aaa0,144,verified,src/nvidia/dlss/rel/source/features/dlaa/weights/cornflower_rook_00389/cornflower_rook_00389.c,cornflower_rook_00389_2aaa0
