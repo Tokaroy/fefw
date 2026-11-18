@@ -231,9 +231,15 @@ unsigned __int64 strlen_plt_alt1(const char*) __asm__("strlen_plt");
 __int64 cornflower_rook_00389_29ee0(__int64 a1);
 _QWORD* cornflower_rook_00389_2b4a0(__int64 a1);
 __int64 cornflower_rook_00389_2e600(__int64 a1);
+_QWORD* nvidia_28900(_QWORD*, __int64, __int64);
+__attribute__((swiftcall)) void nvidia_be650(PSEUDO_X8, __int64);
+unsigned __int64 strlen_plt_alt2(const char*);
 
 __int64 cornflower_rook_00389_29ee0(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64 v1;
   signed __int64 v2;
   __int64 v4;
@@ -376,7 +382,7 @@ __int64 cornflower_rook_00389_29ee0(__int64 a1)
   else {
     v5 = a1 + 33;
   }
-  v6 = strlen_plt_alt1("_");
+  v6 = strlen_plt_alt2("_");
   if (v6 != 0) {
     v7 = v1 >> 1;
     v8 = v6;
@@ -405,11 +411,11 @@ __int64 cornflower_rook_00389_29ee0(__int64 a1)
     }
     if (v12 == v9 || (v13 = v12 - v5, v12 - v5 == -1)) {
     LABEL_49:
-      v35 = strlen_plt_alt1("No layout in layer name");
-      v36 = NgxRoutine_28900((_QWORD*)NgxData_951178[0],
-                             (__int64)"No layout in layer name", v35);
-      NgxRoutine_be650((void*)((__int64)&v125_.v125),
-                       (__int64)v36 + *(_QWORD*)(*v36 - 24LL));
+      v35 = strlen_plt_alt2("No layout in layer name");
+      v36 = nvidia_28900((_QWORD*)NgxData_951178[0],
+                         (__int64)"No layout in layer name", v35);
+      nvidia_be650((void*)((__int64)&v125_.v125),
+                   (__int64)v36 + *(_QWORD*)(*v36 - 24LL));
       v37 = NgxRoutine_db310(&v125_.v125, (__int64)NgxData_9511b8);
       v38 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v37 + 56LL))(v37, 10);
       NgxRoutine_db240(&v125_.v125);
@@ -464,7 +470,7 @@ __int64 cornflower_rook_00389_29ee0(__int64 a1)
   memmove_plt((__int64)v20, v18, v19);
 LABEL_29:
   v20[v19] = 0;
-  v22 = strlen_plt_alt1("nhwc");
+  v22 = strlen_plt_alt2("nhwc");
   v23 = (unsigned __int8)v125_.v125 >> 1;
   if ((v125_.v125 & 1) != 0) {
     v23 = v125_.v126;
@@ -483,18 +489,18 @@ LABEL_29:
   }
   else {
   LABEL_37:
-    v26 = strlen_plt_alt1("nchw8");
+    v26 = strlen_plt_alt2("nchw8");
     v27 = (unsigned __int8)v125_.v125 >> 1;
     if ((v125_.v125 & 1) != 0) {
       v27 = v125_.v126;
     }
     if (v26 != v27) {
     LABEL_45:
-      v30 = strlen_plt_alt1("Unknown layout type");
-      v31 = NgxRoutine_28900((_QWORD*)NgxData_951178[0],
-                             (__int64)"Unknown layout type", v30);
-      NgxRoutine_be650((void*)((__int64)&v122),
-                       (__int64)v31 + *(_QWORD*)(*v31 - 24LL));
+      v30 = strlen_plt_alt2("Unknown layout type");
+      v31 = nvidia_28900((_QWORD*)NgxData_951178[0],
+                         (__int64)"Unknown layout type", v30);
+      nvidia_be650((void*)((__int64)&v122),
+                   (__int64)v31 + *(_QWORD*)(*v31 - 24LL));
       v32 = NgxRoutine_db310(&v122, (__int64)NgxData_9511b8);
       v33 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v32 + 56LL))(v32, 10);
       NgxRoutine_db240(&v122);
@@ -566,7 +572,7 @@ LABEL_29:
   else {
     v48 = (char*)&v122 + 1;
   }
-  v49 = strlen_plt_alt1("_");
+  v49 = strlen_plt_alt2("_");
   if (v49 != 0) {
     v50 = v46 >> 1;
     v51 = v49;
@@ -641,7 +647,7 @@ LABEL_29:
     memmove_plt((__int64)v60, (__int64)v58, v59);
   }
   v60[v59] = 0;
-  v62 = strlen_plt_alt1("conv");
+  v62 = strlen_plt_alt2("conv");
   v63 = v119_.v119;
   v64 = (unsigned __int8)v119_.v119 >> 1;
   if ((v119_.v119 & 1) != 0) {
@@ -672,10 +678,10 @@ LABEL_29:
   LABEL_106:
     v69 = "No conv in layer name";
   LABEL_107:
-    v70 = strlen_plt_alt1(v69);
-    v71 = NgxRoutine_28900((_QWORD*)NgxData_951178[0], (__int64)v69, v70);
-    NgxRoutine_be650((void*)((__int64)&v119_.v119),
-                     (__int64)v71 + *(_QWORD*)(*v71 - 24LL));
+    v70 = strlen_plt_alt2(v69);
+    v71 = nvidia_28900((_QWORD*)NgxData_951178[0], (__int64)v69, v70);
+    nvidia_be650((void*)((__int64)&v119_.v119),
+                 (__int64)v71 + *(_QWORD*)(*v71 - 24LL));
     v72 = NgxRoutine_db310(&v119_.v119, (__int64)NgxData_9511b8);
     v73 = (*(__int64 (**)(__int64, __int64))(*(_QWORD*)v72 + 56LL))(v72, 10);
     NgxRoutine_db240(&v119_.v119);
@@ -739,7 +745,7 @@ LABEL_29:
   else {
     v83 = (char*)&v122 + 1;
   }
-  v84 = strlen_plt_alt1("_");
+  v84 = strlen_plt_alt2("_");
   if (v84 != 0) {
     v85 = v84;
     if ((v82 & 1) != 0) {

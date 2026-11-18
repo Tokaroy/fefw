@@ -71,6 +71,7 @@ void nn_mem_StandardAllocator_Free_alt3(__int64, __int64) __asm__(
 void LODModule_a98be0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4);
 __int64 memcpy_alt1(__int64, __int64, unsigned __int64) __asm__("memcpy");
 void LODModule_a991b0(__int64* a1, unsigned __int64 a2);
+__int64 GameRoutine_1a09c70(_QWORD);
 
 __int64 LODModule_Destructor(__int64 a1)
 {
@@ -1413,6 +1414,9 @@ void LODModule_a98be0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4)
 
 __int64 LODModule_a98ee0(_QWORD* a1, unsigned int a2)
 {
+
+#pragma clang fp contract(on)
+
   _BYTE* v2;
   __int64 result;
   __int64 v5;
@@ -1446,7 +1450,7 @@ __int64 LODModule_a98ee0(_QWORD* a1, unsigned int a2)
   }
   v5 = *(_QWORD*)(a1[1] + 16LL) + 96LL * a2;
   v6 = *(_QWORD*)v5;
-  v7 = strlen(*(_QWORD*)v5 + 2LL);
+  v7 = GameRoutine_1a09c70(*(_QWORD*)v5 + 2LL);
   if (v7 >= 9 && *(_QWORD*)(v6 + 2) == 0x70756F7247444F4CLL &&
       *(_BYTE*)(v6 + 10) == 95) {
     v10 = v6 + 11 + v7 - 9;

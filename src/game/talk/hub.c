@@ -208,6 +208,8 @@ __int64 Hub_119a200(__int64 a1, __int64 a2);
 _BYTE* Hub_119b730_alt3(__int64 a1, __int64 a2, int a3, __int64* a4,
                         __int64 a5) __asm__("Hub_119b730");
 __int64 Hub_119b730(__int64 a1, __int64 a2, int a3, __int64* a4, __int64 a5);
+__attribute__((swiftcall)) void fs_a51060(PSEUDO_X8, __int64, __int64);
+void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 
 bool Hub_1197e80(__int64 a1, __int64* a2)
 {
@@ -2127,6 +2129,9 @@ LABEL_18:
 
 void Hub_1199e20(__int64 a1, const char* a2)
 {
+
+#pragma clang fp contract(on)
+
   bool v4;
   bool v5;
   __int64 v7;
@@ -2145,14 +2150,14 @@ void Hub_1199e20(__int64 a1, const char* a2)
       *(_WORD*)(a1 + 128) = 1;
       GameRoutine_60a020((char*)a1, a2);
       v7 = (*(_BYTE*)a1 & 1) != 0 ? *(_QWORD*)(a1 + 16) : a1 + 1;
-      GameRoutine_a51060((void*)(v9_.v9), msg_MessageManager_instance_, v7);
+      fs_a51060((void*)(v9_.v9), msg_MessageManager_instance_, v7);
       game_112d580((char*)v9_.v9, a1 + 24, a1 + 48);
       if ((v9_.v9[0] & 1) != 0 && v9_.v10 != 0) {
         v8 = 128;
         if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
           v8 = 56;
         }
-        nn_mem_StandardAllocator_Free_alt2(
+        nn_mem_StandardAllocator_Free_alt3(
             *(_QWORD*)fw_memory_g_heap_manager_ptr + v8, v9_.v10);
       }
     }

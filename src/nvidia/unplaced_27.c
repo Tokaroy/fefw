@@ -205,6 +205,7 @@ __int64 nvidia_6e8f0(__int64 a1, long double a2);
 unsigned int* CudaDriverRoutine_4edf0_alt1(unsigned int* result, int, int, int,
                                            int, unsigned int, int*, int*);
 bool cuda_driver_checks_103250_alt1(__int64);
+__int64 nvidia_1181a0(__int64);
 
 __int64 nvidia_140e0(__int64 a1)
 {
@@ -4470,7 +4471,7 @@ __int64 nvidia_1b8de0(_QWORD* a1, unsigned __int64 a2, __int64* a3, __int64 a4,
     cuda_driver_108520(*(_QWORD*)(v21 + 88) + 104LL);
   LABEL_36:
     CudaDriverStub_107f90(a4 + 592);
-    v37 = CudaDriverRoutine_1181a0(a4);
+    v37 = nvidia_1181a0(a4);
     CudaDriverStub_108070(a4 + 592);
     if ((*(_BYTE*)(a4 + 56) & 1) != 0) {
       v38 = CudaDriverRoutine_98340(v21);

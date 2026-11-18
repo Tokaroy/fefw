@@ -261,6 +261,93 @@ __int64 SdkRoutine_6666a0_alt1(__int64 result) __asm__("SdkRoutine_6666a0");
 __int64 SdkRoutine_672d00_alt1(__int64, __int64, __int64,
                                __int64) __asm__("SdkRoutine_672d00");
 __int64 SdkHr_66fcf0(__int64 a1, __int64 a2, __int64 a3);
+_QWORD* nn_664a50(_QWORD* result, char);
+__int64 SdkRoutine_657f90_alt1(__int64 result, int, int, __int64);
+__int64 SdkRoutine_657fd0_alt1(__int64 result, unsigned int, int, __int64);
+__int64 SdkRoutine_668a70_alt1(__int64, __int64, __int64, __int64, char, char);
+__int64 SdkRoutine_669000_alt1(__int64, __int64, char);
+__int64 SdkRoutine_6693a0_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_669460_alt1(__int64, unsigned int, __int64);
+__int64 SdkRoutine_670e40_alt1(__int64, __int64, __int64);
+__int64 SdkRoutine_671080_alt1(__int64, __int64, __int64);
+__int64 SdkRoutine_6712b0_alt1(__int64, __int64);
+__int64 SdkRoutine_6714f0_alt1(__int64, __int64, __int64);
+__int64 SdkRoutine_6728a0_alt1(__int64, __int64, __int128*, __int128*,
+                               __int128*, unsigned int, unsigned int,
+                               unsigned int, __int64, unsigned int);
+__int64 SdkRoutine_672a20_alt1(__int64, __int64, __int128*, __int128*,
+                               __int128*, __int64, __int64, unsigned int);
+__int64 SdkRoutine_672c40_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_672c50_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_672c60_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_672c70_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_672c80_alt1(__int64 result, int, __int64, int);
+__int64 SdkRoutine_672cb0_alt1(__int64 result, int, __int64, int);
+__int64 SdkRoutine_672ce0_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_6738a0_alt1(__int64 result, char, unsigned __int8,
+                               unsigned int, __int64);
+__int64 SdkRoutine_673d40_alt1(__int64, unsigned int, unsigned int,
+                               unsigned int, __int64);
+__int64 SdkRoutine_67b3e0_alt1(__int64 result, int, unsigned int, unsigned int,
+                               unsigned __int64);
+__int64 SdkRoutine_6816f0_alt1(__int64 result, char, unsigned __int8, int,
+                               float);
+__int64 SdkRoutine_683090_alt1(__int64, __int64);
+__int64 SdkRoutine_6831f0_alt1(__int64, __int64);
+__int64 SdkRoutine_683640_alt1(__int64 result, __int64, __int64);
+__int64 SdkRoutine_685340_alt1(__int64 result, int);
+__int64 SdkRoutine_6855d0_alt1(__int64, int);
+__int64 SdkRoutine_685720_alt1(__int64 result, unsigned int, unsigned int);
+__int64 SdkRoutine_6860f0_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_686110_alt1(__int64 result, __int64);
+__int64 SdkRoutine_686130_alt1(__int64 result, __int64);
+__int64 SdkRoutine_686150_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_686170_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_686190_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_6861b0_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_6861d0_alt1(__int64 result, int, unsigned __int64, int);
+__int64 SdkRoutine_686330_alt1(__int64 result, int, __int64, int);
+__int64 SdkRoutine_686370_alt1(__int64, unsigned int, unsigned int,
+                               unsigned int, __int64);
+__int64 SdkRoutine_687fa0_alt1(__int64 result, unsigned int, unsigned int,
+                               unsigned int, __int64);
+__int64 SdkRoutine_688380_alt1(__int64 result, unsigned int, unsigned int,
+                               unsigned int, __int64, __int64, unsigned int);
+__int64 SdkRoutine_6884a0_alt1(__int64, __int64);
+__int64 SdkRoutine_688e40_alt1(__int64 result, char);
+__int64 SdkRoutine_6897c0_alt1(__int64, __int64, unsigned __int64, int);
+__int64 SdkRoutine_689990_alt1(__int64, __int64, __int64, unsigned __int64,
+                               __int64, __int64, unsigned __int64, unsigned int,
+                               unsigned int);
+__int64 SdkRoutine_695480_alt1(__int64 result, __int64, int);
+__int64 SdkRoutine_6955a0_alt1(__int64 result, __int64, int, unsigned int, int,
+                               __int64);
+__int64 SdkRoutine_697360_alt1(__int64, int, _DWORD*);
+__int64 nn_65bcb0(__int64, __int64*, int, int, int, unsigned int, char, char);
+__int64 nn_670700(__int64, unsigned __int64, __int64, unsigned __int64,
+                  __int64);
+__int64 nn_6718f0(__int64, __int64, __int64, __int64, __int64, unsigned int,
+                  unsigned int, unsigned int);
+__int64 nn_672190(__int64, __int64, __int64, __int64, __int64*, __int64);
+__int64 nn_67bba0(__int64 result, unsigned int, unsigned int, int, __int64*);
+__int64 nn_67c500(__int64 result, int, unsigned int, unsigned int,
+                  unsigned __int64);
+__int64 nn_67d180(__int64 result, int, unsigned int, unsigned int, __int64*);
+__int64 nn_67dc60(__int64 result, int, unsigned int, unsigned int, __int64*);
+__int64 nn_67e5c0(__int64 result, int, int, unsigned int, __int64*);
+__int64 nn_67f0a0(__int64 result, int, int, unsigned int, __int64*);
+__int64 nn_688b60(__int64, __int64, __int64, unsigned __int64);
+__int64 nvidia_649d70(__int64, unsigned __int64, unsigned __int64, int, char,
+                      int);
+__int64 nvidia_64da00(__int64 result, __int64, __int64, _QWORD*, _DWORD*, int,
+                      unsigned int, int, int);
+double SdkRoutine_669550_alt1(__int64, int, __int64);
+double SdkRoutine_6a1420_alt1(__int64, __int64, int);
+double nn_685160(__int64, unsigned __int8);
+double nn_695b00(__int64, unsigned __int64, unsigned int);
+double nn_69d8e0(__int64, int);
+void nn_658370();
+void SdkHr_665b40(__int64 a1, unsigned int* a2, __int64 a3);
 
 __int64 SdkHr_6649b0(__int64 result)
 {
@@ -968,470 +1055,489 @@ __int64 SdkHr_665220(__int64 a1, __int64* a2)
   }
 }
 
-__int64 SdkHr_665b40(__int64 result, unsigned int* a2)
+void SdkHr_665b40(__int64 a1, unsigned int* a2, __int64 a3)
 {
-  __int64 v3;
-  unsigned __int64 v4;
+
+#pragma clang fp contract(off)
   __int64 v5;
   __int64 v6;
   __int64 v7;
-  unsigned int* v8;
-  __int64 v9;
-  __int64 v10;
-  __int64 v11;
-  unsigned int* v12;
+  __int64 v8;
+  _QWORD* v9;
+  unsigned int v10;
+  int v11;
+  __int64 v12;
   __int64 v13;
   __int64 v14;
-  __int64 v15;
-  __int64 v16;
-  __int64 v17;
+  unsigned int v15;
+  unsigned int v16;
+  unsigned int v17;
   __int64 v18;
   __int64 v19;
-  __int64 v20;
-  __int64 v21;
-  unsigned int* v22;
-  __int64 v23;
-  __int128 v24;
-  __int64 v25;
+  unsigned int v20;
+  unsigned int v21;
+  unsigned int v22;
+  unsigned int* v23;
+  __int64 v24;
+  __int128 v25;
   __int64 v26;
-  __int128 v27;
-  __int64 v28;
+  __int64 v27;
+  __int128 v28;
   __int64 v29;
-  __int128 v30;
+  __int64 v30;
   __int128 v31;
-  __int64 v32;
+  __int128 v32;
   __int64 v33;
   __int64 v34;
-  __int64 v35;
-  __int128 v36;
-  __int64 v37;
-  __int128 v38;
+  unsigned int v35;
+  unsigned int v36;
+  __int128 v37;
+  __int64 v38;
   __int128 v39;
-  __int64 v40;
+  __int128 v40;
   __int64 v41;
   __int64 v42;
-  __int64 v43;
-  __int128 v44;
-  __int64 v45;
-  __int128 v46;
+  unsigned int v43;
+  unsigned int v44;
+  __int128 v45;
+  __int64 v46;
   __int128 v47;
-  __int64 v48;
+  __int128 v48;
   __int64 v49;
-  __int128 v50;
-  __int64 v51;
+  __int64 v50;
+  __int128 v51;
   __int64 v52;
-  __int128 v53;
-  int v54;
-  unsigned int v55;
-  __int64 v56;
-  __int128 v57;
-  __int64 v58;
-  __int64 v59;
-  __int128 v60;
-  __int64 v61;
-  __int64 v62;
-  __int128 v63;
-  __int64 v64;
-  __int128 v65;
-  __int64 v66;
-  __int128 v67;
-  __int64 v68;
-  __int128 v69;
-  __int64 v70;
-  __int128 v71;
-  __int64 v72;
-  __int128 v73;
-  __int64 v74;
-  __int128 v75;
-  __int64 v76;
-  __int128 v77;
-  __int64 v78;
-  __int128 v79;
-  __int64 v80;
-  __int128 v81;
-  __int64 v82;
-  __int128 v83;
-  __int64 v84;
+  __int64 v53;
+  __int128 v54;
+  __int64 v55;
+  int v56;
+  unsigned int v57;
+  int v58;
+  struct {
+    __int128 v59;
+    __int64 v60;
+  } v59_;
+  struct {
+    __int128 v61;
+    __int64 v62;
+  } v61_;
+  struct {
+    __int128 v63;
+    __int64 v64;
+  } v63_;
+  struct {
+    __int128 v65;
+    __int64 v66;
+  } v65_;
+  struct {
+    __int128 v67;
+    __int64 v68;
+  } v67_;
+  struct {
+    __int128 v69;
+    __int64 v70;
+  } v69_;
+  struct {
+    __int128 v71;
+    __int64 v72;
+  } v71_;
+  struct {
+    __int128 v73;
+    __int64 v74;
+  } v73_;
+  struct {
+    __int128 v75;
+    __int64 v76;
+  } v75_;
+  struct {
+    __int128 v77;
+    __int64 v78;
+  } v77_;
+  struct {
+    __int128 v79;
+    __int64 v80;
+  } v79_;
+  struct {
+    __int128 v81;
+    __int64 v82;
+  } v81_;
+  struct {
+    __int128 v83;
+    __int64 v84;
+  } v83_;
 
-  v3 = result;
   while (1) {
-    v4 = *(_QWORD*)a2;
-    v5 = HIDWORD(*(_QWORD*)a2);
+    v5 = *(_QWORD*)a2;
+    v6 = HIDWORD(*(_QWORD*)a2);
     switch ((unsigned __int8)*(_QWORD*)a2) {
     case 3u:
-      v22 = a2 + 2;
-      SdkRoutine_664a50((_QWORD*)v3, 1);
-      result = SdkRoutine_66ea90(v3 + 40, (unsigned int)v5, v22);
-      v23 = *(_QWORD*)v3;
-      *(_BYTE*)(v3 + 11448) = 1;
-      *(_QWORD*)v3 = v23 + 8 * v5;
-      a2 = &v22[6 * (unsigned int)v5];
+      v23 = a2 + 2;
+      nn_664a50((_QWORD*)a1, 1);
+      SdkRoutine_66ea90(a1 + 40, (unsigned int)v6, v23);
+      v24 = *(_QWORD*)a1;
+      *(_BYTE*)(a1 + 11448) = 1;
+      *(_QWORD*)a1 = v24 + 8 * v6;
+      a2 = &v23[6 * (unsigned int)v6];
       continue;
     case 4u:
       a2 = *((unsigned int**)a2 + 1);
       continue;
     case 5u:
-      result = SdkRoutine_668a70(
-          v3, *((_QWORD*)a2 + 1), (unsigned __int8)BYTE1(*(_QWORD*)a2),
-          (unsigned int)v5, (*(_QWORD*)a2 & 0xFF0000LL) != 0,
-          (*(_QWORD*)a2 & 0xFF000000LL) != 0);
+      SdkRoutine_668a70_alt1(a1, *((_QWORD*)a2 + 1),
+                             (unsigned __int8)BYTE1(*(_QWORD*)a2),
+                             (unsigned int)v6, (*(_QWORD*)a2 & 0xFF0000LL) != 0,
+                             (*(_QWORD*)a2 & 0xFF000000LL) != 0);
       a2 += 4;
       continue;
     case 6u:
     case 0x61u:
-      result = SdkRoutine_669000(v3, *((_QWORD*)a2 + 1),
-                                 (unsigned __int8)*(_QWORD*)a2 == 97);
+      SdkRoutine_669000_alt1(a1, *((_QWORD*)a2 + 1),
+                             (unsigned __int8)*(_QWORD*)a2 == 97);
       a2 += 4;
       continue;
     case 7u:
-      result = SdkRoutine_65bcb0(
-          v3, *((_QWORD*)a2 + 1), ((unsigned int)v4 >> 8) & 0xF,
-          (unsigned __int16)v4 >> 12,
-          (unsigned int)((int)((_DWORD)v4 << 8) >> 24), (unsigned int)v5,
-          (v4 & 0x1000000) != 0, (v4 & 0x2000000) != 0);
+      nn_65bcb0(a1, *((__int64**)a2 + 1), ((unsigned int)v5 >> 8) & 0xF,
+                (unsigned __int16)v5 >> 12, (int)((_DWORD)v5 << 8) >> 24, v6,
+                (v5 & 0x1000000) != 0, (v5 & 0x2000000) != 0);
       a2 += 4;
       continue;
     case 8u:
-      result = SdkRoutine_686110(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_686110_alt1(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 9u:
-      result = SdkRoutine_686150(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_686150_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0xAu:
-      result = SdkRoutine_686170(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_686170_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0xBu:
-      result = SdkRoutine_686190(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_686190_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0xCu:
-      result = SdkRoutine_6861b0(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_6861b0_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0xDu:
-      result =
-          SdkRoutine_6861d0(v3, (unsigned int)v5, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_6861d0_alt1(a1, v6, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0xEu:
-      result =
-          SdkRoutine_686330(v3, (unsigned int)v5, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_686330_alt1(a1, v6, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0xFu:
-      v20 = a2[2];
-      v21 = a2[3];
-      v18 = v3;
-      v19 = (unsigned int)v5;
-      v17 = 0;
+      v21 = a2[2];
+      v22 = a2[3];
+      v19 = a1;
+      v20 = HIDWORD(*(_QWORD*)a2);
+      v18 = 0;
       goto LABEL_66;
     case 0x10u:
-      v17 = *((_QWORD*)a2 + 1);
-      v18 = v3;
-      v19 = 0;
+      v18 = *((_QWORD*)a2 + 1);
+      v19 = a1;
       v20 = 0;
       v21 = 0;
+      v22 = 0;
     LABEL_66:
-      result = SdkRoutine_687fa0(v18, v19, v20, v21, v17);
+      SdkRoutine_687fa0_alt1(v19, v20, v21, v22, v18);
       a2 += 4;
       continue;
     case 0x11u:
-      result = SdkRoutine_695b00(v3, *((_QWORD*)a2 + 1), (unsigned int)v5);
+      nn_695b00(a1, *((_QWORD*)a2 + 1), v6);
       a2 += 4;
       continue;
     case 0x12u:
-      result = SdkRoutine_6955a0(v3, *((_QWORD*)a2 + 1), BYTE1(v4), WORD1(v4),
-                                 (unsigned __int16)WORD2(*(_QWORD*)a2), a2 + 4);
+      SdkRoutine_6955a0_alt1(a1, *((_QWORD*)a2 + 1), BYTE1(v5), WORD1(v5),
+                             (unsigned __int16)WORD2(*(_QWORD*)a2),
+                             (__int64)(a2 + 4));
       a2 = (unsigned int*)((char*)a2 +
                            ((((*(_QWORD*)a2 >> 30) & 0x3FFFC) + 7) & 0x7FFF8) +
                            16);
       continue;
     case 0x13u:
-      v54 = *(_DWORD*)(*((_QWORD*)a2 + 1) + 128LL);
-      if ((v54 & 0x200) != 0) {
-        result = SdkRoutine_695480(v3);
-        v54 = *(_DWORD*)(*((_QWORD*)a2 + 1) + 128LL);
-        if ((v54 & 0x400) == 0) {
+      v55 = *((_QWORD*)a2 + 1);
+      v56 = *(_DWORD*)(v55 + 128);
+      if ((v56 & 0x200) != 0) {
+        SdkRoutine_695480_alt1(a1, v55, 0);
+        v55 = *((_QWORD*)a2 + 1);
+        v56 = *(_DWORD*)(v55 + 128);
+        if ((v56 & 0x400) == 0) {
         LABEL_60:
-          if ((v54 & 0x800) == 0) {
+          if ((v56 & 0x800) == 0) {
             goto LABEL_61;
           }
           goto LABEL_95;
         }
       }
-      else if ((v54 & 0x400) == 0) {
+      else if ((v56 & 0x400) == 0) {
         goto LABEL_60;
       }
-      result = SdkRoutine_695480(v3);
-      v54 = *(_DWORD*)(*((_QWORD*)a2 + 1) + 128LL);
-      if ((v54 & 0x800) == 0) {
+      SdkRoutine_695480_alt1(a1, v55, 1);
+      v55 = *((_QWORD*)a2 + 1);
+      v56 = *(_DWORD*)(v55 + 128);
+      if ((v56 & 0x800) == 0) {
       LABEL_61:
-        if ((v54 & 0x1000) == 0) {
+        if ((v56 & 0x1000) == 0) {
           goto LABEL_62;
         }
         goto LABEL_96;
       }
     LABEL_95:
-      result = SdkRoutine_695480(v3);
-      v54 = *(_DWORD*)(*((_QWORD*)a2 + 1) + 128LL);
-      if ((v54 & 0x1000) == 0) {
+      SdkRoutine_695480_alt1(a1, v55, 2);
+      v55 = *((_QWORD*)a2 + 1);
+      v56 = *(_DWORD*)(v55 + 128);
+      if ((v56 & 0x1000) == 0) {
       LABEL_62:
-        if ((v54 & 0x2000) == 0) {
+        if ((v56 & 0x2000) == 0) {
           goto LABEL_64;
         }
       LABEL_63:
-        result = SdkRoutine_695480(v3);
+        SdkRoutine_695480_alt1(a1, v55, 4);
         goto LABEL_64;
       }
     LABEL_96:
-      result = SdkRoutine_695480(v3);
-      if ((*(_DWORD*)(*((_QWORD*)a2 + 1) + 128LL) & 0x2000) != 0) {
+      SdkRoutine_695480_alt1(a1, v55, 3);
+      v55 = *((_QWORD*)a2 + 1);
+      if ((*(_DWORD*)(v55 + 128) & 0x2000) != 0) {
         goto LABEL_63;
       }
     LABEL_64:
       a2 += 4;
       break;
     case 0x14u:
-      result = SdkRoutine_683090(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_683090_alt1(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x15u:
-      result = SdkRoutine_6831f0(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_6831f0_alt1(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x16u:
-      result = SdkRoutine_697360(v3, (unsigned int)v5, a2 + 2);
+      SdkRoutine_697360_alt1(a1, v6, a2 + 2);
       a2 += 10;
       continue;
     case 0x17u:
-      result = SdkRoutine_67e5c0(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67e5c0(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((__int64**)a2 + 1));
       a2 += 4;
       continue;
     case 0x18u:
-      result = SdkRoutine_67d180(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67d180(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((__int64**)a2 + 1));
       a2 += 4;
       continue;
     case 0x19u:
-      result = SdkRoutine_67dc60(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67dc60(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((__int64**)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Au:
-      result = SdkRoutine_67b3e0(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      SdkRoutine_67b3e0_alt1(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5),
+                             *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Bu:
-      result = SdkRoutine_67c500(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67c500(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Cu:
-      result = SdkRoutine_67f0a0(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67f0a0(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((__int64**)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Du:
-      result = SdkRoutine_67bba0(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4),
-                                 *((_QWORD*)a2 + 1));
+      nn_67bba0(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5), *((__int64**)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Eu:
-      result = SdkRoutine_6738a0(v3, BYTE1(v4), BYTE2(v4), HIDWORD(v4),
-                                 *((_QWORD*)a2 + 1));
+      SdkRoutine_6738a0_alt1(a1, SBYTE1(v5), BYTE2(v5), HIDWORD(v5),
+                             *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x1Fu:
-      result = SdkRoutine_673d40(v3, BYTE1(v4), BYTE2(v4), HIDWORD(v4),
-                                 *((_QWORD*)a2 + 1));
+      SdkRoutine_673d40_alt1(a1, BYTE1(v5), BYTE2(v5), HIDWORD(v5),
+                             *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x20u:
-      v55 = a2[2];
+      v57 = a2[2];
       a2 += 4;
-      *(_WORD*)(v3 + 7992) = v55;
+      *(_WORD*)(a1 + 7992) = v57;
       continue;
     case 0x21u:
-      result = SdkRoutine_6816f0(v3, *((unsigned __int8*)a2 + 12), a2[4], a2[5],
-                                 *((float*)a2 + 2));
+      SdkRoutine_6816f0_alt1(a1, *((_BYTE*)a2 + 12), a2[4], a2[5],
+                             *((float*)a2 + 2));
       a2 += 6;
       continue;
     case 0x22u:
-      result = SdkRoutine_683640(v3, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_683640_alt1(a1, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0x23u:
-      result = SdkRoutine_685160(v3, a2[2] & 1);
+      nn_685160(a1, a2[2] & 1);
       a2 += 4;
       continue;
     case 0x24u:
-      result = SdkRoutine_686370(v3, BYTE1(v4), BYTE2(v4), BYTE3(v4), a2 + 1);
+      SdkRoutine_686370_alt1(a1, BYTE1(v5), BYTE2(v5), BYTE3(v5),
+                             (__int64)(a2 + 1));
       a2 = (unsigned int*)((char*)a2 + (((unsigned __int64)*a2 >> 22) & 0x3F8) +
                            8);
       continue;
     case 0x25u:
-      result = SdkRoutine_669460(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_669460_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x26u:
-      result = SdkRoutine_669550(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_669550_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x27u:
-      result = SdkRoutine_685340(v3, (unsigned int)v5);
+      SdkRoutine_685340_alt1(a1, v6);
       a2 += 2;
       continue;
     case 0x28u:
     case 0x29u:
-      v6 = *((_QWORD*)a2 + 1);
-      v7 = *((_QWORD*)a2 + 2);
-      if ((v4 & 0xFF00) != 0) {
-        v8 = a2 + 14;
+      v7 = *((_QWORD*)a2 + 1);
+      v8 = *((_QWORD*)a2 + 2);
+      if ((v5 & 0xFF00) != 0) {
+        v9 = a2 + 14;
       }
       else {
-        v8 = nullptr;
+        v9 = nullptr;
       }
-      v9 = a2[6];
-      v10 = a2[7];
-      v71 = *((_OWORD*)a2 + 2);
-      v72 = *((_QWORD*)a2 + 6);
-      result = SdkRoutine_64da00(v3, v6, v7, v8, &v71, a2[1], v9, v10,
-                                 *(unsigned __int8*)a2);
+      v10 = a2[6];
+      v11 = a2[7];
+      v71_.v71 = *((_OWORD*)a2 + 2);
+      v71_.v72 = *((_QWORD*)a2 + 6);
+      nvidia_64da00(a1, v7, v8, v9, &v71_.v71, a2[1], v10, v11,
+                    *(unsigned __int8*)a2);
       a2 += 18;
       continue;
     case 0x2Au:
       a2 += 6;
       continue;
     case 0x45u:
-      result = SdkRoutine_672c30(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_672c30(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x46u:
-      result = SdkRoutine_672c40(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_672c40_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x47u:
-      result = SdkRoutine_672c50(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_672c50_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x48u:
-      result = SdkRoutine_672c60(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_672c60_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x49u:
-      result = SdkRoutine_672c70(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_672c70_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x4Au:
-      result =
-          SdkRoutine_672c80(v3, (unsigned int)v5, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_672c80_alt1(a1, v6, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0x4Bu:
-      result =
-          SdkRoutine_672cb0(v3, (unsigned int)v5, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_672cb0_alt1(a1, v6, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0x4Cu:
-      result = SdkRoutine_672ce0(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_672ce0_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 6;
       continue;
     case 0x4Du:
-      result = SdkRoutine_6860f0(v3, (unsigned int)v5, *((_QWORD*)a2 + 1));
+      SdkRoutine_6860f0_alt1(a1, v6, *((_QWORD*)a2 + 1));
       a2 += 6;
       continue;
     case 0x4Eu:
-      v31 = *((_OWORD*)a2 + 1);
-      v32 = *((_QWORD*)a2 + 1);
-      v84 = *((_QWORD*)a2 + 4);
-      v33 = *((_QWORD*)a2 + 7);
-      v34 = a2[22];
-      v35 = a2[23];
-      v83 = v31;
-      v36 = *(_OWORD*)(a2 + 10);
-      v82 = v33;
-      v37 = *((_QWORD*)a2 + 10);
-      v81 = v36;
-      v38 = *((_OWORD*)a2 + 4);
-      v80 = v37;
-      v79 = v38;
-      result = SdkRoutine_6718f0(v3, v32, &v83, &v81, &v79, a2[1], v34, v35);
+      v32 = *((_OWORD*)a2 + 1);
+      v33 = *((_QWORD*)a2 + 1);
+      v83_.v84 = *((_QWORD*)a2 + 4);
+      v34 = *((_QWORD*)a2 + 7);
+      v35 = a2[22];
+      v36 = a2[23];
+      v83_.v83 = v32;
+      v37 = *(_OWORD*)(a2 + 10);
+      v81_.v82 = v34;
+      v38 = *((_QWORD*)a2 + 10);
+      v81_.v81 = v37;
+      v39 = *((_OWORD*)a2 + 4);
+      v79_.v80 = v38;
+      v79_.v79 = v39;
+      nn_6718f0(a1, v33, (__int64)&v83_.v83, (__int64)&v81_.v81,
+                (__int64)&v79_.v79, a2[1], v35, v36);
       a2 += 24;
       continue;
     case 0x4Fu:
-      v24 = *((_OWORD*)a2 + 1);
-      v25 = *((_QWORD*)a2 + 1);
-      v78 = *((_QWORD*)a2 + 4);
-      v26 = *((_QWORD*)a2 + 7);
-      v77 = v24;
-      v27 = *(_OWORD*)(a2 + 10);
-      v76 = v26;
-      v29 = *((_QWORD*)a2 + 10);
-      v28 = *((_QWORD*)a2 + 11);
-      v75 = v27;
-      v30 = *((_OWORD*)a2 + 4);
-      v74 = v29;
-      v73 = v30;
-      result = SdkRoutine_672190(v3, v25, &v77, &v75, &v73, v28);
+      v25 = *((_OWORD*)a2 + 1);
+      v26 = *((_QWORD*)a2 + 1);
+      v77_.v78 = *((_QWORD*)a2 + 4);
+      v27 = *((_QWORD*)a2 + 7);
+      v77_.v77 = v25;
+      v28 = *(_OWORD*)(a2 + 10);
+      v75_.v76 = v27;
+      v30 = *((_QWORD*)a2 + 10);
+      v29 = *((_QWORD*)a2 + 11);
+      v75_.v75 = v28;
+      v31 = *((_OWORD*)a2 + 4);
+      v73_.v74 = v30;
+      v73_.v73 = v31;
+      nn_672190(a1, v26, (__int64)&v77_.v77, (__int64)&v75_.v75,
+                (__int64*)&v73_.v73, v29);
       a2 += 24;
       continue;
     case 0x50u:
-      result = SdkRoutine_670700(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2),
-                                 *((_QWORD*)a2 + 3), *((_QWORD*)a2 + 4));
+      nn_670700(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2), *((_QWORD*)a2 + 3),
+                *((_QWORD*)a2 + 4));
       a2 += 10;
       continue;
     case 0x51u:
-      result = SdkRoutine_670e40(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
+      SdkRoutine_670e40_alt1(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
       a2 += 6;
       continue;
     case 0x52u:
-      result = SdkRoutine_671080(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
+      SdkRoutine_671080_alt1(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
       a2 += 6;
       continue;
     case 0x53u:
-      result = SdkRoutine_6712b0(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_6712b0_alt1(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x54u:
-      result = SdkRoutine_6714f0(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
+      SdkRoutine_6714f0_alt1(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2));
       a2 += 6;
       continue;
     case 0x59u:
-      result = SdkRoutine_688e40(v3, (*(_QWORD*)a2 & 0xFF00LL) != 0);
+      SdkRoutine_688e40_alt1(a1, (*(_QWORD*)a2 & 0xFF00LL) != 0);
       a2 += 2;
       continue;
     case 0x5Au:
-      result = SdkRoutine_649d70(v3, *((_QWORD*)a2 + 3), *((_QWORD*)a2 + 2),
-                                 a2[2], 1, (unsigned int)v5);
+      nvidia_649d70(a1, *((_QWORD*)a2 + 3), *((_QWORD*)a2 + 2), a2[2], 1, v6);
       a2 += 8;
       continue;
     case 0x5Bu:
-      result = SdkRoutine_6884a0(v3, a2);
+      SdkRoutine_6884a0_alt1(a1, (__int64)a2);
       a2 += 34;
       continue;
     case 0x5Cu:
-      result = SdkRoutine_688b60(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2),
-                                 *((_QWORD*)a2 + 3));
+      nn_688b60(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2), *((_QWORD*)a2 + 3));
       a2 += 8;
       continue;
     case 0x5Du:
-      result = SdkRoutine_6897c0(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2),
-                                 (unsigned int)v5);
+      SdkRoutine_6897c0_alt1(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2), v6);
       a2 += 6;
       continue;
     case 0x5Eu:
-      if ((v4 & 0xFF00) != 0) {
-        v56 = 0;
+      if ((v5 & 0xFF00) != 0) {
+        v58 = 0;
       }
       else {
-        v56 = 2;
+        v58 = 2;
       }
-      result = SdkRoutine_6693a0(v3, v56);
+      SdkRoutine_6693a0_alt1(a1, v58, a3);
       a2 += 2;
       continue;
     case 0x5Fu:
@@ -1441,105 +1547,102 @@ __int64 SdkHr_665b40(__int64 result, unsigned int* a2)
       a2 += 2;
       continue;
     case 0x62u:
-      v15 = a2[2];
-      v16 = a2[3];
-      v12 = a2 + 4;
-      v13 = v3;
-      v14 = (unsigned int)v5;
-      v11 = 0;
+      v16 = a2[2];
+      v17 = a2[3];
+      v13 = (__int64)(a2 + 4);
+      v14 = a1;
+      v15 = HIDWORD(*(_QWORD*)a2);
+      v12 = 0;
       goto LABEL_91;
     case 0x63u:
-      v11 = *((_QWORD*)a2 + 1);
-      v12 = a2 + 4;
-      v13 = v3;
-      v14 = 0;
+      v12 = *((_QWORD*)a2 + 1);
+      v13 = (__int64)(a2 + 4);
+      v14 = a1;
       v15 = 0;
       v16 = 0;
+      v17 = 0;
     LABEL_91:
-      result = SdkRoutine_688380(v13, v14, v15, v16, v11, v12, 6);
+      SdkRoutine_688380_alt1(v14, v15, v16, v17, v12, v13, 6u);
       a2 += 10;
       continue;
     case 0x64u:
-      v39 = *((_OWORD*)a2 + 1);
-      v40 = *((_QWORD*)a2 + 1);
-      v70 = *((_QWORD*)a2 + 4);
-      v41 = *((_QWORD*)a2 + 7);
-      v42 = a2[22];
-      v43 = a2[23];
-      v69 = v39;
-      v44 = *(_OWORD*)(a2 + 10);
-      v68 = v41;
-      v45 = *((_QWORD*)a2 + 10);
-      v67 = v44;
-      v46 = *((_OWORD*)a2 + 4);
-      v66 = v45;
-      v65 = v46;
-      result = SdkRoutine_6728a0(v3, v40, &v69, &v67, &v65, a2[1], v42, v43,
-                                 a2 + 24, 6, v57, *((_QWORD*)&v57 + 1), v58,
-                                 v59, v60, *((_QWORD*)&v60 + 1), v61, v62, v63,
-                                 *((_QWORD*)&v63 + 1), v64);
+      v40 = *((_OWORD*)a2 + 1);
+      v41 = *((_QWORD*)a2 + 1);
+      v69_.v70 = *((_QWORD*)a2 + 4);
+      v42 = *((_QWORD*)a2 + 7);
+      v43 = a2[22];
+      v44 = a2[23];
+      v69_.v69 = v40;
+      v45 = *(_OWORD*)(a2 + 10);
+      v67_.v68 = v42;
+      v46 = *((_QWORD*)a2 + 10);
+      v67_.v67 = v45;
+      v47 = *((_OWORD*)a2 + 4);
+      v65_.v66 = v46;
+      v65_.v65 = v47;
+      SdkRoutine_6728a0_alt1(a1, v41, &v69_.v69, &v67_.v67, &v65_.v65, a2[1],
+                             v43, v44, (__int64)(a2 + 24), 6u);
       a2 += 30;
       continue;
     case 0x65u:
-      v47 = *((_OWORD*)a2 + 1);
-      v48 = *((_QWORD*)a2 + 1);
-      v64 = *((_QWORD*)a2 + 4);
-      v49 = *((_QWORD*)a2 + 7);
-      v63 = v47;
-      v50 = *(_OWORD*)(a2 + 10);
-      v61 = v49;
-      v52 = *((_QWORD*)a2 + 10);
-      v51 = *((_QWORD*)a2 + 11);
-      v60 = v50;
-      v53 = *((_OWORD*)a2 + 4);
-      v58 = v52;
-      v57 = v53;
-      result = SdkRoutine_672a20(v3, v48, &v63, &v60, &v57, v51, a2 + 24, 6);
+      v48 = *((_OWORD*)a2 + 1);
+      v49 = *((_QWORD*)a2 + 1);
+      v63_.v64 = *((_QWORD*)a2 + 4);
+      v50 = *((_QWORD*)a2 + 7);
+      v63_.v63 = v48;
+      v51 = *(_OWORD*)(a2 + 10);
+      v61_.v62 = v50;
+      v53 = *((_QWORD*)a2 + 10);
+      v52 = *((_QWORD*)a2 + 11);
+      v61_.v61 = v51;
+      v54 = *((_OWORD*)a2 + 4);
+      v59_.v60 = v53;
+      v59_.v59 = v54;
+      SdkRoutine_672a20_alt1(a1, v49, &v63_.v63, &v61_.v61, &v59_.v59, v52,
+                             (__int64)(a2 + 24), 6u);
       a2 += 30;
       continue;
     case 0x66u:
-      result = SdkRoutine_657f90(v3, (__int64)(int)v4 >> 8, (unsigned int)v5,
-                                 *((_QWORD*)a2 + 1));
+      SdkRoutine_657f90_alt1(a1, (int)v5 >> 8, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x67u:
-      result = SdkRoutine_657fd0(v3, (__int64)(int)v4 >> 8, (unsigned int)v5,
-                                 *((_QWORD*)a2 + 1));
+      SdkRoutine_657fd0_alt1(a1, (int)v5 >> 8, v6, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x68u:
-      result = SdkRoutine_658370(v3, *((_QWORD*)a2 + 1));
+      nn_658370();
       a2 += 4;
       continue;
     case 0x69u:
-      result = SdkRoutine_6a1420(v3, *((_QWORD*)a2 + 1), a2[4]);
+      SdkRoutine_6a1420_alt1(a1, *((_QWORD*)a2 + 1), a2[4]);
       a2 += 6;
       continue;
     case 0x6Bu:
-      result = SdkRoutine_6855d0(v3, (unsigned int)v5);
+      SdkRoutine_6855d0_alt1(a1, v6);
       a2 += 2;
       continue;
     case 0x6Cu:
-      result = SdkRoutine_685720(v3, (__int64)(int)v4 >> 8, (unsigned int)v5);
+      SdkRoutine_685720_alt1(a1, (int)v5 >> 8, v6);
       a2 += 2;
       continue;
     case 0x6Du:
-      result = SdkRoutine_686130(v3, *((_QWORD*)a2 + 1));
+      SdkRoutine_686130_alt1(a1, *((_QWORD*)a2 + 1));
       a2 += 4;
       continue;
     case 0x6Eu:
-      result = SdkRoutine_689990(v3, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2),
-                                 *((_QWORD*)a2 + 3), *((_QWORD*)a2 + 4),
-                                 *((_QWORD*)a2 + 5), *((_QWORD*)a2 + 6), a2[14],
-                                 a2[15]);
+      SdkRoutine_689990_alt1(a1, *((_QWORD*)a2 + 1), *((_QWORD*)a2 + 2),
+                             *((_QWORD*)a2 + 3), *((_QWORD*)a2 + 4),
+                             *((_QWORD*)a2 + 5), *((_QWORD*)a2 + 6), a2[14],
+                             a2[15]);
       a2 += 16;
       continue;
     case 0x6Fu:
-      result = SdkRoutine_69d8e0(v3, (unsigned int)v5);
+      nn_69d8e0(a1, v6);
       a2 += 2;
       continue;
     default:
-      return result;
+      return;
     }
   }
 }

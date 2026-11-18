@@ -202,6 +202,8 @@ _WORD* nvidia_dlss_rel_source_features_dlaa_7de60(_QWORD* a1, __int64* a2,
                                                   _QWORD* a3, __int64* a4)
 {
 
+#pragma clang fp contract(on)
+
 #pragma clang fp contract(off)
   __int64 v8;
   __int64 v9;
@@ -1397,6 +1399,9 @@ LABEL_159:
 __int64 nvidia_dlss_rel_source_features_dlaa_7f7c0(_QWORD* a1, __int64* a2,
                                                    _QWORD* a3, __int64* a4)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64* v5;
   unsigned __int64 v8;
   __int64 v10;
@@ -3701,6 +3706,8 @@ __int64 nvidia_dlss_rel_source_features_dlaa_84940(_QWORD* a1, _WORD** a2,
 _WORD* nvidia_dlss_rel_source_features_dlaa_85080(_QWORD* a1, __int64* a2,
                                                   _QWORD* a3, __int64* a4)
 {
+
+#pragma clang fp contract(on)
 
 #pragma clang fp contract(off)
   __int64 v8;
@@ -7287,6 +7294,8 @@ __int16* nvidia_dlss_rel_source_features_dlaa_8b860(__int64* a1, __int64* a2,
 _WORD* nvidia_dlss_rel_source_features_dlaa_8c4a0(_QWORD* a1, __int64* a2,
                                                   _QWORD* a3, __int64* a4)
 {
+
+#pragma clang fp contract(on)
 
 #pragma clang fp contract(off)
   __int64 v8;

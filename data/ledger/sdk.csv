@@ -2235,7 +2235,7 @@ ba200,188,verified,src/nn/diag/diag_module_misc.cpp,_ZN2nn4diag6detail9Translate
 ba2c0,4,verified,src/nn/diag/abort_observer.cpp,_ZN2nn4diag6detail20DefaultAbortObserverERKNS0_9AbortInfoE
 ba2d0,56,verified,src/nn/diag/hashed_log_helper.c,HashedLogHelper_Caller_ba2d0
 ba310,4,verified,src/nn/diag/diag_hashed_log.cpp,_ZN2nn4diag6detail34HashedLogPostSerializeProcess_hlogEPKvj
-ba320,1596,disputed,src/nn/diag/unplaced_2.c,nn_diag_ba320
+ba320,1768,disputed,src/nn/diag/unplaced_2.c,nn_diag_ba320
 bab50,8,verified,src/nn/sdk_trivial_forwarders.cpp,_Z13SdkStub_bab50m
 bab60,48,verified,src/nn/diag/unplaced.c,threadName
 baba0,240,verified,src/nn/diag/unplaced.c,nn_diag_baba0
@@ -9195,8 +9195,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 20a020,184,verified,src/nn/audio/audio_fft.cpp,_ZN2nn5audio6detail26FftInPlaceProcessRealFloatEPfPKfRNS1_13FftWorkBufferENS1_12FftDirectionE
 20a0e0,172,verified,src/nn/audio/audio_fft.cpp,_ZN2nn5audio6detail34FftInPlaceProcessRealFixedPointIntEPiPKiRNS1_13FftWorkBufferENS1_12FftDirectionE
 20a190,172,verified,src/nn/audio/audio_fft.cpp,_ZN2nn5audio6detail36FftInPlaceProcessRealFixedPointShortEPsPKsRNS1_13FftWorkBufferENS1_12FftDirectionE
-20a240,2460,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_float32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_float32_neon
-20af20,2116,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_float32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_float32_neon
+20a240,2728,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_float32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_float32_neon
+20af20,2968,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_float32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_float32_neon
 20bc50,780,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_float32.neonintrinsic.c,nnaudiodetail_ne10_fft_c2c_1d_float32_neon
 20bf60,708,verified,src/ne10/modules/dsp/NE10_fft_generic_float32.neonintrinsic.cpp,ne10_mixed_radix_generic_butterfly_float32_neon
 20c240,1772,verified,src/ne10/modules/dsp/NE10_fft_generic_float32.neonintrinsic.cpp,_ZL52ne10_mixed_radix_generic_butterfly_float32_neon_implILi0ELb1EEvP13float32x4x2_tPKS0_PKiPK22ne10_fft_cpx_float32_tS1_
@@ -9251,10 +9251,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 21b660,2736,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_int16.neonintrinsic.c,nnaudiodetail_ne10_fft_c2c_1d_int16_neon
 21c120,884,verified,src/ne10/modules/dsp/NE10_fft_int16.neonintrinsic.c,ne10_fft_r2c_1d_int16_neon
 21c4a0,900,verified,src/ne10/modules/dsp/NE10_fft_int16.neonintrinsic.c,ne10_fft_c2r_1d_int16_neon
-21c940,3196,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_int32_unscaled_neon
-21d680,3004,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_int32_scaled_neon
-21e3c0,3196,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_int32_unscaled_neon
-21f100,2968,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_int32_scaled_neon
+21c940,3284,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_int32_unscaled_neon
+21d680,3200,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_forward_int32_scaled_neon
+21e3c0,2784,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_int32_unscaled_neon
+21f100,3000,disputed,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_mixed_radix_fft_backward_int32_scaled_neon
 21fe30,488,verified,src/nn/audio/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,nnaudiodetail_ne10_fft_c2c_1d_int32_neon
 220420,852,verified,src/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,ne10_fft_r2c_1d_int32_neon
 2207a0,844,verified,src/ne10/modules/dsp/NE10_fft_int32.neonintrinsic.c,ne10_fft_c2r_1d_int32_neon
@@ -11868,7 +11868,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 2e2830,104,verified,src/opus/celt/mathops.c,celt_rsqrt_norm
 2e28a0,176,verified,src/opus/celt/mathops.c,celt_sqrt
 2e2950,244,verified,src/opus/celt/mathops.c,celt_cos_norm
-2e2a60,1772,disputed,src/opus/celt/unplaced.c,opus_celt_2e2a60
+2e2a60,1880,disputed,src/opus/celt/unplaced.c,opus_celt_2e2a60
 2e32e0,1092,verified,src/opus/celt/mdct.c,clt_mdct_backward_c
 2e3750,96,verified,src/opus/celt/modes.c,opus_custom_mode_create
 2e37c0,1800,verified,src/opus/celt/unplaced_5.c,opus_celt_2e37c0
@@ -14298,7 +14298,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 4225a0,736,verified,src/nn/fontll/itype/unplaced.c,map_font
 4228c0,828,verified,src/nn/fontll/itype/unplaced.c,map_char
 422c20,492,verified,src/nn/fontll/itype/unplaced_12.c,nn_fontll_itype_422c20
-423c00,1216,disputed,src/nn/fontll/itype/unplaced_12.c,nn_fontll_itype_423c00
+423c00,1216,verified,src/nn/fontll/itype/unplaced_12.c,nn_fontll_itype_423c00
 4241c0,112,verified,src/nn/fontll/itype/unplaced.c,engrave_graymap
 424820,200,verified,src/nn/fontll/itype/unplaced.c,emboss_graymap
 424e80,5868,verified,src/nn/fontll/itype/unplaced.c,outline_graymap
@@ -14397,7 +14397,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 430c10,44,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c10
 430c40,48,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c40
 430c70,28,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c70
-430ca0,2732,disputed,src/nn/unnamed/a000_0.c,SdkHr_430ca0
+430ca0,2400,disputed,src/nn/unnamed/a000_0.c,SdkHr_430ca0
 4318c0,236,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_4318c0
 4319c0,220,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_4319c0
 431ac0,232,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_431ac0
@@ -14495,7 +14495,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 43d540,76,verified,src/nn/fontll/itype/fsglue.c,delete_key
 43d590,116,verified,src/nn/fontll/itype/fsglue.c,get_dropout_control
 43d610,368,verified,src/nn/fontll/itype/unplaced_2.c,fsg_ReduceMatrix
-43d780,2364,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
+43d780,3324,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
 43e6c0,2612,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_43e6c0
 43f120,2404,verified,src/nn/fontll/itype/unplaced_3.c,trim_convert
 43fb70,80,verified,src/nn/fontll/itype/fs_font.c,copy_graymap
@@ -14552,10 +14552,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 44d780,232,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d780
 44d880,688,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d880
 44dba0,868,verified,src/nn/fontll/itype/unplaced_7.c,nn_fontll_itype_44dba0
-44e2c0,668,disputed,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
+44e2c0,1064,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
 44e9e0,292,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e9e0
-44eb20,296,disputed,src/nn/unnamed/h000_0.c,SdkHr_44eb20
-44ec60,56,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60
+44eb20,300,verified,src/nn/unnamed/h000_0.c,SdkHr_44eb20
+44ec60,52,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60
 44eca0,296,verified,src/nn/fontll/itype/unplaced_3.c,get_EBLC_partial
 44eee0,532,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44eee0
 44fa00,852,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44fa00
@@ -15292,7 +15292,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 48a500,408,verified,src/nn/gs/unplaced.c,nn_gs_48a500
 48a6b0,764,verified,src/nn/gs/unplaced.c,nn_gs_48a6b0
 48ce20,228,verified,src/nn/gs/unplaced.c,nn_gs_48ce20
-48d060,676,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
+48d060,692,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
 48d380,220,verified,src/nn/gs/unplaced.c,nn_gs_48d380
 48d480,212,verified,src/nn/gs/unplaced.c,nn_gs_48d480
 48d560,656,verified,src/nn/gs/unplaced.c,nn_gs_48d560
@@ -26259,7 +26259,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 660e70,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e70m
 660e80,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e80m
 660e90,140,verified,src/nn/unnamed/s003_2.c,SdkHr_660e90
-660f20,3416,disputed,src/nn/unplaced_3.c,nn_660f20
+660f20,3416,verified,src/nn/unplaced_3.c,nn_660f20
 661d40,164,verified,src/nn/unnamed/s003_2.c,SdkHr_661d40
 661df0,44,verified,src/nn/unnamed/s003_2.c,SdkHr_661df0
 661e20,48,verified,src/nn/unnamed/s003_2.c,SdkHr_661e20
@@ -26419,7 +26419,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6650b0,264,verified,src/nn/unnamed/s004_0.c,SdkHr_6650b0
 6651c0,96,verified,src/nn/unnamed/s004_0.c,SdkHr_6651c0
 665220,1300,verified,src/nn/unnamed/s004_0.c,SdkHr_665220
-665b40,964,disputed,src/nn/unnamed/s004_0.c,SdkHr_665b40
+665b40,1344,disputed,src/nn/unnamed/s004_0.c,SdkHr_665b40
 666540,348,verified,src/nn/unnamed/s004_0.c,SdkHr_666540
 6666a0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6666a0v
 6666b0,60,verified,src/nn/unnamed/s004_0.c,SdkHr_6666b0
@@ -27074,7 +27074,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 697a00,812,verified,src/nn/unplaced_4.c,nn_697a00
 697e10,808,verified,src/nn/unplaced_4.c,nn_697e10
 698210,808,verified,src/nn/unplaced_4.c,nn_698210
-698610,956,disputed,src/nn/unplaced_8.c,nn_698610
+698610,956,verified,src/nn/unplaced_8.c,nn_698610
 698a50,208,verified,src/nn/unnamed/s004_1.c,SdkHr_698a50
 698b20,196,verified,src/nn/unnamed/s004_1.c,SdkHr_698b20
 698bf0,504,verified,src/nn/unnamed/s004_1.c,SdkHr_698bf0
@@ -31418,7 +31418,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7796a0,4,verified,src/nnmusl/nnmusl_libc_forwarders2.cpp,putchar
 7797b0,288,verified,src/nnmusl/stdio/swprintf.c,swprintf
 7798e0,308,verified,src/nnmusl/stdio/unplaced.c,nnmusl_stdio_7798e0
-779a20,908,disputed,src/nnmusl/stdio/vfscanf.c,vfscanf
+779a20,2320,disputed,src/nnmusl/stdio/vfscanf.c,vfscanf
 77a8c0,200,verified,src/musl/src/temp/__randname.c,__randname
 77a990,4,verified,src/libc/quick_exit.cpp,LockQuickExitState
 77a9a0,4,verified,src/libc/quick_exit.cpp,UnlockQuickExitState
@@ -31498,7 +31498,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 789110,648,verified,src/nnmusl/stdio/vfprintf.c,pop_arg
 7893a0,164,verified,src/musl/src/stdio/vfprintf.c,pad
 78bf20,244,verified,src/nnmusl/stdio/vfwprintf.c,vfwprintf
-78c020,1888,disputed,src/nnmusl/stdio/vfwprintf.c,wprintf_core
+78c020,1904,disputed,src/nnmusl/stdio/vfwprintf.c,wprintf_core
 78ca90,676,verified,src/musl/src/stdio/vfprintf.c,pop_arg
 78cd40,800,verified,src/nnmusl/stdio/vfwprintf.c,pad
 78d070,180,verified,src/nnmusl/nnmusl_strtof.cpp,strtof
@@ -32308,7 +32308,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7bc890,36,verified,src/nn/unnamed/s005_0.c,SdkHr_7bc890
 7bc8c0,2076,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___introsort_7bc8c0
 7bd250,40,verified,src/nn/unnamed/s005_0.c,SdkHr_7bd250
-7bd280,1324,disputed,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___introsort_7bd280
+7bd280,1508,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___introsort_7bd280
 7bd890,36,verified,src/nn/unnamed/s005_0.c,SdkHr_7bd890
 7bd8c0,2068,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___introsort_7bd8c0
 7be250,36,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___sort_7be250
@@ -32343,7 +32343,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7c4f20,704,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c4f20
 7c5220,1124,verified,src/llvm-libcxx/libcxx/src/algorithm.cpp,_ZNSt3__119__partial_sort_implB8ne180100INS_17_ClassicAlgPolicyERNS_6ranges4lessEPaS5_EET1_S6_S6_T2_OT0_
 7c56e0,2064,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c56e0
-7c5f40,532,disputed,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c5f40
+7c5f40,532,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c5f40
 7c6240,812,verified,src/llvm-libcxx/libcxx/src/algorithm.cpp,_ZNSt3__119__partial_sort_implB8ne180100INS_17_ClassicAlgPolicyERNS_6ranges4lessEPsS5_EET1_S6_S6_T2_OT0_
 7c65a0,2056,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c65a0
 7c6e00,748,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c6e00
@@ -32360,7 +32360,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7c9ec0,1960,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7c9ec0
 7ca6a0,1960,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7ca6a0
 7cae80,1968,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7cae80
-7cb660,504,disputed,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7cb660
+7cb660,504,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7cb660
 7cb940,784,verified,src/llvm-libcxx/libcxx/src/algorithm.cpp,_ZNSt3__119__partial_sort_implB8ne180100INS_17_ClassicAlgPolicyERNS_6ranges4lessEPfS5_EET1_S6_S6_T2_OT0_
 7cbc80,1968,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7cbc80
 7cc460,692,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,algorithm_7cc460
@@ -33219,7 +33219,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7f5950,48,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_7f5950m
 7f5980,792,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_basic_filebuf_swap
 7f5ca0,212,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_7f5ca0
-7f5d90,632,disputed,src/llvm-libcxx/libcxx/src/unplaced_17.c,llvm_libcxx_libcxx_src_7f5d90
+7f5d90,632,verified,src/llvm-libcxx/libcxx/src/unplaced_17.c,llvm_libcxx_libcxx_src_7f5d90
 7f6030,84,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_basic_filebuf___read_mode
 7f6090,56,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_7f6090
 7f60d0,92,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_basic_filebuf_pbackfail
@@ -33314,6 +33314,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 802684,44,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_802684
 8026c0,80,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__17num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE6do_putES4_RNS_8ios_baseEcb
 8028c4,60,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_8028c4
+802900,4,verified,src/nn/unnamed/a002_0.c,SdkHr_802900
 802c40,4,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_num_put_do_put_802c40
 802f80,4,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_num_put_do_put_802f80
 803258,24,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_803258
@@ -33327,6 +33328,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 804490,4,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_num_put_do_put_804490
 8047d0,4,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,std___1_num_put_do_put_8047d0
 804ab4,24,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_804ab4
+804ad0,4,verified,src/nn/unnamed/a002_0.c,SdkHr_804ad0
 804db4,24,verified,src/llvm-libcxx/libcxx/src/locale_impl.c,locale_804db4
 804dd0,12,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__17num_putIwNS_19ostreambuf_iteratorIwNS_11char_traitsIwEEEEE6do_putES4_RNS_8ios_baseEwd
 8052a0,12,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__17num_putIwNS_19ostreambuf_iteratorIwNS_11char_traitsIwEEEEE6do_putES4_RNS_8ios_baseEwe

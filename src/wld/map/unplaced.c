@@ -128,6 +128,8 @@ void GameRoutine_a7e300_alt1(_QWORD*, __int64**) __asm__("GameRoutine_a7e300");
 void wld_map_c235c0_alt2(__int64 a1);
 __int64 nn_mem_StandardAllocator_Free_alt3(_QWORD);
 _QWORD* wld_map_c235c0(__int64 a1);
+__int64 GameRoutine_1a0b940(_QWORD, _QWORD, _QWORD);
+__int64 GameRoutine_1a0b950(_QWORD, _QWORD, _QWORD);
 
 __int64 wld_map_c20680(float* a1, float32x4_t* a2)
 {
@@ -2046,7 +2048,7 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
   char v7;
   unsigned __int64 v8;
   char* v9;
-  unsigned __int64 v10;
+  __int64 v10;
   __int64 v11;
   unsigned __int64 v12;
   __int64* v13;
@@ -2059,7 +2061,7 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
   unsigned __int64 v20;
   __int64 v21;
   unsigned __int64 v22;
-  unsigned __int64 v23;
+  char* v23;
   __int64 v24;
   __int64 v25;
   struct {
@@ -2090,7 +2092,7 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
     else {
       v10 = v8;
     }
-    memmove_alt1(v6 + 16, (__int64)v9, v10);
+    GameRoutine_1a0b940(v6 + 16, v9, v10);
   }
   *(_QWORD*)(v6 + 272) = v8;
   *(_BYTE*)(v6 + 16 + v8) = 0;
@@ -2099,8 +2101,8 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v11 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt2(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v11, (__int64)v27_.v28);
+    nn_mem_StandardAllocator_Free_alt3(*(_QWORD*)fw_memory_g_heap_manager_ptr +
+                                       v11);
   }
   v13 = *(__int64**)(a1 + 120);
   v12 = *(_QWORD*)(a1 + 128);
@@ -2133,11 +2135,11 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
       v21 = 0;
     }
     v22 = v21 + 8 * v20;
-    v23 = (unsigned __int64)v13 - v15;
+    v23 = (char*)v13 - v15;
     v24 = (__int64)&v16[v21 + -8 * v17];
     *(_QWORD*)&v16[v21] = v6;
     v14 = (__int64)&v16[v21 + 8];
-    memcpy_alt1(v24, v15, v23);
+    GameRoutine_1a0b950(v24, v15, v23);
     *(_QWORD*)(a1 + 112) = v24;
     *(_QWORD*)(a1 + 120) = v14;
     *(_QWORD*)(a1 + 128) = v22;
@@ -2146,8 +2148,8 @@ __int64 wld_map_c24890(__int64 a1, __int64 a2, unsigned __int64 a3)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v25 = 56;
       }
-      nn_mem_StandardAllocator_Free_alt2(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v25, v15);
+      nn_mem_StandardAllocator_Free_alt3(
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v25);
     }
   }
   else {

@@ -30,36 +30,42 @@ unsigned __int64 SdkRoutine_65dfe0_alt1(__int64, unsigned __int64,
                                         __int64) __asm__("SdkRoutine_65dfe0");
 unsigned __int64 SdkHr_65d550(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
                               __int64 a5, __int64 a6, __int64 a7, __int64 a8);
+__int64 nn_fontll_itype_44eee0(__int64, __int64, __int16, __int16, unsigned int,
+                               unsigned __int16);
+__int64 SdkHr_44eb20(__int64 a1, int* a2, unsigned int a3);
 
-__int64 SdkHr_44eb20(__int64 a1, int* a2)
+__int64 SdkHr_44eb20(__int64 a1, int* a2, unsigned int a3)
 {
-  __int64 v2;
-  __int64 v4;
+
+#pragma clang fp contract(on)
+
+  __int64 v3;
   __int64 v5;
+  __int64 v6;
   __int64 result;
 
   if (a2 == nullptr) {
     return 0;
   }
-  v2 = *(_QWORD*)a2;
+  v3 = *(_QWORD*)a2;
   if (*(_QWORD*)a2 == 0) {
     return 0;
   }
-  v4 = *(_QWORD*)(v2 + 56);
-  if (v4 == 0) {
+  v5 = *(_QWORD*)(v3 + 56);
+  if (v5 == 0) {
     return 0;
   }
-  v5 = *((_QWORD*)a2 + 5);
-  if (v5 == 0 || *(_DWORD*)(v4 + 164) == 0) {
+  v6 = *((_QWORD*)a2 + 5);
+  if (v6 == 0 || *(_DWORD*)(v5 + 164) == 0) {
     return 0;
   }
-  if ((*(_BYTE*)(v2 + 36) & 2) != 0) {
+  if ((*(_BYTE*)(v3 + 36) & 2) != 0) {
     if (a2[2] >= 1 && a2[4] == 0 && a2[5] > 0) {
       goto LABEL_17;
     }
     return 0;
   }
-  if (*(_BYTE*)(v5 + 4) == 0) {
+  if (*(_BYTE*)(v6 + 4) == 0) {
     return 0;
   }
   if ((*(_BYTE*)(a1 + 77) & 2) != 0) {
@@ -76,7 +82,8 @@ __int64 SdkHr_44eb20(__int64 a1, int* a2)
     return 0;
   }
 LABEL_17:
-  result = SdkRoutine_44eee0(a1, v4);
+  result =
+      nn_fontll_itype_44eee0(a1, v5, *(_WORD*)v6, *(_WORD*)(v6 + 2), a3, 1u);
   if (result != 0) {
     *(_WORD*)(result + 36) = 1;
     *(_BYTE*)(result + 34) = 1;

@@ -271,6 +271,8 @@ __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TryHeal_closure_Invoke(
 __int64 game_UnitSkillList_IsVanish_alt1(__int64) __asm__(
     "game_UnitSkillList_IsVanish");
 void ProcMapSeqPhase_848400(__int64 a1);
+__int64 ProcList_9bd480_alt2(__int64);
+__int64 game_ProcList_Call_9bcfa0_alt2(__int64, __int64);
 
 void game_map_anonymous_ProcMapSeqPhase_TerrainEnumerate(__int64 a1)
 {
@@ -1838,6 +1840,9 @@ __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TryGive(__int64 result)
 
 __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TrySkill(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v2;
   unsigned __int64 i;
@@ -1849,7 +1854,7 @@ __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TrySkill(__int64 result)
 
   v1 = *(_QWORD*)(result + 152) + 176LL * *(int*)(result + 176);
   if (*(_QWORD*)(v1 + 160) != *(_QWORD*)(v1 + 152)) {
-    result = ProcList_9bd480_alt1(result);
+    result = ProcList_9bd480_alt2(result);
     if (result != 0 && *(_QWORD*)(v1 + 160) != *(_QWORD*)(v1 + 152)) {
       v2 = result;
       for (i = 0;
@@ -1859,7 +1864,7 @@ __int64 game_map_anonymous_ProcMapSeqPhase_TargetData_TrySkill(__int64 result)
         v5_.v5[1] = v1;
         v5_.v5[2] = i;
         v5_.v6 = v5_.v5;
-        game_ProcList_Call_9bcfa0_alt1(v2, (__int64)v5_.v5);
+        game_ProcList_Call_9bcfa0_alt2(v2, (__int64)v5_.v5);
         result = (__int64)v5_.v6;
         if (v5_.v6 == v5_.v5) {
           v4 = 32;

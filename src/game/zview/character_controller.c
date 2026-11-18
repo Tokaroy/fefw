@@ -311,6 +311,8 @@ extern __int64 GameData_22110ac_alt6;
 float GameRoutine_1a0ab40_alt1(long double, float);
 _QWORD* CharacterController_d48b40(_QWORD* a1, __int64 a2, long double a3,
                                    float a4, float a5);
+typedef __int64 GameAlign_22110ac __attribute__((aligned(4)));
+extern GameAlign_22110ac GameData_22110ac_alt7;
 
 void CharacterController_StateWarpTo_Unknown3(__int64 a1)
 {
@@ -4444,7 +4446,7 @@ LABEL_108:
                               memory_order_acquire) &
          1) == 0 &&
         __cxa_guard_acquire_alt2((__int64)&GameData_22110b8) != 0) {
-      GameData_22110ac_alt5 = 0;
+      GameData_22110ac_alt7 = 0;
       __cxa_guard_release_alt2((__int64)&GameData_22110b8),
           v0 = COERCE_AS(__typeof__(v0),
                          PSEUDO_REGISTER(unsigned long long, "x0", "=r"));
@@ -4464,7 +4466,7 @@ LABEL_108:
       v58 = v57;
     }
     else {
-      v58 = GameData_22110ac_alt5;
+      v58 = GameData_22110ac_alt7;
     }
     v60 = *(float*)(v54 + 364);
     v61 = 0x1.0000000000000p+0f;
