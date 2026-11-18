@@ -289,10 +289,15 @@ void CharacterIK_Unknown6(int8x16_t* a1)
                               LANES128_OF(vextq_s8(v51, v51, 8u)).n128_u64[0]),
                     COERCE_AS(float32x2_t, LANES128(v51).n128_u64[0])))
                 .n64_u64[0];
-        if (LANES64_OF(
-                vpadd_f32(COERCE_AS(float32x2_t, LANES128(v51).n128_u64[0]),
-                          COERCE_AS(float32x2_t, LANES128(v51).n128_u64[0])))
-                .n64_f32[0] != 0x0.0p+0f) {
+        // The original skips an equal or unordered distance.
+        if (__builtin_islessgreater(
+                LANES64_OF(vpadd_f32(
+                               COERCE_AS(float32x2_t,
+                                         LANES128(v51).n128_u64[0]),
+                               COERCE_AS(float32x2_t,
+                                         LANES128(v51).n128_u64[0])))
+                    .n64_f32[0],
+                0x0.0p+0f)) {
           LANES128(v48[19]).n128_u32[0] = LANES128(v47).n128_u32[0];
           LANES128(v48[19]).n128_f32[1] = v38;
           v52 = v48[19];

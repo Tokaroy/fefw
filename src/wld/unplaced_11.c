@@ -221,10 +221,10 @@ __int64 wld_a8b5a0(__int64 result)
                               LANES128_OF(vextq_s8(v14, v14, 8u)).n128_u64[0]),
                     COERCE_AS(float32x2_t, LANES128(v14).n128_u64[0])))
                 .n64_u64[0];
-        if (LANES64_OF(
+        if (__builtin_islessgreater(LANES64_OF(
                 vpadd_f32(COERCE_AS(float32x2_t, LANES128(v14).n128_u64[0]),
                           COERCE_AS(float32x2_t, LANES128(v14).n128_u64[0])))
-                .n64_f32[0] != 0x0.0p+0f) {
+                .n64_f32[0], 0x0.0p+0f)) {
           *(_DWORD*)(result + 304) = LANES128(v12).n128_u32[0];
           *(_DWORD*)(result + 308) = LANES128(v11[13]).n128_u32[1];
           v15 = *(_OWORD*)(result + 304);
@@ -243,10 +243,10 @@ __int64 wld_a8b5a0(__int64 result)
                               LANES128_OF(vextq_s8(v18, v18, 8u)).n128_u64[0]),
                     COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0])))
                 .n64_u64[0];
-        if (LANES64_OF(
+        if (__builtin_islessgreater(LANES64_OF(
                 vpadd_f32(COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0]),
                           COERCE_AS(float32x2_t, LANES128(v18).n128_u64[0])))
-                .n64_f32[0] != 0x0.0p+0f) {
+                .n64_f32[0], 0x0.0p+0f)) {
           *(_DWORD*)(result + 320) = LANES128(v16).n128_u32[0];
           v19 = result;
           *(_DWORD*)(result + 324) = LANES128(v11[14]).n128_u32[1];
@@ -294,10 +294,10 @@ __int64 wld_a8b5a0(__int64 result)
                               LANES128_OF(vextq_s8(v42, v42, 8u)).n128_u64[0]),
                     COERCE_AS(float32x2_t, LANES128(v42).n128_u64[0])))
                 .n64_u64[0];
-        if (LANES64_OF(
+        if (__builtin_islessgreater(LANES64_OF(
                 vpadd_f32(COERCE_AS(float32x2_t, LANES128(v42).n128_u64[0]),
                           COERCE_AS(float32x2_t, LANES128(v42).n128_u64[0])))
-                .n64_f32[0] != 0x0.0p+0f) {
+                .n64_f32[0], 0x0.0p+0f)) {
           *(_DWORD*)(result + 352) = LANES128(v40).n128_u32[0];
           *(_DWORD*)(result + 356) = LANES128(v11[15]).n128_u32[1];
           v43 = *(_OWORD*)(result + 352);
@@ -324,11 +324,11 @@ __int64 wld_a8b5a0(__int64 result)
                             LANES128_OF(vextq_s8(v64, v64, 8u)).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v64).n128_u64[0])))
                     .n64_u64[0];
-            if (LANES64_OF(
+            if (__builtin_islessgreater(LANES64_OF(
                     vpadd_f32(
                         COERCE_AS(float32x2_t, LANES128(v64).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v64).n128_u64[0])))
-                    .n64_f32[0] != 0x0.0p+0f) {
+                    .n64_f32[0], 0x0.0p+0f)) {
               *(_DWORD*)(result + 304) = LANES128(v62).n128_u32[0];
               v9 |= 1u;
               *(_DWORD*)(result + 308) = LANES128(v10[19]).n128_u32[1];
@@ -380,11 +380,11 @@ __int64 wld_a8b5a0(__int64 result)
                             LANES128_OF(vextq_s8(v75, v75, 8u)).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v75).n128_u64[0])))
                     .n64_u64[0];
-            if (LANES64_OF(
+            if (__builtin_islessgreater(LANES64_OF(
                     vpadd_f32(
                         COERCE_AS(float32x2_t, LANES128(v75).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v75).n128_u64[0])))
-                    .n64_f32[0] != 0x0.0p+0f) {
+                    .n64_f32[0], 0x0.0p+0f)) {
               *(_DWORD*)(result + 352) = LANES128(v73).n128_u32[0];
               v10 = nullptr;
               *(_DWORD*)(result + 356) = LANES128(v72[22]).n128_u32[1];

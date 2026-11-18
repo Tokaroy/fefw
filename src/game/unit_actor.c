@@ -2459,7 +2459,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
                                    .n128_u64[0]),
         *(float32x2_t*)&v16);
     *(float32x2_t*)&v16 = vpadd_f32(*(float32x2_t*)&v16, *(float32x2_t*)&v16);
-    if (*(float*)&v16 != 0x0.0p+0f) {
+    if (__builtin_islessgreater(*(float*)&v16, 0x0.0p+0f)) {
       LANES128(v14[19]).n128_u32[0] = v9;
       LANES128(v14[19]).n128_f32[1] = v7;
       v16 = *(long double*)&v14[19];

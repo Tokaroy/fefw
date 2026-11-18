@@ -6729,11 +6729,11 @@ __int64* llvm_libcxx_21_libcxx_include___functional_138f6a0(__int64* result)
                             LANES128_OF(vextq_s8(v50, v50, 8u)).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v50).n128_u64[0])))
                     .n64_u64[0];
-            if (LANES64_OF(
+            if (__builtin_islessgreater(LANES64_OF(
                     vpadd_f32(
                         COERCE_AS(float32x2_t, LANES128(v50).n128_u64[0]),
                         COERCE_AS(float32x2_t, LANES128(v50).n128_u64[0])))
-                    .n64_f32[0] != 0x0.0p+0f) {
+                    .n64_f32[0], 0x0.0p+0f)) {
               *(_QWORD*)(v14 + 304) = LANES128(v48).n128_u64[0];
               v51 = *(_OWORD*)(v14 + 304);
               *(_DWORD*)(v14 + 296) |= 1u;
