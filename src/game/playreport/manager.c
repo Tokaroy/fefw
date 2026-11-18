@@ -91,7 +91,7 @@ extern int GameData_21f8110;
 extern int GameData_21f8130;
 __int64 Manager_130dee0();
 __int64 Manager_130f220(__int64 a1);
-_BYTE* game_playreport_Manager_ReportReliance(__int64 a1);
+_BYTE* game_playreport_Manager_ReportReliance_alt1(__int64 a1);
 __int64 GameRoutine_130de40(__int64);
 __int64 GameRoutine_9adea0(__int64);
 __int64 game_UnitPool_GetFirst_alt1(int*) __asm__("game_UnitPool_GetFirst");
@@ -266,6 +266,11 @@ extern _DWORD* game_g_shared_system_skills_ptr_alt1 __asm__(
     "game_g_shared_system_skills_ptr");
 __int64 Manager_130de40(__int64 a1);
 __int64 Manager_130f910(__int64 a1, __int64 a2, ...);
+__int64 nn_prepo_PlayReport_Add_1a0ae20_alt2(__int64, const char*, __int64);
+__int64 nn_prepo_PlayReport_GetCount_alt2(__int64);
+__int64 nn_prepo_PlayReport_Save_alt2(__int64, __int64);
+void nn_prepo_PlayReport_Clear_alt3(__int64);
+void game_playreport_Manager_ReportReliance(__int64 a1);
 
 __int64 Manager_Destructor_130d940(_QWORD* a1)
 {
@@ -2462,98 +2467,82 @@ __int64 game_playreport_Manager_ReportUnitCommon_lambda0_Invoke(__int64 a1,
   return nn_prepo_Array_Add_1a0af20(*(_QWORD*)(a1 + 16), *(_QWORD*)(a1 + 8));
 }
 
-_BYTE* game_playreport_Manager_ReportReliance(__int64 a1)
+void game_playreport_Manager_ReportReliance(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v1;
   __int64 v3;
   __int64 v4;
   _QWORD* v5;
-  _BYTE* result;
+  __int64 v6;
   __int64 v7;
-  __int64 v8;
-  __int64 v9;
   struct {
-    _BYTE v10[32];
-    _BYTE* v11;
+    _BYTE v8[32];
+    _BYTE* v9;
+  } v8_;
+  struct {
+    __int64 v10;
+    __int64 v11;
+    int* v12;
+    _BYTE* v13;
   } v10_;
   struct {
-    __int64 v12;
-    __int64 v13;
-    int* v14;
-    _BYTE* v15;
-  } v12_;
-  _BYTE v16[4];
-  int v17;
+    _BYTE v14[4];
+    int v15;
+  } v14_;
 
-  v9 = COERCE_AS(__typeof__(v9),
-                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   v1 = a1 + 176;
-  v17 = 0;
-  v16[0] = 0;
-  v12_.v12 = a1 + 176;
-  v12_.v13 = a1;
-  v12_.v14 = &v17;
-  v12_.v15 = v16;
+  v14_.v15 = 0;
+  v14_.v14[0] = 0;
+  v10_.v10 = a1 + 176;
+  v10_.v11 = a1;
+  v10_.v12 = &v14_.v15;
+  v10_.v13 = v14_.v14;
   v3 = game_GameModeData_instance_;
   v4 = a1 + 96;
   v5 = (_QWORD*)fw_memory_HeapManager_Allocate(
-      *(_QWORD*)fw_memory_g_heap_manager_ptr, 64, 16, 0),
-  v9 = COERCE_AS(__typeof__(v9),
-                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 64, 16, 0);
   v5[4] = a1;
   v5[5] = a1;
   v5[6] = v1;
   v5[7] = v4;
-  v10_.v11 = v5;
+  v8_.v9 = v5;
   *v5 = GameData_2025b98;
-  v5[1] = &v17;
-  v5[2] = &v12_.v12;
-  v5[3] = v16;
-  game_GameReliance_Impl_EachPlayer(*(_QWORD*)(v3 + 128), (__int64)v10_.v10),
-      v9 = COERCE_AS(__typeof__(v9),
-                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  result = v10_.v11;
-  if (v10_.v11 == v10_.v10) {
-    v7 = 32;
+  v5[1] = &v14_.v15;
+  v5[2] = &v10_.v10;
+  v5[3] = v14_.v14;
+  game_GameReliance_Impl_EachPlayer(*(_QWORD*)(v3 + 128), (__int64)v8_.v8);
+  if (v8_.v9 == v8_.v8) {
+    v6 = 32;
   }
   else {
-    if (v10_.v11 == nullptr) {
+    if (v8_.v9 == nullptr) {
       goto LABEL_6;
     }
-    v7 = 40;
+    v6 = 40;
   }
-  result = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v10_.v11 + v7))(
-      (__int64)v10_.v11),
-  v9 = COERCE_AS(__typeof__(v9),
-                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  (*(void (**)(__int64))(*(_QWORD*)v8_.v9 + v6))((__int64)v8_.v9);
 LABEL_6:
-  if (v16[0] == 1) {
-    result = (_BYTE*)v12_.v13;
-    if (*(_BYTE*)(v12_.v13 + 88) == 1) {
-      result = (_BYTE*)nn_prepo_PlayReport_Add_1a0ae20(v12_.v13, "Reliance",
-                                                       v12_.v12),
-      v9 = COERCE_AS(__typeof__(v9),
-                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-      v8 = v12_.v13;
-      if (*(_BYTE*)(v12_.v13 + 88) == 1) {
-        if ((int)nn_prepo_PlayReport_GetCount(v12_.v13) < 2 ||
-            (v9 = v8 + 72, *(_OWORD*)(v8 + 72) == 0)) {
-          result = (_BYTE*)nn_prepo_PlayReport_Clear(v8, v9),
-          v9 = COERCE_AS(__typeof__(v9),
-                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  if (v14_.v14[0] == 1) {
+    if (*(_BYTE*)(v10_.v11 + 88) == 1) {
+      nn_prepo_PlayReport_Add_1a0ae20_alt2(v10_.v11, "Reliance", v10_.v10);
+      v7 = v10_.v11;
+      if (*(_BYTE*)(v10_.v11 + 88) == 1) {
+        if ((int)nn_prepo_PlayReport_GetCount_alt2(v10_.v11) < 2 ||
+            *(_OWORD*)(v7 + 72) == 0) {
+          nn_prepo_PlayReport_Clear_alt3(v7);
         }
         else {
-          result = (_BYTE*)nn_prepo_PlayReport_Save(v8, v9),
-          v9 = COERCE_AS(__typeof__(v9),
-                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+          nn_prepo_PlayReport_Save_alt2(v7, v7 + 72);
         }
-        *(_BYTE*)(v8 + 88) = 0;
+        *(_BYTE*)(v7 + 88) = 0;
       }
     }
-    *v12_.v14 = 0;
-    *v12_.v15 = 0;
+    *v10_.v12 = 0;
+    *v10_.v13 = 0;
   }
-  return result;
 }
 
 __int64 game_playreport_Manager_ReportReliance_lambda0_Invoke(__int64 result,

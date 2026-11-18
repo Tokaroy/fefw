@@ -243,7 +243,7 @@ void ResourceBuilder_b5f9c0(__int64 a1, __int64 a2);
 __int64 ResourceBuilder_b5fa20(__int64 result, _QWORD* a2, __int64* a3, int a4);
 __int64 ResourceBuilder_b5fb80(__int64 a1, __int64 a2);
 bool ResourceBuilder_b60880(__int64 a1);
-__int64 ResourceBuilder_b60990(__int64 result, __int64* a2, int* a3);
+__int64 ResourceBuilder_b60990_alt1(__int64 result, __int64* a2, int* a3);
 __int64 ResourceBuilder_b60c20(__int64 a1, __int64 a2);
 __int64 ResourceBuilder_b60c80_alt1(_QWORD* a1, __int64 a2,
                                     int* a3) __asm__("ResourceBuilder_b60c80");
@@ -410,6 +410,11 @@ __int64 PrimitiveDrawManager_1995760(__int64, _QWORD*, int);
 __int64 PrimitiveDrawManager_1996450(_QWORD*, __int64, unsigned int);
 __int64 ResourceBuilder_b71010(__int64 result, _QWORD* a2, __int64* a3,
                                __int64 a4);
+__int64 fw_memory_HeapManager_Allocate_alt2(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_beefc0(char**, __int64, __int64, __int64, unsigned int,
+                    unsigned int, __int64);
+_BYTE* ResourceBuilder_b60990(_BYTE* result, __int64* a2, int* a3);
 
 __int64 ResourceBuilder_b49250(__int64 a1, _QWORD* a2, __int64 a3, __int64* a4,
                                __int64 a5)
@@ -4542,96 +4547,104 @@ bool ResourceBuilder_b60880(__int64 a1)
   return v1 != nullptr && (*v1 & 1) != 0;
 }
 
-__int64 ResourceBuilder_b60990(__int64 result, __int64* a2, int* a3)
+_BYTE* ResourceBuilder_b60990(_BYTE* result, __int64* a2, int* a3)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v3;
   __int64 v4;
   __int64 v5;
   int v6;
   __int64 v7;
-  __int64 v8;
-  __int64 v9;
-  __int64 v10;
-  unsigned int* v11;
-  __int64 v12;
+  _BYTE* v8;
+  _BYTE* v9;
+  unsigned int* v10;
+  unsigned int v11;
+  char** v12;
   __int64 v13;
   __int64 v14;
   __int64 v15;
-  __int64 v16;
-  _QWORD v17[4];
-  _QWORD* v18;
-  _QWORD v19[4];
-  _QWORD* v20;
-  _QWORD v21[4];
-  _QWORD* v22;
+  struct {
+    _BYTE v16[32];
+    _BYTE* v17;
+  } v16_;
+  struct {
+    _QWORD v18[4];
+    _QWORD* v19;
+  } v18_;
+  struct {
+    _QWORD v20[4];
+    _QWORD* v21;
+  } v20_;
 
   v3 = *a2;
   v4 = *(_QWORD*)(*a2 + 448);
   if (v4 == 0) {
     return result;
   }
-  v5 = *(_QWORD*)(result + 16);
+  v5 = *((_QWORD*)result + 2);
   if (((unsigned int)v5 & *(_DWORD*)(v3 + 560)) == 0 ||
       *(_BYTE*)(v3 + 11) == 0) {
     return result;
   }
   v6 = *a3;
-  v7 = *(_QWORD*)(result + 8);
+  v7 = *((_QWORD*)result + 1);
   v8 = result;
-  v9 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      40, 16, 0);
-  *(_QWORD*)(v9 + 16) = v3;
-  *(_DWORD*)(v9 + 24) = v6;
-  *(_QWORD*)(v9 + 32) = v5;
-  v18 = (_QWORD*)v9;
+  v9 = (_BYTE*)fw_memory_HeapManager_Allocate_alt2(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 40, 16, 0);
+  *((_QWORD*)v9 + 2) = v3;
+  *((_DWORD*)v9 + 6) = v6;
+  *((_QWORD*)v9 + 4) = v5;
+  v16_.v17 = v9;
   *(_QWORD*)v9 = GameData_1fc66c0;
-  *(_QWORD*)(v9 + 8) = v7;
-  if (*(_BYTE*)(v8 + 28) != 0) {
-    v11 = (unsigned int*)(v8 + 24);
+  *((_QWORD*)v9 + 1) = v7;
+  if (v8[28] != 0) {
+    v10 = (unsigned int*)(v8 + 24);
   }
   else {
-    v11 = (unsigned int*)(v4 + 408);
+    v10 = (unsigned int*)(v4 + 408);
   }
-  v12 = *v11;
-  v22 = v21;
-  v20 = v19;
-  v13 = *(_QWORD*)(game_g_frame_clock + 16664);
-  v21[0] = GameData_2109ae8;
-  v19[0] = GameData_2109b78;
-  GameRoutine_beefc0(v13, v17, v21, v19, 2, v12, 0, v10, v17[0], v17[1], v17[2],
-                     v17[3]);
-  if (v20 == v19) {
-    v14 = 32;
+  v11 = *v10;
+  v20_.v21 = v20_.v20;
+  v18_.v19 = v18_.v18;
+  v12 = *(char***)(game_g_frame_clock + 16664);
+  v20_.v20[0] = GameData_2109ae8;
+  v18_.v18[0] = GameData_2109b78;
+  game_beefc0(v12, (__int64)v16_.v16, (__int64)v20_.v20, (__int64)v18_.v18, 2u,
+              v11, 0);
+  if (v18_.v19 == v18_.v18) {
+    v13 = 32;
   }
   else {
-    if (v20 == nullptr) {
+    if (v18_.v19 == nullptr) {
       goto LABEL_12;
     }
-    v14 = 40;
+    v13 = 40;
   }
-  (*(void (**)(__int64))(*v20 + v14))((__int64)v20);
-
+  (*(void (**)(__int64))(*v18_.v19 + v13))((__int64)v18_.v19);
 LABEL_12:
-  if (v22 == v21) {
-    v15 = 32;
+  if (v20_.v21 == v20_.v20) {
+    v14 = 32;
     goto LABEL_16;
   }
-  if (v22 != nullptr) {
-    v15 = 40;
+  if (v20_.v21 != nullptr) {
+    v14 = 40;
   LABEL_16:
-    (*(void (**)(__int64))(*v22 + v15))((__int64)v22);
+    (*(void (**)(__int64))(*v20_.v21 + v14))((__int64)v20_.v21);
   }
-  result = (__int64)v18;
-  if (v18 == v17) {
-    v16 = 32;
+  result = v16_.v17;
+  if (v16_.v17 == v16_.v16) {
+    v15 = 32;
   }
   else {
-    if (v18 == nullptr) {
+    if (v16_.v17 == nullptr) {
       return result;
     }
-    v16 = 40;
+    v15 = 40;
   }
-  return (*(__int64 (**)(__int64))(*v18 + v16))((__int64)v18);
+  return (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v16_.v17 + v15))(
+      (__int64)v16_.v17);
 }
 
 __int64 ResourceBuilder_b60c20(__int64 a1, __int64 a2)
