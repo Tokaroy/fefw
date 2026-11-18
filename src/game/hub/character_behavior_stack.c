@@ -364,7 +364,7 @@ void CharacterBehaviorStack_df5940(_QWORD* a1, char** a2, char a3, double a4)
       v15 = vdupq_n_s32(v14);
       v4 = a1[3];
       v39 = vbslq_s8(v15, v13, v39);
-    } while (v12 < (a1[4] - v4) >> 4);
+    } while (v12 < (__int64)(a1[4] - v4) >> 4);
   }
   v16 = (__int64*)fw_memory_g_heap_manager_ptr;
   v17 = fw_memory_HeapManager_Allocate_alt1(

@@ -10647,7 +10647,7 @@ __int64 ResourceBuilder_b78dc0(__int64 a1, _QWORD* a2, _QWORD* a3)
       do {
         v24 = *(_QWORD*)a3[1];
         if (v19 + v22 >=
-            (unsigned __int64)((*(_QWORD*)(a3[1] + 8LL) - v24) >> 4)) {
+            (unsigned __int64)((__int64)(*(_QWORD*)(a3[1] + 8LL) - v24) >> 4)) {
           GameRoutine_b790d0(result);
         }
         (*(void (**)(_QWORD, __int64, _QWORD, _QWORD, _QWORD))(
