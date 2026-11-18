@@ -981,6 +981,7 @@ LABEL_194:
 
 __int64 CombatCamera_1097a60(__int64 result, float a2)
 {
+#pragma clang fp contract(fast)
   float v2;
   float32x4_t* v3;
   float v4;
