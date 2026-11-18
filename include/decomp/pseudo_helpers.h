@@ -46,6 +46,11 @@
 #define PSEUDO_THREAD_POINTER __builtin_arm_rsr64("tpidrro_el0")
 #endif
 
+// The result of a thunk that forwards x0 to x8 untouched, as hr2c writes it.
+struct PseudoThunk {
+  long long words[3];
+};
+
 #include <arm_neon.h>
 
 // arm_neon.h names a rounding conversion across widths only from clang 22.
