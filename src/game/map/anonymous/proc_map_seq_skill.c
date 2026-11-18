@@ -763,9 +763,11 @@ game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke(__int64 a1, _DWORD* a2,
   }
   v14 = *(_DWORD*)(v7 + 4LL * (unsigned int)v9);
   result = 1;
-  v15 = *(unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(*GameData_212c880[0] + 64) +
-                                       8LL * (v14 & 0xFFF)) +
-                            281LL);
+  // The original reads the item data before it tests the flags.
+  v15 = *(volatile unsigned __int8*)(*(_QWORD*)(*(_QWORD*)(
+                                                   *GameData_212c880[0] + 64) +
+                                               8LL * (v14 & 0xFFF)) +
+                                     281LL);
   if (v15 <= 1) {
     v15 = 1;
   }
