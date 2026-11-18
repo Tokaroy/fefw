@@ -4067,7 +4067,7 @@ __int64 GameHr_17fdec0(__int64 result, __int64* a2, float a3)
     v12 = (unsigned int*)(v3 + 4);
     v13 = 1;
     v14 = 0;
-    v15 = __PAIR64__(0x1.0000000000000p+0f, 0);
+    v15 = __PAIR64__(0x3F800000u, 0);
     while (1) {
       if (v14 >= (int)v6) {
         v16 = 0;
@@ -4078,7 +4078,7 @@ __int64 GameHr_17fdec0(__int64 result, __int64* a2, float a3)
         }
         v16 = *(v12 - 1) | ((unsigned __int64)*v12 << 32);
       }
-      if (a3 < *(float*)&v16) {
+      if (!(a3 >= *(float*)&v16)) {
         break;
       }
       v15 = v16;
@@ -4093,12 +4093,12 @@ __int64 GameHr_17fdec0(__int64 result, __int64* a2, float a3)
     v19 = v18 < 0x1.0000000000000p-1f;
     v20 = (float)(v18 * -0x1.0000000000000p+1f) + 0x1.0000000000000p+1f;
     v21 = v18 * (float)(v18 + v18);
-    v22 = (float)(PSEUDO_UNFUSED((float)(v20 * v20) * -0x1.0000000000000p-1f)) +
+    v22 = (float)(PSEUDO_ROUNDED((float)(v20 * v20) * -0x1.0000000000000p-1f)) +
           0x1.0000000000000p+0f;
     if (!v19) {
       v21 = v22;
     }
-    v17 = (float)(PSEUDO_UNFUSED(v21 * *((float*)&v16 + 1))) +
+    v17 = (float)(PSEUDO_ROUNDED(v21 * *((float*)&v16 + 1))) +
           (float)(*((float*)&v15 + 1) * (float)(0x1.0000000000000p+0f - v21));
   }
   *(float*)(result + 88) = v17;
