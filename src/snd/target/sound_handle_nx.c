@@ -29,7 +29,7 @@ extern _UNKNOWN* GameData_2134ff8;
 extern __int64* GameData_2135000;
 __int64 SoundHandleNx_2769e0(__int64 result, __int64* a2);
 __int64* SoundHandleNx_276ac0(__int64* result);
-_QWORD* BaseNx_278890(__int64);
+_QWORD* BaseNx_278890(__int64, unsigned int);
 __int64* GameRoutine_27e260_alt1(__int64* result) __asm__("GameRoutine_27e260");
 __int64 GameRoutine_27e180_alt1(__int64 result,
                                 __int64*) __asm__("GameRoutine_27e180");
@@ -110,7 +110,7 @@ __int64 SoundHandleNX_Unknown19(__int64 a1, char a2)
       goto LABEL_15;
     }
   LABEL_22:
-    v21 = (unsigned int)BaseNx_278890(v18);
+    v21 = (unsigned int)BaseNx_278890(v18, *(_DWORD*)(*v19 + 280));
     if (v21 == 1) {
       goto LABEL_16;
     }
@@ -148,7 +148,7 @@ __int64 SoundHandleNX_Unknown19(__int64 a1, char a2)
     goto LABEL_22;
   }
 LABEL_15:
-  v21 = (unsigned int)BaseNx_278890(v18);
+  v21 = (unsigned int)BaseNx_278890(v18, 0xFFFFFFFF);
   if (v21 == 1) {
   LABEL_16:
     SoundHandleNx_2769e0((__int64)&v26, v19);

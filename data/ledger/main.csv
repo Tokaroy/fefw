@@ -4255,7 +4255,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 14c740,12,verified,src/snd/target/sound_handle_nx.cpp,_ZN3snd6target13SoundHandleNX16clearStopRequestEv
 14c760,472,verified,src/snd/target/unplaced_2.c,snd_target_14c760
 14c940,80,verified,src/snd/target/sound_handle_nx.cpp,_ZN3snd6target13SoundHandleNX11isSameSoundEPNS0_11SoundHandleE
-14c9a0,412,disputed,src/snd/target/sound_handle_nx.c,SoundHandleNX_Unknown19
+14c9a0,412,verified,src/snd/target/sound_handle_nx.c,SoundHandleNX_Unknown19
 14cb40,48,verified,src/snd/target/sound_handle_nx.cpp,_ZN3snd6target13SoundHandleNX13markStartTimeEv
 14cb70,396,verified,src/snd/target/sound_handle_nx.cpp,_ZN3snd6target13SoundHandleNX6updateEv
 14cd30,8,verified,src/snd/target/sound_handle_nx.cpp,_ZN3snd6target13SoundHandleNX14getElapsedTimeEv
