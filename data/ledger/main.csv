@@ -48571,6 +48571,7 @@ ff3280,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 ff32a0,276,verified,src/game/unnamed/b014_1.c,GameHr_ff32a0
 ff33e0,4484,verified,src/game/unplaced_4.c,game_ff33e0
 ff5600,364,verified,src/game/unnamed/e005_5.c,GameHr_ff5600
+ff57a0,916,verified,src/game/unplaced_49.c,game_ff57a0
 ff5c20,220,verified,src/game/unplaced_4.c,game_ff5c20
 ff5d00,484,verified,src/game/script/hub_init_natives_impl.c,HubInitNatives_ff5d00
 ff5f00,428,verified,src/game/script/hub_init_natives_impl.c,HubInitNatives_ff5f00
