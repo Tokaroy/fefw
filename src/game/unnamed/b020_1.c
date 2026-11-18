@@ -611,7 +611,7 @@ __int64 GameRoutine_15a5ce0(_QWORD, _QWORD);
 
 void __attribute__((noreturn)) GameRoutine_15a6060(void);
 
-__int64 GameRoutine_15a6080(void);
+__int64 GameRoutine_15a6080(__int64, __int64, __int64, int);
 
 __int64 GameRoutine_15bd080(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 
@@ -7192,8 +7192,8 @@ __int64 GameHr_1591700(__int64* a1, __int64 a2, char a3)
             }
             v33 = *a1;
             v34 = &v27[-*a1];
-            v35 = (unsigned __int64)(v34 + 1);
-            if ((__int64)(v34 + 1) >= 0) {
+            v35 = (unsigned __int64)v34 + 1;
+            if ((__int64)v34 + 1 >= 0) {
               v36 = v26 - v33;
               if (2 * v36 > v35) {
                 v35 = 2 * v36;
@@ -7292,8 +7292,8 @@ __int64 GameHr_1591700(__int64* a1, __int64 a2, char a3)
                       if ((unsigned __int64)v31 >= v30) {
                         v39 = *a1;
                         v40 = &v31[-*a1];
-                        v41 = (unsigned __int64)(v40 + 1);
-                        if ((__int64)(v40 + 1) < 0) {
+                        v41 = (unsigned __int64)v40 + 1;
+                        if ((__int64)v40 + 1 < 0) {
                           goto LABEL_279;
                         }
                         v42 = v30 - v39;
@@ -7341,8 +7341,8 @@ __int64 GameHr_1591700(__int64* a1, __int64 a2, char a3)
                       if ((unsigned __int64)v48 >= v47) {
                         v50 = *a1;
                         v51 = &v48[-*a1];
-                        v52 = (unsigned __int64)(v51 + 1);
-                        if ((__int64)(v51 + 1) < 0) {
+                        v52 = (unsigned __int64)v51 + 1;
+                        if ((__int64)v51 + 1 < 0) {
                           goto LABEL_279;
                         }
                         v53 = v47 - v50;
@@ -7390,8 +7390,8 @@ __int64 GameHr_1591700(__int64* a1, __int64 a2, char a3)
                       if ((unsigned __int64)v58 >= v57) {
                         v60 = *a1;
                         v61 = &v58[-*a1];
-                        v62 = (unsigned __int64)(v61 + 1);
-                        if ((__int64)(v61 + 1) < 0) {
+                        v62 = (unsigned __int64)v61 + 1;
+                        if ((__int64)v61 + 1 < 0) {
                           goto LABEL_279;
                         }
                         v63 = v57 - v60;
@@ -7528,8 +7528,8 @@ LABEL_149:
       if ((unsigned __int64)v78 >= v77) {
         v80 = *a1;
         v81 = &v78[-*a1];
-        v82 = (unsigned __int64)(v81 + 1);
-        if ((__int64)(v81 + 1) < 0) {
+        v82 = (unsigned __int64)v81 + 1;
+        if ((__int64)v81 + 1 < 0) {
           goto LABEL_279;
         }
         v83 = v77 - v80;
@@ -7574,8 +7574,8 @@ LABEL_149:
       if ((unsigned __int64)v88 >= v87) {
         v90 = *a1;
         v91 = &v88[-*a1];
-        v92 = (unsigned __int64)(v91 + 1);
-        if ((__int64)(v91 + 1) < 0) {
+        v92 = (unsigned __int64)v91 + 1;
+        if ((__int64)v91 + 1 < 0) {
           goto LABEL_279;
         }
         v93 = v87 - v90;
@@ -7665,8 +7665,8 @@ LABEL_185:
                     if ((unsigned __int64)v108 >= v107) {
                       v110 = *a1;
                       v111 = &v108[-*a1];
-                      v112 = (unsigned __int64)(v111 + 1);
-                      if ((__int64)(v111 + 1) < 0) {
+                      v112 = (unsigned __int64)v111 + 1;
+                      if ((__int64)v111 + 1 < 0) {
                         goto LABEL_279;
                       }
                       v113 = v107 - v110;
@@ -7797,8 +7797,8 @@ LABEL_230:
         }
         v33 = *a1;
         v129 = &v128[-*a1];
-        v130 = (unsigned __int64)(v129 + 1);
-        if ((__int64)(v129 + 1) < 0) {
+        v130 = (unsigned __int64)v129 + 1;
+        if ((__int64)v129 + 1 < 0) {
           goto LABEL_279;
         }
         v131 = v127 - v33;
@@ -7839,7 +7839,8 @@ LABEL_230:
     LABEL_276:
       result = *a1;
       if (*a1 != a1[1]) {
-        return GameRoutine_15a6080();
+        return GameRoutine_15a6080(
+            *a1, a1[1], 2 * (63 - __clz((unsigned __int64)(a1[1] - *a1))), 1);
       }
       return result;
     }

@@ -1480,26 +1480,14 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
   float v5;
   float v6;
   float v7;
-  __int64 v8;
-  __int64 v9;
   int v10;
   float v11;
   unsigned int v12;
   float* v13;
-  float* v14;
-  float* v15;
   float v16;
-  bool v17;
   float v18;
   float v19;
   float v20;
-  __int64 v21;
-  float* v22;
-  float v23;
-  float v24;
-  int v25;
-  unsigned int v26;
-  float* v27;
   __int64 result;
   float v29;
   float v30;
@@ -1532,122 +1520,21 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
   float v57;
 
   if (a2 != 0) {
-    {
-      v5 = *a1;
-      __asm__ volatile("" ::"w"(v5));
-    }
-    {
-      v6 = a1[1];
-      __asm__ volatile("" ::"w"(v6));
-    }
-    {
-      v7 = a1[2];
-      __asm__ volatile("" ::"w"(v7));
-    }
-    v8 = a2 & 3;
-    if (a2 >= 4) {
-      v12 = 0;
-      v9 = 0;
-      v10 = -1;
-      v11 = -0x1.fffffe0000000p+127f;
-      do {
-        {
-          v13 = &a1[v12 / 4];
-          __asm__ volatile("" ::"r"(v13));
-        }
-        v14 = (float*)((char*)a1 + 2 * a3 + v12);
-        if ((float)((float)((float)(PSEUDO_UNFUSED((float)(v13[1] - v6) *
-                                                   (float)(v13[1] - v6))) +
-                            (float)((float)(*v13 - v5) * (float)(*v13 - v5))) +
-                    (float)((float)(v13[2] - v7) * (float)(v13[2] - v7))) >
-            (float)(v11 + 0x1.0000000000000p-23f)) {
-          v11 = (float)((float)(PSEUDO_UNFUSED((float)(v13[1] - v6) *
-                                               (float)(v13[1] - v6))) +
-                        (float)((float)(*v13 - v5) * (float)(*v13 - v5))) +
-                (float)((float)(v13[2] - v7) * (float)(v13[2] - v7));
-          v10 = v9;
-        }
-        v15 = (float*)((char*)a1 + a3 + v12);
-        v16 = (float)((float)(PSEUDO_UNFUSED((float)(v15[1] - v6) *
-                                             (float)(v15[1] - v6))) +
-                      (float)((float)(*v15 - v5) * (float)(*v15 - v5))) +
-              (float)((float)(v15[2] - v7) * (float)(v15[2] - v7));
-        v17 = v16 <= (float)(v11 + 0x1.0000000000000p-23f);
-        {
-          v18 = v14[2] - v7;
-          __asm__ volatile("" ::"w"(v18));
-        }
-        if (v16 > (float)(v11 + 0x1.0000000000000p-23f)) {
-          v11 = (float)((float)(PSEUDO_UNFUSED((float)(v15[1] - v6) *
-                                               (float)(v15[1] - v6))) +
-                        (float)((float)(*v15 - v5) * (float)(*v15 - v5))) +
-                (float)((float)(v15[2] - v7) * (float)(v15[2] - v7));
-        }
-        {
-          v19 = *v14;
-          __asm__ volatile("" ::"w"(v19));
-        }
-        {
-          v20 = v14[1];
-          __asm__ volatile("" ::"w"(v20));
-        }
-        if (!v17) {
-          v10 = v9 + 1;
-        }
-        v21 = 3 * a3 + v12;
-        v12 += 4 * a3;
-        v22 = (float*)((char*)a1 + v21);
-        v23 = (float)((float)(PSEUDO_UNFUSED((float)(v20 - v6) *
-                                             (float)(v20 - v6))) +
-                      (float)((float)(v19 - v5) * (float)(v19 - v5))) +
-              (float)(v18 * v18);
-        if (v23 > (float)(v11 + 0x1.0000000000000p-23f)) {
-          v11 = v23;
-          v10 = v9 + 2;
-        }
-        v25 = v9 + 3;
-        v9 += 4;
-        {
-          v24 = v22[2] - v7;
-          __asm__ volatile("" ::"w"(v24));
-        }
-        if ((float)((float)((float)(PSEUDO_UNFUSED((float)(v22[1] - v6) *
-                                                   (float)(v22[1] - v6))) +
-                            (float)((float)(*v22 - v5) * (float)(*v22 - v5))) +
-                    (float)(v24 * v24)) >
-            (float)(v11 + 0x1.0000000000000p-23f)) {
-          v11 = (float)((float)(PSEUDO_UNFUSED((float)(v22[1] - v6) *
-                                               (float)(v22[1] - v6))) +
-                        (float)((float)(*v22 - v5) * (float)(*v22 - v5))) +
-                (float)(v24 * v24);
-          v10 = v25;
-        }
-      } while ((a2 & 0xFFFFFFFC) != v9);
-    }
-    else {
-      LODWORD(v9) = 0;
-      v10 = -1;
-      v11 = -0x1.fffffe0000000p+127f;
-    }
-    if ((a2 & 3) != 0) {
-      v26 = a3 * v9;
-      do {
-        v27 = (float*)((char*)a1 + v26);
-        v26 += a3;
-        if ((float)((float)((float)(PSEUDO_UNFUSED((float)(v27[1] - v6) *
-                                                   (float)(v27[1] - v6))) +
-                            (float)((float)(*v27 - v5) * (float)(*v27 - v5))) +
-                    (float)((float)(v27[2] - v7) * (float)(v27[2] - v7))) >
-            (float)(v11 + 0x1.0000000000000p-23f)) {
-          v11 = (float)((float)(PSEUDO_UNFUSED((float)(v27[1] - v6) *
-                                               (float)(v27[1] - v6))) +
-                        (float)((float)(*v27 - v5) * (float)(*v27 - v5))) +
-                (float)((float)(v27[2] - v7) * (float)(v27[2] - v7));
-          v10 = v9;
-        }
-        LODWORD(v9) = v9 + 1;
-        --v8;
-      } while (v8 != 0);
+    v5 = *a1;
+    v6 = a1[1];
+    v7 = a1[2];
+    v10 = -1;
+    v11 = -0x1.fffffe0000000p+127f;
+    for (v12 = 0; v12 < a2; ++v12) {
+      v13 = (float*)((char*)a1 + (unsigned int)(v12 * a3));
+      v18 = v13[1] - v6;
+      v19 = *v13 - v5;
+      v20 = v13[2] - v7;
+      v16 = v18 * v18 + v19 * v19 + v20 * v20;
+      if (v16 > v11 + 0x1.0000000000000p-23f) {
+        v11 = v16;
+        v10 = v12;
+      }
     }
     if (v10 != -1) {
       if (v10 == 0) {
