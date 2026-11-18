@@ -11909,6 +11909,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 2f2920,2056,verified,src/opus/silk/NSQ_del_dec.c,silk_noise_shape_quantizer_del_dec
 2f4190,40,verified,src/opus/silk/PLC.c,silk_PLC_Reset
 2f41c0,596,verified,src/opus/silk/PLC.c,silk_PLC
+2f4420,2260,disputed,src/opus/silk/unplaced_12.c,opus_silk_2f4420
 2f4fe0,348,verified,src/opus/silk/PLC.c,silk_PLC_glue_frames
 2f51c0,796,verified,src/opus/silk/PLC.c,silk_PLC_energy
 2f5500,112,verified,src/opus/silk/VAD.c,silk_VAD_Init
@@ -12906,6 +12907,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 36cca0,336,verified,src/fdk-aac/libFDK/src/FDK_tools_rom_impl.c,nn_codec_getBitstreamElementList
 36cdf0,356,verified,src/fdk-aac/libFDK/src/FDK_trigFcts.cpp,_ZN2nn5codec10fixp_atan2Eii
 36cfa0,292,verified,src/fdk-aac/libFDK/src/FDK_trigFcts.cpp,_ZN2nn5codec9fixp_atanEi
+36d0d0,196,verified,src/fdk-aac/libFDK/src/unplaced_2.c,fdk_aac_libFDK_src_36d0d0
+36d1a0,192,verified,src/fdk-aac/libFDK/src/unplaced_2.c,fdk_aac_libFDK_src_36d1a0
 36d260,220,verified,src/fdk-aac/libFDK/src/FDK_trigFcts_impl.c,nn_codec_fixp_cos_sin
 36d340,5192,verified,src/nn/codec/transforms.cpp,_ZN2nn5codec3fftEiPiS1_
 36e7b0,4148,verified,src/nn/codec/transforms.cpp,nn::codec::fft_32
@@ -17288,6 +17291,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 4def10,80,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_HlsMediaHttpConnection_4def10
 4def60,48,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_HlsMediaHttpConnection_4def60
 4def90,100,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_Destroy_HlsMediaHttpConnection_4def90
+4df000,24,verified,src/nandroid/libstagefright/unplaced_3.c,nandroid_libstagefright_4df000
 4df1f0,16,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_Destroy_HlsMediaHttpConnection_4df1f0
 4df200,864,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_connect
 4df580,32,verified,src/nandroid/libstagefright/hls_media_http_connection.c,nandroid_HlsMediaHttpConnection_disconnect
@@ -24322,6 +24326,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 628520,328,verified,src/nvidia/sha1.c,NvSha1Final
 628680,1676,verified,src/nvidia/sha1.c,NvSha1Transform
 628d40,116,verified,src/nvidia/unplaced_4.c,nvidia_628d40
+628dc0,72,disputed,src/nvidia/unplaced_46.c,nvidia_628dc0
 628ea0,176,verified,src/nvidia/unplaced_4.c,nvidia_628ea0
 628f50,52,verified,src/nn/unnamed/s003_0.c,SdkHr_628f50
 628f90,52,verified,src/nn/unnamed/s003_0.c,SdkHr_628f90
@@ -30642,6 +30647,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 74bb60,384,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Quantization
 74bce0,104,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Quantization_5ul
 74bd50,12,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Quantization_0ul
+74bd60,892,disputed,src/nerd_gillette_internal/otete/unplaced_5.c,nerd_gillette_internal_otete_74bd60
 74c170,64,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Dequantization
 74c1b0,856,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_OldDequantization
 74c520,1204,verified,src/nerd_gillette_internal/otete/image_codec2.c,nerd_gillette_internal_otete_ImageCodec2_Encode
@@ -34176,6 +34182,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 8392d0,68,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle.cpp,_ZNK12_GLOBAL__N_116itanium_demangle24ForwardTemplateReference9printLeftERNS0_12OutputBufferE
 839320,76,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_ForwardTemplateReference_getSyntaxNode
 839380,76,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_ForwardTemplateReference_printRight
+8393e0,1788,disputed,src/llvm-libcxx/libcxxabi/src/unplaced_8.c,llvm_libcxx_libcxxabi_src_8393e0
 83a7f0,180,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83a7f0
 83a8b0,172,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83a8b0
 83a960,184,verified,src/llvm-libcxx/libcxxabi/src/cxa_demangle_impl.c,anonymous_itanium_demangle_AbstractManglingParser_make_83a960
