@@ -7820,7 +7820,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 265d60,336,verified,src/recastnavigation/Detour/Source/DetourNavMesh.cpp,_ZNK9dtNavMesh21findNearestPolyInTileEPK10dtMeshTilePKfS4_Pf
 265f00,472,verified,src/recastnavigation/Detour/Source/DetourNavMesh.cpp,_ZN9dtNavMesh16baseOffMeshLinksEP10dtMeshTile
 2660e0,728,verified,src/recastnavigation/Detour/Source/DetourNavMesh_impl.c,dtNavMesh_getPolyHeight
-2663e0,960,disputed,src/recastnavigation/Detour/Source/unplaced.c,recastnavigation_Detour_Source_2663e0
+2663e0,960,verified,src/recastnavigation/Detour/Source/unplaced.c,recastnavigation_Detour_Source_2663e0
 266820,360,verified,src/game/unnamed/b001_2.c,GameHr_266820
 266990,68,verified,src/recastnavigation/Detour/Source/DetourNavMesh.cpp,_ZNK9dtNavMesh25getTileAndPolyByRefUnsafeEjPPK10dtMeshTilePPK6dtPoly
 2669e0,1268,verified,src/recastnavigation/Detour/Source/DetourNavMesh.cpp,_ZNK9dtNavMesh19queryPolygonsInTileEPK10dtMeshTilePKfS4_Pji
@@ -22829,7 +22829,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 810d20,304,verified,src/game/unplaced.c,game_810d20
 810e50,148,verified,src/game/unnamed/e002_0.c,GameHr_810e50
 810ef0,200,verified,src/game/unnamed/b006_1.c,GameHr_810ef0
-810fc0,368,disputed,src/game/unplaced_50.c,game_810fc0
+810fc0,368,verified,src/game/unplaced_50.c,game_810fc0
 811140,184,verified,src/game/unnamed/b006_1.c,GameHr_811140
 811200,100,verified,src/game/unnamed/b006_1.c,GameHr_811200
 811270,1480,verified,src/game/unplaced.c,game_811270
@@ -47913,7 +47913,7 @@ fb8eb0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vect
 fb8ed0,1536,verified,src/game/unnamed/b014_0.c,GameHr_fb8ed0
 fb9500,840,verified,src/game/unplaced_4.c,game_fb9500
 fb9850,380,verified,src/game/unnamed/e005_4.c,GameHr_fb9850
-fb99e0,152,disputed,src/game/unplaced_50.c,game_fb99e0
+fb99e0,152,verified,src/game/unplaced_50.c,game_fb99e0
 fb9a90,236,verified,src/game/unplaced_20.c,game_fb9a90
 fb9bb0,44,verified,src/game/unnamed/b014_0.c,GameHr_fb9bb0
 fb9be0,360,verified,src/game/unnamed/b014_0.c,GameHr_fb9be0

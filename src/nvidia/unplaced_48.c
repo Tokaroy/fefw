@@ -165,8 +165,14 @@ __int64 nvidia_bc6c0(__int64 a1, int a2, char a3)
   __int64 v6;
   unsigned int v7;
 
-  v6 = *(_QWORD*)(*(_QWORD*)(a1 + 32) + 24LL);
-  v7 = *(_DWORD*)(*(_QWORD*)(v6 + 64) + 4376LL);
+  {
+    v6 = *(_QWORD*)(*(_QWORD*)(a1 + 32) + 24LL);
+    __asm__ volatile("" ::"r"(v6));
+  }
+  {
+    v7 = *(_DWORD*)(*(_QWORD*)(v6 + 64) + 4376LL);
+    __asm__ volatile("" ::"r"(v7));
+  }
   if (!CudaDriverRoutine_99720(v6) |
       *((_BYTE*)&CudaDriverRoutine_74dc + (_QWORD)CudaDriverData_1422118 + 2) ==
           0) {
