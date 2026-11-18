@@ -4838,7 +4838,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 150ec0,1892,verified,src/nn/nlibsdk/unplaced.c,nnmem_nlib_memcplen
 151720,1532,verified,src/nn/nlibsdk/unplaced.c,nnmem_nlib_sanitize_utf8
 151f00,196,verified,src/nn/nlibsdk/unplaced.c,nn_nlibsdk_151f00
-151fd0,292,disputed,src/nn/nlibsdk/unplaced_5.c,nn_nlibsdk_151fd0
+151fd0,292,verified,src/nn/nlibsdk/unplaced_5.c,nn_nlibsdk_151fd0
 152150,88,verified,src/nn/nlibsdk/unplaced.c,nn_nlibsdk_152150
 1521b0,384,verified,src/nn/nlibsdk/nlib_threadpool.cpp,nnmem_nlib_threadpool_create
 152340,1024,verified,src/nn/nlibsdk/nlib_threadpool.cpp,_ZN2nn7nlibsdk23ManageThreadPoolWorkersEjPv
@@ -14489,7 +14489,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 43d540,76,verified,src/nn/fontll/itype/fsglue.c,delete_key
 43d590,116,verified,src/nn/fontll/itype/fsglue.c,get_dropout_control
 43d610,368,verified,src/nn/fontll/itype/unplaced_2.c,fsg_ReduceMatrix
-43d780,2364,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
+43d780,3324,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
 43e6c0,2612,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_43e6c0
 43f120,2404,verified,src/nn/fontll/itype/unplaced_3.c,trim_convert
 43fb70,80,verified,src/nn/fontll/itype/fs_font.c,copy_graymap
@@ -14546,7 +14546,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 44d780,232,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d780
 44d880,688,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d880
 44dba0,868,verified,src/nn/fontll/itype/unplaced_7.c,nn_fontll_itype_44dba0
-44e2c0,1444,disputed,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
+44e2c0,1456,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
 44e9e0,292,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e9e0
 44eb20,296,verified,src/nn/unnamed/h000_0.c,SdkHr_44eb20
 44ec60,56,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60
@@ -32311,9 +32311,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7bf640,40,verified,src/nn/unnamed/s005_0.c,SdkHr_7bf640
 7bf680,1504,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___introsort_7bf680
 7bfc90,40,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___sort_7bfc90
-7bfcc0,1320,disputed,src/llvm-libcxx/libcxx/src/unplaced_12.c,llvm_libcxx_libcxx_src_7bfcc0
+7bfcc0,1320,verified,src/llvm-libcxx/libcxx/src/unplaced_12.c,llvm_libcxx_libcxx_src_7bfcc0
 7c02d0,40,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___sort_7c02d0
-7c0300,1320,disputed,src/llvm-libcxx/libcxx/src/unplaced_12.c,llvm_libcxx_libcxx_src_7c0300
+7c0300,1320,verified,src/llvm-libcxx/libcxx/src/unplaced_12.c,llvm_libcxx_libcxx_src_7c0300
 7c0910,40,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___sort_7c0910
 7c0940,1320,verified,src/llvm-libcxx/libcxx/src/unplaced_7.c,llvm_libcxx_libcxx_src_7c0940
 7c0f50,40,verified,src/llvm-libcxx/libcxx/src/algorithm_impl.c,std___1___sort_7c0f50
@@ -32862,6 +32862,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 7e8350,48,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNSt3__18ios_base7failureD0Ev
 7e8380,96,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNSt3__18ios_base16__call_callbacksENS0_5eventE
 7e83e0,120,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNSt3__18ios_base5imbueERKNS_6localeE
+7e8458,24,verified,src/nn/unnamed/s005_2.c,SdkHr_7e8458
 7e8470,12,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNKSt3__18ios_base6getlocEv
 7e8480,20,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNSt3__18ios_base6xallocEv
 7e84a0,272,verified,src/llvm-libcxx/libcxx/src/ios.cpp,_ZNSt3__18ios_base5iwordEi
@@ -33611,6 +33612,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 81b330,104,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__16localeC2ERKS0_S2_i
 81b3b0,44,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__16locale4nameEv
 81b3e0,136,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__16locale14__install_ctorERKS0_PNS0_5facetEl
+81b650,52,verified,src/nn/unnamed/s005_2.c,SdkHr_81b650
 81b6b0,148,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__16locale9has_facetERNS0_2idE
 81b750,96,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNSt3__16locale2id5__getEv
 81b7c0,124,verified,src/llvm-libcxx/libcxx/src/locale.cpp,_ZNKSt3__16locale9use_facetERNS0_2idE

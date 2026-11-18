@@ -205,7 +205,7 @@ LABEL_3:
   GameRoutine_5fc180(v113),
       result =
           COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
-  DWORDn(v113[0], sizeof(v113[0]) / 4 - 1) = 68;
+  HIDWORD(v113[0]) = 68;
   v15 = GameRoutine_5fc7e0(a2, (__int64)v113),
   result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   v16 = 16LL * v14;

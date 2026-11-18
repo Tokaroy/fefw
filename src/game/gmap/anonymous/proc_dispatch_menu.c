@@ -60,6 +60,7 @@ __int64 ui_LayoutAccessor_FindTextBox_alt1(__int64*, __int64) __asm__(
     "ui_LayoutAccessor_FindTextBox");
 extern char* GameData_20a0ef0[4];
 void ProcDispatchMenu_Unknown85(__int64 a1);
+void BasicMenu_16e1f40_alt2(_QWORD*, __int64, __int64);
 
 void* ProcDispatchMenu_Unknown67(__int64 a1)
 {
@@ -325,6 +326,9 @@ __int64 game_gmap_anonymous_ProcDispatchMenu_AddItemList(__int64 a1)
 
 __int64 game_gmap_anonymous_ProcDispatchMenu_SortAndFilter(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   int v1;
   __int64 v2;
   _QWORD* v4;
@@ -455,7 +459,7 @@ LABEL_40:
   v22_.v23 = v22_.v22;
   v24_.v25 = v24_.v24;
   v22_.v22[0] = GameData_20a0e10;
-  BasicMenu_16e1f40_alt1((_QWORD*)a1, (__int64)v24_.v24, (__int64)v22_.v22);
+  BasicMenu_16e1f40_alt2((_QWORD*)a1, (__int64)v24_.v24, (__int64)v22_.v22);
   if (v22_.v23 == v22_.v22) {
     v19 = 32;
   }

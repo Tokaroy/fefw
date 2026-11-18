@@ -254,7 +254,7 @@ void game_combat_10def80(_QWORD* a1)
   atomic_fetch_add_explicit((atomic_ullong* volatile)(v8 + 16), 1u,
                             memory_order_relaxed);
   v9 = *(_QWORD*)(v7 + 40);
-  v10 = *(_QWORD*)(v8 + 8) == -1 | v9 == 0;
+  v10 = *(_QWORD*)(v8 + 8) == -1 || v9 == 0;
   if (v10 || (v11 = *(_QWORD*)(v9 + 80)) == 0 ||
       (*(_QWORD*)(v11 + 8) != -1 ? (v12 = *(_QWORD*)(v9 + 88) == 0)
                                  : (v12 = true),
@@ -314,14 +314,14 @@ void game_combat_10def80(_QWORD* a1)
         goto LABEL_89;
       }
     }
-    if (v4 != -972548316 & v4 != -270062627) {
+    if (v4 != -972548316 && v4 != -270062627) {
       goto LABEL_76;
     }
   LABEL_43:
     if ((*(_WORD*)v1 & 0x204) == 0 &&
         (*v6 == 0 || (v37 = *(_QWORD*)(*v6 + 8)) == 0 ||
          (*(_BYTE*)(v37 + 113) & 0x80) == 0)) {
-      v38 = 100 - *(int*)(*(_QWORD*)GameData_212d270 + 52LL);
+      v38 = 100 - *(_DWORD*)(*(_QWORD*)GameData_212d270 + 52LL);
       nn_os_LockMutex((__int64)&game_g_random_mutex);
       v39 = game_map_MapRandom_instance__ptr[0];
       v40 = *(_DWORD*)((char*)game_map_MapRandom_instance__ptr[0] +
@@ -344,7 +344,7 @@ void game_combat_10def80(_QWORD* a1)
         atomic_fetch_add_explicit((atomic_ullong* volatile)(v46 + 16), 1u,
                                   memory_order_relaxed);
         v47 = *(_QWORD*)(v45 + 40);
-        v48 = *(_QWORD*)(v46 + 8) == -1 | v47 == 0;
+        v48 = *(_QWORD*)(v46 + 8) == -1 || v47 == 0;
         if (v48 || (v49 = *(_QWORD*)(v47 + 80)) == 0 ||
             (*(_QWORD*)(v49 + 8) != -1 ? (v50 = *(_QWORD*)(v47 + 88) == 0)
                                        : (v50 = true),
@@ -560,7 +560,7 @@ void game_combat_10def80(_QWORD* a1)
     goto LABEL_250;
   }
   if (v4 <= 232551548) {
-    if (v4 != -93581017 & v4 != -77626398) {
+    if (v4 != -93581017 && v4 != -77626398) {
     LABEL_47:
       if (v4 == 143741767) {
         goto LABEL_48;
@@ -569,7 +569,7 @@ void game_combat_10def80(_QWORD* a1)
     }
     goto LABEL_43;
   }
-  if ((unsigned int)(v4 - 232551549) <= 0x10 &
+  if ((unsigned int)(v4 - 232551549) <= 0x10 &&
       ((1 << (v4 - 125)) & 0x10401) != 0) {
   LABEL_48:
     if (*((float*)v5 + 9) > 0x0.0p+0f) {

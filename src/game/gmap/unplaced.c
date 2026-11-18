@@ -583,6 +583,7 @@ __int64 snd_Fade_Destroy_Fade_alt2(_QWORD*);
 __int64 snd_play_ff2d0_alt2(__int64, __int64, __int64, unsigned int,
                             unsigned int, int, float, float);
 void snd_Fade_Fade_10c830_alt3(__int64, float);
+unsigned int* game_gmap_SpotMgr_GetCurrentSpot_alt3();
 
 bool game_gmap_887a40(__int64 a1)
 {
@@ -5555,7 +5556,7 @@ __int64 game_gmap_135e7e0(__int64 a1)
       }
     }
   LABEL_8:
-    v10 = game_gmap_SpotMgr_GetCurrentSpot_alt1();
+    v10 = game_gmap_SpotMgr_GetCurrentSpot_alt3();
     goto LABEL_13;
   }
   if (v6 == v7) {
@@ -5574,7 +5575,7 @@ __int64 game_gmap_135e7e0(__int64 a1)
 LABEL_12:
   v10 = *(unsigned int**)v8;
 LABEL_13:
-  if ((unsigned __int8)Impl_13261c0_alt1((__int64)v10) == 5) {
+  if ((unsigned __int8)Impl_13261c0_alt2((__int64)v10) == 5) {
     v11 = *((_QWORD*)v10 + 18);
   }
   else {

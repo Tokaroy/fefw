@@ -30,10 +30,19 @@ game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1);
 __int64
 game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind_closure_Invoke(
     __int64 a1, __int64* a2);
+__int64 ProcInst_657850_alt1(__int64, __int64, __int64, char, __int64);
+__int64 fw_memory_HeapManager_Allocate_alt1(__int64, __int64, __int64,
+                                            unsigned int);
+__int64 game_menu_1789cf0(__int64, __int64);
+extern __int64 (*game_menu_GameMenuImpl_ImplUnknown00_ptr_2091160[])();
+void __attribute__((noreturn)) GameRoutine_60a310_alt1();
 _QWORD*
 
 game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v3;
   _QWORD* result;
@@ -44,13 +53,21 @@ game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1)
   __int64* v9;
   _BOOL4 v10;
   __int64 v11;
-  _QWORD v12[4];
-  _QWORD* v13;
+  struct {
+    _QWORD v12[4];
+    _QWORD* v13;
+  } v12_;
   __int64 v14;
 
-  v2 = fw_memory_HeapManager_Allocate(*(_QWORD*)fw_memory_g_heap_manager_ptr,
-                                      1392, 16, 0);
-  GameRoutine_1789cf0(v2, "StableBreedingUnitMenu");
+  v3 = COERCE_AS(__typeof__(v3),
+                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  v2 = fw_memory_HeapManager_Allocate_alt1(
+      *(_QWORD*)fw_memory_g_heap_manager_ptr, 1392, 16, 0),
+  v3 = COERCE_AS(__typeof__(v3),
+                 PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  game_menu_1789cf0(v2, (__int64)"StableBreedingUnitMenu"),
+      v3 = COERCE_AS(__typeof__(v3),
+                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
   *(_DWORD*)(v2 + 1184) = 0;
   *(_DWORD*)(v2 + 1208) = 0;
   *(_QWORD*)(v2 + 1216) = 0;
@@ -71,14 +88,17 @@ game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1)
   *(_QWORD*)v2 = game_facility_anonymous_ProcStableBreedingUnitMenu_vtable;
   *(_QWORD*)(v2 + 1376) = 0;
   *(_QWORD*)(v2 + 176) = GameData_2091090;
-  *(_QWORD*)(v2 + 1056) = game_menu_GameMenuImpl_ImplUnknown00_ptr;
+  *(_QWORD*)(v2 + 1056) = game_menu_GameMenuImpl_ImplUnknown00_ptr_2091160;
   *(_QWORD*)(*GameData_212dcd0 + 56) = *(_QWORD*)(*GameData_212dcd0 + 48);
-  ProcInst_657850(v2, GameData_212c730, "ProcStableBreedingUnitMenu", 1, a1);
-  result = v12;
-  v12[0] = GameData_2091228;
-  v12[1] = v2;
+  ProcInst_657850_alt1(v2, (__int64)GameData_212c730,
+                       (__int64)"ProcStableBreedingUnitMenu", 1, a1),
+      v3 = COERCE_AS(__typeof__(v3),
+                     PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+  result = v12_.v12;
+  v12_.v12[0] = GameData_2091228;
+  v12_.v12[1] = v2;
   v5 = *(__int64****)(game_UnitListSet_instance_ + 24);
-  v13 = v12;
+  v12_.v13 = v12_.v12;
   v6 = *v5;
   v7 = v5[1];
   if (*v5 == v7) {
@@ -105,8 +125,12 @@ game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1)
     }
     if (atomic_fetch_add((atomic_ullong* volatile)(v9 + 1),
                          0xFFFFFFFFFFFFFFFFLL) == 0) {
-      (*(void (**)(__int64*))(*v9 + 16))(v9);
-      std___1___shared_weak_count___release_weak(v9);
+      (*(void (**)(__int64*))(*v9 + 16))(v9),
+          v3 = COERCE_AS(__typeof__(v3),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
+      std___1___shared_weak_count___release_weak(v9),
+          v3 = COERCE_AS(__typeof__(v3),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       if (!v10) {
         goto LABEL_3;
       }
@@ -116,17 +140,21 @@ game_facility_anonymous_ProcStableBreedingUnitMenu_CreateBind(__int64 a1)
     if (v10) {
     LABEL_12:
       v14 = **v6;
-      if (v13 == nullptr) {
-        GameRoutine_60a310(0, v3);
+      if (v12_.v13 == nullptr) {
+        GameRoutine_60a310_alt1(),
+            v3 = COERCE_AS(__typeof__(v3),
+                           PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
       }
-      (*(void (**)(_QWORD*, __int64*))(*v13 + 48LL))(v13, &v14);
+      (*(void (**)(_QWORD*, __int64*))(*v12_.v13 + 48LL))(v12_.v13, &v14),
+          v3 = COERCE_AS(__typeof__(v3),
+                         PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
   LABEL_3:
     v6 += 2;
   } while (v6 != v7);
-  result = v13;
-  if (v13 != v12) {
-    if (v13 != nullptr) {
+  result = v12_.v13;
+  if (v12_.v13 != v12_.v12) {
+    if (v12_.v13 != nullptr) {
       v11 = 40;
       return (_QWORD*)(*(__int64 (**)(_QWORD*, __int64))(*result + v11))(result,
                                                                          v3);

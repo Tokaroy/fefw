@@ -211,6 +211,8 @@ void GfxLoader_c45700(__int64* a1, __int64 a2, unsigned __int64 a3, __int64 a4,
                       unsigned __int64 a5, __int64 a6, unsigned __int64 a7,
                       __int64 a8, __int64 a9, unsigned __int64 a10, __int64 a11,
                       unsigned __int64 a12, __int64 a13, unsigned __int64 a14);
+__int64 GameRoutine_1a09c70(_QWORD);
+__int64 nn_mem_StandardAllocator_Free_alt3(_QWORD);
 
 void GfxLoader_c3f420(__int64** a1, __int64 a2)
 {
@@ -3864,6 +3866,9 @@ void GfxLoader_c46f00(__int64* a1, unsigned __int64 a2)
 
 __int64 GfxLoader_c48320(__int64 result, __int64* a2)
 {
+
+#pragma clang fp contract(on)
+
   unsigned __int64 v2;
   unsigned __int8* v3;
   _QWORD* v5;
@@ -3920,8 +3925,8 @@ __int64 GfxLoader_c48320(__int64 result, __int64* a2)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v8 = 56;
       }
-      result = nn_mem_StandardAllocator_Free(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v8, (_QWORD)(v22_.v24)),
+      result = nn_mem_StandardAllocator_Free_alt3(
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v8),
       v15 = COERCE_AS(__typeof__(v15),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }
@@ -3949,8 +3954,9 @@ __int64 GfxLoader_c48320(__int64 result, __int64* a2)
     }
     if ((*(_BYTE*)v10 & 0x7F) == 8 &&
         ((v22_.v22 & 1) == 0 ? (v12 = (char*)&v22_.v22 + 1) : (v12 = v22_.v24),
-         v13 = strlen(v12), v14 = *(unsigned int**)(v10 + 1), v25[0] = v12,
-         v25[1] = v13, result = (__int64)game_6b7f00(v14, 0, v14, v14[1], v25),
+         v13 = GameRoutine_1a09c70(v12), v14 = *(unsigned int**)(v10 + 1),
+         v25[0] = v12, v25[1] = v13,
+         result = (__int64)game_6b7f00(v14, 0, v14, v14[1], v25),
          v15 != v14[1])) {
       v16 = *(unsigned int*)result;
       if (v15 >= v16) {
@@ -3979,8 +3985,8 @@ __int64 GfxLoader_c48320(__int64 result, __int64* a2)
       if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
         v20 = 56;
       }
-      result = nn_mem_StandardAllocator_Free(
-          *(_QWORD*)fw_memory_g_heap_manager_ptr + v20, (_QWORD)(v22_.v24)),
+      result = nn_mem_StandardAllocator_Free_alt3(
+          *(_QWORD*)fw_memory_g_heap_manager_ptr + v20),
       v15 = COERCE_AS(__typeof__(v15),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
     }

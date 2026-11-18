@@ -229,6 +229,7 @@ void RelianceSelectMenu_1852b80_alt2(__int64*, __int64, __int64);
 void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
 void snd_Fade_Fade_10c830_alt2(__int64, float);
 __int64 game_menu_RelianceSelectMenu_ZLCall_lambda0_Invoke(__int64 a1);
+void game_menu_184d360(__int64*, __int64*);
 
 __int64 RelianceSelectMenu_Unknown96(__int64 a1)
 {
@@ -1183,7 +1184,7 @@ __int64 RelianceSelectMenu_Unknown112(__int64 a1)
       f_.v28 = nullptr;
       f_.v29 = 0;
       f_.v27 = nullptr;
-      GameRoutine_184d360_alt4(f_.v30, (__int64*)&f_.v27);
+      game_menu_184d360(f_.v30, (__int64*)&f_.v27);
       if (v9 != 0 && v8 != nullptr && v7 != 0) {
         v14 = v34;
         v34[0] = GameRoutine_8c9820_alt2((__int64)v8, v7, 0);

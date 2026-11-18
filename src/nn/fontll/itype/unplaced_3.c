@@ -4894,13 +4894,13 @@ LABEL_23:
     *(_DWORD*)(v31 + 36) = (*(_DWORD*)(v12 + v40) - *(_DWORD*)(v12 + v39))
                            << 10;
     v41 = muldiv_64_plt(
-      (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 4LL) << 16,
-      *(unsigned __int16*)(v5 + 112),
-      *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
+        (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 4LL) << 16,
+        *(unsigned __int16*)(v5 + 112),
+        *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
     v42 = muldiv_64_plt(
-      (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 6LL) << 16,
-      *(unsigned __int16*)(v5 + 112),
-      *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
+        (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 6LL) << 16,
+        *(unsigned __int16*)(v5 + 112),
+        *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
     v43 = *(_DWORD*)(v31 + 12);
     v44 = ((v42 >> 1) + (v41 >> 1)) & 0xFFFF0000;
     v45 = *(_DWORD*)(v31 + 24) - v44;
@@ -4965,13 +4965,13 @@ LABEL_23:
     *(_DWORD*)(v31 + 36) = (*(_DWORD*)(v12 + v90) - *(_DWORD*)(v12 + v91))
                            << 10;
     v92 = muldiv_64_plt(
-      (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 4LL) << 16,
-      *(unsigned __int16*)(v5 + 112),
-      *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
+        (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 4LL) << 16,
+        *(unsigned __int16*)(v5 + 112),
+        *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
     v93 = muldiv_64_plt(
-      (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 6LL) << 16,
-      *(unsigned __int16*)(v5 + 112),
-      *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
+        (unsigned int)*(unsigned __int16*)(*(_QWORD*)(v15 + 56) + 6LL) << 16,
+        *(unsigned __int16*)(v5 + 112),
+        *(unsigned __int16*)(*(_QWORD*)(v15 + 48) + 18LL));
     v94 = *(_DWORD*)(v31 + 16);
     v95 = ((v93 >> 1) + (v92 >> 1)) & 0xFFFF0000;
     v96 = v95 - *(_DWORD*)(v31 + 20);

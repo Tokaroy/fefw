@@ -333,7 +333,7 @@ float32x4_t nn_ui2d_detail_5a8380(long double a1, __int64 a2, float32x4_t* a3,
     do {
       v14 = v5 < v12;
       v12 = v11[14];
-      v14 = !v14 & v5 < v12;
+      v14 = !v14 && v5 < v12;
       if (v14) {
         v13 = v11;
         goto LABEL_12;
@@ -398,7 +398,7 @@ LABEL_17:
     do {
       v14 = v5 < v31;
       v31 = v30[14];
-      if (!v14 & v5 < v31) {
+      if (!v14 && v5 < v31) {
         v32 = v30;
         goto LABEL_28;
       }
@@ -447,14 +447,10 @@ LABEL_17:
                                         (float)(0x1.0000000000000p+0f -
                                                 v38)))))))
             .n64_u64[0];
-    v27 = DWORDn(v28, sizeof(v28) / 4 - 1);
+    v27 = HIDWORD(v28);
   }
   else {
-    {
-      __typeof__(v28) z_ = (__typeof__(v28)){0};
-      LODWORD(z_) = *((_DWORD*)a4 + 2);
-      v28 = z_;
-    }
+    LODWORD(v28) = *((_DWORD*)a4 + 2);
     v27 = *((_DWORD*)a4 + 3);
   }
 LABEL_33:

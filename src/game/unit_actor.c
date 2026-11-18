@@ -2381,16 +2381,11 @@ long double UnitActor_81ba20(__int64 a1, long double result)
   int16x4_t v17;
   int v18;
   float32x4_t v19;
-  struct {
-    float32x4_t v20;
-    float v21;
-    char gap20_[12];
-    float v22;
-    char gap36_[12];
-    unsigned __int32 v23;
-    char gap52_[12];
-    long double v24;
-  } f_;
+  float32x4_t v20;
+  float v21;
+  float v22;
+  unsigned __int32 v23;
+  long double v24;
   long double v25;
 
   v2 = *(_QWORD*)(a1 + 8);
@@ -2418,7 +2413,7 @@ long double UnitActor_81ba20(__int64 a1, long double result)
       v4 = *(float*)(a1 + 60);
       LODWORD(v6) = LODWORD(result);
     }
-    f_.v23 = v6;
+    v23 = v6;
     if (v4 < v5) {
       *(float*)&result =
           Cursor_734120_alt2(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
@@ -2428,30 +2423,30 @@ long double UnitActor_81ba20(__int64 a1, long double result)
       v7 = *(float*)&result;
     }
     v8 = *(float*)(a1 + 104);
-    f_.v22 = v7;
+    v22 = v7;
     if (v4 < v5) {
       *(float*)&result =
           Cursor_734120_alt2(*(_DWORD*)(a1 + 64), *(_DWORD*)(a1 + 68),
                              *(float*)(a1 + 88), v8, v4, v5);
-      v7 = f_.v22;
+      v7 = v22;
       v8 = *(float*)&result;
     }
-    v9 = f_.v23;
+    v9 = v23;
     v11 = *(float*)(a1 + 120);
     v10 = *(float*)(a1 + 124);
     v12 = *(float*)(a1 + 144);
-    LANES128(v13).n128_u64[0] = __PAIR64__(LODWORD(v7), f_.v23);
+    LANES128(v13).n128_u64[0] = __PAIR64__(LODWORD(v7), v23);
     LANES128(v13).n128_u64[1] = LODWORD(v8);
     if (v10 < v11) {
-      f_.v20 = v13;
-      f_.v21 = v8;
+      v20 = v13;
+      v21 = v8;
       *(float*)&result =
           Cursor_734120_alt2(*(_DWORD*)(a1 + 128), *(_DWORD*)(a1 + 132),
                              *(float*)(a1 + 140), v12, v10, v11);
-      v13 = f_.v20;
-      v8 = f_.v21;
-      v7 = f_.v22;
-      v9 = f_.v23;
+      v13 = v20;
+      v8 = v21;
+      v7 = v22;
+      v9 = v23;
       v12 = *(float*)&result;
     }
     v14 = *(float32x4_t**)(a1 + 232);
@@ -2475,23 +2470,22 @@ long double UnitActor_81ba20(__int64 a1, long double result)
     }
     (*(__attribute__((swiftcall)) void (**)(PSEUDO_X8, __int64, long double,
                                             long double))(*(_QWORD*)a1 + 32LL))(
-        (void*)(&f_.v24), a1, result, v16);
-    result = f_.v24;
+        (void*)(&v24), a1, result, v16);
+    result = v24;
     LANES64(v17).n64_u64[0] =
-        LANES64_OF(
-            vmovn_s32(vmvnq_s8(vceqq_f32(v14[21], *(float32x4_t*)&f_.v24))))
+        LANES64_OF(vmovn_s32(vmvnq_s8(vceqq_f32(v14[21], *(float32x4_t*)&v24))))
             .n64_u64[0];
     if ((LANES64(v17).n64_u8[0] & 1) != 0 ||
         (LANES64(v17).n64_u8[2] & 1) != 0 ||
         (LANES64(v17).n64_u8[4] & 1) != 0 ||
         (LANES64(v17).n64_u8[6] & 1) != 0) {
       v18 = LANES128(v14[18]).n128_u32[2] | 1;
-      LANES128(v14[21]).n128_u64[0] = *(_QWORD*)&f_.v24;
+      LANES128(v14[21]).n128_u64[0] = *(_QWORD*)&v24;
       LANES128(v14[21]).n128_u64[1] =
           LANES128_OF(vextq_s8(*(int8x16_t*)&result, *(int8x16_t*)&result, 8u))
               .n128_u64[0];
       LANES128(v14[18]).n128_u32[2] = v18;
-      math_622ac0((void*)(&v25), (float32x2_t*)&f_.v24);
+      math_622ac0((void*)(&v25), (float32x2_t*)&v24);
       result = v25;
       LANES128(v14[20]).n128_u64[0] = *(_QWORD*)&v25;
       v19 = v14[20];

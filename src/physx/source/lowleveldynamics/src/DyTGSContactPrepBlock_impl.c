@@ -403,8 +403,8 @@ int32x4_t** physx_Dy_solveContact4_Block_3c4a10(unsigned int* a1, __int64 a2,
   v37 = vzip2q_s32(v29, v33);
   v38 = vzip1q_s32(v32, v36);
   v39 = vzip2q_s32(v32, v36);
-  LANES128(v36).n128_u64[0] = 0xFF7FFFFFFF7FFFFFLL;
-  LANES128(v36).n128_u64[1] = 0xFF7FFFFFFF7FFFFFLL;
+  LANES128(v36).n128_u64[0] = 0x80000000800000LL;
+  LANES128(v36).n128_u64[1] = 0x80000000800000LL;
   v40 = vzip1q_s32(v31, v35);
   v41 = vzip2q_s32(v31, v35);
   v42 = vzip2q_s32(v34, v37);
@@ -718,7 +718,7 @@ int32x4_t** physx_Dy_solveContact4_Block_3c4a10(unsigned int* a1, __int64 a2,
                            COERCE_AS(float32x2_t, LANES128(v124).n128_u64[0]),
                            COERCE_AS(float32x2_t, LANES128(v124).n128_u64[0])))
                        .n64_f32[0];
-            if (!(v299 > v128)) {
+            if (v299 <= v128) {
               v125 = v128;
             }
             v299 = v125;

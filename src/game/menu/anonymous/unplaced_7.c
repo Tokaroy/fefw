@@ -13,7 +13,7 @@ __int64 ui_LayoutAccessor_FindPane(__int64*, __int64);
 bool GameHr_1613a00(__int64, __int64, __int64);
 __int64 GameRoutine_1613dd0(__int64*, __int64*, __int64*, __int64*, __int64*);
 __int64 GameRoutine_1613f30(__int64*, __int64*, __int64*, __int64*, __int64*,
-                         __int64*);
+                            __int64*);
 bool GameRoutine_1614020(__int64*, __int64*, __int64*);
 char* game_util_Format(const char*, ...);
 extern _UNKNOWN* GameData_212c958;
@@ -27,6 +27,8 @@ float32x4_t* GameRoutine_1994460(float32x4_t* result);
 __int64 game_menu_anonymous_1612ec0(__int64 result, __int64* a2, __int64* a3,
                                     __int64 a4, char a5);
 __int64 game_menu_anonymous_17a4cc0(int* a1, __int64 a2, float* a3);
+_QWORD* gfxa_1993840(__int64);
+float32x4_t* gfxa_1994460(float32x4_t* result);
 
 __int64 game_menu_anonymous_1612ec0(__int64 result, __int64* a2, __int64* a3,
                                     __int64 a4, char a5)
@@ -901,11 +903,9 @@ __int64 game_menu_anonymous_17a4cc0(int* a1, __int64 a2, float* a3)
   __int64 v221;
   __int64 v222;
   __int64 result;
+  float v224;
+  float v225;
   struct {
-    float v224;
-    char gap4_[12];
-    float v225;
-    char gap20_[12];
     __int64 v226;
     __int64 v227;
     __int64 v228;
@@ -914,7 +914,7 @@ __int64 game_menu_anonymous_17a4cc0(int* a1, __int64 a2, float* a3)
     __int64 v231;
     __int64 v232;
     __int64 v233;
-  } f_;
+  } v226_;
 
   v25 = COERCE_AS(__typeof__(v25), PSEUDO_REGISTER(float, "s1", "=w")),
   v55 = COERCE_AS(__typeof__(v55),
@@ -1038,21 +1038,21 @@ LABEL_24:
   }
   v22 = 0;
   v23 = 0;
-  f_.v232 = 0;
-  f_.v233 = 0;
-  f_.v230 = 0;
-  f_.v231 = 0;
-  f_.v228 = 0;
-  f_.v229 = 0;
-  f_.v226 = 0;
-  f_.v227 = 0;
+  v226_.v232 = 0;
+  v226_.v233 = 0;
+  v226_.v230 = 0;
+  v226_.v231 = 0;
+  v226_.v228 = 0;
+  v226_.v229 = 0;
+  v226_.v226 = 0;
+  v226_.v227 = 0;
   {
-    f_.v224 = -(float)(*((float*)&v10 + 1) - (float)(v21 * 0x1.0000000000000p-1f));
-    __asm__ volatile("" ::"w"(f_.v224));
+    v224 = -(float)(*((float*)&v10 + 1) - (float)(v21 * 0x1.0000000000000p-1f));
+    __asm__ volatile("" ::"w"(v224));
   }
   {
-    f_.v225 = *(float*)&v10 + (float)(v20 * 0x1.0000000000000p-1f);
-    __asm__ volatile("" ::"w"(f_.v225));
+    v225 = *(float*)&v10 + (float)(v20 * 0x1.0000000000000p-1f);
+    __asm__ volatile("" ::"w"(v225));
   }
   do {
     v27 = game_util_Format("Locator%02d", v23),
@@ -1133,15 +1133,15 @@ LABEL_24:
           v25 = COERCE_AS(__typeof__(v25), PSEUDO_REGISTER(float, "s1", "=w")),
           v55 = COERCE_AS(__typeof__(v55),
                           PSEUDO_REGISTER(unsigned long long, "x8", "=r"));
-      v26 = (float*)((char*)&f_.v226 + v22 * 4);
-      *v26 = f_.v225 + v24;
-      v26[1] = f_.v224 + (float)(PSEUDO_UNFUSED((float)(v32 * (float)-v30) * v25));
+      v26 = (float*)((char*)&v226_.v226 + v22 * 4);
+      *v26 = v225 + v24;
+      v26[1] = v224 + (float)(PSEUDO_UNFUSED((float)(v32 * (float)-v30) * v25));
     }
     ++v23;
     v22 += 2;
   } while (v23 != 8);
   v41 = (__int64**)game_map_MapColorPalette_g_texture_archives;
-  GameRoutine_1993840(**(_QWORD**)game_map_MapColorPalette_g_texture_archives),
+  gfxa_1993840(**(_QWORD**)game_map_MapColorPalette_g_texture_archives),
       v25 = COERCE_AS(__typeof__(v25), PSEUDO_REGISTER(float, "s1", "=w")),
       v55 = COERCE_AS(__typeof__(v55),
                       PSEUDO_REGISTER(unsigned long long, "x8", "=r"));
@@ -1216,7 +1216,7 @@ LABEL_24:
     __asm__ volatile("" ::"r"(v52));
   }
   *(_OWORD*)(v51 + 17344) = *(_OWORD*)GameData_212c958;
-  GameRoutine_1994460(v52),
+  gfxa_1994460(v52),
       v25 = COERCE_AS(__typeof__(v25), PSEUDO_REGISTER(float, "s1", "=w")),
       v55 = COERCE_AS(__typeof__(v55),
                       PSEUDO_REGISTER(unsigned long long, "x8", "=r"));
@@ -1229,7 +1229,7 @@ LABEL_24:
     __asm__ volatile("" ::"r"(v54));
   }
   *(_DWORD*)(v53 + 17308) = 0;
-  GameRoutine_1994460(v54),
+  gfxa_1994460(v54),
       v25 = COERCE_AS(__typeof__(v25), PSEUDO_REGISTER(float, "s1", "=w")),
       v55 = COERCE_AS(__typeof__(v55),
                       PSEUDO_REGISTER(unsigned long long, "x8", "=r"));
@@ -1283,8 +1283,8 @@ LABEL_54:
   *(_DWORD*)(*(_QWORD*)game_map_MapColorPalette_g_texture_archives + 19200LL) =
       v65 + 1;
   *((float*)&v67 + 3) = v61 / 0x1.fe00000000000p+7f;
-  v68 = f_.v226;
-  v69 = f_.v227;
+  v68 = v226_.v226;
+  v69 = v226_.v227;
   if (v65 <= 262142) {
     {
       v70 = *(_QWORD*)(v63 + 19136) + 40LL * (v65 + 1);
@@ -1293,7 +1293,7 @@ LABEL_54:
     *(_QWORD*)(v70 + 8) = 0;
     *(_QWORD*)(v70 + 16) = 0;
     *(_OWORD*)(v70 + 24) = v67;
-    *(_QWORD*)v70 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v70 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v71 = v64 + 1440LL * v66 + 4LL * *(int*)(v64 + 1440LL * v66 + 256);
       __asm__ volatile("" ::"r"(v71));
@@ -1365,7 +1365,7 @@ LABEL_54:
     ++*(_DWORD*)(v83 + 260);
   }
   v84 = game_map_MapColorPalette_g_texture_archives;
-  v85 = f_.v228;
+  v85 = v226_.v228;
   {
     v86 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v86));
@@ -1395,7 +1395,7 @@ LABEL_54:
     *(_QWORD*)(v90 + 8) = 0;
     *(_QWORD*)(v90 + 16) = 0;
     *(_OWORD*)(v90 + 24) = v67;
-    *(_QWORD*)v90 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v90 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v91 = v87 + 1440LL * v89 + 4LL * *(int*)(v87 + 1440LL * v89 + 256);
       __asm__ volatile("" ::"r"(v91));
@@ -1467,7 +1467,7 @@ LABEL_54:
     ++*(_DWORD*)(v103 + 260);
   }
   v104 = game_map_MapColorPalette_g_texture_archives;
-  v105 = f_.v229;
+  v105 = v226_.v229;
   {
     v106 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v106));
@@ -1497,7 +1497,7 @@ LABEL_54:
     *(_QWORD*)(v110 + 8) = 0;
     *(_QWORD*)(v110 + 16) = 0;
     *(_OWORD*)(v110 + 24) = v67;
-    *(_QWORD*)v110 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v110 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v111 = v107 + 1440LL * v109 + 4LL * *(int*)(v107 + 1440LL * v109 + 256);
       __asm__ volatile("" ::"r"(v111));
@@ -1569,7 +1569,7 @@ LABEL_54:
     ++*(_DWORD*)(v123 + 260);
   }
   v124 = game_map_MapColorPalette_g_texture_archives;
-  v125 = f_.v230;
+  v125 = v226_.v230;
   {
     v126 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v126));
@@ -1599,7 +1599,7 @@ LABEL_54:
     *(_QWORD*)(v130 + 8) = 0;
     *(_QWORD*)(v130 + 16) = 0;
     *(_OWORD*)(v130 + 24) = v67;
-    *(_QWORD*)v130 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v130 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v131 = v127 + 1440LL * v129 + 4LL * *(int*)(v127 + 1440LL * v129 + 256);
       __asm__ volatile("" ::"r"(v131));
@@ -1671,7 +1671,7 @@ LABEL_54:
     ++*(_DWORD*)(v143 + 260);
   }
   v144 = game_map_MapColorPalette_g_texture_archives;
-  v145 = f_.v231;
+  v145 = v226_.v231;
   {
     v146 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v146));
@@ -1701,7 +1701,7 @@ LABEL_54:
     *(_QWORD*)(v150 + 8) = 0;
     *(_QWORD*)(v150 + 16) = 0;
     *(_OWORD*)(v150 + 24) = v67;
-    *(_QWORD*)v150 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v150 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v151 = v147 + 1440LL * v149 + 4LL * *(int*)(v147 + 1440LL * v149 + 256);
       __asm__ volatile("" ::"r"(v151));
@@ -1773,7 +1773,7 @@ LABEL_54:
     ++*(_DWORD*)(v163 + 260);
   }
   v164 = game_map_MapColorPalette_g_texture_archives;
-  v165 = f_.v232;
+  v165 = v226_.v232;
   {
     v166 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v166));
@@ -1803,7 +1803,7 @@ LABEL_54:
     *(_QWORD*)(v170 + 8) = 0;
     *(_QWORD*)(v170 + 16) = 0;
     *(_OWORD*)(v170 + 24) = v67;
-    *(_QWORD*)v170 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v170 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v171 = v167 + 1440LL * v169 + 4LL * *(int*)(v167 + 1440LL * v169 + 256);
       __asm__ volatile("" ::"r"(v171));
@@ -1875,7 +1875,7 @@ LABEL_54:
     ++*(_DWORD*)(v183 + 260);
   }
   v184 = game_map_MapColorPalette_g_texture_archives;
-  v185 = f_.v233;
+  v185 = v226_.v233;
   {
     v186 = *(_QWORD*)game_map_MapColorPalette_g_texture_archives;
     __asm__ volatile("" ::"r"(v186));
@@ -1905,7 +1905,7 @@ LABEL_54:
     *(_QWORD*)(v190 + 8) = 0;
     *(_QWORD*)(v190 + 16) = 0;
     *(_OWORD*)(v190 + 24) = v67;
-    *(_QWORD*)v190 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v190 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v191 = v187 + 1440LL * v189 + 4LL * *(int*)(v187 + 1440LL * v189 + 256);
       __asm__ volatile("" ::"r"(v191));
@@ -2006,7 +2006,7 @@ LABEL_54:
     *(_QWORD*)(v209 + 8) = 0;
     *(_QWORD*)(v209 + 16) = 0;
     *(_OWORD*)(v209 + 24) = v67;
-    *(_QWORD*)v209 = __PAIR64__(LODWORD(f_.v224), LODWORD(f_.v225));
+    *(_QWORD*)v209 = __PAIR64__(LODWORD(v224), LODWORD(v225));
     {
       v210 = v206 + 1440LL * v208 + 4LL * *(int*)(v206 + 1440LL * v208 + 256);
       __asm__ volatile("" ::"r"(v210));

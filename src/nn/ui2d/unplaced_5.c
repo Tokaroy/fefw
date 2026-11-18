@@ -9,6 +9,8 @@ __int64 memset(__int64, int, unsigned __int64);
 void nn_ui2d_58b740(__int64, __int64, __int64, unsigned __int16);
 float nn_ui2d_58b2b0(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4,
                      float* a5, float* a6);
+__int64 GameRoutine_1a0ba50(__int64, int, unsigned __int64);
+__int64 nn_ui2d_58b5a0(__int64 result, float*, float);
 
 float nn_ui2d_58b2b0(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4,
                      float* a5, float* a6)
@@ -83,7 +85,7 @@ float nn_ui2d_58b2b0(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4,
     v12 = *(_QWORD*)(*(_QWORD*)(a2 + 200) + 56LL) + *(unsigned int*)(a1 + 52);
     __asm__ volatile("" ::"r"(v12));
   }
-  memset(v12, 0, 0x220u),
+  GameRoutine_1a0ba50(v12, 0, 0x220u),
       result =
           COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   *(float*)(v12 + 4) = *a5;
@@ -100,7 +102,7 @@ float nn_ui2d_58b2b0(__int64 a1, __int64 a2, __int64 a3, unsigned __int16 a4,
     }
     *(float*)(v12 + 284) = v18;
   }
-  v19 = GameRoutine_58b5a0(a1, (float*)v12, v18),
+  v19 = nn_ui2d_58b5a0(a1, (float*)v12, v18),
   result = COERCE_AS(__typeof__(result), PSEUDO_REGISTER(float, "s0", "=w"));
   {
     v20 = *(float32x4_t*)(a2 + 80);

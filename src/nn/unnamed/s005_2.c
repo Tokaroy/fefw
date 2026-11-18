@@ -3,39 +3,30 @@
 #pragma GCC visibility push(hidden)
 
 extern _UNKNOWN SdkData_1060ba0;
-
 void __attribute__((noreturn)) SdkRoutine_7cd620();
-
 __int64 SdkRoutine_815340(_QWORD);
-
 __int64 SdkRoutine_82dd20(_QWORD);
-
 __int64 SdkRoutine_857220(_QWORD, _QWORD);
-
 __int64 SdkRoutine_86ee60(_QWORD);
-
 __int64 SdkRoutine_86ee80(_QWORD);
-
 double SdkRoutine_87c790(_QWORD);
-
 __int64 SdkRoutine_87c8e0(_QWORD);
-
 __int64 SdkRoutine_87c9c0(_QWORD);
-
 __int64 SdkRoutine_87cb10(_QWORD);
-
 __int64 SdkRoutine_87cd30(_QWORD);
-
 __int64 SdkRoutine_87cef0(_QWORD);
-
 __int64 SdkRoutine_87d320(double);
+__int64 _Unwind_Resume_plt(_QWORD);
+__int64 __cxa_guard_abort_plt(_QWORD);
+__int64 std___1_locale_Destroy_locale_plt();
+void __attribute__((noreturn)) SdkHr_7e8458(__int64 a1);
+void __attribute__((noreturn)) SdkHr_81b650(__int64 a1);
 
 void __attribute__((noreturn)) SdkHr_7e8458(__int64 a1)
 {
-  __int64 v1;
 
-  SdkRoutine_86ee60(v1);
-  SdkRoutine_87c790(a1);
+  std___1_locale_Destroy_locale_plt();
+  _Unwind_Resume_plt(a1);
   __udf(0);
 }
 
@@ -97,6 +88,7 @@ void __attribute__((noreturn)) SdkHr_80d850(__int64 a1, __int64 a2, __int64 a3,
 }
 
 void __attribute__((noreturn))
+
 SdkHr_80fb04(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5,
              __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10,
              __int64 a11, char a12, __int64 a13, __int64 a14, void (*a15)(void))
@@ -146,15 +138,12 @@ void __attribute__((noreturn)) SdkHr_818300(__int64 a1)
 
 void __attribute__((noreturn)) SdkHr_81b650(__int64 a1)
 {
-  __int64 v1;
   __int64 v3;
-  __int64 v4;
 
-  SdkRoutine_87cd30(&SdkData_1060ba0);
-  SdkRoutine_87c790(a1);
-  v4 = v3;
-  SdkRoutine_86ee60(v1);
-  SdkRoutine_87c790(v4);
+  __cxa_guard_abort_plt(&SdkData_1060ba0);
+  v3 = _Unwind_Resume_plt(a1);
+  std___1_locale_Destroy_locale_plt();
+  _Unwind_Resume_plt(v3);
   __udf(0);
 }
 

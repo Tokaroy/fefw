@@ -37,6 +37,9 @@ void ProcHubSeqTalkSelect_DeletingDestructor(__int64 a1);
 __int64 HubCharacterDisposManager_d5da40(__int64, __int64, __int64);
 __int64 std___1___shared_weak_count_lock_alt1(__int64) __asm__(
     "std___1___shared_weak_count_lock");
+__int64 std___1___shared_weak_count___release_weak_alt2(__int64);
+__int64 std___1___shared_weak_count_lock_alt2(__int64);
+bool GameRoutine_cb18f0_alt1(_QWORD*, __int64);
 
 __int64 ProcHubSeqTalkSelect_10464e0(__int64 a1)
 {
@@ -71,6 +74,9 @@ __int64 ProcHubSeqTalkSelect_10464e0(__int64 a1)
 __int64 game_hub_anonymous_ProcHubSeqTalkSelect_MainSeq_closure_Invoke_10466d0(
     __int64 a1, __int64* a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 result;
   __int64 v4;
   __int64 v5;
@@ -78,17 +84,18 @@ __int64 game_hub_anonymous_ProcHubSeqTalkSelect_MainSeq_closure_Invoke_10466d0(
   result = *(_QWORD*)(a1 + 16);
   if (result != 0) {
     v4 = *a2;
-    result = std___1___shared_weak_count_lock();
+    result = std___1___shared_weak_count_lock_alt2(result);
     if (result != 0) {
       v5 = result;
       result = *(_QWORD*)(a1 + 8);
       if (result != 0) {
-        result = GameRoutine_cb18f0(result, v4);
+        result = ((__int64 (*)(_QWORD*, __int64))GameRoutine_cb18f0_alt1)(
+            (_QWORD*)result, v4);
       }
       if (atomic_fetch_add((atomic_ullong* volatile)(v5 + 8),
                            0xFFFFFFFFFFFFFFFFLL) == 0) {
         (*(void (**)(__int64))(*(_QWORD*)v5 + 16LL))(v5);
-        return std___1___shared_weak_count___release_weak(v5);
+        return std___1___shared_weak_count___release_weak_alt2(v5);
       }
     }
   }

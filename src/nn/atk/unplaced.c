@@ -35,6 +35,9 @@ __n128 nn_atk_2b8e00_alt1(__int64 a1, __int64* a2);
 __int64 nn_os_LockMutex_alt1(__int64);
 __int64 nn_os_UnlockMutex_alt1(__int64);
 __int64 nn_atk_2b8e00(__int64 a1, __int64* a2);
+__int64 GameRoutine_1a09c70(_QWORD);
+__int64 GameRoutine_1a09d30(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
+                            _QWORD, _QWORD);
 
 float32x4_t nn_atk_277c50(float32x4_t* a1, float32x4_t* a2)
 {
@@ -156,7 +159,7 @@ __int64 nn_atk_278700(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   if ((*(_WORD*)v17 & 1) == 0) {
     v18 = v23;
     v19 = a2;
-    v20 = strlen(a2);
+    v20 = GameRoutine_1a09c70(a2);
     v21 = v19;
     v22 = v20;
     v23 = v18;
@@ -180,7 +183,7 @@ __int64 nn_atk_278700(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
   }
 LABEL_13:
   v25 = &v16[5 * v15];
-  if ((unsigned int)strcmp(
+  if ((unsigned int)GameRoutine_1a09d30(
           v21,
           v23 + *(int*)(v23 + 4) +
               *(int*)(v23 + *(int*)(v23 + 4) + 12LL * (int)v25[3] + 8),

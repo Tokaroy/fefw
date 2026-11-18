@@ -91,6 +91,7 @@ __int64 game_facility_17078c0(__int64 a1, __int64 a2);
 __int64 game_facility_1934710(__int64 a1);
 void game_facility_19e97b0(_QWORD* a1);
 void game_facility_19e9950(_QWORD* a1);
+__int64 BasicMenu_16dcd30(__int64, __int64, _QWORD*, __int64);
 
 void game_facility_a0f9b0(__int64 a1)
 {
@@ -1568,7 +1569,7 @@ __int64 game_facility_1934710(__int64 a1)
     v14_.v15 = 0;
     v9 = 1;
   }
-  game_menu_16dcd30(v3, (__int64)"IndividualDecideMenu", &v14_.v14, v8);
+  BasicMenu_16dcd30(v3, (__int64)"IndividualDecideMenu", &v14_.v14, v8);
   v10 = v14_.v15;
   if (v14_.v15 != 0 && atomic_fetch_add((atomic_ullong* volatile)(v14_.v15 + 8),
                                         0xFFFFFFFFFFFFFFFFLL) == 0) {

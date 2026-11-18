@@ -379,6 +379,8 @@ void Seq_1133d80(__int64 a1);
 void Seq_1134430(__int64 a1);
 typedef __int64 GameAlign_1ac302b __attribute__((aligned(1)));
 extern GameAlign_1ac302b GameData_1ac302b_alt1 __asm__("GameData_1ac302b");
+__int64 memory_a19f00(_QWORD, _QWORD);
+__int64 nn_mem_StandardAllocator_Free_alt4(_QWORD);
 
 void Seq_Destructor_1130ae0(__int64 a1)
 {
@@ -2276,8 +2278,7 @@ LABEL_30:
         v23[v22] = 0;
         if (v25 != 0 &&
             (v26 = GameRoutine_1152360((_QWORD*)(v25 + 560),
-                                       (unsigned __int8*)f_.v111)) !=
-                nullptr &&
+                                       (unsigned __int8*)f_.v111)) != nullptr &&
             (v27 = v26[5]) != 0) {
           v28 = *(_QWORD*)(v27 + 152);
           if ((f_.v111[0] & 1) != 0) {
@@ -2374,8 +2375,7 @@ LABEL_30:
       f_.v109[1] = v75;
       f_.v110 = v76;
     }
-    v78 =
-        GameRoutine_1152360((_QWORD*)(v18 + 560), (unsigned __int8*)f_.v109);
+    v78 = GameRoutine_1152360((_QWORD*)(v18 + 560), (unsigned __int8*)f_.v109);
     if (v78 != nullptr) {
       v79 = v78[5];
       if (v79 != 0) {
@@ -2417,8 +2417,9 @@ LABEL_30:
                                 memory_order_relaxed);
       v44 = *(_QWORD*)(v42 + 40);
       v45 = *(_QWORD*)(v43 + 8) == -1 | v44 == 0;
-      if (v45 || ((void)*(volatile __int64*)(v43 + 8),
-                  (v46 = *(_QWORD*)(v44 + 80)) == 0) ||
+      if (v45 ||
+          ((void)*(volatile __int64*)(v43 + 8),
+           (v46 = *(_QWORD*)(v44 + 80)) == 0) ||
           (*(_QWORD*)(v46 + 8) != -1 ? (v47 = *(_QWORD*)(v44 + 88) == 0)
                                      : (v47 = true),
            v47 || *(_QWORD*)(v43 + 8) == -1)) {
@@ -2684,8 +2685,7 @@ LABEL_30:
       f_.v113 = nullptr;
       f_.v114 = nullptr;
       if (f_.v108 != 0) {
-        f_.v114 =
-            (__int64*)std___1___shared_weak_count_lock_alt1(f_.v108);
+        f_.v114 = (__int64*)std___1___shared_weak_count_lock_alt1(f_.v108);
         if (f_.v114 != nullptr) {
           v99 = f_.v107;
           f_.v113 = (__int64 (**)(void))f_.v107;
@@ -3985,29 +3985,26 @@ void Seq_1134ae0(__int64 a1, __int64 a2)
   __int64 v11;
   int v12;
   __int64 v13;
-  struct {
-    __int64 v14[3];
-    char gap32_[24];
-    __int64 v15;
-  } v14_;
+  __int64 v14[3];
+  __int64 v15;
 
-  Seq_11326e0((void*)(v14_.v14), a1);
-  v3 = (__int64*)v14_.v14[0];
-  v4 = v14_.v14[1];
-  if (v14_.v14[0] != v14_.v14[1]) {
+  Seq_11326e0((void*)(v14), a1);
+  v3 = (__int64*)v14[0];
+  v4 = v14[1];
+  if (v14[0] != v14[1]) {
     v5 = (atomic_uchar*)GameData_212fa30;
     v6 = GameData_212fa28;
     do {
       v7 = *v3;
       if (*v3 != 0) {
         if ((atomic_load_explicit(v5, memory_order_acquire) & 1) == 0) {
-          v14_.v15 = v7;
-          v12 = __cxa_guard_acquire_alt1((__int64)v5);
-          v7 = v14_.v15;
+          v15 = v7;
+          v12 = __cxa_guard_acquire(v5);
+          v7 = v15;
           if (v12 != 0) {
-            *v6 = wld_Crc32_alt1(0, "CharacterFacialController", 0x19u);
-            __cxa_guard_release_alt1((__int64)v5);
-            v7 = v14_.v15;
+            *v6 = wld_Crc32(0, "CharacterFacialController", 25);
+            __cxa_guard_release(v5);
+            v7 = v15;
           }
         }
         v8 = *(_QWORD*)(v7 + 512);
@@ -4019,21 +4016,21 @@ void Seq_1134ae0(__int64 a1, __int64 a2)
         } while (v10 != *v6);
         v11 = *(_QWORD*)(v8 + 8);
         if (*(_DWORD*)(v11 + 96) <= 1u) {
-          GameRoutine_112180_alt1(v11 + 320, a2);
-          GameRoutine_a19f00_alt1(v11 + 272, v11 + 320);
+          GameRoutine_112180(v11 + 320, a2);
+          memory_a19f00(v11 + 272, v11 + 320);
         }
       }
       ++v3;
     } while (v3 != (__int64*)v4);
-    v3 = (__int64*)v14_.v14[0];
+    v3 = (__int64*)v14[0];
   }
   if (v3 != nullptr) {
     v13 = 128;
     if (*(_QWORD*)(*(_QWORD*)fw_memory_g_heap_manager_ptr + 200LL) == 0) {
       v13 = 56;
     }
-    nn_mem_StandardAllocator_Free_alt3(
-        *(_QWORD*)fw_memory_g_heap_manager_ptr + v13, (__int64)v3);
+    nn_mem_StandardAllocator_Free_alt4(*(_QWORD*)fw_memory_g_heap_manager_ptr +
+                                       v13);
   }
 }
 

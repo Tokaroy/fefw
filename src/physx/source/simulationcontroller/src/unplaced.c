@@ -17,13 +17,15 @@ float physx_source_simulationcontroller_src_312a20(__int64 a1);
 __int64* physx_source_simulationcontroller_src_386600(__int64* result,
                                                       __int64 a2, char a3);
 __int64 physx_source_simulationcontroller_src_3893d0();
-
+__int64 GameRoutine_1a09fb0(float);
+float GameRoutine_1a0a010(_QWORD);
+long double GameRoutine_1a09fc0(float);
 // The original always calls sqrtf, with no inline fsqrt.
 __attribute__((no_builtin("sqrtf"))) void
-physx_source_simulationcontroller_src_310590(__int64** a1, double a2,
-                                             double a3, double a4, double a5,
-                                             float a6, float a7, double a8,
-                                             float a9)
+
+physx_source_simulationcontroller_src_310590(__int64** a1, double a2, double a3,
+                                             double a4, double a5, float a6,
+                                             float a7, double a8, float a9)
 {
   float v9;
   float v10;

@@ -1105,6 +1105,8 @@ void AIDeploy_1274c80_alt5(_QWORD*, __int64, unsigned int);
 __int64 GameRoutine_128e990_alt2(__int64 result, _DWORD*);
 __int64 GameRoutine_128f580_alt2(__int64);
 void AIDeploy_1274c80_alt6(_QWORD*, __int64, unsigned int, _DWORD*);
+bool game_128f6c0_alt3(__int64*, int*);
+void GameRoutine_1226120_alt3(__int64, __int64);
 
 __int64 AIThink_11eed80(__int64 a1)
 {
@@ -33650,6 +33652,9 @@ __int64 game_AIThink_BlazeOnTo_lambda0_Invoke(__int64 result, __int64* a2,
 
 void game_AIThink_ActionSpecialAttack_lambda0_Invoke(__int64 a1, _DWORD* a2)
 {
+
+#pragma clang fp contract(on)
+
   __int64 v2;
   __int64 v5;
   _DWORD* v6;
@@ -33663,10 +33668,10 @@ void game_AIThink_ActionSpecialAttack_lambda0_Invoke(__int64 a1, _DWORD* a2)
   int v14;
 
   v2 = *(_QWORD*)(a1 + 8);
-  if ((GameRoutine_128e990_alt1(*(_QWORD*)(v2 + 8), a2) & 1) != 0) {
+  if ((GameRoutine_128e990_alt2(*(_QWORD*)(v2 + 8), a2) & 1) != 0) {
     *(_QWORD*)(*(_QWORD*)(a1 + 16) + 8LL) = a2;
     *(_DWORD*)(*(_QWORD*)(a1 + 16) + 20LL) = 1;
-    if (game_128f6c0_alt1(*(__int64**)(a1 + 16), *(int**)(a1 + 24))) {
+    if (game_128f6c0_alt3(*(__int64**)(a1 + 16), *(int**)(a1 + 24))) {
       v6 = *(_DWORD**)(a1 + 24);
       v5 = *(_QWORD*)(a1 + 32);
       v7 = v6[2];
@@ -33714,7 +33719,7 @@ void game_AIThink_ActionSpecialAttack_lambda0_Invoke(__int64 a1, _DWORD* a2)
           *(_QWORD*)(v11 + 40) = *(_QWORD*)(v10 + 24);
           *(_DWORD*)(v11 + 28) = *(_DWORD*)(v10 + 12);
           *(_DWORD*)(v11 + 32) = *(_DWORD*)(v10 + 16);
-          GameRoutine_1226120_alt2(v10 + 32, v11 + 48);
+          GameRoutine_1226120_alt3(v10 + 32, v11 + 48);
           *(_DWORD*)(v11 + 36) = *(_DWORD*)(v10 + 20);
         }
       }

@@ -42,7 +42,7 @@ void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
   v8 = *(float*)(v6 + 16);
   v9 = *(float*)(v6 + 20);
   *(_QWORD*)(v6 + 120) = 0;
-  if (!(v7 > 0x0.0p+0f)) {
+  if (v7 <= 0x0.0p+0f) {
     *(_DWORD*)(v6 + 116) = 0;
     *(_QWORD*)(v6 + 40) = 0;
     v12 = *(_QWORD**)(v6 + 8);
@@ -77,7 +77,7 @@ void LegionStackMoveTo_Unknown2(__int64 a1, double a2, double a3, double a4,
   v14 = *(float*)(a1 + 56) - v9;
   v15 = *(float*)(a1 + 52) - v8;
   v16 = (float)(PSEUDO_UNFUSED(v14 * v14)) + (float)(v15 * v15);
-  if (!(v16 < 0x1.0000000000000p-23f)) {
+  if (v16 >= 0x1.0000000000000p-23f) {
     v19 = 0x1.0000000000000p+0f / sqrtf(v16);
     v18 = v15 * v19;
     v17 = v14 * v19;

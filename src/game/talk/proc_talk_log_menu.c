@@ -153,6 +153,7 @@ void BasicMenuCursor_16e0c00_alt2(_QWORD*, __int64);
 void GameRoutine_1139a00_alt2(_QWORD*);
 void GameRoutine_8679c0_alt1();
 void nn_mem_StandardAllocator_Free_alt3(__int64, __int64);
+void llvm_libcxx_21_libcxx_include___functional_1139a00(_QWORD*);
 
 __int64 ProcTalkLogMenu_17cfc80(__int64 result, char a2)
 {
@@ -224,7 +225,7 @@ __int64 ProcTalkLogMenu_Unknown84(__int64 a1)
     __int64 v46;
   } v43_;
 
-  GameRoutine_1139a00_alt2((_QWORD*)(a1 + 1056));
+  llvm_libcxx_21_libcxx_include___functional_1139a00((_QWORD*)(a1 + 1056));
   if (game_ProcFadeView_instance_ != 0) {
     v2 = game_ProcFadeView_instance_ +
          ((unsigned __int64)*(unsigned __int8*)(game_ProcFadeView_instance_ +

@@ -15,6 +15,8 @@ int memcmp(__int64, __int64, unsigned __int64);
 unsigned __int64 strlen(const char*);
 unsigned __int8 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4);
 __int64 wld_a8b5a0(__int64 result);
+double GameRoutine_1a09f70(double);
+double GameRoutine_1a09f80(double);
 
 unsigned __int8 wld_a78840(__int64 result, const char* a2, __int64 a3, int a4)
 {
@@ -254,14 +256,14 @@ __int64 wld_a8b5a0(__int64 result)
           v21 = LANES128(v11[14]).n128_f32[1];
           v22 = LANES128(v11[14]).n128_f32[0];
           v23 = LANES128(v11[14]).n128_f32[2] * 0x1.0000000000000p-1;
-          v24 = cos(v23);
-          v25 = sin(v23);
+          v24 = GameRoutine_1a09f80(v23);
+          v25 = GameRoutine_1a09f70(v23);
           v26 = v22 * 0x1.0000000000000p-1;
-          v27 = cos(v26);
-          v28 = sin(v26);
+          v27 = GameRoutine_1a09f80(v26);
+          v28 = GameRoutine_1a09f70(v26);
           v29 = v21 * 0x1.0000000000000p-1;
-          v30 = cos(v29);
-          v31 = sin(v29);
+          v30 = GameRoutine_1a09f80(v29);
+          v31 = GameRoutine_1a09f70(v29);
           result = v19;
           v32 = v24 * v28 * v30 - PSEUDO_UNFUSED(v31 * (v25 * v27));
           v33 =

@@ -3,50 +3,28 @@
 #pragma GCC visibility push(hidden)
 
 __attribute__((swiftcall)) void Manager_bccce0(PSEUDO_X8, _QWORD* result, int);
-
 __int64 CalculateAllocatedSizeHeap_5c7400(__int64, __int64, __int64*);
-
 __int64 GameHr_5ded80(__int64, __int64*, __int64, int, __int64);
-
 __int64 GameHr_5fc7e0(__int64*, __int64);
-
 __int64 GameHr_bc84e0(__int64*, __int64);
-
 __int64 GameRoutine_18e5d80(__int64);
-
 __int64 GameRoutine_5c02c0(const char*, ...);
-
 __int64 GameRoutine_5c7e20(__int64);
-
 __int64 GameRoutine_5c7ea0(__int64, __int64, __int64);
-
 __int64 GameRoutine_5fc180(_QWORD);
-
 __int64 GameRoutine_5fcb50(__int64);
-
 __int64 GameRoutine_5fcb70(_QWORD);
-
 __int64 GameRoutine_5fcb80(__int64 result);
-
 __int64 RectDrawer_5fcbc0(__int64, __int64*);
-
 __int64 fw_text_String_CopyTerminated(__int64*, __int64, unsigned __int64);
-
 __int64 memset(_QWORD, _QWORD, _QWORD);
-
 extern __int64 GameData_2136448[3];
-
 extern __int64 fw_memory_g_heap_manager_ptr;
-
 void nn_mem_StandardAllocator_Free(__int64, __int64);
-
 __int64 nn_vfx_5c65e0(__int64 result, __int64 a2);
-
 __int64 nn_vfx_5c6e20(__int64 a1, __int64 a2, __int64* a3);
-
 long double nn_vfx_5cfd20(long double result, __int64 a2, __int64 a3,
                           __int64 a4, __int64 a5, __int64 a6);
-
 void nn_vfx_bc6f60(__int64 a1, __int64 a2);
 
 long double nn_vfx_5cfd20(long double result, __int64 a2, __int64 a3,

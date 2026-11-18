@@ -155,6 +155,7 @@ __int64 GameRoutine_71fb20_alt1(_QWORD);
 __int64 fw_memory_HeapManager_Allocate_alt1(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 game_menu_DeleteTransportMenu_CreateBind_alt1(_QWORD, _QWORD, _QWORD,
                                                       _QWORD, _QWORD);
+__int64 GameRoutine_9c2e20_alt1(_QWORD, _QWORD, _QWORD, _QWORD);
 
 __int64 DepositoryMenuItem_Unknown21(__int64 a1)
 {
@@ -1414,8 +1415,8 @@ __int64 game_facility_DepositoryMenuItem_OnDialogYes(__int64 a1)
     return 2;
   }
   if (v5 != v4) {
-    GameHr_9c2e20(*(_QWORD*)(v3 + 8), v4, (2 * __clz((v4 - v5) >> 3)) ^ 0x7E,
-                  1);
+    GameRoutine_9c2e20_alt1(*(_QWORD*)(v3 + 8), v4,
+                            (2 * __clz((v4 - v5) >> 3)) ^ 0x7E, 1);
     v5 = (char*)v6[1];
     v4 = (char*)v6[2];
   }
