@@ -5215,7 +5215,7 @@ __int64 GameHr_d5bb40(__int64* a1, __int64 a2)
     do {
       v22 = *(unsigned int*)(v2 + 48);
       if ((_DWORD)v22 != -1) {
-        ((void (*)(__int64*, __int64))GameData_1fdce28[v22])(&v26, v2);
+        ((void (*)(__int64*, __int64))GameData_1fdce28[(unsigned int)v22])(&v26, v2);
       }
       *(_DWORD*)(v2 + 48) = -1;
       v2 += 64;
