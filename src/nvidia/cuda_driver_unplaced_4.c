@@ -4662,9 +4662,10 @@ __int64 cuda_driver_unplaced_4_98fe0(__int64 a1)
         CudaDriverRoutine_12e270(&v12);
         if (v13 == 5) {
         LABEL_7:
-          if (CudaDriverRoutine_12e2a0(&v12) >=
-              (float)(unsigned int)(1000 * *(_DWORD*)(*(_QWORD*)(a1 + 64) +
-                                                      17052LL))) {
+          if (!(CudaDriverRoutine_12e2a0(&v12) <
+                (float)(unsigned int)(1000 *
+                                      *(_DWORD*)(*(_QWORD*)(a1 + 64) +
+                                                 17052LL)))) {
             goto LABEL_22;
           }
         }

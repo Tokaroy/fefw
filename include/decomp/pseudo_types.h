@@ -24,6 +24,13 @@ typedef int32_t _BOOL4;
 typedef int64_t _BOOL8;
 typedef char _UNKNOWN;
 
+// Globals at addresses below the natural alignment of their type. A plain
+// declaration lets clang fold the address into a scaled load offset, and the
+// relocation then drops its low bits.
+typedef long long __attribute__((aligned(1))) _UNALIGNED_INT64;
+typedef int __attribute__((aligned(1))) _UNALIGNED_INT32;
+typedef char* __attribute__((aligned(1))) _UNALIGNED_PTR;
+
 #ifndef nullptr
 #define nullptr ((void*)0)
 #endif

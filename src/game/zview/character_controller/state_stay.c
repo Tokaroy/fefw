@@ -15,7 +15,7 @@ extern __int64 (*game_zview_CharacterController_StateStay_ToStayPos_vtable[])();
 extern __int64 (*game_zview_CharacterController_StateStay_WaitStick_vtable[])();
 extern __int64 (*game_zview_CharacterController_StateStay_vtable[])();
 extern __int64 GameData_21d96b8;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64* GameData_212ec58[2];
 void __attribute__((noreturn)) GameRoutine_60a210(_QWORD);

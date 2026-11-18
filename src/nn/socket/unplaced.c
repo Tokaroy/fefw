@@ -15,7 +15,7 @@ extern __int64 SdkData_eb8660;
 extern __int64 SdkData_eb8668;
 extern __int64 SdkData_eb8670;
 extern __int64 SdkData_eb8678;
-extern __int64 SdkData_eb8684;
+extern _UNALIGNED_INT64 SdkData_eb8684;
 extern __int64 SdkData_eb8690;
 extern int SdkData_eb8698;
 __int64 nn_socket_1822d0();

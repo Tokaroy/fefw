@@ -8891,14 +8891,14 @@ float game_d26b60(__int64 a1)
           goto LABEL_49;
         }
         if ((*(_BYTE*)(GameData_21f3cb0 + 1144) & 1) == 0) {
-          v7 = (float)(vmuls_lane_f32(
+          v7 = !((float)(vmuls_lane_f32(
                            COERCE_FLOAT(
                                HIDWORD(*(_QWORD*)(game_g_game_setting + 960))),
                            *(float32x2_t*)(game_g_game_setting + 960), 1) +
                        (float)(COERCE_FLOAT(
                                    *(_OWORD*)(game_g_game_setting + 960)) *
                                COERCE_FLOAT(*(_OWORD*)(game_g_game_setting +
-                                                       960)))) <= 0x0.0p+0f;
+                                                       960)))) > 0x0.0p+0f);
           if (v7) {
             v8 = 0x0.0p+0f;
           }
@@ -8942,7 +8942,7 @@ float game_d26b60(__int64 a1)
           if ((float)(0x1.0000000000000p+0f - v12) != 0x0.0p+0f) {
             v15 = (float)(v13 - v12) / (float)(0x1.0000000000000p+0f - v12);
             v16 =
-                v15 <= 0x1.0000000000000p+0f
+                !(v15 > 0x1.0000000000000p+0f)
                     ? (float)(v13 - v12) / (float)(0x1.0000000000000p+0f - v12)
                     : 0x1.0000000000000p+0f;
             if (!(v15 < 0x0.0p+0f)) {

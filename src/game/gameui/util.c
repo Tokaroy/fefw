@@ -866,8 +866,8 @@ extern __int64 (*GameData_204de88[])();
 extern __int64 (*GameData_204df08[])();
 extern __int64 (*msg_TagSelector_vtable[])();
 extern __int64 GameData_21c9988;
-extern __int64 GameData_21f4374;
-extern __int64 GameData_21f437c;
+extern _UNALIGNED_INT64 GameData_21f4374;
+extern _UNALIGNED_INT64 GameData_21f437c;
 extern char* GameData_204f080[89];
 void LayoutAccessor_1587220(__int64*, __int64, int, int, int, int, int, char,
                             char);

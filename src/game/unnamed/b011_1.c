@@ -312,7 +312,7 @@ extern int GameData_2211080;
 extern __int64 GameData_2211088;
 extern _UNKNOWN GameData_2211090;
 extern int GameData_2211098;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern _UNKNOWN GameData_22110b8;
 extern char GameData_22110d8;
 extern __int64 GameData_22110e0;

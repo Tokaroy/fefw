@@ -37,7 +37,7 @@ __int64 __cxa_guard_release(_QWORD);
 __int64 fw_memory_HeapManager_Allocate(_QWORD, _QWORD, _QWORD, _QWORD);
 extern _UNKNOWN GameData_22110b8;
 extern __int64 GameData_21c9758;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_g_frame_clock;
 extern __int64* GameData_212eda8[10];

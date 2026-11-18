@@ -8,7 +8,7 @@ __int64 fw_memory_HeapManager_Allocate(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 nn_mem_StandardAllocator_Free(_QWORD, _QWORD);
 extern _UNKNOWN GameData_22110b8;
 extern __int64 (*game_zview_CharacterController_StateMoveTo_vtable[])();
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 fw_memory_g_heap_manager_ptr;
 void __attribute__((noreturn)) GameRoutine_60a210(_QWORD);
 void __attribute__((noreturn)) GameRoutine_cdcc10(void);

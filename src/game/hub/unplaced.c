@@ -832,7 +832,7 @@ extern __int64* GameData_212ebb8[6];
 
 extern __int64 GameData_21676d8;
 
-extern char* GameData_21676c9;
+extern _UNALIGNED_PTR GameData_21676c9;
 
 extern char GameData_21676c8;
 

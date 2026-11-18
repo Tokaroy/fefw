@@ -12,7 +12,7 @@ extern char CudaDriverData_1432e38;
 
 extern char CudaDriverData_1432e80;
 
-extern __int64 CudaDriverData_1432e84;
+extern _UNALIGNED_INT64 CudaDriverData_1432e84;
 
 extern __int64 (*CudaDriverData_143ba40)(void);
 

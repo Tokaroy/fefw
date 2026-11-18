@@ -27,10 +27,10 @@ _QWORD* GameRoutine_7fe910_alt1(_QWORD* result, unsigned __int64, __int64,
                                 __int64) __asm__("GameRoutine_7fe910");
 __int64 GameRoutine_2b0();
 __int64 memset_alt1(_QWORD, _QWORD, _QWORD) __asm__("memset");
-extern __int64 GameData_21da2ea;
-extern __int64 GameData_21da2f2;
-extern __int64 GameData_21da2fa;
-extern __int64 GameData_21da302;
+extern _UNALIGNED_INT64 GameData_21da2ea;
+extern _UNALIGNED_INT64 GameData_21da2f2;
+extern _UNALIGNED_INT64 GameData_21da2fa;
+extern _UNALIGNED_INT64 GameData_21da302;
 extern __int64 GameData_21da318;
 extern __int64 GameData_21da320;
 extern __int64 GameData_21da328;

@@ -9,7 +9,7 @@ __int64 GameRoutine_da9a80(_QWORD, _QWORD);
 __int64 __cxa_guard_acquire(_QWORD);
 __int64 __cxa_guard_release(_QWORD);
 extern _UNKNOWN GameData_22110b8;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 __int64 CharacterControllerPlayer_10c8e20(__int64 result);
 __int64 CharacterInputPlayer_da9a80(_QWORD, _QWORD);
 __int64 DungeonController_f5f760(void);

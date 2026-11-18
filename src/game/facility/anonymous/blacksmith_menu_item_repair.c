@@ -17,7 +17,7 @@ __int64 nn_mem_StandardAllocator_Free(_QWORD);
 __int64 std___1___shared_weak_count___release_weak(_QWORD);
 __int64 std___1___shared_weak_count_lock(_QWORD);
 extern _BYTE* GameData_2132020;
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_TransporterConst_List_instance__ptr[6];
 extern __int64 ui_LayoutAccessor_empty_;

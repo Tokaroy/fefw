@@ -45,7 +45,7 @@ __int64 ShopMenuItem_Sell_Unknown80(__int64 result, __int64 a2);
 __int64 ShopMenuItem_Sell_Unknown78(__int64 a1);
 bool ShopMenuItem_Sell_17051a0(__int64 a1);
 __int64 ObeliskDestinyMenuItem_1a06060(_QWORD, _QWORD, _QWORD);
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 __int64 ShopMenuItem_Sell_Unknown4(__int64 a1);
 __int64 game_facility_ShopMenuItem_Sell_OnOpenDialog_lambda0_Invoke_alt1(
     __int64 a1, __int64* a2, int* a3) __asm__("game_facility_ShopMenuItem_Sell_"

@@ -124,7 +124,7 @@ extern __int64* GameData_212ceb0;
 extern __int64* GameData_2131ab8;
 extern __int64* game_map_MapRandom_instance__ptr[3];
 extern __int64 GameData_212cf80[5];
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 extern __int64 GameData_21ec7b8;
 extern __int64 GameData_21f1e08;
 extern __int64 GameData_2232000;

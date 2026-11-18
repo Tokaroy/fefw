@@ -2169,7 +2169,7 @@ b71a0,304,verified,src/nn/unnamed/s900_0.c,SdkHr_b71a0
 b72e0,672,verified,src/nnmusl/unplaced_2.c,nnmusl_b72e0
 b75a0,144,verified,src/nnmusl/unplaced_2.c,nnmusl_b75a0
 b7630,52,verified,src/nnmusl/unplaced_5.c,nnmusl_b7630
-b7760,520,disputed,src/nn/unnamed/s000_0.c,SdkHr_b7760
+b7760,556,disputed,src/nn/unnamed/s000_0.c,SdkHr_b7760
 b7b80,820,verified,src/nnmusl/unplaced_2.c,nnmusl_b7b80
 b7f20,284,verified,src/nnmusl/unplaced_5.c,nnmusl_b7f20
 b8170,348,verified,src/nnmusl/unplaced_3.c,nnmusl_b8170
@@ -22879,7 +22879,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5de170,776,verified,src/nn/vi/layer_history.c,layer_history_5de170
 5de480,16,verified,src/nn/sdk_trivial_wrappers.cpp,_Z14SdkStub_5de480mm
 5de610,8,verified,src/nn/vi/layer_history.c,nn_vi_detail_LayerHistory_OnPresent
-5de6e0,248,verified,src/nn/vi/unplaced.c,nn_vi_5de6e0
+5de6e0,268,verified,src/nn/vi/unplaced.c,nn_vi_5de6e0
 5de7f0,28,verified,src/nn/vi/vi_layer_native_window.cpp,_ZN2nn2vi6detail17LayerNativeWindowC2EPNS1_21INativeWindowListenerE
 5de810,8,verified,src/nn/vi/vi_layer_native_window.cpp,_ZN2nn2vi6detail17LayerNativeWindow10InitializeEPv
 5de820,8,verified,src/nn/vi/vi_layer_native_window.cpp,_ZN2nn2vi6detail17LayerNativeWindow8FinalizeEv

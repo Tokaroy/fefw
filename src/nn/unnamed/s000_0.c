@@ -260,7 +260,7 @@ extern __int16 SdkData_eaf9f8;
 
 extern char SdkData_eaf9fa;
 
-extern __int64 SdkData_eaf9fc;
+extern _UNALIGNED_INT64 SdkData_eaf9fc;
 
 __int64 SdkRoutine_2d0();
 

@@ -2038,13 +2038,13 @@ __int64 Voice_145cc0(__int64 a1, __int64 a2)
       v7 = fabsf(v15_.v15);
       v15_.v15 = v7;
       v15_.v16 = v6;
-      if (v6 <= v7) {
+      if (!(v6 > v7)) {
         v8 = v7;
       }
       else {
         v8 = v6;
       }
-      if (v8 > 0x1.0000000000000p+0f) {
+      if (!(v8 <= 0x1.0000000000000p+0f)) {
         (*(void (**)(__int64))(*(_QWORD*)*v4 + 344LL))(*v4);
         snd_Fade_Fade_10c830_alt2((__int64)v13_.v13, 0x0.0p+0f);
         (*(void (**)(__int64, __int64))(*(_QWORD*)(a1 + 40) + 144LL))(

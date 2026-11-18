@@ -22,7 +22,7 @@ __int64 std___1___shared_weak_count___release_weak(_QWORD);
 extern _UNKNOWN GameData_22110b8;
 extern __int64 GameData_212dc38[7];
 extern __int64 GameData_21f3cb0;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 fw_memory_g_heap_manager;
 extern __int64* GameData_212ed18[11];
 extern __int64* GameData_212ee78[2];

@@ -103,7 +103,7 @@ extern __int64 GameData_212dbb8[9];
 extern __int64 GameData_21f3c98;
 extern __int64 GameData_21f3d10;
 extern __int64 GameData_220b6e0;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 GameData_22110c0;
 float CharacterRotate_d52080(__int64);
 float acosf(float);

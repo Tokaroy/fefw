@@ -170,7 +170,7 @@ LABEL_13:
     }
     ++v44;
     ++v40;
-  } while (v43 < v38);
+  } while (!(v43 >= v38));
   v47 = &a2[(int)result];
   PSEUDO_LOW_LANE64(v48, n64_u64, LANES64(*(v47)).n64_u64[0]);
   v49 = (float)(v38 - (float)(v43 - v46)) / v46;

@@ -960,7 +960,7 @@ void CharacterFacialController_Unknown5(__int64 a1)
   }
   else {
     v7 = 0x1.0000000000000p+0f;
-    if (v4 < 0x1.0000000000000p+0f) {
+    if (!(v4 >= 0x1.0000000000000p+0f)) {
       v7 = 0x1.0000000000000p+0f -
            GameRoutine_1a0a550(0x1.0000000000000p+0f - v4,
                                v2 * 0x1.df851e0000000p+4f);
@@ -976,9 +976,9 @@ void CharacterFacialController_Unknown5(__int64 a1)
     v8 = 0x1.0000000000000p+0f;
   }
   *(float*)(a1 + 104) = v8;
-  if (v9 <= 0x0.0p+0f || v8 > 0x0.0p+0f) {
+  if (!(v9 > 0x0.0p+0f) || !(v8 <= 0x0.0p+0f)) {
     v10 = v8 > 0x0.0p+0f;
-    if (v9 > 0x0.0p+0f) {
+    if (!(v9 <= 0x0.0p+0f)) {
       v10 = false;
     }
   }
@@ -1045,22 +1045,22 @@ LABEL_37:
     v19 = *(float*)(a1 + 336);
     v20 = v17 + v19;
     v21 = 0x1.0000000000000p+0f;
-    if (v20 <= 0x1.0000000000000p+0f) {
+    if (!(v20 > 0x1.0000000000000p+0f)) {
       v22 = v20;
     }
     else {
       v22 = 0x1.0000000000000p+0f;
     }
-    if (v20 >= 0x0.0p+0f) {
+    if (!(v20 < 0x0.0p+0f)) {
       v23 = v22;
     }
     else {
       v23 = 0x0.0p+0f;
     }
     *(float*)(a1 + 160) = v23;
-    if (v19 <= 0x0.0p+0f) {
+    if (!(v19 > 0x0.0p+0f)) {
       v21 = 0x0.0p+0f;
-      if (v19 >= 0x0.0p+0f) {
+      if (!(v19 < 0x0.0p+0f)) {
         v21 = (float)(snd_fnd_WeakHandle_isValid((__int64*)(a1 + 320)) & 1);
       }
     }
@@ -1099,7 +1099,7 @@ LABEL_37:
       v33 = *(_QWORD*)(v13 + 112);
       v34 = 0x1.3333340000000p-2f;
       v35 = *(float*)(v33 + 292);
-      if (v35 <= 0x1.3333340000000p-2f) {
+      if (!(v35 > 0x1.3333340000000p-2f)) {
         v34 = *(float*)(v33 + 292);
       }
       v36 = v35 < 0x0.0p+0f;
@@ -1115,9 +1115,9 @@ LABEL_37:
   CharacterFacialController_10b4280_alt1(a1 + 208, v15);
   v39 = *(float*)(a1 + 336);
   v40 = 0x1.0000000000000p+0f;
-  if (v39 <= 0x0.0p+0f) {
+  if (!(v39 > 0x0.0p+0f)) {
     v40 = 0x0.0p+0f;
-    if (v39 >= 0x0.0p+0f) {
+    if (!(v39 < 0x0.0p+0f)) {
       v40 = (float)(snd_fnd_WeakHandle_isValid((__int64*)(a1 + 320)) & 1);
     }
   }
@@ -1128,7 +1128,7 @@ LABEL_37:
   v43 = *(float*)(a1 + 340);
   if (v42 != v43) {
     v44 = *(float*)(a1 + 344);
-    if (v44 > 0x0.0p+0f) {
+    if (!(v44 <= 0x0.0p+0f)) {
       if (v44 >= 0x1.0000000000000p+0f) {
         goto LABEL_79;
       }

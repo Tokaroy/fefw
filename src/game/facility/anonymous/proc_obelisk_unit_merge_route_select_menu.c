@@ -103,7 +103,7 @@ __int64 ui_LayoutAccessor_FindTextBox_alt1(__int64*, __int64) __asm__(
 __int64 ui_LayoutAccessor_SetPaneVisible_alt1(
     __int64 result, __int64, char) __asm__("ui_LayoutAccessor_SetPaneVisible");
 extern _UNKNOWN* GameData_212da30;
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 extern __int64 game_g_empty_item;
 __int64 ProcObeliskUnitMergeRouteSelectMenu_Unknown84(__int64 a1);
 __int64 ProcObeliskUnitMergeRouteSelectMenu_9d3c00(__int64 a1);

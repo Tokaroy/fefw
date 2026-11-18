@@ -50,7 +50,7 @@ extern _UNKNOWN GameData_1aa0a79;
 extern _UNKNOWN GameData_1aac18e;
 extern __int64 (*GameData_20f37c8[])();
 extern __int64 (*GameData_20f38c8[])();
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 extern __int64 GameData_21f61c0;
 extern __int64* GameData_212e000[10];
 void __attribute__((noreturn)) GameRoutine_8a54f0(void);

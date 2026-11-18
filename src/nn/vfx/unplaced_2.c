@@ -227,9 +227,9 @@ bool nn_vfx_5d39a0(__int64 a1, __int64* a2, int* a3, float32x4_t* a4, int a5,
     v22 = 8;
     v23 = (float*)(*(_QWORD*)(a1 + 16) + 2536LL * a6 + 1656);
     while (1) {
-      if ((float)(*(float*)&a7 -
-                  *(float*)(LANES128(a4[11]).n128_u64[0] + v19 + 8)) >=
-          *(float*)(LANES128(a4[11]).n128_u64[0] + v19 + 12)) {
+      if (!((float)(*(float*)&a7 -
+                    *(float*)(LANES128(a4[11]).n128_u64[0] + v19 + 8)) <
+            *(float*)(LANES128(a4[11]).n128_u64[0] + v19 + 12))) {
         goto LABEL_19;
       }
       v30 = LANES128(a4[33]).n128_u64[0];

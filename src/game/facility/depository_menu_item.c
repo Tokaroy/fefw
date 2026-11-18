@@ -67,7 +67,7 @@ __int64 GameRoutine_6e3b50(_QWORD, _QWORD);
 __int64 GameRoutine_930b90(_QWORD, _QWORD);
 __int64 ObeliskDestinyMenuItem_1a06060(_QWORD, _QWORD, _QWORD);
 __int64 nn_mem_StandardAllocator_Free(_QWORD);
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 extern __int64 GameData_21f1790;
 extern __int64 GameData_21f1798;
 extern __int64 GameData_21f17a8;

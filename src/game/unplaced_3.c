@@ -474,7 +474,7 @@ extern __int64 GameData_21f92b8;
 extern __int64 GameData_21f92c0;
 extern __int64 GameData_220f870;
 extern __int64 GameData_220f950;
-extern __int64 GameData_22110ac;
+extern _UNALIGNED_INT64 GameData_22110ac;
 extern __int64 GameData_22127a8;
 extern __int64 GameData_22167c8;
 extern __int64 GameData_22167d0;

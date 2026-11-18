@@ -72,11 +72,11 @@ extern __int64 GameData_21f16d0;
 extern __int64 GameData_21f1730;
 extern __int64 GameData_21f1738;
 extern __int64 GameData_21f1740;
-extern __int64 GameData_21f174a;
+extern _UNALIGNED_INT64 GameData_21f174a;
 extern char GameData_21f1748;
 extern int GameData_21f1690;
 extern int GameData_21f1700;
-extern int GameData_21f1752;
+extern _UNALIGNED_INT32 GameData_21f1752;
 unsigned __int64 GameRoutine_898560(__int64, __int64);
 void __attribute__((noreturn)) GameRoutine_60a210();
 void __attribute__((noreturn))

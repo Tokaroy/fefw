@@ -1154,11 +1154,11 @@ extern __int64 GameData_2213808;
 
 extern int GameData_2213810;
 
-extern __int64 GameData_2213814;
+extern _UNALIGNED_INT64 GameData_2213814;
 
-extern __int64 GameData_221381c;
+extern _UNALIGNED_INT64 GameData_221381c;
 
-extern __int64 GameData_2213824;
+extern _UNALIGNED_INT64 GameData_2213824;
 
 extern int GameData_221382c;
 

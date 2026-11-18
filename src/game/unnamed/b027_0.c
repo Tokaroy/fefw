@@ -100,7 +100,7 @@ extern __int64 GameData_21c9ac8;
 
 extern __int64 GameData_21ca310;
 
-extern __int64 GameData_21caa2c;
+extern _UNALIGNED_INT64 GameData_21caa2c;
 
 extern __int64 GameData_21caab0;
 

@@ -6746,7 +6746,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
       }
     LABEL_29:
       v38 = v34 - v33;
-      if ((float)(v34 - v33) > 0x0.0p+0f) {
+      if (!((float)(v34 - v33) <= 0x0.0p+0f)) {
         v39 = a1[97];
         v40 = v4 + 1;
         v188_.v206 = v35;
@@ -8427,7 +8427,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
             *((_BYTE*)a1 + a1[77]++ + 576) = v7 & 1;
             *((float*)a1 + a1[95]++ + 156) = v150;
             a1[a2 + 4] = v4;
-            return v38 > 0x0.0p+0f;
+            return !(v38 <= 0x0.0p+0f);
           }
           if (a1[660] != 0) {
           LABEL_114:
@@ -8528,7 +8528,7 @@ bool math_727520(_QWORD* a1, __int64 a2, int a3, unsigned __int64 a4)
         } while (v156 != 0);
         goto LABEL_126;
       }
-      return v38 > 0x0.0p+0f;
+      return !(v38 <= 0x0.0p+0f);
     }
   }
   v184_.v185 = 0;

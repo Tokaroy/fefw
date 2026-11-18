@@ -41,7 +41,7 @@ extern _UNKNOWN GameData_21a34b8;
 extern _UNKNOWN GameData_21a34d0;
 extern __int64 GameData_21a3500;
 extern char GameData_21a3508;
-extern __int64 GameData_21a350c;
+extern _UNALIGNED_INT64 GameData_21a350c;
 extern _UNKNOWN GameData_21a3b78;
 extern __int64 GameData_21a3cb8;
 extern __int64 GameData_21c6980;
