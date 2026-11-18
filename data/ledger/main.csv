@@ -117,7 +117,7 @@ cf00,296,verified,src/timeline/unplaced_5.c,timeline_cf00
 d078,4,verified,src/timeline/unplaced_5.c,timeline_d078
 d0a0,292,verified,src/timeline/unplaced_7.c,timeline_d0a0
 d218,4,verified,src/timeline/unplaced_5.c,timeline_d218
-d240,260,disputed,src/game/unnamed/e000_0.c,GameHr_d240
+d240,492,disputed,src/game/unnamed/e000_0.c,GameHr_d240
 d470,288,verified,src/game/unnamed/r000_0.c,GameHr_d470
 d5ac,4,verified,src/game/unnamed/v000_0.c,GameHr_d5ac
 d5b0,196,verified,src/game/unnamed/r000_0.c,GameHr_d5b0
@@ -6295,7 +6295,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 198470,80,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray10InsertLastEPv
 1984c0,96,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray8RemoveAtEj
 198520,92,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZN12CScriptArray10RemoveLastEv
-198580,396,disputed,src/game/unnamed/e000_0.c,GameHr_198580
+198580,396,verified,src/game/unnamed/e000_0.c,GameHr_198580
 198720,224,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArrayeqERKS_
 1989b0,716,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArray6EqualsEPKvS1_P16asIScriptContextP11SArrayCache
 198de0,12,verified,src/angelscript/add_on/scriptarray/scriptarray.cpp,_ZNK12CScriptArray9FindByRefEPv

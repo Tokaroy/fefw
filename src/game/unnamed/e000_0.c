@@ -3631,9 +3631,9 @@ __int64 GameHr_198580(__int64 result)
           v8 = *(_QWORD*)(v2 + 24) + 8LL;
           __asm__ volatile("" ::"r"(v8));
         }
-        GameRoutine_1a0b950_alt1((__int64)v13, v8 + (int)v7 + (int)v7 * v3, v7);
+        GameRoutine_1a0b950_alt1((__int64)v13, v8 + (int)((int)v7 + (int)v7 * v3), v7);
         v9 = v1 + (v3 ^ 0xFFFFFFFE);
-        GameRoutine_1a0b950_alt1(v8 + (int)v7 + (int)v7 * v3, v8 + (int)v7 * v9,
+        GameRoutine_1a0b950_alt1(v8 + (int)((int)v7 + (int)v7 * v3), v8 + (int)v7 * v9,
                                  v7);
         result = GameRoutine_1a0b950_alt1(
             *(_QWORD*)(v2 + 24) + *(int*)(v2 + 32) * (__int64)v9 + 8,
