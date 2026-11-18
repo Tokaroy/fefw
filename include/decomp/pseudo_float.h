@@ -9,6 +9,15 @@
     unfused_; \
   })
 
+// The same, held in a register clang cannot see through, since contraction
+// fuses across the statement expression above.
+#define PSEUDO_ROUNDED(x) \
+  ({ \
+    __typeof__(x) rounded_ = (x); \
+    __asm__("" : "+w"(rounded_)); \
+    rounded_; \
+  })
+
 // A scalar written to the low lane of a vector register clears the others.
 #define PSEUDO_LOW_LANE128(v, member, x) \
   ({ \
