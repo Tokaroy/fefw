@@ -2626,7 +2626,8 @@ __int64 nn_vfx_bc5ea0(_QWORD* a1, char* a2)
   } v47_;
 
   v2 = a1[14];
-  v3 = *(_QWORD*)(v2 + 24);
+  // The original loads the list before it tests the name.
+  v3 = *(volatile __int64*)(v2 + 24);
   v4 = v3 == 0 | a2 == nullptr;
   if (v4 ||
       ((v5 = *(_DWORD*)(v2 + 32), *a2 != 0) ? (v7 = v5 == 0) : (v7 = true),

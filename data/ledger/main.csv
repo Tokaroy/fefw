@@ -35921,7 +35921,7 @@ bc56a0,260,verified,src/nn/vfx/config.c,Config_bc56a0
 bc57c0,380,verified,src/eft/manager.c,Manager_bc57c0
 bc5980,336,verified,src/game/unnamed/b010_0.c,GameHr_bc5980
 bc5b80,676,verified,src/nn/vfx/config.c,Config_bc5b80
-bc5ea0,728,disputed,src/nn/vfx/unplaced_3.c,nn_vfx_bc5ea0
+bc5ea0,1412,verified,src/nn/vfx/unplaced_3.c,nn_vfx_bc5ea0
 bc6460,2768,verified,src/eft/manager.c,Manager_bc6460
 bc6f60,232,verified,src/nn/vfx/unplaced_4.c,nn_vfx_bc6f60
 bc7060,396,verified,src/nn/vfx/config.c,Config_bc7060
