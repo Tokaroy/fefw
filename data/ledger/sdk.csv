@@ -2169,7 +2169,7 @@ b71a0,304,verified,src/nn/unnamed/s900_0.c,SdkHr_b71a0
 b72e0,672,verified,src/nnmusl/unplaced_2.c,nnmusl_b72e0
 b75a0,144,verified,src/nnmusl/unplaced_2.c,nnmusl_b75a0
 b7630,52,verified,src/nnmusl/unplaced_5.c,nnmusl_b7630
-b7760,520,verified,src/nn/unnamed/s000_0.c,SdkHr_b7760
+b7760,556,disputed,src/nn/unnamed/s000_0.c,SdkHr_b7760
 b7b80,820,verified,src/nnmusl/unplaced_2.c,nnmusl_b7b80
 b7f20,284,verified,src/nnmusl/unplaced_5.c,nnmusl_b7f20
 b8170,348,verified,src/nnmusl/unplaced_3.c,nnmusl_b8170
@@ -8317,7 +8317,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 1d90b4,488,verified,src/nn/sf/cmif/client/cmif_client_in_object_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail5InRawImEENSE_8InObjectENSE_6BufferILj21EEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d929c,392,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSE_5InRawIhEENSE_14InRawReferenceINSE_7RawDataILm16ELm8EEEEENSH_ImEESN_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d9424,380,verified,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEESG_NSE_5InRawIhEENSE_14InRawReferenceINSE_7RawDataILm16ELm8EEEEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
-1d95a0,380,disputed,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSF_IjEENSE_5InRawIjEENSI_ImEESK_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
+1d95a0,380,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSF_IjEENSE_5InRawIjEENSI_ImEESK_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d971c,472,verified,src/nn/sf/cmif/client/cmif_client_writer_handle_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail14InWriterHandleILb0EEENSE_5InRawImEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d98f4,496,verified,src/nn/sf/cmif/client/cmif_client_writer_handle_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail14InWriterHandleILb0EEENSE_5InRawImEENSH_IjEESJ_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d9ae4,488,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6BufferILj69EEENSE_5InRawIjEESI_SI_SI_SI_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
@@ -25160,7 +25160,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 650060,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_650060m
 650070,12,verified,src/nn/unnamed/u000_1.c,SdkHr_650070
 650080,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_650080mj
-6500a0,1524,verified,src/nn/unplaced_3.c,nn_6500a0
+6500a0,1528,verified,src/nn/unplaced_3.c,nn_6500a0
 650730,700,verified,src/nn/unplaced_16.c,nn_650730
 6509f0,20,verified,src/nn/unnamed/u000_1.c,SdkHr_6509f0
 650a10,288,verified,src/nn/unnamed/s003_2.c,SdkHr_650a10
@@ -25959,7 +25959,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 656180,12,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_656180v
 656190,332,verified,src/nn/unnamed/s003_2.c,SdkHr_656190
 6562e0,280,verified,src/nn/unnamed/s003_2.c,SdkHr_6562e0
-656400,432,verified,src/nn/unplaced_3.c,nn_656400
+656400,468,verified,src/nn/unplaced_3.c,nn_656400
 6565e0,40,verified,src/nn/unnamed/s003_2.c,SdkHr_6565e0
 656610,204,verified,src/nn/unnamed/s900_0.c,SdkHr_656610
 6566e0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6566e0v
@@ -25976,7 +25976,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6568b0,32,verified,src/nn/unnamed/s003_2.c,SdkHr_6568b0
 6568d0,248,verified,src/nn/unnamed/s003_2.c,SdkHr_6568d0
 6569d0,824,verified,src/nn/unplaced_3.c,nn_6569d0
-656d40,844,verified,src/nn/unplaced_3.c,nn_656d40
+656d40,868,verified,src/nn/unplaced_3.c,nn_656d40
 6570b0,24,verified,src/nn/unnamed/s003_2.c,SdkHr_6570b0
 6570d0,20,verified,src/nn/unnamed/u000_1.c,SdkHr_6570d0
 6570f0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6570f0mm
@@ -26226,7 +26226,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65fa80,96,verified,src/nn/unplaced_3.c,nn_65fa80
 65fae0,488,verified,src/nn/unnamed/s003_2.c,SdkHr_65fae0
 65fcd0,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_65fcd0mmm
-65fce0,1280,disputed,src/nn/unplaced_3.c,nn_65fce0
+65fce0,1328,disputed,src/nn/unplaced_3.c,nn_65fce0
 660780,268,verified,src/nn/unplaced_3.c,nn_660780
 6608a0,140,verified,src/nn/unnamed/s003_2.c,SdkHr_6608a0
 660940,968,verified,src/nn/unnamed/s003_2.c,SdkHr_660940
@@ -26250,7 +26250,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 660e70,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e70m
 660e80,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e80m
 660e90,140,verified,src/nn/unnamed/s003_2.c,SdkHr_660e90
-660f20,3416,verified,src/nn/unplaced_3.c,nn_660f20
+660f20,3416,disputed,src/nn/unplaced_3.c,nn_660f20
 661d40,164,verified,src/nn/unnamed/s003_2.c,SdkHr_661d40
 661df0,44,verified,src/nn/unnamed/s003_2.c,SdkHr_661df0
 661e20,48,verified,src/nn/unnamed/s003_2.c,SdkHr_661e20
@@ -26637,7 +26637,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66a170,900,verified,src/nn/unplaced_3.c,nn_66a170
 66a500,460,verified,src/nn/unnamed/s004_0.c,SdkHr_66a500
 66a6d0,976,verified,src/nn/unplaced_7.c,nn_66a6d0
-66aaa0,1116,verified,src/nn/unplaced_3.c,nn_66aaa0
+66aaa0,1152,verified,src/nn/unplaced_3.c,nn_66aaa0
 66afc0,260,verified,src/nn/unplaced_8.c,nn_66afc0
 66b130,100,verified,src/nn/unnamed/s004_0.c,SdkHr_66b130
 66b1a0,72,verified,src/nn/unnamed/s004_0.c,SdkHr_66b1a0
