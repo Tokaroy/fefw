@@ -15,6 +15,7 @@ __int64 VectorGraphicsShapePathData_5a3ca0(float*, float32x2_t*, unsigned int*,
                                            __int64, _DWORD*);
 __int64 nn_ui2d_5a3850(float32x2_t*, float32x2_t*, unsigned __int64*, __int64,
                        __int64, unsigned int, float);
+float GameRoutine_1a0a010(float);
 float* GameRoutine_59fe80(float* result, float, float);
 __int64 VectorGraphicsShapePathStar_Unknown13(__int64* a1, __int64 a2, int* a3,
                                               _DWORD** a4, _DWORD* a5,
@@ -577,7 +578,7 @@ __int64 VectorGraphicsShapePathStar_Unknown13(__int64* a1, __int64 a2, int* a3,
       if (LANES64(v43).n64_f32[0] <= 0x0.0p+0f) {
         LANES64(v48).n64_u64[0] = LANES64_OF(vmul_f32(v40, v40)).n64_u64[0];
         v49 = LANES64_OF(vpadd_f32(v48, v48)).n64_f32[0];
-        if (LANES64(v28).n64_f32[0] >= v49) {
+        if (!(LANES64(v28).n64_f32[0] < v49)) {
           v47 = LANES64(v28).n64_f32[0];
         }
         else {
@@ -588,7 +589,7 @@ __int64 VectorGraphicsShapePathStar_Unknown13(__int64* a1, __int64 a2, int* a3,
         LANES64(v44).n64_u64[0] = LANES64_OF(vsub_f32(v27, v30)).n64_u64[0];
         LANES64(v45).n64_u64[0] = LANES64_OF(vmul_f32(v44, v44)).n64_u64[0];
         v46 = LANES64_OF(vpadd_f32(v45, v45)).n64_f32[0];
-        if (LANES64(v28).n64_f32[0] >= v46) {
+        if (!(LANES64(v28).n64_f32[0] < v46)) {
           v47 = LANES64(v28).n64_f32[0];
         }
         else {
@@ -601,7 +602,7 @@ __int64 VectorGraphicsShapePathStar_Unknown13(__int64* a1, __int64 a2, int* a3,
                 .n64_u64[0];
         LANES64(v53).n64_u64[0] = LANES64_OF(vpadd_f32(v52, v52)).n64_u64[0];
         v54 = LANES64_OF(vdiv_f32(vmul_f32(v53, v53), v34)).n64_f32[0];
-        if (LANES64(v28).n64_f32[0] >= v54) {
+        if (!(LANES64(v28).n64_f32[0] < v54)) {
           v47 = LANES64(v28).n64_f32[0];
         }
         else {
@@ -609,11 +610,19 @@ __int64 VectorGraphicsShapePathStar_Unknown13(__int64* a1, __int64 a2, int* a3,
         }
       }
       v50 = sqrtf(v47);
+      if (v50 != v50) {
+        v50 = GameRoutine_1a0a010(v47);
+      }
       if (v50 <= v41) {
         v51 = 1;
       }
       else {
-        v76_.v78 = ceilf(sqrtf(v50 / v41));
+        float root = sqrtf(v50 / v41);
+
+        if (root != root) {
+          root = GameRoutine_1a0a010(v50 / v41);
+        }
+        v76_.v78 = ceilf(root);
         GameRoutine_59fe80(&v76_.v78, 0x1.0000000000000p+0f,
                            0x1.0000000000000p+10f);
         v51 = 1 << -__clz((unsigned int)((int)v76_.v78 - 1));

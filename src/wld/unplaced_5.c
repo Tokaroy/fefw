@@ -355,9 +355,9 @@ float wld_c51ba0(__int64 a1, float a2)
       0xAAAAAAAAAAAAAAABLL * ((__int64)(*(_QWORD*)(a1 + 32) - (_QWORD)v2) >> 2);
   if ((int)v3 < 1) {
   LABEL_13:
-    v2 += 3 * (int)v3 - 3;
+    v2 += 3 * (__int64)((int)v3 - 1);
   }
-  else if (*v2 <= a2) {
+  else if (!(*v2 > a2)) {
     v4 = v2 + 3;
     v5 = 1;
     do {
@@ -368,8 +368,8 @@ float wld_c51ba0(__int64 a1, float a2)
       v4 += 3;
       v7 = v6;
       --v5;
-    } while (v6 <= a2);
-    v8 = &v2[3 * -(int)v5];
+    } while (!(v6 > a2));
+    v8 = &v2[3 * (unsigned __int64)(unsigned int)-(int)v5];
     v10 = *v8;
     v9 = v8[1];
     v11 = *((_DWORD*)v4 - 1);
@@ -410,10 +410,10 @@ float wld_c51ba0(__int64 a1, float a2)
       return (float)(PSEUDO_UNFUSED(v12 * result)) +
              (float)(v9 * (float)(0x1.0000000000000p+0f - v12));
     }
-    if (v12 < 0x1.0000000000000p+0f) {
-      return v9;
+    if (v12 >= 0x1.0000000000000p+0f) {
+      return result;
     }
-    return result;
+    return v9;
   }
   return v2[1];
 }
