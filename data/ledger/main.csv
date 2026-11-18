@@ -65004,7 +65004,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 14d27a0,264,verified,src/game/gmap/spot_attachment_slots.cpp,_ZNK4game4gmap20SpotAttachmentAnimal7GetDataEv
 14d28c0,228,verified,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_14d28c0
 14d29e0,220,verified,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_14d29e0
-14d2ae0,204,disputed,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_Unknown35
+14d2ae0,204,verified,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_Unknown35
 14d2bc0,92,verified,src/game/gmap/spot_attachment_slots.cpp,_ZN4game4gmap20SpotAttachmentAnimal12OnStartPhaseEv
 14d2d00,496,verified,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_14d2d00
 14d2f20,352,verified,src/game/gmap/spot_attachment_animal.c,SpotAttachmentAnimal_Unknown28

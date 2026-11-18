@@ -419,7 +419,9 @@ __int64 SpotAttachmentAnimal_Unknown35(__int64 a1)
     ++v4;
   }
   result = GameRoutine_13261c0(v1);
-  if ((unsigned __int8)result == 6 && *(_QWORD*)(v1 + 152) != 0) {
+  // The original loads the animal before it tests the state.
+  v11 = *(volatile __int64*)(v1 + 152);
+  if ((unsigned __int8)result == 6 && v11 != 0) {
     v10 = *(_QWORD*)(a1 + 32);
     result = GameRoutine_13261c0(v10);
     v11 = *(_QWORD*)(v10 + 152);
