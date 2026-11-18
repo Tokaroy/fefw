@@ -848,72 +848,60 @@ _DWORD* nn_vfx_5d5fa0(float* a1, unsigned __int64 a2)
 {
 
 #pragma clang fp contract(off)
-  float v2;
-  int v3;
-  float v4;
-  float v5;
+  unsigned int bits;
+  int key;
+  float pivot;
   _DWORD* i;
-  unsigned __int64 v7;
-  float v8;
-  __int64 v9;
-  float v10;
-  float v11;
+  _DWORD* j;
+  __int64 swap;
 
-  v2 = *a1;
-  v3 = *((_DWORD*)a1 + 1);
-  v4 = *(float*)(a2 - 8);
-  v5 = *a1;
-  if (v4 < *a1 || v4 <= *a1 && v3 >= (signed __int32)*(_DWORD*)(a2 - 4)) {
-    for (i = a1 + 2;
-         (unsigned __int64)i < a2 &&
-         (*(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1]);
-         i += 2) {
-      ;
+  // libc++ partition with equals on the left, for float int pairs. A pair
+  // is not after the pivot when its float is lower, or neither lower nor
+  // higher, NaN included, and its int is at most the pivot's.
+#define PSEUDO_NOT_AFTER(p) \
+  (*(float*)(p) < pivot || \
+   (!(*(float*)(p) > pivot) && key >= (int)((_DWORD*)(p))[1]))
+  bits = *(_DWORD*)a1;
+  key = *((_DWORD*)a1 + 1);
+  pivot = *(float*)&bits;
+  j = (_DWORD*)(a2 - 8);
+  i = (_DWORD*)a1 + 2;
+  if (PSEUDO_NOT_AFTER(j)) {
+    while ((unsigned __int64)i < a2 && PSEUDO_NOT_AFTER(i)) {
+      i += 2;
     }
   }
   else {
-    for (i = a1 + 2;
-         *(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1];
-         i += 2)
-      ;
+    while (PSEUDO_NOT_AFTER(i)) {
+      i += 2;
+    }
   }
   if ((unsigned __int64)i < a2) {
-    v7 = a2 - 8;
+    while (!PSEUDO_NOT_AFTER(j)) {
+      j -= 2;
+    }
   }
   else {
-    v7 = a2;
+    j = (_DWORD*)a2;
   }
-  if ((unsigned __int64)i < a2 && v4 >= v5) {
-    v7 = a2 - 8;
-    do {
-      if (v4 <= v5 && v3 >= (signed __int32)*(_DWORD*)(v7 + 4)) {
-        break;
-      }
-      v8 = *(float*)(v7 - 8);
-      v7 -= 8LL;
-      v4 = v8;
-    } while (v8 >= v5);
-  }
-  while ((unsigned __int64)i < v7) {
-    v9 = *(_QWORD*)i;
-    *(_QWORD*)i = *(_QWORD*)v7;
+  while (i < j) {
+    swap = *(__int64*)i;
+    *(__int64*)i = *(__int64*)j;
+    *(__int64*)j = swap;
     i += 2;
-    *(_QWORD*)v7 = v9;
-    while (*(float*)i < v5 || *(float*)i <= v5 && v3 >= (signed __int32)i[1]) {
+    while (PSEUDO_NOT_AFTER(i)) {
       i += 2;
     }
     do {
-      v10 = *(float*)(v7 - 8);
-      v7 -= 8LL;
-      v11 = v10;
-    } while (v10 >= v5 &&
-             (v11 > v5 || v3 < (signed __int32)*(_DWORD*)(v7 + 4)));
+      j -= 2;
+    } while (!PSEUDO_NOT_AFTER(j));
   }
-  if (a1 != (float*)(i - 2)) {
-    *(_QWORD*)a1 = *((_QWORD*)i - 1);
+#undef PSEUDO_NOT_AFTER
+  if ((_DWORD*)a1 != i - 2) {
+    *(__int64*)a1 = *(__int64*)(i - 2);
   }
-  *((float*)i - 2) = v2;
-  *(i - 1) = v3;
+  *(i - 2) = bits;
+  *(i - 1) = key;
   return i;
 }
 

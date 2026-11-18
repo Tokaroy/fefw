@@ -16579,7 +16579,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 5d4c20,868,verified,src/game/unnamed/b003_2.c,GameHr_5d4c20
 5d5380,2384,verified,src/nn/vfx/unplaced_3.c,nn_vfx_5d5380
 5d5de0,428,verified,src/nn/vfx/unplaced_3.c,nn_vfx_5d5de0
-5d5fa0,320,disputed,src/nn/vfx/unplaced_3.c,nn_vfx_5d5fa0
+5d5fa0,320,verified,src/nn/vfx/unplaced_3.c,nn_vfx_5d5fa0
 5d6100,296,verified,src/nn/vfx/unplaced.c,nn_vfx_5d6100
 5d6260,968,verified,src/nn/vfx/unplaced_3.c,nn_vfx_5d6260
 5d66c0,600,verified,src/nn/vfx/unplaced_3.c,nn_vfx_5d66c0
