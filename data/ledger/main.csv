@@ -7800,8 +7800,8 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 263990,16,verified,src/game/unnamed/v000_0.c,GameHr_263990
 2639a0,284,disputed,src/nn/atk/unplaced_2.c,nn_atk_2639a0
 263bf0,632,disputed,src/nn/atk/unplaced_2.c,nn_atk_263bf0
-263e70,580,disputed,src/nn/atk/unplaced_2.c,nn_atk_263e70
-2640d0,508,disputed,src/nn/atk/unplaced_2.c,nn_atk_2640d0
+263e70,544,disputed,src/nn/atk/unplaced_2.c,nn_atk_263e70
+2640d0,560,disputed,src/nn/atk/unplaced_2.c,nn_atk_2640d0
 264560,528,disputed,src/nn/atk/unplaced_2.c,nn_atk_264560
 2647a0,4,verified,src/recastnavigation/Detour/Source/DetourAlloc.cpp,_ZL14dtAllocDefaultm11dtAllocHint
 2647b0,4,verified,src/recastnavigation/Detour/Source/DetourAlloc.cpp,_ZL13dtFreeDefaultPv
@@ -26906,7 +26906,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 91b270,24,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::ProcMapSeqSkill::CanUse(game::Unit const*, game::UnitSkill const&)::'lambda'(game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&), bool (game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&)>::__clone(__base*)"
 91b290,4,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::ProcMapSeqSkill::CanUse(game::Unit const*, game::UnitSkill const&)::'lambda'(game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&), bool (game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&)>::destroy()"
 91b2a0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::ProcMapSeqSkill::CanUse(game::Unit const*, game::UnitSkill const&)::'lambda'(game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&), bool (game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&)>::destroy_deallocate()"
-91b2c0,136,disputed,src/game/map/anonymous/proc_map_seq_skill.c,game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke
+91b2c0,268,disputed,src/game/map/anonymous/proc_map_seq_skill.c,game_map_anonymous_ProcMapSeqSkill_CanUse_closure_Invoke
 91b3d0,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::ProcMapSeqSkill::CanUse(game::Unit const*, game::UnitSkill const&)::'lambda'(game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&), bool (game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&)>::target(std::type_info const&)"
 91b3f0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<game::map::(anonymous namespace)::ProcMapSeqSkill::CanUse(game::Unit const*, game::UnitSkill const&)::'lambda'(game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&), bool (game::map::(anonymous namespace)::ProcMapSeqSkill::Type, game::UnitSkill const&)>::target_type()"
 91b400,4,verified,src/game/game_trivial.cpp,_Z15GameStub_91b400v
@@ -39961,11 +39961,11 @@ d4a620,4,verified,src/game/game_trivial.cpp,_Z15GameStub_d4a620v
 d4a630,4,verified,src/game/game_trivial.cpp,_Z15GameStub_d4a630v
 d4a640,4,verified,src/game/game_trivial.cpp,_Z15GameStub_d4a640v
 d4a650,164,verified,src/wld/object_module.c,ObjectModule_Unknown8
-d4a700,120,disputed,src/game/unnamed/b011_1.c,GameHr_d4a700
+d4a700,120,verified,src/game/unnamed/b011_1.c,GameHr_d4a700
 d4a780,128,verified,src/game/unnamed/b011_1.c,GameHr_d4a780
 d4a800,128,verified,src/game/unnamed/e004_0.c,GameHr_d4a800
 d4a880,128,verified,src/game/unnamed/r004_0.c,GameHr_d4a880
-d4a900,292,disputed,src/game/unnamed/e004_0.c,GameHr_d4a900
+d4a900,288,disputed,src/game/unnamed/e004_0.c,GameHr_d4a900
 d4aa30,164,verified,src/game/zview/hitbox.c,Hitbox_d4aa30
 d4aae0,136,verified,src/game/unnamed/b011_1.c,GameHr_d4aae0
 d4ab70,196,verified,src/game/unnamed/e004_0.c,GameHr_d4ab70
@@ -53961,7 +53961,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 11999a0,504,verified,src/game/talk/hub.c,game_talk_Hub_DisableLookAt
 1199bc0,320,verified,src/game/talk/hub.c,Hub_1199bc0
 1199d20,244,verified,src/game/unnamed/b016_1.c,GameHr_1199d20
-1199e20,220,disputed,src/game/talk/hub.c,Hub_1199e20
+1199e20,52,disputed,src/game/talk/hub.c,Hub_1199e20
 1199f00,384,verified,src/game/talk/hub.c,Hub_1199f00
 119a0b0,332,verified,src/game/talk/hub.c,Hub_119a0b0
 119a200,416,verified,src/game/talk/hub.c,Hub_119a200
