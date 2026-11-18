@@ -18,7 +18,7 @@ __int64 silk_shell_decoder(_QWORD, _QWORD);
 __int64 silk_sum_sqr_shift(_QWORD, _QWORD, _QWORD, _QWORD);
 extern _DWORD MovieData_a61e0[6];
 extern _DWORD MovieData_a6210[6];
-extern _QWORD MovieData_a735c[4];
+extern _UNALIGNED_QWORD MovieData_a735c[4];
 extern _UNKNOWN* MovieData_c09f0;
 extern _UNKNOWN* MovieData_c0b68;
 extern _UNKNOWN* MovieData_c0b70;

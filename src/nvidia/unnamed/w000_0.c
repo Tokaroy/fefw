@@ -18,7 +18,7 @@ extern __int64 (*CudaDriverData_143ba40)(void);
 
 extern __int64 CudaDriverData_143bda8;
 
-extern __int128 CudaDriverData_14403f8;
+extern _UNALIGNED_INT128 CudaDriverData_14403f8;
 
 extern __int64 CudaDriverData_1440428;
 

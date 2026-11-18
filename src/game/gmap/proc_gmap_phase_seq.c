@@ -90,7 +90,7 @@ extern __int64 game_GameModeData_instance_;
 extern __int64 game_g_game_setting;
 extern __int64 game_gameui_Footer_instance_;
 extern __int64 game_gmap_GmapClock_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern __int64 game_gmap_GmapClock_kDefaultTime_ptr;
 extern __int64 game_hub_ProgressEventView_instance_;
 extern __int64* GameData_212c780;

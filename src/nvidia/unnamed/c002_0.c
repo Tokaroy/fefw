@@ -192,7 +192,7 @@ extern _UNKNOWN* CudaDriverData_1435dc8;
 
 extern __int64 (*CudaDriverData_1435dd0)(__int64);
 
-extern __int128 CudaDriverData_1436518;
+extern _UNALIGNED_INT128 CudaDriverData_1436518;
 
 extern char CudaDriverData_1438940;
 

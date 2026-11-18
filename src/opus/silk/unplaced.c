@@ -11,7 +11,7 @@ __int64 silk_biquad_alt_stride1(_QWORD, _QWORD, _QWORD);
 __int64 silk_bwexpander_32(_QWORD, _QWORD, _QWORD);
 __int64 silk_lin2log(unsigned int);
 __int64 silk_log2lin(unsigned int);
-extern _QWORD SdkData_c1ef14[4];
+extern _UNALIGNED_QWORD SdkData_c1ef14[4];
 extern _UNKNOWN** SdkData_e878a0;
 extern _UNKNOWN** SdkData_e87918[2];
 extern _UNKNOWN** SdkData_e87920;

@@ -216,7 +216,7 @@ extern char CudaDriverData_14403dc;
 extern __int64 CudaDriverData_14403e0;
 extern __int64 CudaDriverData_14403e8;
 extern __int64 CudaDriverData_14403f0;
-extern __int128 CudaDriverData_14403f8;
+extern _UNALIGNED_INT128 CudaDriverData_14403f8;
 __int64 CudaDriverRoutine_105c00(void);
 __int64 CudaDriverRoutine_105df0(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD,
                                  _QWORD);

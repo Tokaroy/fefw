@@ -37,7 +37,7 @@ extern __int64 GameData_21c9650;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_GameModeData_instance_;
 extern __int64 game_gmap_GmapClock_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern char* GameData_20aee00[18];
 float LayoutAccessor_15638b0(__int64*, char*, char);
 unsigned __int16* Dir_70d7a0(unsigned __int16* result);

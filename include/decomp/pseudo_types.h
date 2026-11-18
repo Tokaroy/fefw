@@ -30,6 +30,9 @@ typedef char _UNKNOWN;
 typedef long long __attribute__((aligned(1))) _UNALIGNED_INT64;
 typedef int __attribute__((aligned(1))) _UNALIGNED_INT32;
 typedef char* __attribute__((aligned(1))) _UNALIGNED_PTR;
+typedef __int128 __attribute__((aligned(1))) _UNALIGNED_INT128;
+typedef short __attribute__((aligned(1))) _UNALIGNED_INT16;
+typedef unsigned long long __attribute__((aligned(1))) _UNALIGNED_QWORD;
 
 #ifndef nullptr
 #define nullptr ((void*)0)

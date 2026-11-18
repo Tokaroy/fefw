@@ -758,7 +758,7 @@ extern __int64 game_TransporterConst_List_instance__ptr[6];
 extern __int64 game_cmdbtl_ProcCmdBtlSeqView_instance_;
 extern __int64 game_g_empty_item;
 extern __int64 game_g_game_setting;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern __int64 game_map_Action_targets_;
 extern __int64 game_map_Action_units_;
 extern __int64 game_map_g_hint_data;

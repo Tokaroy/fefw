@@ -6,7 +6,7 @@ __attribute__((swiftcall)) void Dir_70ea50_alt1(PSEUDO_X8, __int16* result,
                                                 __int64) __asm__("Dir_70ea50");
 __int16* Dir_70dd80(__int16* result, __int16*);
 extern _DWORD game_script_hub_schedule_kHourCycles[24];
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern int GameData_21caa04;
 unsigned __int16* Dir_70d7a0(unsigned __int16* result);
 __int64 Dir_70e760(__int16* a1, __int16* a2);

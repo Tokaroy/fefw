@@ -50,7 +50,7 @@ __int64 std___1___shared_weak_count_lock(__int64);
 bool AIThink_121a340(_QWORD*, __int64);
 bool GameRoutine_822320(unsigned int);
 bool game_AIThink_GetAttackResult(int*, _QWORD*);
-extern _QWORD GameData_1af2765[2];
+extern _UNALIGNED_QWORD GameData_1af2765[2];
 extern _QWORD game_g_shared_system_skills_ptr;
 extern _UNKNOWN* GameData_216f628;
 extern _UNKNOWN GameData_1ac4744;

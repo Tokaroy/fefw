@@ -271,7 +271,7 @@ __int16* Dir_70dd80(__int16* result, __int16*);
 __int64 Dir_70e760(__int16*, __int16*);
 extern _DWORD game_script_hub_schedule_kHourCycles[24];
 extern __int64 game_gmap_GmapClock_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 __int64 GameHr_869d10();
 _QWORD* AssetTableFile_7f3680(__int64, __int64*);
 _QWORD* GameManager_a2c820(__int64, __int64, char);

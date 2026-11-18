@@ -55,7 +55,7 @@ extern __int64 GameData_22521e8;
 extern __int64 GameData_22521f8;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_gmap_GmapClock_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern __int64 game_gmap_GmapClock_kDefaultTime_ptr;
 extern char GameData_2252040;
 extern char GameData_2252080;

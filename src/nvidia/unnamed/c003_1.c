@@ -419,7 +419,7 @@ extern int CudaDriverData_1438b44;
 
 extern __int64 CudaDriverData_14393e0;
 
-extern __int16 CudaDriverData_143bbe5;
+extern _UNALIGNED_INT16 CudaDriverData_143bbe5;
 
 extern int CudaDriverData_14403d8;
 

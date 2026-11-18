@@ -112,21 +112,21 @@ extern __int64 CudaDriverData_1432c58;
 
 extern char CudaDriverData_14335e6;
 
-extern __int128 CudaDriverData_1434638;
+extern _UNALIGNED_INT128 CudaDriverData_1434638;
 
-extern __int128 CudaDriverData_1434648;
+extern _UNALIGNED_INT128 CudaDriverData_1434648;
 
-extern __int128 CudaDriverData_1434658;
+extern _UNALIGNED_INT128 CudaDriverData_1434658;
 
-extern __int128 CudaDriverData_1434668;
+extern _UNALIGNED_INT128 CudaDriverData_1434668;
 
-extern __int128 CudaDriverData_1434678;
+extern _UNALIGNED_INT128 CudaDriverData_1434678;
 
-extern __int128 CudaDriverData_1434688;
+extern _UNALIGNED_INT128 CudaDriverData_1434688;
 
-extern __int128 CudaDriverData_1434698;
+extern _UNALIGNED_INT128 CudaDriverData_1434698;
 
-extern __int128 CudaDriverData_14346a8;
+extern _UNALIGNED_INT128 CudaDriverData_14346a8;
 
 extern _UNKNOWN CudaDriverData_14347a8;
 

@@ -58,7 +58,7 @@ extern int CudaDriverData_1434ac0;
 
 extern int CudaDriverData_14358d4;
 
-extern __int128 CudaDriverData_1436518;
+extern _UNALIGNED_INT128 CudaDriverData_1436518;
 
 extern __int16 CudaDriverData_1438958;
 

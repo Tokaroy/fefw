@@ -221,7 +221,7 @@ extern _UNKNOWN game_g_random_mutex;
 extern __int64* GameData_212c878[6];
 extern __int64* game_map_MapRandom_instance__ptr[3];
 extern __int64 GameData_212cf80[5];
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 unsigned __int16*
 Dir_70d7a0_alt1(unsigned __int16* result) __asm__("Dir_70d7a0");
 void __attribute__((noreturn)) GameRoutine_12b6e30(void);

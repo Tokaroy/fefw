@@ -756,7 +756,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 437c0,228,verified,src/opus/silk/CNG.c,silk_CNG_Reset
 44290,344,verified,src/opus/silk/HP_variable_cutoff.c,silk_HP_variable_cutoff
 44400,436,verified,src/opus/silk/LPC_analysis_filter.c,silk_LPC_analysis_filter
-445e0,1200,verified,src/opus/silk/unplaced_2.c,opus_silk_445e0
+445e0,1564,verified,src/opus/silk/unplaced_2.c,opus_silk_445e0
 45170,504,verified,src/opus/silk/unplaced_2.c,opus_silk_45170
 45cc0,592,verified,src/opus/silk/unplaced_2.c,opus_silk_45cc0
 45f40,236,verified,src/opus/silk/NLSF_VQ_weights_laroia.c,silk_NLSF_VQ_weights_laroia
@@ -785,13 +785,13 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 4e7c0,680,verified,src/opus/silk/code_signs.c,silk_encode_signs
 4ea80,936,verified,src/opus/silk/code_signs.c,silk_decode_signs
 4ee30,168,verified,src/opus/silk/unplaced_2.c,opus_silk_4ee30
-4eef0,372,verified,src/opus/silk/unplaced_2.c,opus_silk_4eef0
+4eef0,400,verified,src/opus/silk/unplaced_2.c,opus_silk_4eef0
 4f080,1540,verified,src/movie/unnamed/p000_0.c,MovieHr_4f080
 4f690,380,verified,src/opus/silk/unplaced_2.c,opus_silk_4f690
 4f810,16,verified,src/opus/silk/dec_API.c,silk_Get_Decoder_Size
 4f820,60,verified,src/opus/silk/dec_API_impl.c,silk_InitDecoder
 4f860,592,verified,src/opus/silk/dec_API_impl.c,silk_Decode
-50640,504,verified,src/opus/silk/unplaced_2.c,opus_silk_50640
+50640,504,disputed,src/opus/silk/unplaced_2.c,opus_silk_50640
 51580,500,verified,src/opus/silk/unplaced_7.c,opus_silk_51580
 51780,672,verified,src/opus/silk/decode_indices.c,silk_decode_indices
 51b60,768,verified,src/opus/silk/unplaced_3.c,opus_silk_51b60
@@ -823,7 +823,7 @@ fff0,88,verified,src/movie/detail/movie_video_decoder_event_manager.cpp,_ZN5movi
 57f50,764,verified,src/opus/silk/shell_coder.c,silk_shell_encoder
 58260,1016,verified,src/opus/silk/shell_coder.c,silk_shell_decoder
 58660,112,verified,src/opus/silk/unplaced_2.c,opus_silk_58660
-586e0,1164,verified,src/opus/silk/unplaced_2.c,opus_silk_586e0
+586e0,1176,verified,src/opus/silk/unplaced_2.c,opus_silk_586e0
 58bc0,1164,verified,src/opus/silk/unplaced_2.c,opus_silk_58bc0
 590a0,476,verified,src/opus/silk/unplaced_2.c,opus_silk_590a0
 592e0,2520,verified,src/opus/silk/unplaced_3.c,opus_silk_592e0

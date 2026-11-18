@@ -79,7 +79,7 @@ extern __int64 GameData_21f2548;
 extern __int64 game_GameModeData_instance_;
 extern __int64 game_ProcFadeView_instance_;
 extern __int64 game_ProcGameSkipView_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 void __attribute__((noreturn))
 GameRoutine_60a210_alt1() __asm__("GameRoutine_60a210");
 void __attribute__((noreturn)) GameRoutine_60a310(_QWORD, _QWORD);

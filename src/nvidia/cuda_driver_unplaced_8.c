@@ -274,7 +274,7 @@ extern __int128 CudaDriverData_11162b0;
 extern __int128 CudaDriverData_11162d0;
 extern __int128 CudaDriverData_11162e0;
 extern __int128 CudaDriverData_14302e0;
-extern __int128 CudaDriverData_14403f8;
+extern _UNALIGNED_INT128 CudaDriverData_14403f8;
 extern __int64 (*CudaDriverData_1423010)();
 extern __int64 (*CudaDriverData_1423358)();
 extern __int64 (*CudaDriverData_14235b0[25])();

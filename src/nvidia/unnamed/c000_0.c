@@ -44,7 +44,7 @@ extern __int64 CudaDriverData_1435cf8;
 
 extern int CudaDriverData_1436024;
 
-extern __int16 CudaDriverData_143bbe5;
+extern _UNALIGNED_INT16 CudaDriverData_143bbe5;
 
 __int64 CudaDriverRoutine_10480(_QWORD, _QWORD, _QWORD);
 

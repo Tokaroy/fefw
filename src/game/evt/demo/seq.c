@@ -56,7 +56,7 @@ extern __int64 game_ProcFadeView_instance_;
 extern __int64 game_ProcGameSkipView_instance_;
 extern __int64 game_g_frame_clock;
 extern __int64 game_gmap_GmapClock_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern __int64 game_sound_g_game_sound;
 extern __int64* eft_g_effectSystem_ptr[3];
 extern __int64* game_g_frame_clock_ptr[3];

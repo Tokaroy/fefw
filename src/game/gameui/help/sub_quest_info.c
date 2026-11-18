@@ -16,7 +16,7 @@ extern __int64 GameData_2265738;
 extern __int64 GameData_2265750;
 extern __int64 fw_memory_g_heap_manager_ptr;
 extern __int64 game_GameModeData_instance_;
-extern __int64 game_gmap_GmapClock_kDefaultTime;
+extern _UNALIGNED_INT64 game_gmap_GmapClock_kDefaultTime;
 extern int GameData_2265740;
 extern int GameData_2265758;
 __int64* SubQuestInfo_Destructor(__int64 a1);

@@ -21878,7 +21878,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 7cb4c0,8,verified,src/game/game_trivial.cpp,_Z15GameStub_7cb4c0v
 7cb4e0,140,verified,src/game/map/trick.c,Trick_Unknown6
 7cb580,140,verified,src/game/map/trick.c,Trick_Unknown2
-7cb610,812,verified,src/game/unnamed/e002_0.c,GameHr_7cb610
+7cb610,816,verified,src/game/unnamed/e002_0.c,GameHr_7cb610
 7cb970,8,verified,src/game/game_trivial.cpp,_Z15GameStub_7cb970m
 7cb980,600,verified,src/game/map/unplaced.c,game_map_7cb980
 7cbc00,244,verified,src/game/map/anonymous/trick_entity.c,TrickEntity_7cbc00
@@ -23993,7 +23993,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 855190,1180,verified,src/game/unplaced.c,game_855190
 855640,2148,verified,src/game/unnamed/b006_2.c,GameHr_855640
 855ec0,2028,verified,src/game/unplaced.c,game_855ec0
-8566e0,2604,verified,src/game/unnamed/e002_0.c,GameHr_8566e0
+8566e0,2296,verified,src/game/unnamed/e002_0.c,GameHr_8566e0
 8573a0,352,verified,src/game/unnamed/b006_2.c,GameHr_8573a0
 857500,688,verified,src/game/unplaced.c,game_857500
 857880,4,verified,src/game/templates/function_pointer.cpp,_ZNSt3__110__function6__baseIFviEED2Ev
@@ -64783,7 +64783,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 14c6ac0,176,verified,src/game/unnamed/b019_2.c,GameHr_14c6ac0
 14c6b80,220,verified,src/game/unnamed/b019_2.c,GameHr_14c6b80
 14c6c80,304,verified,src/game/gmap/proc_gmap_phase_seq.c,game_gmap_ProcGmapPhaseSeq_CheckAttachmentMiasma
-14c6e70,716,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c6e70
+14c6e70,724,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c6e70
 14c7180,364,verified,src/game/proc/proc_singleton.cpp,_ZN4game21ProcJumpableSingletonINS_4gmap16ProcGmapPhaseSeqENS1_12GmapPhaseSeq5LabelEE9ApplyJumpEv
 14c7300,640,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c7300
 14c75b0,92,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c75b0
@@ -64793,7 +64793,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 14c7c60,428,verified,src/game/gmap/proc_gmap_phase_seq.c,game_gmap_ProcGmapPhaseSeq_CheckSpotAttachmentAuto
 14c7e30,128,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c7e30
 14c7eb0,36,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c7eb0
-14c8020,2088,verified,src/game/gmap/proc_gmap_phase_seq.c,game_gmap_ProcGmapPhaseSeq_FreeCursorTick
+14c8020,2412,verified,src/game/gmap/proc_gmap_phase_seq.c,game_gmap_ProcGmapPhaseSeq_FreeCursorTick
 14c8ac0,76,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c8ac0
 14c8b10,8,verified,src/game/game_trivial_wrappers.cpp,_Z16GameStub_14c8b10m
 14c8ba0,1160,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c8ba0
@@ -64801,12 +64801,12 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 14c9220,108,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9220
 14c92a0,648,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c92a0
 14c9540,220,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9540
-14c9620,456,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9620
+14c9620,472,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9620
 14c9820,332,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9820
 14c9af0,4,verified,src/game/game_trivial.cpp,_Z16GameStub_14c9af0v
 14c9b00,4,verified,src/game/game_trivial.cpp,_Z16GameStub_14c9b00v
 14c9b20,516,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9b20
-14c9d40,192,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9d40
+14c9d40,212,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9d40
 14c9e20,152,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9e20
 14c9ec0,4,verified,src/game/game_trivial.cpp,_Z16GameStub_14c9ec0v
 14c9ed0,180,verified,src/game/gmap/proc_gmap_phase_seq.c,ProcGmapPhaseSeq_14c9ed0
@@ -65055,7 +65055,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 14d4250,180,verified,src/game/gmap/anonymous/proc_animal_seq.c,ProcAnimalSeq_DeletingDestructor
 14d4310,180,verified,src/game/proc/unread_proc_singletons.cpp,_ZN4game21ProcJumpableSingletonINS_4gmap12_GLOBAL__N_113ProcAnimalSeqENS2_5LabelEED0Ev
 14d43d0,248,verified,src/game/gmap/spot_attachment.cpp,_ZN4game4gmap18SpotAttachmentBase9Unknown06Ev
-14d44d0,616,verified,src/game/gmap/spot_attachment_base.c,SpotAttachmentBase_14d44d0
+14d44d0,616,disputed,src/game/gmap/spot_attachment_base.c,SpotAttachmentBase_14d44d0
 14d4740,68,verified,src/game/gmap/spot_attachment_base.c,SpotAttachmentBase_14d4740
 14d4790,136,verified,src/game/gmap/spot_attachment.cpp,_ZN4game4gmap18SpotAttachmentBase9Unknown14Ev
 14d4820,488,verified,src/game/gmap/spot_attachment_base.c,SpotAttachmentBase_14d4820
@@ -75045,7 +75045,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1718850,8,verified,src/game/game_trivial.cpp,_Z16GameStub_1718850m
 1718860,496,verified,src/game/gameui/unplaced_3.c,game_gameui_1718860
 1718a60,3796,verified,src/game/gameui/anonymous/proc_calendar.c,ProcCalendar_1718a60
-171a220,1104,verified,src/game/gameui/unplaced_5.c,game_gameui_171a220
+171a220,1108,verified,src/game/gameui/unplaced_5.c,game_gameui_171a220
 171a710,172,verified,src/game/gameui/schedule_main_quest.c,ScheduleMainQuest_Destructor
 171a7c0,184,verified,src/game/gameui/schedule_main_quest.c,ScheduleMainQuest_DeletingDestructor
 171a880,64,verified,src/game/gameui/schedule_main_quest.c,ScheduleMainQuest_Unknown2
