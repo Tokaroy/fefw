@@ -193,7 +193,7 @@ void game_cmdbtl_anonymous_1625bc0(__int64* a1)
         if (v9 == nullptr) {
           goto LABEL_104;
         }
-        if (((_BYTE)v15[14] & 1) != 0) {
+        if ((*(_BYTE*)&v15[14] & 1) != 0) {
           GameRoutine_1627860((__int64)v52),
               v22 = COERCE_AS(__typeof__(v22),
                               PSEUDO_REGISTER(float, "s1", "=w")),

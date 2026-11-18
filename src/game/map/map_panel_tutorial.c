@@ -707,7 +707,7 @@ LABEL_116:
       (*(void (**)(_QWORD*))(v88 + 40))((_QWORD*)v76 + 6);
       GameRoutine_f54fe0(v76 + 12);
       v89 = *((float**)v76 + 1);
-      if (((_BYTE)v76[68] & 1) != 0 || v76[69] > 0.0) {
+      if ((*(_BYTE*)&v76[68] & 1) != 0 || v76[69] > 0.0) {
         if (v89 != nullptr) {
           do {
             v91 = v89;

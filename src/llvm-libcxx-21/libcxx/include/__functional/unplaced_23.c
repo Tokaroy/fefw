@@ -19,7 +19,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_129f440(__int64 result,
 
   v5 = *a3;
   v6 = *a4;
-  if (((_DWORD)a5[5] & 0x80000000) != 0) {
+  if ((*(_DWORD*)&a5[5] & 0x80000000) != 0) {
     v7 = v5 + 32 * v6;
   }
   else {

@@ -920,11 +920,11 @@ void game_1368580(float* a1, __int64** a2)
               TextBox_59d550((__int64)a1, (__int64)f_.v30);
               v27 = f_.v34;
               v28 = a1[65];
-              v29 = (_WORD)a1[69] & 4;
+              v29 = *(_WORD*)&a1[69] & 4;
               if (v28 != f_.v34) {
                 v29 = 4;
               }
-              *((_WORD*)a1 + 138) = v29 | (_WORD)a1[69] & 0xFFFB;
+              *((_WORD*)a1 + 138) = v29 | *(_WORD*)&a1[69] & 0xFFFB;
               if (v28 != v27) {
                 a1[65] = v27;
               }

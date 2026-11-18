@@ -211,7 +211,7 @@ __attribute__((noinline)) __int64 nn_font_569bc0(__int64 a1, int a2, float* a3,
     *((float*)&v48_.v50 + 1) = v38;
   }
 LABEL_16:
-  if (((_BYTE)a3[10] & 1) == 0) {
+  if ((*(_BYTE*)&a3[10] & 1) == 0) {
     *((float*)&v48_.v50 + 1) = *(float*)(v39 + 64) + v38;
   }
   v43 = *(float*)(v39 + 16);

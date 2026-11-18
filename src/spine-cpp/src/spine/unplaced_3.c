@@ -912,7 +912,7 @@ float* spine_cpp_src_spine_3ecc0(__int64 a1, __int64 a2)
     v14 = *((_QWORD*)v10 + 46);
     if (v14 != v13) {
       v15 = (const char*)v13;
-      if (v14 != 0 && ((_BYTE)v10[94] & 1) != 0) {
+      if (v14 != 0 && (*(_BYTE*)&v10[94] & 1) != 0) {
         v16 = GameRoutine_19e10(),
         v328 = COERCE_AS(__typeof__(v328),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -956,7 +956,7 @@ float* spine_cpp_src_spine_3ecc0(__int64 a1, __int64 a2)
     v22 = *((_QWORD*)v10 + 42);
     if (v22 != v21) {
       v23 = (const char*)v21;
-      if (v22 != 0 && ((_BYTE)v10[86] & 1) != 0) {
+      if (v22 != 0 && (*(_BYTE*)&v10[86] & 1) != 0) {
         v24 = GameRoutine_19e10(),
         v328 = COERCE_AS(__typeof__(v328),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1133,7 +1133,7 @@ float* spine_cpp_src_spine_3ecc0(__int64 a1, __int64 a2)
     v37 = *((_QWORD*)v10 + 59);
     if (v37 != v36) {
       v38 = (const char*)v36;
-      if (v37 != 0 && ((_BYTE)v10[120] & 1) != 0) {
+      if (v37 != 0 && (*(_BYTE*)&v10[120] & 1) != 0) {
         v39 = GameRoutine_19e10(),
         v328 = COERCE_AS(__typeof__(v328),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
@@ -1177,7 +1177,7 @@ float* spine_cpp_src_spine_3ecc0(__int64 a1, __int64 a2)
     v53 = *((_QWORD*)v10 + 55);
     if (v53 != v52) {
       v54 = (const char*)v52;
-      if (v53 != 0 && ((_BYTE)v10[112] & 1) != 0) {
+      if (v53 != 0 && (*(_BYTE*)&v10[112] & 1) != 0) {
         v55 = GameRoutine_19e10(),
         v328 = COERCE_AS(__typeof__(v328),
                          PSEUDO_REGISTER(unsigned long long, "x1", "=r"));

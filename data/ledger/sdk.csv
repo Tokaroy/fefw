@@ -26930,7 +26930,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 681b00,68,verified,src/nn/unnamed/s004_1.c,SdkHr_681b00
 681b60,264,verified,src/nn/unnamed/t002_0.c,SdkHr_681b60
 681c70,48,verified,src/nn/unnamed/s004_1.c,SdkHr_681c70
-681ca0,516,verified,src/nn/unplaced_4.c,nn_681ca0
+681ca0,520,verified,src/nn/unplaced_4.c,nn_681ca0
 681ec0,148,verified,src/nn/unnamed/s004_1.c,SdkHr_681ec0
 681f60,584,verified,src/nn/unplaced_4.c,nn_681f60
 6821c0,52,verified,src/nn/unnamed/s004_1.c,SdkHr_6821c0

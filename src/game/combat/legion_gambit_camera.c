@@ -788,7 +788,7 @@ float* LegionGambitCamera_e5a880(float* result, _BYTE* a2)
           GameRoutine_1a09ce0_alt2((__int64)v13, GameData_1aa9224_alt2, 0xEu);
           v16 = (unsigned __int8*)v15 + 169;
           result = v15;
-          if (((_BYTE)v15[42] & 1) != 0) {
+          if ((*(_BYTE*)&v15[42] & 1) != 0) {
             v16 = *((unsigned __int8**)v15 + 23);
             __asm__ volatile("" ::"r"(v16));
           }
