@@ -42673,7 +42673,7 @@ e43ac0,496,verified,src/game/unnamed/b012_1.c,GameHr_e43ac0
 e43d00,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
 e43d20,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe43d20
 e43d30,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe43d30
-e43d60,624,disputed,src/game/combat/unplaced.c,game_combat_e43d60
+e43d60,632,verified,src/game/combat/unplaced.c,game_combat_e43d60
 e44050,884,disputed,src/game/combat/unplaced.c,game_combat_e44050
 e44660,4,verified,src/memory/new_delete.cpp,complete destructor at 0xe44660
 e44670,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe44670

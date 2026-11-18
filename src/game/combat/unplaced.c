@@ -2028,9 +2028,9 @@ void game_combat_e43d60(__int64 a1)
           0x1.41b2f80000000p-2f;
     v19 = v18 +
           (float)(roundf(v18 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (v19 <= 0x1.921fb60000000p+0f) {
+    if (!(v19 > 0x1.921fb60000000p+0f)) {
       v21 = 0x1.0000000000000p+0f;
-      if (v19 >= -0x1.921fb60000000p+0f) {
+      if (!(v19 < -0x1.921fb60000000p+0f)) {
         goto LABEL_41;
       }
       v20 = -0x1.921fb60000000p+1f;
@@ -2099,8 +2099,14 @@ void game_combat_e43d60(__int64 a1)
                                            (float)(v19 * v19))) *
                         (float)(v19 * v19)) +
                 0x1.0000000000000p+0f);
-    v24 = (float)(v17 * v22) + (float)(v16 * v23);
-    v25 = (float)(v17 * v23) - (float)(v16 * v22);
+    // The original rounds v17 * v22 and v17 * v23 and fuses the v16 ones.
+    {
+      float r24 = v17 * v22;
+      float r25 = v17 * v23;
+      __asm__("" : "+w"(r24), "+w"(r25));
+      v24 = r24 + v16 * v23;
+      v25 = r25 - v16 * v22;
+    }
     if (*(_DWORD*)(a1 + 84) != 1) {
       *(_DWORD*)(a1 + 32) = 0;
       *(_QWORD*)(a1 + 88) = 0;
