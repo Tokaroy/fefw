@@ -376,7 +376,8 @@ LABEL_17:
   *(float32x4_t*)v19 = v58;
   if (*(_DWORD*)(v7 + 4) == 0) {
     v38 = *(long double*)(*(_QWORD*)(a2 + 16) + 848LL);
-    HIDWORD(v38) = 0;
+    // The original clears the last lane of the vector, not the second.
+    ((_DWORD*)&v38)[3] = 0;
     *(long double*)(v19 + 32) = v38;
     v82 = (float32x4_t*)(v19 + 32);
     if ((unsigned int)(*(_DWORD*)v7 - 1) > 1) {

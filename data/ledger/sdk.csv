@@ -14551,7 +14551,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 44dba0,868,verified,src/nn/fontll/itype/unplaced_7.c,nn_fontll_itype_44dba0
 44e2c0,1444,disputed,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
 44e9e0,292,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e9e0
-44eb20,296,verified,src/nn/unnamed/h000_0.c,SdkHr_44eb20
+44eb20,296,disputed,src/nn/unnamed/h000_0.c,SdkHr_44eb20
 44ec60,56,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60
 44eca0,296,verified,src/nn/fontll/itype/unplaced_3.c,get_EBLC_partial
 44eee0,532,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44eee0
@@ -24188,7 +24188,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 61ec10,16,verified,src/nvidia/unplaced_3.c,nvidia_61ec10
 61ec20,24,verified,src/nvidia/unplaced_3.c,nvidia_61ec20
 61ec40,572,verified,src/nvidia/unplaced_3.c,nvidia_61ec40
-61ee80,1048,disputed,src/nvidia/unplaced_3.c,nvidia_61ee80
+61ee80,1048,verified,src/nvidia/unplaced_3.c,nvidia_61ee80
 61f2b0,88,verified,src/nvidia/unplaced_3.c,nvidia_61f2b0
 61f3b0,2816,verified,src/nvidia/unplaced_3.c,nvidia_61f3b0
 620430,636,verified,src/nvidia/unplaced_3.c,nvidia_620430
@@ -25945,7 +25945,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 654d40,392,verified,src/nn/unnamed/s003_2.c,SdkHr_654d40
 654ee0,668,verified,src/nn/unplaced_3.c,nn_654ee0
 655180,100,verified,src/nn/unnamed/s003_2.c,SdkHr_655180
-6551f0,172,verified,src/nn/unnamed/s003_2.c,SdkHr_6551f0
+6551f0,232,verified,src/nn/unnamed/s003_2.c,SdkHr_6551f0
 6553b0,40,verified,src/nn/unnamed/s003_2.c,SdkHr_6553b0
 6553e0,228,verified,src/nn/unnamed/s003_2.c,SdkHr_6553e0
 6554e0,180,verified,src/nn/unplaced_3.c,nn_6554e0
@@ -25978,7 +25978,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 656890,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_656890mm
 6568a0,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6568a0mm
 6568b0,32,verified,src/nn/unnamed/s003_2.c,SdkHr_6568b0
-6568d0,248,verified,src/nn/unnamed/s003_2.c,SdkHr_6568d0
+6568d0,252,verified,src/nn/unnamed/s003_2.c,SdkHr_6568d0
 6569d0,824,verified,src/nn/unplaced_3.c,nn_6569d0
 656d40,868,verified,src/nn/unplaced_3.c,nn_656d40
 6570b0,24,verified,src/nn/unnamed/s003_2.c,SdkHr_6570b0
@@ -25988,9 +25988,9 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 657110,60,verified,src/nn/unnamed/s003_2.c,SdkHr_657110
 657150,84,verified,src/nn/unplaced_3.c,nn_657150
 6571b0,8,verified,src/nn/unnamed/u000_1.c,SdkHr_6571b0
-6571c0,1216,verified,src/nn/unnamed/s003_2.c,SdkHr_6571c0
+6571c0,1748,verified,src/nn/unnamed/s003_2.c,SdkHr_6571c0
 657b60,376,verified,src/nn/unnamed/s900_0.c,SdkHr_657b60
-657d30,460,verified,src/nn/unplaced_8.c,nn_657d30
+657d30,484,verified,src/nn/unplaced_8.c,nn_657d30
 657f20,112,verified,src/nn/unnamed/s003_3.c,SdkHr_657f20
 657f90,52,verified,src/nn/unnamed/s003_2.c,SdkHr_657f90
 657fd0,468,verified,src/nn/unnamed/s003_2.c,SdkHr_657fd0
@@ -26122,7 +26122,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65c290,24,verified,src/nn/unnamed/s003_2.c,SdkHr_65c290
 65c2b0,32,verified,src/nn/unnamed/s003_2.c,SdkHr_65c2b0
 65c2d0,76,verified,src/nn/unnamed/s003_2.c,SdkHr_65c2d0
-65c320,556,verified,src/nn/unplaced_8.c,nn_65c320
+65c320,648,verified,src/nn/unplaced_8.c,nn_65c320
 65c5d0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_65c5d0v
 65c5e0,136,verified,src/nn/unplaced_8.c,nn_65c5e0
 65c670,12,verified,src/nn/unnamed/u000_1.c,SdkHr_65c670
@@ -26168,7 +26168,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65d060,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_65d060m
 65d070,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_65d070m
 65d080,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_65d080m
-65d0a0,520,verified,src/nn/unplaced_8.c,nn_65d0a0
+65d0a0,696,verified,src/nn/unplaced_8.c,nn_65d0a0
 65d380,172,verified,src/nn/unnamed/s003_2.c,SdkHr_65d380
 65d440,24,verified,src/nn/unnamed/s003_2.c,SdkHr_65d440
 65d460,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_65d460v
@@ -26193,10 +26193,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65d9a0,484,verified,src/nn/unplaced_16.c,nn_65d9a0
 65dbc0,360,verified,src/nn/unplaced_8.c,nn_65dbc0
 65dd30,48,verified,src/nn/unnamed/s003_2.c,SdkHr_65dd30
-65dd60,612,verified,src/nn/unplaced_8.c,nn_65dd60
+65dd60,616,verified,src/nn/unplaced_8.c,nn_65dd60
 65dfe0,80,verified,src/nn/unnamed/s003_2.c,SdkHr_65dfe0
 65e040,96,verified,src/nn/unplaced_8.c,nn_65e040
-65e0a0,548,verified,src/nn/unnamed/s003_2.c,SdkHr_65e0a0
+65e0a0,556,verified,src/nn/unnamed/s003_2.c,SdkHr_65e0a0
 65e300,776,verified,src/nn/unnamed/s003_2.c,SdkHr_65e300
 65e620,452,verified,src/nn/unplaced_3.c,nn_65e620
 65e800,612,verified,src/nn/unnamed/s003_2.c,SdkHr_65e800
@@ -26232,7 +26232,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 65fcd0,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_65fcd0mmm
 65fce0,1328,disputed,src/nn/unplaced_3.c,nn_65fce0
 660780,268,verified,src/nn/unplaced_3.c,nn_660780
-6608a0,140,verified,src/nn/unnamed/s003_2.c,SdkHr_6608a0
+6608a0,144,verified,src/nn/unnamed/s003_2.c,SdkHr_6608a0
 660940,968,verified,src/nn/unnamed/s003_2.c,SdkHr_660940
 660d10,24,verified,src/nn/unnamed/s003_2.c,SdkHr_660d10
 660d30,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660d30m
@@ -26254,7 +26254,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 660e70,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e70m
 660e80,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_660e80m
 660e90,140,verified,src/nn/unnamed/s003_2.c,SdkHr_660e90
-660f20,3416,disputed,src/nn/unplaced_3.c,nn_660f20
+660f20,3416,verified,src/nn/unplaced_3.c,nn_660f20
 661d40,164,verified,src/nn/unnamed/s003_2.c,SdkHr_661d40
 661df0,44,verified,src/nn/unnamed/s003_2.c,SdkHr_661df0
 661e20,48,verified,src/nn/unnamed/s003_2.c,SdkHr_661e20
@@ -26413,8 +26413,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6650a0,328,verified,src/nn/unplaced_11.c,nn_6650a0
 6650b0,264,verified,src/nn/unnamed/s004_0.c,SdkHr_6650b0
 6651c0,96,verified,src/nn/unnamed/s004_0.c,SdkHr_6651c0
-665220,992,verified,src/nn/unnamed/s004_0.c,SdkHr_665220
-665b40,1372,verified,src/nn/unnamed/s004_0.c,SdkHr_665b40
+665220,1300,verified,src/nn/unnamed/s004_0.c,SdkHr_665220
+665b40,1768,disputed,src/nn/unnamed/s004_0.c,SdkHr_665b40
 666540,348,verified,src/nn/unnamed/s004_0.c,SdkHr_666540
 6666a0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6666a0v
 6666b0,60,verified,src/nn/unnamed/s004_0.c,SdkHr_6666b0
@@ -26474,7 +26474,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6671b0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6671b0v
 6671c0,4,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_6671c0v
 6671d0,216,verified,src/nn/unnamed/t001_0.c,SdkHr_6671d0
-6672c0,244,verified,src/nn/unnamed/s004_1.c,SdkHr_6672c0
+6672c0,324,verified,src/nn/unnamed/s004_1.c,SdkHr_6672c0
 667420,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_667420m
 667430,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_667430m
 667440,8,verified,src/nn/sdk_trivial.cpp,_Z14SdkStub_667440m
@@ -26570,11 +26570,11 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 668610,132,verified,src/nn/unnamed/s004_0.c,SdkHr_668610
 6686a0,40,verified,src/nn/unnamed/s004_0.c,SdkHr_6686a0
 6686e0,104,verified,src/nn/unnamed/s004_0.c,SdkHr_6686e0
-668760,208,verified,src/nn/unnamed/s004_0.c,SdkHr_668760
+668760,392,verified,src/nn/unnamed/s004_0.c,SdkHr_668760
 668910,344,verified,src/nn/unnamed/s004_0.c,SdkHr_668910
 668c20,12,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_668c20mmmm
 668ee0,20,verified,src/nn/unnamed/u000_2.c,SdkHr_668ee0
-668f00,200,verified,src/nn/unnamed/s004_0.c,SdkHr_668f00
+668f00,256,verified,src/nn/unnamed/s004_0.c,SdkHr_668f00
 669000,368,verified,src/nn/unnamed/s004_0.c,SdkHr_669000
 669170,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_669170mm
 669180,224,verified,src/nn/unplaced_8.c,nn_669180
@@ -26637,12 +26637,12 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66a020,44,verified,src/nn/unnamed/s004_0.c,SdkHr_66a020
 66a050,24,verified,src/nn/unnamed/s004_0.c,SdkHr_66a050
 66a070,24,verified,src/nn/unnamed/s004_0.c,SdkHr_66a070
-66a090,132,verified,src/nn/unnamed/s004_0.c,SdkHr_66a090
+66a090,152,verified,src/nn/unnamed/s004_0.c,SdkHr_66a090
 66a170,900,verified,src/nn/unplaced_3.c,nn_66a170
 66a500,460,verified,src/nn/unnamed/s004_0.c,SdkHr_66a500
 66a6d0,976,verified,src/nn/unplaced_7.c,nn_66a6d0
 66aaa0,1152,verified,src/nn/unplaced_3.c,nn_66aaa0
-66afc0,260,verified,src/nn/unplaced_8.c,nn_66afc0
+66afc0,348,verified,src/nn/unplaced_8.c,nn_66afc0
 66b130,100,verified,src/nn/unnamed/s004_0.c,SdkHr_66b130
 66b1a0,72,verified,src/nn/unnamed/s004_0.c,SdkHr_66b1a0
 66b1f0,80,verified,src/nn/unnamed/s004_0.c,SdkHr_66b1f0
@@ -26722,10 +26722,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 66c9e0,148,verified,src/nn/unplaced_19.c,nn_66c9e0
 66ca80,76,verified,src/nn/unnamed/s004_0.c,SdkHr_66ca80
 66cad0,16,verified,src/nn/sdk_trivial_wrappers.cpp,_Z14SdkStub_66cad0mm
-66cae0,316,verified,src/nn/unplaced_8.c,nn_66cae0
+66cae0,1060,verified,src/nn/unplaced_8.c,nn_66cae0
 66cf80,24,verified,src/nn/unnamed/s900_0.c,SdkHr_66cf80
 66cfa0,168,verified,src/nn/unnamed/s004_0.c,SdkHr_66cfa0
-66d050,400,verified,src/nn/unnamed/s004_0.c,SdkHr_66d050
+66d050,408,verified,src/nn/unnamed/s004_0.c,SdkHr_66d050
 66d1f0,308,verified,src/nn/unnamed/s004_0.c,SdkHr_66d1f0
 66d330,64,verified,src/nn/unnamed/s004_0.c,SdkHr_66d330
 66d8e0,576,verified,src/nn/unnamed/s004_0.c,SdkHr_66d8e0
@@ -26846,7 +26846,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 678050,92,verified,src/nn/unplaced_4.c,nn_678050
 6780b0,84,verified,src/nn/unplaced_4.c,nn_6780b0
 678ac0,420,verified,src/nn/unplaced_4.c,nn_678ac0
-678d00,848,verified,src/nn/unnamed/s004_0.c,SdkHr_678d00
+678d00,880,verified,src/nn/unnamed/s004_0.c,SdkHr_678d00
 6790b0,1024,verified,src/nn/unplaced_4.c,nn_6790b0
 6794b0,516,verified,src/nn/unplaced_4.c,nn_6794b0
 6796c0,1584,verified,src/nn/unplaced_4.c,nn_6796c0
@@ -26860,10 +26860,10 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 67a390,868,verified,src/nn/unplaced_4.c,nn_67a390
 67a700,644,verified,src/nn/unnamed/t001_0.c,SdkHr_67a700
 67a990,148,verified,src/nn/unnamed/s004_0.c,SdkHr_67a990
-67aa40,532,verified,src/nn/unnamed/a001_0.c,SdkHr_67aa40
+67aa40,536,verified,src/nn/unnamed/a001_0.c,SdkHr_67aa40
 67ac60,392,verified,src/nn/unnamed/s004_0.c,SdkHr_67ac60
 67b360,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67b360
-67b920,292,verified,src/nn/unnamed/s004_0.c,SdkHr_67b920
+67b920,376,verified,src/nn/unnamed/s004_0.c,SdkHr_67b920
 67baa0,108,verified,src/nn/unnamed/s004_0.c,SdkHr_67baa0
 67bb20,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67bb20
 67bba0,652,verified,src/nn/unplaced_4.c,nn_67bba0
@@ -26872,7 +26872,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 67c480,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67c480
 67c500,1008,verified,src/nn/unplaced_4.c,nn_67c500
 67c9a0,368,verified,src/nn/unnamed/s004_0.c,SdkHr_67c9a0
-67cb10,340,verified,src/nn/unnamed/s004_0.c,SdkHr_67cb10
+67cb10,368,verified,src/nn/unnamed/s004_0.c,SdkHr_67cb10
 67cc80,1100,verified,src/nn/unplaced_4.c,nn_67cc80
 67d0f0,116,verified,src/nn/unnamed/s004_0.c,SdkHr_67d0f0
 67d180,1080,verified,src/nn/unplaced_4.c,nn_67d180
@@ -27039,7 +27039,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 691650,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_691650mmm
 691660,136,verified,src/nn/unnamed/s004_1.c,SdkHr_691660
 691760,372,verified,src/nn/unnamed/s004_1.c,SdkHr_691760
-691990,140,verified,src/nn/unnamed/s004_1.c,SdkHr_691990
+691990,168,verified,src/nn/unnamed/s004_1.c,SdkHr_691990
 691a40,3160,verified,src/nn/unplaced_13.c,nn_691a40
 693340,1096,verified,src/nn/unnamed/s004_1.c,SdkHr_693340
 693790,200,verified,src/nn/unnamed/s004_1.c,SdkHr_693790
@@ -27069,7 +27069,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 697a00,812,verified,src/nn/unplaced_4.c,nn_697a00
 697e10,808,verified,src/nn/unplaced_4.c,nn_697e10
 698210,808,verified,src/nn/unplaced_4.c,nn_698210
-698610,956,verified,src/nn/unplaced_8.c,nn_698610
+698610,1000,disputed,src/nn/unplaced_8.c,nn_698610
 698a50,208,verified,src/nn/unnamed/s004_1.c,SdkHr_698a50
 698b20,196,verified,src/nn/unnamed/s004_1.c,SdkHr_698b20
 698bf0,504,verified,src/nn/unnamed/s004_1.c,SdkHr_698bf0
@@ -27163,7 +27163,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 69e000,40,verified,src/nn/unnamed/s004_1.c,SdkHr_69e000
 69e030,212,verified,src/nn/unplaced_4.c,nn_69e030
 69e110,124,verified,src/nn/unnamed/s004_1.c,SdkHr_69e110
-69e1a0,804,verified,src/nn/unnamed/s004_1.c,SdkHr_69e1a0
+69e1a0,880,verified,src/nn/unnamed/s004_1.c,SdkHr_69e1a0
 69e5d0,20,verified,src/nn/unnamed/u000_2.c,SdkHr_69e5d0
 69e5f0,612,verified,src/nn/unnamed/s004_1.c,SdkHr_69e5f0
 69e860,28,verified,src/nn/unnamed/s004_1.c,SdkHr_69e860
@@ -27203,7 +27203,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 69fe20,176,verified,src/nn/unplaced_8.c,nn_69fe20
 69fee0,260,verified,src/nn/unplaced_8.c,nn_69fee0
 6a0000,260,verified,src/nn/unplaced_8.c,nn_6a0000
-6a0120,368,verified,src/nn/unplaced_8.c,nn_6a0120
+6a0120,376,verified,src/nn/unplaced_8.c,nn_6a0120
 6a02a0,116,verified,src/nn/unplaced_8.c,nn_6a02a0
 6a0320,168,verified,src/nn/unplaced_8.c,nn_6a0320
 6a03d0,136,verified,src/nn/unplaced_8.c,nn_6a03d0
@@ -27282,7 +27282,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6a2ac0,68,verified,src/nn/unnamed/s004_1.c,SdkHr_6a2ac0
 6a2b10,84,verified,src/nn/unnamed/s004_1.c,SdkHr_6a2b10
 6a2b70,76,verified,src/nn/unnamed/s900_0.c,SdkHr_6a2b70
-6a2bc0,304,verified,src/nn/unplaced_8.c,nn_6a2bc0
+6a2bc0,316,verified,src/nn/unplaced_8.c,nn_6a2bc0
 6a2d20,68,verified,src/nn/unnamed/s004_1.c,SdkHr_6a2d20
 6a2d70,92,verified,src/nn/unnamed/s004_1.c,SdkHr_6a2d70
 6a2de0,340,verified,src/nn/unplaced_8.c,nn_6a2de0
@@ -27359,7 +27359,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 6a7310,68,verified,src/nn/unnamed/s004_2.c,SdkHr_6a7310
 6a74a0,32,verified,src/nn/unnamed/s004_2.c,SdkHr_6a74a0
 6a74c0,60,verified,src/nn/unnamed/s004_2.c,SdkHr_6a74c0
-6a7500,224,verified,src/nn/unplaced_8.c,nn_6a7500
+6a7500,280,verified,src/nn/unplaced_8.c,nn_6a7500
 6a7630,1448,verified,src/nn/unplaced_5.c,nn_6a7630
 6a7c90,12,verified,src/nn/unnamed/u000_2.c,SdkHr_6a7c90
 6a7ca0,12,verified,src/nn/unnamed/u000_2.c,SdkHr_6a7ca0
