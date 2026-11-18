@@ -14293,6 +14293,8 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 422040,1128,verified,src/nn/fontll/itype/unplaced.c,nn_fontll_itype_422040
 4225a0,736,verified,src/nn/fontll/itype/unplaced.c,map_font
 4228c0,828,verified,src/nn/fontll/itype/unplaced.c,map_char
+422c20,492,verified,src/nn/fontll/itype/unplaced_12.c,nn_fontll_itype_422c20
+423c00,1396,disputed,src/nn/fontll/itype/unplaced_12.c,nn_fontll_itype_423c00
 4241c0,112,verified,src/nn/fontll/itype/unplaced.c,engrave_graymap
 424820,200,verified,src/nn/fontll/itype/unplaced.c,emboss_graymap
 424e80,5868,verified,src/nn/fontll/itype/unplaced.c,outline_graymap

@@ -24,6 +24,28 @@
   __builtin_memcpy((target), (source), (size))
 #define __noreturn __attribute__((noreturn))
 
+// Hex-Rays names for byte swaps, overflow checks and the thread pointer.
+// Converted files defined them locally, moved bodies need them here.
+#ifndef _byteswap_ulong
+#define _byteswap_ulong(x) __builtin_bswap32((unsigned int)(x))
+#endif
+#ifndef _byteswap_ushort
+#define _byteswap_ushort(x) __builtin_bswap16((unsigned short)(x))
+#endif
+#ifndef _byteswap_uint64
+#define _byteswap_uint64(x) __builtin_bswap64((unsigned long long)(x))
+#endif
+#ifndef is_mul_ok
+#define is_mul_ok(a, b) \
+  (sizeof((a) * (b)) > 4 \
+    ? ((unsigned __int128)(unsigned long long)(a) * \
+      (unsigned long long)(b)) >> 64 == 0 \
+    : ((unsigned long long)(unsigned int)(a) * (unsigned int)(b)) >> 32 == 0)
+#endif
+#ifndef PSEUDO_THREAD_POINTER
+#define PSEUDO_THREAD_POINTER __builtin_arm_rsr64("tpidrro_el0")
+#endif
+
 #include <arm_neon.h>
 
 // arm_neon.h names a rounding conversion across widths only from clang 22.
