@@ -82,12 +82,12 @@ f60,148,verified,src/game/unnamed/b000_0.c,GameHr_f60
 7aa0,892,verified,src/game/unnamed/e000_0.c,GameHr_7aa0
 7f00,80,verified,src/timeline/value.cpp,_ZN8timeline11InputStream3GetEv
 7f50,268,verified,src/timeline/value_impl.c,Value_7f50
-8060,1124,verified,src/timeline/unplaced_4.c,timeline_8060
+8060,1244,verified,src/timeline/unplaced_4.c,timeline_8060
 86a0,2532,verified,src/timeline/unplaced_2.c,timeline_86a0
 9220,1172,verified,src/game/unnamed/r000_0.c,GameHr_9220
 98c0,1416,verified,src/game/unnamed/b000_0.c,GameHr_98c0
 9ea0,1204,verified,src/game/unnamed/b000_0.c,GameHr_9ea0
-a3e0,2756,verified,src/timeline/unplaced_4.c,timeline_a3e0
+a3e0,2936,verified,src/timeline/unplaced_4.c,timeline_a3e0
 b210,124,verified,src/timeline/value_impl.c,Value_b210
 b290,144,verified,src/game/unnamed/b000_0.c,GameHr_b290
 b320,276,verified,src/timeline/value_impl.c,Value_b320
@@ -12538,7 +12538,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 3b87a0,68,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics.cpp,_ZN5physx7PxArrayINS_2Cm14SpatialVectorFENS_21PxReflectionAllocatorIS2_EEE19resizeUninitializedEj
 3b8800,1056,verified,src/game/unnamed/b002_1.c,GameHr_3b8800
 3b8c40,400,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics.cpp,_ZN5physx2Dy18DynamicsTGSContext36setupArticulationInternalConstraintsERNS0_17IslandContextStepEff
-3b8de0,2184,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics_impl.c,physx_Dy_DynamicsTGSContext_iterativeSolveIsland
+3b8de0,2188,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics_impl.c,physx_Dy_DynamicsTGSContext_iterativeSolveIsland
 3b9740,2344,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics.cpp,_ZN5physx2Dy18DynamicsTGSContext28iterativeSolveIslandParallelERKNS0_23SolverIslandObjectsStepERKNS_16PxsIslandIndicesERNS0_13ThreadContextEffjjPiSA_SA_SA_SA_SA_SA_SA_jjf
 3bb6e0,856,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics.cpp,_ZN5physx2Dy18DynamicsTGSContext17finishSolveIslandERNS0_13ThreadContextERKNS0_23SolverIslandObjectsStepERKNS_16PxsIslandIndicesERNS_2IG19SimpleIslandManagerEPNS_10PxBaseTaskE
 3bba60,272,verified,src/physx/source/lowleveldynamics/src/DyTGSDynamics.cpp,_ZN5physx2Dy18DynamicsTGSContext12mergeResultsEv
@@ -13015,7 +13015,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 3e3c80,148,verified,src/physx/source/simulationcontroller/src/ScPipeline.cpp,_ZN5physx2Sc5Scene17setEdgesConnectedEPNS_10PxBaseTaskE
 3e3d20,72,verified,src/game/unnamed/b002_1.c,GameHr_3e3d20
 3e3d70,72,verified,src/physx/source/simulationcontroller/src/ScPipeline.cpp,_ZN5physx2Sc5Scene6solverEPNS_10PxBaseTaskE
-3e3dc0,1092,verified,src/physx/source/simulationcontroller/src/ScPipeline_impl.c,physx_Sc_Scene_beforeSolver
+3e3dc0,1152,verified,src/physx/source/simulationcontroller/src/ScPipeline_impl.c,physx_Sc_Scene_beforeSolver
 3e42e0,148,verified,src/physx/source/simulationcontroller/src/ScPipeline.cpp,_ZN5physx2Sc5Scene12updateBodiesEPNS_10PxBaseTaskE
 3e4390,488,verified,src/physx/source/simulationcontroller/src/ScPipeline.cpp,_ZN5physx2Sc5Scene14updateDynamicsEPNS_10PxBaseTaskE
 3e4580,148,verified,src/physx/source/simulationcontroller/src/ScPipeline.cpp,_ZN5physx2Sc5Scene30updateDynamicsPostPartitioningEPNS_10PxBaseTaskE
@@ -14674,7 +14674,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 533ab0,60,verified,src/physx/source/geomutils/src/GuIncrementalAABBPruner.cpp,_ZNK5physx2Gu21IncrementalAABBPruner14getPayloadDataEjPNS0_17PrunerPayloadDataE
 533af0,8,verified,src/physx/source/geomutils/src/GuIncrementalAABBPruner.cpp,_ZN5physx2Gu21IncrementalAABBPruner11preallocateEj
 533b00,68,verified,src/physx/source/geomutils/src/GuIncrementalAABBPruner.cpp,_ZN5physx2Gu21IncrementalAABBPruner12setTransformEjRKNS_12PxTransformTIfEE
-533b50,772,verified,src/physx/source/geomutils/src/cooking/GuCookingConvexMesh_impl.c,cookConvexMeshInternal
+533b50,816,verified,src/physx/source/geomutils/src/cooking/GuCookingConvexMesh_impl.c,cookConvexMeshInternal
 5340f0,72,verified,src/physx/source/geomutils/src/cooking/GuCookingConvexMesh.cpp,_ZL11outputErrorILi4EEbiPKc
 534140,60,verified,src/physx/source/geomutils/src/cooking/GuCookingConvexMesh.cpp,_ZL11outputErrorILi2EEbiPKc
 534180,144,verified,src/physx/source/geomutils/src/cooking/GuCookingConvexMesh.cpp,_ZNK5physx9PxSDFDesc7isValidEv
@@ -15238,7 +15238,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 566350,12,verified,src/game/game_trivial.cpp,_Z15GameStub_566350v
 566360,280,verified,src/game/unnamed/b002_2.c,GameHr_566360
 5664a0,304,verified,src/game/unnamed/b002_2.c,GameHr_5664a0
-5665e0,1012,disputed,src/nn/font/unplaced.c,nn_font_5665e0
+5665e0,980,disputed,src/nn/font/unplaced.c,nn_font_5665e0
 566d50,148,verified,src/game/unnamed/b002_2.c,GameHr_566d50
 566df0,136,verified,src/game/unnamed/b002_2.c,GameHr_566df0
 566e80,2188,verified,src/nn/font/unplaced.c,nn_font_566e80
@@ -21034,7 +21034,7 @@ fff90,116,verified,src/snd/api.cpp,_ZN3snd10startPitchERKNS_3fnd10WeakHandleERKN
 789c90,76,verified,src/game/unnamed/b005_2.c,GameHr_789c90
 789ce0,52,verified,src/game/unnamed/r001_1.c,GameHr_789ce0
 789d20,892,verified,src/game/unnamed/r001_1.c,GameHr_789d20
-78a0a0,6788,verified,src/game/map/unplaced_3.c,game_map_78a0a0
+78a0a0,7220,verified,src/game/map/unplaced_3.c,game_map_78a0a0
 78c0d0,24,verified,src/game/unnamed/r001_1.c,GameHr_78c0d0
 78c100,536,verified,src/game/map/unplaced.c,game_map_78c100
 78c350,924,verified,src/game/map/unplaced_7.c,game_map_78c350
@@ -30752,7 +30752,7 @@ a4a0b0,24,verified,src/game/unnamed/b008_2.c,GameHr_a4a0b0
 a4a0e0,688,verified,src/msg/message_file.c,MessageFile_a4a0e0
 a4a400,276,verified,src/game/unnamed/b008_2.c,GameHr_a4a400
 a4a540,320,verified,src/fs/manager.c,Manager_a4a540
-a4a6a0,332,verified,src/msg/project_file.c,ProjectFile_a4a6a0
+a4a6a0,1164,verified,src/msg/project_file.c,ProjectFile_a4a6a0
 a4ac60,276,verified,src/task/registration_impl.c,Registration_a4ac60
 a4ada0,232,verified,src/game/unnamed/b008_2.c,GameHr_a4ada0
 a4aea0,472,verified,src/fs/manager.c,Manager_a4aea0
@@ -33348,7 +33348,7 @@ b63d20,296,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b63d20
 b63e60,556,verified,src/gfxa/task_exposure.c,TaskExposure_b63e60
 b64090,572,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b64090
 b642d0,816,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b642d0
-b64600,1976,verified,src/gfxa/task_exposure.c,TaskExposure_b64600
+b64600,2384,verified,src/gfxa/task_exposure.c,TaskExposure_b64600
 b64f50,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskExposure::Impl::Impl(gfx::Manager&)::$_0, void (nn::gfx::SamplerInfo&)>::deleting destructor"
 b64f80,60,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskExposure::Impl::Impl(gfx::Manager&)::$_0, void (nn::gfx::SamplerInfo&)>::__clone()"
 b64fc0,16,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskExposure::Impl::Impl(gfx::Manager&)::$_0, void (nn::gfx::SamplerInfo&)>::__clone(__base*)"
@@ -33683,9 +33683,9 @@ b74360,32,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b74360
 b74380,28,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskSightMapRender::Impl::Impl(gfx::Manager&)::$_2, void (nn::gfx::SamplerInfo&)>::target(std::type_info const&)"
 b743a0,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskSightMapRender::Impl::Impl(gfx::Manager&)::$_2, void (nn::gfx::SamplerInfo&)>::target_type()"
 b743b0,2488,verified,src/gfxa/unplaced_6.c,gfxa_b743b0
-b74f60,1984,verified,src/gfxa/task_sky_blur.c,gfxa_TaskSkyBlur_Impl_Impl
+b74f60,2008,verified,src/gfxa/task_sky_blur.c,gfxa_TaskSkyBlur_Impl_Impl
 b75a00,600,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b75a00
-b75c60,684,verified,src/gfxa/task_sky_blur.c,TaskSkyBlur_b75c60
+b75c60,684,disputed,src/gfxa/task_sky_blur.c,TaskSkyBlur_b75c60
 b762a0,516,verified,src/gfxa/task_sky_blur.c,gfxa_TaskSkyBlur_Impl_drawMask
 b764b0,2448,verified,src/gfxa/task_sky_blur.c,TaskSkyBlur_b764b0
 b76e40,556,verified,src/gfx/flow/resource_builder_impl.c,ResourceBuilder_b76e40
@@ -33753,7 +33753,7 @@ b79730,12,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"st
 b79740,312,verified,src/gfx/flow/resource_builder.cpp,_ZN3gfx4flow15ResourceBuilder6CreateINS0_19UnrecoveredResourceILj123EEENS0_15UnrecoveredDescILj123EEEEEPT_PKcRKT0_
 b79890,956,verified,src/gfxa/task_ssao.c,gfxa_TaskSSAO_Impl_Impl
 b79df0,448,verified,src/gfxa/task_ssao.c,TaskSSAO_b79df0
-b79fc0,832,verified,src/gfxa/task_ssao.c,TaskSSAO_b79fc0
+b79fc0,792,disputed,src/gfxa/task_ssao.c,TaskSSAO_b79fc0
 b7a910,1884,verified,src/gfxa/task_ssao.c,TaskSSAO_b7a910
 b7b0d0,44,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskSSAO::Impl::Impl(gfx::Manager&)::$_0, void (nn::gfx::SamplerInfo&)>::deleting destructor"
 b7b100,60,verified,src/llvm-libcxx-21/libcxx/include/__functional/function.h,"std::__1::__function::__func<gfxa::TaskSSAO::Impl::Impl(gfx::Manager&)::$_0, void (nn::gfx::SamplerInfo&)>::__clone()"
@@ -37255,10 +37255,10 @@ c7a680,708,verified,src/game/unnamed/b010_1.c,GameHr_c7a680
 c7a950,1028,verified,src/as/unplaced.c,as_c7a950
 c7b5a0,12,verified,src/as/script_natives.cpp,_ZN2as3runERKNS_6stringE
 c7b5b0,2540,verified,src/as/script_run.cpp,_ZN2as3runERKNS_6stringEPNS_3AnyE
-c7bfa0,2508,disputed,src/as/script_run.cpp,_ZN2as8post_runEPKNS_3AnyERKNS_6stringE
+c7bfa0,2608,disputed,src/as/script_run.cpp,_ZN2as8post_runEPKNS_3AnyERKNS_6stringE
 c7cbf0,12,verified,src/as/script_natives.cpp,_ZN2as8post_runERKNS_6stringE
 c7cc00,2540,verified,src/as/script_run.cpp,_ZN2as8post_runERKNS_6stringEPNS_3AnyE
-c7d5f0,2492,disputed,src/as/script_run.cpp,_ZN2as11run_brotherEPKNS_3AnyERKNS_6stringE
+c7d5f0,2724,disputed,src/as/script_run.cpp,_ZN2as11run_brotherEPKNS_3AnyERKNS_6stringE
 c7e2c0,12,verified,src/as/script_natives.cpp,_ZN2as11run_brotherERKNS_6stringE
 c7e2d0,2688,verified,src/as/script_run.cpp,_ZN2as11run_brotherERKNS_6stringEPNS_3AnyE
 c7ed60,2640,verified,src/as/script_run.cpp,_ZN2as16post_run_brotherERKNS_6stringE
@@ -70678,7 +70678,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 165c2c0,28,verified,src/game/gmap/gmap_spot_info_setter_for_list.c,GmapSpotInfoSetterForList_Unknown8
 165c2e0,596,verified,src/game/gmap/gmap_spot_info_setter_for_list.c,GmapSpotInfoSetterForList_Unknown9
 165c540,408,verified,src/game/gmap/gmap_spot_info_setter_for_list.c,GmapSpotInfoSetterForList_Unknown10
-165c700,1872,verified,src/game/gmap/gmap_spot_info_setter_for_dispatch.c,GmapSpotInfoSetterForDispatch_Unknown3
+165c700,2244,verified,src/game/gmap/gmap_spot_info_setter_for_dispatch.c,GmapSpotInfoSetterForDispatch_Unknown3
 165d4a0,252,verified,src/game/gmap/unplaced_2.c,game_gmap_165d4a0
 165d6b0,8,verified,src/game/game_trivial.cpp,_Z16GameStub_165d6b0v
 165d6c0,8,verified,src/game/game_trivial.cpp,_Z16GameStub_165d6c0v
@@ -86372,7 +86372,7 @@ fffcb0,1244,verified,src/game/unnamed/b014_1.c,GameHr_fffcb0
 1988ea0,604,verified,src/game/unnamed/b026_2.c,GameHr_1988ea0
 1989130,500,verified,src/llvm-libcxx-21/libcxx/include//memory/unplaced.c,llvm_libcxx_21_libcxx_include___memory_1989130
 1989340,1592,verified,src/llvm-libcxx-21/libcxx/include//memory/unplaced_4.c,llvm_libcxx_21_libcxx_include___memory_1989340
-1989b20,3248,verified,src/llvm-libcxx-21/libcxx/include//memory/unplaced.c,llvm_libcxx_21_libcxx_include___memory_1989b20
+1989b20,3328,verified,src/llvm-libcxx-21/libcxx/include//memory/unplaced.c,llvm_libcxx_21_libcxx_include___memory_1989b20
 198ac60,256,verified,src/game/unnamed/b026_2.c,GameHr_198ac60
 198ad80,2152,verified,src/llvm-libcxx-21/libcxx/include//memory/unplaced_4.c,llvm_libcxx_21_libcxx_include___memory_198ad80
 198b6c0,608,verified,src/game/unnamed/b026_2.c,GameHr_198b6c0
