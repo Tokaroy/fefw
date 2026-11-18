@@ -266,7 +266,7 @@ __int64 SdkRoutine_657f90_alt1(__int64 result, int, int, __int64);
 __int64 SdkRoutine_657fd0_alt1(__int64 result, unsigned int, int, __int64);
 __int64 SdkRoutine_668a70_alt1(__int64, __int64, __int64, __int64, char, char);
 __int64 SdkRoutine_669000_alt1(__int64, __int64, char);
-__int64 SdkRoutine_6693a0_alt1(__int64 result, int, __int64);
+__int64 SdkRoutine_6693a0_alt1(__int64 result, int);
 __int64 SdkRoutine_669460_alt1(__int64, unsigned int, __int64);
 __int64 SdkRoutine_670e40_alt1(__int64, __int64, __int64);
 __int64 SdkRoutine_671080_alt1(__int64, __int64, __int64);
@@ -1537,7 +1537,7 @@ void SdkHr_665b40(__int64 a1, unsigned int* a2, __int64 a3)
       else {
         v58 = 2;
       }
-      SdkRoutine_6693a0_alt1(a1, v58, a3);
+      SdkRoutine_6693a0_alt1(a1, v58);
       a2 += 2;
       continue;
     case 0x5Fu:

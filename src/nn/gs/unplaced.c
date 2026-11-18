@@ -6,7 +6,7 @@ _QWORD* nn_gs_481a60_alt1(_QWORD*, __int64,
                           __int64 (*)(unsigned __int64, __int64, __int64),
                           __int64, __int64, unsigned __int64, unsigned __int64,
                           __int64) __asm__("nn_gs_481a60");
-__int64 SdkRoutine_47c140(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
+__int64 SdkRoutine_47c140(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 SdkRoutine_47c140_alt1(__int64 result, __int64, unsigned __int64,
                                unsigned __int64*) __asm__("SdkRoutine_47c140");
 __int64 SdkRoutine_47c6a0(__int64 result, __int64, unsigned __int64, __int64);
@@ -309,7 +309,7 @@ __int64 nn_gs_47ada0(__int64 result)
     }
     goto LABEL_22;
   }
-  SdkRoutine_47c140(*(_QWORD*)(v1 + 80), v1 + 88, v2, v23, v1 + 120);
+  SdkRoutine_47c140(*(_QWORD*)(v1 + 80), v1 + 88, v2, v23);
   result = nn_gs_47b000_alt1(v1 + 128, v23);
   v17 = (_QWORD*)v23[0];
   v23[0] = 0;
@@ -1196,7 +1196,7 @@ __int64 nn_gs_47bc80(_QWORD* a1, unsigned __int64 a2, __int64 a3)
   (*(void (**)(unsigned __int64, _QWORD))(*a1 + 16LL))(a2,
                                                        *(_QWORD*)(*a1 + 32LL));
   if (((unsigned __int16)v8 & 0x3FF) == 0) {
-    return SdkRoutine_47c140(a1[1], a1 + 2, v8, a3, a1 + 6);
+    return SdkRoutine_47c140(a1[1], a1 + 2, v8, a3);
   }
   result = nn_gs_47bda0_alt1(a1 + 7, v8, a3);
   if ((result & 1) == 0) {
@@ -4590,8 +4590,7 @@ __int64 nn_gs_48d060(_QWORD* a1)
     v24 = nullptr;
     if ((v2 & 0xFFF) != 0) {
       if ((v2 & 0x3FF) == 0) {
-        SdkRoutine_47c140(*(_QWORD*)(v1 + 80), v1 + 88, v2, (_QWORD)&v24,
-                          v1 + 120);
+        SdkRoutine_47c140(*(_QWORD*)(v1 + 80), v1 + 88, v2, (_QWORD)&v24);
         result = nn_gs_47b000(v1 + 128, &v24);
         v14 = v24;
         v24 = nullptr;

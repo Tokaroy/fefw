@@ -63,9 +63,8 @@ __int64 game_GameVariableTable_Find_alt1(_QWORD*, unsigned __int64*) __asm__(
     "game_GameVariableTable_Find");
 __int64 game_HashString_alt1(__int64 result) __asm__("game_HashString");
 __int64 game_UnitPool_GetFirst_alt1(int*) __asm__("game_UnitPool_GetFirst");
-__int64 game_UnitUtil_UniqueMap_Commit_1212e40_alt2(
-    _QWORD*, __int64*,
-    __int64) __asm__("game_UnitUtil_UniqueMap_Commit_1212e40");
+__int64 game_UnitUtil_UniqueMap_Commit_1212e40_alt2(_QWORD*, __int64*) __asm__(
+    "game_UnitUtil_UniqueMap_Commit_1212e40");
 __int64 game_gmap_TroopMgr_CountPlayerTroop_134e7b0(__int64);
 __int64 game_telop_TelopRelianceLvUp_CreateBind(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 memcpy(_QWORD, _QWORD, _QWORD);
@@ -112,17 +111,15 @@ __int64 game_1373e60_alt1(__int64 result, __int64, unsigned int, char,
 __int64 game_telop_TelopRelianceLvUp_CreateBind_alt1(
     __int64, __int64, __int64, char,
     unsigned __int8) __asm__("game_telop_TelopRelianceLvUp_CreateBind");
-__int64 game_UnitUtil_UniqueMap_Commit_1212e40_alt1(
-    _QWORD*, __int64,
-    __int64) __asm__("game_UnitUtil_UniqueMap_Commit_1212e40");
+__int64 game_UnitUtil_UniqueMap_Commit_1212e40_alt1(_QWORD*, __int64) __asm__(
+    "game_UnitUtil_UniqueMap_Commit_1212e40");
 extern __int64 (*GameData_2019ad8[])();
 void nn_mem_StandardAllocator_Free_alt1(__int64, __int64) __asm__(
     "nn_mem_StandardAllocator_Free");
 void game_UnitUtil_UniqueMap_Commit(_QWORD* a1, _WORD* a2, __int64 a3);
 extern __int64 (*GameData_2019b58[])();
 extern __int64 (*GameData_2019bd8[])();
-__int64 game_UnitUtil_UniqueMap_Commit_1212e40(_QWORD* a1, __int64 a2,
-                                               __int64 a3);
+__int64 game_UnitUtil_UniqueMap_Commit_1212e40(_QWORD* a1, __int64 a2);
 __attribute__((swiftcall)) void
 
 game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
@@ -475,7 +472,7 @@ game_UnitUtil_UniqueMap_Commit_89abc0(PSEUDO_X8 x8_, __int64 result,
         LABEL_64:
           f_.v88[0] = (__int64)GameData_2019a58;
           f_.v89 = f_.v88;
-          game_UnitUtil_UniqueMap_Commit_1212e40_alt2(f_.v84, f_.v88, a3);
+          game_UnitUtil_UniqueMap_Commit_1212e40_alt2(f_.v84, f_.v88);
           result = (__int64)f_.v89;
           if (f_.v89 == f_.v88) {
             v46 = 32;
@@ -1374,7 +1371,7 @@ void game_UnitUtil_UniqueMap_Commit(_QWORD* a1, _WORD* a2, __int64 a3)
       v17_.v17[0] = GameData_2019ad8;
       v17_.v17[1] = v15;
       v17_.v18 = v17_.v17;
-      game_UnitUtil_UniqueMap_Commit_1212e40_alt1(a1, (__int64)v17_.v17, a3);
+      game_UnitUtil_UniqueMap_Commit_1212e40_alt1(a1, (__int64)v17_.v17);
       if (v17_.v18 == v17_.v17) {
         v16 = 32;
       }
@@ -1617,8 +1614,7 @@ __int64 UnitUtil_1212be0(__int64 a1, __int64 a2, __int64 a3)
   goto LABEL_12;
 }
 
-__int64 game_UnitUtil_UniqueMap_Commit_1212e40(_QWORD* a1, __int64 a2,
-                                               __int64 a3)
+__int64 game_UnitUtil_UniqueMap_Commit_1212e40(_QWORD* a1, __int64 a2)
 {
   __int64 v3;
   __int64 v5;
@@ -1736,7 +1732,7 @@ __int64 game_UnitUtil_UniqueMap_Commit_1212e40(_QWORD* a1, __int64 a2,
     }
     v19 = 40;
   }
-  (*(void (**)(_QWORD*, __int64, __int64))(*v14 + v19))(v14, a2, a3);
+  (*(void (**)(_QWORD*, __int64))(*v14 + v19))(v14, a2);
 LABEL_29:
   LODWORD(v29_.v29[0]) = 17;
   result = game_UnitPool_GetFirst_alt1((int*)v29_.v29);

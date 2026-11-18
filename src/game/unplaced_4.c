@@ -1323,9 +1323,13 @@ LABEL_18:
                     vmulq_f32(v15, vrsqrtsq_f32(v15, vmulq_f32(v12, v15)))),
           vceqzq_f32(v12));
       v17 = vmulq_f32(vsubq_f32(COERCE_AS(float32x4_t, 0), v16), v22);
-      a1[10] = vaddq_f32(
-          a1[10],
-          vmulq_n_f32(vmlaq_n_f32(v17, vsubq_f32(v16, v17), v9), v9 * v13));
+      {
+        float32x4_t step =
+            vmulq_n_f32(vmlaq_n_f32(v17, vsubq_f32(v16, v17), v9), v9 * v13);
+
+        __asm__("" : "+w"(step));
+        a1[10] = vaddq_f32(a1[10], step);
+      }
       if (v11 == 0 || *(_BYTE*)(v11 + 152) != 3 ||
           (((v18 = *(_DWORD*)(v11 + 156)) & 8) != 0 ? (v19 = 2) : (v19 = 3),
            (v19 & v18) != 0)) {

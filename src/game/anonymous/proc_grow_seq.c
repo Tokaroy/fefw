@@ -18,7 +18,7 @@ __int64 GameRoutine_6fcb20(_QWORD, _QWORD);
 __int64 GameRoutine_7fb7c0(_QWORD);
 __int64 GameRoutine_932360(_QWORD, _QWORD);
 __int64 UnitSkillList_84d980(_QWORD, _QWORD);
-__int64 Unit_6cc580(_QWORD, _QWORD, _QWORD);
+__int64 Unit_6cc580(_QWORD, _QWORD);
 __int64 Unit_6cc9e0(_QWORD, _QWORD, _QWORD);
 __int64 fw_memory_HeapManager_Allocate(_QWORD, _QWORD, _QWORD, _QWORD);
 __int64 game_Unit_Unknown6c4610(_QWORD);
@@ -300,7 +300,7 @@ __int64 ProcGrowSeq_7faa40(__int64 result)
                                                    8LL * (*v16 & 0xFFF)) +
                                         104LL);
               if (v18 == 2) {
-                result = Unit_6cc580(v1, v16, 0);
+                result = Unit_6cc580(v1, v16);
               }
               else if (v18 == 1) {
                 result = Unit_6cc9e0(v1, v16, 0);
