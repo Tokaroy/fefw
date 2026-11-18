@@ -217,7 +217,8 @@ void GameHr_17c4d00(__int64* a1, _QWORD* a2, __int64 a3, unsigned __int64 a4)
   }
   v14 = (_QWORD*)(v4 + 8 * (v12 >> 4));
   if (v5 != v4) {
-    v15 = *v14 + 244 * (v12 & 0xF);
+    // The original loads the block even when nothing is appended.
+    v15 = *(volatile __int64*)v14 + 244 * (v12 & 0xF);
     v16 = v15;
     if (a4 != 0) {
       goto LABEL_8;
