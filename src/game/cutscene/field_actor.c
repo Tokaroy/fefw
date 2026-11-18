@@ -2360,7 +2360,7 @@ void FieldActor_Unknown4(__int64 a1, long double a2, float a3)
             v36 = 0;
           }
         }
-        memory_a6ea10((void*)(v114_.v114), v36, 0),
+        memory_a6ea10((void*)((__int64)v114_.v114), v36, 0),
             v89 =
                 COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(float, "s0", "=w"));
         if (v114_.v116 != 0 || v114_.v117 != 0 || v114_.v118 != 0 ||

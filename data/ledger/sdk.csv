@@ -8317,7 +8317,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 1d90b4,488,verified,src/nn/sf/cmif/client/cmif_client_in_object_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail5InRawImEENSE_8InObjectENSE_6BufferILj21EEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d929c,392,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSE_5InRawIhEENSE_14InRawReferenceINSE_7RawDataILm16ELm8EEEEENSH_ImEESN_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d9424,380,verified,src/nn/sf/cmif/client/cmif_client_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEESG_NSE_5InRawIhEENSE_14InRawReferenceINSE_7RawDataILm16ELm8EEEEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
-1d95a0,380,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSF_IjEENSE_5InRawIjEENSI_ImEESK_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
+1d95a0,380,disputed,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6OutRawImEENSF_IjEENSE_5InRawIjEENSI_ImEESK_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d971c,472,verified,src/nn/sf/cmif/client/cmif_client_writer_handle_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail14InWriterHandleILb0EEENSE_5InRawImEEEEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d98f4,496,verified,src/nn/sf/cmif/client/cmif_client_writer_handle_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail14InWriterHandleILb0EEENSE_5InRawImEENSH_IjEESJ_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
 1d9ae4,488,verified,src/nn/sf/cmif/client/cmif_client_extra_message.cpp,_ZN2nn2sf4cmif6client19CmifDomainProxyKindINS0_4hipc6client38Hipc2ClientSessionManagedProxyKindBaseINS5_18Hipc2ProxyKindBaseILNS4_6detail11MessageTypeE6EEEEEE7ProcessILb0EJNS2_6detail6BufferILj69EEENSE_5InRawIjEESI_SI_SI_SI_EEENS_6ResultEPKNSC_14ProxyKindStateEDpNT0_9ParameterEi
@@ -14391,7 +14391,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 430c10,44,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c10
 430c40,48,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c40
 430c70,28,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_430c70
-430ca0,1904,disputed,src/nn/unnamed/a000_0.c,SdkHr_430ca0
+430ca0,2400,disputed,src/nn/unnamed/a000_0.c,SdkHr_430ca0
 4318c0,236,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_4318c0
 4319c0,220,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_4319c0
 431ac0,232,verified,src/nn/fontll/itype/unplaced_2.c,nn_fontll_itype_431ac0
@@ -14489,7 +14489,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 43d540,76,verified,src/nn/fontll/itype/fsglue.c,delete_key
 43d590,116,verified,src/nn/fontll/itype/fsglue.c,get_dropout_control
 43d610,368,verified,src/nn/fontll/itype/unplaced_2.c,fsg_ReduceMatrix
-43d780,3324,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
+43d780,2364,disputed,src/nn/fontll/itype/unplaced_3.c,make_graymap
 43e6c0,2612,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_43e6c0
 43f120,2404,verified,src/nn/fontll/itype/unplaced_3.c,trim_convert
 43fb70,80,verified,src/nn/fontll/itype/fs_font.c,copy_graymap
@@ -14546,7 +14546,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 44d780,232,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d780
 44d880,688,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44d880
 44dba0,868,verified,src/nn/fontll/itype/unplaced_7.c,nn_fontll_itype_44dba0
-44e2c0,1456,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
+44e2c0,1444,disputed,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e2c0
 44e9e0,292,verified,src/nn/fontll/itype/unplaced_3.c,nn_fontll_itype_44e9e0
 44eb20,296,verified,src/nn/unnamed/h000_0.c,SdkHr_44eb20
 44ec60,56,verified,src/nn/unnamed/h000_0.c,SdkHr_44ec60
@@ -15286,7 +15286,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 48a500,408,verified,src/nn/gs/unplaced.c,nn_gs_48a500
 48a6b0,764,verified,src/nn/gs/unplaced.c,nn_gs_48a6b0
 48ce20,228,verified,src/nn/gs/unplaced.c,nn_gs_48ce20
-48d060,720,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
+48d060,692,disputed,src/nn/gs/unplaced.c,nn_gs_48d060
 48d380,220,verified,src/nn/gs/unplaced.c,nn_gs_48d380
 48d480,212,verified,src/nn/gs/unplaced.c,nn_gs_48d480
 48d560,656,verified,src/nn/gs/unplaced.c,nn_gs_48d560
@@ -23212,7 +23212,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 5e5e40,352,verified,src/nn/vi2/unplaced.c,nn_vi2_5e5e40
 5e5fe0,388,verified,src/nn/vi2/unplaced.c,nn_vi2_5e5fe0
 5e6180,612,verified,src/nn/vi2/unplaced.c,nn_vi2_5e6180
-5e6400,364,verified,src/nn/vi2/unplaced.c,nn_vi2_5e6400
+5e6400,384,verified,src/nn/vi2/unplaced.c,nn_vi2_5e6400
 5e65a0,248,verified,src/nn/vi2/unplaced.c,nn_vi2_5e65a0
 5e66a0,248,verified,src/nn/vi2/unplaced.c,nn_vi2_5e66a0
 5e67a0,332,verified,src/nn/vi2/unplaced.c,nn_vi2_5e67a0
@@ -27031,7 +27031,7 @@ ffee0,324,verified,src/nn/fs/unplaced.c,nn_fs_GetAndClearMemoryReportInfo
 691060,776,verified,src/graphics/unplaced_4.c,graphics_691060
 691370,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_691370mmm
 691380,36,verified,src/nn/unnamed/s004_1.c,SdkHr_691380
-6913c0,644,disputed,src/nn/unplaced_18.c,nn_6913c0
+6913c0,644,verified,src/nn/unplaced_18.c,nn_6913c0
 691650,8,verified,src/nn/sdk_trivial_thunks.cpp,_Z14SdkStub_691650mmm
 691660,136,verified,src/nn/unnamed/s004_1.c,SdkHr_691660
 691760,372,verified,src/nn/unnamed/s004_1.c,SdkHr_691760

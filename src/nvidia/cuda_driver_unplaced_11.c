@@ -333,7 +333,8 @@ __int64 cuda_driver_21cce0(unsigned int* a1, __int64 a2);
 __int64 nvidia_118090(__int64);
 bool CudaDriverRoutine_5a420_alt1(
     __int64, unsigned __int64, unsigned int) __asm__("CudaDriverRoutine_5a420");
-unsigned __int8 CudaDriverRoutine_5adc0_alt1(__int64) __asm__("CudaDriverRoutine_5adc0");
+unsigned __int8
+CudaDriverRoutine_5adc0_alt1(__int64) __asm__("CudaDriverRoutine_5adc0");
 unsigned __int64
 CudaDriverRoutine_5adc0_alt1_w(__int64) __asm__("CudaDriverRoutine_5adc0");
 bool cuda_driver_12ea30_alt1(int*) __asm__("cuda_driver_12ea30");
@@ -341,6 +342,7 @@ __int64 CudaDriverStub_107f90_alt3(__int64);
 __int64 CudaDriverStub_108070_alt3(__int64);
 bool CudaDriverRoutine_5a420_alt2(__int64, unsigned __int64, unsigned int);
 bool cuda_driver_12ea30_alt2(int*);
+bool CudaDriverRoutine_98110_alt1(_BOOL8 result);
 
 void cuda_driver_1febc0()
 {
@@ -2374,7 +2376,7 @@ LABEL_34:
   if (*((_BYTE*)&CudaDriverRoutine_7540 + (_QWORD)CudaDriverData_1422118 + 3) !=
           0 &&
       *(_DWORD*)v4 != 1 &&
-      (CudaDriverRoutine_98110(v4) || *(_BYTE*)(v4 + 16161) != 0)) {
+      (CudaDriverRoutine_98110_alt1(v4) || *(_BYTE*)(v4 + 16161) != 0)) {
     v29 = *(_QWORD*)(v4 + 17800);
     if (v29 != 0) {
       v30 = *v34;

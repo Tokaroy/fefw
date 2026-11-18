@@ -255,7 +255,7 @@ __int64 snd_e4f40(__int64 result, _DWORD* a2, char* a3, char* a4)
   v8 = (_QWORD*)(v6 + 280);
   if ((__int64*)(v6 + 280) == &v60_.v60) {
     if ((*(_BYTE*)(v6 + 280) & 1) != 0) {
-      result = (*(__int64 (**)(__int64, __int64))(
+      result = (*(__int64 (**)(_QWORD, _QWORD))(
           **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0],
                                                    *(_QWORD*)(v6 + 296));
     }
@@ -296,9 +296,9 @@ __int64 snd_e4f40(__int64 result, _DWORD* a2, char* a3, char* a4)
         goto LABEL_19;
       }
     LABEL_18:
-      result = (*(__int64 (**)(__int64, __int64))(
-          **(_QWORD**)snd_g_memory_ptr[0] + 24LL))(*snd_g_memory_ptr[0],
-                                                   (__int64)v60_.v62);
+      result = (*(__int64 (**)(_QWORD, char*))(**(_QWORD**)snd_g_memory_ptr[0] +
+                                               24LL))(*snd_g_memory_ptr[0],
+                                                      v60_.v62);
       goto LABEL_19;
     }
     result = (__int64)GameRoutine_a3a3a0((_QWORD*)(v6 + 280), (__int64)v60_.v62,

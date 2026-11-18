@@ -99,6 +99,7 @@ void gfx_render_b7fd60(__int64 a1, __int64 a2, int a3, __int64* a4);
 void gfx_render_b83060(__int64 a1);
 void gfx_render_b853e0(__int64 a1, _QWORD* a2);
 int8x16_t* GameRoutine_b7ea80_alt1(__int64, __int64*);
+__int64 llvm_libcxx_21_libcxx_include___functional_bf3cc0(__int64, __int64);
 
 float32x4_t gfx_render_b3bca0(float* a1, float32x4_t* a2)
 {
@@ -4258,7 +4259,8 @@ LABEL_215:
         v87 = COERCE_AS(__typeof__(v87), PSEUDO_REGISTER(float, "s0", "=w")),
         v89 = COERCE_AS(__typeof__(v89), PSEUDO_REGISTER(float, "s0", "=w"));
   }
-  GameRoutine_bf3cc0(*(_QWORD*)(a1 + 464), *(_QWORD*)(a1 + 16)),
+  llvm_libcxx_21_libcxx_include___functional_bf3cc0(*(_QWORD*)(a1 + 464),
+                                                    *(_QWORD*)(a1 + 16)),
       v105 = COERCE_AS(__typeof__(v105), PSEUDO_REGISTER(__n128, "v0", "=w")),
       v106 = COERCE_AS(__typeof__(v106), PSEUDO_REGISTER(__n128, "v1", "=w")),
       v107 = COERCE_AS(__typeof__(v107), PSEUDO_REGISTER(__n128, "v2", "=w")),

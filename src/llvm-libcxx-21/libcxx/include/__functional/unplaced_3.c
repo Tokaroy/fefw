@@ -453,13 +453,16 @@ void __attribute__((noreturn)) String_60a230();
 _QWORD* game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable_alt1(__int64);
 __int64 ResourceBuilder_b782c0_alt1(__int64, _QWORD*, _QWORD*, __int64*,
                                     __int64);
-__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
-                                                          __int64 a2,
-                                                          __int64* a3);
+__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0_alt2(__int64 a1,
+                                                               __int64 a2,
+                                                               __int64* a3);
 __int64 nn_os_LockMutex_alt1(__int64);
 __int64 nn_os_UnlockMutex_alt1(__int64);
 float GameRoutine_1a09fb0_alt1(float);
 float GameRoutine_1a09fc0_alt1(float);
+__int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
+                                                          __int64 a2,
+                                                          _QWORD* a3);
 
 void llvm_libcxx_21_libcxx_include___functional_7c2a10(__int64 a1)
 {
@@ -3115,7 +3118,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_a96c40()
 
 __int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
                                                           __int64 a2,
-                                                          __int64* a3)
+                                                          _QWORD* a3)
 {
 
 #pragma clang fp contract(off)
@@ -3256,7 +3259,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
     if (*(_BYTE*)(v11 + 24) != 0) {
       v12 = 8;
     }
-    v77 = (*(__int64 (**)(__int64))(**(_QWORD**)(v11 + v12) + 40LL))(
+    v77 = (*(__int64 (**)(_QWORD))(**(_QWORD**)(v11 + v12) + 40LL))(
         *(_QWORD*)(v11 + v12)),
     v10 = COERCE_AS(__typeof__(v10),
                     PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
@@ -3487,7 +3490,7 @@ __int64 llvm_libcxx_21_libcxx_include___functional_b99ae0(__int64 a1,
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r")),
       v35 = COERCE_AS(__typeof__(v35),
                       PSEUDO_REGISTER(unsigned long long, "x1", "=r"));
-  return ResourceBuilder_b782c0_alt1(v70, v61, v60, a3, (__int64)&v75);
+  return ResourceBuilder_b782c0(v70, v61, v60, a3, (__int64)&v75);
 }
 
 float llvm_libcxx_21_libcxx_include___functional_e4ff70(__int64 a1, int* a2)
@@ -3640,7 +3643,7 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
   __int64 v126;
   __int64 v127;
   __int64* v128;
-  char* v129;
+  const char* v129;
   unsigned __int64 v130;
   __int64 v131;
   unsigned __int64 v132;
@@ -3720,7 +3723,7 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
   __int64 v206;
   __int64 v207;
   __int64* v208;
-  char* v209;
+  const char* v209;
   unsigned __int64 v210;
   __int64 v211;
   unsigned __int64 v212;
@@ -3769,8 +3772,8 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
     __int64 v243;
   } v241_;
   struct {
-    __int64 v244[4];
-    __int64* v245;
+    _QWORD v244[4];
+    _QWORD* v245;
   } v244_;
   struct {
     _BYTE v246[24];
@@ -3882,9 +3885,7 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
       v25 = *(_QWORD*)(v24 + 288);
       ++v27;
       v26 += 176;
-      if (0x2E8BA2E8BA2E8BA3LL *
-              ((signed __int64)(*(_QWORD*)(v24 + 296) - v25) >> 4) <=
-          v27) {
+      if (0x2E8BA2E8BA2E8BA3LL * ((*(_QWORD*)(v24 + 296) - v25) >> 4) <= v27) {
         v45 = *(_QWORD*)(game_script_hub_talk_g_select_menu + 208);
         if (v45 == 0) {
           goto LABEL_339;
@@ -4288,8 +4289,8 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
                         *(_DWORD*)(v192 + 356) & 0xFFFFFFFB | v216;
                   }
                   else {
-                    game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable_alt1(
-                        v192);
+                    game_menu_UnitCommandMenu_SetFirstItemVisibleAndEnable(v192,
+                                                                           1);
                   }
                 LABEL_414:
                   v224 = 128;
@@ -4534,9 +4535,7 @@ void llvm_libcxx_21_libcxx_include___functional_e93140(__int64 a1)
       v4 = *(_QWORD*)(v1 + 288);
       ++v6;
       v5 += 176;
-      if (0x2E8BA2E8BA2E8BA3LL *
-              ((signed __int64)(*(_QWORD*)(v1 + 296) - v4) >> 4) <=
-          v6) {
+      if (0x2E8BA2E8BA2E8BA3LL * ((*(_QWORD*)(v1 + 296) - v4) >> 4) <= v6) {
         goto LABEL_62;
       }
     }
@@ -5181,7 +5180,7 @@ LABEL_220:
   v139 = &v241_.v241;
   v241_.v241 = GameData_1feaf90;
   v241_.v242 = &v238;
-  v244_.v244[0] = (__int64)&v241_.v241;
+  v244_.v244[0] = &v241_.v241;
   if (v137 == v138) {
     goto LABEL_270;
   }
@@ -5199,8 +5198,8 @@ LABEL_220:
       if (v244_.v244[0] == 0) {
         GameRoutine_60a310();
       }
-      if (((*(__int64 (**)(__int64, __int64))(*(_QWORD*)v244_.v244[0] + 48LL))(
-               v244_.v244[0], (__int64)&v239_.v239) &
+      if (((*(__int64 (**)(_QWORD, __int64**))(*(_QWORD*)v244_.v244[0] + 48LL))(
+               v244_.v244[0], &v239_.v239) &
            1) != 0) {
         break;
       }
@@ -5221,7 +5220,7 @@ LABEL_220:
 LABEL_270:
   v145 = 4;
 LABEL_271:
-  ((void (*)(__int64))(*v139)[v145])((__int64)v139);
+  ((__int64 (*)(__int64))(*v139)[v145])((__int64)v139);
 LABEL_272:
   if (v7 != 0) {
     goto LABEL_414;

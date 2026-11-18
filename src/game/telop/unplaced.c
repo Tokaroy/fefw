@@ -1998,7 +1998,7 @@ __int64 game_telop_1745d80(__int64 a1, __int64 a2, int a3, char a4, __int64 a5)
   }
   *(_DWORD*)(v7 + 320) = 2;
   if ((a4 & 1) != 0) {
-    GameRoutine_867df0_alt5();
+    GameRoutine_867df0_alt4();
     v71 = a5;
   }
   else {

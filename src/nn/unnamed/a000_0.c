@@ -1604,6 +1604,9 @@ LABEL_62:
 
 __int64 SdkHr_430ca0(__int64 result)
 {
+
+#pragma clang fp contract(on)
+
   unsigned int v1;
   unsigned int v2;
   int v3;

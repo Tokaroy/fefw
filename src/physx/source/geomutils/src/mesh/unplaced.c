@@ -931,32 +931,83 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     float v223;
   } v222_;
 
-  v3 = *(_QWORD*)(a1 + 176);
+  {
+    v3 = *(_QWORD*)(a1 + 176);
+    __asm__ volatile("" ::"r"(v3));
+  }
   v7 = (float*)v206_.v206;
   if (v3 != 0) {
     v8 = (unsigned int*)(v3 + 12LL * a2);
-    v9 = *v8;
-    v10 = v8[1];
-    v11 = v8[2];
+    {
+      v9 = *v8;
+      __asm__ volatile("" ::"r"(v9));
+    }
+    {
+      v10 = v8[1];
+      __asm__ volatile("" ::"r"(v10));
+    }
+    {
+      v11 = v8[2];
+      __asm__ volatile("" ::"r"(v11));
+    }
   }
   else {
-    v12 = (unsigned __int16*)(*(_QWORD*)(a1 + 184) + 6LL * a2);
-    v9 = *v12;
-    v10 = v12[1];
-    v11 = v12[2];
+    {
+      v12 = (unsigned __int16*)(*(_QWORD*)(a1 + 184) + 6LL * a2);
+      __asm__ volatile("" ::"r"(v12));
+    }
+    {
+      v9 = *v12;
+      __asm__ volatile("" ::"r"(v9));
+    }
+    {
+      v10 = v12[1];
+      __asm__ volatile("" ::"r"(v10));
+    }
+    {
+      v11 = v12[2];
+      __asm__ volatile("" ::"r"(v11));
+    }
   }
-  v13 = *(_QWORD*)(a1 + 192);
+  {
+    v13 = *(_QWORD*)(a1 + 192);
+    __asm__ volatile("" ::"r"(v13));
+  }
   v14 = (float*)(v13 + 12LL * v9);
   v15 = (float*)(v13 + 12LL * v10);
   v16 = (float*)(v13 + 12LL * v11);
-  v17 = *v14;
-  v18 = v14[1];
-  v19 = v14[2];
-  v20 = *v15;
-  v21 = v15[2];
-  v22 = v16[2];
-  v23 = *v16;
-  v24 = v16[1];
+  {
+    v17 = *v14;
+    __asm__ volatile("" ::"w"(v17));
+  }
+  {
+    v18 = v14[1];
+    __asm__ volatile("" ::"w"(v18));
+  }
+  {
+    v19 = v14[2];
+    __asm__ volatile("" ::"w"(v19));
+  }
+  {
+    v20 = *v15;
+    __asm__ volatile("" ::"w"(v20));
+  }
+  {
+    v21 = v15[2];
+    __asm__ volatile("" ::"w"(v21));
+  }
+  {
+    v22 = v16[2];
+    __asm__ volatile("" ::"w"(v22));
+  }
+  {
+    v23 = *v16;
+    __asm__ volatile("" ::"w"(v23));
+  }
+  {
+    v24 = v16[1];
+    __asm__ volatile("" ::"w"(v24));
+  }
   v203_.v204 = v15[1];
   v203_.v205 = v21;
   *(float*)v206_.v206 = v23;
@@ -970,11 +1021,20 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
         (float)(PSEUDO_UNFUSED(v25 * v26));
   v29 = (float)((float)(v17 - v20) * v26) -
         (float)(PSEUDO_UNFUSED((float)(v18 - v203_.v204) * (float)(v17 - v23)));
-  v30 = *(float*)(a1 + 264);
+  {
+    v30 = *(float*)(a1 + 264);
+    __asm__ volatile("" ::"w"(v30));
+  }
   v31 = (float)(v25 * (float)(v17 - v23)) -
         (float)(PSEUDO_UNFUSED((float)(v17 - v20) * v27));
-  v32 = *(float*)(a1 + 260);
-  v33 = *(float*)(a1 + 268);
+  {
+    v32 = *(float*)(a1 + 260);
+    __asm__ volatile("" ::"w"(v32));
+  }
+  {
+    v33 = *(float*)(a1 + 268);
+    __asm__ volatile("" ::"w"(v33));
+  }
   if ((float)((float)((float)(PSEUDO_UNFUSED(v31 * v30)) + (float)(v28 * v32)) +
               (float)(v29 * v33)) <= 0x0.0p+0f) {
     v36 = v23;
@@ -997,25 +1057,62 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v36 = v20;
     v29 = -v29;
   }
-  v37 = v30 * *(float*)(a1 + 528);
-  v160 = *(float*)(a1 + 528);
-  v38 = *(float*)(a1 + 536);
-  v176 = *(float*)(a1 + 524);
+  {
+    v37 = v30 * *(float*)(a1 + 528);
+    __asm__ volatile("" ::"w"(v37));
+  }
+  {
+    v160 = *(float*)(a1 + 528);
+    __asm__ volatile("" ::"w"(v160));
+  }
+  {
+    v38 = *(float*)(a1 + 536);
+    __asm__ volatile("" ::"w"(v38));
+  }
+  {
+    v176 = *(float*)(a1 + 524);
+    __asm__ volatile("" ::"w"(v176));
+  }
   v222_.v223 = *(float*)(a1 + 272);
   v222_.v222[0] = 0;
   v189 = v28;
-  v39 = v35[1];
-  v40 = v35[2];
+  {
+    v39 = v35[1];
+    __asm__ volatile("" ::"w"(v39));
+  }
+  {
+    v40 = v35[2];
+    __asm__ volatile("" ::"w"(v40));
+  }
   v171 = v36 - v38;
   v173 = v23 - v38;
   v180 = v17 - v38;
-  v41 = (float)(v37 + (float)(v176 * v32)) + (float)(*(float*)(a1 + 532) * v33);
-  v186 = *(float*)(a1 + 532);
-  v42 = *(float*)(a1 + 544);
-  v43 = v7[1];
-  v44 = v7[2];
+  {
+    v41 =
+        (float)(v37 + (float)(v176 * v32)) + (float)(*(float*)(a1 + 532) * v33);
+    __asm__ volatile("" ::"w"(v41));
+  }
+  {
+    v186 = *(float*)(a1 + 532);
+    __asm__ volatile("" ::"w"(v186));
+  }
+  {
+    v42 = *(float*)(a1 + 544);
+    __asm__ volatile("" ::"w"(v42));
+  }
+  {
+    v43 = v7[1];
+    __asm__ volatile("" ::"w"(v43));
+  }
+  {
+    v44 = v7[2];
+    __asm__ volatile("" ::"w"(v44));
+  }
   v198 = v41;
-  v45 = *(float*)(a1 + 540);
+  {
+    v45 = *(float*)(a1 + 540);
+    __asm__ volatile("" ::"w"(v45));
+  }
   v46 = (float)(v19 - v42) - (float)(v44 - v42);
   v184 = v44 - v42;
   v185 = v19 - v42;
@@ -1078,7 +1175,10 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v193 = v42 + v42;
   v190 = -(float)(v45 + v45);
   v191 = -(float)(v42 + v42);
-  v157 = *(float*)(a1 + 520);
+  {
+    v157 = *(float*)(a1 + 520);
+    __asm__ volatile("" ::"w"(v157));
+  }
   if (v52 >= 0x0.0p+0f) {
     v60 = v218_.v218;
     v61 = v216_.v217;
@@ -1103,13 +1203,22 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
   v178 = v56;
   v72 = v160 - v56;
   v73 = v190;
-  v74 = *(float*)(a1 + 532);
+  {
+    v74 = *(float*)(a1 + 532);
+    __asm__ volatile("" ::"w"(v74));
+  }
   v75 = (float)(PSEUDO_UNFUSED(v196 * v58)) + (float)(v57 * v191);
   v76 = (float)(PSEUDO_UNFUSED(v193 * v59)) + (float)(v58 * v192);
   v77 = v194 * v57;
-  v78 = *(float*)(a1 + 524);
+  {
+    v78 = *(float*)(a1 + 524);
+    __asm__ volatile("" ::"w"(v78));
+  }
   v79 = v77 + (float)(v59 * v190);
-  v80 = *(float*)(a1 + 528);
+  {
+    v80 = *(float*)(a1 + 528);
+    __asm__ volatile("" ::"w"(v80));
+  }
   v208_.v209[0] = v75;
   v208_.v209[1] = v76;
   v208_.v209[2] = v79;
@@ -1129,9 +1238,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v161 = v79;
       v84 = v75;
       v155 = v74;
-      GameRoutine_4a5a10_alt1((float*)a1, v220_.v220, v216_.v217, v218_.v219,
-                              v216_.v216, v208_.v209, (float*)(a1 + 260),
-                              &v222_.v223, v157, v198);
+      GameRoutine_4a5a10((float*)a1, v220_.v220, v216_.v217, v218_.v219,
+                         v216_.v216, v208_.v209, (float*)(a1 + 260),
+                         &v222_.v223, v157, v198, v222_.v222);
       v74 = v155;
       v75 = v84;
       v79 = v161;
@@ -1141,9 +1250,18 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v71 = v193;
       v66 = v194;
       v65 = v196;
-      v83 = *(float*)(a1 + 524);
-      v80 = *(float*)(a1 + 528);
-      v82 = *(float*)(a1 + 532);
+      {
+        v83 = *(float*)(a1 + 524);
+        __asm__ volatile("" ::"w"(v83));
+      }
+      {
+        v80 = *(float*)(a1 + 528);
+        __asm__ volatile("" ::"w"(v80));
+      }
+      {
+        v82 = *(float*)(a1 + 532);
+        __asm__ volatile("" ::"w"(v82));
+      }
     }
   }
   v85 = v76 * v81;
@@ -1184,9 +1302,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v172 = v88;
       v174 = v91;
       v170 = v85;
-      GameRoutine_4a5a10_alt1((float*)a1, v218_.v219, v216_.v216, v220_.v221,
-                              v218_.v218, v208_.v208, (float*)(a1 + 260),
-                              &v222_.v223, v157, v198);
+      GameRoutine_4a5a10((float*)a1, v218_.v219, v216_.v216, v220_.v221,
+                         v218_.v218, v208_.v208, (float*)(a1 + 260),
+                         &v222_.v223, v157, v198, v222_.v222);
       v85 = v170;
       v88 = v172;
       v91 = v174;
@@ -1198,13 +1316,22 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
       v79 = v162;
       v73 = v190;
       v68 = v191;
-      v83 = *(float*)(a1 + 524);
+      {
+        v83 = *(float*)(a1 + 524);
+        __asm__ volatile("" ::"w"(v83));
+      }
       v67 = v192;
       v71 = v193;
       v66 = v194;
       v65 = v196;
-      v80 = *(float*)(a1 + 528);
-      v96 = *(float*)(a1 + 532);
+      {
+        v80 = *(float*)(a1 + 528);
+        __asm__ volatile("" ::"w"(v80));
+      }
+      {
+        v96 = *(float*)(a1 + 532);
+        __asm__ volatile("" ::"w"(v96));
+      }
     }
   }
   v100 = v95 + (float)(v90 * v92);
@@ -1234,9 +1361,9 @@ __int64 physx_source_geomutils_src_mesh_4a4dc0(__int64 a1, unsigned int a2,
     v201 = v94;
     v195 = v101;
     v197 = v104;
-    GameRoutine_4a5a10_alt1((float*)a1, v220_.v221, v218_.v218, v220_.v220,
-                            v216_.v217, v206_.v207, (float*)(a1 + 260),
-                            &v222_.v223, v157, v111);
+    GameRoutine_4a5a10((float*)a1, v220_.v221, v218_.v218, v220_.v220,
+                       v216_.v217, v206_.v207, (float*)(a1 + 260), &v222_.v223,
+                       v157, v111, v222_.v222);
     v101 = v195;
     v104 = v197;
     v103 = v199;
@@ -1311,12 +1438,16 @@ LABEL_36:
     return 0;
   }
   v124 = -v123;
-  v125 = *(float*)(a1 + 552);
+  {
+    v125 = *(float*)(a1 + 552);
+    __asm__ volatile("" ::"w"(v125));
+  }
   if (v120 == 0x0.0p+0f) {
     goto LABEL_48;
   }
   if (v120 <= v125) {
     v126 = *(float*)(a1 + 552);
+    __asm__ volatile("" ::"w"(v126));
   }
   else {
     v126 = v120;
@@ -1332,7 +1463,10 @@ LABEL_36:
   LABEL_48:
     *(float*)(a1 + 272) = v120;
     *(_DWORD*)(a1 + 276) = a2;
-    v129 = *(_QWORD*)v14;
+    {
+      v129 = *(_QWORD*)v14;
+      __asm__ volatile("" ::"r"(v129));
+    }
     *(float*)(a1 + 548) = v124;
     if (v125 >= v120) {
       v125 = v120;
@@ -1340,38 +1474,71 @@ LABEL_36:
     *(float*)(a1 + 552) = v125;
     *(_QWORD*)(a1 + 288) = v129;
     *(float*)(a1 + 296) = v14[2];
-    v130 = *((_DWORD*)v15 + 1);
+    {
+      v130 = *((_DWORD*)v15 + 1);
+      __asm__ volatile("" ::"r"(v130));
+    }
     *(float*)(a1 + 300) = *v15;
-    v131 = *((_DWORD*)v15 + 2);
+    {
+      v131 = *((_DWORD*)v15 + 2);
+      __asm__ volatile("" ::"r"(v131));
+    }
     *(_DWORD*)(a1 + 304) = v130;
     *(_DWORD*)(a1 + 308) = v131;
-    v132 = *v16;
-    v133 = *((_DWORD*)v16 + 1);
+    {
+      v132 = *v16;
+      __asm__ volatile("" ::"w"(v132));
+    }
+    {
+      v133 = *((_DWORD*)v16 + 1);
+      __asm__ volatile("" ::"r"(v133));
+    }
     *(float*)(a1 + 324) = v117;
     *(float*)(a1 + 328) = v118;
     *(float*)(a1 + 312) = v132;
-    v134 = *((_DWORD*)v16 + 2);
+    {
+      v134 = *((_DWORD*)v16 + 2);
+      __asm__ volatile("" ::"r"(v134));
+    }
     *(_DWORD*)(a1 + 316) = v133;
     *(float*)(a1 + 332) = v119;
     *(_DWORD*)(a1 + 320) = v134;
     result = 1;
     if ((a3 & 1) != 0) {
-      v136 = v125 * *(float*)(a1 + 348);
-      v137 = *(float*)(a1 + 268);
-      v138 = v125 * *(float*)(a1 + 264);
+      {
+        v136 = v125 * *(float*)(a1 + 348);
+        __asm__ volatile("" ::"w"(v136));
+      }
+      {
+        v137 = *(float*)(a1 + 268);
+        __asm__ volatile("" ::"w"(v137));
+      }
+      {
+        v138 = v125 * *(float*)(a1 + 264);
+        __asm__ volatile("" ::"w"(v138));
+      }
       v139 = (float)(PSEUDO_UNFUSED(v125 * *(float*)(a1 + 340))) +
              *(float*)(a1 + 352);
       v140 = (float)(PSEUDO_UNFUSED(v125 * *(float*)(a1 + 344))) +
              *(float*)(a1 + 356);
-      v141 = *(float*)(a1 + 360);
+      {
+        v141 = *(float*)(a1 + 360);
+        __asm__ volatile("" ::"w"(v141));
+      }
       *(float*)(a1 + 64) = v139;
       *(float*)(a1 + 68) = v140;
       v142 = v136 + v141;
-      v143 = *(float*)(a1 + 260);
+      {
+        v143 = *(float*)(a1 + 260);
+        __asm__ volatile("" ::"w"(v143));
+      }
       *(float*)(a1 + 72) = v142;
       v144 = v125 * v143;
       v145 = (float)(v125 * v137) * 0x1.0000000000000p-1f;
-      v146 = *(float*)(a1 + 244);
+      {
+        v146 = *(float*)(a1 + 244);
+        __asm__ volatile("" ::"w"(v146));
+      }
       v147 = (float)(PSEUDO_UNFUSED(v138 * 0x1.0000000000000p-1f)) +
              *(float*)(a1 + 240);
       *(float*)(a1 + 32) =
@@ -1379,11 +1546,23 @@ LABEL_36:
           *(float*)(a1 + 236);
       *(float*)(a1 + 36) = v147;
       v148 = v145 + v146;
-      v149 = *(float*)(a1 + 128);
-      v150 = *(float*)(a1 + 132);
+      {
+        v149 = *(float*)(a1 + 128);
+        __asm__ volatile("" ::"w"(v149));
+      }
+      {
+        v150 = *(float*)(a1 + 132);
+        __asm__ volatile("" ::"w"(v150));
+      }
       *(float*)(a1 + 40) = v148;
-      v151 = *(float*)(a1 + 160);
-      v152 = *(float*)(a1 + 148);
+      {
+        v151 = *(float*)(a1 + 160);
+        __asm__ volatile("" ::"w"(v151));
+      }
+      {
+        v152 = *(float*)(a1 + 148);
+        __asm__ volatile("" ::"w"(v152));
+      }
       v153 = (float)((float)(PSEUDO_UNFUSED(v140 * *(float*)(a1 + 164))) +
                      (float)(v139 * v149)) +
              (float)(v142 * *(float*)(a1 + 152));

@@ -352,8 +352,8 @@ __int64 game_gameui_15df6c0(__int64 a1, __int64 a2, char a3, __int64 a4,
   _QWORD* v13;
   __int64 v14;
   struct {
-    _QWORD v16[4];
-    _QWORD* v17;
+    _BYTE v16[32];
+    _BYTE* v17;
   } v16_;
   struct {
     _BYTE v18[32];
@@ -406,13 +406,13 @@ __int64 game_gameui_15df6c0(__int64 a1, __int64 a2, char a3, __int64 a4,
                                                             (__int64)v16_.v16);
     }
     else {
-      v16_.v17 = (_QWORD*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+      v16_.v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
     }
   }
   else {
     v16_.v17 = nullptr;
   }
-  v12 = game_gameui_UnitUtil_GetNextDefault_alt1(a2, v16_.v16, a5 & 1);
+  v12 = game_gameui_UnitUtil_GetNextDefault(a2, (__int64)v16_.v16, a5 & 1);
   v13 = v16_.v17;
   if (v16_.v17 == v16_.v16) {
     goto LABEL_17;
@@ -436,8 +436,8 @@ __int64 game_gameui_15dfa40(__int64 a1, __int64 a2, char a3, __int64 a4,
   _QWORD* v13;
   __int64 v14;
   struct {
-    _QWORD v16[4];
-    _QWORD* v17;
+    _BYTE v16[32];
+    _BYTE* v17;
   } v16_;
   struct {
     _BYTE v18[32];
@@ -490,13 +490,13 @@ __int64 game_gameui_15dfa40(__int64 a1, __int64 a2, char a3, __int64 a4,
                                                             (__int64)v16_.v16);
     }
     else {
-      v16_.v17 = (_QWORD*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
+      v16_.v17 = (_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v7 + 16LL))(v7);
     }
   }
   else {
     v16_.v17 = nullptr;
   }
-  v12 = game_gameui_UnitUtil_GetPrevDefault_alt1(a2, v16_.v16, a5 & 1);
+  v12 = game_gameui_UnitUtil_GetPrevDefault(a2, (__int64)v16_.v16, a5 & 1);
   v13 = v16_.v17;
   if (v16_.v17 == v16_.v16) {
     goto LABEL_17;

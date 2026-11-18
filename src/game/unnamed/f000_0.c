@@ -1477,7 +1477,6 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
 
 #pragma clang fp contract(on)
 
-#pragma clang fp contract(off)
   float v5;
   float v6;
   float v7;
@@ -1533,9 +1532,18 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
   float v57;
 
   if (a2 != 0) {
-    v5 = *a1;
-    v6 = a1[1];
-    v7 = a1[2];
+    {
+      v5 = *a1;
+      __asm__ volatile("" ::"w"(v5));
+    }
+    {
+      v6 = a1[1];
+      __asm__ volatile("" ::"w"(v6));
+    }
+    {
+      v7 = a1[2];
+      __asm__ volatile("" ::"w"(v7));
+    }
     v8 = a2 & 3;
     if (a2 >= 4) {
       v12 = 0;
@@ -1543,7 +1551,10 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
       v10 = -1;
       v11 = -0x1.fffffe0000000p+127f;
       do {
-        v13 = &a1[v12 / 4];
+        {
+          v13 = &a1[v12 / 4];
+          __asm__ volatile("" ::"r"(v13));
+        }
         v14 = (float*)((char*)a1 + 2 * a3 + v12);
         if ((float)((float)((float)(PSEUDO_UNFUSED((float)(v13[1] - v6) *
                                                    (float)(v13[1] - v6))) +
@@ -1562,15 +1573,24 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
                       (float)((float)(*v15 - v5) * (float)(*v15 - v5))) +
               (float)((float)(v15[2] - v7) * (float)(v15[2] - v7));
         v17 = v16 <= (float)(v11 + 0x1.0000000000000p-23f);
-        v18 = v14[2] - v7;
+        {
+          v18 = v14[2] - v7;
+          __asm__ volatile("" ::"w"(v18));
+        }
         if (v16 > (float)(v11 + 0x1.0000000000000p-23f)) {
           v11 = (float)((float)(PSEUDO_UNFUSED((float)(v15[1] - v6) *
                                                (float)(v15[1] - v6))) +
                         (float)((float)(*v15 - v5) * (float)(*v15 - v5))) +
                 (float)((float)(v15[2] - v7) * (float)(v15[2] - v7));
         }
-        v19 = *v14;
-        v20 = v14[1];
+        {
+          v19 = *v14;
+          __asm__ volatile("" ::"w"(v19));
+        }
+        {
+          v20 = v14[1];
+          __asm__ volatile("" ::"w"(v20));
+        }
         if (!v17) {
           v10 = v9 + 1;
         }
@@ -1587,7 +1607,10 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
         }
         v25 = v9 + 3;
         v9 += 4;
-        v24 = v22[2] - v7;
+        {
+          v24 = v22[2] - v7;
+          __asm__ volatile("" ::"w"(v24));
+        }
         if ((float)((float)((float)(PSEUDO_UNFUSED((float)(v22[1] - v6) *
                                                    (float)(v22[1] - v6))) +
                             (float)((float)(*v22 - v5) * (float)(*v22 - v5))) +
@@ -1628,18 +1651,42 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
     }
     if (v10 != -1) {
       if (v10 == 0) {
-        *(_DWORD*)a5 = 0;
+        *a5 = 0;
         return 1;
       }
-      v29 = *a1;
-      v30 = a1[1];
-      v32 = a4[1];
-      v31 = a4[2];
+      {
+        v29 = *a1;
+        __asm__ volatile("" ::"w"(v29));
+      }
+      {
+        v30 = a1[1];
+        __asm__ volatile("" ::"w"(v30));
+      }
+      {
+        v32 = a4[1];
+        __asm__ volatile("" ::"w"(v32));
+      }
+      {
+        v31 = a4[2];
+        __asm__ volatile("" ::"w"(v31));
+      }
       v33 = (float*)((char*)a1 + (unsigned int)(v10 * a3));
-      v34 = *v33 - *a1;
-      v35 = v33[1] - v30;
-      v36 = a1[2];
-      v37 = v33[2] - v36;
+      {
+        v34 = *v33 - *a1;
+        __asm__ volatile("" ::"w"(v34));
+      }
+      {
+        v35 = v33[1] - v30;
+        __asm__ volatile("" ::"w"(v35));
+      }
+      {
+        v36 = a1[2];
+        __asm__ volatile("" ::"w"(v36));
+      }
+      {
+        v37 = v33[2] - v36;
+        __asm__ volatile("" ::"w"(v37));
+      }
       v38 = (float)(v32 * v37) - (float)(PSEUDO_UNFUSED(v31 * v35));
       v39 = (float)(v31 * v34) - (float)(PSEUDO_UNFUSED(*a4 * v37));
       v40 = (float)(*a4 * v35) - (float)(PSEUDO_UNFUSED(v32 * v34));
@@ -1677,9 +1724,18 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
       v48 = 0x0.0p+0f;
       do {
         v49 = (float*)((char*)a1 + v46);
-        v50 = *v49;
-        v51 = v49[1];
-        v52 = v49[2];
+        {
+          v50 = *v49;
+          __asm__ volatile("" ::"w"(v50));
+        }
+        {
+          v51 = v49[1];
+          __asm__ volatile("" ::"w"(v51));
+        }
+        {
+          v52 = v49[2];
+          __asm__ volatile("" ::"w"(v52));
+        }
         v53 = a3 + v46;
         v46 += 2 * a3;
         v54 = (float*)((char*)a1 + v53);
@@ -1717,18 +1773,18 @@ __int64 GameHr_464600(float* a1, unsigned int a2, int a3, float* a4, _DWORD* a5)
         goto LABEL_38;
       }
     LABEL_42:
-      *(_DWORD*)a5 = 0;
+      *a5 = 0;
       a5[1] = v10;
       if ((unsigned int)(v45 + 1) < 2 || v45 == v10) {
         result = 2;
-        if ((unsigned int)(v42 + 1) >= 2 & v42 != v10 && v42 != v45) {
+        if ((unsigned int)(v42 + 1) >= 2 && v42 != v10 && v42 != v45) {
           goto LABEL_60;
         }
       }
       else {
         result = 3;
         a5[2] = v45;
-        if ((unsigned int)(v42 + 1) >= 2 & v42 != v10 && v42 != v45) {
+        if ((unsigned int)(v42 + 1) >= 2 && v42 != v10 && v42 != v45) {
         LABEL_60:
           a5[(unsigned int)result] = v42;
           return (unsigned int)(result + 1);

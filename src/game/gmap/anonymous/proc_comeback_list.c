@@ -563,8 +563,8 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
 
   int v1;
   __int64 v2;
-  __int64* v4;
-  __int64* v5;
+  _QWORD* v4;
+  _QWORD* v5;
   int v6;
   bool v7;
   _BYTE* v8;
@@ -572,8 +572,8 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
   bool v10;
   _BYTE* v11;
   int v12;
-  __int64* v14;
-  __int64* v15;
+  _QWORD* v14;
+  _QWORD* v15;
   __int64 v16;
   int v17;
   int v18;
@@ -600,25 +600,24 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
 
   v1 = *(_DWORD*)(a1 + 660);
   v2 = *(_QWORD*)(a1 + 672);
-  if (v1 <
-      (unsigned __int64)((signed __int64)(*(_QWORD*)(a1 + 680) - v2) >> 2)) {
+  if (v1 < (unsigned __int64)((*(_QWORD*)(a1 + 680) - v2) >> 2)) {
     v1 = *(_DWORD*)(v2 + 4LL * v1);
   }
-  v4 = *(__int64**)(a1 + 256);
-  v5 = *(__int64**)(a1 + 264);
+  v4 = *(_QWORD**)(a1 + 256);
+  v5 = *(_QWORD**)(a1 + 264);
   if (v4 != v5) {
     v6 = (unsigned __int8)v1;
     if ((_BYTE)v1 != 0) {
       while (1) {
         v11 = (_BYTE*)*v4;
-        if (((*(__int64 (**)(__int64))(*(_QWORD*)*v4 + 560LL))(*v4) & 1) == 0) {
+        if (((*(__int64 (**)(_QWORD))(*(_QWORD*)*v4 + 560LL))(*v4) & 1) == 0) {
           v10 = true;
           goto LABEL_12;
         }
         v9 = *(_QWORD*)(*(_QWORD*)(*(_QWORD*)(GameData_21ca060 + 64) +
                                    8LL * *(unsigned __int8*)(*(__int64 (**)(
-                                             __int64))(*(_QWORD*)v11 + 584LL))(
-                                             (__int64)v11)) +
+                                             _BYTE*))(*(_QWORD*)v11 + 584LL))(
+                                             v11)) +
                         64LL);
         if (v9 != 0) {
           v12 = *(unsigned __int8*)(v9 + 250);
@@ -635,7 +634,7 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
               LODWORD(v9) = 2;
             }
           }
-          else if (v12 == 10 | v12 == 31) {
+          else if (v12 == 10 || v12 == 31) {
             LODWORD(v9) = 3;
           }
           else {
@@ -657,16 +656,15 @@ __int64 game_gmap_anonymous_ProcComebackList_SortAndFilter(__int64 a1)
     }
     do {
       v8 = (_BYTE*)*v4;
-      v7 = ((*(__int64 (**)(__int64))(*(_QWORD*)*v4 + 560LL))(*v4) & 1) == 0 ||
-           *(_BYTE*)(*(__int64 (**)(__int64))(*(_QWORD*)v8 + 584LL))(
-               (__int64)v8) != 0;
+      v7 = ((*(__int64 (**)(_QWORD))(*(_QWORD*)*v4 + 560LL))(*v4) & 1) == 0 ||
+           *(_BYTE*)(*(__int64 (**)(_BYTE*))(*(_QWORD*)v8 + 584LL))(v8) != 0;
       ++v4;
       v8[84] = v7;
     } while (v4 != v5);
   }
 LABEL_28:
-  v14 = *(__int64**)(a1 + 256);
-  v15 = *(__int64**)(a1 + 264);
+  v14 = *(_QWORD**)(a1 + 256);
+  v15 = *(_QWORD**)(a1 + 264);
   v30_.v31 = 0;
   v30_.v32 = 0;
   v30_.v30 = 0;
@@ -681,18 +679,18 @@ LABEL_28:
   else {
     do {
       v16 = *v14;
-      if (((*(__int64 (**)(__int64))(*(_QWORD*)*v14 + 560LL))(*v14) & 1) != 0 &&
+      if (((*(__int64 (**)(_QWORD))(*(_QWORD*)*v14 + 560LL))(*v14) & 1) != 0 &&
           *(_BYTE*)(v16 + 84) == 1) {
         ++*((_DWORD*)&v30_.v30 + *(unsigned __int8*)(v16 + 83));
       }
       ++v14;
     } while (v14 != v15);
     v17 = v30_.v30;
-    v18 = DWORDn(v30_.v30, sizeof(v30_.v30) / 4 - 1);
+    v18 = HIDWORD(v30_.v30);
     v19 = v30_.v31;
-    v20 = DWORDn(v30_.v31, sizeof(v30_.v31) / 4 - 1);
+    v20 = HIDWORD(v30_.v31);
     v22 = v30_.v32;
-    v21 = DWORDn(v30_.v32, sizeof(v30_.v32) / 4 - 1);
+    v21 = HIDWORD(v30_.v32);
   }
   if (v21 + v22 + v20 + v19 + v17 + v18 == 0) {
     LODWORD(v30_.v30) = v17 + 1;

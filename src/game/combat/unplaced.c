@@ -2028,9 +2028,9 @@ void game_combat_e43d60(__int64 a1)
           0x1.41b2f80000000p-2f;
     v19 = v18 +
           (float)(roundf(v18 * 0x1.45f3060000000p-3f) * -0x1.921fb60000000p+2f);
-    if (!(v19 > 0x1.921fb60000000p+0f)) {
+    if (v19 <= 0x1.921fb60000000p+0f) {
       v21 = 0x1.0000000000000p+0f;
-      if (!(v19 < -0x1.921fb60000000p+0f)) {
+      if (v19 >= -0x1.921fb60000000p+0f) {
         goto LABEL_41;
       }
       v20 = -0x1.921fb60000000p+1f;
@@ -2120,9 +2120,7 @@ void game_combat_e43d60(__int64 a1)
                             memory_order_relaxed);
   v12 = *(_QWORD*)(v9 + 40);
   v13 = *(_QWORD*)(v10 + 8) == -1 || v12 == 0;
-  // The owner check reads the use count again, the load is dead.
-  if (v13 ||
-      ((void)*(volatile __int64*)(v10 + 8), v14 = *(_QWORD*)(v12 + 80)) == 0 ||
+  if (v13 || (v14 = *(_QWORD*)(v12 + 80)) == 0 ||
       (*(_QWORD*)(v14 + 8) != -1 ? (v15 = *(_QWORD*)(v12 + 88) == 0)
                                  : (v15 = true),
        v15 || *(_QWORD*)(v10 + 8) == -1)) {

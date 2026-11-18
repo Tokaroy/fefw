@@ -361,6 +361,7 @@ void __attribute__((noreturn)) nvidia_e21bc(__int64 a1);
 void __attribute__((noreturn)) nvidia_e22b4(__int64 a1);
 __attribute__((swiftcall)) void nvidia_e2e10(PSEUDO_X8 x8_, __int64 unused_int0,
                                              int a1);
+__int64 NgxRoutine_baf00_alt2();
 
 __attribute__((swiftcall)) void nvidia_d8580(PSEUDO_X8 x8_, __int64 unused_int0,
                                              __int64 unused_int1,
@@ -1816,7 +1817,7 @@ void __attribute__((noreturn)) nvidia_dbcac(__int64 a1)
 {
 
   __cxa_guard_abort_plt(&NgxData_2b89de8);
-  NgxRoutine_baf00_alt1();
+  NgxRoutine_baf00_alt2();
   _Unwind_Resume_plt(a1);
   __udf(0);
 }

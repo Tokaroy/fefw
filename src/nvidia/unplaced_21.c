@@ -444,6 +444,7 @@ bool CudaDriverRoutine_efe40_alt1(__int64);
 bool cuda_driver_predicates_9ac80_alt1(__int64);
 bool CudaDriverRoutine_bbe70_alt1(__int64);
 bool cuda_driver_predicates_9ae50_alt1(__int64);
+bool CudaDriverRoutine_99720_alt1(__int64);
 
 __int64 nvidia_5bd0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, _QWORD* a5,
                     __int64 a6)
@@ -8087,7 +8088,7 @@ LABEL_19:
     return (*(_DWORD*)(a1 + 16976) & 0x100) != 0;
   }
 LABEL_22:
-  if (!CudaDriverRoutine_99720(a2)) {
+  if (!CudaDriverRoutine_99720_alt1(a2)) {
     goto LABEL_25;
   }
   {

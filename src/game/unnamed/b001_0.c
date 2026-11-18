@@ -3623,7 +3623,7 @@ __int64 GameHr_1cf840(__int64 a1, __int64 a2, __int64 a3)
   int v9;
   int v11;
   _QWORD* v12;
-  void (*v13)(__int64);
+  __int64 (*v13)(__int64);
   _QWORD* v14;
   __int64 v15;
   _QWORD v16[9];
@@ -3647,17 +3647,17 @@ __int64 GameHr_1cf840(__int64 a1, __int64 a2, __int64 a3)
     v11 = *(_DWORD*)(v8 + 8);
     v12 = (_QWORD*)(a2 + *(int*)(v8 + 68));
     if (*(_BYTE*)(v8 + 72) == 1) {
-      v13 = *(void (**)(__int64))v8;
+      v13 = *(__int64 (**)(__int64))v8;
       v14 = (_QWORD*)(*v12 + (v11 >> 1));
       if ((v11 & 1) == 0) {
-        return ((__int64 (*)(_QWORD*))v13)(v14);
+        return v13((__int64)v14);
       }
     }
     else {
-      v13 = *(void (**)(__int64))v8;
+      v13 = *(__int64 (**)(__int64))v8;
       v14 = (_QWORD*)((char*)v12 + (v11 >> 1));
       if ((v11 & 1) == 0) {
-        return ((__int64 (*)(_QWORD*))v13)(v14);
+        return v13((__int64)v14);
       }
     }
     return (*(__int64 (**)(void))((char*)v13 + *v14))();
@@ -3666,7 +3666,7 @@ __int64 GameHr_1cf840(__int64 a1, __int64 a2, __int64 a3)
     return (*(__int64 (**)(__int64))v8)(a2);
   }
   asCGeneric_asCGeneric(v16, a1, v7, a2, 0);
-  (*(void (**)(__int64))v8)((__int64)v16);
+  (*(void (**)(_QWORD*))v8)(v16);
   v15 = *(_QWORD*)asCGeneric_GetReturnPointer((__int64)v16);
   asCGeneric_Destroy_asCGeneric_1be220(v16);
   return v15;
