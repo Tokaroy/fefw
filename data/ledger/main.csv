@@ -42552,7 +42552,7 @@ e382a0,3100,verified,src/game/combat/unplaced_4.c,game_combat_e382a0
 e39fe0,280,verified,src/game/unnamed/b012_2.c,GameHr_e39fe0
 e3a100,2264,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3a100
 e3ae20,652,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3ae20
-e3b0b0,1056,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b0b0
+e3b0b0,1056,disputed,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b0b0
 e3b650,280,verified,src/game/templates/vector.cpp,_ZNSt3__16vectorIN4game16UnrecoveredValueILj5ELm8ELm8EEENS_9allocatorIS3_EEE9push_backB8nn210108ERKS3_
 e3b770,300,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_e3b770
 e3b8c0,24,verified,src/llvm-libcxx-21/libcxx/include/__vector/vector.h,std::vector<T>::__throw_length_error()
@@ -42589,10 +42589,10 @@ e3bf80,16,verified,src/llvm-libcxx-21/libcxx/include/__memory/shared_ptr.h,"std:
 e3bf90,92,verified,src/llvm-libcxx-21/libcxx/include/__memory/shared_ptr.h,"std::__1::__shared_ptr_emplace<game::combat::LegionStackWaitDamage, std::__1::allocator<game::combat::LegionStackWaitDamage>>::deleting destructor"
 e3bff0,12,verified,src/llvm-libcxx-21/libcxx/include/__memory/shared_ptr.h,"std::__1::__shared_ptr_emplace<game::combat::LegionStackWaitDamage, std::__1::allocator<game::combat::LegionStackWaitDamage>>::__on_zero_shared()"
 e3c000,44,verified,src/llvm-libcxx-21/libcxx/include/__memory/shared_ptr.h,"std::__1::__shared_ptr_emplace<game::combat::LegionStackWaitDamage, std::__1::allocator<game::combat::LegionStackWaitDamage>>::__on_zero_shared_weak()"
-e3c040,904,disputed,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_Unknown3
+e3c040,904,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_Unknown3
 e3c460,4,verified,src/game/game_trivial.cpp,_Z15GameStub_e3c460v
 e3c470,4,verified,src/game/game_trivial.cpp,_Z15GameStub_e3c470v
-e3c480,488,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_Unknown6
+e3c480,464,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_Unknown6
 e3c670,44,verified,src/memory/new_delete.cpp,deleting destructor at 0xe3c670
 e3c6a0,44,verified,src/game/combat/legion_state_battle_fighter.c,LegionStateBattleFighter_Unknown2
 e3c6d0,356,verified,src/game/combat/legion_state_battle_non_target.c,LegionStateBattleNonTarget_Unknown3

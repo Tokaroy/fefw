@@ -2020,7 +2020,8 @@ void LegionStateBattleFighter_Unknown3(__int64 a1)
   v4 = v2[8];
   v3 = v2[9];
   v5 = v2[3];
-  v6 = *(_DWORD*)(v4 + 120);
+  // The original loads the flags before it tests the target.
+  v6 = *(volatile _DWORD*)(v4 + 120);
   if (v5 == 0 || ((v7 = *(unsigned __int8*)(v5 + 72),
                    v8 = (1LL << *(_BYTE*)(v5 + 73)) & 0x7DC, v7 <= 7)
                       ? (v9 = v8 == 0)
